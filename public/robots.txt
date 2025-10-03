@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lescalculateurs.fr/sitemap.xml
+
+# Pages importantes pour les moteurs de recherche
+Allow: /pages/notaire.html
+Allow: /pages/pret.html
+Allow: /pages/plusvalue.html
+Allow: /pages/charges.html
+
+# Assets autorisés
+Allow: /assets/
+
+# Fichiers techniques - optionnels pour les crawlers
+Allow: /assets/site.webmanifest
+Allow: /assets/favicon.ico
+
+# Pas de restrictions - site entièrement public
+# Crawl-delay: 1
