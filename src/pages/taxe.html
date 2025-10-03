@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur Taxe Foncière 2025 - Estimation Gratuite</title>
+    <meta
+      name="description"
+      content="Estimez votre taxe foncière 2025 selon la valeur locative cadastrale et les taux communaux. Simulation gratuite avec abattements et exemptions."
+    />
+    <meta
+      name="keywords"
+      content="taxe foncière 2025, simulation taxe foncière, valeur locative cadastrale, taux communal, abattement fiscal"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <a
+            href="../index.html"
+            class="text-primary-600 hover:text-primary-700 font-medium"
+            >← Retour</a
+          >
+          <h1 class="text-2xl font-bold text-gray-900">Taxe Foncière 2025</h1>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Simulateur de taxe foncière 2025
+          </h2>
+          <div class="prose prose-lg text-gray-600">
+            <p>
+              La taxe foncière est calculée sur la valeur locative cadastrale de
+              votre propriété, multipliée par les taux votés par votre commune
+              et les collectivités territoriales. Notre simulateur 2025 prend en
+              compte les taux moyens par région et les principaux abattements
+              applicables. La valeur locative cadastrale correspond au loyer
+              théorique que pourrait produire votre bien s'il était loué. Cette
+              base est ensuite diminuée d'un abattement forfaitaire et peut
+              bénéficier d'exonérations selon votre situation. Les taux varient
+              considérablement selon les communes : de 10% à plus de 45% dans
+              certaines villes. Notre outil vous donne une estimation basée sur
+              les moyennes régionales actualisées pour 2025.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div id="taxe-calculator"></div>
+
+      <div class="my-12 text-center">
+        <div class="bg-gray-100 border border-gray-200 rounded-lg p-8">
+          <p class="text-gray-500 text-sm">Espace publicitaire</p>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../main.ts"></script>
+    <script type="module">
+      import { CalculatorFrame } from "../components/CalculatorFrame.ts";
+      import { formatCurrency } from "../main.ts";
+      import { baremes } from "../data/baremes.ts";
+
+      const taxeConfig = {
+        title: "Simulateur de taxe foncière 2025",
+        description:
+          "Estimez votre taxe foncière selon la valeur locative et les taux locaux.",
+        fields: [
+          {
+            id: "valeur_locative",
+            label: "Valeur locative cadastrale annuelle",
+            type: "number",
+            required: true,
+            placeholder: "8000",
+            min: 100,
+            step: 100,
+          },
+          {
+            id: "region",
+            label: "Région",
+            type: "select",
+            required: true,
+            options: [
+              { value: "ile_de_france", label: "Île-de-France" },
+              {
+                value: "provence_alpes_cote_azur",
+                label: "Provence-Alpes-Côte d'Azur",
+              },
+              { value: "auvergne_rhone_alpes", label: "Auvergne-Rhône-Alpes" },
+              { value: "occitanie", label: "Occitanie" },
+              { value: "nouvelle_aquitaine", label: "Nouvelle-Aquitaine" },
+              { value: "grand_est", label: "Grand Est" },
+              { value: "hauts_de_france", label: "Hauts-de-France" },
+              { value: "normandie", label: "Normandie" },
+              { value: "centre_val_de_loire", label: "Centre-Val de Loire" },
+              {
+                value: "bourgogne_franche_comte",
+                label: "Bourgogne-Franche-Comté",
+              },
+              { value: "pays_de_la_loire", label: "Pays de la Loire" },
+              { value: "bretagne", label: "Bretagne" },
+              { value: "corse", label: "Corse" },
+            ],
+          },
+          {
+            id: "residence_principale",
+            label: "Résidence principale",
+            type: "checkbox",
+          },
+          {
+            id: "age_proprietaire",
+            label: "Âge du propriétaire (optionnel)",
+            type: "number",
+            placeholder: "45",
+            min: 18,
+            max: 120,
+          },
+          {
+            id: "handicape",
+            label: "Propriétaire en situation de handicap",
+            type: "checkbox",
+          },
+        ],
+        calculate: (values) => {
+          try {
+            const valeurLocative = values.valeur_locative;
+            const region = values.region;
+            const residencePrincipale = values.residence_principale || false;
+            const age = values.age_proprietaire || 0;
+            const handicape = values.handicape || false;
+
+            // Taux moyen de la région
+            const tauxRegion =
+              baremes.taxe_fonciere.taux_moyens_par_region[region];
+
+            // Abattement de base (50% sur la valeur locative)
+            let valeurImposable = valeurLocative * 0.5;
+
+            // Abattements supplémentaires
+            let abattementTotal = 0;
+            const abattements = [];
+
+            if (residencePrincipale) {
+              const abattementRP =
+                valeurImposable *
+                baremes.taxe_fonciere.abattements.residence_principale;
+              abattementTotal += abattementRP;
+              abattements.push({
+                nom: "Résidence principale",
+                montant: abattementRP,
+              });
+            }
+
+            if (
+              age >= baremes.taxe_fonciere.abattements.personne_agee.seuil_age
+            ) {
+              const abattementAge =
+                valeurImposable *
+                baremes.taxe_fonciere.abattements.personne_agee.taux;
+              abattementTotal += abattementAge;
+              abattements.push({
+                nom: "Personne âgée (+65 ans)",
+                montant: abattementAge,
+              });
+            }
+
+            if (handicape) {
+              const abattementHandicap =
+                valeurImposable *
+                baremes.taxe_fonciere.abattements.personne_handicapee;
+              abattementTotal += abattementHandicap;
+              abattements.push({
+                nom: "Personne handicapée",
+                montant: abattementHandicap,
+              });
+            }
+
+            // Base imposable finale
+            const baseImposable = Math.max(
+              0,
+              valeurImposable - abattementTotal
+            );
+
+            // Taxe foncière
+            const taxeFonciere = baseImposable * tauxRegion;
+
+            return {
+              success: true,
+              data: {
+                valeurLocative,
+                valeurImposable,
+                abattements,
+                abattementTotal,
+                baseImposable,
+                tauxRegion,
+                taxeFonciere,
+                region,
+              },
+            };
+          } catch (error) {
+            return {
+              success: false,
+              error: "Erreur lors du calcul. Vérifiez vos données.",
+            };
+          }
+        },
+        formatResult: (result) => {
+          const data = result.data;
+          const regionLabel = {
+            ile_de_france: "Île-de-France",
+            provence_alpes_cote_azur: "Provence-Alpes-Côte d'Azur",
+            auvergne_rhone_alpes: "Auvergne-Rhône-Alpes",
+            occitanie: "Occitanie",
+            nouvelle_aquitaine: "Nouvelle-Aquitaine",
+            grand_est: "Grand Est",
+            hauts_de_france: "Hauts-de-France",
+            normandie: "Normandie",
+            centre_val_de_loire: "Centre-Val de Loire",
+            bourgogne_franche_comte: "Bourgogne-Franche-Comté",
+            pays_de_la_loire: "Pays de la Loire",
+            bretagne: "Bretagne",
+            corse: "Corse",
+          }[data.region];
+
+          return `
+          <div class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800">Valeur locative cadastrale</h4>
+                <p class="text-xl font-bold text-primary-600">${formatCurrency(
+                  data.valeurLocative
+                )}</p>
+              </div>
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800">Taxe foncière estimée</h4>
+                <p class="text-xl font-bold text-green-600">${formatCurrency(
+                  data.taxeFonciere
+                )}</p>
+              </div>
+            </div>
+            
+            <div class="border-t pt-4">
+              <h4 class="font-semibold text-gray-800 mb-3">Détail du calcul :</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Valeur locative cadastrale :</span>
+                  <span class="font-medium">${formatCurrency(
+                    data.valeurLocative
+                  )}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Valeur imposable (abattement 50%) :</span>
+                  <span class="font-medium">${formatCurrency(
+                    data.valeurImposable
+                  )}</span>
+                </div>
+                ${
+                  data.abattements.length > 0
+                    ? `
+                  <div class="text-gray-600 font-medium mt-2">Abattements appliqués :</div>
+                  ${data.abattements
+                    .map(
+                      (ab) => `
+                    <div class="flex justify-between ml-4">
+                      <span>• ${ab.nom} :</span>
+                      <span class="font-medium">-${formatCurrency(
+                        ab.montant
+                      )}</span>
+                    </div>
+                  `
+                    )
+                    .join("")}
+                `
+                    : ""
+                }
+                <div class="flex justify-between border-t pt-2">
+                  <span>Base imposable finale :</span>
+                  <span class="font-medium">${formatCurrency(
+                    data.baseImposable
+                  )}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Taux moyen ${regionLabel} :</span>
+                  <span class="font-medium">${(data.tauxRegion * 100).toFixed(
+                    2
+                  )}%</span>
+                </div>
+                <div class="border-t pt-2 flex justify-between font-bold">
+                  <span>Taxe foncière 2025 :</span>
+                  <span>${formatCurrency(data.taxeFonciere)}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
+              <p class="text-sm text-red-800">
+                <strong>⚠️ Important :</strong> Cette estimation utilise des taux moyens régionaux. 
+                <strong>Les taux réels varient énormément selon les communes</strong> (de 10% à plus de 45% !). 
+                Consultez votre avis de taxe foncière pour le montant exact.
+              </p>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+              <p class="text-sm text-blue-800">
+                <strong>💡 Conseil :</strong> Pour connaître le taux exact de votre commune, 
+                consultez le site de votre mairie ou votre dernier avis d'impôt.
+              </p>
+            </div>
+          </div>
+        `;
+        },
+      };
+
+      new CalculatorFrame("taxe-calculator", taxeConfig);
+    </script>
+  </body>
+</html>

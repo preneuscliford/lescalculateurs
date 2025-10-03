@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Simulateur Prêt Immobilier 2025 - Capacité d'emprunt et mensualités
+    </title>
+    <meta
+      name="description"
+      content="Simulez votre prêt immobilier 2025 : capacité d'emprunt, mensualités, assurance, frais. Calcul précis selon les taux actuels."
+    />
+    <meta
+      name="keywords"
+      content="simulateur prêt immobilier gratuit, capacité emprunt 2025, calcul mensualités crédit, taux prêt immobilier, assurance emprunteur, simulation crédit maison, calculateur hypothèque, co-emprunteur, TAEG, durée prêt, apport personnel"
+    />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://lescalculateurs.fr/pages/pret.html" />
+    <meta property="og:url" content="https://lescalculateurs.fr/pages/pret.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Simulateur Prêt Immobilier 2025 - LesCalculateurs.fr" />
+    <meta property="og:description" content="Calculez votre capacité d'emprunt et vos mensualités avec notre simulateur professionnel" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Simulateur Prêt Immobilier 2025" />
+    <meta name="twitter:description" content="Calculez votre capacité d'emprunt et mensualités" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399"
+         crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo & Navigation -->
+          <div class="flex items-center space-x-6">
+            <img src="../assets/logo.svg" alt="LesCalculateurs.fr" class="w-6 h-6">
+            <a href="../index.html" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+              <span>← Accueil</span>
+            </a>
+            <div class="hidden sm:block">
+              <span class="text-gray-400">|</span>
+            </div>
+            <div class="hidden sm:flex items-center space-x-2">
+              <div class="bg-green-100 text-green-700 rounded-lg p-1.5">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M4 7a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7zm3 3a1 1 0 000 2h6a1 1 0 100-2H7z"></path>
+                </svg>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Prêt Immobilier</span>
+            </div>
+          </div>
+
+          <!-- Title & Status -->
+          <div class="flex items-center space-x-3">
+            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
+              🏦 Simulateur Prêt 2025
+            </h1>
+            <span class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+              ✨ Nouveau
+            </span>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center space-x-2">
+            <div class="hidden md:block">
+              <span class="text-xs text-gray-500">Taux actuels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Intro SEO -->
+      <section class="mb-8">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Simulez votre prêt immobilier 2025 avec précision ! Notre calculateur
+          intègre les taux actuels, l'assurance emprunteur et tous les frais
+          annexes pour vous donner une vision complète de votre financement.
+          Découvrez votre capacité d'emprunt maximale et optimisez vos
+          mensualités selon votre profil. Particulier ou investisseur, résidence
+          principale ou secondaire, notre outil s'adapte à votre projet.
+          Simulations instantanées basées sur les conditions bancaires 2025,
+          avec prise en compte du taux d'usure, des frais de dossier et de
+          garantie. Préparez sereinement votre rendez-vous bancaire avec des
+          chiffres fiables et argumentés.
+        </p>
+      </section>
+
+      <!-- Calculateur -->
+      <div id="calculator-container"></div>
+
+      <!-- FAQ Schema.org -->
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          Questions fréquentes
+        </h2>
+
+        <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              Comment calculer ma capacité d'emprunt maximale ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Votre capacité d'emprunt dépend de vos revenus nets, charges
+                existantes et taux d'endettement (33% maximum). Notre simulateur
+                calcule automatiquement le montant maximal selon les critères
+                bancaires 2025.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              Quels sont les taux de prêt immobilier en 2025 ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Les taux varient selon la durée (15-25 ans) et votre profil.
+                Notre calculateur utilise les taux moyens 2025 observés :
+                environ 3,5-4,5% pour un excellent profil sur 20 ans.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              L'assurance emprunteur est-elle obligatoire ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Légalement non, mais exigée par toutes les banques. Comptez
+                0,3-0,6% du capital selon votre âge et santé. Vous pouvez
+                choisir votre assureur depuis la loi Lemoine.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              Quels frais annexes prévoir ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Frais de dossier (0,5-1%), garantie hypothécaire ou caution
+                (1-2%), frais de courtage éventuels. Notre simulateur intègre
+                tous ces coûts pour un calcul réaliste.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              Puis-je emprunter seul ou à deux ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                L'emprunt à deux augmente la capacité (cumul des revenus) mais
+                engage solidairement. Notre calculateur permet de simuler les
+                deux situations pour optimiser votre dossier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-300">
+          Calculateur Prêt Immobilier - Simulation gratuite 2025
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="../main.ts"></script>
+    <script type="module">
+      import { CalculatorFrame } from "../components/CalculatorFrame.ts";
+      import { formatCurrency } from "../main.ts";
+
+      const pretConfig = {
+        title: "Simulateur de prêt immobilier 2025",
+        description:
+          "Simulation complète : capacité d'emprunt, mensualités, assurance, frais de dossier.",
+        fields: [
+          {
+            id: "prix_bien",
+            label: "Prix du bien immobilier *",
+            type: "number",
+            required: true,
+            placeholder: "300000",
+            min: 10000,
+            step: 1000,
+            suffix: "€",
+          },
+          {
+            id: "apport_personnel",
+            label: "Apport personnel *",
+            type: "number",
+            required: true,
+            placeholder: "50000",
+            min: 0,
+            step: 1000,
+            suffix: "€",
+          },
+          {
+            id: "duree",
+            label: "Durée du prêt *",
+            type: "select",
+            required: true,
+            options: [
+              { value: "10", label: "10 ans" },
+              { value: "15", label: "15 ans" },
+              { value: "20", label: "20 ans" },
+              { value: "25", label: "25 ans" },
+              { value: "30", label: "30 ans" },
+            ],
+          },
+          {
+            id: "taux_nominal",
+            label: "Taux d'intérêt nominal *",
+            type: "number",
+            required: true,
+            placeholder: "4.0",
+            min: 0.1,
+            max: 10,
+            step: 0.1,
+            suffix: "%",
+          },
+          {
+            id: "type_pret",
+            label: "Type de prêt",
+            type: "select",
+            options: [
+              { value: "classique", label: "Prêt classique" },
+              { value: "ptz", label: "Prêt à Taux Zéro (PTZ)" },
+              { value: "pel", label: "Prêt Épargne Logement (PEL)" },
+              { value: "action_logement", label: "Prêt Action Logement" },
+            ],
+          },
+          {
+            id: "revenus_emprunteur1",
+            label: "Revenus mensuels nets emprunteur 1 *",
+            type: "number",
+            required: true,
+            placeholder: "3500",
+            min: 1000,
+            step: 100,
+            suffix: "€",
+          },
+          {
+            id: "revenus_emprunteur2",
+            label: "Revenus mensuels nets emprunteur 2 (optionnel)",
+            type: "number",
+            placeholder: "0",
+            min: 0,
+            step: 100,
+            suffix: "€",
+          },
+          {
+            id: "charges_mensuelles",
+            label: "Charges mensuelles existantes (optionnel)",
+            type: "number",
+            placeholder: "0",
+            min: 0,
+            step: 50,
+            suffix: "€",
+          },
+          {
+            id: "age_emprunteur",
+            label: "Âge de l'emprunteur principal (optionnel)",
+            type: "number",
+            placeholder: "35",
+            min: 18,
+            max: 75,
+          },
+          {
+            id: "statut_professionnel",
+            label: "Statut professionnel",
+            type: "select",
+            options: [
+              { value: "cdi", label: "CDI" },
+              { value: "cdd", label: "CDD" },
+              { value: "freelance", label: "Indépendant/Freelance" },
+              { value: "fonctionnaire", label: "Fonctionnaire" },
+              { value: "retraite", label: "Retraité" },
+            ],
+          },
+          {
+            id: "assurance_taux",
+            label: "Taux d'assurance emprunteur",
+            type: "number",
+            placeholder: "0.36",
+            min: 0.1,
+            max: 2,
+            step: 0.01,
+            suffix: "%",
+          },
+          {
+            id: "frais_dossier",
+            label: "Frais de dossier (optionnel)",
+            type: "number",
+            placeholder: "0",
+            min: 0,
+            step: 100,
+            suffix: "€",
+          },
+          {
+            id: "frais_garantie",
+            label: "Frais de garantie (optionnel)",
+            type: "number",
+            placeholder: "0",
+            min: 0,
+            step: 100,
+            suffix: "€",
+          },
+        ],
+        calculate: (values) => {
+          try {
+            const prixBien = values.prix_bien || 0;
+            const apportPersonnel = values.apport_personnel || 0;
+            const montantEmprunte = prixBien - apportPersonnel;
+
+            if (montantEmprunte <= 0) {
+              return {
+                success: false,
+                error:
+                  "L'apport ne peut pas être supérieur ou égal au prix du bien",
+              };
+            }
+
+            const dureeAnnees = parseInt(values.duree) || 20;
+            const dureeMois = dureeAnnees * 12;
+            const tauxNominal = (values.taux_nominal || 4) / 100;
+            const tauxMensuel = tauxNominal / 12;
+
+            const revenusMensuels =
+              (values.revenus_emprunteur1 || 0) +
+              (values.revenus_emprunteur2 || 0);
+            const chargesMensuelles = values.charges_mensuelles || 0;
+            const revenusNets = revenusMensuels - chargesMensuelles;
+
+            const tauxAssurance = (values.assurance_taux || 0.36) / 100;
+            const fraisDossier = values.frais_dossier || 0;
+            const fraisGarantie = values.frais_garantie || 0;
+
+            // Calcul de la mensualité capital + intérêts
+            let mensualiteCapitalInterets = 0;
+            if (tauxMensuel > 0) {
+              mensualiteCapitalInterets =
+                (montantEmprunte *
+                  tauxMensuel *
+                  Math.pow(1 + tauxMensuel, dureeMois)) /
+                (Math.pow(1 + tauxMensuel, dureeMois) - 1);
+            } else {
+              mensualiteCapitalInterets = montantEmprunte / dureeMois;
+            }
+
+            // Assurance (sur capital emprunté)
+            const assuranceMensuelle = (montantEmprunte * tauxAssurance) / 12;
+
+            // Mensualité totale
+            const mensualiteTotale =
+              mensualiteCapitalInterets + assuranceMensuelle;
+
+            // Coût total du crédit
+            const coutTotalCredit =
+              mensualiteTotale * dureeMois - montantEmprunte;
+            const coutTotalAssurance = assuranceMensuelle * dureeMois;
+            const coutTotalInterets = coutTotalCredit - coutTotalAssurance;
+
+            // Taux d'endettement
+            const tauxEndettement = (mensualiteTotale / revenusMensuels) * 100;
+
+            // Capacité d'emprunt restante (33% max généralement)
+            const capaciteEndettementMax = revenusMensuels * 0.33;
+            const capaciteRestante = Math.max(
+              0,
+              capaciteEndettementMax - mensualiteTotale
+            );
+
+            // TAEG (approximation)
+            const fraisTotaux =
+              fraisDossier + fraisGarantie + coutTotalAssurance;
+            const montantTotalDu = montantEmprunte + fraisTotaux;
+            const taeg =
+              ((mensualiteCapitalInterets * dureeMois) / montantTotalDu - 1) *
+              100;
+
+            return {
+              success: true,
+              data: {
+                prixBien,
+                apportPersonnel,
+                montantEmprunte,
+                dureeAnnees,
+                tauxNominal: tauxNominal * 100,
+                mensualiteCapitalInterets,
+                assuranceMensuelle,
+                mensualiteTotale,
+                coutTotalInterets,
+                coutTotalAssurance,
+                coutTotalCredit,
+                tauxEndettement,
+                capaciteRestante,
+                revenusMensuels,
+                fraisDossier,
+                fraisGarantie,
+                taeg,
+              },
+            };
+          } catch (error) {
+            return {
+              success: false,
+              error: "Erreur dans le calcul du prêt immobilier",
+            };
+          }
+        },
+        formatResult: (result) => {
+          const data = result.data;
+          const endettementOk = data.tauxEndettement <= 33;
+
+          return `
+          <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800">Prix du bien</h4>
+                <p class="text-xl font-bold text-blue-600">${formatCurrency(
+                  data.prixBien
+                )}</p>
+                <p class="text-sm text-gray-600">Apport : ${formatCurrency(
+                  data.apportPersonnel
+                )}</p>
+              </div>
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800">Montant emprunté</h4>
+                <p class="text-xl font-bold text-green-600">${formatCurrency(
+                  data.montantEmprunte
+                )}</p>
+                <p class="text-sm text-gray-600">Sur ${data.dureeAnnees} ans</p>
+              </div>
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800">Mensualité totale</h4>
+                <p class="text-xl font-bold text-purple-600">${formatCurrency(
+                  data.mensualiteTotale
+                )}</p>
+                <p class="text-sm text-gray-600">Capital + Intérêts + Assurance</p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-gray-800 mb-3">Détail des mensualités :</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                <div><span class="font-medium">Capital + Intérêts :</span> ${formatCurrency(
+                  data.mensualiteCapitalInterets
+                )}</div>
+                <div><span class="font-medium">Assurance :</span> ${formatCurrency(
+                  data.assuranceMensuelle
+                )}</div>
+                <div><span class="font-medium">Taux nominal :</span> ${data.tauxNominal.toFixed(
+                  2
+                )}%</div>
+                <div><span class="font-medium">TAEG (approx.) :</span> ${data.taeg.toFixed(
+                  2
+                )}%</div>
+              </div>
+            </div>
+
+            <div class="border-t pt-4">
+              <h4 class="font-semibold text-gray-800 mb-3">Coûts totaux sur ${
+                data.dureeAnnees
+              } ans :</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Intérêts :</span>
+                  <span class="font-medium">${formatCurrency(
+                    data.coutTotalInterets
+                  )}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Assurance :</span>
+                  <span class="font-medium">${formatCurrency(
+                    data.coutTotalAssurance
+                  )}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Frais de dossier :</span>
+                  <span class="font-medium">${formatCurrency(
+                    data.fraisDossier
+                  )}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Frais de garantie :</span>
+                  <span class="font-medium">${formatCurrency(
+                    data.fraisGarantie
+                  )}</span>
+                </div>
+                <div class="flex justify-between border-t pt-2 font-semibold text-lg">
+                  <span>Coût total du crédit :</span>
+                  <span class="text-red-600">${formatCurrency(
+                    data.coutTotalCredit
+                  )}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="${
+              endettementOk
+                ? "bg-green-50 border-green-200"
+                : "bg-red-50 border-red-200"
+            } border rounded-lg p-4">
+              <h4 class="font-semibold ${
+                endettementOk ? "text-green-800" : "text-red-800"
+              } mb-2">
+                ${
+                  endettementOk ? "✅" : "⚠️"
+                } Taux d'endettement : ${data.tauxEndettement.toFixed(1)}%
+              </h4>
+              <p class="text-sm ${
+                endettementOk ? "text-green-700" : "text-red-700"
+              }">
+                ${
+                  endettementOk
+                    ? `Votre taux d'endettement est acceptable (≤ 33%). Capacité restante : ${formatCurrency(
+                        data.capaciteRestante
+                      )}/mois`
+                    : "Attention : votre taux d'endettement dépasse 33%. Le prêt pourrait être refusé par la banque."
+                }
+              </p>
+              <p class="text-xs mt-2 ${
+                endettementOk ? "text-green-600" : "text-red-600"
+              }">
+                Revenus mensuels nets : ${formatCurrency(
+                  data.revenusMensuels
+                )} | Mensualité : ${formatCurrency(data.mensualiteTotale)}
+              </p>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <p class="text-sm text-blue-800">
+                <strong>💡 Conseil :</strong> Cette simulation est indicative. Les banques étudient aussi votre profil, 
+                apport, stabilité professionnelle, et peuvent proposer des conditions différentes.
+              </p>
+            </div>
+          </div>
+          `;
+        },
+      };
+
+      // Initialisation du calculateur
+      new CalculatorFrame("calculator-container", pretConfig);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/notaire", "destination": "/src/pages/notaire.html" },
+    { "source": "/ik", "destination": "/src/pages/ik.html" },
+    { "source": "/ponts", "destination": "/src/pages/ponts.html" },
+    { "source": "/taxe", "destination": "/src/pages/taxe.html" },
+    { "source": "/travail", "destination": "/src/pages/travail.html" }
+  ]
+}

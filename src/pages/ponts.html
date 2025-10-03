@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Calendrier Ponts et Jours Fériés 2025-2026 - Planification Congés
+    </title>
+    <meta
+      name="description"
+      content="Calendrier des jours fériés 2025-2026 et opportunités de ponts. Optimisez vos congés et planifiez vos vacances avec notre outil gratuit."
+    />
+    <meta
+      name="keywords"
+      content="jours fériés 2025, ponts 2026, calendrier vacances, planification congés, jours fériés France"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <a
+            href="../index.html"
+            class="text-primary-600 hover:text-primary-700 font-medium"
+            >← Retour</a
+          >
+          <h1 class="text-2xl font-bold text-gray-900">
+            Ponts et Jours Fériés 2025-2026
+          </h1>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Calendrier des jours fériés et ponts 2025-2026
+          </h2>
+          <div class="prose prose-lg text-gray-600">
+            <p>
+              Planifiez efficacement vos congés grâce à notre calendrier des
+              jours fériés 2025-2026. Identifiez les meilleures opportunités de
+              ponts pour optimiser vos vacances en posant un minimum de jours de
+              congés. Notre calendrier indique tous les jours fériés légaux en
+              France, leur date exacte et les possibilités d'extension en
+              week-end prolongé. Que ce soit pour les fêtes religieuses mobiles
+              (Pâques, Ascension, Pentecôte) ou les fêtes fixes (1er mai, 14
+              juillet, Noël), anticipez vos demandes de congés et négociez vos
+              dates avec votre employeur. Outil indispensable pour RH,
+              gestionnaires de planning et salariés souhaitant optimiser leur
+              temps libre.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div id="ponts-calendar"></div>
+
+      <div class="my-12 text-center">
+        <div class="bg-gray-100 border border-gray-200 rounded-lg p-8">
+          <p class="text-gray-500 text-sm">Espace publicitaire</p>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../main.ts"></script>
+    <script type="module">
+      import { baremes } from "../data/baremes.ts";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("ponts-calendar");
+
+        function renderCalendar() {
+          const jours2025 = baremes.jours_feries["2025"];
+          const jours2026 = baremes.jours_feries["2026"];
+
+          const html = `
+          <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- 2025 -->
+              <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Année 2025</h3>
+                <div class="space-y-4">
+                  ${jours2025
+                    .map((jour) => {
+                      const date = new Date(jour.date);
+                      const jourSemaine = date.toLocaleDateString("fr-FR", {
+                        weekday: "long",
+                      });
+                      const dateFormatee = date.toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "long",
+                      });
+
+                      const isPont =
+                        jourSemaine === "mardi" || jourSemaine === "jeudi";
+
+                      return `
+                      <div class="flex justify-between items-center p-3 rounded-lg ${
+                        isPont
+                          ? "bg-yellow-50 border border-yellow-200"
+                          : "bg-gray-50"
+                      }">
+                        <div>
+                          <div class="font-semibold text-gray-900">${
+                            jour.nom
+                          }</div>
+                          <div class="text-sm text-gray-600">${dateFormatee} (${jourSemaine})</div>
+                        </div>
+                        ${
+                          isPont
+                            ? '<span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Pont possible</span>'
+                            : ""
+                        }
+                      </div>
+                    `;
+                    })
+                    .join("")}
+                </div>
+              </div>
+
+              <!-- 2026 -->
+              <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Année 2026</h3>
+                <div class="space-y-4">
+                  ${jours2026
+                    .map((jour) => {
+                      const date = new Date(jour.date);
+                      const jourSemaine = date.toLocaleDateString("fr-FR", {
+                        weekday: "long",
+                      });
+                      const dateFormatee = date.toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "long",
+                      });
+
+                      const isPont =
+                        jourSemaine === "mardi" || jourSemaine === "jeudi";
+
+                      return `
+                      <div class="flex justify-between items-center p-3 rounded-lg ${
+                        isPont
+                          ? "bg-yellow-50 border border-yellow-200"
+                          : "bg-gray-50"
+                      }">
+                        <div>
+                          <div class="font-semibold text-gray-900">${
+                            jour.nom
+                          }</div>
+                          <div class="text-sm text-gray-600">${dateFormatee} (${jourSemaine})</div>
+                        </div>
+                        ${
+                          isPont
+                            ? '<span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Pont possible</span>'
+                            : ""
+                        }
+                      </div>
+                    `;
+                    })
+                    .join("")}
+                </div>
+              </div>
+            </div>
+
+            <!-- Conseils pour les ponts -->
+            <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <h4 class="text-lg font-semibold text-blue-900 mb-3">💡 Conseils pour optimiser vos ponts</h4>
+              <div class="space-y-2 text-sm text-blue-800">
+                <p>• <strong>Mardi ou jeudi férié :</strong> Posez 1 jour pour un week-end de 4 jours</p>
+                <p>• <strong>Lundi ou vendredi férié :</strong> Week-end de 3 jours automatique</p>
+                <p>• <strong>Planifiez à l'avance :</strong> Déposez vos demandes de congés dès janvier</p>
+                <p>• <strong>Négociez en équipe :</strong> Alternez avec vos collègues pour les ponts populaires</p>
+              </div>
+            </div>
+
+            <!-- Meilleurs ponts de l'année -->
+            <div class="mt-6 bg-green-50 border border-green-200 rounded-lg p-6">
+              <h4 class="text-lg font-semibold text-green-900 mb-3">🎯 Meilleurs ponts 2025-2026</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <strong>2025 :</strong>
+                  <ul class="mt-1 space-y-1 text-green-800">
+                    <li>• 1er mai (jeudi) → Pont du 2 mai</li>
+                    <li>• 8 mai (jeudi) → Pont du 9 mai</li>
+                    <li>• Ascension (jeudi 29 mai) → Pont du 30 mai</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>2026 :</strong>
+                  <ul class="mt-1 space-y-1 text-green-800">
+                    <li>• 1er mai (vendredi) → Week-end 3 jours</li>
+                    <li>• 8 mai (vendredi) → Week-end 3 jours</li>
+                    <li>• Ascension (jeudi 14 mai) → Pont du 15 mai</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+          container.innerHTML = html;
+        }
+
+        renderCalendar();
+      });
+    </script>
+  </body>
+</html>
