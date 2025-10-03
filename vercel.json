@@ -6,7 +6,10 @@
   "rewrites": [
     { "source": "/pages/notaire.html", "destination": "/pages/notaire.html" },
     { "source": "/pages/pret.html", "destination": "/pages/pret.html" },
-    { "source": "/pages/plusvalue.html", "destination": "/pages/plusvalue.html" },
+    {
+      "source": "/pages/plusvalue.html",
+      "destination": "/pages/plusvalue.html"
+    },
     { "source": "/pages/charges.html", "destination": "/pages/charges.html" },
     { "source": "/pages/ik.html", "destination": "/pages/ik.html" },
     { "source": "/pages/ponts.html", "destination": "/pages/ponts.html" },

@@ -41,4 +41,44 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Calculateur Indemnités Kilométriques -->
+  <url>
+    <loc>https://lescalculateurs.fr/pages/ik.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Calculateur Ponts et Jours Fériés -->
+  <url>
+    <loc>https://lescalculateurs.fr/pages/ponts.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Calculateur Taxe Foncière -->
+  <url>
+    <loc>https://lescalculateurs.fr/pages/taxe.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Calculateur Temps de Travail -->
+  <url>
+    <loc>https://lescalculateurs.fr/pages/travail.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Fichier ads.txt pour Google AdSense -->
+  <url>
+    <loc>https://lescalculateurs.fr/ads.txt</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
 </urlset>
