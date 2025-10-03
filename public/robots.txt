@@ -1,14 +1,31 @@
 User-agent: *
 Allow: /
 
+# Google AdSense crawlers
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
 # Sitemap
 Sitemap: https://lescalculateurs.fr/sitemap.xml
+
+# Fichier ads.txt pour Google AdSense
+Allow: /ads.txt
 
 # Pages importantes pour les moteurs de recherche
 Allow: /pages/notaire.html
 Allow: /pages/pret.html
 Allow: /pages/plusvalue.html
 Allow: /pages/charges.html
+Allow: /pages/ik.html
+Allow: /pages/ponts.html
+Allow: /pages/taxe.html
+Allow: /pages/travail.html
 
 # Assets autorisés
 Allow: /assets/

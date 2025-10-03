@@ -10,8 +10,19 @@
         {
           "key": "Content-Type",
           "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/ads.txt",
+      "destination": "/ads.txt",
+      "permanent": false
     }
   ],
   "rewrites": [
