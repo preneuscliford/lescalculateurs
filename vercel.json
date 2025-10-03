@@ -3,6 +3,17 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/ads.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/pages/notaire.html", "destination": "/pages/notaire.html" },
     { "source": "/pages/pret.html", "destination": "/pages/pret.html" },
