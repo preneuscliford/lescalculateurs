@@ -3,6 +3,16 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "routes": [
+    {
+      "src": "/ads.txt",
+      "dest": "/ads.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "public, max-age=3600"
+      }
+    }
+  ],
   "headers": [
     {
       "source": "/ads.txt",
