@@ -14,6 +14,8 @@
     { "source": "/pages/ik.html", "destination": "/pages/ik.html" },
     { "source": "/pages/ponts.html", "destination": "/pages/ponts.html" },
     { "source": "/pages/taxe.html", "destination": "/pages/taxe.html" },
-    { "source": "/pages/travail.html", "destination": "/pages/travail.html" }
+    { "source": "/pages/travail.html", "destination": "/pages/travail.html" },
+    { "source": "/pages/financement.html", "destination": "/pages/financement.html" },
+    { "source": "/pages/crypto-bourse.html", "destination": "/pages/crypto-bourse.html" }
   ]
 }
