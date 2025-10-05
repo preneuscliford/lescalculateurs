@@ -58,13 +58,44 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
       resultsDiv.offsetHeight
     );
 
-    // Capturer le HTML en canvas
-    const canvas = await html2canvas(resultsDiv, {
+    // Cloner le div pour le nettoyer sans modifier l'affichage
+    const clonedDiv = resultsDiv.cloneNode(true);
+    document.body.appendChild(clonedDiv);
+    clonedDiv.style.position = "absolute";
+    clonedDiv.style.left = "-9999px";
+    clonedDiv.style.background = "#ffffff";
+    clonedDiv.style.padding = "20px";
+
+    // Nettoyer les emojis et caractères spéciaux problématiques
+    const cleanText = (node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        // Remplacer les emojis courants par du texte
+        let text = node.textContent;
+        text = text.replace(/📊|📈|📉|💰|💵|💶|💷|🏦|🏠|🏡|📋|✅|❌|⚠️|ℹ️|📄|🔍|📌/g, "");
+        text = text.replace(/\s*\/\s*/g, " "); // Nettoyer les espaces avec slash
+        text = text.replace(/\u00A0/g, " "); // Non-breaking space → espace normal
+        text = text.replace(/\u202F/g, " "); // Narrow no-break space
+        text = text.replace(/\u2009/g, " "); // Thin space
+        node.textContent = text.trim();
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // Parcourir récursivement
+        Array.from(node.childNodes).forEach(cleanText);
+      }
+    };
+
+    cleanText(clonedDiv);
+
+    // Capturer le clone nettoyé
+    const canvas = await html2canvas(clonedDiv, {
       useCORS: true,
       scale: 2,
       backgroundColor: "#ffffff",
       logging: false,
+      removeContainer: true,
     });
+
+    // Supprimer le clone
+    document.body.removeChild(clonedDiv);
 
     console.log("✅ Canvas créé:", canvas.width, "x", canvas.height);
 
@@ -242,21 +273,28 @@ function updateButtonState(button, calculatorName) {
       // Vérifier qu'il y a du contenu réel
       const textContent = container.textContent.trim();
 
-      // Vérifications strictes :
+      // Vérifications :
       // 1. Au moins 100 caractères de contenu
-      // 2. Contient des chiffres (résultats de calcul)
-      // 3. Contient le symbole € ou % (montants/pourcentages)
+      // 2. Contient des chiffres (résultats de calcul ou dates)
+      // 3. Pour les calculateurs financiers : doit avoir € ou %
+      //    Pour les calendriers/autres : juste contenu + chiffres suffit
       const hasEnoughContent = textContent.length > 100;
       const hasNumbers = /\d/.test(textContent);
       const hasCurrencyOrPercent = /[€%]/.test(textContent);
+      const isCalendar = selector.includes("calendar") || selector.includes("ponts");
 
-      if (hasEnoughContent && hasNumbers && hasCurrencyOrPercent) {
+      // Calendrier : juste contenu + chiffres suffit
+      // Autres : besoin de € ou %
+      const isValid = hasEnoughContent && hasNumbers && (isCalendar || hasCurrencyOrPercent);
+
+      if (isValid) {
         hasResults = true;
         resultContainer = container;
         console.log("✅ Résultats valides détectés dans:", selector);
         console.log("   - Longueur:", textContent.length);
         console.log("   - A des chiffres:", hasNumbers);
         console.log("   - A € ou %:", hasCurrencyOrPercent);
+        console.log("   - Est calendrier:", isCalendar);
         break;
       }
     }
