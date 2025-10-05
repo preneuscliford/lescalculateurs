@@ -57,12 +57,6 @@
       </section>
 
       <div id="ponts-calendar"></div>
-
-      <div class="my-12 text-center">
-        <div class="bg-gray-100 border border-gray-200 rounded-lg p-8">
-          <p class="text-gray-500 text-sm">Espace publicitaire</p>
-        </div>
-      </div>
     </main>
 
     <script type="module" src="../main.ts"></script>
@@ -205,6 +199,21 @@
         }
 
         renderCalendar();
+
+        // Forcer la mise à jour du bouton export après le rendu du calendrier
+        const checkAndUpdateButton = () => {
+          const button = document.getElementById("pdf-export-btn");
+          if (button && window.updateButtonState) {
+            console.log("🔄 Mise à jour forcée du bouton Ponts");
+            window.updateButtonState(button, "Calcul des Ponts");
+          } else {
+            // Réessayer si pas encore prêt
+            setTimeout(checkAndUpdateButton, 100);
+          }
+        };
+        
+        // Démarrer la vérification après un court délai
+        setTimeout(checkAndUpdateButton, 200);
       });
     </script>
 

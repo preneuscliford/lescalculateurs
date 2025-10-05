@@ -17,6 +17,7 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
 
     // Priorité : chercher le div des résultats seulement (pas le formulaire)
     const resultsSelectors = [
+      "#ponts-calendar", // Calendrier ponts
       "#calculator-result", // CalculatorFrame
       "#results", // Anciens calculateurs
       ".calculator-results", // Classe générique
@@ -258,6 +259,7 @@ function createPDFButton(containerId, calculatorName, data, notes = []) {
 function updateButtonState(button, calculatorName) {
   // Chercher les zones de résultats (pas les formulaires)
   const resultsSelectors = [
+    "#ponts-calendar", // Calendrier ponts (toujours actif)
     "#calculator-result", // CalculatorFrame
     "#results", // Anciens calculateurs
     ".calculator-results", // Classe générique
@@ -270,6 +272,14 @@ function updateButtonState(button, calculatorName) {
   for (const selector of resultsSelectors) {
     const container = document.querySelector(selector);
     if (container && !container.classList.contains("hidden")) {
+      // Pour le calendrier des ponts : toujours activer si le contenu existe
+      if (selector === "#ponts-calendar" && container.children.length > 0) {
+        hasResults = true;
+        resultContainer = container;
+        console.log("✅ Calendrier ponts détecté - bouton activé automatiquement");
+        break;
+      }
+
       // Vérifier qu'il y a du contenu réel
       const textContent = container.textContent.trim();
 
