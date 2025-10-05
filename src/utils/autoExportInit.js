@@ -3,6 +3,8 @@
  * Détecte automatiquement le calculateur et configure l'export
  */
 
+console.log("🔵 autoExportInit.js CHARGÉ");
+
 // Fonction pour extraire les données depuis la structure HTML des calculateurs
 function extractFromHTMLStructure(resultDiv) {
   const results = {};
@@ -33,9 +35,12 @@ function extractFromHTMLStructure(resultDiv) {
         if (cleanValue.includes("€")) {
           cleanValue = cleanValue.replace(/€/g, " EUR");
         }
+        // Corriger les montants mal formatés avec slashes
         if (cleanValue.includes("/")) {
           cleanValue = cleanValue.replace(/(\d+)\s*\/\s*(\d{3})/g, "$1 $2");
         }
+        // Normaliser les espaces dans les montants
+        cleanValue = cleanValue.replace(/\s+/g, " ").trim();
 
         results[cleanLabel] = cleanValue;
         console.log(`  ✅ Ajouté: "${cleanLabel}" = "${cleanValue}"`);
@@ -111,7 +116,10 @@ function extractFromHTMLStructure(resultDiv) {
   return results;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// Fonction d'initialisation
+function initAutoExport() {
+  console.log("🚀 initAutoExport démarré");
+
   // Configuration des calculateurs
   const calculatorConfigs = {
     notaire: {
@@ -188,50 +196,65 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (!calculatorConfig) return;
+  console.log("🔍 Calculateur détecté:", currentCalculator);
+  console.log("📋 Config:", calculatorConfig);
 
-  // Chargement du module PDF
-  const script = document.createElement("script");
-  script.src = "../utils/universalPDFExport.js";
-  script.onload = () => {
-    initPDFExport(calculatorConfig);
-  };
-  document.head.appendChild(script);
-});
+  if (!calculatorConfig) {
+    console.warn("❌ Aucune config trouvée pour ce calculateur");
+    return;
+  }
+
+  // Le module PDF est déjà chargé via import, on initialise directement
+  console.log("⚙️ Initialisation de l'export PDF...");
+  initPDFExport(calculatorConfig);
+}
+
+// Lancer l'initialisation maintenant si le DOM est prêt, sinon attendre
+if (document.readyState === "loading") {
+  console.log("⏳ DOM en cours de chargement, attente...");
+  document.addEventListener("DOMContentLoaded", initAutoExport);
+} else {
+  console.log("✅ DOM déjà prêt, initialisation immédiate");
+  initAutoExport();
+}
 
 function initPDFExport(config) {
+  console.log("🚀 initPDFExport appelé avec config:", config);
   const isCalculatorFrame = config.type === "CalculatorFrame";
 
   if (isCalculatorFrame) {
     console.log(`Initialisation CalculatorFrame pour ${config.name}`);
+    console.log(`🔍 Recherche du conteneur: #${config.resultsId}`);
 
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "class"
-        ) {
-          const resultDiv = mutation.target;
-          if (
-            resultDiv &&
-            resultDiv.id === "calculator-result" &&
-            !resultDiv.classList.contains("hidden")
-          ) {
-            console.log(`Résultats visibles pour ${config.name}`);
-            setupExportButtons(config);
-            observer.disconnect();
-          }
+    // Créer le bouton immédiatement (il sera désactivé s'il n'y a pas de résultats)
+    setupExportButtons(config);
+
+    // Observer le div des résultats pour mettre à jour l'état du bouton
+    const resultDiv = document.getElementById(config.resultsId);
+    console.log("🔍 Div résultat trouvé?", !!resultDiv);
+
+    if (resultDiv) {
+      console.log(
+        "📊 Mise en place de l'observer pour surveiller les résultats"
+      );
+
+      const observer = new MutationObserver(() => {
+        // Mettre à jour l'état du bouton à chaque changement
+        const button = document.getElementById("pdf-export-btn");
+        if (button && window.updateButtonState) {
+          window.updateButtonState(button, config.name);
         }
       });
-    });
 
-    // Observer le div des résultats
-    const resultDiv = document.getElementById("calculator-result");
-    if (resultDiv) {
       observer.observe(resultDiv, {
-        attributes: true,
-        attributeFilter: ["class"],
+        childList: true, // Observer l'ajout/suppression d'enfants
+        subtree: true, // Observer dans les sous-éléments aussi
+        characterData: true, // Observer les changements de texte
       });
+
+      console.log("✅ Observer activé pour mettre à jour le bouton");
+    } else {
+      console.warn(`❌ Conteneur #${config.resultsId} introuvable !`);
     }
   } else {
     // Pour les anciens calculateurs - attendre que les résultats soient visibles
@@ -272,8 +295,15 @@ function initPDFExport(config) {
 }
 
 function setupExportButtons(config) {
+  console.log("🎯 setupExportButtons appelé");
+  console.log(
+    "🔍 window.createPDFButton existe?",
+    typeof window.createPDFButton
+  );
+
   let exportContainer = document.getElementById("export-buttons");
   if (!exportContainer) {
+    console.log("📦 Création du conteneur export-buttons");
     exportContainer = document.createElement("div");
     exportContainer.id = "export-buttons";
     exportContainer.className = "mt-6 flex flex-wrap gap-4 justify-center";
@@ -288,6 +318,13 @@ function setupExportButtons(config) {
   }
 
   if (!document.getElementById("pdf-export-btn")) {
+    console.log("✅ Appel de window.createPDFButton");
+
+    if (typeof window.createPDFButton !== "function") {
+      console.error("❌ window.createPDFButton n'est pas une fonction!");
+      return;
+    }
+
     window.createPDFButton(
       "export-buttons",
       config.name,

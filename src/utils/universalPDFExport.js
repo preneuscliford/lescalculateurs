@@ -3,6 +3,8 @@
  * Export PDF générique pour tous les calculateurs
  */
 
+console.log("🟢 universalPDFExport.js CHARGÉ");
+
 // Import dynamique de jsPDF via CDN pour éviter les problèmes de build
 async function loadJsPDF() {
   if (window.jsPDF) {
@@ -305,6 +307,13 @@ function formatValue(value) {
   // Nettoyage et normalisation des chaînes de caractères
   let cleanValue = value.toString();
 
+  // Première étape : normaliser TOUS les types d'espaces en espaces normaux
+  cleanValue = cleanValue
+    .replace(/\u00A0/g, " ") // Espace insécable -> espace normal
+    .replace(/\u2009/g, " ") // Espace fine -> espace normal
+    .replace(/\u202F/g, " ") // Espace insécable étroite -> espace normal
+    .replace(/[\u2000-\u200B]/g, " "); // Tous les espaces Unicode -> espace normal
+
   // Supprimer TOUS les caractères problématiques d'un coup
   cleanValue = cleanValue
     // Supprimer les caractères bizarres Unicode et emojis corrompus
@@ -317,15 +326,21 @@ function formatValue(value) {
     .replace(/⚠️/g, "") // Supprimer warning emoji
     .replace(/ℹ️/g, "") // Supprimer info emoji
 
-    // Corriger les montants mal formatés
-    .replace(/(\d+)\s*\/\s*(\d{3})(,\d{2})?\s*€?/g, "$1 $2$3 EUR")
-    .replace(/(\d{1,3}(?:\s\d{3})*(?:,\d{2})?)\s*€/g, "$1 EUR")
+    // Corriger les montants mal formatés avec slashes: "1 /305,00" -> "1305,00"
+    .replace(/(\d+)\s*\/\s*(\d{3})/g, "$1$2") // Enlever les slashes entre chiffres
+    .replace(/(\d{1,3}(?:\s\d{3})*(?:,\d{2})?)\s*€/g, "$1 EUR") // € -> EUR
 
-    // Corriger les montants collés comme "25000,00EUR"
+    // Reformater tous les montants pour ajouter les espaces de milliers
+    .replace(/(\d{4,})(?=,\d{2}\s*EUR)/g, (match) => {
+      // Ajouter des espaces aux milliers: 1305 -> 1 305
+      return match.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    })
+
+    // Corriger les montants collés comme "25000,00EUR" (sans espace avant EUR)
     .replace(/(\d{4,})(,\d{2})?EUR/g, (match, amount, decimal) => {
       // Ajouter des espaces aux milliers
-      const formatted = amount.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
-      return formatted + (decimal || "") + " EUR";
+      const formatted = amount.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      return formatted + (decimal || ",00") + " EUR";
     })
 
     // Normaliser les caractères accentués
@@ -448,5 +463,11 @@ function createPDFButton(
 }
 
 // Export pour utilisation globale
+console.log("📤 Export des fonctions vers window...");
 window.createPDFButton = createPDFButton;
 window.exportCalculatorToPDF = exportCalculatorToPDF;
+console.log("✅ window.createPDFButton défini:", typeof window.createPDFButton);
+console.log(
+  "✅ window.exportCalculatorToPDF défini:",
+  typeof window.exportCalculatorToPDF
+);

@@ -4,6 +4,7 @@ import { resolve } from "path";
 export default defineConfig({
   root: "src",
   publicDir: "../public",
+  base: "/",
   build: {
     outDir: "../dist",
     emptyOutDir: true,
@@ -21,7 +22,11 @@ export default defineConfig({
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
       },
+      output: {
+        manualChunks: {
+          vendor: ["jspdf", "html2canvas"],
+        },
+      },
     },
   },
-  assetsInclude: ["**/*.json"],
 });
