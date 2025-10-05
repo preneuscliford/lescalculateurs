@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculateur Plus-Value Crypto & Bourse 2025 - Impôts Bitcoin, Actions</title>
+    <title>
+      Calculateur Plus-Value Crypto & Bourse 2025 - Impôts Bitcoin, Actions
+    </title>
     <meta
       name="description"
       content="Calculez vos plus-values crypto et bourse avec impôts : Bitcoin, Ethereum, actions. Flat tax 30%, abattements durée de détention, gain net après fiscalité."
@@ -33,7 +35,10 @@
       content="Calculez vos gains crypto et bourse après impôts avec notre simulateur"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Calculateur Plus-Value Crypto & Bourse 2025" />
+    <meta
+      name="twitter:title"
+      content="Calculateur Plus-Value Crypto & Bourse 2025"
+    />
     <meta
       name="twitter:description"
       content="Calculez vos plus-values crypto et bourse après impôts"
@@ -181,15 +186,16 @@
       <!-- Intro SEO -->
       <section class="mb-8">
         <p class="text-lg text-gray-600 leading-relaxed">
-          Calculez précisément vos plus-values crypto et bourse après impôts ! 
-          Bitcoin, Ethereum, actions, ETF : notre simulateur intègre la fiscalité 
-          française 2025 avec flat tax à 30% et abattements pour durée de détention. 
-          Découvrez votre gain net réel après prélèvements sociaux et impôts. 
-          Idéal pour optimiser vos ventes et déclarer correctement vos plus-values. 
-          Prise en compte des achats partiels, dates de détention et régimes fiscaux 
-          spécifiques. Simulation gratuite basée sur le Code général des impôts et 
-          les dernières réformes fiscales. Essentiel pour traders, investisseurs 
-          et particuliers possédant des cryptomonnaies ou actions.
+          Calculez précisément vos plus-values crypto et bourse après impôts !
+          Bitcoin, Ethereum, actions, ETF : notre simulateur intègre la
+          fiscalité française 2025 avec flat tax à 30% et abattements pour durée
+          de détention. Découvrez votre gain net réel après prélèvements sociaux
+          et impôts. Idéal pour optimiser vos ventes et déclarer correctement
+          vos plus-values. Prise en compte des achats partiels, dates de
+          détention et régimes fiscaux spécifiques. Simulation gratuite basée
+          sur le Code général des impôts et les dernières réformes fiscales.
+          Essentiel pour traders, investisseurs et particuliers possédant des
+          cryptomonnaies ou actions.
         </p>
       </section>
 
@@ -215,8 +221,12 @@
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  <option value="crypto">Cryptomonnaies (Bitcoin, Ethereum...)</option>
-                  <option value="actions">Actions (CAC 40, internationales...)</option>
+                  <option value="crypto">
+                    Cryptomonnaies (Bitcoin, Ethereum...)
+                  </option>
+                  <option value="actions">
+                    Actions (CAC 40, internationales...)
+                  </option>
                   <option value="etf">ETF / Trackers</option>
                   <option value="obligations">Obligations</option>
                 </select>
@@ -271,7 +281,9 @@
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-                <span class="text-xs text-gray-500">Unités, tokens, actions...</span>
+                <span class="text-xs text-gray-500"
+                  >Unités, tokens, actions...</span
+                >
               </div>
 
               <div>
@@ -299,7 +311,9 @@
                   step="0.01"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-                <span class="text-xs text-gray-500">Frais de courtage, spread...</span>
+                <span class="text-xs text-gray-500"
+                  >Frais de courtage, spread...</span
+                >
               </div>
             </div>
           </div>
@@ -367,7 +381,9 @@
                   step="0.01"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-                <span class="text-xs text-gray-500">Frais de courtage, spread...</span>
+                <span class="text-xs text-gray-500"
+                  >Frais de courtage, spread...</span
+                >
               </div>
             </div>
           </div>
@@ -387,7 +403,9 @@
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="flat-tax">Flat tax 30% (par défaut)</option>
-                  <option value="progressif">Barème progressif + prélèvements sociaux</option>
+                  <option value="progressif">
+                    Barème progressif + prélèvements sociaux
+                  </option>
                   <option value="personnalise">Taux personnalisé</option>
                 </select>
               </div>
@@ -412,11 +430,13 @@
                 <label class="flex items-center">
                   <input type="checkbox" id="abattementDuree" class="mr-2" />
                   <span class="text-sm font-medium text-gray-700">
-                    Appliquer l'abattement pour durée de détention (actions uniquement)
+                    Appliquer l'abattement pour durée de détention (actions
+                    uniquement)
                   </span>
                 </label>
                 <p class="text-xs text-gray-500 mt-1">
-                  50% après 2 ans, 65% après 8 ans (régime progressif uniquement)
+                  50% après 2 ans, 65% après 8 ans (régime progressif
+                  uniquement)
                 </p>
               </div>
             </div>
@@ -432,6 +452,31 @@
 
         <!-- Résultats -->
         <div id="results" class="hidden mt-8"></div>
+
+        <!-- Boutons d'export (affichés seulement quand il y a des résultats) -->
+        <div id="export-buttons" class="hidden mt-6">
+          <div class="flex flex-wrap gap-4 justify-center">
+            <button
+              id="pdf-export-btn"
+              class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+              <span>📄 Exporter en PDF</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- FAQ Schema.org -->
@@ -459,8 +504,9 @@
               itemtype="https://schema.org/Answer"
             >
               <p class="text-gray-600" itemprop="text">
-                Les plus-values crypto sont imposées à la flat tax de 30% (12,8% impôt + 17,2% prélèvements sociaux) 
-                sans abattement pour durée de détention. Obligation de déclarer toutes les ventes.
+                Les plus-values crypto sont imposées à la flat tax de 30% (12,8%
+                impôt + 17,2% prélèvements sociaux) sans abattement pour durée
+                de détention. Obligation de déclarer toutes les ventes.
               </p>
             </div>
           </div>
@@ -483,8 +529,10 @@
               itemtype="https://schema.org/Answer"
             >
               <p class="text-gray-600" itemprop="text">
-                Pour les actions (pas les crypto), en régime progressif : 50% d'abattement après 2 ans, 
-                65% après 8 ans. La flat tax à 30% ne donne droit à aucun abattement mais reste souvent plus avantageuse.
+                Pour les actions (pas les crypto), en régime progressif : 50%
+                d'abattement après 2 ans, 65% après 8 ans. La flat tax à 30% ne
+                donne droit à aucun abattement mais reste souvent plus
+                avantageuse.
               </p>
             </div>
           </div>
@@ -507,8 +555,10 @@
               itemtype="https://schema.org/Answer"
             >
               <p class="text-gray-600" itemprop="text">
-                Oui, toutes les cessions de crypto (vente, échange) sont imposables en France. 
-                Déclaration obligatoire même pour les plus-values latentes. Utilisez notre calculateur pour estimer vos impôts.
+                Oui, toutes les cessions de crypto (vente, échange) sont
+                imposables en France. Déclaration obligatoire même pour les
+                plus-values latentes. Utilisez notre calculateur pour estimer
+                vos impôts.
               </p>
             </div>
           </div>
@@ -531,8 +581,10 @@
               itemtype="https://schema.org/Answer"
             >
               <p class="text-gray-600" itemprop="text">
-                La flat tax à 30% est souvent plus avantageuse, surtout pour les hauts revenus. 
-                Le barème progressif peut être intéressant pour les petits revenus avec abattement durée de détention (actions uniquement).
+                La flat tax à 30% est souvent plus avantageuse, surtout pour les
+                hauts revenus. Le barème progressif peut être intéressant pour
+                les petits revenus avec abattement durée de détention (actions
+                uniquement).
               </p>
             </div>
           </div>
@@ -555,8 +607,10 @@
               itemtype="https://schema.org/Answer"
             >
               <p class="text-gray-600" itemprop="text">
-                Étalez vos ventes sur plusieurs années, utilisez les moins-values pour compenser, 
-                considérez le PEA pour les actions européennes, et planifiez vos cessions selon votre tranche d'imposition.
+                Étalez vos ventes sur plusieurs années, utilisez les
+                moins-values pour compenser, considérez le PEA pour les actions
+                européennes, et planifiez vos cessions selon votre tranche
+                d'imposition.
               </p>
             </div>
           </div>
@@ -575,20 +629,24 @@
     <script type="module" src="../main.ts"></script>
     <script type="module">
       // Affichage conditionnel du taux personnalisé
-      document.getElementById("regimeFiscal").addEventListener("change", function() {
-        const tauxDiv = document.getElementById("taux-personnalise");
-        if (this.value === "personnalise") {
-          tauxDiv.classList.remove("hidden");
-        } else {
-          tauxDiv.classList.add("hidden");
-        }
-      });
+      document
+        .getElementById("regimeFiscal")
+        .addEventListener("change", function () {
+          const tauxDiv = document.getElementById("taux-personnalise");
+          if (this.value === "personnalise") {
+            tauxDiv.classList.remove("hidden");
+          } else {
+            tauxDiv.classList.add("hidden");
+          }
+        });
 
       // Validation des dates
-      document.getElementById("dateAchat").addEventListener("change", function() {
-        const dateVenteInput = document.getElementById("dateVente");
-        dateVenteInput.min = this.value;
-      });
+      document
+        .getElementById("dateAchat")
+        .addEventListener("change", function () {
+          const dateVenteInput = document.getElementById("dateVente");
+          dateVenteInput.min = this.value;
+        });
 
       document
         .getElementById("crypto-bourse-form")
@@ -597,20 +655,33 @@
 
           // Récupération des valeurs
           const typeActif = document.getElementById("typeActif").value;
-          const nomActif = document.getElementById("nomActif").value || typeActif;
-          const prixAchat = parseFloat(document.getElementById("prixAchat").value) || 0;
-          const quantiteAchat = parseFloat(document.getElementById("quantiteAchat").value) || 0;
-          const dateAchat = new Date(document.getElementById("dateAchat").value);
-          const fraisAchat = parseFloat(document.getElementById("fraisAchat").value) || 0;
-          
-          const prixVente = parseFloat(document.getElementById("prixVente").value) || 0;
-          const quantiteVente = parseFloat(document.getElementById("quantiteVente").value) || 0;
-          const dateVente = new Date(document.getElementById("dateVente").value);
-          const fraisVente = parseFloat(document.getElementById("fraisVente").value) || 0;
-          
+          const nomActif =
+            document.getElementById("nomActif").value || typeActif;
+          const prixAchat =
+            parseFloat(document.getElementById("prixAchat").value) || 0;
+          const quantiteAchat =
+            parseFloat(document.getElementById("quantiteAchat").value) || 0;
+          const dateAchat = new Date(
+            document.getElementById("dateAchat").value
+          );
+          const fraisAchat =
+            parseFloat(document.getElementById("fraisAchat").value) || 0;
+
+          const prixVente =
+            parseFloat(document.getElementById("prixVente").value) || 0;
+          const quantiteVente =
+            parseFloat(document.getElementById("quantiteVente").value) || 0;
+          const dateVente = new Date(
+            document.getElementById("dateVente").value
+          );
+          const fraisVente =
+            parseFloat(document.getElementById("fraisVente").value) || 0;
+
           const regimeFiscal = document.getElementById("regimeFiscal").value;
-          const tauxPersonnalise = parseFloat(document.getElementById("tauxPersonnalise").value) || 30;
-          const abattementDuree = document.getElementById("abattementDuree").checked;
+          const tauxPersonnalise =
+            parseFloat(document.getElementById("tauxPersonnalise").value) || 30;
+          const abattementDuree =
+            document.getElementById("abattementDuree").checked;
 
           // Validations
           if (!prixAchat || !quantiteAchat || !prixVente || !quantiteVente) {
@@ -629,17 +700,27 @@
           }
 
           // Calculs
-          const montantAchat = (prixAchat * quantiteVente) + (fraisAchat * quantiteVente / quantiteAchat);
-          const montantVente = (prixVente * quantiteVente) - fraisVente;
+          const montantAchat =
+            prixAchat * quantiteVente +
+            (fraisAchat * quantiteVente) / quantiteAchat;
+          const montantVente = prixVente * quantiteVente - fraisVente;
           const plusValueBrute = montantVente - montantAchat;
-          
+
           // Calcul de la durée de détention
-          const dureeDetention = Math.floor((dateVente - dateAchat) / (1000 * 60 * 60 * 24 * 365.25));
-          const dureeDetentionMois = Math.floor((dateVente - dateAchat) / (1000 * 60 * 60 * 24 * 30.44));
+          const dureeDetention = Math.floor(
+            (dateVente - dateAchat) / (1000 * 60 * 60 * 24 * 365.25)
+          );
+          const dureeDetentionMois = Math.floor(
+            (dateVente - dateAchat) / (1000 * 60 * 60 * 24 * 30.44)
+          );
 
           // Calcul de l'abattement (uniquement pour actions en régime progressif)
           let tauxAbattement = 0;
-          if (abattementDuree && typeActif === "actions" && regimeFiscal === "progressif") {
+          if (
+            abattementDuree &&
+            typeActif === "actions" &&
+            regimeFiscal === "progressif"
+          ) {
             if (dureeDetention >= 8) {
               tauxAbattement = 65;
             } else if (dureeDetention >= 2) {
@@ -647,7 +728,8 @@
             }
           }
 
-          const plusValueApresAbattement = plusValueBrute * (1 - tauxAbattement / 100);
+          const plusValueApresAbattement =
+            plusValueBrute * (1 - tauxAbattement / 100);
 
           // Calcul de l'impôt
           let tauxImposition = 30; // Flat tax par défaut
@@ -657,7 +739,10 @@
             tauxImposition = tauxPersonnalise;
           }
 
-          const impot = Math.max(0, plusValueApresAbattement * tauxImposition / 100);
+          const impot = Math.max(
+            0,
+            (plusValueApresAbattement * tauxImposition) / 100
+          );
           const gainNet = plusValueBrute - impot;
           const rendement = ((prixVente - prixAchat) / prixAchat) * 100;
 
@@ -679,27 +764,39 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <p class="text-sm text-gray-600">Actif</p>
-                  <p class="text-lg font-semibold text-gray-900">${nomActif.charAt(0).toUpperCase() + nomActif.slice(1)}</p>
+                  <p class="text-lg font-semibold text-gray-900">${
+                    nomActif.charAt(0).toUpperCase() + nomActif.slice(1)
+                  }</p>
                 </div>
                 <div>
                   <p class="text-sm text-gray-600">Quantité</p>
-                  <p class="text-lg font-semibold text-gray-900">${quantiteVente.toLocaleString('fr-FR')}</p>
+                  <p class="text-lg font-semibold text-gray-900">${quantiteVente.toLocaleString(
+                    "fr-FR"
+                  )}</p>
                 </div>
                 <div>
                   <p class="text-sm text-gray-600">Prix d'achat</p>
-                  <p class="text-lg font-semibold text-gray-900">${formatCurrency(prixAchat)}</p>
+                  <p class="text-lg font-semibold text-gray-900">${formatCurrency(
+                    prixAchat
+                  )}</p>
                 </div>
                 <div>
                   <p class="text-sm text-gray-600">Prix de vente</p>
-                  <p class="text-lg font-semibold text-gray-900">${formatCurrency(prixVente)}</p>
+                  <p class="text-lg font-semibold text-gray-900">${formatCurrency(
+                    prixVente
+                  )}</p>
                 </div>
                 <div>
                   <p class="text-sm text-gray-600">Date d'achat</p>
-                  <p class="text-lg font-semibold text-gray-900">${formatDate(dateAchat)}</p>
+                  <p class="text-lg font-semibold text-gray-900">${formatDate(
+                    dateAchat
+                  )}</p>
                 </div>
                 <div>
                   <p class="text-sm text-gray-600">Date de vente</p>
-                  <p class="text-lg font-semibold text-gray-900">${formatDate(dateVente)}</p>
+                  <p class="text-lg font-semibold text-gray-900">${formatDate(
+                    dateVente
+                  )}</p>
                 </div>
               </div>
             </div>
@@ -709,19 +806,27 @@
               <div class="space-y-3">
                 <div class="flex justify-between">
                   <span class="text-gray-600">Montant d'achat (frais inclus) :</span>
-                  <span class="font-semibold">${formatCurrency(montantAchat)}</span>
+                  <span class="font-semibold">${formatCurrency(
+                    montantAchat
+                  )}</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Montant de vente (frais déduits) :</span>
-                  <span class="font-semibold">${formatCurrency(montantVente)}</span>
+                  <span class="font-semibold">${formatCurrency(
+                    montantVente
+                  )}</span>
                 </div>
                 <div class="flex justify-between text-lg">
                   <span class="font-bold text-gray-900">Plus-value brute :</span>
-                  <span class="font-bold ${plusValueBrute >= 0 ? 'text-green-700' : 'text-red-700'}">${formatCurrency(plusValueBrute)}</span>
+                  <span class="font-bold ${
+                    plusValueBrute >= 0 ? "text-green-700" : "text-red-700"
+                  }">${formatCurrency(plusValueBrute)}</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Rendement :</span>
-                  <span class="font-semibold ${rendement >= 0 ? 'text-green-600' : 'text-red-600'}">${rendement.toFixed(2)}%</span>
+                  <span class="font-semibold ${
+                    rendement >= 0 ? "text-green-600" : "text-red-600"
+                  }">${rendement.toFixed(2)}%</span>
                 </div>
               </div>
             </div>
@@ -729,58 +834,98 @@
             <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg">
               <h3 class="text-xl font-bold text-purple-900 mb-4">⏰ Durée de détention</h3>
               <div class="space-y-2">
-                <p><span class="font-semibold">Durée :</span> ${dureeDetention} an${dureeDetention > 1 ? 's' : ''} et ${dureeDetentionMois % 12} mois</p>
-                ${tauxAbattement > 0 ? `
-                <p><span class="font-semibold">Abattement :</span> ${tauxAbattement}% (actions détenues > ${dureeDetention >= 8 ? '8' : '2'} ans)</p>
-                <p><span class="font-semibold">Plus-value après abattement :</span> ${formatCurrency(plusValueApresAbattement)}</p>
-                ` : ''}
-                ${typeActif === 'crypto' ? `
+                <p><span class="font-semibold">Durée :</span> ${dureeDetention} an${
+            dureeDetention > 1 ? "s" : ""
+          } et ${dureeDetentionMois % 12} mois</p>
+                ${
+                  tauxAbattement > 0
+                    ? `
+                <p><span class="font-semibold">Abattement :</span> ${tauxAbattement}% (actions détenues > ${
+                        dureeDetention >= 8 ? "8" : "2"
+                      } ans)</p>
+                <p><span class="font-semibold">Plus-value après abattement :</span> ${formatCurrency(
+                  plusValueApresAbattement
+                )}</p>
+                `
+                    : ""
+                }
+                ${
+                  typeActif === "crypto"
+                    ? `
                 <p class="text-orange-600 text-sm">⚠️ Pas d'abattement pour les cryptomonnaies</p>
-                ` : ''}
+                `
+                    : ""
+                }
               </div>
             </div>
 
-            ${plusValueBrute > 0 ? `
+            ${
+              plusValueBrute > 0
+                ? `
             <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
               <h3 class="text-xl font-bold text-red-900 mb-4">🏛️ Fiscalité</h3>
               <div class="space-y-3">
                 <div class="flex justify-between">
                   <span class="text-gray-600">Régime fiscal :</span>
-                  <span class="font-semibold">${regimeFiscal === 'flat-tax' ? 'Flat tax 30%' : regimeFiscal === 'progressif' ? 'Barème progressif' : 'Taux personnalisé'}</span>
+                  <span class="font-semibold">${
+                    regimeFiscal === "flat-tax"
+                      ? "Flat tax 30%"
+                      : regimeFiscal === "progressif"
+                      ? "Barème progressif"
+                      : "Taux personnalisé"
+                  }</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Base imposable :</span>
-                  <span class="font-semibold">${formatCurrency(plusValueApresAbattement)}</span>
+                  <span class="font-semibold">${formatCurrency(
+                    plusValueApresAbattement
+                  )}</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Taux d'imposition :</span>
-                  <span class="font-semibold">${tauxImposition.toFixed(1)}%</span>
+                  <span class="font-semibold">${tauxImposition.toFixed(
+                    1
+                  )}%</span>
                 </div>
                 <div class="flex justify-between text-lg">
                   <span class="font-bold text-gray-900">Impôt à payer :</span>
-                  <span class="font-bold text-red-700">${formatCurrency(impot)}</span>
+                  <span class="font-bold text-red-700">${formatCurrency(
+                    impot
+                  )}</span>
                 </div>
               </div>
             </div>
-            ` : `
+            `
+                : `
             <div class="bg-gray-50 border-l-4 border-gray-500 p-6 rounded-r-lg">
               <h3 class="text-xl font-bold text-gray-900 mb-4">📉 Moins-value</h3>
-              <p class="text-gray-600">Cette opération génère une moins-value de ${formatCurrency(Math.abs(plusValueBrute))}. 
+              <p class="text-gray-600">Cette opération génère une moins-value de ${formatCurrency(
+                Math.abs(plusValueBrute)
+              )}. 
               Elle peut être imputée sur vos plus-values de même nature pour réduire vos impôts.</p>
             </div>
-            `}
+            `
+            }
 
             <div class="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 p-6 rounded-lg">
               <h3 class="text-2xl font-bold text-gray-900 mb-4">🎯 Résultat final</h3>
               <div class="flex justify-between items-center text-2xl">
                 <span class="font-bold text-gray-900">Gain net après impôts :</span>
-                <span class="font-bold ${gainNet >= 0 ? 'text-green-600' : 'text-red-600'}">${formatCurrency(gainNet)}</span>
+                <span class="font-bold ${
+                  gainNet >= 0 ? "text-green-600" : "text-red-600"
+                }">${formatCurrency(gainNet)}</span>
               </div>
-              ${gainNet > 0 ? `
+              ${
+                gainNet > 0
+                  ? `
               <p class="text-sm text-green-700 mt-2">
-                💡 Vous conservez ${((gainNet / plusValueBrute) * 100).toFixed(1)}% de votre plus-value brute après impôts.
+                💡 Vous conservez ${((gainNet / plusValueBrute) * 100).toFixed(
+                  1
+                )}% de votre plus-value brute après impôts.
               </p>
-              ` : ''}
+              `
+                  : ""
+              }
             </div>
 
             <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
@@ -793,9 +938,10 @@
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <p class="text-sm text-blue-800">
                 <strong>📋 À retenir :</strong> 
-                ${typeActif === 'crypto' ? 
-                  'Les cryptomonnaies sont imposées à 30% sans abattement. Toute cession (vente, échange) est imposable.' : 
-                  'Pour les actions, vous pouvez choisir entre flat tax (30%) et barème progressif avec abattements selon la durée.'
+                ${
+                  typeActif === "crypto"
+                    ? "Les cryptomonnaies sont imposées à 30% sans abattement. Toute cession (vente, échange) est imposable."
+                    : "Pour les actions, vous pouvez choisir entre flat tax (30%) et barème progressif avec abattements selon la durée."
                 }
               </p>
             </div>
@@ -804,10 +950,319 @@
 
           document.getElementById("results").innerHTML = results;
           document.getElementById("results").classList.remove("hidden");
+
+          // Affichage des boutons d'export
+          document.getElementById("export-buttons").classList.remove("hidden");
+
+          // Stockage des données pour l'export PDF
+          window.cryptoBourseData = {
+            userInputs: {
+              typeActif,
+              nomActif,
+              prixAchat,
+              quantiteAchat,
+              dateAchat: formatDate(dateAchat),
+              fraisAchat,
+              prixVente,
+              quantiteVente,
+              dateVente: formatDate(dateVente),
+              fraisVente,
+              regimeFiscal,
+              tauxPersonnalise:
+                regimeFiscal === "personnalise" ? tauxPersonnalise : null,
+              abattementDuree,
+            },
+            results: {
+              montantAchat,
+              montantVente,
+              plusValueBrute,
+              rendement,
+              dureeDetentionAnnees: dureeDetention,
+              dureeDetentionMois,
+              tauxAbattement,
+              plusValueApresAbattement,
+              tauxImposition,
+              impot,
+              gainNet,
+            },
+          };
+
           document
             .getElementById("results")
             .scrollIntoView({ behavior: "smooth" });
         });
+
+      // Fonction pour l'export PDF
+      async function exportToPDF() {
+        const data = window.cryptoBourseData;
+        if (!data) {
+          alert(
+            "Aucun calcul disponible pour l'export. Veuillez d'abord effectuer un calcul."
+          );
+          return;
+        }
+
+        const button = document.getElementById("pdf-export-btn");
+        const originalContent = button.innerHTML;
+
+        try {
+          // État de chargement
+          button.disabled = true;
+          button.innerHTML = `
+            <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>⏳ Génération du PDF...</span>
+          `;
+
+          // Import dynamique des modules PDF
+          const { jsPDF } = await import("https://cdn.skypack.dev/jspdf@2.5.1");
+
+          // Création du PDF
+          const pdf = new jsPDF("p", "mm", "a4");
+          let yPosition = 20;
+
+          // En-tête
+          pdf.setFontSize(20);
+          pdf.setFont("helvetica", "bold");
+          pdf.setTextColor(44, 82, 130);
+          pdf.text("Calcul Plus-Value Crypto & Bourse", 20, yPosition);
+          yPosition += 15;
+
+          pdf.setFontSize(12);
+          pdf.setFont("helvetica", "normal");
+          pdf.setTextColor(107, 114, 128);
+          const currentDate = new Date().toLocaleDateString("fr-FR", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          pdf.text(`Généré le ${currentDate}`, 20, yPosition);
+          yPosition += 20;
+
+          // Données saisies
+          pdf.setFontSize(14);
+          pdf.setFont("helvetica", "bold");
+          pdf.setTextColor(31, 41, 55);
+          pdf.text("📝 Données saisies", 20, yPosition);
+          yPosition += 10;
+
+          pdf.setFontSize(10);
+          pdf.setFont("helvetica", "normal");
+          pdf.setTextColor(75, 85, 99);
+
+          const inputs = [
+            ["Type d'actif:", data.userInputs.typeActif],
+            ["Nom de l'actif:", data.userInputs.nomActif || "Non spécifié"],
+            [
+              "Prix d'achat:",
+              `${data.userInputs.prixAchat.toLocaleString("fr-FR")} €`,
+            ],
+            [
+              "Quantité achetée:",
+              data.userInputs.quantiteAchat.toLocaleString("fr-FR"),
+            ],
+            ["Date d'achat:", data.userInputs.dateAchat],
+            [
+              "Frais d'achat:",
+              `${data.userInputs.fraisAchat.toLocaleString("fr-FR")} €`,
+            ],
+            [
+              "Prix de vente:",
+              `${data.userInputs.prixVente.toLocaleString("fr-FR")} €`,
+            ],
+            [
+              "Quantité vendue:",
+              data.userInputs.quantiteVente.toLocaleString("fr-FR"),
+            ],
+            ["Date de vente:", data.userInputs.dateVente],
+            [
+              "Frais de vente:",
+              `${data.userInputs.fraisVente.toLocaleString("fr-FR")} €`,
+            ],
+            [
+              "Régime fiscal:",
+              data.userInputs.regimeFiscal === "flat-tax"
+                ? "Flat tax 30%"
+                : data.userInputs.regimeFiscal,
+            ],
+          ];
+
+          inputs.forEach(([label, value]) => {
+            pdf.text(label, 20, yPosition);
+            pdf.text(value.toString(), 80, yPosition);
+            yPosition += 5;
+          });
+
+          yPosition += 10;
+
+          // Résultats
+          pdf.setFontSize(14);
+          pdf.setFont("helvetica", "bold");
+          pdf.setTextColor(31, 41, 55);
+          pdf.text("🎯 Résultats du calcul", 20, yPosition);
+          yPosition += 10;
+
+          pdf.setFontSize(10);
+          pdf.setFont("helvetica", "normal");
+
+          const results = [
+            [
+              "Montant d'achat (frais inclus):",
+              `${data.results.montantAchat.toLocaleString("fr-FR", {
+                minimumFractionDigits: 2,
+              })} €`,
+            ],
+            [
+              "Montant de vente (frais déduits):",
+              `${data.results.montantVente.toLocaleString("fr-FR", {
+                minimumFractionDigits: 2,
+              })} €`,
+            ],
+            [
+              "Plus-value brute:",
+              `${data.results.plusValueBrute.toLocaleString("fr-FR", {
+                minimumFractionDigits: 2,
+              })} €`,
+            ],
+            ["Rendement:", `${data.results.rendement.toFixed(2)}%`],
+            [
+              "Durée de détention:",
+              `${data.results.dureeDetentionAnnees} an(s) et ${
+                data.results.dureeDetentionMois % 12
+              } mois`,
+            ],
+            ["Taux d'abattement:", `${data.results.tauxAbattement}%`],
+            [
+              "Plus-value après abattement:",
+              `${data.results.plusValueApresAbattement.toLocaleString("fr-FR", {
+                minimumFractionDigits: 2,
+              })} €`,
+            ],
+            [
+              "Taux d'imposition:",
+              `${data.results.tauxImposition.toFixed(1)}%`,
+            ],
+            [
+              "Impôt à payer:",
+              `${data.results.impot.toLocaleString("fr-FR", {
+                minimumFractionDigits: 2,
+              })} €`,
+            ],
+          ];
+
+          results.forEach(([label, value]) => {
+            if (
+              label.includes("Plus-value brute") ||
+              label.includes("Impôt à payer")
+            ) {
+              pdf.setFont("helvetica", "bold");
+              pdf.setTextColor(
+                data.results.plusValueBrute >= 0 ? 16 : 185,
+                data.results.plusValueBrute >= 0 ? 185 : 28,
+                data.results.plusValueBrute >= 0 ? 129 : 28
+              );
+            } else {
+              pdf.setFont("helvetica", "normal");
+              pdf.setTextColor(75, 85, 99);
+            }
+            pdf.text(label, 20, yPosition);
+            pdf.text(value, 100, yPosition);
+            yPosition += 5;
+          });
+
+          yPosition += 10;
+
+          // Résultat final
+          pdf.setFontSize(12);
+          pdf.setFont("helvetica", "bold");
+          pdf.setTextColor(31, 41, 55);
+          pdf.text("🎯 Gain net après impôts:", 20, yPosition);
+          pdf.setTextColor(
+            data.results.gainNet >= 0 ? 16 : 185,
+            data.results.gainNet >= 0 ? 185 : 28,
+            data.results.gainNet >= 0 ? 129 : 28
+          );
+          pdf.text(
+            `${data.results.gainNet.toLocaleString("fr-FR", {
+              minimumFractionDigits: 2,
+            })} €`,
+            100,
+            yPosition
+          );
+
+          // Watermark et footer
+          pdf.setFontSize(30);
+          pdf.setFont("helvetica", "bold");
+          pdf.setTextColor(229, 231, 235, 0.3);
+          pdf.text("LesCalculateurs.fr", 105, 150, {
+            align: "center",
+            angle: 45,
+          });
+
+          pdf.setFontSize(8);
+          pdf.setFont("helvetica", "normal");
+          pdf.setTextColor(107, 114, 128);
+          pdf.text(
+            "Réalisé avec LesCalculateurs.fr - Calculateurs gratuits",
+            20,
+            280
+          );
+          pdf.text(
+            "Les résultats sont indicatifs. Consultez un professionnel pour des conseils personnalisés.",
+            105,
+            285,
+            { align: "center" }
+          );
+
+          // Téléchargement
+          const fileName = `plus-value-crypto-bourse-${
+            new Date().toISOString().split("T")[0]
+          }.pdf`;
+          pdf.save(fileName);
+
+          // État de succès
+          button.innerHTML = `
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>✅ PDF téléchargé !</span>
+          `;
+
+          setTimeout(() => {
+            button.disabled = false;
+            button.innerHTML = originalContent;
+          }, 3000);
+        } catch (error) {
+          console.error("Erreur export PDF:", error);
+
+          button.innerHTML = `
+            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+            <span>❌ Erreur lors de l'export</span>
+          `;
+
+          setTimeout(() => {
+            button.disabled = false;
+            button.innerHTML = originalContent;
+          }, 3000);
+        }
+      }
+
+      // Event listener pour le bouton PDF
+      document.addEventListener("DOMContentLoaded", () => {
+        const pdfButton = document.getElementById("pdf-export-btn");
+        if (pdfButton) {
+          pdfButton.addEventListener("click", exportToPDF);
+        }
+      });
     </script>
+
+    <!-- Auto-initialisation des exports PDF/CSV -->
+    <script type="module" src="../utils/autoExportInit.js"></script>
   </body>
 </html>

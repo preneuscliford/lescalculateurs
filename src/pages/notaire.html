@@ -726,14 +726,14 @@
 
             <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
               <p class="text-sm text-yellow-800">
-                <strong>💡 Information :</strong> Cette estimation est basée sur les barèmes officiels 2024-2025. 
+                <strong>Information :</strong> Cette estimation est basée sur les barèmes officiels 2024-2025. 
                 Le montant exact peut varier selon la complexité du dossier, les prestations complémentaires 
                 et les taux locaux (droits de mutation variables selon les départements).
               </p>
             </div>
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
               <p class="text-sm text-blue-800">
-                <strong>📍 Bon à savoir :</strong> Les droits d'enregistrement peuvent varier selon votre localisation. 
+                <strong>Bon à savoir :</strong> Les droits d'enregistrement peuvent varier selon votre localisation. 
                 Contactez votre notaire pour une estimation précise.
               </p>
             </div>
@@ -745,5 +745,8 @@
       // Initialisation du calculateur
       new CalculatorFrame("notaire-calculator", notaireConfig);
     </script>
+
+    <!-- Auto-initialisation des exports PDF/CSV -->
+    <script type="module" src="../utils/autoExportInit.js"></script>
   </body>
 </html>

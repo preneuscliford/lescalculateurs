@@ -19,7 +19,7 @@ export default defineConfig({
         taxe: resolve(__dirname, "src/pages/taxe.html"),
         travail: resolve(__dirname, "src/pages/travail.html"),
         financement: resolve(__dirname, "src/pages/financement.html"),
-        'crypto-bourse': resolve(__dirname, "src/pages/crypto-bourse.html"),
+        "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
       },
     },
   },

@@ -632,6 +632,29 @@
           </div>
         `;
 
+          // Stockage des données pour l'export PDF
+          window.plusValueData = {
+            prixVente,
+            prixAchat,
+            fraisAchat,
+            travaux,
+            dateAchat,
+            dateVente,
+            typeBien,
+            dureeDetention: dureeAnnes,
+            prixRevient: prixRevient,
+            plusValueBrute,
+            abattementIR,
+            abattementPS,
+            plusValueIR,
+            plusValuePS,
+            impotIR,
+            impotPS,
+            surtaxe,
+            impotTotal,
+            plusValueNette
+          };
+
           document.getElementById("results").innerHTML = results;
           document.getElementById("results").classList.remove("hidden");
           document
@@ -653,5 +676,8 @@
           .split("T")[0];
       });
     </script>
+    
+    <!-- Auto-initialisation des exports PDF/CSV -->
+    <script type="module" src="../utils/autoExportInit.js"></script>
   </body>
 </html>
