@@ -124,16 +124,17 @@ function initAutoExport() {
   const calculatorConfigs = {
     notaire: {
       name: "Frais de Notaire",
-      resultsId: "notaire-calculator",
+      resultsId: "calculator-result",
       formId: "calculator-form",
       notes: ["Calculs basés sur les barèmes officiels 2025."],
       type: "CalculatorFrame",
     },
     pret: {
       name: "Capacité d'Emprunt",
-      resultsId: "results",
-      formId: "pret-form",
+      resultsId: "calculator-result",
+      formId: "calculator-form",
       notes: ["Simulation indicative selon critères bancaires standard."],
+      type: "CalculatorFrame",
     },
     financement: {
       name: "Financement Personnel",
@@ -143,7 +144,7 @@ function initAutoExport() {
     },
     ik: {
       name: "Indemnités Kilométriques",
-      resultsId: "ik-calculator",
+      resultsId: "calculator-result",
       formId: "calculator-form",
       notes: ["Barèmes fiscaux officiels 2025."],
       type: "CalculatorFrame",
@@ -157,14 +158,14 @@ function initAutoExport() {
     },
     taxe: {
       name: "Taxe Foncière",
-      resultsId: "taxe-calculator",
+      resultsId: "calculator-result",
       formId: "calculator-form",
       notes: ["Estimation basée sur les taux moyens nationaux."],
       type: "CalculatorFrame",
     },
     travail: {
       name: "Durée Légale du Travail",
-      resultsId: "travail-calculator",
+      resultsId: "calculator-result",
       formId: "calculator-form",
       notes: ["Calculs selon le Code du travail français."],
       type: "CalculatorFrame",
@@ -189,10 +190,23 @@ function initAutoExport() {
   let calculatorConfig = null;
 
   for (const [key, config] of Object.entries(calculatorConfigs)) {
-    if (currentPath.includes(key) || document.getElementById(config.formId)) {
+    if (currentPath.includes(key)) {
       currentCalculator = key;
       calculatorConfig = config;
+      console.log(`✅ Détection par URL: ${key} trouvé dans ${currentPath}`);
       break;
+    }
+  }
+
+  // Si pas trouvé par URL, chercher par formId
+  if (!calculatorConfig) {
+    for (const [key, config] of Object.entries(calculatorConfigs)) {
+      if (document.getElementById(config.formId)) {
+        currentCalculator = key;
+        calculatorConfig = config;
+        console.log(`✅ Détection par formId: ${config.formId} trouvé`);
+        break;
+      }
     }
   }
 
@@ -206,7 +220,16 @@ function initAutoExport() {
 
   // Le module PDF est déjà chargé via import, on initialise directement
   console.log("⚙️ Initialisation de l'export PDF...");
-  initPDFExport(calculatorConfig);
+
+  // Pour les CalculatorFrame, attendre que le DOM soit complètement chargé
+  if (calculatorConfig.type === "CalculatorFrame") {
+    console.log(
+      "⏰ CalculatorFrame détecté, attente de 300ms pour que le DOM soit prêt..."
+    );
+    setTimeout(() => initPDFExport(calculatorConfig), 300);
+  } else {
+    initPDFExport(calculatorConfig);
+  }
 }
 
 // Lancer l'initialisation maintenant si le DOM est prêt, sinon attendre

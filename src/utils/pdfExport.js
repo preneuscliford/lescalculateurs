@@ -72,7 +72,10 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
       if (node.nodeType === Node.TEXT_NODE) {
         // Remplacer les emojis courants par du texte
         let text = node.textContent;
-        text = text.replace(/📊|📈|📉|💰|💵|💶|💷|🏦|🏠|🏡|📋|✅|❌|⚠️|ℹ️|📄|🔍|📌/g, "");
+        text = text.replace(
+          /📊|📈|📉|💰|💵|💶|💷|🏦|🏠|🏡|📋|✅|❌|⚠️|ℹ️|📄|🔍|📌/g,
+          ""
+        );
         text = text.replace(/\s*\/\s*/g, " "); // Nettoyer les espaces avec slash
         text = text.replace(/\u00A0/g, " "); // Non-breaking space → espace normal
         text = text.replace(/\u202F/g, " "); // Narrow no-break space
@@ -250,7 +253,41 @@ function createPDFButton(containerId, calculatorName, data, notes = []) {
   updateButtonState(button, calculatorName);
 
   console.log("✅ Bouton PDF créé");
+  
+  // Créer également le bouton CSV (désactivé pour l'instant)
+  createCSVButton(container);
+  
   return button;
+}
+
+/**
+ * Crée un bouton CSV désactivé (feature à venir)
+ */
+function createCSVButton(container) {
+  // Vérifier si le bouton existe déjà
+  let csvButton = document.getElementById("csv-export-btn");
+  if (csvButton) {
+    console.log("ℹ️ Bouton CSV déjà présent");
+    return csvButton;
+  }
+
+  // Créer le bouton CSV
+  csvButton = document.createElement("button");
+  csvButton.id = "csv-export-btn";
+  csvButton.disabled = true;
+  csvButton.className = "bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg shadow-md cursor-not-allowed opacity-60 flex items-center gap-2";
+  csvButton.title = "Fonctionnalité bientôt disponible";
+  csvButton.innerHTML = `
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    <span>Exporter en CSV</span>
+    <span class="text-xs bg-white/20 px-2 py-0.5 rounded">Bientôt</span>
+  `;
+
+  container.appendChild(csvButton);
+  console.log("✅ Bouton CSV créé (désactivé)");
+  return csvButton;
 }
 
 /**
@@ -276,7 +313,9 @@ function updateButtonState(button, calculatorName) {
       if (selector === "#ponts-calendar" && container.children.length > 0) {
         hasResults = true;
         resultContainer = container;
-        console.log("✅ Calendrier ponts détecté - bouton activé automatiquement");
+        console.log(
+          "✅ Calendrier ponts détecté - bouton activé automatiquement"
+        );
         break;
       }
 
@@ -291,11 +330,13 @@ function updateButtonState(button, calculatorName) {
       const hasEnoughContent = textContent.length > 100;
       const hasNumbers = /\d/.test(textContent);
       const hasCurrencyOrPercent = /[€%]/.test(textContent);
-      const isCalendar = selector.includes("calendar") || selector.includes("ponts");
+      const isCalendar =
+        selector.includes("calendar") || selector.includes("ponts");
 
       // Calendrier : juste contenu + chiffres suffit
       // Autres : besoin de € ou %
-      const isValid = hasEnoughContent && hasNumbers && (isCalendar || hasCurrencyOrPercent);
+      const isValid =
+        hasEnoughContent && hasNumbers && (isCalendar || hasCurrencyOrPercent);
 
       if (isValid) {
         hasResults = true;
