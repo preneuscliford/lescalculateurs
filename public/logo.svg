@@ -1,0 +1,28 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond calculatrice -->
+  <rect x="4" y="6" width="20" height="24" rx="3" fill="#2563EB"/>
+  
+  <!-- Écran -->
+  <rect x="6" y="8" width="16" height="6" rx="1" fill="#E5E7EB"/>
+  
+  <!-- Boutons (première ligne) -->
+  <rect x="6" y="16" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="10.5" y="16" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="15" y="16" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="19.5" y="16" width="3" height="3" rx="0.5" fill="#F59E0B"/>
+  
+  <!-- Boutons (deuxième ligne) -->
+  <rect x="6" y="20.5" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="10.5" y="20.5" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="15" y="20.5" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="19.5" y="20.5" width="3" height="3" rx="0.5" fill="#F59E0B"/>
+  
+  <!-- Boutons (troisième ligne) -->
+  <rect x="6" y="25" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="10.5" y="25" width="3" height="3" rx="0.5" fill="#F3F4F6"/>
+  <rect x="15" y="25" width="7" height="3" rx="0.5" fill="#10B981"/>
+  
+  <!-- Check mark validation (coin supérieur droit) -->
+  <circle cx="26" cy="6" r="5" fill="#10B981"/>
+  <path d="M23.5 6L25 7.5L28.5 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

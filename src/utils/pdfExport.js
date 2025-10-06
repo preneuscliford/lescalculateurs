@@ -253,10 +253,10 @@ function createPDFButton(containerId, calculatorName, data, notes = []) {
   updateButtonState(button, calculatorName);
 
   console.log("✅ Bouton PDF créé");
-  
+
   // Créer également le bouton CSV (désactivé pour l'instant)
   createCSVButton(container);
-  
+
   return button;
 }
 
@@ -275,7 +275,8 @@ function createCSVButton(container) {
   csvButton = document.createElement("button");
   csvButton.id = "csv-export-btn";
   csvButton.disabled = true;
-  csvButton.className = "bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg shadow-md cursor-not-allowed opacity-60 flex items-center gap-2";
+  csvButton.className =
+    "bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg shadow-md cursor-not-allowed opacity-60 flex items-center gap-2";
   csvButton.title = "Fonctionnalité bientôt disponible";
   csvButton.innerHTML = `
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

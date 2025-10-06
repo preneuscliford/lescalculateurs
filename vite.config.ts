@@ -21,6 +21,15 @@ export default defineConfig({
         travail: resolve(__dirname, "src/pages/travail.html"),
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
+        blog: resolve(__dirname, "src/pages/blog.html"),
+        "blog-export-pdf": resolve(
+          __dirname,
+          "src/pages/blog/export-pdf-calculateurs.html"
+        ),
+        "blog-frais-notaire": resolve(
+          __dirname,
+          "src/pages/blog/frais-notaire-ancien-neuf-2025.html"
+        ),
       },
       output: {
         manualChunks: {
