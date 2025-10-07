@@ -822,15 +822,297 @@ const departements = [
   },
 ];
 
+// Fonction pour l'élision "de" → "d'" devant voyelle ou H muet
+const getDeOrD = (text) => {
+  const voyelles = [
+    "a",
+    "e",
+    "i",
+    "o",
+    "u",
+    "h",
+    "A",
+    "E",
+    "I",
+    "O",
+    "U",
+    "H",
+    "Î",
+    "î",
+  ];
+  return voyelles.includes(text.charAt(0)) ? "d'" : "de ";
+};
+
+// Fonction pour obtenir le verbe "est/sont/offre/offrent" selon le département
+const getVerbe = (depNom, verbe) => {
+  const pluriels = [
+    "Alpes-de-Haute-Provence",
+    "Hautes-Alpes",
+    "Alpes-Maritimes",
+    "Ardennes",
+    "Bouches-du-Rhône",
+    "Côtes-d'Armor",
+    "Landes",
+    "Pyrénées-Atlantiques",
+    "Hautes-Pyrénées",
+    "Pyrénées-Orientales",
+    "Deux-Sèvres",
+    "Vosges",
+    "Yvelines",
+  ];
+
+  if (pluriels.includes(depNom)) {
+    if (verbe === "est") return "sont";
+    if (verbe === "offre") return "offrent";
+  }
+  return verbe;
+};
+
+// Fonction pour obtenir l'article défini selon le département
+const getArticleDefini = (depNom, depCode) => {
+  // Paris : pas d'article
+  if (depCode === "75") return "";
+
+  // Départements pluriels : les
+  const pluriels = [
+    "Alpes-de-Haute-Provence",
+    "Hautes-Alpes",
+    "Alpes-Maritimes",
+    "Ardennes",
+    "Bouches-du-Rhône",
+    "Côtes-d'Armor",
+    "Landes",
+    "Pyrénées-Atlantiques",
+    "Hautes-Pyrénées",
+    "Pyrénées-Orientales",
+    "Deux-Sèvres",
+    "Vosges",
+    "Yvelines",
+  ];
+  if (pluriels.includes(depNom)) return "les ";
+
+  // Départements masculins singuliers commençant par une consonne : le
+  const masculinsSinguliers = [
+    "Bas-Rhin",
+    "Haut-Rhin",
+    "Calvados",
+    "Cantal",
+    "Cher",
+    "Doubs",
+    "Finistère",
+    "Gard",
+    "Gers",
+    "Jura",
+    "Loir-et-Cher",
+    "Loiret",
+    "Lot",
+    "Lot-et-Garonne",
+    "Maine-et-Loire",
+    "Morbihan",
+    "Nord",
+    "Pas-de-Calais",
+    "Puy-de-Dôme",
+    "Rhône",
+    "Tarn",
+    "Tarn-et-Garonne",
+    "Territoire de Belfort",
+    "Val-d'Oise",
+    "Val-de-Marne",
+    "Var",
+    "Vaucluse",
+  ];
+  if (masculinsSinguliers.includes(depNom)) return "le ";
+
+  // Départements masculins commençant par une voyelle : l'
+  const masculinsVoyelle = ["Hérault"];
+  if (masculinsVoyelle.includes(depNom)) return "l'";
+
+  // Tous les autres (féminins) : la/l'
+  const voyelles = ["A", "E", "I", "O", "U", "H", "Î"];
+  if (voyelles.includes(depNom.charAt(0))) return "l'";
+
+  return "la ";
+};
+
+// Fonction pour obtenir "du/de la/des/de l'" selon le département
+const getDuDeLa = (depNom, depCode) => {
+  if (depCode === "75") return "de Paris";
+
+  const article = getArticleDefini(depNom, depCode);
+  if (article === "le ") return "du ";
+  if (article === "la ") return "de la ";
+  if (article === "les ") return "des ";
+  if (article === "l'") return "de l'";
+  return "de ";
+};
+
+// Fonction pour obtenir la préposition correcte selon le département
+const getPreposition = (depNom, depCode) => {
+  // Paris et villes
+  if (depCode === "75") return "à Paris";
+  if (depNom === "La Réunion") return "à La Réunion";
+  if (depNom === "Mayotte") return "à Mayotte";
+
+  // Départements masculins singuliers commençant par une consonne
+  const masculinsSinguliers = [
+    "Bas-Rhin",
+    "Haut-Rhin",
+    "Calvados",
+    "Cantal",
+    "Cher",
+    "Doubs",
+    "Finistère",
+    "Gard",
+    "Gers",
+    "Jura",
+    "Loir-et-Cher",
+    "Loiret",
+    "Lot",
+    "Lot-et-Garonne",
+    "Maine-et-Loire",
+    "Morbihan",
+    "Nord",
+    "Pas-de-Calais",
+    "Puy-de-Dôme",
+    "Rhône",
+    "Tarn",
+    "Tarn-et-Garonne",
+    "Territoire de Belfort",
+    "Val-d'Oise",
+    "Val-de-Marne",
+    "Var",
+    "Vaucluse",
+  ];
+  if (masculinsSinguliers.includes(depNom)) return `dans le ${depNom}`;
+
+  // Départements masculins commençant par une voyelle
+  const masculinsVoyelle = ["Hérault"];
+  if (masculinsVoyelle.includes(depNom)) return `dans l'${depNom}`;
+
+  // Départements pluriels
+  const pluriels = [
+    "Alpes-de-Haute-Provence",
+    "Hautes-Alpes",
+    "Alpes-Maritimes",
+    "Ardennes",
+    "Bouches-du-Rhône",
+    "Côtes-d'Armor",
+    "Landes",
+    "Pyrénées-Atlantiques",
+    "Hautes-Pyrénées",
+    "Pyrénées-Orientales",
+    "Deux-Sèvres",
+    "Vosges",
+    "Yvelines",
+  ];
+  if (pluriels.includes(depNom)) return `dans les ${depNom}`;
+
+  // Tous les autres (départements féminins) : en + nom
+  return `en ${depNom}`;
+};
+
+// Variantes de contenu pour éviter le duplicate content
+const getIntroVariant = (index, depNom, depCode) => {
+  const prep = getPreposition(depNom, depCode);
+  const variants = [
+    `Acheter un bien immobilier ${prep} nécessite d'anticiper les frais de notaire.`,
+    `Vous préparez un achat immobilier ${prep} ? Les frais de notaire sont un élément clé de votre budget.`,
+    `Projet d'acquisition ${prep} ? Comprendre les frais de notaire est essentiel pour bien budgéter.`,
+    `Investir dans l'immobilier ${prep} implique de prévoir les frais de notaire dès le départ.`,
+    `Vous envisagez d'acheter ${prep} ? Découvrez comment calculer précisément vos frais de notaire.`,
+  ];
+  return variants[index % variants.length];
+};
+
+const getSectionTitle1Variant = (index, depNom, depCode) => {
+  const prep = getPreposition(depNom, depCode);
+  const variants = [
+    `💰 Montant moyen des frais de notaire ${prep}`,
+    `💳 Quel budget prévoir pour les frais de notaire ${prep} ?`,
+    `📊 Coût réel des frais de notaire ${prep}`,
+    `💵 Estimation des frais de notaire pour ${depNom}`,
+    `💰 Frais de notaire 2025 : combien coûte un achat ${prep} ?`,
+  ];
+  return variants[index % variants.length];
+};
+
+const getContextPhraseVariant = (index) => {
+  const variants = [
+    "Les frais de notaire varient selon le <strong>type de bien acheté</strong> et son prix.",
+    "Le montant des frais dépend principalement du <strong>type de logement</strong> et de sa valeur.",
+    "Deux facteurs clés déterminent vos frais : le <strong>type de bien</strong> (neuf ou ancien) et son prix.",
+    "Les frais d'acquisition immobilière changent selon que vous achetez dans l'<strong>ancien ou le neuf</strong>.",
+    "Le calcul des frais varie significativement entre un bien <strong>neuf et un bien ancien</strong>.",
+  ];
+  return variants[index % variants.length];
+};
+
+const getCalculTitleVariant = (index, depNom, ville) => {
+  const variants = [
+    `📊 Exemple de calcul concret ${
+      depNom === "Paris" ? "à Paris" : "en " + depNom
+    }`,
+    `🏠 Simulation d'achat immobilier ${
+      depNom === "Paris" ? "à Paris" : "en " + depNom
+    }`,
+    `💡 Cas pratique : acheter à ${ville}`,
+    `📝 Exemple chiffré pour ${depNom}`,
+    `🔢 Calcul détaillé pour un projet ${
+      depNom === "Paris" ? "à Paris" : "en " + depNom
+    }`,
+  ];
+  return variants[index % variants.length];
+};
+
 // Template HTML pour chaque article
-function generateArticleHTML(dep) {
-  const prixExemple = 250000;
+function generateArticleHTML(dep, index) {
+  // Calculs personnalisés selon le prix/m² du département
+  const prixExemple =
+    dep.prixM2 < 1500 ? 180000 : dep.prixM2 < 3000 ? 250000 : 350000;
+  const apport = Math.round(prixExemple * 0.12);
   const fraisAncien = Math.round(prixExemple * 0.066);
   const fraisNeuf = Math.round(prixExemple * 0.04);
   const economie = fraisAncien - fraisNeuf;
+  const montantEmprunt = prixExemple + fraisAncien - apport;
+
+  // Mensualité approximative (4.2% sur 20 ans)
+  const tauxMensuel = 0.042 / 12;
+  const nbMois = 20 * 12;
+  const mensualite = Math.round(
+    (montantEmprunt * (tauxMensuel * Math.pow(1 + tauxMensuel, nbMois))) /
+      (Math.pow(1 + tauxMensuel, nbMois) - 1)
+  );
 
   const prix200kAncien = Math.round(200000 * 0.066);
   const prix200kNeuf = Math.round(200000 * 0.04);
+
+  // Conseil personnalisé selon le prix du marché
+  let conseilSpecifique = "";
+  if (dep.prixM2 < 1500) {
+    conseilSpecifique = `Le marché immobilier ${getDuDeLa(dep.nom, dep.code)}${
+      dep.nom
+    } est accessible avec un prix moyen de ${dep.prixM2.toLocaleString(
+      "fr-FR"
+    )} €/m². C'est une opportunité pour les primo-accédants.`;
+  } else if (dep.prixM2 < 3000) {
+    conseilSpecifique = `Avec un prix moyen de ${dep.prixM2.toLocaleString(
+      "fr-FR"
+    )} €/m², ${getArticleDefini(dep.nom, dep.code)}${dep.nom} ${getVerbe(
+      dep.nom,
+      "offre"
+    )} un bon équilibre entre qualité de vie et accessibilité.`;
+  } else {
+    conseilSpecifique = `${
+      dep.code === "75"
+        ? "Paris"
+        : getArticleDefini(dep.nom, dep.code) + dep.nom
+    } ${getVerbe(
+      dep.nom,
+      "est"
+    )} un marché premium avec ${dep.prixM2.toLocaleString(
+      "fr-FR"
+    )} €/m² en moyenne. Les frais de notaire représentent donc un montant conséquent à prévoir.`;
+  }
 
   const ville2HTML = dep.ville2
     ? `<li>• <strong>Étude ${dep.ville2}</strong> : Me Bernard, notaire</li>`
@@ -846,7 +1128,10 @@ function generateArticleHTML(dep) {
   }) - Simulateur gratuit</title>
     <meta
       name="description"
-      content="Calculez vos frais de notaire 2025 dans le ${dep.nom} (${
+      content="Calculez vos frais de notaire 2025 ${getPreposition(
+        dep.nom,
+        dep.code
+      )} (${
     dep.code
   }). Tableau comparatif ancien/neuf, exemples concrets et simulateur officiel gratuit."
     />
@@ -890,10 +1175,16 @@ function generateArticleHTML(dep) {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Frais de notaire 2025 dans le ${dep.nom} (${dep.code})",
-      "description": "Guide complet des frais de notaire pour l'achat immobilier dans le ${
-        dep.nom
-      }",
+      "headline": "Frais de notaire 2025 ${getPreposition(
+        dep.nom,
+        dep.code
+      )} (${dep.code})",
+      "description": "Guide complet des frais de notaire pour l'achat immobilier ${getPreposition(
+        dep.nom,
+        dep.code
+      )
+        .replace("dans ", "")
+        .replace("en ", "en ")}${dep.nom === "Paris" ? "" : " ("}${dep.nom}",
       "datePublished": "2025-10-06T10:00:00Z",
       "dateModified": "2025-10-06T10:00:00Z",
       "author": {
@@ -999,13 +1290,13 @@ function generateArticleHTML(dep) {
         </div>
         
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Frais de notaire 2025 dans le ${dep.nom} (${dep.code})
+          Frais de notaire 2025 ${getPreposition(dep.nom, dep.code)} (${
+    dep.code
+  })
         </h1>
         
         <p class="text-xl text-gray-600 leading-relaxed">
-          <strong>Acheter un bien immobilier dans le ${
-            dep.nom
-          } nécessite d'anticiper les frais de notaire.</strong> 
+          <strong>${getIntroVariant(index, dep.nom, dep.code)}</strong> 
           En 2025, ces frais représentent entre <strong>4% et 6,6% du prix d'achat</strong> selon que vous acquériez 
           dans le neuf ou l'ancien. Dans le département ${
             dep.code
@@ -1021,15 +1312,29 @@ function generateArticleHTML(dep) {
         
         <!-- Section 1 -->
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
-          💰 Montant moyen des frais de notaire dans le ${dep.nom}
+          ${getSectionTitle1Variant(index, dep.nom, dep.code)}
         </h2>
 
         <p class="text-gray-700 leading-relaxed mb-6">
-          Les frais de notaire varient selon le <strong>type de bien acheté</strong> et son prix. 
-          Dans le ${
-            dep.nom
+          ${getContextPhraseVariant(index)}
+          ${
+            dep.nom === "Paris"
+              ? "À Paris"
+              : getPreposition(dep.nom, dep.code).startsWith("dans les")
+              ? "Dans les " + dep.nom
+              : getPreposition(dep.nom, dep.code).startsWith("dans l'")
+              ? "Dans l'" + dep.nom
+              : getPreposition(dep.nom, dep.code).startsWith("dans le")
+              ? "Dans le " + dep.nom
+              : "En " + dep.nom
           }, comme partout en France, la différence entre l'ancien et le neuf est significative.
         </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+          <p class="text-lg text-gray-800 mb-0">
+            <strong>🏘️ Marché local :</strong> ${conseilSpecifique}
+          </p>
+        </div>
 
         <div class="overflow-x-auto mb-8">
           <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
@@ -1063,8 +1368,16 @@ function generateArticleHTML(dep) {
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
           <p class="text-lg text-gray-800 mb-0">
-            <strong>💡 Bon à savoir :</strong> Dans le ${
-              dep.nom
+            <strong>💡 Bon à savoir :</strong> ${
+              dep.nom === "Paris"
+                ? "À Paris"
+                : getPreposition(dep.nom, dep.code).startsWith("dans les")
+                ? "Dans les " + dep.nom
+                : getPreposition(dep.nom, dep.code).startsWith("dans l'")
+                ? "Dans l'" + dep.nom
+                : getPreposition(dep.nom, dep.code).startsWith("dans le")
+                ? "Dans le " + dep.nom
+                : "En " + dep.nom
             }, l'écart entre ancien et neuf peut représenter 
             jusqu'à <strong>${(prix200kAncien - prix200kNeuf).toLocaleString(
               "fr-FR"
@@ -1074,7 +1387,7 @@ function generateArticleHTML(dep) {
 
         <!-- Section 2 -->
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
-          📊 Exemple de calcul concret dans le ${dep.nom}
+          ${getCalculTitleVariant(index, dep.nom, dep.ville1)}
         </h2>
 
         <p class="text-gray-700 leading-relaxed mb-6">
@@ -1084,9 +1397,10 @@ function generateArticleHTML(dep) {
         </p>
 
         <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-lg p-6 mb-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Projet d'achat dans le ${
-            dep.nom
-          }</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Projet d'achat ${getPreposition(
+            dep.nom,
+            dep.code
+          )}</h3>
           
           <div class="grid md:grid-cols-2 gap-6">
             <div class="space-y-3">
@@ -1098,7 +1412,9 @@ function generateArticleHTML(dep) {
               </div>
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
                 <span class="text-gray-700">Apport personnel</span>
-                <span class="font-bold">30 000 €</span>
+                <span class="font-bold">${apport.toLocaleString(
+                  "fr-FR"
+                )} €</span>
               </div>
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
                 <span class="text-gray-700">Frais de notaire (6,6%)</span>
@@ -1111,11 +1427,9 @@ function generateArticleHTML(dep) {
             <div class="space-y-3">
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
                 <span class="text-gray-700">Montant à emprunter</span>
-                <span class="font-bold">${(
-                  prixExemple +
-                  fraisAncien -
-                  30000
-                ).toLocaleString("fr-FR")} €</span>
+                <span class="font-bold">${montantEmprunt.toLocaleString(
+                  "fr-FR"
+                )} €</span>
               </div>
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
                 <span class="text-gray-700">Taux d'intérêt</span>
@@ -1131,9 +1445,9 @@ function generateArticleHTML(dep) {
           <div class="mt-6 pt-6 border-t-2 border-gray-300">
             <div class="flex justify-between items-center">
               <span class="font-bold text-lg text-gray-900">Mensualité estimée</span>
-              <span class="text-3xl font-bold text-blue-700">≈ ${Math.round(
-                (prixExemple + fraisAncien - 30000) * 0.0062
-              ).toLocaleString("fr-FR")} €/mois</span>
+              <span class="text-3xl font-bold text-blue-700">≈ ${mensualite.toLocaleString(
+                "fr-FR"
+              )} €/mois</span>
             </div>
           </div>
         </div>
@@ -1149,7 +1463,10 @@ function generateArticleHTML(dep) {
 
         <!-- Section 3 -->
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
-          💡 Astuces pour réduire vos frais de notaire dans le ${dep.nom}
+          💡 Astuces pour réduire vos frais de notaire ${getPreposition(
+            dep.nom,
+            dep.code
+          )}
         </h2>
 
         <div class="grid md:grid-cols-2 gap-4 mb-8">
@@ -1196,13 +1513,13 @@ function generateArticleHTML(dep) {
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 mb-2">Vérifier les aides régionales ${
+                <h3 class="font-bold text-gray-900 mb-2">Vérifier les aides régionales ${getDeOrD(
                   dep.region
-                }</h3>
+                )}${dep.region}</h3>
                 <p class="text-sm text-gray-600">
-                  Certaines collectivités de ${
-                    dep.region
-                  } proposent des <strong>aides à l'accession</strong> 
+                  Certaines collectivités ${getDeOrD(dep.region)}${
+    dep.region
+  } proposent des <strong>aides à l'accession</strong> 
                   qui peuvent inclure une prise en charge partielle des frais.
                 </p>
               </div>
@@ -1229,7 +1546,7 @@ function generateArticleHTML(dep) {
 
         <!-- Section 4 -->
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
-          🏛️ Où trouver un notaire dans le ${dep.nom} ?
+          🏛️ Où trouver un notaire ${getPreposition(dep.nom, dep.code)} ?
         </h2>
 
         <p class="text-gray-700 leading-relaxed mb-6">
@@ -1266,7 +1583,7 @@ function generateArticleHTML(dep) {
           <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
             <strong>Gagnez du temps et de l'argent :</strong> utilisez notre calculateur officiel 
             pour connaître <strong>instantanément</strong> le montant exact des frais de notaire 
-            pour votre projet dans le ${dep.nom}.
+            pour votre projet ${getPreposition(dep.nom, dep.code)}.
           </p>
           <a 
             href="/pages/notaire.html" 
@@ -1350,9 +1667,10 @@ async function generateAllArticles() {
   let errorCount = 0;
 
   // Générer chaque article
-  for (const dep of departements) {
+  for (let index = 0; index < departements.length; index++) {
+    const dep = departements[index];
     try {
-      const html = generateArticleHTML(dep);
+      const html = generateArticleHTML(dep, index);
       const filename = `frais-notaire-${dep.code}.html`;
       const filepath = path.join(outputDir, filename);
 
