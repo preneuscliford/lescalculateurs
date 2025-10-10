@@ -30,6 +30,10 @@ export default defineConfig({
           __dirname,
           "src/pages/blog/frais-notaire-ancien-neuf-2025.html"
         ),
+        "blog-departements": resolve(
+          __dirname,
+          "src/pages/blog/frais-notaire-departements.html"
+        ),
       },
       output: {
         manualChunks: {

@@ -60,14 +60,26 @@ try {
       // Lire le contenu HTML
       let htmlContent = fs.readFileSync(sourcePath, "utf-8");
 
-      // Remplacer les anciens noms de fichiers par les nouveaux
+      // Remplacer les chemins CSS/JS absolus par des chemins relatifs corrects
+      // De /assets/main-xxx.css vers ../../../assets/main-yyy.css
+      // (pages départementales sont dans dist/pages/blog/departements/)
       htmlContent = htmlContent.replace(
-        /src="\.\.\/\.\.\/assets\/main-[^"]+\.js"/g,
-        `src="../../assets/${jsFile}"`
+        /href="\/assets\/main-[^"]+\.css"/g,
+        `href="../../../assets/${cssFile}"`
       );
       htmlContent = htmlContent.replace(
-        /href="\.\.\/\.\.\/assets\/main-[^"]+\.css"/g,
-        `href="../../assets/${cssFile}"`
+        /src="\/assets\/main-[^"]+\.js"/g,
+        `src="../../../assets/${jsFile}"`
+      );
+
+      // Au cas où il y aurait déjà des chemins relatifs
+      htmlContent = htmlContent.replace(
+        /href="\.\.\/\.\.\/\.\.\/assets\/main-[^"]+\.css"/g,
+        `href="../../../assets/${cssFile}"`
+      );
+      htmlContent = htmlContent.replace(
+        /src="\.\.\/\.\.\/\.\.\/assets\/main-[^"]+\.js"/g,
+        `src="../../../assets/${jsFile}"`
       );
 
       // Écrire le fichier modifié
