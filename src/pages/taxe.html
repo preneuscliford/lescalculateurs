@@ -308,6 +308,28 @@
           </div>
         `;
         },
+        exportCSV: {
+          enabled: false,
+          filename: "taxe-fonciere-estimation.csv",
+          getCSVData: (result, values) => {
+            const data = result.data;
+            return {
+              headers: ["Paramètre", "Valeur"],
+              rows: [
+                ["Valeur locative cadastrale (€)", data.valeurLocative],
+                ["Taux communal (%)", (data.tauxCommunal * 100).toFixed(2)],
+                [
+                  "Taux départemental (%)",
+                  (data.tauxDepartemental * 100).toFixed(2),
+                ],
+                ["Taux régional (%)", (data.tauxRegion * 100).toFixed(2)],
+                ["Taux total (%)", (data.tauxTotal * 100).toFixed(2)],
+                ["Taxe foncière 2025 (€)", data.taxeFonciere],
+                ["Région", data.regionLabel],
+              ],
+            };
+          },
+        },
       };
 
       new CalculatorFrame("taxe-calculator", taxeConfig);

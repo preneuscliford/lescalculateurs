@@ -4,6 +4,14 @@ export interface CalculatorConfig {
   fields: CalculatorField[];
   calculate: (values: Record<string, any>) => CalculatorResult;
   formatResult: (result: CalculatorResult) => string;
+  exportCSV?: {
+    enabled: boolean;
+    filename?: string;
+    getCSVData?: (
+      result: CalculatorResult,
+      values: Record<string, any>
+    ) => import("../utils/csvExport").CSVData;
+  };
 }
 
 export interface CalculatorField {
@@ -217,13 +225,44 @@ export class CalculatorFrame {
     resultDiv.classList.remove("hidden");
 
     if (result.success) {
+      // Déterminer si l'export CSV est activé
+      const hasExportCSV =
+        this.config.exportCSV && this.config.exportCSV.enabled === true;
+
+      const exportButton = hasExportCSV
+        ? `
+        <div class="mt-4 pt-4 border-t border-gray-200">
+          <button type="button" id="export-csv-btn" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Exporter en CSV
+          </button>
+        </div>
+      `
+        : "";
+
       resultDiv.className = "mt-6 calculator-result";
       resultDiv.innerHTML = `
         <h3 class="text-lg font-semibold text-gray-800 mb-2">Résultat :</h3>
         <div class="text-gray-700">
           ${this.config.formatResult(result)}
         </div>
+        ${exportButton}
       `;
+
+      // Attacher l'événement d'export CSV si activé
+      if (hasExportCSV) {
+        const exportBtn = resultDiv.querySelector(
+          "#export-csv-btn"
+        ) as HTMLButtonElement;
+        if (exportBtn) {
+          exportBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            this.handleCSVExport(result);
+          });
+        }
+      }
     } else {
       resultDiv.className =
         "mt-6 p-4 bg-red-50 border border-red-200 rounded-lg";
@@ -232,6 +271,37 @@ export class CalculatorFrame {
           <strong>Erreur :</strong> ${result.error}
         </div>
       `;
+    }
+  }
+
+  private async handleCSVExport(result: CalculatorResult): Promise<void> {
+    try {
+      // Importer dynamiquement pour éviter les dépendances circulaires
+      const { exportToCSV } = await import("../utils/csvExport");
+
+      let csvData: import("../utils/csvExport").CSVData;
+
+      if (this.config.exportCSV?.getCSVData) {
+        // Utiliser la fonction personnalisée si fournie
+        csvData = this.config.exportCSV.getCSVData(result, this.values);
+      } else {
+        // Fallback: exporter les valeurs d'entrée et le résultat brut
+        csvData = {
+          headers: ["Champ", "Valeur"],
+          rows: [
+            ...Object.entries(this.values).map(([key, value]) => [key, value]),
+            ["Résultat", JSON.stringify(result.data)],
+          ],
+        };
+      }
+
+      const filename =
+        this.config.exportCSV?.filename ||
+        `${this.config.title.toLowerCase().replace(/\s+/g, "_")}_resultats.csv`;
+      exportToCSV(csvData, filename);
+    } catch (error) {
+      console.error("Erreur lors de l'export CSV:", error);
+      alert("Erreur lors de l'export CSV. Veuillez réessayer.");
     }
   }
 

@@ -245,6 +245,31 @@
           </div>
         `;
         },
+        exportCSV: {
+          enabled: false,
+          filename: "indemnites-kilometriques-estimation.csv",
+          getCSVData: (result, values) => {
+            const data = result.data;
+            return {
+              headers: ["Paramètre", "Valeur"],
+              rows: [
+                [
+                  "Type de véhicule",
+                  data.typeVehicule === "voiture" ? "Voiture" : "Deux-roues",
+                ],
+                ["Distance annuelle (km)", data.kilometres],
+                ["Indemnité par km (€)", data.indemniteParKm.toFixed(3)],
+                ["Indemnités totales (€)", data.total],
+                ...(data.puissance
+                  ? [["Puissance fiscale", data.puissance]]
+                  : []),
+                ...(data.cylindree
+                  ? [["Cylindrée", data.cylindree.replace("_", " ")]]
+                  : []),
+              ],
+            };
+          },
+        },
       };
 
       // Masquer/afficher les champs selon le type de véhicule
