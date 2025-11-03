@@ -6,11 +6,11 @@
     <title>🏠 Frais de Notaire 2025 - Économisez des milliers d'euros !</title>
     <meta
       name="description"
-      content="Calculez vos frais de notaire 2025 et économisez jusqu'à 10 000€ sur votre achat immobilier. Simulation gratuite et précise selon votre département."
+      content="Calculez et comparez les frais de notaire 2025 entre plusieurs villes. Graphique interactif, export CSV. Économisez jusqu'à 3 500€ selon votre département. Simulation gratuite et précise."
     />
     <meta
       name="keywords"
-      content="frais notaire 2025, calculateur frais notaire gratuit, barêmes notaire officiels, émoluments notaire, droits enregistrement, simulation achat immobilier, coût notaire maison appartement, taux notaire france, calcul frais acte, estimation frais notaire département"
+      content="frais notaire 2025, calculateur frais notaire gratuit, comparaison frais notaire départements, barèmes notaire officiels, émoluments notaire, droits enregistrement, simulation achat immobilier, coût notaire maison appartement, taux notaire france, calcul frais acte, estimation frais notaire département, comparateur frais notaire villes, graphique frais notaire, export csv frais notaire"
     />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
@@ -26,11 +26,11 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="🏠 Frais de Notaire 2025 - Économisez des milliers d'euros !"
+      content="🏠 Frais de Notaire 2025 - Comparez et économisez !"
     />
     <meta
       property="og:description"
-      content="Calculez vos frais de notaire 2025 et économisez jusqu'à 10 000€ sur votre achat immobilier"
+      content="Comparez les frais de notaire entre plusieurs villes avec graphique interactif. Économisez jusqu'à 3 500€ selon votre département."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -228,8 +228,138 @@
         </div>
       </section>
 
+      <!-- Section Fonctionnalité Comparaison - SEO -->
+      <section
+        class="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-2 border-blue-200"
+      >
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">📊</span>
+            <h2 class="text-2xl font-bold text-gray-900">
+              Comparez les frais de notaire entre plusieurs villes
+            </h2>
+          </div>
+          <div class="prose prose-lg text-gray-700 mb-4">
+            <p class="mb-3">
+              <strong>Économisez jusqu'à 3 500€</strong> en comparant les frais
+              de notaire entre différents départements ! Notre outil exclusif de
+              <strong>comparaison multi-villes</strong> vous permet de
+              visualiser instantanément les différences de coûts selon la
+              localisation de votre bien immobilier.
+            </p>
+            <p class="mb-3">
+              Les droits d'enregistrement varient de
+              <strong>4.5% en Corse à 5.9% en Île-de-France</strong>, ce qui
+              représente des écarts significatifs sur le montant total de vos
+              frais de notaire. Par exemple, pour un achat de 250 000€, la
+              différence peut atteindre plusieurs milliers d'euros entre Paris
+              (18 283€) et la Gironde (17 943€).
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">🗺️</div>
+              <h3 class="font-bold text-gray-900 mb-1">
+                Comparaison interactive
+              </h3>
+              <p class="text-sm text-gray-600">
+                Comparez jusqu'à 4 villes simultanément avec un graphique visuel
+                coloré
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">💰</div>
+              <h3 class="font-bold text-gray-900 mb-1">Économies calculées</h3>
+              <p class="text-sm text-gray-600">
+                Visualisez instantanément les économies possibles entre
+                départements
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">📥</div>
+              <h3 class="font-bold text-gray-900 mb-1">Export CSV</h3>
+              <p class="text-sm text-gray-600">
+                Exportez vos comparaisons pour les analyser dans Excel
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Calculateur -->
       <div id="notaire-calculator"></div>
+
+      <!-- Tableau de comparaison (masqué par défaut) -->
+      <div id="comparaison-container" class="hidden"></div>
+
+      <!-- Modale de sélection de ville pour comparaison -->
+      <div
+        id="modal-selection-ville"
+        class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50"
+        style="display: none"
+      >
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Choisir une ville à comparer
+          </h3>
+
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              Département à comparer *
+            </label>
+            <select
+              id="modal-departement"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="">-- Sélectionnez un département --</option>
+              <option value="75">75 - Paris (5.9%)</option>
+              <option value="92">92 - Hauts-de-Seine (5.9%)</option>
+              <option value="93">93 - Seine-Saint-Denis (5.9%)</option>
+              <option value="94">94 - Val-de-Marne (5.9%)</option>
+              <option value="78">78 - Yvelines (5.9%)</option>
+              <option value="91">91 - Essonne (5.9%)</option>
+              <option value="95">95 - Val-d'Oise (5.9%)</option>
+              <option value="77">77 - Seine-et-Marne (5.8%)</option>
+              <option value="13">13 - Bouches-du-Rhône (5.8%)</option>
+              <option value="69">69 - Rhône (5.8%)</option>
+              <option value="59">59 - Nord (5.8%)</option>
+              <option value="06">06 - Alpes-Maritimes (5.8%)</option>
+              <option value="31">31 - Haute-Garonne (5.8%)</option>
+              <option value="33">33 - Gironde (5.8%)</option>
+              <option value="44">44 - Loire-Atlantique (5.8%)</option>
+              <option value="34">34 - Hérault (5.8%)</option>
+              <option value="67">67 - Bas-Rhin (5.8%)</option>
+              <option value="35">35 - Ille-et-Vilaine (5.8%)</option>
+              <option value="38">38 - Isère (5.8%)</option>
+              <option value="83">83 - Var (5.8%)</option>
+              <option value="62">62 - Pas-de-Calais (5.8%)</option>
+              <option value="76">76 - Seine-Maritime (5.8%)</option>
+              <option value="84">84 - Vaucluse (5.8%)</option>
+              <option value="30">30 - Gard (5.8%)</option>
+              <option value="17">17 - Charente-Maritime (5.8%)</option>
+              <option value="2A">2A - Corse-du-Sud (4.5%)</option>
+              <option value="2B">2B - Haute-Corse (4.5%)</option>
+              <option value="autre">Autre département (5.8%)</option>
+            </select>
+          </div>
+
+          <div class="flex gap-3">
+            <button
+              onclick="window.annulerSelectionVille()"
+              class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50"
+            >
+              Annuler
+            </button>
+            <button
+              onclick="window.confirmerSelectionVille()"
+              class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
+              Comparer
+            </button>
+          </div>
+        </div>
+      </div>
 
       <!-- FAQ -->
       <section class="max-w-4xl mx-auto mt-12">
@@ -364,6 +494,143 @@
               </p>
             </div>
           </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm border-2 border-blue-200"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              📊 Comment comparer les frais de notaire entre plusieurs villes ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Notre calculateur permet de comparer jusqu'à 4 villes
+                simultanément. Après votre premier calcul, cliquez sur "Comparer
+                avec une autre ville", sélectionnez un département, et
+                visualisez les différences sur un graphique interactif. Les
+                frais varient selon les taux départementaux (4.5% à 5.9%) et les
+                frais de formalités locaux. Vous pouvez économiser jusqu'à 3
+                500€ en choisissant stratégiquement la localisation.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm border-2 border-blue-200"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              💰 Quelles sont les différences de frais de notaire entre
+              départements ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Les droits d'enregistrement varient de 4.5% en Corse (2A, 2B) à
+                5.9% en Île-de-France (75, 92, 93, 94, 78, 91, 95), soit 5.8%
+                dans la majorité des départements. Pour un achat de 250 000€,
+                cela représente une différence de 250€ à 3 500€ selon les
+                départements. Les frais de cadastre, conservation et formalités
+                varient également de 118€ à 220€ selon les pratiques locales.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm border-2 border-blue-200"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              📥 Puis-je exporter ma comparaison de frais de notaire ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Oui ! Après avoir effectué vos calculs et comparaisons, cliquez
+                sur "Exporter en CSV" pour télécharger un fichier Excel avec
+                tous les détails : émoluments, droits d'enregistrement, frais
+                divers, TVA et totaux pour chaque ville comparée. Idéal pour
+                partager avec votre conseiller bancaire ou comparer différents
+                scénarios d'achat immobilier.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 shadow-sm border-2 border-blue-300"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              💡 Comment utiliser la comparaison de frais de notaire ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <div class="text-gray-700" itemprop="text">
+                <p class="mb-3">
+                  Notre outil de comparaison vous permet de visualiser les
+                  différences de frais entre plusieurs villes. Suivez ces étapes
+                  simples :
+                </p>
+                <ol class="text-sm space-y-2 list-decimal list-inside mb-3">
+                  <li>
+                    <strong>Faites votre premier calcul</strong> pour votre
+                    ville avec le formulaire ci-dessus
+                  </li>
+                  <li>
+                    <strong
+                      >Cliquez sur "📊 Comparer avec une autre ville"</strong
+                    >
+                    dans les résultats
+                  </li>
+                  <li>
+                    <strong>Sélectionnez d'autres départements</strong> dans la
+                    liste déroulante
+                  </li>
+                  <li>
+                    <strong>Consultez le graphique</strong> et le tableau
+                    comparatif détaillé
+                  </li>
+                  <li>
+                    <strong>Exportez les données en CSV</strong> si besoin pour
+                    Excel
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -381,6 +648,7 @@
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import { formatCurrency } from "../main.ts";
       import { baremes } from "../data/baremes.ts";
+      import departements from "../data/departements.json";
 
       // Configuration du calculateur frais de notaire
       const notaireConfig = {
@@ -405,27 +673,34 @@
             type: "select",
             required: true,
             options: [
-              { value: "75", label: "75 - Paris" },
-              { value: "13", label: "13 - Bouches-du-Rhône" },
-              { value: "69", label: "69 - Rhône" },
-              { value: "59", label: "59 - Nord" },
-              { value: "92", label: "92 - Hauts-de-Seine" },
-              { value: "93", label: "93 - Seine-Saint-Denis" },
-              { value: "94", label: "94 - Val-de-Marne" },
-              { value: "77", label: "77 - Seine-et-Marne" },
-              { value: "78", label: "78 - Yvelines" },
-              { value: "91", label: "91 - Essonne" },
-              { value: "95", label: "95 - Val-d'Oise" },
-              { value: "06", label: "06 - Alpes-Maritimes" },
-              { value: "31", label: "31 - Haute-Garonne" },
-              { value: "33", label: "33 - Gironde" },
-              { value: "44", label: "44 - Loire-Atlantique" },
-              { value: "34", label: "34 - Hérault" },
-              { value: "67", label: "67 - Bas-Rhin" },
-              { value: "35", label: "35 - Ille-et-Vilaine" },
-              { value: "38", label: "38 - Isère" },
-              { value: "83", label: "83 - Var" },
-              { value: "autre", label: "Autre département" },
+              { value: "75", label: "75 - Paris (5.9%)" },
+              { value: "92", label: "92 - Hauts-de-Seine (5.9%)" },
+              { value: "93", label: "93 - Seine-Saint-Denis (5.9%)" },
+              { value: "94", label: "94 - Val-de-Marne (5.9%)" },
+              { value: "78", label: "78 - Yvelines (5.9%)" },
+              { value: "91", label: "91 - Essonne (5.9%)" },
+              { value: "95", label: "95 - Val-d'Oise (5.9%)" },
+              { value: "77", label: "77 - Seine-et-Marne (5.8%)" },
+              { value: "13", label: "13 - Bouches-du-Rhône (5.8%)" },
+              { value: "69", label: "69 - Rhône (5.8%)" },
+              { value: "59", label: "59 - Nord (5.8%)" },
+              { value: "06", label: "06 - Alpes-Maritimes (5.8%)" },
+              { value: "31", label: "31 - Haute-Garonne (5.8%)" },
+              { value: "33", label: "33 - Gironde (5.8%)" },
+              { value: "44", label: "44 - Loire-Atlantique (5.8%)" },
+              { value: "34", label: "34 - Hérault (5.8%)" },
+              { value: "67", label: "67 - Bas-Rhin (5.8%)" },
+              { value: "35", label: "35 - Ille-et-Vilaine (5.8%)" },
+              { value: "38", label: "38 - Isère (5.8%)" },
+              { value: "83", label: "83 - Var (5.8%)" },
+              { value: "62", label: "62 - Pas-de-Calais (5.8%)" },
+              { value: "76", label: "76 - Seine-Maritime (5.8%)" },
+              { value: "84", label: "84 - Vaucluse (5.8%)" },
+              { value: "30", label: "30 - Gard (5.8%)" },
+              { value: "17", label: "17 - Charente-Maritime (5.8%)" },
+              { value: "2A", label: "2A - Corse-du-Sud (4.5%)" },
+              { value: "2B", label: "2B - Haute-Corse (4.5%)" },
+              { value: "autre", label: "Autre département (5.8%)" },
             ],
           },
           {
@@ -508,11 +783,15 @@
               reste -= montantTranche;
             }
 
-            // Frais divers de base
+            // Récupérer les données spécifiques du département
+            const deptData =
+              departements[departement] || departements["default"];
+
+            // Frais divers spécifiques au département
             let fraisDivers =
-              baremes.notaire.fraisDivers.cadastre +
-              baremes.notaire.fraisDivers.conservation +
-              baremes.notaire.fraisDivers.formalites;
+              deptData.fraisDivers.cadastre +
+              deptData.fraisDivers.conservation +
+              deptData.fraisDivers.formalites;
 
             // Frais d'hypothèque selon le type d'emprunt
             let fraisHypotheque = 0;
@@ -527,24 +806,9 @@
 
             // Droits d'enregistrement selon le type de bien et département
             let droitsEnregistrement = 0;
-            let tauxDroits = 0;
+            let tauxDroits = deptData.tauxDroits;
 
             if (typeBien === "ancien" || typeBien === "terrain") {
-              // Taux variable selon département (exemple simplifié)
-              switch (departement) {
-                case "75": // Paris
-                case "92":
-                case "93":
-                case "94":
-                  tauxDroits = 0.059; // 5.9%
-                  break;
-                case "59": // Nord
-                case "62":
-                  tauxDroits = 0.058; // 5.8%
-                  break;
-                default:
-                  tauxDroits = 0.058; // 5.8% par défaut
-              }
               droitsEnregistrement = prixNetImmobilier * tauxDroits;
             } else if (typeBien === "neuf") {
               // TVA à 20% au lieu des droits d'enregistrement
@@ -740,6 +1004,17 @@
                 Contactez votre notaire pour une estimation précise.
               </p>
             </div>
+
+            <!-- Bouton Ajouter à la comparaison -->
+            <div class="mt-6 flex justify-center">
+              <button
+                onclick="window.ajouterAComparaison?.()"
+                class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center gap-2"
+              >
+                <span class="text-xl">📊</span>
+                <span>Comparer avec une autre ville</span>
+              </button>
+            </div>
           </div>
           `;
         },
@@ -854,6 +1129,234 @@
 
       // Initialisation du calculateur
       new CalculatorFrame("notaire-calculator", notaireConfig);
+    </script>
+
+    <!-- Gestion de la comparaison multi-villes -->
+    <script type="module">
+      import { ComparaisonNotaire } from "../utils/comparaisonNotaire.ts";
+
+      // Instance globale de comparaison
+      window.comparaisonNotaire = new ComparaisonNotaire(
+        "comparaison-container"
+      );
+
+      // Variable pour tracker si la comparaison a déjà été lancée
+      let comparaisonDemarree = false;
+
+      // Fonction pour ouvrir la modale depuis le tableau de comparaison
+      window.ouvrirModaleComparaison = () => {
+        const modal = document.getElementById("modal-selection-ville");
+        if (modal) {
+          modal.style.display = "flex";
+        }
+      };
+
+      // Fonction pour ouvrir la modale de sélection (premier clic depuis les résultats)
+      window.ajouterAComparaison = () => {
+        // Si déjà démarré, ne rien faire (le bouton sera désactivé)
+        if (comparaisonDemarree) {
+          return;
+        }
+
+        // D'abord, ajouter le calcul actuel s'il n'est pas déjà dans la comparaison
+        const calculData = window.dernierCalculNotaire;
+        if (calculData && calculData.result && calculData.values) {
+          const deptMap = {
+            75: "75 - Paris (5.9%)",
+            92: "92 - Hauts-de-Seine (5.9%)",
+            93: "93 - Seine-Saint-Denis (5.9%)",
+            94: "94 - Val-de-Marne (5.9%)",
+            78: "78 - Yvelines (5.9%)",
+            91: "91 - Essonne (5.9%)",
+            95: "95 - Val-d'Oise (5.9%)",
+            77: "77 - Seine-et-Marne (5.8%)",
+            13: "13 - Bouches-du-Rhône (5.8%)",
+            69: "69 - Rhône (5.8%)",
+            59: "59 - Nord (5.8%)",
+            "06": "06 - Alpes-Maritimes (5.8%)",
+            31: "31 - Haute-Garonne (5.8%)",
+            33: "33 - Gironde (5.8%)",
+            44: "44 - Loire-Atlantique (5.8%)",
+            34: "34 - Hérault (5.8%)",
+            67: "67 - Bas-Rhin (5.8%)",
+            35: "35 - Ille-et-Vilaine (5.8%)",
+            38: "38 - Isère (5.8%)",
+            83: "83 - Var (5.8%)",
+            62: "62 - Pas-de-Calais (5.8%)",
+            76: "76 - Seine-Maritime (5.8%)",
+            84: "84 - Vaucluse (5.8%)",
+            30: "30 - Gard (5.8%)",
+            17: "17 - Charente-Maritime (5.8%)",
+            "2A": "2A - Corse-du-Sud (4.5%)",
+            "2B": "2B - Haute-Corse (4.5%)",
+            autre: "Autre département (5.8%)",
+          };
+
+          const departementLabel =
+            deptMap[calculData.values.departement] ||
+            calculData.values.departement;
+
+          // Ajouter le calcul actuel (la fonction vérifie déjà les doublons)
+          window.comparaisonNotaire.ajouterCalcul(
+            calculData.result,
+            calculData.values,
+            departementLabel
+          );
+
+          // Marquer que la comparaison a démarré
+          comparaisonDemarree = true;
+
+          // Désactiver le bouton dans les résultats
+          const btnComparer = document.querySelector(
+            'button[onclick*="ajouterAComparaison"]'
+          );
+          if (btnComparer) {
+            btnComparer.disabled = true;
+            btnComparer.classList.remove(
+              "from-purple-600",
+              "to-blue-600",
+              "hover:from-purple-700",
+              "hover:to-blue-700",
+              "hover:scale-105"
+            );
+            btnComparer.classList.add(
+              "bg-gray-400",
+              "cursor-not-allowed",
+              "opacity-50"
+            );
+            btnComparer.innerHTML =
+              '<span class="text-xl">✓</span><span>Comparaison activée</span>';
+          }
+        }
+
+        // Ensuite, ouvrir la modale pour ajouter une autre ville
+        const modal = document.getElementById("modal-selection-ville");
+        if (modal) {
+          modal.style.display = "flex";
+        }
+      };
+
+      // Fonction pour annuler la sélection
+      window.annulerSelectionVille = () => {
+        const modal = document.getElementById("modal-selection-ville");
+        if (modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // Fonction pour confirmer la sélection et calculer
+      window.confirmerSelectionVille = () => {
+        const select = document.getElementById("modal-departement");
+        const departementChoisi = select.value;
+
+        if (!departementChoisi) {
+          alert("Veuillez sélectionner un département");
+          return;
+        }
+
+        // Fermer la modale
+        const modal = document.getElementById("modal-selection-ville");
+        if (modal) {
+          modal.style.display = "none";
+        }
+
+        // Récupérer les valeurs actuelles du dernier calcul
+        const calculData = window.dernierCalculNotaire;
+        if (!calculData || !calculData.values) {
+          alert("Erreur : impossible de récupérer les données du calcul");
+          return;
+        }
+
+        // Modifier le département dans le formulaire
+        const deptSelect = document.getElementById("departement");
+        if (deptSelect) {
+          deptSelect.value = departementChoisi;
+        }
+
+        // Copier les autres valeurs du dernier calcul
+        const values = { ...calculData.values };
+        values.departement = departementChoisi;
+
+        // Remplir le formulaire avec les mêmes valeurs
+        Object.keys(values).forEach((key) => {
+          const input = document.getElementById(key);
+          if (input) {
+            if (input.type === "checkbox") {
+              input.checked = values[key];
+            } else {
+              input.value = values[key];
+            }
+          }
+        });
+
+        // Déclencher le calcul automatiquement
+        setTimeout(() => {
+          const form = document.querySelector("#notaire-calculator form");
+          const submitBtn = form?.querySelector('button[type="submit"]');
+          if (submitBtn) {
+            submitBtn.click();
+
+            // Attendre que le calcul soit fait et ajouter à la comparaison
+            setTimeout(() => {
+              const nouveauCalcul = window.dernierCalculNotaire;
+              if (
+                nouveauCalcul &&
+                nouveauCalcul.result &&
+                nouveauCalcul.values
+              ) {
+                const deptMap = {
+                  75: "75 - Paris (5.9%)",
+                  92: "92 - Hauts-de-Seine (5.9%)",
+                  93: "93 - Seine-Saint-Denis (5.9%)",
+                  94: "94 - Val-de-Marne (5.9%)",
+                  78: "78 - Yvelines (5.9%)",
+                  91: "91 - Essonne (5.9%)",
+                  95: "95 - Val-d'Oise (5.9%)",
+                  77: "77 - Seine-et-Marne (5.8%)",
+                  13: "13 - Bouches-du-Rhône (5.8%)",
+                  69: "69 - Rhône (5.8%)",
+                  59: "59 - Nord (5.8%)",
+                  "06": "06 - Alpes-Maritimes (5.8%)",
+                  31: "31 - Haute-Garonne (5.8%)",
+                  33: "33 - Gironde (5.8%)",
+                  44: "44 - Loire-Atlantique (5.8%)",
+                  34: "34 - Hérault (5.8%)",
+                  67: "67 - Bas-Rhin (5.8%)",
+                  35: "35 - Ille-et-Vilaine (5.8%)",
+                  38: "38 - Isère (5.8%)",
+                  83: "83 - Var (5.8%)",
+                  62: "62 - Pas-de-Calais (5.8%)",
+                  76: "76 - Seine-Maritime (5.8%)",
+                  84: "84 - Vaucluse (5.8%)",
+                  30: "30 - Gard (5.8%)",
+                  17: "17 - Charente-Maritime (5.8%)",
+                  "2A": "2A - Corse-du-Sud (4.5%)",
+                  "2B": "2B - Haute-Corse (4.5%)",
+                  autre: "Autre département (5.8%)",
+                };
+
+                const departementLabel =
+                  deptMap[nouveauCalcul.values.departement] ||
+                  nouveauCalcul.values.departement;
+
+                window.comparaisonNotaire.ajouterCalcul(
+                  nouveauCalcul.result,
+                  nouveauCalcul.values,
+                  departementLabel
+                );
+
+                // Scroller vers la comparaison
+                document
+                  .getElementById("comparaison-container")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }
+            }, 500);
+          }
+        }, 100);
+      };
     </script>
 
     <!-- Auto-initialisation des exports PDF/CSV -->

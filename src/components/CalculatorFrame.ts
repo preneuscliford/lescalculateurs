@@ -34,6 +34,7 @@ export interface CalculatorResult {
 
 export class CalculatorFrame {
   private container: HTMLElement;
+  private containerId: string;
   private config: CalculatorConfig;
   private values: Record<string, any> = {};
 
@@ -43,6 +44,7 @@ export class CalculatorFrame {
       throw new Error(`Container with id "${containerId}" not found`);
     }
     this.container = element;
+    this.containerId = containerId;
     this.config = config;
     this.render();
   }
@@ -213,6 +215,18 @@ export class CalculatorFrame {
     try {
       const result = this.config.calculate(this.values);
       this.showResult(resultDiv, result);
+
+      // Stocker le résultat dans une variable globale pour la comparaison
+      if (result.success && this.containerId === "notaire-calculator") {
+        (window as any).dernierCalculNotaire = {
+          result: result,
+          values: { ...this.values },
+        };
+        console.log(
+          "✅ Calcul notaire stocké",
+          (window as any).dernierCalculNotaire
+        );
+      }
     } catch (error) {
       this.showResult(resultDiv, {
         success: false,

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Export CSV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <div class="max-w-2xl mx-auto p-6">
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-2xl font-bold mb-4">Test Export CSV</h1>
+        <div id="test-container"></div>
+      </div>
+    </div>
+
+    <script type="module">
+      // Test simple du CalculatorFrame avec export CSV
+      import { CalculatorFrame } from "./src/components/CalculatorFrame.ts";
+
+      const testConfig = {
+        title: "Calculateur de Test",
+        description: "Test de l'export CSV",
+        fields: [
+          {
+            id: "montant",
+            label: "Montant *",
+            type: "number",
+            required: true,
+            placeholder: "1000",
+            min: 100,
+            step: 100,
+          },
+        ],
+        calculate: (values) => {
+          return {
+            success: true,
+            data: {
+              montant: values.montant,
+              total: values.montant * 1.2,
+              taxe: values.montant * 0.2,
+            },
+          };
+        },
+        formatResult: (result) => {
+          const data = result.data;
+          return `
+                    <div class="space-y-2">
+                        <div><strong>Montant:</strong> ${data.montant}€</div>
+                        <div><strong>Taxe (20%):</strong> ${data.taxe.toFixed(
+                          2
+                        )}€</div>
+                        <div><strong>Total:</strong> ${data.total.toFixed(
+                          2
+                        )}€</div>
+                    </div>
+                `;
+        },
+        exportCSV: {
+          enabled: true,
+          filename: "test-export.csv",
+          getCSVData: (result, values) => {
+            const data = result.data;
+            return {
+              headers: ["Description", "Montant (€)"],
+              rows: [
+                ["Montant", data.montant],
+                ["Taxe 20%", data.taxe.toFixed(2)],
+                ["Total", data.total.toFixed(2)],
+              ],
+            };
+          },
+        },
+      };
+
+      new CalculatorFrame("test-container", testConfig);
+    </script>
+  </body>
+</html>
