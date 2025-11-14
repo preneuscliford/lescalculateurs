@@ -153,6 +153,48 @@ try {
     }
   });
 
+  /**
+   * Duplique l'article global "ancien vs neuf" sous /departements pour servir une page physique.
+   * - Réécrit les imports vers les bundles hashés
+   * - Ajuste les chemins des assets
+   * - Injecte la CSS si absente
+   */
+  try {
+    const globalArticleSrc = path.resolve(__dirname, "../src/pages/blog/frais-notaire-ancien-neuf-2025.html");
+    const departementsArticleDst = path.resolve(__dirname, "../dist/pages/blog/departements/frais-notaire-ancien-neuf-2025.html");
+    if (fs.existsSync(globalArticleSrc)) {
+      let htmlContent = fs.readFileSync(globalArticleSrc, "utf-8");
+
+      // Réécriture du script main.ts vers le bundle produit (../../main.ts)
+      htmlContent = htmlContent.replace(
+        /<script[^>]*type="module"[^>]*src="\.\.\/\.\.\/main\.ts"[^>]*><\/script>/g,
+        `<script type="module" crossorigin src="../../../assets/${jsFile}"></script>`
+      );
+
+      // Ajustement des assets ../../assets/* vers ../../../assets/*
+      htmlContent = htmlContent.replace(/(href|src)="\.\.\/\.\.\/assets\//g, `$1="../../../assets/`);
+
+      // Injection CSS si absente
+      if (!new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/${cssFile}\"`).test(htmlContent) && !new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/main-.*\\.css\"`).test(htmlContent)) {
+        htmlContent = htmlContent.replace(
+          /<head>([\s\S]*?)<\/head>/,
+          (m) => m.replace(
+            /<\/head>/,
+            `    <link rel="stylesheet" crossorigin href="../../../assets/${cssFile}">\n  </head>`
+          )
+        );
+      }
+
+      // Écrire la page dupliquée
+      fs.writeFileSync(departementsArticleDst, htmlContent, "utf-8");
+      console.log("✅ Article ancien/neuf copié sous /departements:", departementsArticleDst);
+    } else {
+      console.warn("⚠️ Article global ancien/neuf introuvable:", globalArticleSrc);
+    }
+  } catch (e) {
+    console.error("❌ Erreur duplication article ancien/neuf:", e.message);
+  }
+
   console.log(`\n✅ Copie terminée !`);
   console.log(`   • ${copiedCount} pages copiées avec succès`);
   console.log(`   • CSS/JS injectés automatiquement`);
