@@ -9,6 +9,11 @@
       "source": "/pages/blog/departements/frais-notaire-departements.html",
       "destination": "/pages/blog/frais-notaire-departements.html",
       "permanent": true
+    },
+    {
+      "source": "/pages/blog/departements/frais-notaire-ancien-neuf-2025.html",
+      "destination": "/pages/blog/frais-notaire-ancien-neuf-2025.html",
+      "permanent": true
     }
   ]
 }
