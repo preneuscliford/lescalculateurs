@@ -4,6 +4,11 @@
       "source": "/pages/blog/frais-notaire-:code.html",
       "destination": "/pages/blog/departements/frais-notaire-:code.html",
       "permanent": true
+    },
+    {
+      "source": "/pages/blog/departements/frais-notaire-departements.html",
+      "destination": "/pages/blog/frais-notaire-departements.html",
+      "permanent": true
     }
   ]
 }
