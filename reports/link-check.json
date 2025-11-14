@@ -1,0 +1,3788 @@
+[
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://lescalculateurs.fr/pages/blog.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\charges.html",
+    "url": "https://lescalculateurs.fr/pages/charges.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\crypto-bourse.html",
+    "url": "https://lescalculateurs.fr/pages/crypto-bourse.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\financement.html",
+    "url": "https://lescalculateurs.fr/pages/financement.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\ik.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F1989",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\ik.html",
+    "url": "https://www.service-public.fr/particuliers/actualites/A14686",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\ik.html",
+    "url": "https://www.impots.gouv.fr/particulier/frais-kilometriques-bareme",
+    "status": 404,
+    "ok": false
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\notaire.html",
+    "url": "https://lescalculateurs.fr/pages/notaire.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\notaire.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\notaire.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\notaire.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\plusvalue.html",
+    "url": "https://lescalculateurs.fr/pages/plusvalue.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\plusvalue.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F10864",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\plusvalue.html",
+    "url": "https://www.impots.gouv.fr/particulier/plus-values-immobilieres",
+    "status": 404,
+    "ok": false
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\pret.html",
+    "url": "https://lescalculateurs.fr/pages/pret.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\pret.html",
+    "url": "https://www.banque-france.fr/statistiques/taux-dusure",
+    "status": 404,
+    "ok": false
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\pret.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F10871",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\pret.html",
+    "url": "https://www.service-public.fr/particuliers/actualites/A15916",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\taxe.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F59",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\taxe.html",
+    "url": "https://www.impots.gouv.fr/particulier/la-taxe-fonciere",
+    "status": 404,
+    "ok": false
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\export-pdf-calculateurs.html",
+    "url": "https://lescalculateurs.fr/pages/blog/export-pdf-calculateurs.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://lescalculateurs.fr/pages/blog/frais-notaire-ancien-neuf-2025.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F2164",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-01.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-02.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-03.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-04.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-05.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-06.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-07.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-08.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-09.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-10.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-11.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-12.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-13.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-14.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-15.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-16.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-17.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-18.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-19.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-21.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-22.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-23.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-24.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-25.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-26.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-27.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-28.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-29.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-2A.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-2B.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-30.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-31.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-32.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-33.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-34.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-35.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-36.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-37.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-38.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-39.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-40.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-41.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-42.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-43.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-44.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-45.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-46.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-47.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-48.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-49.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-50.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-51.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-52.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-53.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-54.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-55.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-56.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-57.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-58.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-59.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-60.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-61.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-62.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-63.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-64.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-65.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-66.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-67.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-68.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-69.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-70.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-71.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-72.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-73.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-74.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-75.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-76.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-77.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-78.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-79.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-80.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-81.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-82.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-83.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-84.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-85.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-86.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-87.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-88.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-89.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-90.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-91.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-92.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-93.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-94.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-95.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-971.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-972.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-973.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-974.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-976.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R54267",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
+    "url": "https://www.notaires.fr",
+    "status": 200,
+    "ok": true
+  }
+]

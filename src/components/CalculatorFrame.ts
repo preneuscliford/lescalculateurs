@@ -47,13 +47,14 @@ export class CalculatorFrame {
     this.containerId = containerId;
     this.config = config;
     this.render();
+    this.initFromURL();
   }
 
   private render(): void {
     this.container.innerHTML = `
       <div class="max-w-4xl mx-auto p-6">
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">${
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">🧮 ${
             this.config.title
           }</h2>
           <p class="text-gray-600 mb-6">${this.config.description}</p>
@@ -64,11 +65,11 @@ export class CalculatorFrame {
               .join("")}
             
             <button type="submit" class="calculator-button w-full">
-              Calculer
+              ▶️ Calculer
             </button>
           </form>
           
-          <div id="calculator-result" class="mt-6 hidden"></div>
+          <div id="calculator-result" class="mt-6 hidden" aria-live="polite"></div>
         </div>
       </div>
     `;
@@ -227,6 +228,19 @@ export class CalculatorFrame {
           (window as any).dernierCalculNotaire
         );
       }
+
+      // Sauvegarder l'historique local
+      this.saveHistory(this.values, result);
+
+      // Mettre à jour l'URL pour partage
+      this.updateURL(this.values);
+
+      // Analytics
+      const dataLayer = (window as any).dataLayer || [];
+      dataLayer.push({
+        event: "calculator_submit",
+        calculator: this.config.title,
+      });
     } catch (error) {
       this.showResult(resultDiv, {
         success: false,
@@ -250,7 +264,7 @@ export class CalculatorFrame {
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
-            Exporter en CSV
+            📄 Exporter en CSV
           </button>
         </div>
       `
@@ -339,5 +353,54 @@ export class CalculatorFrame {
         }
       }
     });
+  }
+  /**
+   * Initialise les valeurs depuis la query-string.
+   */
+  private initFromURL(): void {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.size === 0) return;
+      const form = this.container.querySelector("#calculator-form") as HTMLFormElement;
+      if (!form) return;
+      params.forEach((value, key) => {
+        const input = form.querySelector(`#${CSS.escape(key)}`) as HTMLInputElement;
+        if (!input) return;
+        if (input.type === "checkbox") {
+          input.checked = value === "true";
+        } else {
+          input.value = value;
+        }
+        this.updateValue(key, input);
+      });
+    } catch (_) {}
+  }
+
+  /**
+   * Met à jour l'URL avec les valeurs du formulaire (partage/deep link).
+   */
+  private updateURL(values: Record<string, any>): void {
+    try {
+      const params = new URLSearchParams();
+      Object.entries(values).forEach(([k, v]) => {
+        if (v === undefined || v === null || v === "") return;
+        params.set(k, String(v));
+      });
+      const url = `${window.location.pathname}?${params.toString()}`;
+      window.history.replaceState({}, document.title, url);
+    } catch (_) {}
+  }
+
+  /**
+   * Sauvegarde le dernier calcul dans localStorage (limité aux 10 derniers).
+   */
+  private saveHistory(values: Record<string, any>, result: CalculatorResult): void {
+    try {
+      const key = `calculator_history_${this.containerId}`;
+      const prev: any[] = JSON.parse(localStorage.getItem(key) || "[]");
+      const entry = { ts: Date.now(), values: { ...values }, result };
+      const next = [entry, ...prev].slice(0, 10);
+      localStorage.setItem(key, JSON.stringify(next));
+    } catch (_) {}
   }
 }

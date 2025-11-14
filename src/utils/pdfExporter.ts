@@ -3,7 +3,7 @@
  * Génération de PDF côté client avec watermark
  */
 
-import jsPDF from "jspdf";
+// jsPDF est chargé dynamiquement via une factory
 
 export interface PDFExportData {
   title: string;
@@ -16,15 +16,15 @@ export interface PDFExportData {
 }
 
 export class PDFExporter {
-  private pdf: jsPDF;
+  private pdf: any;
   private currentY: number = 20;
   private pageWidth: number;
   private pageHeight: number;
   private leftMargin: number = 20;
   private rightMargin: number = 20;
 
-  constructor() {
-    this.pdf = new jsPDF("p", "mm", "a4");
+  constructor(pdfLib: any) {
+    this.pdf = new pdfLib("p", "mm", "a4");
     this.pageWidth = this.pdf.internal.pageSize.getWidth();
     this.pageHeight = this.pdf.internal.pageSize.getHeight();
   }
@@ -323,6 +323,15 @@ export class PDFExporter {
 export async function exportCalculationToPDF(
   data: PDFExportData
 ): Promise<void> {
-  const exporter = new PDFExporter();
+  const { default: jsPDF } = await import("jspdf");
+  const exporter = new PDFExporter(jsPDF);
   await exporter.exportToPDF(data);
+}
+
+/**
+ * Crée un exporteur PDF en chargeant jsPDF à la demande
+ */
+export async function createPDFExporter(): Promise<PDFExporter> {
+  const { default: jsPDF } = await import("jspdf");
+  return new PDFExporter(jsPDF);
 }

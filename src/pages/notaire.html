@@ -181,7 +181,7 @@
           <!-- Title & Status -->
           <div class="flex items-center space-x-3">
             <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-              Frais de Notaire 2025
+              🧾 Frais de Notaire 2025
             </h1>
             <span
               class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
@@ -364,7 +364,7 @@
       <!-- FAQ -->
       <section class="max-w-4xl mx-auto mt-12">
         <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Questions fréquentes sur les frais de notaire
+          ❓ Questions fréquentes sur les frais de notaire
         </h2>
 
         <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
@@ -635,6 +635,26 @@
       </section>
     </main>
 
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+      <div class="mt-12 bg-gray-100 rounded-lg p-6">
+        <h3 class="font-bold text-gray-900 mb-3">📚 Sources et références officielles</h3>
+        <ul class="text-sm text-gray-700 space-y-2">
+          <li>
+            • Frais de notaire (définition et barème):
+            <a href="https://www.service-public.fr/particuliers/vosdroits/F17701" target="_blank" rel="noopener" class="text-blue-600 hover:underline">service-public.fr</a>
+          </li>
+          <li>
+            • Simulateur frais de notaire:
+            <a href="https://www.service-public.fr/particuliers/vosdroits/R54267" target="_blank" rel="noopener" class="text-blue-600 hover:underline">service-public.fr (simulateur)</a>
+          </li>
+          <li>
+            • Émoluments et pratiques notariales:
+            <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Conseil supérieur du notariat</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <footer class="bg-gray-800 text-white py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-gray-300">
@@ -739,6 +759,11 @@
             ],
           },
           {
+            id: "remise_notaire_var",
+            label: "Appliquer remise notariale sur la partie variable (-10%)",
+            type: "checkbox",
+          },
+          {
             id: "prets_aides",
             label: "Montant des prêts PTZ, PEL, CEL et prêts aidés (optionnel)",
             type: "number",
@@ -766,6 +791,7 @@
             const typeEmprunt = values.type_emprunt || "sans";
             const pretsAides = values.prets_aides || 0;
             const autresPrets = values.autres_prets || 0;
+            const remiseVar = values.remise_notaire_var === true;
 
             // Prix net à considérer (hors mobilier)
             const prixNetImmobilier = prixAchat - montantMobilier;
@@ -781,6 +807,11 @@
               const montantTranche = Math.min(reste, tranche.max - tranche.min);
               emoluments += montantTranche * tranche.taux;
               reste -= montantTranche;
+            }
+
+            // Remise notariale sur la partie variable si activée
+            if (remiseVar) {
+              emoluments = emoluments * 0.9;
             }
 
             // Récupérer les données spécifiques du département
@@ -854,6 +885,7 @@
                 departement,
                 typeEmprunt,
                 montantTotalPrets,
+                remiseVar,
               },
             };
           } catch (error) {
@@ -920,6 +952,11 @@
                     ? `<div><span class="font-medium">Montant total des prêts :</span> ${formatCurrency(
                         data.montantTotalPrets
                       )}</div>`
+                    : ""
+                }
+                ${
+                  data.remiseVar
+                    ? `<div><span class="font-medium">Remise notariale appliquée :</span> Oui (-10% sur la partie variable)</div>`
                     : ""
                 }
               </div>
@@ -1003,6 +1040,16 @@
                 <strong>Bon à savoir :</strong> Les droits d'enregistrement peuvent varier selon votre localisation. 
                 Contactez votre notaire pour une estimation précise.
               </p>
+            </div>
+
+            <!-- Bouton de partage du calcul -->
+            <div class="mt-4 flex justify-center">
+              <button
+                type="button"
+                class="bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 px-4 py-2"
+                onclick="navigator.clipboard.writeText(window.location.href)"
+                title="Copier le lien du calcul"
+              >Partager ce calcul</button>
             </div>
 
             <!-- Bouton Ajouter à la comparaison -->
@@ -1129,6 +1176,43 @@
 
       // Initialisation du calculateur
       new CalculatorFrame("notaire-calculator", notaireConfig);
+    </script>
+
+    <!-- HowTo JSON-LD: Calculer vos frais de notaire -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Calculer vos frais de notaire",
+      "description": "Procédure pas à pas pour estimer les frais de notaire selon le type de bien et le département.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Choisir le type de bien",
+          "text": "Sélectionnez ancien, neuf ou terrain selon votre projet."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Indiquer le département",
+          "text": "Renseignez le département où se situe le bien."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Saisir le prix d'acquisition",
+          "text": "Entrez le prix du bien. Ajoutez le mobilier si applicable pour le déduire."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Préciser l'emprunt",
+          "text": "Indiquez le type d'emprunt et les montants; choisissez si une garantie hypothécaire s'applique."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Calculer",
+          "text": "Cliquez sur Calculer pour obtenir le détail: émoluments, droits, débours, TVA et total."
+        }
+      ]
+    }
     </script>
 
     <!-- Gestion de la comparaison multi-villes -->

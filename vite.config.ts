@@ -37,7 +37,9 @@ export default defineConfig({
       },
       output: {
         manualChunks: {
-          vendor: ["jspdf", "html2canvas"],
+          "chunk-jspdf": ["jspdf"],
+          "chunk-html2canvas": ["html2canvas"],
+          "chunk-chart": ["chart.js"],
         },
       },
     },

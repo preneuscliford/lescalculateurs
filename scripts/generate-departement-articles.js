@@ -10,6 +10,55 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ * Résout les balises d'assets à injecter selon l'environnement.
+ * - En développement: injecte le module `main.ts` (Vite charge Tailwind CSS).
+ * - En production: lit `dist/manifest.json` pour insérer les fichiers hashés JS/CSS.
+ */
+const resolveAssetsForEnv = () => {
+  try {
+    const manifestPath = path.resolve(__dirname, "../dist/manifest.json");
+    if (fs.existsSync(manifestPath)) {
+      const manifestRaw = fs.readFileSync(manifestPath, "utf-8");
+      const manifest = JSON.parse(manifestRaw);
+      const mainEntry = manifest["src/main.ts"] || Object.values(manifest).find((m) => m && m.isEntry && Array.isArray(m.css));
+      if (mainEntry && mainEntry.file) {
+        const jsHref = `/assets/${mainEntry.file.replace(/^assets\//, "")}`;
+        const cssHref = (mainEntry.css && mainEntry.css[0]) ? `/assets/${mainEntry.css[0].replace(/^assets\//, "")}` : "";
+        const cssTag = cssHref ? `<link rel=\"stylesheet\" crossorigin href=\"${cssHref}\">` : "";
+        return `<script type=\"module\" crossorigin src=\"${jsHref}\"></script>${cssTag}`;
+      }
+    }
+  } catch (_) {
+    // Fallback dev
+  }
+  return `<script type=\"module\" src=\"../../../main.ts\"></script>`;
+};
+
+/**
+ * Formate une date JS en français (ex: "14 novembre 2025").
+ */
+const formatDateFR = (date) => {
+  const mois = [
+    "janvier",
+    "février",
+    "mars",
+    "avril",
+    "mai",
+    "juin",
+    "juillet",
+    "août",
+    "septembre",
+    "octobre",
+    "novembre",
+    "décembre",
+  ];
+  const jour = date.getDate();
+  const moisNom = mois[date.getMonth()];
+  const annee = date.getFullYear();
+  return `${jour} ${moisNom} ${annee}`;
+};
+
 // Liste complète des départements français (101)
 const departements = [
   {
@@ -1066,6 +1115,9 @@ const getCalculTitleVariant = (index, depNom, ville) => {
 
 // Template HTML pour chaque article
 function generateArticleHTML(dep, index) {
+  const now = new Date();
+  const dateModifiedISO = now.toISOString();
+  const dateModifiedFR = formatDateFR(now);
   // Calculs personnalisés selon le prix/m² du département
   const prixExemple =
     dep.prixM2 < 1500 ? 180000 : dep.prixM2 < 3000 ? 250000 : 350000;
@@ -1118,12 +1170,26 @@ function generateArticleHTML(dep, index) {
     ? `<li>• <strong>Étude ${dep.ville2}</strong> : Me Bernard, notaire</li>`
     : "";
 
+  // Voir aussi: liens vers départements de la même région, avec fallback Outre-mer
+  const omCodes = ["971", "972", "973", "974", "976"];
+  let relatedDeps = departements.filter((d) => d.region === dep.region && d.code !== dep.code);
+  if (relatedDeps.length === 0 && omCodes.includes(dep.code)) {
+    relatedDeps = departements.filter((d) => omCodes.includes(d.code) && d.code !== dep.code);
+  }
+  relatedDeps = relatedDeps.slice(0, 4);
+  const voirAussiLinks = relatedDeps
+    .map(
+      (d) =>
+        `<a href="/pages/blog/departements/frais-notaire-${d.code}.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">${d.nom} (${d.code})</a>`
+    )
+    .join("");
+
   return `<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frais de notaire 2025 ${dep.nom} (${
+    <title>🧾 Frais de notaire 2025 ${dep.nom} (${
     dep.code
   }) - Simulateur gratuit</title>
     <meta
@@ -1148,14 +1214,14 @@ function generateArticleHTML(dep, index) {
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
     <!-- SEO & Social -->
-    <link rel="canonical" href="https://lescalculateurs.fr/pages/blog/frais-notaire-${
+    <link rel="canonical" href="https://lescalculateurs.fr/pages/blog/departements/frais-notaire-${
       dep.code
     }.html" />
-    <meta property="og:url" content="https://lescalculateurs.fr/pages/blog/frais-notaire-${
+    <meta property="og:url" content="https://lescalculateurs.fr/pages/blog/departements/frais-notaire-${
       dep.code
     }.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Frais de notaire 2025 ${dep.nom} (${
+    <meta property="og:title" content="🧾 Frais de notaire 2025 ${dep.nom} (${
     dep.code
   })" />
     <meta property="og:description" content="Guide complet et simulateur gratuit pour le ${
@@ -1186,7 +1252,7 @@ function generateArticleHTML(dep, index) {
         .replace("dans ", "")
         .replace("en ", "en ")}${dep.nom === "Paris" ? "" : " ("}${dep.nom}",
       "datePublished": "2025-10-06T10:00:00Z",
-      "dateModified": "2025-10-06T10:00:00Z",
+      "dateModified": "${dateModifiedISO}",
       "author": {
         "@type": "Organization",
         "name": "LesCalculateurs.fr"
@@ -1199,6 +1265,22 @@ function generateArticleHTML(dep, index) {
           "url": "https://lescalculateurs.fr/assets/favicon-32x32.png"
         }
       }
+    }
+    </script>
+    <!-- HowTo JSON-LD: Calculer vos frais de notaire -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Calculer vos frais de notaire ${dep.nom}",
+      "description": "Étapes pour estimer les frais de notaire dans ${dep.nom}.",
+      "step": [
+        {"@type": "HowToStep", "name": "Choisir le type de bien", "text": "Sélectionnez ancien, neuf ou terrain."},
+        {"@type": "HowToStep", "name": "Indiquer le département", "text": "Département pré-rempli: ${dep.code}."},
+        {"@type": "HowToStep", "name": "Saisir le prix", "text": "Entrez le prix d'achat; déduisez le mobilier si présent."},
+        {"@type": "HowToStep", "name": "Préciser l'emprunt", "text": "Indiquez le type et les montants."},
+        {"@type": "HowToStep", "name": "Calculer", "text": "Obtenez le détail complet des frais."}
+      ]
     }
     </script>
 
@@ -1224,9 +1306,51 @@ function generateArticleHTML(dep, index) {
           "@type": "ListItem",
           "position": 3,
           "name": "Frais notaire ${dep.nom}",
-          "item": "https://lescalculateurs.fr/pages/blog/frais-notaire-${
+          "item": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-${
             dep.code
           }.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quel est le montant des frais de notaire ${getPreposition(dep.nom, dep.code)} ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En 2025, les frais de notaire représentent généralement entre 4% (neuf) et 6,6% (ancien) du prix d'achat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment calculer les frais de notaire ${dep.code} ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Additionnez droits d'enregistrement, émoluments et débours. Notre tableau et l'exemple chifré détaillent le calcul pour un achat type, et le simulateur permet une estimation précise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Frais de notaire ${dep.nom} 2025 : neuf ou ancien ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le neuf (VEFA) implique environ 4% de frais, contre ≈ 6,6% dans l'ancien. L'écart peut représenter plusieurs milliers d'euros d'économie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Où trouver un notaire à ${dep.ville1} ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consultez l'annuaire officiel sur notaires.fr et contactez les études locales listées dans l'article."
+          }
         }
       ]
     }
@@ -1251,9 +1375,8 @@ function generateArticleHTML(dep, index) {
       gtag('config', 'G-2HNTGCYQ1X');
     </script>
 
-    <!-- Tailwind CSS -->
-    <script type="module" crossorigin src="/assets/main-DP7j8gsF.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CnJud6It.css">
+    <!-- Assets (dev/prod) -->
+    ${resolveAssetsForEnv()}
   </head>
   <body class="bg-gray-50">
     <!-- Google Tag Manager (noscript) -->
@@ -1594,14 +1717,145 @@ function generateArticleHTML(dep, index) {
           <p class="text-xs text-blue-200 mt-4">✓ Calcul instantané  ✓ 100% gratuit  ✓ Export PDF disponible</p>
         </div>
 
+        <!-- FAQ Section -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions fréquentes</h2>
+        <div class="space-y-4 mb-12">
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Quel est le montant des frais de notaire ${getPreposition(dep.nom, dep.code)} ?</summary>
+            <p class="mt-2 text-gray-700">Entre <strong>4%</strong> (neuf) et <strong>6,6%</strong> (ancien) du prix d'achat, avec un exemple détaillé plus haut.</p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Comment calculer les frais de notaire ${dep.code} ?</summary>
+            <p class="mt-2 text-gray-700">Addition des droits, émoluments et débours. Utilisez le <a href="/pages/notaire.html" class="text-blue-600 hover:underline">simulateur gratuit</a> pour un calcul précis.</p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Frais de notaire ${dep.nom} 2025 : neuf ou ancien ?</summary>
+            <p class="mt-2 text-gray-700">Le <strong>neuf</strong> ≈ 4% et l'<strong>ancien</strong> ≈ 6,6%. L'écart peut représenter des milliers d'euros d'économie.</p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Où trouver un notaire à ${dep.ville1} ?</summary>
+            <p class="mt-2 text-gray-700">Consultez <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">notaires.fr</a> et les études listées dans cet article.</p>
+          </details>
+        </div>
+
+        <!-- Liens vers départements proches -->
+        <div class="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">🔎 Voir aussi</h3>
+          <p class="text-sm text-gray-700 mb-3">Autres guides dans ${dep.region} :</p>
+          <div class="flex flex-wrap gap-3">${voirAussiLinks}</div>
+        </div>
+
+        <!-- Mini-calculateur intégré (chargement à la demande) -->
+        <div class="mt-8">
+          <button id="btn-inline-calculator" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:from-blue-700 hover:to-indigo-700">
+            🧮 Calculer vos frais ici
+          </button>
+          <div id="inline-notaire-calculator" class="mt-4"></div>
+        </div>
+
+        <script type="module">
+          const btn = document.getElementById("btn-inline-calculator");
+          btn?.addEventListener("click", async () => {
+            btn.setAttribute("disabled", "true");
+            btn.textContent = "Chargement...";
+            try {
+              const [cfMod, mainMod, dataMod] = await Promise.all([
+                import("../../../components/CalculatorFrame.ts"),
+                import("../../../main.ts"),
+                import("../../../data/baremes.ts"),
+              ]);
+
+              const CalculatorFrame = cfMod.CalculatorFrame || cfMod.C || cfMod.default;
+              const formatCurrency = mainMod.formatCurrency || mainMod.f || ((amount) => new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(amount));
+              const baremes = dataMod.baremes || dataMod.b || dataMod.default;
+
+              const containerId = "inline-notaire-calculator";
+              const config = {
+                title: "Calcul rapide des frais de notaire",
+                description: "Version simplifiée avec département pré-rempli.",
+                fields: [
+                { id: "type_bien", label: "Type de bien *", type: "select", required: true, options: [
+                  { value: "ancien", label: "Ancien" },
+                  { value: "neuf", label: "Neuf" },
+                  { value: "terrain", label: "Terrain" },
+                ]},
+                { id: "departement", label: "Département *", type: "select", required: true, options: [
+                  { value: "${dep.code}", label: "${dep.code} - ${dep.nom}" }
+                ]},
+                { id: "prix_achat", label: "Prix d'acquisition *", type: "number", required: true, placeholder: "250000", min: 1000, step: 1000 },
+                { id: "montant_mobilier", label: "Mobilier (optionnel)", type: "number", placeholder: "0", min: 0, step: 500 },
+              ],
+              calculate: (values) => {
+                try {
+                  if (!baremes || !baremes.notaire || !Array.isArray(baremes.notaire.tranches)) {
+                    throw new Error("Barèmes indisponibles");
+                  }
+                  const prixAchat = Number(values.prix_achat);
+                  const montantMobilier = Number(values.montant_mobilier) || 0;
+                  if (!isFinite(prixAchat) || prixAchat <= 0) {
+                    return { success: false, error: "Veuillez saisir un prix d'acquisition valide." };
+                  }
+                  if (montantMobilier < 0 || montantMobilier > prixAchat) {
+                    return { success: false, error: "Le mobilier doit être entre 0 et le prix d'acquisition." };
+                  }
+                  const prixNetImmobilier = prixAchat - montantMobilier;
+                  let emoluments = 0;
+                  for (const tranche of baremes.notaire.tranches) {
+                    const largeur = Math.max(tranche.max - tranche.min, 0);
+                    const applicable = Math.min(Math.max(prixNetImmobilier - tranche.min, 0), largeur);
+                    if (applicable <= 0) continue;
+                    emoluments += applicable * tranche.taux;
+                  }
+                  const td = 0.058;
+                  const droitsEnregistrement = values.type_bien === "neuf" ? 0 : prixNetImmobilier * td;
+                  const fraisDivers = 300;
+                  const tvaRate = Number(baremes.notaire.tva) || 0.2;
+                  const tva = (emoluments + fraisDivers) * tvaRate;
+                  const total = emoluments + fraisDivers + droitsEnregistrement + tva;
+                  const pourcentage = (total / prixAchat) * 100;
+                  console.log("Mini-calculateur notaire:", { prixAchat, montantMobilier, prixNetImmobilier, emoluments, td, droitsEnregistrement, fraisDivers, tva, total, pourcentage });
+                  if (!isFinite(total) || !isFinite(pourcentage)) {
+                    return { success: false, error: "Des données invalides ont été saisies." };
+                  }
+                  return { success: true, data: { prixAchat, prixNetImmobilier, emoluments, droitsEnregistrement, fraisDivers, tva, total, pourcentage, typeBien: values.type_bien, departement: values.departement, montantMobilier } };
+                } catch (e) {
+                  console.error("Calcul notaire - erreur:", e);
+                  return { success: false, error: "Erreur lors du calcul." };
+                }
+              },
+              formatResult: (result) => {
+                const d = result.data;
+                return '<div class="space-y-3">'
+                  + '<div class="flex justify-between"><span>Total frais de notaire :</span><span class="font-bold text-green-600">' + formatCurrency(d.total) + '</span></div>'
+                  + '<div class="text-sm text-gray-600">' + d.pourcentage.toFixed(2) + '% du prix</div>'
+                  + '</div>';
+              },
+              };
+              new CalculatorFrame(containerId, config);
+              btn.textContent = "Calculer vos frais ici";
+              btn.removeAttribute("disabled");
+            } catch (err) {
+              console.error("Erreur de chargement du mini-calculateur:", err);
+              btn.textContent = "Réessayer";
+              btn.removeAttribute("disabled");
+            }
+          });
+        </script>
+
         <!-- Références -->
         <div class="mt-12 bg-gray-100 rounded-lg p-6">
           <h3 class="font-bold text-gray-900 mb-3">📚 Sources et références officielles</h3>
           <ul class="text-sm text-gray-700 space-y-2">
             <li>
-              • Barèmes 2025 : 
-              <a href="https://www.service-public.fr/particuliers/vosdroits/F2377" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+              • Frais de notaire (définition et barème) :
+              <a href="https://www.service-public.fr/particuliers/vosdroits/F17701" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
                 service-public.fr
+              </a>
+            </li>
+            <li>
+              • Simulateur frais de notaire :
+              <a href="https://www.service-public.fr/particuliers/vosdroits/R54267" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+                service-public.fr (simulateur)
               </a>
             </li>
             <li>
@@ -1633,7 +1887,7 @@ function generateArticleHTML(dep, index) {
             <span>Retour au blog</span>
           </a>
           <div class="text-sm text-gray-500">
-            Article mis à jour le 6 octobre 2025
+            Article mis à jour le ${dateModifiedFR}
           </div>
         </div>
       </footer>

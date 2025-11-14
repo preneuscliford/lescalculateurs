@@ -3,13 +3,13 @@
  * Fonctionne en dev ET en prod (Vercel)
  */
 
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
-
-console.log("🟢 pdfExport.js CHARGÉ (version statique)");
+console.log("🟢 pdfExport.js CHARGÉ (version lazy)");
 
 /**
  * Exporte les résultats du calculateur en PDF
+ */
+/**
+ * Exporte les résultats du calculateur en PDF avec chargement lazy des dépendances
  */
 async function exportCalculatorToPDF(calculatorName, data, notes = []) {
   try {
@@ -90,9 +90,14 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
     cleanText(clonedDiv);
 
     // Capturer le clone nettoyé
+    const [{ jsPDF }, { default: html2canvas }] = await Promise.all([
+      import("jspdf"),
+      import("html2canvas"),
+    ]);
+
     const canvas = await html2canvas(clonedDiv, {
       useCORS: true,
-      scale: 2,
+      scale: Math.max(2, Math.ceil(window.devicePixelRatio || 1)),
       backgroundColor: "#ffffff",
       logging: false,
       removeContainer: true,
