@@ -355,6 +355,8 @@ function setupExportButtons(config) {
       { notes: config.notes }
     );
   }
+
+  // Les boutons CSV / XLSX sont gérés par CalculatorFrame et ajoutés ici pour éviter les doublons.
 }
 
 function collectCalculatorData(config) {

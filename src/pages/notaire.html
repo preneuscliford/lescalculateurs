@@ -278,9 +278,9 @@
             </div>
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <div class="text-3xl mb-2">📥</div>
-              <h3 class="font-bold text-gray-900 mb-1">Export CSV</h3>
+              <h3 class="font-bold text-gray-900 mb-1">Exportation CSV / XLSX</h3>
               <p class="text-sm text-gray-600">
-                Exportez vos comparaisons pour les analyser dans Excel
+                Exportez vos données en CSV (Google Sheets) ou XLSX (Excel).
               </p>
             </div>
           </div>
@@ -624,8 +624,7 @@
                     comparatif détaillé
                   </li>
                   <li>
-                    <strong>Exportez les données en CSV</strong> si besoin pour
-                    Excel
+                    <strong>Exportez vos données en CSV (Google Sheets) ou XLSX (Excel)</strong>
                   </li>
                 </ol>
               </div>
@@ -814,9 +813,18 @@
               emoluments = emoluments * 0.9;
             }
 
-            // Récupérer les données spécifiques du département
-            const deptData =
-              departements[departement] || departements["default"];
+            // Récupérer les données spécifiques du département (mapping local)
+            const idf = new Set(["75","92","93","94","78","91","95"]);
+            const corse = new Set(["2A","2B"]);
+            const tauxDroits = idf.has(departement)
+              ? 0.059
+              : corse.has(departement)
+              ? 0.045
+              : 0.058;
+            const deptData = {
+              tauxDroits,
+              fraisDivers: baremes.notaire.fraisDivers,
+            };
 
             // Frais divers spécifiques au département
             let fraisDivers =
@@ -837,7 +845,6 @@
 
             // Droits d'enregistrement selon le type de bien et département
             let droitsEnregistrement = 0;
-            let tauxDroits = deptData.tauxDroits;
 
             if (typeBien === "ancien" || typeBien === "terrain") {
               droitsEnregistrement = prixNetImmobilier * tauxDroits;
@@ -1046,10 +1053,10 @@
             <div class="mt-4 flex justify-center">
               <button
                 type="button"
-                class="bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 px-4 py-2"
-                onclick="navigator.clipboard.writeText(window.location.href)"
-                title="Copier le lien du calcul"
-              >Partager ce calcul</button>
+                id="btn-share-calc"
+                class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+                title="Copier/partager le lien du calcul"
+              >🔗 Partager ce calcul</button>
             </div>
 
             <!-- Bouton Ajouter à la comparaison -->
@@ -1172,10 +1179,140 @@
             };
           },
         },
+        exportXLSX: {
+          enabled: true,
+          filename: "frais_notaire_2025.xlsx",
+          getXLSXData: (result, values) => {
+            const d = result.data;
+            const fmt = (n) => {
+              const v = n && !isNaN(n) ? Number(n) : 0;
+              return (
+                " " +
+                v.toLocaleString("fr-FR", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })
+              );
+            };
+            const pct = (m) => {
+              const base = d.prixAchat && !isNaN(d.prixAchat) ? Number(d.prixAchat) : 0;
+              const val = m && !isNaN(m) ? Number(m) : 0;
+              const p = base > 0 ? (val / base) * 100 : 0;
+              return " " + p.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "%";
+            };
+            const deptMap = {
+              75: "75 - Paris",
+              13: "13 - Bouches-du-Rhône",
+              69: "69 - Rhône",
+              59: "59 - Nord",
+              92: "92 - Hauts-de-Seine",
+              93: "93 - Seine-Saint-Denis",
+              94: "94 - Val-de-Marne",
+              77: "77 - Seine-et-Marne",
+              78: "78 - Yvelines",
+              91: "91 - Essonne",
+              95: "95 - Val-d'Oise",
+              "06": "06 - Alpes-Maritimes",
+              31: "31 - Haute-Garonne",
+              33: "33 - Gironde",
+              44: "44 - Loire-Atlantique",
+              34: "34 - Hérault",
+              67: "67 - Bas-Rhin",
+              35: "35 - Ille-et-Vilaine",
+              38: "38 - Isère",
+              83: "83 - Var",
+              autre: "Autre département",
+            };
+            const typeBienLabel =
+              d.typeBien === "ancien"
+                ? "Bien ancien"
+                : d.typeBien === "neuf"
+                ? "Bien neuf"
+                : "Terrain";
+            const empruntLabel =
+              d.typeEmprunt === "sans"
+                ? "Sans emprunt"
+                : d.typeEmprunt === "sans_garantie"
+                ? "Sans garantie hypothécaire"
+                : "Avec garantie hypothécaire";
+            const departementLabel = deptMap[d.departement] || d.departement;
+            return {
+              headers: ["Description", "Montant (€)", "Pourcentage du prix"],
+              rows: [
+                ["--- INFORMATIONS ---", "", ""],
+                ["Type de bien", typeBienLabel, ""],
+                ["Département", departementLabel, ""],
+                ["Prix net immobilier", fmt(d.prixNetImmobilier), ""],
+                ["Type d'emprunt", empruntLabel, ""],
+                ["", "", ""],
+                ["--- CALCUL DES FRAIS ---", "", ""],
+                ["Prix d'acquisition", fmt(d.prixAchat), " 100%"],
+                ["Émoluments du notaire", fmt(d.emoluments), pct(d.emoluments)],
+                ["Droits d'enregistrement", fmt(d.droitsEnregistrement), pct(d.droitsEnregistrement)],
+                ["Frais divers (cadastre...)", fmt(d.fraisDivers), pct(d.fraisDivers)],
+                ...(d.fraisHypotheque > 0
+                  ? [["Frais d'hypothèque", fmt(d.fraisHypotheque), pct(d.fraisHypotheque)]]
+                  : []),
+                ...(d.fraisTerrain > 0
+                  ? [["Frais spécifiques terrain", fmt(d.fraisTerrain), pct(d.fraisTerrain)]]
+                  : []),
+                ["TVA (20%)", fmt(d.tva), pct(d.tva)],
+                ["", "", ""],
+                ["TOTAL FRAIS DE NOTAIRE", fmt(d.total), pct(d.total)],
+              ],
+            };
+          },
+        },
       };
 
       // Initialisation du calculateur
       new CalculatorFrame("notaire-calculator", notaireConfig);
+    </script>
+
+    <script>
+      /**
+       * Attache le partage du calcul (copie ou Web Share) sans perturber le rendu
+       */
+      (function() {
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+          var isShare = false;
+          if (target && target.id === 'btn-share-calc') {
+            isShare = true;
+          } else if (target && target.closest) {
+            var el = target.closest('#btn-share-calc');
+            isShare = !!el;
+          }
+          if (!isShare) return;
+          e.preventDefault();
+          try {
+            var link = window.location.href;
+            var dc = window.dernierCalculNotaire && window.dernierCalculNotaire.values ? window.dernierCalculNotaire.values : null;
+            if (dc) {
+              var u = new URL(window.location.pathname, window.location.origin);
+              var p = new URLSearchParams();
+              Object.keys(dc).forEach(function(k){
+                var v = dc[k];
+                if (v !== undefined && v !== null && String(v) !== '') p.set(k, String(v));
+              });
+              u.search = p.toString();
+              link = u.toString();
+            }
+            if (navigator.share) {
+              navigator.share({ title: document.title, text: 'Estimation des frais de notaire', url: link });
+            } else {
+              navigator.clipboard.writeText(link);
+              var t = document.createElement('div');
+              t.textContent = 'Lien copié !';
+              t.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-2 rounded-md shadow';
+              document.body.appendChild(t);
+              setTimeout(function(){ document.body.removeChild(t); }, 2000);
+            }
+          } catch (err) {
+            console.error('Partage erreur', err);
+          }
+        });
+      })();
     </script>
 
     <!-- HowTo JSON-LD: Calculer vos frais de notaire -->

@@ -137,41 +137,47 @@
         calculate: (values) => {
           try {
             const typeVehicule = values.type_vehicule;
-            const kilometres = values.kilometres;
+            const kilometres = Number(values.kilometres);
+
+            if (!typeVehicule) {
+              return { success: false, error: "Veuillez sélectionner le type de véhicule." };
+            }
+            if (!isFinite(kilometres) || kilometres <= 0) {
+              return { success: false, error: "Veuillez saisir un nombre de kilomètres valide." };
+            }
 
             let indemniteParKm = 0;
             let total = 0;
 
             if (typeVehicule === "voiture") {
               const puissance = values.puissance;
-              const baremePuissance = baremes.indemnites_kilometriques.voiture[
-                "2024"
-              ].find((b) => b.puissance === puissance);
-
-              if (!baremePuissance) {
-                throw new Error("Puissance non trouvée");
+              if (!puissance) {
+                return { success: false, error: "Veuillez sélectionner la puissance fiscale (CV)." };
               }
-
-              // Calcul par tranches
+              const baremePuissance = baremes.indemnites_kilometriques.voiture["2024"].find((b) => b.puissance === puissance);
+              if (!baremePuissance) {
+                return { success: false, error: "Puissance non trouvée dans le barème 2024." };
+              }
               if (kilometres <= 5000) {
                 total = kilometres * baremePuissance.jusqu_5000;
                 indemniteParKm = baremePuissance.jusqu_5000;
               } else if (kilometres <= 20000) {
-                total =
-                  5000 * baremePuissance.jusqu_5000 +
-                  (kilometres - 5000) * baremePuissance.de_5001_20000;
+                total = 5000 * baremePuissance.jusqu_5000 + (kilometres - 5000) * baremePuissance.de_5001_20000;
                 indemniteParKm = total / kilometres;
               } else {
-                total =
-                  5000 * baremePuissance.jusqu_5000 +
-                  15000 * baremePuissance.de_5001_20000 +
-                  (kilometres - 20000) * baremePuissance.au_dela_20000;
+                total = 5000 * baremePuissance.jusqu_5000 + 15000 * baremePuissance.de_5001_20000 + (kilometres - 20000) * baremePuissance.au_dela_20000;
                 indemniteParKm = total / kilometres;
               }
             } else {
               const cylindree = values.cylindree_moto;
-              indemniteParKm =
-                baremes.indemnites_kilometriques.deux_roues[cylindree];
+              if (!cylindree) {
+                return { success: false, error: "Veuillez sélectionner la cylindrée (deux-roues)." };
+              }
+              const ik = baremes.indemnites_kilometriques.deux_roues[cylindree];
+              if (!isFinite(ik)) {
+                return { success: false, error: "Cylindrée non trouvée dans le barème." };
+              }
+              indemniteParKm = ik;
               total = kilometres * indemniteParKm;
             }
 
@@ -187,10 +193,7 @@
               },
             };
           } catch (error) {
-            return {
-              success: false,
-              error: "Erreur lors du calcul. Vérifiez vos données.",
-            };
+            return { success: false, error: "Erreur lors du calcul. Vérifiez vos données." };
           }
         },
         formatResult: (result) => {

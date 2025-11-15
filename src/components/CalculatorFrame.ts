@@ -12,6 +12,14 @@ export interface CalculatorConfig {
       values: Record<string, any>
     ) => import("../utils/csvExport").CSVData;
   };
+  exportXLSX?: {
+    enabled: boolean;
+    filename?: string;
+    getXLSXData?: (
+      result: CalculatorResult,
+      values: Record<string, any>
+    ) => import("../utils/csvExport").CSVData;
+  };
 }
 
 export interface CalculatorField {
@@ -48,6 +56,7 @@ export class CalculatorFrame {
     this.config = config;
     this.render();
     this.initFromURL();
+    this.autoCalculateOnLoad();
   }
 
   private render(): void {
@@ -178,6 +187,58 @@ export class CalculatorFrame {
     });
   }
 
+  /**
+   * Lance automatiquement le calcul si toutes les valeurs requises sont présentes (URL ou préremplies)
+   */
+  private autoCalculateOnLoad(): void {
+    try {
+      const form = this.container.querySelector(
+        "#calculator-form"
+      ) as HTMLFormElement;
+      const resultDiv = this.container.querySelector(
+        "#calculator-result"
+      ) as HTMLElement;
+      if (!form || !resultDiv) return;
+
+      // Vérifier que tous les champs requis ont une valeur
+      const allRequiredFilled = this.config.fields
+        .filter((f) => f.required)
+        .every((f) => {
+          const v = this.values[f.id];
+          return v !== undefined && v !== null && String(v) !== "";
+        });
+
+    if (allRequiredFilled) {
+      // Calculer et afficher directement
+      const result = this.config.calculate(this.values);
+      this.showResult(resultDiv, result);
+      return;
+    }
+
+    // Fallback: recharger le dernier calcul depuis l'historique
+    try {
+      const key = `calculator_history_${this.containerId}`;
+      const prev: any[] = JSON.parse(localStorage.getItem(key) || "[]");
+      if (Array.isArray(prev) && prev.length > 0) {
+        const last = prev[0];
+        const vals = last.values || {};
+        Object.keys(vals).forEach((k) => {
+          const input = form.querySelector(`#${CSS.escape(k)}`) as HTMLInputElement;
+          if (!input) return;
+          if (input.type === "checkbox") {
+            (input as HTMLInputElement).checked = !!vals[k];
+          } else {
+            (input as HTMLInputElement).value = String(vals[k]);
+          }
+          this.updateValue(k, input as any);
+        });
+        const result = this.config.calculate(this.values);
+        this.showResult(resultDiv, result);
+      }
+    } catch (_) {}
+    } catch (_) {}
+  }
+
   private updateValue(fieldId: string, input: HTMLInputElement): void {
     if (input.type === "checkbox") {
       this.values[fieldId] = input.checked;
@@ -256,19 +317,10 @@ export class CalculatorFrame {
       // Déterminer si l'export CSV est activé
       const hasExportCSV =
         this.config.exportCSV && this.config.exportCSV.enabled === true;
+      const hasExportXLSX =
+        this.config.exportXLSX && this.config.exportXLSX.enabled === true;
 
-      const exportButton = hasExportCSV
-        ? `
-        <div class="mt-4 pt-4 border-t border-gray-200">
-          <button type="button" id="export-csv-btn" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 cursor-pointer">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-            📄 Exporter en CSV
-          </button>
-        </div>
-      `
-        : "";
+      const exportButtons = "";
 
       resultDiv.className = "mt-6 calculator-result";
       resultDiv.innerHTML = `
@@ -276,20 +328,65 @@ export class CalculatorFrame {
         <div class="text-gray-700">
           ${this.config.formatResult(result)}
         </div>
-        ${exportButton}
+        ${exportButtons}
       `;
 
-      // Attacher l'événement d'export CSV si activé
-      if (hasExportCSV) {
-        const exportBtn = resultDiv.querySelector(
-          "#export-csv-btn"
-        ) as HTMLButtonElement;
-        if (exportBtn) {
-          exportBtn.addEventListener("click", (e) => {
+      const external = document.getElementById("export-buttons");
+      if (external && (hasExportCSV || hasExportXLSX)) {
+        if (hasExportCSV && !document.getElementById("export-csv-btn")) {
+          const csvBtn = document.createElement("button");
+          csvBtn.id = "export-csv-btn";
+          csvBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+          csvBtn.textContent = "📄 Exporter en CSV";
+          csvBtn.addEventListener("click", (e) => {
             e.preventDefault();
             this.handleCSVExport(result);
           });
+          external.appendChild(csvBtn);
         }
+        if (hasExportXLSX && !document.getElementById("export-xlsx-btn")) {
+          const xlsxBtn = document.createElement("button");
+          xlsxBtn.id = "export-xlsx-btn";
+          xlsxBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+          xlsxBtn.textContent = "📊 Exporter en XLSX";
+          xlsxBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            this.handleXLSXExport(result);
+          });
+          external.appendChild(xlsxBtn);
+        }
+      }
+      // Si le conteneur d'export n'est pas encore créé (PDF module), attendre puis ajouter les boutons
+      if (!external && (hasExportCSV || hasExportXLSX)) {
+        const obs = new MutationObserver((muts) => {
+          const ex = document.getElementById("export-buttons");
+          if (!ex) return;
+          // Ajouter les boutons et arrêter l'observateur
+          if (hasExportCSV && !document.getElementById("export-csv-btn")) {
+            const csvBtn = document.createElement("button");
+            csvBtn.id = "export-csv-btn";
+            csvBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+            csvBtn.textContent = "📄 Exporter en CSV";
+            csvBtn.addEventListener("click", (e) => {
+              e.preventDefault();
+              this.handleCSVExport(result);
+            });
+            ex.appendChild(csvBtn);
+          }
+          if (hasExportXLSX && !document.getElementById("export-xlsx-btn")) {
+            const xlsxBtn = document.createElement("button");
+            xlsxBtn.id = "export-xlsx-btn";
+            xlsxBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+            xlsxBtn.textContent = "📊 Exporter en XLSX";
+            xlsxBtn.addEventListener("click", (e) => {
+              e.preventDefault();
+              this.handleXLSXExport(result);
+            });
+            ex.appendChild(xlsxBtn);
+          }
+          obs.disconnect();
+        });
+        obs.observe(document.body, { childList: true, subtree: true });
       }
     } else {
       resultDiv.className =
@@ -330,6 +427,38 @@ export class CalculatorFrame {
     } catch (error) {
       console.error("Erreur lors de l'export CSV:", error);
       alert("Erreur lors de l'export CSV. Veuillez réessayer.");
+    }
+  }
+
+  /**
+   * Exporte le résultat en XLSX (Excel)
+   */
+  private async handleXLSXExport(result: CalculatorResult): Promise<void> {
+    try {
+      const { exportToXLSX } = await import("../utils/csvExport");
+      let xlsxData: import("../utils/csvExport").CSVData;
+
+      if (this.config.exportXLSX?.getXLSXData) {
+        xlsxData = this.config.exportXLSX.getXLSXData(result, this.values);
+      } else if (this.config.exportCSV?.getCSVData) {
+        xlsxData = this.config.exportCSV.getCSVData(result, this.values);
+      } else {
+        xlsxData = {
+          headers: ["Champ", "Valeur"],
+          rows: [
+            ...Object.entries(this.values).map(([key, value]) => [key, value]),
+            ["Résultat", JSON.stringify(result.data)],
+          ],
+        };
+      }
+
+      const filename =
+        this.config.exportXLSX?.filename ||
+        `${this.config.title.toLowerCase().replace(/\s+/g, "_")}_resultats.xlsx`;
+      await exportToXLSX(xlsxData, filename);
+    } catch (error) {
+      console.error("Erreur lors de l'export XLSX:", error);
+      alert("Erreur lors de l'export XLSX. Veuillez réessayer.");
     }
   }
 

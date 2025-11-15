@@ -37,6 +37,7 @@ class ComparaisonNotaire {
 
   constructor(containerId: string) {
     this.containerId = containerId;
+    this.loadFromStorage();
   }
 
   /**
@@ -92,6 +93,7 @@ class ComparaisonNotaire {
 
     this.calculs.push(calcul);
     this.afficherComparaison();
+    this.saveToStorage();
   }
 
   /**
@@ -99,6 +101,7 @@ class ComparaisonNotaire {
    */
   supprimerCalcul(id: string): void {
     this.calculs = this.calculs.filter((c) => c.id !== id);
+    this.saveToStorage();
     if (this.calculs.length === 0) {
       this.masquerComparaison();
     } else {
@@ -121,12 +124,48 @@ class ComparaisonNotaire {
   }
 
   /**
+   * Persistance simple de la comparaison (localStorage)
+   */
+  private saveToStorage(): void {
+    try {
+      localStorage.setItem("comparaison_notaires", JSON.stringify(this.calculs));
+    } catch (_) {}
+  }
+
+  private loadFromStorage(): void {
+    try {
+      const raw = localStorage.getItem("comparaison_notaires");
+      if (!raw) return;
+      const list = JSON.parse(raw);
+      if (Array.isArray(list)) {
+        this.calculs = list;
+        if (this.calculs.length > 0) this.afficherComparaison();
+      }
+    } catch (_) {}
+  }
+
+  /**
    * Masque le tableau de comparaison
    */
   private masquerComparaison(): void {
     const container = document.getElementById(this.containerId);
     if (!container) return;
     container.classList.add("hidden");
+  }
+
+  /**
+   * Réinitialise complètement la comparaison (efface tout sans rechargement)
+   */
+  public reinitialiser(): void {
+    try {
+      this.calculs = [];
+      localStorage.removeItem("comparaison_notaires");
+      const container = document.getElementById(this.containerId);
+      if (container) {
+        container.innerHTML = "";
+      }
+      this.masquerComparaison();
+    } catch (_) {}
   }
 
   /**
@@ -742,15 +781,7 @@ class ComparaisonNotaire {
     } catch (_) {}
   }
 
-  /**
-   * Réinitialise toutes les comparaisons
-   */
-  reinitialiser(): void {
-    if (confirm("Êtes-vous sûr de vouloir effacer toutes les comparaisons ?")) {
-      this.calculs = [];
-      this.masquerComparaison();
-    }
-  }
+  
 
   /**
    * Obtient le nombre de calculs
