@@ -8,7 +8,8 @@
     "build": "tsc && vite build && node scripts/copy-seo-pages.js",
     "preview": "vite preview",
     "generate:blog": "node scripts/generate-departement-articles.js",
-    "indexing:publish": "node scripts/publish-indexing.js --from-sitemap"
+    "indexing:publish": "node scripts/publish-indexing.js --from-sitemap",
+    "sitemap:normalize": "node scripts/normalize-sitemap-domain.js"
   },
   "dependencies": {
     "chart.js": "^4.5.1",
