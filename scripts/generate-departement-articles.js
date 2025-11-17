@@ -1176,13 +1176,42 @@ function generateArticleHTML(dep, index) {
   if (relatedDeps.length === 0 && omCodes.includes(dep.code)) {
     relatedDeps = departements.filter((d) => omCodes.includes(d.code) && d.code !== dep.code);
   }
-  relatedDeps = relatedDeps.slice(0, 4);
+  relatedDeps = relatedDeps.slice(0, 12);
   const voirAussiLinks = relatedDeps
     .map(
       (d) =>
         `<a href="/pages/blog/departements/frais-notaire-${d.code}.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">${d.nom} (${d.code})</a>`
     )
     .join("");
+
+  /**
+   * Calcule le département précédent et suivant pour la navigation.
+   */
+  function computePrevNext() {
+    const idx = departements.findIndex((d) => d.code === dep.code);
+    const prev = idx > 0 ? departements[idx - 1] : null;
+    const next = idx < departements.length - 1 ? departements[idx + 1] : null;
+    return { prev, next };
+  }
+  const { prev, next } = computePrevNext();
+  const navPrevNext = `
+    <div class="flex items-center justify-between mt-8">
+      <div>
+        ${
+          prev
+            ? `<a href="/pages/blog/departements/frais-notaire-${prev.code}.html" class="text-blue-700 hover:underline">← ${prev.nom} (${prev.code})</a>`
+            : ""
+        }
+      </div>
+      <div>
+        ${
+          next
+            ? `<a href="/pages/blog/departements/frais-notaire-${next.code}.html" class="text-blue-700 hover:underline">${next.nom} (${next.code}) →</a>`
+            : ""
+        }
+      </div>
+    </div>`;
+  const hubLink = `<a href="/pages/blog/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les départements</a>`;
 
   return `<!DOCTYPE html>
 <html lang="fr">
@@ -1743,7 +1772,10 @@ function generateArticleHTML(dep, index) {
           <h3 class="text-xl font-bold text-gray-900 mb-3">🔎 Voir aussi</h3>
           <p class="text-sm text-gray-700 mb-3">Autres guides dans ${dep.region} :</p>
           <div class="flex flex-wrap gap-3">${voirAussiLinks}</div>
+          <div class="mt-4">${hubLink}</div>
         </div>
+
+        ${navPrevNext}
 
         <!-- Mini-calculateur intégré (chargement à la demande) -->
         <div class="mt-8">
