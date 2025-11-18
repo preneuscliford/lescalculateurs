@@ -14,6 +14,7 @@ const __dirname = path.dirname(__filename);
 // Chemins
 const sourceDir = path.resolve(__dirname, "../src/pages/blog/departements");
 const targetDir = path.resolve(__dirname, "../dist/pages/blog/departements");
+const legacyBlogDir = path.resolve(__dirname, "../dist/pages/blog");
 const assetsDir = path.resolve(__dirname, "../dist/assets");
 
 console.log("📦 Copie des pages SEO départementales...\n");
@@ -46,10 +47,14 @@ try {
   console.log(`🎨 CSS trouvé: ${cssFile}`);
   console.log(`📜 JS trouvé: ${jsFile}\n`);
 
-  // Créer le dossier de destination s'il n'existe pas
+  // Créer les dossiers de destination s'ils n'existent pas
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
     console.log("✅ Dossier créé:", targetDir);
+  }
+  if (!fs.existsSync(legacyBlogDir)) {
+    fs.mkdirSync(legacyBlogDir, { recursive: true });
+    console.log("✅ Dossier créé:", legacyBlogDir);
   }
 
   // Lire tous les fichiers du dossier source
@@ -139,9 +144,24 @@ try {
         );
       }
 
-      // Écrire le fichier modifié
+      // Écrire le fichier modifié (chemins pour /departements)
       fs.writeFileSync(targetPath, htmlContent, "utf-8");
       copiedCount++;
+
+      // Dupliquer sous /pages/blog/frais-notaire-XX.html sans redirection
+      try {
+        let legacyContent = htmlContent
+          .replace(/\.\.\/\.\.\/\.\.\/assets\//g, "../../assets/")
+          .replace(new RegExp(`href=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.css\"`, "g"), `href=\"../../assets/${cssFile}\"`)
+          .replace(new RegExp(`src=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.js\"`, "g"), `src=\"../../assets/${jsFile}\"`)
+          .replace(new RegExp(`<link rel=\"stylesheet\" crossorigin href=\"\.\.\/\.\.\/\.\.\/assets\/[^\"]+\\.css\">`, "g"), `<link rel=\"stylesheet\" crossorigin href=\"../../assets/${cssFile}\">`);
+
+        const legacyPath = path.join(legacyBlogDir, file);
+        fs.writeFileSync(legacyPath, legacyContent, "utf-8");
+        console.log(`   ↳ Dupliqué: ${legacyPath}`);
+      } catch (e) {
+        console.warn(`⚠️ Duplication legacy échouée pour ${file}: ${e.message}`);
+      }
 
       // Afficher un message tous les 20 fichiers
       if (copiedCount % 20 === 0) {

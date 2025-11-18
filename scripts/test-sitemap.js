@@ -63,7 +63,15 @@ async function follow(url) {
  */
 async function main() {
   const sitemapPath = path.resolve("public", "sitemap.xml");
-  const urls = readSitemapLocs(sitemapPath);
+  let urls = readSitemapLocs(sitemapPath);
+  // Option: override domain (e.g., test www instead of apex)
+  const arg = process.argv.find((a) => a.startsWith("--override-domain="));
+  if (arg) {
+    const domain = arg.split("=")[1];
+    if (domain) {
+      urls = urls.map((u) => u.replace("https://lescalculateurs.fr", `https://${domain}`));
+    }
+  }
   console.log(`Total URLs dans sitemap: ${urls.length}`);
 
   const results = [];
