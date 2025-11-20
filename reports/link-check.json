@@ -6,6 +6,54 @@
     "ok": true
   },
   {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG?width=1200",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg?width=1200",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG?width=480",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG?width=768",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG?width=1600",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg?width=480",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg?width=768",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg?width=1600",
+    "status": 200,
+    "ok": true
+  },
+  {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\charges.html",
     "url": "https://lescalculateurs.fr/pages/charges.html",
     "status": 200,
@@ -37,9 +85,9 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\ik.html",
-    "url": "https://www.impots.gouv.fr/particulier/frais-kilometriques-bareme",
-    "status": 404,
-    "ok": false
+    "url": "https://www.impots.gouv.fr/particulier/questions/lutilisation-du-bareme-kilometrique-est-elle-obligatoire-pour-evaluer-mes",
+    "status": 200,
+    "ok": true
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\notaire.html",
@@ -79,9 +127,9 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\plusvalue.html",
-    "url": "https://www.impots.gouv.fr/particulier/plus-values-immobilieres",
-    "status": 404,
-    "ok": false
+    "url": "https://www.impots.gouv.fr/particulier/questions/je-vends-mon-bien-immobilier-vais-je-payer-de-la-plus-value-immobiliere",
+    "status": 200,
+    "ok": true
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\pret.html",
@@ -91,9 +139,9 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\pret.html",
-    "url": "https://www.banque-france.fr/statistiques/taux-dusure",
-    "status": 404,
-    "ok": false
+    "url": "https://www.banque-france.fr/fr/a-votre-service/particuliers/connaitre-pratiques-bancaires-assurance/credit/taux-usure",
+    "status": 200,
+    "ok": true
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\pret.html",
@@ -115,9 +163,9 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\taxe.html",
-    "url": "https://www.impots.gouv.fr/particulier/la-taxe-fonciere",
-    "status": 404,
-    "ok": false
+    "url": "https://www.impots.gouv.fr/questions/theme/taxe-fonciere/90",
+    "status": 200,
+    "ok": true
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\export-pdf-calculateurs.html",
@@ -150,14 +198,86 @@
     "ok": true
   },
   {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
-    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-01.html",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG?width=1200",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG?width=480",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG?width=768",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-ancien-neuf-2025.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG?width=1600",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://lescalculateurs.fr/pages/blog/frais-notaire-departements.html",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG?width=1200",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&fm=jpg&w=1200&q=75",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG?width=480",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG?width=768",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG?width=1600",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&fm=jpg&w=480&q=75",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&fm=jpg&w=768&q=75",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\frais-notaire-departements.html",
+    "url": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&fm=jpg&w=1600&q=75",
     "status": 200,
     "ok": true
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-01.html",
     "status": 200,
     "ok": true
   },
@@ -181,7 +301,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-01.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monast%C3%A8re%20royal%20de%20Brou%20(%C3%A9glise)%20(1).JPG",
     "status": 200,
     "ok": true
   },
@@ -199,12 +325,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -217,7 +337,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-02.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG",
     "status": 200,
     "ok": true
   },
@@ -235,12 +361,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -253,7 +373,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-03.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moulins-sur-allier,%20Allier,%20Notre-Dame%20de%20l%27Annonciation.JPG",
     "status": 200,
     "ok": true
   },
@@ -271,12 +397,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -289,7 +409,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-04.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Digne-les-Bains%20-%20Cath%C3%A9drale%20Saint-J%C3%A9r%C3%B4me%2001.jpg",
     "status": 200,
     "ok": true
   },
@@ -307,12 +433,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -325,9 +445,15 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
     "status": 200,
     "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-05.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20d%27Asfeld%20Brian%C3%A7on.jpg",
+    "status": 404,
+    "ok": false
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
@@ -343,12 +469,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -361,7 +481,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-06.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nice%20-%20promenade.jpg",
     "status": 200,
     "ok": true
   },
@@ -379,12 +505,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -397,7 +517,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-07.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/060806%20Vallon-Pt%20d%27Arc301.jpg",
     "status": 200,
     "ok": true
   },
@@ -415,12 +541,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -433,7 +553,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-08.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charleville-M%C3%A9zi%C3%A8res%20-%20place%20Ducale%20(02).JPG",
     "status": 200,
     "ok": true
   },
@@ -451,12 +577,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -469,7 +589,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-09.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20de%20Foix.jpg",
     "status": 200,
     "ok": true
   },
@@ -487,12 +613,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -505,7 +625,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-10.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Troyes%20houses.JPG",
     "status": 200,
     "ok": true
   },
@@ -523,12 +649,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -541,7 +661,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-11.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg",
     "status": 200,
     "ok": true
   },
@@ -559,12 +685,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -577,7 +697,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-12.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc%20de%20Millau.jpg",
     "status": 200,
     "ok": true
   },
@@ -595,12 +721,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -613,7 +733,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-13.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_port_de_Marseille.JPG",
     "status": 200,
     "ok": true
   },
@@ -631,12 +757,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -649,7 +769,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-14.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
     "status": 200,
     "ok": true
   },
@@ -667,12 +793,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -685,7 +805,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-15.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc_de_Garabit.JPG",
     "status": 200,
     "ok": true
   },
@@ -703,12 +829,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -721,7 +841,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-16.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Pierre%20d%27Angoul%C3%AAme.jpg",
     "status": 200,
     "ok": true
   },
@@ -739,12 +865,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -757,7 +877,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-17.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
     "status": 200,
     "ok": true
   },
@@ -775,12 +901,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -793,7 +913,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-18.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG",
     "status": 200,
     "ok": true
   },
@@ -811,12 +937,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -829,7 +949,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-19.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
     "status": 200,
     "ok": true
   },
@@ -847,12 +973,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -865,7 +985,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-21.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20des%20Ducs%20de%20Bourgogne4.JPG",
     "status": 200,
     "ok": true
   },
@@ -883,12 +1009,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -901,7 +1021,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-22.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PlaceParlementBretagne.jpg",
     "status": 200,
     "ok": true
   },
@@ -919,12 +1045,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -937,7 +1057,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-23.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tours%20de%20La%20Rochelle.jpg",
     "status": 200,
     "ok": true
   },
@@ -955,12 +1081,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -973,7 +1093,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-24.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
     "status": 200,
     "ok": true
   },
@@ -991,12 +1117,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1009,7 +1129,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-25.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Citadelle_de_Besan%C3%A7on_-_Poudri%C3%A8re.JPG",
     "status": 200,
     "ok": true
   },
@@ -1027,12 +1153,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1045,7 +1165,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-26.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Valence%20kiosque%20Peynet.jpg",
     "status": 200,
     "ok": true
   },
@@ -1063,12 +1189,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1081,7 +1201,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-27.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20d%27%C3%89vreux.jpg",
     "status": 200,
     "ok": true
   },
@@ -1099,12 +1225,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1117,7 +1237,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-28.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Chartres.jpg",
     "status": 200,
     "ok": true
   },
@@ -1135,12 +1261,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1153,7 +1273,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-29.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Remparts%20de%20Vannes.jpg",
     "status": 200,
     "ok": true
   },
@@ -1171,12 +1297,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1189,7 +1309,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2A.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ajaccio%20Citadelle%20et%20plage%20Saint-Fran%C3%A7ois.jpg",
     "status": 200,
     "ok": true
   },
@@ -1207,12 +1333,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1225,7 +1345,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-2B.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20the%20port%20of%20Bastia,%20Corsica,%20France%20(52723827071).jpg",
     "status": 200,
     "ok": true
   },
@@ -1243,12 +1369,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1261,7 +1381,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-30.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ar%C3%A8nes%20de%20N%C3%AEmes.jpg",
     "status": 200,
     "ok": true
   },
@@ -1279,12 +1405,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1297,7 +1417,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-31.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Capitole%20de%20Toulouse%20(France).JPG",
     "status": 200,
     "ok": true
   },
@@ -1315,12 +1441,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1333,7 +1453,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-32.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Com%C3%A9die%20Montpellier.jpg",
     "status": 200,
     "ok": true
   },
@@ -1351,12 +1477,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1369,7 +1489,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-33.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
     "status": 200,
     "ok": true
   },
@@ -1387,12 +1513,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1405,7 +1525,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-34.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Com%C3%A9die%20Montpellier.jpg",
     "status": 200,
     "ok": true
   },
@@ -1423,12 +1549,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1441,7 +1561,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-35.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PlaceParlementBretagne.jpg",
     "status": 200,
     "ok": true
   },
@@ -1459,12 +1585,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1477,7 +1597,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-36.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG",
     "status": 200,
     "ok": true
   },
@@ -1495,12 +1621,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1513,7 +1633,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-37.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Chartres.jpg",
     "status": 200,
     "ok": true
   },
@@ -1531,12 +1657,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1549,7 +1669,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-38.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_la_Bastille_-_Grenoble.JPG",
     "status": 200,
     "ok": true
   },
@@ -1567,12 +1693,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1585,7 +1705,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-39.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saline%20royale%20d%27Arc-et-Senans.jpg",
     "status": 200,
     "ok": true
   },
@@ -1603,12 +1729,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1621,7 +1741,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-40.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ar%C3%A8nes%20de%20Dax.jpg",
     "status": 200,
     "ok": true
   },
@@ -1639,12 +1765,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1657,7 +1777,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-41.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Chartres.jpg",
     "status": 200,
     "ok": true
   },
@@ -1675,12 +1801,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1693,7 +1813,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-42.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20%C3%89tienne-Place%20de%20l%27H%C3%B4tel%20de%20Ville-Le%20Grand%20Cercle-PA00117601.jpg",
     "status": 200,
     "ok": true
   },
@@ -1711,12 +1837,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1729,7 +1849,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-43.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Puy-en-Velay%20Cath%C3%A9drale11.JPG",
     "status": 200,
     "ok": true
   },
@@ -1747,12 +1873,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1765,7 +1885,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-44.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_des_ducs_de_Bretagne_(Nantes)_-_2014_-_02.JPG",
     "status": 200,
     "ok": true
   },
@@ -1783,12 +1909,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1801,7 +1921,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-45.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG",
     "status": 200,
     "ok": true
   },
@@ -1819,12 +1945,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1837,7 +1957,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-46.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20Valentr%C3%A9%20Cahors.jpg",
     "status": 200,
     "ok": true
   },
@@ -1855,12 +1981,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1873,7 +1993,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-47.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tours%20de%20La%20Rochelle.jpg",
     "status": 200,
     "ok": true
   },
@@ -1891,12 +2017,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1909,7 +2029,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-48.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Capitole%20de%20Toulouse%20(France).JPG",
     "status": 200,
     "ok": true
   },
@@ -1927,12 +2053,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1945,7 +2065,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-49.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_d%27Angers-2015b.JPG",
     "status": 200,
     "ok": true
   },
@@ -1963,12 +2089,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -1981,7 +2101,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-50.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Port%20de%20Cherbourg.jpg",
     "status": 200,
     "ok": true
   },
@@ -1999,12 +2125,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2017,7 +2137,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-51.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Reims.jpg",
     "status": 200,
     "ok": true
   },
@@ -2035,12 +2161,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2053,7 +2173,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-52.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc%20de%20Chaumont.jpg",
     "status": 200,
     "ok": true
   },
@@ -2071,12 +2197,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2089,7 +2209,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-53.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20Vieux%20Laval%202.JPG",
     "status": 200,
     "ok": true
   },
@@ -2107,12 +2233,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2125,7 +2245,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-54.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Stanislas%20Nancy.jpg",
     "status": 200,
     "ok": true
   },
@@ -2143,12 +2269,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2161,7 +2281,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-55.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bar-le-Duc-Pr%C3%A9fecture.JPG",
     "status": 200,
     "ok": true
   },
@@ -2179,12 +2305,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2197,7 +2317,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-56.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Remparts%20de%20Vannes.jpg",
     "status": 200,
     "ok": true
   },
@@ -2215,12 +2341,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2233,7 +2353,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-57.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20de%20Metz.jpg",
     "status": 200,
     "ok": true
   },
@@ -2251,12 +2377,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2269,7 +2389,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-58.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nevers%20Cath%C3%A9drale%20St.%20Cyr%20%26%20Ste.%20Julitte%20Ostchor%2001.jpg",
     "status": 200,
     "ok": true
   },
@@ -2287,12 +2413,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2305,7 +2425,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-59.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grande%20Place,%20Bourse%20du%20travail%20et%20beffroi%20Lille%202.JPG",
     "status": 200,
     "ok": true
   },
@@ -2323,12 +2449,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2341,7 +2461,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-60.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Pierre%20de%20Beauvais.jpg",
     "status": 200,
     "ok": true
   },
@@ -2359,12 +2485,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2377,7 +2497,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-61.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique%20Notre-Dame%20d%27Alen%C3%A7on-16juin2010-07.jpg",
     "status": 200,
     "ok": true
   },
@@ -2395,12 +2521,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2413,7 +2533,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-62.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beffroi%20de%20Calais.jpg",
     "status": 200,
     "ok": true
   },
@@ -2431,12 +2557,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2449,7 +2569,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-63.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-l%27Assomption%20de%20Clermont-Ferrand.jpg",
     "status": 200,
     "ok": true
   },
@@ -2467,12 +2593,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2485,7 +2605,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-64.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Marie%20de%20Bayonne.jpg",
     "status": 200,
     "ok": true
   },
@@ -2503,12 +2629,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2521,7 +2641,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-65.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sanctuaire%20Notre-Dame%20de%20Lourdes.jpg",
     "status": 200,
     "ok": true
   },
@@ -2539,12 +2665,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2557,7 +2677,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-66.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Castillet%20Perpignan.jpg",
     "status": 200,
     "ok": true
   },
@@ -2575,12 +2701,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2593,7 +2713,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-67.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedrale_Notre-Dame-de-Strasbourg.jpg",
     "status": 200,
     "ok": true
   },
@@ -2611,12 +2737,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2629,7 +2749,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-68.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colmar%20(Haut-Rhin)%20-%20Petite%20Venise%20-%2051061986041.jpg",
     "status": 200,
     "ok": true
   },
@@ -2647,12 +2773,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2665,7 +2785,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-69.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG",
     "status": 200,
     "ok": true
   },
@@ -2683,12 +2809,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2701,7 +2821,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-70.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Notre_Dame_la_Motte_Vesoul_014.JPG",
     "status": 200,
     "ok": true
   },
@@ -2719,12 +2845,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2737,7 +2857,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-71.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Lazare%20d%27Autun.jpg",
     "status": 200,
     "ok": true
   },
@@ -2755,12 +2881,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2773,7 +2893,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-72.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20du%20Mans.jpg",
     "status": 200,
     "ok": true
   },
@@ -2791,12 +2917,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2809,7 +2929,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-73.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-l%27Assomption%20de%20Clermont-Ferrand.jpg",
     "status": 200,
     "ok": true
   },
@@ -2827,12 +2953,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2845,7 +2965,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-74.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG",
     "status": 200,
     "ok": true
   },
@@ -2863,12 +2989,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2881,7 +3001,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-75.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg",
     "status": 200,
     "ok": true
   },
@@ -2899,12 +3025,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2917,7 +3037,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-76.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rouen_Cathedral,_West_Facade.JPG",
     "status": 200,
     "ok": true
   },
@@ -2935,12 +3061,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2953,7 +3073,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-77.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/0_Provins_-_Tour_C%C3%A9sar_(4).JPG",
     "status": 200,
     "ok": true
   },
@@ -2971,12 +3097,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -2989,7 +3109,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-78.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Front%20of%20the%20Ch%C3%A2teau%20de%20Versailles.jpg",
     "status": 200,
     "ok": true
   },
@@ -3007,12 +3133,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3025,7 +3145,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-79.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
     "status": 200,
     "ok": true
   },
@@ -3043,12 +3169,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3061,7 +3181,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-80.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20d%27Amiens.jpg",
     "status": 200,
     "ok": true
   },
@@ -3079,12 +3205,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3097,7 +3217,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-81.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-C%C3%A9cile%20d%27Albi.jpg",
     "status": 200,
     "ok": true
   },
@@ -3115,12 +3241,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3133,7 +3253,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-82.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg",
     "status": 200,
     "ok": true
   },
@@ -3151,12 +3277,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3169,7 +3289,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-83.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gare%20de%20Toulon.JPG",
     "status": 200,
     "ok": true
   },
@@ -3187,12 +3313,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3205,7 +3325,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-84.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20(84)%20Pont%20Saint-B%C3%A9nezet%2001.JPG",
     "status": 200,
     "ok": true
   },
@@ -3223,12 +3349,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3241,7 +3361,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-85.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/P1080469_Le_chenal_des_Sables_d%27Olonne.JPG",
     "status": 200,
     "ok": true
   },
@@ -3259,12 +3385,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3277,7 +3397,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-86.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
     "status": 200,
     "ok": true
   },
@@ -3295,12 +3421,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3313,7 +3433,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-87.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20de%20Limoges.jpg",
     "status": 200,
     "ok": true
   },
@@ -3331,12 +3457,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3349,7 +3469,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-88.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89pinal%20Basilique%20St.%20Maurice%201.jpg",
     "status": 200,
     "ok": true
   },
@@ -3367,12 +3493,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3385,7 +3505,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-89.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20d%27Auxerre.jpg",
     "status": 200,
     "ok": true
   },
@@ -3403,12 +3529,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3421,7 +3541,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-90.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lion%20de%20Belfort.jpg",
     "status": 200,
     "ok": true
   },
@@ -3439,12 +3565,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3457,7 +3577,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-91.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tour%20de%20Montlh%C3%A9ry.jpg",
     "status": 200,
     "ok": true
   },
@@ -3475,12 +3601,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3493,7 +3613,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-92.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG",
     "status": 200,
     "ok": true
   },
@@ -3511,12 +3637,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3529,7 +3649,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-93.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Denis_-_Basilique_-_Ext%C3%A9rieur_fa%C3%A7ade_ouest.JPG",
     "status": 200,
     "ok": true
   },
@@ -3547,12 +3673,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3565,7 +3685,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-94.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donjon_Ch%C3%A2teau_de_Vincennes.JPG",
     "status": 200,
     "ok": true
   },
@@ -3583,12 +3709,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3601,7 +3721,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-95.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Maclou%20de%20Pontoise.jpg",
     "status": 200,
     "ok": true
   },
@@ -3619,12 +3745,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3637,7 +3757,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-971.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Maurice%20Marie%20Claire%20-%20Basse-Terre.JPG",
     "status": 200,
     "ok": true
   },
@@ -3655,12 +3781,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3673,7 +3793,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-972.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_France_1.JPG",
     "status": 200,
     "ok": true
   },
@@ -3691,12 +3817,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3709,7 +3829,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-973.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%8Ele%20du%20Diable%20Dreyfus.jpg",
     "status": 200,
     "ok": true
   },
@@ -3727,12 +3853,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3745,7 +3865,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-974.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Panorama-Mairie-Saint-Denis.JPG",
     "status": 200,
     "ok": true
   },
@@ -3763,12 +3889,6 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
-    "url": "https://www.notaires.fr",
-    "status": 200,
-    "ok": true
-  },
-  {
-    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
     "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
     "status": 200,
     "ok": true
@@ -3781,7 +3901,13 @@
   },
   {
     "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
-    "url": "https://www.notaires.fr",
+    "url": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\blog\\departements\\frais-notaire-976.html",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2004%2012%2012%2018-24-04%20rose%20sea%20in%20mamoudzou%20mayotte%20island.jpg",
     "status": 200,
     "ok": true
   }

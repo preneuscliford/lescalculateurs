@@ -24,7 +24,7 @@ async function listHtmlFiles(rootDir) {
 }
 
 /**
- * Extrait les liens externes d’un contenu HTML simple.
+ * Extrait les liens externes d’un contenu HTML simple (href).
  */
 function extractLinks(html) {
   const links = [];
@@ -34,6 +34,27 @@ function extractLinks(html) {
     links.push(m[1]);
   }
   return links;
+}
+
+/**
+ * Extrait les URLs d'images externes depuis les balises <img> (src et srcset).
+ */
+function extractImageUrls(html) {
+  const urls = [];
+  const srcRe = /<img[^>]*src=\"(https?:[^\"]+)\"/g;
+  const srcsetRe = /<img[^>]*srcset=\"([^\"]+)\"/g;
+  let m;
+  while ((m = srcRe.exec(html)) !== null) {
+    urls.push(m[1]);
+  }
+  while ((m = srcsetRe.exec(html)) !== null) {
+    const candidates = m[1]
+      .split(/\s*,\s*/)
+      .map((c) => c.trim().split(/\s+/)[0])
+      .filter((u) => u && u.startsWith("http"));
+    urls.push(...candidates);
+  }
+  return Array.from(new Set(urls));
 }
 
 /**
@@ -60,8 +81,10 @@ async function main() {
   const report = [];
   for (const file of files) {
     const html = fs.readFileSync(file, "utf-8");
-    const links = extractLinks(html).filter((u) => u.startsWith("http"));
-    for (const url of links) {
+    const hrefs = extractLinks(html).filter((u) => u.startsWith("http"));
+    const imgs = extractImageUrls(html).filter((u) => u.startsWith("http"));
+    const all = Array.from(new Set([...hrefs, ...imgs]));
+    for (const url of all) {
       const r = await checkUrl(url);
       report.push({ file, url, ...r });
       const statusText = r.ok ? "OK" : `KO (${r.status || r.error})`;
