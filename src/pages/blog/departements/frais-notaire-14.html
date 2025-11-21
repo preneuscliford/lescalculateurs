@@ -31,15 +31,32 @@
     <link rel="manifest" href="/assets/site.webmanifest" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
 
-    <!-- Schema.org Article -->
+    <!-- Schema.org BreadcrumbList + FAQPage + Article -->
     <script type="application/ld+json">
-    {
+    [{
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Accueil","item":"https://lescalculateurs.fr/"},
+        {"@type":"ListItem","position":2,"name":"Immobilier","item":"https://lescalculateurs.fr/immobilier/"},
+        {"@type":"ListItem","position":3,"name":"Frais de notaire Calvados (14)","item":"https://lescalculateurs.fr/pages/blog/departements/frais-notaire-14.html"}
+      ]
+    },{
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Quel est le montant des frais de notaire dans le Calvados ?","acceptedAnswer":{"@type":"Answer","text":"En 2025, les frais de notaire représentent environ 6,6 % du prix d'achat dans l'ancien et 4 % dans le neuf."}},
+        {"@type":"Question","name":"Comment calculer les frais de notaire 14 ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre simulateur gratuit intégré à cette page ; il applique le barème officiel 2025."}},
+        {"@type":"Question","name":"Frais de notaire Calvados 2025 : neuf ou ancien ?","acceptedAnswer":{"@type":"Answer","text":"Pour un bien de 200 000 €, l'économie peut atteindre 7 600 € en choisissant le neuf (VEFA)."}},
+        {"@type":"Question","name":"Où trouver un notaire à Caen ?","acceptedAnswer":{"@type":"Answer","text":"Consultez l'annuaire officiel intégré plus haut ou rendez-vous sur notaires.fr"}}
+      ]
+    },{
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Frais de notaire 2025 dans le Calvados (14)",
-      "description": "Guide complet des frais de notaire pour l'achat immobilier le Calvados (Calvados",
+      "description": "Guide complet des frais de notaire pour l'achat immobilier dans le Calvados (14)",
       "datePublished": "2025-10-06T10:00:00Z",
-      "dateModified": "2025-11-20T23:36:11.148Z",
+      "dateModified": "2025-11-21T14:49:42.573Z",
       "author": {
         "@type": "Organization",
         "name": "LesCalculateurs.fr"
@@ -72,73 +89,79 @@
     }
     </script>
 
-    <!-- Schema.org BreadcrumbList -->
+    <!-- LocalBusiness Schema for Notaires -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@type": "LocalBusiness",
+      "@id": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-14.html#notaires",
+      "name": "Notaires Calvados (14)",
+      "description": "Services notariaux spécialisés en immobilier dans le Calvados - Calcul frais, actes, conseils",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR",
+        "addressRegion": "Normandie",
+        "addressLocality": "Caen",
+        "postalCode": "14000"
+      },
+      "areaServed": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Accueil",
-          "item": "https://lescalculateurs.fr/"
+          "@type": "AdministrativeArea",
+          "name": "Calvados",
+          "alternateName": "Département 14"
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://lescalculateurs.fr/pages/blog.html"
+          "@type": "City",
+          "name": "Caen"
         },
         {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Frais notaire Calvados",
-          "item": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-14.html"
+          "@type": "City", 
+          "name": "Lisieux"
         }
-      ]
-    }
-    </script>
-
-    <!-- Schema.org FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Quel est le montant des frais de notaire dans le Calvados ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En 2025, les frais de notaire représentent généralement entre 4% (neuf) et 6,6% (ancien) du prix d'achat."
+      ],
+      "serviceType": [
+        "Frais de notaire",
+        "Actes notariés immobilier", 
+        "Conseil acquisition",
+        "Transaction immobilière Calvados"
+      ],
+      "priceRange": "4%-6.6% du prix d'achat",
+      "url": "https://www.notaires.fr",
+      "sameAs": "https://www.notaires.fr",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services notariaux Calvados",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Frais de notaire neuf",
+              "description": "Calcul frais acquisition logement neuf dans le Calvados",
+              "provider": {
+                "@type": "Organization",
+                "name": "Notaires Calvados"
+              }
+            },
+            "price": "4%",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Frais de notaire ancien",
+              "description": "Calcul frais acquisition logement ancien dans le Calvados",
+              "provider": {
+                "@type": "Organization",
+                "name": "Notaires Calvados"
+              }
+            },
+            "price": "6.6%", 
+            "priceCurrency": "EUR"
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment calculer les frais de notaire 14 ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Additionnez droits d'enregistrement, émoluments et débours. Notre tableau et l'exemple chifré détaillent le calcul pour un achat type, et le simulateur permet une estimation précise."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Frais de notaire Calvados 2025 : neuf ou ancien ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le neuf (VEFA) implique environ 4% de frais, contre ≈ 6,6% dans l'ancien. L'écart peut représenter plusieurs milliers d'euros d'économie."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Où trouver un notaire à Caen ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Consultez l'annuaire officiel sur notaires.fr et contactez les études locales listées dans l'article."
-          }
-        }
-      ]
+        ]
+      }
     }
     </script>
 
@@ -203,7 +226,7 @@
         </h1>
         
         <p class="text-xl text-gray-600 leading-relaxed">
-          <strong>Investir dans l'immobilier dans le Calvados implique de prévoir les frais de notaire dès le départ.</strong> 
+          <strong>Acheter dans le Calvados en 2025 représente une opportunité d'investissement avec des frais maîtrisés.</strong> 
           En 2025, ces frais représentent entre <strong>4% et 6,6% du prix d'achat</strong> selon que vous acquériez 
           dans le neuf ou l'ancien. Dans le département 14, le prix moyen au m² s'établit à environ 
           <strong>2 400 €</strong>, ce qui impacte directement le montant total de votre investissement.
@@ -235,12 +258,12 @@
 
         <p class="text-gray-700 leading-relaxed mb-6">
           Les frais d'acquisition immobilière changent selon que vous achetez dans l'<strong>ancien ou le neuf</strong>.
-          Dans le Calvados, comme partout en France, la différence entre l'ancien et le neuf est significative.
+          Dans le Calvados, le différentiel neuf/ancien respecte la réglementation nationale.
         </p>
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
           <p class="text-lg text-gray-800 mb-0">
-            <strong>🏘️ Marché local :</strong> Avec un prix moyen de 2 400 €/m², le Calvados offre un bon équilibre entre qualité de vie et accessibilité.
+            <strong>🏘️ Spécificité locale :</strong> Le Calvados bénéficie de l'attractivité normande avec Caen comme métropole dynamique. Le marché immobilier profite de la proximité parisienne et de l'attractivité côtière. Deauville et Cabourg maintiennent des prix élevés sur le segment haut de gamme. L'investissement en résidences secondaires reste soutenu par la clientèle parisienne et l'accessibilité ferroviaire.
           </p>
         </div>
 
@@ -328,7 +351,7 @@
         </div>
 
         <p class="text-sm text-gray-600 bg-white rounded p-4 border border-gray-200">
-          <strong>Note :</strong> Si ce même bien était neuf (VEFA), les frais de notaire ne seraient que de 
+          <strong>Comparaison :</strong> Dans le neuf, ces frais représenteraient uniquement
           <strong>3 225 €</strong>, soit une économie de <strong>5 472 €</strong>.
         </p>
 
@@ -408,6 +431,93 @@
           </div>
         </div>
 
+        
+    <!-- Section Tendances marché -->
+    <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">
+      📈 Marché immobilier Calvados 2024–2025
+    </h2>
+    
+    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg mb-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">📈</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Évolution des prix</h4>
+              <p class="text-gray-700">📊 <strong>Prix stables</strong> (-1% à +3% sur 12 mois)</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">📊</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Volume de transactions</h4>
+              <p class="text-gray-700">📊 Volume en léger retrait, marché d'opportunités</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">⭐</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Attractivité</h4>
+              <p class="text-gray-700">⭐ Rapport qualité-prix préservé, potentiel latent</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">🎯</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Tension du marché</h4>
+              <p class="text-gray-700">🟢 Marché équilibré, négociations possibles</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-4 pt-4 border-t border-blue-200">
+        <p class="text-xs text-gray-600">
+          <strong>📊 Sources :</strong> DVF 2024, LPI-SeLoger, MeilleursAgents, Notaires de France, INSEE • Analyse basée sur les données publiques 2024
+        </p>
+      </div>
+    </div>
+        
+        
+    <!-- Section Prix par ville -->
+    <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">
+      🏘️ Prix moyens par ville dans le Calvados
+    </h2>
+    
+    <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center p-4 bg-blue-50 rounded-lg">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Caen</h4>
+          <p class="text-3xl font-bold text-blue-600 mb-1">2 440 €/m²</p>
+          <p class="text-sm text-gray-600">Préfecture</p>
+        </div>
+        
+        
+        <div class="text-center p-4 bg-green-50 rounded-lg">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Lisieux</h4>
+          <p class="text-3xl font-bold text-green-600 mb-1">2 078 €/m²</p>
+          <p class="text-sm text-gray-600">Sous-préfecture</p>
+        </div>
+        
+        
+        <div class="text-center p-4 bg-orange-50 rounded-lg">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Bayeux</h4>
+          <p class="text-3xl font-bold text-orange-600 mb-1">2 770 €/m²</p>
+          <p class="text-sm text-gray-600">Moyenne communale</p>
+        </div>
+      </div>
+      
+      <div class="mt-4 p-3 bg-gray-50 rounded text-sm text-gray-600">
+        <strong>📊 Méthodologie :</strong> Estimations basées sur les données DVF, indices notariaux et sources publiques. 
+        Prix indicatifs pour l'ancien, variations possibles selon secteur et standing.
+      </div>
+    </div>
+
         <!-- Section 4 -->
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
           🏛️ Où trouver un notaire dans le Calvados ?
@@ -417,7 +527,7 @@
       <section class="bg-gray-50 p-4 rounded-lg mt-6">
         <h3 class="text-xl font-bold text-gray-900 mb-2">Notaires à Caen (14) - 2025</h3>
         <p class="text-gray-700">
-          Selon <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, Caen a enregistré <strong>2 mutations</strong>, dont 2 ventes immobilières (0 maisons, 2 transactions mixtes). La <strong>médiane des prix</strong> des ventes est de <strong>166 000 €</strong>.
+          Selon <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, Caen a enregistré <strong>123 mutations</strong>, dont 78 ventes immobilières (37 maisons, 41 appartements).  <span class="text-xs text-gray-500">(Données DVF 2024, mise à jour mensuelle)</span>
           Pour contacter un professionnel, consultez l’annuaire officiel des notaires de la région Normandie.
         </p>
         <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">Annuaire officiel</a>
@@ -426,7 +536,7 @@
       <section class="bg-gray-50 p-4 rounded-lg mt-6">
         <h3 class="text-xl font-bold text-gray-900 mb-2">Notaires à Lisieux (14) - 2025</h3>
         <p class="text-gray-700">
-          Selon <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, Lisieux a enregistré <strong>3 mutations</strong>, dont 2 ventes immobilières (0 maisons, 2 transactions mixtes). La <strong>médiane des prix</strong> des ventes est de <strong>205 000 €</strong>.
+          Selon <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, Lisieux a enregistré <strong>160 mutations</strong>, dont 108 ventes immobilières (51 maisons, 57 appartements).  <span class="text-xs text-gray-500">(Données DVF 2024, mise à jour mensuelle)</span>
           Pour contacter un professionnel, consultez l’annuaire officiel des notaires de la région Normandie.
         </p>
         <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">Annuaire officiel</a>
