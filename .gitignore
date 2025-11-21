@@ -9,3 +9,14 @@ dist/
 .DS_Store
 Thumbs.db
 *.log
+
+# Environment files
+.env
+
+# Dependencies
+node_modules/
+
+# Si ValeursFoncieres-2024.txt a déjà été committé, retirez-le de l'index puis commitez :
+# git rm --cached ValeursFoncieres-2024.txt
+# git commit -m "Remove large file from index"
+# (si déjà poussé, utilisez BFG ou git filter-repo pour purger l'historique, puis git push --force)
