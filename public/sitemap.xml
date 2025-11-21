@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Page d'accueil -->
   <url>
@@ -15,6 +15,9 @@
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lescalculateurs.fr/assets/apple-touch-icon.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/pret.html</loc>
@@ -85,12 +88,18 @@
     <lastmod>2025-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/export-pdf-calculateurs.html</loc>
     <lastmod>2025-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://lescalculateurs.fr/assets/android-chrome-512x512.png</image:loc>
+    </image:image>
   </url>
   
   <!-- Page pivot départements (Hub SEO) -->
@@ -99,612 +108,1025 @@
     <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/PlaceParlementBretagne.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG</image:loc>
+    </image:image>
   </url>
   
   <!-- Pages départementales (101 pages SEO) -->
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-01.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Monast%C3%A8re%20royal%20de%20Brou%20(%C3%A9glise)%20(1).JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-02.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-03.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Moulins-sur-allier,%20Allier,%20Notre-Dame%20de%20l%27Annonciation.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-04.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Digne-les-Bains%20-%20Cath%C3%A9drale%20Saint-J%C3%A9r%C3%B4me%2001.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-05.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20d%27Asfeld%20Brian%C3%A7on.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-06.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Nice%20-%20promenade.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-07.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/060806%20Vallon-Pt%20d%27Arc301.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-08.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Charleville-M%C3%A9zi%C3%A8res%20-%20place%20Ducale%20(02).JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-09.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20de%20Foix.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-10.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Troyes%20houses.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-11.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-12.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc%20de%20Millau.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-13.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_port_de_Marseille.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-14.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-15.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc_de_Garabit.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-16.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Pierre%20d%27Angoul%C3%AAme.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-17.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-18.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-19.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-21.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20des%20Ducs%20de%20Bourgogne4.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-22.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/PlaceParlementBretagne.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-23.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Tours%20de%20La%20Rochelle.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-24.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-25.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Citadelle_de_Besan%C3%A7on_-_Poudri%C3%A8re.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-26.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Valence%20kiosque%20Peynet.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-27.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20d%27%C3%89vreux.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-28.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Chartres.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-29.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Remparts%20de%20Vannes.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-2A.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Ajaccio%20Citadelle%20et%20plage%20Saint-Fran%C3%A7ois.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-2B.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20the%20port%20of%20Bastia,%20Corsica,%20France%20(52723827071).jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-30.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Ar%C3%A8nes%20de%20N%C3%AEmes.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-31.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Capitole%20de%20Toulouse%20(France).JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-32.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Com%C3%A9die%20Montpellier.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-33.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-34.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Com%C3%A9die%20Montpellier.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-35.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/PlaceParlementBretagne.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-36.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-37.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Chartres.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-38.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_la_Bastille_-_Grenoble.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-39.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Saline%20royale%20d%27Arc-et-Senans.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-40.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Ar%C3%A8nes%20de%20Dax.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-41.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Chartres.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-42.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20%C3%89tienne-Place%20de%20l%27H%C3%B4tel%20de%20Ville-Le%20Grand%20Cercle-PA00117601.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-43.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Puy-en-Velay%20Cath%C3%A9drale11.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-44.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_des_ducs_de_Bretagne_(Nantes)_-_2014_-_02.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-45.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-46.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20Valentr%C3%A9%20Cahors.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-47.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Tours%20de%20La%20Rochelle.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-48.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Capitole%20de%20Toulouse%20(France).JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-49.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_d%27Angers-2015b.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-50.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Port%20de%20Cherbourg.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-51.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Reims.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-52.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc%20de%20Chaumont.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-53.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20Vieux%20Laval%202.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-54.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Stanislas%20Nancy.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-55.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Bar-le-Duc-Pr%C3%A9fecture.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-56.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Remparts%20de%20Vannes.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-57.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20de%20Metz.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-58.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Nevers%20Cath%C3%A9drale%20St.%20Cyr%20%26%20Ste.%20Julitte%20Ostchor%2001.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-59.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Grande%20Place,%20Bourse%20du%20travail%20et%20beffroi%20Lille%202.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-60.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Pierre%20de%20Beauvais.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-61.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Basilique%20Notre-Dame%20d%27Alen%C3%A7on-16juin2010-07.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-62.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Beffroi%20de%20Calais.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-63.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-l%27Assomption%20de%20Clermont-Ferrand.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-64.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Marie%20de%20Bayonne.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-65.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Sanctuaire%20Notre-Dame%20de%20Lourdes.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-66.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Castillet%20Perpignan.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-67.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cathedrale_Notre-Dame-de-Strasbourg.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-68.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Colmar%20(Haut-Rhin)%20-%20Petite%20Venise%20-%2051061986041.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-69.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-70.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Notre_Dame_la_Motte_Vesoul_014.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-71.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Lazare%20d%27Autun.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-72.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20du%20Mans.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-73.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-l%27Assomption%20de%20Clermont-Ferrand.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-74.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-75.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-76.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Rouen_Cathedral,_West_Facade.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-77.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/0_Provins_-_Tour_C%C3%A9sar_(4).JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-78.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Front%20of%20the%20Ch%C3%A2teau%20de%20Versailles.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-79.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-80.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20d%27Amiens.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-81.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-C%C3%A9cile%20d%27Albi.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-82.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-83.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Gare%20de%20Toulon.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-84.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20(84)%20Pont%20Saint-B%C3%A9nezet%2001.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-85.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/P1080469_Le_chenal_des_Sables_d%27Olonne.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-86.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-87.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20de%20Limoges.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-88.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89pinal%20Basilique%20St.%20Maurice%201.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-89.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20d%27Auxerre.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-90.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Lion%20de%20Belfort.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-91.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Tour%20de%20Montlh%C3%A9ry.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-92.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-93.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Denis_-_Basilique_-_Ext%C3%A9rieur_fa%C3%A7ade_ouest.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-94.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Donjon_Ch%C3%A2teau_de_Vincennes.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-95.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Maclou%20de%20Pontoise.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-971.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Maurice%20Marie%20Claire%20-%20Basse-Terre.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-972.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_France_1.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-973.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/%C3%8Ele%20du%20Diable%20Dreyfus.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-974.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Panorama-Mairie-Saint-Denis.JPG</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
   </url>
   <url>
     <loc>https://lescalculateurs.fr/pages/blog/departements/frais-notaire-976.html</loc>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/2004%2012%2012%2018-24-04%20rose%20sea%20in%20mamoudzou%20mayotte%20island.jpg</image:loc>
+    </image:image>
     <lastmod>2025-11-19</lastmod>
     <priority>0.6</priority>
+  
   </url>
 </urlset>
