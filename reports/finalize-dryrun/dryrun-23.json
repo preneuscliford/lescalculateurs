@@ -1,0 +1,18 @@
+{
+  "code": "23",
+  "summary": {
+    "departement_nom": "Creuse",
+    "departement_numero": "23",
+    "prix_m2": 700,
+    "has_table_html": false,
+    "local_advices_count": 0,
+    "local_faqs_count": 0,
+    "has_sources": false,
+    "has_jsonld": false
+  },
+  "sample_table_html": "",
+  "sample_local_advices": [],
+  "sample_local_faqs": [],
+  "sample_sources": [],
+  "jsonld": null
+}

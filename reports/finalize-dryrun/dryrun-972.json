@@ -1,0 +1,18 @@
+{
+  "code": "972",
+  "summary": {
+    "departement_nom": "Martinique",
+    "departement_numero": "972",
+    "prix_m2": 2700,
+    "has_table_html": false,
+    "local_advices_count": 0,
+    "local_faqs_count": 0,
+    "has_sources": false,
+    "has_jsonld": false
+  },
+  "sample_table_html": "",
+  "sample_local_advices": [],
+  "sample_local_faqs": [],
+  "sample_sources": [],
+  "jsonld": null
+}

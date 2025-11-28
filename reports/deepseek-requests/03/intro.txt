@@ -1,0 +1,48 @@
+Génère uniquement le bloc "intro" pour la page "Frais de notaire 2025 – Allier (03)".
+
+⚠ Contraintes obligatoires (à respecter STRICTEMENT) :
+
+❌ Interdictions absolues
+
+Tu n'utilises AUCUNE de ces expressions :
+"Au cœur de"
+"Les frais de notaire varient selon…"
+"L'écart entre neuf et ancien…"
+"Profitez des dispositifs…"
+"Optimisez…"
+"Négociez…"
+"Anticipez…"
+"Astuces pour réduire…"
+"Questions fréquentes – {département}"
+"Dans ce département aux multiples visages"
+"Oui, on observe des variations…"
+" Certaines intercommunalités proposent…"
+"Les transactions influencent les émoluments"
+
+Tu ne réutilises AUCUNE phrase des pages Ain (01) et Aisne (02).
+
+🧱 Style et structure
+
+- Pour "intro", produis un contenu unique, localisé, sans répétition.
+- Style : très local, contextualisé, phrases courtes, ton neutre, vocabulaire varié.
+- Pas de remplissage AI, pas de patterns répétitifs.
+
+📏 Contraintes de longueur
+
+- Intro : 4 à 6 lignes
+- Contenu total par bloc : maximum 150 mots
+- Évite les répétitions internes
+
+🏙️ Villes à mentionner
+
+Utilise ces 3 villes dans le contenu :
+- Moulins
+- Montluçon
+- Une troisième ville de ton choix dans le département
+
+Données :
+Département: Allier (03)
+Région: Auvergne-Rhône-Alpes
+Prix moyen m²: 1400 €
+
+Rends la sortie en HTML fragment sans balises <html> ni <script>.

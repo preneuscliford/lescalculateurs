@@ -1,0 +1,902 @@
+[
+  {
+    "code": "01",
+    "nom": "Ain",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-01-ain",
+    "prix_m2_median": 2200,
+    "intro_courte": "Dans l’Ain, le prix médian des ventes immobilières atteint 2 200 €/m². Calculez vos frais de notaire avec notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale de l’Ain."
+  },
+  {
+    "code": "02",
+    "nom": "Aisne",
+    "region": "Hauts-de-France",
+    "url": "/blog/immobilier/frais-notaire-02-aisne",
+    "prix_m2_median": 900,
+    "intro_courte": "Dans l’Aisne, le marché immobilier affiche un prix médian de 900 €/m². Estimez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire de l’Aisne est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "03",
+    "nom": "Allier",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-03-allier",
+    "prix_m2_median": 1100,
+    "intro_courte": "Dans l’Allier, le prix médian des transactions est d’environ 1 100 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire allier."
+  },
+  {
+    "code": "04",
+    "nom": "Alpes-de-Haute-Provence",
+    "region": "Provence-Alpes-Côte d’Azur",
+    "url": "/blog/immobilier/frais-notaire-04-alpes-haute-provence",
+    "prix_m2_median": 1800,
+    "intro_courte": "Dans les Alpes-de-Haute-Provence, le marché affiche un médian de 1 800 €/m². Simulez vos frais de notaire.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale des Alpes-de-Haute-Provence."
+  },
+  {
+    "code": "05",
+    "nom": "Hautes-Alpes",
+    "region": "Provence-Alpes-Côte d’Azur",
+    "url": "/blog/immobilier/frais-notaire-05-hautes-alpes",
+    "prix_m2_median": 2100,
+    "intro_courte": "Dans les Hautes-Alpes, le prix médian atteint 2 100 €/m². Calculez vos frais avec notre outil local.",
+    "notaires_court": "Un notaire des Hautes-Alpes saura quantifier vos droits."
+  },
+  {
+    "code": "06",
+    "nom": "Alpes-Maritimes",
+    "region": "Provence-Alpes-Côte d’Azur",
+    "url": "/blog/immobilier/frais-notaire-06-alpes-maritimes",
+    "prix_m2_median": 4200,
+    "intro_courte": "Dans les Alpes-Maritimes, le prix médian des ventes dépasse 4 200 €/m². Estimez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire azuréen est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "07",
+    "nom": "Ardèche",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-07-ardeche",
+    "prix_m2_median": 1700,
+    "intro_courte": "En Ardèche, le marché immobilier affiche un médian de 1 700 €/m². Simulez vos frais de notaire en 2025.",
+    "notaires_court": "Faites chiffrer vos droits par une étude notariale ardéchoise."
+  },
+  {
+    "code": "08",
+    "nom": "Ardennes",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-08-ardennes",
+    "prix_m2_median": 850,
+    "intro_courte": "Dans les Ardennes, le prix médian des transactions est d’environ 850 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire ardennais."
+  },
+  {
+    "code": "09",
+    "nom": "Ariège",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-09-ariege",
+    "prix_m2_median": 1200,
+    "intro_courte": "Dans l’Ariège, le marché affiche un prix médian de 1 200 €/m². Estimez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire ariégeois saura quantifier vos droits."
+  },
+  {
+    "code": "10",
+    "nom": "Aube",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-10-aube",
+    "prix_m2_median": 1150,
+    "intro_courte": "Dans l’Aube, le prix médian atteint 1 150 €/m². Simulez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale auboise."
+  },
+  {
+    "code": "11",
+    "nom": "Aude",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-11-aude",
+    "prix_m2_median": 1400,
+    "intro_courte": "Dans l’Aude, le marché immobilier affiche un médian de 1 400 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire audois est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "12",
+    "nom": "Aveyron",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-12-aveyron",
+    "prix_m2_median": 1300,
+    "intro_courte": "Dans l’Aveyron, le prix médian des ventes est d’environ 1 300 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire aveyronnais."
+  },
+  {
+    "code": "13",
+    "nom": "Bouches-du-Rhône",
+    "region": "Provence-Alpes-Côte d’Azur",
+    "url": "/blog/immobilier/frais-notaire-13-bouches-du-rhone",
+    "prix_m2_median": 3100,
+    "intro_courte": "Dans les Bouches-du-Rhône, le marché affiche un médian de 3 100 €/m². Estimez vos frais de notaire rapidement.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale provençale."
+  },
+  {
+    "code": "14",
+    "nom": "Calvados",
+    "region": "Normandie",
+    "url": "/blog/immobilier/frais-notaire-14-calvados",
+    "prix_m2_median": 2100,
+    "intro_courte": "Dans le Calvados, le prix médian atteint 2 100 €/m². Simulez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Un notaire calvadosien saura quantifier vos droits."
+  },
+  {
+    "code": "15",
+    "nom": "Cantal",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-15-cantal",
+    "prix_m2_median": 1100,
+    "intro_courte": "Dans le Cantal, le marché immobilier affiche un médian de 1 100 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire cantalien est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "16",
+    "nom": "Charente",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-16-charente",
+    "prix_m2_median": 1250,
+    "intro_courte": "Dans la Charente, le prix médian des transactions est d’environ 1 250 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale charentaise."
+  },
+  {
+    "code": "17",
+    "nom": "Charente-Maritime",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-17-charente-maritime",
+    "prix_m2_median": 2100,
+    "intro_courte": "En Charente-Maritime, le marché affiche un médian de 2 100 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire charentais-maritime."
+  },
+  {
+    "code": "18",
+    "nom": "Cher",
+    "region": "Centre-Val de Loire",
+    "url": "/blog/immobilier/frais-notaire-18-cher",
+    "prix_m2_median": 1050,
+    "intro_courte": "Dans le Cher, le prix médian atteint 1 050 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Un notaire chérien saura quantifier vos droits."
+  },
+  {
+    "code": "19",
+    "nom": "Corrèze",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-19-corrèze",
+    "prix_m2_median": 1150,
+    "intro_courte": "Dans la Corrèze, le marché immobilier affiche un médian de 1 150 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale corrézienne."
+  },
+  {
+    "code": "21",
+    "nom": "Côte-d’Or",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-21-cote-d-or",
+    "prix_m2_median": 1900,
+    "intro_courte": "En Côte-d’Or, le prix médian des ventes est d’environ 1 900 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire bourguignon est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "22",
+    "nom": "Côtes-d’Armor",
+    "region": "Bretagne",
+    "url": "/blog/immobilier/frais-notaire-22-cotes-d-armor",
+    "prix_m2_median": 2100,
+    "intro_courte": "Dans les Côtes-d’Armor, le marché affiche un médian de 2 100 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire côtes-d’armorien."
+  },
+  {
+    "code": "23",
+    "nom": "Creuse",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-23-creuse",
+    "prix_m2_median": 700,
+    "intro_courte": "Dans la Creuse, le prix médian atteint 700 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Un notaire creusois saura quantifier vos droits."
+  },
+  {
+    "code": "24",
+    "nom": "Dordogne",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-24-dordogne",
+    "prix_m2_median": 1600,
+    "intro_courte": "En Dordogne, le marché immobilier affiche un médian de 1 600 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale dordognaise."
+  },
+  {
+    "code": "25",
+    "nom": "Doubs",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-25-doubs",
+    "prix_m2_median": 1600,
+    "intro_courte": "Dans le Doubs, le prix médian des transactions est d’environ 1 600 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire doubien est à votre écoute pour simuler vos droits."
+  },
+  {
+    "code": "26",
+    "nom": "Drôme",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-26-drome",
+    "prix_m2_median": 1900,
+    "intro_courte": "Dans la Drôme, le marché affiche un médian de 1 900 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire drômois."
+  },
+  {
+    "code": "27",
+    "nom": "Eure",
+    "region": "Normandie",
+    "url": "/blog/immobilier/frais-notaire-27-eure",
+    "prix_m2_median": 1800,
+    "intro_courte": "En Eure, le prix médian atteint 1 800 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale eurélienne."
+  },
+  {
+    "code": "28",
+    "nom": "Eure-et-Loir",
+    "region": "Centre-Val de Loire",
+    "url": "/blog/immobilier/frais-notaire-28-eure-et-loir",
+    "prix_m2_median": 1700,
+    "intro_courte": "Dans l’Eure-et-Loir, le marché immobilier affiche un médian de 1 700 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire eurélien saura quantifier vos droits."
+  },
+  {
+    "code": "29",
+    "nom": "Finistère",
+    "region": "Bretagne",
+    "url": "/blog/immobilier/frais-notaire-29-finistere",
+    "prix_m2_median": 2300,
+    "intro_courte": "Dans le Finistère, le prix médian des ventes dépasse 2 300 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire finistérien est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "2A",
+    "nom": "Corse-du-Sud",
+    "region": "Corse",
+    "url": "/blog/immobilier/frais-notaire-2a-corse-du-sud",
+    "prix_m2_median": 3500,
+    "intro_courte": "En Corse-du-Sud, le marché affiche un médian de 3 500 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale corse."
+  },
+  {
+    "code": "2B",
+    "nom": "Haute-Corse",
+    "region": "Corse",
+    "url": "/blog/immobilier/frais-notaire-2b-haute-corse",
+    "prix_m2_median": 3200,
+    "intro_courte": "Dans la Haute-Corse, le prix médian atteint 3 200 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire haut-corse."
+  },
+  {
+    "code": "30",
+    "nom": "Gard",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-30-gard",
+    "prix_m2_median": 2300,
+    "intro_courte": "Dans le Gard, le marché immobilier affiche un médian de 2 300 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire gardois saura quantifier vos droits."
+  },
+  {
+    "code": "31",
+    "nom": "Haute-Garonne",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-31-haute-garonne",
+    "prix_m2_median": 2800,
+    "intro_courte": "En Haute-Garonne, le prix médian des ventes dépasse 2 800 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale toulousaine."
+  },
+  {
+    "code": "32",
+    "nom": "Gers",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-32-gers",
+    "prix_m2_median": 1400,
+    "intro_courte": "Dans le Gers, le marché affiche un médian de 1 400 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire gersois est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "33",
+    "nom": "Gironde",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-33-gironde",
+    "prix_m2_median": 3200,
+    "intro_courte": "En Gironde, le prix médian atteint 3 200 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire girondin."
+  },
+  {
+    "code": "34",
+    "nom": "Hérault",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-34-herault",
+    "prix_m2_median": 2800,
+    "intro_courte": "Dans l’Hérault, le marché immobilier affiche un médian de 2 800 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale héraultaise."
+  },
+  {
+    "code": "35",
+    "nom": "Ille-et-Vilaine",
+    "region": "Bretagne",
+    "url": "/blog/immobilier/frais-notaire-35-ille-et-vilaine",
+    "prix_m2_median": 2800,
+    "intro_courte": "En Ille-et-Vilaine, le prix médian des ventes dépasse 2 800 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire rennais saura quantifier vos droits."
+  },
+  {
+    "code": "36",
+    "nom": "Indre",
+    "region": "Centre-Val de Loire",
+    "url": "/blog/immobilier/frais-notaire-36-indre",
+    "prix_m2_median": 950,
+    "intro_courte": "Dans l’Indre, le marché affiche un médian de 950 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire indrien est à votre écoute pour simuler vos droits."
+  },
+  {
+    "code": "37",
+    "nom": "Indre-et-Loire",
+    "region": "Centre-Val de Loire",
+    "url": "/blog/immobilier/frais-notaire-37-indre-et-loire",
+    "prix_m2_median": 2300,
+    "intro_courte": "En Indre-et-Loire, le prix médian atteint 2 300 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale tourangelle."
+  },
+  {
+    "code": "38",
+    "nom": "Isère",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-38-isere",
+    "prix_m2_median": 2800,
+    "intro_courte": "Dans l’Isère, le marché immobilier affiche un médian de 2 800 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire isérois."
+  },
+  {
+    "code": "39",
+    "nom": "Jura",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-39-jura",
+    "prix_m2_median": 1600,
+    "intro_courte": "Dans le Jura, le prix médian des transactions est d’environ 1 600 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire jurassien saura quantifier vos droits."
+  },
+  {
+    "code": "40",
+    "nom": "Landes",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-40-landes",
+    "prix_m2_median": 2600,
+    "intro_courte": "Dans les Landes, le marché affiche un médian de 2 600 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale landaise."
+  },
+  {
+    "code": "41",
+    "nom": "Loir-et-Cher",
+    "region": "Centre-Val de Loire",
+    "url": "/blog/immobilier/frais-notaire-41-loir-et-cher",
+    "prix_m2_median": 1500,
+    "intro_courte": "En Loir-et-Cher, le prix médian atteint 1 500 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Un notaire loir-et-chérien est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "42",
+    "nom": "Loire",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-42-loire",
+    "prix_m2_median": 1800,
+    "intro_courte": "Dans la Loire, le marché immobilier affiche un médian de 1 800 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire ligérien saura quantifier vos droits."
+  },
+  {
+    "code": "43",
+    "nom": "Haute-Loire",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-43-haute-loire",
+    "prix_m2_median": 1200,
+    "intro_courte": "En Haute-Loire, le prix médian des ventes est d’environ 1 200 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale haute-loirienne."
+  },
+  {
+    "code": "44",
+    "nom": "Loire-Atlantique",
+    "region": "Pays de la Loire",
+    "url": "/blog/immobilier/frais-notaire-44-loire-atlantique",
+    "prix_m2_median": 3200,
+    "intro_courte": "En Loire-Atlantique, le marché affiche un médian de 3 200 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire nantais."
+  },
+  {
+    "code": "45",
+    "nom": "Loiret",
+    "region": "Centre-Val de Loire",
+    "url": "/blog/immobilier/frais-notaire-45-loiret",
+    "prix_m2_median": 2100,
+    "intro_courte": "Dans le Loiret, le prix médian atteint 2 100 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Un notaire loiretien saura quantifier vos droits."
+  },
+  {
+    "code": "46",
+    "nom": "Lot",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-46-lot",
+    "prix_m2_median": 1100,
+    "intro_courte": "Dans le Lot, le marché immobilier affiche un médian de 1 100 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale lotoise."
+  },
+  {
+    "code": "47",
+    "nom": "Lot-et-Garonne",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-47-lot-et-garonne",
+    "prix_m2_median": 1400,
+    "intro_courte": "En Lot-et-Garonne, le prix médian des ventes est d’environ 1 400 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire lot-et-garonnais est à votre écoute pour simuler vos droits."
+  },
+  {
+    "code": "48",
+    "nom": "Lozère",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-48-lozere",
+    "prix_m2_median": 1400,
+    "intro_courte": "Dans la Lozère, le marché affiche un médian de 1 400 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire lozérien."
+  },
+  {
+    "code": "49",
+    "nom": "Maine-et-Loire",
+    "region": "Pays de la Loire",
+    "url": "/blog/immobilier/frais-notaire-49-maine-et-loire",
+    "prix_m2_median": 2000,
+    "intro_courte": "En Maine-et-Loire, le prix médian atteint 2 000 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale angevine."
+  },
+  {
+    "code": "50",
+    "nom": "Manche",
+    "region": "Normandie",
+    "url": "/blog/immobilier/frais-notaire-50-manche",
+    "prix_m2_median": 1600,
+    "intro_courte": "Dans la Manche, le marché immobilier affiche un médian de 1 600 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire manchois saura quantifier vos droits."
+  },
+  {
+    "code": "51",
+    "nom": "Marne",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-51-marne",
+    "prix_m2_median": 1900,
+    "intro_courte": "Dans la Marne, le prix médian des ventes est d’environ 1 900 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire champenois est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "52",
+    "nom": "Haute-Marne",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-52-haute-marne",
+    "prix_m2_median": 1100,
+    "intro_courte": "En Haute-Marne, le marché affiche un médian de 1 100 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale haut-marnaise."
+  },
+  {
+    "code": "53",
+    "nom": "Mayenne",
+    "region": "Pays de la Loire",
+    "url": "/blog/immobilier/frais-notaire-53-mayenne",
+    "prix_m2_median": 1400,
+    "intro_courte": "Dans la Mayenne, le prix médian atteint 1 400 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire mayennais."
+  },
+  {
+    "code": "54",
+    "nom": "Meurthe-et-Moselle",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-54-meurthe-et-moselle",
+    "prix_m2_median": 1600,
+    "intro_courte": "En Meurthe-et-Moselle, le marché immobilier affiche un médian de 1 600 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire meurthe-et-mosellan saura quantifier vos droits."
+  },
+  {
+    "code": "55",
+    "nom": "Meuse",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-55-meuse",
+    "prix_m2_median": 850,
+    "intro_courte": "Dans la Meuse, le prix médian des transactions est d’environ 850 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale meusienne."
+  },
+  {
+    "code": "56",
+    "nom": "Morbihan",
+    "region": "Bretagne",
+    "url": "/blog/immobilier/frais-notaire-56-morbihan",
+    "prix_m2_median": 2300,
+    "intro_courte": "Dans le Morbihan, le marché affiche un médian de 2 300 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire morbihannais est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "57",
+    "nom": "Moselle",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-57-moselle",
+    "prix_m2_median": 1700,
+    "intro_courte": "En Moselle, le prix médian atteint 1 700 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire mosellan."
+  },
+  {
+    "code": "58",
+    "nom": "Nièvre",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-58-nievre",
+    "prix_m2_median": 950,
+    "intro_courte": "Dans la Nièvre, le marché immobilier affiche un médian de 950 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire nivernais saura quantifier vos droits."
+  },
+  {
+    "code": "59",
+    "nom": "Nord",
+    "region": "Hauts-de-France",
+    "url": "/blog/immobilier/frais-notaire-59-nord",
+    "prix_m2_median": 2100,
+    "intro_courte": "Dans le Nord, le prix médian des ventes dépasse 2 100 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale nordiste."
+  },
+  {
+    "code": "60",
+    "nom": "Oise",
+    "region": "Hauts-de-France",
+    "url": "/blog/immobilier/frais-notaire-60-oise",
+    "prix_m2_median": 1900,
+    "intro_courte": "En Oise, le marché affiche un médian de 1 900 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire oisien est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "61",
+    "nom": "Orne",
+    "region": "Normandie",
+    "url": "/blog/immobilier/frais-notaire-61-orne",
+    "prix_m2_median": 1300,
+    "intro_courte": "Dans l’Orne, le prix médian atteint 1 300 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire ornais."
+  },
+  {
+    "code": "62",
+    "nom": "Pas-de-Calais",
+    "region": "Hauts-de-France",
+    "url": "/blog/immobilier/frais-notaire-62-pas-de-calais",
+    "prix_m2_median": 1600,
+    "intro_courte": "Dans le Pas-de-Calais, le marché immobilier affiche un médian de 1 600 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire pas-de-calaisien saura quantifier vos droits."
+  },
+  {
+    "code": "63",
+    "nom": "Puy-de-Dôme",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-63-puy-de-dome",
+    "prix_m2_median": 1900,
+    "intro_courte": "Dans le Puy-de-Dôme, le prix médian des transactions est d’environ 1 900 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale puydômoise."
+  },
+  {
+    "code": "64",
+    "nom": "Pyrénées-Atlantiques",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-64-pyrenees-atlantiques",
+    "prix_m2_median": 2600,
+    "intro_courte": "Dans les Pyrénées-Atlantiques, le marché affiche un médian de 2 600 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire béarnais est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "65",
+    "nom": "Hautes-Pyrénées",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-65-hautes-pyrenees",
+    "prix_m2_median": 1700,
+    "intro_courte": "Dans les Hautes-Pyrénées, le prix médian atteint 1 700 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire bigourdan."
+  },
+  {
+    "code": "66",
+    "nom": "Pyrénées-Orientales",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-66-pyrenees-orientales",
+    "prix_m2_median": 2100,
+    "intro_courte": "En Pyrénées-Orientales, le marché immobilier affiche un médian de 2 100 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire catalan saura quantifier vos droits."
+  },
+  {
+    "code": "67",
+    "nom": "Bas-Rhin",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-67-bas-rhin",
+    "prix_m2_median": 2300,
+    "intro_courte": "Dans le Bas-Rhin, le prix médian des ventes est d’environ 2 300 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale alsacienne."
+  },
+  {
+    "code": "68",
+    "nom": "Haut-Rhin",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-68-haut-rhin",
+    "prix_m2_median": 2100,
+    "intro_courte": "En Haut-Rhin, le marché affiche un médian de 2 100 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire haut-rhinois est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "69",
+    "nom": "Rhône",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-69-rhone",
+    "prix_m2_median": 3400,
+    "intro_courte": "Dans le Rhône, le prix médian dépasse 3 400 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire lyonnais."
+  },
+  {
+    "code": "70",
+    "nom": "Haute-Saône",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-70-haute-saone",
+    "prix_m2_median": 1200,
+    "intro_courte": "Dans la Haute-Saône, le marché immobilier affiche un médian de 1 200 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire haut-saônois saura quantifier vos droits."
+  },
+  {
+    "code": "71",
+    "nom": "Saône-et-Loire",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-71-saone-et-loire",
+    "prix_m2_median": 1600,
+    "intro_courte": "En Saône-et-Loire, le prix médian atteint 1 600 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale ligérienne."
+  },
+  {
+    "code": "72",
+    "nom": "Sarthe",
+    "region": "Pays de la Loire",
+    "url": "/blog/immobilier/frais-notaire-72-sarthe",
+    "prix_m2_median": 1500,
+    "intro_courte": "Dans la Sarthe, le marché affiche un médian de 1 500 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire sarthois est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "73",
+    "nom": "Savoie",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-73-savoie",
+    "prix_m2_median": 3200,
+    "intro_courte": "En Savoie, le prix médian des ventes dépasse 3 200 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire savoyard."
+  },
+  {
+    "code": "74",
+    "nom": "Haute-Savoie",
+    "region": "Auvergne-Rhône-Alpes",
+    "url": "/blog/immobilier/frais-notaire-74-haute-savoie",
+    "prix_m2_median": 4200,
+    "intro_courte": "Dans la Haute-Savoie, le marché immobilier affiche un médian de 4 200 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire haut-savoyard saura quantifier vos droits."
+  },
+  {
+    "code": "75",
+    "nom": "Paris",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-75-paris",
+    "prix_m2_median": 10500,
+    "intro_courte": "À Paris, le prix médian dépasse 10 500 €/m². Utilisez notre simulateur dédié pour estimer vos frais de notaire.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale parisienne."
+  },
+  {
+    "code": "76",
+    "nom": "Seine-Maritime",
+    "region": "Normandie",
+    "url": "/blog/immobilier/frais-notaire-76-seine-maritime",
+    "prix_m2_median": 1900,
+    "intro_courte": "En Seine-Maritime, le marché affiche un médian de 1 900 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire normand est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "77",
+    "nom": "Seine-et-Marne",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-77-seine-et-marne",
+    "prix_m2_median": 2800,
+    "intro_courte": "Dans la Seine-et-Marne, le prix médian atteint 2 800 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire seine-et-marnais."
+  },
+  {
+    "code": "78",
+    "nom": "Yvelines",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-78-yvelines",
+    "prix_m2_median": 3800,
+    "intro_courte": "Dans les Yvelines, le marché immobilier affiche un médian de 3 800 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire yvelinois saura quantifier vos droits."
+  },
+  {
+    "code": "79",
+    "nom": "Deux-Sèvres",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-79-deux-sevres",
+    "prix_m2_median": 1400,
+    "intro_courte": "En Deux-Sèvres, le prix médian des transactions est d’environ 1 400 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale deux-sévrienne."
+  },
+  {
+    "code": "80",
+    "nom": "Somme",
+    "region": "Hauts-de-France",
+    "url": "/blog/immobilier/frais-notaire-80-somme",
+    "prix_m2_median": 1400,
+    "intro_courte": "Dans la Somme, le marché affiche un médian de 1 400 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire somme est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "81",
+    "nom": "Tarn",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-81-tarn",
+    "prix_m2_median": 1600,
+    "intro_courte": "Dans le Tarn, le prix médian atteint 1 600 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire tarnais."
+  },
+  {
+    "code": "82",
+    "nom": "Tarn-et-Garonne",
+    "region": "Occitanie",
+    "url": "/blog/immobilier/frais-notaire-82-tarn-et-garonne",
+    "prix_m2_median": 1700,
+    "intro_courte": "En Tarn-et-Garonne, le marché immobilier affiche un médian de 1 700 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire tarn-et-garonnais saura quantifier vos droits."
+  },
+  {
+    "code": "83",
+    "nom": "Var",
+    "region": "Provence-Alpes-Côte d’Azur",
+    "url": "/blog/immobilier/frais-notaire-83-var",
+    "prix_m2_median": 4100,
+    "intro_courte": "Dans le Var, le prix médian dépasse 4 100 €/m². Utilisez notre simulateur dédié pour estimer vos frais de notaire.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale varoise."
+  },
+  {
+    "code": "84",
+    "nom": "Vaucluse",
+    "region": "Provence-Alpes-Côte d’Azur",
+    "url": "/blog/immobilier/frais-notaire-84-vaucluse",
+    "prix_m2_median": 3200,
+    "intro_courte": "Dans le Vaucluse, le marché affiche un médian de 3 200 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire vauclusien est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "85",
+    "nom": "Vendée",
+    "region": "Pays de la Loire",
+    "url": "/blog/immobilier/frais-notaire-85-vendee",
+    "prix_m2_median": 2300,
+    "intro_courte": "En Vendée, le prix médian atteint 2 300 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire vendéen."
+  },
+  {
+    "code": "86",
+    "nom": "Vienne",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-86-vienne",
+    "prix_m2_median": 1600,
+    "intro_courte": "Dans la Vienne, le marché immobilier affiche un médian de 1 600 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire viennois saura quantifier vos droits."
+  },
+  {
+    "code": "87",
+    "nom": "Haute-Vienne",
+    "region": "Nouvelle-Aquitaine",
+    "url": "/blog/immobilier/frais-notaire-87-haute-vienne",
+    "prix_m2_median": 1400,
+    "intro_courte": "En Haute-Vienne, le prix médian des ventes est d’environ 1 400 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale haute-viennoise."
+  },
+  {
+    "code": "88",
+    "nom": "Vosges",
+    "region": "Grand Est",
+    "url": "/blog/immobilier/frais-notaire-88-vosges",
+    "prix_m2_median": 1100,
+    "intro_courte": "Dans les Vosges, le marché affiche un médian de 1 100 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire vosgien est à votre écoute pour estimer vos droits."
+  },
+  {
+    "code": "89",
+    "nom": "Yonne",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-89-yonne",
+    "prix_m2_median": 1400,
+    "intro_courte": "Dans l’Yonne, le prix médian atteint 1 400 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire yogne."
+  },
+  {
+    "code": "90",
+    "nom": "Territoire de Belfort",
+    "region": "Bourgogne-Franche-Comté",
+    "url": "/blog/immobilier/frais-notaire-90-territoire-de-belfort",
+    "prix_m2_median": 1500,
+    "intro_courte": "Dans le Territoire de Belfort, le marché immobilier affiche un médian de 1 500 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire belfortain saura quantifier vos droits."
+  },
+  {
+    "code": "91",
+    "nom": "Essonne",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-91-essonne",
+    "prix_m2_median": 3100,
+    "intro_courte": "En Essonne, le prix médian dépasse 3 100 €/m². Utilisez notre simulateur dédié pour estimer vos frais de notaire.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale essonnienne."
+  },
+  {
+    "code": "92",
+    "nom": "Hauts-de-Seine",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-92-hauts-de-seine",
+    "prix_m2_median": 6100,
+    "intro_courte": "Dans les Hauts-de-Seine, le marché affiche un médian de 6 100 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Un notaire hauts-de-seine est à votre écoute pour chiffrer vos droits."
+  },
+  {
+    "code": "93",
+    "nom": "Seine-Saint-Denis",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-93-seine-saint-denis",
+    "prix_m2_median": 4100,
+    "intro_courte": "En Seine-Saint-Denis, le prix médian atteint 4 100 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Confiez le calcul de vos droits à un notaire de Seine-Saint-Denis."
+  },
+  {
+    "code": "94",
+    "nom": "Val-de-Marne",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-94-val-de-marne",
+    "prix_m2_median": 4600,
+    "intro_courte": "Dans le Val-de-Marne, le marché immobilier affiche un médian de 4 600 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire val-de-marnais saura quantifier vos droits."
+  },
+  {
+    "code": "95",
+    "nom": "Val-d’Oise",
+    "region": "Île-de-France",
+    "url": "/blog/immobilier/frais-notaire-95-val-d-oise",
+    "prix_m2_median": 3400,
+    "intro_courte": "Dans le Val-d’Oise, le prix médian dépasse 3 400 €/m². Utilisez notre simulateur dédié pour estimer vos frais de notaire.",
+    "notaires_court": "Faites estimer vos droits par une étude notariale val-doisienne."
+  },
+  {
+    "code": "971",
+    "nom": "Guadeloupe",
+    "region": "Guadeloupe",
+    "url": "/blog/immobilier/frais-notaire-971-guadeloupe",
+    "prix_m2_median": 2500,
+    "intro_courte": "En Guadeloupe, le prix médian des ventes est d’environ 2 500 €/m². Utilisez notre simulateur local.",
+    "notaires_court": "Un notaire guadeloupéen est à votre écoute pour simuler vos droits."
+  },
+  {
+    "code": "972",
+    "nom": "Martinique",
+    "region": "Martinique",
+    "url": "/blog/immobilier/frais-notaire-972-martinique",
+    "prix_m2_median": 2700,
+    "intro_courte": "En Martinique, le marché affiche un médian de 2 700 €/m². Simulez vos frais de notaire rapidement.",
+    "notaires_court": "Confiez le chiffrage de vos droits à un notaire martiniquais."
+  },
+  {
+    "code": "973",
+    "nom": "Guyane",
+    "region": "Guyane",
+    "url": "/blog/immobilier/frais-notaire-973-guyane",
+    "prix_m2_median": 2200,
+    "intro_courte": "En Guyane, le prix médian atteint 2 200 €/m². Estimez vos frais de notaire avec notre outil local.",
+    "notaires_court": "Faites simuler vos droits par une étude notariale guyanaise."
+  },
+  {
+    "code": "974",
+    "nom": "La Réunion",
+    "region": "La Réunion",
+    "url": "/blog/immobilier/frais-notaire-974-la-reunion",
+    "prix_m2_median": 3000,
+    "intro_courte": "À La Réunion, le marché immobilier affiche un médian de 3 000 €/m². Calculez vos frais de notaire en 2025.",
+    "notaires_court": "Un notaire réunionnais saura quantifier vos droits."
+  }
+]

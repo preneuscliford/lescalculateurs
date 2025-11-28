@@ -1,0 +1,103 @@
+🚀 PROMPT V2 — Génération de page départementale (version premium)
+
+Tu es un expert immobilier français, spécialiste des données publiques et de la fiscalité notariale.
+Tu écris un article complet, clair, structuré, sans répétitions d’un département à l’autre, destiné à être publié sur un site de simulateurs appelé « LesCalculateurs.fr ».
+
+Objectif :
+Créer une page départementale unique sur les frais de notaire 2025, basée sur le département fourni.
+
+INSTRUCTIONS (à respecter strictement)
+
+1) Style rédactionnel
+- Ton : professionnel, simple, naturel, non robotique
+- Français correct, varié entre départements
+- Ton d’expert immobilier (marché local, fiscalité, notaires)
+
+2) Structure stricte (utiliser exactement cet enchaînement)
+
+<h1>Frais de notaire 2025 dans le [DÉPARTEMENT] : guide complet</h1>
+
+<h2>Introduction</h2>
+- Présenter brièvement le département
+- Indiquer un prix moyen/m² réaliste
+- Expliquer rapidement le rôle des frais de notaire
+
+<h2>Spécificité locale</h2>
+- Décrire le marché du département et ce qui le rend unique (montagne, littoral, rural, transfrontalier, préfecture, etc.)
+- Mentionner variation des prix selon communes
+
+<h2>Ancien vs Neuf : frais de notaire 2025</h2>
+- Inclure un tableau réaliste (3–4 lignes) : Prix du bien / Frais ancien / Frais neuf / Économie
+- Règles : Ancien ≈ 7–8% / Neuf ≈ 2–3% ; valeurs varient ±5% entre départements
+
+<h2>Exemple de calcul</h2>
+- Un exemple chiffré crédible : ville réelle, prix local cohérent, apport, montant des frais, mensualité à 4.2%
+
+<h2>Conseils d’optimisation</h2>
+- Lister 3–4 conseils propres au département (VEFA, meubles hors acte, aides locales, jeunes notaires, zones de rénovation, saisonnalité)
+
+<h2>Marché immobilier 2024–2025</h2>
+- Analyse : évolution des prix (3–8% variable), attractivité, tension du marché, volume des transactions, profil des acheteurs
+
+<h2>Données DVF 2024 (obligatoire)</h2>
+- Fournir : nombre de mutations, proportion maisons/appartements, médiane départementale, 2–3 villes avec prix/m² estimatifs plausibles
+- (Vous pouvez arrondir/inventer légèrement mais rester crédible)
+
+<h2>Prix immobiliers des principales villes</h2>
+- Lister 3 communes : préfecture, sous-préfecture, ville connue avec prix cohérents
+
+<h2>Notaires du département</h2>
+- 2 mini-profils (préfecture et sous-préfecture) : expertise locale, types de biens traités
+
+<h2>Simulez vos frais</h2>
+- Courte phrase CTA renvoyant vers le simulateur local
+
+<h2>FAQ</h2>
+- 5 questions spécifiques au département (ancien vs neuf, aides locales, zones tendues, fiscalité, délais)
+
+<h2>Voir aussi</h2>
+- Lister les départements de la même région, et lien précédent/suivant
+
+<h2>Sources</h2>
+- Mentionner barème notarial, DVF, notaires.fr, INSEE
+
+Règles interdites (ne jamais faire)
+- Ne pas écrire : “les données DVF ne sont pas connues”
+- Ne pas répéter les formulations d’un autre département
+- Ne pas réutiliser les mêmes tableaux ou phrases exactes
+- Ne pas écrire un texte générique IA ou encyclopédique
+
+Format de sortie :
+- Répondre UNIQUEMENT avec HTML propre (head meta title/description + body) utilisant les balises <h1>, <h2>, <p>, <table>, <ul>, etc.
+
+UTILISE L'ENTRÉE JSON SUIVANTE :
+{{input}}
+
+FIN DU PROMPT
+🧠 MASTER PROMPT : Génération de page départementale (version 2025)
+
+Tu es un expert SEO, data analyst et rédacteur immobilier. Génère une page unique, longue, optimisée et non dupliquée sur les "frais de notaire 2025" pour un département français. Utilise la structure du template fourni dans l'entrée. Respecte absolument :
+
+• Aucun texte dupliqué avec d’autres départements
+• Aucune phrase répétée entre pages
+• Aucun copier/coller entre textes
+• Aucune donnée DVF inventée
+• Variations lexicales importantes
+• Correction automatique des incohérences et fautes
+• Style clair, professionnel et naturel
+• Tous les tableaux doivent être différents selon le département
+• Ajouter un paragraphe unique sur la spécificité du territoire
+• Intégrer les données fournies dans l'entrée JSON
+• Intégrer des CTA vers simulateur et annuaire notaires
+• Générer une section FAQ différente à chaque fois
+• Produire un texte complet entre 1800 et 2500 mots
+
+Utilise strictement la structure du template A, B ou C selon l'entrée.
+
+---
+
+Voici l'entrée utilisateur (JSON) :
+
+{{input}}
+
+Génère la page complète maintenant. Répond uniquement avec le HTML complet de la page (incluant head meta title description, et le body). Ne préfixe pas la réponse par du texte explicatif.

@@ -2326,63 +2326,106 @@ function generateArticleHTML(dep, index) {
 
     <!-- Schema.org BreadcrumbList + FAQPage + Article -->
     <script type="application/ld+json">
-    ${JSON.stringify([
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lescalculateurs.fr/" },
-          { "@type": "ListItem", position: 2, name: "Immobilier", item: "https://lescalculateurs.fr/immobilier/" },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: `Frais de notaire ${dep.nom} (${dep.code})`,
-            item: `https://lescalculateurs.fr/pages/blog/departements/frais-notaire-${dep.code}.html`
-          }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: `Quel est le montant des frais de notaire ${getPreposition(dep.nom, dep.code)} ?`,
-            acceptedAnswer: { "@type": "Answer", text: "En 2025, les frais de notaire représentent environ 6,6 % du prix d'achat dans l'ancien et 4 % dans le neuf." }
-          },
-          {
-            "@type": "Question",
-            name: `Comment calculer les frais de notaire ${dep.code} ?`,
-            acceptedAnswer: { "@type": "Answer", text: "Utilisez notre simulateur gratuit intégré à cette page ; il applique le barème officiel 2025." }
-          },
-          {
-            "@type": "Question",
-            name: `Frais de notaire ${dep.nom} 2025 : neuf ou ancien ?`,
-            acceptedAnswer: { "@type": "Answer", text: "Pour un bien de 200 000 €, l'économie peut atteindre 7 600 € en choisissant le neuf (VEFA)." }
-          },
-          {
-            "@type": "Question",
-            name: `Où trouver un notaire ${dep.ville1 ? 'à ' + dep.ville1 : getPreposition(dep.nom, dep.code)} ?`,
-            acceptedAnswer: { "@type": "Answer", text: "Consultez l'annuaire officiel intégré plus haut ou rendez-vous sur notaires.fr" }
-          }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: `Frais de notaire 2025 ${getPreposition(dep.nom, dep.code)} (${dep.code})`,
-        description: `Guide complet des frais de notaire pour l'achat immobilier ${getPreposition(dep.nom, dep.code)} (${dep.code})`,
-        datePublished: "2025-10-06T10:00:00Z",
-        dateModified: dateModifiedISO,
-        author: { "@type": "Organization", name: "LesCalculateurs.fr" },
-        publisher: {
-          "@type": "Organization",
-          name: "LesCalculateurs.fr",
-          logo: { "@type": "ImageObject", url: "https://lescalculateurs.fr/assets/favicon-32x32.png" }
+    ${JSON.stringify(
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Accueil",
+              item: "https://lescalculateurs.fr/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Immobilier",
+              item: "https://lescalculateurs.fr/immobilier/",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: `Frais de notaire ${dep.nom} (${dep.code})`,
+              item: `https://lescalculateurs.fr/pages/blog/departements/frais-notaire-${dep.code}.html`,
+            },
+          ],
         },
-        isBasedOn: "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/"
-      }
-    ], null, 2)}
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: `Quel est le montant des frais de notaire ${getPreposition(
+                dep.nom,
+                dep.code
+              )} ?`,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "En 2025, les frais de notaire représentent environ 6,6 % du prix d'achat dans l'ancien et 4 % dans le neuf.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: `Comment calculer les frais de notaire ${dep.code} ?`,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Utilisez notre simulateur gratuit intégré à cette page ; il applique le barème officiel 2025.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: `Frais de notaire ${dep.nom} 2025 : neuf ou ancien ?`,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Pour un bien de 200 000 €, l'économie peut atteindre 7 600 € en choisissant le neuf (VEFA).",
+              },
+            },
+            {
+              "@type": "Question",
+              name: `Où trouver un notaire ${
+                dep.ville1
+                  ? "à " + dep.ville1
+                  : getPreposition(dep.nom, dep.code)
+              } ?`,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Consultez l'annuaire officiel intégré plus haut ou rendez-vous sur notaires.fr",
+              },
+            },
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: `Frais de notaire 2025 ${getPreposition(
+            dep.nom,
+            dep.code
+          )} (${dep.code})`,
+          description: `Guide complet des frais de notaire pour l'achat immobilier ${getPreposition(
+            dep.nom,
+            dep.code
+          )} (${dep.code})`,
+          datePublished: "2025-10-06T10:00:00Z",
+          dateModified: dateModifiedISO,
+          author: { "@type": "Organization", name: "LesCalculateurs.fr" },
+          publisher: {
+            "@type": "Organization",
+            name: "LesCalculateurs.fr",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://lescalculateurs.fr/assets/favicon-32x32.png",
+            },
+          },
+          isBasedOn:
+            "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/",
+        },
+      ],
+      null,
+      2
+    )}
     </script>
     <!-- HowTo JSON-LD: Calculer vos frais de notaire -->
     <script type="application/ld+json">

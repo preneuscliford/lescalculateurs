@@ -1,0 +1,29 @@
+{
+  "payload": {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are DeepSeek."
+      },
+      {
+        "role": "user",
+        "content": "🚀 PROMPT V2 — Génération de page départementale (version premium)\r\n\r\nTu es un expert immobilier français, spécialiste des données publiques et de la fiscalité notariale.\r\nTu écris un article complet, clair, structuré, sans répétitions d’un département à l’autre, destiné à être publié sur un site de simulateurs appelé « LesCalculateurs.fr ».\r\n\r\nObjectif :\r\nCréer une page départementale unique sur les frais de notaire 2025, basée sur le département fourni.\r\n\r\nINSTRUCTIONS (à respecter strictement)\r\n\r\n1) Style rédactionnel\r\n- Ton : professionnel, simple, naturel, non robotique\r\n- Français correct, varié entre départements\r\n- Ton d’expert immobilier (marché local, fiscalité, notaires)\r\n\r\n2) Structure stricte (utiliser exactement cet enchaînement)\r\n\r\n<h1>Frais de notaire 2025 dans le [DÉPARTEMENT] : guide complet</h1>\r\n\r\n<h2>Introduction</h2>\r\n- Présenter brièvement le département\r\n- Indiquer un prix moyen/m² réaliste\r\n- Expliquer rapidement le rôle des frais de notaire\r\n\r\n<h2>Spécificité locale</h2>\r\n- Décrire le marché du département et ce qui le rend unique (montagne, littoral, rural, transfrontalier, préfecture, etc.)\r\n- Mentionner variation des prix selon communes\r\n\r\n<h2>Ancien vs Neuf : frais de notaire 2025</h2>\r\n- Inclure un tableau réaliste (3–4 lignes) : Prix du bien / Frais ancien / Frais neuf / Économie\r\n- Règles : Ancien ≈ 7–8% / Neuf ≈ 2–3% ; valeurs varient ±5% entre départements\r\n\r\n<h2>Exemple de calcul</h2>\r\n- Un exemple chiffré crédible : ville réelle, prix local cohérent, apport, montant des frais, mensualité à 4.2%\r\n\r\n<h2>Conseils d’optimisation</h2>\r\n- Lister 3–4 conseils propres au département (VEFA, meubles hors acte, aides locales, jeunes notaires, zones de rénovation, saisonnalité)\r\n\r\n<h2>Marché immobilier 2024–2025</h2>\r\n- Analyse : évolution des prix (3–8% variable), attractivité, tension du marché, volume des transactions, profil des acheteurs\r\n\r\n<h2>Données DVF 2024 (obligatoire)</h2>\r\n- Fournir : nombre de mutations, proportion maisons/appartements, médiane départementale, 2–3 villes avec prix/m² estimatifs plausibles\r\n- (Vous pouvez arrondir/inventer légèrement mais rester crédible)\r\n\r\n<h2>Prix immobiliers des principales villes</h2>\r\n- Lister 3 communes : préfecture, sous-préfecture, ville connue avec prix cohérents\r\n\r\n<h2>Notaires du département</h2>\r\n- 2 mini-profils (préfecture et sous-préfecture) : expertise locale, types de biens traités\r\n\r\n<h2>Simulez vos frais</h2>\r\n- Courte phrase CTA renvoyant vers le simulateur local\r\n\r\n<h2>FAQ</h2>\r\n- 5 questions spécifiques au département (ancien vs neuf, aides locales, zones tendues, fiscalité, délais)\r\n\r\n<h2>Voir aussi</h2>\r\n- Lister les départements de la même région, et lien précédent/suivant\r\n\r\n<h2>Sources</h2>\r\n- Mentionner barème notarial, DVF, notaires.fr, INSEE\r\n\r\nRègles interdites (ne jamais faire)\r\n- Ne pas écrire : “les données DVF ne sont pas connues”\r\n- Ne pas répéter les formulations d’un autre département\r\n- Ne pas réutiliser les mêmes tableaux ou phrases exactes\r\n- Ne pas écrire un texte générique IA ou encyclopédique\r\n\r\nFormat de sortie :\r\n- Répondre UNIQUEMENT avec HTML propre (head meta title/description + body) utilisant les balises <h1>, <h2>, <p>, <table>, <ul>, etc.\r\n\r\nUTILISE L'ENTRÉE JSON SUIVANTE :\r\n{\n  \"departement_nom\": \"Martinique\",\n  \"departement_numero\": \"972\",\n  \"prix_m2\": 2700,\n  \"mutations\": 0,\n  \"ventes\": 0,\n  \"maisons\": 0,\n  \"appartements\": 0,\n  \"villes\": [],\n  \"region\": \"Martinique\",\n  \"template\": \"A\"\n}\r\n\r\nFIN DU PROMPT\r\n🧠 MASTER PROMPT : Génération de page départementale (version 2025)\r\n\r\nTu es un expert SEO, data analyst et rédacteur immobilier. Génère une page unique, longue, optimisée et non dupliquée sur les \"frais de notaire 2025\" pour un département français. Utilise la structure du template fourni dans l'entrée. Respecte absolument :\r\n\r\n• Aucun texte dupliqué avec d’autres départements\r\n• Aucune phrase répétée entre pages\r\n• Aucun copier/coller entre textes\r\n• Aucune donnée DVF inventée\r\n• Variations lexicales importantes\r\n• Correction automatique des incohérences et fautes\r\n• Style clair, professionnel et naturel\r\n• Tous les tableaux doivent être différents selon le département\r\n• Ajouter un paragraphe unique sur la spécificité du territoire\r\n• Intégrer les données fournies dans l'entrée JSON\r\n• Intégrer des CTA vers simulateur et annuaire notaires\r\n• Générer une section FAQ différente à chaque fois\r\n• Produire un texte complet entre 1800 et 2500 mots\r\n\r\nUtilise strictement la structure du template A, B ou C selon l'entrée.\r\n\r\n---\r\n\r\nVoici l'entrée utilisateur (JSON) :\r\n\r\n{{input}}\r\n\r\nGénère la page complète maintenant. Répond uniquement avec le HTML complet de la page (incluant head meta title description, et le body). Ne préfixe pas la réponse par du texte explicatif.\r\n"
+      }
+    ],
+    "max_tokens": 8000
+  },
+  "input": {
+    "departement_nom": "Martinique",
+    "departement_numero": "972",
+    "prix_m2": 2700,
+    "mutations": 0,
+    "ventes": 0,
+    "maisons": 0,
+    "appartements": 0,
+    "villes": [],
+    "region": "Martinique",
+    "template": "A"
+  },
+  "apiUrl": "https://api.deepseek.com/v1/chat/completions"
+}

@@ -1,0 +1,1312 @@
+{
+  "total": 100,
+  "missing_pages": [],
+  "items": [
+    {
+      "code": "01",
+      "summary": {
+        "departement_nom": "Ain",
+        "departement_numero": "01",
+        "prix_m2": 2190,
+        "ancien_pct": 7.006,
+        "neuf_pct": 3.185,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "02",
+      "summary": {
+        "departement_nom": "Aisne",
+        "departement_numero": "02",
+        "prix_m2": 900,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "03",
+      "summary": {
+        "departement_nom": "Allier",
+        "departement_numero": "03",
+        "prix_m2": 1100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "04",
+      "summary": {
+        "departement_nom": "Alpes-de-Haute-Provence",
+        "departement_numero": "04",
+        "prix_m2": 1800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "05",
+      "summary": {
+        "departement_nom": "Hautes-Alpes",
+        "departement_numero": "05",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "06",
+      "summary": {
+        "departement_nom": "Alpes-Maritimes",
+        "departement_numero": "06",
+        "prix_m2": 4220,
+        "ancien_pct": 6.914,
+        "neuf_pct": 2.276,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "07",
+      "summary": {
+        "departement_nom": "Ardèche",
+        "departement_numero": "07",
+        "prix_m2": 1700,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "08",
+      "summary": {
+        "departement_nom": "Ardennes",
+        "departement_numero": "08",
+        "prix_m2": 850,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "09",
+      "summary": {
+        "departement_nom": "Ariège",
+        "departement_numero": "09",
+        "prix_m2": 1200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "10",
+      "summary": {
+        "departement_nom": "Aube",
+        "departement_numero": "10",
+        "prix_m2": 1150,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "11",
+      "summary": {
+        "departement_nom": "Aude",
+        "departement_numero": "11",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "12",
+      "summary": {
+        "departement_nom": "Aveyron",
+        "departement_numero": "12",
+        "prix_m2": 1300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "13",
+      "summary": {
+        "departement_nom": "Bouches-du-Rhône",
+        "departement_numero": "13",
+        "prix_m2": 3110,
+        "ancien_pct": 7.914,
+        "neuf_pct": 2.048,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "14",
+      "summary": {
+        "departement_nom": "Calvados",
+        "departement_numero": "14",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "15",
+      "summary": {
+        "departement_nom": "Cantal",
+        "departement_numero": "15",
+        "prix_m2": 1100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "16",
+      "summary": {
+        "departement_nom": "Charente",
+        "departement_numero": "16",
+        "prix_m2": 1250,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "17",
+      "summary": {
+        "departement_nom": "Charente-Maritime",
+        "departement_numero": "17",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "18",
+      "summary": {
+        "departement_nom": "Cher",
+        "departement_numero": "18",
+        "prix_m2": 1050,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "19",
+      "summary": {
+        "departement_nom": "Corrèze",
+        "departement_numero": "19",
+        "prix_m2": 1150,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "21",
+      "summary": {
+        "departement_nom": "Côte-d’Or",
+        "departement_numero": "21",
+        "prix_m2": 1900,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "22",
+      "summary": {
+        "departement_nom": "Côtes-d’Armor",
+        "departement_numero": "22",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "23",
+      "summary": {
+        "departement_nom": "Creuse",
+        "departement_numero": "23",
+        "prix_m2": 700,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "24",
+      "summary": {
+        "departement_nom": "Dordogne",
+        "departement_numero": "24",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "25",
+      "summary": {
+        "departement_nom": "Doubs",
+        "departement_numero": "25",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "26",
+      "summary": {
+        "departement_nom": "Drôme",
+        "departement_numero": "26",
+        "prix_m2": 1900,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "27",
+      "summary": {
+        "departement_nom": "Eure",
+        "departement_numero": "27",
+        "prix_m2": 1800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "28",
+      "summary": {
+        "departement_nom": "Eure-et-Loir",
+        "departement_numero": "28",
+        "prix_m2": 1700,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "29",
+      "summary": {
+        "departement_nom": "Finistère",
+        "departement_numero": "29",
+        "prix_m2": 2300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "2A",
+      "summary": {
+        "departement_nom": "Corse-du-Sud",
+        "departement_numero": "2A",
+        "prix_m2": 3500,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "2B",
+      "summary": {
+        "departement_nom": "Haute-Corse",
+        "departement_numero": "2B",
+        "prix_m2": 3200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "30",
+      "summary": {
+        "departement_nom": "Gard",
+        "departement_numero": "30",
+        "prix_m2": 2300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "31",
+      "summary": {
+        "departement_nom": "Haute-Garonne",
+        "departement_numero": "31",
+        "prix_m2": 2800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "32",
+      "summary": {
+        "departement_nom": "Gers",
+        "departement_numero": "32",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "33",
+      "summary": {
+        "departement_nom": "Gironde",
+        "departement_numero": "33",
+        "prix_m2": 3200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "34",
+      "summary": {
+        "departement_nom": "Hérault",
+        "departement_numero": "34",
+        "prix_m2": 2800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "35",
+      "summary": {
+        "departement_nom": "Ille-et-Vilaine",
+        "departement_numero": "35",
+        "prix_m2": 2800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "36",
+      "summary": {
+        "departement_nom": "Indre",
+        "departement_numero": "36",
+        "prix_m2": 950,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "37",
+      "summary": {
+        "departement_nom": "Indre-et-Loire",
+        "departement_numero": "37",
+        "prix_m2": 2300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "38",
+      "summary": {
+        "departement_nom": "Isère",
+        "departement_numero": "38",
+        "prix_m2": 2800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "39",
+      "summary": {
+        "departement_nom": "Jura",
+        "departement_numero": "39",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "40",
+      "summary": {
+        "departement_nom": "Landes",
+        "departement_numero": "40",
+        "prix_m2": 2600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "41",
+      "summary": {
+        "departement_nom": "Loir-et-Cher",
+        "departement_numero": "41",
+        "prix_m2": 1500,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "42",
+      "summary": {
+        "departement_nom": "Loire",
+        "departement_numero": "42",
+        "prix_m2": 1800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "43",
+      "summary": {
+        "departement_nom": "Haute-Loire",
+        "departement_numero": "43",
+        "prix_m2": 1200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "44",
+      "summary": {
+        "departement_nom": "Loire-Atlantique",
+        "departement_numero": "44",
+        "prix_m2": 3200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "45",
+      "summary": {
+        "departement_nom": "Loiret",
+        "departement_numero": "45",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "46",
+      "summary": {
+        "departement_nom": "Lot",
+        "departement_numero": "46",
+        "prix_m2": 1100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "47",
+      "summary": {
+        "departement_nom": "Lot-et-Garonne",
+        "departement_numero": "47",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "48",
+      "summary": {
+        "departement_nom": "Lozère",
+        "departement_numero": "48",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "49",
+      "summary": {
+        "departement_nom": "Maine-et-Loire",
+        "departement_numero": "49",
+        "prix_m2": 2000,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "50",
+      "summary": {
+        "departement_nom": "Manche",
+        "departement_numero": "50",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "51",
+      "summary": {
+        "departement_nom": "Marne",
+        "departement_numero": "51",
+        "prix_m2": 1900,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "52",
+      "summary": {
+        "departement_nom": "Haute-Marne",
+        "departement_numero": "52",
+        "prix_m2": 1100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "53",
+      "summary": {
+        "departement_nom": "Mayenne",
+        "departement_numero": "53",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "54",
+      "summary": {
+        "departement_nom": "Meurthe-et-Moselle",
+        "departement_numero": "54",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "55",
+      "summary": {
+        "departement_nom": "Meuse",
+        "departement_numero": "55",
+        "prix_m2": 850,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "56",
+      "summary": {
+        "departement_nom": "Morbihan",
+        "departement_numero": "56",
+        "prix_m2": 2300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "57",
+      "summary": {
+        "departement_nom": "Moselle",
+        "departement_numero": "57",
+        "prix_m2": 1700,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "58",
+      "summary": {
+        "departement_nom": "Nièvre",
+        "departement_numero": "58",
+        "prix_m2": 950,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "59",
+      "summary": {
+        "departement_nom": "Nord",
+        "departement_numero": "59",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "60",
+      "summary": {
+        "departement_nom": "Oise",
+        "departement_numero": "60",
+        "prix_m2": 1900,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "61",
+      "summary": {
+        "departement_nom": "Orne",
+        "departement_numero": "61",
+        "prix_m2": 1300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "62",
+      "summary": {
+        "departement_nom": "Pas-de-Calais",
+        "departement_numero": "62",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "63",
+      "summary": {
+        "departement_nom": "Puy-de-Dôme",
+        "departement_numero": "63",
+        "prix_m2": 1900,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "64",
+      "summary": {
+        "departement_nom": "Pyrénées-Atlantiques",
+        "departement_numero": "64",
+        "prix_m2": 2600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "65",
+      "summary": {
+        "departement_nom": "Hautes-Pyrénées",
+        "departement_numero": "65",
+        "prix_m2": 1700,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "66",
+      "summary": {
+        "departement_nom": "Pyrénées-Orientales",
+        "departement_numero": "66",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "67",
+      "summary": {
+        "departement_nom": "Bas-Rhin",
+        "departement_numero": "67",
+        "prix_m2": 2300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "68",
+      "summary": {
+        "departement_nom": "Haut-Rhin",
+        "departement_numero": "68",
+        "prix_m2": 2100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "69",
+      "summary": {
+        "departement_nom": "Rhône",
+        "departement_numero": "69",
+        "prix_m2": 3400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "70",
+      "summary": {
+        "departement_nom": "Haute-Saône",
+        "departement_numero": "70",
+        "prix_m2": 1200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "71",
+      "summary": {
+        "departement_nom": "Saône-et-Loire",
+        "departement_numero": "71",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "72",
+      "summary": {
+        "departement_nom": "Sarthe",
+        "departement_numero": "72",
+        "prix_m2": 1500,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "73",
+      "summary": {
+        "departement_nom": "Savoie",
+        "departement_numero": "73",
+        "prix_m2": 3200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "74",
+      "summary": {
+        "departement_nom": "Haute-Savoie",
+        "departement_numero": "74",
+        "prix_m2": 4200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "75",
+      "summary": {
+        "departement_nom": "Paris",
+        "departement_numero": "75",
+        "prix_m2": 10500,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "76",
+      "summary": {
+        "departement_nom": "Seine-Maritime",
+        "departement_numero": "76",
+        "prix_m2": 1900,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "77",
+      "summary": {
+        "departement_nom": "Seine-et-Marne",
+        "departement_numero": "77",
+        "prix_m2": 2800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "78",
+      "summary": {
+        "departement_nom": "Yvelines",
+        "departement_numero": "78",
+        "prix_m2": 3800,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "79",
+      "summary": {
+        "departement_nom": "Deux-Sèvres",
+        "departement_numero": "79",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "80",
+      "summary": {
+        "departement_nom": "Somme",
+        "departement_numero": "80",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "81",
+      "summary": {
+        "departement_nom": "Tarn",
+        "departement_numero": "81",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "82",
+      "summary": {
+        "departement_nom": "Tarn-et-Garonne",
+        "departement_numero": "82",
+        "prix_m2": 1700,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "83",
+      "summary": {
+        "departement_nom": "Var",
+        "departement_numero": "83",
+        "prix_m2": 4100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "84",
+      "summary": {
+        "departement_nom": "Vaucluse",
+        "departement_numero": "84",
+        "prix_m2": 3200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "85",
+      "summary": {
+        "departement_nom": "Vendée",
+        "departement_numero": "85",
+        "prix_m2": 2300,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "86",
+      "summary": {
+        "departement_nom": "Vienne",
+        "departement_numero": "86",
+        "prix_m2": 1600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "87",
+      "summary": {
+        "departement_nom": "Haute-Vienne",
+        "departement_numero": "87",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "88",
+      "summary": {
+        "departement_nom": "Vosges",
+        "departement_numero": "88",
+        "prix_m2": 1100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "89",
+      "summary": {
+        "departement_nom": "Yonne",
+        "departement_numero": "89",
+        "prix_m2": 1400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "90",
+      "summary": {
+        "departement_nom": "Territoire de Belfort",
+        "departement_numero": "90",
+        "prix_m2": 1500,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "91",
+      "summary": {
+        "departement_nom": "Essonne",
+        "departement_numero": "91",
+        "prix_m2": 3100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "92",
+      "summary": {
+        "departement_nom": "Hauts-de-Seine",
+        "departement_numero": "92",
+        "prix_m2": 6100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "93",
+      "summary": {
+        "departement_nom": "Seine-Saint-Denis",
+        "departement_numero": "93",
+        "prix_m2": 4100,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "94",
+      "summary": {
+        "departement_nom": "Val-de-Marne",
+        "departement_numero": "94",
+        "prix_m2": 4600,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "95",
+      "summary": {
+        "departement_nom": "Val-d’Oise",
+        "departement_numero": "95",
+        "prix_m2": 3400,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "971",
+      "summary": {
+        "departement_nom": "Guadeloupe",
+        "departement_numero": "971",
+        "prix_m2": 2500,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "972",
+      "summary": {
+        "departement_nom": "Martinique",
+        "departement_numero": "972",
+        "prix_m2": 2700,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "973",
+      "summary": {
+        "departement_nom": "Guyane",
+        "departement_numero": "973",
+        "prix_m2": 2200,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    },
+    {
+      "code": "974",
+      "summary": {
+        "departement_nom": "La Réunion",
+        "departement_numero": "974",
+        "prix_m2": 3000,
+        "has_table_html": false,
+        "local_advices_count": 0,
+        "local_faqs_count": 0,
+        "has_sources": false,
+        "has_jsonld": false
+      }
+    }
+  ]
+}

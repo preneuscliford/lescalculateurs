@@ -1,0 +1,11 @@
+{
+  "model": "deepseek-chat",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Tu es un expert immobilier français. Rephrase cette phrase de manière unique et naturelle pour le département Haute-Savoie, en gardant le sens exact, les chiffres et le contexte des frais de notaire 2025. Varie les mots et la structure sans changer les informations factuelles.\n\nPhrase originale : \"Économie potentielle :  300-800 €                        Privilégier un jeune notaire    Les notaires peuvent accorder des remises sur leurs  émoluments  (jusqu'à 10% sur la partie variable)\"\n\nRéponds uniquement avec la phrase rephrasée, sans guillemets ni explications."
+    }
+  ],
+  "max_tokens": 200,
+  "temperature": 0.7
+}

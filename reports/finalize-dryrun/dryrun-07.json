@@ -1,0 +1,18 @@
+{
+  "code": "07",
+  "summary": {
+    "departement_nom": "Ardèche",
+    "departement_numero": "07",
+    "prix_m2": 1700,
+    "has_table_html": false,
+    "local_advices_count": 0,
+    "local_faqs_count": 0,
+    "has_sources": false,
+    "has_jsonld": false
+  },
+  "sample_table_html": "",
+  "sample_local_advices": [],
+  "sample_local_faqs": [],
+  "sample_sources": [],
+  "jsonld": null
+}

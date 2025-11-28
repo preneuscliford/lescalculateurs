@@ -1,10 +1,10 @@
 export const baremes = {
   notaire: {
     tranches: [
-      { min: 0, max: 6500, taux: 0.039 },
-      { min: 6500, max: 17000, taux: 0.0159 },
-      { min: 17000, max: 60000, taux: 0.0106 },
-      { min: 60000, max: 999999999, taux: 0.00799 },
+      { min: 0, max: 6500, taux: 0.03945 },
+      { min: 6500, max: 17000, taux: 0.0165 },
+      { min: 17000, max: 60000, taux: 0.011 },
+      { min: 60000, max: 999999999, taux: 0.00825 },
     ],
     fraisDivers: {
       hypotheque: 450,
