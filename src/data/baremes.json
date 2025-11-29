@@ -12,7 +12,15 @@
       "conservation": 150,
       "formalites": 200
     },
-    "tva": 0.2
+    "tva": 0.2,
+    "csi": {
+      "taux": 0.001,
+      "minimum": 15
+    },
+    "droitsMutation": {
+      "standard": 0.0581,
+      "neuf": 0.00715
+    }
   },
   "indemnites_kilometriques": {
     "voiture": {

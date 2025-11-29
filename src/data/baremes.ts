@@ -13,6 +13,16 @@ export const baremes = {
       formalites: 200,
     },
     tva: 0.2,
+    csi: {
+      taux: 0.001, // 0,10 %
+      minimum: 15,
+    },
+    droitsMutation: {
+      standard: 0.0581, // taux usuel (hors départements à taux réduit)
+      neuf: 0.00715, // taux réduit pour le neuf
+      reduit: 0.038, // taux réduit pour certains départements
+      departementsReduits: ["36", "38", "56", "976"], // Indre, Isère, Morbihan, Mayotte
+    },
   },
   indemnites_kilometriques: {
     voiture: {
