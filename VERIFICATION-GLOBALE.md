@@ -2,7 +2,7 @@
 
 ## Vue d'ensemble
 
-Ce système centralise la vérification de **7 calculateurs** utilisant des données officielles mises à jour régulièrement.
+Ce système centralise la vérification de **8 calculateurs** utilisant des données officielles mises à jour régulièrement.
 
 ### 📊 État actuel (30 novembre 2025)
 
@@ -10,6 +10,7 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 |-----------|--------|-------|------------------|
 | ✅ Frais de Notaire | À jour | 102 | 01/01/2026 (CSI, TVA, Droits) |
 | ⚠️ Prêt Immobilier | À vérifier | 1 | 🔴 URGENT: 15/12/2025 |
+| ⚠️ Indemnité Kilométrique | À vérifier | 1 | 🟡 BIENTÔT: 31/12/2025 |
 | ⚠️ Plus-Value | À vérifier | 1 | 01/01/2026 |
 | ⚠️ Investissement Locatif | À vérifier | 1 | 01/01/2026 |
 | ⚠️ APL | À vérifier | 1 | 01/01/2026 |
@@ -39,9 +40,43 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 
 ---
 
-## 🟡 PRIORITÉ 2 - AVANT 1er JANVIER 2026
+## 🟡 PRIORITÉ 2 - AVANT 31 DÉCEMBRE 2025
 
-### 2. Calculateur de Plus-Value Immobilière
+### 2. Calculateur d'Indemnité Kilométrique
+**Status:** 🟡 À vérifier (avant 31 décembre 2025)
+
+**Données à vérifier:**
+- Barème indemnité kilométrique 2025 (source: impots.gouv.fr)
+- Barèmes selon type de véhicule:
+  * Voiture (ex: 0,683€/km en 2024, à confirmer 2025)
+  * Moto (ex: 0,286€/km en 2024, à confirmer 2025)
+  * Vélo électrique (ex: 0,276€/km en 2024, à confirmer 2025)
+  * Autres types (2 roues, tricycle)
+- TVA applicable
+
+**Checklist:**
+- [ ] Localiser le fichier du calculateur
+- [ ] Vérifier les barèmes 2025 sur https://www.impots.gouv.fr
+- [ ] Vérifier chaque type de véhicule
+- [ ] Tester avec exemples: 5000km voiture, 3000km moto, 1000km vélo électrique
+- [ ] Vérifier calculs TVA si applicable
+- [ ] Marquer comme "✅ À jour" dans global-monitoring.json
+- [ ] Committer: "Update: mileage allowance calculator verified (31/12/2025)"
+
+**Sources officielles pour 2024 (à confirmer 2025):**
+```
+Voiture: 0.683 €/km (depuis 2024)
+Motocyclette: 0.286 €/km (depuis 2024)
+Vélo électrique: 0.276 €/km (depuis 2024)
+2 roues: 0.234 €/km
+Tricycle moteur: 0.330 €/km
+```
+
+---
+
+## 🟡 PRIORITÉ 3 - AVANT 1er JANVIER 2026
+
+### 3. Calculateur de Plus-Value Immobilière
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
@@ -61,7 +96,7 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 
 ---
 
-### 3. Calculateur d'Investissement Locatif
+### 4. Calculateur d'Investissement Locatif
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
@@ -82,7 +117,7 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 
 ---
 
-### 4. Calculateur d'APL (Aide au Logement)
+### 5. Calculateur d'APL (Aide au Logement)
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
@@ -100,7 +135,7 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 
 ---
 
-### 5. Calculateur de Charges Locatives
+### 6. Calculateur de Charges Locatives
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
@@ -118,9 +153,9 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 
 ---
 
-## 🟡 PRIORITÉ 3 - JANVIER/FÉVRIER 2026
+## 🟡 PRIORITÉ 4 - JANVIER/FÉVRIER 2026
 
-### 6. Calculateur de Frais Agence Immobilière
+### 7. Calculateur de Frais Agence Immobilière
 **Status:** ⚠️ À vérifier (avant 31 janvier 2026)
 
 **Données à vérifier:**
@@ -137,7 +172,7 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 
 ---
 
-### 7. Calculateur de Frais de Notaire (maintenance annuelle)
+### 8. Calculateur de Frais de Notaire (maintenance annuelle)
 **Status:** ✅ À jour (révision annuelle le 01/01/2026)
 
 **Données à révérifier annuellement:**
@@ -164,8 +199,10 @@ Ce système centralise la vérification de **7 calculateurs** utilisant des donn
 ├─ Assurance emprunteur
 └─ Frais de dossier
 
-2025-12-31
-└─ Frais de dossier (contrôle final)
+2025-12-31 🟡 BIENTÔT
+├─ Barème indemnité kilométrique 2025
+├─ Barèmes par type de véhicule (voiture, moto, vélo électrique)
+└─ Taux TVA
 
 2026-01-01 🟡 BIENTÔT (32 jours)
 ├─ Barèmes notariaux 2025-2026
@@ -201,6 +238,7 @@ Pour chaque calculateur:
 ### Étape 1: Localiser les fichiers
 ```
 Pour notaire: src/pages/blog/departements/*.ts (102 fichiers)
+Pour indemnité km: src/pages/calcul-indemnite-kilometrique.ts (ou similaire)
 Pour autres: src/pages/*.ts ou src/components/*.tsx
 ```
 
@@ -248,6 +286,11 @@ Changer le status de "⚠️ À vérifier" à "✅ À jour"
 - **Assurance:** https://www.amf-france.org/
 - **Frais dossier:** https://www.service-public.fr
 
+### Indemnité Kilométrique
+- **Barèmes 2025:** https://www.impots.gouv.fr (rechercher "indemnité kilométrique 2025")
+- **Barèmes par type:** https://www.impots.gouv.fr
+- **TVA:** https://www.impots.gouv.fr
+
 ### Plus-Value Immobilière
 - **Impôt:** https://www.impots.gouv.fr
 - **Prélèvement social:** https://www.impots.gouv.fr
@@ -272,7 +315,7 @@ Changer le status de "⚠️ À vérifier" à "✅ À jour"
 
 ## 🚀 Commandes Utiles
 
-Voir l'état global:
+Voir l'état global de tous les calculateurs:
 ```bash
 node scripts/check-global-verification.cjs
 ```
@@ -320,4 +363,4 @@ git push origin main
 
 **Dernière mise à jour:** 30 novembre 2025
 **Prochaine mise à jour:** 15 décembre 2025 (Prêt immobilier)
-**Version:** 1.0
+**Version:** 2.0

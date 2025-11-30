@@ -211,6 +211,50 @@
           "frequency": "Trimestriel"
         }
       }
+    },
+
+    {
+      "id": "indemnite_km",
+      "name": "Calculateur d'Indemnité Kilométrique",
+      "description": "Calcul indemnité km pour frais professionnels et déplacements",
+      "pages": 1,
+      "status": "⚠️ À vérifier",
+      "current_data": {
+        "year": 2024,
+        "note": "Données 2024 actuellement utilisées",
+        "rates_2024": {
+          "automobile": "0,676 €/km (ou 0,683 selon sources)",
+          "motocyclette": "0,217 €/km (ou 0,286 selon sources)",
+          "moped": "0,164 €/km",
+          "velo_electrique": "0,005 €/km (ou 0,276 selon sources)",
+          "motocyclette_electrique": "0,237 €/km"
+        }
+      },
+      "data_sources": {
+        "bareme_2025": {
+          "description": "Barème indemnité kilométrique 2025",
+          "last_updated": "2025-11-30",
+          "status": "⚠️ NON ENCORE PUBLIÉES - Attendu avant 01/01/2026",
+          "next_check": "2025-12-20",
+          "source": "https://bofip.impots.gouv.fr/",
+          "frequency": "Annuel",
+          "note": "Publiées généralement le 20-31 décembre pour application 1er janvier"
+        },
+        "baremes_par_type": {
+          "description": "Barèmes selon type de véhicule (voiture, moto, vélo électrique, etc.)",
+          "last_updated": "2025-11-30",
+          "status": "⚠️ À confirmer pour 2025",
+          "next_check": "2025-12-20",
+          "source": "https://www.impots.gouv.fr/documentation",
+          "frequency": "Annuel",
+          "note": "Sources consultées: impots.gouv.fr, BOFIP, service-public.gouv.fr, notaires.fr"
+        },
+        "source_officielle": {
+          "description": "Documentation officielle BOFIP",
+          "url": "https://bofip.impots.gouv.fr/",
+          "search_keywords": "IR - Frais professionnels - Indemnité kilométrique"
+        }
+      }
     }
   ],
 
@@ -221,6 +265,14 @@
         "Taux de prêt immobilier moyens",
         "Frais de dossier bancaires",
         "Assurance emprunteur"
+      ]
+    },
+    {
+      "date": "2025-12-31",
+      "checklist": [
+        "Barème indemnité kilométrique 2025 (mise à jour avant 1er janvier)",
+        "Barèmes par type de véhicule",
+        "Taux TVA"
       ]
     },
     {
@@ -269,11 +321,11 @@
   ],
 
   "summary": {
-    "total_calculators": 7,
+    "total_calculators": 8,
     "up_to_date": 1,
-    "need_verification": 6,
+    "need_verification": 7,
     "last_full_audit": "2025-11-30",
     "next_full_audit": "2026-01-01",
-    "recommendation": "Vérifier les 6 calculateurs pour assurer la cohérence des données officielles"
+    "recommendation": "Vérifier les 7 calculateurs pour assurer la cohérence des données officielles"
   }
 }
