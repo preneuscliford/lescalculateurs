@@ -12,10 +12,14 @@ function fixBlogFile(filePath, departement) {
     // Trouver et supprimer la DEUXIÈME formatResult (qui écrase la première)
     // Pattern: chercher le deuxième "formatResult:" dans la section config
     const configStart = content.indexOf("const config = {");
-    const configEnd = content.indexOf("new CalculatorFrame(containerId, config);");
+    const configEnd = content.indexOf(
+      "new CalculatorFrame(containerId, config);"
+    );
 
     if (configStart === -1 || configEnd === -1) {
-      console.log(`⚠️  Structure config non trouvée dans ${path.basename(filePath)}`);
+      console.log(
+        `⚠️  Structure config non trouvée dans ${path.basename(filePath)}`
+      );
       return false;
     }
 
@@ -30,10 +34,15 @@ function fixBlogFile(filePath, departement) {
 
     // Trouver la deuxième occurence de formatResult: et la supprimer
     const firstFormatResultIndex = configSection.indexOf("formatResult:");
-    const secondFormatResultStart = configSection.indexOf("formatResult:", firstFormatResultIndex + 1);
+    const secondFormatResultStart = configSection.indexOf(
+      "formatResult:",
+      firstFormatResultIndex + 1
+    );
 
     if (secondFormatResultStart === -1) {
-      console.log(`✅ ${path.basename(filePath)} OK (une seule formatResult trouvée)`);
+      console.log(
+        `✅ ${path.basename(filePath)} OK (une seule formatResult trouvée)`
+      );
       return true;
     }
 
@@ -54,20 +63,31 @@ function fixBlogFile(filePath, departement) {
     }
 
     if (endIndex === -1) {
-      console.log(`⚠️  Impossible de trouver la fin de formatResult dans ${path.basename(filePath)}`);
+      console.log(
+        `⚠️  Impossible de trouver la fin de formatResult dans ${path.basename(
+          filePath
+        )}`
+      );
       return false;
     }
 
     // Supprimer la deuxième formatResult complète
-    const beforeSecond = content.substring(0, configStart + secondFormatResultStart);
-    const afterSecondFormatResult = content.substring(configStart + secondFormatResultStart + endIndex);
+    const beforeSecond = content.substring(
+      0,
+      configStart + secondFormatResultStart
+    );
+    const afterSecondFormatResult = content.substring(
+      configStart + secondFormatResultStart + endIndex
+    );
 
     // Nettoyer les espaces/virgules superflues
     let newContent = beforeSecond + afterSecondFormatResult;
     newContent = newContent.replace(/,\s*};/, "};"); // Enlever virgule avant }
 
     fs.writeFileSync(filePath, newContent, "utf-8");
-    console.log(`✅ Corrigé ${path.basename(filePath)} (double formatResult supprimée)`);
+    console.log(
+      `✅ Corrigé ${path.basename(filePath)} (double formatResult supprimée)`
+    );
     return true;
   } catch (error) {
     console.error(`❌ Erreur pour ${path.basename(filePath)}:`, error.message);
@@ -77,9 +97,13 @@ function fixBlogFile(filePath, departement) {
 
 // Traiter tous les fichiers de département
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
-const files = fs.readdirSync(deptDir).filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
+const files = fs
+  .readdirSync(deptDir)
+  .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
-console.log(`\n🔧 Correction des doublons formatResult dans ${files.length} articles...\n`);
+console.log(
+  `\n🔧 Correction des doublons formatResult dans ${files.length} articles...\n`
+);
 
 let successCount = 0;
 let failCount = 0;
@@ -97,8 +121,12 @@ files.forEach((file) => {
   }
 });
 
-console.log(`\n✨ Résultat: ${successCount}/${files.length} corrections réussies`);
+console.log(
+  `\n✨ Résultat: ${successCount}/${files.length} corrections réussies`
+);
 if (failCount > 0) {
   console.log(`⚠️  ${failCount} fichiers n'ont pas pu être corrigés`);
 }
-console.log("\n📝 Les doublons formatResult ont été supprimés. L'affichage détaillé des frais est maintenant visible.");
+console.log(
+  "\n📝 Les doublons formatResult ont été supprimés. L'affichage détaillé des frais est maintenant visible."
+);

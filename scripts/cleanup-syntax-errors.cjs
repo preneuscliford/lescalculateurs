@@ -12,11 +12,13 @@ function fixBlogFile(filePath) {
     // Chercher "}, \n => {"
     const badPattern = /},\s*\n\s*=>\s*\{/;
     if (badPattern.test(content)) {
-      console.log(`❌ Reste de syntaxe cassée trouvé dans ${path.basename(filePath)}`);
-      
+      console.log(
+        `❌ Reste de syntaxe cassée trouvé dans ${path.basename(filePath)}`
+      );
+
       // Supprimer tout ce qui suit jusqu'au prochain "formatResult:" ou "new CalculatorFrame"
       // Le plus simple: chercher le premier "formatResult:" et supprimer tout après sa fermeture jusqu'à "new CalculatorFrame"
-      
+
       // Approche: trouver la section entre },\n => { et },\n };
       const match = content.match(/},\s*\n\s*=>\s*\{[\s\S]*?\},\s*};/);
       if (match) {
@@ -29,8 +31,10 @@ function fixBlogFile(filePath) {
     // Vérifier s'il y a des ", => {" orphelins
     const orphanPattern = /,\s*=>\s*\{/;
     if (orphanPattern.test(content)) {
-      console.log(`❌ Reste orphelin "=> {" trouvé dans ${path.basename(filePath)}`);
-      
+      console.log(
+        `❌ Reste orphelin "=> {" trouvé dans ${path.basename(filePath)}`
+      );
+
       // Supprimer jusqu'au prochain }
       const match = content.match(/,\s*=>\s*\{[\s\S]*?\},/);
       if (match) {
@@ -55,9 +59,13 @@ function fixBlogFile(filePath) {
 
 // Traiter tous les fichiers de département
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
-const files = fs.readdirSync(deptDir).filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
+const files = fs
+  .readdirSync(deptDir)
+  .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
-console.log(`\n🔧 Nettoyage des restes de syntaxe cassée dans ${files.length} articles...\n`);
+console.log(
+  `\n🔧 Nettoyage des restes de syntaxe cassée dans ${files.length} articles...\n`
+);
 
 let successCount = 0;
 let failCount = 0;
@@ -71,7 +79,9 @@ files.forEach((file) => {
   }
 });
 
-console.log(`\n✨ Résultat: ${successCount}/${files.length} traitements réussis`);
+console.log(
+  `\n✨ Résultat: ${successCount}/${files.length} traitements réussis`
+);
 if (failCount > 0) {
   console.log(`⚠️  ${failCount} fichiers n'ont pas pu être traités`);
 }
