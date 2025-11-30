@@ -3,13 +3,17 @@
  * Ajoute une section "Hypothèses et Avertissements" pour plus de transparence
  */
 
-const fs = require('fs');
-const glob = require('glob');
-const path = require('path');
+const fs = require("fs");
+const glob = require("glob");
+const path = require("path");
 
-const blogFiles = glob.sync('src/pages/blog/departements/frais-notaire-*.html').sort();
+const blogFiles = glob
+  .sync("src/pages/blog/departements/frais-notaire-*.html")
+  .sort();
 
-console.log(`\n⚠️  Ajout de la section "Hypothèses et Avertissements" pour ${blogFiles.length} pages\n`);
+console.log(
+  `\n⚠️  Ajout de la section "Hypothèses et Avertissements" pour ${blogFiles.length} pages\n`
+);
 
 const disclaimerSection = `
         <!-- Hypothèses et Avertissements -->
@@ -41,18 +45,18 @@ const disclaimerSection = `
 let updated = 0;
 let errors = [];
 
-blogFiles.forEach(file => {
+blogFiles.forEach((file) => {
   const filename = path.basename(file);
-  let content = fs.readFileSync(file, 'utf-8');
+  let content = fs.readFileSync(file, "utf-8");
 
   // Vérifier si la section existe déjà
-  if (content.includes('Hypothèses et Avertissements')) {
+  if (content.includes("Hypothèses et Avertissements")) {
     console.log(`⏭️  ${filename} (déjà présent)`);
     return;
   }
 
   // Chercher l'endroit pour insérer (avant "Sources et références")
-  const insertMarker = '<!-- Références -->';
+  const insertMarker = "<!-- Références -->";
   const insertIndex = content.indexOf(insertMarker);
 
   if (insertIndex === -1) {
@@ -61,7 +65,11 @@ blogFiles.forEach(file => {
   }
 
   // Insérer la section
-  content = content.substring(0, insertIndex) + disclaimerSection + '\n        ' + content.substring(insertIndex);
+  content =
+    content.substring(0, insertIndex) +
+    disclaimerSection +
+    "\n        " +
+    content.substring(insertIndex);
 
   // Écrire le fichier
   fs.writeFileSync(file, content);
@@ -69,10 +77,10 @@ blogFiles.forEach(file => {
   console.log(`✅ ${filename}`);
 });
 
-console.log(`\n${'─'.repeat(70)}`);
+console.log(`\n${"─".repeat(70)}`);
 console.log(`✅ ${updated}/${blogFiles.length} fichiers mis à jour`);
 
 if (errors.length > 0) {
   console.log(`\n⚠️  Erreurs:`);
-  errors.forEach(e => console.log(`   - ${e}`));
+  errors.forEach((e) => console.log(`   - ${e}`));
 }

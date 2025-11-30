@@ -244,3 +244,44 @@ mais corrige: Ordre des blocs ⚠️ identique (intro → tableau → ex → ast
   - Conclusion et CTA uniques, style différent
 
 Chaque section respecte les exigences du document (pas de phrase, astuce, FAQ ou structure recyclée).
+
+!!!!!!!!! IMPOORTANT - LE FORMULE !!!!!!!!!!!!!!
+
+## 💰 Montant moyen des frais de notaire dans le [NOM]
+
+[2 phrases intro avec ville phare + particularité prix]
+
+| Type d'achat | Taux    | Pour [X] € dans [VILLE] |
+| ------------ | ------- | ----------------------- |
+| Ancien       | ≈ 7,x % | [Montant] €             |
+| Neuf         | ≈ 2,x % | [Montant] €             |
+
+## 📊 Exemple concret à [VILLE]
+
+Prix du bien (ancien) [X] €  
+Frais de notaire [Y] €  
+→ différence de [Z] € vs neuf
+
+## 💡 3 conseils uniques à [NOM]
+
+1. [Aide locale ou exonération]
+2. [Spécificité notaire ou marché]
+3. [Astuce négociation ou zone]
+
+## 📈 Marché immobilier [NOM] 2024–2025
+
+[4 bullets avec prix, volume, tension, attractivité – chiffres différents]
+
+## 🏘️ Prix moyens par ville
+
+[3 villes + prix au m² – différents chaque fois]
+
+## 💼 Tarifs Officiels 2024-2025 ([NOM])
+
+Émoluments : même grille  
+Droits : 5.80 % (ou 5.90 %, 6.45 %, etc.)  
+Débours : [X] € (cadastre), [Y] € (conservation) → **différent par département**
+
+## ⚠️ Limitations
+
+[1 phrase unique avec spécificité locale]

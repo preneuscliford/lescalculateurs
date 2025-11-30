@@ -1,0 +1,113 @@
+{
+  "last_updated": "2025-11-30T00:00:00Z",
+  "baremes_notariaux": {
+    "version": "2024-2025",
+    "official_source": "https://www.notaires.fr",
+    "last_check": "2025-11-30",
+    "tranches": [
+      { "min": 0, "max": 6500, "taux": 0.0387, "effective_date": "2024-01-01" },
+      { "min": 6500, "max": 17000, "taux": 0.01596, "effective_date": "2024-01-01" },
+      { "min": 17000, "max": 60000, "taux": 0.01064, "effective_date": "2024-01-01" },
+      { "min": 60000, "max": 999999999, "taux": 0.00799, "effective_date": "2024-01-01" }
+    ],
+    "next_expected_update": "2026-01-01",
+    "notes": "Barèmes en vigueur depuis 01/01/2024, révision annuelle attendue 01/01/2026"
+  },
+  
+  "droits_enregistrement": {
+    "version": "2024-2025",
+    "last_check": "2025-11-30",
+    "next_expected_update": "2026-01-01",
+    "notes": "Taux varient par département. Vérifier annuellement auprès de chaque région"
+  },
+  
+  "monitoring_tasks": [
+    {
+      "task": "Vérifier révision barèmes notariaux",
+      "frequency": "Trimestriel",
+      "next_check": "2026-02-01",
+      "responsible": "Admin",
+      "source": "https://www.notaires.fr/fr/vous-etes-proprietaire-immobilier-ou-acquereur/le-role-du-notaire/les-tarifs-notariaux"
+    },
+    {
+      "task": "Vérifier taux droits d'enregistrement par département",
+      "frequency": "Annuel",
+      "next_check": "2026-01-15",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "task": "Vérifier frais de débours (cadastre, conservation, etc.)",
+      "frequency": "Semestriel",
+      "next_check": "2026-06-01",
+      "responsible": "Admin",
+      "source": "https://www.notaires.fr/ + chambre départementale"
+    },
+    {
+      "task": "Vérifier CSI (Contribution de Sécurité Immobilière)",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.service-public.fr/"
+    },
+    {
+      "task": "Taux de TVA notarial",
+      "frequency": "Annuel (si changement fiscal)",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    }
+  ],
+
+  "changelog": [
+    {
+      "date": "2025-11-30",
+      "version": "1.0",
+      "updates": [
+        "Barèmes 2024-2025 implémentés",
+        "Tranches émoluments vérifiées",
+        "Taux droits enregistrement par département",
+        "Débours/formalités estimés"
+      ],
+      "verified_by": "Admin"
+    }
+  ],
+
+  "alert_rules": {
+    "email_notification": "admin@lescalculateurs.fr",
+    "check_interval_days": 30,
+    "alert_on": [
+      "Nouveau barème publié par Conseil Supérieur du Notariat",
+      "Changement taux droits enregistrement",
+      "Modification CSI ou frais fixes",
+      "Changement taux TVA"
+    ]
+  },
+
+  "sources_officielles": [
+    {
+      "name": "Conseil Supérieur du Notariat",
+      "url": "https://www.notaires.fr",
+      "type": "Barèmes notariaux officiels",
+      "frequency": "Annuel (janvier)"
+    },
+    {
+      "name": "Direction Générale des Finances Publiques",
+      "url": "https://www.impots.gouv.fr",
+      "type": "Droits d'enregistrement, TVA",
+      "frequency": "Annuel (janvier)"
+    },
+    {
+      "name": "Service-Public.fr",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
+      "type": "Infos frais notaire",
+      "frequency": "Continu"
+    },
+    {
+      "name": "Chambre des Notaires (par département)",
+      "url": "https://www.notaires.fr/fr/chambre-notariale-de-votre-region",
+      "type": "Tarifs locaux, débours",
+      "frequency": "Semestriel"
+    }
+  ]
+}
