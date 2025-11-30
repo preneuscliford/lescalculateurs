@@ -6,13 +6,13 @@ Ce système garantit que **LesCalculateurs.fr** reste **à jour** avec les donn�
 
 ## 🔍 Tâches de Monitoring
 
-| Tâche | Fréquence | Prochain Check | Source |
-|-------|-----------|---|--------|
-| **Barèmes notariaux** | Trimestriel | 2026-02-01 | Conseil Supérieur du Notariat |
-| **Droits d'enregistrement** | Annuel | 2026-01-15 | Direction des Finances |
-| **Débours/formalités** | Semestriel | 2026-06-01 | Chambres départementales |
-| **CSI (50€)** | Annuel | 2026-01-01 | Service-Public.fr |
-| **Taux TVA** | Annuel | 2026-01-01 | Direction des Finances |
+| Tâche                       | Fréquence   | Prochain Check | Source                        |
+| --------------------------- | ----------- | -------------- | ----------------------------- |
+| **Barèmes notariaux**       | Trimestriel | 2026-02-01     | Conseil Supérieur du Notariat |
+| **Droits d'enregistrement** | Annuel      | 2026-01-15     | Direction des Finances        |
+| **Débours/formalités**      | Semestriel  | 2026-06-01     | Chambres départementales      |
+| **CSI (50€)**               | Annuel      | 2026-01-01     | Service-Public.fr             |
+| **Taux TVA**                | Annuel      | 2026-01-01     | Direction des Finances        |
 
 ## 📌 Dates Clés à Retenir
 
@@ -24,6 +24,7 @@ Ce système garantit que **LesCalculateurs.fr** reste **à jour** avec les donn�
 ## 🚀 Comment Vérifier les Mises à Jour
 
 ### Lancer la vérification:
+
 ```bash
 node scripts/check-monitoring-dates.cjs
 ```
@@ -31,14 +32,17 @@ node scripts/check-monitoring-dates.cjs
 ### Vérifier manuellement les sources:
 
 1. **Barèmes notariaux 2024-2025:**
+
    - https://www.notaires.fr/fr/vous-etes-proprietaire-immobilier-ou-acquereur/le-role-du-notaire/les-tarifs-notariaux
    - Chercher: Tranches de 0,0387%, 0,01596%, 0,01064%, 0,00799%
 
 2. **Droits d'enregistrement par département:**
+
    - https://www.impots.gouv.fr/
    - Chercher: Taux mutationnels (ancien: ~5-7%, neuf: ~0,71%)
 
 3. **CSI (Contribution de Sécurité Immobilière):**
+
    - https://www.service-public.fr/particuliers/vosdroits/F17701
    - Chercher: "50€ forfaitaire"
 
@@ -51,12 +55,14 @@ node scripts/check-monitoring-dates.cjs
 Quand les données changent:
 
 ### Étape 1: Mettre à jour les données
+
 ```bash
 # Éditer src/data/departements.json avec les nouveaux taux
 # Éditer data/monitoring-calendar.json avec la date
 ```
 
 ### Étape 2: Mettre à jour le code
+
 ```bash
 # Si les tranches changent:
 # - Éditer scripts/add-official-tarifs.cjs (les tranches)
@@ -64,11 +70,13 @@ Quand les données changent:
 ```
 
 ### Étape 3: Tester tous les calculateurs
+
 ```bash
 node scripts/verify-final-content.cjs
 ```
 
 ### Étape 4: Committer les changements
+
 ```bash
 git add -A
 git commit -m "🔄 Update: Barèmes 2025-2026 (X/104 departments updated)"
@@ -76,6 +84,7 @@ git push
 ```
 
 ### Étape 5: Notifier les utilisateurs
+
 - Email newsletter
 - Banneau sur le site
 - Mise à jour blog
@@ -108,6 +117,7 @@ TVA:
 ## 🔐 Archivage des Anciennes Versions
 
 Les anciennes versions sont conservées dans Git:
+
 ```bash
 git log --oneline | grep "Update: Barèmes"
 git show <commit-hash>:src/data/departements.json
@@ -124,7 +134,7 @@ git show <commit-hash>:src/data/departements.json
 ✅ Garantir que **100% des calculateurs** restent à jour  
 ✅ Être les **premiers** à publier les nouveaux barèmes  
 ✅ Maintenir la **confiance des utilisateurs**  
-✅ Éviter les **calculs incorrects**  
+✅ Éviter les **calculs incorrects**
 
 ---
 

@@ -6,30 +6,33 @@ Ce système centralise la vérification de **8 calculateurs** utilisant des donn
 
 ### 📊 État actuel (30 novembre 2025)
 
-| Calculateur | Status | Pages | Prochaine action |
-|-----------|--------|-------|------------------|
-| ✅ Frais de Notaire | À jour | 102 | 01/01/2026 (CSI, TVA, Droits) |
-| ⚠️ Prêt Immobilier | À vérifier | 1 | 🔴 URGENT: 15/12/2025 |
-| ⚠️ Indemnité Kilométrique | À vérifier | 1 | 🟡 BIENTÔT: 31/12/2025 |
-| ⚠️ Plus-Value | À vérifier | 1 | 01/01/2026 |
-| ⚠️ Investissement Locatif | À vérifier | 1 | 01/01/2026 |
-| ⚠️ APL | À vérifier | 1 | 01/01/2026 |
-| ⚠️ Frais Agence | À vérifier | 1 | 31/01/2026 |
-| ⚠️ Charges Locatives | À vérifier | 1 | 01/01/2026 |
+| Calculateur               | Status     | Pages | Prochaine action              |
+| ------------------------- | ---------- | ----- | ----------------------------- |
+| ✅ Frais de Notaire       | À jour     | 102   | 01/01/2026 (CSI, TVA, Droits) |
+| ⚠️ Prêt Immobilier        | À vérifier | 1     | 🔴 URGENT: 15/12/2025         |
+| ⚠️ Indemnité Kilométrique | À vérifier | 1     | 🟡 BIENTÔT: 31/12/2025        |
+| ⚠️ Plus-Value             | À vérifier | 1     | 01/01/2026                    |
+| ⚠️ Investissement Locatif | À vérifier | 1     | 01/01/2026                    |
+| ⚠️ APL                    | À vérifier | 1     | 01/01/2026                    |
+| ⚠️ Frais Agence           | À vérifier | 1     | 31/01/2026                    |
+| ⚠️ Charges Locatives      | À vérifier | 1     | 01/01/2026                    |
 
 ---
 
 ## 🔴 PRIORITÉ 1 - URGENT (avant 15 décembre 2025)
 
 ### 1. Calculateur de Prêt Immobilier
+
 **Status:** 🔴 URGENT - 2 vérifications nécessaires
 
 **Données à vérifier:**
+
 - Taux de prêt immobilier moyens (Banque de France)
 - Assurance emprunteur (AMF France)
 - Frais de dossier (Service-Public)
 
 **Checklist:**
+
 - [ ] Localiser le fichier du calculateur
 - [ ] Vérifier les taux actuels sur https://www.banque-france.fr/statistiques/taux-bancaires
 - [ ] Vérifier les frais de dossier sur Service-Public
@@ -43,18 +46,21 @@ Ce système centralise la vérification de **8 calculateurs** utilisant des donn
 ## 🟡 PRIORITÉ 2 - AVANT 31 DÉCEMBRE 2025
 
 ### 2. Calculateur d'Indemnité Kilométrique
+
 **Status:** 🟡 À vérifier (avant 31 décembre 2025)
 
 **Données à vérifier:**
+
 - Barème indemnité kilométrique 2025 (source: impots.gouv.fr)
 - Barèmes selon type de véhicule:
-  * Voiture (ex: 0,683€/km en 2024, à confirmer 2025)
-  * Moto (ex: 0,286€/km en 2024, à confirmer 2025)
-  * Vélo électrique (ex: 0,276€/km en 2024, à confirmer 2025)
-  * Autres types (2 roues, tricycle)
+  - Voiture (ex: 0,683€/km en 2024, à confirmer 2025)
+  - Moto (ex: 0,286€/km en 2024, à confirmer 2025)
+  - Vélo électrique (ex: 0,276€/km en 2024, à confirmer 2025)
+  - Autres types (2 roues, tricycle)
 - TVA applicable
 
 **Checklist:**
+
 - [ ] Localiser le fichier du calculateur
 - [ ] Vérifier les barèmes 2025 sur https://www.impots.gouv.fr
 - [ ] Vérifier chaque type de véhicule
@@ -64,6 +70,7 @@ Ce système centralise la vérification de **8 calculateurs** utilisant des donn
 - [ ] Committer: "Update: mileage allowance calculator verified (31/12/2025)"
 
 **Sources officielles pour 2024 (à confirmer 2025):**
+
 ```
 Voiture: 0.683 €/km (depuis 2024)
 Motocyclette: 0.286 €/km (depuis 2024)
@@ -77,14 +84,17 @@ Tricycle moteur: 0.330 €/km
 ## 🟡 PRIORITÉ 3 - AVANT 1er JANVIER 2026
 
 ### 3. Calculateur de Plus-Value Immobilière
+
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
+
 - Taux impôt sur plus-value: **19%** (vérifier source)
 - Prélèvement social: **17.2%** (vérifier source)
 - Abattement pour durée de détention: **5% par an après 5 ans, 10% après 22 ans**
 
 **Checklist:**
+
 - [ ] Localiser le fichier du calculateur
 - [ ] Vérifier les taux sur https://www.impots.gouv.fr
 - [ ] Vérifier les règles d'abattement
@@ -97,14 +107,17 @@ Tricycle moteur: 0.330 €/km
 ---
 
 ### 4. Calculateur d'Investissement Locatif
+
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
+
 - Rendement locatif moyen France (SeLoger)
 - Taxe foncière par région (Direction des finances)
 - Statut taxe habitation 2025
 
 **Checklist:**
+
 - [ ] Localiser le fichier du calculateur
 - [ ] Vérifier rendement moyen sur https://www.seloger.com/prix/
 - [ ] Vérifier taux taxe foncière régionaux
@@ -118,13 +131,16 @@ Tricycle moteur: 0.330 €/km
 ---
 
 ### 5. Calculateur d'APL (Aide au Logement)
+
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
+
 - Montants APL max par zone
 - Plafonds ressources APL
 
 **Checklist:**
+
 - [ ] Localiser le fichier du calculateur
 - [ ] Vérifier montants actuels sur https://www.caf.fr/
 - [ ] Vérifier plafonds ressources
@@ -136,13 +152,16 @@ Tricycle moteur: 0.330 €/km
 ---
 
 ### 6. Calculateur de Charges Locatives
+
 **Status:** ⚠️ À vérifier
 
 **Données à vérifier:**
+
 - Taxe foncière (par commune)
 - Charges copropriété moyennes
 
 **Checklist:**
+
 - [ ] Localiser le fichier du calculateur
 - [ ] Vérifier taux taxe foncière
 - [ ] Vérifier moyenne charges copropriété (FNAIM)
@@ -156,12 +175,15 @@ Tricycle moteur: 0.330 €/km
 ## 🟡 PRIORITÉ 4 - JANVIER/FÉVRIER 2026
 
 ### 7. Calculateur de Frais Agence Immobilière
+
 **Status:** ⚠️ À vérifier (avant 31 janvier 2026)
 
 **Données à vérifier:**
+
 - Commission moyenne agences: **5-7%** (vérifier par région)
 
 **Checklist:**
+
 - [ ] Localiser le fichier du calculateur
 - [ ] Vérifier commission moyenne sur SeLoger
 - [ ] Vérifier variations régionales si applicable
@@ -173,15 +195,18 @@ Tricycle moteur: 0.330 €/km
 ---
 
 ### 8. Calculateur de Frais de Notaire (maintenance annuelle)
+
 **Status:** ✅ À jour (révision annuelle le 01/01/2026)
 
 **Données à révérifier annuellement:**
+
 - Barèmes émoluments (Conseil Supérieur du Notariat)
 - Droits d'enregistrement (Direction des finances)
 - CSI (50€ forfaitaire)
 - TVA (20%)
 
 **Checklist:**
+
 - [ ] Exécuter le script de vérification spécifique
 - [ ] Vérifier chaque source officielle
 - [ ] Tester les 102 calculateurs
@@ -236,6 +261,7 @@ Tricycle moteur: 0.330 €/km
 Pour chaque calculateur:
 
 ### Étape 1: Localiser les fichiers
+
 ```
 Pour notaire: src/pages/blog/departements/*.ts (102 fichiers)
 Pour indemnité km: src/pages/calcul-indemnite-kilometrique.ts (ou similaire)
@@ -243,24 +269,29 @@ Pour autres: src/pages/*.ts ou src/components/*.tsx
 ```
 
 ### Étape 2: Identifier les sources officielles
+
 Voir section "Sources officielles" ci-dessous.
 
 ### Étape 3: Vérifier les données
+
 1. Consulter la source officielle
 2. Comparer avec valeurs actuelles dans le code
 3. Identifier changements nécessaires
 
 ### Étape 4: Mettre à jour
+
 1. Modifier le code avec nouvelles valeurs
 2. Ajouter commentaire avec date et source
 3. Tester les calculs
 
 ### Étape 5: Valider
+
 1. Exécuter 3 tests avec exemples réalistes
 2. Vérifier résultats alignés avec sources
 3. Documenter changements
 
 ### Étape 6: Committer
+
 ```bash
 git add -A
 git commit -m "Update: [Calculateur] data verified ([date])"
@@ -268,6 +299,7 @@ git push origin main
 ```
 
 ### Étape 7: Mettre à jour global-monitoring.json
+
 Changer le status de "⚠️ À vérifier" à "✅ À jour"
 
 ---
@@ -275,6 +307,7 @@ Changer le status de "⚠️ À vérifier" à "✅ À jour"
 ## 📚 Sources Officielles
 
 ### Frais de Notaire
+
 - **Barèmes:** https://www.notaires.fr
 - **Droits enregistrement:** https://www.impots.gouv.fr
 - **Débours:** Chambres notariales régionales
@@ -282,33 +315,40 @@ Changer le status de "⚠️ À vérifier" à "✅ À jour"
 - **TVA:** https://www.impots.gouv.fr
 
 ### Prêt Immobilier
+
 - **Taux:** https://www.banque-france.fr/statistiques/taux-bancaires
 - **Assurance:** https://www.amf-france.org/
 - **Frais dossier:** https://www.service-public.fr
 
 ### Indemnité Kilométrique
+
 - **Barèmes 2025:** https://www.impots.gouv.fr (rechercher "indemnité kilométrique 2025")
 - **Barèmes par type:** https://www.impots.gouv.fr
 - **TVA:** https://www.impots.gouv.fr
 
 ### Plus-Value Immobilière
+
 - **Impôt:** https://www.impots.gouv.fr
 - **Prélèvement social:** https://www.impots.gouv.fr
 - **Abattement:** https://www.impots.gouv.fr
 
 ### Investissement Locatif
+
 - **Rendement:** https://www.seloger.com/prix/
 - **Taxe foncière:** https://www.impots.gouv.fr
 - **Taxe habitation:** https://www.impots.gouv.fr
 
 ### APL
+
 - **Montants & plafonds:** https://www.caf.fr/
 
 ### Charges Locatives
+
 - **Taxe foncière:** https://www.impots.gouv.fr
 - **Charges copropriété:** https://www.fnaim.fr/
 
 ### Frais d'Agence
+
 - **Commission moyenne:** https://www.seloger.com/
 
 ---
@@ -316,16 +356,19 @@ Changer le status de "⚠️ À vérifier" à "✅ À jour"
 ## 🚀 Commandes Utiles
 
 Voir l'état global de tous les calculateurs:
+
 ```bash
 node scripts/check-global-verification.cjs
 ```
 
 Voir l'état des frais de notaire:
+
 ```bash
 node scripts/check-monitoring-dates.cjs
 ```
 
 Committer la vérification:
+
 ```bash
 git add -A
 git commit -m "Verify: global maintenance - all calculators checked ([date])"
@@ -351,13 +394,13 @@ git push origin main
 
 ## 📞 Contacts Officiels
 
-| Source | Téléphone | Site | Email |
-|--------|-----------|------|-------|
-| Conseil Supérieur du Notariat | +33 (0)1 42 65 97 90 | https://www.notaires.fr | contact@notaires.fr |
-| Banque de France | +33 (0)1 42 92 42 92 | https://www.banque-france.fr | - |
-| Direction des Finances | - | https://www.impots.gouv.fr | - |
-| CAF | +33 (0)9 69 39 00 00 | https://www.caf.fr/ | - |
-| FNAIM | +33 (0)1 44 72 80 00 | https://www.fnaim.fr/ | - |
+| Source                        | Téléphone            | Site                         | Email               |
+| ----------------------------- | -------------------- | ---------------------------- | ------------------- |
+| Conseil Supérieur du Notariat | +33 (0)1 42 65 97 90 | https://www.notaires.fr      | contact@notaires.fr |
+| Banque de France              | +33 (0)1 42 92 42 92 | https://www.banque-france.fr | -                   |
+| Direction des Finances        | -                    | https://www.impots.gouv.fr   | -                   |
+| CAF                           | +33 (0)9 69 39 00 00 | https://www.caf.fr/          | -                   |
+| FNAIM                         | +33 (0)1 44 72 80 00 | https://www.fnaim.fr/        | -                   |
 
 ---
 

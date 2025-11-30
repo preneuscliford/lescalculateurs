@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-console.log('\n╔════════════════════════════════════════════════════════════════╗');
-console.log('║  🚗 RAPPEL URGENTE - Indemnité Kilométrique 2025               ║');
-console.log('╚════════════════════════════════════════════════════════════════╝\n');
+console.log(
+  "\n╔════════════════════════════════════════════════════════════════╗"
+);
+console.log(
+  "║  🚗 RAPPEL URGENTE - Indemnité Kilométrique 2025               ║"
+);
+console.log(
+  "╚════════════════════════════════════════════════════════════════╝\n"
+);
 
-const today = new Date('2025-11-30');
-const checkDate = new Date('2025-12-20');
+const today = new Date("2025-11-30");
+const checkDate = new Date("2025-12-20");
 const daysUntil = Math.floor((checkDate - today) / (1000 * 60 * 60 * 24));
 
 console.log(`📅 SITUATION ACTUELLE (30 novembre 2025):`);
@@ -18,13 +24,23 @@ console.log(`   Publication attendue: 20-31 décembre 2025`);
 console.log(`   Mise en vigueur: 1er janvier 2026\n`);
 
 console.log(`⏰ TIMELINE CRITIQUE:`);
-console.log(`   🟡 20 décembre 2025 (${daysUntil} jours): Début vérification BOFIP`);
-console.log(`   🟡 31 décembre 2025 (${daysUntil + 11} jours): Dernier jour avant application`);
-console.log(`   🔴 1er janvier 2026 (${daysUntil + 32} jours): Taux doivent être actifs\n`);
+console.log(
+  `   🟡 20 décembre 2025 (${daysUntil} jours): Début vérification BOFIP`
+);
+console.log(
+  `   🟡 31 décembre 2025 (${
+    daysUntil + 11
+  } jours): Dernier jour avant application`
+);
+console.log(
+  `   🔴 1er janvier 2026 (${daysUntil + 32} jours): Taux doivent être actifs\n`
+);
 
 console.log(`📚 SOURCES À CONSULTER:`);
 console.log(`   1. https://bofip.impots.gouv.fr/`);
-console.log(`      Rechercher: "IR - Frais professionnels - Indemnité kilométrique"`);
+console.log(
+  `      Rechercher: "IR - Frais professionnels - Indemnité kilométrique"`
+);
 console.log(`\n   2. https://www.impots.gouv.fr/documentation`);
 console.log(`      Rechercher: "Indemnité kilométrique 2025"`);
 console.log(`\n   3. https://www.service-public.gouv.fr`);
@@ -48,7 +64,9 @@ console.log(`   [ ] Comparer avec taux 2024`);
 console.log(`   [ ] Identifier changements\n`);
 
 console.log(`📝 CHECKLIST MISE À JOUR:`);
-console.log(`   [ ] Localiser fichier: src/pages/calcul-indemnite-kilometrique.ts`);
+console.log(
+  `   [ ] Localiser fichier: src/pages/calcul-indemnite-kilometrique.ts`
+);
 console.log(`   [ ] Mettre à jour constantes de taux`);
 console.log(`   [ ] Ajouter commentaire avec date et source`);
 console.log(`   [ ] Tester: 5000 km auto, 3000 km moto, 1000 km vélo`);

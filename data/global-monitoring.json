@@ -2,7 +2,7 @@
   "platform_name": "LesCalculateurs.fr",
   "last_global_check": "2025-11-30T00:00:00Z",
   "next_global_check": "2026-01-01T00:00:00Z",
-  
+
   "calculators": [
     {
       "id": "notaire",
@@ -289,9 +289,7 @@
     },
     {
       "date": "2026-01-15",
-      "checklist": [
-        "Droits d'enregistrement actualisés"
-      ]
+      "checklist": ["Droits d'enregistrement actualisés"]
     },
     {
       "date": "2026-01-31",
@@ -302,21 +300,15 @@
     },
     {
       "date": "2026-02-01",
-      "checklist": [
-        "Révision trimestrielle barèmes notariaux"
-      ]
+      "checklist": ["Révision trimestrielle barèmes notariaux"]
     },
     {
       "date": "2026-03-01",
-      "checklist": [
-        "Moyenne charges copropriété"
-      ]
+      "checklist": ["Moyenne charges copropriété"]
     },
     {
       "date": "2026-06-01",
-      "checklist": [
-        "Débours et formalités notariaux"
-      ]
+      "checklist": ["Débours et formalités notariaux"]
     }
   ],
 

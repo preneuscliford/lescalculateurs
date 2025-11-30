@@ -6,21 +6,36 @@
     "last_check": "2025-11-30",
     "tranches": [
       { "min": 0, "max": 6500, "taux": 0.0387, "effective_date": "2024-01-01" },
-      { "min": 6500, "max": 17000, "taux": 0.01596, "effective_date": "2024-01-01" },
-      { "min": 17000, "max": 60000, "taux": 0.01064, "effective_date": "2024-01-01" },
-      { "min": 60000, "max": 999999999, "taux": 0.00799, "effective_date": "2024-01-01" }
+      {
+        "min": 6500,
+        "max": 17000,
+        "taux": 0.01596,
+        "effective_date": "2024-01-01"
+      },
+      {
+        "min": 17000,
+        "max": 60000,
+        "taux": 0.01064,
+        "effective_date": "2024-01-01"
+      },
+      {
+        "min": 60000,
+        "max": 999999999,
+        "taux": 0.00799,
+        "effective_date": "2024-01-01"
+      }
     ],
     "next_expected_update": "2026-01-01",
     "notes": "Barèmes en vigueur depuis 01/01/2024, révision annuelle attendue 01/01/2026"
   },
-  
+
   "droits_enregistrement": {
     "version": "2024-2025",
     "last_check": "2025-11-30",
     "next_expected_update": "2026-01-01",
     "notes": "Taux varient par département. Vérifier annuellement auprès de chaque région"
   },
-  
+
   "monitoring_tasks": [
     {
       "task": "Vérifier révision barèmes notariaux",
