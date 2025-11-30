@@ -1060,8 +1060,7 @@
                         typeBien,
                         departement: values.departement,
                         tauxDroits,
-                      },
-                    };
+                      }};
                   } catch (e) {
                     console.error("Calcul notaire - erreur:", e);
                     return { success: false, error: "Erreur lors du calcul." };
@@ -1084,19 +1083,6 @@
                   + '<div class="text-xs text-gray-600 mt-1">' + d.pourcentage.toFixed(2) + '% du prix</div>'
                   + '</div>';
               },
-              formatResult: (result) => {
-                  const d = result.data;
-                  return (
-                    '<div class="space-y-3">' +
-                    '<div class="flex justify-between"><span>Total frais de notaire :</span><span class="font-bold text-green-600">' +
-                    formatCurrency(d.total) +
-                    "</span></div>" +
-                    '<div class="text-sm text-gray-600">' +
-                    d.pourcentage.toFixed(2) +
-                    "% du prix</div>" +
-                    "</div>"
-                  );
-                },
               };
               new CalculatorFrame(containerId, config);
               btn.textContent = "Calculer vos frais ici";

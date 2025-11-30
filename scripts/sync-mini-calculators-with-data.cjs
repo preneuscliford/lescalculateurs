@@ -2,10 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Charger les données depuis departements.json
-const deptDataPath = path.join(
-  __dirname,
-  "../src/data/departements.json"
-);
+const deptDataPath = path.join(__dirname, "../src/data/departements.json");
 const deptData = JSON.parse(fs.readFileSync(deptDataPath, "utf-8"));
 
 function updateBlogFile(filePath, departement) {
@@ -14,7 +11,9 @@ function updateBlogFile(filePath, departement) {
     const depInfo = deptData[departement];
 
     if (!depInfo) {
-      console.log(`⚠️  Département ${departement} non trouvé dans departements.json`);
+      console.log(
+        `⚠️  Département ${departement} non trouvé dans departements.json`
+      );
       return false;
     }
 
@@ -69,7 +68,9 @@ function updateBlogFile(filePath, departement) {
                     
                     if (typeBien !== "neuf") {
                       // Ancien: cadastre + conservation (données du département)
-                      debours = ${cadastre} + ${conservation}; // = ${cadastre + conservation}
+                      debours = ${cadastre} + ${conservation}; // = ${
+      cadastre + conservation
+    }
                       formalites = ${formalites}; // Données du département
                     }
 
@@ -124,7 +125,11 @@ function updateBlogFile(filePath, departement) {
 
     fs.writeFileSync(filePath, content, "utf-8");
     console.log(
-      `✅ ${path.basename(filePath).padEnd(30)} | Taux: ${(tauxDroits * 100).toFixed(1)}% | Cadastre: ${cadastre}€ | Conservation: ${conservation}€ | Formalités: ${formalites}€`
+      `✅ ${path.basename(filePath).padEnd(30)} | Taux: ${(
+        tauxDroits * 100
+      ).toFixed(
+        1
+      )}% | Cadastre: ${cadastre}€ | Conservation: ${conservation}€ | Formalités: ${formalites}€`
     );
     return true;
   } catch (error) {
@@ -135,9 +140,13 @@ function updateBlogFile(filePath, departement) {
 
 // Traiter tous les fichiers de département
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
-const files = fs.readdirSync(deptDir).filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
+const files = fs
+  .readdirSync(deptDir)
+  .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
-console.log(`\n🔄 Mise à jour des mini calculateurs avec données de departements.json...\n`);
+console.log(
+  `\n🔄 Mise à jour des mini calculateurs avec données de departements.json...\n`
+);
 
 let successCount = 0;
 let failCount = 0;
@@ -155,8 +164,12 @@ files.forEach((file) => {
   }
 });
 
-console.log(`\n✨ Résultat: ${successCount}/${files.length} mises à jour réussies`);
+console.log(
+  `\n✨ Résultat: ${successCount}/${files.length} mises à jour réussies`
+);
 if (failCount > 0) {
   console.log(`⚠️  ${failCount} fichiers n'ont pas pu être mis à jour`);
 }
-console.log("\n📊 Les calculateurs mini utilisent maintenant les vrais tarifs par département depuis departements.json");
+console.log(
+  "\n📊 Les calculateurs mini utilisent maintenant les vrais tarifs par département depuis departements.json"
+);

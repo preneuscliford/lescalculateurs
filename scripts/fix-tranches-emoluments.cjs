@@ -3,13 +3,33 @@ const path = require("path");
 
 // Taux de droits par département
 const tauxParDepartement = {
-  "75": 0.059, "92": 0.059, "93": 0.059, "94": 0.059,
-  "78": 0.059, "91": 0.059, "95": 0.059,
-  "77": 0.058, "13": 0.058, "69": 0.058, "59": 0.058,
-  "06": 0.058, "31": 0.058, "33": 0.058, "44": 0.058,
-  "34": 0.058, "67": 0.058, "35": 0.058, "38": 0.058,
-  "83": 0.058, "62": 0.058, "76": 0.058, "84": 0.058,
-  "30": 0.058, "17": 0.058, "2A": 0.045, "2B": 0.045,
+  75: 0.059,
+  92: 0.059,
+  93: 0.059,
+  94: 0.059,
+  78: 0.059,
+  91: 0.059,
+  95: 0.059,
+  77: 0.058,
+  13: 0.058,
+  69: 0.058,
+  59: 0.058,
+  "06": 0.058,
+  31: 0.058,
+  33: 0.058,
+  44: 0.058,
+  34: 0.058,
+  67: 0.058,
+  35: 0.058,
+  38: 0.058,
+  83: 0.058,
+  62: 0.058,
+  76: 0.058,
+  84: 0.058,
+  30: 0.058,
+  17: 0.058,
+  "2A": 0.045,
+  "2B": 0.045,
   default: 0.058,
 };
 
@@ -21,8 +41,10 @@ const fraisParDepartement = {
 function updateBlogFile(filePath, departement) {
   try {
     let content = fs.readFileSync(filePath, "utf-8");
-    const tauxDroits = tauxParDepartement[departement] || tauxParDepartement.default;
-    const frais = fraisParDepartement[departement] || fraisParDepartement.default;
+    const tauxDroits =
+      tauxParDepartement[departement] || tauxParDepartement.default;
+    const frais =
+      fraisParDepartement[departement] || fraisParDepartement.default;
 
     // Trouver et remplacer la fonction calculate
     const calculateStart = content.indexOf("calculate: (values) => {");
@@ -132,9 +154,13 @@ function updateBlogFile(filePath, departement) {
 
 // Traiter tous les fichiers de département
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
-const files = fs.readdirSync(deptDir).filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
+const files = fs
+  .readdirSync(deptDir)
+  .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
-console.log(`\n🔄 Correction des tranches d'émoluments dans ${files.length} articles...\n`);
+console.log(
+  `\n🔄 Correction des tranches d'émoluments dans ${files.length} articles...\n`
+);
 
 let successCount = 0;
 let failCount = 0;
@@ -152,8 +178,12 @@ files.forEach((file) => {
   }
 });
 
-console.log(`\n✨ Résultat: ${successCount}/${files.length} mises à jour réussies`);
+console.log(
+  `\n✨ Résultat: ${successCount}/${files.length} mises à jour réussies`
+);
 if (failCount > 0) {
   console.log(`⚠️  ${failCount} fichiers n'ont pas pu être mis à jour`);
 }
-console.log("\n📝 Tranches corrigées: 0.0387, 0.01596, 0.01064, 0.00799 (identiques au calculateur principal)");
+console.log(
+  "\n📝 Tranches corrigées: 0.0387, 0.01596, 0.01064, 0.00799 (identiques au calculateur principal)"
+);
