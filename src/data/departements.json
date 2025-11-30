@@ -1,4 +1,589 @@
 {
+  "10": {
+    "nom": "Aube",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
+    }
+  },
+  "11": {
+    "nom": "Aude",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "12": {
+    "nom": "Aveyron",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "13": {
+    "nom": "Bouches-du-Rhône",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 130,
+      "conservation": 160,
+      "formalites": 205
+    }
+  },
+  "14": {
+    "nom": "Calvados",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "15": {
+    "nom": "Cantal",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
+    }
+  },
+  "16": {
+    "nom": "Charente",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "17": {
+    "nom": "Charente-Maritime",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 121,
+      "conservation": 151,
+      "formalites": 196
+    }
+  },
+  "18": {
+    "nom": "Cher",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "19": {
+    "nom": "Corrèze",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "20": {
+    "nom": "Corse",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "21": {
+    "nom": "Côte-d'Or",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 121,
+      "conservation": 151,
+      "formalites": 198
+    }
+  },
+  "22": {
+    "nom": "Côtes-d'Armor",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "23": {
+    "nom": "Creuse",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
+    }
+  },
+  "24": {
+    "nom": "Dordogne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 123,
+      "conservation": 153,
+      "formalites": 198
+    }
+  },
+  "25": {
+    "nom": "Doubs",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "26": {
+    "nom": "Drôme",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "27": {
+    "nom": "Eure",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "28": {
+    "nom": "Eure-et-Loir",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "29": {
+    "nom": "Finistère",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 121,
+      "conservation": 151,
+      "formalites": 196
+    }
+  },
+  "30": {
+    "nom": "Gard",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "31": {
+    "nom": "Haute-Garonne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 125,
+      "conservation": 155,
+      "formalites": 200
+    }
+  },
+  "32": {
+    "nom": "Gers",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "33": {
+    "nom": "Gironde",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 127,
+      "conservation": 157,
+      "formalites": 202
+    }
+  },
+  "34": {
+    "nom": "Hérault",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 122,
+      "conservation": 152,
+      "formalites": 197
+    }
+  },
+  "35": {
+    "nom": "Ille-et-Vilaine",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 121,
+      "conservation": 151,
+      "formalites": 196
+    }
+  },
+  "36": {
+    "nom": "Indre",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "37": {
+    "nom": "Indre-et-Loire",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "38": {
+    "nom": "Isère",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 124,
+      "conservation": 154,
+      "formalites": 199
+    }
+  },
+  "39": {
+    "nom": "Jura",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "40": {
+    "nom": "Landes",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 121,
+      "conservation": 151,
+      "formalites": 196
+    }
+  },
+  "41": {
+    "nom": "Loir-et-Cher",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "42": {
+    "nom": "Loire",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 123,
+      "conservation": 153,
+      "formalites": 198
+    }
+  },
+  "43": {
+    "nom": "Haute-Loire",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
+    }
+  },
+  "44": {
+    "nom": "Loire-Atlantique",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 123,
+      "conservation": 153,
+      "formalites": 198
+    }
+  },
+  "45": {
+    "nom": "Loiret",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "46": {
+    "nom": "Lot",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "47": {
+    "nom": "Lot-et-Garonne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 122,
+      "conservation": 152,
+      "formalites": 197
+    }
+  },
+  "48": {
+    "nom": "Lozère",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "49": {
+    "nom": "Maine-et-Loire",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "50": {
+    "nom": "Manche",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "51": {
+    "nom": "Marne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
+    }
+  },
+  "52": {
+    "nom": "Haute-Marne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
+    }
+  },
+  "53": {
+    "nom": "Mayenne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "54": {
+    "nom": "Meurthe-et-Moselle",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "55": {
+    "nom": "Meuse",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "56": {
+    "nom": "Morbihan",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 121,
+      "conservation": 151,
+      "formalites": 196
+    }
+  },
+  "57": {
+    "nom": "Moselle",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "58": {
+    "nom": "Nièvre",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "59": {
+    "nom": "Nord",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "60": {
+    "nom": "Oise",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "61": {
+    "nom": "Orne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "62": {
+    "nom": "Pas-de-Calais",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "63": {
+    "nom": "Puy-de-Dôme",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "64": {
+    "nom": "Pyrénées-Atlantiques",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 123,
+      "conservation": 153,
+      "formalites": 198
+    }
+  },
+  "65": {
+    "nom": "Hautes-Pyrénées",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "66": {
+    "nom": "Pyrénées-Orientales",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 121,
+      "conservation": 151,
+      "formalites": 196
+    }
+  },
+  "67": {
+    "nom": "Bas-Rhin",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "68": {
+    "nom": "Haut-Rhin",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "69": {
+    "nom": "Rhône",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 128,
+      "conservation": 158,
+      "formalites": 203
+    }
+  },
+  "70": {
+    "nom": "Haute-Saône",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "71": {
+    "nom": "Saône-et-Loire",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 197
+    }
+  },
+  "72": {
+    "nom": "Sarthe",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "73": {
+    "nom": "Savoie",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 124,
+      "conservation": 154,
+      "formalites": 199
+    }
+  },
+  "74": {
+    "nom": "Haute-Savoie",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 125,
+      "conservation": 155,
+      "formalites": 200
+    }
+  },
   "75": {
     "nom": "Paris",
     "tauxDroits": 0.059,
@@ -6,6 +591,150 @@
       "cadastre": 150,
       "conservation": 180,
       "formalites": 220
+    }
+  },
+  "76": {
+    "nom": "Seine-Maritime",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 122,
+      "conservation": 152,
+      "formalites": 197
+    }
+  },
+  "77": {
+    "nom": "Seine-et-Marne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 125,
+      "conservation": 155,
+      "formalites": 195
+    }
+  },
+  "78": {
+    "nom": "Yvelines",
+    "tauxDroits": 0.059,
+    "fraisDivers": {
+      "cadastre": 135,
+      "conservation": 165,
+      "formalites": 205
+    }
+  },
+  "79": {
+    "nom": "Deux-Sèvres",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "80": {
+    "nom": "Somme",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "81": {
+    "nom": "Tarn",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "82": {
+    "nom": "Tarn-et-Garonne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "83": {
+    "nom": "Var",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 126,
+      "conservation": 156,
+      "formalites": 201
+    }
+  },
+  "84": {
+    "nom": "Vaucluse",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 195
+    }
+  },
+  "85": {
+    "nom": "Vendée",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "86": {
+    "nom": "Vienne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 119,
+      "conservation": 149,
+      "formalites": 194
+    }
+  },
+  "87": {
+    "nom": "Haute-Vienne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "88": {
+    "nom": "Vosges",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "89": {
+    "nom": "Yonne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "90": {
+    "nom": "Territoire de Belfort",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "91": {
+    "nom": "Essonne",
+    "tauxDroits": 0.059,
+    "fraisDivers": {
+      "cadastre": 130,
+      "conservation": 160,
+      "formalites": 200
     }
   },
   "92": {
@@ -35,24 +764,6 @@
       "formalites": 210
     }
   },
-  "78": {
-    "nom": "Yvelines",
-    "tauxDroits": 0.059,
-    "fraisDivers": {
-      "cadastre": 135,
-      "conservation": 165,
-      "formalites": 205
-    }
-  },
-  "91": {
-    "nom": "Essonne",
-    "tauxDroits": 0.059,
-    "fraisDivers": {
-      "cadastre": 130,
-      "conservation": 160,
-      "formalites": 200
-    }
-  },
   "95": {
     "nom": "Val-d'Oise",
     "tauxDroits": 0.059,
@@ -62,40 +773,58 @@
       "formalites": 200
     }
   },
-  "77": {
-    "nom": "Seine-et-Marne",
-    "tauxDroits": 0.058,
+  "971": {
+    "nom": "Guadeloupe",
+    "tauxDroits": 0.065,
     "fraisDivers": {
-      "cadastre": 125,
-      "conservation": 155,
-      "formalites": 195
+      "cadastre": 160,
+      "conservation": 190,
+      "formalites": 240
     }
   },
-  "13": {
-    "nom": "Bouches-du-Rhône",
-    "tauxDroits": 0.058,
+  "972": {
+    "nom": "Martinique",
+    "tauxDroits": 0.065,
     "fraisDivers": {
-      "cadastre": 130,
-      "conservation": 160,
-      "formalites": 205
+      "cadastre": 160,
+      "conservation": 190,
+      "formalites": 240
     }
   },
-  "69": {
-    "nom": "Rhône",
-    "tauxDroits": 0.058,
+  "973": {
+    "nom": "Guyane",
+    "tauxDroits": 0.065,
     "fraisDivers": {
-      "cadastre": 128,
-      "conservation": 158,
-      "formalites": 203
+      "cadastre": 160,
+      "conservation": 190,
+      "formalites": 240
     }
   },
-  "59": {
-    "nom": "Nord",
-    "tauxDroits": 0.058,
+  "974": {
+    "nom": "La Réunion",
+    "tauxDroits": 0.065,
     "fraisDivers": {
-      "cadastre": 120,
-      "conservation": 150,
-      "formalites": 195
+      "cadastre": 160,
+      "conservation": 190,
+      "formalites": 240
+    }
+  },
+  "975": {
+    "nom": "Saint-Pierre-et-Miquelon",
+    "tauxDroits": 0.065,
+    "fraisDivers": {
+      "cadastre": 160,
+      "conservation": 190,
+      "formalites": 240
+    }
+  },
+  "976": {
+    "nom": "Mayotte",
+    "tauxDroits": 0.065,
+    "fraisDivers": {
+      "cadastre": 160,
+      "conservation": 190,
+      "formalites": 240
     }
   },
   "06": {
@@ -105,123 +834,6 @@
       "cadastre": 135,
       "conservation": 165,
       "formalites": 210
-    }
-  },
-  "31": {
-    "nom": "Haute-Garonne",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 125,
-      "conservation": 155,
-      "formalites": 200
-    }
-  },
-  "33": {
-    "nom": "Gironde",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 127,
-      "conservation": 157,
-      "formalites": 202
-    }
-  },
-  "44": {
-    "nom": "Loire-Atlantique",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 123,
-      "conservation": 153,
-      "formalites": 198
-    }
-  },
-  "34": {
-    "nom": "Hérault",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 122,
-      "conservation": 152,
-      "formalites": 197
-    }
-  },
-  "67": {
-    "nom": "Bas-Rhin",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 120,
-      "conservation": 150,
-      "formalites": 195
-    }
-  },
-  "35": {
-    "nom": "Ille-et-Vilaine",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 121,
-      "conservation": 151,
-      "formalites": 196
-    }
-  },
-  "38": {
-    "nom": "Isère",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 124,
-      "conservation": 154,
-      "formalites": 199
-    }
-  },
-  "83": {
-    "nom": "Var",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 126,
-      "conservation": 156,
-      "formalites": 201
-    }
-  },
-  "62": {
-    "nom": "Pas-de-Calais",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 118,
-      "conservation": 148,
-      "formalites": 193
-    }
-  },
-  "76": {
-    "nom": "Seine-Maritime",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 122,
-      "conservation": 152,
-      "formalites": 197
-    }
-  },
-  "84": {
-    "nom": "Vaucluse",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 120,
-      "conservation": 150,
-      "formalites": 195
-    }
-  },
-  "30": {
-    "nom": "Gard",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 119,
-      "conservation": 149,
-      "formalites": 194
-    }
-  },
-  "17": {
-    "nom": "Charente-Maritime",
-    "tauxDroits": 0.058,
-    "fraisDivers": {
-      "cadastre": 121,
-      "conservation": 151,
-      "formalites": 196
     }
   },
   "2A": {
@@ -249,6 +861,78 @@
       "cadastre": 125,
       "conservation": 150,
       "formalites": 200
+    }
+  },
+  "01": {
+    "nom": "Ain",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "02": {
+    "nom": "Aisne",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 118,
+      "conservation": 148,
+      "formalites": 193
+    }
+  },
+  "03": {
+    "nom": "Allier",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 117,
+      "conservation": 147,
+      "formalites": 192
+    }
+  },
+  "04": {
+    "nom": "Alpes-de-Haute-Provence",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 123,
+      "conservation": 153,
+      "formalites": 198
+    }
+  },
+  "05": {
+    "nom": "Hautes-Alpes",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 122,
+      "conservation": 152,
+      "formalites": 197
+    }
+  },
+  "07": {
+    "nom": "Ardèche",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 120,
+      "conservation": 150,
+      "formalites": 200
+    }
+  },
+  "08": {
+    "nom": "Ardennes",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
+    }
+  },
+  "09": {
+    "nom": "Ariège",
+    "tauxDroits": 0.058,
+    "fraisDivers": {
+      "cadastre": 116,
+      "conservation": 146,
+      "formalites": 191
     }
   }
 }

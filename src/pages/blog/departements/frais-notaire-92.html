@@ -692,48 +692,103 @@
                 { id: "montant_mobilier", label: "Mobilier (optionnel)", type: "number", placeholder: "0", min: 0, step: 500 },
               ],
               calculate: (values) => {
-                try {
-                  if (!baremes || !baremes.notaire || !Array.isArray(baremes.notaire.tranches)) {
-                    throw new Error("Barèmes indisponibles");
+                  try {
+                    const prixAchat = Number(values.prix_achat) || 0;
+                    const montantMobilier = Number(values.montant_mobilier) || 0;
+                    const typeBien = values.type_bien;
+                    
+                    if (!isFinite(prixAchat) || prixAchat <= 0) {
+                      return { success: false, error: "Veuillez saisir un prix d'acquisition valide." };
+                    }
+                    if (montantMobilier < 0 || montantMobilier > prixAchat) {
+                      return { success: false, error: "Le mobilier doit être entre 0 et le prix d'acquisition." };
+                    }
+
+                    const prixNetImmobilier = prixAchat - montantMobilier;
+                    
+                    // Calcul des émoluments selon les tranches officielles (IDENTIQUE AU CALCULATEUR PRINCIPAL)
+                    let emoluments = 0;
+                    const tranches = [
+                      { min: 0, max: 6500, taux: 0.0387 },
+                      { min: 6500, max: 17000, taux: 0.01596 },
+                      { min: 17000, max: 60000, taux: 0.01064 },
+                      { min: 60000, max: 999999999, taux: 0.00799 },
+                    ];
+                    for (const tranche of tranches) {
+                      const largeur = Math.max(tranche.max - tranche.min, 0);
+                      const applicable = Math.min(Math.max(prixNetImmobilier - tranche.min, 0), largeur);
+                      if (applicable <= 0) continue;
+                      emoluments += applicable * tranche.taux;
+                    }
+                    emoluments = Math.round(emoluments * 100) / 100;
+
+                    // Débours et formalités selon le type de bien ET le département
+                    let debours = 330; // Neuf: frais d'acte
+                    let formalites = 120; // Neuf: formalités
+                    
+                    if (typeBien !== "neuf") {
+                      // Ancien: cadastre + conservation (données du département)
+                      debours = 145 + 175; // = 320
+                      formalites = 215; // Données du département
+                    }
+
+                    // CSI (fixe)
+                    const csi = 50;
+
+                    // Droits d'enregistrement
+                    let tauxDroits = 0.059;
+                    let droitsEnregistrement = 0;
+                    if (typeBien === "neuf") {
+                      tauxDroits = 0.00715;
+                    }
+                    droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
+
+                    // TVA (20% sur émoluments + formalités)
+                    const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
+
+                    // Total
+                    const total = Math.round((emoluments + droitsEnregistrement + debours + formalites + csi + tva) * 100) / 100;
+                    const pourcentage = prixAchat > 0 ? Math.round((total / prixAchat) * 10000) / 100 : 0;
+
+                    return {
+                      success: true,
+                      data: {
+                        prixAchat,
+                        prixNetImmobilier,
+                        montantMobilier,
+                        emoluments,
+                        droitsEnregistrement,
+                        debours,
+                        formalites,
+                        csi,
+                        tva,
+                        total,
+                        pourcentage,
+                        typeBien,
+                        departement: values.departement,
+                        tauxDroits,
+                      },
+                    };
+                  } catch (e) {
+                    console.error("Calcul notaire - erreur:", e);
+                    return { success: false, error: "Erreur lors du calcul." };
                   }
-                  const prixAchat = Number(values.prix_achat);
-                  const montantMobilier = Number(values.montant_mobilier) || 0;
-                  if (!isFinite(prixAchat) || prixAchat <= 0) {
-                    return { success: false, error: "Veuillez saisir un prix d'acquisition valide." };
-                  }
-                  if (montantMobilier < 0 || montantMobilier > prixAchat) {
-                    return { success: false, error: "Le mobilier doit être entre 0 et le prix d'acquisition." };
-                  }
-                  const prixNetImmobilier = prixAchat - montantMobilier;
-                  let emoluments = 0;
-                  for (const tranche of baremes.notaire.tranches) {
-                    const largeur = Math.max(tranche.max - tranche.min, 0);
-                    const applicable = Math.min(Math.max(prixNetImmobilier - tranche.min, 0), largeur);
-                    if (applicable <= 0) continue;
-                    emoluments += applicable * tranche.taux;
-                  }
-                  const td = 0.058;
-                  const droitsEnregistrement = values.type_bien === "neuf" ? 0 : prixNetImmobilier * td;
-                  const fraisDivers = 300;
-                  const tvaRate = Number(baremes.notaire.tva) || 0.2;
-                  const tva = (emoluments + fraisDivers) * tvaRate;
-                  const total = emoluments + fraisDivers + droitsEnregistrement + tva;
-                  const pourcentage = (total / prixAchat) * 100;
-                  console.log("Mini-calculateur notaire:", { prixAchat, montantMobilier, prixNetImmobilier, emoluments, td, droitsEnregistrement, fraisDivers, tva, total, pourcentage });
-                  if (!isFinite(total) || !isFinite(pourcentage)) {
-                    return { success: false, error: "Des données invalides ont été saisies." };
-                  }
-                  return { success: true, data: { prixAchat, prixNetImmobilier, emoluments, droitsEnregistrement, fraisDivers, tva, total, pourcentage, typeBien: values.type_bien, departement: values.departement, montantMobilier } };
-                } catch (e) {
-                  console.error("Calcul notaire - erreur:", e);
-                  return { success: false, error: "Erreur lors du calcul." };
-                }
-              },
+                },
               formatResult: (result) => {
                 const d = result.data;
-                return '<div class="space-y-3">'
-                  + '<div class="flex justify-between"><span>Total frais de notaire :</span><span class="font-bold text-green-600">' + formatCurrency(d.total) + '</span></div>'
-                  + '<div class="text-sm text-gray-600">' + d.pourcentage.toFixed(2) + '% du prix</div>'
+                const fmt = (n) => {
+                  if (n === undefined || n === null || isNaN(n)) return "0 €";
+                  return n.toLocaleString("fr-FR", { style: "currency", currency: "EUR", minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                };
+                return '<div class="space-y-2 text-sm">'
+                  + '<div class="flex justify-between"><span>Émoluments du notaire :</span><span class="font-medium">' + fmt(d.emoluments) + '</span></div>'
+                  + '<div class="flex justify-between"><span>Droits d\'enregistrement :</span><span class="font-medium">' + fmt(d.droitsEnregistrement) + '</span></div>'
+                  + '<div class="flex justify-between"><span>Débours :</span><span class="font-medium">' + fmt(d.debours) + '</span></div>'
+                  + '<div class="flex justify-between"><span>Formalités diverses :</span><span class="font-medium">' + fmt(d.formalites) + '</span></div>'
+                  + '<div class="flex justify-between"><span>CSI :</span><span class="font-medium">' + fmt(d.csi) + '</span></div>'
+                  + '<div class="flex justify-between"><span>TVA (20%) :</span><span class="font-medium">' + fmt(d.tva) + '</span></div>'
+                  + '<div class="flex justify-between border-t pt-2 font-bold"><span>Total frais de notaire :</span><span class="text-green-600">' + fmt(d.total) + '</span></div>'
+                  + '<div class="text-xs text-gray-600 mt-1">' + d.pourcentage.toFixed(2) + '% du prix</div>'
                   + '</div>';
               },
               };
