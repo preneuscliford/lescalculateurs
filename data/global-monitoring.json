@@ -1,0 +1,279 @@
+{
+  "platform_name": "LesCalculateurs.fr",
+  "last_global_check": "2025-11-30T00:00:00Z",
+  "next_global_check": "2026-01-01T00:00:00Z",
+  
+  "calculators": [
+    {
+      "id": "notaire",
+      "name": "Frais de Notaire",
+      "description": "Calcul des frais notariaux pour achat immobilier",
+      "pages": 102,
+      "status": "✅ À jour",
+      "data_sources": {
+        "baremes_emoluments": {
+          "version": "2024-2025",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-02-01",
+          "source": "https://www.notaires.fr",
+          "frequency": "Trimestriel"
+        },
+        "droits_enregistrement": {
+          "version": "2024-2025",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-15",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel"
+        },
+        "debours_formalites": {
+          "version": "2024-2025",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-06-01",
+          "source": "https://www.notaires.fr + Chambres départementales",
+          "frequency": "Semestriel"
+        },
+        "csi": {
+          "value": "50€",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.service-public.fr",
+          "frequency": "Annuel"
+        },
+        "tva": {
+          "rate": "20%",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel"
+        }
+      }
+    },
+
+    {
+      "id": "pret_immobilier",
+      "name": "Calculateur de Prêt Immobilier",
+      "description": "Calcul mensualités, durée, coût total du crédit",
+      "pages": 1,
+      "status": "⚠️ À vérifier",
+      "data_sources": {
+        "taux_reference": {
+          "description": "Taux moyens prêts immobiliers",
+          "last_updated": "2025-11-30",
+          "next_check": "2025-12-15",
+          "source": "https://www.banque-france.fr/statistiques/taux-bancaires",
+          "frequency": "Mensuel",
+          "note": "Les taux varient, afficher comme 'exemple' ou fourchette"
+        },
+        "assurance_emprunteur": {
+          "description": "Taux assurance crédit",
+          "last_updated": "2025-11-30",
+          "next_check": "2025-12-15",
+          "source": "https://www.amf-france.org/",
+          "frequency": "Mensuel"
+        },
+        "frais_dossier": {
+          "description": "Frais de dossier bancaires",
+          "last_updated": "2025-11-30",
+          "next_check": "2025-12-31",
+          "source": "https://www.service-public.fr",
+          "frequency": "Trimestrial"
+        }
+      }
+    },
+
+    {
+      "id": "plus_value",
+      "name": "Calculateur de Plus-Value Immobilière",
+      "description": "Calcul impôt sur plus-value, abattement",
+      "pages": 1,
+      "status": "⚠️ À vérifier",
+      "data_sources": {
+        "taux_impot": {
+          "description": "Taux impôt sur plus-value",
+          "current_rate": "19%",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel"
+        },
+        "prelevement_social": {
+          "description": "Prélèvement social et contributions",
+          "current_rate": "17.2%",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel"
+        },
+        "abattement": {
+          "description": "Abattement pour durée de détention",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel",
+          "note": "5% par année après 5 ans, puis 10% à partir de 22 ans"
+        }
+      }
+    },
+
+    {
+      "id": "investissement_locatif",
+      "name": "Calculateur d'Investissement Locatif",
+      "description": "Rentabilité, cash-flow, ROI",
+      "pages": 1,
+      "status": "⚠️ À vérifier",
+      "data_sources": {
+        "taux_rendement_moyen": {
+          "description": "Rendement locatif moyen France",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-31",
+          "source": "https://www.seloger.com/prix/",
+          "frequency": "Mensuel"
+        },
+        "taxe_fonciere": {
+          "description": "Taux taxe foncière par région",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel"
+        },
+        "taxe_habitation": {
+          "description": "Statut taxe habitation 2025",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel"
+        }
+      }
+    },
+
+    {
+      "id": "apl",
+      "name": "Calculateur d'APL (Aide au Logement)",
+      "description": "Calcul aide personnalisée au logement",
+      "pages": 1,
+      "status": "⚠️ À vérifier",
+      "data_sources": {
+        "montants_apl": {
+          "description": "Montants APL max par zone",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.caf.fr/",
+          "frequency": "Annuel"
+        },
+        "plafonds_ressources": {
+          "description": "Plafonds ressources APL",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.caf.fr/",
+          "frequency": "Annuel"
+        }
+      }
+    },
+
+    {
+      "id": "frais_agence",
+      "name": "Calculateur Frais Agence Immobilière",
+      "description": "Commission, frais négociation",
+      "pages": 1,
+      "status": "⚠️ À vérifier",
+      "data_sources": {
+        "commission_moyenne": {
+          "description": "Commission moyenne agences France",
+          "current_rate": "5-7%",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-31",
+          "source": "https://www.seloger.com/",
+          "frequency": "Mensuel",
+          "note": "Variable selon région et agence"
+        }
+      }
+    },
+
+    {
+      "id": "charge_locative",
+      "name": "Calculateur de Charges Locatives",
+      "description": "Taxe foncière, copropriété, assurance",
+      "pages": 1,
+      "status": "⚠️ À vérifier",
+      "data_sources": {
+        "taxe_fonciere": {
+          "description": "Taux taxe foncière par commune",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-01-01",
+          "source": "https://www.impots.gouv.fr",
+          "frequency": "Annuel"
+        },
+        "charges_copropriete": {
+          "description": "Moyenne charges copropriété",
+          "last_updated": "2025-11-30",
+          "next_check": "2026-03-01",
+          "source": "https://www.fnaim.fr/",
+          "frequency": "Trimestriel"
+        }
+      }
+    }
+  ],
+
+  "global_checks": [
+    {
+      "date": "2025-12-15",
+      "checklist": [
+        "Taux de prêt immobilier moyens",
+        "Frais de dossier bancaires",
+        "Assurance emprunteur"
+      ]
+    },
+    {
+      "date": "2026-01-01",
+      "checklist": [
+        "Barèmes notariaux 2025-2026",
+        "Taux impôt plus-value",
+        "Prélèvement social",
+        "CSI, TVA, droits enregistrement",
+        "Taxe foncière",
+        "APL montants et plafonds",
+        "Charges copropriété"
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "checklist": [
+        "Droits d'enregistrement actualisés"
+      ]
+    },
+    {
+      "date": "2026-01-31",
+      "checklist": [
+        "Rendement locatif moyen",
+        "Commission agences immobilières"
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "checklist": [
+        "Révision trimestrielle barèmes notariaux"
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "checklist": [
+        "Moyenne charges copropriété"
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "checklist": [
+        "Débours et formalités notariaux"
+      ]
+    }
+  ],
+
+  "summary": {
+    "total_calculators": 7,
+    "up_to_date": 1,
+    "need_verification": 6,
+    "last_full_audit": "2025-11-30",
+    "next_full_audit": "2026-01-01",
+    "recommendation": "Vérifier les 6 calculateurs pour assurer la cohérence des données officielles"
+  }
+}
