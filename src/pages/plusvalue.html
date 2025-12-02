@@ -141,19 +141,60 @@
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- Intro SEO -->
-      <section class="mb-8">
-        <p class="text-lg text-gray-600 leading-relaxed">
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          💰 Plus-value Immobilière 2025
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
           Calculez précisément l'impôt sur votre plus-value immobilière 2025 !
           Notre outil intègre tous les abattements pour durée de détention, les
           exonérations possibles et les taux en vigueur. Résidence principale,
           secondaire ou investissement locatif : découvrez ce que vous devrez
-          réellement payer au fisc. Abattements progressifs sur l'impôt sur le
-          revenu (6% par an dès la 6ème année) et sur les prélèvements sociaux
-          (1,65% dès la 6ème année, puis 9% dès la 22ème). Exonération totale
-          après 30 ans de détention. Calculs conformes à la réglementation
-          fiscale 2025 avec prise en compte des frais d'acquisition et travaux
-          déductibles.
+          réellement payer au fisc.
         </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Abattements progressifs sur l'impôt sur le revenu (6% par an dès la
+          6ème année) et sur les prélèvements sociaux (1,65% dès la 6ème année,
+          puis 9% dès la 22ème). Exonération totale après 30 ans de détention.
+          Calculs conformes à la réglementation fiscale 2025 avec prise en
+          compte des frais d'acquisition et travaux déductibles. Pour plus de
+          détails, consultez
+          <a href="https://www.legifrance.gouv.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">legifrance.gouv.fr</a>.
+        </p>
+      </section>
+
+      <!-- Feature Cards -->
+      <section class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-8 mb-12">
+        <div class="space-y-4">
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">📈</div>
+              <h3 class="font-bold text-gray-900 mb-1">
+                Calcul exact de plus-value
+              </h3>
+              <p class="text-sm text-gray-600">
+                Déduction automatique des frais d'acquisition, travaux et
+                améliorations avec justificatifs
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">📊</div>
+              <h3 class="font-bold text-gray-900 mb-1">Abattements 2025</h3>
+              <p class="text-sm text-gray-600">
+                Application automatique des abattements pour durée de détention
+                et type de bien
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">✅</div>
+              <h3 class="font-bold text-gray-900 mb-1">Exonérations</h3>
+              <p class="text-sm text-gray-600">
+                Détection des exonérations possibles (résidence principale,
+                durée de détention, etc.)
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Calculateur -->
@@ -277,6 +318,25 @@
         <!-- Résultats -->
         <div id="results" class="hidden mt-8"></div>
       </div>
+
+      <!-- Boutons de comparaison -->
+      <div class="mt-6 flex justify-center gap-3">
+        <button
+          id="plusvalue-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="plusvalue-reset-compare"
+          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <!-- Comparaison (masquée par défaut) -->
+      <div id="plusvalue-comparaison" class="hidden mt-8"></div>
 
       <!-- FAQ Schema.org -->
       <section class="mt-12">
@@ -747,6 +807,31 @@
         document.getElementById("dateAchat").value = fiveYearsAgo
           .toISOString()
           .split("T")[0];
+
+        // Event listeners pour comparaison
+        import("../components/ComparisonModal.ts").then(({ ComparisonModal }) => {
+          const addBtn = document.getElementById("plusvalue-add-to-compare");
+          const resetBtn = document.getElementById("plusvalue-reset-compare");
+
+          if (addBtn && resetBtn) {
+            addBtn.addEventListener("click", () => {
+              ComparisonModal.addComparison("plusvalue", {
+                prixVente: document.getElementById("prixVente")?.value || "N/A",
+                impotTotal: document.getElementById("results")?.querySelector('[data-impot-total]')?.textContent || "N/A"
+              });
+              addBtn.classList.add("hidden");
+              resetBtn.classList.remove("hidden");
+              document.getElementById("plusvalue-comparaison").classList.remove("hidden");
+            });
+
+            resetBtn.addEventListener("click", () => {
+              ComparisonModal.resetComparison("plusvalue");
+              addBtn.classList.remove("hidden");
+              resetBtn.classList.add("hidden");
+              document.getElementById("plusvalue-comparaison").classList.add("hidden");
+            });
+          }
+        });
       });
     </script>
     

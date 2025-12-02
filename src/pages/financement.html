@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>💳 Financement Personnel 2025 — crédit conso, mensualités, capacité</title>
+    <title>
+      💳 Financement Personnel 2025 — crédit conso, mensualités, capacité
+    </title>
     <meta
       name="description"
       content="Simulez votre crédit personnel 2025 : voiture, travaux, équipements. Calculez vos mensualités et obtenez une réponse de principe en 2 minutes."
@@ -15,7 +17,10 @@
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
     <!-- SEO & Social -->
-    <link rel="canonical" href="https://lescalculateurs.fr/pages/financement.html" />
+    <link
+      rel="canonical"
+      href="https://lescalculateurs.fr/pages/financement.html"
+    />
     <meta
       property="og:url"
       content="https://lescalculateurs.fr/pages/financement.html"
@@ -158,7 +163,8 @@
           <!-- Title & Status -->
           <div class="flex items-center space-x-3">
             <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-              💳 Financement Personnel 2025 — crédit conso, mensualités, capacité
+              💳 Financement Personnel 2025 — crédit conso, mensualités,
+              capacité
             </h1>
             <span
               class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800"
@@ -179,19 +185,70 @@
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- Intro SEO -->
-      <section class="mb-8">
-        <p class="text-lg text-gray-600 leading-relaxed">
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          💳 Financement Personnel 2025
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
           Calculez votre capacité de financement pour tous vos projets !
           Voiture, travaux, équipements électroménagers : notre simulateur
           analyse votre situation financière pour vous indiquer si votre projet
           est viable. Prenez en compte vos revenus, charges actuelles et apport
           disponible pour obtenir une estimation précise de vos mensualités et
-          votre ratio d'endettement. Évitez le surendettement et préparez
-          sereinement vos démarches bancaires avec des chiffres fiables.
-          Simulation gratuite basée sur les critères bancaires 2025 et les taux
-          moyens du marché. Idéal pour voiture neuve ou occasion, rénovation,
-          électroménager ou tout autre projet personnel.
+          votre ratio d'endettement.
         </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Évitez le surendettement et préparez sereinement vos démarches
+          bancaires avec des chiffres fiables. Simulation gratuite basée sur les
+          critères bancaires 2025 et les taux moyens du marché. Idéal pour
+          voiture neuve ou occasion, rénovation, électroménager ou tout autre
+          projet personnel. Pour plus de détails, consultez
+          <a
+            href="https://www.service-public.fr/particuliers/vosdroits/F2437"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+            >service-public.fr</a
+          >.
+        </p>
+      </section>
+
+      <!-- Feature Cards -->
+      <section
+        class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-8 mb-12"
+      >
+        <div class="space-y-4">
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">🎯</div>
+              <h3 class="font-bold text-gray-900 mb-1">
+                Capacité d'emprunt exacte
+              </h3>
+              <p class="text-sm text-gray-600">
+                Vérifiez votre capacité d'emprunt selon vos revenus et vos
+                charges actuelles
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">📊</div>
+              <h3 class="font-bold text-gray-900 mb-1">Reste à vivre</h3>
+              <p class="text-sm text-gray-600">
+                Analysez votre capacité de remboursement mensuel et votre reste
+                à vivre
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">💰</div>
+              <h3 class="font-bold text-gray-900 mb-1">
+                Mensualités optimisées
+              </h3>
+              <p class="text-sm text-gray-600">
+                Explorez différentes durées et montants pour trouver la solution
+                adaptée
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Calculateur -->
@@ -430,6 +487,25 @@
         <div id="results" class="hidden mt-8"></div>
       </div>
 
+      <!-- Boutons de comparaison -->
+      <div class="mt-6 flex justify-center gap-3">
+        <button
+          id="financement-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="financement-reset-compare"
+          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <!-- Comparaison (masquée par défaut) -->
+      <div id="financement-comparaison" class="hidden mt-8"></div>
+
       <!-- FAQ Schema.org -->
       <section class="mt-12">
         <h2 class="text-2xl font-bold text-gray-900 mb-6">
@@ -571,15 +647,51 @@
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
         <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Voir aussi</h3>
         <div class="flex flex-wrap gap-3">
-          <a href="/pages/notaire.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Frais de notaire</a>
-          <a href="/pages/pret.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Mensualité de prêt</a>
-          <a href="/pages/plusvalue.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Plus‑value immobilière</a>
-          <a href="/pages/charges.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Charges de copropriété</a>
-          <a href="/pages/taxe.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Taxe foncière</a>
-          <a href="/pages/ik.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Frais kilométriques</a>
-          <a href="/pages/travail.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Temps de travail</a>
-          <a href="/pages/blog/departements/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les départements</a>
-          <a href="/pages/blog.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Blog</a>
+          <a
+            href="/pages/notaire.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Frais de notaire</a
+          >
+          <a
+            href="/pages/pret.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Mensualité de prêt</a
+          >
+          <a
+            href="/pages/plusvalue.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Plus‑value immobilière</a
+          >
+          <a
+            href="/pages/charges.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Charges de copropriété</a
+          >
+          <a
+            href="/pages/taxe.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Taxe foncière</a
+          >
+          <a
+            href="/pages/ik.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Frais kilométriques</a
+          >
+          <a
+            href="/pages/travail.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Temps de travail</a
+          >
+          <a
+            href="/pages/blog/departements/frais-notaire-departements.html"
+            class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700"
+            >Tous les départements</a
+          >
+          <a
+            href="/pages/blog.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Blog</a
+          >
         </div>
       </div>
     </section>
@@ -869,6 +981,39 @@
             .getElementById("results")
             .scrollIntoView({ behavior: "smooth" });
         });
+
+      // Event listeners pour comparaison
+      import("../components/ComparisonModal.ts").then(({ ComparisonModal }) => {
+        const addBtn = document.getElementById("financement-add-to-compare");
+        const resetBtn = document.getElementById("financement-reset-compare");
+
+        if (addBtn && resetBtn) {
+          addBtn.addEventListener("click", () => {
+            ComparisonModal.addComparison("financement", {
+              montantEmprunte:
+                document.getElementById("montantEmprunte")?.value || "N/A",
+              mensualiteEstimee:
+                document
+                  .getElementById("results")
+                  ?.querySelector("[data-mensualite]")?.textContent || "N/A",
+            });
+            addBtn.classList.add("hidden");
+            resetBtn.classList.remove("hidden");
+            document
+              .getElementById("financement-comparaison")
+              .classList.remove("hidden");
+          });
+
+          resetBtn.addEventListener("click", () => {
+            ComparisonModal.resetComparison("financement");
+            addBtn.classList.remove("hidden");
+            resetBtn.classList.add("hidden");
+            document
+              .getElementById("financement-comparaison")
+              .classList.add("hidden");
+          });
+        }
+      });
     </script>
 
     <!-- Auto-initialisation des exports PDF/CSV -->
