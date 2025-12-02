@@ -942,7 +942,8 @@
         </div>
 
         <script type="module">
-          const btn = document.getElementById("btn-inline-calculator");
+          const baremes = await (await fetch("../../../data/baremes.json")).json();
+const btn = document.getElementById("btn-inline-calculator");
           btn?.addEventListener("click", async () => {
             btn.setAttribute("disabled", "true");
             btn.textContent = "Chargement...";
@@ -1023,12 +1024,7 @@
                     
                     // Calcul des émoluments selon les tranches officielles (IDENTIQUE AU CALCULATEUR PRINCIPAL)
                     let emoluments = 0;
-                                        const tranches = [
-                      { min: 0, max: 6500, taux: 0.0387 },
-                      { min: 6500, max: 17000, taux: 0.01596 },
-                      { min: 17000, max: 60000, taux: 0.01064 },
-                      { min: 60000, max: 999999999, taux: 0.00799 },
-                    ];
+                                        const tranches = baremes.notaire.tranches;
                     for (const tranche of tranches) {
                       const largeur = Math.max(tranche.max - tranche.min, 0);
                       const applicable = Math.min(Math.max(prixNetImmobilier - tranche.min, 0), largeur);
@@ -1048,14 +1044,13 @@
                     }
 
                     // CSI (fixe)
-                    const csi = 50;
+                    const csi = Math.max(Math.round(prixNetImmobilier * baremes.notaire.csi.taux), baremes.notaire.csi.minimum);
 
                     // Droits d'enregistrement
-                    let tauxDroits = 0.058;
+                    let tauxDroits = baremes.notaire.droitsMutation.standard;
+if (typeBien !== "neuf" && baremes.notaire.droitsMutation.departementsReduits.includes(values.departement)) { tauxDroits = baremes.notaire.droitsMutation.reduit; }
                     let droitsEnregistrement = 0;
-                    if (typeBien === "neuf") {
-                      tauxDroits = 0.14 558;
-                    }
+                    if (typeBien === "neuf") { tauxDroits = baremes.notaire.droitsMutation.neuf; }
                     droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
 
                     // TVA (20% sur émoluments + formalités)
@@ -1063,7 +1058,7 @@
 
                     // Total
                     const total = Math.round((emoluments + droitsEnregistrement + debours + formalites + csi + tva) * 100) / 100;
-                    const pourcentage = prixAchat > 0 ? Math.round((total / prixAchat) * 14 558) / 100 : 0;
+                    const pourcentage = prixAchat > 0 ? Math.round((total / prixAchat) * 10000) / 100 : 0;
 
                     return {
                       success: true,
