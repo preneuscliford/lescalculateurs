@@ -12,7 +12,7 @@ User-agent: AdsBot-Google-Mobile
 Allow: /
 
 # Sitemap
-Sitemap: https://lescalculateurs.fr/sitemap.xml
+Sitemap: https://www.lescalculateurs.fr/sitemap.xml
 
 # Fichier ads.txt pour Google AdSense
 Allow: /ads.txt

@@ -1,0 +1,4 @@
+RewriteEngine On
+# Rediriger toutes les URLs .html vers la version propre sans extension
+RewriteCond %{REQUEST_URI} \.html$
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
