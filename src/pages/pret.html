@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      🏠 Prêt Immobilier 2025 - Combien pouvez-vous emprunter ?
+      🏦 Prêt Immobilier 2025 — Simulation complète (mensualités, capacité, TAEG)
     </title>
     <meta
       name="description"
@@ -17,7 +17,7 @@
     <meta name="google-adsense-account" content="ca-pub-2209781252231399">
 
     <!-- SEO & Social -->
-    <link rel="canonical" href="https://www.lescalculateurs.fr/pret" />
+    <link rel="canonical" href="https://lescalculateurs.fr/pages/pret.html" />
     <meta property="og:url" content="https://lescalculateurs.fr/pages/pret.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="🏦 Simulateur Prêt Immobilier 2025 - LesCalculateurs.fr" />
@@ -25,6 +25,56 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="🏦 Simulateur Prêt Immobilier 2025" />
     <meta name="twitter:description" content="Calculez votre capacité d'emprunt et mensualités" />
+
+    <!-- JSON-LD: BreadcrumbList & FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://lescalculateurs.fr/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prêt immobilier",
+          "item": "https://lescalculateurs.fr/pages/pret.html"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment calculer ma capacité d'emprunt maximale ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Votre capacité dépend de vos revenus nets, charges et du taux d'endettement (33% max en pratique). Le simulateur calcule automatiquement le montant selon les critères bancaires 2025."}
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les taux de prêt immobilier en 2025 ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Les taux varient selon la durée et le profil. Sur 20 ans, comptez environ 3,5–4,5% pour un très bon dossier. Le simulateur utilise des taux moyens actualisés."}
+        },
+        {
+          "@type": "Question",
+          "name": "L'assurance emprunteur est-elle obligatoire ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Non légalement, mais exigée par les banques. En moyenne 0,3–0,6% du capital selon l'âge/santé. La loi Lemoine permet de choisir son assureur."}
+        },
+        {
+          "@type": "Question",
+          "name": "Quels frais annexes prévoir ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Frais de dossier (0,5–1%), garantie (hypothèque/caution 1–2%), courtage éventuel. Le simulateur intègre ces coûts pour un calcul réaliste."}
+        }
+      ]
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
@@ -449,6 +499,10 @@
             suffix: "€",
           },
         ],
+        /**
+         * Calcule les éléments principaux du prêt immobilier (mensualités, coûts, endettement).
+         * Retourne une structure { success, data|error } consommée par l’affichage.
+         */
         calculate: (values) => {
           try {
             const prixBien = values.prix_bien || 0;
@@ -550,6 +604,10 @@
             };
           }
         },
+        /**
+         * Formate l’affichage des résultats (totaux, détails, conseils) à partir des données calculées.
+         * Produit un bloc HTML prêt à injecter dans l’interface du calculateur.
+         */
         formatResult: (result) => {
           const data = result.data;
           const endettementOk = data.tauxEndettement <= 33;

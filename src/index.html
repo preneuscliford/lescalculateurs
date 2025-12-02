@@ -368,7 +368,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              💰 Frais de notaire 2025
+              💰 Frais de notaire 2025 — barèmes officiels, droits, TVA
             </h3>
             <p class="text-gray-600 mt-2">
               Le calculateur N°1 ! Simulez en quelques clics tous vos frais
@@ -404,7 +404,8 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              💳 Financement personnel
+              💳 Financement personnel — crédit conso, mensualités, capacité
+              2025
             </h3>
             <p class="text-gray-600 mt-2">
               Voiture, travaux, équipements : calculez votre capacité de
@@ -443,7 +444,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              📈 Plus-value immobilière
+              📈 Plus-value immobilière — impôt 2025, abattements, exonérations
             </h3>
             <p class="text-gray-600 mt-2">
               Calculez l'impôt sur votre plus-value immobilière avec abattements
@@ -456,16 +457,16 @@
           </a>
         </div>
 
-        <!-- #4 Plus-value crypto & bourse -->
+        <!-- Salaire brut/net 2025 -->
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-orange-500"
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-green-500"
         >
           <div class="mb-4">
             <div
-              class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-3"
+              class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3"
             >
               <svg
-                class="w-6 h-6 text-orange-600"
+                class="w-6 h-6 text-green-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -474,28 +475,59 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                ></path>
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                />
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              🚀 Plus-Value Crypto & Bourse
+              💼 Salaire brut/net 2025 — estimation nette & PAS
             </h3>
             <p class="text-gray-600 mt-2">
-              Calculez vos gains crypto et actions après impôts. Bitcoin,
-              Ethereum, CAC 40. Flat tax 30% et abattements selon durée de
-              détention.
+              Calculez votre net mensuel et annuel à partir du brut, avec taux
+              de PAS si connu. Comparaison multi-scénarios incluse.
             </p>
           </div>
-          <a
-            href="pages/crypto-bourse.html"
-            class="inline-block calculator-button"
+          <a href="pages/salaire.html" class="inline-block calculator-button"
+            >Calculer</a
           >
-            Calculer
-          </a>
         </div>
 
-        <!-- #5 Simulateur prêt immobilier -->
+        <!-- Impôt sur le revenu 2025 -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-yellow-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🧾 Impôt sur le revenu 2025 — barème, parts
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Estimez votre IR avec barème progressif et quotient familial. Taux
+              moyen et mensualité. Comparaison par scénario disponible.
+            </p>
+          </div>
+          <a href="pages/impot.html" class="inline-block calculator-button"
+            >Calculer</a
+          >
+        </div>
+
+        <!-- Prêt immobilier -->
         <div
           class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-green-500"
         >
@@ -518,7 +550,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              🏦 Simulateur prêt immobilier
+              🏦 Prêt immobilier — mensualités, capacité, TAEG, assurance
             </h3>
             <p class="text-gray-600 mt-2">
               Capacité d'emprunt, mensualités, assurance... Simulez votre
@@ -528,6 +560,54 @@
           </div>
           <a href="pages/pret.html" class="inline-block calculator-button">
             Simuler
+          </a>
+        </div>
+
+        <!-- #4 Plus-value crypto & bourse (déplacé dans section cachée) -->
+      </section>
+
+      <!-- Section calculateurs supplémentaires (cachée par défaut) -->
+      <section
+        id="more-calculators"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+        style="display: none"
+      >
+        <!-- Plus-value crypto & bourse -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-orange-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🚀 Plus-Value Crypto & Bourse — flat tax 30%, abattements
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Calculez vos gains crypto et actions après impôts. Bitcoin,
+              Ethereum, CAC 40. Flat tax 30% et abattements selon durée de
+              détention.
+            </p>
+          </div>
+          <a
+            href="pages/crypto-bourse.html"
+            class="inline-block calculator-button"
+          >
+            Calculer
           </a>
         </div>
 
@@ -554,7 +634,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              🚗 Indemnités kilométriques 2024
+              🚗 Indemnités kilométriques 2024 — barème auto/moto, déclaration
             </h3>
             <p class="text-gray-600 mt-2">
               Transformez vos kilomètres en euros ! Barème fiscal officiel 2024
@@ -568,49 +648,8 @@
             >Calculer</a
           >
         </div>
-      </section>
 
-      <!-- Section calculateurs supplémentaires (cachée par défaut) -->
-      <section
-        id="more-calculators"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-        style="display: none"
-      >
-        <!-- Jours fériés et ponts -->
-        <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
-        >
-          <div class="mb-4">
-            <div
-              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3"
-            >
-              <svg
-                class="w-6 h-6 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900">
-              🌴 Ponts et jours fériés 2025-2026
-            </h3>
-            <p class="text-gray-600 mt-2">
-              Maître du planning ! Découvrez tous les ponts possibles et
-              optimisez vos vacances avec notre calendrier intelligent
-              2025-2026.
-            </p>
-          </div>
-          <a href="pages/ponts.html" class="inline-block calculator-button"
-            >Consulter</a
-          >
-        </div>
+        <!-- #5 Simulateur prêt immobilier (déplacé dans section cachée) -->
 
         <!-- Taxe foncière -->
         <div
@@ -635,7 +674,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              🏠 Taxe foncière 2025
+              🏠 Taxe foncière 2025 — estimation communale, budget
             </h3>
             <p class="text-gray-600 mt-2">
               Anticipez sereinement ! Estimez votre taxe foncière 2025 selon
@@ -673,7 +712,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              ⏰ Temps de travail & heures sup'
+              ⏰ Temps de travail & heures sup' — majorations, RTT
             </h3>
             <p class="text-gray-600 mt-2">
               Vos heures valent de l'or ! Calculez précisément majorations,
@@ -708,7 +747,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900">
-              🏢 Charges de copropriété
+              🏢 Charges de copropriété — budget, syndic, travaux
             </h3>
             <p class="text-gray-600 mt-2">
               Estimez vos charges courantes et exceptionnelles selon la taille,

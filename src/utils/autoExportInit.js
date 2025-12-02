@@ -182,6 +182,20 @@ function initAutoExport() {
       formId: "crypto-bourse-form",
       notes: ["Calculs fiscaux basés sur la réglementation française 2025."],
     },
+    salaire: {
+      name: "Salaire brut/net 2025",
+      resultsId: "calculator-result",
+      formId: "calculator-form",
+      notes: ["Estimation basée sur les taux de cotisations salariales 2025."],
+      type: "CalculatorFrame",
+    },
+    impot: {
+      name: "Impôt sur le revenu 2025",
+      resultsId: "calculator-result",
+      formId: "calculator-form",
+      notes: ["Calculs selon le barème progressif 2025."],
+      type: "CalculatorFrame",
+    },
   };
 
   // Détection du calculateur actuel

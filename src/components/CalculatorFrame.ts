@@ -278,16 +278,12 @@ export class CalculatorFrame {
       const result = this.config.calculate(this.values);
       this.showResult(resultDiv, result);
 
-      // Stocker le résultat dans une variable globale pour la comparaison
-      if (result.success && this.containerId === "notaire-calculator") {
-        (window as any).dernierCalculNotaire = {
-          result: result,
-          values: { ...this.values },
-        };
-        console.log(
-          "✅ Calcul notaire stocké",
-          (window as any).dernierCalculNotaire
-        );
+      if (result.success) {
+        const key = `dernierCalcul_${this.containerId}`;
+        (window as any)[key] = { result, values: { ...this.values } };
+        if (this.containerId === "notaire-calculator") {
+          (window as any).dernierCalculNotaire = { result, values: { ...this.values } };
+        }
       }
 
       // Sauvegarder l'historique local

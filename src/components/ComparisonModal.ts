@@ -1,0 +1,233 @@
+/**
+ * Modal pour ajouter un scénario de comparaison avec saisie de données
+ * Réutilisable pour tous les calculateurs
+ */
+
+export interface ModalField {
+  id: string;
+  label: string;
+  type: "number" | "select" | "text";
+  value: any;
+  required?: boolean;
+  placeholder?: string;
+  options?: { value: string | number; label: string }[];
+  min?: number;
+  max?: number;
+  step?: number;
+}
+
+export interface ModalConfig {
+  title: string;
+  fields: ModalField[];
+  onConfirm: (values: Record<string, any>) => void;
+  onCancel?: () => void;
+}
+
+export class ComparisonModal {
+  private config: ModalConfig;
+  private modalElement: HTMLElement | null = null;
+  private values: Record<string, any> = {};
+
+  constructor(config: ModalConfig) {
+    this.config = config;
+    this.values = {};
+    config.fields.forEach((field) => {
+      this.values[field.id] = field.value;
+    });
+  }
+
+  public open(): void {
+    this.render();
+    const modal = document.getElementById("comparison-modal");
+    if (modal) {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+  }
+
+  public close(): void {
+    const modal = document.getElementById("comparison-modal");
+    if (modal) {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+  }
+
+  private render(): void {
+    // Créer le modal s'il n'existe pas
+    let modal = document.getElementById("comparison-modal");
+    if (!modal) {
+      modal = document.createElement("div");
+      modal.id = "comparison-modal";
+      modal.className =
+        "fixed inset-0 bg-black/50 hidden items-center justify-center z-50";
+      document.body.appendChild(modal);
+    }
+
+    // Créer le contenu du modal
+    const fieldsHTML = this.config.fields
+      .map((field) => this.renderField(field))
+      .join("");
+
+    modal.innerHTML = `
+      <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">${this.config.title}</h2>
+        
+        <form id="comparison-form" class="space-y-4">
+          ${fieldsHTML}
+          
+          <div class="flex gap-3 pt-4">
+            <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">
+              ✅ Ajouter
+            </button>
+            <button type="button" id="modal-cancel" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-lg">
+              ✕ Annuler
+            </button>
+          </div>
+        </form>
+      </div>
+    `;
+
+    // Attacher les event listeners
+    const form = modal.querySelector("#comparison-form") as HTMLFormElement;
+    const cancelBtn = modal.querySelector("#modal-cancel") as HTMLButtonElement;
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.handleSubmit();
+      });
+    }
+
+    if (cancelBtn) {
+      cancelBtn.addEventListener("click", () => {
+        this.close();
+        if (this.config.onCancel) {
+          this.config.onCancel();
+        }
+      });
+    }
+
+    // Fermer le modal au clic sur le fond
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        this.close();
+        if (this.config.onCancel) {
+          this.config.onCancel();
+        }
+      }
+    });
+  }
+
+  private renderField(field: ModalField): string {
+    const baseClasses =
+      "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent";
+    const required = field.required ? "required" : "";
+
+    switch (field.type) {
+      case "select":
+        return `
+          <div>
+            <label for="${
+              field.id
+            }" class="block text-sm font-medium text-gray-700 mb-1">
+              ${field.label} ${field.required ? "*" : ""}
+            </label>
+            <select id="${field.id}" name="${
+          field.id
+        }" class="${baseClasses}" ${required}>
+              <option value="">Sélectionnez...</option>
+              ${
+                field.options
+                  ?.map(
+                    (opt) =>
+                      `<option value="${opt.value}" ${
+                        opt.value === field.value ? "selected" : ""
+                      }>${opt.label}</option>`
+                  )
+                  .join("") || ""
+              }
+            </select>
+          </div>
+        `;
+
+      case "number":
+        return `
+          <div>
+            <label for="${
+              field.id
+            }" class="block text-sm font-medium text-gray-700 mb-1">
+              ${field.label} ${field.required ? "*" : ""}
+            </label>
+            <input 
+              type="number" 
+              id="${field.id}" 
+              name="${field.id}" 
+              class="${baseClasses}" 
+              value="${field.value || ""}"
+              placeholder="${field.placeholder || ""}"
+              min="${field.min || ""}"
+              max="${field.max || ""}"
+              step="${field.step || "any"}"
+              ${required}
+            >
+          </div>
+        `;
+
+      default:
+        return `
+          <div>
+            <label for="${
+              field.id
+            }" class="block text-sm font-medium text-gray-700 mb-1">
+              ${field.label} ${field.required ? "*" : ""}
+            </label>
+            <input 
+              type="text" 
+              id="${field.id}" 
+              name="${field.id}" 
+              class="${baseClasses}" 
+              value="${field.value || ""}"
+              placeholder="${field.placeholder || ""}"
+              ${required}
+            >
+          </div>
+        `;
+    }
+  }
+
+  private handleSubmit(): void {
+    const form = document.getElementById("comparison-form") as HTMLFormElement;
+    if (!form) return;
+
+    // Collecter les valeurs
+    this.config.fields.forEach((field) => {
+      const input = form.querySelector(`#${field.id}`) as
+        | HTMLInputElement
+        | HTMLSelectElement;
+      if (input) {
+        if (input.type === "number") {
+          this.values[field.id] = parseFloat(input.value) || 0;
+        } else {
+          this.values[field.id] = input.value;
+        }
+      }
+    });
+
+    // Valider les champs requis
+    const missingFields = this.config.fields
+      .filter((field) => field.required && !this.values[field.id])
+      .map((field) => field.label);
+
+    if (missingFields.length > 0) {
+      alert(
+        `Veuillez remplir les champs obligatoires : ${missingFields.join(", ")}`
+      );
+      return;
+    }
+
+    // Appeler le callback
+    this.config.onConfirm(this.values);
+    this.close();
+  }
+}
