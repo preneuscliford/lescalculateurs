@@ -41,6 +41,18 @@ function regionImage(region) {
 }
 
 /**
+ * Échappe les caractères XML réservés dans une valeur texte
+ */
+function xmlEscape(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+/**
  * Insère <image:image> pour chaque page départementale dans le sitemap.xml
  */
 function addImagesToSitemap() {
@@ -66,9 +78,10 @@ function addImagesToSitemap() {
       if (mmContent && mmContent[1]) img = mmContent[1];
       else if (mmAny && mmAny[1]) img = mmAny[1];
     }
-    const imageNode = `\n    <image:image>\n      <image:loc>${img}</image:loc>\n    </image:image>`;
+    const safeImg = xmlEscape(img);
+    const imageNode = `\n    <image:image>\n      <image:loc>${safeImg}</image:loc>\n    </image:image>`;
     if (rest.includes("<image:image>")) {
-      return m.replace(/<image:loc>[^<]+<\/image:loc>/, `<image:loc>${img}<\/image:loc>`);
+      return m.replace(/<image:loc>[^<]+<\/image:loc>/, `<image:loc>${safeImg}<\/image:loc>`);
     }
     return `<url>\n    <loc>${loc}</loc>${imageNode}${rest}\n  </url>`;
   });
