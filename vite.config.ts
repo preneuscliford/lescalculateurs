@@ -14,6 +14,8 @@ export default defineConfig({
         notaire: resolve(__dirname, "src/pages/notaire.html"),
         pret: resolve(__dirname, "src/pages/pret.html"),
         plusvalue: resolve(__dirname, "src/pages/plusvalue.html"),
+        salaire: resolve(__dirname, "src/pages/salaire.html"),
+        impot: resolve(__dirname, "src/pages/impot.html"),
         charges: resolve(__dirname, "src/pages/charges.html"),
         ik: resolve(__dirname, "src/pages/ik.html"),
         ponts: resolve(__dirname, "src/pages/ponts.html"),
