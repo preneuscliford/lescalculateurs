@@ -85,6 +85,56 @@
     
       gtag('config', 'G-2HNTGCYQ1X');
     </script>
+
+    <!-- FAQ Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quels sont les abattements pour durée de détention ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Impôt sur le revenu : 6% par an dès la 6ème année, exonération totale après 22 ans. Prélèvements sociaux : 1,65% par an de la 6ème à la 21ème année, puis 9% par an, exonération après 30 ans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels frais puis-je déduire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Frais d'acquisition (notaire, droits), travaux d'amélioration avec factures, ou forfait de 15% du prix d'achat si détention > 5 ans. Les frais d'entretien ne sont pas déductibles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La résidence principale est-elle taxée ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, la vente de la résidence principale est exonérée de plus-value immobilière. L'exonération s'applique même si vous êtes propriétaire de plusieurs biens."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Existe-t-il des exonérations ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui : résidence principale, petits propriétaires (< 15000 € de gain), plus-values inférieures à 1000 €, et diverses situations professionnelles. Vérifiez votre éligibilité."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels frais puis-je déduire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Frais d'acquisition (notaire, droits), travaux d'amélioration avec factures, ou forfait de 15% du prix d'achat si détention > 5 ans. Les frais d'entretien ne sont pas déductibles."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-gray-50">
     <!-- Google Tag Manager (noscript) -->
@@ -344,25 +394,17 @@
           ❓ Questions fréquentes
         </h2>
 
-        <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="space-y-4">
           <div
             class="bg-white rounded-lg p-6 shadow-sm"
-            itemscope
-            itemprop="mainEntity"
-            itemtype="https://schema.org/Question"
           >
             <h3
               class="text-lg font-semibold text-gray-800 mb-3"
-              itemprop="name"
             >
               Quels sont les abattements pour durée de détention ?
             </h3>
-            <div
-              itemscope
-              itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer"
-            >
-              <p class="text-gray-600" itemprop="text">
+            <div>
+              <p class="text-gray-600">
                 Impôt sur le revenu : 6% par an dès la 6ème année, exonération
                 totale après 22 ans. Prélèvements sociaux : 1,65% par an de la
                 6ème à la 21ème année, puis 9% par an, exonération après 30 ans.
@@ -370,24 +412,12 @@
             </div>
           </div>
 
-          <div
-            class="bg-white rounded-lg p-6 shadow-sm"
-            itemscope
-            itemprop="mainEntity"
-            itemtype="https://schema.org/Question"
-          >
-            <h3
-              class="text-lg font-semibold text-gray-800 mb-3"
-              itemprop="name"
-            >
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
               Quels frais puis-je déduire ?
             </h3>
-            <div
-              itemscope
-              itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer"
-            >
-              <p class="text-gray-600" itemprop="text">
+            <div>
+              <p class="text-gray-600">
                 Frais d'acquisition (notaire, droits), travaux d'amélioration
                 avec factures, ou forfait de 15% du prix d'achat si détention
                 &gt; 5 ans. Les frais d'entretien ne sont pas déductibles.
@@ -397,22 +427,14 @@
 
           <div
             class="bg-white rounded-lg p-6 shadow-sm"
-            itemscope
-            itemprop="mainEntity"
-            itemtype="https://schema.org/Question"
           >
             <h3
               class="text-lg font-semibold text-gray-800 mb-3"
-              itemprop="name"
             >
               La résidence principale est-elle taxée ?
             </h3>
-            <div
-              itemscope
-              itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer"
-            >
-              <p class="text-gray-600" itemprop="text">
+            <div>
+              <p class="text-gray-600">
                 Non, la vente de la résidence principale est exonérée de
                 plus-value immobilière. L'exonération s'applique même si vous
                 êtes propriétaire de plusieurs biens.
@@ -422,22 +444,14 @@
 
           <div
             class="bg-white rounded-lg p-6 shadow-sm"
-            itemscope
-            itemprop="mainEntity"
-            itemtype="https://schema.org/Question"
           >
             <h3
               class="text-lg font-semibold text-gray-800 mb-3"
-              itemprop="name"
             >
               Comment est calculé le taux d'imposition ?
             </h3>
-            <div
-              itemscope
-              itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer"
-            >
-              <p class="text-gray-600" itemprop="text">
+            <div>
+              <p class="text-gray-600">
                 Impôt sur le revenu : 19% (+ surtaxe si plus-value &gt; 50
                 000€). Prélèvements sociaux : 17,2%. Total : 36,2% avant
                 abattements pour durée de détention.
@@ -447,22 +461,14 @@
 
           <div
             class="bg-white rounded-lg p-6 shadow-sm"
-            itemscope
-            itemprop="mainEntity"
-            itemtype="https://schema.org/Question"
           >
             <h3
               class="text-lg font-semibold text-gray-800 mb-3"
-              itemprop="name"
             >
               Existe-t-il des exonérations particulières ?
             </h3>
-            <div
-              itemscope
-              itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer"
-            >
-              <p class="text-gray-600" itemprop="text">
+            <div>
+              <p class="text-gray-600">
                 Oui : première vente (sous conditions), vente &lt; 15 000€,
                 retraités/invalides sous plafond de revenus, ou réinvestissement
                 dans la résidence principale dans les 24 mois.
