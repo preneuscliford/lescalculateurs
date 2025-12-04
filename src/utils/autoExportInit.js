@@ -3,6 +3,9 @@
  * Détecte automatiquement le calculateur et configure l'export
  */
 
+// Importer pdfExport pour s'assurer qu'il se charge en premier
+import "./pdfExport.js";
+
 console.log("🔵 autoExportInit.js CHARGÉ");
 
 // Fonction pour extraire les données depuis la structure HTML des calculateurs
@@ -331,12 +334,24 @@ function initPDFExport(config) {
   }
 }
 
-function setupExportButtons(config) {
+async function setupExportButtons(config) {
   console.log("🎯 setupExportButtons appelé");
   console.log(
     "🔍 window.createPDFButton existe?",
     typeof window.createPDFButton
   );
+
+  // pdfExport.js est importé en début de autoExportInit.js, donc window.createPDFButton
+  // devrait être disponible immédiatement
+  if (typeof window.createPDFButton !== "function") {
+    console.error("❌ window.createPDFButton n'est pas une fonction!");
+    console.log(
+      "Type de window.createPDFButton:",
+      typeof window.createPDFButton
+    );
+    console.log("window.createPDFButton:", window.createPDFButton);
+    return;
+  }
 
   let exportContainer = document.getElementById("export-buttons");
   if (!exportContainer) {
@@ -356,11 +371,6 @@ function setupExportButtons(config) {
 
   if (!document.getElementById("pdf-export-btn")) {
     console.log("✅ Appel de window.createPDFButton");
-
-    if (typeof window.createPDFButton !== "function") {
-      console.error("❌ window.createPDFButton n'est pas une fonction!");
-      return;
-    }
 
     window.createPDFButton(
       "export-buttons",

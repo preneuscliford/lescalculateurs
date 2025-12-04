@@ -67,6 +67,77 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
     clonedDiv.style.background = "#ffffff";
     clonedDiv.style.padding = "20px";
 
+    // Convertir les Canvas Chart.js en images pour qu'ils soient capturés correctement
+    const canvases = resultsDiv.querySelectorAll("canvas");
+    console.log("🎨 Nombre de Canvas trouvés:", canvases.length);
+    const canvasImages = [];
+
+    canvases.forEach((canvas, index) => {
+      try {
+        const imgData = canvas.toDataURL("image/png");
+        console.log(
+          "📊 Canvas #" + index + " ID:",
+          canvas.id,
+          "Dimensions:",
+          canvas.width,
+          "x",
+          canvas.height
+        );
+        // Trouver le canvas correspondant dans le clone par position
+        const clonedCanvases = clonedDiv.querySelectorAll("canvas");
+        // Essayer de faire correspondre par ID si disponible, sinon par index
+        let clonedCanvas = null;
+        if (canvas.id) {
+          clonedCanvas = clonedDiv.querySelector(`#${CSS.escape(canvas.id)}`);
+        }
+        if (!clonedCanvas) {
+          clonedCanvas = clonedCanvases[index] || null;
+        }
+        if (clonedCanvas) {
+          const img = document.createElement("img");
+          img.src = imgData;
+
+          // Utiliser les dimensions réelles du canvas
+          let width = canvas.width || canvas.offsetWidth;
+          let height = canvas.height || canvas.offsetHeight;
+          if (!width || !height) {
+            const rect = canvas.getBoundingClientRect();
+            width = rect.width || 600;
+            height = rect.height || 300;
+          }
+
+          img.style.width = width + "px";
+          img.style.height = height + "px";
+          img.style.display = "block";
+          img.style.margin = "0 auto";
+
+          clonedCanvas.parentNode && clonedCanvas.parentNode.replaceChild(img, clonedCanvas);
+          console.log(
+            "✅ Canvas #" +
+              index +
+              " converti en image (" +
+              width +
+              "x" +
+              height +
+              ")"
+          );
+        }
+      } catch (e) {
+        console.warn("⚠️ Impossible de convertir canvas #" + index + ":", e);
+      }
+    });
+
+    // Supprimer les boutons d'export du clone pour ne pas les capturer dans le PDF
+    const exportButtons = clonedDiv.querySelectorAll(
+      "#pdf-export-btn, #csv-export-btn"
+    );
+    exportButtons.forEach((btn) => {
+      btn.style.display = "none";
+      if (btn.parentElement) {
+        btn.parentElement.style.display = "none";
+      }
+    });
+
     // Nettoyer les emojis et caractères spéciaux problématiques
     const cleanText = (node) => {
       if (node.nodeType === Node.TEXT_NODE) {
@@ -264,18 +335,16 @@ function createPDFButton(containerId, calculatorName, data, notes = []) {
   return button;
 }
 
-
 /**
  * Met à jour l'état du bouton selon si des résultats sont présents
  */
 function updateButtonState(button, calculatorName) {
-  // Chercher les zones de résultats (pas les formulaires)
   const resultsSelectors = [
-    "#ponts-calendar", // Calendrier ponts (toujours actif)
-    "#calculator-result", // CalculatorFrame
-    "#results", // Anciens calculateurs
-    ".calculator-results", // Classe générique
-    '[id$="-results"]', // IDs se terminant par -results
+    "#ponts-calendar",
+    "#calculator-result",
+    "#results",
+    ".calculator-results",
+    '[id$="-results"]',
   ];
 
   let hasResults = false;
@@ -284,43 +353,24 @@ function updateButtonState(button, calculatorName) {
   for (const selector of resultsSelectors) {
     const container = document.querySelector(selector);
     if (container && !container.classList.contains("hidden")) {
-      // Pour le calendrier des ponts : toujours activer si le contenu existe
       if (selector === "#ponts-calendar" && container.children.length > 0) {
         hasResults = true;
         resultContainer = container;
-        console.log(
-          "✅ Calendrier ponts détecté - bouton activé automatiquement"
-        );
         break;
       }
 
-      // Vérifier qu'il y a du contenu réel
       const textContent = container.textContent.trim();
-
-      // Vérifications :
-      // 1. Au moins 100 caractères de contenu
-      // 2. Contient des chiffres (résultats de calcul ou dates)
-      // 3. Pour les calculateurs financiers : doit avoir € ou %
-      //    Pour les calendriers/autres : juste contenu + chiffres suffit
-      const hasEnoughContent = textContent.length > 100;
+      const hasEnoughContent = textContent.length > 20;
       const hasNumbers = /\d/.test(textContent);
       const hasCurrencyOrPercent = /[€%]/.test(textContent);
-      const isCalendar =
-        selector.includes("calendar") || selector.includes("ponts");
+      const hasVisuals = !!container.querySelector("canvas, table");
+      const isCalendar = selector.includes("calendar") || selector.includes("ponts");
 
-      // Calendrier : juste contenu + chiffres suffit
-      // Autres : besoin de € ou %
-      const isValid =
-        hasEnoughContent && hasNumbers && (isCalendar || hasCurrencyOrPercent);
+      const isValid = (hasVisuals || (hasEnoughContent && hasNumbers)) && (isCalendar || hasCurrencyOrPercent || hasVisuals);
 
       if (isValid) {
         hasResults = true;
         resultContainer = container;
-        console.log("✅ Résultats valides détectés dans:", selector);
-        console.log("   - Longueur:", textContent.length);
-        console.log("   - A des chiffres:", hasNumbers);
-        console.log("   - A € ou %:", hasCurrencyOrPercent);
-        console.log("   - Est calendrier:", isCalendar);
         break;
       }
     }
