@@ -58,22 +58,22 @@ function listDeptPages() {
  * Met à jour la section statique "Tarifs officiels" dans une page département.
  */
 function updateStaticTarifs(html, code, cfg) {
-  // Émoluments (tranches)
-  html = html.replace(/>3\.87%<\/span>/, '>3,945%<\/span>')
-  html = html.replace(/>1\.60%<\/span>/, '>1,627%<\/span>')
-  html = html.replace(/>1\.06%<\/span>/, '>1,085%<\/span>')
-  html = html.replace(/>0\.80%<\/span>/, '>0,814%<\/span>')
+  // Émoluments (tranches) — barème légal CSN 2025 (remplacements globaux)
+  html = html.replace(/>3\.87%<\/span>/g, '>3,870%<\/span>')
+  html = html.replace(/>1\.60%<\/span>/g, '>1,596%<\/span>')
+  html = html.replace(/>1\.06%<\/span>/g, '>1,064%<\/span>')
+  html = html.replace(/>0\.80%<\/span>/g, '>0,799%<\/span>')
 
-  // Droits d'enregistrement — ancien
+  // Droits d'enregistrement — ancien (remplace la valeur affichée)
   const ancienPct = approxPct(((cfg.dmto && cfg.dmto[code] != null) ? Number(cfg.dmto[code]) / 100 : 0.058))
-  html = html.replace(/Immobilier ancien<\/span>\s*<span[^>]*>[^<]*<\/span>/, `Immobilier ancien<\/span><span class="font-mono bg-green-100 px-3 py-1 rounded">${ancienPct}<\/span>`)
+  html = html.replace(/(Immobilier ancien<\/span>\s*<span[^>]*>)[^<]*(<\/span>)/, `$1${ancienPct}$2`)
 
   // Droits neuf (TFPB) reste 0,71%
   html = html.replace(/Immobilier neuf \(TFPB\)<\/span>\s*<span[^>]*>[^<]*<\/span>/, `Immobilier neuf (TFPB)<\/span><span class="font-mono bg-green-100 px-3 py-1 rounded">0,71%<\/span>`)
 
   // Débours / Formalités / CSI
   html = html.replace(/<span class="text-gray-700">Cadastre \(ancien\)<\/span>[\s\S]*?<span class="text-gray-700"><strong>CSI \(forfaitaire\)<\/strong><\/span>[\s\S]*?<strong>50€<\/strong><\/span>/, (
-    `<span class="text-gray-700">Débours (moyenne)<\/span>\n                <span class="font-mono bg-purple-100 px-3 py-1 rounded">800€<\/span>\n              </div>\n              <div class="flex justify-between items-center">\n                <span class="text-gray-700">Formalités<\/span>\n                <span class="font-mono bg-purple-100 px-3 py-1 rounded">0€<\/span>\n              </div>\n              <div class="flex justify-between items-center border-t pt-2 mt-2">\n                <span class="text-gray-700"><strong>CSI<\/strong><\/span>\n                <span class="font-mono bg-indigo-100 px-3 py-1 rounded"><strong>min 15€ ou 0,10%<\/strong><\/span>`
+    `<span class="text-gray-700">Débours (moyenne)<\/span>\n                <span class="font-mono bg-purple-100 px-3 py-1 rounded">500–600€<\/span>\n              </div>\n              <div class="flex justify-between items-center">\n                <span class="text-gray-700">Formalités<\/span>\n                <span class="font-mono bg-purple-100 px-3 py-1 rounded">0€<\/span>\n              </div>\n              <div class="flex justify-between items-center border-t pt-2 mt-2">\n                <span class="text-gray-700"><strong>CSI<\/strong><\/span>\n                <span class="font-mono bg-indigo-100 px-3 py-1 rounded"><strong>min 15€ ou 0,10%<\/strong><\/span>`
   ))
   return html
 }
@@ -88,14 +88,12 @@ function updateTypeDeBien(html, code, cfg) {
   const ancienRate = approxPct(A.total / price)
   const neufRate = approxPct(N.total / price)
   const fmt = (n) => new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €'
-  // Ancien
-  html = html.replace(/Ancien \([^\)]+\)\s*[^\n]*\s*≈\s*[0-9,\.–%\s]+\s*\t\s*[0-9\s ]+€/i, (m) => {
-    return m.replace(/≈\s*[0-9,\.–%\s]+/, ancienRate).replace(/[0-9\s ]+€/, fmt(A.total))
-  })
-  // Neuf
-  html = html.replace(/Neuf \(VEFA\)\s*[^\n]*\s*≈\s*[0-9,\.–%\s]+\s*\t\s*[0-9\s ]+€/i, (m) => {
-    return m.replace(/≈\s*[0-9,\.–%\s]+/, neufRate).replace(/[0-9\s ]+€/, fmt(N.total))
-  })
+  // Ancien — remplace la 2e et 3e colonne du tableau Type d’achat
+  html = html.replace(/(<td[^>]*>\s*🏡\s*Ancien\s*\([^<]*\)<\/td>\s*<td[^>]*>)[^<]+(<\/td>\s*<td[^>]*>)[^<]+(<\/td>)/i,
+    (m, p1, p2, p3) => `${p1}${ancienRate}${p2}${fmt(A.total)}${p3}`)
+  // Neuf — remplace la 2e et 3e colonne
+  html = html.replace(/(<td[^>]*>\s*🏢\s*Neuf\s*\(VEFA\)<\/td>\s*<td[^>]*>)[^<]+(<\/td>\s*<td[^>]*>)[^<]+(<\/td>)/i,
+    (m, p1, p2, p3) => `${p1}${neufRate}${p2}${fmt(N.total)}${p3}`)
   return html
 }
 

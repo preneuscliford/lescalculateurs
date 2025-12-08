@@ -18,14 +18,14 @@
     "90": 5.80, "91": 5.80, "92": 6.45, "93": 6.45, "94": 6.45, "95": 5.80
   },
   "emoluments": [
-    { "tranche_max": 6500, "taux": 3.945 },
-    { "tranche_max": 17000, "taux": 1.627 },
-    { "tranche_max": 60000, "taux": 1.085 },
-    { "tranche_max": null, "taux": 0.814 }
+    { "tranche_max": 6500, "taux": 3.870 },
+    { "tranche_max": 17000, "taux": 1.596 },
+    { "tranche_max": 60000, "taux": 1.064 },
+    { "tranche_max": null, "taux": 0.799 }
   ],
   "csi": 0.10,
   "debours": {
-    "moyenne": 800,
-    "fourchette": [600, 1200]
+    "moyenne": 550,
+    "fourchette": [500, 600]
   }
 }
