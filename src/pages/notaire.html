@@ -740,6 +740,28 @@
       import { calculerFraisNotaire } from "../utils/calculNotaire.ts";
       import departements from "../data/departements.json";
       const fraisCfg = await (await fetch("../data/frais2025.json")).json();
+      function getDmtoTaux(code) {
+        const c = String(code);
+        if (fraisCfg.dmto_struct && fraisCfg.dmto_struct.ancien) {
+          const map = fraisCfg.dmto_struct.ancien.par_departement || {};
+          const def = Number(fraisCfg.dmto_struct.ancien.default || 0.058);
+          return map[c] != null ? Number(map[c]) : def;
+        }
+        if (fraisCfg.dmto && fraisCfg.dmto[c] != null) {
+          return Number(fraisCfg.dmto[c]) / 100;
+        }
+        return 0.058;
+      }
+      function getDeboursForm(code) {
+        const c = String(code);
+        const dep = fraisCfg.debours?.par_departement?.[c];
+        if (dep) return { debours: Number(dep.cadastre||0)+Number(dep.conservation||0), formalites: Number(dep.formalites||0) };
+        const m = Number(fraisCfg.debours?.moyenne || 550);
+        return { debours: m, formalites: 0 };
+      }
+      const pct = (n) => {
+        const p = n * 100; const t = Math.floor(p * 100) / 100; return `≈ ${t.toFixed(2).replace('.', ',')}%`;
+      };
       const pct = (n) => {
         const p = n * 100;
         const t = Math.floor(p * 100) / 100;
@@ -876,13 +898,11 @@
             // Récupérer les taux et frais du département
             const depData =
               departements[departement] || departements["default"];
-            // Barème émoluments officiels (depuis frais2025.json)
-            const tranches = [
-              { min: 0, max: 6500, taux: (fraisCfg.emoluments?.[0]?.taux || 3.945) / 100 },
-              { min: 6500, max: 17000, taux: (fraisCfg.emoluments?.[1]?.taux || 1.627) / 100 },
-              { min: 17000, max: 60000, taux: (fraisCfg.emoluments?.[2]?.taux || 1.085) / 100 },
-              { min: 60000, max: Infinity, taux: (fraisCfg.emoluments?.[3]?.taux || 0.814) / 100 },
-            ];
+            // Barème émoluments officiels (CSN 2025)
+            const tranches = (fraisCfg.bareme_emoluments_2025?.tranches || []).map(t => ({ min: t.min, max: t.max === 999999999 ? Infinity : t.max, taux: Number(t.taux) }));
+            if (!tranches.length) {
+              tranches.push({ min:0, max:6500, taux:0.0387 }, { min:6500, max:17000, taux:0.01596 }, { min:17000, max:60000, taux:0.01064 }, { min:60000, max:Infinity, taux:0.00799 });
+            }
             let emoluments = 0;
             let reste = prixNetImmobilier;
             let emolumentsSansRemise = 0;
@@ -899,11 +919,10 @@
               emoluments = emoluments * 0.9;
             }
 
-            // Débours standards depuis le JSON, formalités à 0 pour simplifier
-            let debours = Number(fraisCfg.debours?.moyenne || 800);
-            let formalites = 0;
+            // Débours/Formalités par département
+            const { debours, formalites } = getDeboursForm(values.departement);
             // CSI 0,10% (min 15€)
-            const csi = Math.max(prixNetImmobilier * ((fraisCfg.csi || 0.10) / 100), 15);
+            const csi = Math.max(prixNetImmobilier * (Number(fraisCfg.csi?.taux || 0.001)), Number(fraisCfg.csi?.minimum || 15));
 
             // Frais d'hypothèque selon le type d'emprunt
             let fraisHypotheque = 0;
@@ -925,8 +944,8 @@
             // TVA sur émoluments + formalités uniquement
             const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
 
-            // Droits d'enregistrement (ancien depuis JSON, neuf 0,715%)
-            let tauxDroits = (fraisCfg.dmto[departement] != null ? (Number(fraisCfg.dmto[departement]) / 100) : depData.tauxDroits);
+            // Droits d'enregistrement (ancien depuis JSON structuré, neuf 0,715%)
+            let tauxDroits = getDmtoTaux(departement);
             let droitsEnregistrement =
               Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
             let droitsLabel = `Droits d'enregistrement (${pct(tauxDroits)})`;

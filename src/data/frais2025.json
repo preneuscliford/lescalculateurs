@@ -1,4 +1,10 @@
 {
+  "sources": [
+    "https://www.service-public.fr/particuliers/vosdroits/F2167",
+    "https://www.notariat.fr/frais-de-notaire",
+    "https://www.impots.gouv.fr/les-taux-de-taxe-departementale-2025",
+    "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433"
+  ],
   "dmto": {
     "01": 5.80, "02": 5.80, "03": 5.80, "04": 5.80, "05": 5.80, "06": 5.80,
     "07": 5.80, "08": 5.80, "09": 5.80, "10": 5.80, "11": 5.80, "12": 5.80,
@@ -12,10 +18,18 @@
     "54": 5.80, "55": 5.80, "56": 3.80, "57": 3.80, "58": 5.80, "59": 5.80,
     "60": 5.80, "61": 5.80, "62": 5.80, "63": 5.80, "64": 5.80, "65": 5.80,
     "66": 5.80, "67": 3.80, "68": 3.80, "69": 5.80, "70": 5.80, "71": 5.80,
-    "72": 5.80, "73": 5.80, "74": 5.80, "75": 6.30, "76": 5.80, "77": 5.80,
+    "72": 5.80, "73": 5.80, "74": 5.80, "75": 5.81, "76": 5.80, "77": 5.80,
     "78": 5.80, "79": 5.80, "80": 5.80, "81": 5.80, "82": 5.80, "83": 5.80,
     "84": 5.80, "85": 5.80, "86": 5.80, "87": 5.80, "88": 5.80, "89": 5.80,
     "90": 5.80, "91": 5.80, "92": 6.45, "93": 6.45, "94": 6.45, "95": 5.80
+  },
+  "bareme_emoluments_2025": {
+    "tranches": [
+      { "min": 0, "max": 6500, "taux": 0.0387, "formule": "montant * 0.0387" },
+      { "min": 6500, "max": 17000, "taux": 0.01596, "formule": "(montant - 6500) * 0.01596 + 251.55" },
+      { "min": 17000, "max": 60000, "taux": 0.01064, "formule": "(montant - 17000) * 0.01064 + 1926.15" },
+      { "min": 60000, "max": 999999999, "taux": 0.00799, "formule": "(montant - 60000) * 0.00799 + 6503.75" }
+    ]
   },
   "emoluments": [
     { "tranche_max": 6500, "taux": 3.870 },
@@ -23,9 +37,47 @@
     { "tranche_max": 60000, "taux": 1.064 },
     { "tranche_max": null, "taux": 0.799 }
   ],
-  "csi": 0.10,
+  "tva": 0.20,
+  "csi": {
+    "taux": 0.001,
+    "minimum": 15
+  },
   "debours": {
+    "note": "Frais moyens par département pour cadastre, conservation, formalités",
     "moyenne": 550,
-    "fourchette": [500, 600]
+    "fourchette": [500, 600],
+    "par_departement": {
+      "75": { "cadastre": 150, "conservation": 180, "formalites": 220 },
+      "92": { "cadastre": 145, "conservation": 175, "formalites": 215 },
+      "93": { "cadastre": 140, "conservation": 170, "formalites": 210 },
+      "94": { "cadastre": 140, "conservation": 170, "formalites": 210 },
+      "78": { "cadastre": 135, "conservation": 165, "formalites": 205 },
+      "44": { "cadastre": 123, "conservation": 153, "formalites": 198 }
+    }
+  },
+  "dmto_struct": {
+    "ancien": {
+      "default": 0.058,
+      "par_departement": {
+        "36": 0.0509006,
+        "38": 0.063185,
+        "56": 0.0580665,
+        "75": 0.0581,
+        "78": 0.059,
+        "92": 0.059,
+        "93": 0.059,
+        "94": 0.059,
+        "95": 0.059,
+        "971": 0.045,
+        "972": 0.045,
+        "973": 0.045,
+        "974": 0.045,
+        "975": 0.045,
+        "976": 0.038,
+        "2A": 0.045,
+        "2B": 0.045
+      }
+    },
+    "neuf": { "default": 0.00715 }
   }
 }

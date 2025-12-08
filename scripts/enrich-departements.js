@@ -646,8 +646,11 @@ function computeDroits(code, price, type) {
   const c = normalizeCode(code);
   if (!b) return 0;
   if (type === 'neuf') return price * b.neuf;
-  if (cfg && cfg.dmto && cfg.dmto[c]) {
-    return price * (Number(cfg.dmto[c]) / 100);
+  if (cfg && cfg.dmto_struct && cfg.dmto_struct.ancien) {
+    const map = cfg.dmto_struct.ancien.par_departement || {};
+    const def = Number(cfg.dmto_struct.ancien.default || 0.058);
+    const taux = map[c] != null ? Number(map[c]) : def;
+    return price * taux;
   }
   if (b.depReduits.includes(c)) return price * b.reduit;
   const entry = getDeptEntry(code);
@@ -669,7 +672,11 @@ function getDroitsRate(code, type) {
   const c = normalizeCode(code);
   if (!b) return null;
   if (type === 'neuf') return b.neuf;
-  if (cfg && cfg.dmto && cfg.dmto[c]) return Number(cfg.dmto[c]) / 100;
+  if (cfg && cfg.dmto_struct && cfg.dmto_struct.ancien) {
+    const map = cfg.dmto_struct.ancien.par_departement || {};
+    const def = Number(cfg.dmto_struct.ancien.default || 0.058);
+    return map[c] != null ? Number(map[c]) : def;
+  }
   if (b.depReduits.includes(c)) return b.reduit;
   const entry = getDeptEntry(code);
   if (entry && typeof entry.tauxDroits === 'number') return entry.tauxDroits;
@@ -684,8 +691,19 @@ function getDroitsRate(code, type) {
  */
 function computeDeboursFormalites(code, type) {
   const cfg = loadFraisConfig();
-  if (cfg && cfg.debours && typeof cfg.debours.moyenne === 'number') {
-    return { debours: Number(cfg.debours.moyenne), formalites: 0 };
+  if (cfg && cfg.debours) {
+    const map = cfg.debours.par_departement || {};
+    const c = normalizeCode(code);
+    const dep = map[c];
+    if (dep && (dep.cadastre || dep.conservation)) {
+      const cad = Number(dep.cadastre || 0);
+      const cons = Number(dep.conservation || 0);
+      const form = Number(dep.formalites || 0);
+      return { debours: cad + cons, formalites: form };
+    }
+    if (typeof cfg.debours.moyenne === 'number') {
+      return { debours: Number(cfg.debours.moyenne), formalites: 0 };
+    }
   }
   if (type === 'neuf') {
     return { debours: 330, formalites: 120 };
@@ -705,8 +723,9 @@ function computeDeboursFormalites(code, type) {
  */
 function computeCsi(price) {
   const cfg = loadFraisConfig();
-  const taux = cfg && cfg.csi ? Number(cfg.csi) / 100 : 0.001;
-  const csi = Math.max(price * taux, 15);
+  const taux = cfg && cfg.csi && cfg.csi.taux != null ? Number(cfg.csi.taux) : 0.001;
+  const min = cfg && cfg.csi && cfg.csi.minimum != null ? Number(cfg.csi.minimum) : 15;
+  const csi = Math.max(price * taux, min);
   return csi;
 }
 
@@ -714,7 +733,9 @@ function computeCsi(price) {
  * Calcule TVA (20% sur émoluments + formalités)
  */
 function computeTva(emoluments, formalites) {
-  return 0.2 * (emoluments + formalites);
+  const cfg = loadFraisConfig();
+  const tva = cfg && cfg.tva != null ? Number(cfg.tva) : 0.2;
+  return tva * (emoluments + formalites);
 }
 
 /**
