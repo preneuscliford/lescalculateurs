@@ -97,7 +97,8 @@ function hasCta(html) {
  * Construit le bloc CTA personnalisé pour un département donné.
  */
 function buildCtaBlock(name, code) {
-  const cleanName = String(name || '')
+  const official = getDepartmentName(code);
+  const cleanName = String(official || name || '')
     .replace(/\bfrais\s+de\s+notaire\b/gi, '')
     .replace(/\bde\s+notaire\b/gi, '')
     .replace(/\bnotaire\b/gi, '')
@@ -146,18 +147,19 @@ function hasLocalSection(html) {
  * Construit une section locale générique (évite duplication en insérant nom/code).
  */
 function buildLocalSection(name, code) {
+  const official = getDepartmentName(code);
+  if (official) name = official;
   const old = computeTotal(code, 200000, 'ancien');
   const neu = computeTotal(code, 200000, 'neuf');
   const oldRate = getDroitsRate(code, 'ancien');
   const neuRate = getDroitsRate(code, 'neuf');
-  const oldRatePct = oldRate != null ? `${(oldRate * 100).toFixed(2).replace('.', ',')}%` : 'N/A';
-  const neuRatePct = neuRate != null ? `${(neuRate * 100).toFixed(3).replace('.', ',')}%` : 'N/A';
+  const oldRatePct = oldRate != null ? `≈ ${formatPercent(oldRate)}` : 'N/A';
+  const neuRatePct = neuRate != null ? `≈ ${formatPercent(neuRate)}` : 'N/A';
   return (
     `        <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${name} (${code})</h2>\n` +
     `        <p class="text-gray-700 mb-4">\n` +
     `          Ancien : ≈ ${formatEuroAmount(old.total)} pour 200 000 € (droits ${oldRatePct}) • Neuf : ≈ ${formatEuroAmount(neu.total)} pour 200 000 € (droits ${neuRatePct}).\n` +
     `        </p>\n` +
-    `        <p class="text-xs sm:text-sm text-gray-600 mb-4">Neuf : droits réduits uniformes (0,715%). Totaux incluent droits, émoluments, formalités, CSI et TVA.</p>\n` +
     `        <div class="flex gap-3 mb-8">\n` +
     `          <a href="/pages/notaire.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">Calculer maintenant</a>\n` +
     `          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualités de prêt</a>\n` +
@@ -194,19 +196,19 @@ function loadLocales() {
  * Construit une section locale spécifique si des données existent.
  */
 function buildSpecificLocalSection(data, code, deptName) {
-  const city = (deptName || data.city || '').toString().trim();
+  const official = getDepartmentName(code);
+  const city = (official || deptName || '').toString().trim();
   const old = computeTotal(code, 200000, 'ancien');
   const neu = computeTotal(code, 200000, 'neuf');
   const oldRate = getDroitsRate(code, 'ancien');
   const neuRate = getDroitsRate(code, 'neuf');
-  const oldRatePct = oldRate != null ? `${(oldRate * 100).toFixed(2).replace('.', ',')}%` : 'N/A';
-  const neuRatePct = neuRate != null ? `${(neuRate * 100).toFixed(3).replace('.', ',')}%` : 'N/A';
+  const oldRatePct = oldRate != null ? `≈ ${formatPercent(oldRate)}` : 'N/A';
+  const neuRatePct = neuRate != null ? `≈ ${formatPercent(neuRate)}` : 'N/A';
   return (
     `        <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${city} (${code})</h2>\n` +
     `        <p class="text-gray-700 mb-4">\n` +
     `          Ancien : ≈ ${formatEuroAmount(old.total)} pour 200 000 € (droits ${oldRatePct}) • Neuf : ≈ ${formatEuroAmount(neu.total)} pour 200 000 € (droits ${neuRatePct}).\n` +
     `        </p>\n` +
-    `        <p class="text-xs sm:text-sm text-gray-600 mb-4">Neuf : droits réduits uniformes (0,715%). Totaux incluent droits, émoluments, formalités, CSI et TVA.</p>\n` +
     `        <div class="flex gap-3 mb-8">\n` +
     `          <a href="/pages/notaire.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">Calculer maintenant</a>\n` +
     `          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualités de prêt</a>\n` +
@@ -218,10 +220,12 @@ function buildSpecificLocalSection(data, code, deptName) {
  * Met à jour une section locale générique existante vers une version spécifique.
  */
 function upgradeLocalSection(html, data, code, deptName) {
+  const official = getDepartmentName(code);
+  const displayName = official || deptName || data.city;
   // Remplacer le H2 s'il est générique
   html = html.replace(
     /<h2[^>]*>\s*Calcul\s+frais\s+de\s+notaire\s+[^<]*\(\d{2}\)\s*<\/h2>/i,
-    `<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${deptName || data.city} (${code})</h2>`
+    `<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${displayName} (${code})</h2>`
   );
   // Remplacer le paragraphe indicatif par des données spécifiques
   const old = computeTotal(code, 200000, 'ancien');
@@ -236,7 +240,7 @@ function upgradeLocalSection(html, data, code, deptName) {
     `        </p>`
   );
   // Cibler le <p> immédiatement après le H2
-  const h2Str = `<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${deptName || data.city} (${code})</h2>`;
+  const h2Str = `<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${displayName} (${code})</h2>`;
   const h2Pos = html.indexOf(h2Str);
   if (h2Pos !== -1) {
     const pStart = html.indexOf('<p class="text-gray-700 mb-4">', h2Pos);
@@ -282,6 +286,8 @@ function processFile(filePath) {
   updated = insertSummaryAfterCta(updated, summary);
   // Assurer la présence de la note d’explication globale
   updated = ensureInfoNote(updated);
+  // Dédupliquer la note si plusieurs occurrences
+  updated = dedupeInfoNotes(updated);
 
   if (!hasLocalSection(updated)) {
     const local = localData
@@ -322,23 +328,23 @@ function buildSummaryBlock(name, code, data) {
   const neuf = computeTotal(code, 200000, 'neuf');
   const ancienRateNum = getDroitsRate(code, 'ancien');
   const neufRateNum = getDroitsRate(code, 'neuf');
-  const cleanName = String(name || '')
+  const official = getDepartmentName(code);
+  const cleanName = String(official || name || '')
     .replace(/\bfrais\s+de\s+notaire\b/gi, '')
     .replace(/\bde\s+notaire\b/gi, '')
     .replace(/\bnotaire\b/gi, '')
     .trim();
-  const problematic = !cleanName || /\bdans\b|departement/i.test(cleanName);
-  const displayCityRaw = data?.city ? String(data.city).trim() : cleanName;
+  const problematic = false;
+  const displayCityRaw = cleanName;
   const displayCity = displayCityRaw
     .replace(/\bfrais\s+de\s+notaire\b/gi, '')
     .replace(/\bde\s+notaire\b/gi, '')
     .replace(/\bnotaire\b/gi, '')
     .trim();
-  const sameName = displayCity.toLowerCase() === cleanName.toLowerCase();
-  const displayParen = problematic ? `(${code})` : sameName ? `(${code})` : `(${cleanName} ${code})`;
-  const label = problematic ? `💰 Frais de notaire 2025 ${displayParen}` : `💰 Frais de notaire 2025 à ${displayCity} ${displayParen}`;
-  const oldRatePct = ancienRateNum != null ? `${(ancienRateNum * 100).toFixed(2).replace('.', ',')}%` : 'N/A';
-  const newRatePct = neufRateNum != null ? `${(neufRateNum * 100).toFixed(3).replace('.', ',')}%` : 'N/A';
+  const displayParen = `(${code})`;
+  const label = `💰 Frais de notaire 2025 à ${displayCity} ${displayParen}`;
+  const oldRatePct = ancienRateNum != null ? `≈ ${formatPercent(ancienRateNum)}` : 'N/A';
+  const newRatePct = neufRateNum != null ? `≈ ${formatPercent(neufRateNum)}` : 'N/A';
   const partOld = `≈ ${formatEuroAmount(ancien.total)} pour 200 000 € (ancien, droits ${oldRatePct})`;
   const partNew = `≈ ${formatEuroAmount(neuf.total)} pour 200 000 € (neuf, droits ${newRatePct})`;
   const line1 = `${label} : ${partOld} • ${partNew}`;
@@ -401,6 +407,19 @@ function ensureInfoNote(html) {
     return html.slice(0, idx) + '\n' + note + html.slice(idx);
   }
   return html + '\n' + note;
+}
+
+/**
+ * Supprime les doublons de la note "Neuf : droits réduits uniformes...".
+ */
+function dedupeInfoNotes(html) {
+  const re = /<p class="text-xs sm:text-sm text-gray-600 mb-4">Neuf : droits réduits uniformes \(0,715%\)\. Totaux incluent droits, émoluments, formalités, CSI et TVA\.<\/p>/gi;
+  let seen = false;
+  return html.replace(re, (m) => {
+    if (seen) return '';
+    seen = true;
+    return m;
+  });
 }
 
 /**
@@ -475,17 +494,22 @@ function loadBaremes() {
   // Fallback si parsing échoue
   const std = typeof standard === 'number' ? standard : 0.0581;
   const nf = typeof neuf === 'number' ? neuf : 0.00715;
-  const red = typeof reduit === 'number' ? reduit : 0.038;
-  const deps = depReduits.length ? depReduits : ["36","38","56","976"];
+  const red = typeof reduit === 'number' ? reduit : 0.0509006;
+  const deps = depReduits.length ? depReduits : ["36","976"];
   return { standard: std, neuf: nf, reduit: red, depReduits: deps };
 }
 
+/**
+ * Formate un pourcentage avec troncature (pas d'arrondi),
+ * pour coller aux libellés attendus (ex: 5,80% et 0,71%).
+ */
 function formatPercent(num) {
   if (typeof num !== 'number' || isNaN(num)) return 'N/A';
   const pct = num * 100;
-  // Affichage avec , comme séparateur décimal et 3 décimales max pour le neuf
-  const digits = pct < 1 ? 3 : 2;
-  return `${pct.toFixed(digits).replace('.', ',')}%`;
+  const decimals = pct < 1 ? 2 : 2;
+  const factor = Math.pow(10, decimals);
+  const truncated = Math.floor(pct * factor) / factor;
+  return `${truncated.toFixed(decimals).replace('.', ',')}%`;
 }
 
 function getDeptRates(code) {
@@ -526,6 +550,33 @@ function normalizeCode(code) {
 }
 
 /**
+ * Retourne le nom officiel du département depuis departements.json
+ */
+/**
+ * Retourne le nom officiel du département (compat objet ou tableau).
+ */
+function getDepartmentName(code) {
+  const entry = getDeptEntry(code);
+  return entry && entry.nom ? String(entry.nom) : null;
+}
+
+/**
+ * Récupère l'entrée département depuis departements.json (objet ou tableau).
+ */
+function getDeptEntry(code) {
+  const deps = loadDepartements();
+  const c = normalizeCode(code);
+  if (!deps) return null;
+  if (Array.isArray(deps)) {
+    return deps.find((d) => normalizeCode(d.code) === c) || null;
+  }
+  if (typeof deps === 'object') {
+    return deps[c] || null;
+  }
+  return null;
+}
+
+/**
  * Calcule les émoluments proportionnels du notaire selon barème officiel
  */
 function computeEmoluments(price) {
@@ -551,20 +602,18 @@ function computeEmoluments(price) {
 /**
  * Retourne droits d’enregistrement en fonction du département et du type
  */
+/**
+ * Calcule les droits d'enregistrement en fonction du département et du type.
+ */
 function computeDroits(code, price, type) {
   const b = loadBaremes();
   const c = normalizeCode(code);
   if (!b) return 0;
   if (type === 'neuf') return price * b.neuf;
-  // Ancien
   if (b.depReduits.includes(c)) return price * b.reduit;
-  // Essayer departements.json si présent
-  const deps = loadDepartements();
-  if (deps && Array.isArray(deps)) {
-    const entry = deps.find((d) => normalizeCode(d.code) === c);
-    if (entry && typeof entry.tauxDroits === 'number') {
-      return price * entry.tauxDroits;
-    }
+  const entry = getDeptEntry(code);
+  if (entry && typeof entry.tauxDroits === 'number') {
+    return price * entry.tauxDroits;
   }
   return price * b.standard;
 }
@@ -572,39 +621,37 @@ function computeDroits(code, price, type) {
 /**
  * Retourne le taux des droits (% en décimal) utilisé
  */
+/**
+ * Retourne le taux des droits (% en décimal) utilisé pour affichage/calcul.
+ */
 function getDroitsRate(code, type) {
   const b = loadBaremes();
   const c = normalizeCode(code);
   if (!b) return null;
   if (type === 'neuf') return b.neuf;
   if (b.depReduits.includes(c)) return b.reduit;
-  const deps = loadDepartements();
-  if (deps && Array.isArray(deps)) {
-    const entry = deps.find((d) => normalizeCode(d.code) === c);
-    if (entry && typeof entry.tauxDroits === 'number') return entry.tauxDroits;
-  }
+  const entry = getDeptEntry(code);
+  if (entry && typeof entry.tauxDroits === 'number') return entry.tauxDroits;
   return b.standard;
 }
 
 /**
  * Calcule formalités et débours selon type et département
  */
+/**
+ * Calcule formalités et débours selon type et département (compat data).
+ */
 function computeDeboursFormalites(code, type) {
-  const deps = loadDepartements();
-  const c = normalizeCode(code);
   if (type === 'neuf') {
     return { debours: 330, formalites: 120 };
   }
-  if (deps && Array.isArray(deps)) {
-    const entry = deps.find((d) => normalizeCode(d.code) === c);
-    if (entry && entry.fraisDivers) {
-      const cadastre = Number(entry.fraisDivers.cadastre || 0);
-      const conservation = Number(entry.fraisDivers.conservation || 0);
-      const formalites = Number(entry.fraisDivers.formalites || 0);
-      return { debours: cadastre + conservation, formalites };
-    }
+  const entry = getDeptEntry(code);
+  if (entry && entry.fraisDivers) {
+    const cadastre = Number(entry.fraisDivers.cadastre || 0);
+    const conservation = Number(entry.fraisDivers.conservation || 0);
+    const formalites = Number(entry.fraisDivers.formalites || 0);
+    return { debours: cadastre + conservation, formalites };
   }
-  // Fallback générique ancien
   return { debours: 300, formalites: 180 };
 }
 

@@ -19,9 +19,9 @@ export const baremes = {
     },
     droitsMutation: {
       standard: 0.0581, // taux usuel (hors départements à taux réduit)
-      neuf: 0.00715, // taux réduit pour le neuf
-      reduit: 0.038, // taux réduit pour certains départements
-      departementsReduits: ["36", "38", "56", "976"], // Indre, Isère, Morbihan, Mayotte
+      neuf: 0.00715, // taux réduit pour le neuf (≈ 0,71498%)
+      reduit: 0.0509006, // total DMTO avec part départementale à 3,80% (≈ 5,09006%)
+      departementsReduits: ["36", "976"], // Indre, Mayotte
     },
   },
   indemnites_kilometriques: {

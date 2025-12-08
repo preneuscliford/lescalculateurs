@@ -235,7 +235,7 @@
   },
   "36": {
     "nom": "Indre",
-    "tauxDroits": 0.058,
+    "tauxDroits": 0.0509006,
     "fraisDivers": {
       "cadastre": 117,
       "conservation": 147,
@@ -253,7 +253,7 @@
   },
   "38": {
     "nom": "Isère",
-    "tauxDroits": 0.058,
+    "tauxDroits": 0.063185,
     "fraisDivers": {
       "cadastre": 124,
       "conservation": 154,
@@ -415,7 +415,7 @@
   },
   "56": {
     "nom": "Morbihan",
-    "tauxDroits": 0.058,
+    "tauxDroits": 0.0580665,
     "fraisDivers": {
       "cadastre": 121,
       "conservation": 151,
