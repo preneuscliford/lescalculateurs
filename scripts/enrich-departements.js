@@ -500,6 +500,21 @@ function loadBaremes() {
 }
 
 /**
+ * Charge la configuration JSON fournie (DMTO, barème émoluments, CSI, débours).
+ */
+function loadFraisConfig() {
+  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2025.json');
+  if (!fs.existsSync(p)) return null;
+  try {
+    const raw = fs.readFileSync(p, 'utf8');
+    const data = JSON.parse(raw);
+    return data && typeof data === 'object' ? data : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+/**
  * Formate un pourcentage avec troncature (pas d'arrondi),
  * pour coller aux libellés attendus (ex: 5,80% et 0,71%).
  */
@@ -580,7 +595,27 @@ function getDeptEntry(code) {
  * Calcule les émoluments proportionnels du notaire selon barème officiel
  */
 function computeEmoluments(price) {
+  const cfg = loadFraisConfig();
   const p = price || 0;
+  if (cfg && Array.isArray(cfg.emoluments)) {
+    let remaining = p;
+    let total = 0;
+    const toDec = (t) => Number(t) / 100;
+    for (let i = 0; i < cfg.emoluments.length; i++) {
+      const tr = cfg.emoluments[i];
+      const taux = toDec(tr.taux);
+      if (tr.tranche_max == null) {
+        total += remaining * taux;
+        remaining = 0;
+        break;
+      }
+      const prevMax = i === 0 ? 0 : (cfg.emoluments[i - 1].tranche_max || 0);
+      const cap = Math.max(0, Math.min(p, tr.tranche_max) - prevMax);
+      total += cap * taux;
+      remaining -= cap;
+    }
+    return total;
+  }
   let total = 0;
   const tranche1 = Math.min(p, 6500);
   total += tranche1 * 0.0387;
@@ -606,10 +641,14 @@ function computeEmoluments(price) {
  * Calcule les droits d'enregistrement en fonction du département et du type.
  */
 function computeDroits(code, price, type) {
+  const cfg = loadFraisConfig();
   const b = loadBaremes();
   const c = normalizeCode(code);
   if (!b) return 0;
   if (type === 'neuf') return price * b.neuf;
+  if (cfg && cfg.dmto && cfg.dmto[c]) {
+    return price * (Number(cfg.dmto[c]) / 100);
+  }
   if (b.depReduits.includes(c)) return price * b.reduit;
   const entry = getDeptEntry(code);
   if (entry && typeof entry.tauxDroits === 'number') {
@@ -625,10 +664,12 @@ function computeDroits(code, price, type) {
  * Retourne le taux des droits (% en décimal) utilisé pour affichage/calcul.
  */
 function getDroitsRate(code, type) {
+  const cfg = loadFraisConfig();
   const b = loadBaremes();
   const c = normalizeCode(code);
   if (!b) return null;
   if (type === 'neuf') return b.neuf;
+  if (cfg && cfg.dmto && cfg.dmto[c]) return Number(cfg.dmto[c]) / 100;
   if (b.depReduits.includes(c)) return b.reduit;
   const entry = getDeptEntry(code);
   if (entry && typeof entry.tauxDroits === 'number') return entry.tauxDroits;
@@ -642,6 +683,10 @@ function getDroitsRate(code, type) {
  * Calcule formalités et débours selon type et département (compat data).
  */
 function computeDeboursFormalites(code, type) {
+  const cfg = loadFraisConfig();
+  if (cfg && cfg.debours && typeof cfg.debours.moyenne === 'number') {
+    return { debours: Number(cfg.debours.moyenne), formalites: 0 };
+  }
   if (type === 'neuf') {
     return { debours: 330, formalites: 120 };
   }
@@ -659,7 +704,9 @@ function computeDeboursFormalites(code, type) {
  * Calcule CSI (min 15€ ou 0,1% du prix)
  */
 function computeCsi(price) {
-  const csi = Math.max(price * 0.001, 15);
+  const cfg = loadFraisConfig();
+  const taux = cfg && cfg.csi ? Number(cfg.csi) / 100 : 0.001;
+  const csi = Math.max(price * taux, 15);
   return csi;
 }
 
