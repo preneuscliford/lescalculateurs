@@ -775,7 +775,7 @@
   },
   "971": {
     "nom": "Guadeloupe",
-    "tauxDroits": 0.065,
+    "tauxDroits": 0.045,
     "fraisDivers": {
       "cadastre": 160,
       "conservation": 190,
@@ -784,7 +784,7 @@
   },
   "972": {
     "nom": "Martinique",
-    "tauxDroits": 0.065,
+    "tauxDroits": 0.045,
     "fraisDivers": {
       "cadastre": 160,
       "conservation": 190,
@@ -793,7 +793,7 @@
   },
   "973": {
     "nom": "Guyane",
-    "tauxDroits": 0.065,
+    "tauxDroits": 0.045,
     "fraisDivers": {
       "cadastre": 160,
       "conservation": 190,
@@ -802,7 +802,7 @@
   },
   "974": {
     "nom": "La Réunion",
-    "tauxDroits": 0.065,
+    "tauxDroits": 0.045,
     "fraisDivers": {
       "cadastre": 160,
       "conservation": 190,
@@ -811,7 +811,7 @@
   },
   "975": {
     "nom": "Saint-Pierre-et-Miquelon",
-    "tauxDroits": 0.065,
+    "tauxDroits": 0.045,
     "fraisDivers": {
       "cadastre": 160,
       "conservation": 190,
@@ -820,7 +820,7 @@
   },
   "976": {
     "nom": "Mayotte",
-    "tauxDroits": 0.065,
+    "tauxDroits": 0.038,
     "fraisDivers": {
       "cadastre": 160,
       "conservation": 190,
