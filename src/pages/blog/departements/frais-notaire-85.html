@@ -359,23 +359,7 @@
 
       <!-- CTA au-dessus du pli (Vendée 85) -->
             <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-            <!-- CTA BLOCK START -->
-      <div class="mb-6 rounded-lg border-2 border-blue-200 bg-blue-50 p-4 sm:p-5">
+<div class="mb-6 rounded-lg border-2 border-blue-200 bg-blue-50 p-4 sm:p-5">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div class="text-sm sm:text-base text-gray-800 leading-relaxed">
           <strong>Calcul immédiat (10 s) — Gratuit</strong><br/>
@@ -1154,7 +1138,7 @@
         </div>
 
         <script type="module">
-          const baremes = await (await fetch("../../../data/baremes.json")).json();
+          const fraisCfg = await (await fetch("../../../data/frais2025.json")).json();
 const btn = document.getElementById("btn-inline-calculator");
           btn?.addEventListener("click", async () => {
             btn.setAttribute("disabled", "true");
@@ -1236,7 +1220,12 @@ const btn = document.getElementById("btn-inline-calculator");
                     
                     // Calcul des émoluments selon les tranches officielles (IDENTIQUE AU CALCULATEUR PRINCIPAL)
                     let emoluments = 0;
-                    const tranches = baremes.notaire.tranches;
+                    const tranches = [
+  { min: 0, max: 6500, taux: (fraisCfg.emoluments?.[0]?.taux || 3.945) / 100 },
+  { min: 6500, max: 17000, taux: (fraisCfg.emoluments?.[1]?.taux || 1.627) / 100 },
+  { min: 17000, max: 60000, taux: (fraisCfg.emoluments?.[2]?.taux || 1.085) / 100 },
+  { min: 60000, max: Infinity, taux: (fraisCfg.emoluments?.[3]?.taux || 0.814) / 100 },
+];
                     for (const tranche of tranches) {
                       const largeur = Math.max(tranche.max - tranche.min, 0);
                       const applicable = Math.min(Math.max(prixNetImmobilier - tranche.min, 0), largeur);
@@ -1256,12 +1245,12 @@ const btn = document.getElementById("btn-inline-calculator");
                     }
 
                     // CSI (fixe)
-                    const csi = Math.max(Math.round(prixNetImmobilier * baremes.notaire.csi.taux), baremes.notaire.csi.minimum);
+                    const csi = Math.max(Math.round(prixNetImmobilier * ((fraisCfg.csi || 0.10) / 100)), 15);
 
                     // Droits d'enregistrement
-                    let tauxDroits = baremes.notaire.droitsMutation.standard;
-if (typeBien !== "neuf" && baremes.notaire.droitsMutation.departementsReduits.includes(values.departement)) { tauxDroits = baremes.notaire.droitsMutation.reduit; }
-                    let droitsEnregistrement = 0;
+let tauxDroits = (fraisCfg.dmto && fraisCfg.dmto[values.departement] != null ? Number(fraisCfg.dmto[values.departement]) / 100 : 0.058);
+if (typeBien === "neuf") { tauxDroits = 0.00715; }
+let droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
                     if (typeBien === "neuf") { tauxDroits = baremes.notaire.droitsMutation.neuf; }
                     droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
 
