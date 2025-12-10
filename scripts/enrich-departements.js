@@ -104,7 +104,7 @@ function buildCtaBlock(name, code) {
     .replace(/\bnotaire\b/gi, '')
     .trim();
   const label = `Calcul immédiat (10 s) — Gratuit`;
-  const desc = `Barème officiel 2025, estimation précise pour ${cleanName} (${code}).`;
+  const desc = `Barème officiel 2024-2025, estimation précise pour ${cleanName} (${code}).`;
   return (
       `      <!-- CTA BLOCK START -->\n` +
       `      <div class="mb-6 rounded-lg border-2 border-blue-200 bg-blue-50 p-4 sm:p-5">\n` +
@@ -381,9 +381,9 @@ function insertSummaryAfterCta(html, summaryBlock) {
  * Assure la présence de la note d’explication globale sur chaque page
  */
 function ensureInfoNote(html) {
-  const noteRegex = /Neuf\s*:\s*droits\s+réduits\s+uniformes\s*\(0,715%\)\.[\s\S]*?Inclut\s+droits,\s+émoluments,\s+formalités,\s+CSI\s+et\s+TVA\./i;
+  const noteRegex = /Droits\s+réduits\s+uniformisés\s*\(0,715\s*%\)\./i;
   if (noteRegex.test(html)) return html;
-  const note = `        <p class="text-xs sm:text-sm text-gray-600 mb-4">Neuf : droits réduits uniformes (0,715%). Totaux incluent droits, émoluments, formalités, CSI et TVA.</p>\n`;
+  const note = `        <p class="text-xs sm:text-sm text-gray-600 mb-4">Droits réduits uniformisés (0,715 %).</p>\n`;
   // Insérer après le résumé si présent
   const summaryMarker = 'border-yellow-400';
   const pos = html.indexOf(summaryMarker);
@@ -413,7 +413,7 @@ function ensureInfoNote(html) {
  * Supprime les doublons de la note "Neuf : droits réduits uniformes...".
  */
 function dedupeInfoNotes(html) {
-  const re = /<p class="text-xs sm:text-sm text-gray-600 mb-4">Neuf : droits réduits uniformes \(0,715%\)\. Totaux incluent droits, émoluments, formalités, CSI et TVA\.<\/p>/gi;
+  const re = /<p class="text-xs sm:text-sm text-gray-600 mb-4">Droits réduits uniformisés \(0,715\s*%\)\.<\/p>/gi;
   let seen = false;
   return html.replace(re, (m) => {
     if (seen) return '';
