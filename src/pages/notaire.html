@@ -288,6 +288,7 @@
 
       <!-- Calculateur -->
       <div id="notaire-calculator"></div>
+      <div id="export-buttons" class="mt-4 flex flex-wrap gap-3 justify-center" data-export-exclude="true"></div>
 
       <!-- Tableau de comparaison (masqué par défaut) -->
       <div id="comparaison-container" class="hidden"></div>
@@ -714,8 +715,9 @@
       import { formatCurrency } from "../main.ts";
       import { baremes } from "../data/baremes.ts";
       import { calculerFraisNotaire } from "../utils/calculNotaire.ts";
-      import departements from "../data/departements.json";
-      const bjson = await (await fetch("../data/baremes.json")).json();
+      import departements from "../data/departements.json" assert { type: "json" };
+      import bjson from "../data/baremes.json" assert { type: "json" };
+      (async () => {
       /**
        * Retourne le taux DMTO (décimal) pour un département
        */
@@ -1350,24 +1352,17 @@
 
       // Initialisation du calculateur
       new CalculatorFrame("notaire-calculator", notaireConfig);
-    </script>
-    <script type="module">
-      const bjson2 = await (await fetch("../data/baremes.json")).json();
-      const departements = (await import("../data/departements.json", { assert: { type: "json" } })).default;
-      const pct = (n) => { const p = n * 100; const t = Math.floor(p * 100)/100; return `≈ ${t.toFixed(2).replace('.', ',')}%`; };
-      const getDmtoTaux = (code) => {
-        const c = String(code);
-        if (bjson2.dmto?.[c] != null) return Number(bjson2.dmto[c]) / 100;
-        return Number(bjson2.notaire?.droitsMutation?.standard || 0.0581);
-      };
+
+      // Construction des options du modal de comparaison avec taux DMTO réels
       const getName = (code) => {
         const c = String(code).toUpperCase();
-        const arr = Array.isArray(departements) ? departements : Object.keys(departements).map(k => ({ code: k, nom: departements[k].nom }));
-        const found = arr.find(d => String(d.code).toUpperCase() === c);
+        const arr = Array.isArray(departements)
+          ? departements
+          : Object.keys(departements).map((k) => ({ code: k, nom: departements[k].nom }));
+        const found = arr.find((d) => String(d.code).toUpperCase() === c);
         return found?.nom || c;
       };
-      // Construire un mapping global pour labels de département avec taux
-      window.deptLabelMap = Object.keys(bjson2.dmto || {}).reduce((acc, code) => {
+      window.deptLabelMap = Object.keys(bjson.dmto || {}).reduce((acc, code) => {
         const name = getName(code);
         const taux = getDmtoTaux(code);
         acc[code] = `${code} - ${name} (${pct(taux)})`;
@@ -1376,13 +1371,19 @@
       function buildModalOptions() {
         const select = document.getElementById('modal-departement');
         if (!select) return;
-        const popular = ["75","92","93","94","78","91","95","77","13","69","59","06","31","33","44","34","67","35","38","83","62","76","84","30","17","2A","2B"];
-        select.innerHTML = '<option value="">-- Sélectionnez un département --</option>' + popular.map(code => {
-          const label = window.deptLabelMap?.[code] || `${code} - ${getName(code)} (${pct(getDmtoTaux(code))})`;
-          return `<option value="${code}">${label}</option>`;
-        }).join('');
+        const popular = [
+          "75","92","93","94","78","91","95","77","13","69","59","06",
+          "31","33","44","34","67","35","38","83","62","76","84","30","17","2A","2B",
+        ];
+        select.innerHTML = '<option value="">-- Sélectionnez un département --</option>' + popular
+          .map((code) => {
+            const label = window.deptLabelMap?.[code] || `${code} - ${getName(code)} (${pct(getDmtoTaux(code))})`;
+            return `<option value="${code}">${label}</option>`;
+          })
+          .join('');
       }
       buildModalOptions();
+      })();
     </script>
 
     <script>
