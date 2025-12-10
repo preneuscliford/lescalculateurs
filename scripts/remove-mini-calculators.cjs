@@ -9,7 +9,9 @@ const fs = require("fs");
 const path = require("path");
 
 const blogDir = path.join(__dirname, "../src/pages/blog/departements");
-const files = fs.readdirSync(blogDir).filter(f => f.startsWith("frais-notaire-"));
+const files = fs
+  .readdirSync(blogDir)
+  .filter((f) => f.startsWith("frais-notaire-"));
 
 console.log("🗑️  Suppression des mini-calculateurs des pages blog...\n");
 
@@ -23,13 +25,14 @@ for (const file of files) {
 
     // Pattern: cherche le bouton + tout le script jusqu'à la fin du </script>
     // Le pattern cherche depuis "<!-- Mini-calculateur intégré" jusqu'au dernier </script> avant "<!-- Tarifs Officiels"
-    const pattern = /<!-- Mini-calculateur intégré.*?<\/script>\s*(?=<!-- Tarifs Officiels)/s;
-    
+    const pattern =
+      /<!-- Mini-calculateur intégré.*?<\/script>\s*(?=<!-- Tarifs Officiels)/s;
+
     if (pattern.test(content)) {
       content = content.replace(pattern, "");
       fs.writeFileSync(filePath, content, "utf8");
       removed++;
-      
+
       if (removed % 20 === 0) {
         console.log(`✅ ${removed} pages...`);
       }
@@ -43,4 +46,6 @@ for (const file of files) {
 
 console.log(`\n✅ ${removed} mini-calculateurs supprimés`);
 console.log(`⏭️  ${notFound} pages sans mini-calculateur`);
-console.log(`\n💡 Les utilisateurs utiliseront maintenant /pages/notaire pour les calculs avancés`);
+console.log(
+  `\n💡 Les utilisateurs utiliseront maintenant /pages/notaire pour les calculs avancés`
+);
