@@ -292,6 +292,9 @@ class ComparaisonNotaire {
                   label: (context) => {
                     const value = context.parsed.y;
                     const calcul = this.calculs[context.dataIndex];
+                    const base = calcul?.prixAchat || 0;
+                    const pctVal = base > 0 ? (value / base) * 100 : 0;
+                    const pctStr = base > 0 ? pctVal.toFixed(2).replace(".", ",") + "%" : "—";
                     return [
                       `Total : ${value.toLocaleString("fr-FR", {
                         style: "currency",
@@ -299,7 +302,7 @@ class ComparaisonNotaire {
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 0,
                       })}`,
-                      `Soit ${calcul.pourcentage.toFixed(2)}% du prix`,
+                      `Soit ${pctStr} du prix`,
                     ];
                   },
                 },
@@ -576,9 +579,12 @@ class ComparaisonNotaire {
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center font-semibold">${c.pourcentage.toFixed(
-                        2
-                      )}%</td>`
+                      (() => {
+                        const base = c.prixAchat || 0;
+                        const pct = base > 0 ? (c.total / base) * 100 : 0;
+                        const str = base > 0 ? pct.toFixed(2).replace(".", ",") + "%" : "—";
+                        return `<td class="p-3 text-center font-semibold">${str}</td>`;
+                      })()
                   )
                   .join("")}
               </tr>
