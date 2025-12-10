@@ -47,7 +47,14 @@ function getDmtoRate(code, type, baremes) {
 /**
  * Calcule débours et formalités d'après baremes.notaire.fraisDivers
  */
-function computeDeboursFormalites(baremes) {
+function computeDeboursFormalites(code, baremes) {
+  const map = baremes.notaire?.fraisDiversParDepartement || {}
+  const fdDep = map[String(code)]
+  if (fdDep) {
+    const debours = Number(fdDep.cadastre || 0) + Number(fdDep.conservation || 0)
+    const formalites = Number(fdDep.formalites || 0)
+    return { debours, formalites }
+  }
   const fd = baremes.notaire?.fraisDivers || {}
   const debours = Number(fd.cadastre || 0) + Number(fd.conservation || 0)
   const formalites = Number(fd.formalites || 0)
@@ -71,7 +78,7 @@ function computeCsiTva(price, emoluments, formalites, baremes) {
  */
 function computeAll(code, price, type, baremes) {
   const emoluments = computeEmoluments(price, baremes)
-  const { debours, formalites } = computeDeboursFormalites(baremes)
+  const { debours, formalites } = computeDeboursFormalites(code, baremes)
   const droits = price * getDmtoRate(code, type, baremes)
   const { csi, tva } = computeCsiTva(price, emoluments, formalites, baremes)
   const total = emoluments + droits + debours + formalites + csi + tva
@@ -118,7 +125,8 @@ function updateTypeTable(html, code, baremes) {
  */
 function updateTarifsBlock(html, code, baremes) {
   const dmtoPct = approxPct(getDmtoRate(code, 'ancien', baremes))
-  const fd = baremes.notaire?.fraisDivers || {}
+  const map = baremes.notaire?.fraisDiversParDepartement || {}
+  const fd = map[String(code)] || baremes.notaire?.fraisDivers || {}
   let updated = html
   // Émoluments tranches (valeurs légales)
   updated = updated.replace(/>3\.945%<\/span>/g, '>3,870%<\/span>')
