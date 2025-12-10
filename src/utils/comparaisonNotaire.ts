@@ -36,6 +36,7 @@ class ComparaisonNotaire {
   private containerId: string;
   private currentChart: Chart | null = null;
   private currentChartId: string = "";
+  private static SCHEMA_VERSION = "2025-12-10-baremes-json";
 
   constructor(containerId: string) {
     this.containerId = containerId;
@@ -132,10 +133,11 @@ class ComparaisonNotaire {
    */
   private saveToStorage(): void {
     try {
-      localStorage.setItem(
-        "comparaison_notaires",
-        JSON.stringify(this.calculs)
-      );
+      const payload = {
+        version: ComparaisonNotaire.SCHEMA_VERSION,
+        calculs: this.calculs,
+      };
+      localStorage.setItem("comparaison_notaires", JSON.stringify(payload));
     } catch (_) {}
   }
 
@@ -143,11 +145,16 @@ class ComparaisonNotaire {
     try {
       const raw = localStorage.getItem("comparaison_notaires");
       if (!raw) return;
-      const list = JSON.parse(raw);
-      if (Array.isArray(list)) {
-        this.calculs = list;
-        if (this.calculs.length > 0) this.afficherComparaison();
+      const payload = JSON.parse(raw);
+      const version = payload?.version;
+      const list = payload?.calculs;
+      if (version !== ComparaisonNotaire.SCHEMA_VERSION || !Array.isArray(list)) {
+        // Invalide ou ancien format → nettoyage
+        localStorage.removeItem("comparaison_notaires");
+        return;
       }
+      this.calculs = list;
+      if (this.calculs.length > 0) this.afficherComparaison();
     } catch (_) {}
   }
 
