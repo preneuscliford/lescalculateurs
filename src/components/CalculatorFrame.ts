@@ -28,6 +28,7 @@ export interface CalculatorField {
   type: "number" | "select" | "checkbox" | "text";
   required?: boolean;
   placeholder?: string;
+  help?: string;
   options?: { value: string | number; label: string }[];
   min?: number;
   max?: number;
@@ -112,6 +113,11 @@ export class CalculatorFrame {
                   .join("") || ""
               }
             </select>
+            ${
+              field.help
+                ? `<p class="mt-2 text-sm text-gray-500">${field.help}</p>`
+                : ""
+            }
           </div>
         `;
 
