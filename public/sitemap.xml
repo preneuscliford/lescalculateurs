@@ -50,6 +50,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl-zones</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/ik</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>yearly</changefreq>

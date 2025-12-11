@@ -214,34 +214,36 @@ export class CalculatorFrame {
           return v !== undefined && v !== null && String(v) !== "";
         });
 
-    if (allRequiredFilled) {
-      // Calculer et afficher directement
-      const result = this.config.calculate(this.values);
-      this.showResult(resultDiv, result);
-      return;
-    }
-
-    // Fallback: recharger le dernier calcul depuis l'historique
-    try {
-      const key = `calculator_history_${this.containerId}`;
-      const prev: any[] = JSON.parse(localStorage.getItem(key) || "[]");
-      if (Array.isArray(prev) && prev.length > 0) {
-        const last = prev[0];
-        const vals = last.values || {};
-        Object.keys(vals).forEach((k) => {
-          const input = form.querySelector(`#${CSS.escape(k)}`) as HTMLInputElement;
-          if (!input) return;
-          if (input.type === "checkbox") {
-            (input as HTMLInputElement).checked = !!vals[k];
-          } else {
-            (input as HTMLInputElement).value = String(vals[k]);
-          }
-          this.updateValue(k, input as any);
-        });
+      if (allRequiredFilled) {
+        // Calculer et afficher directement
         const result = this.config.calculate(this.values);
         this.showResult(resultDiv, result);
+        return;
       }
-    } catch (_) {}
+
+      // Fallback: recharger le dernier calcul depuis l'historique
+      try {
+        const key = `calculator_history_${this.containerId}`;
+        const prev: any[] = JSON.parse(localStorage.getItem(key) || "[]");
+        if (Array.isArray(prev) && prev.length > 0) {
+          const last = prev[0];
+          const vals = last.values || {};
+          Object.keys(vals).forEach((k) => {
+            const input = form.querySelector(
+              `#${CSS.escape(k)}`
+            ) as HTMLInputElement;
+            if (!input) return;
+            if (input.type === "checkbox") {
+              (input as HTMLInputElement).checked = !!vals[k];
+            } else {
+              (input as HTMLInputElement).value = String(vals[k]);
+            }
+            this.updateValue(k, input as any);
+          });
+          const result = this.config.calculate(this.values);
+          this.showResult(resultDiv, result);
+        }
+      } catch (_) {}
     } catch (_) {}
   }
 
@@ -288,7 +290,10 @@ export class CalculatorFrame {
         const key = `dernierCalcul_${this.containerId}`;
         (window as any)[key] = { result, values: { ...this.values } };
         if (this.containerId === "notaire-calculator") {
-          (window as any).dernierCalculNotaire = { result, values: { ...this.values } };
+          (window as any).dernierCalculNotaire = {
+            result,
+            values: { ...this.values },
+          };
         }
       }
 
@@ -338,7 +343,8 @@ export class CalculatorFrame {
         if (hasExportCSV && !document.getElementById("export-csv-btn")) {
           const csvBtn = document.createElement("button");
           csvBtn.id = "export-csv-btn";
-          csvBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+          csvBtn.className =
+            "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
           csvBtn.textContent = "📄 Exporter en CSV";
           csvBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -349,7 +355,8 @@ export class CalculatorFrame {
         if (hasExportXLSX && !document.getElementById("export-xlsx-btn")) {
           const xlsxBtn = document.createElement("button");
           xlsxBtn.id = "export-xlsx-btn";
-          xlsxBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+          xlsxBtn.className =
+            "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
           xlsxBtn.textContent = "📊 Exporter en XLSX";
           xlsxBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -367,7 +374,8 @@ export class CalculatorFrame {
           if (hasExportCSV && !document.getElementById("export-csv-btn")) {
             const csvBtn = document.createElement("button");
             csvBtn.id = "export-csv-btn";
-            csvBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+            csvBtn.className =
+              "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
             csvBtn.textContent = "📄 Exporter en CSV";
             csvBtn.addEventListener("click", (e) => {
               e.preventDefault();
@@ -378,7 +386,8 @@ export class CalculatorFrame {
           if (hasExportXLSX && !document.getElementById("export-xlsx-btn")) {
             const xlsxBtn = document.createElement("button");
             xlsxBtn.id = "export-xlsx-btn";
-            xlsxBtn.className = "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+            xlsxBtn.className =
+              "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
             xlsxBtn.textContent = "📊 Exporter en XLSX";
             xlsxBtn.addEventListener("click", (e) => {
               e.preventDefault();
@@ -456,7 +465,9 @@ export class CalculatorFrame {
 
       const filename =
         this.config.exportXLSX?.filename ||
-        `${this.config.title.toLowerCase().replace(/\s+/g, "_")}_resultats.xlsx`;
+        `${this.config.title
+          .toLowerCase()
+          .replace(/\s+/g, "_")}_resultats.xlsx`;
       await exportToXLSX(xlsxData, filename);
     } catch (error) {
       console.error("Erreur lors de l'export XLSX:", error);
@@ -492,10 +503,14 @@ export class CalculatorFrame {
     try {
       const params = new URLSearchParams(window.location.search);
       if (params.size === 0) return;
-      const form = this.container.querySelector("#calculator-form") as HTMLFormElement;
+      const form = this.container.querySelector(
+        "#calculator-form"
+      ) as HTMLFormElement;
       if (!form) return;
       params.forEach((value, key) => {
-        const input = form.querySelector(`#${CSS.escape(key)}`) as HTMLInputElement;
+        const input = form.querySelector(
+          `#${CSS.escape(key)}`
+        ) as HTMLInputElement;
         if (!input) return;
         if (input.type === "checkbox") {
           input.checked = value === "true";
@@ -525,7 +540,10 @@ export class CalculatorFrame {
   /**
    * Sauvegarde le dernier calcul dans localStorage (limité aux 10 derniers).
    */
-  private saveHistory(values: Record<string, any>, result: CalculatorResult): void {
+  private saveHistory(
+    values: Record<string, any>,
+    result: CalculatorResult
+  ): void {
     try {
       const key = `calculator_history_${this.containerId}`;
       const prev: any[] = JSON.parse(localStorage.getItem(key) || "[]");

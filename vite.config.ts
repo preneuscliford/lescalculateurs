@@ -23,6 +23,9 @@ export default defineConfig({
         travail: resolve(__dirname, "src/pages/travail.html"),
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
+        simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
+        apl: resolve(__dirname, "src/pages/apl.html"),
+        "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
         blog: resolve(__dirname, "src/pages/blog.html"),
         "blog-export-pdf": resolve(
           __dirname,
