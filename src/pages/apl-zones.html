@@ -25,6 +25,47 @@
       href="https://lescalculateurs.fr/pages/apl-zones.html"
     />
     <link rel="stylesheet" href="../tailwind.css" />
+    <!-- JSON-LD Schema: FAQs pour Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Est-ce que ma zone APL peut changer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, si vous déménagez dans une autre commune. La CAF recalculera automatiquement votre APL en fonction de la nouvelle zone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la zone la + avantageuse pour l'APL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zone 1 (IDF) offre les montants d'APL les + élevés, mais les loyers aussi. Zone 3 (rural) offre une APL plus basse avec des loyers très réduits. C'est une question de compromis personnel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les DOM-TOM ont une zone spéciale APL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, les départements d'outre-mer (DOM) ont leurs propres plafonds, généralement légèrement inférieurs à Zone 2 pour tenir compte du coût de la vie local."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Un village à côté de Paris = Zone 1 ou Zone 2 APL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cela dépend si le village est administrativement en Île-de-France. Les 8 départements de l'IDF = Zone 1. À partir de l'Essonne, Yvelines, Val-d'Oise = Zone 1. Au-delà = Zone 2."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-gray-50">
     <!-- Navigation -->
@@ -643,6 +684,13 @@
           class="inline-block bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-8 rounded transition"
         >
           Accéder au simulateur APL →
+        </a>
+        <p class="text-sm text-blue-200 mt-4">Vous êtes en DOM-TOM?</p>
+        <a
+          href="apl-dom-tom.html"
+          class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded transition"
+        >
+          Voir zones DOM-TOM
         </a>
       </section>
     </main>

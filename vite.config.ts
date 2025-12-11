@@ -26,6 +26,7 @@ export default defineConfig({
         simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
         apl: resolve(__dirname, "src/pages/apl.html"),
         "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
+        "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
         blog: resolve(__dirname, "src/pages/blog.html"),
         "blog-export-pdf": resolve(
           __dirname,
