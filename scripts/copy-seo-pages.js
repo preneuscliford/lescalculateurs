@@ -23,7 +23,7 @@ try {
   // Trouver les fichiers CSS et JS générés par Vite
   const assetFiles = fs.readdirSync(assetsDir);
   const cssFile = assetFiles.find(
-    (f) => f.startsWith("main-") && f.endsWith(".css")
+    (f) => (f.startsWith("main-") || f.startsWith("tailwind-")) && f.endsWith(".css")
   );
   const jsFile = assetFiles.find(
     (f) => f.startsWith("main-") && f.endsWith(".js")
