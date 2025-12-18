@@ -1,4 +1,47 @@
 {
   "cleanUrls": true,
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://$host/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "protocol",
+          "value": "http"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://www.lescalculateurs.fr/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "^lescalculateurs\\.fr$"
+        }
+      ]
+    },
+    {
+      "source": "/blog/departements/(.*)",
+      "destination": "/pages/blog/departements/$1",
+      "permanent": true
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/pages/blog/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
