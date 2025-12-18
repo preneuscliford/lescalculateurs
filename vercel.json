@@ -2,6 +2,16 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/blog/departements/(.*)",
+      "destination": "/pages/blog/departements/$1",
+      "permanent": true
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/pages/blog/$1",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://$host/:path*",
       "permanent": true,
@@ -22,16 +32,6 @@
           "value": "^lescalculateurs\\.fr$"
         }
       ]
-    },
-    {
-      "source": "/blog/departements/(.*)",
-      "destination": "/pages/blog/departements/$1",
-      "permanent": true
-    },
-    {
-      "source": "/blog/(.*)",
-      "destination": "/pages/blog/$1",
-      "permanent": true
     },
     {
       "source": "/(.*)\\.html",
