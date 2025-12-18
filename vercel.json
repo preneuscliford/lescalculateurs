@@ -13,17 +13,6 @@
     },
     {
       "source": "/:path*",
-      "destination": "https://$host/:path*",
-      "permanent": true,
-      "has": [
-        {
-          "type": "protocol",
-          "value": "http"
-        }
-      ]
-    },
-    {
-      "source": "/:path*",
       "destination": "https://www.lescalculateurs.fr/:path*",
       "permanent": true,
       "has": [
