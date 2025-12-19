@@ -40,6 +40,16 @@ export default defineConfig({
           __dirname,
           "src/pages/blog/frais-notaire-departements.html"
         ),
+        "comment-calculer-frais-notaire": resolve(
+          __dirname,
+          "src/pages/comment-calculer-frais-notaire.html"
+        ),
+        "comment-calculer-plus-value": resolve(
+          __dirname,
+          "src/pages/comment-calculer-plus-value.html"
+        ),
+        methodologie: resolve(__dirname, "src/pages/methodologie.html"),
+        sources: resolve(__dirname, "src/pages/sources.html"),
       },
       output: {
         manualChunks: {
