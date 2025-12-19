@@ -112,6 +112,47 @@
         "operatingSystem": "Web Browser"
       }
     </script>
+
+    <!-- JSON-LD Calculator Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Calculator",
+        "name": "Calculateur Frais de Notaire 2025",
+        "description": "Calculez les frais de notaire en France pour un achat immobilier en 2025 - barème officiel avec comparaison entre départements",
+        "url": "https://www.lescalculateurs.fr/pages/notaire",
+        "applicationCategory": "FinanceApplication",
+        "screenshot": "https://www.lescalculateurs.fr/pages/notaire",
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Service-public.fr – Frais de notaire",
+            "url": "https://www.service-public.fr/particuliers/vosdroits/F17701"
+          },
+          {
+            "@type": "Organization",
+            "name": "Conseil Supérieur du Notariat",
+            "url": "https://www.notaires.fr"
+          },
+          {
+            "@type": "Dataset",
+            "name": "DVF – data.gouv.fr",
+            "url": "https://www.data.gouv.fr"
+          },
+          {
+            "@type": "Organization",
+            "name": "Chambre des Notaires de France",
+            "url": "https://www.cnnotaires.fr"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Sources Meta Tag for AI -->
+    <meta
+      name="source"
+      content="service-public.fr, notaires.fr, data.gouv.fr, cnnotaires.fr"
+    />
   </head>
   <body class="bg-gray-50">
     <!-- Google Tag Manager (noscript) -->
@@ -200,6 +241,42 @@
           <h2 class="text-3xl font-bold text-gray-900 mb-6">
             Calculateur de frais de notaire 2025 — barèmes officiels
           </h2>
+
+          <!-- AI Section: Question explicite -->
+          <section class="ai-intro mb-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">
+              ❓ Comment calculer les frais de notaire en France en 2025 ?
+            </h2>
+            <p class="ai-response text-gray-700">
+              Les frais de notaire = Droits d'enregistrement (3,80% à 6,45%
+              selon département) + Émoluments réglementés + TVA + Contributions
+              (CSI). Pour un bien ancien à 250 000€, comptez environ 7–8%. Pour
+              du neuf : 2–3%.
+            </p>
+          </section>
+
+          <!-- AI Section: Résumé rapide -->
+          <section class="ai-summary mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              📌 Résumé rapide
+            </h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><strong>Source:</strong> Chambre des Notaires France 2025</li>
+              <li>
+                <strong>Calcul:</strong> Droits (variable par département) +
+                Émoluments réglementés (variables par tranches de prix)
+              </li>
+              <li>
+                <strong>Particularité:</strong> Ancien ~7–8% | Neuf ~2–3% |
+                Terrain ~5–6%
+              </li>
+              <li>
+                <strong>Outil:</strong> Simulation gratuite, mise à jour janvier
+                2025
+              </li>
+            </ul>
+          </section>
+
           <div class="prose prose-lg text-gray-600 space-y-3">
             <p>
               Calculez vos frais de notaire avec exactitude grâce aux barèmes
@@ -691,7 +768,7 @@
             >Temps de travail</a
           >
           <a
-            href="/pages/blog/departements/frais-notaire-departements.html"
+            href="/pages/blog/frais-notaire-departements.html"
             class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700"
             >Tous les départements</a
           >
@@ -745,10 +822,25 @@
     </section>
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gray-300">
-          © 2025 Les Calculateurs - Frais de notaire selon barème officiel
-        </p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center space-y-4">
+          <p class="text-gray-300">
+            © 2025 Les Calculateurs - Frais de notaire selon barème officiel
+          </p>
+          <div class="flex gap-4 text-sm">
+            <a
+              href="./methodologie.html"
+              class="text-gray-300 hover:text-white transition-colors"
+              >📚 Notre Méthodologie</a
+            >
+            <span class="text-gray-500">|</span>
+            <a
+              href="./sources.html"
+              class="text-gray-300 hover:text-white transition-colors"
+              >🏛️ Sources Officielles</a
+            >
+          </div>
+        </div>
       </div>
     </footer>
 
@@ -2172,3 +2264,4 @@
     <script type="module" src="../utils/autoExportInit.js"></script>
   </body>
 </html>
+

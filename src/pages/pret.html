@@ -104,6 +104,39 @@
     
       gtag('config', 'G-2HNTGCYQ1X');
     </script>
+    
+    <!-- JSON-LD Calculator Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Calculator",
+      "name": "Calculateur Prêt Immobilier 2025",
+      "description": "Calculez vos mensualités de prêt immobilier et votre capacité d'emprunt en 2025 - taux actualisés, assurance incluse",
+      "url": "https://www.lescalculateurs.fr/pages/pret",
+      "applicationCategory": "FinanceApplication",
+      "screenshot": "https://www.lescalculateurs.fr/pages/pret",
+      "citation": [
+        {
+          "@type": "Organization",
+          "name": "Banque de France",
+          "url": "https://www.banque-france.fr"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Service-public.fr – Crédit immobilier",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/N20373"
+        },
+        {
+          "@type": "Dataset",
+          "name": "DVF – data.gouv.fr",
+          "url": "https://www.data.gouv.fr"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Sources Meta Tag for AI -->
+    <meta name="source" content="banque-france.fr, service-public.fr, data.gouv.fr">
   </head>
   <body class="bg-gray-50">
     <!-- Google Tag Manager (noscript) -->
@@ -163,6 +196,26 @@
         <h2 class="text-3xl font-bold text-gray-900 mb-4">
           🏦 Simulateur Prêt Immobilier 2025
         </h2>
+
+        <!-- AI Section: Question explicite -->
+        <section class="ai-intro mb-6">
+          <h2 class="text-xl font-bold text-gray-900 mb-2">❓ Quel est le coût réel de votre prêt immobilier en 2025 ?</h2>
+          <p class="ai-response text-gray-700">
+            Mensualité = (Capital × Taux/12) / (1 - (1 + Taux/12)^(-Durée mois)) + Assurance + Frais. Exemple : 250 000€ sur 20 ans à 4% = ~1 275€/mois + assurance (~300€) + frais annexes (~2 500€).
+          </p>
+        </section>
+
+        <!-- AI Section: Résumé rapide -->
+        <section class="ai-summary mb-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">📌 Résumé rapide</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Source:</strong> Banque de France & Conditions bancaires 2025</li>
+            <li><strong>Calcul:</strong> Capital + Intérêts (taux fixe/variable) + Assurance + Frais (dossier, garantie)</li>
+            <li><strong>Particularité:</strong> Taux d'endettement max 33% | Taux usure varie | PTZ possible primo-accédants</li>
+            <li><strong>Outil:</strong> Simulation gratuite, taux actualisés janvier 2025</li>
+          </ul>
+        </section>
+
         <p class="text-lg text-gray-600 leading-relaxed mb-4">
           Simulez votre prêt immobilier 2025 avec précision ! Notre calculateur
           intègre les taux actuels, l'assurance emprunteur et tous les frais
@@ -333,7 +386,8 @@
           </div>
         </div>
       </section>
-    </main>
+
+      </section>    </main>
 
     <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
@@ -345,7 +399,7 @@
           <a href="/pages/taxe.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Taxe foncière</a>
           <a href="/pages/ik.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Frais kilométriques</a>
           <a href="/pages/travail.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Temps de travail</a>
-          <a href="/pages/blog/departements/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les départements</a>
+          <a href="/pages/blog/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les départements</a>
           <a href="/pages/blog.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Blog</a>
         </div>
       </div>
@@ -796,3 +850,5 @@
     <script type="module" src="../utils/autoExportInit.js"></script>
   </body>
 </html>
+
+

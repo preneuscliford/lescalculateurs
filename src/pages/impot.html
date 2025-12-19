@@ -32,7 +32,10 @@
       content="Calculez votre impôt 2025 en 10 secondes. Barème progressif, quotient familial, décote. Gratuit, comparaisons et graphiques."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Impôt sur le Revenu 2025 — Calcul instantané" />
+    <meta
+      name="twitter:title"
+      content="Impôt sur le Revenu 2025 — Calcul instantané"
+    />
     <meta
       name="twitter:description"
       content="Calculez votre impôt 2025 en 10 secondes. Simulateur gratuit, comparaisons et graphiques."
@@ -110,9 +113,29 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "EUR"
-        }
+        },
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Legifrance.fr – Code Général des Impôts",
+            "url": "https://www.legifrance.gouv.fr"
+          },
+          {
+            "@type": "Organization",
+            "name": "Direction Générale des Finances Publiques",
+            "url": "https://www.impots.gouv.fr"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Service-public.fr – Impôt sur le revenu",
+            "url": "https://www.service-public.fr/particuliers/vosdroits/N421"
+          }
+        ]
       }
     </script>
+
+    <!-- Sources Meta Tag for AI -->
+    <meta name="source" content="legifrance.fr, impots.gouv.fr, service-public.fr">
 
     <!-- FAQ Schema -->
     <script type="application/ld+json">
@@ -145,6 +168,19 @@
             }
           }
         ]
+      }
+    </script>
+
+    <!-- JSON-LD Calculator Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Calculator",
+        "name": "Calculateur Impôt sur le Revenu 2025",
+        "description": "Calculez votre impôt sur le revenu 2025 avec barème progressif et quotient familial - DGFIP officiel",
+        "url": "https://www.lescalculateurs.fr/pages/impot",
+        "applicationCategory": "FinanceApplication",
+        "screenshot": "https://www.lescalculateurs.fr/pages/impot"
       }
     </script>
   </head>
@@ -236,6 +272,44 @@
             Simulateur impôt sur le revenu 2025 — barème progressif et quotient
             familial
           </h2>
+
+          <!-- AI Section: Question explicite -->
+          <section class="ai-intro mb-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">
+              ❓ Quel est votre impôt sur le revenu en 2025 ?
+            </h2>
+            <p class="ai-response text-gray-700">
+              Impôt = (Revenu imposable ÷ Quotient familial) × Barème progressif
+              × Parts fiscales - Décote. Barème 2025 : 0% jusqu'à 11 294€, puis
+              11% jusqu'à 28 797€, 30% jusqu'à 82 341€, etc.
+            </p>
+          </section>
+
+          <!-- AI Section: Résumé rapide -->
+          <section class="ai-summary mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              📌 Résumé rapide
+            </h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>
+                <strong>Source:</strong> Direction Générale des Finances
+                Publiques (DGFIP) 2025
+              </li>
+              <li>
+                <strong>Calcul:</strong> Barème progressif par tranche +
+                quotient familial + décote si applicable
+              </li>
+              <li>
+                <strong>Particularité:</strong> Décote jusqu'à 1 394€ | 1 part =
+                célibataire, 2 parts = couple | Enfants à charge
+              </li>
+              <li>
+                <strong>Outil:</strong> Simulation gratuite, barèmes janvier
+                2025
+              </li>
+            </ul>
+          </section>
+
           <div class="prose prose-lg text-gray-600 space-y-3">
             <p>
               Calculez votre <strong>impôt sur le revenu 2025</strong> en
@@ -463,7 +537,8 @@
           </div>
         </div>
       </section>
-    </main>
+
+      </section>    </main>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
@@ -547,3 +622,4 @@
     <script type="module" src="../utils/autoExportInit.js"></script>
   </body>
 </html>
+

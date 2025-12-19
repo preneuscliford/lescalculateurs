@@ -158,4 +158,29 @@
   .nav-links a {
     @apply text-gray-700 hover:text-blue-600 font-medium transition-colors;
   }
+
+  /* AI Indexation Classes */
+  .ai-intro {
+    @apply bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 mb-6;
+  }
+
+  .ai-summary {
+    @apply bg-amber-50 p-4 rounded-lg border-l-4 border-amber-500 mb-6;
+  }
+
+  .ai-sources {
+    @apply bg-green-50 p-4 rounded-lg border-l-4 border-green-500 mb-6;
+  }
+
+  .ai-calculation-data {
+    @apply bg-gray-50 p-4 rounded-lg border-l-4 border-gray-500 mb-6;
+  }
+
+  .ai-response {
+    @apply text-sm text-gray-700 font-medium;
+  }
+
+  .eeat-block {
+    @apply mb-8 p-6 bg-white border rounded-lg;
+  }
 }

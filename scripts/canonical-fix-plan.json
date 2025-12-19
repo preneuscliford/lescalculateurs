@@ -1,0 +1,36 @@
+{
+  "generated": "2025-12-18T13:37:26.398Z",
+  "issue": "Canonicals create redirect chains blocking indexation",
+  "affectedFiles": 118,
+  "solution": "Standardize all canonicals to match actual Vercel build output paths",
+  "changes": {
+    "replacements": [
+      {
+        "pattern": "/blog/departements/",
+        "replacement": "/pages/blog/departements/",
+        "reason": "Match actual URL path from Vercel build",
+        "files": 94
+      },
+      {
+        "pattern": "/blog/",
+        "replacement": "/pages/blog/",
+        "reason": "Match actual URL path from Vercel build",
+        "files": 11
+      },
+      {
+        "pattern": "https://lescalculateurs.fr/",
+        "replacement": "https://www.lescalculateurs.fr/",
+        "reason": "Enforce www domain (matches redirect rules)",
+        "files": 12
+      },
+      {
+        "pattern": ".html\\\"",
+        "replacement": "\\\"",
+        "reason": "Remove .html from canonical (matches redirect rules)",
+        "files": 11
+      }
+    ],
+    "totalFilesToModify": 118,
+    "estimatedTime": "5-10 minutes with search & replace"
+  }
+}

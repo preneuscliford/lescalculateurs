@@ -23,7 +23,8 @@ try {
   // Trouver les fichiers CSS et JS générés par Vite
   const assetFiles = fs.readdirSync(assetsDir);
   const cssFile = assetFiles.find(
-    (f) => (f.startsWith("main-") || f.startsWith("tailwind-")) && f.endsWith(".css")
+    (f) =>
+      (f.startsWith("main-") || f.startsWith("tailwind-")) && f.endsWith(".css")
   );
   const jsFile = assetFiles.find(
     (f) => f.startsWith("main-") && f.endsWith(".js")
@@ -41,7 +42,9 @@ try {
   }
 
   if (!calculatorFrameJs || !baremesJs) {
-    console.warn("⚠️ Chunks CalculatorFrame ou baremes introuvables, les imports dynamiques ne seront pas réécrits.");
+    console.warn(
+      "⚠️ Chunks CalculatorFrame ou baremes introuvables, les imports dynamiques ne seront pas réécrits."
+    );
   }
 
   console.log(`🎨 CSS trouvé: ${cssFile}`);
@@ -104,10 +107,12 @@ try {
       htmlContent = htmlContent.replace(
         /const\s*\[\s*\{\s*CalculatorFrame\s*\}\s*,\s*\{\s*formatCurrency\s*\}\s*,\s*\{\s*baremes\s*\}\s*\]\s*=\s*await\s*Promise\.all\(\s*\[\s*([\s\S]*?)\s*\]\s*\);/g,
         (match, importsBlock) => {
-          return `const [cfMod, mainMod, dataMod] = await Promise.all([\n${importsBlock}\n]);\n` +
-                 `const CalculatorFrame = cfMod.CalculatorFrame || cfMod.C || cfMod.default;\n` +
-                 `const formatCurrency = mainMod.formatCurrency || mainMod.f || ((amount) => new Intl.NumberFormat(\"fr-FR\", { style: \"currency\", currency: \"EUR\" }).format(amount));\n` +
-                 `const baremes = dataMod.baremes || dataMod.b || dataMod.default;`;
+          return (
+            `const [cfMod, mainMod, dataMod] = await Promise.all([\n${importsBlock}\n]);\n` +
+            `const CalculatorFrame = cfMod.CalculatorFrame || cfMod.C || cfMod.default;\n` +
+            `const formatCurrency = mainMod.formatCurrency || mainMod.f || ((amount) => new Intl.NumberFormat(\"fr-FR\", { style: \"currency\", currency: \"EUR\" }).format(amount));\n` +
+            `const baremes = dataMod.baremes || dataMod.b || dataMod.default;`
+          );
         }
       );
 
@@ -135,9 +140,8 @@ try {
 
       // S'assurer que la feuille de style est injectée si absente
       if (!/href="\.{2}\/\.{2}\/\.{2}\/assets\/[^"]+\.css"/.test(htmlContent)) {
-        htmlContent = htmlContent.replace(
-          /<head>([\s\S]*?)<\/head>/,
-          (m) => m.replace(
+        htmlContent = htmlContent.replace(/<head>([\s\S]*?)<\/head>/, (m) =>
+          m.replace(
             /<\/head>/,
             `    <link rel="stylesheet" crossorigin href="../../../assets/${cssFile}">\n  </head>`
           )
@@ -152,15 +156,35 @@ try {
       try {
         let legacyContent = htmlContent
           .replace(/\.\.\/\.\.\/\.\.\/assets\//g, "../../assets/")
-          .replace(new RegExp(`href=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.css\"`, "g"), `href=\"../../assets/${cssFile}\"`)
-          .replace(new RegExp(`src=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.js\"`, "g"), `src=\"../../assets/${jsFile}\"`)
-          .replace(new RegExp(`<link rel=\"stylesheet\" crossorigin href=\"\.\.\/\.\.\/\.\.\/assets\/[^\"]+\\.css\">`, "g"), `<link rel=\"stylesheet\" crossorigin href=\"../../assets/${cssFile}\">`);
+          .replace(
+            new RegExp(
+              `href=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.css\"`,
+              "g"
+            ),
+            `href=\"../../assets/${cssFile}\"`
+          )
+          .replace(
+            new RegExp(
+              `src=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.js\"`,
+              "g"
+            ),
+            `src=\"../../assets/${jsFile}\"`
+          )
+          .replace(
+            new RegExp(
+              `<link rel=\"stylesheet\" crossorigin href=\"\.\.\/\.\.\/\.\.\/assets\/[^\"]+\\.css\">`,
+              "g"
+            ),
+            `<link rel=\"stylesheet\" crossorigin href=\"../../assets/${cssFile}\">`
+          );
 
         const legacyPath = path.join(legacyBlogDir, file);
         fs.writeFileSync(legacyPath, legacyContent, "utf-8");
         console.log(`   ↳ Dupliqué: ${legacyPath}`);
       } catch (e) {
-        console.warn(`⚠️ Duplication legacy échouée pour ${file}: ${e.message}`);
+        console.warn(
+          `⚠️ Duplication legacy échouée pour ${file}: ${e.message}`
+        );
       }
 
       // Afficher un message tous les 20 fichiers
@@ -180,8 +204,14 @@ try {
    * - Injecte la CSS si absente
    */
   try {
-    const globalArticleSrc = path.resolve(__dirname, "../src/pages/blog/frais-notaire-ancien-neuf-2025.html");
-    const departementsArticleDst = path.resolve(__dirname, "../dist/pages/blog/departements/frais-notaire-ancien-neuf-2025.html");
+    const globalArticleSrc = path.resolve(
+      __dirname,
+      "../src/pages/blog/frais-notaire-ancien-neuf-2025.html"
+    );
+    const departementsArticleDst = path.resolve(
+      __dirname,
+      "../dist/pages/blog/departements/frais-notaire-ancien-neuf-2025.html"
+    );
     if (fs.existsSync(globalArticleSrc)) {
       let htmlContent = fs.readFileSync(globalArticleSrc, "utf-8");
 
@@ -192,13 +222,22 @@ try {
       );
 
       // Ajustement des assets ../../assets/* vers ../../../assets/*
-      htmlContent = htmlContent.replace(/(href|src)="\.\.\/\.\.\/assets\//g, `$1="../../../assets/`);
+      htmlContent = htmlContent.replace(
+        /(href|src)="\.\.\/\.\.\/assets\//g,
+        `$1="../../../assets/`
+      );
 
       // Injection CSS si absente
-      if (!new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/${cssFile}\"`).test(htmlContent) && !new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/main-.*\\.css\"`).test(htmlContent)) {
-        htmlContent = htmlContent.replace(
-          /<head>([\s\S]*?)<\/head>/,
-          (m) => m.replace(
+      if (
+        !new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/${cssFile}\"`).test(
+          htmlContent
+        ) &&
+        !new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/main-.*\\.css\"`).test(
+          htmlContent
+        )
+      ) {
+        htmlContent = htmlContent.replace(/<head>([\s\S]*?)<\/head>/, (m) =>
+          m.replace(
             /<\/head>/,
             `    <link rel="stylesheet" crossorigin href="../../../assets/${cssFile}">\n  </head>`
           )
@@ -207,9 +246,15 @@ try {
 
       // Écrire la page dupliquée
       fs.writeFileSync(departementsArticleDst, htmlContent, "utf-8");
-      console.log("✅ Article ancien/neuf copié sous /departements:", departementsArticleDst);
+      console.log(
+        "✅ Article ancien/neuf copié sous /departements:",
+        departementsArticleDst
+      );
     } else {
-      console.warn("⚠️ Article global ancien/neuf introuvable:", globalArticleSrc);
+      console.warn(
+        "⚠️ Article global ancien/neuf introuvable:",
+        globalArticleSrc
+      );
     }
   } catch (e) {
     console.error("❌ Erreur duplication article ancien/neuf:", e.message);

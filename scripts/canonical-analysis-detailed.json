@@ -1,0 +1,1045 @@
+{
+  "generated": "2025-12-18T13:36:57.709Z",
+  "summary": {
+    "totalFiles": 124,
+    "withCanonical": 124,
+    "missingCanonical": 0,
+    "incompleteCanonical": 0,
+    "problemsFound": 118
+  },
+  "patterns": {
+    "apex_with_html": [
+      {
+        "file": "/pages/apl-zones.html",
+        "href": "https://lescalculateurs.fr/pages/apl-zones.html"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-07.html",
+        "href": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-07.html"
+      },
+      {
+        "file": "/pages/charges.html",
+        "href": "https://lescalculateurs.fr/pages/charges.html"
+      },
+      {
+        "file": "/pages/crypto-bourse.html",
+        "href": "https://lescalculateurs.fr/pages/crypto-bourse.html"
+      },
+      {
+        "file": "/pages/financement.html",
+        "href": "https://lescalculateurs.fr/pages/financement.html"
+      },
+      {
+        "file": "/pages/ik.html",
+        "href": "https://lescalculateurs.fr/pages/ik.html"
+      },
+      {
+        "file": "/pages/plusvalue.html",
+        "href": "https://lescalculateurs.fr/pages/plusvalue.html"
+      },
+      {
+        "file": "/pages/pret.html",
+        "href": "https://lescalculateurs.fr/pages/pret.html"
+      },
+      {
+        "file": "/pages/taxe.html",
+        "href": "https://lescalculateurs.fr/pages/taxe.html"
+      },
+      {
+        "file": "/pages/travail.html",
+        "href": "https://lescalculateurs.fr/pages/travail.html"
+      }
+    ],
+    "apex_without_html": [
+      {
+        "file": "/index.html",
+        "href": "https://lescalculateurs.fr"
+      },
+      {
+        "file": "/pages/apl-dom-tom.html",
+        "href": "https://lescalculateurs.fr/pages/apl-dom-tom"
+      }
+    ],
+    "www_with_html": [
+      {
+        "file": "/pages/apl.html",
+        "href": "https://www.lescalculateurs.fr/pages/apl.html"
+      }
+    ],
+    "www_without_html": [
+      {
+        "file": "/pages/blog/departements/frais-notaire-01.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-01"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-02.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-02"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-03.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-03"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-04.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-04"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-05.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-05"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-06.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-06"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-08.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-08"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-09.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-09"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-10.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-10"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-11.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-11"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-12.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-12"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-13.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-13"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-14.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-14"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-15.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-15"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-16.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-16"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-17.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-17"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-18.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-18"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-19.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-19"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-21.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-21"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-22.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-22"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-23.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-23"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-24.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-24"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-25.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-25"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-26.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-26"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-27.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-27"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-28.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-28"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-29.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-29"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-2A.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-2A"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-2B.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-2B"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-30.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-30"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-31.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-31"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-32.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-32"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-33.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-33"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-34.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-34"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-35.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-35"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-36.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-36"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-37.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-37"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-38.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-38"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-39.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-39"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-40.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-40"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-41.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-41"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-42.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-42"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-43.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-43"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-44.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-44"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-45.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-45"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-46.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-46"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-47.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-47"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-48.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-48"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-49.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-49"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-50.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-50"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-51.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-51"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-52.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-52"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-53.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-53"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-54.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-54"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-55.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-55"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-56.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-56"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-57.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-57"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-58.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-58"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-59.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-59"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-60.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-60"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-61.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-61"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-62.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-62"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-63.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-63"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-64.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-64"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-65.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-65"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-66.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-66"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-67.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-67"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-68.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-68"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-69.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-69"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-70.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-70"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-71.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-71"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-72.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-72"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-73.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-73"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-74.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-74"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-75.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-75"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-76.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-76"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-77.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-77"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-78.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-78"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-79.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-79"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-80.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-80"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-81.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-81"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-82.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-82"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-83.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-83"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-84.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-84"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-85.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-85"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-86.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-86"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-87.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-87"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-88.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-88"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-89.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-89"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-90.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-90"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-91.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-91"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-92.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-92"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-93.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-93"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-94.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-94"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-95.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-95"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-971.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-971"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-972.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-972"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-973.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-973"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-974.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-974"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-975.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-975"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-976.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-976"
+      },
+      {
+        "file": "/pages/blog/export-pdf-calculateurs.html",
+        "href": "https://www.lescalculateurs.fr/blog/export-pdf-calculateurs"
+      },
+      {
+        "file": "/pages/blog/frais-notaire-ancien-neuf-2025.html",
+        "href": "https://www.lescalculateurs.fr/blog/frais-notaire-ancien-neuf-2025"
+      },
+      {
+        "file": "/pages/blog/frais-notaire-departements.html",
+        "href": "https://www.lescalculateurs.fr/blog/frais-notaire-departements"
+      },
+      {
+        "file": "/pages/blog.html",
+        "href": "https://www.lescalculateurs.fr/blog"
+      },
+      {
+        "file": "/pages/impot.html",
+        "href": "https://www.lescalculateurs.fr/impot"
+      },
+      {
+        "file": "/pages/notaire.html",
+        "href": "https://www.lescalculateurs.fr/notaire"
+      },
+      {
+        "file": "/pages/ponts.html",
+        "href": "https://www.lescalculateurs.fr/ponts"
+      },
+      {
+        "file": "/pages/salaire-seo.html",
+        "href": "https://www.lescalculateurs.fr/salaire"
+      },
+      {
+        "file": "/pages/salaire.html",
+        "href": "https://www.lescalculateurs.fr/salaire"
+      },
+      {
+        "file": "/pages/simulateurs.html",
+        "href": "https://www.lescalculateurs.fr/simulateurs"
+      }
+    ],
+    "pages_path": [
+      {
+        "file": "/pages/blog/departements/frais-notaire-01.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-01",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-02.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-02",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-03.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-03",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-04.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-04",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-05.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-05",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-06.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-06",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-07.html",
+        "href": "https://lescalculateurs.fr/pages/blog/departements/frais-notaire-07.html",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-08.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-08",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-09.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-09",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-10.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-10",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-11.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-11",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-12.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-12",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-13.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-13",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-14.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-14",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-15.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-15",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-16.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-16",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-17.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-17",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-18.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-18",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-19.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-19",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-21.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-21",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-22.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-22",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-23.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-23",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-24.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-24",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-25.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-25",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-26.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-26",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-27.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-27",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-28.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-28",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-29.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-29",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-2A.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-2A",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-2B.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-2B",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-30.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-30",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-31.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-31",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-32.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-32",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-33.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-33",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-34.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-34",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-35.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-35",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-36.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-36",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-37.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-37",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-38.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-38",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-39.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-39",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-40.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-40",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-41.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-41",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-42.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-42",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-43.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-43",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-44.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-44",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-45.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-45",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-46.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-46",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-47.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-47",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-48.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-48",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-49.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-49",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-50.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-50",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-51.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-51",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-52.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-52",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-53.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-53",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-54.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-54",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-55.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-55",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-56.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-56",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-57.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-57",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-58.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-58",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-59.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-59",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-60.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-60",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-61.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-61",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-62.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-62",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-63.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-63",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-64.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-64",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-65.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-65",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-66.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-66",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-67.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-67",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-68.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-68",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-69.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-69",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-70.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-70",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-71.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-71",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-72.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-72",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-73.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-73",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-74.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-74",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-75.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-75",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-76.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-76",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-77.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-77",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-78.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-78",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-79.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-79",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-80.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-80",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-81.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-81",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-82.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-82",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-83.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-83",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-84.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-84",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-85.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-85",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-86.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-86",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-87.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-87",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-88.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-88",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-89.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-89",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-90.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-90",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-91.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-91",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-92.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-92",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-93.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-93",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-94.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-94",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-95.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-95",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-971.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-971",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-972.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-972",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-973.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-973",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-974.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-974",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-975.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-975",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/departements/frais-notaire-976.html",
+        "href": "https://www.lescalculateurs.fr/blog/departements/frais-notaire-976",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/export-pdf-calculateurs.html",
+        "href": "https://www.lescalculateurs.fr/blog/export-pdf-calculateurs",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/frais-notaire-ancien-neuf-2025.html",
+        "href": "https://www.lescalculateurs.fr/blog/frais-notaire-ancien-neuf-2025",
+        "issue": "/pages/ → /blog/"
+      },
+      {
+        "file": "/pages/blog/frais-notaire-departements.html",
+        "href": "https://www.lescalculateurs.fr/blog/frais-notaire-departements",
+        "issue": "/pages/ → /blog/"
+      }
+    ],
+    "missing": []
+  },
+  "issues": []
+}

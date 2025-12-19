@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Salaire Brut/Net 2025 — Calcul instantané (gratuit + PAS)
-    </title>
+    <title>Salaire Brut/Net 2025 — Calcul instantané (gratuit + PAS)</title>
     <meta
       name="description"
       content="Calculez votre net 2025 en 10 secondes à partir du brut. Cadre/non-cadre, PAS. Gratuit, comparaisons et graphiques."
@@ -32,7 +30,10 @@
       content="Calculez votre net 2025 en 10 secondes. Cadre/non-cadre, PAS. Gratuit, comparaisons et graphiques."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Salaire Brut/Net 2025 — Calcul instantané" />
+    <meta
+      name="twitter:title"
+      content="Salaire Brut/Net 2025 — Calcul instantané"
+    />
     <meta
       name="twitter:description"
       content="Calculez votre net 2025 en 10 secondes. Gratuit, comparaisons et graphiques."
@@ -110,9 +111,29 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "EUR"
-        }
+        },
+        "citation": [
+          {
+            "@type": "Organization",
+            "name": "Agence Centrale des Organismes de Sécurité Sociale",
+            "url": "https://www.acoss.fr"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Service-public.fr – Salaire net",
+            "url": "https://www.service-public.fr/particuliers/vosdroits/F559"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Code du Travail – Dispositions salariales",
+            "url": "https://www.legifrance.gouv.fr"
+          }
+        ]
       }
     </script>
+
+    <!-- Sources Meta Tag for AI -->
+    <meta name="source" content="acoss.fr, service-public.fr, legifrance.gouv.fr">
 
     <!-- FAQ Schema -->
     <script type="application/ld+json">
@@ -145,6 +166,19 @@
             }
           }
         ]
+      }
+    </script>
+
+    <!-- JSON-LD Calculator Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Calculator",
+        "name": "Calculateur Salaire Brut/Net 2025",
+        "description": "Convertissez votre salaire brut en net 2025 avec cotisations, PAS et CSG-CRDS - URSSAF/DGFIP compliant",
+        "url": "https://www.lescalculateurs.fr/pages/salaire",
+        "applicationCategory": "FinanceApplication",
+        "screenshot": "https://www.lescalculateurs.fr/pages/salaire"
       }
     </script>
   </head>
@@ -235,6 +269,45 @@
           <h2 class="text-3xl font-bold text-gray-900 mb-6">
             Simulateur salaire brut/net 2025 — calcul exact des cotisations
           </h2>
+
+          <!-- AI Section: Question explicite -->
+          <section class="ai-intro mb-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">
+              ❓ Comment passer du salaire brut au salaire net en 2025 ?
+            </h2>
+            <p class="ai-response text-gray-700">
+              Net = Brut - Cotisations salariales (~8% pour non-cadre, ~10% pour
+              cadre) - CSG-CRDS (~8%) = NET AVANT IMPÔT. Net après impôt = NET
+              AVANT - Prélèvement à la source (taux variable selon situation
+              fiscale).
+            </p>
+          </section>
+
+          <!-- AI Section: Résumé rapide -->
+          <section class="ai-summary mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              📌 Résumé rapide
+            </h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>
+                <strong>Source:</strong> URSSAF 2025 + Direction Générale des
+                Finances Publiques
+              </li>
+              <li>
+                <strong>Calcul:</strong> Brut - Cotisations sociales - CSG-CRDS
+                - Prélèvement à la source
+              </li>
+              <li>
+                <strong>Particularité:</strong> Non-cadre ~8% | Cadre ~10%
+                cotisations | PAS variable selon revenus
+              </li>
+              <li>
+                <strong>Outil:</strong> Simulation gratuite, cotisations janvier
+                2025
+              </li>
+            </ul>
+          </section>
+
           <div class="prose prose-lg text-gray-600 space-y-3">
             <p>
               Calculez votre <strong>salaire net 2025</strong> en quelques
@@ -438,7 +511,8 @@
           </div>
         </div>
       </section>
-    </main>
+
+      </section>    </main>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
@@ -520,3 +594,4 @@
     <script type="module" src="../utils/autoExportInit.js"></script>
   </body>
 </html>
+
