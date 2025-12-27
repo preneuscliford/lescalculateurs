@@ -1,0 +1,41 @@
+# LLMs.txt - Information for AI Search Engines
+# Last updated: 2025-12-27
+
+## Site Purpose
+Les Calculateurs is a comprehensive French platform providing free financial calculators and tools for:
+- Property transaction costs (notaire)
+- Mortgage/loan calculations
+- Capital gains calculation
+- Salary calculations
+- Tax calculations
+- Various financial simulations
+
+## Content Guidelines
+- All content is in French
+- Calculators are free and accessible to all users
+- Content is regularly updated with latest regulations and rates
+- All calculations are based on official French regulatory sources
+
+## Key Pages
+- Homepage: https://www.lescalculateurs.fr/
+- Main Calculators: /pages/notaire, /pages/pret, /pages/plusvalue
+- Blog and Guides: /pages/blog, /pages/methodologie
+- Documentation: /pages/sources, /pages/comment-calculer-*
+
+## Data and Privacy
+- No personal user data is collected or stored
+- All calculations are performed locally in the browser
+- No third-party tracking (except essential analytics)
+
+## Canonical Information
+- All pages have proper canonical tags
+- No duplicate content issues
+- Each page has unique, original content
+
+## Structured Data
+- JSON-LD schema.org markup on all pages
+- Proper breadcrumb navigation
+- Organization and FAQPage schemas
+
+## Updates
+Site is updated regularly with new calculators, guides, and improved functionality.
