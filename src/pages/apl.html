@@ -17,10 +17,7 @@
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
     <!-- SEO & Social -->
-    <link
-      rel="canonical"
-      href="https://www.lescalculateurs.fr/pages/apl"
-    />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/apl" />
     <meta
       property="og:url"
       content="https://www.lescalculateurs.fr/pages/apl"
@@ -194,13 +191,28 @@
           >
           pour connaître votre droit réel à l'APL.
         </p>
-        <p class="text-blue-800 text-sm">
-          Ce simulateur APL 2025 vous permet d'estimer votre aide au logement
-          selon les règles officielles en vigueur.
-        </p>
       </div>
 
       <div id="apl-calculator"></div>
+
+      <!-- Boutons de comparaison -->
+      <div class="mt-6 flex justify-center gap-3">
+        <button
+          id="apl-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="apl-reset-compare"
+          class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <!-- Conteneur de comparaison (masqué par défaut) -->
+      <div id="apl-comparaison" class="hidden"></div>
 
       <!-- FAQ Section -->
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
@@ -889,10 +901,10 @@
           },
           {
             id: "economie",
-            label: "Économies / Épargne (patrimoine)",
+            label: "Économies / Épargne (optionnel)",
             type: "number",
-            required: true,
-            placeholder: "5000",
+            required: false,
+            placeholder: "Laissez vide si inconnu",
             min: 0,
             step: 500,
             suffix: "€",
@@ -955,7 +967,8 @@
             apl_estimee = Math.floor(apl_estimee);
 
             // Plafonner selon les maxima CAF 2025 (approximatif)
-            const plafond_apl = region === "idf" ? 600 : 450;
+            const plafond_apl =
+              region === "idf" ? 610 : region === "dom" ? 430 : 510;
             apl_estimee = Math.min(apl_estimee, plafond_apl);
 
             return {
@@ -993,6 +1006,7 @@
                   data.apl_estimee
                 )}</p>
                 <p class="text-sm text-green-700 mt-2">par mois</p>
+                <p class="text-xs text-green-700 mt-3 italic border-t border-green-300 pt-3">📊 Fourchette généralement constatée : 150 € – 600 € selon votre situation et zone.</p>
               </div>
 
               <div class="bg-gray-50 p-4 rounded-lg space-y-3 text-sm">
@@ -1017,9 +1031,7 @@
               </div>
 
               <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg text-sm text-orange-800">
-                <p><strong>⚠️ Important :</strong> Cette simulation est à titre indicatif. Elle ne constitue pas votre droit officiel à l'APL.</p>
-                <p class="mt-2">Facteurs non pris en compte : enfants en alternance, situation d'emploi exacte, charges professionnelles, patrimoine précis.</p>
-                <p class="mt-2"><a href="https://www.caf.fr" target="_blank" class="underline hover:no-underline font-medium">Consultez la CAF</a> pour connaître votre droit réel et faire votre demande officielle.</p>
+                <p><strong>📌 Simulation à titre indicatif :</strong> Cette estimation ne constitue pas une demande officielle. <a href="https://www.caf.fr" target="_blank" class="underline hover:no-underline font-medium">Consultez la CAF</a> pour connaître votre droit réel à l'APL.</p>
               </div>
             </div>
           `;
@@ -1028,6 +1040,8 @@
 
       new CalculatorFrame("apl-calculator", aplConfig);
     </script>
+
+    <!-- Gestion de la comparaison APL -->
+    <script type="module" src="./scripts/apl-script.ts"></script>
   </body>
 </html>
-
