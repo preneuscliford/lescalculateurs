@@ -9,7 +9,16 @@
     "preview": "vite preview",
     "generate:blog": "node scripts/generate-departement-articles.js",
     "indexing:publish": "node scripts/publish-indexing.js --from-sitemap",
-    "sitemap:normalize": "node scripts/normalize-sitemap-domain.js"
+    "sitemap:normalize": "node scripts/normalize-sitemap-domain.js",
+    "agent:official": "node scripts/official-data-agent.cjs",
+    "agent:official:due": "node scripts/official-data-agent.cjs --fetch-all=false",
+    "sync:impot": "node scripts/sync-impot-from-baremes.cjs",
+    "sync:apl": "node scripts/sync-apl-from-baremes.cjs",
+    "agent:juridique:apl": "node scripts/agent-juridique.cjs --cluster=apl --due=true",
+    "agent:juridique:ir": "node scripts/agent-juridique.cjs --cluster=ir --due=true",
+    "agent:juridique:ik": "node scripts/agent-juridique.cjs --cluster=ik --due=true",
+    "agent:juridique:notaire": "node scripts/agent-juridique.cjs --cluster=notaire --due=true",
+    "agent:juridique:dmto": "node scripts/agent-juridique.cjs --cluster=dmto --due=true"
   },
   "dependencies": {
     "chart.js": "^4.5.1",

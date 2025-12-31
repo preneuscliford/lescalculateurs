@@ -7,7 +7,7 @@ const bareme = [
   { plafond: 28797, taux: 0.11 },
   { plafond: 82341, taux: 0.3 },
   { plafond: 177106, taux: 0.41 },
-  { plafond: Infinity, taux: 0.45 },
+  { plafond: 999999999, taux: 0.45 }
 ];
 
 const impotConfig = {

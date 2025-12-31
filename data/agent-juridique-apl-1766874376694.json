@@ -1,0 +1,31 @@
+{
+  "regles_officielles": [
+    {
+      "source": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/aide-personnalisee-au-logement",
+      "extrait": ""
+    },
+    {
+      "source": "https://www.service-public.fr/particuliers/vosdroits/F12006",
+      "extrait": "rtenaire de Pacs.Oui si vous avez un autre lien de parenté direct avec le propriétaire du logement (frère, soeur, oncle, tante, cousin, cousine, neveu, nièce…).Puis-je toucher l’APL si je suis étudiant(e) ?Oui. Vous pouvez toucher l’APL si vous louez un logement.Lors de votre demande, vous devez indiquer vos ressources personnelles imposables (salaires, bourses, revenus d’épargne…).Attention : si vous bénéficiez de l’APL, vos parents ne recevront plus de prestations familiales vous concernant. Par contre, vous pouvez continuer à être rattaché(e) au foyer fiscal de vos parents.Puis-je toucher l"
+    }
+  ],
+  "plafonds": {
+    "validite": "Information officielle non trouvée"
+  },
+  "zones_geographiques": [
+    "Information officielle non trouvée"
+  ],
+  "exceptions": [],
+  "sources_exactes": [
+    {
+      "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/aide-personnalisee-au-logement",
+      "titre": "CAF - Aide personnalisée au logement",
+      "date_publication": "Information officielle non trouvée"
+    },
+    {
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F12006",
+      "titre": "Aide personnalisée au logement (APL) | Service Public",
+      "date_publication": "2025-12-05"
+    }
+  ]
+}

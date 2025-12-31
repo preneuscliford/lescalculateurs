@@ -64,7 +64,7 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Indemnités Kilométriques 2025 — Calcul automatique (barème officiel)"
+      content="Indemnités Kilométriques 2026 — Calcul automatique (barème officiel)"
     />
     <meta
       property="og:description"
@@ -73,7 +73,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Indemnités Kilométriques 2025 — Calcul automatique"
+      content="Indemnités Kilométriques 2026 — Calcul automatique"
     />
     <meta
       name="twitter:description"
@@ -240,7 +240,7 @@
             </li>
           </ul>
           <p class="text-sm text-gray-600">
-            Mise à jour automatique: <strong>janvier 2025</strong>
+            Mise à jour automatique: <strong>janvier 2026</strong>
           </p>
         </div>
       </section>
@@ -278,13 +278,32 @@
             </li>
           </ul>
           <p class="text-sm text-gray-600">
-            <strong>Dernière mise à jour:</strong> janvier 2025 (Impôts.gouv.fr
+            <strong>Dernière mise à jour:</strong> janvier 2026 (Impôts.gouv.fr
             et Service-public.fr)
           </p>
         </div>
       </section>
 
       <div id="ik-calculator"></div>
+
+      <!-- Boutons de comparaison -->
+      <div class="mt-6 flex justify-center gap-3">
+        <button
+          id="ik-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="ik-reset-compare"
+          class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <!-- Conteneur de comparaison (masqué par défaut) -->
+      <div id="ik-comparaison" class="hidden"></div>
     </main>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
@@ -646,6 +665,12 @@
 
       new CalculatorFrame("ik-calculator", ikConfig);
     </script>
+
+    <!-- Gestion de la comparaison IK -->
+    <script type="module" src="./scripts/ik-script.ts"></script>
+
+    <!-- Gestion de la comparaison IK -->
+    <script type="module" src="./scripts/ik-comparaison.ts"></script>
 
     <!-- Auto-initialisation des exports PDF/CSV -->
     <script type="module" src="../utils/pdfExport.js"></script>

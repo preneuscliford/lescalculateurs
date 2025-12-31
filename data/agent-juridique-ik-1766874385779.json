@@ -1,0 +1,12 @@
+{
+  "regles_officielles": [
+    {
+      "source": "Information officielle non trouvée",
+      "extrait": "fetch failed"
+    }
+  ],
+  "plafonds": {},
+  "zones_geographiques": [],
+  "exceptions": [],
+  "sources_exactes": []
+}

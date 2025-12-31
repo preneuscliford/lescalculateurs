@@ -1,11 +1,16 @@
 {
-  "last_updated": "2025-11-30T00:00:00Z",
+  "last_updated": "2025-12-27T22:17:33.141Z",
   "baremes_notariaux": {
     "version": "2024-2025",
     "official_source": "https://www.notaires.fr",
-    "last_check": "2025-11-30",
+    "last_check": "2025-12-27",
     "tranches": [
-      { "min": 0, "max": 6500, "taux": 0.0387, "effective_date": "2024-01-01" },
+      {
+        "min": 0,
+        "max": 6500,
+        "taux": 0.0387,
+        "effective_date": "2024-01-01"
+      },
       {
         "min": 6500,
         "max": 17000,
@@ -28,16 +33,15 @@
     "next_expected_update": "2026-01-01",
     "notes": "Barèmes en vigueur depuis 01/01/2024, révision annuelle attendue 01/01/2026"
   },
-
   "droits_enregistrement": {
     "version": "2024-2025",
-    "last_check": "2025-11-30",
+    "last_check": "2025-12-27",
     "next_expected_update": "2026-01-01",
     "notes": "Taux varient par département. Vérifier annuellement auprès de chaque région"
   },
-
   "monitoring_tasks": [
     {
+      "calculator": "notaire",
       "task": "Vérifier révision barèmes notariaux",
       "frequency": "Trimestriel",
       "next_check": "2026-02-01",
@@ -45,6 +49,7 @@
       "source": "https://www.notaires.fr/fr/vous-etes-proprietaire-immobilier-ou-acquereur/le-role-du-notaire/les-tarifs-notariaux"
     },
     {
+      "calculator": "notaire",
       "task": "Vérifier taux droits d'enregistrement par département",
       "frequency": "Annuel",
       "next_check": "2026-01-15",
@@ -52,6 +57,7 @@
       "source": "https://www.impots.gouv.fr/"
     },
     {
+      "calculator": "notaire",
       "task": "Vérifier frais de débours (cadastre, conservation, etc.)",
       "frequency": "Semestriel",
       "next_check": "2026-06-01",
@@ -59,6 +65,7 @@
       "source": "https://www.notaires.fr/ + chambre départementale"
     },
     {
+      "calculator": "notaire",
       "task": "Vérifier CSI (Contribution de Sécurité Immobilière)",
       "frequency": "Annuel",
       "next_check": "2026-01-01",
@@ -66,14 +73,198 @@
       "source": "https://www.service-public.fr/"
     },
     {
+      "calculator": "notaire",
       "task": "Taux de TVA notarial",
       "frequency": "Annuel (si changement fiscal)",
       "next_check": "2026-01-01",
       "responsible": "Admin",
       "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "calculator": "impot",
+      "task": "Vérifier barème impôt sur le revenu",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/ - Barème 2025"
+    },
+    {
+      "calculator": "impot",
+      "task": "Vérifier décote impôt sur le revenu",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "calculator": "impot",
+      "task": "Vérifier réductions et crédits d'impôt",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "calculator": "salaire",
+      "task": "Vérifier cotisations salariales URSSAF",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.urssaf.fr/ - Assiettes et taux"
+    },
+    {
+      "calculator": "salaire",
+      "task": "Vérifier SMIC brut et net",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.service-public.fr/particuliers/vosdroits/F2300"
+    },
+    {
+      "calculator": "salaire",
+      "task": "Vérifier plafonds cotisations",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.secu.fr/"
+    },
+    {
+      "calculator": "plusvalue",
+      "task": "Vérifier abattement durée de détention",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/ - Plus-values immobilières"
+    },
+    {
+      "calculator": "plusvalue",
+      "task": "Vérifier taux prélèvement social plus-value",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "calculator": "apl",
+      "task": "Vérifier barèmes APL par zone",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.caf.fr/ - Montants des aides"
+    },
+    {
+      "calculator": "apl",
+      "task": "Vérifier zones APL géographiques",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.caf.fr/"
+    },
+    {
+      "calculator": "apl",
+      "task": "Vérifier DOM-TOM APL spécifiques",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.caf.fr/"
+    },
+    {
+      "calculator": "ik",
+      "task": "Vérifier barème impôt de solidarité sur la fortune",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "calculator": "ik",
+      "task": "Vérifier taux ISF/IFI",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "calculator": "pret",
+      "task": "Vérifier taux hypothécaires moyens",
+      "frequency": "Mensuel",
+      "next_check": "2026-01-05",
+      "responsible": "Admin",
+      "source": "https://www.banque-france.fr/statistiques/taux-credit"
+    },
+    {
+      "calculator": "pret",
+      "task": "Vérifier assurance crédit immobilier",
+      "frequency": "Mensuel",
+      "next_check": "2026-01-05",
+      "responsible": "Admin",
+      "source": "https://www.banque-france.fr/"
+    },
+    {
+      "calculator": "charges",
+      "task": "Vérifier indices charges locatives (ILC)",
+      "frequency": "Trimestriel",
+      "next_check": "2026-01-15",
+      "responsible": "Admin",
+      "source": "https://www.insee.fr/ - ILC par région"
+    },
+    {
+      "calculator": "crypto-bourse",
+      "task": "Vérifier taux imposition sur les gains crypto",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/ - Crypto-monnaies"
+    },
+    {
+      "calculator": "crypto-bourse",
+      "task": "Vérifier régime fiscal actions/bourse",
+      "frequency": "Annuel",
+      "next_check": "2026-01-01",
+      "responsible": "Admin",
+      "source": "https://www.amf-france.org/"
+    },
+    {
+      "calculator": "taxe",
+      "task": "Vérifier taux taxe foncière par région",
+      "frequency": "Annuel",
+      "next_check": "2026-01-20",
+      "responsible": "Admin",
+      "source": "https://www.impots.gouv.fr/"
+    },
+    {
+      "calculator": "taxe",
+      "task": "Vérifier exonérations et abattements",
+      "frequency": "Annuel",
+      "next_check": "2026-01-20",
+      "responsible": "Admin",
+      "source": "https://www.service-public.fr/"
+    },
+    {
+      "calculator": "financement",
+      "task": "Vérifier dispositifs aide financement immobilier",
+      "frequency": "Semestriel",
+      "next_check": "2026-01-15",
+      "responsible": "Admin",
+      "source": "https://www.service-public.fr/particuliers/vosdroits/F32036"
+    },
+    {
+      "calculator": "travail",
+      "task": "Vérifier barèmes indemnisation chômage",
+      "frequency": "Annuel",
+      "next_check": "2026-01-15",
+      "responsible": "Admin",
+      "source": "https://www.unedic.org/"
+    },
+    {
+      "calculator": "travail",
+      "task": "Vérifier droits aux allocations chômage",
+      "frequency": "Semestriel",
+      "next_check": "2026-01-15",
+      "responsible": "Admin",
+      "source": "https://www.pole-emploi.fr/"
     }
   ],
-
   "changelog": [
     {
       "date": "2025-11-30",
@@ -85,9 +276,48 @@
         "Débours/formalités estimés"
       ],
       "verified_by": "Admin"
+    },
+    {
+      "date": "2025-12-27",
+      "version": "auto",
+      "updates": [
+        "Emoluments notariaux mis à jour (non vérifiés)",
+        "DMTO départements réduits (56, 57, 67, 68)",
+        "Barème IK 2024 (non vérifié)"
+      ],
+      "verified_by": "Agent automatique"
+    },
+    {
+      "date": "2025-12-27",
+      "version": "auto",
+      "updates": [
+        "Emoluments notariaux mis à jour (non vérifiés)",
+        "DMTO départements réduits (56, 57, 67, 68)",
+        "Barème IK 2024 (non vérifié)"
+      ],
+      "verified_by": "Agent automatique"
+    },
+    {
+      "date": "2025-12-27",
+      "version": "auto",
+      "updates": [
+        "Emoluments notariaux mis à jour (non vérifiés)",
+        "DMTO départements réduits (56, 57, 67, 68)",
+        "Barème IK 2024 (non vérifié)"
+      ],
+      "verified_by": "Agent automatique"
+    },
+    {
+      "date": "2025-12-27",
+      "version": "auto",
+      "updates": [
+        "Emoluments notariaux mis à jour (non vérifiés)",
+        "DMTO départements réduits (56, 57, 67, 68)",
+        "Barème IK 2024 (non vérifié)"
+      ],
+      "verified_by": "Agent automatique"
     }
   ],
-
   "alert_rules": {
     "email_notification": "admin@lescalculateurs.fr",
     "check_interval_days": 30,
@@ -98,30 +328,82 @@
       "Changement taux TVA"
     ]
   },
-
   "sources_officielles": [
     {
       "name": "Conseil Supérieur du Notariat",
       "url": "https://www.notaires.fr",
       "type": "Barèmes notariaux officiels",
+      "calculator": "notaire",
       "frequency": "Annuel (janvier)"
     },
     {
       "name": "Direction Générale des Finances Publiques",
       "url": "https://www.impots.gouv.fr",
-      "type": "Droits d'enregistrement, TVA",
+      "type": "Droits d'enregistrement, TVA, Impôt, Plus-value, IK, Taxe",
+      "calculator": "notaire, impot, plusvalue, ik, taxe",
+      "frequency": "Annuel (janvier)"
+    },
+    {
+      "name": "URSSAF",
+      "url": "https://www.urssaf.fr",
+      "type": "Cotisations salariales, plafonds",
+      "calculator": "salaire",
       "frequency": "Annuel (janvier)"
     },
     {
       "name": "Service-Public.fr",
-      "url": "https://www.service-public.fr/particuliers/vosdroits/F17701",
-      "type": "Infos frais notaire",
+      "url": "https://www.service-public.fr",
+      "type": "Infos générales, aides, allocations",
+      "calculator": "salaire, taxe, travail, financement",
       "frequency": "Continu"
     },
     {
       "name": "Chambre des Notaires (par département)",
       "url": "https://www.notaires.fr/fr/chambre-notariale-de-votre-region",
       "type": "Tarifs locaux, débours",
+      "calculator": "notaire",
+      "frequency": "Semestriel"
+    },
+    {
+      "name": "CAF - Caisse d'Allocations Familiales",
+      "url": "https://www.caf.fr",
+      "type": "Montants APL, zones géographiques",
+      "calculator": "apl",
+      "frequency": "Annuel (janvier)"
+    },
+    {
+      "name": "Banque de France",
+      "url": "https://www.banque-france.fr",
+      "type": "Taux hypothécaires, assurance crédit",
+      "calculator": "pret",
+      "frequency": "Mensuel"
+    },
+    {
+      "name": "INSEE",
+      "url": "https://www.insee.fr",
+      "type": "Indices charges locatives (ILC)",
+      "calculator": "charges",
+      "frequency": "Trimestriel"
+    },
+    {
+      "name": "Autorité des Marchés Financiers",
+      "url": "https://www.amf-france.org",
+      "type": "Régime fiscal actions/bourse",
+      "calculator": "crypto-bourse",
+      "frequency": "Annuel"
+    },
+    {
+      "name": "UNÉDIC",
+      "url": "https://www.unedic.org",
+      "type": "Barèmes allocations chômage",
+      "calculator": "travail",
+      "frequency": "Annuel"
+    },
+    {
+      "name": "Pôle Emploi",
+      "url": "https://www.pole-emploi.fr",
+      "type": "Droits allocations, conditions",
+      "calculator": "travail",
       "frequency": "Semestriel"
     }
   ]

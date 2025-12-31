@@ -1,0 +1,23 @@
+{
+  "regles_officielles": [
+    {
+      "source": "https://www.service-public.fr/particuliers/vosdroits/F1879",
+      "extrait": "Barème kilométrique par puissance administrative et distance."
+    }
+  ],
+  "plafonds": {
+    "type": "Formules par CV et kilométrage",
+    "validite": "2025-11-26"
+  },
+  "zones_geographiques": [],
+  "exceptions": [
+    "Majoration 20% véhicules électriques (BOFiP)."
+  ],
+  "sources_exactes": [
+    {
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F1879",
+      "titre": "Santé à l&#39;école primaire (maternelle ou élémentaire) | Service Public",
+      "date_publication": "2025-11-26"
+    }
+  ]
+}
