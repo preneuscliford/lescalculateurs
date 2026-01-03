@@ -106,38 +106,36 @@
     </script>
     
     <!-- JSON-LD Calculator Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Calculator",
+  "name": "Calculateur Prêt Immobilier 2026",
+  "description": "Calculez vos mensualités de prêt immobilier et votre capacité d'emprunt en 2026 - taux actualisés, assurance incluse",
+  "url": "https://www.lescalculateurs.fr/pages/pret",
+  "applicationCategory": "FinanceApplication",
+  "screenshot": "https://www.lescalculateurs.fr/pages/pret",
+  "isBasedOn": [
+    "https://www.lescalculateurs.fr/pages/methodologie",
+    "https://www.lescalculateurs.fr/pages/sources"
+  ],
+  "citation": [
     {
-      "@context": "https://schema.org",
-      "@type": "Calculator",
-      "name": "Calculateur Prêt Immobilier 2025",
-      "description": "Calculez vos mensualités de prêt immobilier et votre capacité d'emprunt en 2025 - taux actualisés, assurance incluse",
-      "url": "https://www.lescalculateurs.fr/pages/pret",
-      "applicationCategory": "FinanceApplication",
-      "screenshot": "https://www.lescalculateurs.fr/pages/pret",
-      "isBasedOn": [
-        "https://www.lescalculateurs.fr/pages/methodologie",
-        "https://www.lescalculateurs.fr/pages/sources"
-      ],
-      "citation": [
-        {
-          "@type": "Organization",
-          "name": "Banque de France",
-          "url": "https://www.banque-france.fr"
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "Service-public.fr – Crédit immobilier",
-          "url": "https://www.service-public.fr/particuliers/vosdroits/N20373"
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "DVF – data.gouv.fr",
-          "url": "https://www.data.gouv.fr"
-        }
-      ]
+      "@type": "Organization",
+      "name": "Banque de France",
+      "url": "https://www.banque-france.fr"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Service-public.fr – Crédit immobilier",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/N20373"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "DVF – data.gouv.fr",
+      "url": "https://www.data.gouv.fr"
     }
-    </script>
+  ]
+}</script>
 
     <!-- Sources Meta Tag for AI -->
     <meta name="source" content="banque-france.fr, service-public.fr, data.gouv.fr">
