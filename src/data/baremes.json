@@ -879,9 +879,9 @@
     "checked_at": "2025-12-27T22:17:33.139Z"
   },
   "smic": {
-    "annee": 2025,
-    "horaire_brut": 0,
-    "mensuel_brut_35h": 0
+    "annee": 2026,
+    "horaire_brut": 12.02,
+    "mensuel_brut_35h": 1823.03
   },
   "apl": {
     "version": "2025",
