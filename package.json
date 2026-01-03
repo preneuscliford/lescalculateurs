@@ -20,6 +20,8 @@
     "agent:juridique:notaire": "node scripts/agent-juridique.cjs --cluster=notaire --due=true",
     "agent:juridique:dmto": "node scripts/agent-juridique.cjs --cluster=dmto --due=true"
   },
+  "blog:update:2026": "node scripts/update-blog-pages.cjs",
+  "blog:revert": "node scripts/revert-blog-pages.cjs",
   "dependencies": {
     "chart.js": "^4.5.1",
     "html2canvas": "^1.4.1",
