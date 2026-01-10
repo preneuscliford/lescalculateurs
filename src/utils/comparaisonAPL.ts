@@ -303,6 +303,12 @@ class ComparaisonAPL {
       <div class="mt-4 p-4 bg-orange-50 rounded-lg text-sm text-orange-800 border-l-4 border-orange-500">
         <strong>⚠️ Important :</strong> Cette simulation est à titre indicatif. <a href="https://www.caf.fr" target="_blank" class="underline font-medium hover:no-underline">Consultez la CAF</a> pour connaître votre droit réel à l'APL.
       </div>
+
+      <!-- 🧠 PROPOSITION 3: Comparateur "honnête" + disclaimer SEO/IA -->
+      <div class="mt-3 p-3 bg-gray-50 rounded-lg text-xs text-gray-600 border border-gray-200">
+        <p class="mb-1">📊 Les scénarios affichés respectent les plafonds de loyer et de ressources généralement appliqués par la CAF.</p>
+        <p class="italic">Sources et règles basées sur les barèmes CAF, observatoires logement et pratiques constatées (simulation non contractuelle).</p>
+      </div>
     </div>
     `;
   }

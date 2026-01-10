@@ -818,11 +818,23 @@
         <ul class="text-sm text-gray-700 space-y-2">
           <li>
             • Aide personnalisée au logement (cadre général) :
-            <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="text-blue-600 hover:underline">service-public.fr</a>
+            <a
+              href="https://www.service-public.fr/particuliers/vosdroits/F12006"
+              target="_blank"
+              rel="noopener"
+              class="text-blue-600 hover:underline"
+              >service-public.fr</a
+            >
           </li>
           <li>
             • CAF — informations officielles :
-            <a href="https://www.caf.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">caf.fr</a>
+            <a
+              href="https://www.caf.fr"
+              target="_blank"
+              rel="noopener"
+              class="text-blue-600 hover:underline"
+              >caf.fr</a
+            >
           </li>
         </ul>
       </div>
@@ -837,6 +849,11 @@
 
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
+      import {
+        calculerAPL,
+        formatCurrency,
+        MESSAGES_PEDAGOGIQUES,
+      } from "../utils/aplCalculEngine.ts";
 
       const aplConfig = {
         title: "Estimateur APL 2026",
@@ -925,120 +942,89 @@
             suffix: "€",
           },
         ],
+        // ✅ PROPOSITION 1: Moteur de calcul unique (aplCalculEngine.ts)
         calculate: (values) => {
-          try {
-            const {
-              situation,
-              enfants,
-              revenus_mensuels,
-              type_logement,
-              loyer_mensuel,
-              region,
-              economie,
-            } = values;
-
-            if (
-              !situation ||
-              revenus_mensuels === null ||
-              !type_logement ||
-              loyer_mensuel === null
-            ) {
-              return {
-                success: false,
-                error: "Tous les champs obligatoires doivent être remplis",
-              };
-            }
-
-            // Coefficients selon la situation
-            let coefficient = 1;
-            if (situation === "couple") coefficient = 1.5;
-            else if (situation === "monoparental") coefficient = 1.3;
-
-            // Ajouter l'impact des enfants
-            const enfants_num = parseInt(enfants) || 0;
-            const charges_enfants = enfants_num * 70; // 70€ par enfant par mois
-
-            // Calcul de la contribution personnelle (simplifié)
-            let contribution = Math.max(
-              0,
-              revenus_mensuels * 0.07 + economie / 10000 + charges_enfants
-            );
-
-            // Variation selon la région (IDF plus cher)
-            let multiplicateur_region = 1;
-            if (region === "idf") multiplicateur_region = 1.15;
-            else if (region === "dom") multiplicateur_region = 0.95;
-
-            // Calcul APL estimée
-            let apl_estimee = Math.max(
-              0,
-              (loyer_mensuel - contribution) * 0.85
-            );
-
-            // Appliquer le coefficient régional
-            apl_estimee *= multiplicateur_region;
-
-            // Arrondir à l'euro inférieur
-            apl_estimee = Math.floor(apl_estimee);
-
-            // Plafonner selon les maxima CAF 2025 (approximatif)
-            const plafond_apl =
-              region === "idf" ? 610 : region === "dom" ? 430 : 510;
-            apl_estimee = Math.min(apl_estimee, plafond_apl);
-
-            return {
-              success: true,
-              data: {
-                apl_estimee,
-                loyer_mensuel,
-                contribution,
-                reste_charge: Math.max(0, loyer_mensuel - apl_estimee),
-                situation,
-                enfants: enfants_num,
-                revenus_mensuels,
-              },
-            };
-          } catch (error) {
-            return { success: false, error: error.message };
-          }
+          return calculerAPL({
+            situation: values.situation,
+            enfants: values.enfants,
+            revenus_mensuels: values.revenus_mensuels,
+            loyer_mensuel: values.loyer_mensuel,
+            region: values.region,
+            type_logement: values.type_logement,
+            economie: values.economie,
+          });
         },
+        // ✅ PROPOSITION 3: UX pédagogique avec messages intelligents
         formatResult: (result) => {
           const { data } = result;
           if (!data) return "Erreur de calcul";
 
-          const formatCurrency = (amount) => {
-            return new Intl.NumberFormat("fr-FR", {
-              style: "currency",
-              currency: "EUR",
-            }).format(amount);
-          };
+          // 🧠 Message pédagogique si APL = 0
+          const messageZero =
+            data.apl_estimee === 0 && data.raison_zero
+              ? `<div class="bg-amber-50 border-l-4 border-amber-400 p-3 rounded-lg text-sm text-amber-800 mb-4">
+                <p>💡 ${data.raison_zero}</p>
+              </div>`
+              : "";
+
+          // 🧮 PROPOSITION 2: Message si montant plafonné (anti-bullshit)
+          const messagePlafonne = data.is_plafonne
+            ? `<div class="text-xs text-blue-600 mt-2 italic">
+                ℹ️ ${MESSAGES_PEDAGOGIQUES.apl_plafonne}
+              </div>`
+            : "";
 
           return `
             <div class="space-y-4">
+              ${messageZero}
+              
               <div class="bg-green-50 p-6 rounded-lg border-2 border-green-500">
                 <h3 class="text-lg font-semibold text-green-900 mb-2">💚 Votre APL estimée</h3>
                 <p class="text-4xl font-bold text-green-600">${formatCurrency(
                   data.apl_estimee
                 )}</p>
                 <p class="text-sm text-green-700 mt-2">par mois</p>
-                <p class="text-xs text-green-700 mt-3 italic border-t border-green-300 pt-3">📊 Fourchette généralement constatée : 150 € – 600 € selon votre situation et zone.</p>
+                ${messagePlafonne}
+                <p class="text-xs text-green-700 mt-3 italic border-t border-green-300 pt-3">📐 Logique de calcul (simplifiée) : APL ≈ Loyer retenu − Participation personnelle estimée selon les revenus et forfaits logement.</p>
               </div>
 
-              <div class="bg-gray-50 p-4 rounded-lg space-y-3 text-sm">
+              <div class="bg-blue-50 p-4 rounded-lg space-y-3 text-sm border-l-4 border-blue-400">
+                <div class="font-semibold text-blue-900 mb-3">📊 Détail du calcul :</div>
+                
                 <div class="flex justify-between">
-                  <span class="text-gray-700">Loyer/Mensualité crédit :</span>
+                  <span class="text-gray-700">Loyer mensuel réel :</span>
                   <span class="font-medium">${formatCurrency(
                     data.loyer_mensuel
                   )}</span>
                 </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-700">Votre participation estimée :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.contribution
+                
+                <div class="flex justify-between bg-white p-2 rounded">
+                  <span class="text-gray-700">Loyer pris en compte (plafond CAF estimé : ${formatCurrency(
+                    data.plafond_loyer
+                  )}) :</span>
+                  <span class="font-medium text-blue-600">${formatCurrency(
+                    data.loyer_pris_compte
                   )}</span>
                 </div>
+                
+                <div class="border-t pt-3">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Votre participation (30% revenus − forfait ${formatCurrency(
+                      data.forfait_logement
+                    )}) :</span>
+                    <span class="font-medium">${formatCurrency(
+                      data.participation
+                    )}</span>
+                  </div>
+                  <div class="text-xs text-gray-600 ml-4">
+                    = (30% × ${formatCurrency(
+                      data.revenus_mensuels
+                    )}) − ${formatCurrency(data.forfait_logement)}
+                  </div>
+                </div>
+                
                 <div class="flex justify-between border-t pt-3">
-                  <span class="text-gray-700"><strong>Charge à payer après aide</strong> :</span>
+                  <span class="text-gray-700"><strong>Votre charge après APL</strong> :</span>
                   <span class="font-medium text-orange-600">${formatCurrency(
                     data.reste_charge
                   )}</span>
@@ -1046,7 +1032,10 @@
               </div>
 
               <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg text-sm text-orange-800">
-                <p><strong>📌 Simulation à titre indicatif :</strong> Cette estimation ne constitue pas une demande officielle. <a href="https://www.caf.fr" target="_blank" class="underline hover:no-underline font-medium">Consultez la CAF</a> pour connaître votre droit réel à l'APL.</p>
+                <p><strong>📌 Simulation à titre indicatif :</strong> Cette estimation ne constitue pas une demande officielle. ${
+                  MESSAGES_PEDAGOGIQUES.cta_caf
+                } <a href="https://www.caf.fr" target="_blank" class="underline hover:no-underline font-medium">caf.fr</a></p>
+                <p class="text-xs mt-2 text-orange-700 italic">📚 Sources & méthodologie : barèmes CAF, observatoires logement, pratiques constatées (simulation non contractuelle).</p>
               </div>
             </div>
           `;

@@ -1,5 +1,6 @@
 import ComparaisonAPL from "../../utils/comparaisonAPL.ts";
 import { ComparisonModal } from "../../components/ComparisonModal.ts";
+import { calculerAPL } from "../../utils/aplCalculEngine.ts";
 
 // Gestion de la comparaison APL
 const comparaisonAPL = new ComparaisonAPL("apl-comparaison");
@@ -115,7 +116,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
       },
     ],
     onConfirm: (values) => {
-      // Recalculer l'APL avec les nouvelles valeurs
+      // ✅ PROPOSITION 1: Utiliser le moteur de calcul unique
       const {
         situation,
         enfants,
@@ -126,57 +127,49 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
         economie,
       } = values;
 
-      try {
-        const revenu = Number(revenus_mensuels);
-        const loyer = Number(loyer_mensuel);
-        const plafondIDF = 1500;
-        const plafondProvince = 1200;
-        const plafondDOM = 1600;
+      // Appel au moteur unique (même logique que le calcul principal)
+      const calcResult = calculerAPL({
+        situation,
+        enfants: Number(enfants) || 0,
+        revenus_mensuels: Number(revenus_mensuels),
+        loyer_mensuel: Number(loyer_mensuel),
+        region,
+        type_logement,
+        economie: Number(economie) || 0,
+      });
 
-        let plafond = plafondProvince;
-        if (region === "idf") plafond = plafondIDF;
-        else if (region === "dom") plafond = plafondDOM;
-
-        const loyerPrisEnCompte = Math.min(loyer, plafond);
-        let partEnfants = 0;
-        if (enfants > 0) {
-          partEnfants = enfants * 100;
-        }
-
-        const participationPersonnelle = Math.max(
-          0,
-          revenu * 0.07 + partEnfants - 200
+      if (!calcResult.success || !calcResult.data) {
+        alert(
+          calcResult.error ||
+            "Erreur lors du calcul. Veuillez vérifier vos données."
         );
-        const aplEstimee = Math.max(
-          0,
-          loyerPrisEnCompte - participationPersonnelle
-        );
-
-        // Mapper les valeurs pour la comparaison
-        const mappedValues = {
-          situation,
-          revenus: revenu,
-          nombre_enfants: enfants,
-          type_logement,
-          zone:
-            region === "idf"
-              ? "zone_1"
-              : region === "province"
-              ? "zone_2"
-              : "zone_3",
-        };
-
-        const result = {
-          success: true,
-          data: { apl: aplEstimee },
-        };
-
-        console.log("Nouveau scénario APL:", { mappedValues, result });
-        comparaisonAPL.ajouterCalcul(result, mappedValues);
-      } catch (error) {
-        alert("Erreur lors du calcul. Veuillez vérifier vos données.");
-        console.error(error);
+        return;
       }
+
+      // Mapper les valeurs pour la comparaison
+      const mappedValues = {
+        situation,
+        revenus: Number(revenus_mensuels),
+        nombre_enfants: Number(enfants) || 0,
+        type_logement,
+        zone:
+          region === "idf"
+            ? "zone_1"
+            : region === "province"
+            ? "zone_2"
+            : "zone_3",
+      };
+
+      const result = {
+        success: true,
+        data: { apl: calcResult.data.apl_estimee },
+      };
+
+      console.log("Nouveau scénario APL (moteur unique):", {
+        mappedValues,
+        result,
+      });
+      comparaisonAPL.ajouterCalcul(result, mappedValues);
     },
   });
 
@@ -197,4 +190,37 @@ document.addEventListener("click", (e) => {
     comparaisonAPL.reinitialiser();
     document.getElementById("apl-reset-compare")?.classList.add("hidden");
   }
+});
+
+// ✅ TASK 1: PRESETS ENFANTS (0/1/2/3)
+document.querySelectorAll(".preset-enfants").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const enfants = (e.target as HTMLElement).dataset.enfants;
+    // Le champ est généré par CalculatorFrame avec l'ID: apl-calculator_enfants
+    const input = document.getElementById(
+      "apl-calculator_enfants"
+    ) as HTMLInputElement;
+
+    if (input && enfants) {
+      input.value = enfants;
+
+      // Déclencher l'event change pour mettre à jour le calculateur
+      const event = new Event("change", { bubbles: true });
+      input.dispatchEvent(event);
+
+      // Visual feedback
+      (e.target as HTMLElement).classList.add(
+        "ring-2",
+        "ring-purple-500",
+        "scale-95"
+      );
+      setTimeout(() => {
+        (e.target as HTMLElement).classList.remove(
+          "ring-2",
+          "ring-purple-500",
+          "scale-95"
+        );
+      }, 300);
+    }
+  });
 });
