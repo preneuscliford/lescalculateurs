@@ -236,11 +236,12 @@ class ComparaisonAPL {
               <td class="p-3 font-semibold border-r border-gray-200">Type de logement</td>
               ${this.calculs
                 .map((c) => {
-                  // 🟢 Correction 2: Badge explicatif pour colocation
+                  // 🟢 Correction: Badge explicatif pour colocation + mention "hors HLM"
                   const isColocation = c.typeLogement?.toLowerCase().includes('colocation') || c.typeLogement?.toLowerCase().includes('chambre');
+                  const displayType = isColocation ? `${c.typeLogement} <span class="text-xs text-gray-500">(hors HLM)</span>` : c.typeLogement;
                   const badge = isColocation ? `<div class="text-xs text-purple-600 mt-1">⚠️ plafond CAF bas</div>` : '';
                   return `<td class="p-3 text-center text-gray-700 text-sm border-r border-gray-200">
-                    <div>${c.typeLogement}</div>
+                    <div>${displayType}</div>
                     ${badge}
                   </td>`;
                 })
@@ -341,7 +342,7 @@ class ComparaisonAPL {
         <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
           <h4 class="font-bold text-gray-700 mb-2">📊 Lecture des résultats</h4>
           <p class="text-sm text-gray-600">
-            Le scénario en vert est le plus avantageux. Les pourcentages indiquent la différence par rapport au 1er scénario.
+            Le scénario avec l'APL la plus élevée est le plus avantageux. Les pourcentages indiquent la différence par rapport au 1er scénario.
           </p>
         </div>
       </div>
