@@ -76,6 +76,14 @@ export class ComparisonModal {
         <form id="comparison-form" class="space-y-4">
           ${fieldsHTML}
           
+          <!-- Avertissement colocation (affiché dynamiquement) -->
+          <div id="colocation-warning" class="hidden p-3 bg-purple-50 rounded-lg border-l-4 border-purple-500 text-sm">
+            <p class="text-purple-800">
+              <strong>⚠️ Colocation :</strong> La CAF applique des plafonds de loyer plus stricts, 
+              ce qui peut réduire fortement voire annuler l'APL.
+            </p>
+          </div>
+
           <div class="flex gap-3 pt-4">
             <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">
               ✅ Ajouter
@@ -117,6 +125,29 @@ export class ComparisonModal {
         }
       }
     });
+
+    // 🟢 Afficher/masquer avertissement colocation dynamiquement
+    this.setupColocationWarning();
+  }
+
+  private setupColocationWarning(): void {
+    const typeLogementField = document.getElementById('type_logement') as HTMLSelectElement;
+    const warning = document.getElementById('colocation-warning');
+    
+    if (typeLogementField && warning) {
+      const checkColocation = () => {
+        const value = typeLogementField.value.toLowerCase();
+        if (value.includes('colocation') || value.includes('chambre')) {
+          warning.classList.remove('hidden');
+        } else {
+          warning.classList.add('hidden');
+        }
+      };
+      
+      typeLogementField.addEventListener('change', checkColocation);
+      // Vérifier aussi à l'ouverture
+      checkColocation();
+    }
   }
 
   private renderField(field: ModalField): string {

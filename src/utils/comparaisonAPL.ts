@@ -197,7 +197,7 @@ class ComparaisonAPL {
               <td class="p-3 font-bold border-r border-gray-200 text-lg">💰 APL mensuelle</td>
               ${this.calculs
                 .map((c, idx) => {
-                  const isMaxAPL = c.apl === maxAPL;
+                  const isMaxAPL = c.apl === maxAPL && c.apl > 0;
                   const diff = idx === 0 ? 0 : c.apl - this.calculs[0].apl;
                   const diffPct =
                     idx === 0
@@ -205,14 +205,19 @@ class ComparaisonAPL {
                       : ((c.apl - this.calculs[0].apl) / this.calculs[0].apl) *
                         100;
                   const showDiff = idx > 0 && this.calculs[0].apl > 0;
+                  
+                  // 🟢 Correction 1: Message explicatif si APL = 0€
+                  const isZero = c.apl === 0;
+                  const zeroMessage = isZero ? `<div class="text-xs text-amber-700 mt-2 leading-tight">ℹ️ Participation > loyer retenu CAF</div>` : '';
 
                   return `
                   <td class="p-3 text-center font-bold text-lg ${
-                    isMaxAPL ? "bg-green-100 text-green-900" : "text-gray-900"
+                    isMaxAPL ? "bg-green-100 text-green-900" : isZero ? "bg-amber-50 text-amber-800" : "text-gray-900"
                   } border-r border-gray-200">
                     <div>${formatCurrency(c.apl)}</div>
+                    ${zeroMessage}
                     ${
-                      showDiff
+                      showDiff && !isZero
                         ? `<div class="text-xs ${
                             diff > 0 ? "text-green-600" : "text-red-600"
                           } mt-1">
@@ -230,10 +235,15 @@ class ComparaisonAPL {
             <tr class="bg-gray-50 hover:bg-gray-100">
               <td class="p-3 font-semibold border-r border-gray-200">Type de logement</td>
               ${this.calculs
-                .map(
-                  (c) =>
-                    `<td class="p-3 text-center text-gray-700 text-sm border-r border-gray-200">${c.typeLogement}</td>`
-                )
+                .map((c) => {
+                  // 🟢 Correction 2: Badge explicatif pour colocation
+                  const isColocation = c.typeLogement?.toLowerCase().includes('colocation') || c.typeLogement?.toLowerCase().includes('chambre');
+                  const badge = isColocation ? `<div class="text-xs text-purple-600 mt-1">⚠️ plafond CAF bas</div>` : '';
+                  return `<td class="p-3 text-center text-gray-700 text-sm border-r border-gray-200">
+                    <div>${c.typeLogement}</div>
+                    ${badge}
+                  </td>`;
+                })
                 .join("")}
             </tr>
             <tr class="hover:bg-purple-50">
@@ -284,18 +294,54 @@ class ComparaisonAPL {
         </table>
       </div>
 
+      <!-- 🟢 1️⃣ Message explicatif conditionnel quand APL = 0€ -->
+      ${this.calculs.some(c => c.apl === 0) ? `
+      <div class="mt-4 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-500">
+        <h4 class="font-bold text-amber-900 mb-2">ℹ️ Pourquoi certains scénarios affichent APL = 0 € ?</h4>
+        <p class="text-sm text-amber-800 mb-2">
+          Dans ces scénarios, l'APL est nulle principalement à cause :
+        </p>
+        <ul class="text-sm text-amber-800 list-disc list-inside space-y-1">
+          <li>De <strong>revenus trop élevés</strong> par rapport au plafond CAF</li>
+          <li>Du <strong>plafond de loyer très bas</strong> (notamment en colocation)</li>
+          <li>D'une <strong>participation personnelle supérieure</strong> au loyer retenu</li>
+        </ul>
+        <p class="text-xs text-amber-700 mt-2 italic">→ Cela ne signifie pas une erreur de calcul, mais reflète les règles CAF en vigueur.</p>
+      </div>
+      ` : ''}
+
+      <!-- 🟢 2️⃣ Avertissement spécifique colocation -->
+      ${this.calculs.some(c => c.typeLogement?.toLowerCase().includes('colocation') || c.typeLogement?.toLowerCase().includes('chambre')) ? `
+      <div class="mt-4 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+        <h4 class="font-bold text-purple-900 mb-2">⚠️ Spécificité colocation / chambre meublée</h4>
+        <p class="text-sm text-purple-800">
+          En colocation, la CAF applique des <strong>plafonds de loyer plus stricts</strong>.
+          Cela réduit fortement, voire annule l'APL même avec enfants à charge.
+        </p>
+      </div>
+      ` : ''}
+
+      <!-- 🟢 3️⃣ Ce que montrent ces résultats (texte GPT) -->
+      <div class="mt-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+        <h4 class="font-bold text-blue-900 mb-2">📊 Ce que montrent ces résultats</h4>
+        <p class="text-sm text-blue-800">
+          Ces résultats montrent <strong>l'impact combiné</strong> des revenus, du type de logement et de la situation familiale.
+          Pour une comparaison pertinente, <strong>modifiez un seul critère à la fois</strong>.
+        </p>
+      </div>
+
       <!-- Conseils pédagogiques -->
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-          <h4 class="font-bold text-blue-900 mb-2">📊 Ce que vous voyez</h4>
-          <p class="text-sm text-blue-800">
-            Les différences d'APL entre vos scénarios. Comparez les montants pour voir quelle situation vous est la plus favorable.
-          </p>
-        </div>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
           <h4 class="font-bold text-green-900 mb-2">💡 Comment l'utiliser</h4>
           <p class="text-sm text-green-800">
-            Testez différentes configurations (type de logement, loyer, revenus) pour trouver l'option qui maximise votre aide.
+            Testez différentes configurations pour trouver l'option qui maximise votre aide au logement.
+          </p>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
+          <h4 class="font-bold text-gray-700 mb-2">📊 Lecture des résultats</h4>
+          <p class="text-sm text-gray-600">
+            Le scénario en vert est le plus avantageux. Les pourcentages indiquent la différence par rapport au 1er scénario.
           </p>
         </div>
       </div>
