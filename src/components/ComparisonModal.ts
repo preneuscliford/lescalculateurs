@@ -214,9 +214,15 @@ export class ComparisonModal {
       }
     });
 
-    // Valider les champs requis
+    // Valider les champs requis (0 est une valeur valide pour les champs numériques)
     const missingFields = this.config.fields
-      .filter((field) => field.required && !this.values[field.id])
+      .filter(
+        (field) =>
+          field.required &&
+          (this.values[field.id] === undefined ||
+            this.values[field.id] === null ||
+            this.values[field.id] === "")
+      )
       .map((field) => field.label);
 
     if (missingFields.length > 0) {
