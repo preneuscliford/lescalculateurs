@@ -268,7 +268,13 @@ export class CalculatorFrame {
 
     // Validate required fields
     const missingFields = this.config.fields
-      .filter((field) => field.required && !this.values[field.id])
+      .filter(
+        (field) =>
+          field.required &&
+          (this.values[field.id] === undefined ||
+            this.values[field.id] === null ||
+            this.values[field.id] === "")
+      )
       .map((field) => field.label);
 
     if (missingFields.length > 0) {
