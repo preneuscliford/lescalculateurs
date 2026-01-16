@@ -3,16 +3,16 @@ import { ComparisonModal } from "../../components/ComparisonModal.ts";
 import { formatCurrency } from "../../main.ts";
 
 const bareme = [
-  { plafond: 11294, taux: 0 },
-  { plafond: 28797, taux: 0.11 },
-  { plafond: 82341, taux: 0.3 },
-  { plafond: 177106, taux: 0.41 },
+  { plafond: 11497, taux: 0 },
+  { plafond: 29315, taux: 0.11 },
+  { plafond: 83823, taux: 0.3 },
+  { plafond: 180294, taux: 0.41 },
   { plafond: 999999999, taux: 0.45 }
 ];
 
 const impotConfig = {
-  title: "Impôt sur le revenu 2025",
-  description: "Barème progressif et quotient familial.",
+  title: "Impôt sur le revenu 2026",
+  description: "Barème progressif et quotient familial (données officielles).",
   fields: [
     {
       id: "revenu",
