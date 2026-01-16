@@ -20,7 +20,7 @@ function loadCfg() {
       const dmDept = b?.notaire?.droits_mutation?.ancien?.par_departement || {}
       if (!cfg) cfg = {}
       cfg.dmto_overrides = dmOverrides
-      cfg.dmto_default = 0.0581
+      cfg.dmto_default = 0.0632  // Taux DMTO majoré 2026 (87 départements)
       cfg.dmto_neuf_default = 0.00715
       cfg.dmto_departmental = dmDept
     } catch {}
@@ -67,7 +67,7 @@ function computeDroits(code, price, cfg, type) {
   if (type === 'neuf') return price * (cfg.dmto_neuf_default || 0.00715)
   const override = cfg.dmto_overrides && cfg.dmto_overrides[code]
   if (override != null) return price * Number(override)
-  const dmtoPct = cfg.dmto && cfg.dmto[code] != null ? Number(cfg.dmto[code]) / 100 : (cfg.dmto_default || 0.058)
+  const dmtoPct = cfg.dmto && cfg.dmto[code] != null ? Number(cfg.dmto[code]) / 100 : (cfg.dmto_default || 0.0632)
   return price * dmtoPct
 }
 
