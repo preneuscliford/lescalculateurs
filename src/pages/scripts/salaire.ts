@@ -3,7 +3,7 @@ import { ComparisonModal } from "../../components/ComparisonModal.ts";
 import { formatCurrency } from "../../main.ts";
 
 const salaireConfig = {
-  title: "Simulateur salaire brut/net 2025",
+  title: "Simulateur salaire brut/net 2026",
   description: "Estimez votre net mensuel et annuel avec PAS.",
   fields: [
     {

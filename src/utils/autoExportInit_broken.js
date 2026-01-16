@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Frais de Notaire",
       resultsId: "notaire-calculator",
       formId: "calculator-form",
-      notes: ["Calculs basés sur les barèmes officiels 2025."],
+      notes: ["Calculs basés sur les barèmes officiels 2026."],
       type: "CalculatorFrame"
     },
     pret: {
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Indemnités Kilométriques",
       resultsId: "ik-calculator",
       formId: "calculator-form",
-      notes: ["Barèmes fiscaux officiels 2025."],
+      notes: ["Barèmes fiscaux officiels 2026."],
       type: "CalculatorFrame"
     },
     ponts: {
@@ -165,13 +165,13 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Plus-Value Immobilière",
       resultsId: "results",
       formId: "plus-value-form",
-      notes: ["Calculs fiscaux selon la réglementation 2025."],
+      notes: ["Calculs fiscaux selon la réglementation 2026."],
     },
     crypto: {
       name: "Plus-Value Crypto & Bourse",
       resultsId: "results",
       formId: "crypto-bourse-form",
-      notes: ["Calculs fiscaux basés sur la réglementation française 2025."],
+      notes: ["Calculs fiscaux basés sur la réglementation française 2026."],
     },
   };
 
