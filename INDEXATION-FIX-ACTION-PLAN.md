@@ -10,6 +10,7 @@
 **Cause racine:** Google a indexé des versions anciennes (avec `.htm`, `.html`, ou apex domain) qui redirigent maintenant vers les versions propres. Google voit ces chaînes de redirections et les ignore.
 
 **Votre config actuelle:** ✅ **CORRECTE**
+
 - vercel.json avec 301 redirects permanentes → OK
 - Sitemap sans .html → OK
 - Canonicals standardisés → OK
@@ -28,6 +29,7 @@ Ces URLs n'existent plus et redirigent. Google doit le savoir:
 3. **Indiquer:** "Supprimée définitivement" (le site redirige maintenant)
 
 URLs à supprimer (exemples):
+
 ```
 https://www.lescalculateurs.fr/pages/notaire.html
 https://lescalculateurs.fr/pages/notaire
@@ -41,7 +43,7 @@ Dans Google Search Console:
 
 1. **Accéder à** "Inspection d'URL"
 2. **Tester chaque URL** propre (ex: `https://www.lescalculateurs.fr/pages/notaire`)
-3. **Cliquer "Demander l'indexation"** 
+3. **Cliquer "Demander l'indexation"**
 4. **Répéter pour les 126 URLs du sitemap**
 
 ### **Étape 3: Ajouter des en-têtes HTTP pour aider Google**
@@ -66,16 +68,19 @@ Attendre **3-7 jours** et vérifier dans Google Search Console:
 ## 🚀 Actions à faire MAINTENANT
 
 ### 1. Exécuter le build
+
 ```bash
 npm run build
 ```
 
 ### 2. Vérifier qu'il n'y a PAS d'erreurs
+
 ```bash
 npm run build 2>&1 | grep -i error
 ```
 
 ### 3. Commiter et pusher
+
 ```bash
 git add .
 git commit -m "fix: ensure clean indexation - no .html, www-only, redirects 301"
@@ -108,12 +113,12 @@ git push
 
 ## 🎯 Résultat attendu après 7 jours
 
-| Métrique | Avant | Après |
-|----------|-------|-------|
-| Pages avec redirection | 138 | 0 |
-| Pages indexées | ~120 | ~126 |
-| 404 | 10 | 0 |
-| Erreurs redirections | 5 | 0 |
+| Métrique               | Avant | Après |
+| ---------------------- | ----- | ----- |
+| Pages avec redirection | 138   | 0     |
+| Pages indexées         | ~120  | ~126  |
+| 404                    | 10    | 0     |
+| Erreurs redirections   | 5     | 0     |
 
 ---
 

@@ -16,6 +16,18 @@ function loadFraisConfig() {
   }
 }
 
+function loadBaremesGen() {
+  const p = path.resolve(process.cwd(), 'src', 'data', 'baremes.generated.json')
+  if (!fs.existsSync(p)) return null
+  try {
+    const raw = fs.readFileSync(p, 'utf8')
+    const data = JSON.parse(raw)
+    return data && typeof data === 'object' ? data : null
+  } catch (_) {
+    return null
+  }
+}
+
 /**
  * Calcule les émoluments proportionnels selon le barème du JSON.
  */
@@ -41,10 +53,15 @@ function computeEmoluments(price, cfg) {
 /**
  * Calcule les droits d'enregistrement (ancien/neuf) pour un code département.
  */
-function computeDroits(code, price, cfg, type) {
-  if (type === 'neuf') return price * 0.00715
-  const taux = cfg.dmto[code] != null ? Number(cfg.dmto[code]) / 100 : 0.058
-  return price * taux
+function computeDroits(code, price, cfg, type, baremesGen) {
+  if (type === 'neuf') return price * 0.007
+  // Priorité aux taux votés 2026 (base départementale) convertis en taux total
+  const depBase = baremesGen?.notaire?.droits_mutation?.ancien?.par_departement?.[code]?.taux
+  const toTotal = (t) => t + 0.012 + 0.0237 * t
+  if (typeof depBase === 'number') return price * toTotal(depBase)
+  // Fallback: ancienne carte dmto en %
+  const tauxPct = cfg.dmto && cfg.dmto[code] != null ? Number(cfg.dmto[code]) / 100 : toTotal(0.05)
+  return price * tauxPct
 }
 
 /**
@@ -65,9 +82,9 @@ function computeTva(emoluments, formalites) {
 /**
  * Calcule détail et total des frais pour un exemple générique.
  */
-function computeAll(code, price, type, cfg) {
+function computeAll(code, price, type, cfg, baremesGen) {
   const emoluments = computeEmoluments(price, cfg)
-  const droits = computeDroits(code, price, cfg, type)
+  const droits = computeDroits(code, price, cfg, type, baremesGen)
   const debours = Number(cfg.debours?.moyenne || 800)
   const formalites = 0
   const csi = computeCsi(price, cfg)
@@ -95,17 +112,17 @@ function approxPct(x) {
 /**
  * Met à jour la page comparatif ancien/neuf avec les données calculées.
  */
-function updateComparatifPage(cfg) {
+function updateComparatifPage(cfg, baremesGen) {
   const file = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'frais-notaire-ancien-neuf-2025.html')
   if (!fs.existsSync(file)) return false
   let html = fs.readFileSync(file, 'utf8')
 
-  // Exemple générique sur 300 000 € – utiliser un département à 5,80% (code 01)
+  // Exemple générique sur 300 000 € – utiliser un département à 5,00% base (code 01)
   const code = '01'
   const priceAncien = 300000
   const priceNeuf = 300000
-  const A = computeAll(code, priceAncien, 'ancien', cfg)
-  const N = computeAll(code, priceNeuf, 'neuf', cfg)
+  const A = computeAll(code, priceAncien, 'ancien', cfg, baremesGen)
+  const N = computeAll(code, priceNeuf, 'neuf', cfg, baremesGen)
 
   // Encadré « En bref »
   html = html.replace(/<strong>6,6% dans l'ancien<\/strong>/, `<strong>${approxPct(A.total / priceAncien)} dans l'ancien</strong>`)
@@ -114,12 +131,12 @@ function updateComparatifPage(cfg) {
   html = html.replace(/<strong>7 800€ sur un bien à 300 000€<\/strong>/, `<strong>${euro(eco)} sur un bien à 300 000€</strong>`)
 
   // Tableau – Droits d'enregistrement ancien et neuf
-  html = html.replace(/>5,80 %<\/td>/, `>${approxPct(Number(cfg.dmto[code]) / 100)}<\/td>`)
+  html = html.replace(/>5,80 %<\/td>/, `>${approxPct(A.droits / priceAncien)}<\/td>`)
   html = html.replace(/>0,70 % \+ TVA 20%<\/td>/, `>0,715 % (sur prix HT)<\/td>`)
 
   // Détail ancien
   html = html.replace(/Émoluments du notaire<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/, `Émoluments du notaire</span><span class="font-bold">${euro(A.emoluments)}</span>`)
-  html = html.replace(/Droits d'enregistrement \(5,8%\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/, `Droits d'enregistrement (${approxPct(Number(cfg.dmto[code]) / 100)})</span><span class="font-bold">${euro(A.droits)}</span>`)
+  html = html.replace(/Droits d'enregistrement \(5,8%\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/, `Droits d'enregistrement (${approxPct(A.droits / priceAncien)})</span><span class="font-bold">${euro(A.droits)}</span>`)
   html = html.replace(/Débours \(cadastre, conservation\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/, `Débours (cadastre, conservation)</span><span class="font-bold">${euro(A.debours)}</span>`)
   html = html.replace(/Formalités diverses<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/, `Formalités diverses</span><span class="font-bold">${euro(A.formalites)}</span>`)
   html = html.replace(/Contribution Sécurité Immobilière<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/, `Contribution Sécurité Immobilière</span><span class="font-bold">${euro(A.csi)}</span>`)
@@ -149,20 +166,17 @@ function updateComparatifPage(cfg) {
 /**
  * Met à jour les textes génériques de la page « frais-notaire-departements ».
  */
-function updateDepartementsTexts(cfg) {
+function updateDepartementsTexts(cfg, baremesGen) {
   const file = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'frais-notaire-departements.html')
   if (!fs.existsSync(file)) return false
   let html = fs.readFileSync(file, 'utf8')
 
-  // Taux standard autour de 5,81% -> ≈ 5,80%
-  html = html.replace(/taux standard autour de 5,81 %/i, 'taux standard autour de ≈ 5,80 %')
+  // Taux standard autour de 5,81% -> ≈ 6,32%
+  html = html.replace(/taux standard autour de 5,81 %/i, 'taux usuel constaté autour de ≈ 6,32 %')
+  html = html.replace(/≈ 5,80 %/g, '≈ 6,32 %')
 
   // Liste des départements à taux réduits et spéciaux selon le JSON
-  const reduced = ['56','57','67','68']
-  const corsica = ['2A','2B']
-  const paris = ['75']
-  const idfHigh = ['92','93','94']
-  const txt = `taux réduits à 3,8 % dans quelques départements (ex. Morbihan, Moselle, Bas-Rhin, Haut-Rhin), Corse à 4,50 %, Paris à 6,30 % et 92/93/94 à 6,45 %`
+  const txt = `taux réduits à 3,8 % dans quelques départements (ex. Indre, Mayotte), quelques départements à 4,50 % (ex. Hautes‑Alpes), et base votée à 5,00 % donnant ≈ 6,32 % en taux total (Paris et 92/93/94 inclus)`
   html = html.replace(/taux réduits à 3,8 % dans quelques départements \(ex\. Indre, Isère, Morbihan, Mayotte\)/i, txt)
 
   // Fourchettes génériques : ancien 7–8% / neuf 2–3% – remplacer par libellés ≈ si besoin
@@ -179,12 +193,13 @@ function updateDepartementsTexts(cfg) {
  */
 function main() {
   const cfg = loadFraisConfig()
+  const baremesGen = loadBaremesGen()
   if (!cfg) {
     console.error('Configuration frais2025.json introuvable')
     process.exit(1)
   }
-  const r1 = updateComparatifPage(cfg)
-  const r2 = updateDepartementsTexts(cfg)
+  const r1 = updateComparatifPage(cfg, baremesGen)
+  const r2 = updateDepartementsTexts(cfg, baremesGen)
   console.log(`Blog refresh: comparatif=${r1 ? 'ok' : 'skip'}, departements=${r2 ? 'ok' : 'skip'}`)
 }
 

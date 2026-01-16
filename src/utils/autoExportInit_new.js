@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Frais de Notaire",
       resultsId: "notaire-calculator",
       formId: "notaire-form",
-      notes: ["Calculs basés sur les barèmes officiels 2025."],
+      notes: ["Calcul basé sur les données officielles (CGI, Loi de finances 2025)."],
       type: "CalculatorFrame",
     },
     pret: {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Indemnités Kilométriques",
       resultsId: "ik-calculator",
       formId: "ik-form",
-      notes: ["Barèmes fiscaux officiels 2025."],
+      notes: ["Dernier barème fiscal connu (administration)."],
       type: "CalculatorFrame",
     },
     ponts: {

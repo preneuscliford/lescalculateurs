@@ -131,20 +131,22 @@ export class ComparisonModal {
   }
 
   private setupColocationWarning(): void {
-    const typeLogementField = document.getElementById('type_logement') as HTMLSelectElement;
-    const warning = document.getElementById('colocation-warning');
-    
+    const typeLogementField = document.getElementById(
+      "type_logement"
+    ) as HTMLSelectElement;
+    const warning = document.getElementById("colocation-warning");
+
     if (typeLogementField && warning) {
       const checkColocation = () => {
         const value = typeLogementField.value.toLowerCase();
-        if (value.includes('colocation') || value.includes('chambre')) {
-          warning.classList.remove('hidden');
+        if (value.includes("colocation") || value.includes("chambre")) {
+          warning.classList.remove("hidden");
         } else {
-          warning.classList.add('hidden');
+          warning.classList.add("hidden");
         }
       };
-      
-      typeLogementField.addEventListener('change', checkColocation);
+
+      typeLogementField.addEventListener("change", checkColocation);
       // Vérifier aussi à l'ouverture
       checkColocation();
     }

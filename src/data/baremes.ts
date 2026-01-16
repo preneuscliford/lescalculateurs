@@ -18,10 +18,10 @@ export const baremes = {
       minimum: 15,
     },
     droitsMutation: {
-      standard: 0.0581, // taux usuel (hors départements à taux réduit)
+      standard: 0.0632, // taux majoré 2026 (5% voté = 6.32% total)
       neuf: 0.00715, // taux réduit pour le neuf (≈ 0,71498%)
-      reduit: 0.0509006, // total DMTO avec part départementale à 3,80% (≈ 5,09006%)
-      departementsReduits: ["36", "976"], // Indre, Mayotte
+      reduit: 0.0509, // taux réduit 2026 (3.80% voté = 5.09% total)
+      departementsReduits: ["36", "976"], // Indre et Mayotte uniquement en 2026
     },
   },
   indemnites_kilometriques: {

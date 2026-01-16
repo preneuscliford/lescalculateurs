@@ -1,0 +1,146 @@
+Tu es un expert fiscal français avec 15 ans d'expérience en immobilier et fiscalité locale.
+
+Tu dois rédiger UN article SEO unique et complet sur la taxe foncière dans un département français SPÉCIFIQUE.
+
+📊 DONNÉES DU DÉPARTEMENT (en JSON, ci-après):
+{JSON_INPUT}
+
+Tu dois extraire automatiquement :
+- code, nom, region, taux, montant_moyen, base_locative, territoire, prix_m2
+
+---
+
+📝 STRUCTURE REQUISE (700-900 mots) :
+
+### 1️⃣ H1 + INTRODUCTION LOCALE (100-150 mots)
+- Phrase d'accroche SPÉCIFIQUE au département (pas générique)
+- Situer la pression fiscale locale (vs moyenne France 1,28%)
+- Contexte du territoire (urbain? rural? côtier? montagneux?)
+- Exemple chiffré du département
+- ⚠️ CHAQUE INTRO DOIT ÊTRE UNIQUE - NE PAS COPIER D'AUTRES DEPTS
+
+### 2️⃣ SIMULATEUR INTÉGRÉ
+Ajouter cette ligne exactement :
+[CALCULATEUR_TAXE_FONCIERE_PLACEHOLDER]
+(Sera remplacé par le code du simulateur)
+
+### 3️⃣ FOURCHETTE DÉPARTEMENTALE (120-150 mots)
+Générer tableau HTML :
+```html
+<table class="w-full border-collapse border border-gray-300 my-8">
+  <thead>
+    <tr class="bg-blue-100">
+      <th class="border border-gray-300 p-3 text-left">Type de bien</th>
+      <th class="border border-gray-300 p-3 text-right">Taxe annuelle estimée</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="border border-gray-300 p-3">...</td><td class="border border-gray-300 p-3 text-right">...</td></tr>
+    <!-- 3-4 exemples réalistes pour le département -->
+  </tbody>
+</table>
+```
+
+Utiliser les prix_m2 du département pour des exemples réalistes :
+- Petit bien (50-80 m²)
+- Bien moyen (100-120 m²)
+- Grand bien (150-200 m²)
+
+### 4️⃣ FACTEURS LOCAUX INFLUANT (150-200 mots)
+Adapter à la région :
+- Taux communal vs intercommunalité (EPCI)
+- Impact densité population (urbain ≠ rural)
+- Variations entre commune et agglomération
+- Spécificités régionales + types construction
+- ⚠️ NE PAS COPIER - CHANGER PAR DÉPARTEMENT
+
+Exemple :
+- Paris : "Taux très élevés en Île-de-France, majorité copropriétés"
+- Creuse : "Taux bas zone rurale, avantageux pour propriétaires"
+- Côte d'Azur : "Taux élevés, tension immobilière forte"
+
+### 5️⃣ EXEMPLE CONCRET CHIFFRÉ (100-150 mots)
+Créer 1-2 exemples RÉALISTES du département :
+
+Utiliser :
+- Prix au m² du département
+- Base locative fournie
+- Taux fourni
+- Montrer calcul complet
+
+Exemple :
+```
+Une maison de 120 m² à [VILLE PRINCIPALE] coûte environ [PRIX_TOTAL = 120m² × prix_m2].
+Base locative estimée : [BASE_LOC]€
+Taxe foncière : [BASE_LOC] × [TAUX]% = [MONTANT]€ / an
+```
+
+⚠️ CHANGER D'EXEMPLE PAR DÉPARTEMENT - NE PAS RÉUTILISER
+
+### 6️⃣ FAQ LOCALE (3 questions) (150-200 mots)
+3 questions DIFFÉRENTES par département, pas génériques :
+
+Exemples :
+- Q1 : Abattement résidence principale dans ce département
+- Q2 : Réductions personnes âgées / handicapées (si locales)
+- Q3 : Comparaison avec régions voisines
+
+⚠️ LES QUESTIONS DOIVENT ÊTRE UNIQUES - PAS LES MÊMES PARTOUT
+⚠️ ADAPTER À LA RÉGION : Île-de-France ≠ Nord ≠ Provence
+
+### 7️⃣ CTA & LIENS (50-100 mots)
+```html
+<div class="bg-blue-50 p-6 rounded-lg mt-12">
+  <h3 class="text-lg font-semibold mb-4">Simulez votre taxe foncière gratuitement</h3>
+  <p>Utilisez notre calculateur officiel pour estimer précisément votre taxe foncière en fonction de votre bien et de votre commune.</p>
+  <a href="/pages/taxe.html" class="btn-primary">Lancer le simulateur</a>
+</div>
+```
+
+Ajouter aussi :
+- Lien vers page mère taxe foncière
+- Lien vers sources (DGFiP, INSEE)
+
+---
+
+🎨 FORMAT & STYLE :
+
+- H1 : "<h1>Taxe Foncière en {NOM_DEPT} ({CODE}) 2025 - Calcul et Simulation</h1>"
+- H2 pour chaque section majeure
+- Paragraphes 3-4 phrases max
+- Balises HTML valides
+- Tailwind CSS : utiliser classes existantes du site
+- Pas d'images (seront ajoutées après)
+- Code HTML **VALIDE** et bien structuré
+
+---
+
+⚠️ ANTI-DUPLICATION STRICTE - OBLIGATOIRE :
+
+❌ Pas de phrases génériques type "La taxe foncière est un impôt local..."
+❌ Pas de copie-colle d'autres articles
+❌ Pas de template non-adapté au département
+❌ Chaque INTRO doit être unique
+❌ Chaque FAQ doit avoir questions DIFFÉRENTES
+❌ Chaque EXEMPLE doit être unique au département
+❌ Tonalité peut changer (friendly/formel) selon contexte
+
+✅ Rends cet article SPÉCIFIQUE, UNIQUE et UTILE pour {NOM_DEPT}
+
+---
+
+📌 SOURCES & QUALITÉ :
+
+- Données basées sur DGFiP (taux officiels)
+- INSEE pour démographie et base locative
+- Article neutre, factuel, utile
+- Pas de conseils juridiques (informatif)
+- Prêt à publication immédiate
+
+---
+
+Génère CET ARTICLE maintenant, en HTML, optimisé SEO pour "{NOM_DEPT}".
+
+**IMPORTANT**: Cet article doit être **DIFFÉRENT** de tous les autres articles des 100 autres départements. Pas de template générique.
+
+Commence le HTML :

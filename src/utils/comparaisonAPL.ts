@@ -205,14 +205,20 @@ class ComparaisonAPL {
                       : ((c.apl - this.calculs[0].apl) / this.calculs[0].apl) *
                         100;
                   const showDiff = idx > 0 && this.calculs[0].apl > 0;
-                  
+
                   // 🟢 Correction 1: Message explicatif si APL = 0€
                   const isZero = c.apl === 0;
-                  const zeroMessage = isZero ? `<div class="text-xs text-amber-700 mt-2 leading-tight">ℹ️ Participation > loyer retenu CAF</div>` : '';
+                  const zeroMessage = isZero
+                    ? `<div class="text-xs text-amber-700 mt-2 leading-tight">ℹ️ Participation > loyer retenu CAF</div>`
+                    : "";
 
                   return `
                   <td class="p-3 text-center font-bold text-lg ${
-                    isMaxAPL ? "bg-green-100 text-green-900" : isZero ? "bg-amber-50 text-amber-800" : "text-gray-900"
+                    isMaxAPL
+                      ? "bg-green-100 text-green-900"
+                      : isZero
+                      ? "bg-amber-50 text-amber-800"
+                      : "text-gray-900"
                   } border-r border-gray-200">
                     <div>${formatCurrency(c.apl)}</div>
                     ${zeroMessage}
@@ -237,9 +243,15 @@ class ComparaisonAPL {
               ${this.calculs
                 .map((c) => {
                   // 🟢 Correction: Badge explicatif pour colocation + mention "hors HLM"
-                  const isColocation = c.typeLogement?.toLowerCase().includes('colocation') || c.typeLogement?.toLowerCase().includes('chambre');
-                  const displayType = isColocation ? `${c.typeLogement} <span class="text-xs text-gray-500">(hors HLM)</span>` : c.typeLogement;
-                  const badge = isColocation ? `<div class="text-xs text-purple-600 mt-1">⚠️ plafond CAF bas</div>` : '';
+                  const isColocation =
+                    c.typeLogement?.toLowerCase().includes("colocation") ||
+                    c.typeLogement?.toLowerCase().includes("chambre");
+                  const displayType = isColocation
+                    ? `${c.typeLogement} <span class="text-xs text-gray-500">(hors HLM)</span>`
+                    : c.typeLogement;
+                  const badge = isColocation
+                    ? `<div class="text-xs text-purple-600 mt-1">⚠️ plafond CAF bas</div>`
+                    : "";
                   return `<td class="p-3 text-center text-gray-700 text-sm border-r border-gray-200">
                     <div>${displayType}</div>
                     ${badge}
@@ -296,7 +308,9 @@ class ComparaisonAPL {
       </div>
 
       <!-- 🟢 1️⃣ Message explicatif conditionnel quand APL = 0€ -->
-      ${this.calculs.some(c => c.apl === 0) ? `
+      ${
+        this.calculs.some((c) => c.apl === 0)
+          ? `
       <div class="mt-4 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-500">
         <h4 class="font-bold text-amber-900 mb-2">ℹ️ Pourquoi certains scénarios affichent APL = 0 € ?</h4>
         <p class="text-sm text-amber-800 mb-2">
@@ -309,10 +323,18 @@ class ComparaisonAPL {
         </ul>
         <p class="text-xs text-amber-700 mt-2 italic">→ Cela ne signifie pas une erreur de calcul, mais reflète les règles CAF en vigueur.</p>
       </div>
-      ` : ''}
+      `
+          : ""
+      }
 
       <!-- 🟢 2️⃣ Avertissement spécifique colocation -->
-      ${this.calculs.some(c => c.typeLogement?.toLowerCase().includes('colocation') || c.typeLogement?.toLowerCase().includes('chambre')) ? `
+      ${
+        this.calculs.some(
+          (c) =>
+            c.typeLogement?.toLowerCase().includes("colocation") ||
+            c.typeLogement?.toLowerCase().includes("chambre")
+        )
+          ? `
       <div class="mt-4 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
         <h4 class="font-bold text-purple-900 mb-2">⚠️ Spécificité colocation / chambre meublée</h4>
         <p class="text-sm text-purple-800">
@@ -320,7 +342,9 @@ class ComparaisonAPL {
           Cela réduit fortement, voire annule l'APL même avec enfants à charge.
         </p>
       </div>
-      ` : ''}
+      `
+          : ""
+      }
 
       <!-- 🟢 3️⃣ Ce que montrent ces résultats (texte GPT) -->
       <div class="mt-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">

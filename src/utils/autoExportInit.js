@@ -129,7 +129,7 @@ function initAutoExport() {
       name: "Frais de Notaire",
       resultsId: "calculator-result",
       formId: "calculator-form",
-      notes: ["Calculs basés sur les barèmes officiels 2025."],
+      notes: ["Calcul basé sur les données officielles (CGI, Loi de finances 2025)."],
       type: "CalculatorFrame",
     },
     pret: {
@@ -149,7 +149,7 @@ function initAutoExport() {
       name: "Indemnités Kilométriques",
       resultsId: "calculator-result",
       formId: "calculator-form",
-      notes: ["Barèmes fiscaux officiels 2025."],
+      notes: ["Dernier barème fiscal connu (administration)."],
       type: "CalculatorFrame",
     },
     ponts: {
