@@ -99,12 +99,20 @@
       "standard": 0.0632,
       "neuf": 0.00715,
       "reduit": 0.0509,
-      "departementsReduits": [
-        "36",
-        "976"
-      ],
+      "departementsReduits": ["36", "976"],
       "departementsStandard": [
-        "05", "06", "07", "16", "26", "27", "48", "60", "65", "71", "971", "972"
+        "05",
+        "06",
+        "07",
+        "16",
+        "26",
+        "27",
+        "48",
+        "60",
+        "65",
+        "71",
+        "971",
+        "972"
       ],
       "commentaire": "Taux majoré 6,32% (art. 116 LF 2025) pour 87 départements, standard 5,80% pour 12 départements, réduit 5,09% pour 2 départements"
     },
@@ -113,11 +121,7 @@
       "ancien": {
         "taux_standard": 0.05,
         "departements_taux_reduit": {
-          "liste": [
-            "36",
-            "56",
-            "976"
-          ],
+          "liste": ["36", "56", "976"],
           "taux_total": 0.0509006
         },
         "overrides": {
@@ -444,10 +448,7 @@
       },
       "neuf": {
         "taux_estime": 0.007,
-        "fourchette": [
-          0.006,
-          0.008
-        ],
+        "fourchette": [0.006, 0.008],
         "commentaire": "Droits réduits applicables aux logements neufs ou assimilés (hors TVA)"
       }
     }
