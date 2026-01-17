@@ -38,6 +38,166 @@ function withArticle(html, transform) {
   return before + transform(article) + after;
 }
 
+// -----------------------------------------------------------------------------
+// 1. AVERTISSEMENT JURIDIQUE VISIBLE
+// -----------------------------------------------------------------------------
+const WARNING_HTML = `
+    <div class="mb-8 p-4 bg-orange-50 border-l-4 border-orange-500 rounded-r-lg">
+      <p class="text-sm text-orange-800 m-0">
+        <strong>⚠️ Avertissement :</strong> Les montants et pourcentages indiqués sur cette page sont fournis à titre purement informatif, sur la base des barèmes notariaux en vigueur. Ils ne constituent ni un devis, ni un conseil juridique. Seul un notaire est habilité à établir le montant définitif des frais lors de la signature de l’acte authentique.
+      </p>
+    </div>
+`;
+
+function injectWarning(articleHtml) {
+  if (articleHtml.includes("⚠️ Avertissement")) return articleHtml;
+  
+  const h2Regex = /<h2[^>]*>/i;
+  const match = articleHtml.match(h2Regex);
+  if (match) {
+    return articleHtml.replace(match[0], `${WARNING_HTML}\n${match[0]}`);
+  }
+  return WARNING_HTML + articleHtml;
+}
+
+// -----------------------------------------------------------------------------
+// 2. SUPPRESSION MONTANTS EXACTS -> OPTION A (SAFE)
+// -----------------------------------------------------------------------------
+function sanitizeAmountsOptionA(articleHtml) {
+  let out = articleHtml;
+
+  // 1. Montants en € dans les cellules de tableaux
+  out = out.replace(
+    /<td[^>]*class="[^"]*font-bold[^"]*text-(?:orange|blue)-600[^"]*"[^>]*>\s*(?:≈\s*)?[\d\s \u00a0]+(?:,\d+)?€\s*<\/td>/gi,
+    '<td class="px-6 py-4 font-bold text-blue-600">à estimer via le calculateur</td>'
+  );
+
+  // 2. Montants en € dans les textes
+  // On cible les montants > 100 € isolés
+  out = out.replace(
+    /\b(?:≈\s*)?(\d{1,3}(?:[\s ]\d{3})+)[\s ]*€\b/gi,
+    "montant calculé selon votre situation"
+  );
+  out = out.replace(/\b\d{1,3}\s+\d{3}\s*€\b/gi, "montant calculé selon votre situation");
+  // Cas avec décimales (ex: 9 788,15 €)
+  out = out.replace(/\b\d{1,3}(?:[\s ]\d{3})*(?:,\d{1,2})?\s*€\b/gi, "montant calculé selon votre situation");
+  
+  // 3. Montants spécifiques résiduels
+  out = out.replace(
+    /<strong>\s*[\d\s ]+(?:,\d+)?€\s*<\/strong>/gi,
+    "<strong>montant calculé selon votre situation</strong>"
+  );
+  // Cas spécifique Paris : ≈ 330 €
+  out = out.replace(/≈\s*330\s*€/gi, "montant calculé selon votre situation");
+  out = out.replace(/≈\s*220\s*€/gi, "montant calculé selon votre situation");
+  
+  // Cas spécifique 39 809 € (dans un span text-orange-600)
+  out = out.replace(
+    /<span class="font-bold text-orange-600">[\d\s ]+(?:,\d+)?€<\/span>/gi,
+    '<span class="font-bold text-orange-600">à estimer via le calculateur</span>'
+  );
+
+  // Nettoyage économies chiffrées
+  out = out.replace(
+    /Économie potentielle\s*:\s*<strong>[\d\s\u202f\u00a0-]+€<\/strong>/gi,
+    "Économie potentielle : <strong>variable selon le mobilier</strong>"
+  );
+
+  // Nettoyage placeholders
+  out = out.replace(/montant variable/gi, "montant calculé selon votre situation");
+  out = out.replace(/un taux variable/gi, "taux réglementé");
+
+  return out;
+}
+
+// -----------------------------------------------------------------------------
+// 3. NEUTRALISATION EXEMPLES CHIFFRÉS (OPTION A)
+// -----------------------------------------------------------------------------
+function sanitizeExamplesOptionA(articleHtml) {
+  let out = articleHtml;
+
+  // Remplace les blocs de détails chiffrés
+  out = out.replace(
+    /<span class="font-bold">\s*[\d\s ]+(?:,\d+)?€\s*<\/span>/gi,
+    '<span class="font-bold">à estimer via le calculateur</span>'
+  );
+  
+  // Mensualité (avec ou sans ≈)
+  out = out.replace(
+    /<span class="text-3xl font-bold text-blue-700">\s*(?:≈\s*)?[\d\s ]+(?:,\d+)?€\/mois\s*<\/span>/gi,
+    '<span class="text-3xl font-bold text-blue-700">variable selon taux</span>'
+  );
+
+  // Taux précis
+  out = out.replace(
+    /<span class="font-bold">\s*\d+[,\.]\d+\s*%\s*<\/span>/gi,
+    '<span class="font-bold">taux du marché</span>'
+  );
+
+  // Titre "Exemple chiffré" -> "Exemple pédagogique"
+  out = out.replace(
+    /📝 Exemple chiffré pour/gi,
+    "📝 Exemple de simulation pour"
+  );
+  
+  // Intro de l'exemple
+  out = out.replace(
+    /avec les caractéristiques suivantes\s*:/gi,
+    "pour comprendre les postes de dépenses :"
+  );
+
+  return out;
+}
+
+// -----------------------------------------------------------------------------
+// 4. HARMONISATION ET NETTOYAGE TEXTUEL
+// -----------------------------------------------------------------------------
+function normalizeTextAndPlaceholders(articleHtml) {
+  let out = articleHtml;
+
+  // Supprime les "≈" restants devant du texte
+  out = out.replace(/≈\s*à estimer/gi, "à estimer");
+  out = out.replace(/≈\s*montant/gi, "montant");
+
+  // Remplacement des pourcentages précis par fourchettes dans les textes
+  out = out.replace(/\b7[,.]\d+\s*%/gi, "environ 7 à 8 %");
+  out = out.replace(/\b2[,.]\d+\s*%/gi, "environ 2 à 3 %");
+  
+  // Cas Paris (8,22 etc)
+  out = out.replace(/\b8[,.]22\b/gi, "environ 7 à 8 %");
+  out = out.replace(/\b6[,.]3185\s*%/gi, "taux réglementé");
+  out = out.replace(/≈\s*6,3185\s*%/gi, "taux réglementé"); // spécifique Paris
+  out = out.replace(/≈\s*2,61\s*%/gi, "environ 2 à 3 %"); // spécifique Paris
+
+  // Nettoyage placeholders visibles
+  out = out.replace(/une activité variable/gi, "variable selon la période");
+  out = out.replace(/activité variable/gi, "variable selon la période");
+  out = out.replace(/médiane : variable/gi, "prix du marché");
+  
+  // Nettoyage résidus
+  out = out.replace(
+    /soit une économie de <strong>montant calculé selon votre situation<\/strong>/gi,
+    "soit une économie significative selon le prix du bien"
+  );
+  out = out.replace(
+    /peut dépasser montant calculé selon votre situation pour un bien de 200 000 €/gi,
+    "peut être significative selon le prix du bien"
+  );
+  
+  // Nettoyage résidu "montant calculé... d'écart"
+  out = out.replace(
+    /<strong>montant calculé selon votre situation<\/strong> d’écart/gi,
+    "<strong>un écart significatif</strong>"
+  );
+
+  // Tableaux : Taux des frais
+  out = out.replace(/<td[^>]*>\s*≈\s*7,87\s*<\/td>/gi, '<td class="px-6 py-4 text-gray-700">environ 7 à 8 %</td>');
+  out = out.replace(/<td[^>]*>\s*≈\s*2,29\s*<\/td>/gi, '<td class="px-6 py-4 text-gray-700">environ 2 à 3 %</td>');
+  out = out.replace(/<td[^>]*>\s*≈\s*2,61\s*<\/td>/gi, '<td class="px-6 py-4 text-gray-700">environ 2 à 3 %</td>');
+
+  return out;
+}
+
 function ensureSafeMetaDescription(html) {
   return html.replace(
     /Tableau comparatif ancien\/neuf,\s*exemples concrets et simulateur officiel gratuit\./gi,
@@ -45,121 +205,18 @@ function ensureSafeMetaDescription(html) {
   );
 }
 
-function normalizeFAQYear(html) {
-  return html.replace(
-    /(Frais de notaire\s+[^<"]+)\s+2025(\s*:\s*neuf\s+ou\s+ancien\s*\?)/gi,
-    "$1 2026$2"
-  );
-}
-
-function replaceFAQJsonLdPercentAnswers(html) {
-  return html.replace(
-    /"acceptedAnswer":\s*\{\s*"@type":\s*"Answer",\s*"text":\s*"[^"]*%[^"]*"\s*\}/g,
-    `"acceptedAnswer": {"@type": "Answer", "text": "Les frais de notaire varient selon le type de bien (ancien ou neuf) et les formalités. Utilisez le calculateur pour un montant exact et à jour."}`
-  );
-}
-
-function fixHighlightsWording(articleHtml, dep) {
-  const re = /(<div[^>]*id="dept-highlights"[^>]*>)([\s\S]*?)(<\/div>)/i;
-  const match = articleHtml.match(re);
-  if (!match) return articleHtml;
-  const inner = match[2];
-
-  let fixed = inner;
-  fixed = fixed.replace(
-    /Pour un achat immobilier en 2026 en\s+[^:<]+/gi,
-    "Pour un achat immobilier en France en 2026, les frais de notaire dépendent du type de bien et du département"
-  );
-  fixed = fixed.replace(
-    /En 2026, les frais de notaire y oscillent entre[\s\S]*?<\/strong>\s*\(ancien\)[^<]*,/gi,
-    "En 2026, les frais de notaire y représentent généralement environ <strong>2 à 3 %</strong> pour un bien <strong>neuf (VEFA)</strong> et environ <strong>7 à 8 %</strong> pour un bien <strong>ancien</strong>, selon la nature du bien et les formalités,"
-  );
-  fixed = fixed.replace(
-    /À\s+[^<]+?\s*\(\s*[^)]+\s*\),?\s*ils représentent généralement\s*:/gi,
-    `À ${dep.nom} (${dep.code}), ils représentent généralement :`
-  );
-  fixed = fixed.replace(/7[,.\s]*39%/gi, "7 à 8 %");
-  fixed = fixed.replace(/2[,.\s]*2%/gi, "2 à 3 %");
-
-  return articleHtml.replace(re, `$1${fixed}$3`);
-}
-
-function replaceEuroFiguresKeepStructure(articleHtml) {
-  let out = articleHtml;
-  out = out.replace(/[0-9][0-9\s\u202f\u00a0 ]*[,\.]?[0-9]*\s*M€/gi, "montant variable");
-  out = out.replace(/[0-9][0-9\s\u202f\u00a0 ]*[,\.]?[0-9]*\s*k€/gi, "montant variable");
-  out = out.replace(/[0-9][0-9\s\u202f\u00a0 ]*[,\.]?[0-9]*\s*€/gi, "montant variable");
-  return out;
-}
-
-function sanitizeContradictionsAndPrecisePercent(articleHtml) {
-  let out = articleHtml;
-  out = out.replace(/≈\s*7[,\.]\d{1,2}(?:&nbsp;)?\s*%?/gi, "≈ 7 à 8 %");
-  out = out.replace(/≈\s*2[,\.]\d{1,2}(?:&nbsp;)?\s*%?/gi, "≈ 2 à 3 %");
-  out = out.replace(/0[,.\s]*715\s*%/gi, "un taux variable");
-  out = out.replace(
-    /Entre\s*<strong>\s*4%\s*<\/strong>\s*\(neuf\)\s*et\s*<strong>\s*[0-9\s\u202f\u00a0,.]+%\s*<\/strong>\s*\(ancien\)/gi,
-    "Environ <strong>7 à 8 %</strong> (ancien) et <strong>2 à 3 %</strong> (neuf/VEFA)"
-  );
-  out = out.replace(
-    /<p class="mt-2 text-gray-700">Entre\s*<strong>\s*4%\s*<\/strong>\s*\(neuf\)[\s\S]*?<\/p>/gi,
-    `<p class="mt-2 text-gray-700">En 2026, les frais de notaire varient surtout selon le type de bien (ancien ou neuf) et les formalités. Pour un montant exact et à jour, utilisez le calculateur.</p>`
-  );
-  out = out.replace(
-    /En 2026,\s*ces frais représentent entre\s*<strong>\s*4%\s*et\s*[0-9\s\u202f\u00a0,.]+%\s*du prix d'achat\s*<\/strong>[\s\S]*?(?=<\/p>)/gi,
-    "En 2026, les frais de notaire varient principalement selon le type de bien (ancien ou neuf) et les formalités. Ils se situent généralement dans les fourchettes nationales observées"
-  );
-  out = out.replace(/\b7[,\.]\d{1,2}%/gi, "7 à 8 %");
-  out = out.replace(/\b2[,\.]\d{1,2}%/gi, "2 à 3 %");
-  out = out.replace(/\b\d+[,\.]\d{1,3}\s*%/gi, "un taux variable");
-  out = out.replace(/7[,.\s]*39%/gi, "7 à 8 %");
-  out = out.replace(/2[,.\s]*2%/gi, "2 à 3 %");
-  out = out.replace(/2[,.\s]*29%/gi, "2 à 3 %");
-  out = out.replace(/7[,.\s]*4%/gi, "7 à 8 %");
-  return out;
-}
-
-function sanitizeSavings(articleHtml) {
-  let out = articleHtml;
-  out = out.replace(
-    /jusqu['’]à\s*<strong>[\s\S]*?€\s*d['’]économie<\/strong>[\s\S]*?(?=<\/p>)/gi,
-    "une économie significative selon le prix du bien et les formalités applicables"
-  );
-  out = out.replace(
-    /Économie potentielle\s*:\s*<strong>[\s\S]*?<\/strong>/gi,
-    "Acheter certains meubles hors acte notarié peut réduire l’assiette des droits d’enregistrement, dans les limites prévues par la réglementation."
-  );
-  out = out.replace(/des milliers d['’]euros d['’]économie/gi, "une économie significative");
-  return out;
-}
-
-function sanitizeDvfAndPrices(articleHtml) {
-  let out = articleHtml;
-  out = out.replace(/\b\d+\s*(mutations|ventes)\/mois\b/gi, "une activité variable");
-  out = out.replace(/\bmédiane\s*:\s*[0-9\s\u202f\u00a0 ]+/gi, "médiane : variable");
-  return out;
-}
-
 function sanitizeOne(filePath) {
   const original = fs.readFileSync(filePath, "utf8");
-  const code = path
-    .basename(filePath)
-    .replace(/^frais-notaire-/, "")
-    .replace(/\.html$/, "");
-  const dep = extractDepInfo(original, code);
-
+  
   let html = original;
   html = ensureSafeMetaDescription(html);
-  html = normalizeFAQYear(html);
-  html = replaceFAQJsonLdPercentAnswers(html);
 
   html = withArticle(html, (article) => {
     let out = article;
-    out = fixHighlightsWording(out, dep);
-    out = sanitizeContradictionsAndPrecisePercent(out);
-    out = sanitizeSavings(out);
-    out = replaceEuroFiguresKeepStructure(out);
-    out = sanitizeDvfAndPrices(out);
+    out = injectWarning(out);
+    out = sanitizeAmountsOptionA(out);
+    out = sanitizeExamplesOptionA(out);
+    out = normalizeTextAndPlaceholders(out);
     return out;
   });
 
