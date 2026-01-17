@@ -44,17 +44,8 @@ function replaceRanges(content) {
  * (évite doublons), y compris anciens blocs en style border-l-4
  */
 function removeExistingHighlights(content) {
-  const line1 = /Frais de notaire\s+2025\s+en\s+Seine-Saint-Denis\s*\(93\)/i;
-  const line2 = /Frais de notaire\s+2025\s+en\s+Seine-et-Marne\s*\(77\)/i;
-  // Supprimer paragraphes contenant ces lignes
-  content = content.replace(new RegExp(`<p[\\s\\S]*?${line1.source}[\\s\\S]*?<\\/p>`, "gi"), "");
-  content = content.replace(new RegExp(`<p[\\s\\S]*?${line2.source}[\\s\\S]*?<\\/p>`, "gi"), "");
-  // Supprimer anciens blocs jaunes s'ils contiennent ces lignes
   content = content.replace(
-    new RegExp(
-      `<div[^>]*class="[^"]*bg-yellow-50[^"]*border[^"]*"[\\s\\S]*?(?:${line1.source}|${line2.source})[\\s\\S]*?<\\/div>`,
-      "gi"
-    ),
+    /<div[^>]*class="[^"]*bg-yellow-50[^"]*"[^>]*id="dept-highlights"[^>]*>[\s\S]*?<\/div>\s*/gi,
     ""
   );
   return content;
@@ -65,14 +56,11 @@ function removeExistingHighlights(content) {
  */
 function insertDeptHighlights(content) {
   if (content.includes("<!-- dept-highlights -->")) return content;
-  const has93 = /Frais de notaire\s+2025\s+en\s+Seine-Saint-Denis\s*\(93\)/i.test(content);
-  const has77 = /Frais de notaire\s+2025\s+en\s+Seine-et-Marne\s*\(77\)/i.test(content);
-  if (has93 || has77) return content;
+  if (/<div[^>]*id="dept-highlights"[^>]*>/i.test(content)) return content;
   const block =
     '\n<div class="mt-6 mb-8 bg-yellow-50 border-l-4 border-yellow-400 p-4 sm:p-5 rounded-r" id="dept-highlights">\n' +
     '<!-- dept-highlights -->\n' +
-    '<p class="text-sm sm:text-base text-gray-800 leading-relaxed"><strong>💰 Frais de notaire 2025 en Seine-Saint-Denis (93) : ≈ 16\u202f056 € pour 200\u202f000 € (ancien, droits ≈ 6,45%) • ≈ 4\u202f586 € pour 200\u202f000 € (neuf, droits ≈ 0,71%)</strong><br/><span class="text-xs sm:text-sm text-gray-600">Inclut droits, émoluments, formalités, CSI et TVA</span></p>\n' +
-    '<p class="text-sm sm:text-base text-gray-800 leading-relaxed"><strong>💰 Frais de notaire 2025 en Seine-et-Marne (77) : ≈ 14\u202f708 € pour 200\u202f000 € (ancien, droits ≈ 5,80%) • ≈ 4\u202f538 € pour 200\u202f000 € (neuf, droits ≈ 0,71%)</strong><br/><span class="text-xs sm:text-sm text-gray-600">Inclut droits, émoluments, formalités, CSI et TVA</span></p>\n' +
+    '<p class="text-sm sm:text-base text-gray-800 leading-relaxed"><strong>💰 Frais de notaire 2026 : repères rapides</strong><br/>Bien ancien : environ <strong>7–8 %</strong> • Bien neuf (VEFA) : environ <strong>2–3 %</strong>.<br/><span class="text-xs sm:text-sm text-gray-600">Pour un montant exact et à jour, utilisez le calculateur.</span></p>\n' +
     '</div>\n';
   // insertion après le premier <h1> si présent, sinon en haut du <main>
   const h1Match = content.match(/<h1[^>]*>[\s\S]*?<\/h1>/i);
@@ -97,6 +85,7 @@ function processFile(filePath) {
   const original = content;
   content = replaceRanges(content);
   content = replaceAtoEn(content);
+  content = removeExistingHighlights(content);
   content = insertDeptHighlights(content);
   if (content !== original) {
     fs.writeFileSync(filePath, content, "utf-8");
