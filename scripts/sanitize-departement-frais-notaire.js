@@ -151,7 +151,11 @@ function removeTarifsOfficielsBlock(html) {
   let out = html;
   out = out.replace(
     /<!--\s*Tarifs Officiels[\s\S]*?-->\s*<div[\s\S]*?<\/div>\s*(?=<!--\s*Hypothèses)/gi,
-    `<!-- Tarifs Officiels 2025-2026 -->\n<div class="mt-12 bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6"><h3 class="font-bold text-blue-900 mb-4">💼 Tarifs officiels</h3><p class="text-sm text-blue-900 m-0">Les barèmes (droits, émoluments, CSI, formalités) sont réglementés et peuvent évoluer. Pour un montant exact et à jour selon votre dossier, utilisez le calculateur et/ou consultez les sources officielles (notaires.fr, service-public.fr, impots.gouv.fr).</p></div>\n\n<!-- Hypothèses et Avertissements -->`
+    `<!-- Tarifs Officiels 2025-2026 -->\n<div class="mt-12 bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6"><h3 class="font-bold text-blue-900 mb-4">💼 Tarifs officiels</h3><p class="text-sm text-blue-900 m-0">Les barèmes (droits, émoluments, CSI, formalités) sont réglementés et peuvent évoluer. Pour un montant exact et à jour selon votre dossier, utilisez le calculateur et/ou consultez les sources officielles (notaires.fr, service-public.fr, impots.gouv.fr).</p></div>\n\n`
+  );
+  out = out.replace(
+    /(<!--\s*Hypothèses et Avertissements\s*-->[\s\r\n]*){2,}/gi,
+    "<!-- Hypothèses et Avertissements -->\n"
   );
   out = out.replace(
     /Droits réduits VEFA\s*\([\s\S]*?%\s*pour acquisitions de biens neufs\)\.[^<]*<\/p>/gi,
