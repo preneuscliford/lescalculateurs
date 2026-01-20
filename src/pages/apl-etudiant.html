@@ -3,40 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculateur ASF 2026 — Allocation Soutien Familial (gratuit)</title>
+    <title>
+      Calculateur APL Étudiant 2026 — Allocation Logement Étudiant (gratuit)
+    </title>
     <meta
       name="description"
-      content="Estimez votre ASF 2026 (Allocation de Soutien Familial). Calculateur gratuit pour parents isolés. Simulation en 1 minute sans compte."
+      content="Estimez votre APL étudiant 2026. Calculateur gratuit pour étudiants et jeunes actifs. Simulation en 1 minute sans création de compte."
     />
     <meta
       name="keywords"
-      content="ASF, allocation soutien familial, parent isolé, aide enfant, soutien familial 2026, CAF, allocation monoparental"
+      content="APL étudiant, APL jeune, allocation logement étudiant, calculateur APL, simulation logement, aide au logement 2026, CAF"
     />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
     <!-- SEO & Social -->
-    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/asf" />
+    <link
+      rel="canonical"
+      href="https://www.lescalculateurs.fr/pages/apl-etudiant"
+    />
     <meta
       property="og:url"
-      content="https://www.lescalculateurs.fr/pages/asf"
+      content="https://www.lescalculateurs.fr/pages/apl-etudiant"
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Calculateur ASF 2026 — Allocation Soutien Familial"
-    />
+    <meta property="og:title" content="Calculateur APL Étudiant 2026" />
     <meta
       property="og:description"
-      content="Estimez votre ASF gratuitement en 1 minute"
+      content="Estimez votre APL étudiant gratuitement en 1 minute"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Calculateur ASF 2026 — Allocation Soutien Familial"
-    />
+    <meta name="twitter:title" content="Calculateur APL Étudiant 2026" />
     <meta
       name="twitter:description"
-      content="Estimez votre ASF gratuitement en 1 minute"
+      content="Estimez votre APL étudiant gratuitement en 1 minute"
     />
 
     <!-- Favicon -->
@@ -97,7 +96,7 @@
     </script>
 
     <link rel="stylesheet" href="../tailwind.css" />
-    <script type="module" src="./scripts/asf-script.ts"></script>
+    <script type="module" src="./scripts/apl-etudiant-script.ts"></script>
   </head>
 
   <body class="bg-gray-50">
@@ -111,8 +110,8 @@
         </a>
         <div class="space-x-4">
           <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
-          <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
           <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">APL</a>
+          <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
           <a href="/pages/aah" class="text-gray-600 hover:text-blue-600">AAH</a>
         </div>
       </div>
@@ -120,26 +119,26 @@
 
     <!-- Hero Section -->
     <section
-      class="bg-gradient-to-r from-pink-600 to-pink-700 text-white py-12"
+      class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12"
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-4">
-          👉 Calculateur ASF 2026 — Estimation gratuite et immédiate
+          👉 APL Étudiant 2026 — Estimation gratuite en 1 minute
         </h1>
-        <p class="text-xl text-pink-100 mb-6">
-          Allocation de Soutien Familial pour parents isolés et orphelins.
+        <p class="text-xl text-blue-100 mb-6">
+          Calculez votre aide au logement étudiant ou jeune actif.
           <br />Résultat indicatif, sans engagement de la CAF.
         </p>
         <button
-          id="asf-scroll-to-form"
+          id="apl-etudiant-scroll-to-form"
           class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
         >
-          🟢 Lancer la simulation ASF
+          🟢 Lancer la simulation APL
         </button>
-        <div class="mt-6 bg-pink-900 bg-opacity-50 p-4 rounded-lg inline-block">
+        <div class="mt-6 bg-blue-900 bg-opacity-50 p-4 rounded-lg inline-block">
           <p class="text-sm">
-            ⚠️ Résultat pédagogique basé sur les montants 2026.
-            <br />La CAF est seule décisionnaire du droit et montant.
+            ⚠️ Résultat indicatif basé sur les montants 2026.
+            <br />La CAF reste seule décisionnaire.
           </p>
         </div>
       </div>
@@ -147,119 +146,127 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <!-- Qu'est-ce que l'ASF -->
+      <!-- Qu'est-ce que l'APL étudiant -->
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          📘 Qu'est-ce que l'ASF ?
+          📘 Qu'est-ce que l'APL Étudiant ?
         </h2>
         <p class="text-gray-600 mb-4">
-          L'ASF (Allocation de Soutien Familial) est une aide financière
-          destinée aux parents isolés ayant la charge d'enfants, et aux enfants
-          orphelins.
+          L'APL (Allocation Personnalisée au Logement) étudiant est une aide
+          financière accordée par la CAF pour réduire vos dépenses de logement.
         </p>
         <p class="text-gray-600 mb-6">
-          Elle vise à sécuriser les revenus des familles monoparentales et à
-          supporter les enfants sans parents.
+          Elle s'adresse aux étudiants et jeunes actifs ayant des ressources
+          limitées.
         </p>
         <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
-          <li>vous êtes parent seul(e) avec enfant(s) à charge</li>
-          <li>
-            vous assumez seul(e) la charge effective et permanente d'un ou
-            plusieurs enfants
-          </li>
-          <li>ou vous êtes enfant orphelin</li>
+          <li>Vous êtes étudiant ou jeune salarié</li>
+          <li>Vous disposez d'un logement indépendant</li>
+          <li>Vous avez des revenus modestes</li>
         </ul>
-        <p class="text-pink-600 font-semibold">
-          👉 Estimez votre montant d'ASF ci-dessous.
+        <p class="text-blue-600 font-semibold">
+          👉 Estimez votre montant d'APL ci-dessous.
         </p>
       </section>
 
       <!-- Ce que calcule le simulateur -->
-      <section class="mb-12 bg-pink-50 p-6 rounded-lg">
+      <section class="mb-12 bg-blue-50 p-6 rounded-lg">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
           🧾 Que permet cette simulation ?
         </h2>
         <ul class="list-disc list-inside space-y-3 text-gray-700">
-          <li>vérifier votre éligibilité à l'ASF</li>
-          <li>obtenir une estimation du montant mensuel par enfant</li>
-          <li>comprendre l'impact de votre situation familiale</li>
+          <li>vérifier votre éligibilité à l'APL étudiant</li>
+          <li>obtenir une estimation du montant mensuel</li>
+          <li>comprendre comment vos revenus et loyer impactent l'aide</li>
         </ul>
         <p class="text-sm text-gray-600 mt-6">
-          💡 Résultat pédagogique. La CAF effectuera l'étude complète de votre
-          dossier.
+          💡 Résultat pédagogique et indicatif seulement.
         </p>
       </section>
 
-      <!-- Calculateur ASF -->
+      <!-- Calculateur APL Étudiant -->
       <section class="mb-12">
-        <div id="asf-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+        <div
+          id="apl-etudiant-calculator"
+          class="bg-white p-8 rounded-lg shadow-lg"
+        >
           <h2 class="text-2xl font-bold text-gray-800 mb-6">
-            🧮 Calculer mon ASF
+            🧮 Calculer mon APL étudiant
           </h2>
 
-          <form id="asf-form" class="space-y-6">
-            <!-- Situation familiale -->
+          <form id="apl-etudiant-form" class="space-y-6">
+            <!-- Situation -->
             <div>
               <label
-                for="asf-situation"
+                for="apl-etudiant-situation"
                 class="block text-gray-700 font-semibold mb-2"
               >
                 Situation familiale *
               </label>
               <select
-                id="asf-situation"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                id="apl-etudiant-situation"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               >
                 <option value="">-- Sélectionnez --</option>
-                <option value="parentisole">Parent isolé avec enfant(s)</option>
-                <option value="orphelin">Enfant orphelin</option>
-                <option value="depourvu">
-                  Enfant privé de soutien familial
-                </option>
+                <option value="seul">Célibataire / Seul</option>
+                <option value="couple">En couple</option>
+                <option value="parent">Parent monoparental</option>
               </select>
             </div>
 
-            <!-- Nombre d'enfants -->
+            <!-- Loyer -->
             <div>
               <label
-                for="asf-enfants"
+                for="apl-etudiant-charges"
                 class="block text-gray-700 font-semibold mb-2"
               >
-                Nombre d'enfants à charge (moins de 21 ans) *
+                Montant du loyer mensuel (€) *
               </label>
               <input
                 type="number"
-                id="asf-enfants"
-                min="1"
-                max="10"
-                placeholder="Nombre d'enfants"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                id="apl-etudiant-charges"
+                min="0"
+                placeholder="Loyer de votre logement"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
 
-            <!-- Revenus mensuels -->
+            <!-- Revenus -->
             <div>
               <label
-                for="asf-revenus"
+                for="apl-etudiant-revenus"
                 class="block text-gray-700 font-semibold mb-2"
               >
                 Revenus mensuels du foyer (€) *
               </label>
               <input
                 type="number"
-                id="asf-revenus"
+                id="apl-etudiant-revenus"
                 min="0"
-                placeholder="Salaires, allocations, pensions..."
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                placeholder="Salaires, bourses, allocations..."
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
-              <p class="text-xs text-gray-500 mt-2">
-                💡 Les ressources ne conditionnent pas l'éligibilité à l'ASF.
-                Elles peuvent être demandées par la CAF dans le cadre de l'étude
-                globale du dossier.
-              </p>
+            </div>
+
+            <!-- Enfants -->
+            <div>
+              <label
+                for="apl-etudiant-enfants"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Nombre d'enfants à charge
+              </label>
+              <input
+                type="number"
+                id="apl-etudiant-enfants"
+                min="0"
+                max="5"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
             </div>
 
             <!-- Bouton Calculer -->
@@ -267,104 +274,85 @@
               type="submit"
               class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
             >
-              🟢 Calculer mon ASF
+              🟢 Calculer mon APL
             </button>
           </form>
 
           <!-- Résultat -->
           <div
-            id="asf-result"
-            class="hidden mt-8 p-6 bg-pink-50 border-2 border-pink-500 rounded-lg"
+            id="apl-etudiant-result"
+            class="hidden mt-8 p-6 bg-blue-50 border-2 border-blue-500 rounded-lg"
           >
-            <h3 class="text-2xl font-bold text-pink-700 mb-4">
-              📊 Estimation de votre ASF
+            <h3 class="text-2xl font-bold text-blue-700 mb-4">
+              📊 Estimation de votre APL étudiant
             </h3>
-            <div id="asf-result-content" class="space-y-4">
+            <div id="apl-etudiant-result-content" class="space-y-4">
               <div class="text-center">
                 <p class="text-gray-600 mb-2">Montant mensuel estimé :</p>
-                <p class="text-4xl font-bold text-pink-600" id="asf-montant">
+                <p
+                  class="text-4xl font-bold text-blue-600"
+                  id="apl-etudiant-montant"
+                >
                   ---
                 </p>
               </div>
-              <div class="bg-white p-4 rounded border-l-4 border-pink-500">
-                <p id="asf-explication" class="text-gray-700"></p>
+              <div class="bg-white p-4 rounded border-l-4 border-blue-500">
+                <p id="apl-etudiant-explication" class="text-gray-700"></p>
               </div>
               <p class="text-xs text-gray-500 italic">
-                💡 Résultat pédagogique. Consultez la CAF pour une demande
-                réelle.
+                💡 Résultat pédagogique. Consultez la CAF pour les demandes
+                réelles.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Exemple pédagogique -->
-      <section class="mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          📝 Exemple indicatif
-        </h2>
-        <blockquote
-          class="border-l-4 border-pink-500 pl-6 py-4 bg-gray-50 rounded"
-        >
-          <p class="text-gray-700 mb-2">
-            <strong
-              >Parent isolé avec 2 enfants à charge, revenus faibles.</strong
-            >
-          </p>
-          <p class="text-gray-700">
-            L'ASF pourrait représenter 176.50€ par enfant (montant 2026), ajusté
-            selon vos ressources.
-          </p>
-        </blockquote>
-      </section>
-
       <!-- FAQ -->
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          ❓ Questions fréquentes sur l'ASF
+          ❓ Questions fréquentes — APL Étudiant
         </h2>
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer">
-              Qui peut bénéficier de l'ASF ?
+              Qui peut bénéficier de l'APL étudiant ?
             </summary>
             <p class="mt-3 text-gray-600 text-sm">
-              Les parents isolés avec enfant(s) de moins de 21 ans à charge, les
-              enfants orphelins ou les enfants privés du soutien familial de
-              leurs parents.
+              Les étudiants de moins de 30 ans (généralement), les apprentis, et
+              les jeunes actifs ayant un logement indépendant et des revenus
+              modestes.
             </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer">
-              ASF et RSA : peuvent-ils se cumuler ?
+              APL étudiant et bourses : cumul possible ?
             </summary>
             <p class="mt-3 text-gray-600 text-sm">
-              Oui, l'ASF peut se cumuler avec le RSA. Il faut cependant que les
-              conditions d'éligibilité à chacun soient remplies. Consultez la
-              CAF pour votre situation.
+              Oui, les bourses d'études ne sont généralement pas déduites du
+              calcul de l'APL. Consultez la CAF pour confirmation.
             </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer">
-              Quel est le montant par enfant ?
+              APL et colocation : comment ça marche ?
             </summary>
             <p class="mt-3 text-gray-600 text-sm">
-              Le montant dépend de votre situation et vos ressources. L'ASF peut
-              couvrir partiellement ou entièrement un montant forfaitaire par
-              enfant fixé par la CAF (environ 176€ en 2026).
+              En colocation, chaque colocataire peut demander l'APL. Le loyer
+              pris en compte est votre part. Consultez la CAF de votre région.
             </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer">
-              Comment demander l'ASF ?
+              Comment faire la demande d'APL ?
             </summary>
             <p class="mt-3 text-gray-600 text-sm">
-              Contactez la CAF de votre département ou rendez-vous en ligne sur
-              le site de la CAF pour demander l'Allocation de Soutien Familial.
-              Des documents justificatifs seront requis.
+              Rendez-vous sur le site de la CAF de votre département, ou
+              présentez-vous directement pour demander les formulaires. Une
+              attestation de loyer du propriétaire est généralement requise.
             </p>
           </details>
         </div>
@@ -372,32 +360,32 @@
 
       <!-- Simulations associées -->
       <section
-        class="mb-12 bg-gradient-to-r from-pink-50 to-red-50 p-6 rounded-lg"
+        class="mb-12 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg"
       >
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
           🔗 Autres aides sociales
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <a
+            href="/pages/apl"
+            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-blue-600">🏠 APL Standard</p>
+            <p class="text-sm text-gray-600 mt-1">Pour tous les logements</p>
+          </a>
+          <a
             href="/pages/rsa"
             class="bg-white p-4 rounded-lg border-2 border-purple-500 hover:shadow-lg transition-shadow"
           >
             <p class="font-semibold text-purple-600">💜 RSA</p>
-            <p class="text-sm text-gray-600 mt-1">Revenu minimum mensuel</p>
-          </a>
-          <a
-            href="/pages/apl"
-            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
-          >
-            <p class="font-semibold text-blue-600">🏠 APL</p>
-            <p class="text-sm text-gray-600 mt-1">Aide au logement</p>
+            <p class="text-sm text-gray-600 mt-1">Revenu minimum</p>
           </a>
           <a
             href="/pages/prime-activite"
             class="bg-white p-4 rounded-lg border-2 border-green-500 hover:shadow-lg transition-shadow"
           >
             <p class="font-semibold text-green-600">💼 Prime d'activité</p>
-            <p class="text-sm text-gray-600 mt-1">Complément de salaire</p>
+            <p class="text-sm text-gray-600 mt-1">Complément de revenus</p>
           </a>
           <a
             href="/pages/aah"
@@ -414,11 +402,13 @@
             <p class="text-sm text-gray-600 mt-1">Allocation Retour Emploi</p>
           </a>
           <a
-            href="/pages/apl-etudiant"
-            class="bg-white p-4 rounded-lg border-2 border-indigo-500 hover:shadow-lg transition-shadow"
+            href="/pages/asf"
+            class="bg-white p-4 rounded-lg border-2 border-pink-500 hover:shadow-lg transition-shadow"
           >
-            <p class="font-semibold text-indigo-600">🎓 APL Étudiant</p>
-            <p class="text-sm text-gray-600 mt-1">Pour les étudiants</p>
+            <p class="font-semibold text-pink-600">👨‍👩‍👧 ASF</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Allocation Soutien Familial
+            </p>
           </a>
         </div>
       </section>
