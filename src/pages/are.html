@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Calculateur ARE 2026 — Allocation Retour Emploi / Chômage (gratuit)
+    </title>
+    <meta
+      name="description"
+      content="Estimez vos allocations chômage (ARE) 2026. Calculateur gratuit pour les demandeurs d'emploi. France Travail - Simulation en 1 minute."
+    />
+    <meta
+      name="keywords"
+      content="ARE, allocation retour emploi, chômage 2026, allocations France Travail, simulateur ARE, allocation demandeur emploi, Pôle Emploi"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/are" />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/are"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Calculateur ARE 2026 — Allocation Chômage"
+    />
+    <meta
+      property="og:description"
+      content="Estimez vos allocations chômage (ARE) gratuitement en 1 minute"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Calculateur ARE 2026 — Allocation Chômage"
+    />
+    <meta
+      name="twitter:description"
+      content="Estimez vos allocations chômage (ARE) gratuitement en 1 minute"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/site.webmanifest" />
+
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TPFZCGX5");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-2HNTGCYQ1X");
+    </script>
+
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/are-script.ts"></script>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div
+        class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="font-bold text-lg text-blue-600">
+          🧮 Les Calculateurs
+        </a>
+        <div class="space-x-4">
+          <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+          <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
+          <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">APL</a>
+          <a href="/pages/aah" class="text-gray-600 hover:text-blue-600">AAH</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-orange-600 to-orange-700 text-white py-12"
+    >
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">
+          👉 Calculateur ARE 2026 — Estimation gratuite et immédiate
+        </h1>
+        <p class="text-xl text-orange-100 mb-6">
+          Estimez vos allocations chômage selon les règles générales de France Travail en vigueur.
+          <br />Résultat pédagogique, sans engagement de France Travail.
+        </p>
+        <button
+          id="are-scroll-to-form"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+        >
+          🟢 Lancer la simulation ARE
+        </button>
+        <div
+          class="mt-6 bg-orange-900 bg-opacity-50 p-4 rounded-lg inline-block"
+        >
+          <p class="text-sm">
+            ⚠️ Résultat pédagogique basé sur les taux 2026.
+            <br />France Travail est seul décisionnaire du droit et montant.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <!-- Qu'est-ce que l'ARE -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📘 Qu'est-ce que l'ARE ?
+        </h2>
+        <p class="text-gray-600 mb-4">
+          L'ARE (Allocation de Retour à l'Emploi) est une indemnisation versée
+          par France Travail aux demandeurs d'emploi ayant cotisé via une
+          activité antérieure.
+        </p>
+        <p class="text-gray-600 mb-6">
+          L'ARE dépend de votre ancien salaire et de votre ancienneté
+          professionnelle.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Le montant de l'ARE est calculé à partir du salaire journalier de référence (SJR), établi par France Travail à partir de vos anciens salaires.
+        </p>
+        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+          <li>votre ancienneté d'emploi (minimum 4 mois en 28 mois)</li>
+          <li>votre salaire antérieur</li>
+          <li>votre âge</li>
+          <li>votre situation familiale</li>
+        </ul>
+        <p class="text-orange-600 font-semibold">
+          👉 Estimez votre allocation ci-dessous.
+        </p>
+      </section>
+
+      <!-- Ce que calcule le simulateur -->
+      <section class="mb-12 bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🧾 Que permet cette simulation ?
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-gray-700">
+          <li>vérifier votre éligibilité à l'ARE</li>
+          <li>obtenir un ordre de grandeur du montant mensuel</li>
+          <li>estimer la durée maximale d'indemnisation</li>
+        </ul>
+        <p class="text-sm text-gray-600 mt-6">
+          💡 Résultat pédagogique. France Travail effectuera le calcul précis
+          sur votre dossier.
+        </p>
+      </section>
+
+      <!-- Calculateur ARE -->
+      <section class="mb-12">
+        <div id="are-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            🧮 Calculer mon ARE
+          </h2>
+
+          <form id="are-form" class="space-y-6">
+            <!-- Situation familiale -->
+            <div>
+              <label
+                for="are-situation"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Situation familiale *
+              </label>
+              <select
+                id="are-situation"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="seul">Célibataire / Seul</option>
+                <option value="couple">En couple</option>
+                <option value="parent">Parent monoparental</option>
+              </select>
+            </div>
+
+            <!-- Âge -->
+            <div>
+              <label
+                for="are-age"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Votre âge *
+              </label>
+              <input
+                type="number"
+                id="are-age"
+                min="18"
+                max="75"
+                value="35"
+                placeholder="Votre âge"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+
+            <!-- Ancienneté d'emploi -->
+            <div>
+              <label
+                for="are-anciennete"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Ancienneté d'emploi (mois dans les 28 derniers mois) *
+              </label>
+              <input
+                type="number"
+                id="are-anciennete"
+                min="0"
+                max="28"
+                placeholder="Nombre de mois travaillés"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+
+            <!-- Salaire de référence -->
+            <div>
+              <label
+                for="are-salaire"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Salaire mensuel de référence (€) *
+              </label>
+              <input
+                type="number"
+                id="are-salaire"
+                min="0"
+                placeholder="Salaire mensuel brut"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+
+            <!-- Enfants à charge -->
+            <div>
+              <label
+                for="are-enfants"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Enfants à charge
+              </label>
+              <input
+                type="number"
+                id="are-enfants"
+                min="0"
+                max="5"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+
+            <!-- Bouton Calculer -->
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer mon ARE
+            </button>
+          </form>
+
+          <!-- Résultat -->
+          <div
+            id="are-result"
+            class="hidden mt-8 p-6 bg-orange-50 border-2 border-orange-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-orange-700 mb-4">
+              📊 Estimation de vos allocations chômage
+            </h3>
+            <div id="are-result-content" class="space-y-4">
+              <div class="text-center bg-white p-4 rounded">
+                <p class="text-gray-600 mb-2">Montant mensuel estimé :</p>
+                <p class="text-3xl font-bold text-orange-600" id="are-montant">
+                  ---
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-orange-500">
+                <p id="are-explication" class="text-gray-700"></p>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 Résultat pédagogique. France Travail vous confirmera le
+                montant exact et la durée d'indemnisation lors de l'étude de
+                votre dossier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          ❓ Questions fréquentes — Allocations chômage
+        </h2>
+        <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Qui peut bénéficier de l'ARE ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Toute personne involontairement privée d'emploi, ayant cotisé via
+              une activité antérieure (minimum 4 mois en 28 mois), et qui
+              cherche activement un emploi.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Quelle est la durée maximale de l'ARE ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              La durée d'indemnisation varie selon votre âge, votre durée d'activité antérieure, les différés d'indemnisation (congés payés, indemnités) et les règles en vigueur au moment de l'ouverture de vos droits. Seul France Travail peut déterminer votre durée d'indemnisation précise lors de l'étude de votre dossier.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              ARE et travail partagé : incompatible ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Non, vous pouvez cumuler l'ARE avec une activité réduite (travail
+              à temps partiel). La part de salaire est déduite de l'indemnité.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Comment m'inscrire à France Travail ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Inscrivez-vous sur le site de France Travail (francetravail.fr)
+              dès votre perte d'emploi. Vous pourrez aussi vous présenter en
+              agence pour faire votre demande d'ARE.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Simulations associées -->
+      <section
+        class="mb-12 bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🔗 Autres simulations de revenus
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a
+            href="/pages/rsa"
+            class="bg-white p-4 rounded-lg border-2 border-purple-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-purple-600">💜 RSA</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Revenu de solidarité active
+            </p>
+          </a>
+          <a
+            href="/pages/apl"
+            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-blue-600">🏠 APL</p>
+            <p class="text-sm text-gray-600 mt-1">Aide au logement</p>
+          </a>
+          <a
+            href="/pages/aah"
+            class="bg-white p-4 rounded-lg border-2 border-pink-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-pink-600">🦾 AAH</p>
+            <p class="text-sm text-gray-600 mt-1">Allocation handicap</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Références -->
+      <section class="mt-12">
+        <p class="text-gray-600">
+          <strong>Sources officielles :</strong>
+          <a
+            href="https://www.francetravail.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            francetravail.fr
+          </a>
+          •
+          <a
+            href="https://www.service-public.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            service-public.fr
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">
+          © 2026 Les Calculateurs — Simulateurs gratuits français
+        </p>
+        <p class="text-gray-400">
+          Tous les calculs sont indicatifs. Consultez les organismes officiels
+          pour les demandes réelles.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
