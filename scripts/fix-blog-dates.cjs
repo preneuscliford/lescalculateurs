@@ -19,9 +19,9 @@ fs.writeFileSync(
 );
 console.log("✓ frais-notaire-departements.html corrigé");
 
-// Corriger frais-notaire-ancien-neuf-2025.html
+// Corriger frais-notaire-ancien-neuf-2026.html
 html = fs.readFileSync(
-  "src/pages/blog/frais-notaire-ancien-neuf-2025.html",
+  "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
   "utf8",
 );
 html = html.replace(
@@ -33,10 +33,10 @@ html = html.replace(
   '<time datetime="2026-01-16">16 janvier 2026</time>',
 );
 fs.writeFileSync(
-  "src/pages/blog/frais-notaire-ancien-neuf-2025.html",
+  "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
   html,
   "utf8",
 );
-console.log("✓ frais-notaire-ancien-neuf-2025.html corrigé");
+console.log("✓ frais-notaire-ancien-neuf-2026.html corrigé");
 
 console.log("\n✓ Toutes les dates blog corrigées");

@@ -15,7 +15,7 @@ const notairePages = [
   "src/pages/methodologie.html",
   "src/pages/sources.html",
   "src/pages/blog/frais-notaire-departements.html",
-  "src/pages/blog/frais-notaire-ancien-neuf-2025.html",
+  "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
 ];
 
 // Pages de départements

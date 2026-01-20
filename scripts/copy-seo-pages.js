@@ -24,16 +24,17 @@ try {
   const assetFiles = fs.readdirSync(assetsDir);
   const cssFile = assetFiles.find(
     (f) =>
-      (f.startsWith("main-") || f.startsWith("tailwind-")) && f.endsWith(".css")
+      (f.startsWith("main-") || f.startsWith("tailwind-")) &&
+      f.endsWith(".css"),
   );
   const jsFile = assetFiles.find(
-    (f) => f.startsWith("main-") && f.endsWith(".js")
+    (f) => f.startsWith("main-") && f.endsWith(".js"),
   );
   const calculatorFrameJs = assetFiles.find(
-    (f) => f.startsWith("CalculatorFrame-") && f.endsWith(".js")
+    (f) => f.startsWith("CalculatorFrame-") && f.endsWith(".js"),
   );
   const baremesJs = assetFiles.find(
-    (f) => f.startsWith("baremes-") && f.endsWith(".js")
+    (f) => f.startsWith("baremes-") && f.endsWith(".js"),
   );
 
   if (!cssFile || !jsFile) {
@@ -43,7 +44,7 @@ try {
 
   if (!calculatorFrameJs || !baremesJs) {
     console.warn(
-      "⚠️ Chunks CalculatorFrame ou baremes introuvables, les imports dynamiques ne seront pas réécrits."
+      "⚠️ Chunks CalculatorFrame ou baremes introuvables, les imports dynamiques ne seront pas réécrits.",
     );
   }
 
@@ -81,26 +82,26 @@ try {
       // Remplacer les imports de développement (main.ts) par les bundles hashés
       htmlContent = htmlContent.replace(
         /<script[^>]*type="module"[^>]*src="[^"]*main\.ts"[^>]*><\/script>/g,
-        `<script type="module" crossorigin src="../../../assets/${jsFile}"></script>`
+        `<script type="module" crossorigin src="../../../assets/${jsFile}"></script>`,
       );
 
       // Réécrire les imports dynamiques inline du mini-calculateur vers les chunks dist
       if (calculatorFrameJs) {
         htmlContent = htmlContent.replace(
           /import\("\.\.\/\.\.\/\.\.\/components\/CalculatorFrame\.ts"\)/g,
-          `import("../../../assets/${calculatorFrameJs}")`
+          `import("../../../assets/${calculatorFrameJs}")`,
         );
       }
       if (baremesJs) {
         htmlContent = htmlContent.replace(
           /import\("\.\.\/\.\.\/\.\.\/data\/baremes\.ts"\)/g,
-          `import("../../../assets/${baremesJs}")`
+          `import("../../../assets/${baremesJs}")`,
         );
       }
       // Réécrire import de main.ts si présent dans les scripts inline
       htmlContent = htmlContent.replace(
         /import\("\.\.\/\.\.\/\.\.\/main\.ts"\)/g,
-        `import("../../../assets/${jsFile}")`
+        `import("../../../assets/${jsFile}")`,
       );
 
       // Remplacer la destructuration fragile par une résolution robuste des exports minifiés
@@ -113,7 +114,7 @@ try {
             `const formatCurrency = mainMod.formatCurrency || mainMod.f || ((amount) => new Intl.NumberFormat(\"fr-FR\", { style: \"currency\", currency: \"EUR\" }).format(amount));\n` +
             `const baremes = dataMod.baremes || dataMod.b || dataMod.default;`
           );
-        }
+        },
       );
 
       // Remplacer les chemins CSS/JS absolus par des chemins relatifs corrects
@@ -121,21 +122,21 @@ try {
       // (pages départementales sont dans dist/pages/blog/departements/)
       htmlContent = htmlContent.replace(
         /href="\/assets\/main-[^"]+\.css"/g,
-        `href="../../../assets/${cssFile}"`
+        `href="../../../assets/${cssFile}"`,
       );
       htmlContent = htmlContent.replace(
         /src="\/assets\/main-[^"]+\.js"/g,
-        `src="../../../assets/${jsFile}"`
+        `src="../../../assets/${jsFile}"`,
       );
 
       // Au cas où il y aurait déjà des chemins relatifs
       htmlContent = htmlContent.replace(
         /href="\.\.\/\.\.\/\.\.\/assets\/main-[^"]+\.css"/g,
-        `href="../../../assets/${cssFile}"`
+        `href="../../../assets/${cssFile}"`,
       );
       htmlContent = htmlContent.replace(
         /src="\.\.\/\.\.\/\.\.\/assets\/main-[^"]+\.js"/g,
-        `src="../../../assets/${jsFile}"`
+        `src="../../../assets/${jsFile}"`,
       );
 
       // S'assurer que la feuille de style est injectée si absente
@@ -143,8 +144,8 @@ try {
         htmlContent = htmlContent.replace(/<head>([\s\S]*?)<\/head>/, (m) =>
           m.replace(
             /<\/head>/,
-            `    <link rel="stylesheet" crossorigin href="../../../assets/${cssFile}">\n  </head>`
-          )
+            `    <link rel="stylesheet" crossorigin href="../../../assets/${cssFile}">\n  </head>`,
+          ),
         );
       }
 
@@ -159,23 +160,23 @@ try {
           .replace(
             new RegExp(
               `href=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.css\"`,
-              "g"
+              "g",
             ),
-            `href=\"../../assets/${cssFile}\"`
+            `href=\"../../assets/${cssFile}\"`,
           )
           .replace(
             new RegExp(
               `src=\"\.\.\/\.\.\/\.\.\/assets\/main-[^\"]+\\.js\"`,
-              "g"
+              "g",
             ),
-            `src=\"../../assets/${jsFile}\"`
+            `src=\"../../assets/${jsFile}\"`,
           )
           .replace(
             new RegExp(
               `<link rel=\"stylesheet\" crossorigin href=\"\.\.\/\.\.\/\.\.\/assets\/[^\"]+\\.css\">`,
-              "g"
+              "g",
             ),
-            `<link rel=\"stylesheet\" crossorigin href=\"../../assets/${cssFile}\">`
+            `<link rel=\"stylesheet\" crossorigin href=\"../../assets/${cssFile}\">`,
           );
 
         const legacyPath = path.join(legacyBlogDir, file);
@@ -183,7 +184,7 @@ try {
         console.log(`   ↳ Dupliqué: ${legacyPath}`);
       } catch (e) {
         console.warn(
-          `⚠️ Duplication legacy échouée pour ${file}: ${e.message}`
+          `⚠️ Duplication legacy échouée pour ${file}: ${e.message}`,
         );
       }
 
@@ -206,11 +207,11 @@ try {
   try {
     const globalArticleSrc = path.resolve(
       __dirname,
-      "../src/pages/blog/frais-notaire-ancien-neuf-2025.html"
+      "../src/pages/blog/frais-notaire-ancien-neuf-2026.html",
     );
     const departementsArticleDst = path.resolve(
       __dirname,
-      "../dist/pages/blog/departements/frais-notaire-ancien-neuf-2025.html"
+      "../dist/pages/blog/departements/frais-notaire-ancien-neuf-2026.html",
     );
     if (fs.existsSync(globalArticleSrc)) {
       let htmlContent = fs.readFileSync(globalArticleSrc, "utf-8");
@@ -218,29 +219,29 @@ try {
       // Réécriture du script main.ts vers le bundle produit (../../main.ts)
       htmlContent = htmlContent.replace(
         /<script[^>]*type="module"[^>]*src="\.\.\/\.\.\/main\.ts"[^>]*><\/script>/g,
-        `<script type="module" crossorigin src="../../../assets/${jsFile}"></script>`
+        `<script type="module" crossorigin src="../../../assets/${jsFile}"></script>`,
       );
 
       // Ajustement des assets ../../assets/* vers ../../../assets/*
       htmlContent = htmlContent.replace(
         /(href|src)="\.\.\/\.\.\/assets\//g,
-        `$1="../../../assets/`
+        `$1="../../../assets/`,
       );
 
       // Injection CSS si absente
       if (
         !new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/${cssFile}\"`).test(
-          htmlContent
+          htmlContent,
         ) &&
         !new RegExp(`href=\"\.\.\.\/\.\.\.\/assets\/main-.*\\.css\"`).test(
-          htmlContent
+          htmlContent,
         )
       ) {
         htmlContent = htmlContent.replace(/<head>([\s\S]*?)<\/head>/, (m) =>
           m.replace(
             /<\/head>/,
-            `    <link rel="stylesheet" crossorigin href="../../../assets/${cssFile}">\n  </head>`
-          )
+            `    <link rel="stylesheet" crossorigin href="../../../assets/${cssFile}">\n  </head>`,
+          ),
         );
       }
 
@@ -248,12 +249,12 @@ try {
       fs.writeFileSync(departementsArticleDst, htmlContent, "utf-8");
       console.log(
         "✅ Article ancien/neuf copié sous /departements:",
-        departementsArticleDst
+        departementsArticleDst,
       );
     } else {
       console.warn(
         "⚠️ Article global ancien/neuf introuvable:",
-        globalArticleSrc
+        globalArticleSrc,
       );
     }
   } catch (e) {

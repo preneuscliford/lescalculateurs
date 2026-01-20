@@ -30,24 +30,30 @@ export default defineConfig({
         blog: resolve(__dirname, "src/pages/blog.html"),
         "blog-export-pdf": resolve(
           __dirname,
-          "src/pages/blog/export-pdf-calculateurs.html"
+          "src/pages/blog/export-pdf-calculateurs.html",
         ),
         "blog-frais-notaire": resolve(
           __dirname,
-          "src/pages/blog/frais-notaire-ancien-neuf-2025.html"
+          "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
+        ),
+        "frais-notaire-ancien-neuf": resolve(
+          __dirname,
+          "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
         ),
         "blog-departements": resolve(
           __dirname,
-          "src/pages/blog/frais-notaire-departements.html"
+          "src/pages/blog/frais-notaire-departements.html",
         ),
         "comment-calculer-frais-notaire": resolve(
           __dirname,
-          "src/pages/comment-calculer-frais-notaire.html"
+          "src/pages/comment-calculer-frais-notaire.html",
         ),
         "comment-calculer-plus-value": resolve(
           __dirname,
-          "src/pages/comment-calculer-plus-value.html"
+          "src/pages/comment-calculer-plus-value.html",
         ),
+        rsa: resolve(__dirname, "src/pages/rsa.html"),
+        "prime-activite": resolve(__dirname, "src/pages/prime-activite.html"),
         methodologie: resolve(__dirname, "src/pages/methodologie.html"),
         sources: resolve(__dirname, "src/pages/sources.html"),
       },
