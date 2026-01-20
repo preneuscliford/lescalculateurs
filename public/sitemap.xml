@@ -114,6 +114,30 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/aah</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl-etudiant</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/are</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/asf</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/ik</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>yearly</changefreq>

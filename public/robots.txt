@@ -31,6 +31,10 @@ Allow: /pages/apl-zones.html
 Allow: /pages/apl-dom-tom.html
 Allow: /pages/rsa.html
 Allow: /pages/prime-activite.html
+Allow: /pages/aah.html
+Allow: /pages/apl-etudiant.html
+Allow: /pages/are.html
+Allow: /pages/asf.html
 Allow: /pages/salaire.html
 Allow: /pages/financement.html
 Allow: /pages/crypto-bourse.html
