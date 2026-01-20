@@ -1,5 +1,35 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/pages/aah",
+      "destination": "/pages/aah.html"
+    },
+    {
+      "source": "/pages/are",
+      "destination": "/pages/are.html"
+    },
+    {
+      "source": "/pages/apl-etudiant",
+      "destination": "/pages/apl-etudiant.html"
+    },
+    {
+      "source": "/pages/asf",
+      "destination": "/pages/asf.html"
+    },
+    {
+      "source": "/pages/rsa",
+      "destination": "/pages/rsa.html"
+    },
+    {
+      "source": "/pages/prime-activite",
+      "destination": "/pages/prime-activite.html"
+    },
+    {
+      "source": "/pages/apl",
+      "destination": "/pages/apl.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/blog/departements/(.*)",
