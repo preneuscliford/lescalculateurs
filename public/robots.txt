@@ -26,6 +26,17 @@ Allow: /pages/ik.html
 Allow: /pages/ponts.html
 Allow: /pages/taxe.html
 Allow: /pages/travail.html
+Allow: /pages/apl.html
+Allow: /pages/apl-zones.html
+Allow: /pages/apl-dom-tom.html
+Allow: /pages/rsa.html
+Allow: /pages/prime-activite.html
+Allow: /pages/salaire.html
+Allow: /pages/financement.html
+Allow: /pages/crypto-bourse.html
+Allow: /pages/impot.html
+Allow: /pages/comment-calculer-frais-notaire.html
+Allow: /pages/comment-calculer-plus-value.html
 
 # Assets autorisés
 Allow: /assets/
