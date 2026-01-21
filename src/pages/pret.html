@@ -8,7 +8,7 @@
     </title>
     <meta
       name="description"
-      content="Calculez vos mensualités et votre capacité d’emprunt en 10 secondes. Taux 2026, assurance, frais inclus. Simulation gratuite et précise."
+      content="Calculez vos mensualités et votre capacité d’emprunt en 10 secondes. Taux 2026, assurance, frais pris en compte. Simulation gratuite et indicative."
     />
     <meta
       name="keywords"
@@ -21,10 +21,10 @@
     <meta property="og:url" content="https://www.lescalculateurs.fr/pages/pret" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Prêt Immobilier 2026 — Calcul immédiat (mensualités + capacité)" />
-    <meta property="og:description" content="Calculez vos mensualités et votre capacité d’emprunt en 10 secondes. Taux 2026, assurance, frais inclus. Gratuit et précis." />
+    <meta property="og:description" content="Calculez vos mensualités et votre capacité d’emprunt en 10 secondes. Taux 2026, assurance, frais pris en compte. Gratuit et indicatif." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Prêt Immobilier 2026 — Calcul immédiat" />
-    <meta name="twitter:description" content="Mensualités + capacité en 10 secondes. Simulation gratuite et précise (2026)." />
+    <meta name="twitter:description" content="Mensualités + capacité en 10 secondes. Simulation gratuite et indicative (2026)." />
 
     <!-- JSON-LD: BreadcrumbList & FAQPage -->
     <script type="application/ld+json">
@@ -55,7 +55,7 @@
         {
           "@type": "Question",
           "name": "Comment calculer ma capacité d'emprunt maximale ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Votre capacité dépend de vos revenus nets, charges et du taux d'endettement (33% max en pratique). Le simulateur calcule automatiquement le montant selon les critères bancaires 2026."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Votre capacité dépend de vos revenus, de vos charges et du taux d'endettement (souvent ~35% assurance incluse). Le simulateur calcule automatiquement les mensualités et le taux d'endettement estimé."}
         },
         {
           "@type": "Question",
@@ -191,10 +191,49 @@
           </div>
         </div>
       </div>
-      </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+        <p class="text-sm text-gray-800 m-0">
+          Les calculs reposent sur des formules standard d'amortissement et des
+          hypothèses simplifiées (assurance, frais). Ils constituent une
+          estimation indicative et non contractuelle.
+        </p>
+      </div>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8">
+        <p class="text-blue-800 text-sm mb-2">
+          <strong>📌 Simulation à titre indicatif :</strong> Ce simulateur
+          affiche un indicateur d'effort basé sur le reste à vivre (revenus −
+          charges) et un taux d'endettement indicatif au sens bancaire
+          (mensualités de crédit + charges) / revenus.
+        </p>
+        <p class="text-blue-800 text-sm m-0">
+          Les frais (dossier, garantie) sont généralement payés à part ; ils
+          sont pris en compte dans le coût total et le TAEG estimé.
+        </p>
+      </div>
+
+      <div id="calculator-container"></div>
+
+      <div class="mt-6 flex justify-center gap-3">
+        <button
+          id="pret-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="pret-reset-compare"
+          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <div id="pret-comparaison" class="hidden mt-8"></div>
+
       <!-- Intro SEO -->
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -205,7 +244,8 @@
         <section class="ai-intro mb-6">
           <h2 class="text-xl font-bold text-gray-900 mb-2">❓ Quel est le coût réel de votre prêt immobilier en 2026 ?</h2>
           <p class="ai-response text-gray-700">
-            Mensualité = (Capital × Taux/12) / (1 - (1 + Taux/12)^(-Durée mois)) + Assurance + Frais. Exemple : 250 000€ sur 20 ans à 4% = ~1 275€/mois + assurance (~300€) + frais annexes (~2 500€).
+            Mensualité = (capital × i × (1+i)^n) / ((1+i)^n − 1) + assurance (approx.).
+            Les frais (dossier, garantie) sont généralement payés à part et influencent le coût total et le TAEG.
           </p>
         </section>
 
@@ -215,7 +255,7 @@
           <ul class="space-y-2 text-gray-700">
             <li><strong>Source:</strong> Banque de France & Conditions bancaires 2026</li>
             <li><strong>Calcul:</strong> Capital + Intérêts (taux fixe/variable) + Assurance + Frais (dossier, garantie)</li>
-            <li><strong>Particularité:</strong> Taux d'endettement max 33% | Taux usure varie | PTZ possible primo-accédants</li>
+            <li><strong>Particularité:</strong> Taux d'endettement indicatif ~35% (assurance incluse) | Taux d'usure variable | PTZ possible primo-accédants</li>
             <li><strong>Outil:</strong> Simulation gratuite, taux actualisés janvier 2026</li>
           </ul>
         </section>
@@ -254,7 +294,7 @@
               </h3>
               <p class="text-sm text-gray-600">
                 Calculez votre capacité d'emprunt maximale selon vos revenus et
-                charges (taux d'endettement 33%)
+                charges (taux d'endettement indicatif ~35%)
               </p>
             </div>
             <div class="bg-white rounded-lg p-4 shadow-sm">
@@ -279,28 +319,6 @@
         </div>
       </section>
 
-      <!-- Calculateur -->
-      <div id="calculator-container"></div>
-
-      <!-- Boutons de comparaison -->
-      <div class="mt-6 flex justify-center gap-3">
-        <button
-          id="pret-add-to-compare"
-          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
-        >
-          ➕ Ajouter à la comparaison
-        </button>
-        <button
-          id="pret-reset-compare"
-          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
-        >
-          🔄 Réinitialiser
-        </button>
-      </div>
-
-      <!-- Comparaison (masquée par défaut) -->
-      <div id="pret-comparaison" class="hidden mt-8"></div>
-
       <!-- FAQ Schema.org -->
       <section class="mt-12">
         <h2 class="text-2xl font-bold text-gray-900 mb-6">
@@ -318,8 +336,8 @@
             </h3>
             <div>
               <p class="text-gray-600">
-                Votre capacité d'emprunt dépend de vos revenus nets, charges
-                existantes et taux d'endettement (33% maximum). Notre simulateur
+                Votre capacité d'emprunt dépend de vos revenus, charges
+                existantes et taux d'endettement (souvent ~35% assurance incluse). Notre simulateur
                 calcule automatiquement le montant maximal selon les critères
                 bancaires 2026.
               </p>
@@ -401,12 +419,26 @@
     <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
         <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Voir aussi</h3>
+        <p class="text-sm text-gray-600 mb-3">
+          Parcours immobilier :
+          <a href="/pages/apl.html" class="text-blue-700 hover:underline">APL</a>
+          →
+          <a href="/pages/pret.html" class="text-blue-700 hover:underline">Prêt</a>
+          →
+          <a href="/pages/notaire.html" class="text-blue-700 hover:underline">Notaire</a>
+          →
+          <a href="/pages/taxe.html" class="text-blue-700 hover:underline">Taxe</a>
+          →
+          <a href="/pages/charges.html" class="text-blue-700 hover:underline">Charges</a>
+        </p>
         <div class="flex flex-wrap gap-3">
+          <a href="/pages/apl.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">APL 2026</a>
           <a href="/pages/notaire.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Frais de notaire</a>
           <a href="/pages/plusvalue.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Plus‑value immobilière</a>
           <a href="/pages/charges.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Charges de copropriété</a>
           <a href="/pages/taxe.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Taxe foncière</a>
-          <a href="/pages/ik.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Frais kilométriques</a>
+          <a href="/pages/impot.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Impôt sur le revenu</a>
+          <a href="/pages/ik.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Indemnités kilométriques (IK)</a>
           <a href="/pages/travail.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Temps de travail</a>
           <a href="/pages/blog/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les départements</a>
           <a href="/pages/blog.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Blog</a>
@@ -461,23 +493,21 @@
         fields: [
           {
             id: "prix_bien",
-            label: "Prix du bien immobilier *",
+            label: "Prix du bien immobilier (€) *",
             type: "number",
             required: true,
             placeholder: "300000",
             min: 10000,
             step: 1000,
-            suffix: "€",
           },
           {
             id: "apport_personnel",
-            label: "Apport personnel *",
+            label: "Apport personnel (€) *",
             type: "number",
             required: true,
             placeholder: "50000",
             min: 0,
             step: 1000,
-            suffix: "€",
           },
           {
             id: "duree",
@@ -494,111 +524,69 @@
           },
           {
             id: "taux_nominal",
-            label: "Taux d'intérêt nominal *",
+            label: "Taux d'intérêt nominal (%/an) *",
             type: "number",
             required: true,
             placeholder: "4.0",
             min: 0.1,
             max: 10,
             step: 0.1,
-            suffix: "%",
-          },
-          {
-            id: "type_pret",
-            label: "Type de prêt",
-            type: "select",
-            options: [
-              { value: "classique", label: "Prêt classique" },
-              { value: "ptz", label: "Prêt à Taux Zéro (PTZ)" },
-              { value: "pel", label: "Prêt Épargne Logement (PEL)" },
-              { value: "action_logement", label: "Prêt Action Logement" },
-            ],
           },
           {
             id: "revenus_emprunteur1",
-            label: "Revenus mensuels nets emprunteur 1 *",
+            label: "Revenus mensuels (€) emprunteur 1 *",
             type: "number",
             required: true,
             placeholder: "3500",
             min: 1000,
             step: 100,
-            suffix: "€",
           },
           {
             id: "revenus_emprunteur2",
-            label: "Revenus mensuels nets emprunteur 2 (optionnel)",
+            label: "Revenus mensuels (€) emprunteur 2 (optionnel)",
             type: "number",
             placeholder: "0",
             min: 0,
             step: 100,
-            suffix: "€",
           },
           {
             id: "charges_mensuelles",
-            label: "Charges mensuelles existantes (optionnel)",
+            label: "Charges mensuelles (€) existantes (optionnel)",
             type: "number",
             placeholder: "0",
             min: 0,
             step: 50,
-            suffix: "€",
-          },
-          {
-            id: "age_emprunteur",
-            label: "Âge de l'emprunteur principal (optionnel)",
-            type: "number",
-            placeholder: "35",
-            min: 18,
-            max: 75,
-          },
-          {
-            id: "statut_professionnel",
-            label: "Statut professionnel",
-            type: "select",
-            options: [
-              { value: "cdi", label: "CDI" },
-              { value: "cdd", label: "CDD" },
-              { value: "freelance", label: "Indépendant/Freelance" },
-              { value: "fonctionnaire", label: "Fonctionnaire" },
-              { value: "retraite", label: "Retraité" },
-            ],
           },
           {
             id: "assurance_taux",
-            label: "Taux d'assurance emprunteur",
+            label: "Taux d'assurance emprunteur (%/an)",
             type: "number",
             placeholder: "0.36",
             min: 0.1,
             max: 2,
             step: 0.01,
-            suffix: "%",
           },
           {
             id: "frais_dossier",
-            label: "Frais de dossier (optionnel)",
+            label: "Frais de dossier (€) (optionnel)",
             type: "number",
             placeholder: "0",
             min: 0,
             step: 100,
-            suffix: "€",
           },
           {
             id: "frais_garantie",
-            label: "Frais de garantie (optionnel)",
+            label: "Frais de garantie (€) (optionnel)",
             type: "number",
             placeholder: "0",
             min: 0,
             step: 100,
-            suffix: "€",
           },
         ],
-        /**
-         * Calcule les éléments principaux du prêt immobilier (mensualités, coûts, endettement).
-         * Retourne une structure { success, data|error } consommée par l’affichage.
-         */
         calculate: (values) => {
           try {
-            const prixBien = values.prix_bien || 0;
-            const apportPersonnel = values.apport_personnel || 0;
+            const prixBien = Number(values.prix_bien) || 0;
+            const apportPersonnel = Number(values.apport_personnel) || 0;
             const montantEmprunte = prixBien - apportPersonnel;
 
             if (montantEmprunte <= 0) {
@@ -611,18 +599,32 @@
 
             const dureeAnnees = parseInt(values.duree) || 20;
             const dureeMois = dureeAnnees * 12;
-            const tauxNominal = (values.taux_nominal || 4) / 100;
+            const tauxNominal = (Number(values.taux_nominal) || 0) / 100;
             const tauxMensuel = tauxNominal / 12;
 
             const revenusMensuels =
-              (values.revenus_emprunteur1 || 0) +
-              (values.revenus_emprunteur2 || 0);
-            const chargesMensuelles = values.charges_mensuelles || 0;
-            const revenusNets = revenusMensuels - chargesMensuelles;
+              (Number(values.revenus_emprunteur1) || 0) +
+              (Number(values.revenus_emprunteur2) || 0);
+            const chargesMensuelles = Number(values.charges_mensuelles) || 0;
+            const revenusDisponibles = Math.max(0, revenusMensuels - chargesMensuelles);
 
-            const tauxAssurance = (values.assurance_taux || 0.36) / 100;
-            const fraisDossier = values.frais_dossier || 0;
-            const fraisGarantie = values.frais_garantie || 0;
+            if (revenusMensuels <= 0) {
+              return {
+                success: false,
+                error: "Veuillez saisir des revenus mensuels valides.",
+              };
+            }
+            if (revenusDisponibles <= 0) {
+              return {
+                success: false,
+                error:
+                  "Les charges mensuelles ne peuvent pas être supérieures ou égales aux revenus.",
+              };
+            }
+
+            const tauxAssurance = (Number(values.assurance_taux) || 0) / 100;
+            const fraisDossier = Number(values.frais_dossier) || 0;
+            const fraisGarantie = Number(values.frais_garantie) || 0;
 
             // Calcul de la mensualité capital + intérêts
             let mensualiteCapitalInterets = 0;
@@ -643,29 +645,57 @@
             const mensualiteTotale =
               mensualiteCapitalInterets + assuranceMensuelle;
 
-            // Coût total du crédit
-            const coutTotalCredit =
-              mensualiteTotale * dureeMois - montantEmprunte;
+            const coutTotalInterets =
+              mensualiteCapitalInterets * dureeMois - montantEmprunte;
             const coutTotalAssurance = assuranceMensuelle * dureeMois;
-            const coutTotalInterets = coutTotalCredit - coutTotalAssurance;
+            const coutTotalHorsFrais =
+              (mensualiteCapitalInterets + assuranceMensuelle) * dureeMois -
+              montantEmprunte;
+            const coutTotalFrais = fraisDossier + fraisGarantie;
+            const coutTotalAvecFrais = coutTotalHorsFrais + coutTotalFrais;
 
-            // Taux d'endettement
-            const tauxEndettement = (mensualiteTotale / revenusMensuels) * 100;
+            const tauxEffort = (mensualiteTotale / revenusDisponibles) * 100;
 
-            // Capacité d'emprunt restante (33% max généralement)
-            const capaciteEndettementMax = revenusMensuels * 0.33;
-            const capaciteRestante = Math.max(
+            const tauxEndettement = ((mensualiteTotale + chargesMensuelles) / revenusMensuels) * 100;
+            const tauxEndettementMax = 35;
+            const mensualiteMax = Math.max(
               0,
-              capaciteEndettementMax - mensualiteTotale
+              revenusMensuels * (tauxEndettementMax / 100) - chargesMensuelles
             );
+            const capaciteRestante = Math.max(0, mensualiteMax - mensualiteTotale);
 
-            // TAEG (approximation)
-            const fraisTotaux =
-              fraisDossier + fraisGarantie + coutTotalAssurance;
-            const montantTotalDu = montantEmprunte + fraisTotaux;
-            const taeg =
-              ((mensualiteCapitalInterets * dureeMois) / montantTotalDu - 1) *
-              100;
+            const netPerçu = montantEmprunte - fraisDossier - fraisGarantie;
+            const paymentMensuel = mensualiteCapitalInterets + assuranceMensuelle;
+            const computePV = (r) => {
+              if (r <= 0) return paymentMensuel * dureeMois;
+              let pv = 0;
+              let denom = 1 + r;
+              let factor = denom;
+              for (let k = 1; k <= dureeMois; k++) {
+                pv += paymentMensuel / factor;
+                factor *= denom;
+              }
+              return pv;
+            };
+
+            let taeg = null;
+            if (netPerçu > 0 && paymentMensuel > 0) {
+              let low = 0;
+              let high = 1;
+              while (computePV(high) > netPerçu && high < 10) {
+                high *= 2;
+              }
+              if (computePV(high) <= netPerçu) {
+                for (let i = 0; i < 60; i++) {
+                  const mid = (low + high) / 2;
+                  const pv = computePV(mid);
+                  if (pv > netPerçu) low = mid;
+                  else high = mid;
+                }
+                const rMensuel = (low + high) / 2;
+                taeg = (Math.pow(1 + rMensuel, 12) - 1) * 100;
+              }
+            }
 
             return {
               success: true,
@@ -680,10 +710,17 @@
                 mensualiteTotale,
                 coutTotalInterets,
                 coutTotalAssurance,
-                coutTotalCredit,
+                coutTotalHorsFrais,
+                coutTotalFrais,
+                coutTotalAvecFrais,
                 tauxEndettement,
+                tauxEffort,
                 capaciteRestante,
                 revenusMensuels,
+                chargesMensuelles,
+                revenusDisponibles,
+                mensualiteMax,
+                tauxEndettementMax,
                 fraisDossier,
                 fraisGarantie,
                 taeg,
@@ -702,90 +739,98 @@
          */
         formatResult: (result) => {
           const data = result.data;
-          const endettementOk = data.tauxEndettement <= 33;
+          const endettementOk = data.tauxEndettement <= data.tauxEndettementMax;
+          const taegText =
+            typeof data.taeg === "number" && isFinite(data.taeg)
+              ? `${data.taeg.toFixed(2)}%`
+              : "—";
 
           return `
           <div class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-gray-800">Prix du bien</h4>
-                <p class="text-xl font-bold text-blue-600">${formatCurrency(
+            <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Résultat principal</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Mensualité totale</p>
+                  <p class="text-2xl font-bold text-purple-700">${formatCurrency(
+                    data.mensualiteTotale
+                  )}</p>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Montant emprunté</p>
+                  <p class="text-2xl font-bold text-blue-700">${formatCurrency(
+                    data.montantEmprunte
+                  )}</p>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Durée</p>
+                  <p class="text-2xl font-bold text-green-700">${data.dureeAnnees} ans</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 mt-3 m-0">
+                Prix du bien : <strong>${formatCurrency(
                   data.prixBien
-                )}</p>
-                <p class="text-sm text-gray-600">Apport : ${formatCurrency(
+                )}</strong> • Apport : <strong>${formatCurrency(
                   data.apportPersonnel
-                )}</p>
-              </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-gray-800">Montant emprunté</h4>
-                <p class="text-xl font-bold text-green-600">${formatCurrency(
-                  data.montantEmprunte
-                )}</p>
-                <p class="text-sm text-gray-600">Sur ${data.dureeAnnees} ans</p>
-              </div>
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-gray-800">Mensualité totale</h4>
-                <p class="text-xl font-bold text-purple-600">${formatCurrency(
-                  data.mensualiteTotale
-                )}</p>
-                <p class="text-sm text-gray-600">Capital + Intérêts + Assurance</p>
-              </div>
+                )}</strong>
+              </p>
             </div>
 
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <h4 class="font-semibold text-gray-800 mb-3">Détail des mensualités :</h4>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                <div><span class="font-medium">Capital + Intérêts :</span> ${formatCurrency(
-                  data.mensualiteCapitalInterets
-                )}</div>
-                <div><span class="font-medium">Assurance :</span> ${formatCurrency(
-                  data.assuranceMensuelle
-                )}</div>
-                <div><span class="font-medium">Taux nominal :</span> ${data.tauxNominal.toFixed(
-                  2
-                )}%</div>
-                <div><span class="font-medium">TAEG (approx.) :</span> ${data.taeg.toFixed(
-                  2
-                )}%</div>
-              </div>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <h3 class="text-lg font-bold text-blue-900 mb-2">🧠 Logique de calcul (simplifiée)</h3>
+              <ul class="text-sm text-blue-900 list-disc list-inside space-y-1">
+                <li>Mensualité = capital + intérêts (annuité constante, taux fixe) + assurance (approx.)</li>
+                <li>Taux d'endettement (bancaire indicatif) = (mensualité + charges) / revenus</li>
+                <li>Taux d'effort (indicatif) = mensualité / (revenus − charges)</li>
+                <li>TAEG estimé : intègre assurance et frais (hypothèses simplifiées)</li>
+              </ul>
             </div>
 
-            <div class="border-t pt-4">
-              <h4 class="font-semibold text-gray-800 mb-3">Coûts totaux sur ${
-                data.dureeAnnees
-              } ans :</h4>
-              <div class="space-y-2 text-sm">
-                <div class="flex justify-between">
-                  <span>Intérêts :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.coutTotalInterets
-                  )}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Assurance :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.coutTotalAssurance
-                  )}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Frais de dossier :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.fraisDossier
-                  )}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Frais de garantie :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.fraisGarantie
-                  )}</span>
-                </div>
-                <div class="flex justify-between border-t pt-2 font-semibold text-lg">
-                  <span>Coût total du crédit :</span>
-                  <span class="text-red-600">${formatCurrency(
-                    data.coutTotalCredit
-                  )}</span>
-                </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 class="text-lg font-bold text-gray-900 mb-3">📊 Détail chiffré</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse">
+                  <tbody>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Mensualité capital + intérêts</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.mensualiteCapitalInterets
+                    )}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Assurance mensuelle (approx.)</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.assuranceMensuelle
+                    )}</td></tr>
+                    <tr class="border-b bg-gray-50"><td class="p-3 font-bold text-gray-900">Mensualité totale</td><td class="p-3 text-right font-bold text-purple-700">${formatCurrency(
+                      data.mensualiteTotale
+                    )}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Taux nominal</td><td class="p-3 text-right font-semibold text-gray-900">${data.tauxNominal.toFixed(
+                      2
+                    )}%</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">TAEG estimé (assurance + frais)</td><td class="p-3 text-right font-semibold text-gray-900">${taegText}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Frais de dossier</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.fraisDossier
+                    )}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Frais de garantie</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.fraisGarantie
+                    )}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Coût total intérêts</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.coutTotalInterets
+                    )}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Coût total assurance</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.coutTotalAssurance
+                    )}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Coût total hors frais</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.coutTotalHorsFrais
+                    )}</td></tr>
+                    <tr class="bg-gray-50"><td class="p-3 font-bold text-gray-900">Coût total avec frais</td><td class="p-3 text-right font-bold text-red-700">${formatCurrency(
+                      data.coutTotalAvecFrais
+                    )}</td></tr>
+                  </tbody>
+                </table>
               </div>
+              <p class="text-xs text-gray-600 mt-3 m-0">
+                L'assurance est ici estimée sur le capital initial, selon un taux annuel indicatif. Les modalités réelles (capital restant dû, quotité, âge, santé) peuvent modifier le coût final.
+              </p>
+              <p class="text-xs text-gray-600 mt-2 m-0">
+                Le TAEG affiché est une estimation. Le TAEG contractuel dépend des conditions exactes de l'offre de prêt et des frais réels appliqués par l'établissement.
+              </p>
             </div>
 
             <div class="${
@@ -798,25 +843,36 @@
               } mb-2">
                 ${
                   endettementOk ? "✅" : "⚠️"
-                } Taux d'endettement : ${data.tauxEndettement.toFixed(1)}%
+                } Taux d'endettement (bancaire indicatif) : ${data.tauxEndettement.toFixed(1)}%
               </h4>
               <p class="text-sm ${
                 endettementOk ? "text-green-700" : "text-red-700"
               }">
                 ${
                   endettementOk
-                    ? `Votre taux d'endettement est acceptable (≤ 33%). Capacité restante : ${formatCurrency(
+                    ? `Votre taux d'endettement est acceptable (≤ ${data.tauxEndettementMax}%). Capacité restante : ${formatCurrency(
                         data.capaciteRestante
                       )}/mois`
-                    : "Attention : votre taux d'endettement dépasse 33%. Le prêt pourrait être refusé par la banque."
+                    : `Attention : votre taux d'endettement dépasse ${data.tauxEndettementMax}%. Le prêt pourrait être refusé ou nécessiter des ajustements.`
                 }
               </p>
               <p class="text-xs mt-2 ${
                 endettementOk ? "text-green-600" : "text-red-600"
               }">
-                Revenus mensuels nets : ${formatCurrency(
+                Revenus : ${formatCurrency(
                   data.revenusMensuels
-                )} | Mensualité : ${formatCurrency(data.mensualiteTotale)}
+                )} • Charges : ${formatCurrency(
+                  data.chargesMensuelles
+                )} • Revenus disponibles : ${formatCurrency(
+                  data.revenusDisponibles
+                )} • Seuil ${data.tauxEndettementMax}% : ${formatCurrency(
+                  data.mensualiteMax
+                )}
+              </p>
+              <p class="text-xs text-gray-600 mt-2 m-0">
+                Indicateur d'effort (reste à vivre) : ${data.tauxEffort.toFixed(
+                  1
+                )}%.
               </p>
             </div>
 
@@ -829,6 +885,40 @@
           </div>
           `;
         },
+        exportCSV: {
+          enabled: true,
+          filename: "pret-immobilier-estimation.csv",
+          getCSVData: (result, values) => {
+            const d = result.data;
+            return {
+              headers: ["Paramètre", "Valeur"],
+              rows: [
+                ["Prix du bien (€)", d.prixBien],
+                ["Apport (€)", d.apportPersonnel],
+                ["Montant emprunté (€)", d.montantEmprunte],
+                ["Durée (années)", d.dureeAnnees],
+                ["Taux nominal (%/an)", d.tauxNominal.toFixed(2)],
+                ["Assurance mensuelle (€)", d.assuranceMensuelle],
+                ["Mensualité totale (€)", d.mensualiteTotale],
+                ["Intérêts totaux (€)", d.coutTotalInterets],
+                ["Assurance totale (€)", d.coutTotalAssurance],
+                ["Frais dossier (€)", d.fraisDossier],
+                ["Frais garantie (€)", d.fraisGarantie],
+                ["Coût total avec frais (€)", d.coutTotalAvecFrais],
+                ["Revenus mensuels (€)", d.revenusMensuels],
+                ["Charges mensuelles (€)", d.chargesMensuelles],
+                ["Taux d'endettement bancaire indicatif (%)", d.tauxEndettement.toFixed(1)],
+                ["Taux d'effort indicatif (%)", d.tauxEffort.toFixed(1)],
+                [
+                  "TAEG estimé (%)",
+                  typeof d.taeg === "number" && isFinite(d.taeg)
+                    ? d.taeg.toFixed(2)
+                    : "",
+                ],
+              ],
+            };
+          },
+        },
       };
 
       // Initialisation du calculateur
@@ -839,23 +929,172 @@
         const addBtn = document.getElementById("pret-add-to-compare");
         const resetBtn = document.getElementById("pret-reset-compare");
 
+        ComparisonModal.init("pret");
+        if (resetBtn && ComparisonModal.count("pret") > 0) {
+          resetBtn.classList.remove("hidden");
+        }
+
         if (addBtn && resetBtn) {
           addBtn.addEventListener("click", () => {
-            ComparisonModal.addComparison("pret", {
-              mensualite: document.querySelector('[data-result="mensualiteTotale"]')?.textContent || "N/A",
-              coutTotal: document.querySelector('[data-result="coutTotalCredit"]')?.textContent || "N/A",
-              tauxEndettement: document.querySelector('[data-result="tauxEndettement"]')?.textContent || "N/A"
+            const last = window["dernierCalcul_calculator-container"];
+            const lastValues = last?.values || {};
+
+            const modal = new ComparisonModal({
+              title: "Ajouter un scénario à la comparaison",
+              fields: [
+                {
+                  id: "label",
+                  label: "Nom du scénario (optionnel)",
+                  type: "text",
+                  value: "",
+                  placeholder: "Projet résidence principale",
+                },
+                {
+                  id: "prix_bien",
+                  label: "Prix du bien immobilier (€)",
+                  type: "number",
+                  value: lastValues.prix_bien ?? 300000,
+                  required: true,
+                  min: 10000,
+                  step: 1000,
+                },
+                {
+                  id: "apport_personnel",
+                  label: "Apport personnel (€)",
+                  type: "number",
+                  value: lastValues.apport_personnel ?? 50000,
+                  required: true,
+                  min: 0,
+                  step: 1000,
+                },
+                {
+                  id: "duree",
+                  label: "Durée du prêt",
+                  type: "select",
+                  value: lastValues.duree || "20",
+                  required: true,
+                  options: [
+                    { value: "10", label: "10 ans" },
+                    { value: "15", label: "15 ans" },
+                    { value: "20", label: "20 ans" },
+                    { value: "25", label: "25 ans" },
+                    { value: "30", label: "30 ans" },
+                  ],
+                },
+                {
+                  id: "taux_nominal",
+                  label: "Taux d'intérêt nominal (%/an)",
+                  type: "number",
+                  value: lastValues.taux_nominal ?? 4.0,
+                  required: true,
+                  min: 0,
+                  max: 10,
+                  step: 0.1,
+                },
+                {
+                  id: "assurance_taux",
+                  label: "Taux d'assurance emprunteur (%/an)",
+                  type: "number",
+                  value: lastValues.assurance_taux ?? 0.36,
+                  required: true,
+                  min: 0,
+                  max: 2,
+                  step: 0.01,
+                },
+                {
+                  id: "revenus_emprunteur1",
+                  label: "Revenus mensuels (€) emprunteur 1",
+                  type: "number",
+                  value: lastValues.revenus_emprunteur1 ?? 3500,
+                  required: true,
+                  min: 0,
+                  step: 100,
+                },
+                {
+                  id: "revenus_emprunteur2",
+                  label: "Revenus mensuels (€) emprunteur 2 (optionnel)",
+                  type: "number",
+                  value: lastValues.revenus_emprunteur2 ?? 0,
+                  required: false,
+                  min: 0,
+                  step: 100,
+                },
+                {
+                  id: "charges_mensuelles",
+                  label: "Charges mensuelles (€) existantes (optionnel)",
+                  type: "number",
+                  value: lastValues.charges_mensuelles ?? 0,
+                  required: false,
+                  min: 0,
+                  step: 50,
+                },
+                {
+                  id: "frais_dossier",
+                  label: "Frais de dossier (€) (optionnel)",
+                  type: "number",
+                  value: lastValues.frais_dossier ?? 0,
+                  required: false,
+                  min: 0,
+                  step: 100,
+                },
+                {
+                  id: "frais_garantie",
+                  label: "Frais de garantie (€) (optionnel)",
+                  type: "number",
+                  value: lastValues.frais_garantie ?? 0,
+                  required: false,
+                  min: 0,
+                  step: 100,
+                },
+              ],
+              onConfirm: (values) => {
+                const normalized = {
+                  prix_bien: Number(values.prix_bien) || 0,
+                  apport_personnel: Number(values.apport_personnel) || 0,
+                  duree: String(values.duree || "20"),
+                  taux_nominal: Number(values.taux_nominal) || 0,
+                  assurance_taux: Number(values.assurance_taux) || 0,
+                  revenus_emprunteur1: Number(values.revenus_emprunteur1) || 0,
+                  revenus_emprunteur2: Number(values.revenus_emprunteur2) || 0,
+                  charges_mensuelles: Number(values.charges_mensuelles) || 0,
+                  frais_dossier: Number(values.frais_dossier) || 0,
+                  frais_garantie: Number(values.frais_garantie) || 0,
+                };
+
+                const computed = pretConfig.calculate(normalized);
+                if (!computed?.success) {
+                  alert(computed?.error || "Erreur lors du calcul.");
+                  return;
+                }
+                const d = computed.data;
+                const labelText = String(values.label || "").trim();
+                const autoLabel = `Prêt ${d.dureeAnnees} ans • ${formatCurrency(
+                  d.montantEmprunte
+                )}`;
+
+                ComparisonModal.addComparison("pret", {
+                  label: labelText || autoLabel,
+                  mensualite: formatCurrency(d.mensualiteTotale),
+                  cout_total: formatCurrency(d.coutTotalAvecFrais),
+                  taux_endettement: `${d.tauxEndettement.toFixed(1)}%`,
+                  taux_effort: `${d.tauxEffort.toFixed(1)}%`,
+                  montant_emprunte: formatCurrency(d.montantEmprunte),
+                  taeg: typeof d.taeg === "number" && isFinite(d.taeg) ? `${d.taeg.toFixed(2)}%` : "—",
+                });
+
+                resetBtn.classList.remove("hidden");
+                document
+                  .getElementById("pret-comparaison")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              },
             });
-            addBtn.classList.add("hidden");
-            resetBtn.classList.remove("hidden");
-            document.getElementById("pret-comparaison").classList.remove("hidden");
+
+            modal.open();
           });
 
           resetBtn.addEventListener("click", () => {
             ComparisonModal.resetComparison("pret");
-            addBtn.classList.remove("hidden");
             resetBtn.classList.add("hidden");
-            document.getElementById("pret-comparaison").classList.add("hidden");
           });
         }
       });

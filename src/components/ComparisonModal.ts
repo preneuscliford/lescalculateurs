@@ -269,4 +269,145 @@ export class ComparisonModal {
     this.config.onConfirm(this.values);
     this.close();
   }
+
+  static addComparison(namespace: string, scenario: Record<string, any>): void {
+    const stored = this.getComparisons(namespace);
+    const id = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    stored.push({ id, ...scenario });
+    this.saveComparisons(namespace, stored);
+    this.renderComparisons(namespace);
+  }
+
+  static resetComparison(namespace: string): void {
+    localStorage.removeItem(this.storageKey(namespace));
+    this.renderComparisons(namespace);
+  }
+
+  static init(namespace: string): void {
+    this.renderComparisons(namespace);
+  }
+
+  static count(namespace: string): number {
+    return this.getComparisons(namespace).length;
+  }
+
+  private static storageKey(namespace: string): string {
+    return `comparaison_${namespace}`;
+  }
+
+  private static getComparisons(namespace: string): Array<Record<string, any>> {
+    try {
+      const raw = localStorage.getItem(this.storageKey(namespace));
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+
+  private static saveComparisons(
+    namespace: string,
+    scenarios: Array<Record<string, any>>,
+  ): void {
+    try {
+      localStorage.setItem(this.storageKey(namespace), JSON.stringify(scenarios));
+    } catch {}
+  }
+
+  private static renderComparisons(namespace: string): void {
+    const container = document.getElementById(`${namespace}-comparaison`);
+    if (!container) return;
+
+    const scenarios = this.getComparisons(namespace);
+    if (scenarios.length === 0) {
+      container.innerHTML = "";
+      container.classList.add("hidden");
+      return;
+    }
+    container.classList.remove("hidden");
+
+    const fieldSet = new Set<string>();
+    scenarios.forEach((s) => {
+      Object.keys(s).forEach((k) => {
+        if (k === "id" || k === "label") return;
+        fieldSet.add(k);
+      });
+    });
+    const fields = Array.from(fieldSet);
+
+    const headerCells = scenarios
+      .map((s, idx) => {
+        const label = typeof s.label === "string" && s.label.trim() ? s.label : `Scénario ${idx + 1}`;
+        return `<th class="p-3 text-center font-semibold">
+          ${label}
+          <br>
+          <button class="text-xs text-red-600 hover:text-red-800 mt-1" data-delete-id="${s.id}">✕ Supprimer</button>
+        </th>`;
+      })
+      .join("");
+
+    const rows = fields
+      .map((field) => {
+        const label = field
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (m) => m.toUpperCase());
+        const tds = scenarios
+          .map((s) => {
+            const v = s[field];
+            const value =
+              v === undefined || v === null || v === ""
+                ? "—"
+                : typeof v === "boolean"
+                ? v
+                  ? "Oui"
+                  : "Non"
+                : String(v);
+            return `<td class="p-3 text-center">${value}</td>`;
+          })
+          .join("");
+        return `<tr class="hover:bg-gray-50"><td class="p-3 font-medium">${label}</td>${tds}</tr>`;
+      })
+      .join("");
+
+    container.innerHTML = `
+      <div class="bg-white border-2 border-orange-500 rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-lg font-bold">Comparaison des scénarios</h3>
+          <button id="${namespace}-clear-all" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 text-sm font-semibold">
+            🔄 Réinitialiser tout
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-gray-200 rounded-lg text-sm">
+            <thead>
+              <tr class="bg-blue-50">
+                <th class="p-3 text-left font-semibold">Critère</th>
+                ${headerCells}
+              </tr>
+            </thead>
+            <tbody>
+              ${rows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+
+    container
+      .querySelectorAll("button[data-delete-id]")
+      .forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = (btn as HTMLButtonElement).dataset.deleteId;
+          const next = this.getComparisons(namespace).filter((s) => s.id !== id);
+          this.saveComparisons(namespace, next);
+          this.renderComparisons(namespace);
+        });
+      });
+
+    container
+      .querySelector(`#${namespace}-clear-all`)
+      ?.addEventListener("click", () => {
+        this.resetComparison(namespace);
+      });
+  }
 }

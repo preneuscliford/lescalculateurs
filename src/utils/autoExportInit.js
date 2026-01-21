@@ -133,10 +133,10 @@ function initAutoExport() {
       type: "CalculatorFrame",
     },
     pret: {
-      name: "Capacité d'Emprunt",
+      name: "Prêt Immobilier 2026",
       resultsId: "calculator-result",
       formId: "calculator-form",
-      notes: ["Simulation indicative selon critères bancaires standard."],
+      notes: ["Simulation indicative : mensualités, coût total, endettement (hypothèses simplifiées)."],
       type: "CalculatorFrame",
     },
     financement: {
@@ -198,6 +198,12 @@ function initAutoExport() {
       formId: "calculator-form",
       notes: ["Calculs selon le barème progressif 2026."],
       type: "CalculatorFrame",
+    },
+    charges: {
+      name: "Charges de copropriété 2026",
+      resultsId: "results",
+      formId: "charges-form",
+      notes: ["Estimation indicative basée sur des ordres de grandeur (2026)."],
     },
   };
 

@@ -26,6 +26,38 @@ export const baremes = {
   },
   indemnites_kilometriques: {
     voiture: {
+      latest: [
+        {
+          puissance: "3CV et moins",
+          jusqu_5000: 0.502,
+          de_5001_20000: 0.3,
+          au_dela_20000: 0.36,
+        },
+        {
+          puissance: "4CV",
+          jusqu_5000: 0.575,
+          de_5001_20000: 0.323,
+          au_dela_20000: 0.387,
+        },
+        {
+          puissance: "5CV",
+          jusqu_5000: 0.603,
+          de_5001_20000: 0.339,
+          au_dela_20000: 0.407,
+        },
+        {
+          puissance: "6CV",
+          jusqu_5000: 0.631,
+          de_5001_20000: 0.355,
+          au_dela_20000: 0.427,
+        },
+        {
+          puissance: "7CV et plus",
+          jusqu_5000: 0.659,
+          de_5001_20000: 0.371,
+          au_dela_20000: 0.447,
+        },
+      ],
       "2024": [
         {
           puissance: "3CV et moins",
@@ -94,25 +126,24 @@ export const baremes = {
     ],
   },
   taxe_fonciere: {
-    abattements: {
-      residence_principale: 0.15,
-      personne_agee: { seuil_age: 65, taux: 0.1 },
+    degrevements_indicatifs: {
+      personne_agee: { seuil_age: 75, taux: 0.1 },
       personne_handicapee: 0.1,
     },
     taux_moyens_par_region: {
-      ile_de_france: 0.0135,
-      provence_alpes_cote_azur: 0.0142,
-      auvergne_rhone_alpes: 0.0128,
-      occitanie: 0.0155,
-      nouvelle_aquitaine: 0.0148,
-      grand_est: 0.0132,
-      hauts_de_france: 0.0145,
-      normandie: 0.0138,
-      centre_val_de_loire: 0.0151,
-      bourgogne_franche_comte: 0.0144,
-      pays_de_la_loire: 0.014,
-      bretagne: 0.0147,
-      corse: 0.0125,
+      ile_de_france: 0.29,
+      provence_alpes_cote_azur: 0.33,
+      auvergne_rhone_alpes: 0.31,
+      occitanie: 0.35,
+      nouvelle_aquitaine: 0.34,
+      grand_est: 0.32,
+      hauts_de_france: 0.34,
+      normandie: 0.33,
+      centre_val_de_loire: 0.34,
+      bourgogne_franche_comte: 0.33,
+      pays_de_la_loire: 0.32,
+      bretagne: 0.33,
+      corse: 0.28,
     },
   },
   duree_travail: {

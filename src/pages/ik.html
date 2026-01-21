@@ -12,7 +12,7 @@
     />
     <meta
       name="keywords"
-      content="indemnités kilométriques 2026, barème IK 2025, calcul frais kilométriques, déduction fiscale km, frais réels professionnels, barème urssaf indemnités, calcul trajet domicile travail, remboursement km employeur, auto-entrepreneur frais déplacement, calcul ik 5cv 7cv, indemnité kilométrique voiture électrique, frais professionnels déductibles 2026, simulation frais réels vs abattement 10%, barème fiscal automobile, trajet professionnel déduction impôts"
+      content="indemnités kilométriques (IK) 2026, barème IK 2025, calcul indemnités kilométriques, déduction fiscale km, frais réels professionnels, barème urssaf indemnités, calcul trajet domicile travail, remboursement km employeur, auto-entrepreneur frais déplacement, calcul ik 5cv 7cv, indemnité kilométrique voiture électrique, frais professionnels déductibles 2026, simulation frais réels vs abattement 10%, barème fiscal automobile, trajet professionnel déduction impôts"
     />
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/ik" />
     <script type="application/ld+json">
@@ -136,6 +136,46 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <p class="text-sm text-gray-800 m-0">
+            Les calculs reposent sur le dernier barème kilométrique publié. Ils
+            constituent une estimation indicative et non contractuelle.
+          </p>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8">
+          <p class="text-blue-800 text-sm mb-2">
+            <strong>📌 Simulation à titre indicatif :</strong> Le barème IK est
+            utilisé pour estimer des frais de déplacement selon des règles
+            fiscales. Votre situation (trajets, justificatifs, frais réels) et
+            la réglementation applicable déterminent le montant retenu.
+          </p>
+          <p class="text-blue-800 text-sm m-0">
+            Résultat affiché : indemnités annuelles estimées et moyenne par km.
+          </p>
+        </div>
+      </div>
+
+      <div id="ik-calculator"></div>
+
+      <div class="mt-6 flex justify-center gap-3">
+        <button
+          id="ik-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="ik-reset-compare"
+          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <div id="ik-comparaison" class="hidden mt-8"></div>
+
       <section class="mb-8">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold text-gray-900 mb-6">
@@ -181,8 +221,6 @@
           </section>
 
           <div class="prose prose-lg text-gray-600">
-<div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg"><p class="text-sm text-gray-800 m-0">Les calculs reposent sur les barèmes réglementés en vigueur et les taux départementaux connus à date. Ils constituent une estimation indicative et non contractuelle.</p></div>
-
             <p>
               Les indemnités kilométriques permettent de déduire fiscalement les
               frais de déplacement professionnel. Notre calculateur utilise le
@@ -202,7 +240,7 @@
 
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div class="mt-12 bg-blue-50 rounded-lg p-6 border border-blue-200">
-          <h3 class="font-bold text-blue-900 mb-3">📚 Sources 2026</h3>
+          <h3 class="font-bold text-blue-900 mb-3">📚 Sources officielles</h3>
           <ul class="text-sm text-gray-700 space-y-2">
             <li>
               • Frais professionnels (barème kilométrique – cadre fiscal) :
@@ -228,11 +266,12 @@
           </h3>
           <ul class="space-y-2 text-gray-700 mb-4">
             <li>
-              <strong>barème réglementé en vigueur voitures:</strong> Tarifs dégressifs par
+              <strong>Dernier barème publié (voitures) :</strong> tarifs par
               puissance fiscale (3–7 CV)
             </li>
             <li>
-              <strong>barème réglementé en vigueur deux-roues:</strong> Tarifs par cylindrée
+              <strong>Dernier barème publié (deux‑roues) :</strong> tarifs par
+              cylindrée
               (&lt; 50cc, 50–125cc, &gt; 125cc)
             </li>
             <li>
@@ -240,51 +279,51 @@
               001–20 000 km | &gt; 20 000 km annuels
             </li>
             <li>
-              <strong>Actualisation inflation:</strong> Révisé annuellement
-              janvier (inflation + coûts carburant)
-            </li>
-            <li>
               <strong>Déductibilité fiscale:</strong> Frais professionnels
               déductibles du revenu imposable
             </li>
             <li>
-              <strong>Conformité:</strong> Conforme aux articles CGI L.111-1
-              (micro-entrepreneurs) et L.83 (professions libérales)
+              <strong>Référence:</strong> CGI article 83 (frais réels) et
+              documentation officielle
             </li>
           </ul>
           <p class="text-sm text-gray-600">
-            <strong>Dernière mise à jour:</strong> janvier 2026 (Impôts.gouv.fr
-            et Service-public.fr)
+            <strong>Dernière mise à jour:</strong> janvier 2026 (sources
+            officielles)
           </p>
         </div>
       </section>
-
-      <div id="ik-calculator"></div>
-
-      <!-- Boutons de comparaison -->
-      <div class="mt-6 flex justify-center gap-3">
-        <button
-          id="ik-add-to-compare"
-          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
-        >
-          ➕ Ajouter à la comparaison
-        </button>
-        <button
-          id="ik-reset-compare"
-          class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 font-semibold shadow-md transition-colors hidden"
-        >
-          🔄 Réinitialiser
-        </button>
-      </div>
-
-      <!-- Conteneur de comparaison (masqué par défaut) -->
-      <div id="ik-comparaison" class="hidden"></div>
     </main>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
         <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Voir aussi</h3>
+        <p class="text-sm text-gray-600 mb-3">
+          Parcours travail/fiscal :
+          <a href="/pages/ik.html" class="text-blue-700 hover:underline">IK</a>
+          →
+          <a href="/pages/impot.html" class="text-blue-700 hover:underline">Impôt</a>
+          →
+          <a href="/pages/salaire.html" class="text-blue-700 hover:underline">Salaire</a>
+          →
+          <a href="/pages/travail.html" class="text-blue-700 hover:underline">Temps</a>
+        </p>
         <div class="flex flex-wrap gap-3">
+          <a
+            href="/pages/impot.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Impôt sur le revenu</a
+          >
+          <a
+            href="/pages/salaire.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Salaire brut/net</a
+          >
+          <a
+            href="/pages/apl.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >APL 2026</a
+          >
           <a
             href="/pages/notaire.html"
             class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
@@ -477,18 +516,34 @@
         formatResult: (result) => {
           const data = result.data;
           return `
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-gray-800">Distance annuelle</h4>
-                <p class="text-xl font-bold text-primary-600">${data.kilometres.toLocaleString()} km</p>
+          <div class="space-y-6">
+            <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Résultat principal</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Distance annuelle</p>
+                  <p class="text-2xl font-bold text-blue-700">${data.kilometres.toLocaleString(
+                    "fr-FR"
+                  )} km</p>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Indemnités totales (annuel)</p>
+                  <p class="text-2xl font-bold text-green-700">${formatCurrency(
+                    data.total
+                  )}</p>
+                </div>
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Mensuel (sur 12 mois)</p>
+                  <p class="text-2xl font-bold text-purple-700">${formatCurrency(
+                    data.total / 12
+                  )}</p>
+                </div>
               </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-gray-800">Indemnités totales</h4>
-                <p class="text-xl font-bold text-green-600">${formatCurrency(
-                  data.total
-                )}</p>
-              </div>
+              <p class="text-sm text-gray-600 mt-3 m-0">
+                Indemnité moyenne par km : <strong>${data.indemniteParKm.toFixed(
+                  3
+                )} €</strong>
+              </p>
             </div>
             
             <div class="border-t pt-4">
@@ -522,18 +577,17 @@
                 `
                     : ""
                 }
-                <div class="flex justify-between">
-                  <span>Indemnité moyenne par km :</span>
-                  <span class="font-medium">${data.indemniteParKm.toFixed(
-                    3
-                  )} €</span>
-                </div>
               </div>
             </div>
 
             <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mt-4">
               <p class="text-sm text-orange-800">
-                <strong>⚠️ Attention :</strong> Barème 2024 – Données 2026 non encore publiées. Mise à jour automatique dès publication officielle.
+                <strong>⚠️ Attention :</strong> Barème 2024 (dernier publié). En l'absence de publication du barème 2026, ce simulateur applique le dernier barème officiel connu, reconduit par l'administration.
+              </p>
+            </div>
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
+              <p class="text-sm text-yellow-900">
+                <strong>Important :</strong> Les indemnités kilométriques (IK) ne s'appliquent que si vous optez pour la déduction des frais réels. Elles ne sont pas cumulables avec l'abattement forfaitaire de 10 %.
               </p>
             </div>
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
@@ -546,7 +600,7 @@
         `;
         },
         exportCSV: {
-          enabled: false,
+          enabled: true,
           filename: "indemnites-kilometriques-estimation.csv",
           getCSVData: (result, values) => {
             const data = result.data;
@@ -603,9 +657,6 @@
 
     <!-- Gestion de la comparaison IK -->
     <script type="module" src="./scripts/ik-script.ts"></script>
-
-    <!-- Gestion de la comparaison IK -->
-    <script type="module" src="./scripts/ik-comparaison.ts"></script>
 
     <!-- Auto-initialisation des exports PDF/CSV -->
     <script type="module" src="../utils/pdfExport.js"></script>

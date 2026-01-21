@@ -150,7 +150,7 @@
             "name": "Comment calculer mon impôt sur le revenu 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Entrez votre revenu net imposable annuel, indiquez votre situation familiale (nombre de parts) et notre calculateur applique le barème progressif en vigueur avec décote si applicable."
+                "text": "Entrez votre revenu imposable annuel, indiquez votre situation familiale (nombre de parts) et notre calculateur applique le barème progressif en vigueur (estimation indicative hors décote)."
             }
           },
           {
@@ -264,7 +264,84 @@
       </div>
     </header>
 
+    <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+      <p class="text-sm text-gray-800 m-0">
+        Les calculs reposent sur les barèmes réglementés en vigueur et les taux
+        départementaux connus à date. Ils constituent une estimation indicative
+        et non contractuelle.
+      </p>
+    </div>
+
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8">
+          <p class="text-blue-800 text-sm mb-2">
+            <strong>📌 Simulation à titre indicatif :</strong> Ce calcul
+            correspond aux règles en vigueur au 1er janvier 2026. Il ne tient
+            pas compte de la décote, des réductions/crédits d'impôt, ni du
+            prélèvement à la source.
+          </p>
+          <p class="text-blue-800 text-sm mb-2">
+            ⚠️ Ce simulateur calcule l’impôt annuel théorique. Il ne représente
+            pas le montant prélevé chaque mois via le prélèvement à la source.
+          </p>
+          <p class="text-blue-800 text-sm m-0">
+            Résultat affiché : impôt estimé selon barème progressif + quotient
+            familial.
+          </p>
+        </div>
+      </div>
+
+      <div id="impot-calculator"></div>
+
+      <section class="max-w-4xl mx-auto mt-16 bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          💡 Exemples chiffrés (indicatifs)
+        </h2>
+        <p class="text-gray-600 mb-8">
+          Les montants ci-dessous sont des ordres de grandeur. Pour un résultat
+          exact, renseignez vos chiffres dans le simulateur ci-dessus.
+        </p>
+
+        <div class="space-y-6">
+          <div class="border-l-4 border-green-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Exemple 1 : Célibataire, revenu imposable 11 000 € (1 part)
+            </h3>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <p class="text-green-900 m-0">
+                <strong>Ordre de grandeur :</strong> impôt estimé ≈
+                <span class="text-xl font-bold text-green-700">0 €</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="border-l-4 border-blue-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Exemple 2 : Célibataire, revenu imposable 38 000 € (1 part)
+            </h3>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <p class="text-blue-900 m-0">
+                <strong>Ordre de grandeur :</strong> impôt estimé ≈
+                <span class="text-xl font-bold text-blue-700">4 700 €</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="border-l-4 border-purple-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Exemple 3 : Couple, revenu imposable 60 000 € (2 parts)
+            </h3>
+            <div class="bg-purple-50 p-4 rounded-lg">
+              <p class="text-purple-900 m-0">
+                <strong>Ordre de grandeur :</strong> impôt estimé ≈
+                <span class="text-xl font-bold text-purple-700">4 600 €</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Intro SEO -->
       <section class="mb-8">
         <div class="max-w-4xl mx-auto">
@@ -279,9 +356,10 @@
               ❓ Quel est votre impôt sur le revenu en 2026 ?
             </h2>
             <p class="ai-response text-gray-700">
-              Impôt = (Revenu imposable ÷ Quotient familial) × Barème progressif
-              × Parts fiscales - Décote. barème réglementé en vigueur : 0% jusqu'à 11 294€, puis
-              11% jusqu'à 28 797€, 30% jusqu'à 82 341€, etc.
+              Impôt = application du barème progressif au quotient familial,
+              puis multiplication par le nombre de parts fiscales. Barème
+              réglementé en vigueur : 0% jusqu'à 11 497€, puis 11% jusqu'à 29
+              315€, 30% jusqu'à 83 823€, etc.
             </p>
           </section>
 
@@ -293,7 +371,7 @@
             <ul class="space-y-2 text-gray-700">
               <li>
                 <strong>Source:</strong> Direction Générale des Finances
-                Publiques (DGFIP) 2025
+                Publiques (DGFIP)
               </li>
               <li>
                 <strong>Calcul:</strong> Barème progressif par tranche +
@@ -305,29 +383,25 @@
               </li>
               <li>
                 <strong>Outil:</strong> Simulation gratuite, barèmes janvier
-                2025
+                2026
               </li>
             </ul>
           </section>
 
           <div class="prose prose-lg text-gray-600 space-y-3">
-<div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg"><p class="text-sm text-gray-800 m-0">Les calculs reposent sur les barèmes réglementés en vigueur et les taux départementaux connus à date. Ils constituent une estimation indicative et non contractuelle.</p></div>
-
             <p>
               Calculez votre <strong>impôt sur le revenu 2026</strong> en
-              quelques secondes ! Entrez votre revenu net imposable, indiquez
-              votre situation familiale (nombre de parts fiscales), et notre
+              quelques secondes ! Entrez votre revenu imposable annuel,
+              indiquez votre situation familiale (nombre de parts fiscales), et
+              notre
               calculateur applique automatiquement le
-              <strong>barème progressif officiel</strong> 2025 avec déductions
-              et décote le cas échéant.
+              <strong>barème progressif officiel</strong> 2026 (quotient
+              familial).
             </p>
             <p>
-              Obtenez une estimation précise incluant les
-              <strong>tranches d'imposition</strong>, le
-              <strong>quotient familial</strong>, les
-              <strong>réductions d'impôt</strong> et le
-              <strong>prélèvement à la source</strong>. Idéal pour les salariés,
-              indépendants et retraités.
+              Pour une estimation complète (décote, réductions/crédits d'impôt,
+              prélèvement à la source), référez-vous au simulateur officiel
+              impots.gouv.fr.
             </p>
             <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
               <p class="m-0 text-sm">
@@ -338,7 +412,7 @@
                   rel="nofollow noopener"
                   target="_blank"
                 >
-                  Direction Générale des Finances Publiques — Barème IR 2025
+                  Direction Générale des Finances Publiques — Barème IR 2026
                 </a>
               </p>
             </div>
@@ -405,28 +479,6 @@
         </div>
       </section>
 
-      <!-- Calculateur -->
-      <div id="impot-calculator"></div>
-
-      <!-- Boutons de comparaison -->
-      <div class="mt-6 flex justify-center gap-3">
-        <!-- <button
-          id="impot-add-to-compare"
-          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
-        >
-          ➕ Ajouter à la comparaison
-        </button> -->
-        <button
-          id="impot-reset-compare"
-          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
-        >
-          🔄 Réinitialiser
-        </button>
-      </div>
-
-      <!-- Comparaison (masquée par défaut) -->
-      <div id="impot-comparaison" class="hidden mt-8"></div>
-
       <!-- FAQ Schema.org -->
       <section id="aide" class="max-w-4xl mx-auto mt-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
@@ -440,10 +492,9 @@
             </h3>
             <div>
               <p class="text-gray-600">
-                Entrez votre <strong>revenu net imposable</strong> (salaire
-                après abattements ou chiffre d'affaires pour indépendants),
-                indiquez votre <strong>situation familiale</strong> (nombre de
-                parts fiscales), et notre calculateur applique le
+                Entrez votre <strong>revenu imposable annuel</strong>, indiquez
+                votre <strong>situation familiale</strong> (nombre de parts
+                fiscales), et notre calculateur applique le
                 <strong>barème réglementé en vigueur</strong> avec les réductions/crédits
                 d'impôt.
               </p>
@@ -473,7 +524,7 @@
               <p class="text-gray-600">
                 L'impôt sur le revenu est <strong>progressif</strong> : plus
                 votre revenu augmente, plus le taux d'imposition augmente. En
-                2025, les tranches vont de 0% à 45%. Chaque tranche de revenu
+                2026, les tranches vont de 0% à 45%. Chaque tranche de revenu
                 est imposée au taux correspondant, d'où un taux moyen inférieur
                 au taux marginal.
               </p>
@@ -539,29 +590,68 @@
           </div>
         </div>
       </section>
-
-      </section>    </main>
+    </main>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-3">
-          🔗 Outils complémentaires
-        </h3>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Voir aussi</h3>
+        <p class="text-sm text-gray-600 mb-3">
+          Parcours : <a href="/pages/ik.html" class="text-blue-700 hover:underline">IK</a> →
+          <a href="/pages/impot.html" class="text-blue-700 hover:underline">Impôt</a> →
+          <a href="/pages/salaire.html" class="text-blue-700 hover:underline">Salaire</a> →
+          <a href="/pages/travail.html" class="text-blue-700 hover:underline">Temps</a>
+          • Immobilier :
+          <a href="/pages/apl.html" class="text-blue-700 hover:underline">APL</a> →
+          <a href="/pages/pret.html" class="text-blue-700 hover:underline">Prêt</a> →
+          <a href="/pages/notaire.html" class="text-blue-700 hover:underline">Notaire</a> →
+          <a href="/pages/taxe.html" class="text-blue-700 hover:underline">Taxe</a> →
+          <a href="/pages/charges.html" class="text-blue-700 hover:underline">Charges</a>
+        </p>
         <div class="flex flex-wrap gap-3">
+          <a
+            href="/pages/apl.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >APL 2026</a
+          >
           <a
             href="/pages/salaire.html"
             class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
             >Salaire brut/net</a
           >
           <a
+            href="/pages/travail.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Temps de travail</a
+          >
+          <a
+            href="/pages/ik.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Indemnités kilométriques (IK)</a
+          >
+          <a
             href="/pages/pret.html"
             class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
-            >Mensualité prêt</a
+            >Prêt immobilier</a
           >
           <a
             href="/pages/notaire.html"
             class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
             >Frais de notaire</a
+          >
+          <a
+            href="/pages/taxe.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Taxe foncière</a
+          >
+          <a
+            href="/pages/charges.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Charges de copropriété</a
+          >
+          <a
+            href="/pages/plusvalue.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Plus‑value immobilière</a
           >
         </div>
       </div>

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -8,11 +8,11 @@
     </title>
     <meta
       name="description"
-      content="Calculez votre taxe foncière 2026 et trouvez les exonérations disponibles. Économisez jusqu'à 100€ par an avec nos conseils personnalisés."
+      content="Estimez votre taxe foncière 2026 selon la valeur locative cadastrale, un taux global indicatif (ou saisi) et des dégrèvements éventuels. Simulation gratuite et indicative."
     />
     <meta
       name="keywords"
-      content="taxe foncière 2026 calcul, simulation taxe foncière gratuite, valeur locative cadastrale explication, taux communal taxe foncière, exonération taxe foncière personnes âgées, dégrèvement taxe foncière revenus modestes, plafonnement taxe foncière, abattement résidence principale, taxe foncière logement neuf, construction neuve exonération 2 ans, taxe ordures ménagères calcul, comment calculer taxe foncière, augmentation taxe foncière 2026, réduction taxe foncière économies énergie, contestation avis taxe foncière"
+      content="taxe foncière 2026 calcul, simulation taxe foncière gratuite, valeur locative cadastrale explication, taux taxe foncière commune, exonération taxe foncière personnes âgées, dégrèvement taxe foncière revenus modestes, plafonnement taxe foncière, taxe foncière logement neuf, construction neuve exonération 2 ans, taxe ordures ménagères calcul, comment calculer taxe foncière, augmentation taxe foncière 2026, contestation avis taxe foncière"
     />
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/taxe" />
     <script type="application/ld+json">
@@ -97,7 +97,7 @@
             >← Retour</a
           >
           <h1 class="text-2xl font-bold text-gray-900">
-            📜 Taxe Foncière 2026 — estimation communale
+            📜 Taxe foncière 2026 (TFPB) — estimation indicative
           </h1>
           <div></div>
         </div>
@@ -105,6 +105,97 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+        <p class="text-sm text-gray-800 m-0">
+          Les calculs reposent sur les barèmes réglementés en vigueur et les
+          taux connus à date. Ils constituent une estimation indicative et non
+          contractuelle.
+        </p>
+      </div>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8">
+        <p class="text-blue-800 text-sm mb-2">
+          <strong>📌 Simulation à titre indicatif :</strong> Cette estimation
+          correspond aux règles en vigueur au 1er janvier 2026. Les taux réels
+          varient fortement selon les communes ; votre avis d'impôt reste la
+          référence.
+        </p>
+        <p class="text-blue-800 text-sm m-0">
+          Résultat affiché : taxe foncière annuelle estimée à partir d'une
+          valeur locative cadastrale et d'un taux global indicatif (ou saisi).
+        </p>
+      </div>
+
+      <div id="taxe-calculator"></div>
+
+      <div class="mt-6 flex justify-center gap-3">
+        <button
+          id="taxe-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="taxe-reset-compare"
+          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <div id="taxe-comparaison" class="hidden mt-8"></div>
+
+      <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          💡 Exemples chiffrés (indicatifs)
+        </h2>
+        <p class="text-gray-600 mb-8">
+          Les montants ci-dessous sont des ordres de grandeur. Pour un résultat
+          exact, utilisez votre valeur locative cadastrale et l'avis de taxe
+          foncière.
+        </p>
+
+        <div class="space-y-6">
+          <div class="border-l-4 border-green-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Exemple 1 : Valeur locative faible + dégrèvements possibles
+            </h3>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <p class="text-green-900 m-0">
+                <strong>Cas possible :</strong> taxe faible, voire
+                <span class="font-bold">0 €</span> si des exonérations ou
+                dégrèvements s'appliquent (sous conditions).
+              </p>
+            </div>
+          </div>
+
+          <div class="border-l-4 border-blue-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Exemple 2 : Valeur locative 8 000 € (ordre de grandeur)
+            </h3>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <p class="text-blue-900 m-0">
+                <strong>Ordre de grandeur :</strong> taxe ≈
+                <span class="text-xl font-bold text-blue-700">quelques centaines d'euros</span>
+                selon les taux locaux.
+              </p>
+            </div>
+          </div>
+
+          <div class="border-l-4 border-purple-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Exemple 3 : Forte valeur locative et taux élevés
+            </h3>
+            <div class="bg-purple-50 p-4 rounded-lg">
+              <p class="text-purple-900 m-0">
+                <strong>Cas possible :</strong> taxe élevée si la commune vote un
+                taux important, même avec une valeur locative similaire.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Intro SEO -->
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -117,10 +208,10 @@
             ❓ Comment est calculée la taxe foncière en France ?
           </h2>
           <p class="ai-response text-gray-700">
-            Taxe foncière = Valeur locative cadastrale × Taux communal + Taux
-            départemental + Taux régional. La valeur locative dépend de la
-            surface cadastrale et de la situation du bien. Moyenne France :
-            800–1 500€/an.
+            Taxe foncière = Valeur locative cadastrale × Taux global. Des
+            exonérations ou dégrèvements peuvent s'appliquer selon votre
+            situation. Les taux réels varient selon les communes ; ce simulateur
+            fournit une estimation à partir d'un taux indicatif (ou saisi).
           </p>
         </section>
 
@@ -134,11 +225,12 @@
             </li>
             <li>
               <strong>Calcul:</strong> Valeur locative × (Taux communal +
-              Départemental + Régional)
+              intercommunalité + département) = taux global
             </li>
             <li>
               <strong>Particularité:</strong> Taux varie par région |
-              Abattements possibles | Exonérations agricoles/handicap
+              très variable selon les communes | Exonérations/dégrèvements
+              possibles (sous conditions)
             </li>
             <li>
               <strong>Outil:</strong> Simulation gratuite, taux 2026 actualisés
@@ -149,17 +241,16 @@
         <p class="text-lg text-gray-600 leading-relaxed mb-4">
           La taxe foncière est calculée sur la valeur locative cadastrale de
           votre propriété, multipliée par les taux votés par votre commune et
-          les collectivités territoriales. Notre simulateur 2026 prend en compte
-          les taux moyens par région et les principaux abattements applicables.
+          les collectivités territoriales (taux global). Notre simulateur 2026
+          propose un taux indicatif par région, que vous pouvez remplacer par
+          le taux exact de votre avis.
         </p>
         <p class="text-lg text-gray-600 leading-relaxed">
           La valeur locative cadastrale correspond au loyer théorique que
           pourrait produire votre bien s'il était loué. Cette base est ensuite
-          diminuée d'un abattement forfaitaire et peut bénéficier d'exonérations
-          selon votre situation. Les taux varient considérablement selon les
-          communes : de 10% à plus de 45% dans certaines villes. Notre outil
-          vous donne une estimation basée sur les moyennes régionales
-          actualisées pour 2026. Pour plus de détails, consultez
+          susceptible d'exonérations ou de dégrèvements selon votre situation
+          (sous conditions). Les taux varient considérablement selon les
+          communes : souvent 25% à 45%. Pour plus de détails, consultez
           <a
             href="https://www.service-public.fr/particuliers/vosdroits/F59"
             target="_blank"
@@ -177,7 +268,7 @@
           "@context": "https://schema.org",
           "@type": "Calculator",
           "name": "Calculateur Taxe Foncière 2026",
-          "description": "Simulez votre taxe foncière 2026 - abattements, taux régionaux, valeur locative cadastrale",
+          "description": "Simulez votre taxe foncière 2026 - valeur locative cadastrale, taux global indicatif (ou saisi), dégrèvements éventuels",
           "url": "https://www.lescalculateurs.fr/pages/taxe",
           "applicationCategory": "FinanceApplication",
           "screenshot": "https://www.lescalculateurs.fr/pages/taxe",
@@ -219,53 +310,71 @@
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <div class="text-3xl mb-2">🗂️</div>
               <h3 class="font-bold text-gray-900 mb-1">
-                Valeur locative précise
+                Valeur locative cadastrale
               </h3>
               <p class="text-sm text-gray-600">
-                Calcul basé sur la surface cadastrale et les taux régionaux 2026
+                Calcul basé sur la valeur locative cadastrale de votre avis
               </p>
             </div>
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <div class="text-3xl mb-2">📍</div>
-              <h3 class="font-bold text-gray-900 mb-1">Taux par région</h3>
+              <h3 class="font-bold text-gray-900 mb-1">Taux global</h3>
               <p class="text-sm text-gray-600">
-                Intégration des taux communaux, départementaux et régionaux de
-                votre zone
+                Estimation à partir d'un taux indicatif, ou saisie de votre taux
+                exact (avis d'impôt)
               </p>
             </div>
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <div class="text-3xl mb-2">✏️</div>
-              <h3 class="font-bold text-gray-900 mb-1">Abattements</h3>
+              <h3 class="font-bold text-gray-900 mb-1">Dégrèvements</h3>
               <p class="text-sm text-gray-600">
-                Prise en compte des exonérations et des réductions applicables à
-                votre bien
+                Exonérations/dégrèvements possibles (âge, handicap, revenus,
+                logement neuf), selon conditions
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Calculateur -->
-      <div id="taxe-calculator"></div>
-
-      <!-- Boutons de comparaison -->
-      <div class="mt-6 flex justify-center gap-3">
-        <button
-          id="taxe-add-to-compare"
-          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
-        >
-          ➕ Ajouter à la comparaison
-        </button>
-        <button
-          id="taxe-reset-compare"
-          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
-        >
-          🔄 Réinitialiser
-        </button>
-      </div>
-
-      <!-- Comparaison (masquée par défaut) -->
-      <div id="taxe-comparaison" class="hidden mt-8"></div>
+      <section class="max-w-4xl mx-auto mb-10">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">
+            ❓ Mini‑FAQ (taxe foncière)
+          </h2>
+          <div class="space-y-5">
+            <div>
+              <h3 class="font-semibold text-gray-900">
+                Pourquoi ma taxe foncière augmente presque chaque année ?
+              </h3>
+              <p class="text-gray-600 text-sm m-0">
+                Elle peut évoluer avec la revalorisation des bases, les décisions
+                de taux votées localement et des changements de situation
+                (travaux, exonérations expirées).
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">
+                Pourquoi deux logements similaires paient des montants différents ?
+              </h3>
+              <p class="text-gray-600 text-sm m-0">
+                Les valeurs locatives cadastrales et les taux locaux peuvent
+                varier fortement d'une commune à l'autre, et certains biens
+                bénéficient d'exonérations/dégrèvements spécifiques.
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">
+                Puis‑je contester ma taxe foncière ?
+              </h3>
+              <p class="text-gray-600 text-sm m-0">
+                Oui, notamment en cas d'erreur sur les caractéristiques du bien
+                ou la base cadastrale. Vérifiez d'abord votre avis et les
+                éléments de calcul, puis suivez la procédure officielle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- AI Section: Sources vérifiables -->
       <section class="max-w-4xl mx-auto mb-8 mt-12">
@@ -319,32 +428,23 @@
           </h3>
           <ul class="space-y-2 text-gray-700 mb-4">
             <li>
-              <strong>Valeur locative cadastrale:</strong> Base imposable
-              fournie par l'administration fiscale
+              <strong>Valeur locative cadastrale:</strong> base de la taxe
+              foncière sur les propriétés bâties (TFPB), fournie par
+              l'administration fiscale
             </li>
             <li>
-              <strong>Taux communal:</strong> Voté par la commune (variable
-              10–45% selon collectivités)
+              <strong>Taux global:</strong> somme des taux votés (commune +
+              intercommunalité + département), très variable selon les
+              collectivités (souvent 25% à 45%)
             </li>
             <li>
-              <strong>Taux départemental:</strong> Variable par département
-              (1,5%–2,5% environ)
+              <strong>Dégrèvements/exonérations:</strong> possibles sous
+              conditions (âge, handicap, revenus, logement neuf, travaux,
+              situations particulières)
             </li>
             <li>
-              <strong>Taux régional:</strong> Variable par région (0,5%–1%
-              environ)
-            </li>
-            <li>
-              <strong>Abattements:</strong> 50% résidence principale, 100%
-              agricoles sous conditions
-            </li>
-            <li>
-              <strong>Exonérations:</strong> Handicap, retraités revenus
-              modestes, zones franches urbaines
-            </li>
-            <li>
-              <strong>Conformité:</strong> Conforme articles CGI L.1397-1 et
-              R.1396-1
+              <strong>À part sur l'avis:</strong> la TEOM (ordures ménagères)
+              peut être affichée séparément de la taxe foncière
             </li>
           </ul>
           <p class="text-sm text-gray-600">
@@ -357,7 +457,24 @@
       <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
           <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Voir aussi</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Parcours immobilier :
+            <a href="/pages/apl.html" class="text-blue-700 hover:underline">APL</a>
+            →
+            <a href="/pages/pret.html" class="text-blue-700 hover:underline">Prêt</a>
+            →
+            <a href="/pages/notaire.html" class="text-blue-700 hover:underline">Notaire</a>
+            →
+            <a href="/pages/taxe.html" class="text-blue-700 hover:underline">Taxe</a>
+            →
+            <a href="/pages/charges.html" class="text-blue-700 hover:underline">Charges</a>
+          </p>
           <div class="flex flex-wrap gap-3">
+            <a
+              href="/pages/apl.html"
+              class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+              >APL 2026</a
+            >
             <a
               href="/pages/notaire.html"
               class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
@@ -379,9 +496,14 @@
               >Charges de copropriété</a
             >
             <a
+              href="/pages/impot.html"
+              class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+              >Impôt sur le revenu</a
+            >
+            <a
               href="/pages/ik.html"
               class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
-              >Frais kilométriques</a
+              >Indemnités kilométriques (IK)</a
             >
             <a
               href="/pages/travail.html"
@@ -445,7 +567,7 @@
           fields: [
             {
               id: "valeur_locative",
-              label: "Valeur locative cadastrale annuelle",
+              label: "Valeur locative cadastrale annuelle (€)",
               type: "number",
               required: true,
               placeholder: "8000",
@@ -483,9 +605,13 @@
               ],
             },
             {
-              id: "residence_principale",
-              label: "Résidence principale",
-              type: "checkbox",
+              id: "taux_global",
+              label: "Taux global (%) (optionnel)",
+              type: "number",
+              placeholder: "33",
+              min: 0,
+              max: 60,
+              step: 0.1,
             },
             {
               id: "age_proprietaire",
@@ -503,76 +629,59 @@
           ],
           calculate: (values) => {
             try {
-              const valeurLocative = values.valeur_locative;
+              const valeurLocative = Number(values.valeur_locative) || 0;
               const region = values.region;
-              const residencePrincipale = values.residence_principale || false;
-              const age = values.age_proprietaire || 0;
-              const handicape = values.handicape || false;
+              const tauxGlobalPct = Number(values.taux_global) || 0;
+              const age = Number(values.age_proprietaire) || 0;
+              const handicape = !!values.handicape;
 
-              // Taux moyen de la région
               const tauxRegion =
-                baremes.taxe_fonciere.taux_moyens_par_region[region];
+                baremes.taxe_fonciere.taux_moyens_par_region[region] || 0;
+              const tauxUtilise = tauxGlobalPct > 0 ? tauxGlobalPct / 100 : tauxRegion;
+              const tauxSource = tauxGlobalPct > 0 ? "personnalise" : "moyen";
 
-              // Abattement de base (50% sur la valeur locative)
-              let valeurImposable = valeurLocative * 0.5;
+              const taxeBrute = valeurLocative * tauxUtilise;
 
-              // Abattements supplémentaires
-              let abattementTotal = 0;
-              const abattements = [];
-
-              if (residencePrincipale) {
-                const abattementRP =
-                  valeurImposable *
-                  baremes.taxe_fonciere.abattements.residence_principale;
-                abattementTotal += abattementRP;
-                abattements.push({
-                  nom: "Résidence principale",
-                  montant: abattementRP,
-                });
-              }
+              let degrevementTotal = 0;
+              const degrevements = [];
 
               if (
-                age >= baremes.taxe_fonciere.abattements.personne_agee.seuil_age
+                age >=
+                baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.seuil_age
               ) {
-                const abattementAge =
-                  valeurImposable *
-                  baremes.taxe_fonciere.abattements.personne_agee.taux;
-                abattementTotal += abattementAge;
-                abattements.push({
-                  nom: "Personne âgée (+65 ans)",
-                  montant: abattementAge,
+                const degAge =
+                  taxeBrute *
+                  baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.taux;
+                degrevementTotal += degAge;
+                degrevements.push({
+                  nom: "Personne âgée (sous conditions)",
+                  montant: degAge,
                 });
               }
 
               if (handicape) {
-                const abattementHandicap =
-                  valeurImposable *
-                  baremes.taxe_fonciere.abattements.personne_handicapee;
-                abattementTotal += abattementHandicap;
-                abattements.push({
-                  nom: "Personne handicapée",
-                  montant: abattementHandicap,
+                const degHandicap =
+                  taxeBrute *
+                  baremes.taxe_fonciere.degrevements_indicatifs.personne_handicapee;
+                degrevementTotal += degHandicap;
+                degrevements.push({
+                  nom: "Handicap (sous conditions)",
+                  montant: degHandicap,
                 });
               }
 
-              // Base imposable finale
-              const baseImposable = Math.max(
-                0,
-                valeurImposable - abattementTotal,
-              );
-
-              // Taxe foncière
-              const taxeFonciere = baseImposable * tauxRegion;
+              const taxeFonciere = Math.max(0, taxeBrute - degrevementTotal);
 
               return {
                 success: true,
                 data: {
                   valeurLocative,
-                  valeurImposable,
-                  abattements,
-                  abattementTotal,
-                  baseImposable,
+                  taxeBrute,
+                  degrevements,
+                  degrevementTotal,
                   tauxRegion,
+                  tauxUtilise,
+                  tauxSource,
                   taxeFonciere,
                   region,
                 },
@@ -601,82 +710,119 @@
               bretagne: "Bretagne",
               corse: "Corse",
             }[data.region];
+            const isZero = !data.taxeFonciere || data.taxeFonciere <= 0;
+            const tauxLabel =
+              data.tauxSource === "personnalise"
+                ? "Taux global (saisi)"
+                : "Taux global indicatif";
+            const isVeryLow = data.taxeFonciere > 0 && data.taxeFonciere < 50;
 
             return `
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-gray-800">Valeur locative cadastrale</h4>
-                <p class="text-xl font-bold text-primary-600">${formatCurrency(
+          <div class="space-y-6">
+            <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Résultat principal</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Taxe foncière estimée (annuelle)</p>
+                  <p class="text-2xl font-bold text-green-700">${formatCurrency(
+                    data.taxeFonciere,
+                  )}</p>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">Taxe brute (avant dégrèvements)</p>
+                  <p class="text-2xl font-bold text-blue-700">${formatCurrency(
+                    data.taxeBrute,
+                  )}</p>
+                </div>
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-600">${tauxLabel}</p>
+                  <p class="text-2xl font-bold text-purple-700">${(
+                    data.tauxUtilise * 100
+                  ).toFixed(2)}%</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 mt-3 m-0">
+                Région : <strong>${regionLabel}</strong> • Valeur locative cadastrale : <strong>${formatCurrency(
                   data.valeurLocative,
-                )}</p>
-              </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-gray-800">Taxe foncière estimée</h4>
-                <p class="text-xl font-bold text-green-600">${formatCurrency(
-                  data.taxeFonciere,
-                )}</p>
-              </div>
+                )}</strong>
+              </p>
             </div>
-            
-            <div class="border-t pt-4">
-              <h4 class="font-semibold text-gray-800 mb-3">Détail du calcul :</h4>
-              <div class="space-y-2 text-sm">
-                <div class="flex justify-between">
-                  <span>Valeur locative cadastrale :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.valeurLocative,
-                  )}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Valeur imposable (abattement 50%) :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.valeurImposable,
-                  )}</span>
-                </div>
-                ${
-                  data.abattements.length > 0
-                    ? `
-                  <div class="text-gray-600 font-medium mt-2">Abattements appliqués :</div>
-                  ${data.abattements
-                    .map(
-                      (ab) => `
-                    <div class="flex justify-between ml-4">
-                      <span>• ${ab.nom} :</span>
-                      <span class="font-medium">-${formatCurrency(
-                        ab.montant,
-                      )}</span>
-                    </div>
-                  `,
-                    )
-                    .join("")}
-                `
-                    : ""
-                }
-                <div class="flex justify-between border-t pt-2">
-                  <span>Base imposable finale :</span>
-                  <span class="font-medium">${formatCurrency(
-                    data.baseImposable,
-                  )}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Taux moyen ${regionLabel} :</span>
-                  <span class="font-medium">${(data.tauxRegion * 100).toFixed(
-                    2,
-                  )}%</span>
-                </div>
-                <div class="border-t pt-2 flex justify-between font-bold">
-                  <span>Taxe foncière 2026 :</span>
-                  <span>${formatCurrency(data.taxeFonciere)}</span>
-                </div>
+
+            ${
+              isZero
+                ? `
+            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+              <h3 class="text-lg font-bold text-green-900 mb-2">✅ Pourquoi la taxe est à 0 € ?</h3>
+              <ul class="text-sm text-green-900 list-disc list-inside space-y-1">
+                <li>Des exonérations ou dégrèvements peuvent ramener le montant à 0 € (sous conditions).</li>
+                <li>La valeur locative cadastrale est faible et le taux utilisé est une estimation.</li>
+                <li>Vérifiez votre avis : la TEOM (ordures ménagères) peut apparaître séparément.</li>
+              </ul>
+            </div>
+            `
+                : ""
+            }
+
+            ${
+              isVeryLow
+                ? `
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+              <h3 class="text-lg font-bold text-yellow-900 mb-2">⚠️ Montant très faible : comment l'interpréter ?</h3>
+              <p class="text-sm text-yellow-900 m-0">
+                Exemple volontairement simplifié : pour une valeur locative cadastrale très faible et/ou si des dégrèvements s'appliquent, la taxe peut être proche de 0 €. Dans la majorité des cas, la taxe foncière annuelle se situe entre quelques centaines et plusieurs milliers d'euros.
+              </p>
+            </div>
+            `
+                : ""
+            }
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <h3 class="text-lg font-bold text-blue-900 mb-2">🧠 Logique de calcul (simplifiée)</h3>
+              <ul class="text-sm text-blue-900 list-disc list-inside space-y-1">
+                <li>Base = valeur locative cadastrale</li>
+                <li>Taxe brute = base × taux global utilisé (indicatif ou saisi)</li>
+                <li>Taxe estimée = taxe brute − dégrèvements éventuels (sous conditions)</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 class="text-lg font-bold text-gray-900 mb-3">📊 Détail chiffré (étape par étape)</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse">
+                  <tbody>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Valeur locative cadastrale</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.valeurLocative,
+                    )}</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Taux global utilisé</td><td class="p-3 text-right font-semibold text-gray-900">${(
+                      data.tauxUtilise * 100
+                    ).toFixed(2)}%</td></tr>
+                    <tr class="border-b"><td class="p-3 text-gray-600">Taxe brute (avant dégrèvements)</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                      data.taxeBrute,
+                    )}</td></tr>
+                    ${
+                      data.degrevements.length > 0
+                        ? data.degrevements
+                            .map(
+                              (ab) => `<tr class="border-b"><td class="p-3 text-gray-600">Dégrèvement — ${ab.nom}</td><td class="p-3 text-right font-semibold text-gray-900">-${formatCurrency(
+                                ab.montant,
+                              )}</td></tr>`,
+                            )
+                            .join("")
+                        : `<tr class="border-b"><td class="p-3 text-gray-600">Dégrèvements (si éligible)</td><td class="p-3 text-right font-semibold text-gray-900">—</td></tr>`
+                    }
+                    <tr class="bg-gray-50"><td class="p-3 font-bold text-gray-900">Taxe foncière estimée 2026</td><td class="p-3 text-right font-bold text-green-700">${formatCurrency(
+                      data.taxeFonciere,
+                    )}</td></tr>
+                  </tbody>
+                </table>
               </div>
             </div>
 
             <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
               <p class="text-sm text-red-800">
-                <strong>⚠️ Important :</strong> Cette estimation utilise des taux moyens régionaux. 
-                <strong>Les taux réels varient énormément selon les communes</strong> (de 10% à plus de 45% !). 
-                Consultez votre avis de taxe foncière pour le montant exact.
+                <strong>⚠️ Important :</strong> Cette estimation utilise un taux global indicatif. 
+                <strong>Les taux réels (commune + intercommunalité + département) varient énormément</strong> (souvent 25% à 45%).
+                Consultez votre avis de taxe foncière pour le taux exact.
               </p>
             </div>
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
@@ -697,15 +843,11 @@
                 headers: ["Paramètre", "Valeur"],
                 rows: [
                   ["Valeur locative cadastrale (€)", data.valeurLocative],
-                  ["Taux communal (%)", (data.tauxCommunal * 100).toFixed(2)],
-                  [
-                    "Taux départemental (%)",
-                    (data.tauxDepartemental * 100).toFixed(2),
-                  ],
-                  ["Taux régional (%)", (data.tauxRegion * 100).toFixed(2)],
-                  ["Taux total (%)", (data.tauxTotal * 100).toFixed(2)],
+                  ["Taux global utilisé (%)", (data.tauxUtilise * 100).toFixed(2)],
+                  ["Taxe brute (€)", data.taxeBrute],
+                  ["Dégrèvements (€)", data.degrevementTotal],
                   ["Taxe foncière 2026 (€)", data.taxeFonciere],
-                  ["Région", data.regionLabel],
+                  ["Région", data.region],
                 ],
               };
             },
@@ -714,40 +856,212 @@
 
         new CalculatorFrame("taxe-calculator", taxeConfig);
 
-        // Event listeners pour comparaison
-        import("../components/ComparisonModal.ts").then(
-          ({ ComparisonModal }) => {
-            const addBtn = document.getElementById("taxe-add-to-compare");
-            const resetBtn = document.getElementById("taxe-reset-compare");
+        import("../components/ComparisonModal.ts").then(({ ComparisonModal }) => {
+          const addBtn = document.getElementById("taxe-add-to-compare");
+          const resetBtn = document.getElementById("taxe-reset-compare");
 
-            if (addBtn && resetBtn) {
-              addBtn.addEventListener("click", () => {
-                ComparisonModal.addComparison("taxe", {
-                  valeurLocative:
-                    document.querySelector('[data-result="valeurLocative"]')
-                      ?.textContent || "N/A",
-                  taxeFonciere:
-                    document.querySelector('[data-result="taxeFonciere"]')
-                      ?.textContent || "N/A",
-                });
-                addBtn.classList.add("hidden");
-                resetBtn.classList.remove("hidden");
-                document
-                  .getElementById("taxe-comparaison")
-                  .classList.remove("hidden");
+          ComparisonModal.init("taxe");
+          if (resetBtn && ComparisonModal.count("taxe") > 0) {
+            resetBtn.classList.remove("hidden");
+          }
+
+          if (addBtn && resetBtn) {
+            addBtn.addEventListener("click", () => {
+              const regionLabels = {
+                ile_de_france: "Île-de-France",
+                provence_alpes_cote_azur: "Provence-Alpes-Côte d'Azur",
+                auvergne_rhone_alpes: "Auvergne-Rhône-Alpes",
+                occitanie: "Occitanie",
+                nouvelle_aquitaine: "Nouvelle-Aquitaine",
+                grand_est: "Grand Est",
+                hauts_de_france: "Hauts-de-France",
+                normandie: "Normandie",
+                centre_val_de_loire: "Centre-Val de Loire",
+                bourgogne_franche_comte: "Bourgogne-Franche-Comté",
+                pays_de_la_loire: "Pays de la Loire",
+                bretagne: "Bretagne",
+                corse: "Corse",
+              };
+
+              function computeScenario(values) {
+                const valeurLocative = Number(values.valeur_locative) || 0;
+                const region = String(values.region || "");
+                const tauxGlobalPct = Number(values.taux_global) || 0;
+                const age = Number(values.age_proprietaire) || 0;
+                const handicape = !!values.handicape;
+
+                const tauxRegion =
+                  baremes.taxe_fonciere.taux_moyens_par_region[region] || 0;
+                const tauxUtilise =
+                  tauxGlobalPct > 0 ? tauxGlobalPct / 100 : tauxRegion;
+                const taxeBrute = valeurLocative * tauxUtilise;
+                let degrevementTotal = 0;
+
+                if (
+                  age >=
+                  baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.seuil_age
+                ) {
+                  const degAge =
+                    taxeBrute *
+                    baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.taux;
+                  degrevementTotal += degAge;
+                }
+
+                if (handicape) {
+                  const degHandicap =
+                    taxeBrute *
+                    baremes.taxe_fonciere.degrevements_indicatifs.personne_handicapee;
+                  degrevementTotal += degHandicap;
+                }
+
+                const taxeFonciere = Math.max(0, taxeBrute - degrevementTotal);
+
+                return {
+                  valeurLocative,
+                  region,
+                  tauxGlobalPct,
+                  age,
+                  handicape,
+                  tauxRegion,
+                  tauxUtilise,
+                  taxeBrute,
+                  degrevementTotal,
+                  taxeFonciere,
+                };
+              }
+
+              const last = window["dernierCalcul_taxe-calculator"];
+              const lastValues = last?.values || {};
+
+              const modal = new ComparisonModal({
+                title: "Ajouter un scénario à la comparaison",
+                fields: [
+                  {
+                    id: "ville",
+                    label: "Ville (optionnel)",
+                    type: "text",
+                    value: lastValues.ville || "",
+                    placeholder: "Caen",
+                  },
+                  {
+                    id: "valeur_locative",
+                    label: "Valeur locative cadastrale annuelle (€)",
+                    type: "number",
+                    value: lastValues.valeur_locative ?? 8000,
+                    required: true,
+                    min: 0,
+                    step: 100,
+                  },
+                  {
+                    id: "region",
+                    label: "Région",
+                    type: "select",
+                    value: lastValues.region || "normandie",
+                    required: true,
+                    options: [
+                      { value: "ile_de_france", label: "Île-de-France" },
+                      {
+                        value: "provence_alpes_cote_azur",
+                        label: "Provence-Alpes-Côte d'Azur",
+                      },
+                      {
+                        value: "auvergne_rhone_alpes",
+                        label: "Auvergne-Rhône-Alpes",
+                      },
+                      { value: "occitanie", label: "Occitanie" },
+                      { value: "nouvelle_aquitaine", label: "Nouvelle-Aquitaine" },
+                      { value: "grand_est", label: "Grand Est" },
+                      { value: "hauts_de_france", label: "Hauts-de-France" },
+                      { value: "normandie", label: "Normandie" },
+                      { value: "centre_val_de_loire", label: "Centre-Val de Loire" },
+                      {
+                        value: "bourgogne_franche_comte",
+                        label: "Bourgogne-Franche-Comté",
+                      },
+                      { value: "pays_de_la_loire", label: "Pays de la Loire" },
+                      { value: "bretagne", label: "Bretagne" },
+                      { value: "corse", label: "Corse" },
+                    ],
+                  },
+                  {
+                    id: "taux_global",
+                    label: "Taux global (%) (optionnel)",
+                    type: "number",
+                    value: lastValues.taux_global ?? "",
+                    placeholder: "33",
+                    min: 0,
+                    max: 60,
+                    step: 0.1,
+                  },
+                  {
+                    id: "age_proprietaire",
+                    label: "Âge du propriétaire (optionnel)",
+                    type: "number",
+                    value: lastValues.age_proprietaire ?? "",
+                    min: 0,
+                    max: 120,
+                    step: 1,
+                  },
+                  {
+                    id: "handicape",
+                    label: "Propriétaire en situation de handicap",
+                    type: "select",
+                    value: String(!!lastValues.handicape),
+                    required: true,
+                    options: [
+                      { value: "true", label: "Oui" },
+                      { value: "false", label: "Non" },
+                    ],
+                  },
+                ],
+                onConfirm: (values) => {
+                  const normalized = {
+                    ville: String(values.ville || "").trim(),
+                    valeur_locative: Number(values.valeur_locative) || 0,
+                    region: String(values.region || ""),
+                    taux_global: Number(values.taux_global) || 0,
+                    age_proprietaire: Number(values.age_proprietaire) || 0,
+                    handicape: String(values.handicape) === "true",
+                  };
+
+                  const computed = computeScenario(normalized);
+                  const regionLabel = regionLabels[computed.region] || computed.region;
+
+                  const labelParts = [
+                    normalized.ville ? normalized.ville : null,
+                    regionLabel,
+                    `VLC ${formatCurrency(computed.valeurLocative)}`,
+                  ].filter(Boolean);
+
+                  ComparisonModal.addComparison("taxe", {
+                    label: labelParts.join(" • "),
+                    ville: normalized.ville || "—",
+                    region: regionLabel,
+                    valeur_locative: formatCurrency(computed.valeurLocative),
+                    age: normalized.age_proprietaire ? `${normalized.age_proprietaire} ans` : "—",
+                    handicap: normalized.handicape,
+                    taux_utilise: `${(computed.tauxUtilise * 100).toFixed(2)}%`,
+                    taxe_brute: formatCurrency(computed.taxeBrute),
+                    degrevements: formatCurrency(computed.degrevementTotal),
+                    taxe_fonciere: formatCurrency(computed.taxeFonciere),
+                  });
+
+                  resetBtn.classList.remove("hidden");
+                  document
+                    .getElementById("taxe-comparaison")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                },
               });
 
-              resetBtn.addEventListener("click", () => {
-                ComparisonModal.resetComparison("taxe");
-                addBtn.classList.remove("hidden");
-                resetBtn.classList.add("hidden");
-                document
-                  .getElementById("taxe-comparaison")
-                  .classList.add("hidden");
-              });
-            }
-          },
-        );
+              modal.open();
+            });
+
+            resetBtn.addEventListener("click", () => {
+              ComparisonModal.resetComparison("taxe");
+              resetBtn.classList.add("hidden");
+            });
+          }
+        });
       </script>
 
       <!-- Auto-initialisation des exports PDF/CSV -->

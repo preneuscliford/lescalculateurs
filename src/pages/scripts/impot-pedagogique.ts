@@ -3,10 +3,10 @@ import { ComparisonModal } from "../../components/ComparisonModal.ts";
 import { formatCurrency } from "../../main.ts";
 
 const bareme = [
-  { plafond: 11294, taux: 0 },
-  { plafond: 28797, taux: 0.11 },
-  { plafond: 82341, taux: 0.3 },
-  { plafond: 177106, taux: 0.41 },
+  { plafond: 11497, taux: 0 },
+  { plafond: 29315, taux: 0.11 },
+  { plafond: 83823, taux: 0.3 },
+  { plafond: 180294, taux: 0.41 },
   { plafond: Infinity, taux: 0.45 },
 ];
 
@@ -24,9 +24,11 @@ function calculateDistribution(qf: number) {
     const montant = Math.min(qf, tranchePlafond) - prev;
     distribution.push({
       tranche: i + 1,
+      de: prev,
+      a: Math.min(qf, tranchePlafond),
       montant,
       taux,
-      qf,
+      impotParPart: montant * taux,
     });
 
     prev = tranchePlafond;
@@ -81,8 +83,9 @@ const comparisonStorage = {
 };
 
 const impotConfig = {
-  title: "Impôt sur le revenu 2025",
-  description: "Barème progressif et quotient familial.",
+  title: "Impôt sur le revenu 2026",
+  description:
+    "Barème progressif et quotient familial (estimation indicative, hors décote/réductions/crédits).",
   fields: [
     {
       id: "revenu",
@@ -150,6 +153,8 @@ const impotConfig = {
   formatResult: (result: any) => {
     const d = result.data;
     const distribution = calculateDistribution(d.qf);
+    const impotParPart = d.parts > 0 ? d.irBrut / d.parts : 0;
+    const isZeroIR = d.irBrut <= 0;
 
     // Déterminer l'explication des parts fiscales
     let partsExplication = "";
@@ -297,7 +302,7 @@ const impotConfig = {
       <!-- Résultat Principal -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-          <h4 class="font-semibold text-gray-800">💰 IR brut estimé</h4>
+          <h4 class="font-semibold text-gray-800">💰 Impôt estimé (barème brut)</h4>
           <p class="text-2xl font-bold text-blue-600">${formatCurrency(
             d.irBrut
           )}</p>
@@ -317,6 +322,88 @@ const impotConfig = {
           <p class="text-xs text-gray-500 mt-2">Taux marginal: ${(
             d.tauxMarginal * 100
           ).toFixed(0)}%</p>
+        </div>
+      </div>
+
+      ${
+        isZeroIR
+          ? `
+      <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+        <h3 class="text-lg font-bold text-green-900 mb-2">✅ Pourquoi l'impôt est à 0 € ?</h3>
+        <ul class="text-sm text-green-900 list-disc list-inside space-y-1">
+          <li>Votre quotient familial (${formatCurrency(
+            d.qf
+          )}) reste dans la tranche à 0 % (jusqu'à ${formatCurrency(
+            bareme[0].plafond
+          )} par part).</li>
+          <li>Ce résultat est une estimation “barème brut” (hors décote, réductions et crédits d'impôt).</li>
+          <li>En pratique, la décote et vos avantages fiscaux peuvent changer le montant final.</li>
+        </ul>
+      </div>
+      `
+          : ""
+      }
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">🧠 Logique de calcul (simplifiée)</h3>
+        <ul class="text-sm text-blue-900 list-disc list-inside space-y-1">
+          <li>Quotient familial (QF) = Revenu imposable ÷ Nombre de parts</li>
+          <li>Impôt par part = application du barème progressif sur le QF</li>
+          <li>Impôt estimé = (Impôt par part) × Nombre de parts</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-6">
+        <h3 class="text-lg font-bold text-gray-900 mb-3">📊 Détail chiffré (étape par étape)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="p-2 text-left border border-gray-200">Tranche</th>
+                <th class="p-2 text-center border border-gray-200">De - À (par part)</th>
+                <th class="p-2 text-center border border-gray-200">Taux</th>
+                <th class="p-2 text-right border border-gray-200">Base (par part)</th>
+                <th class="p-2 text-right border border-gray-200">Impôt (par part)</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${distribution
+                .map(
+                  (dist: any) => `
+                <tr class="border-b border-gray-100 hover:bg-gray-50">
+                  <td class="p-2 border border-gray-200">${dist.tranche}</td>
+                  <td class="p-2 text-center border border-gray-200">${formatCurrency(
+                    dist.de
+                  )} à ${dist.a === Infinity ? "∞" : formatCurrency(dist.a)}</td>
+                  <td class="p-2 text-center border border-gray-200 font-semibold">${(
+                    dist.taux * 100
+                  ).toFixed(0)}%</td>
+                  <td class="p-2 text-right border border-gray-200">${formatCurrency(
+                    dist.montant
+                  )}</td>
+                  <td class="p-2 text-right border border-gray-200 font-semibold">${formatCurrency(
+                    dist.impotParPart
+                  )}</td>
+                </tr>
+              `
+                )
+                .join("")}
+            </tbody>
+            <tfoot>
+              <tr class="bg-gray-50">
+                <td class="p-2 border border-gray-200 font-semibold" colspan="4">Impôt par part</td>
+                <td class="p-2 border border-gray-200 text-right font-bold">${formatCurrency(
+                  impotParPart
+                )}</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-2 border border-gray-200 font-semibold" colspan="4">Impôt estimé (toutes parts)</td>
+                <td class="p-2 border border-gray-200 text-right font-bold text-blue-700">${formatCurrency(
+                  d.irBrut
+                )}</td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
       </div>
 
@@ -380,7 +467,13 @@ const impotConfig = {
                   "bg-purple-500",
                 ];
                 const color = colors[i % colors.length];
-                const pct = ((dist.montant / dist.qf) * 100).toFixed(1);
+                const total = d.qf > 0 ? d.qf : 0;
+                const pct =
+                  distribution.length === 1
+                    ? "100.0"
+                    : total > 0
+                    ? ((dist.montant / total) * 100).toFixed(1)
+                    : "0.0";
                 return `
                 <div>
                   <div class="flex justify-between text-xs mb-1">
@@ -399,11 +492,11 @@ const impotConfig = {
               .join("")}
           </div>
           <p class="text-xs text-gray-600 mt-3 bg-amber-100 p-2 rounded">
-            💡 <strong>Sur votre revenu de ${formatCurrency(
-              d.revenu
-            )}, seuls ${formatCurrency(
-      Math.max(0, Math.min(d.qf - 11294, 28797 - 11294))
-    )} sont taxés à 30%</strong> (tranche 3)
+            💡 <strong>Au-dessus de ${formatCurrency(
+              bareme[1].plafond
+            )} par part, la partie correspondante est taxée à 30 % :</strong> environ ${formatCurrency(
+              Math.max(0, Math.min(d.qf, bareme[2].plafond) - bareme[1].plafond)
+            )} dans votre cas.
           </p>
         </div>
       </div>
@@ -434,6 +527,9 @@ const impotConfig = {
               (d.irBrut * d.parts) / 0.5
             )}</p>
             <p class="text-xs text-gray-600 mt-2">Les enfants ajoutent 0.5 part chacun</p>
+            <p class="text-xs text-gray-600 mt-2">
+              ℹ️ Le quotient familial est plafonné : au-delà d’un certain avantage par demi-part, le gain fiscal est limité.
+            </p>
           </div>
         </div>
       </div>
@@ -442,16 +538,11 @@ const impotConfig = {
       <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
         <h3 class="text-lg font-bold text-purple-900 mb-3">🎁 La décote (pourquoi certains ne paient pas d'impôt)</h3>
         <p class="text-sm text-purple-800 mb-4">
-          La décote réduit votre impôt si celui-ci est faible. Si votre IR est inférieur à un certain seuil, vous bénéficiez d'une réduction automatique :
+          La décote peut réduire votre impôt si celui-ci est faible. Dans certains cas, elle peut même ramener l'impôt final à 0 €.
         </p>
         <div class="bg-white rounded p-4 border border-purple-200">
-          <p class="text-sm text-purple-900"><strong>Décote 2025 :</strong></p>
-          <ul class="text-sm text-purple-800 mt-2 space-y-1 list-disc list-inside">
-            <li>Célibataire, divorcé, veuf : décote jusqu'à 960 €</li>
-            <li>Couple marié ou PACS : décote jusqu'à 1 920 €</li>
-          </ul>
           <p class="text-xs text-gray-600 mt-3 bg-purple-100 p-2 rounded">
-            ℹ️ Résultat : Un couple peut avoir un revenu de 40 000 € et ne payer <strong>0 € d'impôt</strong> grâce à la décote !
+            ℹ️ Ce simulateur n'applique pas la décote : il affiche une estimation “barème brut”. Pour un résultat exact, utilisez le simulateur officiel DGFIP.
           </p>
         </div>
       </div>

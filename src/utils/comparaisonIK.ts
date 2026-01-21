@@ -215,14 +215,14 @@ class ComparaisonIK {
                 .join("")}
             </tr>
             <tr class="bg-orange-50 font-bold">
-              <td class="p-3 border-r border-gray-200">Annuel (12 mois)</td>
+              <td class="p-3 border-r border-gray-200">Mensuel (sur 12 mois)</td>
               ${this.calculs
                 .map(
                   (c) => `
                 <td class="p-3 text-center ${
                   c.total === maxTotal ? "text-green-700" : "text-gray-900"
                 } border-r border-gray-200">
-                  ${formatCurrency(c.total * 12)}
+                  ${formatCurrency(c.total / 12)}
                 </td>`
                 )
                 .join("")}
