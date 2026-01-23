@@ -1,10 +1,49 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import fs from "fs";
+import path from "path";
 
 export default defineConfig({
   root: "src",
   publicDir: "../public",
   base: "/",
+  plugins: [
+    {
+      name: "clean-urls-html",
+      apply: "serve",
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          const url = req.url || "/";
+          const [pathname, search] = url.split("?");
+
+          if (!pathname || pathname === "/") return next();
+          if (pathname.startsWith("/@")) return next();
+          if (pathname.startsWith("/assets/")) return next();
+          if (pathname.includes(".")) return next();
+
+          const cleanPath = pathname
+            .replace(/^\/+/, "")
+            .replace(/\/+$/, "");
+          const rootDir = server.config.root;
+
+          const candidateHtml = path.join(rootDir, `${cleanPath}.html`);
+          const candidateIndex = path.join(rootDir, cleanPath, "index.html");
+
+          if (fs.existsSync(candidateHtml)) {
+            req.url = `/${cleanPath}.html${search ? `?${search}` : ""}`;
+            return next();
+          }
+
+          if (fs.existsSync(candidateIndex)) {
+            req.url = `/${cleanPath}/index.html${search ? `?${search}` : ""}`;
+            return next();
+          }
+
+          return next();
+        });
+      },
+    },
+  ],
   build: {
     outDir: "../dist",
     emptyOutDir: true,
