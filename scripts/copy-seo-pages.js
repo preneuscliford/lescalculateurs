@@ -391,7 +391,7 @@ function generateSatellitePages({
         relatedPage: related,
         cssFile,
         jsFile,
-        assetPrefix: "../../assets",
+        assetPrefix: "/assets",
       });
 
       const outDir = path.join(satellitesTargetDir, p.pillarKey);
@@ -410,7 +410,7 @@ function generateSatellitePages({
         relatedPage: related,
         cssFile,
         jsFile,
-        assetPrefix: "../../../assets",
+        assetPrefix: "/assets",
       });
       const outPathIndex = path.join(outDirClean, "index.html");
       fs.writeFileSync(outPathIndex, htmlIndex, "utf-8");
