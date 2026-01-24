@@ -2,6 +2,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/pages/blog/frais-notaire-ancien-neuf-2025",
+      "destination": "/pages/blog/frais-notaire-ancien-neuf-2026",
+      "permanent": true
+    },
+    {
       "source": "/blog/departements/(.*)",
       "destination": "/pages/blog/departements/$1",
       "permanent": true
