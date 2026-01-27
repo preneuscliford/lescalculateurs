@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
+const { readTextFile, writeTextFile } = require("./encoding.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const BLOG_DIR = path.join(ROOT, "src/pages/blog");
@@ -81,14 +82,14 @@ function insertDeptHighlights(content) {
  * Traite un fichier HTML: remplacements et insertion
  */
 function processFile(filePath) {
-  let content = fs.readFileSync(filePath, "utf-8");
+  let content = readTextFile(filePath);
   const original = content;
   content = replaceRanges(content);
   content = replaceAtoEn(content);
   content = removeExistingHighlights(content);
   content = insertDeptHighlights(content);
   if (content !== original) {
-    fs.writeFileSync(filePath, content, "utf-8");
+    writeTextFile(filePath, content);
     return true;
   }
   return false;

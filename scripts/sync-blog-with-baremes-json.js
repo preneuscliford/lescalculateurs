@@ -1,5 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { createRequire } from 'node:module'
+
+const require = createRequire(import.meta.url)
+const { readTextFile, writeTextFile } = require('./encoding.cjs')
 
 /**
  * Charge src/data/baremes.json (barème CSN, DMTO, CSI, TVA, frais divers)
@@ -194,7 +198,7 @@ function getDeptName(code) {
  * Traite un fichier département: met à jour les trois blocs
  */
 function processFile(file, baremes) {
-  const html = fs.readFileSync(file, 'utf8')
+  const html = readTextFile(file)
   const m = file.match(/frais-notaire-(\d{2}|\d{3}|2A|2B)\.html$/)
   const code = m ? m[1] : null
   if (!code) return false
@@ -205,7 +209,7 @@ function processFile(file, baremes) {
   updated = updateSummary(updated, code, name, baremes)
   updated = updateLocalBlock(updated, code, baremes)
   if (updated !== html) {
-    fs.writeFileSync(file, updated, 'utf8')
+    writeTextFile(file, updated)
     return true
   }
   return false

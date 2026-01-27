@@ -1,5 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+const { readTextFile, writeTextFile } = require("./encoding.cjs");
 
 /**
  * Charge le JSON frais2025 (DMTO, émoluments, CSI, débours)
@@ -134,7 +138,7 @@ function updateComparatifPage(cfg, baremesGen) {
     "frais-notaire-ancien-neuf-2026.html",
   );
   if (!fs.existsSync(file)) return false;
-  let html = fs.readFileSync(file, "utf8");
+  let html = readTextFile(file);
 
   // Exemple générique sur 300 000 € – utiliser un département à 5,00% base (code 01)
   const code = "01";
@@ -250,7 +254,7 @@ function updateComparatifPage(cfg, baremesGen) {
     `✅ Économie vs ancien : <span class="text-2xl">${euro(A.total - N.total)}</span>`,
   );
 
-  fs.writeFileSync(file, html, "utf8");
+  writeTextFile(file, html);
   return true;
 }
 
@@ -266,7 +270,7 @@ function updateDepartementsTexts(cfg, baremesGen) {
     "frais-notaire-departements.html",
   );
   if (!fs.existsSync(file)) return false;
-  let html = fs.readFileSync(file, "utf8");
+  let html = readTextFile(file);
 
   // Taux standard autour de 5,81% -> ≈ 6,32%
   html = html.replace(
@@ -287,7 +291,7 @@ function updateDepartementsTexts(cfg, baremesGen) {
   html = html.replace(/8 \%/g, "≈ 7,00 %");
   html = html.replace(/2 à 3 \%/g, "≈ 1,90 % à ≈ 2,00 %");
 
-  fs.writeFileSync(file, html, "utf8");
+  writeTextFile(file, html);
   return true;
 }
 

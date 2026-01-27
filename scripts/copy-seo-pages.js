@@ -7,9 +7,13 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const require = createRequire(import.meta.url);
+const { readTextFile } = require("./encoding.cjs");
 
 // Chemins
 const sourceDir = path.resolve(__dirname, "../src/pages/blog/departements");
@@ -79,7 +83,7 @@ try {
       const targetPath = path.join(targetDir, file);
 
       // Lire le contenu HTML
-      let htmlContent = fs.readFileSync(sourcePath, "utf-8");
+      let htmlContent = readTextFile(sourcePath);
 
       // Remplacer les imports de développement (main.ts) par les bundles hashés
       htmlContent = htmlContent.replace(
@@ -216,7 +220,7 @@ try {
       "../dist/pages/blog/departements/frais-notaire-ancien-neuf-2026.html",
     );
     if (fs.existsSync(globalArticleSrc)) {
-      let htmlContent = fs.readFileSync(globalArticleSrc, "utf-8");
+      let htmlContent = readTextFile(globalArticleSrc);
 
       // Réécriture du script main.ts vers le bundle produit (../../main.ts)
       htmlContent = htmlContent.replace(
@@ -351,7 +355,7 @@ function generateSatellitePages({
 
   txtFiles.forEach((fileName) => {
     const txtPath = path.join(satellitesTxtDir, fileName);
-    const raw = fs.readFileSync(txtPath, "utf-8");
+    const raw = readTextFile(txtPath);
     const trimmed = raw.trim();
     if (!trimmed || trimmed === "(placeholder content)") {
       console.warn(`⚠️ Satellites TXT ignoré (vide): ${fileName}`);
@@ -452,7 +456,7 @@ function ensurePillarCleanUrls({ cssFile, jsFile, satellitesTargetDir }) {
     );
     if (!fs.existsSync(taxeFonciereSrc)) return;
 
-    let html = fs.readFileSync(taxeFonciereSrc, "utf-8");
+    let html = readTextFile(taxeFonciereSrc);
     html = html.replace(
       /<script[^>]*type="module"[^>]*src="\.\.\/\.\.\/\.\.\/main\.ts"[^>]*><\/script>/g,
       `<script type="module" crossorigin src="../../assets/${jsFile}"></script>`,
