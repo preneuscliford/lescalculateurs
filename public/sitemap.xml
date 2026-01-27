@@ -201,6 +201,34 @@
       <image:loc>https://www.lescalculateurs.fr/assets/android-chrome-512x512.png</image:loc>
     </image:image>
   </url>
+
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/revalorisation-smic-2026</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/inflation-cout-vie-2026</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://commons.wikimedia.org/wiki/Special:FilePath/Shopping_cart.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/salarie-ou-auto-entrepreneur-2026</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+    </image:image>
+  </url>
   
   <!-- Page pivot départements (Hub SEO) -->
   <url>

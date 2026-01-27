@@ -71,6 +71,18 @@ export default defineConfig({
           __dirname,
           "src/pages/blog/export-pdf-calculateurs.html",
         ),
+        "blog-revalorisation-smic-2026": resolve(
+          __dirname,
+          "src/pages/blog/revalorisation-smic-2026.html",
+        ),
+        "blog-inflation-cout-vie-2026": resolve(
+          __dirname,
+          "src/pages/blog/inflation-cout-vie-2026.html",
+        ),
+        "blog-salarie-ou-auto-entrepreneur-2026": resolve(
+          __dirname,
+          "src/pages/blog/salarie-ou-auto-entrepreneur-2026.html",
+        ),
         "blog-frais-notaire": resolve(
           __dirname,
           "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
