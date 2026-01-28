@@ -10,6 +10,63 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const SEO_YEAR = 2026;
+const DATE_PUBLISHED_ISO = "2026-01-16T10:00:00Z";
+const DATE_PUBLISHED_FR = "16 janvier 2026";
+const PUBLISH_MONTH_LABEL = "Janvier 2026";
+const PUBLISH_MONTH_DATETIME = "2026-01-01";
+
+function hasFlag(flag) {
+  const args = process.argv.slice(2);
+  return args.includes(flag) || args.some((a) => a.startsWith(`${flag}=`));
+}
+
+function normalizeDepartementCode(code) {
+  const c = String(code || "").trim().toUpperCase();
+  if (!c) return null;
+  if (/^\d{1,2}$/.test(c)) return c.padStart(2, "0");
+  if (/^\d{3}$/.test(c)) return c;
+  if (c === "2A" || c === "2B") return c;
+  return null;
+}
+
+function parseDepartementCodesFromArgs() {
+  const args = process.argv.slice(2);
+  const out = new Set();
+
+  const addMany = (value) => {
+    if (!value) return;
+    for (const part of String(value).split(/[,\s;]+/g)) {
+      const normalized = normalizeDepartementCode(part);
+      if (normalized) out.add(normalized);
+    }
+  };
+
+  for (let i = 0; i < args.length; i++) {
+    const a = args[i];
+    if (a.startsWith("--dept=")) addMany(a.slice("--dept=".length));
+    else if (a.startsWith("--departement="))
+      addMany(a.slice("--departement=".length));
+    else if (a === "--dept" || a === "--departement" || a === "-d")
+      addMany(args[i + 1]);
+  }
+
+  addMany(process.env.DEPT || process.env.DEPARTEMENT);
+  return out;
+}
+
+function isConformYMYL(html, depCode) {
+  if (!html) return false;
+  const hasTitle = html.includes("— Simulateur officiel gratuit</title>");
+  const hasCanonical = html.includes(
+    `https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-${depCode}`
+  );
+  const hasNoHtmlCanonical = !html.includes(
+    `frais-notaire-${depCode}.html`
+  );
+  return hasTitle && hasCanonical && hasNoHtmlCanonical;
+}
+
 /**
  * Résout le chemin du fichier DVF 2024.
  * Priorité: env `DVF_PATH` → `../ValeursFoncieres-2024.txt` → chemin absolu projet.
@@ -1055,6 +1112,7 @@ const getVerbe = (depNom, verbe) => {
     "Ardennes",
     "Bouches-du-Rhône",
     "Côtes-d'Armor",
+    "Hauts-de-Seine",
     "Landes",
     "Pyrénées-Atlantiques",
     "Hautes-Pyrénées",
@@ -1131,7 +1189,7 @@ const getArticleDefini = (depNom, depCode) => {
   if (masculinsVoyelle.includes(depNom)) return "l'";
 
   // Tous les autres (féminins) : la/l'
-  const voyelles = ["A", "E", "I", "O", "U", "H", "Î"];
+  const voyelles = ["A", "E", "I", "O", "U", "H", "Y", "Î"];
   if (voyelles.includes(depNom.charAt(0))) return "l'";
 
   return "la ";
@@ -1200,6 +1258,7 @@ const getPreposition = (depNom, depCode) => {
     "Ardennes",
     "Bouches-du-Rhône",
     "Côtes-d'Armor",
+    "Hauts-de-Seine",
     "Landes",
     "Pyrénées-Atlantiques",
     "Hautes-Pyrénées",
@@ -2277,12 +2336,12 @@ function generateArticleHTML(dep, index) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🧾 Frais de notaire 2025 ${dep.nom} (${
+    <title>🧾 Frais de notaire ${SEO_YEAR} ${dep.nom} (${
     dep.code
   }) - Simulateur gratuit</title>
     <meta
       name="description"
-      content="Calculez vos frais de notaire 2025 ${getPreposition(
+      content="Calculez vos frais de notaire ${SEO_YEAR} ${getPreposition(
         dep.nom,
         dep.code
       )} (${
@@ -2293,7 +2352,7 @@ function generateArticleHTML(dep, index) {
       name="keywords"
       content="frais notaire ${dep.nom}, simulateur frais notaire ${
     dep.code
-  }, calcul frais notaire 2025, achat immobilier ${dep.nom}, notaire ${
+  }, calcul frais notaire ${SEO_YEAR}, achat immobilier ${dep.nom}, notaire ${
     dep.ville1
   }"
     />
@@ -2309,7 +2368,7 @@ function generateArticleHTML(dep, index) {
       dep.code
     }.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="🧾 Frais de notaire 2025 ${dep.nom} (${
+    <meta property="og:title" content="🧾 Frais de notaire ${SEO_YEAR} ${dep.nom} (${
     dep.code
   })" />
     <meta property="og:description" content="Guide complet et simulateur gratuit pour le ${
@@ -2364,7 +2423,7 @@ function generateArticleHTML(dep, index) {
               )} ?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "En 2025, les frais de notaire représentent environ 6,6 % du prix d'achat dans l'ancien et 4 % dans le neuf.",
+                text: `Ancien : environ 7 à 8 % • Neuf (VEFA) : environ 2 à 3 % du prix d'achat. Utilisez le simulateur pour une estimation personnalisée.`,
               },
             },
             {
@@ -2372,15 +2431,15 @@ function generateArticleHTML(dep, index) {
               name: `Comment calculer les frais de notaire ${dep.code} ?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Utilisez notre simulateur gratuit intégré à cette page ; il applique le barème officiel 2025.",
+                text: `Utilisez notre simulateur gratuit intégré à cette page : il applique le barème officiel en vigueur.`,
               },
             },
             {
               "@type": "Question",
-              name: `Frais de notaire ${dep.nom} 2025 : neuf ou ancien ?`,
+              name: `Frais de notaire ${dep.nom} ${SEO_YEAR} : neuf ou ancien ?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Pour un bien de 200 000 €, l'économie peut atteindre 7 600 € en choisissant le neuf (VEFA).",
+                text: "Le neuf (VEFA) a généralement des frais plus faibles que l'ancien. L'écart dépend du prix et du dossier : utilisez le simulateur pour comparer.",
               },
             },
             {
@@ -2400,7 +2459,7 @@ function generateArticleHTML(dep, index) {
         {
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: `Frais de notaire 2025 ${getPreposition(
+          headline: `Frais de notaire ${SEO_YEAR} ${getPreposition(
             dep.nom,
             dep.code
           )} (${dep.code})`,
@@ -2408,7 +2467,7 @@ function generateArticleHTML(dep, index) {
             dep.nom,
             dep.code
           )} (${dep.code})`,
-          datePublished: "2025-10-06T10:00:00Z",
+          datePublished: DATE_PUBLISHED_ISO,
           dateModified: dateModifiedISO,
           author: { "@type": "Organization", name: "LesCalculateurs.fr" },
           publisher: {
@@ -2590,21 +2649,20 @@ function generateArticleHTML(dep, index) {
         <div class="flex items-center space-x-2 text-sm text-gray-500 mb-4">
           <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Immobilier</span>
           <span>•</span>
-          <time datetime="2025-10-06">6 octobre 2025</time>
+          <time datetime="${DATE_PUBLISHED_ISO.slice(0, 10)}">${DATE_PUBLISHED_FR}</time>
           <span>•</span>
           <span>Guide départemental</span>
         </div>
         
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Frais de notaire 2025 ${getPreposition(dep.nom, dep.code)} (${
+          Frais de notaire ${SEO_YEAR} ${getPreposition(dep.nom, dep.code)} (${
     dep.code
   })
         </h1>
         
         <p class="text-xl text-gray-600 leading-relaxed">
           <strong>${getIntroVariant(index, dep.nom, dep.code)}</strong> 
-          En 2025, ces frais représentent entre <strong>4% et 6,6% du prix d'achat</strong> selon que vous acquériez 
-          dans le neuf ou l'ancien. Dans le département ${
+          En ${SEO_YEAR}, ces frais se situent généralement autour de <strong>7 à 8 %</strong> dans l'ancien et <strong>2 à 3 %</strong> dans le neuf (VEFA). Dans le département ${
             dep.code
           }, le prix moyen au m² s'établit à environ 
           <strong>${dep.prixM2.toLocaleString(
@@ -3138,11 +3196,430 @@ function generateArticleHTML(dep, index) {
 </html>`;
 }
 
+function generateArticleHTML_YMYL(dep) {
+  const depLabel = `${dep.nom} (${dep.code})`;
+  const canonical = `https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-${dep.code}`;
+  const title = `Frais de notaire ${depLabel} ${SEO_YEAR} — Simulateur officiel gratuit`;
+  const description = `Calculez vos frais de notaire en ${dep.nom} (${dep.code}) instantanément. Estimation automatique ${SEO_YEAR}, barème officiel. Aucun email demandé.`;
+  const inLoc = getPreposition(dep.nom, dep.code)
+    .replace(/^dans l'/i, "Dans l’")
+    .replace(/^dans /i, "Dans ")
+    .replace(/^en /i, "En ")
+    .replace(/^à /i, "À ");
+
+  const intro =
+    dep.code === "75"
+      ? `Paris conjugue prestige, rareté et diversité de quartiers. Acheter à Paris en ${SEO_YEAR} implique de composer avec des prix parmi les plus élevés d’Europe, une offre tendue et des frais de notaire significatifs. Chaque arrondissement possède ses spécificités, ses dynamiques et ses points de vigilance.`
+      : `Selon que vous achetez à ${dep.ville1}${dep.ville2 ? `, ${dep.ville2}` : ""} ou ailleurs, le contexte local et la nature du bien influencent l’organisation d’un achat. Avant de signer, il est utile d’anticiper les frais de notaire, qui dépendent notamment de la nature de l’acquisition et des formalités du dossier.`;
+
+  const particularites =
+    dep.code === "75"
+      ? `À Paris, la copropriété, la complexité de certains dossiers (règlements, diagnostics, servitudes, situation locative) et la diversité des quartiers peuvent allonger certaines formalités. Le recours au calculateur permet d’obtenir une estimation adaptée à votre projet.`
+      : `${inLoc}, les frais de notaire sont calculés selon les règles nationales, mais le contexte local influence souvent le budget global d’un achat immobilier. Selon les secteurs, la typologie des biens (copropriété, maisons, terrain), les délais et certaines formalités peuvent varier. Le recours au calculateur permet d’obtenir une estimation adaptée à la commune et au type de bien.`;
+
+  return `<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${title}</title>
+    <meta name="description" content="${description}" />
+    <meta
+      name="keywords"
+      content="frais notaire ${dep.nom}, frais de notaire ${SEO_YEAR} ${dep.nom}, droits d'enregistrement ${dep.nom}, notaires ${dep.nom}, émoluments notaire ${dep.nom}"
+    />
+    <meta name="author" content="LesCalculateurs.fr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <link rel="canonical" href="${canonical}" />
+    <meta property="og:url" content="${canonical}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="Calculez vos frais de notaire en ${dep.nom} instantanément. Estimation automatique ${SEO_YEAR}. Aucun email demandé." />
+    <meta name="twitter:description" content="Calculez vos frais de notaire en ${dep.nom} instantanément. Estimation automatique ${SEO_YEAR}. Aucun email demandé." />
+    <meta property="og:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <script type="application/ld+json">
+      ${JSON.stringify(
+        [
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item: "https://www.lescalculateurs.fr/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Immobilier",
+                item: "https://www.lescalculateurs.fr/immobilier/",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: `Frais de notaire ${dep.nom} (${dep.code})`,
+                item: canonical,
+              },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: `Quel est le montant des frais de notaire ${getPreposition(
+                  dep.nom,
+                  dep.code
+                )} ?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `En ${SEO_YEAR}, les frais de notaire se situent généralement entre 7 % et 9 % du prix d'achat dans l'ancien et entre 2 % et 3 % dans le neuf (VEFA), selon le barème national et les droits d'enregistrement.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Comment sont calculés les frais de notaire ?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Les frais de notaire comprennent les droits d'enregistrement (taxe départementale), les émoluments du notaire (barème réglementé), les débours et formalités, la contribution de sécurité immobilière (CSI) et la TVA applicable.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Quelle différence entre ancien et neuf (VEFA) ?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "L'achat dans le neuf (VEFA) bénéficie de droits réduits, ce qui peut réduire le montant total des frais par rapport à l'ancien.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: `Où trouver un notaire ${getPreposition(dep.nom, dep.code)} ?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `Consultez l'annuaire officiel des notaires sur notaires.fr pour trouver un professionnel proche de votre projet immobilier ${getPreposition(
+                    dep.nom,
+                    dep.code
+                  )}.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: `Les frais de notaire sont-ils plus élevés ${getPreposition(
+                  dep.nom,
+                  dep.code
+                )} que dans d’autres départements ?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Non. Les frais de notaire sont encadrés au niveau national. Le montant total dépend surtout du prix du bien et de la nature du projet (ancien/neuf, formalités, etc.).",
+                },
+              },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Frais de notaire ${SEO_YEAR} ${getPreposition(
+              dep.nom,
+              dep.code
+            )} (${dep.code})`,
+            description: `Guide des frais de notaire pour l'achat immobilier ${getPreposition(
+              dep.nom,
+              dep.code
+            )} (${dep.code})`,
+            datePublished: DATE_PUBLISHED_ISO,
+            dateModified: new Date().toISOString(),
+            author: { "@type": "Organization", name: "LesCalculateurs.fr" },
+            publisher: {
+              "@type": "Organization",
+              name: "LesCalculateurs.fr",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.lescalculateurs.fr/assets/favicon-32x32.png",
+              },
+            },
+          },
+        ],
+        null,
+        2
+      )}
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399" crossorigin="anonymous"></script>
+
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TPFZCGX5");
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2HNTGCYQ1X");
+    </script>
+
+    <script type="module" src="../../../main.ts"></script>
+  </head>
+  <body class="bg-gray-50">
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-4">
+            <a href="/pages/blog.html" class="text-blue-600 hover:text-blue-700 font-semibold flex items-center space-x-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+              <span>← Blog</span>
+            </a>
+          </div>
+          <a href="/index.html" class="text-sm text-gray-600 hover:text-gray-900">Accueil</a>
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-10">
+        <h2 class="text-xl font-bold text-gray-900 mb-3">💰 Frais de notaire ${SEO_YEAR} ${getPreposition(dep.nom, dep.code)} (${dep.code})</h2>
+        <p class="text-gray-700 mb-2">Pour un achat immobilier en ${SEO_YEAR} :</p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li><strong>Bien ancien :</strong> généralement environ 7 % à 9 % du prix d'acquisition</li>
+          <li><strong>Bien neuf (VEFA) :</strong> généralement environ 2 % à 3 %, en raison de droits de mutation réduits, le reste étant composé d'émoluments, débours et taxes réglementées</li>
+        </ul>
+        <p class="text-sm text-gray-600 mb-2">Ces informations sont fournies à titre indicatif et pédagogique. Elles incluent les droits, émoluments, formalités, contribution de sécurité immobilière (CSI) et la TVA applicable.</p>
+        <p class="text-sm text-gray-700">👉 Pour un montant exact et personnalisé, <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">utilisez le calculateur</a>.</p>
+      </div>
+
+      <header class="mb-12">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Immobilier</span>
+          <span>•</span>
+          <time datetime="${PUBLISH_MONTH_DATETIME}">${PUBLISH_MONTH_LABEL}</time>
+          <span>•</span>
+          <span>Guide départemental</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Frais de notaire ${SEO_YEAR} ${getPreposition(dep.nom, dep.code)} (${dep.code})
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed">${intro}</p>
+      </header>
+
+      <figure class="rounded-lg overflow-hidden border border-gray-200 mb-8">
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/France_location_map-Regions_and_departements-2016.svg"
+          alt="Illustration ${dep.nom} — Guide frais de notaire ${dep.code}"
+          class="w-full h-64 object-cover"
+          loading="lazy"
+          width="800"
+          height="256"
+        />
+        <figcaption class="text-sm text-gray-500 px-4 py-2 bg-gray-50">
+          Illustration ${dep.nom} (${dep.code}). Source : Wikimedia Commons (CC).
+        </figcaption>
+      </figure>
+
+      <div class="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+        <p class="text-sm text-gray-700 m-0">
+          <strong>Sources officielles des taux et barèmes :</strong>
+          <a href="https://www.service-public.fr/particuliers/vosdroits/F2167" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">service-public.fr</a> •
+          <a href="https://www.notariat.fr/frais-de-notaire" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">notariat.fr</a> •
+          <a href="https://www.impots.gouv.fr" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">impots.gouv.fr</a> •
+          <a href="https://www.legifrance.gouv.fr" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">legifrance.gouv.fr</a>
+        </p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💵 Estimation des frais de notaire</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Les frais d'acquisition immobilière diffèrent selon que vous achetez dans l'ancien ou dans le neuf. ${inLoc}, le différentiel ancien / neuf respecte la réglementation nationale.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Spécificité locale</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          ${dep.nom} présente des dynamiques immobilières propres, influencées par son attractivité, son tissu urbain et les projets d'aménagement en cours. Ces éléments peuvent impacter indirectement le budget global d'un projet immobilier (prix d'achat, concurrence, délais, conditions de financement), sans modifier les règles nationales applicables aux frais de notaire.
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4 mb-8">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">📍 Particularités ${getPreposition(dep.nom, dep.code)} (${dep.code})</h3>
+          <p class="text-gray-700 mb-0">${particularites}</p>
+        </div>
+
+        <h3 class="text-2xl font-bold text-gray-900 mt-0 mb-4">💡 Estimation rapide selon le type de bien</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
+            <thead class="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+              <tr>
+                <th class="px-6 py-4 text-left font-semibold">Type d'achat</th>
+                <th class="px-6 py-4 text-left font-semibold">Ordre de grandeur</th>
+                <th class="px-6 py-4 text-left font-semibold">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200 hover:bg-orange-50">
+                <td class="px-6 py-4 font-medium text-gray-900">🏡 Ancien</td>
+                <td class="px-6 py-4 text-gray-700">≈ 7 % à 9 %</td>
+                <td class="px-6 py-4"><a href="/pages/notaire.html" class="text-blue-600 hover:underline font-semibold">Simuler</a></td>
+              </tr>
+              <tr class="hover:bg-blue-50">
+                <td class="px-6 py-4 font-medium text-gray-900">🏢 Neuf (VEFA)</td>
+                <td class="px-6 py-4 text-gray-700">≈ 2 % à 3 %</td>
+                <td class="px-6 py-4"><a href="/pages/notaire.html" class="text-blue-600 hover:underline font-semibold">Simuler</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-8">
+          👉 Ces fourchettes correspondent à des ordres de grandeur observés en France. Pour connaître le montant exact selon votre commune, utilisez le <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">simulateur</a>.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+          <p class="text-lg text-gray-800 mb-0">
+            <strong>💡 Bon à savoir :</strong> L'écart entre ancien et neuf peut représenter une économie significative selon le prix du bien et la nature du projet.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📝 Exemple pédagogique (non contractuel)</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">Prenons l'exemple d'un achat immobilier à ${dep.ville1 || dep.nom} :</p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li><strong>Prix du bien :</strong> à estimer via le calculateur</li>
+          <li><strong>Apport personnel :</strong> selon votre projet</li>
+          <li><strong>Frais de notaire :</strong> calculés selon barème officiel</li>
+          <li><strong>Montant à emprunter :</strong> selon votre projet</li>
+          <li><strong>Durée :</strong> selon capacité d'emprunt</li>
+        </ul>
+        <p class="text-sm text-gray-600 mb-6">👉 Ces données sont fournies à titre illustratif. Le calcul exact dépend du projet réel.</p>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💡 Astuces pour réduire vos frais de notaire</h2>
+        <ul class="list-disc list-inside text-gray-700 mb-6">
+          <li><strong>Mobilier hors acte :</strong> certains meubles peuvent être exclus de l'assiette des droits, dans le respect de la réglementation</li>
+          <li><strong>Remises d'émoluments :</strong> possibles dans certains cas sur la part réglementée</li>
+          <li><strong>Aides locales :</strong> certaines collectivités proposent des dispositifs d'aide à l'accession</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📈 Marché immobilier ${dep.nom} ${SEO_YEAR - 1}–${SEO_YEAR}</h2>
+        <ul class="list-disc list-inside text-gray-700 mb-6">
+          <li><strong>Évolution des prix :</strong> tendance variable selon secteurs</li>
+          <li><strong>Volume de transactions :</strong> dépend du contexte local</li>
+          <li><strong>Attractivité :</strong> liée à l'emploi, aux transports et aux projets urbains</li>
+          <li><strong>Tension du marché :</strong> variable selon les communes</li>
+        </ul>
+        <p class="text-sm text-gray-600 mb-6">Sources : DVF, INSEE, Notaires de France, données publiques ${SEO_YEAR} (mise à jour janvier).</p>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Prix immobiliers par ville (indicatifs)</h2>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li><strong>${dep.ville1 || dep.nom} :</strong> prix variable selon secteur</li>
+          <li><strong>Autres communes :</strong> variations possibles</li>
+        </ul>
+        <p class="text-sm text-gray-600 mb-6">📊 Méthodologie : estimations basées sur données publiques, à titre indicatif.</p>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏛️ Où trouver un notaire ${getPreposition(dep.nom, dep.code)} ?</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Pour un devis exact et personnalisé, consultez l'annuaire officiel des notaires sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline" target="_blank" rel="noopener">notaires.fr</a> et contactez un professionnel proche de votre projet immobilier.
+        </p>
+
+        <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 my-8 text-white">
+          <h2 class="text-2xl font-bold mb-2">💡 Simulez vos frais de notaire ${SEO_YEAR}</h2>
+          <p class="text-green-100 mb-4">Utilisez notre calculateur officiel pour obtenir une estimation immédiate, gratuite et personnalisée.</p>
+          <a href="/pages/notaire.html" class="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition">🧮 Accéder au simulateur gratuit</a>
+          <p class="text-sm text-green-200 mt-3">✓ Calcul instantané • ✓ Gratuit • ✓ Export PDF</p>
+          <p class="text-sm text-green-100 mt-3">🔗 Voir aussi : <a href="/pages/pret.html" class="underline font-semibold text-white hover:text-green-50">Calculer votre prêt immobilier après frais de notaire</a></p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions fréquentes</h2>
+        <div class="space-y-4 mb-8">
+          <details class="bg-gray-50 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900 cursor-pointer">Quel est le montant des frais de notaire ${getPreposition(
+              dep.nom,
+              dep.code
+            )} ?</summary>
+            <p class="mt-2 text-gray-700">En ${SEO_YEAR}, les frais se situent généralement entre 7 % et 9 % (ancien) ou 2 % à 3 % (neuf).</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900 cursor-pointer">Comment sont calculés les frais de notaire ?</summary>
+            <p class="mt-2 text-gray-700">Ils comprennent les droits d'enregistrement, émoluments du notaire, débours, CSI et TVA.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900 cursor-pointer">Quelle différence entre ancien et neuf (VEFA) ?</summary>
+            <p class="mt-2 text-gray-700">Le neuf bénéficie de droits réduits, ce qui peut réduire le montant total des frais.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900 cursor-pointer">Où trouver un notaire proche de mon projet ?</summary>
+            <p class="mt-2 text-gray-700">Consultez l'annuaire officiel sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">notaires.fr</a>.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900 cursor-pointer">Les frais de notaire sont-ils plus élevés ${getPreposition(
+              dep.nom,
+              dep.code
+            )} que dans d’autres départements ?</summary>
+            <p class="mt-2 text-gray-700">Non. Les frais de notaire sont encadrés au niveau national. Le montant total dépend surtout du prix du bien et de la nature du projet.</p>
+          </details>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📌 Rappel réglementaire</h2>
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+          <p class="text-gray-700 mb-2">Les frais de notaire comprennent des éléments strictement encadrés par la loi (droits, taxes, émoluments) ainsi que des frais variables selon le dossier.</p>
+          <p class="text-gray-700 mb-0">Leur répartition exacte dépend de la nature de l'acte, du bien, et des formalités requises.</p>
+        </div>
+
+        <div class="bg-gray-100 rounded-lg p-6 my-8">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">📚 Sources officielles</h3>
+          <p class="text-sm text-gray-700">
+            <a href="https://www.service-public.fr" class="text-blue-600 hover:underline">service-public.fr</a> •
+            <a href="https://www.notariat.fr" class="text-blue-600 hover:underline">notariat.fr</a> •
+            <a href="https://www.impots.gouv.fr" class="text-blue-600 hover:underline">impots.gouv.fr</a> •
+            <a href="https://www.legifrance.gouv.fr" class="text-blue-600 hover:underline">legifrance.gouv.fr</a>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+        <p>&copy; ${SEO_YEAR} LesCalculateurs.fr - Tous droits réservés</p>
+      </div>
+    </footer>
+  </body>
+</html>`;
+}
+
 // Fonction principale de génération
 async function generateAllArticles() {
-  console.log(
-    "🚀 Début de la génération de 101 articles SEO départementaux...\n"
-  );
+  const selectedDeptCodes = parseDepartementCodesFromArgs();
+  const ymyl = hasFlag("--ymyl");
+  const force = hasFlag("--force");
+  const totalToGenerate = selectedDeptCodes.size
+    ? departements.filter((d) => selectedDeptCodes.has(d.code)).length
+    : departements.length;
+
+  console.log(`🚀 Début de la génération de ${totalToGenerate} article(s)...\n`);
 
   const outputDir = path.resolve(__dirname, "../src/pages/blog/departements");
 
@@ -3158,10 +3635,21 @@ async function generateAllArticles() {
   // Générer chaque article
   for (let index = 0; index < departements.length; index++) {
     const dep = departements[index];
+    if (selectedDeptCodes.size && !selectedDeptCodes.has(dep.code)) continue;
     try {
-      const html = generateArticleHTML(dep, index);
       const filename = `frais-notaire-${dep.code}.html`;
       const filepath = path.join(outputDir, filename);
+      if (ymyl && !force && fs.existsSync(filepath)) {
+        const existing = fs.readFileSync(filepath, "utf-8");
+        if (isConformYMYL(existing, dep.code)) {
+          console.log(`⏭️  [${dep.code}] ${dep.nom} - déjà conforme`);
+          continue;
+        }
+      }
+
+      const html = ymyl
+        ? generateArticleHTML_YMYL(dep, index)
+        : generateArticleHTML(dep, index);
 
       fs.writeFileSync(filepath, html, "utf-8");
       console.log(`✅ [${dep.code}] ${dep.nom} - ${filename}`);
