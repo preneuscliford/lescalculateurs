@@ -24,7 +24,8 @@ function main() {
     const abs = path.resolve(process.cwd(), root);
     if (!fs.existsSync(abs)) continue;
 
-    walk(abs, (filePath) => {
+    const stat = fs.statSync(abs);
+    const processOne = (filePath) => {
       if (!filePath.toLowerCase().endsWith(".html")) return;
       total++;
       const buf = fs.readFileSync(filePath);
@@ -34,7 +35,13 @@ function main() {
         converted++;
         convertedFiles.push(path.relative(process.cwd(), filePath));
       }
-    });
+    };
+
+    if (stat.isFile()) {
+      processOne(abs);
+    } else if (stat.isDirectory()) {
+      walk(abs, processOne);
+    }
   }
 
   console.log(
@@ -47,4 +54,3 @@ function main() {
 }
 
 main();
-
