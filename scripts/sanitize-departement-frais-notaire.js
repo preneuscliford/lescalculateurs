@@ -3,6 +3,113 @@ import path from "node:path";
 
 const ROOT = path.resolve(process.cwd());
 const DEPT_DIR = path.join(ROOT, "src", "pages", "blog", "departements");
+const SEO_YEAR = 2026;
+let currentFilePathForSanitize = "";
+
+const DEPT_NAME_BY_CODE = new Map([
+  ["01", "Ain"],
+  ["02", "Aisne"],
+  ["03", "Allier"],
+  ["04", "Alpes-de-Haute-Provence"],
+  ["05", "Hautes-Alpes"],
+  ["06", "Alpes-Maritimes"],
+  ["07", "Ardèche"],
+  ["08", "Ardennes"],
+  ["09", "Ariège"],
+  ["10", "Aube"],
+  ["11", "Aude"],
+  ["12", "Aveyron"],
+  ["13", "Bouches-du-Rhône"],
+  ["14", "Calvados"],
+  ["15", "Cantal"],
+  ["16", "Charente"],
+  ["17", "Charente-Maritime"],
+  ["18", "Cher"],
+  ["19", "Corrèze"],
+  ["2A", "Corse-du-Sud"],
+  ["2B", "Haute-Corse"],
+  ["21", "Côte-d'Or"],
+  ["22", "Côtes-d'Armor"],
+  ["23", "Creuse"],
+  ["24", "Dordogne"],
+  ["25", "Doubs"],
+  ["26", "Drôme"],
+  ["27", "Eure"],
+  ["28", "Eure-et-Loir"],
+  ["29", "Finistère"],
+  ["30", "Gard"],
+  ["31", "Haute-Garonne"],
+  ["32", "Gers"],
+  ["33", "Gironde"],
+  ["34", "Hérault"],
+  ["35", "Ille-et-Vilaine"],
+  ["36", "Indre"],
+  ["37", "Indre-et-Loire"],
+  ["38", "Isère"],
+  ["39", "Jura"],
+  ["40", "Landes"],
+  ["41", "Loir-et-Cher"],
+  ["42", "Loire"],
+  ["43", "Haute-Loire"],
+  ["44", "Loire-Atlantique"],
+  ["45", "Loiret"],
+  ["46", "Lot"],
+  ["47", "Lot-et-Garonne"],
+  ["48", "Lozère"],
+  ["49", "Maine-et-Loire"],
+  ["50", "Manche"],
+  ["51", "Marne"],
+  ["52", "Haute-Marne"],
+  ["53", "Mayenne"],
+  ["54", "Meurthe-et-Moselle"],
+  ["55", "Meuse"],
+  ["56", "Morbihan"],
+  ["57", "Moselle"],
+  ["58", "Nièvre"],
+  ["59", "Nord"],
+  ["60", "Oise"],
+  ["61", "Orne"],
+  ["62", "Pas-de-Calais"],
+  ["63", "Puy-de-Dôme"],
+  ["64", "Pyrénées-Atlantiques"],
+  ["65", "Hautes-Pyrénées"],
+  ["66", "Pyrénées-Orientales"],
+  ["67", "Bas-Rhin"],
+  ["68", "Haut-Rhin"],
+  ["69", "Rhône"],
+  ["70", "Haute-Saône"],
+  ["71", "Saône-et-Loire"],
+  ["72", "Sarthe"],
+  ["73", "Savoie"],
+  ["74", "Haute-Savoie"],
+  ["75", "Paris"],
+  ["76", "Seine-Maritime"],
+  ["77", "Seine-et-Marne"],
+  ["78", "Yvelines"],
+  ["79", "Deux-Sèvres"],
+  ["80", "Somme"],
+  ["81", "Tarn"],
+  ["82", "Tarn-et-Garonne"],
+  ["83", "Var"],
+  ["84", "Vaucluse"],
+  ["85", "Vendée"],
+  ["86", "Vienne"],
+  ["87", "Haute-Vienne"],
+  ["88", "Vosges"],
+  ["89", "Yonne"],
+  ["90", "Territoire de Belfort"],
+  ["91", "Essonne"],
+  ["92", "Hauts-de-Seine"],
+  ["93", "Seine-Saint-Denis"],
+  ["94", "Val-de-Marne"],
+  ["95", "Val-d'Oise"],
+  ["971", "Guadeloupe"],
+  ["972", "Martinique"],
+  ["973", "Guyane"],
+  ["974", "La Réunion"],
+  ["975", "Saint-Pierre-et-Miquelon"],
+  ["976", "Mayotte"],
+]);
 
 function normalizeDepartementCode(code) {
   const c = String(code || "").trim().toUpperCase();
@@ -65,6 +172,64 @@ const HEADER_WITH_LOGO = `<header class="bg-white shadow-sm border-b border-gray
 </div>
 </div>
 </header>`;
+
+function computeTitleForDept(depNom, depCode) {
+  const candidates = [
+    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) – Simulation gratuite`,
+    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) – Calcul gratuit`,
+    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) – Simu gratuite`,
+  ];
+  return (
+    candidates.find((t) => t.length <= 60) ||
+    candidates[candidates.length - 1]
+  );
+}
+
+function getDansExpression(depNom, depCode) {
+  if (depCode === "75") return "à Paris";
+  if (depNom === "Mayotte") return "à Mayotte";
+  if (depNom === "La Réunion") return "à La Réunion";
+  const a = getArticleDefini(depNom);
+  if (a === "les ") return `dans les ${depNom}`;
+  if (a === "le ") return `dans le ${depNom}`;
+  if (a === "l'") return `dans l’${depNom}`;
+  return `dans la ${depNom}`;
+}
+
+function computeMetaDescriptionForDept(depNom, depCode) {
+  const loc = getDansExpression(depNom, depCode);
+  return `Calculez les frais de notaire ${loc} en ${SEO_YEAR}. Ancien, neuf (VEFA), taux officiels et estimation gratuite en 10 secondes.`;
+}
+
+function ensureSeoHead(html, depNom, depCode) {
+  const title = computeTitleForDept(depNom, depCode);
+  const description = computeMetaDescriptionForDept(depNom, depCode);
+
+  let out = html;
+  out = out.replace(/<title>[\s\S]*?<\/title>/i, `<title>${title}</title>`);
+  out = out.replace(
+    /<meta\b[^>]*\bname=["']description["'][^>]*\bcontent=["'][^"']*["'][^>]*>/i,
+    `<meta name="description" content="${description}" />`
+  );
+  out = out.replace(
+    /<meta\b[^>]*\bproperty=["']og:title["'][^>]*\bcontent=["'][^"']*["'][^>]*>/i,
+    `<meta property="og:title" content="${title}" />`
+  );
+  out = out.replace(
+    /<meta\b[^>]*\bproperty=["']og:description["'][^>]*\bcontent=["'][^"']*["'][^>]*>/i,
+    `<meta property="og:description" content="${description}" />`
+  );
+  out = out.replace(
+    /<meta\b[^>]*\bname=["']twitter:description["'][^>]*\bcontent=["'][^"']*["'][^>]*>/i,
+    `<meta name="twitter:description" content="${description}" />`
+  );
+  return out;
+}
+
+function parseDeptCodeFromFilename(filePath) {
+  const m = path.basename(filePath).match(/^frais-notaire-(.+)\.html$/i);
+  return m ? normalizeDepartementCode(m[1]) : null;
+}
 
 function needsLogoHeader(html) {
   const bodyStart = html.indexOf("<body");
@@ -312,6 +477,11 @@ function sanitizeGlobal(html) {
   let out = html;
 
   out = ensureLogoHeader(out);
+  const code = parseDeptCodeFromFilename(currentFilePathForSanitize || "");
+  if (code) {
+    const depNom = DEPT_NAME_BY_CODE.get(code);
+    if (depNom) out = ensureSeoHead(out, depNom, code);
+  }
 
   out = out.replace(/montant calculé selon votre situation/gi, "estimer via le calculateur");
 
@@ -423,8 +593,24 @@ function harmonizeParis(articleHtml) {
 }
 
 function sanitizeOne(filePath) {
+  currentFilePathForSanitize = filePath;
   const original = fs.readFileSync(filePath, "utf8");
-  if (!hasProblems(original) && !needsLogoHeader(original)) return false;
+  const deptCode = parseDeptCodeFromFilename(filePath);
+  const deptNom = deptCode ? DEPT_NAME_BY_CODE.get(deptCode) : null;
+  const expectedTitle = deptNom
+    ? computeTitleForDept(deptNom, deptCode)
+    : null;
+  const expectedDescription = deptNom
+    ? computeMetaDescriptionForDept(deptNom, deptCode)
+    : null;
+  const hasSeoMismatch =
+    expectedTitle &&
+    expectedDescription &&
+    (!original.includes(`<title>${expectedTitle}</title>`) ||
+      !original.includes(`name="description" content="${expectedDescription}"`));
+
+  if (!hasProblems(original) && !needsLogoHeader(original) && !hasSeoMismatch)
+    return false;
   let html = sanitizeGlobal(original);
 
   html = withArticle(html, (article) => {

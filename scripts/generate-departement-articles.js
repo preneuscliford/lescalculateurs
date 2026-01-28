@@ -3196,8 +3196,21 @@ function generateArticleHTML(dep, index) {
 function generateArticleHTML_YMYL(dep) {
   const depLabel = `${dep.nom} (${dep.code})`;
   const canonical = `https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-${dep.code}`;
-  const title = `Frais de notaire ${depLabel} ${SEO_YEAR} — Simulateur officiel gratuit`;
-  const description = `Calculez vos frais de notaire en ${dep.nom} (${dep.code}) instantanément. Estimation automatique ${SEO_YEAR}, barème officiel. Aucun email demandé.`;
+  const title = `Frais de notaire ${SEO_YEAR} ${dep.nom} (${dep.code}) – Simulation gratuite`;
+  const getDansExpressionForMeta = (depNom, depCode) => {
+    if (depCode === "75") return "à Paris";
+    if (depNom === "Mayotte") return "à Mayotte";
+    if (depNom === "La Réunion") return "à La Réunion";
+    const article = getArticleDefini(depNom, depCode);
+    if (article === "les ") return `dans les ${depNom}`;
+    if (article === "le ") return `dans le ${depNom}`;
+    if (article === "l'") return `dans l’${depNom}`;
+    return `dans la ${depNom}`;
+  };
+  const description = `Calculez les frais de notaire ${getDansExpressionForMeta(
+    dep.nom,
+    dep.code
+  )} en ${SEO_YEAR}. Ancien, neuf (VEFA), taux officiels et estimation gratuite en 10 secondes.`;
   const inLoc = getPreposition(dep.nom, dep.code)
     .replace(/^dans l'/i, "Dans l’")
     .replace(/^dans /i, "Dans ")
