@@ -52,6 +52,57 @@ function withArticle(html, transform) {
   return before + transform(article) + after;
 }
 
+const HEADER_WITH_LOGO = `<header class="bg-white shadow-sm border-b border-gray-200">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center py-4">
+<div class="flex items-center space-x-4">
+<img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs.fr" class="h-10 w-auto" />
+<a href="/pages/blog.html" class="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-2">
+<span>← Blog</span>
+</a>
+</div>
+<a href="/index.html" class="text-sm text-gray-600 hover:text-gray-900">Accueil</a>
+</div>
+</div>
+</header>`;
+
+function needsLogoHeader(html) {
+  const bodyStart = html.indexOf("<body");
+  if (bodyStart === -1) return false;
+  const articleStart = html.indexOf("<article", bodyStart);
+  if (articleStart === -1) return false;
+  const headerStart = html.indexOf("<header", bodyStart);
+  if (headerStart === -1 || headerStart > articleStart) return true;
+  const headerEnd = html.indexOf("</header>", headerStart);
+  if (headerEnd === -1 || headerEnd > articleStart) return true;
+  const headerHtml = html.slice(headerStart, headerEnd + "</header>".length);
+  return !headerHtml.includes("/assets/lescalculateurs-new-logo.png");
+}
+
+function ensureLogoHeader(html) {
+  const bodyStart = html.indexOf("<body");
+  if (bodyStart === -1) return html;
+  const articleStart = html.indexOf("<article", bodyStart);
+  if (articleStart === -1) return html;
+  const logoIndex = html.indexOf("/assets/lescalculateurs-new-logo.png", bodyStart);
+  if (logoIndex !== -1 && logoIndex < articleStart) return html;
+
+  const headerAfterNoscriptRegex =
+    /(<noscript>[\s\S]*?<\/noscript>\s*)(<header\b[\s\S]*?<\/header>)/i;
+  const m = html.match(headerAfterNoscriptRegex);
+  if (m) {
+    const existingHeader = m[2];
+    if (existingHeader.includes("/assets/lescalculateurs-new-logo.png")) return html;
+    return html.replace(headerAfterNoscriptRegex, `$1${HEADER_WITH_LOGO}`);
+  }
+
+  if (/<noscript>[\s\S]*?<\/noscript>/i.test(html)) {
+    return html.replace(/(<\/noscript>\s*)/i, `$1\n${HEADER_WITH_LOGO}\n`);
+  }
+
+  return html.replace(/(<body[^>]*>\s*)/i, `$1\n${HEADER_WITH_LOGO}\n`);
+}
+
 const PROBLEM_PATTERNS = [
   /�/,
   /Ã./,
@@ -260,6 +311,8 @@ function cleanTextNodes(html) {
 function sanitizeGlobal(html) {
   let out = html;
 
+  out = ensureLogoHeader(out);
+
   out = out.replace(/montant calculé selon votre situation/gi, "estimer via le calculateur");
 
   out = out.replace(/\bEn Paris\b/gi, "À Paris");
@@ -371,7 +424,7 @@ function harmonizeParis(articleHtml) {
 
 function sanitizeOne(filePath) {
   const original = fs.readFileSync(filePath, "utf8");
-  if (!hasProblems(original)) return false;
+  if (!hasProblems(original) && !needsLogoHeader(original)) return false;
   let html = sanitizeGlobal(original);
 
   html = withArticle(html, (article) => {
