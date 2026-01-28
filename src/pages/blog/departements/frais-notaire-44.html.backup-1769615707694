@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Frais de notaire Loire-Atlantique 2026 � Simulateur rapide et fiable
+    </title>
+    <meta
+      name="description"
+      content="Obtenez vos frais de notaire en Loire-Atlantique instantan�ment. Calcul automatique, bar�me 2025, estimation gratuite."
+    />
+    <meta
+      name="keywords"
+      content="frais notaire Loire-Atlantique, calcul frais notaire 44, achat immobilier Nantes, notaire Saint-Nazaire, simulateur notaire 2026, conseils achat maison 44, guide immobilier Loire-Atlantique"
+    />
+    <meta name="author" content="LesCalculateurs.fr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-adsense-account" content="ca-pub-14?14?558?14?558?5589" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-44" />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-44"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Frais de notaire Loire-Atlantique 2026 � Simulateur rapide et fiable"
+    />
+    <meta
+      property="og:description"
+      content="Obtenez vos frais de notaire en Loire-Atlantique instantan�ment. Calcul automatique, bar�me 2025, estimation gratuite."
+    />
+    <meta
+      name="twitter:description"
+      content="Obtenez vos frais de notaire en Loire-Atlantique instantan�ment. Calcul automatique, bar�me 2025, estimation gratuite."
+    />
+    <meta
+      property="og:image"
+      content="https://www.lescalculateurs.fr/assets/favicon-32x32.png"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <!-- Schema.org BreadcrumbList + FAQPage + Article -->
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Accueil",
+              "item": "https://www.lescalculateurs.fr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Immobilier",
+              "item": "https://www.lescalculateurs.fr/immobilier/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Frais de notaire Loire-Atlantique (44)",
+              "item": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-44"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Nantes est-elle adapt�e aux familles avec enfants ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Id�ale ! Avec ses �coles prestigieuses, ses parcs et ses transports en commun efficaces, Nantes offre un cadre familial exceptionnel."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quelles aides pour l'achat sur le littoral atlantique ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Les communes touristiques proposent des subventions pour la r�novation et l'am�nagement, avec exon�rations fiscales partielles."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "L'investissement locatif �tudiant est-il rentable � Nantes ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tr�s rentable avec des rendements de 4-5% net gr�ce � la demande stable des �tudiants et jeunes actifs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Comment optimiser fiscalement une r�sidence secondaire c�ti�re ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Privil�giez les biens �ligibles au statut r�sidence de tourisme avec amortissement fiscal et r�cup�ration de TVA."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Frais de notaire 2026 en Loire-Atlantique (44)",
+          "description": "Guide complet des frais de notaire pour l'achat immobilier en Loire-Atlantique (44)",
+          "datePublished": "2025-10-06T10:00:00Z",
+          "dateModified": "2025-11-25T19:37:53.372Z",
+          "author": {
+            "@type": "Organization",
+            "name": "LesCalculateurs.fr"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LesCalculateurs.fr",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.lescalculateurs.fr/assets/favicon-32x32.png"
+            }
+          },
+          "isBasedOn": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/"
+        }
+      ]
+    </script>
+    <!-- HowTo JSON-LD: Calculer vos frais de notaire -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Calculer vos frais de notaire Loire-Atlantique",
+        "description": "�tapes pour estimer les frais de notaire dans Loire-Atlantique.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Choisir le type de bien",
+            "text": "S�lectionnez ancien, neuf ou terrain."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Indiquer le d�partement",
+            "text": "D�partement pr�-rempli: 44."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Saisir le prix",
+            "text": "Entrez le prix d'achat; d�duisez le mobilier si pr�sent."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Pr�ciser l'emprunt",
+            "text": "Indiquez le type et les montants."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculer",
+            "text": "Obtenez le d�tail complet des frais."
+          }
+        ]
+      }
+    </script>
+
+    <!-- LocalBusiness Schema for Notaires -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-44.html#notaires",
+        "name": "Notaires Nantes et C�te d'Amour (44)",
+        "description": "Services notariaux sp�cialis�s en immobilier dans la Loire-Atlantique - Calcul frais, actes, conseils pour Nantes, Saint-Nazaire, stations baln�aires",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "FR",
+          "addressRegion": "Pays de la Loire",
+          "addressLocality": "Nantes",
+          "postalCode": "14?558"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Loire-Atlantique",
+            "alternateName": "D�partement 44"
+          },
+          {
+            "@type": "City",
+            "name": "Nantes"
+          },
+          {
+            "@type": "City",
+            "name": "Saint-Nazaire"
+          }
+        ],
+        "serviceType": [
+          "Frais de notaire",
+          "Actes notari�s immobilier",
+          "Conseil acquisition",
+          "Transaction immobili�re Nantes et C�te d'Amour"
+        ],
+        "priceRange": "2�3% (neuf) / 7�8% (ancien)",
+        "url": "https://www.notaires.fr",
+        "sameAs": "https://www.notaires.fr",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services notariaux Nantes et C�te d'Amour",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Frais de notaire neuf",
+                "description": "Calcul frais acquisition logement neuf en Loire-Atlantique",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Notaires Nantes et C�te d'Amour"
+                }
+              },
+              "price": "4%",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Frais de notaire ancien",
+                "description": "Calcul frais acquisition logement ancien en Loire-Atlantique",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Notaires Nantes et C�te d'Amour"
+                }
+              },
+              "price": "7.2%",
+              "priceCurrency": "EUR"
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-14?14?558?14?558?5589"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TPFZCGX5");
+    </script>
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2HNTGCYQ1X");
+    </script>
+
+    <!-- Assets (dev/prod) -->
+    <script type="module" src="../../../main.ts"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-4">
+            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs.fr" class="h-10 w-auto" />
+            <a
+              href="/pages/blog.html"
+              class="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-2"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                ></path>
+              </svg>
+              <span>? Blog</span>
+            </a>
+          </div>
+          <a
+            href="/index.html"
+            class="text-sm text-gray-600 hover:text-gray-900"
+            >Accueil</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+
+      
+
+      
+
+      
+
+      
+
+            
+      
+      <div class="mt-6 mb-8 bg-blue-50 border-l-4 border-blue-400 p-4 sm:p-5 rounded-r">
+        <p class="text-sm sm:text-base text-gray-800 leading-relaxed">
+          <strong>?? Frais de notaire 2026 : Loire-Atlantique (44)</strong><br/>
+          Pour un achat immobilier en 2026 :<br/>
+          � <strong>Bien ancien</strong> : environ 7 � 8 % du prix d'acquisition<br/>
+          � <strong>Bien neuf (VEFA)</strong> : environ 2 � 3 %<br/>
+          <span class="text-xs sm:text-sm text-gray-600">Pour un montant exact et � jour, utilisez le calculateur.</span>
+        </p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Article Header -->
+      <header class="mb-12">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-4">
+          <span
+            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium"
+            >Immobilier</span
+          >
+          <span>�</span>
+          <time datetime="2026-10-06">6 octobre 2025</time>
+          <span>�</span>
+          <span>Guide d�partemental</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Frais de notaire 2026 en Loire-Atlantique (44)
+        </h1>
+
+        <p class="text-xl text-gray-600 leading-relaxed">
+          <strong
+            >La Loire-Atlantique, carrefour de l�Atlantique et de la Loire,
+            attire autant les familles que les investisseurs par sa diversit�
+            urbaine et c�ti�re.</strong
+          >
+          Nantes, m�tropole cr�ative, rayonne par son dynamisme �conomique et
+          culturel, tandis que Saint-Nazaire et la C�te d�Amour s�duisent pour
+          leur cadre baln�aire et leur vitalit� portuaire. Les prix immobiliers
+          y sont contrast�s?: du centre-ville nantais aux villages du vignoble,
+          chaque secteur affiche ses sp�cificit�s. Les frais de notaire,
+          variables selon le type de bien, sont un �l�ment cl� � anticiper pour
+          r�ussir son projet dans le 44.
+        </p>
+      </header>
+
+      <figure class="rounded-lg overflow-hidden border border-gray-200 mb-8">
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_des_ducs_de_Bretagne_(Nantes)_-_2014_-_02.JPG"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 960px, 1200px"
+          alt="Guide frais de notaire � Loire-Atlantique (44)"
+          width="1200"
+          height="675"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="w-full h-auto object-cover"
+        />
+        <figcaption class="text-sm text-gray-500 px-4 py-2">
+          Image illustrative du d�partement Loire-Atlantique. Source�: Wikimedia
+          Commons.
+        </figcaption>
+      </figure>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none">
+
+    <div class="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+      <p class="text-sm text-gray-700 m-0">
+        Source officielle des taux DMTO :
+        <a href="https://www.service-public.fr/particuliers/vosdroits/F2167" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.service-public.fr/particuliers/vosdroits/F2167</a> � <a href="https://www.notariat.fr/frais-de-notaire" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.notariat.fr/frais-de-notaire</a> � <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf</a> � <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433</a>
+      </p>
+    </div>
+        <!-- Section 1 -->
+        
+    <div class="mb-8 p-4 bg-orange-50 border-l-4 border-orange-500 rounded-r-lg">
+      <p class="text-sm text-orange-800 m-0">
+        <strong>?? Avertissement :</strong> Les montants et pourcentages indiqu�s sur cette page sont fournis � titre purement informatif, sur la base des bar�mes notariaux en vigueur. Ils ne constituent ni un devis, ni un conseil juridique. Seul un notaire est habilit� � �tablir le montant d�finitif des frais lors de la signature de l�acte authentique.
+      </p>
+    </div>
+
+<h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ?? Frais de notaire 2026?: � quoi s�attendre en Loire-Atlantique??
+        </h2>
+
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Le montant des frais d�pend du type de bien?:
+          <strong>ancien ou neuf</strong>. En Loire-Atlantique, la diff�rence de
+          co�t entre ces deux cat�gories s�explique par la fiscalit� locale et
+          la forte attractivit� du littoral. Les achats en VEFA (neuf)
+          b�n�ficient d�un taux r�duit, tandis que l�ancien reste majoritaire
+          dans les transactions.
+        </p>
+
+        <div
+          class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg"
+        >
+          <p class="text-lg text-gray-800 mb-0">
+            <strong>?? Sp�cificit� lig�rienne?:</strong> Le 44 conjugue
+            innovation urbaine et douceur de vivre oc�anique. Nantes, capitale
+            r�gionale, attire cadres et �tudiants, tandis que Saint-Nazaire
+            s�impose par son industrie navale et ses plages familiales. Le
+            littoral, de Pornic � La Baule, reste tr�s pris� pour les r�sidences
+            secondaires. L�arri�re-pays, autour de Clisson ou Ancenis, s�duit
+            par ses villages viticoles et ses prix plus accessibles. La
+            diversit� des march�s locaux impose une vigilance sur les frais
+            annexes selon la commune.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto mb-8">
+          <table
+            class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm"
+          >
+            <thead
+              class="bg-gradient-to-r from-blue-600 to-blue-700 text-white"
+            >
+              <tr>
+                <th class="px-6 py-4 text-left font-semibold">Type d�achat</th>
+                <th class="px-6 py-4 text-left font-semibold">
+                  Taux des frais
+                </th>
+                <th class="px-6 py-4 text-left font-semibold">
+                  Pour 200?000?�
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200 hover:bg-orange-50">
+                <td class="px-6 py-4 font-medium text-gray-900">
+                  ?? Ancien (Nantes)
+                </td>
+                <td class="px-6 py-4 text-gray-700">environ 7 � 8 %</td>
+                <td class="px-6 py-4 font-bold text-blue-600">� estimer via le calculateur</td>
+              </tr>
+              <tr class="hover:bg-blue-50">
+                <td class="px-6 py-4 font-medium text-gray-900">
+                  ?? Neuf (VEFA)
+                </td>
+                <td class="px-6 py-4 text-gray-700">� 2,26</td>
+                <td class="px-6 py-4 font-bold text-blue-600">� estimer via le calculateur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-white border-2 border-blue-100 rounded-lg p-5 mb-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Rep�res locaux 2026 (Loire-Atlantique)</h3>
+          <p class="text-sm text-gray-700">
+            En Loire-Atlantique, les droits d'enregistrement sur l'ancien sont de <strong>environ 7 � 8 %&nbsp;%</strong>.
+            Les d�bours et formalit�s moyens observ�s sont d�environ <strong>� 276&nbsp;�</strong> et <strong>� 198&nbsp;�</strong>.
+            Sur le littoral (La Baule, Pornic), les biens de standing et les servitudes c�ti�res peuvent entra�ner des pi�ces suppl�mentaires.
+            � Nantes intra-muros, les grandes copropri�t�s impliquent parfois davantage de copies et de documents, influant sur les d�bours.
+          </p>
+        </div>
+
+        <div
+          class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg"
+        >
+          <p class="text-lg text-gray-800 mb-0">
+            <strong>?? Focus Loire-Atlantique?:</strong> Les �carts de frais
+            s�expliquent par la diversit� des march�s?: Nantes affiche des prix
+            �lev�s et un dynamisme constant, tandis que l�arri�re-pays et le
+            littoral proposent des opportunit�s pour primo-acc�dants et
+            investisseurs. Le neuf permet de profiter d�avantages fiscaux,
+            notamment sur la c�te et dans les programmes urbains r�cents.
+          </p>
+        </div>
+
+        <!-- Section 2 -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ?? Exemple concret d�achat � Nantes
+        </h2>
+
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Illustration?: voici un cas r�el d�acquisition � Nantes, pour un
+          appartement ancien, avec apport et financement typiques du march�
+          local.
+        </p>
+
+        <div
+          class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-lg p-6 mb-6"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Simulation d�achat en Loire-Atlantique
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-3">
+              <div
+                class="flex justify-between items-center pb-2 border-b border-gray-300"
+              >
+                <span class="text-gray-700">Prix du bien (ancien)</span>
+                <span class="font-bold">� estimer via le calculateur</span>
+              </div>
+              <div
+                class="flex justify-between items-center pb-2 border-b border-gray-300"
+              >
+                <span class="text-gray-700">Apport personnel</span>
+                <span class="font-bold">� estimer via le calculateur</span>
+              </div>
+              <div
+                class="flex justify-between items-center pb-2 border-b border-gray-300"
+              >
+                <span class="text-gray-700"
+                  >Frais de notaire (bar�me officiel)</span
+                >
+                <span class="font-bold text-orange-600">� estimer via le calculateur</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div
+                class="flex justify-between items-center pb-2 border-b border-gray-300"
+              >
+                <span class="text-gray-700">Montant � emprunter</span>
+                <span class="font-bold">� estimer via le calculateur</span>
+              </div>
+              <div
+                class="flex justify-between items-center pb-2 border-b border-gray-300"
+              >
+                <span class="text-gray-700">Taux d'int�r�t</span>
+                <span class="font-bold">taux r�glement�</span>
+              </div>
+              <div
+                class="flex justify-between items-center pb-2 border-b border-gray-300"
+              >
+                <span class="text-gray-700">Dur�e</span>
+                <span class="font-bold">20 ans</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t-2 border-gray-300">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-lg text-gray-900"
+                >Mensualit� estim�e</span
+              >
+              <span class="text-3xl font-bold text-blue-700">variable selon taux</span>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="text-sm text-gray-600 bg-white rounded p-4 border border-gray-200"
+        >
+          <strong>� savoir?:</strong> Pour un bien neuf de m�me valeur, les
+          frais descendent � <strong>montant calcul� selon votre situation</strong>, soit plus de
+          <strong>montant calcul� selon votre situation</strong> d��conomie par rapport � l�ancien.
+        </p>
+
+        <!-- Section 3 -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ?? Astuces pour r�duire vos frais de notaire en Loire-Atlantique
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-8">
+          <div
+            class="bg-white border-2 border-gray-200 rounded-lg p-5 hover:border-blue-400 transition-all"
+          >
+            <div class="flex items-start">
+              <div class="bg-green-100 rounded-full p-3 mr-4">??</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">
+                  Cibler les programmes neufs �ligibles Pinel � Nantes
+                </h3>
+                <p class="text-sm text-gray-600">
+                  Les quartiers en renouvellement urbain � Nantes offrent des
+                  dispositifs Pinel?: profitez d�une
+                  <strong>r�duction d�imp�t</strong> jusqu�� 21?% et d�un taux
+                  de frais de notaire r�duit sur le neuf.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-200 rounded-lg p-5 hover:border-blue-400 transition-all"
+          >
+            <div class="flex items-start">
+              <div class="bg-blue-100 rounded-full p-3 mr-4">???</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">
+                  Acheter dans un village de caract�re
+                </h3>
+                <p class="text-sm text-gray-600">
+                  Certaines communes labellis�es �?villages de caract�re?�
+                  proposent des <strong>exon�rations partielles</strong> de
+                  droits d�enregistrement pour les acquisitions � vocation
+                  touristique ou patrimoniale.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-200 rounded-lg p-5 hover:border-blue-400 transition-all"
+          >
+            <div class="flex items-start">
+              <div class="bg-purple-100 rounded-full p-3 mr-4">??</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">
+                  Profiter des aides r�gionales � la r�novation
+                </h3>
+                <p class="text-sm text-gray-600">
+                  La r�gion Pays de la Loire propose des subventions pour
+                  l�isolation et la r�novation �nerg�tique?: valorisez votre
+                  bien avant la vente et r�duisez les frais annexes � l�achat.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-200 rounded-lg p-5 hover:border-blue-400 transition-all"
+          >
+            <div class="flex items-start">
+              <div class="bg-yellow-100 rounded-full p-3 mr-4">??</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">
+                  Investir dans le locatif �tudiant � Nantes
+                </h3>
+                <p class="text-sm text-gray-600">
+                  Les logements proches des universit�s nantaises b�n�ficient
+                  d�une <strong>demande locative soutenue</strong>?: cela
+                  facilite la n�gociation des frais annexes et s�curise
+                  l�investissement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Tendances march� -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">
+          ?? March� immobilier Loire-Atlantique?: tendances 2025�2026
+        </h2>
+
+        <div
+          class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg mb-8"
+        >
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="text-2xl">??</div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">
+                    �volution des prix
+                  </h4>
+                  <p class="text-gray-700">
+                    ?? Stabilit� dans Nantes (+1% � +3%), l�g�re baisse dans
+                    l'arri�re-pays (-2%), march� �quilibr� malgr� les tensions
+                    �conomiques
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="text-2xl">??</div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">
+                    Volume de transactions
+                  </h4>
+                  <p class="text-gray-700">
+                    ?? Activit� soutenue dans l'agglom�ration nantaise, plus
+                    mod�r�e sur le littoral et dans les terres
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="text-2xl">?</div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">
+                    Attractivit� d�mographique
+                  </h4>
+                  <p class="text-gray-700">
+                    ? Boom des arriv�es familiales et des t�l�travailleurs
+                    s�duits par la qualit� de vie nantaise
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="text-2xl">??</div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Tension du march�</h4>
+                  <p class="text-gray-700">
+                    ?? March� �quilibr� avec des opportunit�s dans les secteurs
+                    moins tendus comme Ch�teaubriant
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-blue-200">
+            <p class="text-xs text-gray-600">
+              <strong>En r�sum�?:</strong> Nantes reste le moteur du march�,
+              mais la Loire-Atlantique offre des alternatives vari�es?: littoral
+              pour les r�sidences secondaires, arri�re-pays pour
+              l�accessibilit�, et p�les �tudiants pour l�investissement locatif.
+              Les donn�es 2024 confirment la vitalit� du d�partement malgr� un
+              contexte national plus tendu.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section Prix par ville -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">
+          ??? Prix moyens par ville en Loire-Atlantique
+        </h2>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center p-4 bg-blue-50 rounded-lg">
+              <h4 class="font-bold text-lg text-gray-900 mb-2">Nantes</h4>
+              <p class="text-3xl font-bold text-blue-600 mb-1">3?007 �/m�</p>
+              <p class="text-sm text-gray-600">Pr�fecture</p>
+            </div>
+
+            <div class="text-center p-4 bg-green-50 rounded-lg">
+              <h4 class="font-bold text-lg text-gray-900 mb-2">
+                Saint-Nazaire
+              </h4>
+              <p class="text-3xl font-bold text-green-600 mb-1">3?555 �/m�</p>
+              <p class="text-sm text-gray-600">Sous-pr�fecture</p>
+            </div>
+
+            <div class="text-center p-4 bg-orange-50 rounded-lg">
+              <h4 class="font-bold text-lg text-gray-900 mb-2">
+                Ch�teaubriant
+              </h4>
+              <p class="text-3xl font-bold text-orange-600 mb-1">2?983 �/m�</p>
+              <p class="text-sm text-gray-600">Moyenne communale</p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 bg-gray-50 rounded text-sm text-gray-600">
+            <strong>Analyse?:</strong> Nantes reste la ville la plus cot�e du
+            d�partement, port�e par son attractivit� et son bassin d�emplois.
+            Saint-Nazaire s�duit par son dynamisme industriel et ses prix encore
+            abordables. Ch�teaubriant, au nord, offre une alternative rurale
+            pour les budgets plus serr�s.
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ??? O� trouver un notaire en Loire-Atlantique ?
+        </h2>
+
+        <section class="bg-gray-50 p-4 rounded-lg mt-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Notaires � Nantes (44)
+          </h3>
+          <p class="text-gray-700">
+            � Nantes, les �tudes notariales accompagnent de nombreux projets
+            familiaux et patrimoniaux. Les successions complexes et les ventes
+            de biens anciens y sont fr�quentes. Les notaires locaux sont r�put�s
+            pour leur expertise sur les transactions en centre-ville et sur le
+            littoral.
+          </p>
+          <a
+            href="https://www.notaires.fr"
+            class="text-blue-600 hover:underline"
+            >Annuaire officiel</a
+          >
+        </section>
+
+        <section class="bg-gray-50 p-4 rounded-lg mt-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Notaires � Saint-Nazaire (44)
+          </h3>
+          <p class="text-gray-700">
+            � Saint-Nazaire, les notaires sont sollicit�s pour des transactions
+            vari�es, de l�achat d�appartements en centre-ville � l�acquisition
+            de maisons de p�cheurs r�nov�es. Le march� local est marqu� par la
+            pr�sence d�industries et la proximit� du port, ce qui influence la
+            typologie des biens trait�s.
+          </p>
+          <a
+            href="https://www.notaires.fr"
+            class="text-blue-600 hover:underline"
+            >Annuaire officiel</a
+          >
+        </section>
+
+        <p
+          class="text-sm text-gray-600 bg-blue-50 border border-blue-200 rounded p-4"
+        >
+          <strong>Bon � savoir?:</strong> Les notaires de Loire-Atlantique sont
+          vos interlocuteurs privil�gi�s pour s�curiser vos transactions, qu�il
+          s�agisse d�un bien sur la c�te, d�une maison de ville ou d�un projet
+          rural.
+        </p>
+
+        <!-- CTA Section -->
+        
+
+        <!-- FAQ Section -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ? FAQ � Immobilier et notaires en Loire-Atlantique
+        </h2>
+        <div class="space-y-4 mb-12">
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">
+              Nantes?: un cadre de vie adapt� aux familles??
+            </summary>
+            <p class="mt-2 text-gray-700">
+              Nantes offre un environnement id�al pour les familles?: �coles
+              r�put�es, nombreux espaces verts, transports efficaces et
+              quartiers r�sidentiels attractifs comme Doulon ou Bellevue.
+            </p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">
+              Quelles aides pour acheter sur la c�te atlantique??
+            </summary>
+            <p class="mt-2 text-gray-700">
+              Plusieurs communes du littoral, de Pornic � La Baule, proposent
+              des subventions pour la r�novation et l�am�nagement. Les
+              r�sidences de tourisme b�n�ficient d�exon�rations fiscales,
+              cumulables avec les aides r�gionales.
+            </p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">
+              L�investissement locatif �tudiant � Nantes est-il int�ressant??
+            </summary>
+            <p class="mt-2 text-gray-700">
+              Oui, la forte pr�sence universitaire garantit une demande locative
+              stable et des rendements attractifs (4-5?% net), notamment dans
+              les quartiers centraux et proches des campus.
+            </p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">
+              Comment optimiser la fiscalit� d�une r�sidence secondaire sur la
+              c�te??
+            </summary>
+            <p class="mt-2 text-gray-700">
+              Privil�giez les biens �ligibles au statut �?r�sidence de
+              tourisme?�?: amortissement fiscal, r�cup�ration de TVA sur les
+              travaux et fiscalit� avantageuse sur les revenus saisonniers.
+            </p>
+          </details>
+
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Mobilier hors acte � Nantes?: quand est-ce pertinent??</summary>
+            <p class="mt-2 text-gray-700">
+              La s�paration de la valeur du mobilier (cuisine, �lectrom�nager, meubles) du prix immobilier peut r�duire la base des droits.
+              Elle doit �tre r�aliste et justifi�e (inventaire, estimation), et valid�e par le notaire.
+            </p>
+          </details>
+
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Littoral 44?: y a-t-il des frais annexes sp�cifiques??</summary>
+            <p class="mt-2 text-gray-700">
+              Les biens c�tiers et portuaires peuvent n�cessiter des pi�ces suppl�mentaires (servitudes, bornage, copies).
+              Un notaire local vous indiquera les formalit�s et documents � pr�voir pour �viter les surco�ts.
+            </p>
+          </details>
+        </div>
+
+        <!-- Liens vers d�partements proches -->
+        <div class="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">?? Voir aussi</h3>
+          <p class="text-sm text-gray-700 mb-3">
+            Autres guides dans les Pays de la Loire?:
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/pages/blog/departements/frais-notaire-49.html"
+              class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+              >Maine-et-Loire (49)</a
+            ><a
+              href="/pages/blog/departements/frais-notaire-53.html"
+              class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+              >Mayenne (53)</a
+            ><a
+              href="/pages/blog/departements/frais-notaire-72.html"
+              class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+              >Sarthe (72)</a
+            ><a
+              href="/pages/blog/departements/frais-notaire-85.html"
+              class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+              >Vend�e (85)</a
+            >
+          </div>
+          <div class="mt-4">
+            <a
+              href="/pages/blog/frais-notaire-departements.html"
+              class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700"
+              >Tous les d�partements</a
+            >
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between mt-8">
+          <div>
+            <a
+              href="/pages/blog/departements/frais-notaire-43.html"
+              class="text-blue-700 hover:underline"
+              >? Haute-Loire (43)</a
+            >
+          </div>
+          <div>
+            <a
+              href="/pages/blog/departements/frais-notaire-45.html"
+              class="text-blue-700 hover:underline"
+              >Loiret (45) ?</a
+            >
+          </div>
+        </div>
+
+        <!-- Tarifs Officiels 2025-2026 -->
+        <div class="mt-12 bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6">
+          <h3 class="font-bold text-blue-900 mb-4">?? Tarifs Officiels 2025-2026 (Loire-Atlantique)</h3>
+          
+          <!-- Tranches d'�moluments -->
+          <div class="mb-6">
+            <h4 class="font-semibold text-blue-800 mb-3">�moluments notariaux (tranches)</h4>
+            <div class="space-y-2 bg-white rounded p-4">
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">De 0� � 6 500�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">3,945%</span>
+              </div>
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">De 6 500� � 17 000�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">1,627%</span>
+              </div>
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">De 17 000� � 60 000�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">1,085%</span>
+              </div>
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">Au-del� de 60 000�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">0,814%</span>
+              </div>
+              
+            </div>
+            <p class="text-xs text-gray-600 mt-2">Source: <a href="https://www.notaires.fr" target="_blank" class="text-blue-600 hover:underline">Conseil Sup�rieur du Notariat</a></p>
+          </div>
+
+          <!-- Tarif droits d'enregistrement -->
+          <div class="mb-6">
+            <h4 class="font-semibold text-blue-800 mb-3">Droits d'enregistrement (Loire-Atlantique)</h4>
+            <div class="bg-white rounded p-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">Immobilier ancien</span><span class="font-mono bg-green-100 px-3 py-1 rounded">� 6,32%</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-gray-700">Immobilier neuf (VEFA)</span><span class="font-mono bg-green-100 px-3 py-1 rounded">� 0,71%</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-600 mt-2">Taux applicable au d�partement: <strong>Loire-Atlantique</strong></p>
+          </div>
+
+          <!-- D�bours et formalit�s -->
+          <div>
+            <h4 class="font-semibold text-blue-800 mb-3">D�bours et formalit�s (Loire-Atlantique)</h4>
+            <div class="space-y-2 bg-white rounded p-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">D�bours (moyenne)</span>
+                <span class="font-mono bg-purple-100 px-3 py-1 rounded">276 �</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">Formalit�s</span>
+                <span class="font-mono bg-purple-100 px-3 py-1 rounded">198 �</span>
+              </div>
+              <div class="flex justify-between items-center border-t pt-2 mt-2">
+                <span class="text-gray-700"><strong>CSI</strong></span>
+                <span class="font-mono bg-indigo-100 px-3 py-1 rounded"><strong>min 15� ou 0,10%</strong></span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        
+        <!-- Hypoth�ses et Avertissements -->
+        <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-6">
+          <h3 class="font-bold text-yellow-900 mb-4">?? Hypoth�ses et Limitations</h3>
+          
+          <div class="text-sm text-yellow-800 space-y-3">
+            <p><strong>Ce simulateur est une estimation bas�e sur:</strong></p>
+            <ul class="list-disc list-inside space-y-2 ml-2">
+              <li><strong>Bar�mes officiels 2026</strong> du Conseil Sup�rieur du Notariat</li>
+              <li><strong>D�bours moyens</strong> (cadastre, conservation, formalit�s) pour le d�partement</li>
+              <li><strong>Taux standard</strong> sans abattements ou particularit�s locales</li>
+              <li><strong>Immobilier � titre on�reux</strong> (achat classique)</li>
+            </ul>
+
+            <p className="mt-4"><strong>?? �carts possibles:</strong></p>
+            <ul class="list-disc list-inside space-y-2 ml-2">
+              <li>Les d�bours r�els varient selon le dossier (g�om�tre, copies suppl�mentaires, etc.)</li>
+              <li>Certains d�partements appliquent des taux ou abattements particuliers</li>
+              <li>Les droits de mutation peuvent diff�rer (ex: zones d'am�nagement du territoire)</li>
+              <li>Cas sp�ciaux non couverts (VEFA, SCI, d�membrement, etc.)</li>
+            </ul>
+
+            <p class="mt-4 text-yellow-900"><strong>?? Pour un devis exact:</strong> Contactez directement le notaire de votre r�gion � c'est gratuit et sans engagement.</p>
+          </div>
+        </div>
+
+        <!-- R�f�rences -->
+        <div class="mt-12 bg-gray-100 rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-3">
+            ?? Sources et r�f�rences officielles
+          </h3>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>
+              � Frais de notaire (d�finition et bar�me) :
+              <a
+                href="https://www.service-public.fr/particuliers/vosdroits/F14?558"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 hover:underline"
+              >
+                service-public.fr
+              </a>
+            </li>
+            <li>
+              � Simulateur frais de notaire :
+              <a
+                href="https://www.service-public.fr/particuliers/vosdroits/R14?558"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 hover:underline"
+              >
+                service-public.fr (simulateur)
+              </a>
+            </li>
+            <li>
+              � �moluments notariaux :
+              <a
+                href="https://www.notaires.fr"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 hover:underline"
+              >
+                Conseil Sup�rieur du Notariat
+              </a>
+            </li>
+            <li>
+              � Donn�es DVF 2026 (Demande de Valeurs Fonci�res) :
+              <a
+                href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 hover:underline"
+              >
+                data.gouv.fr
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- EEAT Trust Signal -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <p class="text-xs text-gray-500 text-center">
+            Contenu r�dig� et maintenu par <strong>LesCalculateurs.fr</strong> � outil ind�pendant d'estimation immobili�re bas� sur les bar�mes notariaux officiels (Conseil Sup�rieur du Notariat, impots.gouv.fr, Legifrance).
+          </p>
+        </div>
+      </div>
+
+      <!-- Article Footer -->
+      <footer class="mt-16 pt-8 border-t border-gray-200">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <a
+            href="/pages/blog.html"
+            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center space-x-2"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              ></path>
+            </svg>
+            <span>Retour au blog</span>
+          </a>
+          <div class="text-sm text-gray-500">
+            Article mis � jour le 16 janvier 2026
+          </div>
+        </div>
+      </footer>
+    
+        <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Estimation des frais de notaire � Loire-Atlantique (44)</h2>
+        <p class="text-gray-700 mb-4">
+          Ancien : � 16?434 � pour 200?000 � (droits � 6,32%) � Neuf : � 5?224 � pour 200?000 � (droits � 0,71%).
+        </p>
+        <div class="flex gap-3 mb-8">
+          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualit�s de pr�t</a>
+        </div>
+        
+
+          
+
+          
+
+          
+
+          
+
+          
+
+                    
+</article>
+
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+        <p>&copy; 2026 LesCalculateurs.fr - Tous droits r�serv�s</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+
+
