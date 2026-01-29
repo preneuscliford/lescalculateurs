@@ -1,14 +1,7 @@
 import { CalculatorFrame } from "../../components/CalculatorFrame.ts";
 import { ComparisonModal } from "../../components/ComparisonModal.ts";
 import { formatCurrency } from "../../main.ts";
-
-const bareme = [
-  { plafond: 11497, taux: 0 },
-  { plafond: 29315, taux: 0.11 },
-  { plafond: 83823, taux: 0.3 },
-  { plafond: 180294, taux: 0.41 },
-  { plafond: 999999999, taux: 0.45 }
-];
+import { calculerIR } from "../../utils/irCalculEngine.ts";
 
 const impotConfig = {
   title: "Impôt sur le revenu 2026",
@@ -37,37 +30,17 @@ const impotConfig = {
     try {
       const revenu = Number(values.revenu);
       const parts = Number(values.parts);
-      if (!isFinite(revenu) || revenu < 0 || !isFinite(parts) || parts <= 0) {
-        return {
-          success: false,
-          error: "Veuillez saisir un revenu et un nombre de parts valides.",
-        };
-      }
-      const qf = revenu / parts;
-      let impotsParPart = 0;
-      let prev = 0;
-      for (let i = 0; i < bareme.length; i++) {
-        const tranchePlafond = bareme[i].plafond;
-        const taux = bareme[i].taux;
-        const base = Math.max(0, Math.min(qf, tranchePlafond) - prev);
-        impotsParPart += base * taux;
-        prev = tranchePlafond;
-        if (qf <= tranchePlafond) break;
-      }
-      const irBrut = impotsParPart * parts;
-      const tauxMoyen = revenu > 0 ? irBrut / revenu : 0;
-      const mensualiteMoyenne = irBrut / 12;
-      const tauxMarginal = bareme.find((b) => qf <= b.plafond)?.taux || 0;
+      const r = calculerIR({ revenu, parts });
       return {
         success: true,
         data: {
-          revenu,
-          parts,
-          qf,
-          irBrut,
-          tauxMoyen,
-          tauxMarginal,
-          mensualiteMoyenne,
+          revenu: r.revenu,
+          parts: r.parts,
+          qf: r.qf,
+          irBrut: r.irBrut,
+          tauxMoyen: r.tauxMoyen,
+          tauxMarginal: r.tauxMarginal,
+          mensualiteMoyenne: r.mensualiteMoyenne,
         },
       };
     } catch (e) {
@@ -349,35 +322,19 @@ document
         },
       ],
       onConfirm: (values) => {
-        const revenu = values.revenu;
-        const parts = values.parts;
-        const qf = revenu / parts;
-
-        let impotsParPart = 0;
-        let prev = 0;
-        for (let i = 0; i < bareme.length; i++) {
-          const tranchePlafond = bareme[i].plafond;
-          const taux = bareme[i].taux;
-          const base = Math.max(0, Math.min(qf, tranchePlafond) - prev);
-          impotsParPart += base * taux;
-          prev = tranchePlafond;
-          if (qf <= tranchePlafond) break;
-        }
-        const irBrut = impotsParPart * parts;
-        const tauxMoyen = revenu > 0 ? irBrut / revenu : 0;
-        const mensualiteMoyenne = irBrut / 12;
-        const tauxMarginal = bareme.find((b) => qf <= b.plafond)?.taux || 0;
-
-        const label = `${fmtEUR(revenu)} • ${parts} part(s)`;
+        const revenu = Number(values.revenu);
+        const parts = Number(values.parts);
+        const r = calculerIR({ revenu, parts });
+        const label = `${fmtEUR(r.revenu)} • ${r.parts} part(s)`;
         compIR.push({
           label,
-          revenu,
-          parts,
-          qf,
-          irBrut,
-          mensualiteMoyenne,
-          tauxMarginal,
-          tauxMoyen,
+          revenu: r.revenu,
+          parts: r.parts,
+          qf: r.qf,
+          irBrut: r.irBrut,
+          mensualiteMoyenne: r.mensualiteMoyenne,
+          tauxMarginal: r.tauxMarginal,
+          tauxMoyen: r.tauxMoyen,
         });
         renderIR();
       },

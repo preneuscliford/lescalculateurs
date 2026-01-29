@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulateur RSA 2026 – Calcul CAF gratuit</title>
-    <meta name="description" content="Estimez votre RSA en 2026. Calcul CAF gratuit selon revenus, logement et composition familiale." />
+    <title>Simulateur RSA 2026 : estimation gratuite officielle</title>
+    <meta name="description" content="Estimez votre RSA 2026 gratuitement avec notre simulateur, conforme aux règles officielles CAF." />
     <meta
       name="keywords"
       content="calculateur RSA, RSA 2026, simulation RSA, simulateur RSA, montant du RSA, RSA combien, conditions RSA, qui a droit au RSA, comment calculer le RSA, calcul du RSA, RSA personne seule, RSA et APL cumulable, CAF"
@@ -18,11 +18,11 @@
       content="https://www.lescalculateurs.fr/pages/rsa"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Simulateur RSA 2026 – Calcul CAF gratuit" />
-    <meta property="og:description" content="Estimez votre RSA en 2026. Calcul CAF gratuit selon revenus, logement et composition familiale." />
+    <meta property="og:title" content="Simulateur RSA 2026 : estimation gratuite officielle" />
+    <meta property="og:description" content="Estimez votre RSA 2026 gratuitement avec notre simulateur, conforme aux règles officielles CAF." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Simulateur RSA 2026 – Calcul CAF gratuit" />
-    <meta name="twitter:description" content="Estimez votre RSA en 2026. Calcul CAF gratuit selon revenus, logement et composition familiale." />
+    <meta name="twitter:title" content="Simulateur RSA 2026 : estimation gratuite officielle" />
+    <meta name="twitter:description" content="Estimez votre RSA 2026 gratuitement avec notre simulateur, conforme aux règles officielles CAF." />
 
     <!-- Favicon -->
     <link
@@ -90,14 +90,17 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Simulateur RSA 2026",
-        "operatingSystem": "Web",
         "applicationCategory": "FinanceApplication",
-        "description": "Simulateur du Revenu de Solidarité Active permettant d'estimer vos droits selon votre situation.",
-        "url": "https://www.lescalculateurs.fr/pages/rsa",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "EUR"
+        "alternateName": [
+          "Calculateur RSA 2026",
+          "Simulation RSA 2026",
+          "Estimation RSA"
+        ],
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "publisher": {
+          "@type": "Organization",
+          "name": "LesCalculateurs.fr"
         }
       }
     </script>
@@ -116,13 +119,11 @@
 
     <!-- Navigation -->
     <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div
-        class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center"
-      >
+      <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
         <a href="/" class="font-bold text-lg text-blue-600">
           🧮 Les Calculateurs
         </a>
-        <div class="space-x-4">
+        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm sm:text-base">
           <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
           <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">APL</a>
           <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
@@ -141,11 +142,13 @@
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-4">
-          👉 Simulation RSA 2026 — Estimation gratuite et immédiate
+          Simulateur RSA 2026 – Calcul officiel gratuit
         </h1>
         <p class="text-xl text-purple-100 mb-6">
-          Estimation indicative basée sur les règles CAF en vigueur.
-          <br />Résultat non contractuel, sans création de compte.
+          Ce simulateur permet d’estimer votre revenu de solidarité active selon
+          les règles officielles en vigueur en 2026.
+          <br />Le calcul est gratuit, rapide et ne nécessite aucune création de
+          compte.
         </p>
         <button
           id="rsa-scroll-to-form"
@@ -166,46 +169,6 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <!-- Qu'est-ce que le RSA -->
-      <section class="mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          📘 Qu'est-ce que le RSA ?
-        </h2>
-        <p class="text-gray-600 mb-4">
-          Le Revenu de Solidarité Active (RSA) est une aide destinée à garantir
-          un revenu minimum aux personnes disposant de faibles ressources. Son
-          montant dépend de plusieurs critères personnels et familiaux.
-        </p>
-        <p class="text-gray-600 mb-6">Le RSA dépend notamment :</p>
-        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
-          <li>de votre situation familiale</li>
-          <li>de vos revenus récents</li>
-          <li>de votre logement</li>
-          <li>de votre activité ou non</li>
-        </ul>
-        <p class="text-gray-600 mb-6">
-          Il est versé par la CAF ou la MSA selon votre régime.
-        </p>
-        <p class="text-blue-600 font-semibold">
-          👉 Pour un montant personnalisé, utilisez le simulateur.
-        </p>
-      </section>
-
-      <!-- Ce que calcule le simulateur -->
-      <section class="mb-12 bg-blue-50 p-6 rounded-lg">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          🧾 Que permet cette simulation RSA ?
-        </h2>
-        <ul class="list-disc list-inside space-y-3 text-gray-700">
-          <li>estimer si vous pouvez être éligible au RSA</li>
-          <li>obtenir un ordre de grandeur du montant mensuel</li>
-          <li>comprendre l'impact de votre situation personnelle</li>
-        </ul>
-        <p class="text-sm text-gray-600 mt-6">
-          💡 Le résultat est indicatif et pédagogique.
-        </p>
-      </section>
-
       <!-- Calculateur RSA -->
       <section class="mb-12">
         <div id="rsa-calculator" class="bg-white p-8 rounded-lg shadow-lg">
@@ -355,6 +318,46 @@
         </div>
       </section>
 
+      <!-- Qu'est-ce que le RSA -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          Quelles sont les règles officielles en 2026 ?
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Le Revenu de Solidarité Active (RSA) est une aide destinée à garantir
+          un revenu minimum aux personnes disposant de faibles ressources. Son
+          montant dépend de plusieurs critères personnels et familiaux.
+        </p>
+        <p class="text-gray-600 mb-6">Le RSA dépend notamment :</p>
+        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+          <li>de votre situation familiale</li>
+          <li>de vos revenus récents</li>
+          <li>de votre logement</li>
+          <li>de votre activité ou non</li>
+        </ul>
+        <p class="text-gray-600 mb-6">
+          Il est versé par la CAF ou la MSA selon votre régime.
+        </p>
+        <p class="text-blue-600 font-semibold">
+          👉 Pour un montant personnalisé, utilisez le simulateur.
+        </p>
+      </section>
+
+      <!-- Ce que calcule le simulateur -->
+      <section class="mb-12 bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          Comment fonctionne le calculateur ?
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-gray-700">
+          <li>estimer si vous pouvez être éligible au RSA</li>
+          <li>obtenir un ordre de grandeur du montant mensuel</li>
+          <li>comprendre l'impact de votre situation personnelle</li>
+        </ul>
+        <p class="text-sm text-gray-600 mt-6">
+          💡 Le résultat est indicatif et pédagogique.
+        </p>
+      </section>
+
       <section class="mb-12 bg-white p-8 rounded-lg shadow-lg">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">
           RSA 2026 : conditions et montant (en résumé)
@@ -489,7 +492,7 @@
       <!-- Exemple pédagogique -->
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          📝 Exemple indicatif
+          Exemple de calcul / simulation
         </h2>
         <blockquote
           class="border-l-4 border-purple-500 pl-6 py-4 bg-gray-50 rounded"
@@ -509,11 +512,27 @@
         </p>
       </section>
 
+      <section class="mb-12 bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          Différence entre estimation et calcul officiel
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Cette page fournit une estimation rapide à partir des informations
+            saisies. Le calcul officiel est réalisé par la CAF/MSA lors de
+            l’instruction de votre dossier, avec vos justificatifs et données
+            administratives.
+          </p>
+          <p class="text-sm text-gray-600">
+            Pour un montant définitif, effectuez la démarche officielle sur
+            caf.fr.
+          </p>
+        </div>
+      </section>
+
       <!-- FAQ -->
       <section class="mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          ❓ Questions fréquentes sur le RSA
-        </h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Questions fréquentes</h2>
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer">

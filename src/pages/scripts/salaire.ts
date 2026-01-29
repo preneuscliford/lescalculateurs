@@ -1,6 +1,7 @@
 import { CalculatorFrame } from "../../components/CalculatorFrame.ts";
 import { ComparisonModal } from "../../components/ComparisonModal.ts";
 import { formatCurrency } from "../../main.ts";
+import { calculerSalaire } from "../../utils/salaireCalculEngine.ts";
 
 const salaireConfig = {
   title: "Simulateur salaire brut/net 2026",
@@ -41,30 +42,25 @@ const salaireConfig = {
       const brut = Number(values.brut);
       const statut = values.statut;
       const tauxPAS = Number(values.taux_pas) || 0;
-      if (!isFinite(brut) || brut <= 0 || !statut) {
-        return {
-          success: false,
-          error: "Veuillez saisir un brut valide et votre statut.",
-        };
-      }
-      const tauxSalarial = statut === "cadre" ? 0.25 : 0.23;
-      const netAvantImpot = brut * (1 - tauxSalarial);
-      const pasMensuel = netAvantImpot * (tauxPAS / 100);
-      const netApresImpot = netAvantImpot - pasMensuel;
+      const r = calculerSalaire({
+        brutMensuel: brut,
+        statut,
+        tauxPAS,
+      });
       return {
         success: true,
         data: {
-          brut,
-          statut,
-          tauxSalarial,
-          netAvantImpot,
-          pasMensuel,
-          netApresImpot,
-          brutAnnuel: brut * 12,
-          netAvantImpotAnnuel: netAvantImpot * 12,
-          pasAnnuel: pasMensuel * 12,
-          netApresImpotAnnuel: netApresImpot * 12,
-          tauxPAS,
+          brut: r.brut,
+          statut: r.statut,
+          tauxSalarial: r.tauxSalarial,
+          netAvantImpot: r.netAvantImpot,
+          pasMensuel: r.pasMensuel,
+          netApresImpot: r.netApresImpot,
+          brutAnnuel: r.brutAnnuel,
+          netAvantImpotAnnuel: r.netAvantImpotAnnuel,
+          pasAnnuel: r.pasAnnuel,
+          netApresImpotAnnuel: r.netApresImpotAnnuel,
+          tauxPAS: r.tauxPAS,
         },
       };
     } catch (e) {
