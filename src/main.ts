@@ -1,4 +1,5 @@
 import "./tailwind.css";
+import { initializeScrollButtons } from "./utils/scrollButtons";
 
 // Simple routing for SPA-like navigation (optional)
 export function initializeApp() {
@@ -9,6 +10,9 @@ export function initializeApp() {
 
   // Initialize show more functionality
   initializeShowMore();
+
+  // Initialize scroll-to-simulator buttons
+  initializeScrollButtons();
 }
 
 // Add Google AdSense script only in production
