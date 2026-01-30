@@ -247,10 +247,15 @@
           </div>
 
           <!-- Title & Status -->
-          <div class="flex items-center gap-3 sm:flex-1 sm:justify-center">
-            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-              🧾 Impôt sur le Revenu 2026
-            </h1>
+          <div class="flex items-start gap-3 sm:flex-1 sm:justify-center">
+            <div>
+              <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
+                Simulateur impôt sur le revenu 2026 : estimation du montant à payer
+              </h1>
+              <p class="text-xs text-gray-600 mt-1">
+                Estimez votre impôt sur le revenu 2026 selon vos revenus, votre foyer fiscal et les barèmes en vigueur (simulation indicative).
+              </p>
+            </div>
             <span
               class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
             >
@@ -280,6 +285,61 @@
             Estimez votre impôt sur le revenu 2026 en quelques secondes à partir
             de votre revenu et de votre situation familiale (quotient familial).
           </p>
+          <p class="text-gray-600 text-sm">
+            ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h2>
+          <div class="space-y-2 text-gray-700 text-sm">
+            <p>🏛️ <strong>Source</strong> : DGFiP, Service‑Public</p>
+            <p>📐 <strong>Logique</strong> : calcul basé sur revenu imposable annuel et nombre de parts</p>
+            <p>📅 <strong>Année</strong> : paramètres 2026</p>
+            <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-cyan-50 border border-cyan-100 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧾 Ce que permet ce simulateur</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Obtenir un <strong>montant indicatif</strong> d’IR (ordre de grandeur)</li>
+            <li>Comprendre l’impact du <strong>quotient familial</strong> (parts)</li>
+            <li>Comparer plusieurs situations via la comparaison intégrée au résultat</li>
+            <li>Croiser avec d’autres outils (salaire, PAS, etc.)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
+            <li>Renseignez les informations demandées</li>
+            <li>Indiquez vos montants ou paramètres principaux</li>
+            <li>Lancez la simulation</li>
+            <li>Consultez le résultat estimatif</li>
+          </ol>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment lire les résultats</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-6">
+            <li><strong>Montant estimé</strong> : ordre de grandeur</li>
+            <li><strong>Détail</strong> : paramètres pris en compte</li>
+            <li><strong>Avertissement</strong> : dépend de votre situation réelle</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Pourquoi le résultat peut être nul / faible / différent</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+            <li>Dépassement de seuils réglementaires</li>
+            <li>Paramètres non pris en compte dans une simulation simplifiée</li>
+            <li>Règles spécifiques propres à votre dossier</li>
+          </ul>
         </div>
       </section>
 
@@ -332,10 +392,10 @@
               </p>
             </div>
             <div class="bg-white rounded-lg p-4 shadow-sm">
-              <div class="text-3xl mb-2">📄</div>
-              <h3 class="font-bold text-gray-900 mb-1">Export PNG / PDF</h3>
+              <div class="text-3xl mb-2">📚</div>
+              <h3 class="font-bold text-gray-900 mb-1">Lecture par tranches</h3>
               <p class="text-sm text-gray-600">
-                Téléchargez vos simulations pour votre dossier fiscal
+                Comprenez l'impact du barème progressif et des parts
               </p>
             </div>
           </div>

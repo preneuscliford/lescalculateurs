@@ -227,10 +227,15 @@
           </div>
 
           <!-- Title & Status -->
-          <div class="flex items-center space-x-3">
-            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-              💼 Salaire Brut/Net 2026
-            </h1>
+          <div class="flex items-start space-x-3">
+            <div>
+              <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
+                Simulateur salaire brut net 2026 : calcul du net avant et après impôt
+              </h1>
+              <p class="text-xs text-gray-600 mt-1">
+                Convertissez votre salaire brut en net 2026 selon les cotisations officielles, votre statut et le prélèvement à la source (estimation indicative).
+              </p>
+            </div>
             <span
               class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
             >
@@ -295,6 +300,58 @@
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h2>
+          <div class="space-y-2 text-gray-700 text-sm">
+            <p>🏛️ <strong>Source</strong> : URSSAF, impots.gouv.fr, service-public.fr</p>
+            <p>📐 <strong>Logique</strong> : calcul basé sur brut, statut (cadre/non‑cadre), taux PAS</p>
+            <p>📅 <strong>Année</strong> : paramètres 2026</p>
+            <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-blue-50 border border-blue-100 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧾 Ce que permet ce simulateur</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Obtenir un <strong>montant indicatif</strong> (net avant impôt / net après PAS)</li>
+            <li>Comprendre l’impact de vos paramètres (statut, PAS, brut)</li>
+            <li>Comparer plusieurs scénarios</li>
+            <li>Exporter les résultats (PNG / PDF)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
+            <li>Renseignez les informations demandées</li>
+            <li>Indiquez vos montants ou paramètres principaux</li>
+            <li>Lancez la simulation</li>
+            <li>Consultez le résultat estimatif</li>
+          </ol>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment lire les résultats</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-6">
+            <li><strong>Montant estimé</strong> : ordre de grandeur</li>
+            <li><strong>Détail</strong> : paramètres pris en compte</li>
+            <li><strong>Avertissement</strong> : dépend de votre situation réelle</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Pourquoi le résultat peut être nul / faible / différent</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+            <li>Dépassement de seuils réglementaires ou taux PAS inadapté</li>
+            <li>Paramètres non pris en compte dans une simulation simplifiée</li>
+            <li>Règles spécifiques propres à votre contrat (mutuelle, primes, conventions)</li>
+          </ul>
         </div>
       </section>
 
