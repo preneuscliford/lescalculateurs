@@ -70,7 +70,7 @@ if (form) {
       explicationDisplay.textContent = result.explication;
     }
 
-    resultDiv.classList.remove("hidden");
+    resultDiv.classList.remove("invisible");
     resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }

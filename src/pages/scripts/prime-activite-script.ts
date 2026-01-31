@@ -63,7 +63,7 @@ form.addEventListener("submit", (e) => {
     explDisplay.textContent = formatted.explDisplay;
 
     // Affichage du bloc résultat
-    resultDiv.classList.remove("hidden");
+    resultDiv.classList.remove("invisible");
     resultDiv.scrollIntoView({ behavior: "smooth" });
 
     // Dispatch événement personnalisé pour suivi
@@ -97,6 +97,6 @@ if (scrollButton) {
   typeActiviteSelect,
 ].forEach((elem) => {
   elem.addEventListener("change", () => {
-    resultDiv.classList.add("hidden");
+    resultDiv.classList.add("invisible");
   });
 });

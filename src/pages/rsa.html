@@ -45,43 +45,6 @@
     <link rel="manifest" href="../assets/site.webmanifest" />
     <link rel="shortcut icon" href="../assets/favicon.ico" />
 
-    <!-- Google AdSense -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TPFZCGX5");
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-2HNTGCYQ1X");
-    </script>
-
     <link rel="stylesheet" href="../tailwind.css" />
     <script type="module" src="./scripts/rsa-script.ts"></script>
     <!-- Schema.org SoftwareApplication -->
@@ -104,19 +67,9 @@
         }
       }
     </script>
+    <script defer src="/third-party-loader.js"></script>
   </head>
   <body class="bg-gray-50">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <!-- Navigation -->
     <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
@@ -333,7 +286,7 @@
           <!-- Résultat -->
           <div
             id="rsa-result"
-            class="hidden mt-8 p-6 bg-green-50 border-2 border-green-500 rounded-lg"
+            class="invisible mt-8 min-h-[220px] p-6 bg-green-50 border-2 border-green-500 rounded-lg"
           >
             <h3 class="text-2xl font-bold text-green-700 mb-4">
               📊 Estimation de votre RSA

@@ -50,7 +50,7 @@ form.addEventListener("submit", (e) => {
     explDisplay.textContent = formatted.explDisplay;
 
     // Affichage du bloc résultat
-    resultDiv.classList.remove("hidden");
+    resultDiv.classList.remove("invisible");
     resultDiv.scrollIntoView({ behavior: "smooth" });
 
     // Dispatch événement personnalisé pour suivi

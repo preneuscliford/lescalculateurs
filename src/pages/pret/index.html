@@ -22,84 +22,6 @@
     <meta name="twitter:description" content="Simulez votre prêt immobilier en 2026. Mensualités, taux, capacité d’emprunt et financement total gratuitement." />
 
     <!-- JSON-LD: BreadcrumbList & FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Accueil",
-          "item": "https://www.lescalculateurs.fr/index"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Prêt immobilier",
-          "item": "https://www.lescalculateurs.fr/pages/pret"
-        }
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Comment calculer ma capacité d'emprunt maximale ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Votre capacité dépend de vos revenus, de vos charges et du taux d'endettement (souvent ~35% assurance incluse). Le simulateur calcule automatiquement les mensualités et le taux d'endettement estimé."}
-        },
-        {
-          "@type": "Question",
-          "name": "Quels sont les taux de prêt immobilier en 2026 ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Les taux varient selon la durée et le profil. Sur 20 ans, comptez environ 3,5–4,5% pour un très bon dossier. Le simulateur utilise des taux moyens actualisés."}
-        },
-        {
-          "@type": "Question",
-          "name": "L'assurance emprunteur est-elle obligatoire ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Non légalement, mais exigée par les banques. En moyenne 0,3–0,6% du capital selon l'âge/santé. La loi Lemoine permet de choisir son assureur."}
-        },
-        {
-          "@type": "Question",
-          "name": "Quels frais annexes prévoir ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Frais de dossier (0,5–1%), garantie (hypothèque/caution 1–2%), courtage éventuel. Le simulateur intègre ces coûts pour un calcul réaliste."}
-        }
-      ]
-    }
-    </script>
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
-    <link rel="manifest" href="../assets/site.webmanifest">
-    <link rel="shortcut icon" href="../assets/favicon.ico">
-
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399"
-         crossorigin="anonymous"></script>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TPFZCGX5');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-2HNTGCYQ1X');
-    </script>
-    
     <!-- JSON-LD Calculator Schema -->
     <script type="application/ld+json">
     {
@@ -153,13 +75,9 @@
         }
       }
     </script>
+    <script defer src="/third-party-loader.js"></script>
   </head>
   <body class="bg-gray-50">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col gap-3 py-4 sm:flex-row sm:justify-between sm:items-center">
@@ -187,19 +105,7 @@
 
           <!-- Title & Status -->
           <div class="sm:flex-1 sm:flex sm:justify-center">
-            <div class="flex flex-col items-center">
-              <div class="flex items-center gap-3">
-                <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-                  Simulateur prêt immobilier : mensualités et capacité d’emprunt
-                </h1>
-                <span class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                  ✨ Nouveau
-                </span>
-              </div>
-              <p class="text-xs text-gray-600 mt-1 text-center">
-                Calculez vos mensualités et votre capacité d’emprunt selon le montant, la durée et le taux de crédit immobilier (estimation indicative).
-              </p>
-            </div>
+            <!-- Bloc déplacé sous l'avertissement -->
           </div>
 
           <!-- Actions -->
@@ -213,21 +119,31 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="flex justify-center mb-8">
-        <button
-          data-scroll-target="#calculator-container"
-          data-scroll-focus="input, select, textarea"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors shadow-md"
-        >
-          🔵 Aller directement à la simulation
-        </button>
-      </div>
       <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
         <p class="text-sm text-gray-800 m-0">
           Les calculs reposent sur des formules standard d'amortissement et des
           hypothèses simplifiées (assurance, frais). Ils constituent une
           estimation indicative et non contractuelle.
         </p>
+      </div>
+
+      <div class="flex flex-col items-center mt-6 mb-8">
+        <div class="flex items-center gap-3">
+          <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
+            Simulateur prêt immobilier : mensualités et capacité d’emprunt
+          </h1>
+        </div>
+        <p class="text-sm text-gray-600 mt-2 text-center">
+          Calculez vos mensualités et votre capacité d’emprunt selon le montant, la durée et le taux de crédit immobilier (estimation indicative).
+        </p>
+        <button
+          data-scroll-target="#calculator-container"
+          data-scroll-focus="input, select, textarea"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors shadow-md mt-6"
+        >
+          🟢 Lancer la simulation
+        </button>
+      </div>
       </div>
 
       <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8">
@@ -487,16 +403,15 @@
           <div
             class="bg-white rounded-lg p-6 shadow-sm"
           >
-            <h3
-              class="text-lg font-semibold text-gray-800 mb-3"
-            >
-              Comment calculer ma capacité d'emprunt maximale ?
-            </h3>
-            <div>
-              <p class="text-gray-600">
-                Votre capacité d'emprunt dépend de vos revenus, charges
-                existantes et taux d'endettement (souvent ~35% assurance incluse). Notre simulateur
-                calcule automatiquement le montant maximal selon les critères
+                  <div class="flex flex-col items-center mb-8">
+                    <button
+                      data-scroll-target="#calculator-container"
+                      data-scroll-focus="input, select, textarea"
+                      class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg mt-2"
+                    >
+                      🟢 Lancer la simulation
+                    </button>
+                  </div>
                 bancaires 2026.
               </p>
             </div>
@@ -1345,8 +1260,14 @@
     </script>
     
     <!-- Auto-initialisation des exports PDF/CSV -->
-    <script type="module" src="../utils/pdfExport.js"></script>
-    <script type="module" src="../utils/autoExportInit.js"></script>
+    <script type="module">
+  const __lcLoadAutoExport = () => import("../utils/autoExportInit.js");
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(__lcLoadAutoExport, { timeout: 4000 });
+  } else {
+    window.setTimeout(__lcLoadAutoExport, 2000);
+  }
+</script>
   </body>
 </html>
 

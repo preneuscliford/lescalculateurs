@@ -53,6 +53,7 @@
       name="source"
       content="legifrance.gouv.fr, travail-emploi.gouv.fr, service-public.fr"
     />
+    <script defer src="/third-party-loader.js"></script>
   </head>
   <body class="bg-gray-50">
     <header class="bg-white shadow-sm">
@@ -420,8 +421,14 @@
     </script>
 
     <!-- Auto-initialisation des exports PDF/CSV -->
-    <script type="module" src="../utils/pdfExport.js"></script>
-    <script type="module" src="../utils/autoExportInit.js"></script>
+    <script type="module">
+  const __lcLoadAutoExport = () => import("../utils/autoExportInit.js");
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(__lcLoadAutoExport, { timeout: 4000 });
+  } else {
+    window.setTimeout(__lcLoadAutoExport, 2000);
+  }
+</script>
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

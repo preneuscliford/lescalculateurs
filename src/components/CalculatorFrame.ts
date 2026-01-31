@@ -79,7 +79,7 @@ export class CalculatorFrame {
             </button>
           </form>
           
-          <div id="calculator-result" class="mt-6 hidden" aria-live="polite"></div>
+          <div id="calculator-result" class="mt-6 calculator-result invisible min-h-[220px]" aria-live="polite"></div>
         </div>
       </div>
     `;
@@ -324,7 +324,7 @@ export class CalculatorFrame {
   }
 
   private showResult(resultDiv: HTMLElement, result: CalculatorResult): void {
-    resultDiv.classList.remove("hidden");
+    resultDiv.classList.remove("invisible");
 
     if (result.success) {
       // Déterminer si l'export CSV est activé
@@ -335,7 +335,7 @@ export class CalculatorFrame {
 
       const exportButtons = "";
 
-      resultDiv.className = "mt-6 calculator-result";
+      resultDiv.className = "mt-6 calculator-result min-h-[220px]";
       resultDiv.innerHTML = `
         <h3 class="text-lg font-semibold text-gray-800 mb-2">Résultat :</h3>
         <div class="text-gray-700">

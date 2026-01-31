@@ -2,9 +2,6 @@
  * Module PDF Export - Version statique avec imports npm
  * Fonctionne en dev ET en prod (Vercel)
  */
-
-console.log("🟢 pdfExport.js CHARGÉ (version lazy)");
-
 /**
  * Exporte les résultats du calculateur en PDF
  */
@@ -422,13 +419,3 @@ function updateButtonState(button, calculatorName) {
 window.createPDFButton = createPDFButton;
 window.exportCalculatorToPDF = exportCalculatorToPDF;
 window.updateButtonState = updateButtonState;
-
-console.log("✅ window.createPDFButton défini:", typeof window.createPDFButton);
-console.log(
-  "✅ window.exportCalculatorToPDF défini:",
-  typeof window.exportCalculatorToPDF
-);
-console.log(
-  "✅ window.updateButtonState défini:",
-  typeof window.updateButtonState
-);

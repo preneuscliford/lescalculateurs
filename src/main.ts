@@ -3,28 +3,13 @@ import { initializeScrollButtons } from "./utils/scrollButtons";
 
 // Simple routing for SPA-like navigation (optional)
 export function initializeApp() {
-  console.log("Les Calculateurs - Application initialisée");
-
   // Add any global initialization logic here
-  addGoogleAdsense();
 
   // Initialize show more functionality
   initializeShowMore();
 
   // Initialize scroll-to-simulator buttons
   initializeScrollButtons();
-}
-
-// Add Google AdSense script only in production
-function addGoogleAdsense() {
-  if (import.meta.env.PROD) {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src =
-      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX";
-    script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
-  }
 }
 
 // Initialize show more/less functionality for calculators

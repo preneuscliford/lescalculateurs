@@ -55,27 +55,7 @@
     <link rel="manifest" href="../assets/site.webmanifest">
     <link rel="shortcut icon" href="../assets/favicon.ico">
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399"
-         crossorigin="anonymous"></script>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TPFZCGX5');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-2HNTGCYQ1X');
-    </script>
+    <script defer src="/third-party-loader.js"></script>
 
     <!-- WebApplication Schema.org -->
     <script type="application/ld+json">{
@@ -192,11 +172,6 @@
     </script>
   </head>
   <body class="bg-gray-50">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center py-4">
@@ -448,7 +423,7 @@
         </form>
 
         <!-- Résultats avec graphiques -->
-        <div id="results" class="hidden mt-8">
+        <div id="results" class="invisible mt-8 min-h-[220px]">
           <!-- Les graphiques seront insérés ici dynamiquement -->
         </div>
       </div>
@@ -913,6 +888,15 @@
 
     <script type="module" src="../main.ts"></script>
     <script type="module">
+      let __lcChartPromise;
+      function __lcLoadChart() {
+        if (__lcChartPromise) return __lcChartPromise;
+        __lcChartPromise = import("chart.js/auto").then((mod) => {
+          return mod.Chart || mod.default || mod;
+        });
+        return __lcChartPromise;
+      }
+
       document
         .getElementById("plusvalue-form")
         .addEventListener("submit", function (e) {
@@ -1009,7 +993,7 @@
               </div>
             </div>
           `;
-            document.getElementById("results").classList.remove("hidden");
+            document.getElementById("results").classList.remove("invisible");
             return;
           }
 
@@ -1050,7 +1034,7 @@
               </div>
             </div>
             `;
-            document.getElementById("results").classList.remove("hidden");
+            document.getElementById("results").classList.remove("invisible");
             return;
           }
 
@@ -1146,7 +1130,7 @@
                 </div>
               </div>
             `;
-            document.getElementById("results").classList.remove("hidden");
+            document.getElementById("results").classList.remove("invisible");
             document.getElementById("plusvalue-add-to-compare")?.classList.remove("hidden");
             return;
           }
@@ -1376,7 +1360,7 @@
           };
 
           document.getElementById("results").innerHTML = results;
-          document.getElementById("results").classList.remove("hidden");
+          document.getElementById("results").classList.remove("invisible");
           
           // Ne pas masquer le bouton "Ajouter à la comparaison" - on peut ajouter plusieurs fois
           document.getElementById("plusvalue-add-to-compare")?.classList.remove("hidden");
@@ -1384,23 +1368,20 @@
           // Générer les graphiques après un court délai pour que les canvas soient dans le DOM
           // Uniquement si ce ne sont pas des cas d'exonération (résidence principale ou moins-value)
           if (impotTotal && impotTotal > 0) {
-            setTimeout(() => {
+            setTimeout(async () => {
+              const Chart = await __lcLoadChart();
               // Trouver les canvas générés avec les IDs spécifiques
               const chartImpotsId = `chart-impots-${chartTimestamp}`;
               const chartAbattementsId = `chart-abattements-${chartTimestamp}`;
               
               const chartImpotsCanvas = document.getElementById(chartImpotsId);
               const chartAbattementsCanvas = document.getElementById(chartAbattementsId);
-              
-              console.log("🔍 Canvas trouvés:");
-              console.log("  - chart-impots:", chartImpotsId, chartImpotsCanvas ? "✅" : "❌");
-              console.log("  - chart-abattements:", chartAbattementsId, chartAbattementsCanvas ? "✅" : "❌");
 
               // Graphique 1: Ventilation des impôts
-              if (chartImpotsCanvas && window.Chart) {
+              if (chartImpotsCanvas) {
                 const ctxImpots = chartImpotsCanvas.getContext('2d');
                 if (ctxImpots) {
-                  new window.Chart(ctxImpots, {
+                  new Chart(ctxImpots, {
                     type: 'doughnut',
                     data: {
                       labels: ['Impôt sur revenu', 'Surtaxe', 'Prélèvements sociaux'],
@@ -1431,10 +1412,8 @@
               }
 
               // Graphique 2: Évolution des abattements
-              if (chartAbattementsCanvas && window.Chart) {
-                console.log("📈 Création du graphique 'Abattements selon durée'");
+              if (chartAbattementsCanvas) {
                 const ctxAbattements = chartAbattementsCanvas.getContext('2d');
-                console.log("📈 Context obtenu?", !!ctxAbattements);
                 if (ctxAbattements) {
                   const yearsData = [];
                   const abattementIRData = [];
@@ -1457,7 +1436,7 @@
                     abattementPSData.push(psAbat);
                   }
 
-                  new window.Chart(ctxAbattements, {
+                  new Chart(ctxAbattements, {
                     type: 'line',
                     data: {
                       labels: yearsData,
@@ -1507,15 +1486,7 @@
                       }
                     }
                   });
-                  console.log("✅ Graphique 'Abattements selon durée' créé");
-                } else {
-                  console.warn("⚠️ Context invalide pour 'Abattements selon durée'");
                 }
-              } else {
-                console.warn("⚠️ Canvas ou Chart.js non disponible pour 'Abattements selon durée'", {
-                  hasCanvas: !!chartAbattementsCanvas,
-                  hasChart: !!window.Chart
-                });
               }
             }, 200);
           }
@@ -1622,7 +1593,7 @@
               
               // Réinitialiser le formulaire principal
               document.getElementById("plusvalue-form").reset();
-              document.getElementById("results").classList.add("hidden");
+              document.getElementById("results").classList.add("invisible");
               closeModal();
             });
 
@@ -1748,11 +1719,15 @@
       });
     </script>
     
-    <!-- Import Chart.js via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
     <!-- Auto-initialisation des exports PDF/CSV (importe pdfExport.js automatiquement) -->
-    <script type="module" src="../utils/autoExportInit.js"></script>
+    <script type="module">
+  const __lcLoadAutoExport = () => import("../utils/autoExportInit.js");
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(__lcLoadAutoExport, { timeout: 4000 });
+  } else {
+    window.setTimeout(__lcLoadAutoExport, 2000);
+  }
+</script>
   </body>
 </html>
 

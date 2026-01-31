@@ -72,7 +72,7 @@ if (form) {
     }
 
     if (resultDiv) {
-      resultDiv.classList.remove("hidden");
+      resultDiv.classList.remove("invisible");
       resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
       console.log("Result div shown");
     }

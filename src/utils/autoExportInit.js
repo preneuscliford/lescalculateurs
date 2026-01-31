@@ -6,8 +6,6 @@
 // Importer pdfExport pour s'assurer qu'il se charge en premier
 import "./pdfExport.js";
 
-console.log("🔵 autoExportInit.js CHARGÉ");
-
 // Fonction pour extraire les données depuis la structure HTML des calculateurs
 function extractFromHTMLStructure(resultDiv) {
   const results = {};

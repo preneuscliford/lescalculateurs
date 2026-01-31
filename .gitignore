@@ -10,6 +10,7 @@ dist/
 .DS_Store
 Thumbs.db
 *.log
+127.0.0.1_*.report.html
 
 # Environment files
 .env
