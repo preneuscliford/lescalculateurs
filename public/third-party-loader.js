@@ -4,6 +4,7 @@
 
   var ADSENSE_CLIENT_ID = "ca-pub-2209781252231399";
   var GTM_ID = "GTM-TPFZCGX5";
+  var GA4_ID = "G-2HNTGCYQ1X";
 
   function alreadyHasScript(srcIncludes) {
     var scripts = document.getElementsByTagName("script");
@@ -90,9 +91,30 @@
     addScript("https://www.googletagmanager.com/gtm.js?id=" + encodeURIComponent(GTM_ID));
   }
 
+  function loadGA4() {
+    if (!GA4_ID) return;
+    if (alreadyHasScript("googletagmanager.com/gtag/js")) return;
+    addLink("dns-prefetch", "https://www.googletagmanager.com");
+    addLink("preconnect", "https://www.googletagmanager.com");
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag =
+      window.gtag ||
+      function () {
+        window.dataLayer.push(arguments);
+      };
+    window.gtag("js", new Date());
+    window.gtag("config", GA4_ID);
+
+    addScript(
+      "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA4_ID)
+    );
+  }
+
   function loadThirdParty() {
     loadAdsense();
     loadGTM();
+    loadGA4();
   }
 
   var deferOnMobile = isMobileLike() || isConstrainedNetwork();
