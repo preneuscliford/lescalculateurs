@@ -57,7 +57,7 @@
       "name": "Comment obtenir le montant estimé de mon APL ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "utilisez le estimateur gratuit de la CAF pour connaître votre montant définitif."
+        "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif."
       }
     }
   ]
@@ -130,7 +130,7 @@
       <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
         <p class="text-sm text-gray-800 m-0">
           ⚠️ Avertissement : Les résultats fournis sont des estimations
-          indicatives. Seule une démarche officielle auprés de la CAF permet
+          indicatives. Seule une démarche officielle auprès de la CAF permet
           d'obtenir un montant définitif.
         </p>
       </div>
@@ -312,7 +312,7 @@
           <p>
             Exemple : une personne seule en province avec un loyer de 520 € et
             des revenus mensuels de 1 050 €. Le simulateur estime un montant
-            déAPL en appliquant un loyer retenu plafonné et une participation
+            d'APL en appliquant un loyer retenu plafonné et une participation
             personnelle selon les barèmes.
           </p>
           <p class="text-sm text-gray-600">
@@ -326,7 +326,7 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-6">Différence entre estimation et calcul</h2>
         <div class="space-y-3 text-gray-700">
           <p>Une estimation permet d'obtenir un ordre de grandeur rapidement. Un
-            calculést celui réalis€ par la CAF € partir de vos
+            calcul est celui réalisé par la CAF à partir de vos
             déclarations et des données administratives.</p>
           <p class="text-sm text-gray-600">
             Pour un montant définitif et une demande, utilisez les démarches
@@ -404,14 +404,14 @@
             </p>
             <ul class="text-gray-600 text-sm space-y-1 ml-4 mb-3">
               <li>
-                € Vos revenus fiscaux (revenus N-2, transmis automatiquement par
+                • Vos revenus fiscaux (revenus N-2, transmis automatiquement par
                 les impôts)
               </li>
-              <li>€ Votre composition familiale et nombre d'enfants</li>
+              <li>• Votre composition familiale et nombre d'enfants</li>
               <li>
-                € Votre zone géographique (Île-de-France, Province, DOM-TOM)
+                • Votre zone géographique (Île-de-France, Province, DOM-TOM)
               </li>
-              <li>€ Le loyer pris en compte (plafonné par la CAF)</li>
+              <li>• Le loyer pris en compte (plafonné par la CAF)</li>
             </ul>
             <p class="text-gray-600">
               Plus vos revenus sont élevés, moins vous recevez d'APL. La CAF
@@ -431,8 +431,8 @@
             </p>
             <p class="text-sm italic text-orange-700 bg-orange-50 p-2 rounded">
               ⚠️ <strong>Important :</strong> La CAF utilise votre revenu fiscal
-              de référence (RFR) N-2, transmis automatiquement par les impéts
-              gréce au système de ressources "RLS". Vos ressources ne sont
+              de référence (RFR) N-2, transmis automatiquement par les impôts
+              grâce au système de ressources "RLS". Vos ressources ne sont
               vérifiées qu'une fois par an.
             </p>
           </div>
@@ -511,7 +511,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
-                <span class="font-medium">éle-de-France (Zone 1)</span>
+                <span class="font-medium">Île-de-France (Zone 1)</span>
               </div>
             </div>
             <div class="bg-blue-50 p-4 rounded-lg">
@@ -774,7 +774,7 @@
                   <th
                     class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900"
                   >
-                    Loyer plafonn€ (é)
+                    Loyer plafonné (€)
                   </th>
                   <th
                     class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900"
@@ -862,7 +862,7 @@
                   <th
                     class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900"
                   >
-                    Loyer plafonn€ (é)
+                    Loyer plafonné (€)
                   </th>
                   <th
                     class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900"
@@ -1010,7 +1010,7 @@
         <h3 class="font-bold text-blue-900 mb-3">📚 Sources 2026</h3>
         <ul class="text-sm text-gray-700 space-y-2">
           <li>
-            € Aide personnalisée au logement (cadre général) :
+            • Aide personnalisée au logement (cadre général) :
             <a
               href="https://www.service-public.fr/particuliers/vosdroits/F12006"
               target="_blank"
@@ -1020,7 +1020,7 @@
             >
           </li>
           <li>
-            € CAF € informations officielles :
+            • CAF – informations officielles :
             <a
               href="https://www.caf.fr"
               target="_blank"
@@ -1119,7 +1119,7 @@
             type: "select",
             required: true,
             options: [
-              { value: "idf", label: "éle-de-France" },
+              { value: "idf", label: "Île-de-France" },
               { value: "province", label: "Province (hors IDF)" },
               { value: "dom", label: "DOM-TOM" },
             ],
@@ -1160,7 +1160,7 @@
               </div>`
               : "";
 
-          // 💡 PROPOSITION 2: Message si montant plafonn€ (anti-bullshit)
+          // 💡 PROPOSITION 2: Message si montant plafonné (anti-bullshit)
           const messagePlafonne = data.is_plafonne
             ? `<div class="text-xs text-blue-600 mt-2 italic">
                 💡 ${MESSAGES_PEDAGOGIQUES.apl_plafonne}
