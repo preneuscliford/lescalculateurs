@@ -591,7 +591,7 @@
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import { formatCurrency } from "../main.ts";
-      import { barèmes } from "../data/barèmes.ts";
+      import { baremes } from "../data/baremes.ts";
 
       const travailConfig = {
         title: "Calculateur durée légale du travail",
@@ -635,11 +635,11 @@
             const salaireHoraire = values.salaire_horaire;
             const periode = values.periode;
 
-            const dureLegale = barèmes.duree_travail.duree_legale_hebdomadaire;
+            const dureLegale = baremes.duree_travail.duree_legale_hebdomadaire;
             const majoration1 =
-              barèmes.duree_travail.majorations_heures_sup.de_36_43h;
+              baremes.duree_travail.majorations_heures_sup.de_36_43h;
             const majoration2 =
-              barèmes.duree_travail.majorations_heures_sup.au_dela_43h;
+              baremes.duree_travail.majorations_heures_sup.au_dela_43h;
 
             // Calcul des heures supplémentaires par semaine
             let heuresNormales = Math.min(heuresSemaine, dureLegale);
@@ -682,11 +682,11 @@
             if (periode === "annuel") {
               const heuresSupAnnuelles = (heuresSup1 + heuresSup2) * 52;
               const contingent =
-                barèmes.duree_travail.contingent_annuel_heures_sup;
+                baremes.duree_travail.contingent_annuel_heures_sup;
               if (heuresSupAnnuelles > contingent) {
                 reposCompensateur =
                   (heuresSupAnnuelles - contingent) *
-                  barèmes.duree_travail.repos_compensateur.taux;
+                  baremes.duree_travail.repos_compensateur.taux;
               }
             }
 

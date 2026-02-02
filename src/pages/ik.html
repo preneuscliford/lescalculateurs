@@ -515,7 +515,7 @@
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import { formatCurrency } from "../main.ts";
-      import { barèmes } from "../data/barèmes.ts";
+      import { baremes } from "../data/baremes.ts";
 
       const ikConfig = {
         title: "Indemnités kilométriques 2026 — barème auto/moto, déclaration",
@@ -594,7 +594,7 @@
                   error: "Veuillez sélectionner la puissance fiscale (CV).",
                 };
               }
-              const tableVoiture = barèmes.indemnites_kilometriques.voiture.latest || barèmes.indemnites_kilometriques.voiture["2024"];
+              const tableVoiture = baremes.indemnites_kilometriques.voiture.latest || baremes.indemnites_kilometriques.voiture["2024"];
               const barèmePuissance = tableVoiture.find((b) => b.puissance === puissance);
               if (!barèmePuissance) {
                 return {
@@ -625,7 +625,7 @@
                   error: "Veuillez sélectionner la cylindrée (deux-roues).",
                 };
               }
-              const ik = barèmes.indemnites_kilometriques.deux_roues[cylindree];
+              const ik = baremes.indemnites_kilometriques.deux_roues[cylindree];
               if (!isFinite(ik)) {
                 return {
                   success: false,
