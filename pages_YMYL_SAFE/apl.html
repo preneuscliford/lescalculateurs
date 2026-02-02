@@ -46,37 +46,18 @@
     <link rel="shortcut icon" href="../assets/favicon.ico" />
 
     <link rel="stylesheet" href="../tailwind.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Simulateur APL 2026",
-        "alternateName": [
-          "Calculateur APL 2026",
-          "Simulation APL 2026",
-          "Estimation APL"
-        ],
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "isAccessibleForFree": true,
-        "publisher": {
-          "@type": "Organization",
-          "name": "LesCalculateurs.fr"
-        }
-      }
-    </script>
-    <script defer src="/third-party-loader.js"></script>
-  <script type="application/ld+json">
+    
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment obtenir le montant exact de mon APL ?",
+      "name": "Comment obtenir le montant estimé de mon APL ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Utilisez le simulateur officiel de la CAF pour connaitre votre montant definitif d aide au logement."
+        "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif."
       }
     }
   ]
@@ -84,7 +65,7 @@
 </script>
 </head>
   <body class="bg-gray-50">
-<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
 
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,14 +113,10 @@
 
           <!-- Title & Status -->
           <div class="flex items-center gap-3 sm:flex-1 sm:justify-center">
-            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-              Simulateur APL 2026 – Calcul officiel gratuit
-            </h1>
+            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Simulateur APL 2026 – Calcul gratuit</h1>
             <span
               class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800"
-            >
-              OFFICIEL
-            </span>
+            ></span>
           </div>
 
           <!-- Actions -->
@@ -154,7 +131,7 @@
         <p class="text-sm text-gray-800 m-0">
           ⚠️ Avertissement : Les résultats fournis sont des estimations
           indicatives. Seule une démarche officielle auprès de la CAF permet
-          d’obtenir un montant définitif.
+          d'obtenir un montant définitif.
         </p>
       </div>
     </div>
@@ -163,7 +140,7 @@
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <section class="mb-8">
         <p class="text-lg text-gray-700 leading-relaxed">
-          Ce simulateur permet d’estimer votre aide au logement selon les règles
+          Ce simulateur permet d'estimer votre aide au logement selon les règles
           officielles en vigueur en 2026. Le calcul est gratuit, rapide et ne
           nécessite aucune création de compte.
         </p>
@@ -204,19 +181,19 @@
             </p>
             <div class="grid sm:grid-cols-3 gap-4">
               <div class="bg-white rounded-lg p-4 shadow-sm">
-                <h3 class="font-bold text-gray-900 mb-1">🗺️ Comparaison</h3>
+                <h3 class="font-bold text-gray-900 mb-1">🔍 Comparaison</h3>
                 <p class="text-sm text-gray-600">
-                  Jusqu’à 3 scénarios côte à côte, avec les écarts.
+                  Jusqu'à 3 scénarios côte à côte, avec les écarts.
                 </p>
               </div>
               <div class="bg-white rounded-lg p-4 shadow-sm">
-                <h3 class="font-bold text-gray-900 mb-1">💡 Détail chiffré</h3>
+                <h3 class="font-bold text-gray-900 mb-1">📋 Détail chiffré</h3>
                 <p class="text-sm text-gray-600">
                   Loyer retenu, plafonds, participation et reste à charge.
                 </p>
               </div>
               <div class="bg-white rounded-lg p-4 shadow-sm">
-                <h3 class="font-bold text-gray-900 mb-1">🧾 Si vous obtenez 0 €</h3>
+                <h3 class="font-bold text-gray-900 mb-1">💡 Si vous obtenez 0 €</h3>
                 <p class="text-sm text-gray-600">
                   Explication claire et pistes à tester via une variante.
                 </p>
@@ -265,45 +242,45 @@
               faire une simulation, puis de confirmer sur le site de la CAF.
             </p>
             <ul class="text-gray-600 text-sm space-y-1 ml-4">
-              <li>• Logement : résidence principale, décent, bail conforme</li>
-              <li>• Situation : composition du foyer, statut d’occupation</li>
-              <li>• Ressources : revenus et patrimoine pris en compte par la CAF</li>
+              <li>🏠 Logement : résidence principale, décent, bail conforme</li>
+              <li>👤 Situation : composition du foyer, statut d'occupation</li>
+              <li>💰 Ressources : revenus et patrimoine pris en compte par la CAF</li>
             </ul>
           </div>
 
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Quelles ressources pour l’APL ?
+              Quelles ressources pour l'APL ?
             </h3>
             <p class="text-gray-600">
               La CAF utilise des <strong>ressources</strong> transmises par
-              l’administration fiscale et recalculées selon ses règles. Plus vos
+              l'administration fiscale et recalculées selon ses règles. Plus vos
               ressources sont élevées, plus la participation personnelle augmente
-              et plus l’APL diminue. En cas de changement de situation, il faut
+              et plus l'APL diminue. En cas de changement de situation, il faut
               le déclarer rapidement.
             </p>
           </div>
 
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Comment est calculée l’APL ?
+              Comment est calculée l'APL ?
             </h3>
             <p class="text-gray-600">
-              Le calcul exact dépend de la zone, du loyer retenu (plafonné), de
+              Le calcul estimé dépend de la zone, du loyer retenu (plafonné), de
               la composition du foyer et des ressources. Une lecture simple est :
-              <strong>APL ≈ loyer retenu − participation personnelle</strong>.
-              Pour un chiffre adapté à votre cas, utilisez le simulateur ci‑dessus.
+              <strong>APL = loyer retenu - participation personnelle</strong>.
+              Pour un chiffre adapté à votre cas, utilisez le simulateur ci-dessus.
             </p>
           </div>
 
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              APL pour propriétaire : ce qu’il faut savoir
+              APL pour propriétaire : ce qu'il faut savoir
             </h3>
             <p class="text-gray-600">
               Les <strong>propriétaires occupants</strong> ne sont
-              généralement pas éligibles à l’APL. Il existe toutefois des
-              exceptions et d’autres aides possibles selon votre situation : la
+              généralement pas éligibles à l'APL. Il existe toutefois des
+              exceptions et d'autres aides possibles selon votre situation : la
               référence reste la CAF et les textes en vigueur.
             </p>
           </div>
@@ -335,26 +312,22 @@
           <p>
             Exemple : une personne seule en province avec un loyer de 520 € et
             des revenus mensuels de 1 050 €. Le simulateur estime un montant
-            d’APL en appliquant un loyer retenu plafonné et une participation
+            d'APL en appliquant un loyer retenu plafonné et une participation
             personnelle selon les barèmes.
           </p>
           <p class="text-sm text-gray-600">
-            Le résultat exact dépend de votre dossier (ressources, situation,
+            Le résultat estimé dépend de votre dossier (ressources, situation,
             type de logement, zone et paramètres CAF).
           </p>
         </div>
       </section>
 
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Différence entre estimation et calcul officiel
-        </h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Différence entre estimation et calcul</h2>
         <div class="space-y-3 text-gray-700">
-          <p>
-            Une estimation permet d’obtenir un ordre de grandeur rapidement. Un
-            calcul officiel est celui réalisé par la CAF à partir de vos
-            déclarations et des données administratives.
-          </p>
+          <p>Une estimation permet d'obtenir un ordre de grandeur rapidement. Un
+            calcul est celui réalisé par la CAF à partir de vos
+            déclarations et des données administratives.</p>
           <p class="text-sm text-gray-600">
             Pour un montant définitif et une demande, utilisez les démarches
             officielles sur caf.fr.
@@ -411,8 +384,8 @@
             <p class="text-gray-600">
               La démarche se fait via votre compte CAF : création du dossier,
               déclaration de la situation, du logement, puis transmission des
-              pièces demandées. Les droits et le montant exact sont confirmés
-              après instruction.
+              pièces demandées. Les droits et le montant estimé sont confirméss
+              aprèss instruction.
             </p>
           </div>
 
@@ -422,7 +395,7 @@
             </h3>
             <p class="text-gray-600 mb-3">
               <strong
-                >Formule simplifiée : APL = Loyer pris en compte – Participation
+                >Formule simplifiée : APL = Loyer pris en compte - Participation
                 personnelle</strong
               >
             </p>
@@ -457,7 +430,7 @@
               d'imposition sur le revenu des 2 dernières années est analysé.
             </p>
             <p class="text-sm italic text-orange-700 bg-orange-50 p-2 rounded">
-              💡 <strong>Important :</strong> La CAF utilise votre revenu fiscal
+              ⚠️ <strong>Important :</strong> La CAF utilise votre revenu fiscal
               de référence (RFR) N-2, transmis automatiquement par les impôts
               grâce au système de ressources "RLS". Vos ressources ne sont
               vérifiées qu'une fois par an.
@@ -509,7 +482,7 @@
       <!-- Exemples de calcul APL -->
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-8">
-          💡 Exemples de calcul APL 2026
+          📊 Exemples de calcul APL 2026
         </h2>
         <p class="text-gray-600 mb-8">
           Voici quelques cas concrets pour comprendre comment l'APL est
@@ -534,7 +507,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium">700 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 700 €</span><span class="result-exact" style="display:none;">700 €</span></span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -545,12 +518,12 @@
               <p class="text-blue-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-blue-600"
-                  >180 € à 220 €</span
+                  >180 € - 220 €</span
                 >
                 par mois
               </p>
               <p class="text-sm text-blue-800 mt-2">
-                Charge à payer : environ 480 € à 520 €
+                Charge à payer : environ 480 € - 520 €
               </p>
             </div>
           </div>
@@ -571,7 +544,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium">850 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 850 €</span><span class="result-exact" style="display:none;">850 €</span></span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -582,7 +555,7 @@
               <p class="text-green-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-green-600"
-                  >250 € à 320 €</span
+                  >250 € - 320 €</span
                 >
                 par mois
               </p>
@@ -608,7 +581,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium">550 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 550 €</span><span class="result-exact" style="display:none;">550 €</span></span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -619,7 +592,7 @@
               <p class="text-purple-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-purple-600"
-                  >300 € à 350 €</span
+                  >300 € - 350 €</span
                 >
                 par mois
               </p>
@@ -647,7 +620,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Mensualité crédit :</span>
-                <span class="font-medium">950 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 950 €</span><span class="result-exact" style="display:none;">950 €</span></span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -658,7 +631,7 @@
               <p class="text-yellow-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-yellow-600"
-                  >150 € à 200 €</span
+                  >150 € - 200 €</span
                 >
                 par mois
               </p>
@@ -671,19 +644,18 @@
 
         <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
           <p class="text-blue-800 text-sm">
-            <strong>⚠️ Note :</strong> Ces exemples sont fournis à titre
+            <strong>📝 Note :</strong> Ces exemples sont fournis à titre
             illustratif. Les montants réels d'APL dépendent de nombreux facteurs
             : revenus N-2 exacts, composition du foyer, loyer pris en compte par
-            la CAF, situation patrimoniale, etc. Pour un calcul officiel,
-            contactez la CAF de votre département.
-          </p>
+            la CAF, situation patrimoniale, etc. Pour un calcul,
+            contactez la CAF de votre département.</p>
         </div>
       </section>
 
       <!-- Plafonds CAF 2025 -->
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-8">
-          📊 Plafonds CAF 2026 par Zone
+          🏠 Plafonds CAF 2026 par Zone
         </h2>
         <p class="text-gray-600 mb-6">
           Les plafonds de loyer pris en compte par la CAF varient selon votre
@@ -729,23 +701,23 @@
                     Personne seule
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    610 €
+                    610 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    200–280 €
+                    200-280 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
                   <td class="border border-gray-300 px-4 py-2">Couple</td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    670 €
+                    670 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    250–350 €
+                    250-350 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
@@ -753,12 +725,12 @@
                     Couple + 1 enfant
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    730 €
+                    730 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    300–400 €
+                    300-400 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
@@ -766,12 +738,12 @@
                     Couple + 2 enfants
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    790 €
+                    790 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    350–450 €
+                    350-450 €
                   </td>
                 </tr>
               </tbody>
@@ -817,23 +789,23 @@
                     Personne seule
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    510 €
+                    510 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    160–220 €
+                    160-220 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
                   <td class="border border-gray-300 px-4 py-2">Couple</td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    560 €
+                    560 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    200–280 €
+                    200-280 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
@@ -841,12 +813,12 @@
                     Couple + 1 enfant
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    610 €
+                    610 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    250–320 €
+                    250-320 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
@@ -854,12 +826,12 @@
                     Couple + 2 enfants
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    660 €
+                    660 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    300–380 €
+                    300-380 €
                   </td>
                 </tr>
               </tbody>
@@ -905,23 +877,23 @@
                     Personne seule
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    430 €
+                    430 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    140–190 €
+                    140-190 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
                   <td class="border border-gray-300 px-4 py-2">Couple</td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    480 €
+                    480 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    180–240 €
+                    180-240 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
@@ -929,12 +901,12 @@
                     Couple + 1 enfant
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    530 €
+                    530 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    220–300 €
+                    220-300 €
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50">
@@ -942,12 +914,12 @@
                     Couple + 2 enfants
                   </td>
                   <td class="border border-gray-300 px-4 py-2 font-medium">
-                    580 €
+                    580 é
                   </td>
                   <td
                     class="border border-gray-300 px-4 py-2 font-medium text-green-600"
                   >
-                    270–350 €
+                    270-350 €
                   </td>
                 </tr>
               </tbody>
@@ -959,7 +931,7 @@
           class="mt-8 bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg"
         >
           <p class="text-orange-800 text-sm">
-            <strong>📌 Remarques importantes :</strong> Ces plafonds sont
+            <strong>⚠️ Remarques importantes :</strong> Ces plafonds sont
             actualisés régulièrement par la CAF. Les montants d'APL affichés
             sont des estimations basées sur une participation personnelle
             moyenne. Votre APL réelle dépend de votre contribution exacte,
@@ -977,7 +949,7 @@
             href="apl-zones.html"
             class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded transition"
           >
-            En savoir plus sur les zones APL →
+            En savoir plus sur les zones APL ?
           </a>
         </div>
       </section>
@@ -985,17 +957,17 @@
 
     <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Voir aussi</h3>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">👁️ Voir aussi</h3>
         <p class="text-sm text-gray-600 mb-3">
           Parcours immobilier :
           <a href="/pages/apl.html" class="text-blue-700 hover:underline">APL</a>
-          →
+          ?
           <a href="/pages/pret.html" class="text-blue-700 hover:underline">Prêt</a>
-          →
+          ?
           <a href="/pages/notaire.html" class="text-blue-700 hover:underline">Notaire</a>
-          →
+          ?
           <a href="/pages/taxe.html" class="text-blue-700 hover:underline">Taxe</a>
-          →
+          ?
           <a href="/pages/charges.html" class="text-blue-700 hover:underline">Charges</a>
         </p>
         <div class="flex flex-wrap gap-3">
@@ -1022,7 +994,7 @@
           <a
             href="/pages/plusvalue.html"
             class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
-            >Plus‑value immobilière</a
+            >Plus-value immobilière</a
           >
           <a
             href="/pages/impot.html"
@@ -1048,7 +1020,7 @@
             >
           </li>
           <li>
-            • CAF — informations officielles :
+            • CAF – informations officielles :
             <a
               href="https://www.caf.fr"
               target="_blank"
@@ -1154,7 +1126,7 @@
           },
           {
             id: "economie",
-            label: "Économies / Épargne (optionnel)",
+            label: "économies / épargne (optionnel)",
             type: "number",
             required: false,
             placeholder: "Laissez vide si inconnu",
@@ -1163,7 +1135,7 @@
             suffix: "€",
           },
         ],
-        // ✅ PROPOSITION 1: Moteur de calcul unique (aplCalculEngine.ts)
+        // ? PROPOSITION 1: Moteur de calcul unique (aplCalculEngine.ts)
         calculate: (values) => {
           return calculerAPL({
             situation: values.situation,
@@ -1175,12 +1147,12 @@
             economie: values.economie,
           });
         },
-        // ✅ PROPOSITION 3: UX pédagogique avec messages intelligents
+        // ? PROPOSITION 3: UX pédagogique avec messages intelligents
         formatResult: (result) => {
           const { data } = result;
           if (!data) return "Erreur de calcul";
 
-          // 🧠 Message pédagogique si APL = 0
+          // 💡 Message pédagogique si APL = 0
           const messageZero =
             data.apl_estimee === 0 && data.raison_zero
               ? `<div class="bg-amber-50 border-l-4 border-amber-400 p-3 rounded-lg text-sm text-amber-800 mb-4">
@@ -1188,10 +1160,10 @@
               </div>`
               : "";
 
-          // 🧮 PROPOSITION 2: Message si montant plafonné (anti-bullshit)
+          // 💡 PROPOSITION 2: Message si montant plafonné (anti-bullshit)
           const messagePlafonne = data.is_plafonne
             ? `<div class="text-xs text-blue-600 mt-2 italic">
-                ℹ️ ${MESSAGES_PEDAGOGIQUES.apl_plafonne}
+                💡 ${MESSAGES_PEDAGOGIQUES.apl_plafonne}
               </div>`
             : "";
 
@@ -1200,17 +1172,17 @@
               ${messageZero}
               
               <div class="bg-green-50 p-6 rounded-lg border-2 border-green-500">
-                <h3 class="text-lg font-semibold text-green-900 mb-2">💚 Votre APL estimée</h3>
+                <h3 class="text-lg font-semibold text-green-900 mb-2">✅ Votre APL estimée</h3>
                 <p class="text-4xl font-bold text-green-600">${formatCurrency(
                   data.apl_estimee
                 )}</p>
                 <p class="text-sm text-green-700 mt-2">par mois</p>
                 ${messagePlafonne}
-                <p class="text-xs text-green-700 mt-3 italic border-t border-green-300 pt-3">📐 Logique de calcul (simplifiée) : APL ≈ Loyer retenu − Participation personnelle estimée selon les revenus et forfaits logement.</p>
+                <p class="text-xs text-green-700 mt-3 italic border-t border-green-300 pt-3">🧮 Logique de calcul (simplifiée) : APL = Loyer retenu - Participation personnelle estimée selon les revenus et forfaits logement.</p>
               </div>
 
               <div class="bg-blue-50 p-4 rounded-lg space-y-3 text-sm border-l-4 border-blue-400">
-                <div class="font-semibold text-blue-900 mb-3">📊 Détail du calcul :</div>
+                <div class="font-semibold text-blue-900 mb-3">📋 Détail du calcul :</div>
                 
                 <div class="flex justify-between">
                   <span class="text-gray-700">Loyer mensuel réel :</span>
@@ -1230,7 +1202,7 @@
                 
                 <div class="border-t pt-3">
                   <div class="flex justify-between mb-1">
-                    <span class="text-gray-700">Votre participation (30% revenus − forfait ${formatCurrency(
+                    <span class="text-gray-700">Votre participation (30% revenus - forfait ${formatCurrency(
                       data.forfait_logement
                     )}) :</span>
                     <span class="font-medium">${formatCurrency(
@@ -1240,7 +1212,7 @@
                   <div class="text-xs text-gray-600 ml-4">
                     = (30% × ${formatCurrency(
                       data.revenus_mensuels
-                    )}) − ${formatCurrency(data.forfait_logement)}
+                    )}) - ${formatCurrency(data.forfait_logement)}
                   </div>
                 </div>
                 
@@ -1268,6 +1240,116 @@
 
     <!-- Gestion de la comparaison APL -->
     <script type="module" src="./scripts/apl-script.ts"></script>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">🔍 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barémes en vigueur</p></div>
+
+<script>
+// Verbalisation YMYL - masquer montant estimé, afficher fourchette
+document.addEventListener('DOMContentLoaded', function() {
+  const exactSpans = document.querySelectorAll('.result-exact');
+  exactSpans.forEach(function(span) {
+    const exactVal = parseInt(span.textContent);
+    const verbalSpan = span.previousElementSibling;
+    if (verbalSpan && verbalSpan.classList.contains('result-verbal')) {
+      const rounded = Math.round(exactVal / 10) * 10;
+      verbalSpan.textContent = 'environ ' + rounded + ' € - estimateur gratuit pour valeur estimee';
+    }
+  });
+});
+</script>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' é';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('é')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
 </body>
 </html>
