@@ -395,7 +395,7 @@
             </h3>
             <p class="text-gray-600 mb-3">
               <strong
-                >Formule simplifiée : APL = Loyer pris en compte € Participation
+                >Formule simplifiée : APL = Loyer pris en compte - Participation
                 personnelle</strong
               >
             </p>
@@ -448,7 +448,7 @@
               le calcul.
             </p>
             <p class="text-gray-600 text-sm">
-              Exemple : Si le plafond est 600 € et votre loyer est 700 é, seuls
+              Exemple : Si le plafond est 600 € et votre loyer est 700 €, seuls
               600 € sont considérés pour l'APL.
             </p>
           </div>
@@ -518,12 +518,12 @@
               <p class="text-blue-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-blue-600"
-                  >180 € € 220 €</span
+                  >180 € - 220 €</span
                 >
                 par mois
               </p>
               <p class="text-sm text-blue-800 mt-2">
-                Charge à payer : environ 480 € € 520 €
+                Charge à payer : environ 480 € - 520 €
               </p>
             </div>
           </div>
@@ -555,7 +555,7 @@
               <p class="text-green-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-green-600"
-                  >250 € € 320 €</span
+                  >250 € - 320 €</span
                 >
                 par mois
               </p>
@@ -592,7 +592,7 @@
               <p class="text-purple-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-purple-600"
-                  >300 € € 350 €</span
+                  >300 € - 350 €</span
                 >
                 par mois
               </p>
@@ -631,7 +631,7 @@
               <p class="text-yellow-900">
                 <strong>Estimation APL :</strong>
                 <span class="text-2xl font-bold text-yellow-600"
-                  >150 € € 200 €</span
+                  >150 € - 200 €</span
                 >
                 par mois
               </p>
@@ -779,7 +779,7 @@
                   <th
                     class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900"
                   >
-                    APL max. approx. (é)
+                    APL max. approx. (€)
                   </th>
                 </tr>
               </thead>
@@ -867,7 +867,7 @@
                   <th
                     class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900"
                   >
-                    APL max. approx. (é)
+                    APL max. approx. (€)
                   </th>
                 </tr>
               </thead>
@@ -935,7 +935,7 @@
             actualisés régulièrement par la CAF. Les montants d'APL affichés
             sont des estimations basées sur une participation personnelle
             moyenne. Votre APL réelle dépend de votre contribution exacte,
-            elle-même calculée € partir de vos revenus N-2 et de votre
+            elle-même calculée à partir de vos revenus N-2 et de votre
             patrimoine.
           </p>
         </div>
@@ -974,7 +974,7 @@
           <a
             href="/pages/pret.html"
             class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
-            >Prét immobilier</a
+            >Prêt immobilier</a
           >
           <a
             href="/pages/notaire.html"
@@ -1035,7 +1035,7 @@
     <footer class="bg-gray-100 border-t border-gray-200 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <p class="text-center text-gray-600 text-sm">
-          € 2026 LesCalculateurs.fr
+          © 2026 LesCalculateurs.fr
         </p>
       </div>
     </footer>
@@ -1060,7 +1060,7 @@
             required: true,
             options: [
               { value: "seul", label: "Célibataire / Seul" },
-              { value: "couple", label: "En couple (mari€ ou concubinage)" },
+              { value: "couple", label: "En couple (marié ou concubinage)" },
               {
                 value: "monoparental",
                 label: "Monoparental (1 enfant minimum)",
@@ -1070,7 +1070,7 @@
           },
           {
             id: "enfants",
-            label: "Nombre d'enfants € charge",
+            label: "Nombre d'enfants à charge",
             type: "number",
             required: true,
             placeholder: "0",
@@ -1097,7 +1097,7 @@
               { value: "location", label: "Location (logement principal)" },
               {
                 value: "accession",
-                label: "Accession € la propriét€ (crédit immobilier)",
+                label: "Accession à la propriété (crédit immobilier)",
               },
               { value: "hlm", label: "Logement HLM" },
               { value: "colocation", label: "Colocation / Chambre meublée" },
@@ -1105,7 +1105,7 @@
           },
           {
             id: "loyer_mensuel",
-            label: "Loyer/Mensualit€ crédit *",
+            label: "Loyer/Mensualité crédit *",
             type: "number",
             required: true,
             placeholder: "800",
@@ -1251,7 +1251,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const verbalSpan = span.previousElementSibling;
     if (verbalSpan && verbalSpan.classList.contains('result-verbal')) {
       const rounded = Math.round(exactVal / 10) * 10;
-      verbalSpan.textContent = 'environ ' + rounded + ' € € estimateur gratuit pour valeur estimee';
+      verbalSpan.textContent = 'environ ' + rounded + ' € - estimateur gratuit pour valeur estimee';
     }
   });
 });
@@ -1312,7 +1312,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Remplacer contenu
     el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
                    '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
-                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative € voir ' + config.source + ' pour montant estimé</small>';
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
   }
   
   // Observer les changements DOM
