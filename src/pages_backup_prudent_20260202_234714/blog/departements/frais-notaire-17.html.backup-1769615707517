@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frais de notaire Charente-Maritime 2026 � Simulateur rapide et fiable</title>
+    <meta
+      name="description"
+      content="Obtenez vos frais de notaire en Charente-Maritime instantan�ment. Calcul automatique, bar�me 2025, estimation gratuite."
+    />
+    <meta
+      name="keywords"
+      content="frais notaire Charente-Maritime, simulateur frais notaire 17, calcul frais notaire 2026, achat immobilier Charente-Maritime, notaire La Rochelle"
+    />
+    <meta name="author" content="LesCalculateurs.fr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-17" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-17" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Frais de notaire Charente-Maritime 2026 � Simulateur rapide et fiable" />
+    <meta property="og:description" content="Obtenez vos frais de notaire en Charente-Maritime instantan�ment. Calcul automatique, bar�me 2025, estimation gratuite." />
+    <meta name="twitter:description" content="Obtenez vos frais de notaire en Charente-Maritime instantan�ment. Calcul automatique, bar�me 2025, estimation gratuite." />
+    <meta property="og:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <!-- Schema.org BreadcrumbList + FAQPage + Article -->
+    <script type="application/ld+json">
+    [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.lescalculateurs.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Immobilier",
+        "item": "https://www.lescalculateurs.fr/immobilier/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Frais de notaire Charente-Maritime (17)",
+        "item": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-17"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quel est le montant des frais de notaire en Charente-Maritime ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les frais de notaire d�pendent du type de bien et du prix d�achat. Dans l�ancien, ils sont g�n�ralement plus �lev�s que dans le neuf, conform�ment au bar�me en vigueur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment calculer les frais de notaire 17 ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le calcul applique automatiquement le bar�me en vigueur. Renseignez le type de bien, le prix et les �ventuels frais d�emprunt pour obtenir le d�tail."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Frais de notaire Charente-Maritime 2025 : neuf ou ancien ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour un budget donn�, les frais sont en g�n�ral plus faibles en VEFA (neuf) qu�en ancien, ce qui r�duit le co�t global � l�acquisition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O� trouver un notaire � La Rochelle ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consultez l�annuaire officiel des notaires (notaires.fr) et comparez les �tudes de La Rochelle et de Rochefort selon votre projet."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Frais de notaire 2026 en Charente-Maritime (17)",
+    "description": "Guide complet des frais de notaire pour l'achat immobilier en Charente-Maritime (17)",
+    "datePublished": "2025-10-06T10:00:00Z",
+    "dateModified": "2025-11-25T19:37:53.295Z",
+    "author": {
+      "@type": "Organization",
+      "name": "LesCalculateurs.fr"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LesCalculateurs.fr",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.lescalculateurs.fr/assets/favicon-32x32.png"
+      }
+    },
+    "isBasedOn": "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/"
+  }
+]
+    </script>
+    <!-- HowTo JSON-LD: Calculer vos frais de notaire -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Calculer vos frais de notaire Charente-Maritime",
+      "description": "�tapes pour estimer les frais de notaire dans Charente-Maritime.",
+      "step": [
+        {"@type": "HowToStep", "name": "Choisir le type de bien", "text": "S�lectionnez ancien, neuf ou terrain."},
+        {"@type": "HowToStep", "name": "Indiquer le d�partement", "text": "D�partement pr�-rempli: 17."},
+        {"@type": "HowToStep", "name": "Saisir le prix", "text": "Entrez le prix d'achat; d�duisez le mobilier si pr�sent."},
+        {"@type": "HowToStep", "name": "Pr�ciser l'emprunt", "text": "Indiquez le type et les montants."},
+        {"@type": "HowToStep", "name": "Calculer", "text": "Obtenez le d�tail complet des frais."}
+      ]
+    }
+    </script>
+
+    <!-- LocalBusiness Schema for Notaires -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-17.html#notaires",
+      "name": "Notaires Charente-Maritime (17)",
+      "description": "Services notariaux sp�cialis�s en immobilier en Charente-Maritime - Calcul frais, actes, conseils",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR",
+        "addressRegion": "Nouvelle-Aquitaine",
+        "addressLocality": "La Rochelle",
+        "postalCode": "17000"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Charente-Maritime",
+          "alternateName": "D�partement 17"
+        },
+        {
+          "@type": "City",
+          "name": "La Rochelle"
+        },
+        {
+          "@type": "City", 
+          "name": "Rochefort"
+        }
+      ],
+      "serviceType": [
+        "Frais de notaire",
+        "Actes notari�s immobilier", 
+        "Conseil acquisition",
+        "Transaction immobili�re Charente-Maritime"
+      ],
+      "priceRange": "2�3% (neuf) / 7�8% (ancien)",
+      "url": "https://www.notaires.fr",
+      "sameAs": "https://www.notaires.fr",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services notariaux Charente-Maritime",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Frais de notaire neuf",
+              "description": "Calcul frais acquisition logement neuf en Charente-Maritime",
+              "provider": {
+                "@type": "Organization",
+                "name": "Notaires Charente-Maritime"
+              }
+            },
+            "price": "4%",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Frais de notaire ancien",
+              "description": "Calcul frais acquisition logement ancien en Charente-Maritime",
+              "provider": {
+                "@type": "Organization",
+                "name": "Notaires Charente-Maritime"
+              }
+            },
+            "price": "6.6%", 
+            "priceCurrency": "EUR"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399" crossorigin="anonymous"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TPFZCGX5');</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HNTGCYQ1X');
+    </script>
+
+    <!-- Assets (dev/prod) -->
+    <script type="module" src="../../../main.ts"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-4">
+            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs.fr" class="h-10 w-auto">
+            <a href="/pages/blog.html" class="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+              <span>? Blog</span>
+            </a>
+          </div>
+          <a href="/index.html" class="text-sm text-gray-600 hover:text-gray-900">Accueil</a>
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+
+      
+
+      
+
+      
+
+      
+
+            <!-- CTA BLOCK START -->
+<div class="mb-6 rounded-lg border-2 border-blue-200 bg-blue-50 p-4 sm:p-5">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div class="text-sm sm:text-base text-gray-800 leading-relaxed">
+          <strong>Calcul imm�diat (10 s) � Gratuit</strong><br/>
+          Bar�me officiel 2026, estimation pr�cise pour Charente-Maritime (17).
+          </div>
+          <a href="/pages/notaire.html" class="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm sm:mt-0">Lancer le calcul</a>
+        </div>
+<div class="mt-6 mb-8 bg-blue-50 border-l-4 border-blue-400 p-4 sm:p-5 rounded-r">
+        <p class="text-sm sm:text-base text-gray-800 leading-relaxed">
+          <strong>?? Frais de notaire 2026 : Charente-Maritime (17)</strong><br/>
+          Pour un achat immobilier en 2026 :<br/>
+          � <strong>Bien ancien</strong> : environ 7 � 8 % du prix d'acquisition<br/>
+          � <strong>Bien neuf (VEFA)</strong> : environ 2 � 3 %<br/>
+          <span class="text-xs sm:text-sm text-gray-600">Pour un montant exact et � jour, utilisez le calculateur.</span>
+        </p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Article Header -->
+      <header class="mb-12">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Immobilier</span>
+          <span>�</span>
+          <time datetime="2026-10-06">6 octobre 2025</time>
+          <span>�</span>
+          <span>Guide d�partemental</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Frais de notaire 2026 en Charente-Maritime (17)
+        </h1>
+        
+        <p class="text-xl text-gray-600 leading-relaxed">
+          <strong>Acqu�rir sur le littoral en Charente-Maritime n�cessite d'anticiper pr�cis�ment vos frais d'acquisition immobili�re.</strong> 
+          En 2026, ces frais d�pendent essentiellement de la nature du bien (neuf ou ancien) selon que vous acqu�riez 
+          dans le neuf ou l'ancien. Dans le d�partement 17, le prix moyen au m� s'�tablit � environ 
+          <strong>montant calcul� selon votre situation</strong>, ce qui impacte directement le montant total de votre investissement.
+        </p>
+      </header>
+
+      <figure class="rounded-lg overflow-hidden border border-gray-200 mb-8">
+        
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG"
+            
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 960px, 1200px"
+            alt="Guide frais de notaire � Charente-Maritime (17)"
+            width="1200" height="675"
+            loading="eager" fetchpriority="high" decoding="async"
+            class="w-full h-auto object-cover"
+          />
+          <figcaption class="text-sm text-gray-500 px-4 py-2">Image illustrative du d�partement Charente-Maritime. Source�: Wikimedia Commons.</figcaption>
+          
+      </figure>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none">
+
+    <div class="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+      <p class="text-sm text-gray-700 m-0">
+        Source officielle des taux DMTO :
+        <a href="https://www.service-public.fr/particuliers/vosdroits/F2167" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.service-public.fr/particuliers/vosdroits/F2167</a> � <a href="https://www.notariat.fr/frais-de-notaire" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.notariat.fr/frais-de-notaire</a> � <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf</a> � <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433</a>
+      </p>
+    </div>
+        
+        <!-- Section 1 -->
+        
+    <div class="mb-8 p-4 bg-orange-50 border-l-4 border-orange-500 rounded-r-lg">
+      <p class="text-sm text-orange-800 m-0">
+        <strong>?? Avertissement :</strong> Les montants et pourcentages indiqu�s sur cette page sont fournis � titre purement informatif, sur la base des bar�mes notariaux en vigueur. Ils ne constituent ni un devis, ni un conseil juridique. Seul un notaire est habilit� � �tablir le montant d�finitif des frais lors de la signature de l�acte authentique.
+      </p>
+    </div>
+
+<h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ?? Quel budget pr�voir pour les frais de notaire en Charente-Maritime ?
+        </h2>
+
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Le montant des frais d�pend principalement du <strong>type de logement</strong> et de sa valeur.
+          En Charente-Maritime, l'�cart de co�t entre neuf et ancien suit les bar�mes nationaux.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+          <p class="text-lg text-gray-800 mb-0">
+            <strong>??? Sp�cificit� locale :</strong> La Charente-Maritime pr�sente un march� tendu sur le littoral (La Rochelle, Royan) et plus accessible dans l'int�rieur. Les �les de R� et Ol�ron maintiennent des prix tr�s �lev�s. L'investissement locatif saisonnier reste tr�s rentable malgr� la r�glementation. Le d�partement attire de nombreux retrait�s et t�l�travailleurs s�duits par la douceur de vivre atlantique.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto mb-8">
+          <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
+            <thead class="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+              <tr>
+                <th class="px-6 py-4 text-left font-semibold">Type d'achat</th>
+                <th class="px-6 py-4 text-left font-semibold">Taux des frais</th>
+                <th class="px-6 py-4 text-left font-semibold">Pour 200 000 � � La Rochelle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200 hover:bg-orange-50">
+                <td class="px-6 py-4 font-medium text-gray-900">
+                  ?? Ancien
+                </td>
+                <td class="px-6 py-4 text-gray-700">� 7,89</td>
+                <td class="px-6 py-4 font-bold text-blue-600">� estimer via le calculateur</td>
+              </tr>
+              <tr class="hover:bg-blue-50">
+                <td class="px-6 py-4 font-medium text-gray-900">
+                  ?? Neuf (VEFA)
+                </td>
+                <td class="px-6 py-4 text-gray-700">� 2,28</td>
+                <td class="px-6 py-4 font-bold text-blue-600">� estimer via le calculateur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+          <p class="text-lg text-gray-800 mb-0">
+            <strong>?? Bon � savoir :</strong> En <strong>VEFA (neuf)</strong>, les frais sont en g�n�ral plus faibles que dans l�ancien,
+            ce qui r�duit le co�t global � l�acquisition pour un m�me budget.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4 mb-8">
+          <p class="text-sm text-gray-700">
+            <strong>D�bours indicatifs (La Rochelle) :</strong> cadastre � <strong>montant calcul� selon votre situation</strong>, conservation � <strong>montant calcul� selon votre situation</strong>.
+            Ces montants peuvent varier selon le dossier et les formalit�s.
+          </p>
+        </div>
+
+        <!-- Section 2 -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ?? Simulation d'achat immobilier en Charente-Maritime
+        </h2>
+
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Prenons l'exemple d'un <strong>achat immobilier � La Rochelle</strong> pour comprendre les postes de d�penses :
+        </p>
+
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-lg p-6 mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Projet d'achat en Charente-Maritime</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+                <span class="text-gray-700">Prix du bien (ancien)</span>
+                <span class="font-bold">� estimer via le calculateur</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+                <span class="text-gray-700">Apport personnel</span>
+                <span class="font-bold">� estimer via le calculateur</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+                <span class="text-gray-700">Frais de notaire (bar�me officiel)</span>
+                <span class="font-bold text-orange-600">� estimer via le calculateur</span>
+              </div>
+            </div>
+            
+            <div class="space-y-3">
+              <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+                <span class="text-gray-700">Montant � emprunter</span>
+                <span class="font-bold">� estimer via le calculateur</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+                <span class="text-gray-700">Taux d'int�r�t</span>
+                <span class="font-bold">taux r�glement�</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+                <span class="text-gray-700">Dur�e</span>
+                <span class="font-bold">20 ans</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t-2 border-gray-300">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-lg text-gray-900">Mensualit� estim�e</span>
+              <span class="text-3xl font-bold text-blue-700">variable selon taux</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 bg-white rounded p-4 border border-gray-200">
+          <strong>� retenir :</strong> Pour un bien neuf �quivalent, vous ne paieriez que
+          <strong>montant calcul� selon votre situation</strong>, soit une �conomie significative selon le prix du bien.
+        </p>
+
+        <!-- Section 3 -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ?? Astuces pour r�duire vos frais de notaire en Charente-Maritime
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-5 hover:border-blue-400 transition-all">
+            <div class="flex items-start">
+              <div class="bg-green-100 rounded-full p-3 mr-4">???</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">V�rifier les aides locales � La Rochelle</h3>
+                <p class="text-sm text-gray-600">Certaines communes ou intercommunalit�s proposent des <strong>aides � l�accession</strong> ou � la <strong>r�novation</strong>. Renseignez-vous aupr�s de la mairie ou de l�agglo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-5 hover:border-blue-400 transition-all">
+            <div class="flex items-start">
+              <div class="bg-blue-100 rounded-full p-3 mr-4">??</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">Rochefort Agglom�ration�: dispositifs accession/r�novation</h3>
+                <p class="text-sm text-gray-600">Des <strong>dispositifs locaux</strong> peuvent r�duire le co�t global (travaux, performance �nerg�tique). Consultez le site de l�agglom�ration.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-5 hover:border-blue-400 transition-all">
+            <div class="flex items-start">
+              <div class="bg-orange-100 rounded-full p-3 mr-4">???</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">Saintes�: programmes fa�ades et centre-ville</h3>
+                <p class="text-sm text-gray-600">Des <strong>programmes de revitalisation</strong> peuvent inclure des aides pour fa�ades/centre ancien. Utile pour optimiser le budget travaux.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+    <!-- Section Tendances march� -->
+    <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">
+      ?? March� immobilier Charente-Maritime 2025�2026
+    </h2>
+    
+    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg mb-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">??</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">�volution des prix</h4>
+              <p class="text-gray-700">?? <strong>Prix stables</strong> (-1% � +3% sur 12 mois)</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">??</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Volume de transactions</h4>
+              <p class="text-gray-700">?? Volume en l�ger retrait, march� d'opportunit�s</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">?</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Attractivit�</h4>
+              <p class="text-gray-700">? Rapport qualit�-prix pr�serv�, potentiel latent</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-3">
+            <div class="text-2xl">??</div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Tension du march�</h4>
+              <p class="text-gray-700">?? March� �quilibr�, n�gociations possibles</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-4 pt-4 border-t border-blue-200">
+        <p class="text-xs text-gray-600">
+          <strong>?? Sources :</strong> DVF 2026, LPI-SeLoger, MeilleursAgents, Notaires de France, INSEE � Analyse bas�e sur les donn�es publiques 2026
+        </p>
+      </div>
+    </div>
+        
+        
+    <!-- Section Prix par ville -->
+    <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">
+      ??? Prix moyens par ville en Charente-Maritime
+    </h2>
+    
+    <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center p-4 bg-blue-50 rounded-lg">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">La Rochelle</h4>
+          <p class="text-3xl font-bold text-blue-600 mb-1">2?692 �/m�</p>
+          <p class="text-sm text-gray-600">Pr�fecture</p>
+        </div>
+        
+        
+        <div class="text-center p-4 bg-green-50 rounded-lg">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Rochefort</h4>
+          <p class="text-3xl font-bold text-green-600 mb-1">2?685 �/m�</p>
+          <p class="text-sm text-gray-600">Sous-pr�fecture</p>
+        </div>
+        
+        
+        <div class="text-center p-4 bg-orange-50 rounded-lg">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Saintes</h4>
+          <p class="text-3xl font-bold text-orange-600 mb-1">2?037 �/m�</p>
+          <p class="text-sm text-gray-600">Moyenne communale</p>
+        </div>
+      </div>
+      
+      <div class="mt-4 p-3 bg-gray-50 rounded text-sm text-gray-600">
+        <strong>?? M�thodologie :</strong> Estimations bas�es sur les donn�es DVF, indices notariaux et sources publiques. 
+        Prix indicatifs pour l'ancien, variations possibles selon secteur et standing.
+      </div>
+    </div>
+
+        <!-- Section 4 -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
+          ??? O� trouver un notaire en Charente-Maritime ?
+        </h2>
+
+        
+      <section class="bg-gray-50 p-4 rounded-lg mt-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Notaires � La Rochelle (17) - 2026</h3>
+        <p class="text-gray-700">
+          En 2024, La Rochelle recense <strong>3 mutations</strong> selon <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2026</strong></a>, incluant 3 ventes immobili�res (1 maison, 2 biens mixtes). La <strong>m�diane des prix</strong> des ventes est de <strong>montant calcul� selon votre situation</strong>. <span class="text-xs text-gray-500">(Donn�es DVF 2025, mise � jour mensuelle)</span>
+          Pour contacter un professionnel, consultez l�annuaire officiel des notaires de la r�gion Nouvelle-Aquitaine.
+        </p>
+        <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">Annuaire officiel</a>
+      </section>
+        
+      <section class="bg-gray-50 p-4 rounded-lg mt-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Notaires � Rochefort (17) - 2026</h3>
+        <p class="text-gray-700">
+          Selon <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2026</strong></a>, Rochefort a enregistr� <strong>3 mutations</strong>, dont 2 ventes immobili�res (1 maison, 1 bien mixte). La <strong>m�diane des prix</strong> des ventes est de <strong>montant calcul� selon votre situation</strong>. <span class="text-xs text-gray-500">(Donn�es DVF 2025, mise � jour mensuelle)</span>
+          Pour contacter un professionnel, consultez l�annuaire officiel des notaires de la r�gion Nouvelle-Aquitaine.
+        </p>
+        <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">Annuaire officiel</a>
+      </section>
+
+        <p class="text-sm text-gray-600 bg-blue-50 border border-blue-200 rounded p-4">
+          <strong>?? Astuce :</strong> Vous pouvez consulter l'annuaire officiel des notaires sur 
+          <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline font-semibold">notaires.fr</a> 
+          pour trouver un professionnel proche de La Rochelle ou Rochefort.
+        </p>
+
+        <!-- CTA Section -->
+        <div class="mt-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8 text-center">
+          <h3 class="text-2xl font-bold mb-4">?? Simulez vos frais de notaire 2026 maintenant</h3>
+          <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+            <strong>Gagnez du temps et de l'argent :</strong> utilisez notre calculateur officiel 
+            pour conna�tre <strong>instantan�ment</strong> le montant exact des frais de notaire 
+            pour votre projet en Charente-Maritime.
+          </p>
+          <a 
+            href="/pages/notaire.html" 
+            class="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg"
+          >
+            ?? Acc�der au simulateur gratuit
+          </a>
+          <p class="text-xs text-blue-200 mt-4">? Calcul instantan�  ? 100% gratuit  ? Export PDF disponible</p>
+        </div>
+
+        <!-- FAQ Section -->
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">? Questions fr�quentes</h2>
+        <div class="space-y-4 mb-12">
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Quel est le montant des frais de notaire en Charente-Maritime ?</summary>
+            <p class="mt-2 text-gray-700">Entre <strong>4%</strong> (neuf) et <strong>environ 7 � 8 %</strong> (ancien) du prix d'achat, avec un exemple d�taill� plus haut.</p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Comment calculer les frais de notaire 17 ?</summary>
+            <p class="mt-2 text-gray-700">Addition des droits, �moluments et d�bours. Utilisez le <a href="/pages/notaire.html" class="text-blue-600 hover:underline">simulateur gratuit</a> pour un calcul pr�cis.</p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">Frais de notaire Charente-Maritime 2026 : neuf ou ancien ?</summary>
+            <p class="mt-2 text-gray-700">Le <strong>neuf</strong> environ 2 � 3 % et l'<strong>ancien</strong> environ 7 � 8 %. L'�cart peut repr�senter des milliers d'euros d'�conomie.</p>
+          </details>
+          <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
+            <summary class="font-semibold text-gray-900">O� trouver un notaire � La Rochelle ?</summary>
+            <p class="mt-2 text-gray-700">Consultez <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">notaires.fr</a> et les �tudes list�es dans cet article.</p>
+          </details>
+        </div>
+
+        <!-- Liens vers d�partements proches -->
+        <div class="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">?? Voir aussi</h3>
+          <p class="text-sm text-gray-700 mb-3">Autres guides dans Nouvelle-Aquitaine :</p>
+          <div class="flex flex-wrap gap-3"><a href="/pages/blog/departements/frais-notaire-16.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Charente (16)</a><a href="/pages/blog/departements/frais-notaire-19.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Corr�ze (19)</a><a href="/pages/blog/departements/frais-notaire-23.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Creuse (23)</a><a href="/pages/blog/departements/frais-notaire-24.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Dordogne (24)</a><a href="/pages/blog/departements/frais-notaire-33.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Gironde (33)</a><a href="/pages/blog/departements/frais-notaire-40.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Landes (40)</a><a href="/pages/blog/departements/frais-notaire-47.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Lot-et-Garonne (47)</a><a href="/pages/blog/departements/frais-notaire-64.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Pyr�n�es-Atlantiques (64)</a><a href="/pages/blog/departements/frais-notaire-79.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Deux-S�vres (79)</a><a href="/pages/blog/departements/frais-notaire-86.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Vienne (86)</a><a href="/pages/blog/departements/frais-notaire-87.html" class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">Haute-Vienne (87)</a></div>
+          <div class="mt-4"><a href="/pages/blog/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les d�partements</a></div>
+        </div>
+
+        
+    <div class="flex items-center justify-between mt-8">
+      <div>
+        <a href="/pages/blog/departements/frais-notaire-16.html" class="text-blue-700 hover:underline">? Charente (16)</a>
+      </div>
+      <div>
+        <a href="/pages/blog/departements/frais-notaire-18.html" class="text-blue-700 hover:underline">Cher (18) ?</a>
+      </div>
+    </div>
+
+        <!-- Tarifs Officiels 2025-2026 -->
+        <div class="mt-12 bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6">
+          <h3 class="font-bold text-blue-900 mb-4">?? Tarifs Officiels 2025-2026 (Charente-Maritime)</h3>
+          
+          <!-- Tranches d'�moluments -->
+          <div class="mb-6">
+            <h4 class="font-semibold text-blue-800 mb-3">�moluments notariaux (tranches)</h4>
+            <div class="space-y-2 bg-white rounded p-4">
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">De 0� � 6 500�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">3,945%</span>
+              </div>
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">De 6 500� � 17 000�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">1,627%</span>
+              </div>
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">De 17 000� � 60 000�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">1,085%</span>
+              </div>
+              
+              <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                <span class="text-gray-700">Au-del� de 60 000�</span>
+                <span class="font-mono bg-blue-100 px-3 py-1 rounded">0,814%</span>
+              </div>
+              
+            </div>
+            <p class="text-xs text-gray-600 mt-2">Source: <a href="https://www.notaires.fr" target="_blank" class="text-blue-600 hover:underline">Conseil Sup�rieur du Notariat</a></p>
+          </div>
+
+          <!-- Tarif droits d'enregistrement -->
+          <div class="mb-6">
+            <h4 class="font-semibold text-blue-800 mb-3">Droits d'enregistrement (Charente-Maritime)</h4>
+            <div class="bg-white rounded p-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">Immobilier ancien</span><span class="font-mono bg-green-100 px-3 py-1 rounded">� 6,32%</span>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-gray-700">Immobilier neuf (VEFA)</span><span class="font-mono bg-green-100 px-3 py-1 rounded">� 0,71%</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-600 mt-2">Taux applicable au d�partement: <strong>Charente-Maritime</strong></p>
+          </div>
+
+          <!-- D�bours et formalit�s -->
+          <div>
+            <h4 class="font-semibold text-blue-800 mb-3">D�bours et formalit�s (Charente-Maritime)</h4>
+            <div class="space-y-2 bg-white rounded p-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">D�bours (moyenne)</span>
+                <span class="font-mono bg-purple-100 px-3 py-1 rounded">272 �</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">Formalit�s</span>
+                <span class="font-mono bg-purple-100 px-3 py-1 rounded">196 �</span>
+              </div>
+              <div class="flex justify-between items-center border-t pt-2 mt-2">
+                <span class="text-gray-700"><strong>CSI</strong></span>
+                <span class="font-mono bg-indigo-100 px-3 py-1 rounded"><strong>min 15� ou 0,10%</strong></span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        
+        <!-- Hypoth�ses et Avertissements -->
+        <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-6">
+          <h3 class="font-bold text-yellow-900 mb-4">?? Hypoth�ses et Limitations</h3>
+          
+          <div class="text-sm text-yellow-800 space-y-3">
+            <p><strong>Ce simulateur est une estimation bas�e sur:</strong></p>
+            <ul class="list-disc list-inside space-y-2 ml-2">
+              <li><strong>Bar�mes officiels 2026</strong> du Conseil Sup�rieur du Notariat</li>
+              <li><strong>D�bours moyens</strong> (cadastre, conservation, formalit�s) pour le d�partement</li>
+              <li><strong>Taux standard</strong> sans abattements ou particularit�s locales</li>
+              <li><strong>Immobilier � titre on�reux</strong> (achat classique)</li>
+            </ul>
+
+            <p className="mt-4"><strong>?? �carts possibles:</strong></p>
+            <ul class="list-disc list-inside space-y-2 ml-2">
+              <li>Les d�bours r�els varient selon le dossier (g�om�tre, copies suppl�mentaires, etc.)</li>
+              <li>Certains d�partements appliquent des taux ou abattements particuliers</li>
+              <li>Les droits de mutation peuvent diff�rer (ex: zones d'am�nagement du territoire)</li>
+              <li>Cas sp�ciaux non couverts (VEFA, SCI, d�membrement, etc.)</li>
+            </ul>
+
+            <p class="mt-4 text-yellow-900"><strong>?? Pour un devis exact:</strong> Contactez directement le notaire de votre r�gion � c'est gratuit et sans engagement.</p>
+          </div>
+        </div>
+
+        <!-- R�f�rences -->
+        <div class="mt-12 bg-gray-100 rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-3">?? Sources et r�f�rences officielles</h3>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>
+              � Frais de notaire (d�finition et bar�me) :
+              <a href="https://www.service-public.fr/particuliers/vosdroits/F17701" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+                service-public.fr
+              </a>
+            </li>
+            <li>
+              � Simulateur frais de notaire :
+              <a href="https://www.service-public.fr/particuliers/vosdroits/R54267" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+                service-public.fr (simulateur)
+              </a>
+            </li>
+            <li>
+              � �moluments notariaux : 
+              <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+                Conseil Sup�rieur du Notariat
+              </a>
+          </li>
+          <li>
+            � Donn�es DVF 2026 (Demande de Valeurs Fonci�res) :
+            <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+              data.gouv.fr
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+        <!-- EEAT Trust Signal -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <p class="text-xs text-gray-500 text-center">
+            Contenu r�dig� et maintenu par <strong>LesCalculateurs.fr</strong> � outil ind�pendant d'estimation immobili�re bas� sur les bar�mes notariaux officiels (Conseil Sup�rieur du Notariat, impots.gouv.fr, Legifrance).
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Article Footer -->
+      <footer class="mt-16 pt-8 border-t border-gray-200">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <a
+            href="/pages/blog.html"
+            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center space-x-2"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            <span>Retour au blog</span>
+          </a>
+          <div class="text-sm text-gray-500">
+            Article mis � jour le 16 janvier 2026
+          </div>
+        </div>
+      </footer>
+
+    
+        <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire Charente-Maritime (17)</h2>
+                                                                                                                                                                                                                                                                        <p class="text-gray-700 mb-4">
+                              Ancien : � 16?434 � pour 200?000 � (droits � 6,32%) � Neuf : � 5?224 � pour 200?000 � (droits � 0,71%).
+        </p>
+        <div class="flex gap-3 mb-8">
+          <a href="/pages/notaire.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">Calculer maintenant</a>
+          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualit�s de pr�t</a>
+        </div>
+        
+
+          
+
+          
+
+          
+
+          
+
+          
+
+                    
+</article>
+
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+        <p>&copy; 2026 LesCalculateurs.fr - Tous droits r�serv�s</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+
+
