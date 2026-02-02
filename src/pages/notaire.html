@@ -1,12 +1,12 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulateur frais de notaire 2026 – Calcul officiel gratuit</title>
+    <title>Simulateur frais de notaire 2026 – Calcul gratuit</title>
     <meta
       name="description"
-      content="Calculez vos frais de notaire en 2026. Ancien, neuf (VEFA), droits, émoluments et estimation gratuite immédiate."
+      content="calculez vos frais de notaire en 2026. Ancien, neuf (VEFA), droits, émoluments et estimation gratuite immédiate."
     />
     <meta
       name="keywords"
@@ -27,7 +27,7 @@
     />
     <meta
       property="og:description"
-      content="Calculez vos frais de notaire en 2026. Ancien, neuf (VEFA), droits, émoluments et estimation gratuite immédiate."
+      content="calculez vos frais de notaire en 2026. Ancien, neuf (VEFA), droits, émoluments et estimation gratuite immédiate."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -36,7 +36,7 @@
     />
     <meta
       name="twitter:description"
-      content="Calculez vos frais de notaire en 2026. Ancien, neuf (VEFA), droits, émoluments et estimation gratuite immédiate."
+      content="calculez vos frais de notaire en 2026. Ancien, neuf (VEFA), droits, émoluments et estimation gratuite immédiate."
     />
 
     <!-- Favicon -->
@@ -82,14 +82,14 @@
         "@context": "https://schema.org",
         "@type": "Calculator",
         "name": "Calculateur Frais de notaire 2026",
-        "description": "Calculez les frais de notaire en France pour un achat immobilier en 2026 - barème officiel avec comparaison entre départements",
+        "description": "calculez les frais de notaire en France pour un achat immobilier en 2026 - barème officiel avec comparaison entre départements",
         "url": "https://www.lescalculateurs.fr/pages/notaire",
         "applicationCategory": "FinanceApplication",
         "screenshot": "https://www.lescalculateurs.fr/pages/notaire",
         "isBasedOn": [
           "https://www.lescalculateurs.fr/pages/methodologie",
           "https://www.lescalculateurs.fr/pages/sources",
-          "https://www.lescalculateurs.fr/pages/comment-calculer-frais-notaire"
+          "https://www.lescalculateurs.fr/pages/comment-calculér-frais-notaire"
         ],
         "citation": [
           {
@@ -129,7 +129,7 @@
         "name": "Simulateur de frais de notaire 2026",
         "operatingSystem": "Web",
         "applicationCategory": "FinanceApplication",
-        "description": "Simulateur gratuit permettant de calculer les frais de notaire dans l'ancien ou le neuf selon les barèmes officiels 2026.",
+        "description": "Simulateur gratuit permettant de calculér les frais de notaire dans l'ancien ou le neuf selon les barèmes officiels 2026.",
         "url": "https://www.lescalculateurs.fr/pages/frais-notaire",
         "offers": {
           "@type": "Offer",
@@ -138,8 +138,26 @@
         }
       }
     </script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaître le montant estimé des frais de notaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation pr�cise."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
@@ -348,7 +366,7 @@
         <div class="max-w-4xl mx-auto">
           <section class="ai-intro mb-6">
             <h2 class="text-xl font-bold text-gray-900 mb-2">
-              ❓ Comment calculer les frais de notaire en France en 2026 ?
+              ❓ Comment calculér les frais de notaire en France en 2026 ?
             </h2>
             <p class="ai-response text-gray-700">
               Les frais de notaire = Droits d'enregistrement (5,09% à 6,32%
@@ -403,7 +421,7 @@
 
           <div class="prose prose-lg text-gray-600 space-y-3">
             <p>
-              Calculez vos frais de notaire avec précision grâce aux barèmes
+              calculez vos frais de notaire avec précision grâce aux barèmes
               réglementaires (émoluments proportionnels, droits
               d'enregistrement, TVA, formalités et CSI). L'ancien se situe en
               général autour de 7–8% et le neuf autour de 2–3% du prix d'achat.
@@ -930,10 +948,10 @@
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import { formatCurrency } from "../main.ts";
-      import { baremes } from "../data/baremes.ts";
-      import { calculerFraisNotaire } from "../utils/calculNotaire.ts";
+      import { barèmes } from "../data/barèmes.ts";
+      import { calculérFraisNotaire } from "../utils/calculNotaire.ts";
       import departements from "../data/departements.json" assert { type: "json" };
-      import bjson from "../data/baremes.json" assert { type: "json" };
+      import bjson from "../data/barèmes.json" assert { type: "json" };
       (async () => {
         /**
          * Retourne le taux DMTO (décimal) pour un département
@@ -976,7 +994,7 @@
         const notaireConfig = {
           title: "Calculateur de frais de notaire 2026",
           description:
-            "Calculez vos frais de notaire selon les barèmes réglementaires en vigueur (2026).",
+            "calculez vos frais de notaire selon les barèmes réglementaires en vigueur (2026).",
           fields: [
             {
               id: "type_bien",
@@ -2067,12 +2085,12 @@
       })();
     </script>
 
-    <!-- HowTo JSON-LD: Calculer vos frais de notaire -->
+    <!-- HowTo JSON-LD: calculér vos frais de notaire -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        "name": "Calculer vos frais de notaire",
+        "name": "calculér vos frais de notaire",
         "description": "Procédure pas à pas pour estimer les frais de notaire selon le type de bien et le département.",
         "step": [
           {
@@ -2097,8 +2115,8 @@
           },
           {
             "@type": "HowToStep",
-            "name": "Calculer",
-            "text": "Cliquez sur Calculer pour obtenir le détail: émoluments, droits, débours, TVA et total."
+            "name": "calculér",
+            "text": "Cliquez sur calculér pour obtenir le détail: émoluments, droits, débours, TVA et total."
           }
         ]
       }
@@ -2225,7 +2243,7 @@
         }
       };
 
-      // Fonction pour confirmer la sélection et calculer
+      // Fonction pour confirmer la sélection et calculér
       window.confirmerSelectionVille = () => {
         const select = document.getElementById("modal-departement");
         const departementChoisi = select.value;
@@ -2332,5 +2350,101 @@
     window.setTimeout(__lcLoadAutoExport, 2000);
   }
 </script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>

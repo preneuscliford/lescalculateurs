@@ -8,13 +8,13 @@ function listDeptPages() {
 
 function checkFile(filePath) {
   const html = fs.readFileSync(filePath, 'utf8')
-  const usesFrais2025 = /fetch\(\s*["']\.\.\/\.\.\/\.\.\/data\/frais2025\.json["']\s*\)/.test(html)
+  const usesfrais2026 = /fetch\(\s*["']\.\.\/\.\.\/\.\.\/data\/frais2026\.json["']\s*\)/.test(html)
   const usesBaremesJson = /import\s+bjson\s+from\s+"\.\.\/\.\.\/data\/baremes\.json"\s+assert\s+\{\s+type:\s+"json"\s+\}/.test(html)
   const tranchesCSN = /notaire\?\.tranches|taux\:\s*0\.0387/.test(html)
   const deboursPerDept = /fraisDiversParDepartement/.test(html)
   const csiFromJson = /notaire\?\.csi|csi\?\.taux/.test(html)
   const dmtoFromJson = /fraisCfg\.dmto\s*\[/.test(html)
-  return { usesFrais2025, usesBaremesJson, tranchesCSN, deboursPerDept, csiFromJson, dmtoFromJson }
+  return { usesfrais2026, usesBaremesJson, tranchesCSN, deboursPerDept, csiFromJson, dmtoFromJson }
 }
 
 function main() {
@@ -22,7 +22,7 @@ function main() {
   const report = []
   for (const f of files) {
     const res = checkFile(f)
-    if (res.usesFrais2025 || !res.usesBaremesJson || !res.tranchesCSN || !res.deboursPerDept || !res.csiFromJson || !res.dmtoFromJson) {
+    if (res.usesfrais2026 || !res.usesBaremesJson || !res.tranchesCSN || !res.deboursPerDept || !res.csiFromJson || !res.dmtoFromJson) {
       report.push({ file: f, ...res })
     }
   }

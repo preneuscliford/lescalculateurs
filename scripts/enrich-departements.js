@@ -503,7 +503,7 @@ function loadBaremes() {
  * Charge la configuration JSON fournie (DMTO, barème émoluments, CSI, débours).
  */
 function loadFraisConfig() {
-  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2025.json');
+  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2026.json');
   if (!fs.existsSync(p)) return null;
   try {
     const raw = fs.readFileSync(p, 'utf8');

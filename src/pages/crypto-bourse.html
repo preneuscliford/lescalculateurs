@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulateur plus-value crypto 2026 – Calcul impôt 30 %</title>
-    <meta name="description" content="Calculez l’impôt sur vos plus-values crypto en 2026. Flat tax 30 % et estimation gratuite." />
+    <meta name="description" content="calculez l’impôt sur vos plus-values crypto en 2026. Flat tax 30 % et estimation gratuite." />
     <meta
       name="keywords"
       content="calculateur plus-value crypto, impôt bitcoin 2026, plus-value bourse actions, flat tax 30%, abattement durée détention, gain net crypto, fiscalité cryptomonnaies, impôt ethereum, plus-value trading, calculateur gratuit"
@@ -31,8 +31,26 @@
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaître le montant estimé des frais de notaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation pr�cise."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
@@ -115,12 +133,12 @@
           <strong>Calcul flat tax crypto (2 clics) — Gratuit</strong><br/>
           PFU 30% (12.8% + 17.2%), abattements et plus-values 2026.
         </div>
-        <a href="#crypto-bourse-form" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">Calculer</a>
+        <a href="#crypto-bourse-form" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">calculér</a>
       </div>
       <!-- Intro SEO -->
       <section class="mb-8">
         <p class="text-lg text-gray-600 leading-relaxed">
-          Calculez précisément vos plus-values crypto et bourse après impôts !
+          calculez précisément vos plus-values crypto et bourse après impôts !
           Bitcoin, Ethereum, actions, ETF : notre simulateur intègre la
           fiscalité française 2026 avec flat tax à 30% et abattements pour durée
           de détention. Découvrez votre gain net réel après prélèvements sociaux
@@ -154,7 +172,7 @@
       </section>
 
       <section class="mb-10 bg-white border border-gray-200 rounded-xl p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculér)</h2>
 
         <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
         <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
@@ -180,13 +198,13 @@
           Le simulateur intègre <strong>12.8% d'impôt</strong> et <strong>17.2% de prélèvements sociaux</strong>, avec les cas d'<strong>abattement</strong> et de <strong>compensation des moins‑values</strong>.
         </p>
         <div class="flex gap-3">
-          <a href="#crypto-bourse-form" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">Calculer la flat tax</a>
+          <a href="#crypto-bourse-form" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">calculér la flat tax</a>
           <a href="/pages/impot.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Comparer avec impôt sur le revenu</a>
         </div>
         <div class="mt-4 bg-gray-50 border border-gray-200 rounded-lg p-4">
           <h3 class="font-semibold text-gray-900 mb-2">FAQ — Flat Tax Crypto</h3>
           <ul class="text-sm text-gray-700 space-y-2">
-            <li><strong>Comment calculer la flat tax crypto ?</strong> Indiquez vos transactions et laissez le simulateur appliquer le PFU 30%.</li>
+            <li><strong>Comment calculér la flat tax crypto ?</strong> Indiquez vos transactions et laissez le simulateur appliquer le PFU 30%.</li>
             <li><strong>Flat tax ou barème ?</strong> Le PFU est par défaut; certains optent pour le barème si avantageux (selon revenus et charges).</li>
             <li><strong>Moins‑values ?</strong> Elles peuvent s'imputer sur les plus‑values futures selon les règles fiscales.</li>
           </ul>
@@ -400,17 +418,17 @@
                   <option value="progressif">
                     Barème progressif + prélèvements sociaux
                   </option>
-                  <option value="personnalise">Taux personnalisé</option>
+                  <option value="personnalisé">Taux personnalisé</option>
                 </select>
               </div>
 
-              <div id="taux-personnalise" class="hidden">
+              <div id="taux-personnalisé" class="hidden">
                 <label class="block text-sm font-medium text-gray-700 mb-2">
                   Taux d'imposition personnalisé
                 </label>
                 <input
                   type="number"
-                  id="tauxPersonnalise"
+                  id="tauxpersonnalisé"
                   placeholder="30"
                   min="0"
                   max="100"
@@ -440,7 +458,7 @@
             type="submit"
             class="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200"
           >
-            🚀 Calculer ma plus-value après impôts
+            🚀 calculér ma plus-value après impôts
           </button>
         </form>
 
@@ -527,7 +545,7 @@
               <p class="text-gray-600" itemprop="text">
                 Oui, toutes les cessions de crypto (vente, échange) sont
                 imposables en France. Déclaration obligatoire même pour les
-                plus-values latentes. Utilisez notre calculateur pour estimer
+                plus-values latentes. utilisez notre calculateur pour estimer
                 vos impôts.
               </p>
             </div>
@@ -658,8 +676,8 @@
       document
         .getElementById("regimeFiscal")
         .addEventListener("change", function () {
-          const tauxDiv = document.getElementById("taux-personnalise");
-          if (this.value === "personnalise") {
+          const tauxDiv = document.getElementById("taux-personnalisé");
+          if (this.value === "personnalisé") {
             tauxDiv.classList.remove("hidden");
           } else {
             tauxDiv.classList.add("hidden");
@@ -704,8 +722,8 @@
             parseFloat(document.getElementById("fraisVente").value) || 0;
 
           const regimeFiscal = document.getElementById("regimeFiscal").value;
-          const tauxPersonnalise =
-            parseFloat(document.getElementById("tauxPersonnalise").value) || 30;
+          const tauxpersonnalisé =
+            parseFloat(document.getElementById("tauxpersonnalisé").value) || 30;
           const abattementDuree =
             document.getElementById("abattementDuree").checked;
 
@@ -761,8 +779,8 @@
           let tauxImposition = 30; // Flat tax par défaut
           if (regimeFiscal === "progressif") {
             tauxImposition = 30; // Simplifié : 17.2% + tranche marginale moyenne
-          } else if (regimeFiscal === "personnalise") {
-            tauxImposition = tauxPersonnalise;
+          } else if (regimeFiscal === "personnalisé") {
+            tauxImposition = tauxpersonnalisé;
           }
 
           const impot = Math.max(
@@ -994,8 +1012,8 @@
               dateVente: formatDate(dateVente),
               fraisVente,
               regimeFiscal,
-              tauxPersonnalise:
-                regimeFiscal === "personnalise" ? tauxPersonnalise : null,
+              tauxpersonnalisé:
+                regimeFiscal === "personnalisé" ? tauxpersonnalisé : null,
               abattementDuree,
             },
             results: {
@@ -1299,7 +1317,103 @@
     window.setTimeout(__lcLoadAutoExport, 2000);
   }
 </script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>
 
 

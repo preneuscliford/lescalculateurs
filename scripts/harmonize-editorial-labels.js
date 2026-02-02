@@ -2,10 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Charge la configuration frais2025.json (barème CSN, DMTO, débours, CSI, TVA)
+ * Charge la configuration frais2026.json (barème CSN, DMTO, débours, CSI, TVA)
  */
 function loadCfg() {
-  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2025.json')
+  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2026.json')
   return JSON.parse(fs.readFileSync(p, 'utf8'))
 }
 

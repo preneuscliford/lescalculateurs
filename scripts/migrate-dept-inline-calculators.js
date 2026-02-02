@@ -10,7 +10,7 @@ function listDeptPages() {
 }
 
 /**
- * Migre un fichier: remplace l'utilisation de baremes.json par frais2025.json
+ * Migre un fichier: remplace l'utilisation de baremes.json par frais2026.json
  * et adapte les lignes clés du calcul inline (tranches, CSI, DMTO).
  */
 function migrateFile(filePath) {
@@ -20,7 +20,7 @@ function migrateFile(filePath) {
   // Remplacer le fetch de baremes.json
   html = html.replace(
     /const\s+baremes\s*=\s*await\s*\(\s*await\s*fetch\(["']\.\.\/\.\.\/\.\.\/data\/baremes\.json["']\)\)\.json\(\);/,
-    'const fraisCfg = await (await fetch("../../../data/frais2025.json")).json();'
+    'const fraisCfg = await (await fetch("../../../data/frais2026.json")).json();'
   )
 
   // Adapter les tranches émoluments

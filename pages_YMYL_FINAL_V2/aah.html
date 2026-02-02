@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur AAH 2026 – Montant &amp; conditions</title>
+    <meta name="description" content="Calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
+    <meta
+      name="keywords"
+      content="calculateur AAH, allocation adulte handicapé, AAH 2026, simulation AAH, montant AAH, eligibilité AAH, taux incapacité, MDPH, CAF"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/aah" />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/aah"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Simulateur AAH 2026 – Montant &amp; conditions" />
+    <meta property="og:description" content="Calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Simulateur AAH 2026 – Montant &amp; conditions" />
+    <meta name="twitter:description" content="Calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/site.webmanifest" />
+
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/aah-script.ts"></script>
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur AAH 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Simulateur de l'Allocation aux Adultes Handicapés selon le taux d'incapacité et les ressources.",
+        "url": "https://www.lescalculateurs.fr/pages/aah",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaitre le montant exact de ma Prime d activite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utilisez le simulateur officiel de la CAF pour connaitre votre montant definitif de Prime d activite."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+  <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div
+        class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="font-bold text-lg text-blue-600">
+          🧮 Les Calculateurs
+        </a>
+        <div class="space-x-4">
+          <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+          <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">APL</a>
+          <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
+          <a
+            href="/pages/prime-activite"
+            class="text-gray-600 hover:text-blue-600"
+            >Prime d'activité</a
+          >
+          <a href="/pages/aah" class="text-gray-600 hover:text-blue-600">AAH</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-purple-600 to-purple-700 text-white py-12"
+    >
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">
+          Simulateur AAH 2026 : estimation du montant selon la CAF et la MDPH
+        </h1>
+        <p class="text-xl text-purple-100 mb-6">
+          Estimez votre AAH 2026 selon votre taux d’incapacité, vos ressources
+          et votre situation familiale (simulation indicative, CAF et MDPH).
+        </p>
+        <button
+          id="aah-scroll-to-form"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+        >
+          🟢 Lancer la simulation AAH
+        </button>
+        <p class="mt-6 text-sm text-purple-100">
+          ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <section class="mb-10 bg-white border border-gray-200 rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h2>
+        <div class="space-y-2 text-gray-700">
+          <p>🏛️ <strong>Source</strong> : CAF, Service‑Public, MDPH</p>
+          <p>📐 <strong>Logique</strong> : calcul basé sur taux d’incapacité, foyer, ressources, logement</p>
+          <p>📅 <strong>Année</strong> : paramètres 2026</p>
+          <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
+        </div>
+      </section>
+
+      <section class="mb-10 bg-purple-50 border border-purple-100 rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧾 Ce que permet ce simulateur</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li>Estimer si vous pouvez être <strong>éligible</strong> (à titre indicatif)</li>
+          <li>Obtenir un <strong>montant indicatif</strong> mensuel</li>
+          <li>Comprendre l’impact de vos paramètres (taux, foyer, ressources, logement)</li>
+          <li>Tester plusieurs scénarios en modifiant vos données</li>
+        </ul>
+      </section>
+
+      <section class="mb-12 bg-white border border-gray-200 rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
+        <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
+          <li>Renseignez les informations demandées</li>
+          <li>Indiquez vos montants ou paramètres principaux</li>
+          <li>Lancez la simulation</li>
+          <li>Consultez le résultat estimatif</li>
+        </ol>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment lire les résultats</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-6">
+          <li><strong>Montant estimé</strong> : ordre de grandeur</li>
+          <li><strong>Détail</strong> : paramètres pris en compte</li>
+          <li><strong>Avertissement</strong> : dépend de votre situation réelle</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Pourquoi le résultat peut être nul / faible / différent</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+          <li>Dépassement de seuils réglementaires</li>
+          <li>Paramètres non pris en compte dans une simulation simplifiée</li>
+          <li>Règles spécifiques propres à votre dossier</li>
+        </ul>
+      </section>
+
+      <!-- Qu'est-ce que l'AAH -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📘 Qu'est-ce que l'AAH ?
+        </h2>
+        <p class="text-gray-600 mb-4">
+          L'Allocation aux Adultes Handicapés (AAH) est une aide financière
+          versée par la CAF aux personnes en situation de handicap, sous
+          conditions d'éligibilité.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Votre taux d'incapacité doit être reconnu par la MDPH (Maison
+          Départementale des Personnes Handicapées).
+        </p>
+        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+          <li>taux d'incapacité ≥ 50% reconnu par la MDPH</li>
+          <li>ressources modestes selon les règles CAF</li>
+          <li>domicile en France</li>
+          <li>âge minimum 20 ans</li>
+        </ul>
+        <p class="text-gray-600 mb-6">
+          <strong>Taux 50-79% :</strong> Pour un taux d'incapacité compris entre
+          50 % et 79 %, l'AAH est attribuée sous conditions supplémentaires,
+          notamment en cas de restriction substantielle et durable d'accès à
+          l'emploi.
+        </p>
+        <p class="text-purple-600 font-semibold">
+          👉 Estimez votre montant d'AAH selon les règles CAF ci-dessous.
+        </p>
+      </section>
+
+      <!-- Ce que calcule le simulateur -->
+      <section class="mb-12 bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🧾 Que permet cette simulation AAH ?
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-gray-700">
+          <li>estimer si vous pouvez être éligible</li>
+          <li>obtenir un ordre de grandeur du montant mensuel</li>
+          <li>comprendre l'impact de votre taux d'incapacité et vos revenus</li>
+        </ul>
+        <p class="text-sm text-gray-600 mt-6">
+          💡 Le résultat est indicatif et pédagogique.
+        </p>
+      </section>
+
+      <!-- Calculateur AAH -->
+      <section class="mb-12">
+        <div id="aah-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            🧮 Calculer mon AAH
+          </h2>
+
+          <form id="aah-form" class="space-y-6">
+            <!-- Situation familiale -->
+            <div>
+              <label
+                for="aah-situation"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Situation familiale *
+              </label>
+              <select
+                id="aah-situation"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="seul">Célibataire / Seul</option>
+                <option value="couple">En couple</option>
+                <option value="monoparental">Parent isolé</option>
+              </select>
+            </div>
+
+            <!-- Nombre d'enfants -->
+            <div>
+              <label
+                for="aah-enfants"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Nombre d'enfants à charge
+              </label>
+              <input
+                type="number"
+                id="aah-enfants"
+                min="0"
+                max="10"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+
+            <!-- Taux d'incapacité -->
+            <div>
+              <label
+                for="aah-taux"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Taux d'incapacité reconnu *
+              </label>
+              <select
+                id="aah-taux"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="50">Entre 50 % et 79 %</option>
+                <option value="80">≥ 80 %</option>
+              </select>
+            </div>
+
+            <!-- Revenus mensuels -->
+            <div>
+              <label
+                for="aah-revenus"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Revenus mensuels du foyer (€) *
+              </label>
+              <input
+                type="number"
+                id="aah-revenus"
+                min="0"
+                value="0"
+                placeholder="Salaires, pensions, allocations..."
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            <!-- Situation de logement -->
+            <div>
+              <label
+                for="aah-logement"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Situation de logement *
+              </label>
+              <select
+                id="aah-logement"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="locataire">Locataire</option>
+                <option value="proprio">Propriétaire</option>
+                <option value="heberge">Hébergé / Sans logement stable</option>
+              </select>
+            </div>
+
+            <!-- Bouton Calculer -->
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer mon AAH
+            </button>
+          </form>
+
+          <!-- Résultat -->
+          <div
+            id="aah-result"
+            class="invisible mt-8 min-h-[220px] p-6 bg-purple-50 border-2 border-purple-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-purple-700 mb-4">
+              📊 Estimation de votre AAH
+            </h3>
+            <div id="aah-result-content" class="space-y-4">
+              <div class="text-center">
+                <p class="text-gray-600 mb-2">Montant mensuel estimé :</p>
+                <p class="text-4xl font-bold text-purple-600" id="aah-montant">
+                  ---
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-purple-500">
+                <p id="aah-explication" class="text-gray-700"></p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-purple-600">
+                <p class="text-sm text-gray-800">
+                  Cette estimation tient compte de vos ressources déclarées.
+                </p>
+                <p class="text-sm text-gray-800 mt-2">
+                  Le montant de l'AAH ne peut pas dépasser le plafond
+                  réglementaire fixé par la CAF.
+                </p>
+                <p class="text-sm text-gray-800 mt-2">
+                  Le montant réel dépendra de votre situation exacte et de la
+                  décision finale de la CAF.
+                </p>
+              </div>
+              <div
+                class="bg-purple-50 p-3 rounded border-l-4 border-purple-500 mt-4"
+              >
+                <p class="text-sm text-gray-800">
+                  L'AAH peut être ajustée en cas de reprise d'activité ou de
+                  cumul avec d'autres prestations. Consultez la CAF pour
+                  connaître l'impact de votre situation sur le montant final.
+                </p>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 Ce résultat est indicatif et pédagogique. La CAF reste seule
+                compétente pour l'attribution et le calcul final. Votre taux
+                d'incapacité doit être reconnu par la MDPH.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exemple pédagogique -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📝 Exemple indicatif
+        </h2>
+        <blockquote
+          class="border-l-4 border-purple-500 pl-6 py-4 bg-gray-50 rounded"
+        >
+          <p class="text-gray-700 mb-2">
+            <strong>Personne seule, taux ≥ 80 %, revenus faibles.</strong>
+          </p>
+          <p class="text-gray-700">
+            Le montant dépend toujours des ressources exactes et de la
+            composition du foyer.
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          ❓ Questions fréquentes sur l'AAH
+        </h2>
+        <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Qui peut bénéficier de l'AAH ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Toute personne de 20 ans ou plus en situation de handicap (taux
+              d'incapacité ≥ 50%) avec des ressources modestes peut être
+              éligible. Des conditions de résidence en France et des seuils de
+              revenus s'appliquent.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              AAH et travail : est-ce cumulable ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, l'AAH et l'activité professionnelle peuvent se cumuler sous
+              certaines conditions. Un abattement sur les revenus de travail
+              s'applique. Pour en savoir plus, consultez la CAF.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              AAH et RSA : quelle différence ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              L'AAH est destinée aux personnes en situation de handicap, le RSA
+              aux personnes disposant de faibles ressources. Elles peuvent
+              parfois se cumuler selon la situation. Consultez la CAF pour votre
+              cas.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              À qui faire la demande ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              La demande d'AAH se fait auprès de votre CAF (Caisse d'Allocations
+              Familiales) ou de la MDPH (Maison Départementale des Personnes
+              Handicapées). Vous pouvez la contacter en ligne ou vous présenter
+              directement à l'accueil.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Simulations associées -->
+      <section
+        class="mb-12 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🔗 Autres aides sociales
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a
+            href="/pages/rsa"
+            class="bg-white p-4 rounded-lg border-2 border-purple-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-purple-600">💜 RSA</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Revenu de Solidarité Active
+            </p>
+          </a>
+          <a
+            href="/pages/apl"
+            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-blue-600">🏠 APL</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Aide Personnalisée au Logement
+            </p>
+          </a>
+          <a
+            href="/pages/prime-activite"
+            class="bg-white p-4 rounded-lg border-2 border-green-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-green-600">💼 Prime d'activité</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Complément de revenus de travail
+            </p>
+          </a>
+          <a
+            href="/pages/are"
+            class="bg-white p-4 rounded-lg border-2 border-yellow-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-yellow-600">📋 ARE</p>
+            <p class="text-sm text-gray-600 mt-1">Allocation Retour Emploi</p>
+          </a>
+          <a
+            href="/pages/asf"
+            class="bg-white p-4 rounded-lg border-2 border-pink-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-pink-600">👨‍👩‍👧 ASF</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Allocation Soutien Familial
+            </p>
+          </a>
+          <a
+            href="/pages/apl-etudiant"
+            class="bg-white p-4 rounded-lg border-2 border-indigo-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-indigo-600">🎓 APL Étudiant</p>
+            <p class="text-sm text-gray-600 mt-1">Pour les étudiants</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Références -->
+      <section class="mt-12">
+        <p class="text-gray-600">
+          <strong>Sources officielles :</strong>
+          <a
+            href="https://www.service-public.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            service-public.fr
+          </a>
+          •
+          <a
+            href="https://www.caf.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            caf.fr
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">
+          © 2026 Les Calculateurs — Simulateurs gratuits français
+        </p>
+        <p class="text-gray-400">
+          Tous les calculs sont indicatifs. Consultez les organismes officiels
+          pour les demandes réelles.
+        </p>
+      </div>
+    </footer>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num < 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
+</html>

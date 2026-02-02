@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -62,6 +62,8 @@
     />
     <link rel="manifest" href="../assets/site.webmanifest" />
     <link rel="shortcut icon" href="../assets/favicon.ico" />
+
+    <script defer src="/third-party-loader.js"></script>
 
     <!-- FAQ Schema.org (JSON-LD) -->
     <script type="application/ld+json">
@@ -129,9 +131,26 @@
         }
       }
     </script>
-    <script defer src="/third-party-loader.js"></script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaître le montant estimé des frais de notaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation pr�cise."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
@@ -213,7 +232,7 @@
             Simulateur financement personnel : capacité et mensualités
           </h1>
           <p class="text-lg sm:text-xl text-gray-700 mt-3 font-medium">
-            Calculez votre capacité de financement et vos mensualités selon vos
+            calculez votre capacité de financement et vos mensualités selon vos
             revenus, charges et durée de crédit (estimation indicative).
           </p>
           <button
@@ -233,7 +252,7 @@
           🧮 Financement Personnel 2026
         </h2>
         <p class="text-lg text-gray-600 leading-relaxed mb-4">
-          Calculez votre capacité de financement pour tous vos projets !
+          calculez votre capacité de financement pour tous vos projets !
           Voiture, travaux, équipements électroménagers : notre simulateur
           analyse votre situation financière pour vous indiquer si votre projet
           est viable. Prenez en compte vos revenus, charges actuelles et apport
@@ -288,7 +307,7 @@
 
       <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">
-          🧭 Guide rapide (avant de calculer)
+          🧭 Guide rapide (avant de calculér)
         </h2>
 
         <h3 class="text-lg font-semibold text-gray-900 mb-2">
@@ -623,7 +642,7 @@
             type="submit"
             class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200"
           >
-            🧮 Calculer ma capacité de financement
+            🧮 calculér ma capacité de financement
           </button>
         </form>
 
@@ -1125,5 +1144,101 @@
     window.setTimeout(__lcLoadAutoExport, 2000);
   }
 </script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>

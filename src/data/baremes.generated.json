@@ -96,7 +96,7 @@
       "commentaire": "Contribution de sécurité immobilière"
     },
     "droitsMutation": {
-      "standard": 0.0632,
+      "standard": 0.058,
       "neuf": 0.00715,
       "reduit": 0.0509,
       "departementsReduits": ["36", "976"],
@@ -125,9 +125,9 @@
           "taux_total": 0.0509006
         },
         "overrides": {
-          "92": 0.063,
-          "93": 0.063,
-          "94": 0.063
+          "92": 0.058,
+          "93": 0.058,
+          "94": 0.058
         },
         "par_departement": {
           "10": {
@@ -321,7 +321,7 @@
             "taux": 0.05
           },
           "73": {
-            "taux": 0.04
+            "taux": 0.0632
           },
           "74": {
             "taux": 0.05

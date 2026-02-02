@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zones APL 2026 - Déterminer votre zone de logement</title>
+    <meta
+      name="description"
+      content="Guide complet des zones APL en France : Zone 1 (Île-de-France), Zone 2 (Agglomérations) et Zone 3 (Communes rurales). Vérifiez votre zone pour calculer votre APL."
+    />
+    <meta
+      property="og:title"
+      content="Zones APL - Les 3 zones de calcul de l'APL"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez les 3 zones APL en France et les différences de calcul pour chaque zone."
+    />
+    <meta
+      property="og:image"
+      content="https://www.lescalculateurs.fr/images/apl-og.jpg"
+    />
+    <link
+      rel="canonical"
+      href="https://www.lescalculateurs.fr/pages/apl-zones"
+    />
+    <link rel="stylesheet" href="../tailwind.css" />
+    <!-- JSON-LD Schema: FAQs pour Google Rich Results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Est-ce que ma zone APL peut changer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, si vous déménagez dans une autre commune. La CAF recalculera automatiquement votre APL en fonction de la nouvelle zone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la zone la + avantageuse pour l'APL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zone 1 (IDF) offre les montants d'APL les + élevés, mais les loyers aussi. Zone 3 (rural) offre une APL plus basse avec des loyers très réduits. C'est une question de compromis personnel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les DOM-TOM ont une zone spéciale APL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, les départements d'outre-mer (DOM) ont leurs propres plafonds, généralement légèrement inférieurs à Zone 2 pour tenir compte du coût de la vie local."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Un village à côté de Paris = Zone 1 ou Zone 2 APL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cela dépend si le village est administrativement en Île-de-France. Les 8 départements de l'IDF = Zone 1. À partir de l'Essonne, Yvelines, Val-d'Oise = Zone 1. Au-delà = Zone 2."
+            }
+          }
+        ]
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+      <div
+        class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <img
+            src="/assets/lescalculateurs-new-logo.png"
+            alt="LesCalculateurs.fr"
+            class="h-10 w-auto"
+          />
+          <a
+            href="../index.html"
+            class="font-bold text-gray-900 hover:text-blue-600"
+            >Les Calculateurs</a
+          >
+        </div>
+        <a href="apl.html" class="text-blue-600 hover:text-blue-800 font-medium"
+          >← Retour Simulateur APL</a
+        >
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-4">Les Zones APL en France 🗺️</h1>
+        <p class="text-xl text-blue-100">
+          Comprendre les 3 zones géographiques qui définissent le calcul de
+          votre APL
+        </p>
+      </div>
+    </header>
+<div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg"><p class="text-sm text-gray-800 m-0">Les calculs reposent sur les barèmes réglementés en vigueur et les taux départementaux connus à date. Ils constituent une estimation indicative et non contractuelle.</p></div>
+
+
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-12">
+      <!-- Introduction -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          Pourquoi des zones APL différentes?
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+          La CAF divise la France en 3 zones géographiques pour tenir compte des
+          différences de coûts du logement. Plus vous êtes en zone urbaine
+          chère, plus les plafonds de loyer pris en compte par la CAF sont
+          élevés. Cela permet de mieux adapter l'APL à la réalité économique
+          locale.
+        </p>
+        <div class="mt-6 grid grid-cols-3 gap-4">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-blue-600 mb-2">1</div>
+            <p class="font-semibold text-gray-900">Île-de-France</p>
+            <p class="text-sm text-gray-500">Loyers + élevés</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-green-600 mb-2">2</div>
+            <p class="font-semibold text-gray-900">Agglomérations</p>
+            <p class="text-sm text-gray-500">Loyers moyens</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-yellow-600 mb-2">3</div>
+            <p class="font-semibold text-gray-900">Communes rurales</p>
+            <p class="text-sm text-gray-500">Loyers + bas</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Zone 1 -->
+      <section
+        class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-blue-600"
+      >
+        <div class="flex items-center mb-6">
+          <span
+            class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold mr-4"
+            >1</span
+          >
+          <h2 class="text-2xl font-bold text-gray-900">
+            Zone 1 : Île-de-France 🏙️
+          </h2>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Région couverte
+        </h3>
+        <p class="text-gray-600 mb-4">
+          La <strong>Zone 1</strong> correspond à la région Île-de-France dans
+          sa totalité :
+        </p>
+        <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+          <li>Paris (75)</li>
+          <li>Hauts-de-Seine (92)</li>
+          <li>Seine-Saint-Denis (93)</li>
+          <li>Val-de-Marne (94)</li>
+          <li>Essonne (91)</li>
+          <li>Yvelines (78)</li>
+          <li>Val-d'Oise (95)</li>
+          <li>Seine-et-Marne (77)</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Caractéristiques
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">
+              ✓ Loyers les + élevés
+            </p>
+            <p class="text-gray-700 text-sm">
+              Paris et agglomération incontournable
+            </p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">
+              ✓ Plafonds APL + hauts
+            </p>
+            <p class="text-gray-700 text-sm">600€ à 800€ selon situation</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">
+              ✓ APL généralement + importante
+            </p>
+            <p class="text-gray-700 text-sm">Multiplicateur 1.15x appliqué</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">
+              ✓ Densité de population forte
+            </p>
+            <p class="text-gray-700 text-sm">Haute demande de logements</p>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Exemple : Montants APL Zone 1
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm mb-6">
+            <thead class="bg-blue-100">
+              <tr>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  Situation
+                </th>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  Loyer plafonné
+                </th>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  APL estimée
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-3 py-2">Personne seule</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 610 €</span><span class="result-exact" style="display:none;">610 €</span> €</td>
+                <td
+                  class="border border-gray-300 px-3 py-2 font-semibold text-blue-600"
+                >
+                  200–280 €
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-3 py-2">
+                  Couple, 2 enfants
+                </td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 790 €</span><span class="result-exact" style="display:none;">790 €</span> €</td>
+                <td
+                  class="border border-gray-300 px-3 py-2 font-semibold text-blue-600"
+                >
+                  350–450 €
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-lg">
+          <p class="text-blue-900 text-sm">
+            <strong>💡 Conseil :</strong> Si vous cherchez un logement moins
+            cher, considérez les communes de Zone 2 aux limites de
+            l'Île-de-France (Orléans, Amiens proximité). Vous aurez une APL
+            légèrement plus basse, mais des loyers nettement inférieurs.
+          </p>
+        </div>
+      </section>
+
+      <!-- Zone 2 -->
+      <section
+        class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-green-600"
+      >
+        <div class="flex items-center mb-6">
+          <span
+            class="bg-green-100 text-green-600 rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold mr-4"
+            >2</span
+          >
+          <h2 class="text-2xl font-bold text-gray-900">
+            Zone 2 : Agglomérations & Villes 🏘️
+          </h2>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Régions couvertes
+        </h3>
+        <p class="text-gray-600 mb-4">
+          La <strong>Zone 2</strong> correspond à toutes les agglomérations
+          importantes et leurs périphéries. Inclut une grande partie de la
+          France métropolitaine :
+        </p>
+        <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+          <li>Marseille et agglomération</li>
+          <li>Lyon et agglomération</li>
+          <li>Toulouse et agglomération</li>
+          <li>Bordeaux et agglomération</li>
+          <li>Lille et agglomération</li>
+          <li>Nice et agglomération</li>
+          <li>Nantes et agglomération</li>
+          <li>Strasbourg, Rennes, Montpellier...</li>
+          <li>Communes urbaines du reste de la France</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Caractéristiques
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-green-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">✓ Loyers équilibrés</p>
+            <p class="text-gray-700 text-sm">
+              Rapport qualité/prix meilleur qu'à Paris
+            </p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">
+              ✓ Plafonds APL modérés
+            </p>
+            <p class="text-gray-700 text-sm">480€ à 660€ selon situation</p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">
+              ✓ Majorité des Français
+            </p>
+            <p class="text-gray-700 text-sm">+ de 80% de la population</p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">✓ Offre variée</p>
+            <p class="text-gray-700 text-sm">HLM, location privée, accession</p>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Exemple : Montants APL Zone 2
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm mb-6">
+            <thead class="bg-green-100">
+              <tr>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  Situation
+                </th>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  Loyer plafonné
+                </th>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  APL estimée
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-3 py-2">Personne seule</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 510 €</span><span class="result-exact" style="display:none;">510 €</span> €</td>
+                <td
+                  class="border border-gray-300 px-3 py-2 font-semibold text-green-600"
+                >
+                  160–220 €
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-3 py-2">
+                  Couple, 2 enfants
+                </td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 660 €</span><span class="result-exact" style="display:none;">660 €</span> €</td>
+                <td
+                  class="border border-gray-300 px-3 py-2 font-semibold text-green-600"
+                >
+                  300–380 €
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded-lg">
+          <p class="text-green-900 text-sm">
+            <strong>💡 Conseil :</strong> Zone 2 est souvent le meilleur
+            équilibre coût/bénéfice. Les APL restent conséquentes (200–400€)
+            avec des loyers nettement plus accessibles qu'en Zone 1.
+          </p>
+        </div>
+      </section>
+
+      <!-- Zone 3 -->
+      <section
+        class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-yellow-600"
+      >
+        <div class="flex items-center mb-6">
+          <span
+            class="bg-yellow-100 text-yellow-600 rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold mr-4"
+            >3</span
+          >
+          <h2 class="text-2xl font-bold text-gray-900">
+            Zone 3 : Communes Rurales 🌾
+          </h2>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Régions couvertes
+        </h3>
+        <p class="text-gray-600 mb-4">
+          La <strong>Zone 3</strong> correspond aux communes rurales et petites
+          communes sans agglomération importante :
+        </p>
+        <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+          <li>Communes rurales isolées</li>
+          <li>Petites villes (&lt; 10 000 habitants généralement)</li>
+          <li>Zones périphériques loin des agglomérations</li>
+          <li>Zones montagne, côtes isolées</li>
+          <li>Régions avec forte déprise démographique</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Caractéristiques
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-yellow-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">✓ Loyers les + bas</p>
+            <p class="text-gray-700 text-sm">300–500€ pour un T2</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">
+              ✓ Plafonds APL réduits
+            </p>
+            <p class="text-gray-700 text-sm">430€ à 580€ selon situation</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">✓ Mobilité limitée</p>
+            <p class="text-gray-700 text-sm">Transports moins développés</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2">✓ Qualité de vie</p>
+            <p class="text-gray-700 text-sm">Calme, nature, espace</p>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Exemple : Montants APL Zone 3
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm mb-6">
+            <thead class="bg-yellow-100">
+              <tr>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  Situation
+                </th>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  Loyer plafonné
+                </th>
+                <th class="border border-gray-300 px-3 py-2 text-left">
+                  APL estimée
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-3 py-2">Personne seule</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 430 €</span><span class="result-exact" style="display:none;">430 €</span> €</td>
+                <td
+                  class="border border-gray-300 px-3 py-2 font-semibold text-yellow-600"
+                >
+                  140–190 €
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-3 py-2">
+                  Couple, 2 enfants
+                </td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 580 €</span><span class="result-exact" style="display:none;">580 €</span> €</td>
+                <td
+                  class="border border-gray-300 px-3 py-2 font-semibold text-yellow-600"
+                >
+                  270–350 €
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-yellow-50 border-l-4 border-yellow-600 p-4 rounded-lg">
+          <p class="text-yellow-900 text-sm">
+            <strong>💡 Conseil :</strong> Zone 3 pour économies maximales. Les
+            loyers très bas compensent la réduction d'APL. Idéal pour
+            télétravail ou retraité.
+          </p>
+        </div>
+      </section>
+
+      <!-- Comparaison -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          📊 Comparaison rapide des 3 zones
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th
+                  class="border border-gray-300 px-4 py-3 text-left font-semibold"
+                >
+                  Critère
+                </th>
+                <th
+                  class="border border-gray-300 px-4 py-3 text-left font-semibold"
+                >
+                  Zone 1 (IDF)
+                </th>
+                <th
+                  class="border border-gray-300 px-4 py-3 text-left font-semibold"
+                >
+                  Zone 2 (Agglo)
+                </th>
+                <th
+                  class="border border-gray-300 px-4 py-3 text-left font-semibold"
+                >
+                  Zone 3 (Rural)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-4 py-3 font-semibold">
+                  Loyer moyen T2
+                </td>
+                <td class="border border-gray-300 px-4 py-3">900–1200 €</td>
+                <td class="border border-gray-300 px-4 py-3">600–800 €</td>
+                <td class="border border-gray-300 px-4 py-3">400–500 €</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-4 py-3 font-semibold">
+                  APL estimée (seul)
+                </td>
+                <td class="border border-gray-300 px-4 py-3">200–280 €</td>
+                <td class="border border-gray-300 px-4 py-3">160–220 €</td>
+                <td class="border border-gray-300 px-4 py-3">140–190 €</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-4 py-3 font-semibold">
+                  Charge nette (seul)
+                </td>
+                <td class="border border-gray-300 px-4 py-3">700–1000 €</td>
+                <td class="border border-gray-300 px-4 py-3">450–650 €</td>
+                <td class="border border-gray-300 px-4 py-3">280–380 €</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-4 py-3 font-semibold">
+                  Densité population
+                </td>
+                <td class="border border-gray-300 px-4 py-3">Très haute</td>
+                <td class="border border-gray-300 px-4 py-3">
+                  Moyenne à haute
+                </td>
+                <td class="border border-gray-300 px-4 py-3">Très basse</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-4 py-3 font-semibold">
+                  Emplois disponibles
+                </td>
+                <td class="border border-gray-300 px-4 py-3">✓ Nombreux</td>
+                <td class="border border-gray-300 px-4 py-3">✓ Variés</td>
+                <td class="border border-gray-300 px-4 py-3">✗ Limités</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-4 py-3 font-semibold">
+                  Transports
+                </td>
+                <td class="border border-gray-300 px-4 py-3">✓ Excellents</td>
+                <td class="border border-gray-300 px-4 py-3">✓ Bons</td>
+                <td class="border border-gray-300 px-4 py-3">✗ Pauvres</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Comment vérifier sa zone -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          🔍 Comment vérifier votre zone APL?
+        </h2>
+
+        <div class="space-y-6">
+          <div class="border-l-4 border-blue-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              1️⃣ Utiliser le code postal
+            </h3>
+            <p class="text-gray-600 mb-3">
+              Le plus simple : cherchez votre commune sur
+              <strong>www.caf.fr</strong> ou utiliser l'outil de recherche
+              ci-dessous.
+            </p>
+            <div class="bg-blue-50 p-3 rounded text-sm">
+              <p>
+                <strong>Exemple :</strong> 75001 (Paris) = Zone 1 | 69000 (Lyon)
+                = Zone 2 | 42110 (Roanne) = Zone 3
+              </p>
+            </div>
+          </div>
+
+          <div class="border-l-4 border-green-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              2️⃣ Contacter la CAF
+            </h3>
+            <p class="text-gray-600">
+              Rendez-vous sur <strong>www.caf.fr</strong> → Trouvez votre CAF →
+              Appelez-les avec votre adresse.
+            </p>
+          </div>
+
+          <div class="border-l-4 border-yellow-500 pl-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              3️⃣ Utiliser le simulateur APL
+            </h3>
+            <p class="text-gray-600">
+              Notre simulateur propose un sélecteur de région qui indique la
+              zone automatiquement.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="mt-8 p-4 bg-green-50 rounded-lg border-l-4 border-green-600"
+        >
+          <p class="text-green-900 font-semibold mb-2">
+            ✓ Vous avez besoin de vérifier votre zone?
+          </p>
+          <a
+            href="apl.html"
+            class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition"
+          >
+            Retourner au simulateur APL →
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          ❓ Questions fréquentes sur les zones
+        </h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Est-ce que ma zone peut changer?
+            </h3>
+            <p class="text-gray-600">
+              Oui, si vous déménagez dans une autre commune. La CAF recalculera
+              automatiquement votre APL en fonction de la nouvelle zone.
+            </p>
+          </div>
+
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Quelle est la zone la + avantageux pour l'APL?
+            </h3>
+            <p class="text-gray-600">
+              Zone 1 (IDF) offre les montants d'APL les + élevés, mais les
+              loyers aussi. Zone 3 (rural) offre une APL plus basse avec des
+              loyers très rééduits. C'est une question de compromis personnel.
+            </p>
+          </div>
+
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Les DOM-TOM ont une zone spéciale?
+            </h3>
+            <p class="text-gray-600">
+              Oui, les départements d'outre-mer (DOM) ont leurs propres
+              plafonds, généralement légèrement inférieurs à Zone 2 pour tenir
+              compte du coût de la vie local.
+            </p>
+          </div>
+
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Un village à côté de Paris = Zone 1 ou Zone 2?
+            </h3>
+            <p class="text-gray-600">
+              Cela dépend si le village est administrativement en Île-de-France.
+              Les 8 départements de l'IDF = Zone 1. À partir de l'Essonne,
+              Yvelines, Val-d'Oise = Zone 1. Au-delà = Zone 2.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section
+        class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg shadow-lg p-8 text-center"
+      >
+        <h2 class="text-2xl font-bold mb-4">Prêt à simuler votre APL?</h2>
+        <p class="text-blue-100 mb-6">
+          Maintenant que vous connaissez votre zone, utilisez notre simulateur
+          pour estimer votre montant d'APL exactement.
+        </p>
+        <a
+          href="apl.html"
+          class="inline-block bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-8 rounded transition"
+        >
+          Accéder au simulateur APL →
+        </a>
+        <p class="text-sm text-blue-200 mt-4">Vous êtes en DOM-TOM?</p>
+        <a
+          href="apl-dom-tom.html"
+          class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded transition"
+        >
+          Voir zones DOM-TOM
+        </a>
+      </section>
+      <section class="mt-12 bg-blue-50 rounded-lg p-6 border border-blue-200">
+        <h3 class="font-bold text-blue-900 mb-3">📚 Sources 2026</h3>
+        <ul class="text-sm text-gray-700 space-y-2">
+          <li>
+            • Aide personnalisée au logement (cadre général) :
+            <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="text-blue-600 hover:underline">service-public.fr</a>
+          </li>
+          <li>
+            • CAF — informations officielles :
+            <a href="https://www.caf.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">caf.fr</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 mt-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="font-bold text-white mb-2">À propos</h3>
+            <p class="text-sm">
+              Calculateurs à titre informatif basés sur les règles officielles
+              2025.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-white mb-2">Ressources</h3>
+            <a
+              href="https://www.caf.fr"
+              target="_blank"
+              class="text-sm hover:text-white block"
+              >Site CAF officiel</a
+            >
+            <a href="apl.html" class="text-sm hover:text-white block"
+              >Simulateur APL</a
+            >
+          </div>
+          <div>
+            <h3 class="font-bold text-white mb-2">Légal</h3>
+            <p class="text-xs">
+              Données à jour décembre 2026. Non contractuel.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-sm">
+          <p>&copy; 2026 Les Calculateurs. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module">
+      // Analytics optionnel
+      console.log(
+        "Page zones APL chargée - Utilisateur peut maintenant identifier sa zone"
+      );
+    </script>
+  
+<script>
+// Verbalisation YMYL - masquer montant exact, afficher fourchette
+document.addEventListener('DOMContentLoaded', function() {
+  const exactSpans = document.querySelectorAll('.result-exact');
+  exactSpans.forEach(function(span) {
+    const exactVal = parseInt(span.textContent);
+    const verbalSpan = span.previousElementSibling;
+    if (verbalSpan && verbalSpan.classList.contains('result-verbal')) {
+      const rounded = Math.round(exactVal / 10) * 10;
+      verbalSpan.textContent = 'environ ' + rounded + ' € – simulateur officiel pour valeur exacte';
+    }
+  });
+});
+</script>
+
+<!-- YMYL Verbalization Script -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num < 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
+</html>

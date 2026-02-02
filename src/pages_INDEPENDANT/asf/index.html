@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur ASF 2026 – Allocation CAF gratuite</title>
+    <meta name="description" content="Estimez l’ASF en 2026. Calcul CAF gratuit pour parents isolés et orphelins." />
+    <meta
+      name="keywords"
+      content="ASF, allocation soutien familial, parent isolé, aide enfant, soutien familial 2026, CAF, allocation monoparental"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/asf" />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/asf"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Simulateur ASF 2026 – Allocation CAF gratuite" />
+    <meta property="og:description" content="Estimez l’ASF en 2026. Calcul CAF gratuit pour parents isolés et orphelins." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Simulateur ASF 2026 – Allocation CAF gratuite" />
+    <meta name="twitter:description" content="Estimez l’ASF en 2026. Calcul CAF gratuit pour parents isolés et orphelins." />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/site.webmanifest" />
+
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/asf-script.ts"></script>
+    <!-- Schema.org SoftwareApplication -->
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment obtenir le montant estime de mon APL ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utilisez le estimateur gratuit de la CAF pour connaitre votre montant definitif."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+  <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div
+        class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="font-bold text-lg text-blue-600">
+          🧮 Les Calculateurs
+        </a>
+        <div class="space-x-4">
+          <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+          <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
+          <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">APL</a>
+          <a href="/pages/aah" class="text-gray-600 hover:text-blue-600">AAH</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-pink-600 to-pink-700 text-white py-12"
+    >
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">
+          Simulateur ASF 2026 : estimation de l’Allocation de Soutien Familial
+        </h1>
+        <p class="text-xl text-pink-100 mb-6">
+          Estimez votre ASF 2026 selon votre situation parentale, le nombre
+          d’enfants et vos ressources (simulation indicative CAF).
+        </p>
+        <button
+          id="asf-scroll-to-form"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+        >
+          🟢 Lancer la simulation ASF
+        </button>
+        <div class="mt-6 bg-pink-900 bg-opacity-50 p-4 rounded-lg inline-block">
+          <p class="text-sm">
+            ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📌 Résumé rapide
+        </h2>
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <div class="space-y-2 text-gray-700">
+            <p>🏛️ <strong>Source</strong> : CAF, Service‑Public</p>
+            <p>📐 <strong>Logique</strong> : calcul basé sur situation familiale, enfants, ressources</p>
+            <p>📅 <strong>Année</strong> : paramètres 2026</p>
+            <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10 bg-pink-50 border border-pink-100 rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧾 Ce que permet ce simulateur</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li>Obtenir un <strong>montant indicatif</strong> d’ASF mensuel</li>
+          <li>Comprendre l’impact de vos paramètres (situation, enfants, ressources)</li>
+          <li>Tester plusieurs scénarios en modifiant vos données</li>
+        </ul>
+      </section>
+
+      <section class="mb-12 bg-white border border-gray-200 rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
+        <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
+          <li>Renseignez les informations demandées</li>
+          <li>Indiquez vos montants ou paramètres principaux</li>
+          <li>Lancez la simulation</li>
+          <li>Consultez le résultat estimatif</li>
+        </ol>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment lire les résultats</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-6">
+          <li><strong>Montant estimé</strong> : ordre de grandeur</li>
+          <li><strong>Détail</strong> : paramètres pris en compte</li>
+          <li><strong>Avertissement</strong> : dépend de votre situation réelle</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Pourquoi le résultat peut être nul / faible / différent</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+          <li>Dépassement de seuils réglementaires</li>
+          <li>Paramètres non pris en compte dans une simulation simplifiée</li>
+          <li>Règles spécifiques propres à votre dossier</li>
+        </ul>
+      </section>
+
+      <!-- Qu'est-ce que l'ASF -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📘 Qu'est-ce que l'ASF ?
+        </h2>
+        <p class="text-gray-600 mb-4">
+          L'ASF (Allocation de Soutien Familial) est une aide financière
+          destinée aux parents isolés ayant la charge d'enfants, et aux enfants
+          orphelins.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Elle vise à sécuriser les revenus des familles monoparentales et à
+          supporter les enfants sans parents.
+        </p>
+        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+          <li>vous êtes parent seul(e) avec enfant(s) à charge</li>
+          <li>
+            vous assumez seul(e) la charge effective et permanente d'un ou
+            plusieurs enfants
+          </li>
+          <li>ou vous êtes enfant orphelin</li>
+        </ul>
+        <p class="text-pink-600 font-semibold">
+          👉 Estimez votre montant d'ASF ci-dessous.
+        </p>
+      </section>
+
+      <!-- Ce que calcule le simulateur -->
+      <section class="mb-12 bg-pink-50 p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🧾 Que permet cette simulation ?
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-gray-700">
+          <li>vérifier votre éligibilité à l'ASF</li>
+          <li>obtenir une estimation du montant mensuel par enfant</li>
+          <li>comprendre l'impact de votre situation familiale</li>
+        </ul>
+        <p class="text-sm text-gray-600 mt-6">
+          💡 Résultat pédagogique. La CAF effectuera l'étude complète de votre
+          dossier.
+        </p>
+      </section>
+
+      <!-- Calculateur ASF -->
+      <section class="mb-12">
+        <div id="asf-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            🧮 Calculer mon ASF
+          </h2>
+
+          <form id="asf-form" class="space-y-6">
+            <!-- Situation familiale -->
+            <div>
+              <label
+                for="asf-situation"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Situation familiale *
+              </label>
+              <select
+                id="asf-situation"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="parentisole">Parent isolé avec enfant(s)</option>
+                <option value="orphelin">Enfant orphelin</option>
+                <option value="depourvu">
+                  Enfant privé de soutien familial
+                </option>
+              </select>
+            </div>
+
+            <!-- Nombre d'enfants -->
+            <div>
+              <label
+                for="asf-enfants"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Nombre d'enfants à charge (moins de 21 ans) *
+              </label>
+              <input
+                type="number"
+                id="asf-enfants"
+                min="1"
+                max="10"
+                placeholder="Nombre d'enfants"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required
+              />
+            </div>
+
+            <!-- Revenus mensuels -->
+            <div>
+              <label
+                for="asf-revenus"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Revenus mensuels du foyer (€) *
+              </label>
+              <input
+                type="number"
+                id="asf-revenus"
+                min="0"
+                placeholder="Salaires, allocations, pensions..."
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required
+              />
+              <p class="text-xs text-gray-500 mt-2">
+                💡 Les ressources ne conditionnent pas l'éligibilité à l'ASF.
+                Elles peuvent être demandées par la CAF dans le cadre de l'étude
+                globale du dossier.
+              </p>
+            </div>
+
+            <!-- Bouton Calculer -->
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer mon ASF
+            </button>
+          </form>
+
+          <!-- Résultat -->
+          <div
+            id="asf-result"
+            class="invisible mt-8 min-h-[220px] p-6 bg-pink-50 border-2 border-pink-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-pink-700 mb-4">
+              📊 Estimation de votre ASF
+            </h3>
+            <div id="asf-result-content" class="space-y-4">
+              <div class="text-center">
+                <p class="text-gray-600 mb-2">Montant mensuel estimé :</p>
+                <p class="text-4xl font-bold text-pink-600" id="asf-montant">
+                  ---
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-pink-500">
+                <p id="asf-explication" class="text-gray-700"></p>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 Résultat pédagogique. Consultez la CAF pour une demande
+                réelle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exemple pédagogique -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📝 Exemple indicatif
+        </h2>
+        <blockquote
+          class="border-l-4 border-pink-500 pl-6 py-4 bg-gray-50 rounded"
+        >
+          <p class="text-gray-700 mb-2">
+            <strong
+              >Parent isolé avec 2 enfants à charge, revenus faibles.</strong
+            >
+          </p>
+          <p class="text-gray-700">
+            L'ASF pourrait représenter 176.50€ par enfant (montant 2026), ajusté
+            selon vos ressources.
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          ❓ Questions fréquentes sur l'ASF
+        </h2>
+        <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Qui peut bénéficier de l'ASF ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Les parents isolés avec enfant(s) de moins de 21 ans à charge, les
+              enfants orphelins ou les enfants privés du soutien familial de
+              leurs parents.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              ASF et RSA : peuvent-ils se cumuler ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, l'ASF peut se cumuler avec le RSA. Il faut cependant que les
+              conditions d'éligibilité à chacun soient remplies. Consultez la
+              CAF pour votre situation.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Quel est le montant par enfant ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Le montant dépend de votre situation et vos ressources. L'ASF peut
+              couvrir partiellement ou entièrement un montant forfaitaire par
+              enfant fixé par la CAF (environ 176€ en 2026).
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Comment demander l'ASF ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Contactez la CAF de votre département ou rendez-vous en ligne sur
+              le site de la CAF pour demander l'Allocation de Soutien Familial.
+              Des documents justificatifs seront requis.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Simulations associées -->
+      <section
+        class="mb-12 bg-gradient-to-r from-pink-50 to-red-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🔗 Autres aides sociales
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a
+            href="/pages/rsa"
+            class="bg-white p-4 rounded-lg border-2 border-purple-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-purple-600">💜 RSA</p>
+            <p class="text-sm text-gray-600 mt-1">Revenu minimum mensuel</p>
+          </a>
+          <a
+            href="/pages/apl"
+            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-blue-600">🏠 APL</p>
+            <p class="text-sm text-gray-600 mt-1">Aide au logement</p>
+          </a>
+          <a
+            href="/pages/prime-activite"
+            class="bg-white p-4 rounded-lg border-2 border-green-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-green-600">💼 Prime d'activité</p>
+            <p class="text-sm text-gray-600 mt-1">Complément de salaire</p>
+          </a>
+          <a
+            href="/pages/aah"
+            class="bg-white p-4 rounded-lg border-2 border-orange-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-orange-600">🦾 AAH</p>
+            <p class="text-sm text-gray-600 mt-1">Allocation Handicap</p>
+          </a>
+          <a
+            href="/pages/are"
+            class="bg-white p-4 rounded-lg border-2 border-yellow-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-yellow-600">📋 ARE</p>
+            <p class="text-sm text-gray-600 mt-1">Allocation Retour Emploi</p>
+          </a>
+          <a
+            href="/pages/apl-etudiant"
+            class="bg-white p-4 rounded-lg border-2 border-indigo-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-indigo-600">🎓 APL Étudiant</p>
+            <p class="text-sm text-gray-600 mt-1">Pour les étudiants</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Références -->
+      <section class="mt-12">
+        <p class="text-gray-600">
+          <strong>Sources officielles :</strong>
+          <a
+            href="https://www.caf.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            caf.fr
+          </a>
+          •
+          <a
+            href="https://www.service-public.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            service-public.fr
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">
+          © 2026 Les Calculateurs — Simulateurs gratuits français
+        </p>
+        <p class="text-gray-400">
+          Tous les calculs sont indicatifs. Consultez les organismes officiels
+          pour les demandes réelles.
+        </p>
+      </div>
+    </footer>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estime</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
+</html>

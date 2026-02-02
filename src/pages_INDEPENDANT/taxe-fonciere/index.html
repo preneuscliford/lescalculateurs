@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxe Foncière 2026 - Calculateur Gratuit par Département</title>
+    <meta
+      name="description"
+      content="Calculez votre taxe foncière en 2026. Simulateur gratuit, montants moyens par département, explications et taux officiels."
+    />
+    <meta
+      name="keywords"
+      content="taxe foncière, calcul taxe, simulation, taux 2026, montant moyen"
+    />
+    <meta name="author" content="LesCalculateurs.fr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <link
+      rel="canonical"
+      href="https://lescalculateurs.fr/pages/taxe-fonciere"
+    />
+    <meta
+      property="og:url"
+      content="https://lescalculateurs.fr/pages/taxe-fonciere"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Taxe Foncière 2026 - Calculateur Gratuit par Département"
+    />
+    <meta
+      property="og:description"
+      content="Simulateur gratuit + montants moyens pour tous les départements français"
+    />
+    <meta
+      property="og:image"
+      content="https://lescalculateurs.fr/assets/favicon-32x32.png"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Taxe Foncière 2026",
+        "url": "https://lescalculateurs.fr/pages/taxe-fonciere",
+        "description": "Simulateur de taxe foncière et montants par département",
+        "publisher": { "@type": "Organization", "name": "LesCalculateurs.fr" }
+      }
+    </script>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <script type="module" src="../../../main.ts"></script>
+    <script defer src="/third-party-loader.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaitre le montant estime de ma taxe fonciere ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez votre avis d imposition ou contactez le centre des impots fonciers de votre commune."
+      }
+    }
+  ]
+}
+</script>
+</head>
+  <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">impots.gouv.fr</a> ou <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-4">
+            <img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs.fr"
+              class="h-10 w-auto"
+            />
+            <span class="text-lg font-semibold text-gray-900"
+              >Taxe Foncière</span
+            >
+          </div>
+          <a
+            href="/index.html"
+            class="text-sm text-gray-600 hover:text-gray-900"
+            >Accueil</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        Taxe Foncière 2026 - Calculateur Gratuit par Département
+      </h1>
+
+      <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+        La taxe foncière est un impôt local qui s'applique à tous les
+        propriétaires immobiliers en France. Son montant varie considérablement
+        selon votre département et votre commune. Utilisez notre simulateur
+        gratuit pour estimer précisément votre taxe foncière en 2026, découvrez
+        les taux moyens de votre région et comprenez les facteurs qui
+        influencent ce montant.
+      </p>
+
+      <!-- Simulateur central -->
+      <div class="bg-blue-50 p-8 rounded-lg mb-12 border-2 border-blue-200">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">
+          💰 Simulateur Taxe Foncière
+        </h2>
+        <p class="text-gray-700 mb-6">
+          Calculez votre taxe foncière en quelques clics. Indiquez votre
+          département, la base locative cadastrale de votre bien et découvrez
+          votre estimation.
+        </p>
+        <div
+          id="calculator-frame"
+          class="bg-white p-4 rounded border border-gray-200"
+        >
+          <p class="text-center text-gray-500 py-8">
+            Simulateur interactif (charge)
+          </p>
+        </div>
+      </div>
+
+      <!-- Qu'est-ce que la taxe foncière ? -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          Qu'est-ce que la Taxe Foncière ?
+        </h2>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          La taxe foncière est un impôt annuel payé par tous les propriétaires
+          de biens immobiliers en France (résidence principale, secondaire,
+          terrain, etc.). Elle est prélevée par les collectivités locales
+          (commune, département, région) qui en fixent les taux respectifs.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Le montant est calculé sur la base d'une évaluation immobilière (base
+          locative) multipliée par les taux votés par les collectivités.
+          Contrairement à ce qu'on pourrait croire, ce n'est pas basé sur le
+          prix d'achat, mais sur une valeur locative cadastrale estimée.
+        </p>
+      </section>
+
+      <!-- Taux moyens nationaux -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          Taux Moyens Nationaux en 2026
+        </h2>
+        <p class="text-gray-700 mb-4">
+          Le taux moyen de taxe foncière en France s'établit autour de
+          <strong>1,28 %</strong> de la base locative. Cependant, cette moyenne
+          cache d'importantes variations régionales :
+        </p>
+        <table class="w-full border-collapse border border-gray-300 mb-6">
+          <thead>
+            <tr class="bg-blue-100">
+              <th class="border border-gray-300 p-3 text-left">Région</th>
+              <th class="border border-gray-300 p-3 text-right">Taux moyen</th>
+              <th class="border border-gray-300 p-3 text-left">Contexte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">Île-de-France</td>
+              <td class="border border-gray-300 p-3 text-right">
+                <strong>1,35 %</strong>
+              </td>
+              <td class="border border-gray-300 p-3">
+                Au-dessus moyenne (zones urbaines coûteuses)
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">
+                Provence-Alpes-Côte d'Azur
+              </td>
+              <td class="border border-gray-300 p-3 text-right">
+                <strong>1,42 %</strong>
+              </td>
+              <td class="border border-gray-300 p-3">
+                Très élevé (littoral, zones touristiques)
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">
+                Bourgogne-Franche-Comté
+              </td>
+              <td class="border border-gray-300 p-3 text-right">
+                <strong>1,35 %</strong>
+              </td>
+              <td class="border border-gray-300 p-3">Au-dessus moyenne</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">Nouvelle-Aquitaine</td>
+              <td class="border border-gray-300 p-3 text-right">
+                <strong>1,35 %</strong>
+              </td>
+              <td class="border border-gray-300 p-3">Modéré</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">
+                Zones rurales (ex: Creuse)
+              </td>
+              <td class="border border-gray-300 p-3 text-right">
+                <strong>1,10 %</strong>
+              </td>
+              <td class="border border-gray-300 p-3">
+                Très bas (démographique faible)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p
+          class="text-gray-700 bg-yellow-50 p-4 rounded border-l-4 border-yellow-400"
+        >
+          <strong>📌 Conseil :</strong> Consultez les pages spécifiques à votre
+          département pour connaître les taux et montants moyens exacts.
+        </p>
+      </section>
+
+      <!-- Facteurs influant -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          Facteurs Influant la Taxe Foncière
+        </h2>
+
+        <div class="space-y-4">
+          <div class="bg-gray-50 p-4 rounded border-l-4 border-blue-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              1. Base Locative Cadastrale
+            </h3>
+            <p class="text-gray-700">
+              C'est la valeur estimée de votre bien selon le cadastre
+              (indépendante du prix d'achat). Plus la base est élevée, plus la
+              taxe l'est aussi. Elle est réactualisée périodiquement.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded border-l-4 border-green-500">
+            <h3 class="font-bold text-gray-900 mb-2">2. Taux Communal</h3>
+            <p class="text-gray-700">
+              Chaque commune vote son propre taux. Deux communes voisines
+              peuvent avoir des taux très différents (ex: 1,0 % vs 1,8 %).
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded border-l-4 border-purple-500">
+            <h3 class="font-bold text-gray-900 mb-2">3. Taux Intercommunal</h3>
+            <p class="text-gray-700">
+              De nombreuses communes sont regroupées en intercommunalités (EPCI)
+              qui votent un taux supplémentaire.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded border-l-4 border-red-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              4. Abattements et Exonérations
+            </h3>
+            <p class="text-gray-700">
+              Résidence principale : abattement national de 15%. Certaines
+              communes offrent des réductions supplémentaires (personnes âgées,
+              handicapées, revenus modestes).
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded border-l-4 border-orange-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              5. Type et Localisation du Bien
+            </h3>
+            <p class="text-gray-700">
+              Un bien urbain densément peuplé aura une base locative et une taxe
+              plus élevée qu'un bien rural équivalent.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exemples montants -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          Exemples de Montants Annuels
+        </h2>
+        <p class="text-gray-700 mb-4">
+          Voici des estimations pour différents types de biens :
+        </p>
+
+        <table class="w-full border-collapse border border-gray-300">
+          <thead>
+            <tr class="bg-blue-100">
+              <th class="border border-gray-300 p-3 text-left">Type de Bien</th>
+              <th class="border border-gray-300 p-3 text-left">Localisation</th>
+              <th class="border border-gray-300 p-3 text-right">
+                Montant Annuel Moyen
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">
+                Petit appartement (50 m²)
+              </td>
+              <td class="border border-gray-300 p-3">Paris / Île-de-France</td>
+              <td class="border border-gray-300 p-3 text-right">400-600 €</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">
+                Appartement standard (90 m²)
+              </td>
+              <td class="border border-gray-300 p-3">Province (ville)</td>
+              <td class="border border-gray-300 p-3 text-right">550-750 €</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">Maison (150 m²)</td>
+              <td class="border border-gray-300 p-3">Région dynamique</td>
+              <td class="border border-gray-300 p-3 text-right">800-1200 €</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 p-3">Propriété (250+ m²)</td>
+              <td class="border border-gray-300 p-3">Zone rurale</td>
+              <td class="border border-gray-300 p-3 text-right">600-900 €</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-sm text-gray-500 mt-4">
+          ⚠️ Ces montants sont estimés. Votre situation peut varier
+          significativement.
+        </p>
+      </section>
+
+      <!-- FAQ générale -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          Questions Fréquentes
+        </h2>
+
+        <div class="space-y-4">
+          <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              Qui paie la taxe foncière ?
+            </h3>
+            <p class="text-gray-700">
+              Tous les propriétaires de biens immobiliers (terrains, maisons,
+              appartements, commerces, etc.). Les locataires ne la paient pas.
+            </p>
+          </div>
+
+          <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              La taxe foncière est-elle déductible des impôts ?
+            </h3>
+            <p class="text-gray-700">
+              Partiellement. Pour une résidence principale, la taxe n'est pas
+              déductible. Pour un bien loué (investissement), la taxe est
+              déductible des revenus fonciers.
+            </p>
+          </div>
+
+          <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              Comment contester ma taxe foncière ?
+            </h3>
+            <p class="text-gray-700">
+              Vous avez 60 jours après réception de l'avis pour faire
+              réclamation au centre des finances publiques. Motifs : erreur dans
+              le calcul, base locative manifestement fausse, exonération non
+              appliquée.
+            </p>
+          </div>
+
+          <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              La taxe foncière peut-elle augmenter chaque année ?
+            </h3>
+            <p class="text-gray-700">
+              Oui. Les collectivités peuvent voter une augmentation des taux. La
+              base locative est aussi réactualisée régulièrement (tous les 4-6
+              ans généralement). La base locative de 2026 reste stable.
+            </p>
+          </div>
+
+          <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+            <h3 class="font-bold text-gray-900 mb-2">
+              Existe-t-il des exonérations ?
+            </h3>
+            <p class="text-gray-700">
+              Oui, plusieurs cas : résidence principale (abattement 15%),
+              personnes handicapées, mutilés de guerre, revenus modestes
+              (certaines communes), agriculteurs, etc. Vérifiez auprès de votre
+              mairie.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Index des 101 pages -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          Taxe Foncière par Département
+        </h2>
+        <p class="text-gray-700 mb-6">
+          Consultez les montants moyens, taux, et explications complètes pour
+          votre département :
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a
+            href="./departements/ain-01"
+            class="p-4 border border-gray-300 rounded hover:bg-blue-50 hover:border-blue-500 transition"
+          >
+            <strong class="text-gray-900">Ain (01)</strong>
+            <p class="text-sm text-gray-600">
+              Taux : 1.28% | Montant moyen : 650€
+            </p>
+          </a>
+          <a
+            href="./departements/paris-75"
+            class="p-4 border border-gray-300 rounded hover:bg-blue-50 hover:border-blue-500 transition"
+          >
+            <strong class="text-gray-900">Paris (75)</strong>
+            <p class="text-sm text-gray-600">
+              Taux : 1.35% | Montant moyen : 850€
+            </p>
+          </a>
+          <a
+            href="./departements/nord-59"
+            class="p-4 border border-gray-300 rounded hover:bg-blue-50 hover:border-blue-500 transition"
+          >
+            <strong class="text-gray-900">Nord (59)</strong>
+            <p class="text-sm text-gray-600">
+              Taux : 1.45% | Montant moyen : 720€
+            </p>
+          </a>
+          <a
+            href="./departements/rhone-69"
+            class="p-4 border border-gray-300 rounded hover:bg-blue-50 hover:border-blue-500 transition"
+          >
+            <strong class="text-gray-900">Rhône (69)</strong>
+            <p class="text-sm text-gray-600">
+              Taux : 1.28% | Montant moyen : 680€
+            </p>
+          </a>
+          <a
+            href="./departements/bouches-du-rhone-13"
+            class="p-4 border border-gray-300 rounded hover:bg-blue-50 hover:border-blue-500 transition"
+          >
+            <strong class="text-gray-900">Bouches-du-Rhône (13)</strong>
+            <p class="text-sm text-gray-600">
+              Taux : 1.42% | Montant moyen : 950€
+            </p>
+          </a>
+          <a
+            href="./departements/hauts-de-seine-92"
+            class="p-4 border border-gray-300 rounded hover:bg-blue-50 hover:border-blue-500 transition"
+          >
+            <strong class="text-gray-900">Hauts-de-Seine (92)</strong>
+            <p class="text-sm text-gray-600">
+              Taux : 1.48% | Montant moyen : 920€
+            </p>
+          </a>
+        </div>
+
+        <p class="text-center text-gray-600 mt-8 text-sm">
+          + 95 autres départements disponibles (voir liste complète dans la
+          documentation)
+        </p>
+      </section>
+
+      <!-- CTA final -->
+      <div
+        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8 rounded-lg"
+      >
+        <h2 class="text-2xl font-bold mb-4">
+          Simulez Votre Taxe Foncière Gratuitement
+        </h2>
+        <p class="mb-6">
+          Notre calculateur vous permet d'estimer précisément votre taxe
+          foncière en fonction de votre situation spécifique. Résultat
+          instantané, sans inscription.
+        </p>
+        <a
+          href="/pages/taxe.html"
+          class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded hover:bg-gray-100 transition"
+        >
+          Ouvrir le Simulateur →
+        </a>
+      </div>
+    </article>
+
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+        <p>&copy; 2026 LesCalculateurs.fr - Tous droits réservés</p>
+        <p class="text-sm text-gray-500 mt-2">
+          Données sources : DGFiP, INSEE, data.gouv.fr
+        </p>
+      </div>
+    </footer>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.impots.gouv.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit impots.gouv.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estime</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
+</html>

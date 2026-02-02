@@ -8,9 +8,9 @@ const path = require("path");
 
 const rootDir = path.join(__dirname, "..");
 
-// ===== 1. Mettre à jour frais2025.json =====
-function updateFrais2025Json() {
-  const filepath = path.join(rootDir, "src/data/frais2025.json");
+// ===== 1. Mettre à jour frais2026.json =====
+function updatefrais2026Json() {
+  const filepath = path.join(rootDir, "src/data/frais2026.json");
   const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
 
   // Nouveaux taux DMTO 2026
@@ -173,7 +173,7 @@ function updateFrais2025Json() {
   };
 
   fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
-  console.log("✅ frais2025.json mis à jour");
+  console.log("✅ frais2026.json mis à jour");
 }
 
 // ===== 2. Mettre à jour baremes.ts =====
@@ -400,7 +400,7 @@ function updateMethodologie() {
 // ===== Exécution =====
 console.log("🔄 Mise à jour des taux DMTO 2026 (UTF-8 safe)...\n");
 
-updateFrais2025Json();
+updatefrais2026Json();
 updateBaremesTs();
 updateBaremesJson();
 updateNotaireHtml();

@@ -1,0 +1,724 @@
+{
+  "notaire": {
+    "meta": {
+      "source": "Décret n°2016-230, réforme Macron, données en vigueur 2025–2026",
+      "nature": "réglementaire"
+    },
+    "emoluments": {
+      "tranches": [
+        {
+          "min": 0,
+          "max": 6500,
+          "taux": 0.0387
+        },
+        {
+          "min": 6500,
+          "max": 17000,
+          "taux": 0.01596
+        },
+        {
+          "min": 17000,
+          "max": 60000,
+          "taux": 0.01064
+        },
+        {
+          "min": 60000,
+          "max": null,
+          "taux": 0.00799
+        }
+      ],
+      "remise_possible": {
+        "applicable": true,
+        "seuil": 100000,
+        "taux_max": 0.2,
+        "commentaire": "Remise facultative accordée par le notaire sur la part d’assiette supérieure à 100 000 € (jusqu’à -20 %)"
+      }
+    },
+    "tranches": [
+      {
+        "min": 0,
+        "max": 6500,
+        "taux": 0.0387
+      },
+      {
+        "min": 6500,
+        "max": 17000,
+        "taux": 0.01596
+      },
+      {
+        "min": 17000,
+        "max": 60000,
+        "taux": 0.01064
+      },
+      {
+        "min": 60000,
+        "max": 999999999,
+        "taux": 0.00799
+      }
+    ],
+    "fraisDivers": {
+      "hypotheque": 450,
+      "cadastre": 125,
+      "conservation": 150,
+      "formalites": 200
+    },
+    "debours_estimatifs": {
+      "nature": "estimation",
+      "commentaire": "Montants moyens observés, variables selon l’étude notariale et la complexité du dossier",
+      "elements": {
+        "hypotheque": {
+          "min": 300,
+          "max": 600
+        },
+        "cadastre": {
+          "min": 100,
+          "max": 150
+        },
+        "conservation": {
+          "min": 100,
+          "max": 200
+        },
+        "formalites": {
+          "min": 150,
+          "max": 400
+        }
+      }
+    },
+    "tva": 0.2,
+    "tva_meta": {
+      "taux": 0.2,
+      "nature": "réglementaire"
+    },
+    "csi": {
+      "taux": 0.001,
+      "minimum": 15,
+      "nature": "réglementaire",
+      "commentaire": "Contribution de sécurité immobilière"
+    },
+    "droitsMutation": {
+      "standard": 0.0632,
+      "neuf": 0.00715,
+      "reduit": 0.0509,
+      "departementsReduits": ["36", "976"],
+      "departementsStandard": [
+        "05",
+        "06",
+        "07",
+        "16",
+        "26",
+        "27",
+        "48",
+        "60",
+        "65",
+        "71",
+        "971",
+        "972"
+      ],
+      "commentaire": "Taux majoré 6,32% (art. 116 LF 2025) pour 87 départements, standard 5,80% pour 12 départements, réduit 5,09% pour 2 départements"
+    },
+    "droits_mutation": {
+      "nature": "réglementaire",
+      "ancien": {
+        "taux_standard": 0.05,
+        "departements_taux_reduit": {
+          "liste": ["36", "56", "976"],
+          "taux_total": 0.0509006
+        },
+        "overrides": {
+          "92": 0.063,
+          "93": 0.063,
+          "94": 0.063
+        },
+        "par_departement": {
+          "10": {
+            "taux": 0.05
+          },
+          "11": {
+            "taux": 0.05
+          },
+          "12": {
+            "taux": 0.05
+          },
+          "13": {
+            "taux": 0.05
+          },
+          "14": {
+            "taux": 0.05,
+            "abattement_habitation": 46000
+          },
+          "15": {
+            "taux": 0.05
+          },
+          "16": {
+            "taux": 0.045
+          },
+          "17": {
+            "taux": 0.05
+          },
+          "18": {
+            "taux": 0.05
+          },
+          "19": {
+            "taux": 0.05
+          },
+          "20": {
+            "taux": 0.05
+          },
+          "21": {
+            "taux": 0.05
+          },
+          "22": {
+            "taux": 0.05
+          },
+          "23": {
+            "taux": 0.05
+          },
+          "24": {
+            "taux": 0.05
+          },
+          "25": {
+            "taux": 0.05
+          },
+          "26": {
+            "taux": 0.045
+          },
+          "27": {
+            "taux": 0.045
+          },
+          "28": {
+            "taux": 0.05
+          },
+          "29": {
+            "taux": 0.05
+          },
+          "30": {
+            "taux": 0.05
+          },
+          "31": {
+            "taux": 0.05
+          },
+          "32": {
+            "taux": 0.05
+          },
+          "33": {
+            "taux": 0.05
+          },
+          "34": {
+            "taux": 0.05
+          },
+          "35": {
+            "taux": 0.05
+          },
+          "36": {
+            "taux": 0.038
+          },
+          "37": {
+            "taux": 0.05
+          },
+          "38": {
+            "taux": 0.05
+          },
+          "39": {
+            "taux": 0.05
+          },
+          "40": {
+            "taux": 0.05
+          },
+          "41": {
+            "taux": 0.05
+          },
+          "42": {
+            "taux": 0.05
+          },
+          "43": {
+            "taux": 0.05
+          },
+          "44": {
+            "taux": 0.05
+          },
+          "45": {
+            "taux": 0.05
+          },
+          "46": {
+            "taux": 0.05
+          },
+          "47": {
+            "taux": 0.05
+          },
+          "48": {
+            "taux": 0.045
+          },
+          "49": {
+            "taux": 0.05
+          },
+          "50": {
+            "taux": 0.05
+          },
+          "51": {
+            "taux": 0.05
+          },
+          "52": {
+            "taux": 0.05
+          },
+          "53": {
+            "taux": 0.05
+          },
+          "54": {
+            "taux": 0.05
+          },
+          "55": {
+            "taux": 0.05
+          },
+          "56": {
+            "taux": 0.05
+          },
+          "57": {
+            "taux": 0.05
+          },
+          "58": {
+            "taux": 0.05
+          },
+          "59": {
+            "taux": 0.05
+          },
+          "60": {
+            "taux": 0.045
+          },
+          "61": {
+            "taux": 0.05
+          },
+          "62": {
+            "taux": 0.05
+          },
+          "63": {
+            "taux": 0.05
+          },
+          "64": {
+            "taux": 0.05
+          },
+          "65": {
+            "taux": 0.045
+          },
+          "66": {
+            "taux": 0.05
+          },
+          "67": {
+            "taux": 0.05
+          },
+          "68": {
+            "taux": 0.05
+          },
+          "69": {
+            "taux": 0.05
+          },
+          "70": {
+            "taux": 0.05
+          },
+          "71": {
+            "taux": 0.045
+          },
+          "72": {
+            "taux": 0.05
+          },
+          "73": {
+            "taux": 0.0632
+          },
+          "74": {
+            "taux": 0.05
+          },
+          "75": {
+            "taux": 0.05
+          },
+          "76": {
+            "taux": 0.05
+          },
+          "77": {
+            "taux": 0.05
+          },
+          "78": {
+            "taux": 0.05
+          },
+          "79": {
+            "taux": 0.05
+          },
+          "80": {
+            "taux": 0.05
+          },
+          "81": {
+            "taux": 0.05
+          },
+          "82": {
+            "taux": 0.05
+          },
+          "83": {
+            "taux": 0.05
+          },
+          "84": {
+            "taux": 0.05
+          },
+          "85": {
+            "taux": 0.05
+          },
+          "86": {
+            "taux": 0.05
+          },
+          "87": {
+            "taux": 0.05
+          },
+          "88": {
+            "taux": 0.05
+          },
+          "89": {
+            "taux": 0.05
+          },
+          "90": {
+            "taux": 0.05
+          },
+          "91": {
+            "taux": 0.05
+          },
+          "92": {
+            "taux": 0.05
+          },
+          "93": {
+            "taux": 0.05
+          },
+          "94": {
+            "taux": 0.05
+          },
+          "95": {
+            "taux": 0.05
+          },
+          "971": {
+            "taux": 0.045
+          },
+          "972": {
+            "taux": 0.045
+          },
+          "973": {
+            "taux": 0.05
+          },
+          "974": {
+            "taux": 0.05
+          },
+          "975": {
+            "taux": 0.045
+          },
+          "976": {
+            "taux": 0.038
+          },
+          "01": {
+            "taux": 0.05
+          },
+          "02": {
+            "taux": 0.05
+          },
+          "03": {
+            "taux": 0.05
+          },
+          "04": {
+            "taux": 0.05
+          },
+          "05": {
+            "taux": 0.045
+          },
+          "06": {
+            "taux": 0.045
+          },
+          "07": {
+            "taux": 0.045
+          },
+          "08": {
+            "taux": 0.05
+          },
+          "09": {
+            "taux": 0.05
+          },
+          "2A": {
+            "taux": 0.05
+          },
+          "2B": {
+            "taux": 0.05
+          }
+        },
+        "fallback": {
+          "taux": 0.05,
+          "commentaire": "Taux majoritaire observé en 2026 lorsque le département n’est pas explicitement listé"
+        }
+      },
+      "neuf": {
+        "taux_estime": 0.007,
+        "fourchette": [0.006, 0.008],
+        "commentaire": "Droits réduits applicables aux logements neufs ou assimilés (hors TVA)"
+      }
+    }
+  },
+  "indemnites_kilometriques": {
+    "meta": {
+      "source": "Barème fiscal",
+      "annee_reference": 2024,
+      "statut": "en attente de mise à jour officielle"
+    },
+    "voiture": {
+      "2024": [
+        {
+          "puissance": "3CV et moins",
+          "jusqu_5000": 0.502,
+          "de_5001_20000": 0.3,
+          "au_dela_20000": 0.36
+        },
+        {
+          "puissance": "4CV",
+          "jusqu_5000": 0.575,
+          "de_5001_20000": 0.323,
+          "au_dela_20000": 0.387
+        },
+        {
+          "puissance": "5CV",
+          "jusqu_5000": 0.603,
+          "de_5001_20000": 0.339,
+          "au_dela_20000": 0.407
+        },
+        {
+          "puissance": "6CV",
+          "jusqu_5000": 0.631,
+          "de_5001_20000": 0.355,
+          "au_dela_20000": 0.427
+        },
+        {
+          "puissance": "7CV et plus",
+          "jusqu_5000": 0.659,
+          "de_5001_20000": 0.371,
+          "au_dela_20000": 0.447
+        }
+      ],
+      "latest": [
+        {
+          "puissance": "3CV et moins",
+          "jusqu_5000": 0.502,
+          "de_5001_20000": 0.3,
+          "au_dela_20000": 0.36
+        },
+        {
+          "puissance": "4CV",
+          "jusqu_5000": 0.575,
+          "de_5001_20000": 0.323,
+          "au_dela_20000": 0.387
+        },
+        {
+          "puissance": "5CV",
+          "jusqu_5000": 0.603,
+          "de_5001_20000": 0.339,
+          "au_dela_20000": 0.407
+        },
+        {
+          "puissance": "6CV",
+          "jusqu_5000": 0.631,
+          "de_5001_20000": 0.355,
+          "au_dela_20000": 0.427
+        },
+        {
+          "puissance": "7CV et plus",
+          "jusqu_5000": 0.659,
+          "de_5001_20000": 0.371,
+          "au_dela_20000": 0.447
+        }
+      ]
+    },
+    "deux_roues": {
+      "moins_50cc": 0.315,
+      "50cc_125cc": 0.388,
+      "plus_125cc": 0.453
+    }
+  },
+  "jours_feries": {
+    "2025": [
+      {
+        "date": "2025-01-01",
+        "nom": "Jour de l'An",
+        "fixe": true
+      },
+      {
+        "date": "2025-04-21",
+        "nom": "Lundi de Pâques",
+        "fixe": false
+      },
+      {
+        "date": "2025-05-01",
+        "nom": "Fête du Travail",
+        "fixe": true
+      },
+      {
+        "date": "2025-05-08",
+        "nom": "Fête de la Victoire",
+        "fixe": true
+      },
+      {
+        "date": "2025-05-29",
+        "nom": "Ascension",
+        "fixe": false
+      },
+      {
+        "date": "2025-06-09",
+        "nom": "Lundi de Pentecôte",
+        "fixe": false
+      },
+      {
+        "date": "2025-07-14",
+        "nom": "Fête Nationale",
+        "fixe": true
+      },
+      {
+        "date": "2025-08-15",
+        "nom": "Assomption",
+        "fixe": true
+      },
+      {
+        "date": "2025-11-01",
+        "nom": "Toussaint",
+        "fixe": true
+      },
+      {
+        "date": "2025-11-11",
+        "nom": "Armistice",
+        "fixe": true
+      },
+      {
+        "date": "2025-12-25",
+        "nom": "Noël",
+        "fixe": true
+      }
+    ],
+    "2026": [
+      {
+        "date": "2026-01-01",
+        "nom": "Jour de l'An",
+        "fixe": true
+      },
+      {
+        "date": "2026-04-06",
+        "nom": "Lundi de Pâques",
+        "fixe": false
+      },
+      {
+        "date": "2026-05-01",
+        "nom": "Fête du Travail",
+        "fixe": true
+      },
+      {
+        "date": "2026-05-08",
+        "nom": "Fête de la Victoire",
+        "fixe": true
+      },
+      {
+        "date": "2026-05-14",
+        "nom": "Ascension",
+        "fixe": false
+      },
+      {
+        "date": "2026-05-25",
+        "nom": "Lundi de Pentecôte",
+        "fixe": false
+      },
+      {
+        "date": "2026-07-14",
+        "nom": "Fête Nationale",
+        "fixe": true
+      },
+      {
+        "date": "2026-08-15",
+        "nom": "Assomption",
+        "fixe": true
+      },
+      {
+        "date": "2026-11-01",
+        "nom": "Toussaint",
+        "fixe": true
+      },
+      {
+        "date": "2026-11-11",
+        "nom": "Armistice",
+        "fixe": true
+      },
+      {
+        "date": "2026-12-25",
+        "nom": "Noël",
+        "fixe": true
+      }
+    ],
+    "nature": "réglementaire"
+  },
+  "taxe_fonciere": {
+    "meta": {
+      "nature": "estimation",
+      "commentaire": "La taxe foncière dépend exclusivement des décisions communales et intercommunales"
+    },
+    "abattements": {
+      "residence_principale": 0.15,
+      "personne_agee": {
+        "seuil_age": 65,
+        "taux": 0.1
+      },
+      "personne_handicapee": 0.1
+    },
+    "abattements_possibles": {
+      "residence_principale": {
+        "taux_max": 0.15,
+        "conditionnel": true
+      },
+      "personne_agee": {
+        "seuil_age": 65,
+        "taux_max": 0.1
+      },
+      "personne_handicapee": {
+        "taux_max": 0.1
+      }
+    },
+    "taux_moyens_par_region": {
+      "ile_de_france": 0.0135,
+      "provence_alpes_cote_azur": 0.0142,
+      "auvergne_rhone_alpes": 0.0128,
+      "occitanie": 0.0155,
+      "nouvelle_aquitaine": 0.0148,
+      "grand_est": 0.0132,
+      "hauts_de_france": 0.0145,
+      "normandie": 0.0138,
+      "centre_val_de_loire": 0.0151,
+      "bourgogne_franche_comte": 0.0144,
+      "pays_de_la_loire": 0.014,
+      "bretagne": 0.0147,
+      "corse": 0.0125
+    },
+    "taux_moyens_regionaux": {
+      "ile_de_france": 0.0135,
+      "provence_alpes_cote_azur": 0.0142,
+      "occitanie": 0.0155,
+      "nouvelle_aquitaine": 0.0148,
+      "bretagne": 0.0147,
+      "corse": 0.0125
+    }
+  },
+  "duree_travail": {
+    "nature": "réglementaire",
+    "duree_legale_hebdomadaire": 35,
+    "duree_legale_annuelle": 1607,
+    "majorations_heures_sup": {
+      "de_36_43h": 0.25,
+      "au_dela_43h": 0.5
+    },
+    "heures_supplementaires": {
+      "majoration_36_43h": 0.25,
+      "majoration_apres_43h": 0.5,
+      "contingent_annuel": 220
+    },
+    "contingent_annuel_heures_sup": 220,
+    "repos_compensateur": {
+      "seuil_declenchement": 43,
+      "taux": 1.5
+    },
+    "repos_compensateur_struct": {
+      "seuil": 43,
+      "taux": 1.5
+    }
+  }
+}

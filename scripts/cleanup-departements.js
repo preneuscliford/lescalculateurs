@@ -12,12 +12,12 @@ function listDeptFiles() {
 }
 
 /**
- * Remplace le fetch de baremes.json par frais2025.json, en conservant le nom de variable.
+ * Remplace le fetch de baremes.json par frais2026.json, en conservant le nom de variable.
  */
 function replaceBaremesJson(html) {
   return html.replace(
     /fetch\("\.\.\/\.\.\/\.\/data\/baremes\.json"\)/g,
-    'fetch("../../../data/frais2025.json")'
+    'fetch("../../../data/frais2026.json")'
   )
 }
 

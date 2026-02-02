@@ -6,10 +6,10 @@ const require = createRequire(import.meta.url);
 const { readTextFile, writeTextFile } = require("./encoding.cjs");
 
 /**
- * Charge le JSON frais2025 (DMTO, émoluments, CSI, débours)
+ * Charge le JSON frais2026 (DMTO, émoluments, CSI, débours)
  */
 function loadFraisConfig() {
-  const p = path.resolve(process.cwd(), "src", "data", "frais2025.json");
+  const p = path.resolve(process.cwd(), "src", "data", "frais2026.json");
   if (!fs.existsSync(p)) return null;
   try {
     const raw = fs.readFileSync(p, "utf8");
@@ -302,7 +302,7 @@ function main() {
   const cfg = loadFraisConfig();
   const baremesGen = loadBaremesGen();
   if (!cfg) {
-    console.error("Configuration frais2025.json introuvable");
+    console.error("Configuration frais2026.json introuvable");
     process.exit(1);
   }
   const r1 = updateComparatifPage(cfg, baremesGen);

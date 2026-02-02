@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -23,66 +23,29 @@
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/apl-dom-tom" />
     <link rel="stylesheet" href="../tailwind.css" />
     <!-- JSON-LD Schema: FAQs DOM-TOM -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Existe-t-il une APL dans les DOM-TOM?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, l'APL existe dans les 5 DOM-TOM (Guadeloupe, Martinique, Guyane, Réunion, Mayotte). Les règles sont globalement identiques à la métropole, mais les plafonds et taux sont adaptés au coût de la vie local."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Les plafonds APL sont-ils différents outre-mer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, les plafonds de loyer pris en compte par la CAF sont légèrement inférieurs à ceux de la Zone 2 métropolitaine pour tenir compte du contexte économique local. L'APL moyenne est généralement 5 à 10% moins élevée."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Comment contacter la CAF dans les DOM-TOM?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Chaque DOM-TOM dispose de sa propre CAF. Rendez-vous sur www.caf.fr pour trouver la CAF de votre département, ou contactez directement votre mairie pour les coordonnées."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "L'APL couvre-t-elle les HLM outre-mer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, l'APL s'applique aux locations HLM, privées, accession à la propriété et colocations dans les DOM-TOM, comme en métropole."
-            }
-          }
-        ]
-      }
-    </script>
+    
     <!-- Schema.org SoftwareApplication -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Simulateur APL CAF 2026",
-        "operatingSystem": "Web",
-        "applicationCategory": "FinanceApplication",
-        "description": "Simulateur APL gratuit permettant d'estimer le montant de l'aide au logement selon les règles CAF en vigueur.",
-        "url": "https://www.lescalculateurs.fr/pages/apl",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "EUR"
-        }
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment obtenir le montant estimé de mon APL ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "utilisez le estimateur gratuit de la CAF pour connaître votre montant définitif."
       }
-    </script>
-    <script defer src="/third-party-loader.js"></script>
-  </head>
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <!-- Navigation -->
     <nav class="bg-white shadow-sm">
       <div
@@ -520,7 +483,7 @@
       <section
         class="bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg shadow-lg p-8 text-center"
       >
-        <h2 class="text-2xl font-bold mb-4">Calculez votre APL</h2>
+        <h2 class="text-2xl font-bold mb-4">calculez votre APL</h2>
         <p class="text-purple-100 mb-6">
           Retournez au simulateur APL pour estimer votre allocation dans votre
           DOM-TOM.
@@ -560,7 +523,7 @@
               href="https://www.caf.fr"
               target="_blank"
               class="text-sm hover:text-white block"
-              >Site CAF officiel</a
+              >Site CAF</a
             >
             <a href="apl.html" class="text-sm hover:text-white block"
               >Simulateur APL</a
@@ -581,5 +544,101 @@
         </div>
       </div>
     </footer>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>

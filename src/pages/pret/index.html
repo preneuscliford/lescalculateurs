@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -22,13 +22,71 @@
     <meta name="twitter:description" content="Simulez votre prêt immobilier en 2026. Mensualités, taux, capacité d’emprunt et financement total gratuitement." />
 
     <!-- JSON-LD: BreadcrumbList & FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.lescalculateurs.fr/index"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prêt immobilier",
+          "item": "https://www.lescalculateurs.fr/pages/pret"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment calculér ma capacité d'emprunt maximale ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Votre capacité dépend de vos revenus, de vos charges et du taux d'endettement (souvent ~35% assurance incluse). Le simulateur calculé automatiquement les mensualités et le taux d'endettement estimé."}
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les taux de prêt immobilier en 2026 ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Les taux varient selon la durée et le profil. Sur 20 ans, comptez environ 3,5–4,5% pour un très bon dossier. Le simulateur utilise des taux moyens actualisés."}
+        },
+        {
+          "@type": "Question",
+          "name": "L'assurance emprunteur est-elle obligatoire ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Non légalement, mais exigée par les banques. En moyenne 0,3–0,6% du capital selon l'âge/santé. La loi Lemoine permet de choisir son assureur."}
+        },
+        {
+          "@type": "Question",
+          "name": "Quels frais annexes prévoir ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Frais de dossier (0,5–1%), garantie (hypothèque/caution 1–2%), courtage éventuel. Le simulateur intègre ces coûts pour un calcul réaliste."}
+        }
+      ]
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+
+    <script defer src="/third-party-loader.js"></script>
+    
     <!-- JSON-LD Calculator Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Calculator",
       "name": "Calculateur Prêt Immobilier 2026",
-      "description": "Calculez vos mensualités de prêt immobilier et votre capacité d'emprunt en 2026 - taux actualisés, assurance incluse",
+      "description": "calculez vos mensualités de prêt immobilier et votre capacité d'emprunt en 2026 - taux actualisés, assurance incluse",
       "url": "https://www.lescalculateurs.fr/pages/pret",
       "applicationCategory": "FinanceApplication",
       "screenshot": "https://www.lescalculateurs.fr/pages/pret",
@@ -75,9 +133,26 @@
         }
       }
     </script>
-    <script defer src="/third-party-loader.js"></script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaître le montant estimé des frais de notaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation pr�cise."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col gap-3 py-4 sm:flex-row sm:justify-between sm:items-center">
@@ -134,7 +209,7 @@
           </h1>
         </div>
         <p class="text-sm text-gray-600 mt-2 text-center">
-          Calculez vos mensualités et votre capacité d’emprunt selon le montant, la durée et le taux de crédit immobilier (estimation indicative).
+          calculez vos mensualités et votre capacité d’emprunt selon le montant, la durée et le taux de crédit immobilier (estimation indicative).
         </p>
         <button
           data-scroll-target="#calculator-container"
@@ -253,7 +328,7 @@
           frais de dossier et de garantie. Préparez sereinement votre
           rendez-vous bancaire avec des chiffres fiables et argumentés. Pour
           plus de détails (publications et seuils observés), consultez la
-          <a href="https://www.banque-france.fr/fr/a-votre-service/particuliers/connaitre-pratiques-bancaires-assurance/credit/taux-usure" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Banque de France</a>.
+          <a href="https://www.banque-france.fr/fr/a-votre-service/particuliers/connaître-pratiques-bancaires-assurance/credit/taux-usure" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Banque de France</a>.
         </p>
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
           <p class="text-sm text-blue-800">
@@ -272,7 +347,7 @@
                 Capacité d'emprunt estimée
               </h3>
               <p class="text-sm text-gray-600">
-                Calculez votre capacité d'emprunt maximale selon vos revenus et
+                calculez votre capacité d'emprunt maximale selon vos revenus et
                 charges (taux d'endettement indicatif ~35%)
               </p>
             </div>
@@ -441,7 +516,7 @@
             <div>
               <p class="text-gray-600">
                 Renseignez le prix du bien, l’apport, la durée, le taux nominal
-                et l’assurance. Le simulateur calcule la mensualité, le coût
+                et l’assurance. Le simulateur calculé la mensualité, le coût
                 total et des indicateurs (endettement/effort) pour comparer vos
                 scénarios.
               </p>
@@ -450,7 +525,7 @@
 
           <div class="bg-white rounded-lg p-6 shadow-sm">
             <h3 class="text-lg font-semibold text-gray-800 mb-3">
-              Comment calculer un prêt immobilier ?
+              Comment calculér un prêt immobilier ?
             </h3>
             <div>
               <p class="text-gray-600">
@@ -611,7 +686,7 @@
         <ul class="text-sm text-gray-700 space-y-2">
           <li>
             • Taux d'usure et informations officielles:
-            <a href="https://www.banque-france.fr/fr/a-votre-service/particuliers/connaitre-pratiques-bancaires-assurance/credit/taux-usure" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Banque de France</a>
+            <a href="https://www.banque-france.fr/fr/a-votre-service/particuliers/connaître-pratiques-bancaires-assurance/credit/taux-usure" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Banque de France</a>
           </li>
           <li>
             • Prêt à Taux Zéro (PTZ):
@@ -1268,7 +1343,103 @@
     window.setTimeout(__lcLoadAutoExport, 2000);
   }
 </script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>
 
 

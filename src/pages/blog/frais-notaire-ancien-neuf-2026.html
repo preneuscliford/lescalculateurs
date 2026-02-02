@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -137,8 +137,26 @@
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaître le montant estimé des frais de notaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation pr�cise."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <!-- Google Tag Manager (noscript) -->
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,7 +215,7 @@
         </h1>
 
         <p class="text-xl text-gray-600 leading-relaxed">
-          Découvrez le montant exact des frais de notaire selon que vous achetez
+          Découvrez le montant estimé des frais de notaire selon que vous achetez
           dans l'ancien ou le neuf. Ordres de grandeur, explications détaillées
           et économies réelles expliquées.
         </p>
@@ -242,7 +260,7 @@
             <strong>environ 2 % à 3 %</strong> dans le neuf (VEFA), selon la
             nature du bien et le département. 👉
             <strong>L'écart peut représenter plusieurs milliers d'euros</strong>
-            sur un projet immobilier, mais le montant exact dépend toujours du
+            sur un projet immobilier, mais le montant estimé dépend toujours du
             contexte réel et des conditions de la transaction.
           </p>
         </div>
@@ -380,7 +398,7 @@
             </div>
             <div class="flex justify-between pl-3">
               <span>Débours (cadastre, conservation)</span
-              ><span class="font-bold">550 €</span>
+              ><span class="font-bold"><span class="result-verbal">environ 550 €</span><span class="result-exact" style="display:none;">550 €</span> €</span>
             </div>
             <div class="flex justify-between pl-3">
               <span>Formalités diverses</span><span class="font-bold">0 €</span>
@@ -391,7 +409,7 @@
             </div>
             <div class="flex justify-between pl-3">
               <span>TVA (20% sur émoluments + formalités)</span
-              ><span class="font-bold">559 €</span>
+              ><span class="font-bold"><span class="result-verbal">environ 559 €</span><span class="result-exact" style="display:none;">559 €</span> €</span>
             </div>
             <div
               class="flex justify-between pb-2 border-t-2 border-orange-300 pt-2 font-bold"
@@ -446,11 +464,11 @@
               ><span class="font-bold">2 100 €</span>
             </div>
             <div class="flex justify-between pl-3">
-              <span>Débours (VEFA)</span><span class="font-bold">550 €</span>
+              <span>Débours (VEFA)</span><span class="font-bold"><span class="result-verbal">environ 550 €</span><span class="result-exact" style="display:none;">550 €</span> €</span>
             </div>
             <div class="flex justify-between pl-3">
               <span>Formalités diverses</span>
-              <span class="font-bold">120 €</span>
+              <span class="font-bold"><span class="result-verbal">environ 120 €</span><span class="result-exact" style="display:none;">120 €</span> €</span>
             </div>
             <div class="flex justify-between pl-3">
               <span>Contribution Sécurité Immobilière</span
@@ -458,7 +476,7 @@
             </div>
             <div class="flex justify-between pl-3">
               <span>TVA (20% sur émoluments + formalités)</span>
-              <span class="font-bold">533 €</span>
+              <span class="font-bold"><span class="result-verbal">environ 533 €</span><span class="result-exact" style="display:none;">533 €</span> €</span>
             </div>
             <div
               class="flex justify-between pb-2 border-t-2 border-blue-300 pt-2 font-bold"
@@ -661,7 +679,7 @@
                   Simuler avant signature
                 </h3>
                 <p class="text-sm text-gray-600">
-                  Utilisez notre calculateur pour ajuster votre
+                  utilisez notre calculateur pour ajuster votre
                   <strong>apport personnel</strong>
                   et éviter les mauvaises surprises
                 </p>
@@ -868,10 +886,10 @@
         <div
           class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8 text-center"
         >
-          <h3 class="text-2xl font-bold mb-4">Calculateur officiel 2026</h3>
+          <h3 class="text-2xl font-bold mb-4">calculateur gratuit 2026</h3>
           <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
             Entrez le prix du bien, sélectionnez ancien ou neuf, obtenez le
-            montant exact et téléchargez le détail en PDF
+            montant estimé et téléchargez le détail en PDF
           </p>
           <a
             href="../notaire.html"
@@ -999,5 +1017,116 @@
     </footer>
 
     <script type="module" src="../../main.ts"></script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<script>
+// Verbalisation YMYL - masquer montant estimé, afficher fourchette
+document.addEventListener('DOMContentLoaded', function() {
+  const exactSpans = document.querySelectorAll('.result-exact');
+  exactSpans.forEach(function(span) {
+    const exactVal = parseInt(span.textContent);
+    const verbalSpan = span.previousElementSibling;
+    if (verbalSpan && verbalSpan.classList.contains('result-verbal')) {
+      const rounded = Math.round(exactVal / 10) * 10;
+      verbalSpan.textContent = 'environ ' + rounded + ' € – estimateur gratuit pour valeur estimee';
+    }
+  });
+});
+</script>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>

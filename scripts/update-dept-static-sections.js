@@ -2,10 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Charge la configuration frais2025.json (DMTO, émoluments, CSI, débours).
+ * Charge la configuration frais2026.json (DMTO, émoluments, CSI, débours).
  */
 function loadFraisCfg() {
-  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2025.json')
+  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2026.json')
   if (!fs.existsSync(p)) return null
   return JSON.parse(fs.readFileSync(p, 'utf8'))
 }
@@ -122,7 +122,7 @@ function processFile(filePath, cfg) {
 function main() {
   const cfg = loadFraisCfg()
   if (!cfg) {
-    console.error('frais2025.json introuvable')
+    console.error('frais2026.json introuvable')
     process.exit(1)
   }
   const files = listDeptPages()

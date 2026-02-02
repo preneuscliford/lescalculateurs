@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -46,7 +46,7 @@
         "name": "Simulateur de frais de notaire 2026",
         "operatingSystem": "Web",
         "applicationCategory": "FinanceApplication",
-        "description": "Simulateur gratuit permettant de calculer les frais de notaire dans l'ancien ou le neuf selon les barèmes officiels 2026.",
+        "description": "Simulateur gratuit permettant de calculér les frais de notaire dans l'ancien ou le neuf selon les barèmes officiels 2026.",
         "url": "https://www.lescalculateurs.fr/pages/frais-notaire",
         "offers": {
           "@type": "Offer",
@@ -56,8 +56,26 @@
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment connaître le montant estimé des frais de notaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation pr�cise."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <!-- Google Tag Manager (noscript) -->
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,7 +162,7 @@
             notaire 2026 et les droits de mutation foncière. Chaque département
             applique ses propres taux et nos simulateurs vous permettent de
             <strong
-              >calculer précisément vos frais d'acquisition immobilière</strong
+              >calculér précisément vos frais d'acquisition immobilière</strong
             >
             pour un bien ancien ou neuf, en fonction de votre localisation
             géographique.
@@ -161,7 +179,7 @@
             et seulement <strong>2 à 3%</strong> pour un bien neuf. Cette
             différence s'explique par les droits de mutation départementaux qui
             varient entre <strong>5,09% et 4,50%</strong> selon votre
-            localisation. Utilisez notre simulateur pour obtenir une estimation
+            localisation. utilisez notre simulateur pour obtenir une estimation
             précise selon votre projet immobilier.
           </p>
         </div>
@@ -397,7 +415,7 @@
             🍇 Bourgogne-Franche-Comté
           </h3>
           <p class="text-gray-600 mb-4 text-sm italic">
-            Calculez vos frais de notaire en Bourgogne-Franche-Comté. Taux de
+            calculez vos frais de notaire en Bourgogne-Franche-Comté. Taux de
             mutation foncière et droits d'acquisition pour un bien ancien ou
             neuf.
           </p>
@@ -923,7 +941,7 @@
             ☀️ Occitanie
           </h3>
           <p class="text-gray-600 mb-4 text-sm italic">
-            Calculez vos frais d'acquisition immobilière en Occitanie selon le
+            calculez vos frais d'acquisition immobilière en Occitanie selon le
             barème notaire 2026 et les taux de mutation.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -1306,10 +1324,10 @@
           class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-10 text-center text-white"
         >
           <h2 class="text-3xl font-bold mb-4">
-            🧮 Calculez vos frais de notaire maintenant
+            🧮 calculez vos frais de notaire maintenant
           </h2>
           <p class="text-lg mb-6">
-            Utilisez nos <strong>calculateurs gratuits</strong> pour simuler vos
+            utilisez nos <strong>calculateurs gratuits</strong> pour simuler vos
             frais selon votre situation :
           </p>
           <div
@@ -1435,5 +1453,101 @@
         render(low, "top-low");
       })();
     </script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>

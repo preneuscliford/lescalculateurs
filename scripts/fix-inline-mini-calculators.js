@@ -9,9 +9,9 @@ function listDeptPages() {
 function fixFile(filePath) {
   const html = fs.readFileSync(filePath, 'utf8')
   let out = html
-  // 1) Remplacer fetch frais2025.json par import baremes.json
+  // 1) Remplacer fetch frais2026.json par import baremes.json
   out = out.replace(
-    /const\s+fraisCfg\s*=\s*await\s*\(\s*await\s*fetch\(["']\.\.\/\.\.\/data\/frais2025\.json["']\)\)\.json\(\);/,
+    /const\s+fraisCfg\s*=\s*await\s*\(\s*await\s*fetch\(["']\.\.\/\.\.\/data\/frais2026\.json["']\)\)\.json\(\);/,
     'import bjson from "../../../data/baremes.json" assert { type: "json" };\n          const fraisCfg = bjson;'
   )
   // 2) Tranches: utiliser notaire.tranches (CSN 2024-2025)

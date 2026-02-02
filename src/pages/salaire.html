@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -97,7 +97,7 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Comment calculer mon salaire net 2026 ?",
+            "name": "Comment calculér mon salaire net 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Entrez votre salaire brut mensuel, sélectionnez votre statut (cadre ou non-cadre) et indiquez votre taux de PAS si connu. Notre calculateur applique automatiquement les cotisations salariales officielles 2026 pour afficher votre net."
@@ -152,8 +152,26 @@
         }
       }
     </script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment calculér mon salaire net exact ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "utilisez les simulateurs officiels pour connaître votre salaire net apres deduction des cotisations et impots."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">impots.gouv.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
@@ -228,7 +246,7 @@
             Simulateur salaire brut/net 2026 — calcul exact des cotisations
           </h2>
           <p class="text-gray-600 mb-4 text-sm">
-            Calculez votre salaire net 2026 en quelques secondes, à partir de
+            calculez votre salaire net 2026 en quelques secondes, à partir de
             votre brut, votre statut (cadre / non-cadre) et votre taux PAS.
           </p>
           <div class="mb-6">
@@ -265,7 +283,7 @@
 
       <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculér)</h2>
 
           <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
           <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
@@ -410,7 +428,7 @@
 
           <div class="prose prose-lg text-gray-600 space-y-3">
             <p>
-              Calculez votre <strong>salaire net 2026</strong> en quelques
+              calculez votre <strong>salaire net 2026</strong> en quelques
               secondes ! Entrez votre brut mensuel, votre statut (cadre ou
               non-cadre) et votre taux PAS. Notre calculateur applique
               automatiquement les
@@ -450,7 +468,7 @@
         <div class="space-y-6">
           <div class="bg-white rounded-lg p-6 shadow-sm">
             <h3 class="text-lg font-semibold text-gray-800 mb-3">
-              💡 Comment calculer mon salaire net ?
+              💡 Comment calculér mon salaire net ?
             </h3>
             <div>
               <p class="text-gray-600">
@@ -505,7 +523,7 @@
                     Cliquez sur <strong>"➕ Ajouter à la comparaison"</strong>
                   </li>
                   <li>Modifiez un paramètre (brut, statut, PAS)</li>
-                  <li>Confirmez pour <strong>recalculer et ajouter</strong></li>
+                  <li>Confirmez pour <strong>recalculér et ajouter</strong></li>
                   <li>
                     Voyez vos <strong>graphiques colorés</strong> avec tous les
                     scénarios
@@ -638,6 +656,102 @@
     window.setTimeout(__lcLoadAutoExport, 2000);
   }
 </script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.impots.gouv.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit impots.gouv.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>
 

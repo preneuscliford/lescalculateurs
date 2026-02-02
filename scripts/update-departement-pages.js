@@ -8,7 +8,7 @@ function loadCfg() {
     "data",
     "baremes.generated.json",
   );
-  const jsonP = path.resolve(process.cwd(), "src", "data", "frais2025.json");
+  const jsonP = path.resolve(process.cwd(), "src", "data", "frais2026.json");
   let cfg = null;
   if (fs.existsSync(jsonP)) {
     try {
@@ -238,7 +238,7 @@ function processFile(file, cfg) {
 function main() {
   const cfg = loadCfg();
   if (!cfg) {
-    console.error("Configuration frais2025.json introuvable");
+    console.error("Configuration frais2026.json introuvable");
     process.exit(1);
   }
   const dir = path.resolve(

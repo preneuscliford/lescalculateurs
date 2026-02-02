@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
     <title>Zones APL 2026 - Déterminer votre zone de logement</title>
     <meta
       name="description"
-      content="Guide complet des zones APL en France : Zone 1 (Île-de-France), Zone 2 (Agglomérations) et Zone 3 (Communes rurales). Vérifiez votre zone pour calculer votre APL."
+      content="Guide complet des zones APL en France : Zone 1 (Île-de-France), Zone 2 (Agglomérations) et Zone 3 (Communes rurales). Vérifiez votre zone pour calculér votre APL."
     />
     <meta
       property="og:title"
@@ -26,48 +26,25 @@
     />
     <link rel="stylesheet" href="../tailwind.css" />
     <!-- JSON-LD Schema: FAQs pour Google Rich Results -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Est-ce que ma zone APL peut changer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, si vous déménagez dans une autre commune. La CAF recalculera automatiquement votre APL en fonction de la nouvelle zone."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Quelle est la zone la + avantageuse pour l'APL?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Zone 1 (IDF) offre les montants d'APL les + élevés, mais les loyers aussi. Zone 3 (rural) offre une APL plus basse avec des loyers très réduits. C'est une question de compromis personnel."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Les DOM-TOM ont une zone spéciale APL?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, les départements d'outre-mer (DOM) ont leurs propres plafonds, généralement légèrement inférieurs à Zone 2 pour tenir compte du coût de la vie local."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Un village à côté de Paris = Zone 1 ou Zone 2 APL?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Cela dépend si le village est administrativement en Île-de-France. Les 8 départements de l'IDF = Zone 1. À partir de l'Essonne, Yvelines, Val-d'Oise = Zone 1. Au-delà = Zone 2."
-            }
-          }
-        ]
-      }
-    </script>
+    
     <script defer src="/third-party-loader.js"></script>
-  </head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment obtenir le montant estimé de mon APL ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "utilisez le estimateur gratuit de la CAF pour connaître votre montant définitif."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm">
@@ -222,7 +199,7 @@
             <tbody>
               <tr class="hover:bg-gray-50">
                 <td class="border border-gray-300 px-3 py-2">Personne seule</td>
-                <td class="border border-gray-300 px-3 py-2">610 €</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 610 €</span><span class="result-exact" style="display:none;">610 €</span> €</td>
                 <td
                   class="border border-gray-300 px-3 py-2 font-semibold text-blue-600"
                 >
@@ -233,7 +210,7 @@
                 <td class="border border-gray-300 px-3 py-2">
                   Couple, 2 enfants
                 </td>
-                <td class="border border-gray-300 px-3 py-2">790 €</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 790 €</span><span class="result-exact" style="display:none;">790 €</span> €</td>
                 <td
                   class="border border-gray-300 px-3 py-2 font-semibold text-blue-600"
                 >
@@ -337,7 +314,7 @@
             <tbody>
               <tr class="hover:bg-gray-50">
                 <td class="border border-gray-300 px-3 py-2">Personne seule</td>
-                <td class="border border-gray-300 px-3 py-2">510 €</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 510 €</span><span class="result-exact" style="display:none;">510 €</span> €</td>
                 <td
                   class="border border-gray-300 px-3 py-2 font-semibold text-green-600"
                 >
@@ -348,7 +325,7 @@
                 <td class="border border-gray-300 px-3 py-2">
                   Couple, 2 enfants
                 </td>
-                <td class="border border-gray-300 px-3 py-2">660 €</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 660 €</span><span class="result-exact" style="display:none;">660 €</span> €</td>
                 <td
                   class="border border-gray-300 px-3 py-2 font-semibold text-green-600"
                 >
@@ -442,7 +419,7 @@
             <tbody>
               <tr class="hover:bg-gray-50">
                 <td class="border border-gray-300 px-3 py-2">Personne seule</td>
-                <td class="border border-gray-300 px-3 py-2">430 €</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 430 €</span><span class="result-exact" style="display:none;">430 €</span> €</td>
                 <td
                   class="border border-gray-300 px-3 py-2 font-semibold text-yellow-600"
                 >
@@ -453,7 +430,7 @@
                 <td class="border border-gray-300 px-3 py-2">
                   Couple, 2 enfants
                 </td>
-                <td class="border border-gray-300 px-3 py-2">580 €</td>
+                <td class="border border-gray-300 px-3 py-2"><span class="result-verbal">environ 580 €</span><span class="result-exact" style="display:none;">580 €</span> €</td>
                 <td
                   class="border border-gray-300 px-3 py-2 font-semibold text-yellow-600"
                 >
@@ -633,7 +610,7 @@
               Est-ce que ma zone peut changer?
             </h3>
             <p class="text-gray-600">
-              Oui, si vous déménagez dans une autre commune. La CAF recalculera
+              Oui, si vous déménagez dans une autre commune. La CAF recalculéra
               automatiquement votre APL en fonction de la nouvelle zone.
             </p>
           </div>
@@ -728,7 +705,7 @@
               href="https://www.caf.fr"
               target="_blank"
               class="text-sm hover:text-white block"
-              >Site CAF officiel</a
+              >Site CAF</a
             >
             <a href="apl.html" class="text-sm hover:text-white block"
               >Simulateur APL</a
@@ -753,5 +730,115 @@
         "Page zones APL chargée - Utilisateur peut maintenant identifier sa zone"
       );
     </script>
-  </body>
+  
+<script>
+// Verbalisation YMYL - masquer montant estimé, afficher fourchette
+document.addEventListener('DOMContentLoaded', function() {
+  const exactSpans = document.querySelectorAll('.result-exact');
+  exactSpans.forEach(function(span) {
+    const exactVal = parseInt(span.textContent);
+    const verbalSpan = span.previousElementSibling;
+    if (verbalSpan && verbalSpan.classList.contains('result-verbal')) {
+      const rounded = Math.round(exactVal / 10) * 10;
+      verbalSpan.textContent = 'environ ' + rounded + ' € – estimateur gratuit pour valeur estimee';
+    }
+  });
+});
+</script>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>

@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+          simulateur prime d’activité  2026 – Simulateur | LesCalculateurs</title>
+    <meta name="description" content="
+          simulateur prime d’activité  2026 – Simulateur | LesCalculateurs. Outil gratuit pour estimer votre situation. Résultat immédiat.">
+    <meta
+      name="keywords"
+      content="calculateur prime d'activité, prime d'activité 2026, simulation prime activité, montant prime activité, eligibilité prime d'activité, aide travailleurs, CAF"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link
+      rel="canonical"
+      href="https://www.lescalculateurs.fr/pages/prime-activite"
+    />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/prime-activite"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Simulateur prime d’activité 2026 – Calcul CAF" />
+    <meta property="og:description" content="Simulez votre prime d’activité en 2026. Estimation gratuite selon revenus et situation professionnelle." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Simulateur prime d’activité 2026 – Calcul CAF" />
+    <meta name="twitter:description" content="Simulez votre prime d’activité en 2026. Estimation gratuite selon revenus et situation professionnelle." />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/site.webmanifest" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" />
+
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/prime-activite-script.ts"></script>
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur Prime d'activité 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Calculateur de la prime d'activité pour estimer le complément de revenu selon les règles en vigueur.",
+        "url": "https://www.lescalculateurs.fr/pages/prime-activite",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Où trouver le simulateur officiel pour un calcul précis ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour un calcul précis et personnalisé, utilisez le simulateur officiel sur le site de la CAF (caf.fr) ou notre outil de simulation intégré. Ces simulateurs prennent en compte votre situation exacte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle différence entre une estimation et un calcul officiel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une estimation vous donne un ordre de grandeur basé sur des situations types. Le calcul officiel utilise vos données personnelles exactes (revenus, composition familiale, localisation) pour un résultat précis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les montants présentés sont-ils à jour pour 2026 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les montants sont régulièrement mis à jour selon les barèmes officiels 2026. Cependant, seul le simulateur officiel garantit le montant exact de votre droit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment interpréter les résultats de simulation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les résultats sont indicatifs et basés sur les barèmes en vigueur. Pour une décision administrative, consultez les services compétents ou utilisez le simulateur officiel."
+      }
+    }
+  ]
+}
+</script>
+</head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div
+        class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="font-bold text-lg text-blue-600">
+          🧮 Les Calculateurs
+        </a>
+        <div class="space-x-4">
+          <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+          <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">APL</a>
+          <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
+          <a
+            href="/pages/prime-activite"
+            class="text-gray-600 hover:text-blue-600"
+            >Prime d'activité</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-green-600 to-green-700 text-white py-12"
+    >
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1>
+          Simulateur Prime d’activité 2026 : estimation du montant mensuel
+         2026</h1>
+        <p class="text-xl text-green-100 mb-6">
+          Calculez une estimation de votre Prime d’activité 2026 selon vos
+          revenus professionnels, votre foyer et votre logement (résultat
+          indicatif CAF).
+        </p>
+        <button
+          id="prime-scroll-to-form"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+        >
+          🟢 Lancer la simulation Prime d'activité
+        </button>
+        <div
+          class="mt-6 bg-green-900 bg-opacity-50 p-4 rounded-lg inline-block"
+        >
+          <p class="text-sm">
+            ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📌 Résumé rapide
+        </h2>
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <div class="space-y-2 text-gray-700">
+            <p>🏛️ <strong>Source</strong> : CAF, Service‑Public</p>
+<div class="sticky-ymyl">Cette page donne des ordres de grandeur. Pour un résultat fiable, utilisez le simulateur officiel.</div>
+            <p>📐 <strong>Logique</strong> : calcul basé sur revenus, foyer, logement, activité</p>
+            <p>📅 <strong>Année</strong> : paramètres 2026</p>
+            <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10 bg-green-50 border border-green-100 rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧾 Ce que permet ce simulateur</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li>Estimer votre <strong>éligibilité</strong> (à titre indicatif)</li>
+          <li>Obtenir un <strong>montant indicatif</strong> mensuel</li>
+          <li>Comprendre l’impact de vos paramètres</li>
+          <li>Tester plusieurs scénarios en modifiant vos données</li>
+        </ul>
+      </section>
+
+      <section class="mb-12 bg-white border border-gray-200 rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
+        <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
+          <li>Renseignez les informations demandées</li>
+          <li>Indiquez vos montants ou paramètres principaux</li>
+          <li>Lancez la simulation</li>
+          <li>Consultez le résultat estimatif</li>
+        </ol>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment lire les résultats</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-6">
+          <li><strong>Montant estimé</strong> : ordre de grandeur</li>
+          <li><strong>Détail</strong> : paramètres pris en compte</li>
+          <li><strong>Avertissement</strong> : dépend de votre situation réelle</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Pourquoi le résultat peut être nul / faible / différent</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+          <li>Dépassement de seuils réglementaires</li>
+          <li>Paramètres non pris en compte dans une simulation simplifiée</li>
+          <li>Règles spécifiques propres à votre dossier</li>
+        </ul>
+      </section>
+
+      <!-- Qu'est-ce que la Prime d'activité -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📘 Qu'est-ce que la Prime d'activité ?
+        </h2>
+        <p class="text-gray-600 mb-4">
+          La Prime d'activité est une aide destinée aux personnes exerçant une
+          activité professionnelle avec des revenus modestes. Elle vise à
+          compléter les revenus du travail.
+        </p>
+        <p class="text-gray-600 mb-6">Elle dépend notamment :</p>
+        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+          <li>de vos revenus professionnels</li>
+          <li>de votre situation familiale</li>
+          <li>de votre logement</li>
+        </ul>
+        <p class="text-gray-600 mb-6">
+          Elle concerne les salariés, indépendants, apprentis et étudiants sous
+          conditions.
+        </p>
+      </section>
+
+      <!-- Ce que calcule le simulateur -->
+      <section class="mb-12 bg-green-50 p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🧾 Que permet cette simulation ?
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-gray-700">
+          <li>estimer votre éligibilité à la Prime d'activité</li>
+          <li>obtenir une estimation du montant mensuel</li>
+          <li>comprendre l'impact de vos revenus</li>
+        </ul>
+      </section>
+
+      <!-- Calculateur Prime d'activité -->
+      <section class="mb-12">
+        <div id="prime-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            🧮 Calculer ma Prime d'activité
+          </h2>
+
+          <form id="prime-form" class="space-y-6">
+            <!-- Situation familiale -->
+            <div>
+              <label
+                for="prime-situation"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Situation familiale *
+              </label>
+              <select
+                id="prime-situation"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="seul">Célibataire / Seul</option>
+                <option value="couple">En couple (marié ou concubinage)</option>
+                <option value="monoparental">
+                  Monoparental (1 enfant minimum)
+                </option>
+              </select>
+            </div>
+
+            <!-- Nombre d'enfants -->
+            <div>
+              <label
+                for="prime-enfants"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Nombre d'enfants à charge
+              </label>
+              <input
+                type="number"
+                id="prime-enfants"
+                min="0"
+                max="10"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <!-- Revenus professionnels -->
+            <div>
+              <label
+                for="prime-revenus-pro"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Revenus professionnels mensuels (€) *
+              </label>
+              <input
+                type="number"
+                id="prime-revenus-pro"
+                min="0"
+                step="10"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                required
+              />
+              <p class="text-xs text-gray-500 mt-2">
+                Salaire, revenus d'activité
+              </p>
+            </div>
+
+            <!-- Autres revenus -->
+            <div>
+              <label
+                for="prime-autres-revenus"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Autres revenus mensuels (€)
+              </label>
+              <input
+                type="number"
+                id="prime-autres-revenus"
+                min="0"
+                step="10"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+              <p class="text-xs text-gray-500 mt-2">
+                Allocations, pensions, etc.
+              </p>
+            </div>
+
+            <!-- Situation de logement -->
+            <div>
+              <label
+                for="prime-logement"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Situation de logement *
+              </label>
+              <select
+                id="prime-logement"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="loue">Locataire (loyer payé)</option>
+                <option value="proprio">
+                  Propriétaire (remboursement crédit)
+                </option>
+                <option value="gratuit">Logement gratuit</option>
+              </select>
+            </div>
+
+            <!-- Type d'activité -->
+            <div>
+              <label
+                for="prime-type-activite"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Type d'activité *
+              </label>
+              <select
+                id="prime-type-activite"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="salarie">Salarié (CDI, CDD)</option>
+                <option value="independant">
+                  Indépendant / Auto-entrepreneur
+                </option>
+                <option value="apprenti">Apprenti / Stagiaire</option>
+              </select>
+            </div>
+
+            <!-- Bouton Calculer -->
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer ma Prime d'activité
+            </button>
+          </form>
+
+          <!-- Résultat -->
+          <div
+            id="prime-result"
+            class="invisible mt-8 min-h-[220px] p-6 bg-green-50 border-2 border-green-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-green-700 mb-4">
+              📊 Estimation de votre Prime d'activité
+            </h3>
+            <div id="prime-result-content" class="space-y-4">
+              <div class="text-center">
+                <p class="text-gray-600 mb-2">Montant mensuel estimé :</p>
+                <p class="text-4xl font-bold text-green-600" id="prime-montant">
+                  ---
+                </p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-green-500">
+                <p id="prime-explication" class="text-gray-700"></p>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 Ce résultat est indicatif. La CAF reste seule compétente pour
+                l'attribution et le calcul final.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exemple pédagogique -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📝 Exemple indicatif
+        </h2>
+        <blockquote
+          class="border-l-4 border-green-500 pl-6 py-4 bg-gray-50 rounded"
+        >
+          <p class="text-gray-700 mb-2">
+            <strong>Salarié avec revenus modestes,</strong> vivant seul ou en
+            couple.
+          </p>
+          <p class="text-gray-700">
+            Le montant dépend des revenus exacts et de la composition du foyer.
+          </p>
+        </blockquote>
+        <p class="text-xs text-gray-500 italic mt-4">
+          💡 Exemple fourni à titre illustratif uniquement.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          ❓ Questions fréquentes sur la Prime d'activité
+        </h2>
+        <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Qui a droit à la Prime d'activité ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Toute personne de plus de 18 ans (sauf exceptions) qui exerce une
+              activité professionnelle et dispose de revenus modestes peut être
+              éligible. Les conditions précises sont définies par la CAF.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Prime d'activité et chômage partiel ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              L'éligibilité dépend de votre situation lors du chômage partiel.
+              La CAF évalue chaque cas selon les revenus réels.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Étudiant ou apprenti : ai-je droit ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Les apprentis peuvent être éligibles s'ils exercent une activité
+              professionnelle. Les étudiants doivent vérifier leurs conditions
+              d'accès auprès de la CAF.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Prime d'activité et APL ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, la Prime d'activité et l'APL sont cumulables si vous répondez
+              aux critères de chacune.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Quand faire la demande ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Vous pouvez faire votre demande à tout moment auprès de votre CAF,
+              en ligne sur caf.fr ou en vous présentant directement à l'accueil.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Simulations associées -->
+      <section
+        class="mb-12 bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          🔗 Autres aides sociales
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a
+            href="/pages/rsa"
+            class="bg-white p-4 rounded-lg border-2 border-purple-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-purple-600">💜 RSA</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Revenu de Solidarité Active
+            </p>
+          </a>
+          <a
+            href="/pages/apl"
+            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-blue-600">🏠 APL</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Aide Personnalisée au Logement
+            </p>
+          </a>
+          <a
+            href="/pages/aah"
+            class="bg-white p-4 rounded-lg border-2 border-orange-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-orange-600">🦾 AAH</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Allocation Adulte Handicapé
+            </p>
+          </a>
+          <a
+            href="/pages/are"
+            class="bg-white p-4 rounded-lg border-2 border-yellow-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-yellow-600">📋 ARE</p>
+            <p class="text-sm text-gray-600 mt-1">Allocation Retour Emploi</p>
+          </a>
+          <a
+            href="/pages/asf"
+            class="bg-white p-4 rounded-lg border-2 border-pink-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-pink-600">👨‍👩‍👧 ASF</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Allocation Soutien Familial
+            </p>
+          </a>
+          <a
+            href="/pages/apl-etudiant"
+            class="bg-white p-4 rounded-lg border-2 border-indigo-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-indigo-600">🎓 APL Étudiant</p>
+            <p class="text-sm text-gray-600 mt-1">Pour les étudiants</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Rappel réglementaire -->
+      <section class="bg-gray-100 p-6 rounded-lg mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          📌 Rappel réglementaire
+        </h2>
+        <p class="text-gray-700 mb-4">
+          La Prime d'activité est régie par des règles nationales. La CAF est
+          seule compétente pour l'attribution et le calcul final.
+        </p>
+        <p class="text-gray-600">
+          <strong>Sources officielles :</strong>
+          <a
+            href="https://www.service-public.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            service-public.fr
+          </a>
+          •
+          <a
+            href="https://www.caf.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+          >
+            caf.fr
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">
+          © 2026 Les Calculateurs — Simulateurs gratuits français
+        </p>
+        <p class="text-gray-400">
+          Tous les calculs sont indicatifs. Consultez les organismes officiels
+          pour les demandes réelles.
+        </p>
+      </div>
+    </footer>
+  <nav class="internal-links" aria-label="Navigation interne"><ul><li><a href="/simulateurs">Tous nos simulateurs</a></li><li><a href="/">Accueil</a></li></ul></nav>
+</body>
+</html>

@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 function loadCfg() {
-  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2025.json')
+  const p = path.resolve(process.cwd(), 'src', 'data', 'frais2026.json')
   return JSON.parse(fs.readFileSync(p, 'utf8'))
 }
 

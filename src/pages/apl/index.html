@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -46,28 +46,27 @@
     <link rel="shortcut icon" href="../assets/favicon.ico" />
 
     <link rel="stylesheet" href="../tailwind.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Simulateur APL 2026",
-        "alternateName": [
-          "Calculateur APL 2026",
-          "Simulation APL 2026",
-          "Estimation APL"
-        ],
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "isAccessibleForFree": true,
-        "publisher": {
-          "@type": "Organization",
-          "name": "LesCalculateurs.fr"
-        }
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment obtenir le montant estimé de mon APL ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "utilisez le estimateur gratuit de la CAF pour connaître votre montant définitif."
       }
-    </script>
-    <script defer src="/third-party-loader.js"></script>
-  </head>
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col gap-3 py-4 sm:flex-row sm:justify-between sm:items-center">
@@ -114,14 +113,10 @@
 
           <!-- Title & Status -->
           <div class="flex items-center gap-3 sm:flex-1 sm:justify-center">
-            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-              Simulateur APL 2026 – Calcul officiel gratuit
-            </h1>
+            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Simulateur APL 2026 – Calcul gratuit</h1>
             <span
               class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800"
-            >
-              OFFICIEL
-            </span>
+            ></span>
           </div>
 
           <!-- Actions -->
@@ -328,15 +323,11 @@
       </section>
 
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Différence entre estimation et calcul officiel
-        </h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Différence entre estimation et calcul</h2>
         <div class="space-y-3 text-gray-700">
-          <p>
-            Une estimation permet d’obtenir un ordre de grandeur rapidement. Un
-            calcul officiel est celui réalisé par la CAF à partir de vos
-            déclarations et des données administratives.
-          </p>
+          <p>Une estimation permet d’obtenir un ordre de grandeur rapidement. Un
+            calculést celui réalisé par la CAF à partir de vos
+            déclarations et des données administratives.</p>
           <p class="text-sm text-gray-600">
             Pour un montant définitif et une demande, utilisez les démarches
             officielles sur caf.fr.
@@ -393,7 +384,7 @@
             <p class="text-gray-600">
               La démarche se fait via votre compte CAF : création du dossier,
               déclaration de la situation, du logement, puis transmission des
-              pièces demandées. Les droits et le montant exact sont confirmés
+              pièces demandées. Les droits et le montant estimé sont confirmés
               après instruction.
             </p>
           </div>
@@ -516,7 +507,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium">700 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 700 €</span><span class="result-exact" style="display:none;">700 €</span> €</span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -553,7 +544,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium">850 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 850 €</span><span class="result-exact" style="display:none;">850 €</span> €</span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -590,7 +581,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium">550 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 550 €</span><span class="result-exact" style="display:none;">550 €</span> €</span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -629,7 +620,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Mensualité crédit :</span>
-                <span class="font-medium">950 €</span>
+                <span class="font-medium"><span class="result-verbal">environ 950 €</span><span class="result-exact" style="display:none;">950 €</span> €</span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -653,12 +644,11 @@
 
         <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
           <p class="text-blue-800 text-sm">
-            <strong>⚠️ Note :</strong> Ces exemples sont fournis à titre
+            <strong>⚠️ Note :</strong>Ces exemples sont fournis à titre
             illustratif. Les montants réels d'APL dépendent de nombreux facteurs
             : revenus N-2 exacts, composition du foyer, loyer pris en compte par
-            la CAF, situation patrimoniale, etc. Pour un calcul officiel,
-            contactez la CAF de votre département.
-          </p>
+            la CAF, situation patrimoniale, etc. Pour un calcul,
+            contactez la CAF de votre département.</p>
         </div>
       </section>
 
@@ -1053,10 +1043,10 @@
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import {
-        calculerAPL,
+        calculérAPL,
         formatCurrency,
         MESSAGES_PEDAGOGIQUES,
-      } from "../utils/aplCalculEngine.ts";
+      } from "../utils/aplcalculéngine.ts";
 
       const aplConfig = {
         title: "Estimateur APL 2026",
@@ -1145,9 +1135,9 @@
             suffix: "€",
           },
         ],
-        // ✅ PROPOSITION 1: Moteur de calcul unique (aplCalculEngine.ts)
+        // ✅ PROPOSITION 1: Moteur de calcul unique (aplcalculéngine.ts)
         calculate: (values) => {
-          return calculerAPL({
+          return calculérAPL({
             situation: values.situation,
             enfants: values.enfants,
             revenus_mensuels: values.revenus_mensuels,
@@ -1250,5 +1240,116 @@
 
     <!-- Gestion de la comparaison APL -->
     <script type="module" src="./scripts/apl-script.ts"></script>
-  </body>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+
+<script>
+// Verbalisation YMYL - masquer montant estimé, afficher fourchette
+document.addEventListener('DOMContentLoaded', function() {
+  const exactSpans = document.querySelectorAll('.result-exact');
+  exactSpans.forEach(function(span) {
+    const exactVal = parseInt(span.textContent);
+    const verbalSpan = span.previousElementSibling;
+    if (verbalSpan && verbalSpan.classList.contains('result-verbal')) {
+      const rounded = Math.round(exactVal / 10) * 10;
+      verbalSpan.textContent = 'environ ' + rounded + ' € – estimateur gratuit pour valeur estimee';
+    }
+  });
+});
+</script>
+
+<!-- YMYL Verbalization Script -->
+<script>(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num< 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+</body>
 </html>
