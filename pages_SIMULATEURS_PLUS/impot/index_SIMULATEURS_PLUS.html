@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur impôt sur le revenu 2026 – Calcul officiel</title>
+    <meta name="description" content="Calculez votre impôt sur le revenu 2026. Simulation gratuite selon revenus et situation familiale." />
+    <meta
+      name="keywords"
+      content="impôt sur le revenu 2026, calculateur IR, simulateur impôt gratuit, barème progressif, quotient familial, IRPP, tranche marginale d'impôt, décote, comparaison"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/impot" />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/impot"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Simulateur impôt sur le revenu 2026 – Calcul officiel" />
+    <meta property="og:description" content="Calculez votre impôt sur le revenu 2026. Simulation gratuite selon revenus et situation familiale." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Simulateur impôt sur le revenu 2026 – Calcul officiel" />
+    <meta name="twitter:description" content="Calculez votre impôt sur le revenu 2026. Simulation gratuite selon revenus et situation familiale." />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/site.webmanifest" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" />
+
+    <script defer src="/third-party-loader.js"></script>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Impôt sur le Revenu 2026",
+        "description": "Simulateur gratuit d'impôt sur le revenu avec comparaison multi-scénarios",
+        "url": "https://www.lescalculateurs.fr/pages/impot",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "isBasedOn": [
+          "https://www.lescalculateurs.fr/pages/methodologie",
+          "https://www.lescalculateurs.fr/pages/sources"
+        ],
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Legifrance.fr – Code général des impôts",
+            "url": "https://www.legifrance.gouv.fr"
+          },
+          {
+            "@type": "Organization",
+            "name": "Direction générale des Finances publiques",
+            "url": "https://www.impots.gouv.fr"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Service-public.fr – Impôt sur le revenu",
+            "url": "https://www.service-public.fr/particuliers/vosdroits/N421"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Sources Meta Tag for AI -->
+    <meta name="source" content="legifrance.fr, impots.gouv.fr, service-public.fr">
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment calculer mon impôt sur le revenu 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Entrez votre revenu net imposable annuel, indiquez votre situation familiale (nombre de parts) et notre calculateur applique le barème progressif 2026 avec décote si applicable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que le quotient familial ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le quotient familial divise votre revenu imposable par le nombre de parts fiscales (1 couple + enfants). Plus de parts = impôt réduit. Utilisé pour les couples mariés et contribuables avec enfants."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la différence entre revenu brut et net imposable ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le revenu brut est vos revenus avant abattement. Le net imposable est après déduction des charges professionnelles, frais réels ou forfaitaires (10%). C'est sur ce net qu'on applique le barème IR."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD Calculator Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Calculator",
+        "name": "Simulateur Impôt sur le Revenu 2026",
+        "description": "Calculez votre impôt sur le revenu 2026 avec barème progressif et quotient familial - DGFIP officiel",
+        "url": "https://www.lescalculateurs.fr/pages/impot",
+        "applicationCategory": "FinanceApplication",
+        "screenshot": "https://www.lescalculateurs.fr/pages/impot"
+      }
+    </script>
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur d'impôt sur le revenu 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Simulateur permettant d'estimer l'impôt sur le revenu selon votre situation fiscale.",
+        "url": "https://www.lescalculateurs.fr/pages/impot-revenu",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      }
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Comment estimer mon APL en 2026 ?",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Renseignez vos critères personnels"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Cliquez sur Estimer"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Consultez le résultat détaillé"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://www.lescalculateurs.fr"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Simulateurs",
+      "item": "https://www.lescalculateurs.fr/pages/simulateurs"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "APL 2026",
+      "item": "https://www.lescalculateurs.fr/pages/impot"
+    }
+  ]
+}
+</script>
+</head>
+  <body class="bg-gray-50">
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">impots.gouv.fr</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
+
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-3 py-4 sm:flex-row sm:justify-between sm:items-center">
+          <!-- Logo & Navigation -->
+          <div class="flex items-center gap-4 flex-wrap">
+            <img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs.fr"
+              class="h-10 w-auto"
+            />
+            <a
+              href="../index.html"
+              class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                ></path>
+              </svg>
+              <span>🏠 Accueil</span>
+            </a>
+            <div class="hidden sm:block">
+              <span class="text-gray-400">|</span>
+            </div>
+            <div class="hidden sm:flex items-center space-x-2">
+              <div class="bg-blue-100 text-blue-700 rounded-lg p-1.5">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-sm font-medium text-gray-700"
+                >Impôt sur le revenu</span
+              >
+            </div>
+          </div>
+
+          <!-- Title & Status -->
+          <div class="flex items-start gap-3 sm:flex-1 sm:justify-center">
+            <!-- Titre et sous-titre nav supprimés -->
+            <span
+              class="hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
+            >
+              📅 2026
+            </span>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center space-x-2">
+            <div class="hidden md:block">
+              <span class="text-xs text-gray-500">Barème officiel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Intro SEO -->
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Simulateur impôt sur le revenu 2026 – barème progressif et quotient
+            familial
+          </h2>
+          <p class="text-gray-600 mb-4 text-sm">
+            Estimez votre impôt sur le revenu 2026 en quelques secondes à partir
+            de votre revenu et de votre situation familiale (quotient familial).
+          </p>
+          <p class="text-gray-600 text-sm">
+            ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires.
+          </p>
+          <div class="mt-8 mb-6">
+            <a href="#impot-calculator" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">
+              Lancer la simulation
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h2>
+          <div class="space-y-2 text-gray-700 text-sm">
+            <p>🏛️ <strong>Source</strong> : DGFiP, Service‑Public</p>
+            <p>📐 <strong>Logique</strong> : calcul basé sur revenu imposable annuel et nombre de parts</p>
+            <p>📅 <strong>Année</strong> : paramètres 2026</p>
+            <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-cyan-50 border border-cyan-100 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧾 Ce que permet ce simulateur</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Obtenir un <strong>montant indicatif</strong> d’IR (ordre de grandeur)</li>
+            <li>Comprendre l’impact du <strong>quotient familial</strong> (parts)</li>
+            <li>Comparer plusieurs situations via la comparaison intégrée au résultat</li>
+            <li>Croiser avec d’autres outils (salaire, PAS, etc.)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
+            <li>Renseignez les informations demandées</li>
+            <li>Indiquez vos montants ou paramètres principaux</li>
+            <li>Lancez la simulation</li>
+            <li>Consultez le résultat estimatif</li>
+          </ol>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment lire les résultats</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-6">
+            <li><strong>Montant estimé</strong> : ordre de grandeur</li>
+            <li><strong>Détail</strong> : paramètres pris en compte</li>
+            <li><strong>Avertissement</strong> : dépend de votre situation réelle</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Pourquoi le résultat peut être nul / faible / différent</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+            <li>Dépassement de seuils réglementaires</li>
+            <li>Paramètres non pris en compte dans une simulation simplifiée</li>
+            <li>Règles spécifiques propres à votre dossier</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section Comparaison - SEO -->
+      <section
+        class="mb-8 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border-2 border-cyan-200"
+      >
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">📊</span>
+            <h2 class="text-2xl font-bold text-gray-900">
+              Comparez votre impôt : situation familiale, revenus, réductions
+            </h2>
+          </div>
+          <div class="prose prose-lg text-gray-700 mb-4">
+            <p class="mb-3">
+              <strong>Simulez plusieurs scénarios</strong> pour optimiser votre
+              fiscalité ! Comparez célibataire vs marié, avec/sans enfants, ou
+              différents niveaux de revenus, avec
+              <strong>graphiques comparatifs en temps réel</strong>.
+            </p>
+            <p class="mb-3">
+              <strong
+                >L'impact du quotient familial peut atteindre 2 000-3 000€
+                d'économies annuelles</strong
+              >
+              selon votre situation. Visualisez instantanément comment
+              changements de revenus ou situation familiale affectent votre
+              impôt avec notre <strong>outil de simulation interactif</strong>.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">🧪</div>
+              <h3 class="font-bold text-gray-900 mb-1">
+                Comparaison multi-scénarios
+              </h3>
+              <p class="text-sm text-gray-600">
+                Testez différentes situations et voyez l'impact sur votre impôt
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">💡</div>
+              <h3 class="font-bold text-gray-900 mb-1">
+                économies potentielles
+              </h3>
+              <p class="text-sm text-gray-600">
+                Identifiez les leviers pour réduire légalement votre impôt
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="text-3xl mb-2">📚</div>
+              <h3 class="font-bold text-gray-900 mb-1">Lecture par tranches</h3>
+              <p class="text-sm text-gray-600">
+                Comprenez l'impact du barème progressif et des parts
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calculateur -->
+      <div id="impot-calculator"></div>
+
+      <!-- Boutons de comparaison -->
+      <div class="mt-6 flex justify-center gap-3">
+        <!-- <button
+          id="impot-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button> -->
+        <button
+          id="impot-reset-compare"
+          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <!-- Comparaison (masquée par défaut) -->
+      <div id="impot-comparaison" class="hidden mt-8"></div>
+
+      <section class="mt-10 mb-8">
+        <div class="max-w-4xl mx-auto">
+          <section class="ai-intro mb-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">
+              ❓ Quel est votre impôt sur le revenu en 2026 ?
+            </h2>
+            <p class="ai-response text-gray-700">
+              Impôt = (Revenu imposable ÷ Quotient familial) × Barème progressif
+              × Parts fiscales - Décote. Barème 2026 : 0% jusqu'à 11 294€, puis
+              11% jusqu'à 28 797€, 30% jusqu'à 82 341€, etc.
+            </p>
+          </section>
+
+          <section class="ai-summary mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">⚡ Résumé rapide</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>
+                <strong>Source:</strong> Direction Générale des Finances
+                Publiques (DGFIP) 2026
+              </li>
+              <li>
+                <strong>Calcul:</strong> Barème progressif par tranche +
+                quotient familial + décote si applicable
+              </li>
+              <li>
+                <strong>Particularité:</strong> Décote jusqu'à 1 394€ | 1 part =
+                célibataire, 2 parts = couple | Enfants à charge
+              </li>
+              <li>
+                <strong>Outil:</strong> Simulation gratuite, barèmes janvier
+                2026
+              </li>
+            </ul>
+          </section>
+
+          <div class="prose prose-lg text-gray-600 space-y-3">
+            <p>
+              Calculez votre <strong>impôt sur le revenu 2026</strong> en
+              quelques secondes ! Entrez votre revenu net imposable, indiquez
+              votre situation familiale (nombre de parts fiscales), et notre
+              calculateur applique automatiquement le
+              <strong>barème progressif officiel</strong> 2026 avec déductions
+              et décote le cas échéant.
+            </p>
+            <p>
+              Obtenez une estimation précise incluant les
+              <strong>tranches d'imposition</strong>, le
+              <strong>quotient familial</strong>, les
+              <strong>réductions d'impôt</strong> et le
+              <strong>prélèvement à la source</strong>. Idéal pour les salariés,
+              indépendants et retraités.
+            </p>
+            <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+              <p class="m-0 text-sm">
+                Source officielle :
+                <a
+                  class="text-blue-700 underline"
+                  href="https://www.impots.gouv.fr/"
+                  rel="nofollow noopener"
+                  target="_blank"
+                >
+                  Direction générale des Finances publiques – Barème IR 2026
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Schema.org -->
+      <section id="aide" class="max-w-4xl mx-auto mt-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+          ❓ FAQ - Impôt sur le Revenu 2026
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              ❓ Comment calculer mon impôt sur le revenu 2026 ?
+            </h3>
+            <div>
+              <p class="text-gray-600">
+                Entrez votre <strong>revenu net imposable</strong> (salaire
+                après abattements ou chiffre d'affaires pour indépendants),
+                indiquez votre <strong>situation familiale</strong> (nombre de
+                parts fiscales), et notre calculateur applique le
+                <strong>barème 2026</strong> avec les réductions/crédits
+                d'impôt.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              ❓ Qu'est-ce que le quotient familial ?
+            </h3>
+            <div>
+              <p class="text-gray-600">
+                Le <strong>quotient familial</strong> divise votre revenu
+                imposable par le nombre de <strong>parts fiscales</strong>. Plus
+                de parts = impôt réduit. Exemple : un couple avec 2 enfants = 3
+                parts (1 par personne + 1 par enfant). Le calcul s'effectue par
+                tranche, puis se multiplie par le nombre de parts.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              ❓ Comment fonctionne le barème progressif ?
+            </h3>
+            <div>
+              <p class="text-gray-600">
+                L'impôt sur le revenu est <strong>progressif</strong> : plus
+                votre revenu augmente, plus le taux d'imposition augmente. En
+                2026, les tranches vont de 0% à 45%. Chaque tranche de revenu
+                est imposée au taux correspondant, d'où un taux moyen inférieur
+                au taux marginal.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm border-2 border-cyan-200"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              ❓ Comment utiliser la comparaison multi-scénarios ?
+            </h3>
+            <div>
+              <div class="text-gray-700">
+                <ol class="text-sm space-y-2 list-decimal list-inside">
+                  <li>
+                    Effectuez un <strong>premier calcul</strong> avec votre
+                    situation actuelle
+                  </li>
+                  <li>
+                    Cliquez sur <strong>"➕ Ajouter à la comparaison"</strong>
+                  </li>
+                  <li>Modifiez un paramètre (revenu, parts, situation)</li>
+                  <li>Confirmez pour <strong>recalculer et ajouter</strong></li>
+                  <li>
+                    Voyez vos <strong>graphiques comparatifs</strong> avec tous
+                    les scénarios côte à côte
+                  </li>
+                  <li>
+                    Exportez en <strong>PNG ou PDF</strong> pour votre dossier
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              ❓ Qu'est-ce que la décote ?
+            </h3>
+            <div>
+              <p class="text-gray-600">
+                La <strong>décote</strong> est une réduction d'impôt accordée
+                aux contribuables avec revenu faible. Si votre impôt calculé est
+                inférieur au seuil, vous bénéficiez d'une décote supplémentaire.
+                En 2025, le seuil est d'environ 1 808€ pour une personne seule.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              ❓ Mes données sont-elles sécurisées ?
+            </h3>
+            <div>
+              <p class="text-gray-600">
+                Oui ! Tous les calculs s'effectuent
+                <strong>directement dans votre navigateur</strong>. Aucune
+                donnée personnelle n'est envoyée sur nos serveurs ni conservée.
+                Vos simulations restent privées.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </section>    </main>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+      <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">
+          🧰 Outils complémentaires
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/pages/salaire.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Salaire brut/net</a
+          >
+          <a
+            href="/pages/pret.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Mensualité prêt</a
+          >
+          <a
+            href="/pages/notaire.html"
+            class="inline-block bg-white border border-gray-300 rounded px-3 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Frais de notaire</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+      <div class="mt-12 bg-gray-100 rounded-lg p-6">
+        <h3 class="font-bold text-gray-900 mb-3">
+          📚 Sources et références officielles
+        </h3>
+        <ul class="text-sm text-gray-700 space-y-2">
+          <li>
+            🔗 Barème IR 2026 :
+            <a
+              href="https://www.impots.gouv.fr/"
+              target="_blank"
+              rel="noopener"
+              class="text-blue-600 hover:underline"
+              >impots.gouv.fr</a
+            >
+          </li>
+          <li>
+            🔗 Quotient familial et parts fiscales :
+            <a
+              href="https://www.service-public.fr/particuliers/vosdroits/F1332"
+              target="_blank"
+              rel="noopener"
+              class="text-blue-600 hover:underline"
+              >service-public.fr</a
+            >
+          </li>
+          <li>
+            🔗 Décote et plafonnement quotient :
+            <a
+              href="https://www.legifrance.gouv.fr/codes/article_L15-0-A-1/code-general-des-impots"
+              target="_blank"
+              rel="noopener"
+              class="text-blue-600 hover:underline"
+              >legifrance.gouv.fr</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center space-y-4">
+          <p class="text-gray-300">
+            © 2026 Les Calculateurs - Impôt sur le revenu selon barèmes officiels
+          </p>
+          <div class="flex gap-4 text-sm">
+            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📘 Notre Méthodologie</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">📚 Sources Officielles</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="../main.ts"></script>
+    <script type="module" src="./scripts/impot-pedagogique.ts"></script>
+    <script type="module">
+  const __lcLoadAutoExport = () => import("../utils/autoExportInit.js");
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(__lcLoadAutoExport, { timeout: 4000 });
+  } else {
+    window.setTimeout(__lcLoadAutoExport, 2000);
+  }
+</script>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.impots.gouv.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel impots.gouv.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
+
+<!-- YMYL Verbalization Script -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration par type
+  const CONFIG = {
+    APL: { source: 'CAF', url: 'https://www.caf.fr' },
+    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
+    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
+    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
+    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
+    PRET: { source: 'banque', url: '#' },
+    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
+    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
+  };
+  
+  // Detecter le type de simulateur
+  function detectType() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('apl')) return 'APL';
+    if (path.includes('impot')) return 'IMPOT';
+    if (path.includes('notaire')) return 'NOTAIRE';
+    if (path.includes('rsa')) return 'RSA';
+    if (path.includes('prime')) return 'PRIME';
+    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
+    if (path.includes('salaire')) return 'SALAIRE';
+    if (path.includes('pret')) return 'PRET';
+    if (path.includes('taxe')) return 'TAXE';
+    if (path.includes('plus-value')) return 'PLUSVALUE';
+    return 'GENERIC';
+  }
+  
+  // Verbaliser un montant
+  function verbalize(value) {
+    const num = parseInt(value);
+    if (isNaN(num) || num < 10) return value;
+    const rounded = Math.round(num / 10) * 10;
+    return 'environ ' + rounded + ' €';
+  }
+  
+  // Traiter un element
+  function processElement(el, type) {
+    const text = el.textContent || el.innerText || '';
+    const match = text.match(/(d[ds]{2,5})s*€/);
+    if (!match) return;
+    
+    const exactVal = match[1].replace(/s/g, '');
+    const verbalVal = verbalize(exactVal);
+    const config = CONFIG[type] || CONFIG.GENERIC;
+    
+    // Remplacer contenu
+    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
+                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
+  }
+  
+  // Observer les changements DOM
+  const observer = new MutationObserver(function(mutations) {
+    const type = detectType();
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element
+          // Chercher dans les resultats
+          const results = node.querySelectorAll ? 
+            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
+          results.forEach(function(el) {
+            if (el.textContent.includes('€')) {
+              processElement(el, type);
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Demarrer observation
+  document.addEventListener('DOMContentLoaded', function() {
+    const type = detectType();
+    
+    // Traiter elements existants
+    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
+      if (el.textContent.match(/d{3,6}s*€/)) {
+        processElement(el, type);
+      }
+    });
+    
+    // Observer nouveaux elements
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+
+<div class="cluster-links" style="margin-top:2rem;padding:1rem;background:#f3f4f6;border-radius:8px;"><p><strong>Continuez votre simulation :</strong></p><a href="/pages/pret">Simulez votre prêt</a> | <a href="/pages/taxe">Estimez votre taxe</a> | <a href="/pages/rsa">Calculez votre RSA</a></div>
+</body>
+</html>
+
+
