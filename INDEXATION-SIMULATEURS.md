@@ -2,7 +2,7 @@
 
 ## 📊 Statistiques
 
-- **Total URLs simulateurs** : 109 URLs uniques
+- **Total URLs simulateurs** : 108 URLs (22 principaux + 86 satellites)
 - **Limite API Google** : 200 URLs/jour pour `URL_UPDATED`
 - **Status** : ✅ Prêt pour indexation
 
@@ -12,7 +12,8 @@
 |---------|-------------|---------------|
 | `scripts/simulateurs-urls.txt` | Toutes les URLs (avec doublons) | 325 |
 | `scripts/simulateurs-only-urls.txt` | Uniquement simulateurs (filtrées) | 209 |
-| `scripts/simulateurs-unique-urls.txt` | **URLs finales uniques** | **109** |
+| `scripts/simulateurs-unique-urls.txt` | **URLs finales uniques** | **108** |
+| `scripts/simulateurs-final-urls.txt` | URLs finales nettoyées | **108** |
 
 ## 🚀 Commandes d'indexation
 
@@ -38,15 +39,38 @@ node scripts/publish-indexing.js --file=scripts/simulateurs-unique-urls.txt --ty
 
 ## 📋 Types de pages indexées
 
-- **APL** : APL principale + sous-pages (colocation, propriétaire, etc.)
-- **RSA** : RSA principale + sous-pages (couple, jeune, chômage, etc.)
-- **Impôt** : Impôt sur le revenu + sous-pages
-- **Prêt** : Prêt immobilier + sous-pages
-- **Salaire** : Convertisseur brut/net + sous-pages
-- **Notaire** : Frais de notaire
-- **Taxe** : Taxe foncière + sous-pages
-- **Plus-value** : Plus-value immobilière + sous-pages
-- **Aides** : Pages satellites d'aides sociales
+### 🏠 Immobilier & Achat (22 URLs)
+- **Frais de Notaire** : Notaire principale + pages satellites
+- **Prêt Immobilier** : Pret principale + 16 sous-pages (taux, capacité, PTZ, etc.)
+- **Plus-Value Immobilière** : Plusvalue + 11 sous-pages (abattements, exonérations, etc.)
+- **Charges de Copropriété** : Charges principale
+
+### 🤝 Allocations & Aides Sociales (34 URLs)
+- **APL** : APL principale + 6 satellites (colocation, propriétaire, refusée, etc.)
+- **RSA** : RSA principale + 16 satellites (couple, jeune, chômage, auto-entrepreneur, etc.)
+- **Prime d'activité** : Principale
+- **AAH** : Allocation Adultes Handicapés
+- **APL Étudiant** : APL étudiant + DOM-TOM + zones
+- **ASF** : Allocation Soutien Familial
+
+### 💼 Allocations Chômage (2 URLs)
+- **ARE** : Allocation Retour à l'Emploi
+
+### 💰 Finances Personnelles (20 URLs)
+- **Financement Personnel** : Capacité financement
+- **Impôts** : Impôt revenu + 10 sous-pages (tranches, couple/séparé, auto-entrepreneur, etc.)
+- **Salaire** : Brut/net + 5 sous-pages
+- **Crypto & Bourse** : Plus-value crypto
+- **Travail** : Calculateur travail
+- **IK** : Indemnités kilométriques
+
+### 📑 Impôts & Taxes (29 URLs)
+- **Taxe Foncière** : Taxe principale + 16 satellites (exonérations, calcul, contestation, etc.)
+
+### 📚 Aides Diverses (12 URLs)
+- Pages d'aides sociales et simulations
+
+**Total : 22 principaux + 86 satellites = 108 URLs**
 
 ## ⚠️ Prérequis
 
@@ -63,7 +87,7 @@ node scripts/publish-indexing.js --file=scripts/simulateurs-unique-urls.txt --ty
 
 ## 📊 Résultat attendu
 
-- ✅ ~109 URLs soumises à Google
+- ✅ 108 URLs soumises à Google
 - ⏱️ Durée estimée : 2-5 minutes (avec délai de 500ms entre chaque requête)
 - 📈 Amélioration de l'indexation des simulateurs
 
