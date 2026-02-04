@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -23,28 +23,67 @@
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/apl-dom-tom" />
     <link rel="stylesheet" href="../tailwind.css" />
     <!-- JSON-LD Schema: FAQs DOM-TOM -->
-    
-    <!-- Schema.org SoftwareApplication -->
-    
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Comment obtenir le montant estimé de mon APL ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif."
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Existe-t-il une APL dans les DOM-TOM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, l'APL existe dans les 5 DOM-TOM (Guadeloupe, Martinique, Guyane, Réunion, Mayotte). Les règles sont globalement identiques à la métropole, mais les plafonds et taux sont adaptés au coût de la vie local."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les plafonds APL sont-ils différents outre-mer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, les plafonds de loyer pris en compte par la CAF sont légèrement inférieurs à ceux de la Zone 2 métropolitaine pour tenir compte du contexte économique local. L'APL moyenne est généralement 5 à 10% moins élevée."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment contacter la CAF dans les DOM-TOM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Chaque DOM-TOM dispose de sa propre CAF. Rendez-vous sur www.caf.fr pour trouver la CAF de votre département, ou contactez directement votre mairie pour les coordonnées."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'APL couvre-t-elle les HLM outre-mer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, l'APL s'applique aux locations HLM, privées, accession à la propriété et colocations dans les DOM-TOM, comme en métropole."
+            }
+          }
+        ]
       }
-    }
-  ]
-}
-</script>
+    </script>
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur APL CAF 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Simulateur APL gratuit permettant d'estimer le montant de l'aide au logement selon les règles CAF en vigueur.",
+        "url": "https://www.lescalculateurs.fr/pages/apl",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
 </head>
   <body class="bg-gray-50">
-<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
 
     <!-- Navigation -->
     <nav class="bg-white shadow-sm">
@@ -483,7 +522,7 @@
       <section
         class="bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg shadow-lg p-8 text-center"
       >
-        <h2 class="text-2xl font-bold mb-4">calculez votre APL</h2>
+        <h2 class="text-2xl font-bold mb-4">Calculez votre APL</h2>
         <p class="text-purple-100 mb-6">
           Retournez au simulateur APL pour estimer votre allocation dans votre
           DOM-TOM.
@@ -523,7 +562,7 @@
               href="https://www.caf.fr"
               target="_blank"
               class="text-sm hover:text-white block"
-              >Site CAF</a
+              >Site CAF officiel</a
             >
             <a href="apl.html" class="text-sm hover:text-white block"
               >Simulateur APL</a
@@ -544,10 +583,11 @@
         </div>
       </div>
     </footer>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes en vigueur</p></div>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
 
 <!-- YMYL Verbalization Script -->
-<script>(function() {
+<script>
+(function() {
   'use strict';
   
   // Configuration par type
@@ -558,7 +598,7 @@
     RSA: { source: 'CAF', url: 'https://www.caf.fr' },
     PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
     IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
     PRET: { source: 'banque', url: '#' },
     TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
     PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
@@ -583,7 +623,7 @@
   // Verbaliser un montant
   function verbalize(value) {
     const num = parseInt(value);
-    if (isNaN(num) || num< 10) return value;
+    if (isNaN(num) || num < 10) return value;
     const rounded = Math.round(num / 10) * 10;
     return 'environ ' + rounded + ' €';
   }
@@ -601,7 +641,7 @@
     // Remplacer contenu
     el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
                    '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
-                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
   }
   
   // Observer les changements DOM

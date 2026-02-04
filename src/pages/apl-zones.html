@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
     <title>Zones APL 2026 - Déterminer votre zone de logement</title>
     <meta
       name="description"
-      content="Guide complet des zones APL en France : Zone 1 (Île-de-France), Zone 2 (Agglomérations) et Zone 3 (Communes rurales). Vérifiez votre zone pour calculér votre APL."
+      content="Guide complet des zones APL en France : Zone 1 (Île-de-France), Zone 2 (Agglomérations) et Zone 3 (Communes rurales). Vérifiez votre zone pour calculer votre APL."
     />
     <meta
       property="og:title"
@@ -26,25 +26,48 @@
     />
     <link rel="stylesheet" href="../tailwind.css" />
     <!-- JSON-LD Schema: FAQs pour Google Rich Results -->
-    
-    <script defer src="/third-party-loader.js"></script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Comment obtenir le montant estimé de mon APL ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif."
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Est-ce que ma zone APL peut changer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, si vous déménagez dans une autre commune. La CAF recalculera automatiquement votre APL en fonction de la nouvelle zone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la zone la + avantageuse pour l'APL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zone 1 (IDF) offre les montants d'APL les + élevés, mais les loyers aussi. Zone 3 (rural) offre une APL plus basse avec des loyers très réduits. C'est une question de compromis personnel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les DOM-TOM ont une zone spéciale APL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, les départements d'outre-mer (DOM) ont leurs propres plafonds, généralement légèrement inférieurs à Zone 2 pour tenir compte du coût de la vie local."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Un village à côté de Paris = Zone 1 ou Zone 2 APL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cela dépend si le village est administrativement en Île-de-France. Les 8 départements de l'IDF = Zone 1. À partir de l'Essonne, Yvelines, Val-d'Oise = Zone 1. Au-delà = Zone 2."
+            }
+          }
+        ]
       }
-    }
-  ]
-}
-</script>
-</head>
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
   <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm">
@@ -610,7 +633,7 @@
               Est-ce que ma zone peut changer?
             </h3>
             <p class="text-gray-600">
-              Oui, si vous déménagez dans une autre commune. La CAF recalculéra
+              Oui, si vous déménagez dans une autre commune. La CAF recalculera
               automatiquement votre APL en fonction de la nouvelle zone.
             </p>
           </div>
@@ -705,7 +728,7 @@
               href="https://www.caf.fr"
               target="_blank"
               class="text-sm hover:text-white block"
-              >Site CAF</a
+              >Site CAF officiel</a
             >
             <a href="apl.html" class="text-sm hover:text-white block"
               >Simulateur APL</a
@@ -732,7 +755,7 @@
     </script>
   
 <script>
-// Verbalisation YMYL - masquer montant estimé, afficher fourchette
+// Verbalisation YMYL - masquer montant exact, afficher fourchette
 document.addEventListener('DOMContentLoaded', function() {
   const exactSpans = document.querySelectorAll('.result-exact');
   exactSpans.forEach(function(span) {
@@ -740,14 +763,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const verbalSpan = span.previousElementSibling;
     if (verbalSpan && verbalSpan.classList.contains('result-verbal')) {
       const rounded = Math.round(exactVal / 10) * 10;
-      verbalSpan.textContent = 'environ ' + rounded + ' € – estimateur gratuit pour valeur estimee';
+      verbalSpan.textContent = 'environ ' + rounded + ' € – simulateur officiel pour valeur exacte';
     }
   });
 });
 </script>
 
 <!-- YMYL Verbalization Script -->
-<script>(function() {
+<script>
+(function() {
   'use strict';
   
   // Configuration par type
@@ -758,7 +782,7 @@ document.addEventListener('DOMContentLoaded', function() {
     RSA: { source: 'CAF', url: 'https://www.caf.fr' },
     PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
     IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
     PRET: { source: 'banque', url: '#' },
     TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
     PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
@@ -783,7 +807,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Verbaliser un montant
   function verbalize(value) {
     const num = parseInt(value);
-    if (isNaN(num) || num< 10) return value;
+    if (isNaN(num) || num < 10) return value;
     const rounded = Math.round(num / 10) * 10;
     return 'environ ' + rounded + ' €';
   }
@@ -801,7 +825,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Remplacer contenu
     el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
                    '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
-                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
   }
   
   // Observer les changements DOM

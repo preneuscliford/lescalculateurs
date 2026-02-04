@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -80,10 +80,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment connaître le montant estimé des frais de notaire ?",
+      "name": "Comment connaitre le montant exact des frais de notaire ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation précise."
+        "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation precise."
       }
     }
   ]
@@ -91,7 +91,7 @@
 </script>
 </head>
   <body class="bg-gray-50">
-<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
 
     <!-- Google Tag Manager (noscript) -->
     <header class="bg-white shadow-sm border-b border-gray-200">
@@ -296,9 +296,11 @@
                 Frais de notaire 2026 : ancien vs neuf - Le comparatif complet
               </a>
             </h2>
-            <p class="text-gray-600 mb-4 line-clamp-3">Tableau comparatif, exemples concrets pour 300 000€ et
+            <p class="text-gray-600 mb-4 line-clamp-3">
+              Tableau comparatif officiel, exemples concrets pour 300 000€ et
               astuces pour économiser jusqu'à 7 800€. Découvrez pourquoi les
-              frais sont 40% moins élevés dans le neuf.</p>
+              frais sont 40% moins élevés dans le neuf.
+            </p>
             <div class="flex items-center justify-between text-sm">
               <div class="flex items-center space-x-4 text-gray-500">
                 <div class="flex items-center space-x-1">
@@ -623,10 +625,11 @@
     </footer>
 
     <script type="module" src="../main.ts"></script>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes en vigueur</p></div>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
 
 <!-- YMYL Verbalization Script -->
-<script>(function() {
+<script>
+(function() {
   'use strict';
   
   // Configuration par type
@@ -637,7 +640,7 @@
     RSA: { source: 'CAF', url: 'https://www.caf.fr' },
     PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
     IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
     PRET: { source: 'banque', url: '#' },
     TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
     PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
@@ -662,7 +665,7 @@
   // Verbaliser un montant
   function verbalize(value) {
     const num = parseInt(value);
-    if (isNaN(num) || num< 10) return value;
+    if (isNaN(num) || num < 10) return value;
     const rounded = Math.round(num / 10) * 10;
     return 'environ ' + rounded + ' €';
   }
@@ -680,7 +683,7 @@
     // Remplacer contenu
     el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
                    '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
-                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
   }
   
   // Observer les changements DOM

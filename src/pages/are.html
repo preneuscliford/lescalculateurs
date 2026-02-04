@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -47,18 +47,37 @@
     <link rel="stylesheet" href="../tailwind.css" />
     <script type="module" src="./scripts/are-script.ts"></script>
     <!-- Schema.org SoftwareApplication -->
-    
-<script type="application/ld+json">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur ARE 2026",
+        "alternateName": [
+          "Calculateur ARE 2026",
+          "Simulation ARE 2026",
+          "Estimation ARE"
+        ],
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "publisher": {
+          "@type": "Organization",
+          "name": "LesCalculateurs.fr"
+        }
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment obtenir le montant estimé de mon APL ?",
+      "name": "Comment obtenir le montant exact de mon APL ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif."
+        "text": "Utilisez le simulateur officiel de la CAF pour connaitre votre montant definitif d aide au logement."
       }
     }
   ]
@@ -67,7 +86,7 @@
 </head>
 
   <body class="bg-gray-50">
-<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
 
     <!-- Navigation -->
     <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -93,7 +112,7 @@
           Simulateur ARE 2026 : estimation de l’allocation chômage
         </h1>
         <p class="text-xl text-orange-100 mb-6">
-          calculez une estimation de votre allocation chômage ARE 2026 selon vos
+          Calculez une estimation de votre allocation chômage ARE 2026 selon vos
           anciens revenus, votre situation et la réglementation France Travail.
         </p>
         <button
@@ -134,7 +153,7 @@
       </section>
 
       <section class="mb-12 bg-white border border-gray-200 rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculér)</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
 
         <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
         <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
@@ -163,7 +182,7 @@
       <section class="mb-12">
         <div id="are-calculator" class="bg-white p-8 rounded-lg shadow-lg">
           <h2 class="text-2xl font-bold text-gray-800 mb-6">
-            🧮 calculér mon ARE
+            🧮 Calculer mon ARE
           </h2>
 
           <form id="are-form" class="space-y-6">
@@ -262,12 +281,12 @@
               />
             </div>
 
-            <!-- Bouton calculér -->
+            <!-- Bouton Calculer -->
             <button
               type="submit"
               class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
             >
-              🟢 calculér mon ARE
+              🟢 Calculer mon ARE
             </button>
           </form>
 
@@ -291,7 +310,7 @@
               </div>
               <p class="text-xs text-gray-500 italic">
                 💡 Résultat pédagogique. France Travail vous confirmera le
-                montant estimé et la durée d'indemnisation lors de l'étude de
+                montant exact et la durée d'indemnisation lors de l'étude de
                 votre dossier.
               </p>
             </div>
@@ -329,7 +348,7 @@
         </p>
       </section>
 
-      <!-- Ce que calculé le simulateur -->
+      <!-- Ce que calcule le simulateur -->
       <section class="mb-12 bg-orange-50 p-6 rounded-lg">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
           Comment fonctionne le calculateur ?
@@ -349,11 +368,13 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-4">
           Comment est calculée l’indemnité chômage (ARE) ?
         </h2>
-        <p class="text-gray-600">Le calcul de l’ARE repose notamment sur le salaire journalier de
+        <p class="text-gray-600">
+          Le calcul de l’ARE repose notamment sur le salaire journalier de
           référence (SJR), la situation du demandeur d’emploi et les règles en
           vigueur au moment de l’ouverture des droits. Ce simulateur fournit une
-          estimation pédagogique ; France Travail applique le calculsur
-          votre dossier.</p>
+          estimation pédagogique ; France Travail applique le calcul officiel sur
+          votre dossier.
+        </p>
       </section>
 
       <section class="mb-12 bg-white p-8 rounded-lg shadow-lg">
@@ -375,9 +396,9 @@
         </h2>
         <p class="text-gray-600">
           Le montant dépend de votre ancien salaire, de votre durée d’activité,
-          de votre âge et de votre situation. utilisez le simulateur ci‑dessus
+          de votre âge et de votre situation. Utilisez le simulateur ci‑dessus
           pour obtenir un ordre de grandeur, puis référez-vous à la notification
-          France Travail pour le montant estimé et la durée.
+          France Travail pour le montant exact et la durée.
         </p>
       </section>
 
@@ -388,15 +409,20 @@
         <p class="text-gray-600">
           Exemple : pour un salaire de référence stable et une durée d’activité
           suffisante, le simulateur estime un montant d’ARE et une durée
-          d’indemnisation à partir de paramètres simplifiés. Le résultat estimé
+          d’indemnisation à partir de paramètres simplifiés. Le résultat exact
           dépend du SJR, des plafonds et de votre dossier.
         </p>
       </section>
 
       <section class="mb-12 bg-white p-8 rounded-lg shadow-lg">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">Différence entre estimation et calcul</h2>
-        <p class="text-gray-600">Une estimation fournit un ordre de grandeur rapidement. Le calculést réalisé par France Travail lors de l’ouverture des droits
-          avec vos justificatifs et vos périodes de travail.</p>
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          Différence entre estimation et calcul officiel
+        </h2>
+        <p class="text-gray-600">
+          Une estimation fournit un ordre de grandeur rapidement. Le calcul
+          officiel est réalisé par France Travail lors de l’ouverture des droits
+          avec vos justificatifs et vos périodes de travail.
+        </p>
       </section>
 
       <!-- FAQ -->
@@ -545,10 +571,11 @@
         </p>
       </div>
     </footer>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes en vigueur</p></div>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
 
 <!-- YMYL Verbalization Script -->
-<script>(function() {
+<script>
+(function() {
   'use strict';
   
   // Configuration par type
@@ -559,7 +586,7 @@
     RSA: { source: 'CAF', url: 'https://www.caf.fr' },
     PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
     IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
     PRET: { source: 'banque', url: '#' },
     TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
     PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
@@ -584,7 +611,7 @@
   // Verbaliser un montant
   function verbalize(value) {
     const num = parseInt(value);
-    if (isNaN(num) || num< 10) return value;
+    if (isNaN(num) || num < 10) return value;
     const rounded = Math.round(num / 10) * 10;
     return 'environ ' + rounded + ' €';
   }
@@ -602,7 +629,7 @@
     // Remplacer contenu
     el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
                    '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
-                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
   }
   
   // Observer les changements DOM

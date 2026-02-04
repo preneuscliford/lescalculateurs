@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulateur AAH 2026 – Montant &amp; conditions</title>
-    <meta name="description" content="calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
+    <meta name="description" content="Calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
     <meta
       name="keywords"
       content="calculateur AAH, allocation adulte handicapé, AAH 2026, simulation AAH, montant AAH, eligibilité AAH, taux incapacité, MDPH, CAF"
@@ -19,10 +19,10 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Simulateur AAH 2026 – Montant &amp; conditions" />
-    <meta property="og:description" content="calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
+    <meta property="og:description" content="Calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Simulateur AAH 2026 – Montant &amp; conditions" />
-    <meta name="twitter:description" content="calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
+    <meta name="twitter:description" content="Calculez votre AAH en 2026. Simulation gratuite selon taux d’incapacité et revenus." />
 
     <!-- Favicon -->
     <link
@@ -47,18 +47,34 @@
     <link rel="stylesheet" href="../tailwind.css" />
     <script type="module" src="./scripts/aah-script.ts"></script>
     <!-- Schema.org SoftwareApplication -->
-    
-<script type="application/ld+json">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur AAH 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Simulateur de l'Allocation aux Adultes Handicapés selon le taux d'incapacité et les ressources.",
+        "url": "https://www.lescalculateurs.fr/pages/aah",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment obtenir le montant estimé de mon APL ?",
+      "name": "Comment connaitre le montant exact de ma Prime d activite ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif."
+        "text": "Utilisez le simulateur officiel de la CAF pour connaitre votre montant definitif de Prime d activite."
       }
     }
   ]
@@ -67,7 +83,7 @@
 </head>
 
   <body class="bg-gray-50">
-<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;">estimateur gratuit</a>.</div>
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
 
     <!-- Navigation -->
     <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -138,7 +154,7 @@
       </section>
 
       <section class="mb-12 bg-white border border-gray-200 rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculér)</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧭 Guide rapide (avant de calculer)</h2>
 
         <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment utiliser ce simulateur</h3>
         <ol class="list-decimal list-inside space-y-2 text-gray-700 text-sm mb-6">
@@ -194,7 +210,7 @@
         </p>
       </section>
 
-      <!-- Ce que calculé le simulateur -->
+      <!-- Ce que calcule le simulateur -->
       <section class="mb-12 bg-purple-50 p-6 rounded-lg">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
           🧾 Que permet cette simulation AAH ?
@@ -213,7 +229,7 @@
       <section class="mb-12">
         <div id="aah-calculator" class="bg-white p-8 rounded-lg shadow-lg">
           <h2 class="text-2xl font-bold text-gray-800 mb-6">
-            🧮 calculér mon AAH
+            🧮 Calculer mon AAH
           </h2>
 
           <form id="aah-form" class="space-y-6">
@@ -313,12 +329,12 @@
               </select>
             </div>
 
-            <!-- Bouton calculér -->
+            <!-- Bouton Calculer -->
             <button
               type="submit"
               class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
             >
-              🟢 calculér mon AAH
+              🟢 Calculer mon AAH
             </button>
           </form>
 
@@ -543,10 +559,11 @@
         </p>
       </div>
     </footer>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes en vigueur</p></div>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
 
 <!-- YMYL Verbalization Script -->
-<script>(function() {
+<script>
+(function() {
   'use strict';
   
   // Configuration par type
@@ -557,7 +574,7 @@
     RSA: { source: 'CAF', url: 'https://www.caf.fr' },
     PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
     IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
+    SALAIRE: { source: 'officiel', url: 'https://www.impots.gouv.fr' },
     PRET: { source: 'banque', url: '#' },
     TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
     PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
@@ -582,7 +599,7 @@
   // Verbaliser un montant
   function verbalize(value) {
     const num = parseInt(value);
-    if (isNaN(num) || num< 10) return value;
+    if (isNaN(num) || num < 10) return value;
     const rounded = Math.round(num / 10) * 10;
     return 'environ ' + rounded + ' €';
   }
@@ -600,7 +617,7 @@
     // Remplacer contenu
     el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
                    '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
-                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
+                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant exact</small>';
   }
   
   // Observer les changements DOM
