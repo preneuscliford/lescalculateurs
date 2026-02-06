@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/generate-satellites-dev.js && vite",
-    "build": "tsc && vite build && node scripts/copy-seo-pages.js",
+    "build": "node scripts/verify-utf8.cjs && tsc && vite build && node scripts/copy-seo-pages.js && node scripts/verify-utf8.cjs",
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -13,6 +13,8 @@
     "indexing:publish": "node scripts/publish-indexing.js --from-sitemap",
     "sitemap:normalize": "node scripts/normalize-sitemap-domain.js",
     "sitemap:satellites": "node scripts/add-satellites-to-sitemap.cjs",
+    "utf8:check": "node scripts/verify-utf8.cjs",
+    "utf8:fix": "node scripts/fix-utf8-build.cjs",
     "agent:official": "node scripts/official-data-agent.cjs",
     "agent:official:due": "node scripts/official-data-agent.cjs --fetch-all=false",
     "sync:impot": "node scripts/sync-impot-from-baremes.cjs",

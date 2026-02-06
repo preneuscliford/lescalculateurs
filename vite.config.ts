@@ -21,9 +21,7 @@ export default defineConfig({
           if (pathname.startsWith("/assets/")) return next();
           if (pathname.includes(".")) return next();
 
-          const cleanPath = pathname
-            .replace(/^\/+/, "")
-            .replace(/\/+$/, "");
+          const cleanPath = pathname.replace(/^\/+/, "").replace(/\/+$/, "");
           const rootDir = server.config.root;
 
           const candidateHtml = path.join(rootDir, `${cleanPath}.html`);
@@ -110,6 +108,7 @@ export default defineConfig({
         are: resolve(__dirname, "src/pages/are.html"),
         asf: resolve(__dirname, "src/pages/asf.html"),
         methodologie: resolve(__dirname, "src/pages/methodologie.html"),
+        "a-propos": resolve(__dirname, "src/pages/a-propos.html"),
         sources: resolve(__dirname, "src/pages/sources.html"),
       },
       output: {

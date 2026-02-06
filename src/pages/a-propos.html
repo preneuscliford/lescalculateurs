@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos — LesCalculateurs.fr</title>
+    <meta
+      name="description"
+      content="À propos de LesCalculateurs.fr — outils de calcul et d'estimation basés sur des sources publiques officielles françaises."
+    />
+
+    <!-- SEO & Social -->
+    <link
+      rel="canonical"
+      href="https://www.lescalculateurs.fr/pages/a-propos"
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="À propos — LesCalculateurs.fr" />
+    <meta
+      property="og:description"
+      content="LesCalculateurs.fr : outils de calcul accessibles fondés sur des données publiques officielles françaises."
+    />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/a-propos"
+    />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "À propos",
+        "url": "https://www.lescalculateurs.fr/pages/a-propos",
+        "publisher": { "@type": "Organization", "name": "LesCalculateurs.fr" }
+      }
+    </script>
+    <link rel="stylesheet" href="/tailwind.css" />
+    <script type="module" src="../main.ts"></script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo & Brand -->
+          <div class="flex items-center space-x-3">
+            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs.fr" class="w-12 h-12 object-contain" />
+            <div>
+              <h1 class="text-2xl font-bold text-gray-900">Les Calculateurs</h1>
+              <p class="text-xs text-blue-600 font-medium">✨ Outils 2026</p>
+            </div>
+          </div>
+
+          <!-- Navigation Desktop -->
+          <nav class="hidden md:flex items-center space-x-6">
+            <a href="../index.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">🏠 Accueil</a>
+            <a href="./simulateurs.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">🎯 Tous les Simulateurs</a>
+            <a href="../index.html#calculateurs" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">🧮 TOP 5</a>
+            <a href="./blog.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">📰 Blog</a>
+            <a href="./methodologie.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">📚 Méthodologie</a>
+            <a href="#aide" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">❓ Aide</a>
+            <a href="./a-propos.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">ℹ️ À propos</a>
+          </nav>
+
+          <!-- CTA & Mobile Menu -->
+          <div class="flex items-center space-x-3">
+            <div class="hidden sm:block">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">🆓 Gratuit</span>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-gray-900">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 py-4">
+          <nav class="flex flex-col space-y-3">
+            <a href="../index.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">🏠 Accueil</a>
+            <a href="./simulateurs.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">🎯 Tous les Simulateurs</a>
+            <a href="../index.html#calculateurs" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">🧮 TOP 5</a>
+            <a href="./blog.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">📰 Blog</a>
+            <a href="./methodologie.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">📚 Méthodologie</a>
+            <a href="#aide" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">❓ Aide</a>
+            <a href="./a-propos.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">ℹ️ À propos</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <article class="prose prose-lg text-gray-600 max-w-none">
+        <h2>À propos de LesCalculateurs.fr</h2>
+
+        <p>
+          LesCalculateurs.fr est un projet indépendant dont l’objectif est de
+          proposer des
+          <strong>outils de calcul et d’estimation accessibles</strong>,
+          construits à partir de
+          <strong>données publiques officielles françaises</strong>.
+        </p>
+
+        <p>
+          Le site a pour vocation d’aider les utilisateurs à
+          <strong
+            >mieux comprendre des règles administratives, fiscales ou
+            sociales</strong
+          >, souvent complexes, en les traduisant sous forme de
+          <strong>simulateurs simples et pédagogiques</strong>.
+        </p>
+
+        <h3>Qui est derrière LesCalculateurs.fr ?</h3>
+        <p>
+          LesCalculateurs.fr est développé et maintenu par un
+          <strong>développeur indépendant</strong>, spécialisé dans la
+          conception de sites web et d’outils numériques.
+        </p>
+
+        <p>Le projet repose principalement sur :</p>
+        <ul>
+          <li>
+            des <strong>compétences techniques en développement web</strong>,
+          </li>
+          <li>
+            la <strong>lecture et l’interprétation de barèmes publics</strong>,
+          </li>
+          <li>
+            la <strong>mise en forme de règles administratives</strong> sous
+            forme de calculs compréhensibles.
+          </li>
+        </ul>
+
+        <p>
+          Il ne s’agit pas d’un site institutionnel et il n’est affilié à aucune
+          administration publique.
+        </p>
+
+        <h3>Ce que nous faisons (et ce que nous ne faisons pas)</h3>
+        <p>LesCalculateurs.fr se concentre exclusivement sur :</p>
+        <ul>
+          <li>
+            ✔️ l’intégration de
+            <strong>règles et barèmes publiés officiellement</strong>
+          </li>
+          <li>
+            ✔️ la création de <strong>simulateurs d’estimation</strong> à
+            vocation informative
+          </li>
+          <li>
+            ✔️ la <strong>simplification de calculs</strong> pour un usage grand
+            public
+          </li>
+          <li>
+            ✔️ l’orientation vers les
+            <strong>sources officielles compétentes</strong>
+          </li>
+        </ul>
+
+        <p>LesCalculateurs.fr <strong>ne fournit pas</strong> :</p>
+        <ul>
+          <li>de conseils fiscaux personnalisés,</li>
+          <li>d’avis juridiques,</li>
+          <li>de recommandations professionnelles.</li>
+        </ul>
+
+        <p>
+          Les résultats affichés sont <strong>indicatifs</strong> et doivent
+          toujours être
+          <strong>vérifiés auprès des organismes officiels</strong> ou de
+          professionnels qualifiés (expert-comptable, notaire, avocat).
+        </p>
+
+        <h3>Une démarche de transparence</h3>
+        <p>La transparence est un principe central du projet.</p>
+        <ul>
+          <li>
+            chaque simulateur précise qu’il s’agit d’une
+            <strong>estimation non contractuelle</strong>,
+          </li>
+          <li>
+            les <strong>sources officielles utilisées</strong> sont mentionnées,
+          </li>
+          <li>
+            les <strong>limites des calculs</strong> sont clairement indiquées,
+          </li>
+          <li>
+            les <strong>dates de mise à jour</strong> sont affichées lorsque les
+            barèmes évoluent.
+          </li>
+        </ul>
+
+        <h3>Pourquoi ce site existe</h3>
+        <p>
+          De nombreuses données officielles sont aujourd’hui accessibles au
+          public, mais leur lecture reste souvent technique, dispersée et
+          difficile à interpréter sans connaissances préalables.
+        </p>
+        <p>
+          LesCalculateurs.fr est né d’un constat simple :
+          <strong
+            >les données existent, mais leur exploitation n’est pas toujours
+            évidente</strong
+          >.
+        </p>
+
+        <h3>Engagements</h3>
+        <ul>
+          <li>
+            utiliser uniquement des
+            <strong>sources publiques officielles</strong>,
+          </li>
+          <li>
+            maintenir les outils
+            <strong>à jour selon les barèmes en vigueur</strong>,
+          </li>
+          <li>
+            ne pas collecter de <strong>données personnelles sensibles</strong>,
+          </li>
+          <li>
+            privilégier une approche
+            <strong>neutre, claire et responsable</strong>.
+          </li>
+        </ul>
+
+        <h3>Pour aller plus loin</h3>
+        <ul>
+          <li>
+            📘 Consultez la page <a href="./methodologie.html">Méthodologie</a>
+          </li>
+          <li>
+            🔗 Consultez les
+            <a href="./sources.html">sources officielles</a> utilisées
+          </li>
+          <li>
+            🧮 Utilisez les simulateurs comme
+            <strong>aide à l’estimation</strong>, jamais comme décision
+            définitive
+          </li>
+        </ul>
+
+        <p><strong>Dernière mise à jour : Janvier 2026</strong></p>
+      </article>
+    </main>
+
+    <footer class="bg-gray-100 mt-12 py-6 text-center text-gray-600 text-sm">
+      <p>© 2026 LesCalculateurs.fr - Tous droits réservés</p>
+      <p class="mt-2">
+        <a href="../index.html" class="text-primary-600 hover:underline"
+          >Accueil</a
+        >
+        |
+        <a href="./sources.html" class="text-primary-600 hover:underline"
+          >Sources officielles</a
+        >
+        |
+        <a href="./a-propos.html" class="text-primary-600 hover:underline"
+          >À propos</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
