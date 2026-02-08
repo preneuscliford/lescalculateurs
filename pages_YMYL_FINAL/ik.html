@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -142,7 +142,7 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment connaitre le montant exact des frais de notaire ?",
+      "name": "Comment connaître le montant exact des frais de notaire ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation precise."
@@ -153,7 +153,7 @@
 </script>
 </head>
   <body class="bg-gray-50">
-<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
 
     <header class="bg-white shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -515,7 +515,7 @@
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import { formatCurrency } from "../main.ts";
-      import { baremes } from "../data/baremes.ts";
+      import { barèmes } from "../data/barèmes.ts";
 
       const ikConfig = {
         title: "Indemnités kilométriques 2026 — barème auto/moto, déclaration",
@@ -594,7 +594,7 @@
                   error: "Veuillez sélectionner la puissance fiscale (CV).",
                 };
               }
-              const tableVoiture = baremes.indemnites_kilometriques.voiture.latest || baremes.indemnites_kilometriques.voiture["2024"];
+              const tableVoiture = barèmes.indemnites_kilometriques.voiture.latest || barèmes.indemnites_kilometriques.voiture["2024"];
               const baremePuissance = tableVoiture.find((b) => b.puissance === puissance);
               if (!baremePuissance) {
                 return {
@@ -625,7 +625,7 @@
                   error: "Veuillez sélectionner la cylindrée (deux-roues).",
                 };
               }
-              const ik = baremes.indemnites_kilometriques.deux_roues[cylindree];
+              const ik = barèmes.indemnites_kilometriques.deux_roues[cylindree];
               if (!isFinite(ik)) {
                 return {
                   success: false,
@@ -832,6 +832,6 @@
         </div>
       </div>
     </footer>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -170,7 +170,7 @@ gtag('config', 'G-2HNTGCYQ1X');
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment connaitre le montant exact des frais de notaire ?",
+      "name": "Comment connaître le montant exact des frais de notaire ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Consultez un notaire ou utilisez les outils officiels des Notaires de France pour une estimation precise."
@@ -184,7 +184,7 @@ gtag('config', 'G-2HNTGCYQ1X');
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
+<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.notaires.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">notaires.fr</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
 
     <header class="bg-white shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -619,7 +619,7 @@ gtag('config', 'G-2HNTGCYQ1X');
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import { formatCurrency } from "../main.ts";
-      import { baremes } from "../data/baremes.ts";
+      import { barèmes } from "../data/barèmes.ts";
 
       const travailConfig = {
         title: "Calculateur durée légale du travail",
@@ -663,11 +663,11 @@ gtag('config', 'G-2HNTGCYQ1X');
             const salaireHoraire = values.salaire_horaire;
             const periode = values.periode;
 
-            const dureLegale = baremes.duree_travail.duree_legale_hebdomadaire;
+            const dureLegale = barèmes.duree_travail.duree_legale_hebdomadaire;
             const majoration1 =
-              baremes.duree_travail.majorations_heures_sup.de_36_43h;
+              barèmes.duree_travail.majorations_heures_sup.de_36_43h;
             const majoration2 =
-              baremes.duree_travail.majorations_heures_sup.au_dela_43h;
+              barèmes.duree_travail.majorations_heures_sup.au_dela_43h;
 
             // Calcul des heures supplémentaires par semaine
             let heuresNormales = Math.min(heuresSemaine, dureLegale);
@@ -710,11 +710,11 @@ gtag('config', 'G-2HNTGCYQ1X');
             if (periode === "annuel") {
               const heuresSupAnnuelles = (heuresSup1 + heuresSup2) * 52;
               const contingent =
-                baremes.duree_travail.contingent_annuel_heures_sup;
+                barèmes.duree_travail.contingent_annuel_heures_sup;
               if (heuresSupAnnuelles > contingent) {
                 reposCompensateur =
                   (heuresSupAnnuelles - contingent) *
-                  baremes.duree_travail.repos_compensateur.taux;
+                  barèmes.duree_travail.repos_compensateur.taux;
               }
             }
 
@@ -935,6 +935,6 @@ gtag('config', 'G-2HNTGCYQ1X');
         </div>
       </div>
     </footer>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul definitif conforme aux baremes officiels</p></div>
+  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.notaires.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel notaires.fr</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
 </body>
 </html>
