@@ -5,80 +5,80 @@ const path = require("path");
 // Ne PAS inclure de mots corrects (faux positifs)
 const FAUTES = {
   // Fautes de frappe courantes
-  "parmis": "parmi",
-  "nottament": "notamment",
-  "notament": "notamment",
-  "apartement": "appartement",
-  "appartment": "appartement",
-  "calucl": "calcul",
-  "calcuateur": "calculateur",
-  "calcualteur": "calculateur",
-  "simualteur": "simulateur",
-  "simulatuer": "simulateur",
-  "éxonération": "exonération",
-  "éxonéré": "exonéré",
-  "supériure": "supérieure",
-  "infériure": "inférieure",
-  "déclaratoin": "déclaration",
-  "propriétare": "propriétaire",
-  "imobillier": "immobilier",
-  "immobillier": "immobilier",
-  "immobilié": "immobilier",
-  "fiscall": "fiscal",
-  "fiscallement": "fiscalement",
-  "révenus": "revenus",
-  "revnus": "revenus",
-  "salrial": "salarial",
-  "menstuel": "mensuel",
-  "menusuel": "mensuel",
-  "annulle": "annuel",
-  "annuele": "annuel",
-  "calcullé": "calculé",
-  "estimatoin": "estimation",
-  "rémunéraion": "rémunération",
-  "rmunération": "rémunération",
-  "dédutcible": "déductible",
-  "bénéficiares": "bénéficiaires",
-  "beneficiaire": "bénéficiaire",
-  "prélevement": "prélèvement",
-  "prélevements": "prélèvements",
-  "prelevement": "prélèvement",
-  "qulques": "quelques",
-  "retraîte": "retraite",
-  "retraîté": "retraité",
-  "montnat": "montant",
-  "montantt": "montant",
-  "hébergment": "hébergement",
-  "gratuitemnt": "gratuitement",
-  "aprés": "après",
-  "trés": "très",
-  "intérets": "intérêts",
-  "interets": "intérêts",
-  "intêrets": "intérêts",
+  parmis: "parmi",
+  nottament: "notamment",
+  notament: "notamment",
+  apartement: "appartement",
+  appartment: "appartement",
+  calucl: "calcul",
+  calcuateur: "calculateur",
+  calcualteur: "calculateur",
+  simualteur: "simulateur",
+  simulatuer: "simulateur",
+  éxonération: "exonération",
+  éxonéré: "exonéré",
+  supériure: "supérieure",
+  infériure: "inférieure",
+  déclaratoin: "déclaration",
+  propriétare: "propriétaire",
+  imobillier: "immobilier",
+  immobillier: "immobilier",
+  immobilié: "immobilier",
+  fiscall: "fiscal",
+  fiscallement: "fiscalement",
+  révenus: "revenus",
+  revnus: "revenus",
+  salrial: "salarial",
+  menstuel: "mensuel",
+  menusuel: "mensuel",
+  annulle: "annuel",
+  annuele: "annuel",
+  calcullé: "calculé",
+  estimatoin: "estimation",
+  rémunéraion: "rémunération",
+  rmunération: "rémunération",
+  dédutcible: "déductible",
+  bénéficiares: "bénéficiaires",
+  beneficiaire: "bénéficiaire",
+  prélevement: "prélèvement",
+  prélevements: "prélèvements",
+  prelevement: "prélèvement",
+  qulques: "quelques",
+  retraîte: "retraite",
+  retraîté: "retraité",
+  montnat: "montant",
+  montantt: "montant",
+  hébergment: "hébergement",
+  gratuitemnt: "gratuitement",
+  aprés: "après",
+  trés: "très",
+  intérets: "intérêts",
+  interets: "intérêts",
+  intêrets: "intérêts",
   "en déssous": "en dessous",
-  "plsu": "plus",
-  "danc": "donc",
-  "tros": "trop",
-  "parceque": "parce que",
-  "suplémentaire": "supplémentaire",
-  "suplementaire": "supplémentaire",
-  "emprunteu": "emprunteur",
-  "amortissemnt": "amortissement",
-  "amortisement": "amortissement",
-  "propriétair": "propriétaire",
-  "locatare": "locataire",
+  plsu: "plus",
+  danc: "donc",
+  tros: "trop",
+  parceque: "parce que",
+  suplémentaire: "supplémentaire",
+  suplementaire: "supplémentaire",
+  emprunteu: "emprunteur",
+  amortissemnt: "amortissement",
+  amortisement: "amortissement",
+  propriétair: "propriétaire",
+  locatare: "locataire",
   "tout les": "tous les",
   "Tout les": "Tous les",
-  "biensur": "bien sûr",
-  "biensûr": "bien sûr",
-  "certe": "certes",
-  "ormis": "hormis",
-  "neanmoins": "néanmoins",
-  "neamoins": "néanmoins",
-  "malgrés": "malgré",
-  "malgres": "malgré",
-  "éléction": "élection",
-  "eventuellement": "éventuellement",
+  biensur: "bien sûr",
+  biensûr: "bien sûr",
+  certe: "certes",
+  ormis: "hormis",
+  neanmoins: "néanmoins",
+  neamoins: "néanmoins",
+  malgrés: "malgré",
+  malgres: "malgré",
+  éléction: "élection",
+  eventuellement: "éventuellement",
   "depend de": "dépend de",
   "votre impôts": "votre impôt",
   "2 026": "2026",
@@ -186,13 +186,21 @@ function findSpellingErrors(filePath) {
 
   for (const [faute, correction] of Object.entries(FAUTES)) {
     // Recherche insensible à la casse mais préserve la casse originale
-    const regex = new RegExp(`\\b${faute.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi");
+    const regex = new RegExp(
+      `\\b${faute.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
+      "gi",
+    );
     let match;
     while ((match = regex.exec(textContent)) !== null) {
       errors.push({
         faute: match[0],
         correction,
-        context: textContent.substring(Math.max(0, match.index - 30), match.index + faute.length + 30).trim(),
+        context: textContent
+          .substring(
+            Math.max(0, match.index - 30),
+            match.index + faute.length + 30,
+          )
+          .trim(),
       });
     }
   }
@@ -204,7 +212,9 @@ function main() {
   const srcDir = path.resolve(__dirname, "../src/pages");
   const files = getHtmlFiles(srcDir);
 
-  console.log(`🔍 Analyse orthographique de ${files.length} fichiers HTML...\n`);
+  console.log(
+    `🔍 Analyse orthographique de ${files.length} fichiers HTML...\n`,
+  );
 
   const allErrors = [];
 
@@ -233,8 +243,13 @@ function main() {
   }
 
   // Résumé
-  const totalErrors = allErrors.reduce((sum, item) => sum + item.errors.length, 0);
-  console.log(`\n📊 Résumé: ${totalErrors} erreurs dans ${allErrors.length} fichiers`);
+  const totalErrors = allErrors.reduce(
+    (sum, item) => sum + item.errors.length,
+    0,
+  );
+  console.log(
+    `\n📊 Résumé: ${totalErrors} erreurs dans ${allErrors.length} fichiers`,
+  );
 
   // Regrouper par type d'erreur
   const errorCounts = {};
