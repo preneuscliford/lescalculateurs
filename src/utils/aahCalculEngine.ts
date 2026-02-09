@@ -4,12 +4,14 @@
  */
 
 // PLAFOND STRICT AAH 2026 - Ne jamais dépasser
-const AAH_PLAFOND_2026 = 1016.65; // Montant maximum AAH versé
+// Source : Décret du 29 mars 2025 - applicable au 1er avril 2025
+const AAH_PLAFOND_2026 = 1033.32; // Montant maximum AAH versé (taux plein)
 
-// Montants de référence CAF (indicatifs)
+// Montants de référence CAF
+// Note : Depuis la déconjugalisation (oct 2023), seul le montant "seul" est pertinent
 const AAH_MONTANTS_2026 = {
-  seul: 956.65,
-  couple: 1529.04,
+  seul: 1033.32,  // Taux plein (sans revenus)
+  couple: 1033.32, // Identique depuis déconjugalisation
 };
 
 // Seuils d'incapacité

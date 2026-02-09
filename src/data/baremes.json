@@ -938,13 +938,14 @@
         "taux": 0.45
       }
     ],
-    "source": "SKIP (non dû)",
-    "checked_at": "2025-12-27T22:17:33.139Z"
+    "source": "Article 197 CGI - Barème officiel 2026",
+    "checked_at": "2026-02-09T22:00:00.000Z"
   },
   "smic": {
-    "annee": 2026,
-    "horaire_brut": 12.02,
-    "mensuel_brut_35h": 1823.03
+    "annee": 2025,
+    "horaire_brut": 11.88,
+    "mensuel_brut_35h": 1801.80,
+    "note": "Montants 2025 en attendant publication officielle 2026"
   },
   "apl": {
     "version": "2026",

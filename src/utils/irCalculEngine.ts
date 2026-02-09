@@ -18,12 +18,13 @@ export interface IRResult {
   mensualiteMoyenne: number;
 }
 
+// Barème IR 2026 - Source : Article 197 du Code général des impôts
 export const baremeIR2026: BaremeTranche[] = [
-  { plafond: 11497, taux: 0 },
-  { plafond: 29315, taux: 0.11 },
-  { plafond: 83823, taux: 0.3 },
-  { plafond: 180294, taux: 0.41 },
-  { plafond: Number.POSITIVE_INFINITY, taux: 0.45 },
+  { plafond: 11497, taux: 0 },      // 0%
+  { plafond: 28797, taux: 0.11 },   // 11%
+  { plafond: 82341, taux: 0.3 },    // 30%
+  { plafond: 177106, taux: 0.41 },  // 41%
+  { plafond: Number.POSITIVE_INFINITY, taux: 0.45 }, // 45%
 ];
 
 export function calculerIR(input: IRInput, bareme: BaremeTranche[] = baremeIR2026): IRResult {

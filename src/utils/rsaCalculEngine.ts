@@ -3,17 +3,17 @@
  * Basé sur les montants de base CAF et les règles d'éligibilité
  */
 
-// Montants RSA 2026 (références CAF indicatives)
+// Montants RSA 2026 (source : Légifrance, applicable au 1er avril 2025)
 const RSA_BASE_MONTANTS = {
-  seul: 607.75,
-  couple: 911.625,
-  monoparental_1enfant: 728.1,
-  monoparental_2enfants: 848.445,
-  monoparental_3enfants: 968.79,
+  seul: 646.52,        // Personne seule sans APL
+  couple: 969.78,      // Couple sans APL
+  monoparental_1enfant: 1106.94,  // Parent isolé avec 1 enfant sans APL
+  monoparental_2enfants: 1383.68, // Parent isolé avec 2 enfants sans APL
+  monoparental_3enfants: 1660.41, // Parent isolé avec 3 enfants sans APL
 };
 
-// Majorations par enfant supplémentaire
-const RSA_MAJORATION_ENFANT = 120.345;
+// Majorations par enfant supplémentaire (au-delà de 3 enfants)
+const RSA_MAJORATION_ENFANT = 258.61; // 276.73 pour parent isolé
 
 // Seuils de revenus (limites d'éligibilité)
 const RSA_SEUILS = {
