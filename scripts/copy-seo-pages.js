@@ -371,7 +371,10 @@ function generateSatellitePages({
     const defaultPillarKey = detectPillarKeyFromFileName(fileName);
     const renderedPages = pages.map((p, idx) => {
       const slug = slugify(p.title || `page-${p.number || idx + 1}`);
-      const pillarKey = defaultPillarKey === "aide" ? "aide" : p.pillarKeyOverride || defaultPillarKey;
+      const pillarKey =
+        defaultPillarKey === "aide"
+          ? "aide"
+          : p.pillarKeyOverride || defaultPillarKey;
       const pillar = pillarConfigs[pillarKey] || pillarConfigs.simulateurs;
       return { ...p, slug, pillarKey, pillar, idx };
     });
@@ -465,7 +468,9 @@ function ensurePillarCleanUrls({ cssFile, jsFile, satellitesTargetDir }) {
       /<script[^>]*type="module"[^>]*src="[^"]*main\.ts"[^>]*><\/script>/g,
       `<script type="module" crossorigin src="../../assets/${jsFile}"></script>`,
     );
-    if (!new RegExp(`href="\\.{2}\\/\\.{2}\\/assets\\/${cssFile}"`).test(html)) {
+    if (
+      !new RegExp(`href="\\.{2}\\/\\.{2}\\/assets\\/${cssFile}"`).test(html)
+    ) {
       html = html.replace(
         /<\/head>/,
         `    <link rel="stylesheet" crossorigin href="../../assets/${cssFile}">\n  </head>`,
@@ -511,8 +516,7 @@ function parseSatelliteTxtToPages(txt) {
     .filter((l) => l.length > 0);
 
   const hasPilierBlocks = lines.some(
-    (l, i) =>
-      l.toLowerCase() === "pilier" && isPilierBulletLine(lines[i + 1]),
+    (l, i) => l.toLowerCase() === "pilier" && isPilierBulletLine(lines[i + 1]),
   );
   if (hasPilierBlocks) {
     return parsePilierBlocksToPages(lines);
@@ -578,9 +582,7 @@ function parseSatelliteTxtToPages(txt) {
       continue;
     }
     if (/^Contenu\s*:/i.test(normalized)) {
-      current.contentHints = normalized
-        .replace(/^Contenu\s*:\s*/i, "")
-        .trim();
+      current.contentHints = normalized.replace(/^Contenu\s*:\s*/i, "").trim();
       continue;
     }
     if (/^CTA\s*:/i.test(normalized)) {
@@ -609,7 +611,9 @@ function parsePilierBlocksToPages(lines) {
   const pages = [];
 
   for (let i = 0; i < lines.length; i++) {
-    if (!(lines[i].toLowerCase() === "pilier" && isPilierBulletLine(lines[i + 1]))) {
+    if (
+      !(lines[i].toLowerCase() === "pilier" && isPilierBulletLine(lines[i + 1]))
+    ) {
       continue;
     }
 
@@ -617,7 +621,10 @@ function parsePilierBlocksToPages(lines) {
     let end = i + 2;
     while (
       end < lines.length &&
-      !(lines[end].toLowerCase() === "pilier" && isPilierBulletLine(lines[end + 1]))
+      !(
+        lines[end].toLowerCase() === "pilier" &&
+        isPilierBulletLine(lines[end + 1])
+      )
     ) {
       end++;
     }
@@ -630,7 +637,8 @@ function parsePilierBlocksToPages(lines) {
     const questionLine =
       content.find((l) => /^Réponse à la question\s*:/i.test(l)) || "";
     const ctaLine = content.find((l) => /^👉/u.test(l)) || "";
-    const relatedLine = content.find((l) => /^📄\s*Lire aussi\s*:/u.test(l)) || "";
+    const relatedLine =
+      content.find((l) => /^📄\s*Lire aussi\s*:/u.test(l)) || "";
     const footerLine =
       content.find((l) => /^Retour au pilier\s*:/i.test(l)) || "";
 
@@ -722,7 +730,9 @@ function parsePilierBlocksToPages(lines) {
 }
 
 function stripListPrefix(line) {
-  return String(line).replace(/^[-–•]\s*/u, "").trim();
+  return String(line)
+    .replace(/^[-–•]\s*/u, "")
+    .trim();
 }
 
 function isPilierBulletLine(line) {
@@ -753,7 +763,13 @@ function slugify(input) {
     .replace(/-{2,}/g, "-");
 }
 
-function renderSatelliteHtml({ page, relatedPage, cssFile, jsFile, assetPrefix }) {
+function renderSatelliteHtml({
+  page,
+  relatedPage,
+  cssFile,
+  jsFile,
+  assetPrefix,
+}) {
   const domain = "https://www.lescalculateurs.fr";
   const canonical = `${domain}/pages/${page.pillarKey}/${page.slug}`;
   const safeTitle = page.title || page.question || "Page satellite";
@@ -805,6 +821,7 @@ function renderSatelliteHtml({ page, relatedPage, cssFile, jsFile, assetPrefix }
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(metaTitle)}" />
     <meta name="twitter:description" content="${escapeHtml(metaDescription)}" />
+    <script defer src="/third-party-loader.js"></script>
 
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 
@@ -880,9 +897,7 @@ function renderSatelliteHtml({ page, relatedPage, cssFile, jsFile, assetPrefix }
       <section class="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">Ce qu’il faut vérifier</h2>
         <ul class="list-disc list-inside space-y-2 text-gray-700">
-          ${bullets
-            .map((b) => `<li>${escapeHtml(b)}</li>`)
-            .join("")}
+          ${bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join("")}
         </ul>
       </section>
 
@@ -954,7 +969,8 @@ function buildMetaDescription(page) {
 function buildParagraphs(page) {
   const paragraphs = [];
 
-  const first = page.bodyLines && page.bodyLines.length ? page.bodyLines[0] : "";
+  const first =
+    page.bodyLines && page.bodyLines.length ? page.bodyLines[0] : "";
   if (first) paragraphs.push(first);
 
   if (page.objective) {
@@ -968,9 +984,7 @@ function buildParagraphs(page) {
     const hints = page.contentHints
       .replace(/\s*[,;]\s*/g, ", ")
       .replace(/\.+$/g, "");
-    paragraphs.push(
-      `En pratique, on regarde surtout : ${hints}.`,
-    );
+    paragraphs.push(`En pratique, on regarde surtout : ${hints}.`);
   }
 
   if (paragraphs.length === 0) {
@@ -1004,7 +1018,9 @@ function buildBullets(page) {
   });
 
   if (bullets.length === 0) {
-    bullets.push("Votre situation personnelle (revenus, foyer, logement, durée)");
+    bullets.push(
+      "Votre situation personnelle (revenus, foyer, logement, durée)",
+    );
     bullets.push("Les règles en vigueur à la date de votre demande");
     bullets.push("Les justificatifs demandés par l’organisme");
   }
