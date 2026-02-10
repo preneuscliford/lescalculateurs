@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulateur ARE 2026 : estimation gratuite officielle</title>
-    <meta name="description" content="Estimez votre ARE 2026 gratuitement avec notre simulateur, conforme aux règles officielles France Travail." />
+    <title>Simulateur ARE 2026 Gratuit | Calcul Allocation Chômage France Travail</title>
+    <meta name="description" content="Calculez votre allocation chômage ARE 2026 gratuitement. Simulateur France Travail : estimation mensuelle selon votre ancien salaire. Résultat instantané !" />
     <meta
       name="keywords"
       content="ARE, allocation retour emploi, chômage 2026, allocations France Travail, simulateur ARE, allocation demandeur emploi, Pôle Emploi"
@@ -18,11 +18,11 @@
       content="https://www.lescalculateurs.fr/pages/are"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Simulateur ARE 2026 : estimation gratuite officielle" />
-    <meta property="og:description" content="Estimez votre ARE 2026 gratuitement avec notre simulateur, conforme aux règles officielles France Travail." />
+    <meta property="og:title" content="Simulateur ARE 2026 Gratuit | Calcul Allocation Chômage France Travail" />
+    <meta property="og:description" content="Calculez votre allocation chômage ARE 2026 gratuitement. Simulateur France Travail : estimation mensuelle selon votre ancien salaire. Résultat instantané !" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Simulateur ARE 2026 : estimation gratuite officielle" />
-    <meta name="twitter:description" content="Estimez votre ARE 2026 gratuitement avec notre simulateur, conforme aux règles officielles France Travail." />
+    <meta name="twitter:title" content="Simulateur ARE 2026 Gratuit | Calcul Allocation Chômage France Travail" />
+    <meta name="twitter:description" content="Calculez votre allocation chômage ARE 2026 gratuitement. Simulateur France Travail : estimation mensuelle selon votre ancien salaire. Résultat instantané !" />
 
     <!-- Favicon -->
     <link
@@ -46,6 +46,34 @@
 
     <link rel="stylesheet" href="../tailwind.css" />
     <script type="module" src="./scripts/are-script.ts"></script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.lescalculateurs.fr"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Simulateurs",
+          "item": "https://www.lescalculateurs.fr/pages/simulateurs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ARE 2026",
+          "item": "https://www.lescalculateurs.fr/pages/are"
+        }
+      ]
+    }
+    </script>
+
     <!-- Schema.org SoftwareApplication -->
     <script type="application/ld+json">
       {
@@ -74,10 +102,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment obtenir le montant exact de mon APL ?",
+      "name": "Quel est le montant de l'ARE en 2026 ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Utilisez le simulateur officiel de la CAF pour connaître votre montant définitif d'aide au logement."
+        "text": "Le montant de l'ARE (Allocation de Retour à l'Emploi) dépend de votre ancien salaire. En 2026, elle correspond à environ 57% de votre salaire journalier de référence (SJR), avec un minimum de 31,50€ et un maximum de 91,82€ brut par jour. Le montant varie aussi selon vos revenus d'activité repris et votre situation familiale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qui peut percevoir l'ARE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour percevoir l'ARE, vous devez : avoir travaillé au moins 4 mois (88 jours ou 610 heures) sur les 28 derniers mois, être inscrit comme demandeur d'emploi, être âgé de moins de 65 ans (ou 67 selon la durée d'assurance retraite), et résider en France. La radiation du contrat de travail ne doit pas être due à une démission sauf motif légitime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment calculer l'allocation chômage ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le calcul de l'ARE se fait en 4 étapes : 1) Déterminer le salaire journalier de référence (SJR) = total des salaires des 12 derniers mois / nombre de jours travaillés. 2) Appliquer le taux de 57,43% du SJR. 3) Ajouter une majoration si vous avez des enfants à charge. 4) Déduire les revenus d'activité partielle. Notre simulateur effectue ce calcul automatiquement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps dure l'allocation chômage ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La durée de l'ARE dépend de votre ancienneté dans l'emploi : de 6 à 24 mois maximum pour les moins de 53 ans. À partir de 53 ans, la durée peut atteindre 36 mois. L'allocation est versée mensuellement tant que vous êtes inscrit à France Travail (anciennement Pôle emploi) et que vous faites des démarches actives de recherche d'emploi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'ARE est-elle cumulable avec un travail à temps partiel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, l'ARE est cumulable avec une activité réduite (temps partiel, intermittent, saisonnier). Vous conservez une partie de votre allocation selon vos nouveaux revenus. Le calcul : nouvel montant ARE = ARE complète - 70% des revenus d'activité repris. Cette règle favorise la reprise d'emploi tout en maintenant une sécurité financière."
       }
     }
   ]
@@ -555,6 +615,44 @@
           >
             service-public.fr
           </a>
+        </p>
+      </section>
+
+      <!-- Simulateurs connexes - Maillage interne SEO -->
+      <section class="mb-12 bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">🔄 Autres simulateurs pour demandeurs d'emploi</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="/pages/rsa" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-purple-200">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💜</span>
+              <div>
+                <h4 class="font-semibold text-purple-700">Simulateur RSA</h4>
+                <p class="text-xs text-gray-600">Si vos droits ARE sont épuisés</p>
+              </div>
+            </div>
+          </a>
+          <a href="/pages/apl" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-blue-200">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🏠</span>
+              <div>
+                <h4 class="font-semibold text-blue-700">Simulateur APL</h4>
+                <p class="text-xs text-gray-600">Gardez votre aide au logement</p>
+              </div>
+            </div>
+          </a>
+          <a href="/pages/prime-activite" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-green-200">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💼</span>
+              <div>
+                <h4 class="font-semibold text-green-700">Prime d'activité</h4>
+                <p class="text-xs text-gray-600">Si vous reprenez un emploi</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">
+          💡 <strong>Conseil :</strong> Vous pouvez cumuler ARE + travail à temps partiel + APL. 
+          Utilisez nos simulateurs pour optimiser vos revenus pendant votre recherche d'emploi.
         </p>
       </section>
     </main>
