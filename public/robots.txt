@@ -39,6 +39,8 @@ Allow: /pages/salaire.html
 Allow: /pages/financement.html
 Allow: /pages/crypto-bourse.html
 Allow: /pages/impot.html
+Allow: /pages/guide-complet-impot-revenu-2026.html
+Allow: /pages/salaire-brut-net-calcul-2026.html
 Allow: /pages/comment-calculer-frais-notaire.html
 Allow: /pages/comment-calculer-plus-value.html
 
