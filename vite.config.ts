@@ -115,6 +115,8 @@ export default defineConfig({
         methodologie: resolve(__dirname, "src/pages/methodologie.html"),
         "a-propos": resolve(__dirname, "src/pages/a-propos.html"),
         sources: resolve(__dirname, "src/pages/sources.html"),
+        "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
+        "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
       },
       output: {
         manualChunks: {
