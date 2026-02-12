@@ -99,9 +99,26 @@
         ],
         "author": {
           "@type": "Organization",
-          "name": "LesCalculateurs.fr",
-          "url": "https://lescalculateurs.fr"
-        }
+          "name": "LesCalculateurs.fr"
+        },
+        "mainEntity": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Calculateur Frais de Notaire",
+            "url": "https://lescalculateurs.fr/pages/notaire",
+            "description": "Estimation des frais de notaire 2026 avec barèmes en vigueur",
+            "operatingSystem": "Web Browser",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Simulateur Prêt Immobilier",
+            "url": "https://lescalculateurs.fr/pages/pret",
+            "description": "Simulation complète de prêt immobilier avec capacité d'emprunt",
+            "operatingSystem": "Web Browser",
+            "applicationCategory": "FinanceApplication"
+          }
+        ]
       }
     </script>
 
@@ -139,18 +156,18 @@
           </div>
 
           <!-- Navigation Desktop -->
-          <nav class="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <nav class="hidden md:flex items-center space-x-6">
             <a
               href="#accueil"
               class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
             >
-              🏠 <span class="hidden lg:inline">Accueil</span>
+              🏠 Accueil
             </a>
             <a
               href="./pages/simulateurs.html"
               class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
             >
-              🎯 <span class="hidden lg:inline">Simulateurs</span><span class="lg:hidden">Outils</span>
+              🎯 Tous les Simulateurs
             </a>
             <a
               href="#calculateurs"
@@ -166,28 +183,38 @@
             </a>
             <a
               href="./pages/methodologie.html"
-              class="hidden lg:flex text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
             >
-              📚 Méthodo
+              📚 Méthodologie
             </a>
             <a
               href="./pages/a-propos.html"
-              class="hidden xl:flex text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
             >
               ℹ️ À propos
+            </a>
+            <a
+              href="#aide"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+            >
+              ❓ Aide
             </a>
           </nav>
 
           <!-- CTA & Mobile Menu -->
-          <div class="flex items-center space-x-2">
-            <a href="./pages/historique-mises-a-jour.html" 
-               class="hidden md:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors whitespace-nowrap"
-               title="Voir l'historique">
-              🔄 <span class="hidden lg:inline">12 fév. 2026</span>
-            </a>
-            <span class="hidden lg:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-              🆓 Gratuit
-            </span>
+          <div class="flex items-center space-x-3">
+            <div class="hidden sm:block">
+              <a href="./pages/historique-mises-a-jour.html" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors" title="Voir l'historique des mises à jour">
+                🔄 Mis à jour le 12 février 2026
+              </a>
+            </div>
+            <div class="hidden sm:block">
+              <span
+                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
+              >
+                🆓 Gratuit
+              </span>
+            </div>
 
             <!-- Mobile menu button -->
             <button
@@ -216,27 +243,48 @@
           id="mobile-menu"
           class="hidden md:hidden border-t border-gray-200 py-4"
         >
-          <nav class="flex flex-col space-y-2">
-            <a href="#accueil" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">
+          <nav class="flex flex-col space-y-3">
+            <a
+              href="#accueil"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2"
+            >
               🏠 Accueil
             </a>
-            <a href="./pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">
-              🎯 Simulateurs
+            <a
+              href="./pages/simulateurs.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2"
+            >
+              🎯 Tous les Simulateurs
             </a>
-            <a href="#calculateurs" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">
+            <a
+              href="#calculateurs"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2"
+            >
               🧮 TOP 5
             </a>
-            <a href="./pages/blog.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">
+            <a
+              href="/pages/blog.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2"
+            >
               📰 Blog
             </a>
-            <a href="./pages/methodologie.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">
+            <a
+              href="./pages/methodologie.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2"
+            >
               📚 Méthodologie
             </a>
-            <a href="./pages/historique-mises-a-jour.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2 bg-blue-50 rounded">
-              🔄 Mises à jour (12 fév. 2026)
-            </a>
-            <a href="./pages/a-propos.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2">
+            <a
+              href="./pages/a-propos.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2"
+            >
               ℹ️ À propos
+            </a>
+            <a
+              href="#aide"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors px-2 py-2"
+            >
+              ❓ Aide
             </a>
           </nav>
         </div>
@@ -245,261 +293,789 @@
 
     <main id="accueil" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- Intro SEO -->
-      <section class="text-center mb-16">
-        <div
-          class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6"
-        >
-          <span class="mr-2">🆕</span>
-          <span>Nouveau : Simulateur ARE 2026 disponible</span>
+      <section class="mb-12">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl font-bold text-gray-900 mb-6">
+            🚀 TOP 5 Calculateurs Financiers Gratuits 2026
+          </h1>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            <strong>Les calculateurs les plus utilisés</strong> pour vos projets
+            financiers ! 💡 <strong>Frais de notaire</strong>,
+            <strong>financement personnel</strong>,
+            <strong>plus-value immobilière & crypto</strong>,
+            <strong>simulateur prêt immobilier</strong> : tous les outils
+            indispensables. ✨ Calculs indicatifs en temps réel, basés sur les
+            <strong>barèmes en vigueur</strong>, sans inscription.
+          </p>
+          <div class="grid md:grid-cols-2 gap-6 text-left">
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h2 class="text-xl font-semibold text-blue-900 mb-2">
+                🏠 Immobilier
+              </h2>
+              <ul class="text-sm text-blue-700 space-y-1">
+                <li>
+                  • <strong>Frais de notaire</strong> : estimation par
+                  département
+                </li>
+                <li>
+                  • <strong>Prêt immobilier</strong> : capacité d'emprunt &
+                  mensualités
+                </li>
+                <li>• <strong>Plus-value</strong> : impôt avec abattements</li>
+              </ul>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h2 class="text-xl font-semibold text-green-900 mb-2">
+                � Finances
+              </h2>
+              <ul class="text-sm text-green-700 space-y-1">
+                <li>
+                  • <strong>Charges copropriété</strong> : estimation complète
+                </li>
+                <li>• <strong>Simulation achat</strong> : tous les coûts</li>
+                <li>
+                  • Calculateurs basés sur les barèmes réglementés en vigueur
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          🧮 Vos calculateurs<br class="md:hidden" />
-          <span class="text-blue-600">gratuits & nouvelle génération</span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Des outils de calcul simples et rapides pour vos projets : frais de
-          notaire, prêt immobilier, plus-value, charges de copropriété... et
-          bien plus encore !
-        </p>
+      </section>
+
+      <!-- Grid des calculateurs - TOP 5 -->
+      <section
+        id="calculateurs"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+      >
+        <!-- #1 Frais de notaire -->
         <div
-          class="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center"
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-blue-500"
         >
-          <a
-            href="#calculateurs"
-            class="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              💰 Frais de notaire 2026 — barèmes en vigueur, droits, TVA
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Le calculateur N°1 ! Simulez en quelques clics tous vos frais
+              d'acquisition immobilière selon les barèmes en vigueur.
+              Estimations indicatifs et immédiats.
+            </p>
+          </div>
+          <a href="pages/notaire.html" class="inline-block calculator-button"
+            >Calculer</a
           >
-            <span class="mr-2">🚀</span>
-            Découvrir les calculateurs
+        </div>
+
+        <!-- #2 Financement personnel -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-purple-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-purple-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              💳 Financement personnel — crédit conso, mensualités, capacité
+              2026
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Voiture, travaux, équipements : calculez votre capacité de
+              financement avec apport, mensualités et ratio d'endettement.
+              Simulation complète.
+            </p>
+          </div>
+          <a
+            href="pages/financement.html"
+            class="inline-block calculator-button"
+          >
+            Calculer
           </a>
-          <a
-            href="./pages/simulateurs.html"
-            class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+        </div>
+
+        <!-- #3 Plus-value immobilière -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-yellow-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              📈 Plus-value immobilière — impôt 2026, abattements, exonérations
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Calculez l'impôt sur votre plus-value immobilière avec abattements
+              et exonérations selon la durée de détention. Barèmes 2026 en
+              vigueur.
+            </p>
+          </div>
+          <a href="pages/plusvalue.html" class="inline-block calculator-button">
+            Calculer
+          </a>
+        </div>
+
+        <!-- Salaire brut/net 2025 -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-green-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              💼 Salaire brut/net 2026 — estimation nette & PAS
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Calculez votre net mensuel et annuel à partir du brut, avec taux
+              de PAS si connu. Comparaison multi-scénarios incluse.
+            </p>
+          </div>
+          <a href="pages/salaire.html" class="inline-block calculator-button"
+            >Calculer</a
           >
-            <span class="mr-2">📊</span>
-            Voir tous les simulateurs
+        </div>
+
+        <!-- Impôt sur le revenu 2025 -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-yellow-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🧾 Impôt sur le revenu 2026 — barème, parts
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Estimez votre IR avec barème progressif et quotient familial. Taux
+              moyen et mensualité. Comparaison par scénario disponible.
+            </p>
+          </div>
+          <a href="pages/impot.html" class="inline-block calculator-button"
+            >Calculer</a
+          >
+        </div>
+
+        <!-- Prêt immobilier -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-green-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🏦 Prêt immobilier — mensualités, capacité, TAEG, assurance
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Capacité d'emprunt, mensualités, assurance... Simulez votre
+              financement immobilier avec tous les détails ! Simulation complète
+              et indicative.
+            </p>
+          </div>
+          <a href="pages/pret.html" class="inline-block calculator-button">
+            Simuler
+          </a>
+        </div>
+
+        <!-- #4 Plus-value crypto & bourse (déplacé dans section cachée) -->
+      </section>
+
+      <!-- Section calculateurs supplémentaires (cachée par défaut) -->
+      <section
+        id="more-calculators"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+        style="display: none"
+      >
+        <!-- 🆕 RSA 2026 -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-purple-500 relative"
+        >
+          <div class="absolute top-3 right-3">
+            <span
+              class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+            >
+              🆕 NOUVEAU
+            </span>
+          </div>
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-purple-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              💜 RSA 2026 — Revenu de Solidarité Active, simulation gratuite
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Estimez votre Revenu de Solidarité Active selon votre situation
+              familiale, revenus et logement. Calcul conforme CAF 2026.
+            </p>
+          </div>
+          <a href="pages/rsa.html" class="inline-block calculator-button">
+            Simuler
+          </a>
+        </div>
+
+        <!-- 🆕 Prime d'activité 2026 -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-green-500 relative"
+        >
+          <div class="absolute top-3 right-3">
+            <span
+              class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+            >
+              🆕 NOUVEAU
+            </span>
+          </div>
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              💼 Prime d'activité 2026 — aide travailleurs revenus modestes
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Calculez votre Prime d'activité pour compléter vos revenus de
+              travail. Estimation basée sur vos revenus professionnels et
+              situation CAF.
+            </p>
+          </div>
+          <a
+            href="pages/prime-activite.html"
+            class="inline-block calculator-button"
+          >
+            Simuler
+          </a>
+        </div>
+
+        <!-- Plus-value crypto & bourse -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-orange-500"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🚀 Plus-Value Crypto & Bourse — flat tax 30%, abattements
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Calculez vos gains crypto et actions après impôts. Bitcoin,
+              Ethereum, CAC 40. Flat tax 30% et abattements selon durée de
+              détention.
+            </p>
+          </div>
+          <a
+            href="pages/crypto-bourse.html"
+            class="inline-block calculator-button"
+          >
+            Calculer
+          </a>
+        </div>
+
+        <!-- Indemnités kilométriques -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🚗 Indemnités kilométriques 2026 — barème auto/moto, déclaration
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Transformez vos kilomètres en euros ! Barème fiscal applicable
+              auto et moto, calcul instantané et déclaration simplifiée.
+            </p>
+            <p class="text-xs text-orange-600 mt-1 font-medium">
+              ⚠️ Barème 2024 — Données 2026 non encore publiées
+            </p>
+          </div>
+          <a href="pages/ik.html" class="inline-block calculator-button"
+            >Calculer</a
+          >
+        </div>
+
+        <!-- #5 Simulateur prêt immobilier (déplacé dans section cachée) -->
+
+        <!-- Taxe foncière -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🏠 Taxe foncière 2026 — estimation communale, budget
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Anticipez sereinement ! Estimez votre taxe foncière 2026 selon
+              votre commune et préparez votre budget sans surprise.
+            </p>
+            <p class="text-xs text-red-600 mt-1 font-medium">
+              ⚠️ Taux très variables selon les communes (10% à 45%+)
+            </p>
+          </div>
+          <a href="pages/taxe.html" class="inline-block calculator-button"
+            >Calculer</a
+          >
+        </div>
+
+        <!-- Durée du travail -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              ⏰ Temps de travail & heures sup' — majorations, RTT
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Vos heures valent de l'or ! Estimez majorations, heures sup' et
+              RTT selon le code du travail français.
+            </p>
+          </div>
+          <a href="pages/travail.html" class="inline-block calculator-button"
+            >Calculer</a
+          >
+        </div>
+
+        <!-- Estimateur charges copropriété -->
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+        >
+          <div class="mb-4">
+            <div
+              class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-red-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">
+              🏢 Charges de copropriété — budget, syndic, travaux
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Estimez vos charges courantes et exceptionnelles selon la taille,
+              l'âge et les équipements de votre copropriété.
+            </p>
+          </div>
+          <a href="pages/charges.html" class="inline-block calculator-button">
+            Calculer
           </a>
         </div>
       </section>
 
-      <!-- Section TOP 5 -->
-      <section id="calculateurs" class="mb-16">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-3xl font-bold text-gray-900">
-            🏆 TOP 5 des calculateurs
+      <!-- Bouton Afficher plus -->
+      <div class="text-center mb-12">
+        <button
+          id="show-more-btn"
+          class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          ✨ Afficher plus de calculateurs
+        </button>
+        <button
+          id="show-less-btn"
+          class="hidden bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          ➖ Afficher moins
+        </button>
+      </div>
+
+      <!-- FAQ Schema.org -->
+      <section id="aide" class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+          ❓ Aide & Questions fréquentes
+        </h2>
+
+        <div class="space-y-6" itemscope itemtype="https://schema.org/FAQPage">
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              🎯 Les calculs sont-ils fiables et à jour ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Nos simulateurs utilisent les barèmes réglementaires officiels
+                connus à date (CAF, Service-Public, administrations françaises).
+                Les calculs fournissent des estimations indicatives, mises à
+                jour lors de l'évolution des textes publiés. Les montants
+                affichés n'ont pas de valeur contractuelle. Les organismes
+                officiels restent seuls compétents pour le calcul définitif.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              🔒 Mes données sont-elles en sécurité ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Oui. Les calculs sont effectués localement dans votre
+                navigateur. Aucune donnée personnelle n'est transmise, stockée
+                ou conservée sur nos serveurs. Les informations saisies servent
+                uniquement à produire une estimation immédiate.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              📱 Est-ce compatible avec smartphone et tablette ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Oui. Le site est conçu pour fonctionner sur ordinateur,
+                smartphone et tablette. L'interface s'adapte automatiquement à
+                la taille de l'écran pour une utilisation confortable.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              ⚖️ Puis-je utiliser ces résultats pour des démarches officielles ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Les simulateurs sont conçus pour vous aider à estimer et
+                comprendre votre situation. Ils ne remplacent ni une démarche
+                officielle, ni une décision administrative, ni l'avis d'un
+                professionnel. Pour toute déclaration ou demande officielle,
+                référez-vous aux organismes compétents (CAF, impôts, notaire,
+                etc.).
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              🚑 J'ai constaté une erreur ou un dysfonctionnement
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="text-gray-600" itemprop="text">
+                Si vous identifiez une incohérence ou un bug technique, vous
+                pouvez nous le signaler via notre dépôt GitHub. Les corrections
+                sont apportées lorsque nécessaire afin d'améliorer la fiabilité
+                des outils.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section SEO supplémentaire -->
+      <section
+        class="mb-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-8"
+      >
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+            🎯 Pourquoi utiliser LesCalculateurs.fr ?
           </h2>
-          <a
-            href="./pages/simulateurs.html"
-            class="text-blue-600 hover:text-blue-700 font-medium text-sm hidden sm:block"
-          >
-            Voir tout →
-          </a>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Calculateur Frais de Notaire -->
-          <a
-            href="./pages/notaire.html"
-            class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden"
-          >
-            <div class="p-6">
-              <div
-                class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform"
-              >
-                🏠
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Frais de Notaire
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Estimez les frais d'acquisition immobilière : ancien, neuf,
-                terrain. Barèmes 2026 à jour.
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-4xl mb-3">⚡</div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Rapidité</h3>
+              <p class="text-gray-600">
+                Estimations immédiates, sans création de compte ni inscription.
               </p>
-              <div class="flex items-center text-blue-600 font-medium text-sm">
-                <span>Calculer →</span>
-              </div>
             </div>
-          </a>
 
-          <!-- Calculateur Prêt -->
-          <a
-            href="./pages/pret.html"
-            class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden"
-          >
-            <div class="p-6">
-              <div
-                class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform"
-              >
-                💰
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Prêt Immobilier
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Mensualités, capacité d'emprunt, tableau d'amortissement. Taux
-                actuels 2026.
+            <div class="text-center">
+              <div class="text-4xl mb-3">🎯</div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Clarté</h3>
+              <p class="text-gray-600">
+                Simulateurs conçus pour comprendre les règles, les paramètres
+                pris en compte et les limites des calculs.
               </p>
-              <div class="flex items-center text-green-600 font-medium text-sm">
-                <span>Simuler →</span>
-              </div>
             </div>
-          </a>
 
-          <!-- Calculateur Plus-Value -->
-          <a
-            href="./pages/plusvalue.html"
-            class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden"
-          >
-            <div class="p-6">
-              <div
-                class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform"
-              >
-                📈
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Plus-Value Immo
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Calculez la plus-value lors de la vente d'un bien immobilier.
-                Abattements et prélèvements.
+            <div class="text-center">
+              <div class="text-4xl mb-3">🆓</div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Gratuité</h3>
+              <p class="text-gray-600">
+                Outils accessibles gratuitement, sans obligation d'inscription.
               </p>
-              <div
-                class="flex items-center text-purple-600 font-medium text-sm"
-              >
-                <span>Estimer →</span>
-              </div>
             </div>
-          </a>
-
-          <!-- Calculateur Charges -->
-          <a
-            href="./pages/charges.html"
-            class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden"
-          >
-            <div class="p-6">
-              <div
-                class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform"
-              >
-                🏢
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Charges Copropriété
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Répartition des charges, tantièmes, budget prévisionnel. Pour
-                copropriétaires et syndics.
-              </p>
-              <div
-                class="flex items-center text-orange-600 font-medium text-sm"
-              >
-                <span>Calculer →</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Calculateur Financement -->
-          <a
-            href="./pages/financement.html"
-            class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden md:col-span-2 lg:col-span-1"
-          >
-            <div class="p-6">
-              <div
-                class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform"
-              >
-                🚗
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Financement Perso
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Crédit auto, moto, travaux. Simulation complète avec assurance et
-                frais.
-              </p>
-              <div class="flex items-center text-pink-600 font-medium text-sm">
-                <span>Découvrir →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="mt-8 text-center sm:hidden">
-          <a
-            href="./pages/simulateurs.html"
-            class="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors"
-          >
-            Voir tous les simulateurs →
-          </a>
-        </div>
-      </section>
-
-      <!-- Stats / Trust -->
-      <section class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-16">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div class="text-3xl font-bold text-blue-600 mb-1">15+</div>
-            <div class="text-sm text-gray-600">Calculateurs</div>
           </div>
-          <div>
-            <div class="text-3xl font-bold text-blue-600 mb-1">100K+</div>
-            <div class="text-sm text-gray-600">Calculs/mois</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-blue-600 mb-1">4.8★</div>
-            <div class="text-sm text-gray-600">Note moyenne</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-blue-600 mb-1">100%</div>
-            <div class="text-sm text-gray-600">Gratuit</div>
+
+          <div class="mt-8 bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+              🏆 Simulateurs les plus utilisés
+            </h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <h4 class="font-medium text-blue-900 mb-2">🏠 Immobilier</h4>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• Frais de notaire (barèmes et taux départementaux)</li>
+                  <li>• Prêt immobilier (mensualités et capacité d'emprunt)</li>
+                  <li>
+                    • Plus-value immobilière (abattements et durée de détention)
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-green-900 mb-2">🏢 Copropriété</h4>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• Charges annuelles estimatives</li>
+                  <li>• Charges courantes</li>
+                  <li>• Charges exceptionnelles (ordre de grandeur)</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      <!-- Features -->
-      <section class="grid md:grid-cols-3 gap-8 mb-16">
-        <div class="text-center">
-          <div class="text-4xl mb-4">⚡</div>
-          <h3 class="font-bold text-gray-900 mb-2">Rapide & Simple</h3>
-          <p class="text-gray-600 text-sm">
-            Des résultats en quelques clics, sans inscription
-          </p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">📱</div>
-          <h3 class="font-bold text-gray-900 mb-2">100% Responsive</h3>
-          <p class="text-gray-600 text-sm">
-            Fonctionne parfaitement sur mobile, tablette et desktop
-          </p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">🔒</div>
-          <h3 class="font-bold text-gray-900 mb-2">Sans Tracking</h3>
-          <p class="text-gray-600 text-sm">
-            Vos données restent sur votre appareil. 100% privé.
-          </p>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="text-center bg-gray-900 rounded-2xl p-12 text-white">
-        <h2 class="text-3xl font-bold mb-4">
-          Prêt à faire vos calculs ?
-        </h2>
-        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-          Rejoignez les milliers d'utilisateurs qui utilisent nos calculateurs
-          chaque jour pour leurs projets.
-        </p>
-        <a
-          href="./pages/simulateurs.html"
-          class="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
-        >
-          <span class="mr-2">🚀</span>
-          Explorer tous les simulateurs
-        </a>
       </section>
     </main>
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gray-300 mb-4">
+        <p class="text-gray-300 mb-3">
           💙 Les Calculateurs 2026 - Calculs fiables et gratuits
         </p>
         <div class="flex gap-4 text-sm flex-wrap justify-center mb-3">
@@ -530,26 +1106,55 @@
           });
         }
 
-        // Smooth scroll pour les ancres
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
-            if (href && href !== "#") {
-              e.preventDefault();
-              const target = document.querySelector(href);
-              if (target) {
-                target.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                });
-                // Fermer le menu mobile si ouvert
-                if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-                  mobileMenu.classList.add("hidden");
-                }
+        // Sélectionner tous les liens de navigation interne
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              // Fermer le menu mobile si ouvert
+              if (mobileMenu) {
+                mobileMenu.classList.add("hidden");
               }
+
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
             }
           });
         });
+
+        // Effet de highlighting du menu actif lors du scroll
+        const sections = document.querySelectorAll("section[id], main[id]");
+        const navItems = document.querySelectorAll('nav a[href^="#"]');
+
+        function highlightNavItem() {
+          let current = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - 200) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navItems.forEach((item) => {
+            item.classList.remove("text-blue-600");
+            item.classList.add("text-gray-600");
+            if (item.getAttribute("href") === `#${current}`) {
+              item.classList.remove("text-gray-600");
+              item.classList.add("text-blue-600");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", highlightNavItem);
       });
     </script>
   </body>

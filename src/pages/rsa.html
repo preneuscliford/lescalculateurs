@@ -181,23 +181,47 @@
 <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a> ou <a href="/simulateur" style="color:#856404;text-decoration:underline;">simulateur officiel</a>.</div>
 
     <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
-        <a href="/" class="font-bold text-lg text-blue-600">
-          🧮 Les Calculateurs
-        </a>
-        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm sm:text-base">
-          <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
-          <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">APL</a>
-          <a href="/pages/rsa" class="text-gray-600 hover:text-blue-600">RSA</a>
-          <a
-            href="/pages/prime-activite"
-            class="text-gray-600 hover:text-blue-600"
-            >Prime d'activité</a
-          >
+        <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:8px 12px;text-align:center;font-size:13px;">
+      <strong>⚠️ Estimation indicative.</strong> 
+      <span class="hidden sm:inline">Montant définitif sur </span>
+      <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a>
+      <span class="hidden md:inline"> | <a href="/pages/historique-mises-a-jour" style="color:#856404;text-decoration:underline;">🔄 Historique</a></span>
+    </div>
+
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Logo -->
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs" class="h-8 w-auto">
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
+          </a>
+          
+          <!-- Nav Desktop -->
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">🎯 Outils</a>
+            <a href="/pages/methodologie.html" class="hidden lg:block text-gray-600 hover:text-blue-600">📚 Méthodo</a>
+            <a href="/pages/historique-mises-a-jour" class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded">🔄 Màj 12/02</a>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
+          <nav class="flex flex-col space-y-2 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1">🎯 Simulateurs</a>
+            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1">📚 Méthodologie</a>
+            <a href="/pages/historique-mises-a-jour" class="text-blue-600 hover:text-blue-800 font-medium py-1 bg-blue-50 rounded px-2">🔄 Mises à jour</a>
+          </nav>
         </div>
       </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section
@@ -891,7 +915,7 @@
           © 2026 Les Calculateurs — Simulateurs gratuits français
         </p>
         <div class="flex gap-4 text-sm flex-wrap justify-center mb-4">
-          <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📘 Méthodologie</a>
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📘 Méthodo</a>
           <span class="text-gray-500">|</span>
           <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">📚 Sources</a>
           <span class="text-gray-500">|</span>
@@ -904,5 +928,17 @@
       </div>
     </footer>
   <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 Simulateur officiel CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes officiels</p></div>
+<!-- Mobile Menu Toggle Script -->
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', function() {
+        menu.classList.toggle('hidden');
+      });
+    }
+  })();
+</script>
 </body>
 </html>
