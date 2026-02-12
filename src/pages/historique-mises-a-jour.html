@@ -68,11 +68,28 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Historique des mises à jour et audits des barèmes 2026",
-        "description": "Suivi des mises à jour des simulateurs financiers et des barèmes officiels.",
+        "description": "Suivi des mises à jour des simulateurs financiers et des barèmes officiels. Audit complet du 12 février 2026 : SMIC, ASF, indemnités kilométriques, impôt sur le revenu, ARE.",
         "author": { "@type": "Organization", "name": "LesCalculateurs.fr" },
         "publisher": { "@type": "Organization", "name": "LesCalculateurs.fr" },
         "datePublished": "2026-02-12",
-        "dateModified": "2026-02-12"
+        "dateModified": "2026-02-12",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "SMIC 2026",
+            "description": "12,02 €/heure - Revalorisation au 1er janvier 2026"
+          },
+          {
+            "@type": "Thing", 
+            "name": "Barème kilométrique 2026",
+            "description": "Barème 2025 applicable pour l'imposition des revenus 2025"
+          },
+          {
+            "@type": "Thing",
+            "name": "Impôt sur le revenu 2026",
+            "description": "Barème des revenus 2025 déclarés en 2026"
+          }
+        ]
       }
     </script>
 
@@ -120,6 +137,57 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 py-12">
+      <!-- Encadré stratégique SEO/IA : État actuel -->
+      <section
+        class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg border-2 border-indigo-300 p-6 mb-8"
+      >
+        <h2 class="text-xl font-bold text-indigo-900 mb-4 flex items-center gap-2">
+          📊 État actuel des simulateurs (février 2026)
+        </h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+            <div class="text-3xl mb-1">✅</div>
+            <div class="text-2xl font-bold text-green-700">10</div>
+            <div class="text-sm text-gray-600">simulateurs conformes aux barèmes 2026</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+            <div class="text-3xl mb-1">🔄</div>
+            <div class="text-lg font-bold text-blue-700">Avril 2026</div>
+            <div class="text-sm text-gray-600">prochain audit programmé</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+            <div class="text-3xl mb-1">📅</div>
+            <div class="text-lg font-bold text-purple-700">12 fév. 2026</div>
+            <div class="text-sm text-gray-600">dernière vérification complète</div>
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-white/50 rounded-lg">
+          <p class="text-sm text-indigo-800">
+            <strong>Barèmes applicables :</strong> Revenus 2025 (déclarés en 2026) • 
+            Cotisations 2026 • Allocations au 1er avril 2025
+          </p>
+        </div>
+      </section>
+
+      <!-- Mention juridique de protection -->
+      <section
+        class="bg-amber-50 rounded-lg border-l-4 border-amber-400 p-6 mb-8"
+      >
+        <div class="flex items-start gap-3">
+          <span class="text-2xl">⚠️</span>
+          <div>
+            <h2 class="font-bold text-amber-900 mb-2">Information importante</h2>
+            <p class="text-amber-900 text-sm">
+              Nos simulateurs fournissent des <strong>estimations à titre indicatif</strong>. 
+              Seuls les organismes officiels (CAF, impots.gouv.fr, France Travail, URSSAF) 
+              peuvent déterminer le montant exact de vos droits et obligations. 
+              Les résultats obtenus ne constituent pas une décision définitive et 
+              peuvent varier selon votre situation personnelle exacte.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- Introduction -->
       <section
         class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8"
@@ -191,6 +259,21 @@
             barèmes auprès des sources officielles. Plusieurs corrections ont
             été appliquées pour garantir la conformité des calculs.
           </p>
+
+          <!-- Période de validité des barèmes -->
+          <div class="bg-blue-50 rounded-lg p-4 mb-4 border border-blue-200">
+            <h3 class="font-semibold text-blue-900 mb-2 flex items-center gap-2">
+              📅 Période de validité des barèmes mis à jour
+            </h3>
+            <ul class="space-y-1 text-sm text-blue-800">
+              <li><strong>SMIC :</strong> applicable au 1er janvier 2026</li>
+              <li><strong>Impôt sur le revenu :</strong> barème des revenus 2025 (déclarés en 2026)</li>
+              <li><strong>RSA / AAH / Prime d'activité :</strong> montants applicables au 1er avril 2025</li>
+              <li><strong>Indemnités kilométriques :</strong> barème 2025 (applicable pour l'imposition des revenus 2025)</li>
+              <li><strong>ARE :</strong> montants applicables depuis le 1er juillet 2025</li>
+              <li><strong>ASF :</strong> montant applicable au 1er avril 2025</li>
+            </ul>
+          </div>
 
           <div class="bg-gray-50 rounded-lg p-4 mb-4">
             <h3 class="font-semibold text-gray-900 mb-3">
@@ -458,7 +541,7 @@
       <section
         class="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6"
       >
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 mb-3">
           <span class="text-3xl">📅</span>
           <div>
             <h2 class="text-lg font-bold text-gray-900">
@@ -469,6 +552,15 @@
               sociaux
             </p>
           </div>
+        </div>
+        <div class="ml-12 text-sm text-gray-600">
+          <p class="mb-2">
+            Cette révision portera sur : RSA, AAH, Prime d'activité, ASF, ARE 
+            et les éventuelles revalorisations de printemps.
+          </p>
+          <a href="/pages/methodologie.html" class="text-blue-600 hover:text-blue-800 underline">
+            → Consulter notre méthodologie d'audit
+          </a>
         </div>
       </section>
 
