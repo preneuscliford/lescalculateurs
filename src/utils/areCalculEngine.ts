@@ -73,7 +73,8 @@ export function calculerARE(data: AREData): AREResult {
   let montantEstime = salaireReferent * tauxRemplacement;
 
   // ARE minimum and maximum (2026 rates)
-  const montantMinimum = 31.45; // euros/day
+  // Source : Unédic - Montant minimum applicable depuis le 1er juillet 2025
+  const montantMinimum = 32.13; // euros/day (corrigé : 31.45 → 32.13)
   const montantMaximumDaily = 186.92; // euros/day (max 2026)
   const montantMaximum = montantMaximumDaily * 30; // approximate monthly
 

@@ -18,12 +18,12 @@ export interface IRResult {
   mensualiteMoyenne: number;
 }
 
-// Barème IR 2026 - Source : Article 197 du Code général des impôts
+// Barème IR 2026 (revenus 2025) - Source : Article 197 du CGI - service-public.fr
 export const baremeIR2026: BaremeTranche[] = [
   { plafond: 11497, taux: 0 },      // 0%
-  { plafond: 28797, taux: 0.11 },   // 11%
-  { plafond: 82341, taux: 0.3 },    // 30%
-  { plafond: 177106, taux: 0.41 },  // 41%
+  { plafond: 29315, taux: 0.11 },   // 11% (corrigé : 28 797 → 29 315)
+  { plafond: 83823, taux: 0.3 },    // 30% (corrigé : 82 341 → 83 823)
+  { plafond: 180000, taux: 0.41 },  // 41% (corrigé : 177 106 → 180 000)
   { plafond: Number.POSITIVE_INFINITY, taux: 0.45 }, // 45%
 ];
 

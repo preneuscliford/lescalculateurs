@@ -44,7 +44,8 @@ export function calculerASF(data: ASFData): ASFResult {
   }
 
   // ASF monthly amount 2026 (per child)
-  const montantParEnfant = 176.5; // 2026 rate per child
+  // Source officielle : service-public.fr - Montant actualisé au 1er avril 2025
+  const montantParEnfant = 199.19; // 2026 rate per child (taux de base)
 
   // Resource ceiling 2026
   // Single parent with children
