@@ -117,6 +117,7 @@ export default defineConfig({
         sources: resolve(__dirname, "src/pages/sources.html"),
         "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
         "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
+        "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
       },
       output: {
         manualChunks: {
