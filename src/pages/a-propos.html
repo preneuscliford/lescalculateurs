@@ -39,23 +39,39 @@
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399" crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209781252231399"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TPFZCGX5');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TPFZCGX5");
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2HNTGCYQ1X"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2HNTGCYQ1X');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2HNTGCYQ1X");
     </script>
 
     <link rel="stylesheet" href="/tailwind.css" />
@@ -63,8 +79,14 @@
   </head>
   <body class="bg-gray-50">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TPFZCGX5"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Header -->
@@ -73,7 +95,11 @@
         <div class="flex justify-between items-center py-4">
           <!-- Logo & Brand -->
           <div class="flex items-center space-x-3">
-            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs.fr" class="w-12 h-12 object-contain" />
+            <img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs.fr"
+              class="w-12 h-12 object-contain"
+            />
             <div>
               <h1 class="text-2xl font-bold text-gray-900">Les Calculateurs</h1>
               <p class="text-xs text-blue-600 font-medium">✨ Outils 2026</p>
@@ -82,50 +108,123 @@
 
           <!-- Navigation Desktop -->
           <nav class="hidden md:flex items-center space-x-2 md:space-x-4">
-            <a href="../index.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">🏠 Accueil</a>
-            <a href="./simulateurs.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">🎯 Outils</a>
-            <a href="../index.html#calculateurs" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">🧮 TOP 5</a>
-            <a href="./blog.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">📰 Blog</a>
-            <a href="./methodologie.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors">📚 Méthodologie</a>
-            <a href="./a-propos.html" class="text-blue-600 font-medium text-sm transition-colors">ℹ️ À propos</a>
+            <a
+              href="../index.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+              >🏠 Accueil</a
+            >
+            <a
+              href="./simulateurs.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+              >🎯 Outils</a
+            >
+            <a
+              href="../index.html#calculateurs"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+              >🧮 TOP 5</a
+            >
+            <a
+              href="./blog.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+              >📰 Blog</a
+            >
+            <a
+              href="./methodologie.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm transition-colors"
+              >📚 Méthodologie</a
+            >
+            <a
+              href="./a-propos.html"
+              class="text-blue-600 font-medium text-sm transition-colors"
+              >ℹ️ À propos</a
+            >
           </nav>
 
           <!-- Mobile menu button -->
-          <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-gray-900">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-gray-600 hover:text-gray-900"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
             </svg>
           </button>
         </div>
 
         <!-- Menu mobile -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 py-4">
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden border-t border-gray-200 py-4"
+        >
           <nav class="flex flex-col space-y-3">
-            <a href="../index.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2">🏠 Accueil</a>
-            <a href="./simulateurs.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2">🎯 Simulateurs</a>
-            <a href="./blog.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2">📰 Blog</a>
-            <a href="./methodologie.html" class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2">📚 Méthodologie</a>
-            <a href="./a-propos.html" class="text-blue-600 font-medium text-sm px-2 py-2">ℹ️ À propos</a>
+            <a
+              href="../index.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2"
+              >🏠 Accueil</a
+            >
+            <a
+              href="./simulateurs.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2"
+              >🎯 Simulateurs</a
+            >
+            <a
+              href="./blog.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2"
+              >📰 Blog</a
+            >
+            <a
+              href="./methodologie.html"
+              class="text-gray-600 hover:text-blue-600 font-medium text-sm px-2 py-2"
+              >📚 Méthodologie</a
+            >
+            <a
+              href="./a-propos.html"
+              class="text-blue-600 font-medium text-sm px-2 py-2"
+              >ℹ️ À propos</a
+            >
           </nav>
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16">
+    <section
+      class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full mb-6">
+        <div
+          class="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full mb-6"
+        >
           <span class="text-4xl">🎯</span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">À propos de LesCalculateurs.fr</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          À propos de LesCalculateurs.fr
+        </h1>
         <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-          Des outils de calcul gratuits et accessibles, construits à partir de données publiques officielles françaises.
+          Des outils de calcul gratuits et accessibles, construits à partir de
+          données publiques officielles françaises.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="./methodologie.html" class="inline-flex items-center px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+          <a
+            href="./methodologie.html"
+            class="inline-flex items-center px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+          >
             📚 Notre méthodologie
           </a>
-          <a href="./sources.html" class="inline-flex items-center px-6 py-3 bg-blue-500/30 text-white font-semibold rounded-lg hover:bg-blue-500/40 transition-colors border border-blue-400">
+          <a
+            href="./sources.html"
+            class="inline-flex items-center px-6 py-3 bg-blue-500/30 text-white font-semibold rounded-lg hover:bg-blue-500/40 transition-colors border border-blue-400"
+          >
             🔗 Sources officielles
           </a>
         </div>
@@ -139,14 +238,25 @@
           <div>
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Notre mission</h2>
             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-              LesCalculateurs.fr est un projet indépendant né d'un constat simple : <strong class="text-blue-600">les données publiques existent, mais leur exploitation n'est pas toujours évidente</strong>.
+              LesCalculateurs.fr est un projet indépendant né d'un constat
+              simple :
+              <strong class="text-blue-600"
+                >les données publiques existent, mais leur exploitation n'est
+                pas toujours évidente</strong
+              >.
             </p>
             <p class="text-gray-600 mb-6">
-              Notre objectif est de transformer des règles administratives, fiscales et sociales souvent complexes en <strong>simulateurs simples et pédagogiques</strong>.
+              Notre objectif est de transformer des règles administratives,
+              fiscales et sociales souvent complexes en
+              <strong>simulateurs simples et pédagogiques</strong>.
             </p>
             <div class="flex items-center space-x-2 text-sm text-gray-500">
-              <span class="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
-              <span>Projet indépendant - Sans affiliation institutionnelle</span>
+              <span
+                class="inline-block w-2 h-2 bg-green-500 rounded-full"
+              ></span>
+              <span
+                >Projet indépendant - Sans affiliation institutionnelle</span
+              >
             </div>
           </div>
           <div class="grid grid-cols-2 gap-4">
@@ -179,36 +289,67 @@
     <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">Ce que nous faisons</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">Des outils conçus pour simplifier l'accès à l'information publique</p>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Ce que nous faisons
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Des outils conçus pour simplifier l'accès à l'information publique
+          </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Card 1 -->
-          <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow">
-            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6"
+            >
               <span class="text-2xl">📋</span>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Intégration de barèmes</h3>
-            <p class="text-gray-600">Nous intégrons les règles et barèmes publiés officiellement par les administrations françaises.</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Intégration de barèmes
+            </h3>
+            <p class="text-gray-600">
+              Nous intégrons les règles et barèmes publiés officiellement par
+              les administrations françaises.
+            </p>
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow">
-            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6"
+            >
               <span class="text-2xl">🧮</span>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Simulateurs clairs</h3>
-            <p class="text-gray-600">Des calculateurs d'estimation à vocation informative, conçus pour un usage grand public.</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Simulateurs clairs
+            </h3>
+            <p class="text-gray-600">
+              Des calculateurs d'estimation à vocation informative, conçus pour
+              un usage grand public.
+            </p>
           </div>
 
           <!-- Card 3 -->
-          <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow">
-            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6"
+            >
               <span class="text-2xl">🔗</span>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Orientation vers l'officiel</h3>
-            <p class="text-gray-600">Nous orientons systématiquement vers les sources officielles compétentes pour chaque situation.</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Orientation vers l'officiel
+            </h3>
+            <p class="text-gray-600">
+              Nous orientons systématiquement vers les sources officielles
+              compétentes pour chaque situation.
+            </p>
           </div>
         </div>
       </div>
@@ -221,15 +362,21 @@
           <!-- Ce que nous ne faisons PAS -->
           <div class="bg-red-50 rounded-2xl p-8 border border-red-100">
             <div class="flex items-center space-x-3 mb-6">
-              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center"
+              >
                 <span class="text-xl">⚠️</span>
               </div>
-              <h3 class="text-xl font-semibold text-red-800">Ce que nous ne fournissons pas</h3>
+              <h3 class="text-xl font-semibold text-red-800">
+                Ce que nous ne fournissons pas
+              </h3>
             </div>
             <ul class="space-y-4">
               <li class="flex items-start space-x-3">
                 <span class="text-red-500 mt-1">✕</span>
-                <span class="text-gray-700">De conseils fiscaux personnalisés</span>
+                <span class="text-gray-700"
+                  >De conseils fiscaux personnalisés</span
+                >
               </li>
               <li class="flex items-start space-x-3">
                 <span class="text-red-500 mt-1">✕</span>
@@ -237,16 +384,22 @@
               </li>
               <li class="flex items-start space-x-3">
                 <span class="text-red-500 mt-1">✕</span>
-                <span class="text-gray-700">De recommandations professionnelles</span>
+                <span class="text-gray-700"
+                  >De recommandations professionnelles</span
+                >
               </li>
               <li class="flex items-start space-x-3">
                 <span class="text-red-500 mt-1">✕</span>
-                <span class="text-gray-700">De décisions administratives définitives</span>
+                <span class="text-gray-700"
+                  >De décisions administratives définitives</span
+                >
               </li>
             </ul>
             <div class="mt-6 p-4 bg-white rounded-xl">
               <p class="text-sm text-gray-600">
-                <strong>Important :</strong> Les résultats sont <span class="text-red-600 font-semibold">indicatifs</span> et doivent être vérifiés auprès des organismes officiels.
+                <strong>Important :</strong> Les résultats sont
+                <span class="text-red-600 font-semibold">indicatifs</span> et
+                doivent être vérifiés auprès des organismes officiels.
               </p>
             </div>
           </div>
@@ -254,23 +407,33 @@
           <!-- Notre engagement transparence -->
           <div class="bg-green-50 rounded-2xl p-8 border border-green-100">
             <div class="flex items-center space-x-3 mb-6">
-              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+              <div
+                class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"
+              >
                 <span class="text-xl">✓</span>
               </div>
-              <h3 class="text-xl font-semibold text-green-800">Notre engagement transparence</h3>
+              <h3 class="text-xl font-semibold text-green-800">
+                Notre engagement transparence
+              </h3>
             </div>
             <ul class="space-y-4">
               <li class="flex items-start space-x-3">
                 <span class="text-green-500 mt-1">✓</span>
-                <span class="text-gray-700">Estimations non contractuelles clairement indiquées</span>
+                <span class="text-gray-700"
+                  >Estimations non contractuelles clairement indiquées</span
+                >
               </li>
               <li class="flex items-start space-x-3">
                 <span class="text-green-500 mt-1">✓</span>
-                <span class="text-gray-700">Sources officielles toujours mentionnées</span>
+                <span class="text-gray-700"
+                  >Sources officielles toujours mentionnées</span
+                >
               </li>
               <li class="flex items-start space-x-3">
                 <span class="text-green-500 mt-1">✓</span>
-                <span class="text-gray-700">Limites des calculs explicitement affichées</span>
+                <span class="text-gray-700"
+                  >Limites des calculs explicitement affichées</span
+                >
               </li>
               <li class="flex items-start space-x-3">
                 <span class="text-green-500 mt-1">✓</span>
@@ -279,7 +442,10 @@
             </ul>
             <div class="mt-6 p-4 bg-white rounded-xl">
               <p class="text-sm text-gray-600">
-                <strong>Notre promesse :</strong> Une approche <span class="text-green-600 font-semibold">neutre, claire et responsable</span>.
+                <strong>Notre promesse :</strong> Une approche
+                <span class="text-green-600 font-semibold"
+                  >neutre, claire et responsable</span
+                >.
               </p>
             </div>
           </div>
@@ -288,15 +454,20 @@
     </section>
 
     <!-- Pourquoi ce site existe -->
-    <section class="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <section
+      class="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+    >
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl font-bold mb-6">Pourquoi ce site existe ?</h2>
         <p class="text-xl text-gray-300 leading-relaxed mb-8">
-          De nombreuses données officielles sont accessibles au public, mais leur lecture reste souvent technique, dispersée et difficile à interpréter sans connaissances préalables.
+          De nombreuses données officielles sont accessibles au public, mais
+          leur lecture reste souvent technique, dispersée et difficile à
+          interpréter sans connaissances préalables.
         </p>
         <div class="bg-white/10 backdrop-blur rounded-2xl p-8 inline-block">
           <p class="text-2xl font-semibold text-blue-300">
-            "Les données existent, mais leur exploitation n'est pas toujours évidente"
+            "Les données existent, mais leur exploitation n'est pas toujours
+            évidente"
           </p>
         </div>
       </div>
@@ -306,40 +477,65 @@
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Qui est derrière le projet ?</h2>
-          
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Qui est derrière le projet ?
+          </h2>
+
           <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
             <div class="flex items-start space-x-2 md:space-x-4">
-              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0"
+              >
                 <span class="text-3xl">👨‍💻</span>
               </div>
               <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Un développeur indépendant</h3>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                  Un développeur indépendant
+                </h3>
                 <p class="text-gray-600 mb-4">
-                  LesCalculateurs.fr est développé et maintenu par un développeur indépendant, spécialisé dans la conception de sites web et d'outils numériques.
+                  LesCalculateurs.fr est développé et maintenu par un
+                  développeur indépendant, spécialisé dans la conception de
+                  sites web et d'outils numériques.
                 </p>
                 <p class="text-gray-600 mb-4">
-                  Il ne s'agit <strong class="text-gray-900">pas d'un site institutionnel</strong> et il n'est affilié à aucune administration publique.
+                  Il ne s'agit
+                  <strong class="text-gray-900"
+                    >pas d'un site institutionnel</strong
+                  >
+                  et il n'est affilié à aucune administration publique.
                 </p>
                 <p class="text-gray-600 italic">
-                  Le projet est développé dans une démarche d'amélioration continue, en fonction des évolutions réglementaires et des retours utilisateurs.
+                  Le projet est développé dans une démarche d'amélioration
+                  continue, en fonction des évolutions réglementaires et des
+                  retours utilisateurs.
                 </p>
               </div>
             </div>
 
             <div class="mt-8 pt-8 border-t border-gray-200">
-              <h4 class="font-semibold text-gray-900 mb-4">Le projet repose sur :</h4>
+              <h4 class="font-semibold text-gray-900 mb-4">
+                Le projet repose sur :
+              </h4>
               <div class="grid sm:grid-cols-3 gap-4">
                 <div class="flex items-center space-x-3">
-                  <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">1</span>
+                  <span
+                    class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600"
+                    >1</span
+                  >
                   <span class="text-gray-700">Compétences techniques</span>
                 </div>
                 <div class="flex items-center space-x-3">
-                  <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">2</span>
+                  <span
+                    class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600"
+                    >2</span
+                  >
                   <span class="text-gray-700">Lecture des barèmes publics</span>
                 </div>
                 <div class="flex items-center space-x-3">
-                  <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">3</span>
+                  <span
+                    class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600"
+                    >3</span
+                  >
                   <span class="text-gray-700">Mise en forme pédagogique</span>
                 </div>
               </div>
@@ -352,15 +548,24 @@
     <!-- CTA Section -->
     <section class="py-16 bg-blue-600">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">Découvrez nos simulateurs</h2>
+        <h2 class="text-3xl font-bold text-white mb-6">
+          Découvrez nos simulateurs
+        </h2>
         <p class="text-blue-100 text-lg mb-8">
-          Des outils gratuits pour estimer vos droits, aides et obligations en quelques clics.
+          Des outils gratuits pour estimer vos droits, aides et obligations en
+          quelques clics.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="./simulateurs.html" class="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
+          <a
+            href="./simulateurs.html"
+            class="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
+          >
             🎯 Voir tous les simulateurs
           </a>
-          <a href="./sources.html" class="inline-flex items-center px-8 py-4 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-400 transition-colors border border-blue-400">
+          <a
+            href="./sources.html"
+            class="inline-flex items-center px-8 py-4 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-400 transition-colors border border-blue-400"
+          >
             🔗 Consulter nos sources
           </a>
         </div>
@@ -373,28 +578,74 @@
         <div class="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h4 class="text-white font-semibold mb-4">LesCalculateurs.fr</h4>
-            <p class="text-sm">Outils de calcul gratuits basés sur des sources publiques officielles françaises.</p>
+            <p class="text-sm">
+              Outils de calcul gratuits basés sur des sources publiques
+              officielles françaises.
+            </p>
           </div>
           <div>
             <h4 class="text-white font-semibold mb-4">Navigation</h4>
             <ul class="space-y-2 text-sm">
-              <li><a href="../index.html" class="hover:text-white transition-colors">Accueil</a></li>
-              <li><a href="./simulateurs.html" class="hover:text-white transition-colors">Simulateurs</a></li>
-              <li><a href="./blog.html" class="hover:text-white transition-colors">Blog</a></li>
+              <li>
+                <a
+                  href="../index.html"
+                  class="hover:text-white transition-colors"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./simulateurs.html"
+                  class="hover:text-white transition-colors"
+                  >Simulateurs</a
+                >
+              </li>
+              <li>
+                <a href="./blog.html" class="hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
             </ul>
           </div>
           <div>
             <h4 class="text-white font-semibold mb-4">Informations</h4>
             <ul class="space-y-2 text-sm">
-              <li><a href="./methodologie.html" class="hover:text-white transition-colors">Méthodologie</a></li>
-              <li><a href="./sources.html" class="hover:text-white transition-colors">Sources officielles</a></li>
-              <li><a href="./a-propos.html" class="hover:text-white transition-colors">À propos</a></li>
-              <li><a href="/pages/historique-mises-a-jour" class="hover:text-white transition-colors">🔄 Mises à jour</a></li>
+              <li>
+                <a
+                  href="./methodologie.html"
+                  class="hover:text-white transition-colors"
+                  >Méthodologie</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./sources.html"
+                  class="hover:text-white transition-colors"
+                  >Sources officielles</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./a-propos.html"
+                  class="hover:text-white transition-colors"
+                  >À propos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/historique-mises-a-jour"
+                  class="hover:text-white transition-colors"
+                  >🔄 Mises à jour</a
+                >
+              </li>
             </ul>
           </div>
           <div>
             <h4 class="text-white font-semibold mb-4">Mise à jour</h4>
-            <p class="text-sm">Dernière mise à jour : <span class="text-white">Janvier 2026</span></p>
+            <p class="text-sm">
+              Dernière mise à jour :
+              <span class="text-white">Janvier 2026</span>
+            </p>
           </div>
         </div>
         <div class="border-t border-gray-800 pt-8 text-center text-sm">
@@ -405,10 +656,12 @@
 
     <script>
       // Mobile menu toggle
-      document.getElementById('mobile-menu-button').addEventListener('click', function() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-      });
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
     </script>
   </body>
 </html>
