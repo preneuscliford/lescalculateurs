@@ -178,26 +178,24 @@
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Comment obtenir le montant estimé de mon APL ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif d'aide au logement."
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment obtenir le montant estimé de mon APL ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "utilisez l'estimateur gratuit de la CAF pour connaître votre montant définitif d'aide au logement."
+            }
+          }
+        ]
       }
-    }
-  ]
-}
-</script>
-</head>
+    </script>
+  </head>
   <body class="bg-gray-50">
-
-
     <header class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
@@ -238,9 +236,7 @@
                   ></path>
                 </svg>
               </div>
-              <span class="text-sm font-medium text-gray-700"
-                >Outils</span
-              >
+              <span class="text-sm font-medium text-gray-700">Outils</span>
             </div>
           </div>
 
@@ -258,7 +254,9 @@
               class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
               >ℹ️ À propos</a
             >
-            <span class="hidden md:inline text-xs text-gray-500">15+ outils</span>
+            <span class="hidden md:inline text-xs text-gray-500"
+              >15+ outils</span
+            >
           </div>
         </div>
       </div>
@@ -801,109 +799,159 @@
           >
         </p>
         <div class="flex gap-4 text-sm flex-wrap justify-center">
-          <a href="/pages/methodologie" class="text-gray-600 hover:text-gray-900 transition-colors">📘 Méthodologie</a>
+          <a
+            href="/pages/methodologie"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >📘 Méthodologie</a
+          >
           <span class="text-gray-400">|</span>
-          <a href="/pages/sources" class="text-gray-600 hover:text-gray-900 transition-colors">📚 Sources</a>
+          <a
+            href="/pages/sources"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >📚 Sources</a
+          >
           <span class="text-gray-400">|</span>
-          <a href="/pages/historique-mises-a-jour" class="text-gray-600 hover:text-gray-900 transition-colors">🔄 Mises à jour</a>
+          <a
+            href="/pages/historique-mises-a-jour"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >🔄 Mises à jour</a
+          >
         </div>
       </div>
     </footer>
-  <div class="ymyl-officiel-btn" style="text-align:center;margin:20px 0;"><a class="btn-officiel" href="https://www.caf.fr" target="_blank" rel="noopener" style="display:inline-block;background:#007bff;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold;">👉 estimateur gratuit CAF</a><p style="font-size:12px;color:#666;margin-top:8px;">Pour un calcul définitif conforme aux barèmes en vigueur</p></div>
+    <div class="ymyl-officiel-btn" style="text-align: center; margin: 20px 0">
+      <a
+        class="btn-officiel"
+        href="https://www.caf.fr"
+        target="_blank"
+        rel="noopener"
+        style="
+          display: inline-block;
+          background: #007bff;
+          color: #fff;
+          padding: 12px 24px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: bold;
+        "
+        >👉 estimateur gratuit CAF</a
+      >
+      <p style="font-size: 12px; color: #666; margin-top: 8px">
+        Pour un calcul définitif conforme aux barèmes en vigueur
+      </p>
+    </div>
 
-<!-- YMYL Verbalization Script -->
-<script>(function() {
-  'use strict';
-  
-  // Configuration par type
-  const CONFIG = {
-    APL: { source: 'CAF', url: 'https://www.caf.fr' },
-    IMPOT: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    NOTAIRE: { source: 'notaires.fr', url: 'https://www.notaires.fr' },
-    RSA: { source: 'CAF', url: 'https://www.caf.fr' },
-    PRIME: { source: 'CAF', url: 'https://www.caf.fr' },
-    IK: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    SALAIRE: { source: '', url: 'https://www.impots.gouv.fr' },
-    PRET: { source: 'banque', url: '#' },
-    TAXE: { source: 'impots.gouv.fr', url: 'https://www.impots.gouv.fr' },
-    PLUSVALUE: { source: 'notaire', url: 'https://www.notaires.fr' }
-  };
-  
-  // Detecter le type de simulateur
-  function detectType() {
-    const path = window.location.pathname.toLowerCase();
-    if (path.includes('apl')) return 'APL';
-    if (path.includes('impot')) return 'IMPOT';
-    if (path.includes('notaire')) return 'NOTAIRE';
-    if (path.includes('rsa')) return 'RSA';
-    if (path.includes('prime')) return 'PRIME';
-    if (path.includes('ik') || path.includes('kilometrique')) return 'IK';
-    if (path.includes('salaire')) return 'SALAIRE';
-    if (path.includes('pret')) return 'PRET';
-    if (path.includes('taxe')) return 'TAXE';
-    if (path.includes('plus-value')) return 'PLUSVALUE';
-    return 'GENERIC';
-  }
-  
-  // Verbaliser un montant
-  function verbalize(value) {
-    const num = parseInt(value);
-    if (isNaN(num) || num< 10) return value;
-    const rounded = Math.round(num / 10) * 10;
-    return 'environ ' + rounded + ' €';
-  }
-  
-  // Traiter un element
-  function processElement(el, type) {
-    const text = el.textContent || el.innerText || '';
-    const match = text.match(/(d[ds]{2,5})s*€/);
-    if (!match) return;
-    
-    const exactVal = match[1].replace(/s/g, '');
-    const verbalVal = verbalize(exactVal);
-    const config = CONFIG[type] || CONFIG.GENERIC;
-    
-    // Remplacer contenu
-    el.innerHTML = '<span class="ymyl-verbal" style="color:inherit;">' + verbalVal + '</span>' +
-                   '<span class="ymyl-exact" style="display:none;">' + exactVal + ' €</span>' +
-                   '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' + config.source + ' pour montant estimé</small>';
-  }
-  
-  // Observer les changements DOM
-  const observer = new MutationObserver(function(mutations) {
-    const type = detectType();
-    mutations.forEach(function(mutation) {
-      mutation.addedNodes.forEach(function(node) {
-        if (node.nodeType === 1) { // Element
-          // Chercher dans les resultats
-          const results = node.querySelectorAll ? 
-            node.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result') : [];
-          results.forEach(function(el) {
-            if (el.textContent.includes('€')) {
-              processElement(el, type);
-            }
-          });
+    <!-- YMYL Verbalization Script -->
+    <script>
+      (function () {
+        "use strict";
+
+        // Configuration par type
+        const CONFIG = {
+          APL: { source: "CAF", url: "https://www.caf.fr" },
+          IMPOT: {
+            source: "impots.gouv.fr",
+            url: "https://www.impots.gouv.fr",
+          },
+          NOTAIRE: { source: "notaires.fr", url: "https://www.notaires.fr" },
+          RSA: { source: "CAF", url: "https://www.caf.fr" },
+          PRIME: { source: "CAF", url: "https://www.caf.fr" },
+          IK: { source: "impots.gouv.fr", url: "https://www.impots.gouv.fr" },
+          SALAIRE: { source: "", url: "https://www.impots.gouv.fr" },
+          PRET: { source: "banque", url: "#" },
+          TAXE: { source: "impots.gouv.fr", url: "https://www.impots.gouv.fr" },
+          PLUSVALUE: { source: "notaire", url: "https://www.notaires.fr" },
+        };
+
+        // Detecter le type de simulateur
+        function detectType() {
+          const path = window.location.pathname.toLowerCase();
+          if (path.includes("apl")) return "APL";
+          if (path.includes("impot")) return "IMPOT";
+          if (path.includes("notaire")) return "NOTAIRE";
+          if (path.includes("rsa")) return "RSA";
+          if (path.includes("prime")) return "PRIME";
+          if (path.includes("ik") || path.includes("kilometrique")) return "IK";
+          if (path.includes("salaire")) return "SALAIRE";
+          if (path.includes("pret")) return "PRET";
+          if (path.includes("taxe")) return "TAXE";
+          if (path.includes("plus-value")) return "PLUSVALUE";
+          return "GENERIC";
         }
-      });
-    });
-  });
-  
-  // Demarrer observation
-  document.addEventListener('DOMContentLoaded', function() {
-    const type = detectType();
-    
-    // Traiter elements existants
-    document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
-      if (el.textContent.match(/d{3,6}s*€/)) {
-        processElement(el, type);
-      }
-    });
-    
-    // Observer nouveaux elements
-    observer.observe(document.body, { childList: true, subtree: true });
-  });
-})();
-</script>
 
-</body>
+        // Verbaliser un montant
+        function verbalize(value) {
+          const num = parseInt(value);
+          if (isNaN(num) || num < 10) return value;
+          const rounded = Math.round(num / 10) * 10;
+          return "environ " + rounded + " €";
+        }
+
+        // Traiter un element
+        function processElement(el, type) {
+          const text = el.textContent || el.innerText || "";
+          const match = text.match(/(d[ds]{2,5})s*€/);
+          if (!match) return;
+
+          const exactVal = match[1].replace(/s/g, "");
+          const verbalVal = verbalize(exactVal);
+          const config = CONFIG[type] || CONFIG.GENERIC;
+
+          // Remplacer contenu
+          el.innerHTML =
+            '<span class="ymyl-verbal" style="color:inherit;">' +
+            verbalVal +
+            "</span>" +
+            '<span class="ymyl-exact" style="display:none;">' +
+            exactVal +
+            " €</span>" +
+            '<small style="display:block;color:#666;font-size:0.8em;margin-top:2px;">valeur indicative – voir ' +
+            config.source +
+            " pour montant estimé</small>";
+        }
+
+        // Observer les changements DOM
+        const observer = new MutationObserver(function (mutations) {
+          const type = detectType();
+          mutations.forEach(function (mutation) {
+            mutation.addedNodes.forEach(function (node) {
+              if (node.nodeType === 1) {
+                // Element
+                // Chercher dans les resultats
+                const results = node.querySelectorAll
+                  ? node.querySelectorAll(
+                      '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result',
+                    )
+                  : [];
+                results.forEach(function (el) {
+                  if (el.textContent.includes("€")) {
+                    processElement(el, type);
+                  }
+                });
+              }
+            });
+          });
+        });
+
+        // Demarrer observation
+        document.addEventListener("DOMContentLoaded", function () {
+          const type = detectType();
+
+          // Traiter elements existants
+          document
+            .querySelectorAll(
+              '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span',
+            )
+            .forEach(function (el) {
+              if (el.textContent.match(/d{3,6}s*€/)) {
+                processElement(el, type);
+              }
+            });
+
+          // Observer nouveaux elements
+          observer.observe(document.body, { childList: true, subtree: true });
+        });
+      })();
+    </script>
+  </body>
 </html>
