@@ -9,7 +9,7 @@
     </title>
     <meta
       name="description"
-      content="💰 Calculez votre APL 2026 gratuitement en ligne. Simulateur aide au logement CAF : estimation mensuelle selon vos revenus et loyer. Résultat immédiat !"
+      content="Faites une estimation APL 2026 gratuite en ligne. Calculez votre aide au logement CAF : montant mensuel selon vos revenus, loyer et zone géographique. Résultat immédiat !"
     />
     <meta
       name="keywords"
@@ -30,7 +30,7 @@
     />
     <meta
       property="og:description"
-      content="💰 Calculez votre APL 2026 gratuitement en ligne. Simulateur aide au logement CAF : estimation mensuelle selon vos revenus et loyer. Résultat immédiat !"
+      content="Faites une estimation APL 2026 gratuite en ligne. Calculez votre aide au logement CAF : montant mensuel selon vos revenus, loyer et zone géographique. Résultat immédiat !"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -39,7 +39,7 @@
     />
     <meta
       name="twitter:description"
-      content="💰 Calculez votre APL 2026 gratuitement en ligne. Simulateur aide au logement CAF : estimation mensuelle selon vos revenus et loyer. Résultat immédiat !"
+      content="Faites une estimation APL 2026 gratuite en ligne. Calculez votre aide au logement CAF : montant mensuel selon vos revenus, loyer et zone géographique. Résultat immédiat !"
     />
 
     <!-- Favicon -->
@@ -234,115 +234,43 @@
     </script>
   </head>
   <body class="bg-gray-50">
-    <div
-      class="sticky-ymyl"
-      role="alert"
-      style="
-        position: sticky;
-        top: 0;
-        z-index: 9999;
-        background: #fff3cd;
-        border: 1px solid #ffc107;
-        padding: 8px 12px;
-        text-align: center;
-        font-size: 13px;
-      "
-    >
-      <strong>⚠️ Estimation indicative.</strong>
+    <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:8px 12px;text-align:center;font-size:13px;">
+      <strong>⚠️ Estimation indicative.</strong> 
       <span class="hidden sm:inline">Montant définitif sur </span>
-      <a
-        href="https://www.caf.fr"
-        target="_blank"
-        rel="noopener"
-        style="color: #856404; text-decoration: underline; font-weight: bold"
-        >CAF</a
-      >
-      <span class="hidden md:inline">
-        |
-        <a
-          href="/pages/historique-mises-a-jour"
-          style="color: #856404; text-decoration: underline"
-          >🔄 Historique</a
-        ></span
-      >
+      <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">CAF</a>
+      <span class="hidden md:inline"> | <a href="/pages/historique-mises-a-jour" style="color:#856404;text-decoration:underline;">🔄 Historique</a></span>
     </div>
 
-    <header
-      class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50"
-    >
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-14">
           <!-- Logo -->
           <a href="/" class="flex items-center space-x-2">
-            <img
-              src="/assets/lescalculateurs-new-logo.png"
-              alt="LesCalculateurs"
-              class="h-8 w-auto"
-            />
-            <span class="font-bold text-gray-900 hidden sm:block"
-              >Les Calculateurs</span
-            >
+            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs" class="h-8 w-auto">
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
           </a>
-
+          
           <!-- Nav Desktop -->
           <nav class="hidden md:flex items-center space-x-4 text-sm">
             <a href="/" class="text-gray-600 hover:text-blue-600">🏠 Accueil</a>
-            <a
-              href="/pages/simulateurs.html"
-              class="text-gray-600 hover:text-blue-600"
-              >🎯 Outils</a
-            >
-            <a
-              href="/pages/methodologie.html"
-              class="hidden lg:block text-gray-600 hover:text-blue-600"
-              >📚 Méthodo</a
-            >
-            <a
-              href="/pages/historique-mises-a-jour"
-              class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded"
-              >🔄 Màj 12/02</a
-            >
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">🎯 Outils</a>
+            <a href="/pages/methodologie.html" class="hidden lg:block text-gray-600 hover:text-blue-600">📚 Méthodo</a>
+            <a href="/pages/historique-mises-a-jour" class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded">🔄 Màj 12/02</a>
           </nav>
 
           <!-- Mobile menu button -->
           <button id="mobile-menu-btn" class="md:hidden text-gray-600">
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </div>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
           <nav class="flex flex-col space-y-2 text-sm">
-            <a href="/" class="text-gray-600 hover:text-blue-600 py-1"
-              >🏠 Accueil</a
-            >
-            <a
-              href="/pages/simulateurs.html"
-              class="text-gray-600 hover:text-blue-600 py-1"
-              >🎯 Simulateurs</a
-            >
-            <a
-              href="/pages/methodologie.html"
-              class="text-gray-600 hover:text-blue-600 py-1"
-              >📚 Méthodologie</a
-            >
-            <a
-              href="/pages/historique-mises-a-jour"
-              class="text-blue-600 hover:text-blue-800 font-medium py-1 bg-blue-50 rounded px-2"
-              >🔄 Mises à jour</a
-            >
+            <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1">🎯 Simulateurs</a>
+            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1">📚 Méthodologie</a>
+            <a href="/pages/historique-mises-a-jour" class="text-blue-600 hover:text-blue-800 font-medium py-1 bg-blue-50 rounded px-2">🔄 Mises à jour</a>
           </nav>
         </div>
       </div>
@@ -1355,23 +1283,11 @@
           © 2026 LesCalculateurs.fr
         </p>
         <div class="flex gap-4 text-sm flex-wrap justify-center">
-          <a
-            href="/pages/methodologie"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >📘 Méthodo</a
-          >
+          <a href="/pages/methodologie" class="text-gray-600 hover:text-gray-900 transition-colors">📘 Méthodo</a>
           <span class="text-gray-400">|</span>
-          <a
-            href="/pages/sources"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >📚 Sources</a
-          >
+          <a href="/pages/sources" class="text-gray-600 hover:text-gray-900 transition-colors">📚 Sources</a>
           <span class="text-gray-400">|</span>
-          <a
-            href="/pages/historique-mises-a-jour"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >🔄 Mises à jour</a
-          >
+          <a href="/pages/historique-mises-a-jour" class="text-gray-600 hover:text-gray-900 transition-colors">🔄 Mises à jour</a>
         </div>
       </div>
     </footer>
