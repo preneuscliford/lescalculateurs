@@ -108,7 +108,11 @@
         "applicationCategory": "FinanceApplication",
         "description": "Calculateur de capacité de financement pour crédit à la consommation (auto, travaux, conso).",
         "url": "https://www.lescalculateurs.fr/pages/financement",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "citation": [
+          {"@type": "Organization", "name": "Banque de France", "url": "https://www.banque-france.fr"},
+          {"@type": "CreativeWork", "name": "Service-public.fr Crédit", "url": "https://www.service-public.fr/particuliers/vosdroits/N20373"}
+        ]
       }
     </script>
 
@@ -135,6 +139,7 @@
 
     <script defer src="/third-party-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="source" content="banque-france.fr, service-public.fr, legifrance.gouv.fr" />
 
     <style>
       .indicateur-reste {
@@ -276,6 +281,20 @@
           🟢 Calculer ma capacité de financement
         </button>
       </div>
+
+      <!-- Résumé rapide -->
+      <section class="mb-8 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg p-6 border border-purple-100">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="mr-2">📌</span> Résumé rapide
+        </h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Source :</strong> <a href="https://www.banque-france.fr/fr/statistiques/credit/credits-aux-particuliers-2025-08" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Taux d'usure (BdF)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/N20373" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Fiche crédit conso</a></li>
+          <li><strong>Calcul :</strong> Mensualité max = Revenus × 33% − Charges existantes</li>
+          <li><strong>Endettement :</strong> Maximum 33% recommandé (jusqu'à 40% selon profil)</li>
+          <li><strong>Projets :</strong> Véhicule, travaux, équipement, voyage</li>
+          <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
+        </ul>
+      </section>
 
       <!-- Simulateur -->
       <div

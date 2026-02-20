@@ -106,7 +106,11 @@
         "publisher": {
           "@type": "Organization",
           "name": "LesCalculateurs.fr"
-        }
+        },
+        "citation": [
+          {"@type": "Organization", "name": "France Travail", "url": "https://www.france-travail.fr"},
+          {"@type": "CreativeWork", "name": "Service-public.fr ARE", "url": "https://www.service-public.fr/particuliers/vosdroits/N549"}
+        ]
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
@@ -214,7 +218,8 @@
         ]
       }
     </script>
-  </head>
+  <meta name="source" content="france-travail.fr, service-public.fr, legifrance.gouv.fr" />
+</head>
 
   <body class="bg-gray-50">
 
@@ -292,17 +297,21 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <section class="mb-10 bg-white border border-gray-200 rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h2>
-        <div class="space-y-2 text-gray-700">
-          <p>🏛️ <strong>Source</strong> : France Travail, Service‑Public</p>
-          <p>
-            📐 <strong>Logique</strong> : calcul basé sur situation, salaire de
-            référence, ancienneté, âge
-          </p>
-          <p>📅 <strong>Année</strong> : paramètres 2026</p>
-          <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
-        </div>
+      <!-- H2 SEO (complémentaire au H1) -->
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Simulateur ARE 2026 — barèmes France Travail officiels et calcul des indemnités</h2>
+
+      <!-- Résumé rapide -->
+      <section class="mb-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-6 border border-orange-100">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="mr-2">📌</span> Résumé rapide
+        </h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Source :</strong> <a href="https://www.service-public.fr/particuliers/vosdroits/R17654" target="_blank" rel="noopener" class="text-orange-600 hover:underline">Simulateur ARE officiel</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/N549" target="_blank" rel="noopener" class="text-orange-600 hover:underline">Fiche ARE (service-public)</a></li>
+          <li><strong>Condition :</strong> 4 mois de travail (88 jours ou 610h) sur 28 mois</li>
+          <li><strong>Calcul :</strong> SJR × 57,43% (min 31,50€/jour, max 91,82€/jour)</li>
+          <li><strong>Cumul :</strong> Possible avec activité réduite (70% des revenus déduits)</li>
+          <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
+        </ul>
       </section>
 
       <section

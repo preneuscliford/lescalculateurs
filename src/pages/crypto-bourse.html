@@ -27,7 +27,11 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "EUR"
-        }
+        },
+        "citation": [
+          {"@type": "Organization", "name": "impots.gouv.fr", "url": "https://www.impots.gouv.fr"},
+          {"@type": "CreativeWork", "name": "Service-public.fr Crypto", "url": "https://www.service-public.fr/particuliers/vosdroits/F32963"}
+        ]
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
@@ -71,6 +75,7 @@
   ]
 }
 </script>
+  <meta name="source" content="impots.gouv.fr, service-public.fr, legifrance.gouv.fr" />
 </head>
   <body class="bg-gray-50">
 <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="https://www.impots.gouv.fr/particulier/je-calcule-mes-impots" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">impots.gouv.fr</a>.</div>
@@ -107,7 +112,7 @@
             </a>
             <div class="hidden sm:block">
               <span class="text-gray-400">|</span>
-            </div>
+            </ul>
             <div class="hidden sm:flex items-center space-x-2">
               <div class="bg-orange-100 text-orange-700 rounded-lg p-1.5">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -149,6 +154,9 @@
       </div>
     </header>
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- H2 SEO (complémentaire au H1) -->
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Calculateur de plus-value crypto 2026 — barèmes fiscaux officiels et imposition 30%</h2>
+
       <!-- CTA au-dessus du pli pour requête "calcul flat tax crypto" -->
       <div class="mb-6 rounded-lg border-2 border-blue-200 bg-blue-50 p-4 flex items-center justify-between">
         <div class="text-sm text-gray-800">
@@ -173,13 +181,17 @@
         </p>
       </section>
 
-      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h2>
-        <div class="space-y-2 text-gray-700 text-sm">
-          <p>🏛️ <strong>Source</strong> : impots.gouv.fr, Code général des impôts</p>
+      <!-- Résumé rapide -->
+      <section class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="mr-2">📌</span> Résumé rapide
+        </h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Source :</strong> <a href="https://www.impots.gouv.fr/particulier/questions/imposition-des-plus-values-de-cessions-de-valeurs-mobilieres-et-droits-sociaux" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Imposition crypto (DGFiP)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/F32963" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Fiche crypto</a></li>
           <p>📐 <strong>Logique</strong> : calcul basé sur prix d’achat, prix de vente, frais, durée, régime</p>
-          <p>📅 <strong>Année</strong> : paramètres 2026</p>
-          <p>⚠️ <strong>Important</strong> : résultat non contractuel</p>
+          <li><strong>Abattement :</strong> 50% après 2 ans de détention</li>
+          <li><strong>Option :</strong> Barème progressif possible si plus avantageux</li>
+          <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
         </div>
       </section>
 

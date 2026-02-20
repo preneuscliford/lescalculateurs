@@ -60,7 +60,12 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "EUR"
-        }
+        },
+        "citation": [
+          {"@type": "Organization", "name": "CAF", "url": "https://www.caf.fr"},
+          {"@type": "Organization", "name": "MDPH", "url": "https://www.mdph.fr"},
+          {"@type": "CreativeWork", "name": "Service-public.fr AAH", "url": "https://www.service-public.fr/particuliers/vosdroits/F12242"}
+        ]
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
@@ -80,6 +85,7 @@
   ]
 }
 </script>
+  <meta name="source" content="caf.fr, service-public.fr, mdph.fr, legifrance.gouv.fr" />
 </head>
 
   <body class="bg-gray-50">
@@ -134,8 +140,25 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <section class="mb-10 bg-white border border-gray-200 rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h2>
+      <!-- H2 SEO (complémentaire au H1) -->
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Simulateur AAH 2026 — barèmes CAF officiels selon taux d'incapacité</h2>
+
+      <!-- Résumé rapide -->
+      <section class="mb-8 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg p-6 border border-purple-100">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="mr-2">📌</span> Résumé rapide
+        </h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Source :</strong> <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-demarches" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Simulateurs CAF (AAH, RSA...)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/F12242" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Fiche AAH</a>, <a href="https://www.mdph.fr" target="_blank" rel="noopener" class="text-purple-600 hover:underline">MDPH</a></li>
+          <li><strong>Condition :</strong> Taux d'incapacité ≥ 80% ou 50-79% avec restriction d'accès à l'emploi</li>
+          <li><strong>Calcul :</strong> Montant forfaitaire réduit selon les ressources du foyer</li>
+          <li><strong>Complément :</strong> Cumulable avec la Majoration pour Vie Autonome (MVA)</li>
+          <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
+        </ul>
+      </section>
+
+      <section class="mb-10 bg-white border border-gray-200 rounded-lg p-6" style="display:none">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide (old)</h2>
         <div class="space-y-2 text-gray-700">
           <p>🏛️ <strong>Source</strong> : CAF, Service‑Public, MDPH</p>
           <p>📐 <strong>Logique</strong> : calcul basé sur taux d’incapacité, foyer, ressources, logement</p>

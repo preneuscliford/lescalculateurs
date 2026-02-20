@@ -105,7 +105,23 @@
         "publisher": {
           "@type": "Organization",
           "name": "LesCalculateurs.fr"
-        }
+        },
+        "citation": [
+          {
+            "@type": "Organization",
+            "name": "Caisse d'Allocations Familiales (CAF)",
+            "url": "https://www.caf.fr"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Service-public.fr - Aide au logement",
+            "url": "https://www.service-public.fr/particuliers/vosdroits/F12006"
+          }
+        ],
+        "isBasedOn": [
+          "https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/aides-au-logement",
+          "https://www.service-public.fr/particuliers/vosdroits/F12006"
+        ]
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
@@ -229,7 +245,8 @@
         ]
       }
     </script>
-  </head>
+      <meta name="source" content="caf.fr, service-public.fr, legifrance.gouv.fr" />
+</head>
   <body class="bg-gray-50">
     <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:8px 12px;text-align:center;font-size:13px;">
       <strong>⚠️ Estimation indicative.</strong> 
@@ -274,6 +291,32 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- H2 SEO + CTA -->
+      <section class="mb-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Simulateur APL 2026 — barèmes CAF officiels et plafonds en vigueur</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Estimez en 2 minutes votre aide personnalisée au logement (APL) selon les barèmes réglementaires 2026.
+          Cet outil gratuit utilise les plafonds et formules officiels de la CAF.
+        </p>
+        <a href="#apl-calculator" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+          🚀 Lancer la simulation
+        </a>
+      </section>
+
+      <!-- Résumé rapide -->
+      <section class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="mr-2">📌</span> Résumé rapide
+        </h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Source :</strong> <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-demarches" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Simulateurs CAF (APL, RSA, Prime d'activité...)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Fiche APL (service-public)</a>, <a href="https://www.anil.org/outils/les-aides-au-logement/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Simulateur ANIL</a></li>
+          <li><strong>Calcul :</strong> APL = Loyer plafonné − Participation personnelle</li>
+          <li><strong>Particularité :</strong> Cumulable avec le RSA, non cumulable avec ALS/ALF</li>
+          <li><strong>Nouveauté 2026 :</strong> Barèmes revalorisés au 1er janvier 2026</li>
+          <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
+        </ul>
+      </section>
+
       <section class="mb-8">
         <p class="text-lg text-gray-700 leading-relaxed">
           Ce simulateur permet d’estimer votre aide au logement selon les règles
