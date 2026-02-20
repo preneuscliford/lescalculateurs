@@ -348,32 +348,45 @@
       </div>
     </header>
 
-    <!-- Bloc titre -->
-    <div class="mb-8 mt-8 text-center px-4 sm:px-6 lg:px-8">
-      <h1 class="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight break-words">
-        Simulateur plus-value immobilière 2026<br class="sm:hidden" />
-        <span class="text-lg sm:text-xl lg:text-3xl">— abattements et barèmes fiscaux officiels</span>
-      </h1>
-      <h2 class="text-lg sm:text-xl font-semibold text-gray-700 mt-3">
-        Simulation gratuite — calcul plus value maison ou appartement
-      </h2>
-      <p class="text-base sm:text-lg text-gray-600 mt-4">
-        Vendez un bien immobilier et souhaitez connaître votre impôt ? Cet outil estime votre 
-        <strong>plus-value immobilière</strong> en 2026 selon les barèmes fiscaux officiels : 
-        taux de 19% + 17,2% de prélèvements sociaux, abattements pour durée de détention 
-        (22 ans pour l'IR, 30 ans pour les PS), exonération résidence principale. 
-        Calculez votre impôt en 2 minutes.
-      </p>
-      <button
-        data-scroll-target="#plusvalue-calculator"
-        data-scroll-focus="input, select, textarea"
-        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors shadow-md mt-8 mx-auto block"
-      >
-        🟢 Lancer la simulation
-      </button>
-    </div>
-
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- H1 + H2 SEO + CTA -->
+      <section class="mb-8 text-center">
+        <h1 class="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight break-words">
+          Simulateur plus-value immobilière 2026<br class="sm:hidden" />
+          <span class="text-lg sm:text-xl lg:text-3xl">— abattements et barèmes fiscaux officiels</span>
+        </h1>
+        <h2 class="text-lg sm:text-xl font-semibold text-gray-700 mt-3">
+          Simulation gratuite — calcul plus value maison ou appartement
+        </h2>
+        <p class="text-base sm:text-lg text-gray-600 mt-4 leading-relaxed">
+          Vendez un bien immobilier et souhaitez connaître votre impôt ? Cet outil estime votre 
+          <strong>plus-value immobilière</strong> en 2026 selon les barèmes fiscaux officiels : 
+          taux de 19% + 17,2% de prélèvements sociaux, abattements pour durée de détention 
+          (22 ans pour l'IR, 30 ans pour les PS), exonération résidence principale. 
+          Calculez votre impôt en 2 minutes.
+        </p>
+        <button
+          data-scroll-target="#plusvalue-calculator"
+          data-scroll-focus="input, select, textarea"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors shadow-md mt-8 mx-auto block"
+        >
+          🟢 Lancer la simulation
+        </button>
+      </section>
+
+      <!-- Résumé rapide -->
+      <section class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="mr-2">📌</span> Résumé rapide
+        </h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Sources :</strong> <a href="https://www.impots.gouv.fr/particulier/je-calcule-mes-impots" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Calcul plus-value (DGFiP)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/F16623" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Fiche plus-value</a>, <a href="https://www.legifrance.gouv.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">CGI</a></li>
+          <li><strong>Calcul :</strong> (Prix de vente − Prix d'achat − Frais − Travaux) × Abattement durée</li>
+          <li><strong>Abattements :</strong> IR 6%/an (22 ans exo), PS 1,65%/an puis 9%/an (30 ans exo)</li>
+          <li><strong>Exonérations :</strong> Résidence principale, petits propriétaires (&lt;15 000€)</li>
+          <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
+        </ul>
+      </section>
       <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8">
         <p class="text-blue-800 text-sm mb-2">
           <strong>📌 Simulation à titre indicatif :</strong> Cette estimation ne
