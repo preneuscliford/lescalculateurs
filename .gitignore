@@ -28,4 +28,6 @@ Thumbs.db
 
 # SEMrush data files
 *.csv
+*.xlsx
+semrush-keywords/
 
