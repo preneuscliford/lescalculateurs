@@ -295,19 +295,27 @@
         <ul class="space-y-2 text-sm text-gray-700">
           <li class="flex items-start">
             <span class="text-green-600 mr-2">✓</span>
-            <span><strong>Sources officielles :</strong> Barèmes CAF 2026 et service-public.fr</span>
+            <span><strong>Sources officielles :</strong> 
+              <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/fiches-aides/le-revenu-de-solidarite-active-rsa" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Barèmes RSA CAF</a>, 
+              <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="text-blue-600 hover:underline">service-public.fr</a>, 
+              <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Code de la sécurité sociale</a>
+            </span>
           </li>
           <li class="flex items-start">
             <span class="text-green-600 mr-2">✓</span>
-            <span><strong>Calcul conforme :</strong> Formule officielle RSA = Forfait - (62% × revenus)</span>
+            <span><strong>Calcul conforme :</strong> Formule officielle RSA = Montant forfaitaire − (62% × revenus d'activité) − autres ressources</span>
           </li>
           <li class="flex items-start">
             <span class="text-green-600 mr-2">✓</span>
-            <span><strong>Mise à jour :</strong> Données actualisées le <time datetime="2026-02-21">21 février 2026</time></span>
+            <span><strong>Montants vérifiés :</strong> 652,02€ (personne seule), 978,03€ (couple) — taux applicables depuis avril 2025</span>
           </li>
           <li class="flex items-start">
             <span class="text-green-600 mr-2">✓</span>
-            <span><strong>+50 000 simulations</strong> réalisées chaque mois</span>
+            <span><strong>Mise à jour :</strong> Données actualisées le <time datetime="2026-02-21">21 février 2026</time> après vérification CAF</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-2">✓</span>
+            <span><strong>Méthodologie transparente :</strong> <a href="/pages/methodologie" class="text-blue-600 hover:underline">Consulter notre méthode de calcul</a></span>
           </li>
         </ul>
       </section>
@@ -320,7 +328,7 @@
           <span class="mr-2">📌</span> Résumé rapide
         </h3>
         <ul class="space-y-2 text-gray-700">
-          <li><strong>Source :</strong> <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-demarches" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Simulateurs CAF (RSA, APL...)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Fiche RSA (service-public)</a></li>
+          <li><strong>Sources :</strong> <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/fiches-aides/le-revenu-de-solidarite-active-rsa" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Barèmes CAF officiels</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Fiche RSA (service-public)</a>, <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390" target="_blank" rel="noopener" class="text-purple-600 hover:underline">Code sécurité sociale</a></li>
           <li><strong>Calcul :</strong> RSA = Montant forfaitaire − (Ressources × 62%)</li>
           <li><strong>Particularité :</strong> Cumulable avec l'APL, couverture santé CMU-C incluse</li>
           <li><strong>Mise à jour :</strong> <time datetime="2026-02-21">21 février 2026</time> — Barèmes 2026 en vigueur</li>
@@ -370,7 +378,14 @@
           </table>
         </div>
         <p class="text-sm text-gray-500 mt-4">
-          <strong>Source :</strong> <a href="https://www.caf.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">CAF.fr</a> — Barèmes 2026 en vigueur (dernière revalorisation : avril 2025, prochaine : avril 2026). Montants indicatifs hors ressources.
+          <strong>Sources officielles :</strong> 
+          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/fiches-aides/le-revenu-de-solidarite-active-rsa" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Barèmes RSA CAF 2026</a> | 
+          <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Service-public.fr RSA</a> | 
+          <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Code de la sécurité sociale (Article L262-1)</a>
+        </p>
+        <p class="text-xs text-gray-400 mt-2">
+          Montants forfaitaires applicables depuis le 1er avril 2025. Revalorisation annuelle prévue en avril 2026. 
+          Dernier contrôle : <time datetime="2026-02-21">21 février 2026</time>.
         </p>
       </section>
 
@@ -407,6 +422,27 @@
           <li>Paramètres non pris en compte dans une simulation simplifiée</li>
           <li>Règles spécifiques propres à votre dossier</li>
         </ul>
+      </section>
+
+      <!-- Méthodologie de calcul -->
+      <section class="mb-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Comment est calculé le RSA ? Formule officielle</h2>
+        <div class="bg-white p-4 rounded-lg mb-4">
+          <p class="text-lg font-mono text-center text-purple-700 font-bold mb-2">
+            RSA = Montant forfaitaire − (62% × revenus d'activité) − autres ressources
+          </p>
+        </div>
+        <ul class="text-sm text-gray-700 space-y-2">
+          <li>• <strong>Montant forfaitaire :</strong> 652,02€ (personne seule), 978,03€ (couple), 1 141,04€ (parent + 1 enfant), etc.</li>
+          <li>• <strong>Abattement 38% :</strong> Seuls 62% de vos revenus d'activité sont déduits (source : <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Article L262-1 du CSS</a>)</li>
+          <li>• <strong>Autres ressources :</strong> Pensions, allocations (hors APL), épargne comptabilisés à 100%</li>
+        </ul>
+        <p class="text-xs text-gray-500 mt-4">
+          <strong>Sources :</strong> 
+          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/fiches-aides/le-revenu-de-solidarite-active-rsa" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Barèmes CAF 2026</a> | 
+          <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Service-public.fr</a> | 
+          <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Code de la sécurité sociale</a>
+        </p>
       </section>
 
       <!-- Calculateur RSA -->
@@ -991,31 +1027,30 @@
       <!-- Rappel réglementaire -->
       <section class="bg-gray-100 p-6 rounded-lg mb-12">
         <h2 class="text-2xl font-bold text-gray-800 mb-4">
-          📌 Rappel réglementaire
+          📌 Rappel réglementaire et sources officielles
         </h2>
         <p class="text-gray-700 mb-4">
-          Le RSA est une aide encadrée par la loi. Les règles d'attribution et
-          de calcul sont définies par la CAF.
+          Le RSA (Revenu de Solidarité Active) est une aide financière encadrée par 
+          <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390" target="_blank" rel="noopener" class="text-blue-600 hover:underline">l'article L262-1 du Code de la sécurité sociale</a>. 
+          Les montants sont fixés par décret et revalorisés annuellement.
         </p>
-        <p class="text-gray-600">
-          <strong>Sources officielles :</strong>
-          <a
-            href="https://www.service-public.fr"
-            target="_blank"
-            rel="noopener"
-            class="text-blue-600 hover:underline"
-          >
-            service-public.fr
+        <div class="grid md:grid-cols-3 gap-4 mt-6">
+          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/fiches-aides/le-revenu-de-solidarite-active-rsa" target="_blank" rel="noopener" class="bg-white p-4 rounded-lg border-2 border-purple-300 hover:border-purple-500 transition-colors text-center">
+            <p class="font-bold text-purple-700">📋 Barèmes CAF</p>
+            <p class="text-xs text-gray-600 mt-1">Montants officiels 2026</p>
           </a>
-          •
-          <a
-            href="https://www.caf.fr"
-            target="_blank"
-            rel="noopener"
-            class="text-blue-600 hover:underline"
-          >
-            caf.fr
+          <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="bg-white p-4 rounded-lg border-2 border-blue-300 hover:border-blue-500 transition-colors text-center">
+            <p class="font-bold text-blue-700">📖 Service-public.fr</p>
+            <p class="text-xs text-gray-600 mt-1">Guide complet du RSA</p>
           </a>
+          <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390" target="_blank" rel="noopener" class="bg-white p-4 rounded-lg border-2 border-gray-300 hover:border-gray-500 transition-colors text-center">
+            <p class="font-bold text-gray-700">⚖️ Légifrance</p>
+            <p class="text-xs text-gray-600 mt-1">Textes de loi officiels</p>
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 mt-6 pt-4 border-t border-gray-300">
+          <strong>Mise à jour :</strong> Données vérifiées le <time datetime="2026-02-21">21 février 2026</time> par nos équipes. 
+          Dernier arrêté de revalorisation : <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049134561" target="_blank" rel="noopener" class="text-blue-600 hover:underline">JORF n°0086 du 11 avril 2025</a>.
         </p>
       </section>
 

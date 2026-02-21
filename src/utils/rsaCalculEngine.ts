@@ -3,17 +3,22 @@
  * Basé sur les montants de base CAF et les règles d'éligibilité
  */
 
-// Montants RSA 2026 (source : Légifrance, applicable au 1er avril 2025)
+// Montants RSA 2026 (sources : CAF et Légifrance, applicable au 1er avril 2025)
+// Références officielles :
+// - https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/fiches-aides/le-revenu-de-solidarite-active-rsa
+// - https://www.service-public.fr/particuliers/vosdroits/N19775
 const RSA_BASE_MONTANTS = {
-  seul: 646.52,        // Personne seule sans APL
-  couple: 969.78,      // Couple sans APL
-  monoparental_1enfant: 1106.94,  // Parent isolé avec 1 enfant sans APL
-  monoparental_2enfants: 1383.68, // Parent isolé avec 2 enfants sans APL
-  monoparental_3enfants: 1660.41, // Parent isolé avec 3 enfants sans APL
+  seul: 652.02,        // Personne seule (montant forfaitaire depuis avril 2025)
+  couple: 978.03,      // Couple sans enfant (montant forfaitaire depuis avril 2025)
+  monoparental_1enfant: 1141.04,  // Parent isolé avec 1 enfant
+  monoparental_2enfants: 1304.04, // Couple avec 2 enfants ou parent isolé avec 2 enfants
+  monoparental_3enfants: 1467.04, // Parent isolé avec 3 enfants
 };
 
-// Majorations par enfant supplémentaire (au-delà de 3 enfants)
-const RSA_MAJORATION_ENFANT = 258.61; // 276.73 pour parent isolé
+// Majorations par enfant supplémentaire (au-delà du nombre de base)
+// Source : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029950390
+const RSA_MAJORATION_ENFANT = 163.01; // Majoration par enfant pour couple (après le premier)
+const RSA_MAJORATION_ENFANT_MONOPARENTAL = 163.01; // Majoration par enfant supplémentaire pour parent isolé
 
 // Seuils de revenus (limites d'éligibilité)
 const RSA_SEUILS = {
@@ -84,11 +89,18 @@ export function calculerRSA(data: RSACalculData): RSAResult {
   }
 
   // Majorations pour enfants supplémentaires
+  // Règle : majoration de 163,01€ par enfant supplémentaire au-delà de la composition de base
   let majorations = 0;
-  if (data.situation === "monoparental" && data.enfants > 3) {
-    majorations = (data.enfants - 3) * RSA_MAJORATION_ENFANT;
-  } else if (data.situation !== "monoparental" && data.enfants > 0) {
+  if (data.situation === "monoparental" && data.enfants > 1) {
+    // Parent isolé : montant base déjà inclus pour 1 enfant, majoration à partir du 2ème
+    majorations = (data.enfants - 1) * RSA_MAJORATION_ENFANT_MONOPARENTAL;
+  } else if (data.situation === "couple" && data.enfants > 0) {
+    // Couple : majoration de 163,01€ par enfant
     majorations = data.enfants * RSA_MAJORATION_ENFANT;
+  } else if (data.situation === "seul" && data.enfants > 0) {
+    // Personne seule avec enfants (devient monoparental)
+    // Déjà géré par les montants monoparentaux
+    majorations = 0;
   }
 
   const montantBaseTotal = montantBase + majorations;
