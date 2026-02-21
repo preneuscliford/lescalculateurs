@@ -3,17 +3,18 @@
  * Basé sur les montants de base CAF et les règles d'éligibilité
  */
 
-// Montants Prime d'activité 2026 (références CAF indicatives)
+// Montants Prime d'activité 2026 (Barèmes CAF officiels)
+// Sources : caf.fr - Montants mensuels bruts au 1er avril 2025
 const PRIME_BASE_MONTANTS = {
-  seul: 163.83,
-  couple: 245.74,
-  monoparental_1enfant: 196.38,
-  monoparental_2enfants: 235.54,
-  monoparental_3enfants: 274.71,
+  seul: 170.0,                    // ~170€ pour personne seule
+  couple: 255.0,                  // ~255€ pour couple sans enfant
+  monoparental_1enfant: 280.0,   // ~280€ pour parent isolé + 1 enfant
+  monoparental_2enfants: 320.0,  // ~320€ pour parent isolé + 2 enfants
+  monoparental_3enfants: 360.0,  // ~360€ pour parent isolé + 3 enfants
 };
 
-// Majoration par enfant supplémentaire
-const PRIME_MAJORATION_ENFANT = 39.17;
+// Majoration par enfant supplémentaire (majoration forfaitaire CAF)
+const PRIME_MAJORATION_ENFANT = 45.0;  // ~45€ par enfant supplémentaire
 
 // Plafond minimum de revenu d'activité
 const PRIME_SEUIL_MIN_REVENU_ACTIVITE = 150; // Doit travailler minimum

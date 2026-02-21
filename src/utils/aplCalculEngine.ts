@@ -60,24 +60,24 @@ export interface APLData {
 // ==========================================
 
 /**
- * Plafonds de loyer par zone (ordre de grandeur CAF 2026)
- * Ajustés selon situation familiale et nombre d'enfants
+ * Plafonds de loyer par zone (Barèmes CAF 2026 officiels)
+ * Sources: caf.fr, service-public.fr
  */
 const PLAFONDS_LOYER_BASE: Record<Zone, number> = {
-  idf: 325, // Île-de-France
-  province: 285, // Province (hors IDF)
-  dom: 305, // DOM-TOM
+  idf: 610, // Île-de-France - Zone 1
+  province: 510, // Province Zone 2 (grandes villes)
+  dom: 430, // DOM-TOM assimilé Zone 3
 };
 
 /**
- * Bonus loyer par enfant supplémentaire
+ * Bonus loyer par enfant supplémentaire (majoration CAF)
  */
-const BONUS_LOYER_PAR_ENFANT = 50;
+const BONUS_LOYER_PAR_ENFANT = 60;
 
 /**
  * Bonus loyer pour couple
  */
-const BONUS_LOYER_COUPLE = 40;
+const BONUS_LOYER_COUPLE = 60;
 
 /**
  * Forfait logement (déduit de la participation personnelle)

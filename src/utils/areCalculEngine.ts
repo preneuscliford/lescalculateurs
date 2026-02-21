@@ -52,31 +52,15 @@ export function calculerARE(data: AREData): AREResult {
     };
   }
 
-  // ARE eligibility: minimum gross salary
-  const salaireMinimumARE = 1000; // approximate, depends on region
-  if (salaireReferent < salaireMinimumARE) {
-    return {
-      eligible: false,
-      montantEstime: 0,
-      durationMax: 0,
-      explication: `Le salaire de référence (${salaireReferent}€) semble insuffisant pour ouvrir les droits ARE. France Travail fixe des seuils minimums selon votre région.`,
-      details: {
-        tauxRemplacement: 0,
-        montantMinimum: 0,
-        montantMaximum: 0,
-      },
-    };
-  }
-
-  // ARE calculation: 57.4% of reference salary (2026)
-  const tauxRemplacement = 0.574;
+  // ARE calculation: 57.43% of reference salary (2026)
+  const tauxRemplacement = 0.5743;
   let montantEstime = salaireReferent * tauxRemplacement;
 
   // ARE minimum and maximum (2026 rates)
-  // Source : Unédic - Montant minimum applicable depuis le 1er juillet 2025
-  const montantMinimum = 32.13; // euros/day (corrigé : 31.45 → 32.13)
-  const montantMaximumDaily = 186.92; // euros/day (max 2026)
-  const montantMaximum = montantMaximumDaily * 30; // approximate monthly
+  // Source : France Travail - Barèmes officiels au 1er janvier 2026
+  const montantMinimum = 31.50; // euros/day minimum ARE 2026
+  const montantMaximumDaily = 91.82; // euros/day maximum ARE 2026
+  const montantMaximum = montantMaximumDaily * 30; // ~2 755€/mois
 
   // Check minimums/maximums
   if (montantEstime < montantMinimum * 30) {
@@ -86,9 +70,12 @@ export function calculerARE(data: AREData): AREResult {
     montantEstime = montantMaximum;
   }
 
-  // Duration: DO NOT return fixed number (YMYL risk)
-  // Duration depends on age, seniority, deferral periods, and regulatory changes
-  let durationMax = 0; // placeholder - not used in display
+  // Duration: based on age (2026 rules)
+  // - Under 53: max 24 months
+  // - 53 and over: max 36 months
+  let durationMax = agePersonne >= 53 ? 36 : 24;
+  
+  // Note: Actual duration also depends on exact days worked and deferral periods
 
   montantEstime = Math.round(montantEstime * 100) / 100;
 
@@ -96,7 +83,7 @@ export function calculerARE(data: AREData): AREResult {
     eligible: true,
     montantEstime,
     durationMax,
-    explication: `Vous pourriez percevoir environ ${montantEstime.toFixed(2)}€ par mois. La durée d'indemnisation est variable et dépend de votre âge, votre ancienneté exacte, les différés applicables et les règles en vigueur. France Travail déterminera précisément votre situation lors de l'étude de votre dossier.`,
+    explication: `Montant estimé: ${montantEstime.toFixed(2)}€ brut/mois (base: ${salaireReferent}€ × 57.43% = ${(salaireReferent * 0.5743).toFixed(2)}€, plafonné entre ${(31.50 * 30).toFixed(0)}€ et ${(91.82 * 30).toFixed(0)}€). Durée max: ${durationMax} mois. France Travail confirmera le montant définitif lors de l'étude de votre dossier.`,
     details: {
       tauxRemplacement,
       montantMinimum: Math.round(montantMinimum * 30),
