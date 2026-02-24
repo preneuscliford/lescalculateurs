@@ -92,7 +92,7 @@
 
     <link rel="stylesheet" href="../tailwind.css" />
     
-    <!-- Styles spécifiques pour les animations 3D -->
+    <!-- Styles spécifiques -->
     <style>
       .perspective-1000 { perspective: 1000px; }
       .transform-style-3d { transform-style: preserve-3d; }
@@ -106,8 +106,6 @@
       @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
       .stat-card { transition: all 0.3s ease; }
       .stat-card:hover { transform: scale(1.05); }
-      .pulse-animation { animation: pulse 2s infinite; }
-      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
     </style>
 
     <!-- Schema.org -->
@@ -122,25 +120,13 @@
         "citation": [
           {"@type": "Organization", "name": "CAF", "url": "https://www.caf.fr"},
           {"@type": "Organization", "name": "France Travail", "url": "https://www.francetravail.fr"},
-          {"@type": "CreativeWork", "name": "Service-public.fr RSA", "url": "https://www.service-public.fr/particuliers/vosdroits/N19775"}
+          {"@type": "CreativeWork", "name": "Service-public.fr RSA", "url": "https://www.service-public.fr/particuliers/vosdroits/N19775"},
+          {"@type": "CreativeWork", "name": "Info.gouv.fr SMIC 2026", "url": "https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026"}
         ]
       }
     </script>
     
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.lescalculateurs.fr/" },
-          { "@type": "ListItem", "position": 2, "name": "Simulateurs", "item": "https://www.lescalculateurs.fr/pages/simulateurs" },
-          { "@type": "ListItem", "position": 3, "name": "RSA vs SMIC", "item": "https://www.lescalculateurs.fr/pages/rsa-vs-smic" }
-        ]
-      }
-    </script>
-    
-    <meta name="source" content="caf.fr, service-public.fr, legifrance.gouv.fr, francetravail.fr" />
+    <meta name="source" content="caf.fr, service-public.fr, info.gouv.fr, legifrance.gouv.fr" />
   </head>
 
   <body class="bg-gray-50">
@@ -154,8 +140,17 @@
       ></iframe>
     </noscript>
     
+    <!-- ⚠️ BANDEAU YMYL DISCLAIMER -->
+    <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border-bottom:2px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;">
+      <strong>⚠️ Estimation indicative.</strong> Montants calculés selon les barèmes officiels 2026. 
+      Pour un calcul définitif conforme à votre situation, consultez 
+      <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">caf.fr</a> ou 
+      <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">service-public.fr</a>.
+      <span style="display:inline-block;margin-left:8px;">✓ Vérifié le 23 février 2026</span>
+    </div>
+    
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white shadow-sm sticky top-[52px] z-40">
       <div class="container mx-auto px-4 py-4 flex items-center justify-between">
         <a href="/" class="flex items-center space-x-2">
           <span class="text-2xl">🧮</span>
@@ -174,7 +169,7 @@
       <div class="container mx-auto px-4 text-center">
         
         <div class="inline-flex items-center bg-white/20 backdrop-blur rounded-full px-4 py-2 mb-6">
-          <span class="text-sm">✅ Vérifié le 23 février 2026 — Sources CAF & France Travail</span>
+          <span class="text-sm">✅ Vérifié le 23 février 2026 — Sources officielles ci-dessous</span>
         </div>
         
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -183,8 +178,8 @@
         </h1>
         
         <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-white/90">
-          Comparez en temps réel les montants, avantages et inconvénients selon votre situation personnelle. 
-          <strong>Simulateur interactif 2026.</strong>
+          Comparez en temps réel les montants officiels 2026. <br>
+          <strong>SMIC : 12,02€/heure brut — RSA : 646,52€/mois (base)</strong>
         </p>
         
         <!-- COMPARATEUR VISUEL -->
@@ -200,39 +195,64 @@
           
           <div id="display-zone" class="grid md:grid-cols-2 gap-6">
             
+            <!-- Card RSA -->
             <div id="card-rsa" class="stat-card bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 md:p-8">
               <div class="text-5xl md:text-6xl mb-4">🏠</div>
               <h3 class="text-2xl font-bold mb-2">RSA</h3>
-              <div class="text-4xl md:text-5xl font-bold text-white mb-2">607,75 €</div>
-              <p class="text-green-100 text-lg">net/mois (célibataire)</p>
-              <div class="mt-6 space-y-2 text-left bg-white/10 rounded-lg p-4 text-sm">
+              <div class="text-4xl md:text-5xl font-bold text-white mb-2">≈ 569 € <span class="text-lg">- 647 €</span></div>
+              <p class="text-green-100 text-base">net/mois selon situation<br><span class="text-xs opacity-80">Montant forfaitaire : 646,52€ - forfait logement</span></p>
+              <div class="mt-4 text-xs bg-white/20 rounded-lg p-2">
+                <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="text-white underline hover:text-yellow-300">
+                  📋 Source : service-public.fr
+                </a>
+              </div>
+              <div class="mt-4 space-y-2 text-left bg-white/10 rounded-lg p-4 text-sm">
                 <div class="flex items-center"><span class="text-green-300 mr-2">✓</span> Sans condition d'emploi</div>
                 <div class="flex items-center"><span class="text-green-300 mr-2">✓</span> Renouvelable</div>
                 <div class="flex items-center"><span class="text-red-300 mr-2">✗</span> Pas de cotisations retraite</div>
-                <div class="flex items-center"><span class="text-red-300 mr-2">✗</span> Pas de droits chômage</div>
               </div>
             </div>
             
+            <!-- Card SMIC -->
             <div id="card-smic" class="stat-card bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 md:p-8">
               <div class="text-5xl md:text-6xl mb-4">💼</div>
               <h3 class="text-2xl font-bold mb-2">SMIC</h3>
-              <div class="text-4xl md:text-5xl font-bold text-white mb-2">1 401,82 €</div>
-              <p class="text-blue-100 text-lg">net/mois (35h)</p>
-              <div class="mt-6 space-y-2 text-left bg-white/10 rounded-lg p-4 text-sm">
+              <div class="text-4xl md:text-5xl font-bold text-white mb-2">≈ 1 443 €</div>
+              <p class="text-blue-100 text-base">net/mois (35h)<br><span class="text-xs opacity-80">Brut : 1 823,03€ — Horaire : 12,02€ brut</span></p>
+              <div class="mt-4 text-xs bg-white/20 rounded-lg p-2">
+                <a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="text-white underline hover:text-yellow-300">
+                  📋 Source : info.gouv.fr
+                </a>
+              </div>
+              <div class="mt-4 space-y-2 text-left bg-white/10 rounded-lg p-4 text-sm">
                 <div class="flex items-center"><span class="text-green-300 mr-2">✓</span> + Prime d'activité</div>
                 <div class="flex items-center"><span class="text-green-300 mr-2">✓</span> Droits chômage</div>
                 <div class="flex items-center"><span class="text-green-300 mr-2">✓</span> Cotisations retraite</div>
-                <div class="flex items-center"><span class="text-green-300 mr-2">✓</span> Perspectives d'évolution</div>
               </div>
             </div>
             
           </div>
           
+          <!-- Indicateur d'écart -->
           <div class="mt-8 p-4 md:p-6 bg-yellow-400/90 rounded-2xl border-2 border-yellow-300">
             <p class="text-lg md:text-xl font-bold text-gray-900">
-              💡 Avec la Prime d'activité, le SMIC est plus avantageux de 
-              <span class="text-2xl md:text-3xl text-blue-700">+794 €/mois</span>
+              💡 Avec la Prime d'activité, le SMIC est plus avantageux d'environ 
+              <span class="text-2xl md:text-3xl text-blue-700">+650 à +900 €/mois</span>
             </p>
+            <p class="text-gray-700 mt-2 text-sm">Estimation selon la situation familiale — Les montants varient selon le foyer</p>
+          </div>
+          
+          <!-- Sources officielles -->
+          <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+            <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition">
+              📚 Fiche RSA (service-public.fr)
+            </a>
+            <a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition">
+              📚 SMIC 2026 (info.gouv.fr)
+            </a>
+            <a href="https://www.service-public.fr/particuliers/vosdroits/N31477" target="_blank" rel="noopener" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition">
+              📚 Prime d'activité (service-public.fr)
+            </a>
           </div>
           
         </div>
@@ -263,22 +283,26 @@
                 <div class="mt-4 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">Survolez pour découvrir →</div>
               </div>
               <div class="absolute w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-xl p-6 text-white rotate-y-180 backface-hidden">
-                <h4 class="font-bold text-xl mb-6 text-center">Comparaison détaillée</h4>
-                <div class="space-y-4">
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">RSA mensuel</span><span class="font-bold text-2xl">607,75 €</span>
+                <h4 class="font-bold text-xl mb-4 text-center">Comparaison détaillée</h4>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">RSA (base)</span><span class="font-bold">646,52 €</span>
                   </div>
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">SMIC net</span><span class="font-bold text-2xl">1 401,82 €</span>
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">RSA (avec logement)</span><span class="font-bold text-yellow-300">≈ 569 €</span>
                   </div>
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">Prime d'activité</span><span class="font-bold text-green-300">+ ~200 €</span>
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">SMIC net 35h</span><span class="font-bold">≈ 1 443 €</span>
                   </div>
-                  <div class="flex justify-between items-center pt-2">
-                    <span class="font-semibold">Différence totale</span><span class="font-bold text-3xl text-yellow-300">+994 €</span>
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">Prime d'activité est.</span><span class="font-bold text-green-300">≈ +170 €</span>
+                  </div>
+                  <div class="flex justify-between items-center pt-1">
+                    <span class="font-semibold">Différence estimée</span><span class="font-bold text-xl text-yellow-300">≈ +1 040 €</span>
                   </div>
                 </div>
-                <button onclick="setSimulator('celibataire')" class="mt-6 w-full bg-white text-indigo-600 py-3 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg">Simuler cette situation</button>
+                <p class="text-xs text-white/70 mt-3 italic">Estimations indicatives — sources : service-public.fr, info.gouv.fr</p>
+                <button onclick="setSimulator('celibataire')" class="mt-3 w-full bg-white text-indigo-600 py-2 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg text-sm">Simuler</button>
               </div>
             </div>
           </div>
@@ -293,22 +317,23 @@
                 <div class="mt-4 px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">Survolez pour découvrir →</div>
               </div>
               <div class="absolute w-full h-full bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl shadow-xl p-6 text-white rotate-y-180 backface-hidden">
-                <h4 class="font-bold text-xl mb-6 text-center">Comparaison détaillée</h4>
-                <div class="space-y-4">
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">RSA mensuel</span><span class="font-bold text-2xl">851,08 €</span>
+                <h4 class="font-bold text-xl mb-4 text-center">Comparaison détaillée</h4>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">RSA parent isolé</span><span class="font-bold text-lg">1 106,95 €</span>
                   </div>
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">SMIC net</span><span class="font-bold text-2xl">1 401,82 €</span>
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">SMIC net 35h</span><span class="font-bold">≈ 1 443 €</span>
                   </div>
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">Prime d'activité</span><span class="font-bold text-green-300">+ ~280 €</span>
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">Prime d'activité est.</span><span class="font-bold text-green-300">≈ +280 €</span>
                   </div>
-                  <div class="flex justify-between items-center pt-2">
-                    <span class="font-semibold">Différence totale</span><span class="font-bold text-3xl text-yellow-300">+831 €</span>
+                  <div class="flex justify-between items-center pt-1">
+                    <span class="font-semibold">Différence estimée</span><span class="font-bold text-xl text-yellow-300">≈ +616 €</span>
                   </div>
                 </div>
-                <button onclick="setSimulator('parent1')" class="mt-6 w-full bg-white text-rose-600 py-3 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg">Simuler cette situation</button>
+                <p class="text-xs text-white/70 mt-3 italic">RSA majoré pour parent isolé — source : service-public.fr</p>
+                <button onclick="setSimulator('parent1')" class="mt-3 w-full bg-white text-rose-600 py-2 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg text-sm">Simuler</button>
               </div>
             </div>
           </div>
@@ -323,22 +348,23 @@
                 <div class="mt-4 px-4 py-2 bg-cyan-100 text-cyan-700 rounded-full text-sm font-semibold">Survolez pour découvrir →</div>
               </div>
               <div class="absolute w-full h-full bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl shadow-xl p-6 text-white rotate-y-180 backface-hidden">
-                <h4 class="font-bold text-xl mb-6 text-center">Comparaison détaillée</h4>
-                <div class="space-y-4">
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">RSA couple</span><span class="font-bold text-2xl">911,63 €</span>
+                <h4 class="font-bold text-xl mb-4 text-center">Comparaison détaillée</h4>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">RSA couple</span><span class="font-bold text-lg">969,78 €</span>
                   </div>
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">SMIC net</span><span class="font-bold text-2xl">1 401,82 €</span>
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">SMIC net 35h</span><span class="font-bold">≈ 1 443 €</span>
                   </div>
-                  <div class="flex justify-between items-center border-b border-white/30 pb-3">
-                    <span class="text-white/80">Prime d'activité</span><span class="font-bold text-green-300">+ ~180 €</span>
+                  <div class="flex justify-between items-center border-b border-white/30 pb-2">
+                    <span class="text-white/80">Prime d'activité est.</span><span class="font-bold text-green-300">≈ +200 €</span>
                   </div>
-                  <div class="flex justify-between items-center pt-2">
-                    <span class="font-semibold">Différence totale</span><span class="font-bold text-3xl text-yellow-300">+670 €</span>
+                  <div class="flex justify-between items-center pt-1">
+                    <span class="font-semibold">Différence estimée</span><span class="font-bold text-xl text-yellow-300">≈ +673 €</span>
                   </div>
                 </div>
-                <button onclick="setSimulator('couple')" class="mt-6 w-full bg-white text-blue-600 py-3 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg">Simuler cette situation</button>
+                <p class="text-xs text-white/70 mt-3 italic">Estimations indicatives — sources : service-public.fr, info.gouv.fr</p>
+                <button onclick="setSimulator('couple')" class="mt-3 w-full bg-white text-blue-600 py-2 rounded-xl font-bold hover:bg-yellow-300 transition shadow-lg text-sm">Simuler</button>
               </div>
             </div>
           </div>
@@ -373,14 +399,6 @@
               </div>
               
               <div>
-                <label class="block font-semibold mb-3 text-gray-700 text-lg">Région</label>
-                <select id="region" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg" onchange="calculerComparaison()">
-                  <option value="metro">🇫🇷 Métropole</option>
-                  <option value="dom">🏝️ DOM (Guadeloupe, Martinique, Guyane, La Réunion)</option>
-                </select>
-              </div>
-              
-              <div>
                 <label class="block font-semibold mb-3 text-gray-700 text-lg">Heures de travail / semaine</label>
                 <input type="range" id="heures" min="0" max="39" value="35" class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600" oninput="updateHeuresLabel(); calculerComparaison()">
                 <div class="flex justify-between text-sm text-gray-500 mt-2">
@@ -390,9 +408,11 @@
                 </div>
               </div>
               
-              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-xl">
                 <p class="text-sm text-yellow-800">
-                  <strong>ℹ️ Info :</strong> Le simulateur intègre les barèmes 2026 : RSA, SMIC à 11,88€/heure brut, et Prime d'activité estimée.
+                  <strong>ℹ️ Calculs indicatifs :</strong> Basés sur les barèmes officiels 2026. 
+                  Le RSA exact dépend de vos ressources et du forfait logement. 
+                  La Prime d'activité est <strong>estimée</strong> selon les barèmes CAF.
                 </p>
               </div>
               
@@ -400,47 +420,49 @@
             
             <!-- Résultat -->
             <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
-              <h3 class="text-xl font-bold mb-6 text-center text-gray-800">Résultat de la comparaison</h3>
+              <h3 class="text-xl font-bold mb-6 text-center text-gray-800">Résultat estimé de la comparaison</h3>
               
-              <!-- Barres de progression -->
               <div class="space-y-6">
                 
                 <div>
                   <div class="flex justify-between mb-2">
                     <span class="font-medium text-gray-600">💰 RSA estimé</span>
-                    <span class="font-bold text-green-600 text-xl" id="result-rsa">607,75 €</span>
+                    <span class="font-bold text-green-600 text-xl" id="result-rsa">≈ 569 €</span>
                   </div>
                   <div class="w-full bg-gray-100 rounded-full h-6 overflow-hidden">
                     <div id="bar-rsa" class="progress-bar bg-gradient-to-r from-green-400 to-green-600 h-full rounded-full" style="width: 30%"></div>
                   </div>
+                  <p class="text-xs text-gray-500 mt-1">Montant indicatif selon situation — hors ressources</p>
                 </div>
                 
                 <div>
                   <div class="flex justify-between mb-2">
-                    <span class="font-medium text-gray-600">💼 SMIC net + Prime</span>
-                    <span class="font-bold text-blue-600 text-xl" id="result-smic">1 650 €</span>
+                    <span class="font-medium text-gray-600">💼 SMIC net + Prime estimée</span>
+                    <span class="font-bold text-blue-600 text-xl" id="result-smic">≈ 1 613 €</span>
                   </div>
                   <div class="w-full bg-gray-100 rounded-full h-6 overflow-hidden">
-                    <div id="bar-smic" class="progress-bar bg-gradient-to-r from-blue-400 to-blue-600 h-full rounded-full" style="width: 82%"></div>
+                    <div id="bar-smic" class="progress-bar bg-gradient-to-r from-blue-400 to-blue-600 h-full rounded-full" style="width: 85%"></div>
                   </div>
+                  <p class="text-xs text-gray-500 mt-1">Estimation nette après cotisations + Prime d'activité</p>
                 </div>
                 
               </div>
               
-              <!-- Conclusion -->
               <div id="conclusion" class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-500">
-                <p class="font-bold text-lg text-blue-800 mb-2">
-                  💡 Le SMIC est plus avantageux
-                </p>
+                <p class="font-bold text-lg text-blue-800 mb-2">💡 Le SMIC est plus avantageux</p>
                 <p class="text-blue-700">
-                  Écart estimé : <span id="ecart" class="font-bold text-2xl">1 042 €</span> / mois
+                  Écart estimé : <span id="ecart" class="font-bold text-2xl">≈ 1 040 €</span> / mois
                 </p>
               </div>
               
-              <!-- CTA -->
+              <div class="mt-4 p-3 bg-gray-50 rounded-lg text-xs text-gray-500">
+                Sources : <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="underline">service-public.fr (RSA)</a>, 
+                <a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="underline">info.gouv.fr (SMIC)</a>
+              </div>
+              
               <div class="mt-6 grid grid-cols-2 gap-4">
-                <a href="/pages/rsa.html" class="text-center bg-green-100 text-green-700 py-3 rounded-xl font-semibold hover:bg-green-200 transition">Simuler RSA</a>
-                <a href="/pages/salaire.html" class="text-center bg-blue-100 text-blue-700 py-3 rounded-xl font-semibold hover:bg-blue-200 transition">Simuler SMIC</a>
+                <a href="/pages/rsa.html" class="text-center bg-green-100 text-green-700 py-3 rounded-xl font-semibold hover:bg-green-200 transition">Simuler RSA exact</a>
+                <a href="/pages/salaire.html" class="text-center bg-blue-100 text-blue-700 py-3 rounded-xl font-semibold hover:bg-blue-200 transition">Simuler SMIC exact</a>
               </div>
               
             </div>
@@ -451,11 +473,24 @@
       </div>
     </section>
 
-    <!-- 📊 TABLEAU COMPARATIF DÉTAILLÉ -->
+    <!-- 📊 TABLEAU COMPARATIF -->
     <section class="py-16 md:py-20 bg-gray-50">
       <div class="container mx-auto px-4 max-w-6xl">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">📋 Tableau comparatif complet RSA vs SMIC 2026</h2>
-        <p class="text-gray-600 text-center mb-10">Comparaison des avantages et inconvénients détaillés</p>
+        <p class="text-gray-600 text-center mb-6">Comparaison des avantages et inconvénients détaillés</p>
+        
+        <!-- Sources -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10 text-sm">
+          <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full hover:bg-blue-200 transition">
+            📄 RSA — service-public.fr
+          </a>
+          <a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="inline-flex items-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full hover:bg-purple-200 transition">
+            📄 SMIC 2026 — info.gouv.fr
+          </a>
+          <a href="https://www.service-public.fr/particuliers/vosdroits/N31477" target="_blank" rel="noopener" class="inline-flex items-center bg-green-100 text-green-700 px-4 py-2 rounded-full hover:bg-green-200 transition">
+            📄 Prime d'activité — service-public.fr
+          </a>
+        </div>
         
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div class="overflow-x-auto">
@@ -469,24 +504,24 @@
               </thead>
               <tbody class="divide-y divide-gray-200">
                 <tr class="hover:bg-gray-50">
-                  <td class="p-4 font-medium">💶 Montant mensuel net (célibataire)</td>
-                  <td class="p-4 text-center"><span class="font-bold text-green-600">607,75 €</span></td>
-                  <td class="p-4 text-center"><span class="font-bold text-blue-600">1 401,82 €</span></td>
+                  <td class="p-4 font-medium">💶 Montant mensuel (célibataire)</td>
+                  <td class="p-4 text-center"><span class="font-bold text-green-600">≈ 569 € <span class="text-xs font-normal">(avec logement)</span></span><br><span class="text-xs text-gray-500">Base : <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="underline">646,52 €</a></span></td>
+                  <td class="p-4 text-center"><span class="font-bold text-blue-600">≈ 1 443 € <span class="text-xs font-normal">net</span></span><br><span class="text-xs text-gray-500"><a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="underline">1 823,03 € brut</a></span></td>
                 </tr>
                 <tr class="hover:bg-gray-50 bg-gray-50/50">
                   <td class="p-4 font-medium">⭐ Avec Prime d'activité</td>
                   <td class="p-4 text-center text-gray-400">Non cumulable</td>
-                  <td class="p-4 text-center"><span class="font-bold text-green-600">+ ~150-280 €</span></td>
+                  <td class="p-4 text-center"><span class="font-bold text-green-600">≈ +150 à +280 €</span><br><span class="text-xs text-gray-500">Estimation selon foyer</span></td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="p-4 font-medium">📝 Conditions d'attribution</td>
+                  <td class="p-4 font-medium">📝 Conditions</td>
                   <td class="p-4 text-center">Ressources &lt; plafond</td>
                   <td class="p-4 text-center">Contrat de travail</td>
                 </tr>
                 <tr class="hover:bg-gray-50 bg-gray-50/50">
                   <td class="p-4 font-medium">⏱️ Durée de versement</td>
                   <td class="p-4 text-center">1 an (renouvelable)</td>
-                  <td class="p-4 text-center">Illimitée</td>
+                  <td class="p-4 text-center">Illimitée (CDD/CDI)</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
                   <td class="p-4 font-medium">🏛️ Cotisations retraite</td>
@@ -499,27 +534,24 @@
                   <td class="p-4 text-center text-green-500">✅ Oui (après 4 mois)</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="p-4 font-medium">🏥 Couverture santé</td>
-                  <td class="p-4 text-center">CMU-C possible</td>
-                  <td class="p-4 text-center">Sécurité sociale</td>
-                </tr>
-                <tr class="hover:bg-gray-50 bg-gray-50/50">
                   <td class="p-4 font-medium">📈 Perspectives d'évolution</td>
                   <td class="p-4 text-center text-red-500">❌ Stagnation</td>
                   <td class="p-4 text-center text-green-500">✅ Progression possible</td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                  <td class="p-4 font-medium">🎯 Revenu stable garanti</td>
-                  <td class="p-4 text-center text-green-500">✅ Oui</td>
-                  <td class="p-4 text-center text-orange-500">⚠️ Dépend de l'emploi</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+        
+        <p class="text-center text-sm text-gray-500 mt-6">
+          ℹ️ Les montants du RSA avec « forfait logement » déduits sont indicatifs (déduction de 77,58€ à 192,02€ selon la composition du foyer).<br>
+          La Prime d'activité est une estimation basée sur les barèmes CAF. Pour les montants exacts, consultez 
+          <a href="https://www.caf.fr" target="_blank" rel="noopener" class="underline text-blue-600">caf.fr</a>.
+        </p>
       </div>
     </section>
 
+    <!-- FAQ et reste de la page... (continuera dans la prochaine partie) -->
     <!-- 📚 FAQ ACCORDÉON -->
     <section class="py-16 md:py-20 bg-white">
       <div class="container mx-auto px-4 max-w-4xl">
@@ -534,14 +566,35 @@
               <span class="faq-icon text-2xl transition-transform duration-300">+</span>
             </button>
             <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
-              <p>Sur le plan strictement financier, le SMIC (+ Prime d'activité) est toujours plus avantageux que le RSA. Un célibataire gagne environ <strong>794€ à 994€ de plus par mois</strong> au SMIC qu'au RSA.</p>
-              <p class="mt-3">Cependant, le choix dépend aussi d'autres critères :</p>
+              <p>Sur le plan strictement financier, le SMIC (+ Prime d'activité) est toujours plus avantageux que le RSA. Selon les barèmes officiels 2026 :</p>
               <ul class="list-disc ml-6 mt-2 space-y-1">
-                <li><strong>Stabilité :</strong> Le RSA est garanti, le SMIC dépend d'un emploi</li>
-                <li><strong>Retraite :</strong> Le SMIC cotise pour votre retraite, pas le RSA</li>
-                <li><strong>Chômage :</strong> Le SMIC ouvre des droits au chômage</li>
-                <li><strong>Évolution :</strong> Un emploi peut mener à des promotions</li>
+                <li><strong>SMIC net 35h :</strong> ≈ 1 443 €/mois (<a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="underline">source info.gouv.fr</a>)</li>
+                <li><strong>RSA célibataire :</strong> ≈ 569 €/mois (avec forfait logement déduit)</li>
+                <li><strong>Écart estimé :</strong> environ +650 à +1 000 € selon la situation familiale</li>
               </ul>
+              <p class="mt-3">Cependant, d'autres critères entrent en compte : stabilité du revenu, droits à la retraite, chômage, et perspectives professionnelles.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
+            <button class="faq-question w-full px-6 py-5 text-left font-semibold flex justify-between items-center hover:bg-gray-100 transition" onclick="toggleFaq(this)">
+              <span class="text-lg">Quels sont les montants officiels RSA et SMIC 2026 ?</span>
+              <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
+              <p><strong>SMIC 2026</strong> (au 1er janvier 2026, <a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="underline">source info.gouv.fr</a>) :</p>
+              <ul class="list-disc ml-6 mt-2 space-y-1">
+                <li>Horaire brut : 12,02 €</li>
+                <li>Mensuel brut (35h) : 1 823,03 €</li>
+                <li>Mensuel net estimé : ≈ 1 443 €</li>
+              </ul>
+              <p class="mt-3"><strong>RSA 2026</strong> (base au 1er avril 2025, <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="underline">source service-public.fr</a>) :</p>
+              <ul class="list-disc ml-6 mt-2 space-y-1">
+                <li>Personne seule (base) : 646,52 €</li>
+                <li>Parent isolé + 1 enfant : 1 106,95 €</li>
+                <li>Couple sans enfant : 969,78 €</li>
+              </ul>
+              <p class="mt-2 text-sm">Un forfait logement (77,58€ à 192,02€) est déduit si vous percevez des aides au logement.</p>
             </div>
           </div>
           
@@ -551,44 +604,29 @@
               <span class="faq-icon text-2xl transition-transform duration-300">+</span>
             </button>
             <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
-              <p><strong>Non</strong>, le RSA et le SMIC ne sont pas cumulables. Si vous travaillez au SMIC, vous devez déclarer vos revenus à la CAF.</p>
-              <p class="mt-3">Selon le montant de vos revenus :</p>
+              <p><strong>Non</strong>, le RSA et le SMIC ne sont pas cumulables (<a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="underline">source service-public.fr</a>).</p>
+              <p class="mt-2">Si vous travaillez au SMIC, vous devez déclarer vos revenus à la CAF. Selon le montant de vos revenus :</p>
               <ul class="list-disc ml-6 mt-2 space-y-1">
-                <li>En dessous d'un certain seuil, votre RSA est réduit</li>
-                <li>Au-delà d'environ 15-20 heures/semaine au SMIC, le RSA est généralement supprimé</li>
-                <li>Vous pouvez cependant bénéficier de la <strong>Prime d'activité</strong> qui remplace le RSA quand vous travaillez</li>
+                <li>Votre RSA est réduit proportionnellement à vos revenus</li>
+                <li>Au-delà d'un certain seuil (environ 20-25h/semaine au SMIC), le RSA est supprimé</li>
+                <li>Vous pouvez alors bénéficier de la <a href="https://www.service-public.fr/particuliers/vosdroits/N31477" target="_blank" rel="noopener" class="underline">Prime d'activité</a> qui la remplace</li>
               </ul>
             </div>
           </div>
           
           <div class="faq-item bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
             <button class="faq-question w-full px-6 py-5 text-left font-semibold flex justify-between items-center hover:bg-gray-100 transition" onclick="toggleFaq(this)">
-              <span class="text-lg">Quel est le seuil pour gagner plus que le RSA ?</span>
+              <span class="text-lg">Combien faut-il travailler pour gagner plus que le RSA ?</span>
               <span class="faq-icon text-2xl transition-transform duration-300">+</span>
             </button>
             <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
-              <p>Avec la Prime d'activité, il faut travailler environ :</p>
+              <p>Avec la Prime d'activité, il faut environ :</p>
               <ul class="list-disc ml-6 mt-2 space-y-1">
-                <li><strong>20-25 heures/semaine</strong> pour égaler le RSA d'un célibataire (607€)</li>
-                <li><strong>25-30 heures/semaine</strong> pour égaler le RSA d'un couple (912€)</li>
-                <li><strong>30-35 heures/semaine</strong> pour égaler le RSA d'un parent isolé avec enfant (851€)</li>
+                <li><strong>20-25 heures/semaine</strong> au SMIC pour égaler le RSA d'un célibataire (≈ 569 €)</li>
+                <li><strong>30-35 heures/semaine</strong> pour égaler le RSA d'un parent isolé avec enfant (≈ 951 €)</li>
               </ul>
-              <p class="mt-3">Au-delà de <strong>35h (temps plein)</strong>, le SMIC devient significativement plus avantageux avec un écart de 600€ à 1000€ selon la situation.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
-            <button class="faq-question w-full px-6 py-5 text-left font-semibold flex justify-between items-center hover:bg-gray-100 transition" onclick="toggleFaq(this)">
-              <span class="text-lg">Le RSA est-il plus avantageux que le SMIC pour les parents ?</span>
-              <span class="faq-icon text-2xl transition-transform duration-300">+</span>
-            </button>
-            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
-              <p><strong>Non</strong>, même pour les parents isolés, le SMIC reste plus avantageux financièrement. Un parent isolé avec un enfant touchera :</p>
-              <ul class="list-disc ml-6 mt-2 space-y-1">
-                <li><strong>RSA :</strong> 851,08€/mois</li>
-                <li><strong>SMIC + Prime :</strong> environ 1 650€/mois</li>
-              </ul>
-              <p class="mt-3">L'écart est d'environ <strong>800€/mois</strong> en faveur du SMIC.</p>
+              <p class="mt-3">En temps plein (35h), le SMIC (+ Prime) devient significativement plus avantageux avec un écart estimé de 650€ à 900€ selon la situation familiale.</p>
+              <p class="mt-2 text-sm">⚠️ Ces calculs sont indicatifs. Le montant exact de la Prime d'activité dépend de votre situation familiale complète.</p>
             </div>
           </div>
           
@@ -600,46 +638,82 @@
     <section class="py-16 md:py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">🔄 Poursuivez avec nos simulateurs</h2>
-        <p class="text-white/80 mb-10 max-w-2xl mx-auto">Affinez votre simulation avec nos outils dédiés</p>
+        <p class="text-white/80 mb-10 max-w-2xl mx-auto">Affinez votre simulation avec nos outils dédiés et les sources officielles</p>
         
         <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           
           <a href="/pages/rsa.html" class="group bg-white/10 backdrop-blur rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all hover:scale-105 border border-white/20">
             <div class="text-5xl mb-4 group-hover:scale-110 transition">💰</div>
             <h3 class="font-bold text-xl mb-2">Simulateur RSA</h3>
-            <p class="text-white/70 text-sm">Calculez votre allocation exacte selon votre situation</p>
-            <div class="mt-4 text-yellow-300 font-semibold group-hover:translate-x-2 transition">→ Calculer</div>
+            <p class="text-white/70 text-sm mb-4">Calculez votre allocation exacte selon votre situation</p>
+            <span class="text-xs bg-white/20 px-3 py-1 rounded-full">Source : CAF</span>
           </a>
           
           <a href="/pages/prime-activite.html" class="group bg-white/10 backdrop-blur rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all hover:scale-105 border border-white/20">
             <div class="text-5xl mb-4 group-hover:scale-110 transition">⭐</div>
             <h3 class="font-bold text-xl mb-2">Prime d'activité</h3>
-            <p class="text-white/70 text-sm">Le complément qui fait la différence pour les travailleurs</p>
-            <div class="mt-4 text-yellow-300 font-semibold group-hover:translate-x-2 transition">→ Calculer</div>
+            <p class="text-white/70 text-sm mb-4">Le complément qui fait la différence pour les travailleurs</p>
+            <span class="text-xs bg-white/20 px-3 py-1 rounded-full">Source : CAF</span>
           </a>
           
           <a href="/pages/salaire.html" class="group bg-white/10 backdrop-blur rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all hover:scale-105 border border-white/20">
             <div class="text-5xl mb-4 group-hover:scale-110 transition">💼</div>
             <h3 class="font-bold text-xl mb-2">Simulateur SMIC</h3>
-            <p class="text-white/70 text-sm">Calculez votre salaire net selon vos heures</p>
-            <div class="mt-4 text-yellow-300 font-semibold group-hover:translate-x-2 transition">→ Calculer</div>
+            <p class="text-white/70 text-sm mb-4">Calculez votre salaire net selon vos heures de travail</p>
+            <span class="text-xs bg-white/20 px-3 py-1 rounded-full">Source : 12,02€/h brut</span>
           </a>
           
+        </div>
+        
+        <!-- Liens directs vers sources officielles -->
+        <div class="mt-12 pt-8 border-t border-white/20">
+          <p class="text-white/80 mb-4">Consultez directement les sources officielles</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
+              📄 service-public.fr (RSA)
+            </a>
+            <a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
+              📄 info.gouv.fr (SMIC)
+            </a>
+            <a href="https://www.caf.fr" target="_blank" rel="noopener" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
+              📄 caf.fr (Simulateur officiel)
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ⚠️ DISCLAIMER YMYL -->
+    <!-- ⚠️ DISCLAIMER FINAL -->
     <section class="py-10 bg-gray-100">
       <div class="container mx-auto px-4 max-w-4xl">
-        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-xl">
-          <h4 class="font-bold text-yellow-800 mb-2">⚠️ Information importante</h4>
-          <p class="text-yellow-700 text-sm leading-relaxed">
-            Les montants présentés sont des <strong>estimations indicatives</strong> basées sur les barèmes officiels 2026 (SMIC : 11,88€ brut/heure, RSA : décrets 2026). 
-            Les montants exacts dépendent de votre situation personnelle et sont calculés par la CAF ou la MSA. 
-            Pour un calcul définitif, consultez <a href="https://www.caf.fr" target="_blank" rel="noopener" class="underline">caf.fr</a> ou 
-            <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="underline">service-public.fr</a>.
-          </p>
+        <div class="bg-yellow-50 border-2 border-yellow-400 p-6 rounded-xl">
+          <h4 class="font-bold text-yellow-800 mb-3 flex items-center">
+            <span class="text-xl mr-2">⚠️</span> Information importante sur les montants présentés
+          </h4>
+          <div class="text-yellow-700 text-sm leading-relaxed space-y-2">
+            <p>
+              <strong>Sources des données :</strong> Les montants du SMIC proviennent du 
+              <a href="https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026" target="_blank" rel="noopener" class="underline font-semibold">communiqué officiel du gouvernement du 15 décembre 2025</a> 
+              (SMIC horaire brut : 12,02€, mensuel brut : 1 823,03€). 
+              Les montants du RSA proviennent de <a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="underline font-semibold">service-public.fr</a> 
+              (revalorisation du 1er avril 2025).
+            </p>
+            <p>
+              <strong>Estimations :</strong> Les montants « nets » du SMIC et les montants de Prime d'activité présentés sont des 
+              <strong>estimations indicatives</strong> (signalées par le signe ≈). Le montant net réel dépend de votre situation 
+              (cotisations spécifiques, convention collective, etc.). La Prime d'activité est calculée selon les barèmes CAF 
+              et varie selon votre foyer complet.
+            </p>
+            <p>
+              <strong>Pour un calcul définitif :</strong> Consultez 
+              <a href="https://www.caf.fr" target="_blank" rel="noopener" class="underline font-semibold">caf.fr</a> ou 
+              <a href="https://www.service-public.fr" target="_blank" rel="noopener" class="underline font-semibold">service-public.fr</a> 
+              pour une simulation personnalisée conforme à votre situation exacte.
+            </p>
+            <p class="text-xs text-yellow-600 mt-3">
+              Page vérifiée le 23 février 2026 — Les montants sont sujets à évolution législative.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -650,7 +724,7 @@
         <div class="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h5 class="font-bold mb-4">LesCalculateurs</h5>
-            <p class="text-gray-400 text-sm">Simulateurs d'aides sociales et de calculs financiers pour les particuliers.</p>
+            <p class="text-gray-400 text-sm">Simulateurs d'aides sociales et de calculs financiers pour les particuliers. Sources officielles uniquement.</p>
           </div>
           <div>
             <h5 class="font-bold mb-4">Simulateurs</h5>
@@ -658,14 +732,15 @@
               <li><a href="/pages/rsa.html" class="hover:text-white">RSA</a></li>
               <li><a href="/pages/prime-activite.html" class="hover:text-white">Prime d'activité</a></li>
               <li><a href="/pages/salaire.html" class="hover:text-white">SMIC / Salaire</a></li>
+              <li><a href="/pages/rsa-vs-smic.html" class="hover:text-white text-yellow-400">RSA vs SMIC ⭐</a></li>
             </ul>
           </div>
           <div>
-            <h5 class="font-bold mb-4">Liens utiles</h5>
+            <h5 class="font-bold mb-4">Sources officielles</h5>
             <ul class="space-y-2 text-sm text-gray-400">
-              <li><a href="https://www.caf.fr" target="_blank" rel="noopener" class="hover:text-white">CAF</a></li>
-              <li><a href="https://www.service-public.fr/particuliers/vosdroits/N19775" target="_blank" rel="noopener" class="hover:text-white">Service-public.fr</a></li>
-              <li><a href="https://www.francetravail.fr" target="_blank" rel="noopener" class="hover:text-white">France Travail</a></li>
+              <li><a href="https://www.caf.fr" target="_blank" rel="noopener" class="hover:text-white">caf.fr →</a></li>
+              <li><a href="https://www.service-public.fr" target="_blank" rel="noopener" class="hover:text-white">service-public.fr →</a></li>
+              <li><a href="https://www.info.gouv.fr" target="_blank" rel="noopener" class="hover:text-white">info.gouv.fr →</a></li>
             </ul>
           </div>
           <div>
@@ -677,33 +752,49 @@
           </div>
         </div>
         <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>© 2026 LesCalculateurs.fr — Simulateurs indépendants, sources officielles</p>
+          <p>© 2026 LesCalculateurs.fr — Simulateurs avec sources officielles (CAF, service-public.fr, info.gouv.fr)</p>
         </div>
       </div>
     </footer>
 
     <!-- JAVASCRIPT INTERACTIF -->
     <script>
-      // Données des barèmes 2026
+      // Données des barèmes 2026 - SOURCES OFFICIELLES
       const BAREMES = {
         rsa: {
-          celibataire: 607.75,
-          couple: 911.63,
-          parent1: 851.08,
-          parent2: 1096.28,
-          couple1: 1215.50,
-          couple2: 1519.38
+          // Source : service-public.fr (revalorisation 1er avril 2025)
+          celibataire: 646.52,
+          couple: 969.78,
+          parent1: 1106.95,
+          parent2: 1383.69,
+          couple1: 1163.73,
+          couple2: 1451.32
+        },
+        forfaitLogement: {
+          1: 77.58,
+          2: 155.16,
+          3: 192.02
         },
         smic: {
-          horaireBrut: 11.88,
-          horaireNet: 9.22, // estimation
-          mensuelNet35h: 1401.82
+          // Source : info.gouv.fr (15/12/2025)
+          horaireBrut: 12.02,
+          horaireNet: 9.41, // Estimation (~22% de charges)
+          mensuelBrut35h: 1823.03,
+          mensuelNet35h: 1443.11 // Estimation
         }
       };
 
-      // Toggle entre les modes d'affichage
+      // Nombre de personnes dans le foyer selon situation
+      const NB_PERSONNES = {
+        celibataire: 1,
+        couple: 2,
+        parent1: 2,
+        parent2: 3,
+        couple1: 3,
+        couple2: 4
+      };
+
       function showMode(mode) {
-        // Mettre à jour les boutons
         document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
         document.getElementById('btn-' + mode).classList.add('active');
         
@@ -714,9 +805,11 @@
           cardRsa.style.display = 'block';
           cardSmic.style.display = 'none';
           cardRsa.classList.add('md:col-span-2');
+          cardSmic.classList.remove('md:col-span-2');
         } else if (mode === 'smic') {
           cardRsa.style.display = 'none';
           cardSmic.style.display = 'block';
+          cardRsa.classList.remove('md:col-span-2');
           cardSmic.classList.add('md:col-span-2');
         } else {
           cardRsa.style.display = 'block';
@@ -726,78 +819,78 @@
         }
       }
 
-      // Mise à jour du label des heures
       function updateHeuresLabel() {
         const heures = document.getElementById('heures').value;
         document.getElementById('heures-label').textContent = heures + 'h';
       }
 
-      // Calcul principal de la comparaison
       function calculerComparaison() {
         const situation = document.getElementById('situation').value;
         const heures = parseInt(document.getElementById('heures').value);
-        const region = document.getElementById('region').value;
         
-        // Calcul RSA
-        let rsaMontant = BAREMES.rsa[situation] || BAREMES.rsa.celibataire;
+        // Calcul RSA avec forfait logement (estimation)
+        const rsaBase = BAREMES.rsa[situation] || BAREMES.rsa.celibataire;
+        const nbPers = NB_PERSONNES[situation] || 1;
+        const forfaitLoge = nbPers === 1 ? BAREMES.forfaitLogement[1] : 
+                           nbPers === 2 ? BAREMES.forfaitLogement[2] : BAREMES.forfaitLogement[3];
+        const rsaNet = Math.max(0, rsaBase - forfaitLoge);
         
-        // Ajustement DOM si nécessaire
-        if (region === 'dom') {
-          rsaMontant *= 1.05; // approximation
-        }
-        
-        // Calcul SMIC
+        // Calcul SMIC net
         const smicNetMensuel = (BAREMES.smic.horaireNet * heures * 52) / 12;
         
         // Estimation Prime d'activité (simplifiée)
         let primeActivite = 0;
         if (heures >= 20) {
-          const basePrime = { celibataire: 170, couple: 255, parent1: 280, parent2: 320, couple1: 320, couple2: 380 };
+          const basePrime = { 
+            celibataire: 170, 
+            couple: 255, 
+            parent1: 280, 
+            parent2: 350, 
+            couple1: 320, 
+            couple2: 400 
+          };
           primeActivite = basePrime[situation] || 170;
-          // Réduction si temps partiel
           if (heures < 35) {
             primeActivite *= (heures / 35);
           }
         }
         
         const smicTotal = smicNetMensuel + primeActivite;
-        const ecart = smicTotal - rsaMontant;
+        const ecart = smicTotal - rsaNet;
         
-        // Mise à jour de l'affichage
-        document.getElementById('result-rsa').textContent = rsaMontant.toFixed(2) + ' €';
-        document.getElementById('result-smic').textContent = smicTotal.toFixed(0) + ' €';
-        document.getElementById('ecart').textContent = Math.abs(ecart).toFixed(0) + ' €';
+        // Mise à jour affichage avec signe ≈ pour les estimations
+        document.getElementById('result-rsa').textContent = '≈ ' + rsaNet.toFixed(0) + ' €';
+        document.getElementById('result-smic').textContent = '≈ ' + smicTotal.toFixed(0) + ' €';
+        document.getElementById('ecart').textContent = (ecart > 0 ? '≈ +' : '≈ ') + Math.abs(ecart).toFixed(0) + ' €';
         
-        // Mise à jour des barres de progression
-        const maxVal = Math.max(rsaMontant, smicTotal) * 1.2;
-        document.getElementById('bar-rsa').style.width = (rsaMontant / maxVal * 100) + '%';
+        // Barres de progression
+        const maxVal = Math.max(rsaNet, smicTotal) * 1.2;
+        document.getElementById('bar-rsa').style.width = (rsaNet / maxVal * 100) + '%';
         document.getElementById('bar-smic').style.width = (smicTotal / maxVal * 100) + '%';
         
-        // Mise à jour de la conclusion
+        // Conclusion
         const conclusion = document.getElementById('conclusion');
         if (ecart > 0) {
           conclusion.innerHTML = `
             <p class="font-bold text-lg text-blue-800 mb-2">💡 Le SMIC est plus avantageux</p>
-            <p class="text-blue-700">Écart estimé : <span class="font-bold text-2xl">${ecart.toFixed(0)} €</span> / mois</p>
+            <p class="text-blue-700">Écart estimé : <span class="font-bold text-2xl">≈ +${ecart.toFixed(0)} €</span> / mois</p>
           `;
           conclusion.className = 'mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-500';
         } else {
           conclusion.innerHTML = `
-            <p class="font-bold text-lg text-green-800 mb-2">💡 Le RSA est plus avantageux</p>
-            <p class="text-green-700">Écart estimé : <span class="font-bold text-2xl">${Math.abs(ecart).toFixed(0)} €</span> / mois</p>
+            <p class="font-bold text-lg text-green-800 mb-2">💡 Le RSA semble plus avantageux</p>
+            <p class="text-green-700">Écart estimé : <span class="font-bold text-2xl">≈ ${ecart.toFixed(0)} €</span> / mois</p>
           `;
           conclusion.className = 'mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-l-4 border-green-500';
         }
       }
 
-      // Définir le simulateur depuis les cards
       function setSimulator(situation) {
         document.getElementById('situation').value = situation;
         calculerComparaison();
         document.getElementById('simulateur').scrollIntoView({ behavior: 'smooth' });
       }
 
-      // Toggle FAQ
       function toggleFaq(button) {
         const answer = button.nextElementSibling;
         const icon = button.querySelector('.faq-icon');
