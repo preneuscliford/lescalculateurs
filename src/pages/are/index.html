@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulation ARE 2026 - Calcul Gratuit | Simulateur France Travail</title>
+    <title>Simulateur ARE 2026 | Calcul Indemnité Chômage Gratuit</title>
     <meta
       name="description"
-      content="Simulation ARE 2026 gratuite : calculez votre allocation chômage avec notre simulateur France Travail. Montant mensuel, durée d'indemnisation selon votre ancien salaire et cotisations. Résultat immédiat !"
+      content="Calculez votre allocation chômage ARE 2026 : montant mensuel, durée d'indemnisation et cumul emploi. Barèmes France Travail officiels à jour. Résultat en 2 min !"
     />
     <meta
       name="keywords"
@@ -27,7 +27,7 @@
     />
     <meta
       property="og:description"
-      content="Simulation ARE 2026 gratuite : calculez votre allocation chômage avec notre simulateur France Travail. Montant mensuel, durée d'indemnisation selon votre ancien salaire et cotisations. Résultat immédiat !"
+      content="Calculez votre allocation chômage ARE 2026 : montant mensuel, durée d'indemnisation et cumul emploi. Barèmes France Travail officiels à jour. Résultat en 2 min !"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -36,7 +36,7 @@
     />
     <meta
       name="twitter:description"
-      content="Simulation ARE 2026 gratuite : calculez votre allocation chômage avec notre simulateur France Travail. Montant mensuel, durée d'indemnisation selon votre ancien salaire et cotisations. Résultat immédiat !"
+      content="Calculez votre allocation chômage ARE 2026 : montant mensuel, durée d'indemnisation et cumul emploi. Barèmes France Travail officiels à jour. Résultat en 2 min !"
     />
 
     <!-- Favicon -->
@@ -98,19 +98,24 @@
         "alternateName": [
           "Calculateur ARE 2026",
           "Simulation ARE 2026",
-          "Estimation ARE"
+          "Estimation ARE",
+          "Calcul indemnité chômage"
         ],
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
         "isAccessibleForFree": true,
+        "dateModified": "2026-02-12",
         "publisher": {
           "@type": "Organization",
-          "name": "LesCalculateurs.fr"
+          "name": "LesCalculateurs.fr",
+          "url": "https://www.lescalculateurs.fr"
         },
         "citation": [
           {"@type": "Organization", "name": "France Travail", "url": "https://www.france-travail.fr"},
-          {"@type": "CreativeWork", "name": "Service-public.fr ARE", "url": "https://www.service-public.fr/particuliers/vosdroits/N549"}
-        ]
+          {"@type": "CreativeWork", "name": "Service-public.fr ARE", "url": "https://www.service-public.fr/particuliers/vosdroits/N549"},
+          {"@type": "Organization", "name": "Pôle emploi", "url": "https://www.pole-emploi.fr"}
+        ],
+        "featureList": "Calcul du montant ARE, Estimation durée indemnisation, Simulation cumul emploi, Calcul SJR"
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
@@ -119,6 +124,46 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel est le délai de carence ARE 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le délai de carence ARE est de 7 jours ouvrés (environ 1 semaine) au début de votre indemnisation. Il peut être reporté en cas de reprise d'emploi ou réduit/annulé dans certaines situations (licenciement économique, fin de CDD à terme fixe)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on cumuler ARE et auto-entreprise en 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, vous pouvez cumuler ARE et auto-entreprise. Votre ARE est réduite de 70% de vos revenus d'auto-entrepreneur déclarés. Vous devez déclarer votre activité à France Travail dès le démarrage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment déclarer un travail occasionnel pendant l'ARE ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous devez déclarer tout travail occasionnel sur votre espace personnel France Travail dans les 48 heures suivant le début de l'activité. Le montant de votre allocation est alors ajusté automatiquement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'ARE est-elle imposable sur le revenu 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, l'ARE est imposable sur le revenu. Elle doit être déclarée dans la catégorie 'traitements et salaires' de votre déclaration d'impôts, mais elle est exonérée de prélèvements sociaux (CSG/CRDS réduite)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de temps faut-il cotiser pour avoir le chômage ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour ouvrir des droits au chômage ARE, vous devez avoir travaillé au moins 4 mois (88 jours ou 610 heures) au cours des 28 derniers mois. Les périodes de stage ou de formation non rémunérée ne comptent pas."
+            }
+          },
           {
             "@type": "Question",
             "name": "Quel est le montant de l'ARE en 2026 ?",
@@ -272,8 +317,13 @@
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-4">
-          Simulateur ARE 2026 : estimation de l’allocation chômage
+          Simulateur ARE 2026 — barèmes France Travail et calcul des indemnités
         </h1>
+        <p class="text-sm text-orange-200 mb-2">
+          <span class="inline-flex items-center bg-orange-800 bg-opacity-50 px-3 py-1 rounded-full">
+            <span class="mr-1">✓</span> Vérifié le 12 février 2026 — Barèmes officiels à jour
+          </span>
+        </p>
         <p class="text-xl text-orange-100 mb-6">
           Calculez une estimation de votre allocation chômage ARE 2026 selon vos
           anciens revenus, votre situation et la réglementation France Travail.
@@ -298,7 +348,7 @@
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
       <!-- H2 SEO (complémentaire au H1) -->
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">Simulateur ARE 2026 — barèmes France Travail officiels et calcul des indemnités</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Estimation allocation chômage : montant mensuel et durée d'indemnisation</h2>
 
       <!-- Résumé rapide -->
       <section class="mb-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-6 border border-orange-100">
@@ -312,6 +362,55 @@
           <li><strong>Cumul :</strong> Possible avec activité réduite (70% des revenus déduits)</li>
           <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
         </ul>
+      </section>
+
+      <!-- Barèmes officiels ARE 2026 -->
+      <section class="mb-10 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-6 border-2 border-orange-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+          <span class="mr-2">📊</span> Barèmes officiels ARE 2026 : taux, plafonds et conditions
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-orange-100">
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-orange-200">Élément</th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-orange-200">Barème 2026</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-orange-100">
+                <td class="p-3 text-gray-700"><strong>Taux de remplacement</strong></td>
+                <td class="p-3 text-gray-700">57,43% du Salaire Journalier de Référence (SJR)</td>
+              </tr>
+              <tr class="border-b border-orange-100 bg-white">
+                <td class="p-3 text-gray-700"><strong>Minimum journalier</strong></td>
+                <td class="p-3 text-gray-700">31,50€ brut/jour (soit ~945€/mois)</td>
+              </tr>
+              <tr class="border-b border-orange-100">
+                <td class="p-3 text-gray-700"><strong>Maximum journalier</strong></td>
+                <td class="p-3 text-gray-700">91,82€ brut/jour (soit ~2 755€/mois)</td>
+              </tr>
+              <tr class="border-b border-orange-100 bg-white">
+                <td class="p-3 text-gray-700"><strong>Condition d'ancienneté</strong></td>
+                <td class="p-3 text-gray-700">4 mois minimum (88 jours ou 610h) sur 28 mois</td>
+              </tr>
+              <tr class="border-b border-orange-100">
+                <td class="p-3 text-gray-700"><strong>Durée max indemnisation (&lt; 53 ans)</strong></td>
+                <td class="p-3 text-gray-700">24 mois maximum</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="p-3 text-gray-700"><strong>Durée max indemnisation (≥ 53 ans)</strong></td>
+                <td class="p-3 text-gray-700">36 mois maximum</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-600 mt-4">
+          <strong>Sources :</strong> 
+          <a href="https://www.service-public.fr/particuliers/vosdroits/N549" target="_blank" rel="noopener" class="text-orange-600 hover:underline">service-public.fr</a>, 
+          <a href="https://www.france-travail.fr" target="_blank" rel="noopener" class="text-orange-600 hover:underline">france-travail.fr</a>
+          | <em>Données officielles en vigueur au 1er janvier 2026</em>
+        </p>
       </section>
 
       <section
@@ -511,50 +610,70 @@
         </div>
       </section>
 
-      <!-- Qu'est-ce que l'ARE -->
-      <section class="mb-12">
+      <!-- Calcul du SJR expliqué -->
+      <section class="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          Quelles sont les règles officielles en 2026 ?
+          Comment calculer le SJR (Salaire Journalier de Référence) ?
         </h2>
-        <p class="text-gray-600 mb-4">
-          L'ARE (Allocation de Retour à l'Emploi) est une indemnisation versée
-          par France Travail aux demandeurs d'emploi ayant cotisé via une
-          activité antérieure.
+        <p class="text-gray-700 mb-4">
+          Le <strong>SJR</strong> est la base de calcul de votre ARE. C'est le salaire moyen que vous avez perçu pendant vos 12 derniers mois de travail, divisé par le nombre de jours travaillés.
         </p>
-        <p class="text-gray-600 mb-6">
-          L'ARE dépend de votre ancien salaire et de votre ancienneté
-          professionnelle.
-        </p>
-        <p class="text-gray-600 mb-6">
-          Le montant de l'ARE est calculé à partir du salaire journalier de
-          référence (SJR), établi par France Travail à partir de vos anciens
-          salaires.
-        </p>
-        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
-          <li>votre ancienneté d'emploi (minimum 4 mois en 28 mois)</li>
-          <li>votre salaire antérieur</li>
-          <li>votre âge</li>
-          <li>votre situation familiale</li>
-        </ul>
-        <p class="text-orange-600 font-semibold">
-          👉 Estimez votre allocation ci-dessus.
+        
+        <div class="bg-white p-4 rounded-lg mb-4 border-l-4 border-blue-500">
+          <h3 class="font-semibold text-gray-800 mb-2">Formule officielle :</h3>
+          <p class="text-lg font-mono bg-gray-100 p-3 rounded">
+            SJR = Total des salaires bruts des 12 derniers mois ÷ Nombre de jours travaillés
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg mb-4 border border-blue-200">
+          <h3 class="font-semibold text-gray-800 mb-2">Exemple concret :</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+            <li>Salaires totaux sur 12 mois : <strong>24 000€</strong></li>
+            <li>Jours travaillés : <strong>200 jours</strong></li>
+            <li>SJR = 24 000 ÷ 200 = <strong>120€/jour</strong></li>
+            <li>ARE journalière = 120€ × 57,43% = <strong>68,92€/jour</strong></li>
+            <li>ARE mensuelle estimée : <strong>~2 067€ brut/mois</strong> (30 jours)</li>
+          </ul>
+        </div>
+
+        <p class="text-sm text-gray-600">
+          💡 <strong>Conseil :</strong> Plus vous avez travaillé de jours avec un salaire élevé, plus votre SJR sera important. Les périodes de chômage ou d'inactivité ne sont pas comptées dans le calcul.
         </p>
       </section>
 
-      <!-- Ce que calcule le simulateur -->
-      <section class="mb-12 bg-orange-50 p-6 rounded-lg">
+      <!-- Cumul ARE et salaire -->
+      <section class="mb-12 bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          Comment fonctionne le calculateur ?
+          Cumul ARE et salaire 2026 : simulateur de reprise d'activité
         </h2>
-        <ul class="list-disc list-inside space-y-3 text-gray-700">
-          <li>vérifier votre éligibilité à l'ARE</li>
-          <li>obtenir un ordre de grandeur du montant mensuel</li>
-          <li>estimer la durée maximale d'indemnisation</li>
-        </ul>
-        <p class="text-sm text-gray-600 mt-6">
-          💡 Résultat pédagogique. France Travail effectuera le calcul précis
-          sur votre dossier.
+        <p class="text-gray-700 mb-4">
+          Vous pouvez <strong>cumuler votre ARE avec un travail à temps partiel</strong> ou une activité réduite. C'est un excellent moyen de tester un nouveau poste tout en gardant une sécurité financière.
         </p>
+
+        <div class="bg-white p-4 rounded-lg mb-4 border-l-4 border-green-500">
+          <h3 class="font-semibold text-gray-800 mb-2">Formule de calcul du cumul :</h3>
+          <p class="text-lg font-mono bg-gray-100 p-3 rounded">
+            ARE partielle = ARE complète - (70% × revenus nouvelle activité)
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg mb-4 border border-green-200">
+          <h3 class="font-semibold text-gray-800 mb-2">Exemple de cumul :</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+            <li>Votre ARE complète : <strong>60€/jour</strong> (soit 1 800€/mois)</li>
+            <li>Nouveau salaire temps partiel : <strong>800€ net/mois</strong></li>
+            <li>Déduction : 800€ × 70% = <strong>560€</strong></li>
+            <li>ARE conservée : 1 800€ - 560€ = <strong>1 240€</strong></li>
+            <li>Total perçu : 800€ + 1 240€ = <strong>2 040€/mois</strong></li>
+          </ul>
+        </div>
+
+        <div class="bg-yellow-50 p-3 rounded border border-yellow-200">
+          <p class="text-sm text-gray-700">
+            ⚠️ <strong>Important :</strong> Vous devez déclarer toute reprise d'activité à France Travail. Le cumul est possible avec un CDI, CDD, intérim, ou auto-entrepreneur.
+          </p>
+        </div>
       </section>
 
       <section class="mb-12 bg-white p-8 rounded-lg shadow-lg">
@@ -621,9 +740,54 @@
       <!-- FAQ -->
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          Questions fréquentes
+          Questions fréquentes ARE
         </h2>
         <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Quel est le délai de carence ARE 2026 ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Le délai de carence est une période sans indemnisation qui s'applique en début de chômage. Il correspond à 7 jours ouvrés (environ 1 semaine). Ce délai est reporté en cas de reprise d'emploi ou de formation. Certaines situations permettent de le réduire ou de l'annuler (licenciement économique, fin de CDD à terme fixe, etc.).
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Peut-on cumuler ARE et auto-entreprise en 2026 ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, vous pouvez cumuler ARE et auto-entreprise (micro-entrepreneur). Le calcul est le même que pour une activité salariée : votre ARE est réduite de 70% de vos revenus d'auto-entrepreneur déclarés. Attention : vous devez déclarer votre activité à France Travail dès le démarrage. Le cumul est limité dans le temps selon votre durée d'indemnisation restante.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Comment déclarer un travail occasionnel pendant l'ARE ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Vous devez déclarer tout travail occasionnel (intérim, vacation, remplacement) sur votre espace personnel France Travail dans les 48 heures suivant le début de l'activité. Rends le montant de votre allocation ajusté automatiquement. Si vous ne déclarez pas, vous risquez une suspension ou une radiation de vos droits.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              L'ARE est-elle imposable sur le revenu 2026 ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, l'ARE est imposable sur le revenu. Elle doit être déclarée dans la catégorie "traitements et salaires" de votre déclaration d'impôts. Cependant, elle est exonérée de prélèvements sociaux (CSG/CRDS réduite). Pour estimer votre impôt avec l'ARE, utilisez notre <a href="/pages/impot.html" class="text-blue-600 hover:underline">simulateur d'impôt sur le revenu</a>.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Combien de temps faut-il cotiser pour avoir le chômage ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Pour ouvrir des droits au chômage ARE, vous devez avoir travaillé au moins <strong>4 mois consécutifs ou non</strong> (soit 88 jours ou 610 heures) au cours des 28 derniers mois. Cette condition d'ancienneté est calculée sur la base de votre certificat de travail. Les périodes de stage, de formation non rémunérée ou de bénévolat ne comptent pas.
+            </p>
+          </details>
+
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer">
               Qui peut bénéficier de l'ARE ?
@@ -747,7 +911,7 @@
             rel="noopener"
             class="text-blue-600 hover:underline"
           >
-            service-public.fr
+            service-public.fr (ARE)
           </a>
         </p>
       </section>
@@ -767,9 +931,9 @@
             <div class="flex items-center gap-3">
               <span class="text-2xl">💜</span>
               <div>
-                <h4 class="font-semibold text-purple-700">Simulateur RSA</h4>
+                <h4 class="font-semibold text-purple-700">Simulateur RSA 2026</h4>
                 <p class="text-xs text-gray-600">
-                  Si vos droits ARE sont épuisés
+                  Calculez le Revenu de Solidarité Active si vos droits ARE sont épuisés
                 </p>
               </div>
             </div>
@@ -781,9 +945,9 @@
             <div class="flex items-center gap-3">
               <span class="text-2xl">🏠</span>
               <div>
-                <h4 class="font-semibold text-blue-700">Simulateur APL</h4>
+                <h4 class="font-semibold text-blue-700">Simulateur APL 2026</h4>
                 <p class="text-xs text-gray-600">
-                  Gardez votre aide au logement
+                  Estimez votre Aide Personnalisée au Logement pendant le chômage
                 </p>
               </div>
             </div>
@@ -795,8 +959,8 @@
             <div class="flex items-center gap-3">
               <span class="text-2xl">💼</span>
               <div>
-                <h4 class="font-semibold text-green-700">Prime d'activité</h4>
-                <p class="text-xs text-gray-600">Si vous reprenez un emploi</p>
+                <h4 class="font-semibold text-green-700">Prime d'activité 2026</h4>
+                <p class="text-xs text-gray-600">Calculez votre complément si vous reprenez un emploi</p>
               </div>
             </div>
           </a>
@@ -812,10 +976,10 @@
               <span class="text-2xl">💶</span>
               <div>
                 <h4 class="font-semibold text-green-700">
-                  Guide salaire brut/net 2026
+                  Convertisseur brut/net 2026
                 </h4>
                 <p class="text-xs text-gray-600">
-                  ARE calculée sur votre ancien salaire
+                  Comprenez comment votre ancien salaire brut détermine votre ARE
                 </p>
               </div>
             </div>
@@ -827,8 +991,8 @@
             <div class="flex items-center gap-3">
               <span class="text-2xl">📖</span>
               <div>
-                <h4 class="font-semibold text-indigo-700">Guide impôt 2026</h4>
-                <p class="text-xs text-gray-600">L'ARE est imposable</p>
+                <h4 class="font-semibold text-indigo-700">Impôt sur le revenu 2026</h4>
+                <p class="text-xs text-gray-600">Simulez votre impôt avec l'ARE incluse</p>
               </div>
             </div>
           </a>
