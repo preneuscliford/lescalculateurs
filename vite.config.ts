@@ -102,6 +102,7 @@ export default defineConfig({
           "src/pages/comment-calculer-plus-value.html",
         ),
         rsa: resolve(__dirname, "src/pages/rsa.html"),
+        "rsa-vs-smic": resolve(__dirname, "src/pages/rsa-vs-smic.html"),
         "prime-activite": resolve(__dirname, "src/pages/prime-activite.html"),
         aah: resolve(__dirname, "src/pages/aah.html"),
         "apl-etudiant": resolve(__dirname, "src/pages/apl-etudiant.html"),
