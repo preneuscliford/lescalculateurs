@@ -383,7 +383,114 @@
         </div>
       </section>
 
-      <!-- Calculateur -->
+      <!-- 1. COMPARATEUR VISUEL TOGGLE (NOUVEAU) -->
+      <section class="py-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl mb-8 border border-blue-200">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">🏠 Comparateur express Ancien vs Neuf</h2>
+          
+          <!-- Toggle Buttons -->
+          <div class="flex justify-center mb-8">
+            <div class="bg-white rounded-full p-1.5 inline-flex shadow-lg">
+              <button id="btn-ancien-quick" class="toggle-mode-n active px-6 py-3 rounded-full font-bold transition-all bg-blue-600 text-white" onclick="setModeN('ancien')">
+                🏠 Ancien
+              </button>
+              <button id="btn-neuf-quick" class="toggle-mode-n px-6 py-3 rounded-full font-bold transition-all text-gray-600 hover:bg-gray-100" onclick="setModeN('neuf')">
+                🏗️ Neuf/VEFA
+              </button>
+              <button id="btn-compare-quick" class="toggle-mode-n px-6 py-3 rounded-full font-bold transition-all text-gray-600 hover:bg-gray-100" onclick="setModeN('compare')">
+                ⚖️ Comparer
+              </button>
+            </div>
+          </div>
+          
+          <!-- Quick Calculator -->
+          <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6">
+            <div class="mb-4">
+              <label class="block font-semibold text-gray-700 mb-2">Prix du bien (€)</label>
+              <input type="range" id="quick-prix" min="50000" max="1000000" step="10000" value="250000" 
+                     class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                     oninput="updateQuickCalc()">
+              <div class="text-center font-bold text-2xl text-blue-600 mt-2">
+                <span id="quick-prix-display">250 000</span> €
+              </div>
+            </div>
+            
+            <!-- Résultats -->
+            <div id="quick-results" class="grid md:grid-cols-2 gap-4">
+              <!-- Ancien -->
+              <div class="bg-orange-50 rounded-xl p-4 border-2 border-orange-200" id="card-ancien-quick">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-bold text-orange-800">🏠 Ancien</span>
+                  <span class="text-2xl font-bold text-orange-600" id="frais-ancien">~17 500 €</span>
+                </div>
+                <div class="w-full bg-orange-200 rounded-full h-4 mb-2">
+                  <div id="bar-ancien" class="bg-orange-500 h-4 rounded-full transition-all" style="width: 7%"></div>
+                </div>
+                <p class="text-sm text-orange-700">~7% du prix d'achat</p>
+              </div>
+              
+              <!-- Neuf -->
+              <div class="bg-green-50 rounded-xl p-4 border-2 border-green-200" id="card-neuf-quick">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-bold text-green-800">🏗️ Neuf/VEFA</span>
+                  <span class="text-2xl font-bold text-green-600" id="frais-neuf">~6 000 €</span>
+                </div>
+                <div class="w-full bg-green-200 rounded-full h-4 mb-2">
+                  <div id="bar-neuf" class="bg-green-500 h-4 rounded-full transition-all" style="width: 2.4%"></div>
+                </div>
+                <p class="text-sm text-green-700">~2,4% du prix d'achat</p>
+              </div>
+            </div>
+            
+            <!-- Comparaison -->
+            <div id="compare-result-quick" class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-300 text-center hidden">
+              <p class="font-bold text-yellow-800">💰 Économie en achetant du neuf : <span id="eco-neuf" class="text-2xl">~11 500 €</span></p>
+              <p class="text-sm text-yellow-700 mt-1">Utilisez le simulateur complet ci-dessous pour un calcul précis par département</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+      function setModeN(mode) {
+        document.querySelectorAll('.toggle-mode-n').forEach(btn => {
+          btn.classList.remove('active', 'bg-blue-600', 'text-white');
+          btn.classList.add('text-gray-600');
+        });
+        document.getElementById('btn-' + mode + '-quick').classList.add('active', 'bg-blue-600', 'text-white');
+        document.getElementById('btn-' + mode + '-quick').classList.remove('text-gray-600');
+        
+        const ancien = document.getElementById('card-ancien-quick');
+        const neuf = document.getElementById('card-neuf-quick');
+        const compare = document.getElementById('compare-result-quick');
+        
+        if (mode === 'ancien') {
+          ancien.style.display = 'block'; neuf.style.display = 'none'; compare.classList.add('hidden');
+          ancien.classList.add('md:col-span-2'); neuf.classList.remove('md:col-span-2');
+        } else if (mode === 'neuf') {
+          ancien.style.display = 'none'; neuf.style.display = 'block'; compare.classList.add('hidden');
+          neuf.classList.add('md:col-span-2'); ancien.classList.remove('md:col-span-2');
+        } else {
+          ancien.style.display = 'block'; neuf.style.display = 'block';
+          ancien.classList.remove('md:col-span-2'); neuf.classList.remove('md:col-span-2');
+          compare.classList.remove('hidden');
+        }
+      }
+      function updateQuickCalc() {
+        const prix = parseInt(document.getElementById('quick-prix').value);
+        document.getElementById('quick-prix-display').textContent = prix.toLocaleString('fr-FR');
+        const fraisAncien = prix * 0.07;
+        const fraisNeuf = prix * 0.024;
+        const economie = fraisAncien - fraisNeuf;
+        document.getElementById('frais-ancien').textContent = '~' + Math.round(fraisAncien).toLocaleString('fr-FR') + ' €';
+        document.getElementById('frais-neuf').textContent = '~' + Math.round(fraisNeuf).toLocaleString('fr-FR') + ' €';
+        document.getElementById('eco-neuf').textContent = '~' + Math.round(economie).toLocaleString('fr-FR') + ' €';
+        document.getElementById('bar-ancien').style.width = (prix * 0.07 / 100000 * 100) + '%';
+        document.getElementById('bar-neuf').style.width = (prix * 0.024 / 100000 * 100) + '%';
+      }
+      </script>
+
+      <!-- Calculateur principal -->
       <div id="notaire-calculator"></div>
       <div
         id="export-buttons"
@@ -544,6 +651,134 @@
           </div>
         </div>
       </div>
+
+      <!-- 2. CARTE DES TAUX DMTO PAR RÉGION (NOUVEAU) -->
+      <section class="py-8 mb-8">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">🗺️ Carte des taux de DMTO par région</h2>
+          <p class="text-center text-gray-600 mb-6">Cliquez sur une région pour voir le détail</p>
+          
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <!-- Légende -->
+            <div class="flex flex-wrap justify-center gap-4 mb-6 text-sm">
+              <div class="flex items-center gap-2">
+                <span class="w-4 h-4 rounded bg-green-500"></span>
+                <span>Taux réduit 5,09% (3 dépts)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-4 h-4 rounded bg-yellow-500"></span>
+                <span>Taux standard 5,80% (10 dépts)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-4 h-4 rounded bg-red-500"></span>
+                <span>Taux majoré 6,32% (87 dépts)</span>
+              </div>
+            </div>
+            
+            <!-- Grille régions -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('Île-de-France : 6,32%\nDépartements : 75, 77, 78, 91, 92, 93, 94, 95')">
+                <p class="font-bold text-red-800">Île-de-France</p>
+                <p class="text-2xl font-bold text-red-600">6,32%</p>
+              </div>
+              <div class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('Auvergne-Rhône-Alpes : 6,32%\nSauf Isère (38) à 5,09%')">
+                <p class="font-bold text-red-800">Auvergne-Rhône-Alpes</p>
+                <p class="text-2xl font-bold text-red-600">6,32%</p>
+                <p class="text-xs text-red-700">Sauf 38 (5,09%)</p>
+              </div>
+              <div class="p-4 bg-yellow-100 rounded-lg border-2 border-yellow-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('PACA : 5,80%\nDépartements : 04, 05, 06, 13, 83, 84')">
+                <p class="font-bold text-yellow-800">PACA</p>
+                <p class="text-2xl font-bold text-yellow-600">5,80%</p>
+              </div>
+              <div class="p-4 bg-green-100 rounded-lg border-2 border-green-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('Bretagne : 5,09% à 6,32%\nMorbihan (56) : 5,09%\nAutres : 6,32%')">
+                <p class="font-bold text-green-800">Bretagne</p>
+                <p class="text-2xl font-bold text-green-600">Variable</p>
+                <p class="text-xs text-green-700">56 à 5,09%</p>
+              </div>
+              <div class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('Nouvelle-Aquitaine : 6,32%')">
+                <p class="font-bold text-red-800">Nouvelle-Aquitaine</p>
+                <p class="text-2xl font-bold text-red-600">6,32%</p>
+              </div>
+              <div class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('Occitanie : 6,32%')">
+                <p class="font-bold text-red-800">Occitanie</p>
+                <p class="text-2xl font-bold text-red-600">6,32%</p>
+              </div>
+              <div class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('Pays de la Loire : 6,32%')">
+                <p class="font-bold text-red-800">Pays de la Loire</p>
+                <p class="text-2xl font-bold text-red-600">6,32%</p>
+              </div>
+              <div class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center" onclick="alert('Grand Est : 6,32%')">
+                <p class="font-bold text-red-800">Grand Est</p>
+                <p class="text-2xl font-bold text-red-600">6,32%</p>
+              </div>
+            </div>
+            
+            <p class="text-center text-sm text-gray-500 mt-4">
+              Source : <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf" target="_blank" rel="noopener" class="text-blue-600 underline">
+                PDF DMTO 2026 - impots.gouv.fr
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RÉPARTITION VISUELLE (CAMEMBERT) -->
+      <section class="py-8 bg-gray-50 rounded-2xl mb-8">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">📊 D'où vont vos frais de notaire ?</h2>
+          <p class="text-gray-600 mb-6">Répartition pour un bien ancien de 250 000 €</p>
+          
+          <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-6">
+            <!-- Camembert CSS -->
+            <div class="relative w-48 h-48 mx-auto mb-6">
+              <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#fee2e2" stroke-width="20"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="20" 
+                        stroke-dasharray="201 251" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#dbeafe" stroke-width="20" 
+                        stroke-dasharray="35 251" stroke-dashoffset="-201" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="20" 
+                        stroke-dasharray="15 251" stroke-dashoffset="-236" stroke-linecap="round"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <p class="text-2xl font-bold text-gray-800">~18 750 €</p>
+                  <p class="text-xs text-gray-600">Total</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Légende -->
+            <div class="space-y-2 text-left max-w-sm mx-auto text-sm">
+              <div class="flex items-center justify-between p-2 bg-red-50 rounded">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                  <span>Taxes (DMTO)</span>
+                </div>
+                <span class="font-bold">~15 000 € (80%)</span>
+              </div>
+              <div class="flex items-center justify-between p-2 bg-blue-50 rounded">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                  <span>Émoluments</span>
+                </div>
+                <span class="font-bold">~2 500 € (14%)</span>
+              </div>
+              <div class="flex items-center justify-between p-2 bg-gray-100 rounded">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-gray-400"></span>
+                  <span>Débours</span>
+                </div>
+                <span class="font-bold">~1 000 € (6%)</span>
+              </div>
+            </div>
+            
+            <p class="text-xs text-gray-500 mt-4 bg-yellow-50 p-2 rounded">
+              <strong>💡 Le saviez-vous ?</strong> Le notaire ne garde que ~14% des frais, le reste est reversé à l'État et aux collectivités.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <!-- FAQ -->
       <section class="max-w-4xl mx-auto mt-12">
@@ -818,6 +1053,168 @@
                     >
                   </li>
                 </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUESTIONS SUPPLÉMENTAIRES FAQ (NOUVEAU) -->
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              💰 Quels sont les frais de notaire pour un bien à 200 000 € ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <div class="text-gray-600" itemprop="text">
+                <p class="mb-2">
+                  Pour un bien de <strong>200 000 €</strong>, les frais se répartissent comme suit :
+                </p>
+                <ul class="list-disc list-inside space-y-1 mb-3">
+                  <li><strong>Ancien (taux moyen 5,8%) :</strong> ~14 000 à 16 000 € total</li>
+                  <li><strong>Neuf/VEFA :</strong> ~4 000 à 6 000 € total (TVA déjà incluse)</li>
+                </ul>
+                <p class="text-sm text-gray-500">
+                  La différence s'explique par les droits de mutation (DMTO) : ~11 600 € pour l'ancien contre ~1 500 € pour le neuf.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              ✂️ Comment réduire ses frais de notaire légalement ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <div class="text-gray-600" itemprop="text">
+                <p class="mb-2">4 moyens légaux de réduire vos frais :</p>
+                <ol class="list-decimal list-inside space-y-1">
+                  <li><strong>Acheter du neuf :</strong> Frais de ~2-3% au lieu de ~7-8%</li>
+                  <li><strong>Négocier la remise :</strong> Jusqu'à 10% sur les émoluments pour les biens > 150 000 €</li>
+                  <li><strong>Déduire les meubles :</strong> Pour un bien meublé, déduire leur valeur du prix</li>
+                  <li><strong>Choisir le département :</strong> Certains ont des taux réduits (5,09% vs 6,32%)</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              🏗️ Neuf vs Ancien : quelle différence de frais ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <div class="text-gray-600" itemprop="text">
+                <p class="mb-2">Pour un bien de <strong>250 000 €</strong> :</p>
+                <div class="grid md:grid-cols-2 gap-4 mb-3">
+                  <div class="bg-orange-50 p-3 rounded border border-orange-200">
+                    <p class="font-bold text-orange-800">🏠 Ancien</p>
+                    <p class="text-2xl font-bold text-orange-600">~18 750 €</p>
+                    <p class="text-sm">(7,5% du prix)</p>
+                  </div>
+                  <div class="bg-green-50 p-3 rounded border border-green-200">
+                    <p class="font-bold text-green-800">🏗️ Neuf</p>
+                    <p class="text-2xl font-bold text-green-600">~6 250 €</p>
+                    <p class="text-sm">(2,5% du prix)</p>
+                  </div>
+                </div>
+                <p>
+                  <strong>Économie :</strong> ~12 500 € en achetant du neuf ! La TVA à 20% étant déjà incluse dans le prix du neuf, vous ne payez que les émoluments et débours.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              💼 Peut-on négocier les frais de notaire ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <div class="text-gray-600" itemprop="text">
+                <p class="mb-2"><strong>Partiellement oui.</strong> Voici ce qui est négociable :</p>
+                <ul class="list-disc list-inside space-y-1 mb-3">
+                  <li><strong>Émoluments :</strong> Remise possible jusqu'à <strong>10%</strong> pour les biens > 150 000 € (à la discrétion du notaire)</li>
+                  <li><strong>Taxes et DMTO :</strong> Non négociables (fixés par l'État)</li>
+                  <li><strong>Débours :</strong> Non négociables (coûts réels)</li>
+                </ul>
+                <p class="text-sm bg-yellow-50 p-2 rounded">
+                  <strong>Conseil :</strong> Sur 200 000 €, la remise max représente ~200-300 €. Le notaire doit appliquer la même remise à tous ses clients.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-sm"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-3"
+              itemprop="name"
+            >
+              📍 Quel département a les frais de notaire les moins chers ?
+            </h3>
+            <div
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <div class="text-gray-600" itemprop="text">
+                <p class="mb-2">3 départements ont un taux réduit de <strong>5,09%</strong> :</p>
+                <ul class="list-disc list-inside space-y-1 mb-3">
+                  <li><strong>Indre (36)</strong></li>
+                  <li><strong>Isère (38)</strong></li>
+                  <li><strong>Morbihan (56)</strong></li>
+                </ul>
+                <p class="text-sm bg-green-50 p-2 rounded">
+                  <strong>Exemple :</strong> Pour 200 000 €, vous économisez ~2 460 € en achetant dans l'Isère plutôt qu'en région parisienne (6,32%).
+                </p>
               </div>
             </div>
           </div>
