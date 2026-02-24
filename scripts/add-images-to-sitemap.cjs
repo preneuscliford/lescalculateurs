@@ -53,7 +53,20 @@ function xmlEscape(text) {
 }
 
 /**
+ * Vérifie si une image est locale (pas externe)
+ */
+function isLocalImage(imgSrc) {
+  if (!imgSrc) return false;
+  // Image locale si elle commence par / ou par le domaine local
+  if (imgSrc.startsWith('/')) return true;
+  if (imgSrc.startsWith('https://www.lescalculateurs.fr/')) return true;
+  if (imgSrc.startsWith('https://lescalculateurs.fr/')) return true;
+  return false;
+}
+
+/**
  * Insère <image:image> pour chaque page départementale dans le sitemap.xml
+ * N'ajoute que les images locales (pas d'images externes Wikimedia, Unsplash, etc.)
  */
 function addImagesToSitemap() {
   const sitemapPath = path.resolve(__dirname, "../public/sitemap.xml");
@@ -68,16 +81,24 @@ function addImagesToSitemap() {
 
   xml = xml.replace(/<url>\s*<loc>(https:\/\/lescalculateurs\.fr\/pages\/blog\/departements\/frais-notaire-([^<]+)\.html)<\/loc>([\s\S]*?)<\/url>/g, (m, loc, code, rest) => {
     const localPath = path.resolve(__dirname, `../src/pages/blog/departements/frais-notaire-${code}.html`);
+    // Image par défaut locale
     let img = "https://lescalculateurs.fr/assets/android-chrome-512x512.png";
+    
     if (fs.existsSync(localPath)) {
       const html = fs.readFileSync(localPath, "utf-8");
       const mmContentA = html.match(/<img[^>]*class=\"[^\"]*object-cover[^\"]*\"[^>]*src=\"([^\"]+)\"/i);
       const mmContentB = html.match(/<img[^>]*src=\"([^\"]+)\"[^>]*class=\"[^\"]*object-cover[^\"]*\"/i);
       const mmAny = html.match(/<img[^>]*src=\"([^\"]+)\"/i);
       const mmContent = mmContentA || mmContentB;
-      if (mmContent && mmContent[1]) img = mmContent[1];
-      else if (mmAny && mmAny[1]) img = mmAny[1];
+      
+      const foundImg = mmContent ? mmContent[1] : (mmAny ? mmAny[1] : null);
+      
+      // N'utiliser l'image trouvée que si elle est locale
+      if (foundImg && isLocalImage(foundImg)) {
+        img = foundImg;
+      }
     }
+    
     const safeImg = xmlEscape(img);
     const imageNode = `\n    <image:image>\n      <image:loc>${safeImg}</image:loc>\n    </image:image>`;
     if (rest.includes("<image:image>")) {
