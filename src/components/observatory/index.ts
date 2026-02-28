@@ -34,14 +34,19 @@ export type {
 
 export { RSA_FEEDBACK_QUESTIONS } from '../../types/observatory';
 
-// Re-exports des services
+// Version simple (recommandee) - utilise fonction SQL directement
 export {
-  submitFeedback,
+  submitFeedbackSafe as submitFeedback,
   getProfileStats,
-  getGlobalStats,
-  generateProfileHash,
-  hasUserFeedback,
   getTotalFeedbackCount,
+  generateProfileHash,
+} from '../../services/observatory-simple';
+
+// Version avec Edge Function (optionnel, necessite deploiement)
+export {
+  submitFeedback as submitFeedbackEdge,
+  getGlobalStats,
+  hasUserFeedback,
 } from '../../services/observatory';
 
 // Exports des protections anti-spam

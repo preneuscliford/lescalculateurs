@@ -5,7 +5,7 @@
  */
 
 import { RSA_FEEDBACK_QUESTIONS, type FeedbackQuestion, type UserFeedback } from '../../types/observatory';
-import { submitFeedback, generateProfileHash } from '../../services/observatory';
+import { submitFeedbackSafe, generateProfileHash } from '../../services/observatory-simple';
 import {
   validateSubmission,
   recordSubmission,
@@ -309,7 +309,7 @@ export class FeedbackForm {
         form_start_time: this.formStartTime,
       };
 
-      const result = await submitFeedback(feedback, validationData);
+      const result = await submitFeedbackSafe(feedback, validationData);
 
       if (result.success) {
         // Enregistrer la soumission pour rate limiting
