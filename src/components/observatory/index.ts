@@ -43,3 +43,15 @@ export {
   hasUserFeedback,
   getTotalFeedbackCount,
 } from '../../services/observatory';
+
+// Exports des protections anti-spam
+export {
+  validateSubmission,
+  recordSubmission,
+  canSubmit,
+  getTimeRemaining,
+  resetProtection,
+  startFormTimer,
+  checkHoneypot,
+  generateFingerprint,
+} from '../../services/spamProtection';

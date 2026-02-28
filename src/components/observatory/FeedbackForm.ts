@@ -1,10 +1,18 @@
 /**
  * Composant formulaire de feedback post-simulation
- * Collecte anonyme des expériences utilisateurs
+ * Collecte anonyme des experiences utilisateurs
+ * Avec protections anti-spam (honeypot, rate limiting, fingerprint)
  */
 
 import { RSA_FEEDBACK_QUESTIONS, type FeedbackQuestion, type UserFeedback } from '../../types/observatory';
 import { submitFeedback, generateProfileHash } from '../../services/observatory';
+import {
+  validateSubmission,
+  recordSubmission,
+  startFormTimer,
+  getTimeRemaining,
+  resetProtection,
+} from '../../services/spamProtection';
 
 interface FeedbackFormProps {
   simulatorType: 'rsa' | 'apl' | 'aah' | 'are' | 'prime-activite';
@@ -23,11 +31,60 @@ export class FeedbackForm {
   private props: FeedbackFormProps;
   private answers: Partial<UserFeedback> = {};
   private isSubmitting = false;
+  private profileHash: string | null = null;
+  private formStartTime: number = 0;
 
   constructor(container: HTMLElement, props: FeedbackFormProps) {
     this.container = container;
     this.props = props;
+    this.init();
+  }
+
+  private async init(): Promise<void> {
+    // Generer le hash du profil
+    this.profileHash = await generateProfileHash(this.props.profile);
+    
+    // Verifier si deja soumis recemment
+    const timeCheck = getTimeRemaining(this.profileHash);
+    
+    if (!timeCheck.canSubmit) {
+      this.renderCooldown(timeCheck.remainingText);
+      return;
+    }
+    
+    // Démarrer le timer de remplissage
+    startFormTimer(this.profileHash);
+    this.formStartTime = Date.now();
+    
+    // Rendre le formulaire
     this.render();
+  }
+
+  private renderCooldown(remainingText: string): void {
+    this.container.innerHTML = `
+      <div class="observatory-feedback bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">Merci pour votre contribution !</h3>
+            <p class="text-sm text-gray-600">Vous avez deja partage votre experience.</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-lg p-4 border border-gray-100 text-center">
+          <p class="text-gray-600 mb-2">Prochaine contribution possible dans:</p>
+          <p class="text-2xl font-bold text-blue-600">${remainingText}</p>
+        </div>
+        
+        <p class="mt-4 text-xs text-gray-500 text-center">
+          Cette limitation permet d'eviter les abus et garantir la qualite des donnees.
+        </p>
+      </div>
+    `;
   }
 
   private render(): void {
@@ -43,9 +100,15 @@ export class FeedbackForm {
             </svg>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900">Aidez la communauté</h3>
+            <h3 class="text-lg font-semibold text-gray-900">Aidez la communaute</h3>
             <p class="text-sm text-gray-600">Partagez votre experience (anonyme)</p>
           </div>
+        </div>
+
+        <!-- Honeypot: champ cache pour detecter les bots -->
+        <div class="hp-field" style="position: absolute; left: -9999px; opacity: 0;">
+          <label for="hp-website">Ne pas remplir ce champ</label>
+          <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="space-y-4" id="feedback-questions">
@@ -74,10 +137,25 @@ export class FeedbackForm {
         <p class="mt-3 text-xs text-gray-500 text-center">
           100% anonyme • Les donnees aident les futurs demandeurs
         </p>
+        
+        <!-- Debug: reset (a enlever en production) -->
+        <button 
+          id="debug-reset"
+          class="mt-2 text-xs text-gray-400 hover:text-gray-600 underline"
+          style="display: none;"
+        >
+          [Debug] Reinitialiser
+        </button>
       </div>
     `;
 
     this.attachEventListeners();
+    
+    // Afficher le bouton debug si en mode dev (localhost)
+    if (window.location.hostname === 'localhost') {
+      const debugBtn = this.container.querySelector('#debug-reset') as HTMLElement;
+      if (debugBtn) debugBtn.style.display = 'block';
+    }
   }
 
   private renderQuestion(question: FeedbackQuestion): string {
@@ -171,6 +249,15 @@ export class FeedbackForm {
     cancelBtn?.addEventListener('click', () => {
       this.props.onCancel?.();
     });
+    
+    // Debug reset button
+    const debugBtn = this.container.querySelector('#debug-reset');
+    debugBtn?.addEventListener('click', () => {
+      if (this.profileHash) {
+        resetProtection(this.profileHash);
+        window.location.reload();
+      }
+    });
   }
 
   private isValid(): boolean {
@@ -186,16 +273,28 @@ export class FeedbackForm {
   }
 
   private async submit(): Promise<void> {
-    if (this.isSubmitting || !this.isValid()) return;
+    if (this.isSubmitting || !this.isValid() || !this.profileHash) return;
     
     this.isSubmitting = true;
     this.updateSubmitButton();
 
     try {
-      const profileHash = await generateProfileHash(this.props.profile);
+      // Recuperer la valeur du honeypot
+      const honeypotInput = document.getElementById('hp-website') as HTMLInputElement;
+      const honeypotValue = honeypotInput?.value || null;
+      
+      // Valider les protections anti-spam
+      const validation = validateSubmission(this.profileHash, honeypotValue);
+      
+      if (!validation.valid) {
+        this.showError(validation.reason || 'Validation echouee');
+        this.isSubmitting = false;
+        this.updateSubmitButton();
+        return;
+      }
       
       const feedback: Omit<UserFeedback, 'id' | 'created_at'> = {
-        profile_hash: profileHash,
+        profile_hash: this.profileHash,
         simulator_type: this.props.simulatorType,
         obtention: this.answers.obtention as 'oui' | 'refuse' | 'en_cours' | 'pas_demande',
         delai: this.answers.delai as 'moins_2_semaines' | '2_4_semaines' | '1_2_mois' | 'plus_2_mois' | undefined,
@@ -203,9 +302,18 @@ export class FeedbackForm {
         satisfaction: this.answers.satisfaction as number | undefined,
       };
 
-      const result = await submitFeedback(feedback);
+      // Données de validation pour l'Edge Function
+      const validationData = {
+        fingerprint: validation.fingerprint || '',
+        honeypot: honeypotValue || undefined,
+        form_start_time: this.formStartTime,
+      };
+
+      const result = await submitFeedback(feedback, validationData);
 
       if (result.success) {
+        // Enregistrer la soumission pour rate limiting
+        recordSubmission(this.profileHash);
         this.showSuccess();
         this.props.onSubmitted?.();
       } else {
@@ -229,13 +337,22 @@ export class FeedbackForm {
         </div>
         <h3 class="text-lg font-semibold text-green-900 mb-2">Merci pour votre aide !</h3>
         <p class="text-green-700">Votre retour va aider d\'autres personnes dans leur demarche.</p>
+        
+        <div class="mt-4 p-3 bg-white rounded-lg border border-green-100">
+          <p class="text-sm text-green-800">
+            Prochaine contribution possible dans <strong>24 heures</strong>.
+          </p>
+        </div>
       </div>
     `;
   }
 
   private showError(message: string): void {
+    // Supprimer les messages d'erreur precedents
+    this.container.querySelectorAll('.error-message').forEach(el => el.remove());
+    
     const errorDiv = document.createElement('div');
-    errorDiv.className = 'mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm';
+    errorDiv.className = 'error-message mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm';
     errorDiv.textContent = message;
     this.container.querySelector('.observatory-feedback')?.appendChild(errorDiv);
   }

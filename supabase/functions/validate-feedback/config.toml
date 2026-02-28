@@ -1,0 +1,2 @@
+[functions.validate-feedback]
+verify_jwt = false  # Permet les appels anonymes

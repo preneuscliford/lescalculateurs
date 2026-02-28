@@ -36,11 +36,48 @@ export async function generateProfileHash(profile: {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 16);
 }
 
+// URL de l'Edge Function de validation (optionnel)
+const VALIDATE_FUNCTION_URL = `${SUPABASE_URL}/functions/v1/validate-feedback`;
+
 // Soumettre un feedback
 export async function submitFeedback(
-  feedback: Omit<UserFeedback, 'id' | 'created_at'>
+  feedback: Omit<UserFeedback, 'id' | 'created_at'>,
+  validationData?: {
+    fingerprint: string;
+    honeypot?: string;
+    form_start_time: number;
+  }
 ): Promise<{ success: boolean; error?: string }> {
   try {
+    // 1. Validation côté serveur via Edge Function (si disponible)
+    if (validationData) {
+      try {
+        const validateResponse = await fetch(VALIDATE_FUNCTION_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({
+            ...feedback,
+            ...validationData,
+          }),
+        });
+
+        if (!validateResponse.ok) {
+          const errorData = await validateResponse.json().catch(() => ({}));
+          return { 
+            success: false, 
+            error: errorData.error || `Erreur ${validateResponse.status}` 
+          };
+        }
+      } catch (e) {
+        // Si l'Edge Function n'est pas disponible, on continue avec la validation client uniquement
+        console.warn('Edge Function non disponible, validation client uniquement');
+      }
+    }
+
+    // 2. Insertion dans la base
     const payload = {
       ...feedback,
       created_at: new Date().toISOString(),
