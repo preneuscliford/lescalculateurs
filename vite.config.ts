@@ -61,6 +61,7 @@ export default defineConfig({
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
         simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
+        "simulateurs/index": resolve(__dirname, "src/simulateurs/index.html"),
         apl: resolve(__dirname, "src/pages/apl.html"),
         "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
         "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
@@ -187,6 +188,10 @@ export default defineConfig({
         "simulateurs-aide-profil-2026": resolve(
           __dirname,
           "src/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
+        ),
+        "simulateurs/quelle-aide-selon-mon-profil-2026": resolve(
+          __dirname,
+          "src/simulateurs/quelle-aide-selon-mon-profil-2026.html",
         ),
         "frais-notaire-75": resolve(__dirname, "src/pages/blog/departements/frais-notaire-75.html"),
         "frais-notaire-13": resolve(__dirname, "src/pages/blog/departements/frais-notaire-13.html"),
