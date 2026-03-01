@@ -373,23 +373,27 @@ document
         },
       ],
       onConfirm: (values) => {
-        const tauxSalarial = values.statut === "cadre" ? 0.25 : 0.23;
-        const netAvantImpot = values.brut * (1 - tauxSalarial);
-        const pasMensuel = netAvantImpot * (values.taux_pas / 100);
-        const netApresImpot = netAvantImpot - pasMensuel;
+        const brut = Number(values.brut);
+        const statut = values.statut;
+        const tauxPAS = Number(values.taux_pas) || 0;
+        const r = calculerSalaire({
+          brutMensuel: brut,
+          statut,
+          tauxPAS,
+        });
 
         const label = `${
-          values.statut === "cadre" ? "Cadre" : "Non‑cadre"
-        } • PAS ${Number(values.taux_pas || 0).toFixed(1)}% • Brut ${formatEUR(
-          values.brut
+          statut === "cadre" ? "Cadre" : "Non‑cadre"
+        } • PAS ${Number(tauxPAS || 0).toFixed(1)}% • Brut ${formatEUR(
+          brut
         )}`;
 
         compState.push({
           label,
-          brut: values.brut,
-          netAvantImpot,
-          pasMensuel,
-          netApresImpot,
+          brut: r.brut,
+          netAvantImpot: r.netAvantImpot,
+          pasMensuel: r.pasMensuel,
+          netApresImpot: r.netApresImpot,
         });
         renderSalaireComparaison();
       },

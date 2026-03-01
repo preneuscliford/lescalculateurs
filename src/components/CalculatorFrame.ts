@@ -315,6 +315,17 @@ export class CalculatorFrame {
         event: "calculator_submit",
         calculator: this.config.title,
       });
+
+      // Notifier les scripts de page (comparaisons, UI auxiliaires, etc.)
+      window.dispatchEvent(
+        new CustomEvent("calculator-updated", {
+          detail: {
+            elementId: this.containerId,
+            values: { ...this.values },
+            result,
+          },
+        }),
+      );
     } catch (error) {
       this.showResult(resultDiv, {
         success: false,

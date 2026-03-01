@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulation Impôt sur le Revenu 2026 - Calcul Gratuit | Simulateur Officiel</title>
-    <meta name="description" content="🧾 Simulation impôt sur le revenu 2026 gratuite : calculez votre impôt selon les barèmes officiels. Simulateur IR avec quotient familial, décote et tranches. Résultat immédiat !" />
+    <title>Simulateur impôts 2026 : estimation impôt sur le revenu</title>
+    <meta name="description" content="Estimez votre impôt 2026 avec quotient familial et barème progressif. Simulation gratuite et rapide." />
     <meta
       name="keywords"
       content="simulation impot sur le revenu, simulateur impots sur le revenu, simulateur impot sur le revenu, impot sur le revenu simulation, simulation impots sur le revenu, calcul impot 2026, barème progressif, quotient familial, IRPP, décote impôt"
@@ -740,7 +740,7 @@
   // Traiter un element
   function processElement(el, type) {
     const text = el.textContent || el.innerText || '';
-    const match = text.match(/(d[ds]{2,5})s*€/);
+    const match = text.match(/(\d[\d\s]{2,5})\s*€/);
     if (!match) return;
     
     const exactVal = match[1].replace(/s/g, '');
@@ -778,7 +778,7 @@
     
     // Traiter elements existants
     document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
-      if (el.textContent.match(/d{3,6}s*€/)) {
+      if (el.textContent.match(/\d{3,6}\s*€/)) {
         processElement(el, type);
       }
     });

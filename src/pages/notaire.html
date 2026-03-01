@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulateur Frais de Notaire 2026 - Calcul Gratuit</title>
+    <title>Calcul frais de notaire 2026 : ancien, neuf, département</title>
     <meta
       name="description"
-      content="calculez vos frais de notaire en 2026. Ancien, neuf (VEFA), droits, émoluments et estimation gratuite immédiate."
+      content="Simulateur frais de notaire 2026 : estimez vos frais selon prix, type de bien et département. Résultat immédiat."
     />
     <meta
       name="keywords"
@@ -258,10 +258,9 @@
       <!-- Intro SEO -->
       <section class="mb-8">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">
-            Calculateur de frais de notaire 2026 — barèmes réglementaires en
-            vigueur (France)
-          </h2>
+          <h1 class="text-3xl font-bold text-gray-900 mb-6">
+            Calcul des frais de notaire 2026
+          </h1>
           <p class="text-gray-600 mb-4 text-sm">
             Outil de simulation basé sur les barèmes notariaux réglementés et
             les taux DMTO officiels publiés par l'administration fiscale
@@ -2861,7 +2860,7 @@
         // Traiter un element
         function processElement(el, type) {
           const text = el.textContent || el.innerText || "";
-          const match = text.match(/(d[ds]{2,5})s*€/);
+          const match = text.match(/(\d[\d\s]{2,5})\s*€/);
           if (!match) return;
 
           const exactVal = match[1].replace(/s/g, "");
@@ -2914,7 +2913,7 @@
               '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span',
             )
             .forEach(function (el) {
-              if (el.textContent.match(/d{3,6}s*€/)) {
+              if (el.textContent.match(/\d{3,6}\s*€/)) {
                 processElement(el, type);
               }
             });
