@@ -29,7 +29,12 @@ interface FeedbackFormProps {
 export class FeedbackForm {
   private container: HTMLElement;
   private props: FeedbackFormProps;
-  private answers: Partial<UserFeedback> = {};
+  private answers: {
+    obtention?: UserFeedback['obtention'];
+    delai?: UserFeedback['delai'];
+    controle?: UserFeedback['controle'];
+    satisfaction?: number;
+  } = {};
   private isSubmitting = false;
   private profileHash: string | null = null;
   private formStartTime: number = 0;
@@ -211,7 +216,7 @@ export class FeedbackForm {
     this.container.querySelectorAll('input[type="radio"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
         const target = e.target as HTMLInputElement;
-        this.answers[target.name as keyof UserFeedback] = target.value as any;
+        this.setRadioAnswer(target.name, target.value);
         this.updateSubmitButton();
       });
     });
@@ -234,8 +239,9 @@ export class FeedbackForm {
               s.classList.add('border-gray-200', 'text-gray-400');
             }
           });
-          
-          this.answers[questionId as keyof UserFeedback] = parseInt(value) as any;
+
+          this.setRatingAnswer(questionId, parseInt(value, 10));
+          this.updateSubmitButton();
         }
       });
     });
@@ -262,7 +268,20 @@ export class FeedbackForm {
 
   private isValid(): boolean {
     const requiredQuestions = RSA_FEEDBACK_QUESTIONS.filter(q => q.required);
-    return requiredQuestions.every(q => this.answers[q.id as keyof UserFeedback] !== undefined);
+    return requiredQuestions.every((q) => {
+      switch (q.id) {
+        case 'obtention':
+          return this.answers.obtention !== undefined;
+        case 'controle':
+          return this.answers.controle !== undefined;
+        case 'delai':
+          return this.answers.delai !== undefined;
+        case 'satisfaction':
+          return this.answers.satisfaction !== undefined;
+        default:
+          return true;
+      }
+    });
   }
 
   private updateSubmitButton(): void {
@@ -292,14 +311,21 @@ export class FeedbackForm {
         this.updateSubmitButton();
         return;
       }
+
+      if (!this.answers.obtention || !this.answers.controle) {
+        this.showError('Veuillez repondre aux questions obligatoires');
+        this.isSubmitting = false;
+        this.updateSubmitButton();
+        return;
+      }
       
       const feedback: Omit<UserFeedback, 'id' | 'created_at'> = {
         profile_hash: this.profileHash,
         simulator_type: this.props.simulatorType,
-        obtention: this.answers.obtention as 'oui' | 'refuse' | 'en_cours' | 'pas_demande',
-        delai: this.answers.delai as 'moins_2_semaines' | '2_4_semaines' | '1_2_mois' | 'plus_2_mois' | undefined,
-        controle: this.answers.controle as 'oui' | 'non',
-        satisfaction: this.answers.satisfaction as number | undefined,
+        obtention: this.answers.obtention,
+        delai: this.answers.delai,
+        controle: this.answers.controle,
+        satisfaction: this.answers.satisfaction,
       };
 
       // Données de validation pour l'Edge Function
@@ -355,6 +381,34 @@ export class FeedbackForm {
     errorDiv.className = 'error-message mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm';
     errorDiv.textContent = message;
     this.container.querySelector('.observatory-feedback')?.appendChild(errorDiv);
+  }
+
+  private setRadioAnswer(name: string, value: string): void {
+    switch (name) {
+      case 'obtention':
+        if (value === 'oui' || value === 'refuse' || value === 'en_cours' || value === 'pas_demande') {
+          this.answers.obtention = value;
+        }
+        break;
+      case 'delai':
+        if (value === 'moins_2_semaines' || value === '2_4_semaines' || value === '1_2_mois' || value === 'plus_2_mois') {
+          this.answers.delai = value;
+        }
+        break;
+      case 'controle':
+        if (value === 'oui' || value === 'non') {
+          this.answers.controle = value;
+        }
+        break;
+      default:
+        break;
+    }
+  }
+
+  private setRatingAnswer(questionId: string, rating: number): void {
+    if (questionId === 'satisfaction' && Number.isInteger(rating) && rating >= 1 && rating <= 5) {
+      this.answers.satisfaction = rating;
+    }
   }
 }
 
