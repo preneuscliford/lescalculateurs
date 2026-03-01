@@ -17,6 +17,16 @@
       "permanent": true
     },
     {
+      "source": "/simulateurs",
+      "destination": "/pages/simulateurs",
+      "permanent": true
+    },
+    {
+      "source": "/simulateurs/(.*)",
+      "destination": "/pages/simulateurs/$1",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://www.lescalculateurs.fr/:path*",
       "permanent": true,
