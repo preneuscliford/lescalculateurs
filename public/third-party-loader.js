@@ -39,6 +39,58 @@
     document.head.appendChild(script);
   }
 
+  function ensureGlobalFavicons() {
+    try {
+      var existingIcon = document.querySelector('link[rel="shortcut icon"], link[rel="icon"]');
+      if (existingIcon) return;
+
+      var icons = [
+        { rel: "apple-touch-icon", href: "/assets/apple-touch-icon.png", sizes: "180x180" },
+        { rel: "icon", href: "/assets/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { rel: "icon", href: "/assets/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+        { rel: "manifest", href: "/assets/site.webmanifest" },
+        { rel: "shortcut icon", href: "/assets/favicon.ico" }
+      ];
+
+      for (var i = 0; i < icons.length; i++) {
+        var link = document.createElement("link");
+        link.rel = icons[i].rel;
+        link.href = icons[i].href;
+        if (icons[i].sizes) link.sizes = icons[i].sizes;
+        if (icons[i].type) link.type = icons[i].type;
+        document.head.appendChild(link);
+      }
+    } catch (_e) {}
+  }
+
+  function normalizeBrandLockups() {
+    try {
+      var selectors = [
+        'a[href="/"]',
+        'a[href="/index.html"]',
+        'a[href="./index.html"]',
+        'a[href="../index.html"]',
+        'a[href="index.html"]'
+      ].join(", ");
+      var links = document.querySelectorAll(selectors);
+
+      for (var i = 0; i < links.length; i++) {
+        var anchor = links[i];
+        var text = (anchor.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
+        var isBrandText =
+          text.indexOf("les calculateurs") !== -1 ||
+          text.indexOf("lescalculateurs") !== -1;
+
+        if (!isBrandText) continue;
+        if (anchor.querySelector('img[src*="lescalculateurs-new-logo.png"]')) continue;
+
+        anchor.classList.add("inline-flex", "items-center", "gap-2", "font-bold", "text-gray-900");
+        anchor.innerHTML =
+          '<img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs.fr" class="h-8 w-auto" loading="eager" decoding="async"><span class="whitespace-nowrap">Les Calculateurs</span>';
+      }
+    } catch (_e) {}
+  }
+
   function isMobileLike() {
     try {
       if (
@@ -115,6 +167,13 @@
     loadAdsense();
     loadGTM();
     loadGA4();
+  }
+
+  ensureGlobalFavicons();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", normalizeBrandLockups, { once: true });
+  } else {
+    normalizeBrandLockups();
   }
 
   var deferOnMobile = isMobileLike() || isConstrainedNetwork();
