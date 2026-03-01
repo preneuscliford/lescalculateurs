@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulation globale des aides 2026 : RSA, APL, Prime d'activite</title>
+    <title>Simulateur global aides 2026 : RSA, APL, Prime d'activite en 1 calcul</title>
     <meta
       name="description"
-      content="Comparez en une seule simulation vos aides sociales 2026 : RSA, APL et Prime d'activite. Entrez votre profil et obtenez un total mensuel estimatif."
+      content="Simulateur global 2026 : estimez en une seule page votre RSA, votre APL et votre Prime d'activite. Resultats instantanes, total mensuel et FAQ complete."
     />
     <meta name="robots" content="index,follow" />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
@@ -18,17 +18,44 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Simulation globale RSA, APL, Prime d'activite (2026)"
+      content="Simulateur global RSA, APL, Prime d'activite (2026)"
     />
     <meta
       property="og:description"
-      content="Une seule page pour estimer vos 3 aides principales et visualiser un total mensuel potentiel."
+      content="Comparez vos aides sociales principales en une simulation et obtenez un total mensuel indicatif."
     />
     <meta
       property="og:url"
       content="https://www.lescalculateurs.fr/pages/simulateurs/quelle-aide-selon-mon-profil-2026"
     />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://www.lescalculateurs.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Simulateurs",
+            "item": "https://www.lescalculateurs.fr/pages/simulateurs"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Quelle aide selon mon profil 2026",
+            "item": "https://www.lescalculateurs.fr/pages/simulateurs/quelle-aide-selon-mon-profil-2026"
+          }
+        ]
+      }
+    </script>
 
     <script type="application/ld+json">
       {
@@ -48,15 +75,71 @@
             "name": "Peut-on cumuler RSA, APL et Prime d'activite ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le cumul depend de votre situation precise. Cette page donne une estimation pedagogique pour orienter vos demarches."
+              "text": "Le cumul depend de votre situation exacte. Cette page donne une estimation pedagogique pour orienter vos demarches."
             }
           },
           {
             "@type": "Question",
-            "name": "Quel revenu renseigner ?",
+            "name": "Quel revenu faut-il renseigner dans le comparateur ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Indiquez vos revenus mensuels nets du foyer pour le comparateur global, puis vos revenus professionnels pour la Prime d'activite."
+              "text": "Renseignez vos revenus mensuels du foyer pour la vue globale, puis vos revenus professionnels pour la Prime d'activite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi mon APL estimee est-elle nulle ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Votre revenu, votre loyer plafonne, votre region ou votre situation familiale peuvent reduire l'aide estimee jusqu'a zero."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi mon RSA estime est-il faible ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le RSA tient compte des ressources du foyer et de la composition familiale. Un revenu plus eleve diminue le montant potentiel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Puis-je refaire plusieurs simulations ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Modifiez vos champs puis relancez le calcul pour comparer differents scenarios de revenus, logement et activite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le total mensuel est-il garanti ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Le total est une projection indicative. Les organismes officiels valident chaque droit selon votre dossier complet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Cette page est-elle utile pour un parent isole ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Le formulaire prend en compte la situation monoparentale et le nombre d'enfants pour ajuster les estimations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la difference entre revenus du foyer et revenus professionnels ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les revenus du foyer couvrent l'ensemble des ressources mensuelles. Les revenus professionnels servent surtout au calcul de la Prime d'activite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ou continuer apres cette simulation ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Consultez les pages detaillees RSA, APL et Prime d'activite puis effectuez vos demarches sur les plateformes officielles."
             }
           }
         ]
@@ -68,114 +151,123 @@
     <script type="module" src="../scripts/multi-aides-script.ts"></script>
     <script defer src="/third-party-loader.js"></script>
   </head>
-  <body class="bg-gray-50">
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-40">
+  <body class="bg-slate-50">
+    <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-40">
       <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="/" class="font-bold text-lg text-blue-700">Les Calculateurs</a>
-        <nav class="text-sm text-gray-600 space-x-4">
+        <nav class="text-sm text-slate-600 space-x-4">
           <a href="/pages/simulateurs" class="hover:text-blue-600">Simulateurs</a>
           <a href="/pages/sources" class="hover:text-blue-600">Sources</a>
+          <a href="/pages/methodologie" class="hover:text-blue-600">Methodologie</a>
         </nav>
       </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 py-10">
-      <section class="mb-8">
-        <p class="text-xs uppercase tracking-wide text-blue-700 font-semibold mb-2">
-          Comparateur multi-aides 2026
+      <section class="rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50 via-cyan-50 to-indigo-50 p-7 sm:p-10 mb-8 shadow-sm">
+        <p class="text-xs uppercase tracking-wide text-blue-800 font-semibold mb-2">
+          Simulateur global aides sociales 2026
         </p>
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-          Quelle aide selon mon profil ? RSA + APL + Prime d'activite
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 leading-tight">
+          Quelle aide selon mon profil ? Comparez RSA, APL et Prime d'activite en un seul calcul
         </h1>
-        <p class="text-gray-700 max-w-3xl">
-          Renseignez un seul profil et obtenez une projection rapide des 3 aides les plus demandees.
-          Le total est indicatif et sert a prioriser vos demarches.
+        <p class="text-slate-700 max-w-4xl mb-5">
+          Cette page centralise vos trois estimations principales pour reduire les allers-retours entre simulateurs.
+          Vous obtenez un total mensuel indicatif, puis des explications par aide pour preparer vos demarches.
         </p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="inline-flex items-center rounded-full bg-white border border-blue-200 px-3 py-1 text-blue-700">simulation rsa apl prime 2026</span>
+          <span class="inline-flex items-center rounded-full bg-white border border-blue-200 px-3 py-1 text-blue-700">aides cumulables</span>
+          <span class="inline-flex items-center rounded-full bg-white border border-blue-200 px-3 py-1 text-blue-700">estimation mensuelle foyer</span>
+        </div>
       </section>
 
-      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        <article class="bg-white border border-gray-200 rounded-lg p-5">
-          <h2 class="font-bold text-gray-900 mb-2">1 formulaire unique</h2>
-          <p class="text-sm text-gray-700">Plus besoin de refaire vos donnees sur trois pages differentes.</p>
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-8">
+        <article class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <h2 class="font-bold text-slate-900 mb-2">1 formulaire, 3 moteurs</h2>
+          <p class="text-sm text-slate-700">Le profil est saisi une seule fois puis applique a RSA, APL et Prime d'activite.</p>
         </article>
-        <article class="bg-white border border-gray-200 rounded-lg p-5">
-          <h2 class="font-bold text-gray-900 mb-2">3 estimations simultanees</h2>
-          <p class="text-sm text-gray-700">RSA, APL et Prime d'activite sont affiches dans le meme tableau de resultats.</p>
+        <article class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <h2 class="font-bold text-slate-900 mb-2">Lecture immediate</h2>
+          <p class="text-sm text-slate-700">Montants, statut probable et explications sont visibles dans un bloc unique.</p>
         </article>
-        <article class="bg-white border border-gray-200 rounded-lg p-5">
-          <h2 class="font-bold text-gray-900 mb-2">Total mensuel potentiel</h2>
-          <p class="text-sm text-gray-700">Une vision claire pour savoir quelles demandes lancer en priorite.</p>
+        <article class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <h2 class="font-bold text-slate-900 mb-2">Scenario planning</h2>
+          <p class="text-sm text-slate-700">Testez plusieurs hypotheses de revenus et logement pour estimer vos marges.</p>
         </article>
       </section>
 
-      <section class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm mb-8" id="simulateur-global">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Simulation globale RSA / APL / Prime</h2>
+      <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm mb-8" id="simulateur-global">
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
+          <h2 class="text-2xl font-bold text-slate-900">Simulation globale RSA / APL / Prime</h2>
+          <a href="#faq" class="text-sm text-blue-700 hover:text-blue-800 font-medium">Voir la FAQ complete</a>
+        </div>
 
         <form id="multi-aides-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Situation familiale
-            <select id="ma-situation" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required>
+            <select id="ma-situation" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required>
               <option value="seul">Seul(e)</option>
               <option value="couple">Couple</option>
               <option value="monoparental">Parent isole</option>
             </select>
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Nombre d'enfants
-            <input id="ma-enfants" type="number" min="0" max="10" value="0" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required />
+            <input id="ma-enfants" type="number" min="0" max="10" value="0" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required />
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Revenus mensuels du foyer (EUR)
-            <input id="ma-revenus" type="number" min="0" step="10" placeholder="Ex: 1200" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required />
+            <input id="ma-revenus" type="number" min="0" step="10" placeholder="Ex: 1200" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required />
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Revenus professionnels (EUR)
-            <input id="ma-revenus-pro" type="number" min="0" step="10" placeholder="Ex: 900" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required />
+            <input id="ma-revenus-pro" type="number" min="0" step="10" placeholder="Ex: 900" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required />
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Autres revenus (EUR)
-            <input id="ma-autres-revenus" type="number" min="0" step="10" value="0" class="mt-1 w-full rounded-lg border border-gray-300 p-2" />
+            <input id="ma-autres-revenus" type="number" min="0" step="10" value="0" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" />
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Loyer ou mensualite logement (EUR)
-            <input id="ma-loyer" type="number" min="0" step="10" placeholder="Ex: 650" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required />
+            <input id="ma-loyer" type="number" min="0" step="10" placeholder="Ex: 650" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required />
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Region
-            <select id="ma-region" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required>
+            <select id="ma-region" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required>
               <option value="idf">Ile-de-France</option>
               <option value="province" selected>Province</option>
               <option value="dom">DOM-TOM</option>
             </select>
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Situation logement
-            <select id="ma-logement" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required>
+            <select id="ma-logement" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required>
               <option value="loue">Locataire</option>
               <option value="proprio">Proprietaire accedant</option>
               <option value="gratuit">Heberge a titre gratuit</option>
             </select>
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Situation activite
-            <select id="ma-activite" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required>
+            <select id="ma-activite" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required>
               <option value="actif">En activite</option>
               <option value="chomage">Au chomage</option>
               <option value="inactif">Sans activite</option>
             </select>
           </label>
 
-          <label class="text-sm font-medium text-gray-800">
+          <label class="text-sm font-medium text-slate-800">
             Type d'activite principale
-            <select id="ma-type-activite" class="mt-1 w-full rounded-lg border border-gray-300 p-2" required>
+            <select id="ma-type-activite" class="mt-1 w-full rounded-lg border border-slate-300 p-2.5 bg-slate-50" required>
               <option value="salarie">Salarie</option>
               <option value="independant">Independant</option>
               <option value="apprenti">Apprenti</option>
@@ -186,7 +278,7 @@
             <p id="multi-aides-error" class="hidden mb-3 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3"></p>
             <button
               type="submit"
-              class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+              class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-sm"
             >
               Lancer la simulation globale
             </button>
@@ -194,73 +286,151 @@
         </form>
       </section>
 
-      <section id="multi-aides-result" class="hidden bg-white border border-gray-200 rounded-xl p-6 shadow-sm mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Resultats estimes</h2>
+      <section id="multi-aides-result" class="hidden bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Resultats estimes</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <article class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <p class="text-sm text-gray-600 mb-1">RSA mensuel</p>
-            <p id="ma-rsa-montant" class="text-2xl font-bold text-gray-900">-</p>
+          <article class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+            <p class="text-sm text-slate-600 mb-1">RSA mensuel</p>
+            <p id="ma-rsa-montant" class="text-2xl font-bold text-slate-900">-</p>
             <p id="ma-rsa-status" class="text-sm font-medium text-blue-700 mt-2">-</p>
-            <p id="ma-rsa-expl" class="text-xs text-gray-600 mt-2">-</p>
+            <p id="ma-rsa-expl" class="text-xs text-slate-600 mt-2">-</p>
           </article>
-          <article class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <p class="text-sm text-gray-600 mb-1">APL mensuelle</p>
-            <p id="ma-apl-montant" class="text-2xl font-bold text-gray-900">-</p>
+          <article class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+            <p class="text-sm text-slate-600 mb-1">APL mensuelle</p>
+            <p id="ma-apl-montant" class="text-2xl font-bold text-slate-900">-</p>
             <p id="ma-apl-status" class="text-sm font-medium text-blue-700 mt-2">-</p>
-            <p id="ma-apl-expl" class="text-xs text-gray-600 mt-2">-</p>
+            <p id="ma-apl-expl" class="text-xs text-slate-600 mt-2">-</p>
           </article>
-          <article class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <p class="text-sm text-gray-600 mb-1">Prime d'activite mensuelle</p>
-            <p id="ma-prime-montant" class="text-2xl font-bold text-gray-900">-</p>
+          <article class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+            <p class="text-sm text-slate-600 mb-1">Prime d'activite mensuelle</p>
+            <p id="ma-prime-montant" class="text-2xl font-bold text-slate-900">-</p>
             <p id="ma-prime-status" class="text-sm font-medium text-blue-700 mt-2">-</p>
-            <p id="ma-prime-expl" class="text-xs text-gray-600 mt-2">-</p>
+            <p id="ma-prime-expl" class="text-xs text-slate-600 mt-2">-</p>
           </article>
         </div>
 
-        <div class="rounded-lg border border-emerald-200 bg-emerald-50 p-5">
+        <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
           <p class="text-sm text-emerald-900 mb-1">Total mensuel potentiel (indicatif)</p>
-          <p id="ma-total-montant" class="text-3xl font-bold text-emerald-800">-</p>
+          <p id="ma-total-montant" class="text-3xl font-extrabold text-emerald-800">-</p>
         </div>
 
-        <p class="text-xs text-gray-600 mt-4">
+        <p class="text-xs text-slate-600 mt-4">
           Estimation pedagogique non contractuelle. Les montants definitifs sont confirmes par la CAF et les organismes officiels.
         </p>
       </section>
 
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <article class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-3">Comment interpreter vos resultats</h2>
+          <ol class="list-decimal list-inside text-sm text-slate-700 space-y-2">
+            <li>Regardez le statut de chaque aide (eligible probable, montant nul probable, etc.).</li>
+            <li>Analysez les explications pour comprendre ce qui bloque ou limite votre estimation.</li>
+            <li>Ajustez revenus et logement pour simuler plusieurs scenarios avant vos demarches.</li>
+            <li>Validez ensuite sur les portails officiels pour obtenir votre montant final.</li>
+          </ol>
+        </article>
+        <article class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-3">Profils frequents</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left text-slate-600 border-b border-slate-200">
+                  <th class="py-2 pr-3">Profil</th>
+                  <th class="py-2 pr-3">Aide prioritaire</th>
+                  <th class="py-2">A verifier</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-700">
+                <tr class="border-b border-slate-100">
+                  <td class="py-2 pr-3">Seul, loyer eleve</td>
+                  <td class="py-2 pr-3">APL</td>
+                  <td class="py-2">Zone et plafond de loyer</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                  <td class="py-2 pr-3">Parent isole</td>
+                  <td class="py-2 pr-3">RSA + APL</td>
+                  <td class="py-2">Composition du foyer</td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-3">Actif a revenus modestes</td>
+                  <td class="py-2 pr-3">Prime d'activite</td>
+                  <td class="py-2">Revenus professionnels</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
       <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
-        <h2 class="text-xl font-bold text-gray-900 mb-3">Maillage utile</h2>
+        <h2 class="text-xl font-bold text-slate-900 mb-3">Maillage interne utile</h2>
         <div class="flex flex-wrap gap-3 text-sm">
           <a href="/pages/apl" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">simulation apl 2026</a>
           <a href="/pages/rsa" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">simulation rsa 2026</a>
           <a href="/pages/prime-activite" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">simulation prime activite 2026</a>
           <a href="/pages/aides/cumul-aides-rsa-apl-prime-activite" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">rsa apl prime activite cumul</a>
+          <a href="/pages/apl/plafond-ressources-apl-2026" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">plafond ressources apl 2026</a>
+          <a href="/pages/rsa/montant-rsa-2026" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">montant rsa 2026</a>
+          <a href="/pages/prime-activite/montant-prime-activite-2026" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">montant prime activite 2026</a>
+          <a href="/pages/simulateurs" class="bg-white border border-blue-200 hover:bg-blue-100 rounded px-3 py-2 text-blue-700">tous les simulateurs</a>
         </div>
       </section>
 
-      <section>
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">FAQ</h2>
+      <section id="faq" class="mb-4">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">FAQ complete</h2>
         <div class="space-y-3">
-          <details class="bg-white border border-gray-200 rounded-lg p-4">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Cette simulation est-elle officielle ?</summary>
-            <p class="mt-3 text-sm text-gray-700">Non. C'est un estimateur pour vous orienter. Pour un droit final, utilisez votre espace CAF ou faites une demande officielle.</p>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Cette simulation est-elle officielle ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Non. C'est un estimateur pedagogique. Les droits definitifs sont verifies par les organismes officiels.</p>
           </details>
-          <details class="bg-white border border-gray-200 rounded-lg p-4">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Pourquoi un montant peut etre a 0 EUR ?</summary>
-            <p class="mt-3 text-sm text-gray-700">Selon vos revenus, votre loyer, votre activite ou votre composition de foyer, certaines aides peuvent etre nulles dans l'estimation.</p>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Puis-je cumuler RSA, APL et Prime d'activite ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Le cumul est possible selon certains profils, mais depend de regles detaillees. Utilisez cette estimation pour orienter vos demarches.</p>
           </details>
-          <details class="bg-white border border-gray-200 rounded-lg p-4">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Puis-je refaire plusieurs scenarios ?</summary>
-            <p class="mt-3 text-sm text-gray-700">Oui, modifiez les champs (revenus, loyer, situation) puis relancez le calcul pour comparer vos scenarios rapidement.</p>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Quel revenu dois-je indiquer ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Renseignez vos revenus mensuels du foyer, puis vos revenus professionnels pour la Prime d'activite.</p>
+          </details>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Pourquoi l'APL peut etre a 0 EUR ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Le plafond de loyer, la zone geographique et le niveau de ressources peuvent annuler le droit estime.</p>
+          </details>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Pourquoi le RSA peut etre tres faible ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Le montant baisse avec les revenus du foyer et varie selon la composition familiale et la situation declaree.</p>
+          </details>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">La Prime d'activite est-elle automatique ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Non, elle doit etre demandee et depend notamment des revenus professionnels et de la situation de foyer.</p>
+          </details>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Puis-je comparer plusieurs scenarios ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Oui, modifiez vos donnees puis relancez le calcul autant de fois que necessaire.</p>
+          </details>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Le total mensuel est-il garanti ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Non. Le total est une projection indicative et non un engagement de versement.</p>
+          </details>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Cette page est-elle adaptee aux parents isoles ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Oui, le simulateur inclut la situation monoparentale et le nombre d'enfants.</p>
+          </details>
+          <details class="bg-white border border-slate-200 rounded-lg p-4">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Quelle est la suite apres le calcul ?</summary>
+            <p class="mt-3 text-sm text-slate-700">Consultez les simulateurs detailles puis deposez votre demande via les canaux officiels.</p>
           </details>
         </div>
       </section>
     </main>
 
-    <footer class="bg-white border-t border-gray-200 mt-10">
-      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600">
+    <footer class="bg-white border-t border-slate-200 mt-10">
+      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-600 flex flex-wrap gap-3 justify-between">
         <p>
           <a href="/pages/simulateurs" class="text-blue-600 hover:underline">Retour a tous les simulateurs</a>
+        </p>
+        <p>
+          <a href="/pages/sources" class="text-blue-600 hover:underline">Consulter les sources et limites des estimations</a>
         </p>
       </div>
     </footer>
