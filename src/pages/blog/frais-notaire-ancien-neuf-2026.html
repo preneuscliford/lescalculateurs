@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Frais de notaire 2026 : ancien vs neuf - Économie réelle et simulateur
+      Frais de notaire ancien vs neuf (2026) : différences et calcul
     </title>
     <meta
       name="description"
-      content="Comparez les frais de notaire entre l'ancien et le neuf en 2026. Explications détaillées, ordres de grandeur et simulateur gratuit pour un calcul précis."
+      content="Comparez les frais de notaire dans l'ancien et le neuf en 2026 avec exemples chiffrés et simulation."
     />
     <meta
       name="keywords"
@@ -212,7 +212,7 @@
         </div>
 
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Frais de notaire 2026 : ancien vs neuf - Le comparatif complet
+          Frais de notaire : ancien ou neuf en 2026 ?
         </h1>
 
         <p class="text-xl text-gray-600 leading-relaxed">
@@ -1080,7 +1080,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Traiter un element
   function processElement(el, type) {
     const text = el.textContent || el.innerText || '';
-    const match = text.match(/(d[ds]{2,5})s*€/);
+    const match = text.match(/(\d[\d\s]{2,5})\s*€/);
     if (!match) return;
     
     const exactVal = match[1].replace(/s/g, '');
@@ -1118,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Traiter elements existants
     document.querySelectorAll('.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span').forEach(function(el) {
-      if (el.textContent.match(/d{3,6}s*€/)) {
+      if (el.textContent.match(/\d{3,6}\s*€/)) {
         processElement(el, type);
       }
     });
