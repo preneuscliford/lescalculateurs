@@ -19,10 +19,6 @@ const { readTextFile } = require("./encoding.cjs");
 const sourceDir = path.resolve(__dirname, "../src/pages/blog/departements");
 const targetDir = path.resolve(__dirname, "../dist/pages/blog/departements");
 const legacyBlogDir = path.resolve(__dirname, "../dist/pages/blog");
-const legacyRootDepartementsDir = path.resolve(
-  __dirname,
-  "../dist/blog/departements",
-);
 const assetsDir = path.resolve(__dirname, "../dist/assets");
 const satellitesTxtDir = path.resolve(__dirname, "../pages_satellite_txt");
 const satellitesTargetDir = path.resolve(__dirname, "../dist/pages");
@@ -69,10 +65,6 @@ try {
   if (!fs.existsSync(legacyBlogDir)) {
     fs.mkdirSync(legacyBlogDir, { recursive: true });
     console.log("✅ Dossier créé:", legacyBlogDir);
-  }
-  if (!fs.existsSync(legacyRootDepartementsDir)) {
-    fs.mkdirSync(legacyRootDepartementsDir, { recursive: true });
-    console.log("✅ Dossier créé:", legacyRootDepartementsDir);
   }
 
   // Lire tous les fichiers du dossier source
@@ -192,44 +184,10 @@ try {
             ),
             `<link rel=\"stylesheet\" crossorigin href=\"../../assets/${cssFile}\">`,
           );
-        legacyContent = ensureNoindexRobots(legacyContent);
 
         const legacyPath = path.join(legacyBlogDir, file);
         fs.writeFileSync(legacyPath, legacyContent, "utf-8");
         console.log(`   ↳ Dupliqué: ${legacyPath}`);
-
-        // Support URL propre legacy: /pages/blog/frais-notaire-XX
-        const legacyCleanDir = path.join(
-          legacyBlogDir,
-          file.replace(/\.html$/i, ""),
-        );
-        if (!fs.existsSync(legacyCleanDir)) {
-          fs.mkdirSync(legacyCleanDir, { recursive: true });
-        }
-        fs.writeFileSync(
-          path.join(legacyCleanDir, "index.html"),
-          legacyContent,
-          "utf-8",
-        );
-
-        // Support des anciens backlinks: /blog/departements/frais-notaire-XX
-        const legacyRootPath = path.join(legacyRootDepartementsDir, file);
-        const legacyRootContent = ensureNoindexRobots(htmlContent);
-        fs.writeFileSync(legacyRootPath, legacyRootContent, "utf-8");
-
-        // Support URL propre ancien: /blog/departements/frais-notaire-XX
-        const legacyRootCleanDir = path.join(
-          legacyRootDepartementsDir,
-          file.replace(/\.html$/i, ""),
-        );
-        if (!fs.existsSync(legacyRootCleanDir)) {
-          fs.mkdirSync(legacyRootCleanDir, { recursive: true });
-        }
-        fs.writeFileSync(
-          path.join(legacyRootCleanDir, "index.html"),
-          legacyRootContent,
-          "utf-8",
-        );
       } catch (e) {
         console.warn(
           `⚠️ Duplication legacy échouée pour ${file}: ${e.message}`,
@@ -1123,19 +1081,4 @@ function shouldShowPretEndettementTip(page) {
     .filter(Boolean)
     .join(" ");
   return /\d/.test(haystack);
-}
-
-function ensureNoindexRobots(html) {
-  const robotsMetaRegex =
-    /<meta\s+name=["']robots["']\s+content=["'][^"']*["']\s*\/?>/i;
-  if (robotsMetaRegex.test(html)) {
-    return html.replace(
-      robotsMetaRegex,
-      '<meta name="robots" content="noindex,follow" />',
-    );
-  }
-  return html.replace(
-    /<\/head>/i,
-    '    <meta name="robots" content="noindex,follow" />\n  </head>',
-  );
 }

@@ -120,10 +120,6 @@ export default defineConfig({
           __dirname,
           "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
         ),
-        "blog-frais-notaire-2025": resolve(
-          __dirname,
-          "src/pages/blog/frais-notaire-ancien-neuf-2025.html",
-        ),
         "frais-notaire-ancien-neuf": resolve(
           __dirname,
           "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
