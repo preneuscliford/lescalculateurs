@@ -51,25 +51,15 @@ export default defineConfig({
         notaire: resolve(__dirname, "src/pages/notaire.html"),
         pret: resolve(__dirname, "src/pages/pret.html"),
         plusvalue: resolve(__dirname, "src/pages/plusvalue.html"),
-        "plus-value-immobiliere": resolve(
-          __dirname,
-          "src/pages/plus-value-immobiliere.html",
-        ),
         salaire: resolve(__dirname, "src/pages/salaire.html"),
         impot: resolve(__dirname, "src/pages/impot.html"),
         charges: resolve(__dirname, "src/pages/charges.html"),
         ik: resolve(__dirname, "src/pages/ik.html"),
         ponts: resolve(__dirname, "src/pages/ponts.html"),
         taxe: resolve(__dirname, "src/pages/taxe.html"),
-        "taxe-habitation": resolve(__dirname, "src/pages/taxe-habitation.html"),
         travail: resolve(__dirname, "src/pages/travail.html"),
-        "calculateur-travail": resolve(
-          __dirname,
-          "src/pages/calculateur-travail.html",
-        ),
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
-        "crypto-plus-value": resolve(__dirname, "src/pages/crypto-plus-value.html"),
         simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
         "simulateurs/index": resolve(__dirname, "src/simulateurs/index.html"),
         "simulateurs-aide-financiere-famille": resolve(
@@ -238,10 +228,6 @@ export default defineConfig({
         "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
         "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
         "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
-        "mentions-legales": resolve(__dirname, "src/pages/mentions-legales.html"),
-        "politique-confidentialite": resolve(__dirname, "src/pages/politique-confidentialite.html"),
-        "politique-cookies": resolve(__dirname, "src/pages/politique-cookies.html"),
-        contact: resolve(__dirname, "src/pages/contact.html"),
       },
       output: {
         manualChunks: {
