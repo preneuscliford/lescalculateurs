@@ -51,17 +51,51 @@ export default defineConfig({
         notaire: resolve(__dirname, "src/pages/notaire.html"),
         pret: resolve(__dirname, "src/pages/pret.html"),
         plusvalue: resolve(__dirname, "src/pages/plusvalue.html"),
+        "plus-value-immobiliere": resolve(
+          __dirname,
+          "src/pages/plus-value-immobiliere.html",
+        ),
         salaire: resolve(__dirname, "src/pages/salaire.html"),
         impot: resolve(__dirname, "src/pages/impot.html"),
         charges: resolve(__dirname, "src/pages/charges.html"),
         ik: resolve(__dirname, "src/pages/ik.html"),
         ponts: resolve(__dirname, "src/pages/ponts.html"),
         taxe: resolve(__dirname, "src/pages/taxe.html"),
+        "taxe-habitation": resolve(__dirname, "src/pages/taxe-habitation.html"),
         travail: resolve(__dirname, "src/pages/travail.html"),
+        "calculateur-travail": resolve(
+          __dirname,
+          "src/pages/calculateur-travail.html",
+        ),
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
+        "crypto-plus-value": resolve(__dirname, "src/pages/crypto-plus-value.html"),
         simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
         "simulateurs/index": resolve(__dirname, "src/simulateurs/index.html"),
+        "simulateurs-aide-financiere-famille": resolve(
+          __dirname,
+          "src/pages/simulateurs/aide-financiere-famille.html",
+        ),
+        "simulateurs-aide-sociale-simulation-globale": resolve(
+          __dirname,
+          "src/pages/simulateurs/aide-sociale-simulation-globale.html",
+        ),
+        "simulateurs-aides-jeunes-actifs": resolve(
+          __dirname,
+          "src/pages/simulateurs/aides-jeunes-actifs.html",
+        ),
+        "simulateurs-aides-retraites": resolve(
+          __dirname,
+          "src/pages/simulateurs/aides-retraites.html",
+        ),
+        "simulateurs-cumul-aides-sociales": resolve(
+          __dirname,
+          "src/pages/simulateurs/cumul-aides-sociales.html",
+        ),
+        "simulateurs-quelles-aides-ai-je-droit": resolve(
+          __dirname,
+          "src/pages/simulateurs/quelles-aides-ai-je-droit.html",
+        ),
         apl: resolve(__dirname, "src/pages/apl.html"),
         "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
         "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
@@ -85,6 +119,10 @@ export default defineConfig({
         "blog-frais-notaire": resolve(
           __dirname,
           "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
+        ),
+        "blog-frais-notaire-2025": resolve(
+          __dirname,
+          "src/pages/blog/frais-notaire-ancien-neuf-2025.html",
         ),
         "frais-notaire-ancien-neuf": resolve(
           __dirname,
