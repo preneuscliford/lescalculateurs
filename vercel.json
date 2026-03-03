@@ -17,8 +17,8 @@
       "permanent": true
     },
     {
-      "source": "/:path*",
-      "destination": "https://www.lescalculateurs.fr/:path*",
+      "source": "/:path((?!ads\\.txt$|robots\\.txt$|sitemap\\.xml$).*)",
+      "destination": "https://www.lescalculateurs.fr/:path",
       "permanent": true,
       "has": [
         {
