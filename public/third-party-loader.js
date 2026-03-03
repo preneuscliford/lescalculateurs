@@ -6,6 +6,100 @@
   var ADSENSE_PUB_ID = "2209781252231399";
   var GTM_ID = "GTM-TPFZCGX5";
   var GA4_ID = "G-2HNTGCYQ1X";
+  var CONSENT_STORAGE_KEY = "lc_cookie_consent_v1";
+  var CONSENT_BANNER_ID = "lc-consent-banner";
+  var CONSENT_STYLE_ID = "lc-consent-style";
+
+  function getStoredConsentStatus() {
+    try {
+      var raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
+      if (!raw) return null;
+      if (raw === "accepted") return "accepted";
+      if (raw === "rejected") return "rejected";
+
+      var parsed = JSON.parse(raw);
+      if (parsed && (parsed.status === "accepted" || parsed.status === "rejected")) {
+        return parsed.status;
+      }
+    } catch (_e) {}
+
+    return null;
+  }
+
+  function persistConsentStatus(status, source) {
+    try {
+      window.localStorage.setItem(
+        CONSENT_STORAGE_KEY,
+        JSON.stringify({ status: status, source: source || "fallback-banner", updatedAt: new Date().toISOString() })
+      );
+    } catch (_e) {}
+  }
+
+  function hideFallbackConsentBanner() {
+    var banner = document.getElementById(CONSENT_BANNER_ID);
+    if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+  }
+
+  function ensureFallbackConsentStyle() {
+    if (document.getElementById(CONSENT_STYLE_ID)) return;
+    var style = document.createElement("style");
+    style.id = CONSENT_STYLE_ID;
+    style.textContent =
+      "#" +
+      CONSENT_BANNER_ID +
+      "{position:fixed;left:16px;right:16px;bottom:16px;z-index:99999;background:#111827;color:#fff;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.35);padding:16px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}" +
+      "#" +
+      CONSENT_BANNER_ID +
+      " .lc-consent-title{font-size:16px;font-weight:700;margin:0 0 8px}" +
+      "#" +
+      CONSENT_BANNER_ID +
+      " .lc-consent-copy{font-size:14px;line-height:1.45;color:#e5e7eb;margin:0 0 14px}" +
+      "#" +
+      CONSENT_BANNER_ID +
+      " .lc-consent-actions{display:flex;gap:8px;flex-wrap:wrap}" +
+      "#" +
+      CONSENT_BANNER_ID +
+      " button{border:0;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;cursor:pointer}" +
+      "#" +
+      CONSENT_BANNER_ID +
+      " .lc-btn-accept{background:#2563eb;color:#fff}" +
+      "#" +
+      CONSENT_BANNER_ID +
+      " .lc-btn-reject{background:#374151;color:#fff}" +
+      "@media (min-width: 768px){#" + CONSENT_BANNER_ID + "{max-width:760px;right:auto}}";
+    document.head.appendChild(style);
+  }
+
+  function showFallbackConsentBanner() {
+    if (document.getElementById(CONSENT_BANNER_ID)) return;
+    if (getStoredConsentStatus()) return;
+
+    ensureFallbackConsentStyle();
+
+    var banner = document.createElement("section");
+    banner.id = CONSENT_BANNER_ID;
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-live", "polite");
+    banner.innerHTML =
+      '<p class="lc-consent-title">Gestion des cookies</p>' +
+      '<p class="lc-consent-copy">Nous utilisons des cookies pour mesurer l\'audience et financer le service avec de la publicité. Vous pouvez accepter ou refuser le tracking.</p>' +
+      '<div class="lc-consent-actions">' +
+      '<button type="button" class="lc-btn-accept" data-consent="accept">Accepter</button>' +
+      '<button type="button" class="lc-btn-reject" data-consent="reject">Refuser</button>' +
+      "</div>";
+
+    banner.addEventListener("click", function (event) {
+      var button = event.target && event.target.closest ? event.target.closest("button[data-consent]") : null;
+      if (!button) return;
+
+      var granted = button.getAttribute("data-consent") === "accept";
+      persistConsentStatus(granted ? "accepted" : "rejected", "fallback-banner");
+      updateConsentMode(granted);
+      hideFallbackConsentBanner();
+    });
+
+    document.body.appendChild(banner);
+  }
 
   function alreadyHasScript(srcIncludes) {
     var scripts = document.getElementsByTagName("script");
@@ -140,7 +234,7 @@
 
   function applyLegacyConsentIfAny() {
     try {
-      var raw = window.localStorage.getItem("lc_cookie_consent_v1");
+      var raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
       if (!raw) return;
 
       var status = null;
@@ -206,7 +300,7 @@
         // Backward compatibility if old code checks this key.
         try {
           window.localStorage.setItem(
-            "lc_cookie_consent_v1",
+            CONSENT_STORAGE_KEY,
             JSON.stringify({ status: granted ? "accepted" : "rejected", source: "tcf" })
           );
         } catch (_e) {}
@@ -335,9 +429,14 @@
 
   window.lcResetCookiePreferences = function () {
     try {
-      window.localStorage.removeItem("lc_cookie_consent_v1");
+      window.localStorage.removeItem(CONSENT_STORAGE_KEY);
     } catch (_e) {}
+    showFallbackConsentBanner();
     window.lcOpenCookiePreferences();
+  };
+
+  window.lcEnsureCookieBanner = function () {
+    showFallbackConsentBanner();
   };
 
   ensureGlobalFavicons();
@@ -350,12 +449,14 @@
       "DOMContentLoaded",
       function () {
         normalizeBrandLockups();
+        showFallbackConsentBanner();
         scheduleThirdPartyLoad();
       },
       { once: true }
     );
   } else {
     normalizeBrandLockups();
+    showFallbackConsentBanner();
     scheduleThirdPartyLoad();
   }
 })();
