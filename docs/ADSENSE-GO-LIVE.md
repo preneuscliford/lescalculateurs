@@ -9,10 +9,11 @@ npm run adsense:go-live-check
 ```
 
 Ce script valide automatiquement:
+
 - `public/ads.txt` présent avec un publisher Google.
 - `public/third-party-loader.js` présent avec consent mode par défaut en `denied` et fallback banner.
-- `src/index.html` + toutes les pages HTML complètes de `src/pages` chargent `\`/third-party-loader.js\``.
-- Aucun chargement direct GTM / GA4 / AdSense n'est resté dans `src/pages` (hors fichiers backup).
+- `src/index.html` + toutes les pages HTML complètes de `src/pages` **et** `src/simulateurs` chargent `/third-party-loader.js`.
+- Aucun chargement direct GTM / GA4 / AdSense n'est resté dans `src/pages` et `src/simulateurs` (hors fichiers backup).
 
 ## 2) Vérification build
 
