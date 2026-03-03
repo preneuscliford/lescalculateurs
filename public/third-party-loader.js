@@ -9,6 +9,8 @@
   var CONSENT_STORAGE_KEY = "lc_cookie_consent_v1";
   var CONSENT_BANNER_ID = "lc-consent-banner";
   var CONSENT_STYLE_ID = "lc-consent-style";
+  var CONSENT_MODAL_ID = "lc-consent-modal";
+  var CONSENT_MODAL_STYLE_ID = "lc-consent-modal-style";
 
   function getStoredConsentStatus() {
     try {
@@ -16,10 +18,38 @@
       if (!raw) return null;
       if (raw === "accepted") return "accepted";
       if (raw === "rejected") return "rejected";
+      if (raw === "essential") return "essential";
 
       var parsed = JSON.parse(raw);
-      if (parsed && (parsed.status === "accepted" || parsed.status === "rejected")) {
+      if (parsed && parsed.status) {
         return parsed.status;
+      }
+    } catch (_e) {}
+
+    return null;
+  }
+
+  function getStoredConsentPreferences() {
+    try {
+      var raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
+      if (!raw) return null;
+
+      var parsed = JSON.parse(raw);
+      if (parsed && parsed.status === "custom") {
+        return {
+          essential: true,
+          analytics: parsed.analytics === true,
+          ads: parsed.ads === true
+        };
+      }
+      if (parsed && parsed.status === "accepted") {
+        return { essential: true, analytics: true, ads: true };
+      }
+      if (parsed && parsed.status === "essential") {
+        return { essential: true, analytics: false, ads: false };
+      }
+      if (parsed && parsed.status === "rejected") {
+        return { essential: true, analytics: false, ads: false };
       }
     } catch (_e) {}
 
@@ -38,6 +68,126 @@
   function hideFallbackConsentBanner() {
     var banner = document.getElementById(CONSENT_BANNER_ID);
     if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+  }
+
+  function hideConsentModal() {
+    var modal = document.getElementById(CONSENT_MODAL_ID);
+    if (modal && modal.parentNode) modal.parentNode.removeChild(modal);
+  }
+
+  function showCustomizeModal() {
+    if (document.getElementById(CONSENT_MODAL_ID)) return;
+    
+    var prefs = getStoredConsentPreferences() || { essential: true, analytics: false, ads: false };
+    
+    var modal = document.createElement("div");
+    modal.id = CONSENT_MODAL_ID;
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "lc-modal-title");
+    
+    modal.innerHTML = 
+      '<div class="lc-modal-content">' +
+        '<div class="lc-modal-header">' +
+          '<h2 id="lc-modal-title">Personnaliser les cookies</h2>' +
+        '</div>' +
+        '<div class="lc-modal-body">' +
+          '<div class="lc-cookie-category">' +
+            '<div class="lc-category-header">' +
+              '<span class="lc-category-title">Cookies essentiels</span>' +
+              '<label class="lc-toggle">' +
+                '<input type="checkbox" checked disabled data-category="essential">' +
+                '<span class="lc-toggle-slider"></span>' +
+              '</label>' +
+            '</div>' +
+            '<p class="lc-category-desc">Necessaires au fonctionnement du site (securite, navigation, preferences de base). Ne peuvent pas etre desactives.</p>' +
+          '</div>' +
+          '<div class="lc-cookie-category">' +
+            '<div class="lc-category-header">' +
+              '<span class="lc-category-title">Cookies analytiques</span>' +
+              '<label class="lc-toggle">' +
+                '<input type="checkbox" ' + (prefs.analytics ? "checked" : "") + ' data-category="analytics">' +
+                '<span class="lc-toggle-slider"></span>' +
+              '</label>' +
+            '</div>' +
+            '<p class="lc-category-desc">Nous aident a comprendre comment vous utilisez le site pour ameliorer (Google Analytics).</p>' +
+          '</div>' +
+          '<div class="lc-cookie-category">' +
+            '<div class="lc-category-header">' +
+              '<span class="lc-category-title">Cookies publicitaires</span>' +
+              '<label class="lc-toggle">' +
+                '<input type="checkbox" ' + (prefs.ads ? "checked" : "") + ' data-category="ads">' +
+                '<span class="lc-toggle-slider"></span>' +
+              '</label>' +
+            '</div>' +
+            '<p class="lc-category-desc">Permettent d afficher des publicites pertinentes et de mesurer leur performance (Google AdSense).</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="lc-modal-footer">' +
+          '<button type="button" class="lc-btn-text" data-action="close">Fermer</button>' +
+          '<button type="button" class="lc-btn-secondary" data-action="save">Enregistrer mes choix</button>' +
+          '<button type="button" class="lc-btn-primary" data-action="accept-all">Tout accepter</button>' +
+        '</div>' +
+      '</div>';
+    
+    modal.addEventListener("click", function(event) {
+      var target = event.target;
+      if (target === modal) {
+        hideConsentModal();
+        return;
+      }
+      var actionBtn = target.closest("[data-action]");
+      if (!actionBtn) return;
+      var action = actionBtn.getAttribute("data-action");
+      if (action === "close") {
+        hideConsentModal();
+      } else if (action === "accept-all") {
+        persistConsentStatus("accepted", "customize-modal");
+        updateConsentMode(true);
+        hideConsentModal();
+        hideFallbackConsentBanner();
+      } else if (action === "save") {
+        var analyticsChecked = modal.querySelector('[data-category="analytics"]').checked;
+        var adsChecked = modal.querySelector('[data-category="ads"]').checked;
+        try {
+          window.localStorage.setItem(
+            CONSENT_STORAGE_KEY,
+            JSON.stringify({
+              status: "custom",
+              essential: true,
+              analytics: analyticsChecked,
+              ads: adsChecked,
+              source: "customize-modal",
+              updatedAt: new Date().toISOString()
+            })
+          );
+        } catch (_e) {}
+        updateConsentModeCustom(analyticsChecked, adsChecked);
+        hideConsentModal();
+        hideFallbackConsentBanner();
+      }
+    });
+    
+    document.body.appendChild(modal);
+  }
+
+  function updateConsentModeCustom(analytics, ads) {
+    ensureDataLayerAndGtagStub();
+    window.gtag("consent", "update", {
+      ad_storage: ads ? "granted" : "denied",
+      analytics_storage: analytics ? "granted" : "denied",
+      ad_user_data: ads ? "granted" : "denied",
+      ad_personalization: ads ? "granted" : "denied"
+    });
+    if (analytics) {
+      loadGA4();
+      loadGTM();
+    }
+    if (ads) {
+      loadFundingChoices();
+      loadAdsense();
+    }
+    console.log("[LC] Consentement personnalise applique - Analytics:", analytics, "Ads:", ads);
   }
 
   function ensureFallbackConsentStyle() {
@@ -62,11 +212,77 @@
       " button{border:0;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;cursor:pointer}" +
       "#" +
       CONSENT_BANNER_ID +
-      " .lc-btn-accept{background:#2563eb;color:#fff}" +
+      " .lc-btn-essential{background:#374151;color:#fff;flex:1}" +
       "#" +
       CONSENT_BANNER_ID +
-      " .lc-btn-reject{background:#374151;color:#fff}" +
-      "@media (min-width: 768px){#" + CONSENT_BANNER_ID + "{max-width:760px;right:auto}}";
+      " .lc-btn-accept{background:#059669;color:#fff;flex:1}" +
+      "#" +
+      CONSENT_BANNER_ID +
+      " .lc-btn-customize{background:transparent;color:#9ca3af;border:1px solid #4b5563;font-size:12px;padding:8px 12px}" +
+      "@media (min-width: 768px){#" + CONSENT_BANNER_ID + "{max-width:760px;right:auto}}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      "{position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-modal-content{background:#111827;color:#fff;border-radius:16px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 50px -12px rgba(0,0,0,.5)}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-modal-header{padding:24px 24px 0}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-modal-header h2{font-size:20px;font-weight:700;margin:0}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-modal-body{padding:16px 24px}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-modal-footer{padding:16px 24px 24px;display:flex;gap:12px;justify-content:flex-end;border-top:1px solid #374151}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-cookie-category{padding:16px 0;border-bottom:1px solid #374151}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-cookie-category:last-child{border-bottom:none}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-category-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-category-title{font-size:15px;font-weight:600}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-category-desc{font-size:13px;color:#9ca3af;line-height:1.5}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-toggle{position:relative;display:inline-block;width:48px;height:26px}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-toggle input{opacity:0;width:0;height:0}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-toggle-slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#374151;border-radius:26px;transition:.3s}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-toggle-slider:before{position:absolute;content:'';height:20px;width:20px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-toggle input:checked+.lc-toggle-slider{background:#059669}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-toggle input:checked+.lc-toggle-slider:before{transform:translateX(22px)}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-toggle input:disabled+.lc-toggle-slider{opacity:.5;cursor:not-allowed}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-btn-primary{background:#059669;color:#fff;border:0;border-radius:8px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-btn-secondary{background:#374151;color:#fff;border:0;border-radius:8px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer}" +
+      "#" +
+      CONSENT_MODAL_ID +
+      " .lc-btn-text{background:transparent;color:#9ca3af;border:0;padding:10px 16px;font-size:14px;cursor:pointer;text-decoration:underline}"; 
     document.head.appendChild(style);
   }
 
@@ -82,20 +298,33 @@
     banner.setAttribute("aria-live", "polite");
     banner.innerHTML =
       '<p class="lc-consent-title">Vos données, votre choix</p>' +
-      '<p class="lc-consent-copy">Pour rester gratuit et indépendant, nous utilisons des cookies pour mesurer l\'audience et afficher des publicités. Vous gardez le contrôle : acceptez, refusez ou personnalisez votre choix.</p>' +
+      '<p class="lc-consent-copy">LesCalculateurs utilise des cookies essentiels pour fonctionner correctement, ainsi que des cookies d\'analyse et publicitaires pour améliorer le service et le financer. Vous pouvez accepter uniquement l\'essentiel, tout accepter ou personnaliser vos préférences.</p>' +
       '<div class="lc-consent-actions">' +
-      '<button type="button" class="lc-btn-accept" data-consent="accept">Accepter</button>' +
-      '<button type="button" class="lc-btn-reject" data-consent="reject">Refuser</button>' +
+      '<button type="button" class="lc-btn-essential" data-consent="essential">Accepter l\'essentiel</button>' +
+      '<button type="button" class="lc-btn-accept" data-consent="accept">Accepter tout</button>' +
+      '<button type="button" class="lc-btn-customize" data-consent="customize">Personnaliser</button>' +
       "</div>";
 
     banner.addEventListener("click", function (event) {
       var button = event.target && event.target.closest ? event.target.closest("button[data-consent]") : null;
       if (!button) return;
 
-      var granted = button.getAttribute("data-consent") === "accept";
-      persistConsentStatus(granted ? "accepted" : "rejected", "fallback-banner");
-      updateConsentMode(granted);
-      hideFallbackConsentBanner();
+      var consentType = button.getAttribute("data-consent");
+      
+      if (consentType === "accept") {
+        // Tout accepter : GA4 + AdSense + GTM activés
+        persistConsentStatus("accepted", "fallback-banner");
+        updateConsentMode(true);
+        hideFallbackConsentBanner();
+      } else if (consentType === "essential") {
+        // Essentiel uniquement : pas de tracking
+        persistConsentStatus("essential", "fallback-banner");
+        updateConsentMode(false);
+        hideFallbackConsentBanner();
+      } else if (consentType === "customize") {
+        // Ouvrir le modal de personnalisation
+        showCustomizeModal();
+      }
     });
 
     document.body.appendChild(banner);
@@ -238,14 +467,33 @@
       if (!raw) return;
 
       var status = null;
-      if (raw === "accepted") {
-        status = "accepted";
+      var source = "legacy";
+      if (raw === "accepted" || raw === "essential") {
+        status = raw;
       } else {
         var parsed = JSON.parse(raw);
-        if (parsed && parsed.status === "accepted") status = "accepted";
+        if (parsed && parsed.status) {
+          status = parsed.status;
+          source = parsed.source || source;
+        }
       }
 
-      if (status !== "accepted") return;
+      // Gerer les differents statuts de consentement
+      if (status === "custom") {
+        // Consentement personnalise - charger selon les preferences
+        var prefs = getStoredConsentPreferences();
+        if (prefs) {
+          updateConsentModeCustom(prefs.analytics, prefs.ads);
+        }
+        return;
+      }
+      
+      if (status !== "accepted") {
+        if (status === "essential") {
+          console.log("[LC] Consentement essentiel uniquement - pas de tracking charge");
+        }
+        return;
+      }
 
       ensureDataLayerAndGtagStub();
       window.gtag("consent", "update", {
@@ -396,6 +644,21 @@
     // Si consentement requis mais pas donne, on ne charge rien
     if (requireConsent) {
       var status = getStoredConsentStatus();
+      var prefs = getStoredConsentPreferences();
+      
+      if (status === "custom" && prefs) {
+        // Consentement personnalise - charger selon les preferences
+        if (prefs.analytics) {
+          loadGA4();
+          loadGTM();
+        }
+        if (prefs.ads) {
+          loadFundingChoices();
+          loadAdsense();
+        }
+        return;
+      }
+      
       if (status !== "accepted") {
         console.log("[LC] Consentement requis pour charger GA4/AdSense/GTM");
         return;
@@ -413,7 +676,8 @@
     var deferOnMobile = isMobileLike() || isConstrainedNetwork();
     
     // Verifier si on a deja un consentement stocke
-    var hasConsent = getStoredConsentStatus() === "accepted";
+    var status = getStoredConsentStatus();
+    var hasConsent = status === "accepted" || status === "custom" || status === "essential";
     var requireConsent = !hasConsent;
 
     function scheduleIdleLoad() {
