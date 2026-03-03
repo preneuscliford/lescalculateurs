@@ -1,0 +1,103 @@
+TOTAL_ANALYSED 244
+SIM_PAIRS 170
+VARIANT_PAIRS 53
+ACTIONABLE_PAIRS 117
+ACTIONABLE_CLUSTERS 18
+
+cluster_size=11
+- src/pages/blog/departements/frais-notaire-16.html
+- src/pages/blog/departements/frais-notaire-23.html
+- src/pages/blog/departements/frais-notaire-24.html
+- src/pages/blog/departements/frais-notaire-33.html
+- src/pages/blog/departements/frais-notaire-50.html
+- src/pages/blog/departements/frais-notaire-53.html
+- src/pages/blog/departements/frais-notaire-57.html
+- src/pages/blog/departements/frais-notaire-72.html
+- src/pages/blog/departements/frais-notaire-80.html
+- src/pages/blog/departements/frais-notaire-86.html
+- src/pages/blog/departements/frais-notaire-89.html
+
+cluster_size=6
+- src/pages/blog/departements/frais-notaire-49.html
+- src/pages/blog/departements/frais-notaire-62.html
+- src/pages/blog/departements/frais-notaire-67.html
+- src/pages/blog/departements/frais-notaire-68.html
+- src/pages/blog/departements/frais-notaire-82.html
+- src/pages/blog/departements/frais-notaire-90.html
+
+cluster_size=6
+- src/pages/blog/departements/frais-notaire-14.html
+- src/pages/blog/departements/frais-notaire-18.html
+- src/pages/blog/departements/frais-notaire-32.html
+- src/pages/blog/departements/frais-notaire-46.html
+- src/pages/blog/departements/frais-notaire-59.html
+- src/pages/blog/departements/frais-notaire-81.html
+
+cluster_size=4
+- src/pages/blog/departements/frais-notaire-12.html
+- src/pages/blog/departements/frais-notaire-27.html
+- src/pages/blog/departements/frais-notaire-36.html
+- src/pages/blog/departements/frais-notaire-61.html
+
+cluster_size=4
+- src/pages/blog/departements/frais-notaire-35.html
+- src/pages/blog/departements/frais-notaire-37.html
+- src/pages/blog/departements/frais-notaire-52.html
+- src/pages/blog/departements/frais-notaire-87.html
+
+cluster_size=3
+- src/pages/aide/index.html
+- src/pages/simulateurs.html
+- src/pages/simulateurs/index.html
+
+cluster_size=3
+- src/pages/blog/departements/frais-notaire-17.html
+- src/pages/blog/departements/frais-notaire-76.html
+- src/pages/blog/departements/frais-notaire-77.html
+
+cluster_size=3
+- src/pages/blog/departements/frais-notaire-02.html
+- src/pages/blog/departements/frais-notaire-60.html
+- src/pages/blog/departements/frais-notaire-91.html
+
+cluster_size=3
+- src/pages/blog/departements/frais-notaire-07.html
+- src/pages/blog/departements/frais-notaire-28.html
+- src/pages/blog/departements/frais-notaire-2B.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-09.html
+- src/pages/blog/departements/frais-notaire-70.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-51.html
+- src/pages/blog/departements/frais-notaire-71.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-15.html
+- src/pages/blog/departements/frais-notaire-25.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-42.html
+- src/pages/blog/departements/frais-notaire-55.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-08.html
+- src/pages/blog/departements/frais-notaire-40.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-2A.html
+- src/pages/blog/departements/frais-notaire-44.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-39.html
+- src/pages/blog/departements/frais-notaire-45.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-78.html
+- src/pages/blog/departements/frais-notaire-88.html
+
+cluster_size=2
+- src/pages/blog/departements/frais-notaire-64.html
+- src/pages/blog/departements/frais-notaire-79.html
+

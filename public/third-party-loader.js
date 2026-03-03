@@ -81,8 +81,8 @@
     banner.setAttribute("role", "dialog");
     banner.setAttribute("aria-live", "polite");
     banner.innerHTML =
-      '<p class="lc-consent-title">Gestion des cookies</p>' +
-      '<p class="lc-consent-copy">Nous utilisons des cookies pour mesurer l\'audience et financer le service avec de la publicité. Vous pouvez accepter ou refuser le tracking.</p>' +
+      '<p class="lc-consent-title">Vos données, votre choix</p>' +
+      '<p class="lc-consent-copy">Pour rester gratuit et indépendant, nous utilisons des cookies pour mesurer l\'audience et afficher des publicités. Vous gardez le contrôle : acceptez, refusez ou personnalisez votre choix.</p>' +
       '<div class="lc-consent-actions">' +
       '<button type="button" class="lc-btn-accept" data-consent="accept">Accepter</button>' +
       '<button type="button" class="lc-btn-reject" data-consent="reject">Refuser</button>' +
