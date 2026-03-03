@@ -23,7 +23,8 @@
     "agent:juridique:ir": "node scripts/agent-juridique.cjs --cluster=ir --due=true",
     "agent:juridique:ik": "node scripts/agent-juridique.cjs --cluster=ik --due=true",
     "agent:juridique:notaire": "node scripts/agent-juridique.cjs --cluster=notaire --due=true",
-    "agent:juridique:dmto": "node scripts/agent-juridique.cjs --cluster=dmto --due=true"
+    "agent:juridique:dmto": "node scripts/agent-juridique.cjs --cluster=dmto --due=true",
+    "adsense:go-live-check": "node scripts/adsense-go-live-check.cjs"
   },
   "blog:update:2026": "node scripts/update-blog-pages.cjs",
   "blog:revert": "node scripts/revert-blog-pages.cjs",
