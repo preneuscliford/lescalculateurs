@@ -116,7 +116,7 @@ if (missingLoader.length) {
 if (directIncludes.length) {
   fail(`Pages avec script tiers direct détecté (${directIncludes.length}):\n- ${directIncludes.slice(0, 20).join('\n- ')}${directIncludes.length > 20 ? '\n- ...' : ''}`);
 } else {
-  pass('Aucun chargement direct GTM/GA/AdSense trouvé dans src/pages (hors backups)');
+  pass('Aucun chargement direct GTM/GA/AdSense trouvé dans src/pages et src/simulateurs (hors backups)');
 }
 
 if (process.exitCode && process.exitCode !== 0) {
