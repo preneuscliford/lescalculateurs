@@ -163,6 +163,78 @@
     } catch (_e) {}
   }
 
+  function updateConsentMode(granted) {
+    try {
+      ensureDataLayerAndGtagStub();
+      window.gtag("consent", "update", {
+        ad_storage: granted ? "granted" : "denied",
+        analytics_storage: granted ? "granted" : "denied",
+        ad_user_data: granted ? "granted" : "denied",
+        ad_personalization: granted ? "granted" : "denied"
+      });
+    } catch (_e) {}
+  }
+
+  function applyTcfConsentIfAny() {
+    var tries = 0;
+    var maxTries = 40;
+
+    function onTcfData(tcData) {
+      try {
+        if (!tcData || !tcData.purpose || !tcData.purpose.consents) return;
+
+        // Conservative mapping for Consent Mode: require core ad purposes.
+        var consents = tcData.purpose.consents;
+        var hasP1 = !!consents["1"]; // store/access info on device
+        var hasP3 = !!consents["3"]; // personalized ads profile
+        var hasP4 = !!consents["4"]; // personalized ads selection
+        var hasP7 = !!consents["7"]; // ad performance measurement
+        var hasP10 = !!consents["10"]; // product improvement
+
+        var adsGranted = hasP1 && hasP3 && hasP4;
+        var analyticsGranted = hasP1 && (hasP7 || hasP10);
+        var granted = adsGranted || analyticsGranted;
+
+        ensureDataLayerAndGtagStub();
+        window.gtag("consent", "update", {
+          ad_storage: adsGranted ? "granted" : "denied",
+          analytics_storage: analyticsGranted ? "granted" : "denied",
+          ad_user_data: adsGranted ? "granted" : "denied",
+          ad_personalization: adsGranted ? "granted" : "denied"
+        });
+
+        // Backward compatibility if old code checks this key.
+        try {
+          window.localStorage.setItem(
+            "lc_cookie_consent_v1",
+            JSON.stringify({ status: granted ? "accepted" : "rejected", source: "tcf" })
+          );
+        } catch (_e) {}
+      } catch (_e) {}
+    }
+
+    function attachTcfListener() {
+      if (typeof window.__tcfapi !== "function") {
+        tries++;
+        if (tries >= maxTries) return;
+        window.setTimeout(attachTcfListener, 500);
+        return;
+      }
+
+      try {
+        window.__tcfapi("addEventListener", 2, function (tcData, success) {
+          if (!success) return;
+          if (!tcData) return;
+          if (tcData.eventStatus === "tcloaded" || tcData.eventStatus === "useractioncomplete") {
+            onTcfData(tcData);
+          }
+        });
+      } catch (_e) {}
+    }
+
+    attachTcfListener();
+  }
+
   function loadFundingChoices() {
     if (alreadyHasScript("fundingchoicesmessages.google.com/i/pub-")) return;
     addLink("dns-prefetch", "https://fundingchoicesmessages.google.com");
@@ -271,6 +343,7 @@
   ensureGlobalFavicons();
   applyConsentModeDefaults();
   applyLegacyConsentIfAny();
+  applyTcfConsentIfAny();
 
   if (document.readyState === "loading") {
     document.addEventListener(
