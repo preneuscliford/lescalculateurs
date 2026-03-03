@@ -254,6 +254,11 @@
         ad_user_data: "granted",
         ad_personalization: "granted"
       });
+      
+      // Consentement deja accepté, charger AdSense/GTM immediatement
+      loadFundingChoices();
+      loadAdsense();
+      loadGTM();
     } catch (_e) {}
   }
 
@@ -266,6 +271,14 @@
         ad_user_data: granted ? "granted" : "denied",
         ad_personalization: granted ? "granted" : "denied"
       });
+      
+      // Si consentement accorde, charger AdSense et GTM maintenant
+      if (granted) {
+        console.log("[LC] Consentement accepte, chargement AdSense/GTM");
+        loadFundingChoices();
+        loadAdsense();
+        loadGTM();
+      }
     } catch (_e) {}
   }
 
@@ -296,6 +309,13 @@
           ad_user_data: adsGranted ? "granted" : "denied",
           ad_personalization: adsGranted ? "granted" : "denied"
         });
+
+        // Charger AdSense/GTM si consentement accordé
+        if (granted) {
+          loadFundingChoices();
+          loadAdsense();
+          loadGTM();
+        }
 
         // Backward compatibility if old code checks this key.
         try {
@@ -369,22 +389,43 @@
     addScript("https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA4_ID));
   }
 
-  function loadThirdParty() {
+  function loadThirdParty(requireConsent) {
+    // Toujours charger GA4 pour l'observation (comptage users)
+    // GA4 fonctionne en mode 'denied' par defaut, juste pour compter
+    loadGA4();
+    
+    // Si consentement requis mais pas donne, on arrete la
+    if (requireConsent) {
+      var status = getStoredConsentStatus();
+      if (status !== "accepted") {
+        console.log("[LC] Consentement requis pour AdSense/GTM");
+        return;
+      }
+    }
+    
+    // Charger AdSense et GTM uniquement avec consentement
     loadFundingChoices();
     loadAdsense();
     loadGTM();
-    loadGA4();
   }
 
   function scheduleThirdPartyLoad() {
     var deferOnMobile = isMobileLike() || isConstrainedNetwork();
+    
+    // Verifier si on a deja un consentement stocke
+    var hasConsent = getStoredConsentStatus() === "accepted";
+    var requireConsent = !hasConsent;
 
     function scheduleIdleLoad() {
       if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(loadThirdParty, { timeout: 3000 });
+        window.requestIdleCallback(function() {
+          loadThirdParty(requireConsent);
+        }, { timeout: 3000 });
         return;
       }
-      window.setTimeout(loadThirdParty, 1500);
+      window.setTimeout(function() {
+        loadThirdParty(requireConsent);
+      }, 1500);
     }
 
     if (!deferOnMobile) {
@@ -450,13 +491,13 @@
       function () {
         normalizeBrandLockups();
         showFallbackConsentBanner();
-        scheduleThirdPartyLoad();
+        scheduleThirdPartyLoad(); // GA4 charge immediatement, AdSense/GTM attendent consentement
       },
       { once: true }
     );
   } else {
     normalizeBrandLockups();
     showFallbackConsentBanner();
-    scheduleThirdPartyLoad();
+    scheduleThirdPartyLoad(); // GA4 charge immediatement, AdSense/GTM attendent consentement
   }
 })();
