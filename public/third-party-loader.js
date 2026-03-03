@@ -298,7 +298,7 @@
     banner.setAttribute("aria-live", "polite");
     banner.innerHTML =
       '<p class="lc-consent-title">Vos données, votre choix</p>' +
-      '<p class="lc-consent-copy">LesCalculateurs utilise des cookies essentiels pour fonctionner correctement, ainsi que des cookies d\'analyse et publicitaires pour améliorer le service et le financer. Vous pouvez accepter uniquement l\'essentiel, tout accepter ou personnaliser vos préférences.</p>' +
+      '<p class="lc-consent-copy">LesCalculateurs utilise des cookies essentiels pour fonctionner correctement, ainsi que des cookies d\'analyse et publicitaires pour améliorer le service et le maintenir gratuit. Vous pouvez accepter uniquement l\'essentiel, tout accepter ou personnaliser vos préférences.</p>' +
       '<div class="lc-consent-actions">' +
       '<button type="button" class="lc-btn-essential" data-consent="essential">Accepter l\'essentiel</button>' +
       '<button type="button" class="lc-btn-accept" data-consent="accept">Accepter tout</button>' +
