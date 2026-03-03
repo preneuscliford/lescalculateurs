@@ -133,14 +133,7 @@ export default defineConfig({
         "apl-etudiant": resolve(__dirname, "src/pages/apl-etudiant.html"),
         are: resolve(__dirname, "src/pages/are.html"),
         asf: resolve(__dirname, "src/pages/asf.html"),
-        "rsa-montant-2026": resolve(
-          __dirname,
-          "src/pages/rsa/montant-rsa-2026.html",
-        ),
-        "rsa-fin-de-droits-chomage": resolve(
-          __dirname,
-          "src/pages/rsa/rsa-fin-de-droits-chomage.html",
-        ),
+
         "are-montant-2026": resolve(
           __dirname,
           "src/pages/are/montant-are-2026.html",
@@ -149,14 +142,7 @@ export default defineConfig({
           __dirname,
           "src/pages/are/are-fin-de-droits-aides.html",
         ),
-        "apl-plafond-ressources-2026": resolve(
-          __dirname,
-          "src/pages/apl/plafond-ressources-apl-2026.html",
-        ),
-        "apl-ressources-prises-en-compte": resolve(
-          __dirname,
-          "src/pages/apl/quelles-ressources-sont-prises-en-compte.html",
-        ),
+
         "prime-activite-plafond-2026": resolve(
           __dirname,
           "src/pages/prime-activite/plafond-prime-activite-2026.html",
@@ -165,30 +151,12 @@ export default defineConfig({
           __dirname,
           "src/pages/prime-activite/montant-prime-activite-2026.html",
         ),
-        "salaire-2500-brut-en-net-2026": resolve(
-          __dirname,
-          "src/pages/salaire/2500-brut-en-net-2026.html",
-        ),
-        "salaire-3000-brut-en-net-2026": resolve(
-          __dirname,
-          "src/pages/salaire/3000-brut-en-net-2026.html",
-        ),
-        "smic-net-2026": resolve(
-          __dirname,
-          "src/pages/salaire/smic-net-2026.html",
-        ),
-        "pret-quel-salaire-150000": resolve(
-          __dirname,
-          "src/pages/pret/quel-salaire-pour-emprunter-150000.html",
-        ),
-        "pret-quel-salaire-400000": resolve(
-          __dirname,
-          "src/pages/pret/quel-salaire-pour-emprunter-400000.html",
-        ),
-        "pret-taux-endettement-35": resolve(
-          __dirname,
-          "src/pages/pret/taux-endettement-35-pourcent-explication.html",
-        ),
+
+
+
+
+
+
         "notaire-neuf-2026": resolve(
           __dirname,
           "src/pages/notaire/frais-notaire-neuf-2026.html",
@@ -197,14 +165,8 @@ export default defineConfig({
           __dirname,
           "src/pages/notaire/frais-notaire-ancien-2026.html",
         ),
-        "impot-tranches-2026-tableau": resolve(
-          __dirname,
-          "src/pages/impot/tranches-impot-2026-tableau.html",
-        ),
-        "impot-rfr-2026": resolve(
-          __dirname,
-          "src/pages/impot/revenu-fiscal-reference-2026.html",
-        ),
+
+
         "aides-cumul-rsa-apl-prime-activite": resolve(
           __dirname,
           "src/pages/aides/cumul-aides-rsa-apl-prime-activite.html",
