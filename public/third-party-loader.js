@@ -255,7 +255,8 @@
         ad_personalization: "granted"
       });
       
-      // Consentement deja accepté, charger AdSense/GTM immediatement
+      // Consentement deja accepté, charger tous les scripts
+      loadGA4();
       loadFundingChoices();
       loadAdsense();
       loadGTM();
@@ -272,9 +273,10 @@
         ad_personalization: granted ? "granted" : "denied"
       });
       
-      // Si consentement accorde, charger AdSense et GTM maintenant
+      // Si consentement accorde, charger tous les scripts maintenant
       if (granted) {
-        console.log("[LC] Consentement accepte, chargement AdSense/GTM");
+        console.log("[LC] Consentement accepte, chargement GA4/AdSense/GTM");
+        loadGA4();
         loadFundingChoices();
         loadAdsense();
         loadGTM();
@@ -310,8 +312,9 @@
           ad_personalization: adsGranted ? "granted" : "denied"
         });
 
-        // Charger AdSense/GTM si consentement accordé
+        // Charger les scripts si consentement accordé
         if (granted) {
+          loadGA4();
           loadFundingChoices();
           loadAdsense();
           loadGTM();
@@ -390,20 +393,17 @@
   }
 
   function loadThirdParty(requireConsent) {
-    // Toujours charger GA4 pour l'observation (comptage users)
-    // GA4 fonctionne en mode 'denied' par defaut, juste pour compter
-    loadGA4();
-    
-    // Si consentement requis mais pas donne, on arrete la
+    // Si consentement requis mais pas donne, on ne charge rien
     if (requireConsent) {
       var status = getStoredConsentStatus();
       if (status !== "accepted") {
-        console.log("[LC] Consentement requis pour AdSense/GTM");
+        console.log("[LC] Consentement requis pour charger GA4/AdSense/GTM");
         return;
       }
     }
     
-    // Charger AdSense et GTM uniquement avec consentement
+    // Charger tous les scripts avec consentement
+    loadGA4();
     loadFundingChoices();
     loadAdsense();
     loadGTM();
@@ -491,7 +491,7 @@
       function () {
         normalizeBrandLockups();
         showFallbackConsentBanner();
-        scheduleThirdPartyLoad(); // GA4 charge immediatement, AdSense/GTM attendent consentement
+        scheduleThirdPartyLoad(); // Tous les scripts attendent consentement (RGPD)
       },
       { once: true }
     );
