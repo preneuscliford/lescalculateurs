@@ -61,31 +61,6 @@ export default defineConfig({
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
         simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
-        "simulateurs/index": resolve(__dirname, "src/simulateurs/index.html"),
-        "simulateurs-aide-financiere-famille": resolve(
-          __dirname,
-          "src/pages/simulateurs/aide-financiere-famille.html",
-        ),
-        "simulateurs-aide-sociale-simulation-globale": resolve(
-          __dirname,
-          "src/pages/simulateurs/aide-sociale-simulation-globale.html",
-        ),
-        "simulateurs-aides-jeunes-actifs": resolve(
-          __dirname,
-          "src/pages/simulateurs/aides-jeunes-actifs.html",
-        ),
-        "simulateurs-aides-retraites": resolve(
-          __dirname,
-          "src/pages/simulateurs/aides-retraites.html",
-        ),
-        "simulateurs-cumul-aides-sociales": resolve(
-          __dirname,
-          "src/pages/simulateurs/cumul-aides-sociales.html",
-        ),
-        "simulateurs-quelles-aides-ai-je-droit": resolve(
-          __dirname,
-          "src/pages/simulateurs/quelles-aides-ai-je-droit.html",
-        ),
         apl: resolve(__dirname, "src/pages/apl.html"),
         "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
         "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
@@ -133,52 +108,6 @@ export default defineConfig({
         "apl-etudiant": resolve(__dirname, "src/pages/apl-etudiant.html"),
         are: resolve(__dirname, "src/pages/are.html"),
         asf: resolve(__dirname, "src/pages/asf.html"),
-
-        "are-montant-2026": resolve(
-          __dirname,
-          "src/pages/are/montant-are-2026.html",
-        ),
-        "are-fin-de-droits-aides": resolve(
-          __dirname,
-          "src/pages/are/are-fin-de-droits-aides.html",
-        ),
-
-        "prime-activite-plafond-2026": resolve(
-          __dirname,
-          "src/pages/prime-activite/plafond-prime-activite-2026.html",
-        ),
-        "prime-activite-montant-2026": resolve(
-          __dirname,
-          "src/pages/prime-activite/montant-prime-activite-2026.html",
-        ),
-
-
-
-
-
-
-        "notaire-neuf-2026": resolve(
-          __dirname,
-          "src/pages/notaire/frais-notaire-neuf-2026.html",
-        ),
-        "notaire-ancien-2026": resolve(
-          __dirname,
-          "src/pages/notaire/frais-notaire-ancien-2026.html",
-        ),
-
-
-        "aides-cumul-rsa-apl-prime-activite": resolve(
-          __dirname,
-          "src/pages/aides/cumul-aides-rsa-apl-prime-activite.html",
-        ),
-        "simulateurs-aide-profil-2026": resolve(
-          __dirname,
-          "src/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
-        ),
-        "simulateurs/quelle-aide-selon-mon-profil-2026": resolve(
-          __dirname,
-          "src/simulateurs/quelle-aide-selon-mon-profil-2026.html",
-        ),
         "frais-notaire-75": resolve(__dirname, "src/pages/blog/departements/frais-notaire-75.html"),
         "frais-notaire-13": resolve(__dirname, "src/pages/blog/departements/frais-notaire-13.html"),
         "frais-notaire-69": resolve(__dirname, "src/pages/blog/departements/frais-notaire-69.html"),
@@ -187,6 +116,10 @@ export default defineConfig({
         methodologie: resolve(__dirname, "src/pages/methodologie.html"),
         "a-propos": resolve(__dirname, "src/pages/a-propos.html"),
         sources: resolve(__dirname, "src/pages/sources.html"),
+        "mentions-legales": resolve(__dirname, "src/pages/mentions-legales.html"),
+        "politique-confidentialite": resolve(__dirname, "src/pages/politique-confidentialite.html"),
+        "politique-cookies": resolve(__dirname, "src/pages/politique-cookies.html"),
+        contact: resolve(__dirname, "src/pages/contact.html"),
         "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
         "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
         "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
