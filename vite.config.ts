@@ -61,6 +61,10 @@ export default defineConfig({
         financement: resolve(__dirname, "src/pages/financement.html"),
         "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
         simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
+        "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
+          __dirname,
+          "src/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
+        ),
         apl: resolve(__dirname, "src/pages/apl.html"),
         "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
         "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
