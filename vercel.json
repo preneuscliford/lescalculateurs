@@ -2,6 +2,16 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/pages/frais-notaire",
+      "destination": "/pages/notaire",
+      "permanent": true
+    },
+    {
+      "source": "/pages/blog/frais-notaire-((?:[0-9]{2,3}|2A|2B))",
+      "destination": "/pages/blog/departements/frais-notaire-$1",
+      "permanent": true
+    },
+    {
       "source": "/pages/blog/frais-notaire-ancien-neuf-2025",
       "destination": "/pages/blog/frais-notaire-ancien-neuf-2026",
       "permanent": true
