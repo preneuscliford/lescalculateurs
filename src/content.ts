@@ -1,3 +1,4 @@
+import "./tailwind.css";
 import { initializeScrollButtons } from "./utils/scrollButtons";
 
 function ensureGlobalFavicons() {
