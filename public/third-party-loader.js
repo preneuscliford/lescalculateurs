@@ -63,6 +63,38 @@
     document.head.appendChild(script);
   }
 
+  function runAfterLoad(callback) {
+    if (document.readyState === "complete") {
+      window.setTimeout(callback, 0);
+      return;
+    }
+
+    window.addEventListener(
+      "load",
+      function () {
+        window.setTimeout(callback, 0);
+      },
+      { once: true }
+    );
+  }
+
+  function runWhenIdle(callback, timeout) {
+    var maxDelay = typeof timeout === "number" ? timeout : 2500;
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(callback, { timeout: maxDelay });
+      return;
+    }
+
+    window.setTimeout(callback, Math.min(maxDelay, 1500));
+  }
+
+  function scheduleNonCritical(callback, timeout) {
+    runAfterLoad(function () {
+      runWhenIdle(callback, timeout);
+    });
+  }
+
   function loadGA4() {
     if (!GA4_ID || alreadyHasScript("googletagmanager.com/gtag/js")) return;
     addLink("dns-prefetch", "https://www.googletagmanager.com");
@@ -228,15 +260,14 @@
 
     setAdsPersonalization(!!state.ads);
 
-    // Keep GA4 loaded for cookieless pings (modeled measurement).
-    loadGA4();
-
-    // Ads can load in both modes; non personalized ads are used when denied.
-    loadFundingChoices();
-    loadAdsense();
-
-    // Keep GTM only when analytics consent is granted.
-    if (state.analytics) loadGTM();
+    scheduleNonCritical(function () {
+      loadGA4();
+      if (state.analytics) loadGTM();
+      if (state.ads) {
+        loadFundingChoices();
+        loadAdsense();
+      }
+    }, 3000);
   }
 
   function hideBanner() {
@@ -289,10 +320,11 @@
     modal.id = MODAL_ID;
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", "Personnaliser les cookies");
 
     modal.innerHTML =
       '<div class="lc-content">' +
-      '<div class="lc-header"><h2>Personnaliser les cookies</h2></div>' +
+      '<div class="lc-header"><h2 id="lc-consent-modal-title">Personnaliser les cookies</h2></div>' +
       '<div class="lc-body">' +
       '<div class="lc-row"><div><strong>Cookies essentiels</strong><div class="lc-desc">Necessaires au fonctionnement du site.</div></div><input type="checkbox" checked disabled></div>' +
       '<div class="lc-row"><div><strong>Mesure d\'audience</strong><div class="lc-desc">Mesure Analytics, y compris en mode anonymise si refuse.</div></div><input id="lc-modal-analytics" type="checkbox" ' + (current.analytics ? "checked" : "") + '></div>' +
@@ -304,6 +336,7 @@
       '<button class="lc-primary" data-action="accept" type="button">Tout accepter</button>' +
       '</div>' +
       '</div>';
+    modal.setAttribute("aria-labelledby", "lc-consent-modal-title");
 
     modal.addEventListener("click", function (event) {
       if (event.target === modal) {
@@ -353,15 +386,17 @@
     banner.id = BANNER_ID;
     banner.setAttribute("role", "dialog");
     banner.setAttribute("aria-live", "polite");
+    banner.setAttribute("aria-label", "Gestion des cookies");
 
     banner.innerHTML =
-      '<p class="lc-title">Gestion des cookies</p>' +
+      '<p id="lc-consent-banner-title" class="lc-title">Gestion des cookies</p>' +
       '<p class="lc-copy">LesCalculateurs utilise des cookies essentiels pour fonctionner correctement, ainsi que des cookies d\'analyse et publicitaires pour améliorer le service et le maintenir gratuit. Si vous refusez, la mesure reste anonymisee (Consent Mode) et les pubs deviennent non personnalisees.</p>' +
       '<div class="lc-actions">' +
       '<button type="button" class="lc-accept" data-consent="accept">Accepter tout</button>' +
       '<button type="button" class="lc-reject" data-consent="reject">Refuser</button>' +
       '<button type="button" class="lc-custom" data-consent="custom">Personnaliser</button>' +
       '</div>';
+    banner.setAttribute("aria-labelledby", "lc-consent-banner-title");
 
     banner.addEventListener("click", function (event) {
       var btn = event.target && event.target.closest ? event.target.closest("button[data-consent]") : null;
@@ -440,14 +475,7 @@
     showConsentBanner();
   };
 
-  ensureGlobalFavicons();
   applyConsentModeDefaults();
-
-  // Load GA4 and AdSense in cookieless mode first, then update once user chooses.
-  setAdsPersonalization(false);
-  loadGA4();
-  loadFundingChoices();
-  loadAdsense();
 
   applyStoredConsentOnLoad();
   trackPageContext();
