@@ -1,11 +1,19 @@
 const fs = require("fs");
 const path = require("path");
+const { pathToFileURL } = require("url");
 
-function main() {
+async function loadAplPilotSlugs() {
+  const filePath = path.resolve(__dirname, "../data/pseo/apl-pilot-scenarios.js");
+  const mod = await import(pathToFileURL(filePath).href);
+  return new Set((mod.aplPilotScenarios || []).map((item) => item.slug));
+}
+
+async function main() {
   const sitemapPath = path.resolve(__dirname, "../public/sitemap.xml");
   const srcPagesDir = path.resolve(__dirname, "../src/pages");
   const domain = "https://www.lescalculateurs.fr";
   const today = new Date().toISOString().slice(0, 10);
+  const aplPilotSlugs = await loadAplPilotSlugs();
 
   const pillars = [
     "apl",
@@ -33,6 +41,7 @@ function main() {
     for (const ent of entries) {
       if (!ent.isDirectory()) continue;
       const slug = ent.name;
+      if (pillar === "apl" && !aplPilotSlugs.has(slug)) continue;
       const indexPath = path.join(dir, slug, "index.html");
       if (!fs.existsSync(indexPath)) continue;
       urls.add(`${domain}/pages/${pillar}/${slug}`);
@@ -72,4 +81,7 @@ function escapeRegExp(str) {
   return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-main();
+main().catch((error) => {
+  console.error(error instanceof Error ? error.message : error);
+  process.exit(1);
+});

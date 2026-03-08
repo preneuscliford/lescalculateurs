@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/generate-satellites-dev.js && vite",
-    "build": "node scripts/verify-utf8.cjs && tsc && vite build && node scripts/copy-seo-pages.js && node scripts/verify-utf8.cjs",
+    "dev": "node scripts/generate-satellites-dev.js && node scripts/generate-pseo-apl.js && vite",
+    "build": "node scripts/verify-utf8.cjs && node scripts/generate-pseo-apl.js && tsc && vite build && node scripts/copy-seo-pages.js && node scripts/add-satellites-to-sitemap.cjs && node scripts/verify-utf8.cjs",
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -24,7 +24,9 @@
     "agent:juridique:ik": "node scripts/agent-juridique.cjs --cluster=ik --due=true",
     "agent:juridique:notaire": "node scripts/agent-juridique.cjs --cluster=notaire --due=true",
     "agent:juridique:dmto": "node scripts/agent-juridique.cjs --cluster=dmto --due=true",
-    "adsense:go-live-check": "node scripts/adsense-go-live-check.cjs"
+    "adsense:go-live-check": "node scripts/adsense-go-live-check.cjs",
+    "generate:pseo:apl": "node scripts/generate-pseo-apl.js",
+    "generate:pseo:apl:dist": "node scripts/generate-pseo-apl.js --target=dist"
   },
   "blog:update:2026": "node scripts/update-blog-pages.cjs",
   "blog:revert": "node scripts/revert-blog-pages.cjs",

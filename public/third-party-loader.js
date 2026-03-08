@@ -111,6 +111,60 @@
     );
   }
 
+  function getPageTrackingContext() {
+    try {
+      var body = document.body;
+      if (!body || !body.dataset) return null;
+
+      var pageType = body.dataset.lcPageType || "";
+      var cluster = body.dataset.lcPageCluster || "";
+      var template = body.dataset.lcPageTemplate || "";
+      var slug = body.dataset.lcPageSlug || "";
+      var intent = body.dataset.lcPageIntent || "";
+      var audience = body.dataset.lcPageAudience || "";
+      var variant = body.dataset.lcPageVariant || "";
+
+      if (!pageType && !cluster && !slug) return null;
+
+      return {
+        page_type: pageType || "unknown",
+        page_cluster: cluster || "default",
+        page_template: template || "",
+        page_slug: slug || "",
+        page_intent: intent || "",
+        page_audience: audience || "",
+        page_variant: variant || "",
+        page_path: window.location.pathname || "/"
+      };
+    } catch (_e) {
+      return null;
+    }
+  }
+
+  function trackPageContext() {
+    if (window.__lcPageContextTracked) return;
+
+    var context = getPageTrackingContext();
+    if (!context) return;
+
+    ensureDataLayerAndGtagStub();
+    window.__lcPageContextTracked = true;
+
+    window.dataLayer.push({
+      event: "lc_page_context",
+      lc_page_type: context.page_type,
+      lc_page_cluster: context.page_cluster,
+      lc_page_template: context.page_template,
+      lc_page_slug: context.page_slug,
+      lc_page_intent: context.page_intent,
+      lc_page_audience: context.page_audience,
+      lc_page_variant: context.page_variant,
+      page_path: context.page_path
+    });
+
+    window.gtag("event", "lc_page_view", context);
+  }
+
   function getStoredConsentState() {
     try {
       var raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
@@ -396,11 +450,13 @@
   loadAdsense();
 
   applyStoredConsentOnLoad();
+  trackPageContext();
 
   if (document.readyState === "loading") {
     document.addEventListener(
       "DOMContentLoaded",
       function () {
+        trackPageContext();
         showConsentBanner();
       },
       { once: true }
