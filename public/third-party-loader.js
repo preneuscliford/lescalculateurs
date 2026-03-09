@@ -12,6 +12,8 @@
   var MODAL_ID = "lc-consent-modal";
   var STYLE_ID = "lc-consent-style";
 
+  var shouldSkipBaselineLoad = false;
+
   function ensureDataLayerAndGtagStub() {
     window.dataLayer = window.dataLayer || [];
     window.gtag =
@@ -246,7 +248,7 @@
     } catch (_e) {}
   }
 
-  function applyConsentState(state) {
+  function applyConsentState(state, options) {
     ensureDataLayerAndGtagStub();
 
     window.gtag("consent", "update", {
@@ -260,14 +262,19 @@
 
     setAdsPersonalization(!!state.ads);
 
-    scheduleNonCritical(function () {
+    var loadThirdParty = function () {
       loadGA4();
       if (state.analytics) loadGTM();
-      if (state.ads) {
-        loadFundingChoices();
-        loadAdsense();
-      }
-    }, 3000);
+      loadFundingChoices();
+      loadAdsense();
+    };
+
+    if (options && options.immediate === true) {
+      shouldSkipBaselineLoad = true;
+      loadThirdParty();
+    } else {
+      scheduleNonCritical(loadThirdParty, 3000);
+    }
   }
 
   function hideBanner() {
@@ -356,7 +363,7 @@
       if (action === "accept") {
         var accepted = { essential: true, analytics: true, ads: true };
         persistConsentState(accepted, "customize-modal");
-        applyConsentState(accepted);
+        applyConsentState(accepted, { immediate: true });
         hideModal();
         hideBanner();
         return;
@@ -367,7 +374,7 @@
         var ads = !!modal.querySelector("#lc-modal-ads").checked;
         var custom = { essential: true, analytics: analytics, ads: ads };
         persistConsentState(custom, "customize-modal");
-        applyConsentState(custom);
+        applyConsentState(custom, { immediate: true });
         hideModal();
         hideBanner();
       }
@@ -407,7 +414,7 @@
       if (action === "accept") {
         var accepted = { essential: true, analytics: true, ads: true };
         persistConsentState(accepted, "banner");
-        applyConsentState(accepted);
+        applyConsentState(accepted, { immediate: true });
         hideBanner();
         return;
       }
@@ -415,7 +422,7 @@
       if (action === "reject") {
         var rejected = { essential: true, analytics: false, ads: false };
         persistConsentState(rejected, "banner");
-        applyConsentState(rejected);
+        applyConsentState(rejected, { immediate: true });
         hideBanner();
         return;
       }
@@ -430,8 +437,12 @@
 
   function applyStoredConsentOnLoad() {
     var stored = getStoredConsentState();
-    if (!stored) return;
-    applyConsentState(stored);
+    if (!stored) return false;
+
+    // Stored consent already exists → prevent baseline loader.
+    shouldSkipBaselineLoad = true;
+    applyConsentState(stored, { immediate: true });
+    return true;
   }
 
   function ensureGlobalFavicons() {
@@ -466,7 +477,7 @@
     try {
       window.localStorage.removeItem(CONSENT_STORAGE_KEY);
     } catch (_e) {}
-    applyConsentState({ essential: true, analytics: false, ads: false });
+    applyConsentState({ essential: true, analytics: false, ads: false }, { immediate: true });
     hideModal();
     showConsentBanner();
   };
@@ -477,7 +488,18 @@
 
   applyConsentModeDefaults();
 
-  applyStoredConsentOnLoad();
+  var hasStoredConsent = applyStoredConsentOnLoad();
+
+  if (!hasStoredConsent) {
+    setAdsPersonalization(false);
+    scheduleNonCritical(function () {
+      if (shouldSkipBaselineLoad) return;
+      loadGA4();
+      loadFundingChoices();
+      loadAdsense();
+    }, 3000);
+  }
+
   trackPageContext();
 
   if (document.readyState === "loading") {
