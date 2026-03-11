@@ -5,22 +5,32 @@ const GENERATED_MARKER = "<!-- GENERATED:PSEO:APL -->";
 const SITUATION_LABELS = {
   seul: "Personne seule",
   couple: "Couple",
-  monoparental: "Parent isole",
+  monoparental: "Parent isol\u00e9",
   autre: "Autre foyer",
 };
 
 const REGION_LABELS = {
-  idf: "Ile-de-France",
+  idf: "\u00cele-de-France",
   province: "Province",
   dom: "DOM-TOM",
 };
 
 const LOGEMENT_LABELS = {
   location: "Location",
-  accession: "Accession a la propriete",
+  accession: "Accession \u00e0 la propri\u00e9t\u00e9",
   hlm: "Logement HLM",
   colocation: "Colocation",
 };
+
+function buildAplSimulatorUrl(input) {
+  const params = new URLSearchParams();
+  Object.entries(input || {}).forEach(([key, value]) => {
+    if (value === undefined || value === null || value === "") return;
+    params.set(key, String(value));
+  });
+  const query = params.toString();
+  return `${PILLAR_PATH}${query ? `?${query}` : ""}#apl-calculator`;
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -55,6 +65,13 @@ function escapeJsonUnicode(value) {
 
 function repairCorruptedFrench(value) {
   return String(value)
+    .replace(/\?/g, (match, offset, input) => {
+      const prev = input[offset - 1] || "";
+      const next = input[offset + 1] || "";
+      if (prev === " " && next === " ") return "à";
+      if (prev === " " && /[A-Z]/.test(next)) return "à";
+      return "?";
+    })
     .replace(/Sc\?narios/g, "Sc\u00e9narios")
     .replace(/sc\?narios/g, "sc\u00e9narios")
     .replace(/Sc\?nario/g, "Sc\u00e9nario")
@@ -136,7 +153,107 @@ function repairCorruptedFrench(value) {
     .replace(/ a Marseille/g, " \u00e0 Marseille")
     .replace(/ a Toulouse/g, " \u00e0 Toulouse")
     .replace(/ a Lille/g, " \u00e0 Lille")
-    .replace(/ a Nantes/g, " \u00e0 Nantes");
+    .replace(/ a Nantes/g, " \u00e0 Nantes")
+    .replace(/\bV\?rifier\b/g, "V\u00e9rifier")
+    .replace(/\bV\?rifiez\b/g, "V\u00e9rifiez")
+    .replace(/\bv\?rification\b/g, "v\u00e9rification")
+    .replace(/\bv\?rifier\b/g, "v\u00e9rifier")
+    .replace(/\br\?ellement\b/g, "r\u00e9ellement")
+    .replace(/\br\?els\b/g, "r\u00e9els")
+    .replace(/\br\?el\b/g, "r\u00e9el")
+    .replace(/\br\?elles\b/g, "r\u00e9elles")
+    .replace(/\br\?elle\b/g, "r\u00e9elle")
+    .replace(/\br\?sultats\b/g, "r\u00e9sultats")
+    .replace(/\br\?sultat\b/g, "r\u00e9sultat")
+    .replace(/\br\?f\?rences\b/g, "r\u00e9f\u00e9rences")
+    .replace(/\br\?f\?rence\b/g, "r\u00e9f\u00e9rence")
+    .replace(/\bch\?mage\b/g, "ch\u00f4mage")
+    .replace(/\bcompl\?te\b/g, "compl\u00e8te")
+    .replace(/\btr\?s\b/g, "tr\u00e8s")
+    .replace(/\bmod\?r\?e\b/g, "mod\u00e9r\u00e9e")
+    .replace(/\bmod\?r\?\b/g, "mod\u00e9r\u00e9")
+    .replace(/\bp\?riode\b/g, "p\u00e9riode")
+    .replace(/\bg\?ographique\b/g, "g\u00e9ographique")
+    .replace(/\bco\?t\b/g, "co\u00fbt")
+    .replace(/\bsup\?rieur\b/g, "sup\u00e9rieur")
+    .replace(/\bsup\?rieure\b/g, "sup\u00e9rieure")
+    .replace(/\bint\?ressante\b/g, "int\u00e9ressante")
+    .replace(/\bindemnit\?s\b/g, "indemnit\u00e9s")
+    .replace(/\bsuppl\?mentaires\b/g, "suppl\u00e9mentaires")
+    .replace(/\br\?gularit\?\b/g, "r\u00e9gularit\u00e9")
+    .replace(/\bd\?m\?nager\b/g, "d\u00e9m\u00e9nager")
+    .replace(/\bd\?passe\b/g, "d\u00e9passe")
+    .replace(/\bd\?but\b/g, "d\u00e9but")
+    .replace(/\bentr\?e\b/g, "entr\u00e9e")
+    .replace(/\bmarch\?\b/g, "march\u00e9")
+    .replace(/\bconventionn\?\b/g, "conventionn\u00e9")
+    .replace(/\br\?pond\b/g, "r\u00e9pond")
+    .replace(/\br\?duire\b/g, "r\u00e9duire")
+    .replace(/\br\?gle\b/g, "r\u00e8gle")
+    .replace(/\br\?gles\b/g, "r\u00e8gles")
+    .replace(/\brepr?sentatif\b/g, "repr\u00e9sentatif")
+    .replace(/\brepr?sentatifs\b/g, "repr\u00e9sentatifs")
+    .replace(/\brepr?sentative\b/g, "repr\u00e9sentative")
+    .replace(/\brepr?sentatives\b/g, "repr\u00e9sentatives")
+    .replace(/\bparall\?le\b/g, "parall\u00e8le")
+    .replace(/\brequ\?te\b/g, "requ\u00eate")
+    .replace(/\bconventionn\?\b/g, "conventionn\u00e9")
+    .replace(/\br\?ponse\b/g, "r\u00e9ponse")
+    .replace(/\br\?pond\b/g, "r\u00e9pond")
+    .replace(/\butilit\?\b/g, "utilit\u00e9")
+    .replace(/\bcritere\b/g, "crit\u00e8re")
+    .replace(/\bcriteres\b/g, "crit\u00e8res")
+    .replace(/\betre\b/g, "\u00eatre")
+    .replace(/\bEtre\b/g, "\u00catre")
+    .replace(/\bd\?clarer\b/g, "d\u00e9clarer")
+    .replace(/\bd\?clar\?e\b/g, "d\u00e9clar\u00e9e")
+    .replace(/\bd\?clar\?\b/g, "d\u00e9clar\u00e9")
+    .replace(/\bd\?pend\b/g, "d\u00e9pend")
+    .replace(/\bd\?d\?pend\b/g, "d\u00e9pend")
+    .replace(/\bcaract\?ristiques\b/g, "caract\u00e9ristiques")
+    .replace(/\bpr\?cise\b/g, "pr\u00e9cise")
+    .replace(/\bpr\?cis\b/g, "pr\u00e9cis")
+    .replace(/\br\?sidence\b/g, "r\u00e9sidence")
+    .replace(/\butilit\?\b/g, "utilit\u00e9")
+    .replace(/\br\?currente\b/g, "r\u00e9currente")
+    .replace(/\bd\?calage\b/g, "d\u00e9calage")
+    .replace(/\bcoh\?rent\b/g, "coh\u00e9rent")
+    .replace(/\bcoh\?rente\b/g, "coh\u00e9rente")
+    .replace(/\b\?tudiant\b/g, "\u00e9tudiant")
+    .replace(/\b\?tudiants\b/g, "\u00e9tudiants")
+    .replace(/\b\?tudiantes\b/g, "\u00e9tudiantes")
+    .replace(/\bc\?libataire\b/g, "c\u00e9libataire")
+    .replace(/\bC\?libataire\b/g, "C\u00e9libataire")
+    .replace(/\bisol\?\b/g, "isol\u00e9")
+    .replace(/\bg\?olocalisation\b/g, "g\u00e9olocalisation")
+    .replace(/\bg\?olocalis\w*/g, (match) =>
+      match
+        .replace("g?olocalisee", "g\u00e9olocalis\u00e9e")
+        .replace("g?olocalisee", "g\u00e9olocalis\u00e9e")
+        .replace("g?olocalisee", "g\u00e9olocalis\u00e9e"),
+    )
+    .replace(/\s+\?(\s+)/g, " \u00e0$1")
+    .replace(/\?\s+Paris/g, "\u00e0 Paris")
+    .replace(/\?\s+Lyon/g, "\u00e0 Lyon")
+    .replace(/\?\s+Marseille/g, "\u00e0 Marseille")
+    .replace(/\?\s+Toulouse/g, "\u00e0 Toulouse")
+    .replace(/\? loyer comparable/g, "\u00c0 loyer comparable")
+    .replace(/\? charge/g, "\u00e0 charge")
+    .replace(/\? l'autre/g, "\u00e0 l'autre")
+    .replace(/\? elle seule/g, "\u00e0 elle seule")
+    .replace(/\bl APL\b/g, "l'APL")
+    .replace(/\bL APL\b/g, "L'APL")
+    .replace(/\bd un\b/g, "d'un")
+    .replace(/\bd une\b/g, "d'une")
+    .replace(/\bd autres\b/g, "d'autres")
+    .replace(/\bd activit\u00e9\b/g, "d'activit\u00e9")
+    .replace(/\bd emploi\b/g, "d'emploi")
+    .replace(/\ba l'APL\b/g, "\u00e0 l'APL")
+    .replace(/\ba Paris\b/g, "\u00e0 Paris")
+    .replace(/\ba Lyon\b/g, "\u00e0 Lyon")
+    .replace(/\ba Marseille\b/g, "\u00e0 Marseille")
+    .replace(/\ba Toulouse\b/g, "\u00e0 Toulouse")
+    .replace(/\s{2,}/g, " ");
 }
 
 function toFrenchDisplayText(value) {
@@ -157,6 +274,8 @@ function toFrenchDisplayText(value) {
     .replace(/\bmodifie\b/g, "modifi\u00e9")
     .replace(/\bparametres\b/g, "param\u00e8tres")
     .replace(/\bParametres\b/g, "Param\u00e8tres")
+    .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
+    .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres")
     .replace(/\bVerification\b/g, "V\u00e9rification")
     .replace(/\bverification\b/g, "v\u00e9rification")
     .replace(/\bResultat\b/g, "R\u00e9sultat")
@@ -225,6 +344,21 @@ function toFrenchDisplayText(value) {
     .replace(/\bconcrete\b/g, "concr\u00e8te")
     .replace(/\bConcrete\b/g, "Concr\u00e8te")
     .replace(/\bconcretes\b/g, "concr\u00e8tes")
+    .replace(/\brequete\b/g, "requ\u00eate")
+    .replace(/\bRequete\b/g, "Requ\u00eate")
+    .replace(/\btres\b/g, "tr\u00e8s")
+    .replace(/\bTres\b/g, "Tr\u00e8s")
+    .replace(/\blaisse\b/g, "laisse")
+    .replace(/\bparallele\b/g, "parall\u00e8le")
+    .replace(/\bParallele\b/g, "Parall\u00e8le")
+    .replace(/\bhesitez\b/g, "h\u00e9sitez")
+    .replace(/\bHesitez\b/g, "H\u00e9sitez")
+    .replace(/\bserre\b/g, "serr\u00e9")
+    .replace(/\bSerre\b/g, "Serr\u00e9")
+    .replace(/\bmoderee\b/g, "mod\u00e9r\u00e9e")
+    .replace(/\bModeree\b/g, "Mod\u00e9r\u00e9e")
+    .replace(/\bintegralement\b/g, "int\u00e9gralement")
+    .replace(/\bIntegrablement\b/g, "Int\u00e9gralement")
     .replace(/\bdetaille\b/g, "d\u00e9taill\u00e9")
     .replace(/\bDetaille\b/g, "D\u00e9taill\u00e9")
     .replace(/\brepond\b/g, "r\u00e9pond")
@@ -240,6 +374,22 @@ function toFrenchDisplayText(value) {
     .replace(/\bbeneficient\b/g, "b\u00e9n\u00e9ficient")
     .replace(/\bpret\b/g, "pr\u00eat")
     .replace(/\bPret\b/g, "Pr\u00eat")
+    .replace(/\bmethodologie\b/g, "m\u00e9thodologie")
+    .replace(/\bMethodologie\b/g, "M\u00e9thodologie")
+    .replace(/\bmethode\b/g, "m\u00e9thode")
+    .replace(/\bMethode\b/g, "M\u00e9thode")
+    .replace(/\bbasee\b/g, "bas\u00e9e")
+    .replace(/\bBasee\b/g, "Bas\u00e9e")
+    .replace(/\bpre-rempli\b/g, "pr\u00e9-rempli")
+    .replace(/\bPre-rempli\b/g, "Pr\u00e9-rempli")
+    .replace(/\bpre-remplie\b/g, "pr\u00e9-remplie")
+    .replace(/\bPre-remplie\b/g, "Pr\u00e9-remplie")
+    .replace(/\bcout\b/g, "co\u00fbt")
+    .replace(/\bCout\b/g, "Co\u00fbt")
+    .replace(/\bevolue\b/g, "\u00e9volue")
+    .replace(/\bEvolue\b/g, "\u00c9volue")
+    .replace(/\bnecessaire\b/g, "n\u00e9cessaire")
+    .replace(/\bNecessaire\b/g, "N\u00e9cessaire")
     .replace(/\bL intention\b/g, "L'intention")
     .replace(/\bl intention\b/g, "l'intention")
     .replace(/\bL objectif\b/g, "L'objectif")
@@ -249,12 +399,20 @@ function toFrenchDisplayText(value) {
     .replace(/\bd un\b/g, "d'un")
     .replace(/\bd une\b/g, "d'une")
     .replace(/\bd autres\b/g, "d'autres")
+    .replace(/ d activite\b/g, " d'activit\u00e9")
+    .replace(/ d activites\b/g, " d'activit\u00e9s")
+    .replace(/\bd abord\b/g, "d'abord")
     .replace(/\bc est\b/g, "c'est")
     .replace(/\bC est\b/g, "C'est")
     .replace(/\bqu un\b/g, "qu'un")
     .replace(/\bqu une\b/g, "qu'une")
+    .replace(/\blorsqu on\b/g, "lorsqu'on")
+    .replace(/\bLorsqu on\b/g, "Lorsqu'on")
     .replace(/\bj ai\b/g, "j'ai")
     .replace(/\bJ ai\b/g, "J'ai")
+    .replace(/\bVerifier\b/g, "V\u00e9rifier")
+    .replace(/\bVerifiez\b/g, "V\u00e9rifiez")
+    .replace(/\bverifiez\b/g, "v\u00e9rifiez")
     .replace(/\bIle-de-France\b/g, "\u00cele-de-France")
     .replace(/\ba Paris\b/g, "\u00e0 Paris")
     .replace(/\ba Lyon\b/g, "\u00e0 Lyon")
@@ -271,9 +429,20 @@ function toFrenchDisplayText(value) {
     .replace(/\ba la CAF\b/g, "\u00e0 la CAF")
     .replace(/\ba votre situation\b/g, "\u00e0 votre situation")
     .replace(/\ba l intention\b/g, "\u00e0 l'intention")
+    .replace(/\ba l estimation\b/g, "\u00e0 l'estimation")
+    .replace(/\ba l aide\b/g, "\u00e0 l'aide")
+    .replace(/\ba l activite\b/g, "\u00e0 l'activit\u00e9")
+    .replace(/\ba l autre\b/g, "\u00e0 l'autre")
+    .replace(/\ba revenu\b/g, "\u00e0 revenu")
+    .replace(/\ba ([0-9])/g, "\u00e0 $1")
+    .replace(/\bA ([0-9])/g, "\u00c0 $1")
+    .replace(/\bcomplete\b/g, "compl\u00e8te")
+    .replace(/\bComplete\b/g, "Compl\u00e8te")
     .replace(/\bmodifi?r\b/g, "modifier")
     .replace(/\brecalcul?r\b/g, "recalculer")
-    .replace(/\bdes son\b/g, "d\u00e8s son");
+    .replace(/\bdes son\b/g, "d\u00e8s son")
+    .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
+    .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres");
 }
 
 function renderText(value) {
@@ -300,15 +469,207 @@ function renderRelatedLinks(relatedPages) {
             .map(
               (page) => `
           <a href="/pages/apl/${page.slug}" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
-            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">${escapeHtml(
-              toFrenchDisplayText(page.intent),
+            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">${renderText(
+              page.intent,
             )}</span>
-            <span class="font-semibold">${escapeHtml(
-              toFrenchDisplayText(page.title),
-            )}</span>
+            <span class="font-semibold">${renderText(page.title)}</span>
           </a>`,
             )
             .join("")}
+        </div>
+      </section>`;
+}
+
+function renderPilotVariants(pilotProduct) {
+  if (!pilotProduct?.variants?.length) return "";
+
+  return `
+      <section class="mt-8 rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">Tester 3 variantes</h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          ${renderText(
+            "Si votre situation est proche de ce cas, testez aussi ces variantes pour voir ce qui fait vraiment bouger l'estimation.",
+          )}
+        </p>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          ${pilotProduct.variants
+            .map(
+              (item) => `
+          <a href="${escapeAttribute(item.href)}" class="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-slate-900 transition-colors hover:border-emerald-400 hover:bg-emerald-100">
+            <p class="font-semibold">${renderText(item.label)}</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">${renderText(item.description)}</p>
+          </a>`,
+            )
+            .join("")}
+        </div>
+      </section>`;
+}
+
+function renderPilotDrivers(pilotProduct) {
+  if (!pilotProduct?.drivers?.length) return "";
+
+  return `
+      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">Ce qui change le plus le montant</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          ${pilotProduct.drivers
+            .map(
+              (item) => `
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">${renderText(item.title)}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">${renderText(item.description)}</p>
+          </article>`,
+            )
+            .join("")}
+        </div>
+      </section>`;
+}
+
+function renderPilotComparison(pilotProduct, simulatorUrl) {
+  if (!pilotProduct?.comparisonLinks?.length) return "";
+
+  return `
+      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">Comparer avec un autre cas</h2>
+        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+          ${pilotProduct.comparisonLinks
+            .map(
+              (item) => `
+          <a href="${escapeAttribute(
+            item.href === PILLAR_PATH ? simulatorUrl || item.href : item.href,
+          )}" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 transition-colors hover:border-blue-500 hover:bg-blue-50">
+            <span class="font-semibold">${renderText(item.label)}</span>
+          </a>`,
+            )
+            .join("")}
+        </div>
+      </section>`;
+}
+
+function renderPilotJourney(pilotProduct) {
+  if (!pilotProduct?.journey?.length) return "";
+
+  return `
+      <section class="mt-8 rounded-3xl border border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50 p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">Parcours recommand&eacute;</h2>
+        <ol class="mt-5 space-y-3">
+          ${pilotProduct.journey
+            .map(
+              (item, index) => `
+          <li class="flex gap-3 rounded-2xl bg-white/80 p-4">
+            <span class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">${index + 1}</span>
+            <span class="text-slate-700 leading-relaxed">${renderText(item)}</span>
+          </li>`,
+            )
+            .join("")}
+        </ol>
+      </section>`;
+}
+
+function renderMethodologySources() {
+  return `
+      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">M&eacute;thodologie et sources</h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          ${renderText(
+            "Cette estimation repose sur le moteur de simulation APL du site, pr\u00e9-rempli avec un sc\u00e9nario repr\u00e9sentatif. Elle donne un ordre de grandeur utile, mais ne remplace pas une v\u00e9rification finale \u00e0 partir de votre situation exacte.",
+          )}
+        </p>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">${renderText(
+              "Sur quoi l'estimation est bas\u00e9e",
+            )}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">${renderText(
+              "Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone g\u00e9ographique et du type de logement renseign\u00e9s dans le sc\u00e9nario.",
+            )}</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">${renderText(
+              "Ce que cette page ne remplace pas",
+            )}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">${renderText(
+              "Le r\u00e9sultat reste indicatif. La CAF peut retenir d'autres \u00e9l\u00e9ments selon votre dossier, votre bail, vos ressources d\u00e9clar\u00e9es et votre situation administrative.",
+            )}</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">${renderText(
+              "Pourquoi nous montrons la m\u00e9thode",
+            )}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">${renderText(
+              "L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple \u00e0 v\u00e9rifier avec les r\u00e9f\u00e9rences officielles.",
+            )}</p>
+          </article>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/pages/methodologie" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
+            Consulter notre m&eacute;thodologie
+          </a>
+          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/aides-au-logement" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 font-semibold text-blue-900 transition-colors hover:bg-blue-100">
+            Voir la source officielle CAF
+          </a>
+          <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
+            Voir la fiche service-public.fr
+          </a>
+        </div>
+      </section>`;
+}
+
+function renderScenarioComparisonTable(scenario, estimate, relatedPages) {
+  const comparablePages = [
+    { ...scenario, estimate },
+    ...relatedPages.filter((page) => page?.estimate),
+  ].slice(0, 4);
+
+  if (comparablePages.length < 2) return "";
+
+  const rows = comparablePages
+    .map(
+      (page) => `
+          <tr class="border-b border-slate-100 last:border-0">
+            <td class="px-4 py-3 align-top">
+              <a href="/pages/apl/${escapeAttribute(page.slug)}" class="font-semibold text-slate-900 hover:text-blue-700">
+                ${renderText(page.audience || page.title)}
+              </a>
+              <p class="mt-1 text-xs text-slate-500">${renderText(page.intent)}</p>
+            </td>
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">${escapeHtml(
+              page.estimate.formattedApl.startsWith("~")
+                ? page.estimate.formattedApl
+                : `~${page.estimate.formattedApl}`,
+            )}</td>
+            <td class="px-4 py-3 text-right text-slate-700">${escapeHtml(
+              page.estimate.formattedRevenue,
+            )}</td>
+            <td class="px-4 py-3 text-right text-slate-700">${escapeHtml(
+              page.estimate.formattedRent,
+            )}</td>
+          </tr>`,
+    )
+    .join("");
+
+  return `
+      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">Comparer plusieurs sc&eacute;narios</h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          ${renderText(
+            "Ce tableau permet de voir rapidement comment l'estimation evolue selon des profils et contextes proches.",
+          )}
+        </p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+          <table class="min-w-full border-collapse text-sm">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-4 py-3 text-left font-semibold text-slate-700">Sc&eacute;nario</th>
+                <th class="px-4 py-3 text-right font-semibold text-slate-700">APL estim&eacute;e</th>
+                <th class="px-4 py-3 text-right font-semibold text-slate-700">Revenus</th>
+                <th class="px-4 py-3 text-right font-semibold text-slate-700">Loyer</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows}
+            </tbody>
+          </table>
         </div>
       </section>`;
 }
@@ -382,8 +743,8 @@ export function renderAPLScenarioPage({
     .map(
       (item) => `
           <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <summary class="cursor-pointer list-none font-semibold text-slate-900">${escapeHtml(
-              toFrenchDisplayText(item.question),
+            <summary class="cursor-pointer list-none font-semibold text-slate-900">${renderText(
+              item.question,
             )}</summary>
             <p class="mt-3 text-slate-700 leading-relaxed">${renderText(item.answer)}</p>
           </details>`,
@@ -391,11 +752,24 @@ export function renderAPLScenarioPage({
     .join("");
 
   const estimationMessage = estimate.reasonZero
-    ? `Montant estime a ${estimate.formattedApl}. ${estimate.reasonZero}`
+    ? `Montant estim\u00e9 \u00e0 ${estimate.formattedApl}. ${estimate.reasonZero}`
     : `Estimation indicative autour de ${estimate.formattedApl} par mois.`;
   const approxAplDisplay = estimate.formattedApl.startsWith("~")
     ? estimate.formattedApl
     : `~${estimate.formattedApl}`;
+  const simulatorUrl = buildAplSimulatorUrl(scenario.input);
+  const pilotVariantsHtml = renderPilotVariants(scenario.pilotProduct);
+  const pilotDriversHtml = renderPilotDrivers(scenario.pilotProduct);
+  const pilotComparisonHtml = renderPilotComparison(
+    scenario.pilotProduct,
+    simulatorUrl,
+  );
+  const pilotJourneyHtml = renderPilotJourney(scenario.pilotProduct);
+  const scenarioComparisonHtml = renderScenarioComparisonTable(
+    scenario,
+    estimate,
+    relatedPages,
+  );
 
   const introText = toFrenchDisplayText(
     `${scenario.description} Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.`,
@@ -412,8 +786,8 @@ export function renderAPLScenarioPage({
     .map(
       ([label, value]) => `
               <tr class="border-b border-slate-100 last:border-0">
-                <th class="px-4 py-3 text-left font-medium text-slate-600">${escapeHtml(label)}</th>
-                <td class="px-4 py-3 text-right font-semibold text-slate-900">${escapeHtml(value)}</td>
+                <th class="px-4 py-3 text-left font-medium text-slate-600">${renderText(label)}</th>
+                <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderText(value)}</td>
               </tr>`,
     )
     .join("");
@@ -448,8 +822,8 @@ export function renderAPLScenarioPage({
     data-lc-page-cluster="apl"
     data-lc-page-template="scenario"
     data-lc-page-slug="${escapeAttribute(scenario.slug)}"
-    data-lc-page-intent="${escapeAttribute(toFrenchDisplayText(scenario.intent))}"
-    data-lc-page-audience="${escapeAttribute(toFrenchDisplayText(scenario.audience))}"
+    data-lc-page-intent="${escapeAttribute(encodeHtmlEntities(toFrenchDisplayText(scenario.intent)))}"
+    data-lc-page-audience="${escapeAttribute(encodeHtmlEntities(toFrenchDisplayText(scenario.audience)))}"
     data-lc-page-variant="pilot-2026"
   >
     ${GENERATED_MARKER}
@@ -487,7 +861,7 @@ export function renderAPLScenarioPage({
           )}
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="${PILLAR_PATH}" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">
+          <a href="${simulatorUrl}" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">
             Ouvrir le simulateur APL complet
           </a>
           <a href="#hypotheses" class="rounded-xl border border-white/30 bg-white/5 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/15">
@@ -529,7 +903,7 @@ export function renderAPLScenarioPage({
       </section>
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 class="text-2xl font-bold text-slate-900">Sc&eacute;nario utilise pour cette estimation</h2>
+        <h2 class="text-2xl font-bold text-slate-900">Sc&eacute;nario utilis&eacute; pour cette estimation</h2>
         <p class="mt-4 text-slate-700 leading-relaxed">
           ${renderText(
             "Cette estimation repose sur un sc\u00e9nario repr\u00e9sentatif construit \u00e0 partir d'un profil type.",
@@ -561,6 +935,14 @@ export function renderAPLScenarioPage({
         </p>
       </section>
 
+      ${renderMethodologySources()}
+
+      ${scenarioComparisonHtml}
+
+      ${pilotVariantsHtml}
+
+      ${pilotDriversHtml}
+
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Pourquoi cette page existe</h2>
         <p class="mt-4 text-slate-700 leading-relaxed">
@@ -581,7 +963,11 @@ export function renderAPLScenarioPage({
         </div>
       </section>
 
+      ${pilotComparisonHtml}
+
       ${renderRelatedLinks(relatedPages)}
+
+      ${pilotJourneyHtml}
 
       <section class="mt-8 rounded-3xl border border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50 p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Aller plus loin</h2>
@@ -590,8 +976,8 @@ export function renderAPLScenarioPage({
             "Si votre situation ressemble \u00e0 ce sc\u00e9nario, utilisez le simulateur complet pour tester plusieurs param\u00e8tres : loyer, revenus, zone g\u00e9ographique et composition du foyer. Vous obtiendrez ainsi une estimation plus proche de votre situation r\u00e9elle.",
           )}
         </p>
-        <a href="${PILLAR_PATH}" class="mt-6 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
-          Lancer une simulation APL complete
+        <a href="${simulatorUrl}" class="mt-6 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
+          Lancer une simulation APL compl&egrave;te
         </a>
       </section>
     </main>

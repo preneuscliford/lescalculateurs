@@ -11,6 +11,34 @@ const scrollButton = document.getElementById(
   "are-scroll-to-form",
 ) as HTMLButtonElement;
 
+function initFromURL(): void {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.size) return;
+
+  const fieldIds = [
+    "are-situation",
+    "are-age",
+    "are-anciennete",
+    "are-salaire",
+    "are-enfants",
+  ];
+
+  let hasValue = false;
+
+  fieldIds.forEach((fieldId) => {
+    const value = params.get(fieldId);
+    if (value === null) return;
+    const input = document.getElementById(fieldId) as HTMLInputElement | HTMLSelectElement | null;
+    if (!input) return;
+    input.value = value;
+    hasValue = true;
+  });
+
+  if (hasValue) {
+    form?.requestSubmit();
+  }
+}
+
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -84,3 +112,5 @@ if (scrollButton) {
     form?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
+
+initFromURL();

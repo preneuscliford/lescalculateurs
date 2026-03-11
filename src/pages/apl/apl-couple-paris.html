@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/tailwind.css" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.lescalculateurs.fr"},{"@type":"ListItem","position":2,"name":"Simulateur APL","item":"https://www.lescalculateurs.fr/pages/apl"},{"@type":"ListItem","position":3,"name":"APL pour un couple \u00e0 Paris : estimation 2026","item":"https://www.lescalculateurs.fr/pages/apl/apl-couple-paris"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"APL pour un couple \u00e0 Paris : estimation 2026","description":"Cas pratique d'un couple parisien avec loyer francilien et revenus intermediaires.","url":"https://www.lescalculateurs.fr/pages/apl/apl-couple-paris","isPartOf":"https://www.lescalculateurs.fr/pages/apl","publisher":{"@type":"Organization","name":"LesCalculateurs.fr","url":"https://www.lescalculateurs.fr"}}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Un couple \u00e0 Paris peut-il toucher une APL significative ?","acceptedAnswer":{"@type":"Answer","text":"Oui dans certains cas, mais le plafond de loyer retient seulement une partie du cout r\u00e9el du logement."}},{"@type":"Question","name":"Les revenus combines annulent-ils souvent l'APL ?","acceptedAnswer":{"@type":"Answer","text":"Ils peuvent la reduire rapidement. Il faut donc verifier le rapport entre revenus du foyer et loyer."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Un couple \u00e0 Paris peut-il toucher une APL significative ?","acceptedAnswer":{"@type":"Answer","text":"Oui dans certains cas, mais le plafond de loyer retient seulement une partie du co\u00fbt r\u00e9el du logement."}},{"@type":"Question","name":"Les revenus combin?s annulent-ils souvent l'APL ?","acceptedAnswer":{"@type":"Answer","text":"Ils peuvent la r\u00e9duire rapidement. Il faut donc v\u00e9rifier le rapport entre revenus du foyer et loyer."}}]}</script>
     <script defer src="/third-party-loader.js"></script>
     <script type="module" src="/main.ts"></script>
   </head>
@@ -29,7 +29,7 @@
     data-lc-page-template="scenario"
     data-lc-page-slug="apl-couple-paris"
     data-lc-page-intent="apl couple paris"
-    data-lc-page-audience="Couple à Paris"
+    data-lc-page-audience="Couple &amp;#224; Paris"
     data-lc-page-variant="pilot-2026"
   >
     <!-- GENERATED:PSEO:APL -->
@@ -61,7 +61,7 @@
           Le montant affich&#233; est calcul&#233; &#224; partir du moteur de simulation APL utilis&#233; sur LesCalculateurs.fr, avec un sc&#233;nario repr&#233;sentatif.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/pages/apl" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">
+          <a href="/pages/apl?situation=couple&enfants=0&revenus_mensuels=2200&loyer_mensuel=980&region=idf&type_logement=location&economie=0#apl-calculator" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">
             Ouvrir le simulateur APL complet
           </a>
           <a href="#hypotheses" class="rounded-xl border border-white/30 bg-white/5 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/15">
@@ -87,13 +87,13 @@
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">Profil</p>
           <p class="mt-3 text-lg font-semibold text-slate-950">Couple &#224; Paris</p>
           <p class="mt-3 text-sm leading-relaxed text-slate-600">
-            Cette page couvre une requete geolocalisee couple plus loyer tendu, fr&#233;quente sur les budgets de debut de vie commune.
+            Cette page couvre une requ&#234;te g?olocalis?e couple plus loyer tendu, fr&#233;quente sur les budgets de d&#233;but de vie commune.
           </p>
         </aside>
       </section>
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 class="text-2xl font-bold text-slate-900">Sc&eacute;nario utilise pour cette estimation</h2>
+        <h2 class="text-2xl font-bold text-slate-900">Sc&eacute;nario utilis&eacute; pour cette estimation</h2>
         <p class="mt-4 text-slate-700 leading-relaxed">
           Cette estimation repose sur un sc&#233;nario repr&#233;sentatif construit &#224; partir d&#39;un profil type.
         </p>
@@ -119,7 +119,7 @@
               </tr>
               <tr class="border-b border-slate-100 last:border-0">
                 <th class="px-4 py-3 text-left font-medium text-slate-600">Zone</th>
-                <td class="px-4 py-3 text-right font-semibold text-slate-900">Île-de-France</td>
+                <td class="px-4 py-3 text-right font-semibold text-slate-900">&#206;le-de-France</td>
               </tr>
               <tr class="border-b border-slate-100 last:border-0">
                 <th class="px-4 py-3 text-left font-medium text-slate-600">Type de logement</th>
@@ -136,12 +136,116 @@
           Cette estimation repose sur un sc&#233;nario simplifi&#233; et sur des hypoth&#232;ses moyennes. Avant toute d&#233;marche, il est conseill&#233; de v&#233;rifier les param&#232;tres qui influencent r&#233;ellement le calcul.
         </p>
         <ul class="mt-6 list-disc space-y-3 pl-5">
-          <li class="text-slate-700 leading-relaxed">Verifier le loyer hors charges indique dans le bail.</li><li class="text-slate-700 leading-relaxed">Tester un sc&#233;nario avec revenus a 2000 EUR puis a 2500 EUR.</li><li class="text-slate-700 leading-relaxed">Comparer avec une proche banlieue si vous etudiez plusieurs options.</li>
+          <li class="text-slate-700 leading-relaxed">V&#233;rifier le loyer hors charges indiqu? dans le bail.</li><li class="text-slate-700 leading-relaxed">Tester un sc&#233;nario avec revenus &#224; 2000 EUR puis &#224; 2500 EUR.</li><li class="text-slate-700 leading-relaxed">Comparer avec une proche banlieue si vous etudiez plusieurs options.</li>
         </ul>
         <p class="mt-4 text-slate-700 leading-relaxed">
           Dans certains cas, une colocation, un logement HLM ou un autre type de bail peut modifier sensiblement le montant.
         </p>
       </section>
+
+      
+      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">M&eacute;thodologie et sources</h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          Cette estimation repose sur le moteur de simulation APL du site, pr&#233;-rempli avec un sc&#233;nario repr&#233;sentatif. Elle donne un ordre de grandeur utile, mais ne remplace pas une v&#233;rification finale &#224; partir de votre situation exacte.
+        </p>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Sur quoi l&#39;estimation est bas&#233;e</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone g&#233;ographique et du type de logement renseign&#233;s dans le sc&#233;nario.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Ce que cette page ne remplace pas</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">Le r&#233;sultat reste indicatif. La CAF peut retenir d&#39;autres &#233;l&#233;ments selon votre dossier, votre bail, vos ressources d&#233;clar&#233;es et votre situation administrative.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Pourquoi nous montrons la m&#233;thode</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">L&#39;objectif est de rendre l&#39;estimation plus lisible, plus transparente et plus simple &#224; v&#233;rifier avec les r&#233;f&#233;rences officielles.</p>
+          </article>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/pages/methodologie" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
+            Consulter notre m&eacute;thodologie
+          </a>
+          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/aides-au-logement" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 font-semibold text-blue-900 transition-colors hover:bg-blue-100">
+            Voir la source officielle CAF
+          </a>
+          <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
+            Voir la fiche service-public.fr
+          </a>
+        </div>
+      </section>
+
+      
+      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">Comparer plusieurs sc&eacute;narios</h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          Ce tableau permet de voir rapidement comment l&#39;estimation &#233;volue selon des profils et contextes proches.
+        </p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+          <table class="min-w-full border-collapse text-sm">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-4 py-3 text-left font-semibold text-slate-700">Sc&eacute;nario</th>
+                <th class="px-4 py-3 text-right font-semibold text-slate-700">APL estim&eacute;e</th>
+                <th class="px-4 py-3 text-right font-semibold text-slate-700">Revenus</th>
+                <th class="px-4 py-3 text-right font-semibold text-slate-700">Loyer</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+          <tr class="border-b border-slate-100 last:border-0">
+            <td class="px-4 py-3 align-top">
+              <a href="/pages/apl/apl-couple-paris" class="font-semibold text-slate-900 hover:text-blue-700">
+                Couple &#224; Paris
+              </a>
+              <p class="mt-1 text-xs text-slate-500">apl couple paris</p>
+            </td>
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">~112 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">2200 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">980 EUR</td>
+          </tr>
+          <tr class="border-b border-slate-100 last:border-0">
+            <td class="px-4 py-3 align-top">
+              <a href="/pages/apl/apl-couple-loyer-eleve" class="font-semibold text-slate-900 hover:text-blue-700">
+                Couple avec loyer &#233;lev&#233;
+              </a>
+              <p class="mt-1 text-xs text-slate-500">apl couple loyer &#233;lev&#233;</p>
+            </td>
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">~82 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">2300 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">1080 EUR</td>
+          </tr>
+          <tr class="border-b border-slate-100 last:border-0">
+            <td class="px-4 py-3 align-top">
+              <a href="/pages/apl/apl-celibataire-paris-petit-revenu" class="font-semibold text-slate-900 hover:text-blue-700">
+                C&#233;libataire &#224; Paris avec petit revenu
+              </a>
+              <p class="mt-1 text-xs text-slate-500">apl c&#233;libataire paris</p>
+            </td>
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">~320 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">1200 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">780 EUR</td>
+          </tr>
+          <tr class="border-b border-slate-100 last:border-0">
+            <td class="px-4 py-3 align-top">
+              <a href="/pages/apl/apl-couple-lyon" class="font-semibold text-slate-900 hover:text-blue-700">
+                Couple &#224; Lyon
+              </a>
+              <p class="mt-1 text-xs text-slate-500">apl couple lyon</p>
+            </td>
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">~57 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">2050 EUR</td>
+            <td class="px-4 py-3 text-right text-slate-700">790 EUR</td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      
+
+      
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Pourquoi cette page existe</h2>
@@ -150,7 +254,7 @@
         </p>
         <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">Derni&egrave;re modification</p>
-          <p class="mt-2 text-slate-800">2026-03-08</p>
+          <p class="mt-2 text-slate-800">2026-03-11</p>
         </div>
       </section>
 
@@ -159,15 +263,17 @@
         <div class="mt-5 space-y-4">
           
           <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <summary class="cursor-pointer list-none font-semibold text-slate-900">Un couple à Paris peut-il toucher une APL significative ?</summary>
-            <p class="mt-3 text-slate-700 leading-relaxed">Oui dans certains cas, mais le plafond de loyer retient seulement une partie du cout r&#233;el du logement.</p>
+            <summary class="cursor-pointer list-none font-semibold text-slate-900">Un couple &#224; Paris peut-il toucher une APL significative ?</summary>
+            <p class="mt-3 text-slate-700 leading-relaxed">Oui dans certains cas, mais le plafond de loyer retient seulement une partie du co&#251;t r&#233;el du logement.</p>
           </details>
           <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <summary class="cursor-pointer list-none font-semibold text-slate-900">Les revenus combines annulent-ils souvent l&#39;APL ?</summary>
-            <p class="mt-3 text-slate-700 leading-relaxed">Ils peuvent la reduire rapidement. Il faut donc verifier le rapport entre revenus du foyer et loyer.</p>
+            <summary class="cursor-pointer list-none font-semibold text-slate-900">Les revenus combin?s annulent-ils souvent l&#39;APL ?</summary>
+            <p class="mt-3 text-slate-700 leading-relaxed">Ils peuvent la r&#233;duire rapidement. Il faut donc v&#233;rifier le rapport entre revenus du foyer et loyer.</p>
           </details>
         </div>
       </section>
+
+      
 
       
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -178,16 +284,16 @@
         <div class="grid gap-3 sm:grid-cols-2">
           
           <a href="/pages/apl/apl-couple-loyer-eleve" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
-            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl couple loyer élevé</span>
-            <span class="font-semibold">APL pour un couple avec loyer élevé : estimation 2026</span>
+            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl couple loyer &#233;lev&#233;</span>
+            <span class="font-semibold">APL pour un couple avec loyer &#233;lev&#233; : estimation 2026</span>
           </a>
           <a href="/pages/apl/apl-celibataire-paris-petit-revenu" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
-            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl célibataire paris</span>
-            <span class="font-semibold">APL célibataire à Paris avec petit revenu : estimation 2026</span>
+            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl c&#233;libataire paris</span>
+            <span class="font-semibold">APL c&#233;libataire &#224; Paris avec petit revenu : estimation 2026</span>
           </a>
           <a href="/pages/apl/apl-couple-lyon" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
             <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl couple lyon</span>
-            <span class="font-semibold">APL pour un couple à Lyon : estimation 2026</span>
+            <span class="font-semibold">APL pour un couple &#224; Lyon : estimation 2026</span>
           </a>
           <a href="/pages/apl/apl-couple-sans-enfant" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
             <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl couple sans enfant</span>
@@ -196,13 +302,15 @@
         </div>
       </section>
 
+      
+
       <section class="mt-8 rounded-3xl border border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50 p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Aller plus loin</h2>
         <p class="mt-4 text-slate-700 leading-relaxed">
           Si votre situation ressemble &#224; ce sc&#233;nario, utilisez le simulateur complet pour tester plusieurs param&#232;tres : loyer, revenus, zone g&#233;ographique et composition du foyer. Vous obtiendrez ainsi une estimation plus proche de votre situation r&#233;elle.
         </p>
-        <a href="/pages/apl" class="mt-6 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
-          Lancer une simulation APL complete
+        <a href="/pages/apl?situation=couple&enfants=0&revenus_mensuels=2200&loyer_mensuel=980&region=idf&type_logement=location&economie=0#apl-calculator" class="mt-6 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
+          Lancer une simulation APL compl&egrave;te
         </a>
       </section>
     </main>

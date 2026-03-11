@@ -33,6 +33,34 @@ const scrollButton = document.getElementById(
   "rsa-scroll-to-form",
 ) as HTMLButtonElement;
 
+function initFromURL(): void {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.size) return;
+
+  const fieldIds = [
+    "rsa-situation",
+    "rsa-enfants",
+    "rsa-revenus",
+    "rsa-logement",
+    "rsa-activite",
+  ];
+
+  let hasValue = false;
+
+  fieldIds.forEach((fieldId) => {
+    const value = params.get(fieldId);
+    if (value === null) return;
+    const input = document.getElementById(fieldId) as HTMLInputElement | HTMLSelectElement | null;
+    if (!input) return;
+    input.value = value;
+    hasValue = true;
+  });
+
+  if (hasValue) {
+    form?.requestSubmit();
+  }
+}
+
 /**
  * Gestion du formulaire
  */
@@ -102,6 +130,8 @@ if (scrollButton) {
     }
   });
 });
+
+initFromURL();
 
 
 /**

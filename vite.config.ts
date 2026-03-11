@@ -4,9 +4,25 @@ import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
 import { aplPilotScenarios } from "./data/pseo/apl-pilot-scenarios.js";
+import { rsaPilotScenarios } from "./data/pseo/rsa-pilot-scenarios.js";
+import { arePilotScenarios } from "./data/pseo/are-pilot-scenarios.js";
 
 function generateAplPseoPages() {
   execFileSync(process.execPath, [resolve(__dirname, "scripts/generate-pseo-apl.js")], {
+    cwd: __dirname,
+    stdio: "pipe",
+  });
+}
+
+function generateRsaPseoPages() {
+  execFileSync(process.execPath, [resolve(__dirname, "scripts/generate-pseo-rsa.js")], {
+    cwd: __dirname,
+    stdio: "pipe",
+  });
+}
+
+function generateArePseoPages() {
+  execFileSync(process.execPath, [resolve(__dirname, "scripts/generate-pseo-are.js")], {
     cwd: __dirname,
     stdio: "pipe",
   });
@@ -176,14 +192,57 @@ function collectLegacySeoAliasInputs() {
   );
 }
 
+function collectRsaPilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of rsaPilotScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/rsa", slug, "index.html");
+    if (!fs.existsSync(indexPath)) continue;
+
+    inputs[`rsa-pilot-${slug}`] = indexPath;
+  }
+
+  return inputs;
+}
+
+function collectArePilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of arePilotScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/are", slug, "index.html");
+    const htmlPath = resolve(__dirname, "src/pages/are", `${slug}.html`);
+
+    if (fs.existsSync(indexPath)) {
+      inputs[`are-pilot-${slug}`] = indexPath;
+      continue;
+    }
+
+    if (fs.existsSync(htmlPath)) {
+      inputs[`are-pilot-${slug}`] = htmlPath;
+    }
+  }
+
+  return inputs;
+}
+
 export default defineConfig(({ command }) => {
   if (command === "serve" || command === "build") {
     generateAplPseoPages();
+    generateRsaPseoPages();
+    generateArePseoPages();
   }
 
   const aplNestedInputs = collectNestedAplInputs();
   const aplPilotInputs = collectAplPilotInputs();
   const legacySeoAliasInputs = collectLegacySeoAliasInputs();
+  const rsaPilotInputs = collectRsaPilotInputs();
+  const arePilotInputs = collectArePilotInputs();
 
   return {
     root: "src",
@@ -236,6 +295,12 @@ export default defineConfig(({ command }) => {
 
           // Pages pSEO APL du pilote declarees explicitement pour la prod
           ...aplPilotInputs,
+
+          // Pages pSEO RSA du pilote declarees explicitement pour la prod
+          ...rsaPilotInputs,
+
+          // Pages pSEO ARE du pilote declarees explicitement pour la prod
+          ...arePilotInputs,
 
           // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
           ...legacySeoAliasInputs,
