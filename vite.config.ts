@@ -47,6 +47,91 @@ function collectAplPilotInputs() {
   return inputs;
 }
 
+function collectStaticPageInputs() {
+  return {
+    main: resolve(__dirname, "src/index.html"),
+    notaire: resolve(__dirname, "src/pages/notaire.html"),
+    pret: resolve(__dirname, "src/pages/pret.html"),
+    plusvalue: resolve(__dirname, "src/pages/plusvalue.html"),
+    salaire: resolve(__dirname, "src/pages/salaire.html"),
+    impot: resolve(__dirname, "src/pages/impot.html"),
+    charges: resolve(__dirname, "src/pages/charges.html"),
+    ik: resolve(__dirname, "src/pages/ik.html"),
+    ponts: resolve(__dirname, "src/pages/ponts.html"),
+    taxe: resolve(__dirname, "src/pages/taxe.html"),
+    travail: resolve(__dirname, "src/pages/travail.html"),
+    financement: resolve(__dirname, "src/pages/financement.html"),
+    "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
+    simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
+    "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
+      __dirname,
+      "src/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
+    ),
+    apl: resolve(__dirname, "src/pages/apl.html"),
+    "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
+    "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
+    blog: resolve(__dirname, "src/pages/blog.html"),
+    "blog-export-pdf": resolve(
+      __dirname,
+      "src/pages/blog/export-pdf-calculateurs.html",
+    ),
+    "blog-revalorisation-smic-2026": resolve(
+      __dirname,
+      "src/pages/blog/revalorisation-smic-2026.html",
+    ),
+    "blog-inflation-cout-vie-2026": resolve(
+      __dirname,
+      "src/pages/blog/inflation-cout-vie-2026.html",
+    ),
+    "blog-salarie-ou-auto-entrepreneur-2026": resolve(
+      __dirname,
+      "src/pages/blog/salarie-ou-auto-entrepreneur-2026.html",
+    ),
+    "blog-frais-notaire": resolve(
+      __dirname,
+      "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
+    ),
+    "frais-notaire-ancien-neuf": resolve(
+      __dirname,
+      "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
+    ),
+    "blog-departements": resolve(
+      __dirname,
+      "src/pages/blog/frais-notaire-departements.html",
+    ),
+    "comment-calculer-frais-notaire": resolve(
+      __dirname,
+      "src/pages/comment-calculer-frais-notaire.html",
+    ),
+    "comment-calculer-plus-value": resolve(
+      __dirname,
+      "src/pages/comment-calculer-plus-value.html",
+    ),
+    rsa: resolve(__dirname, "src/pages/rsa.html"),
+    "rsa-vs-smic": resolve(__dirname, "src/pages/rsa-vs-smic.html"),
+    "prime-activite": resolve(__dirname, "src/pages/prime-activite.html"),
+    aah: resolve(__dirname, "src/pages/aah.html"),
+    "apl-etudiant": resolve(__dirname, "src/pages/apl-etudiant.html"),
+    are: resolve(__dirname, "src/pages/are.html"),
+    asf: resolve(__dirname, "src/pages/asf.html"),
+    "frais-notaire-75": resolve(__dirname, "src/pages/blog/departements/frais-notaire-75.html"),
+    "frais-notaire-13": resolve(__dirname, "src/pages/blog/departements/frais-notaire-13.html"),
+    "frais-notaire-69": resolve(__dirname, "src/pages/blog/departements/frais-notaire-69.html"),
+    "frais-notaire-31": resolve(__dirname, "src/pages/blog/departements/frais-notaire-31.html"),
+    "frais-notaire-06": resolve(__dirname, "src/pages/blog/departements/frais-notaire-06.html"),
+    methodologie: resolve(__dirname, "src/pages/methodologie.html"),
+    "a-propos": resolve(__dirname, "src/pages/a-propos.html"),
+    sources: resolve(__dirname, "src/pages/sources.html"),
+    "mentions-legales": resolve(__dirname, "src/pages/mentions-legales.html"),
+    "politique-confidentialite": resolve(__dirname, "src/pages/politique-confidentialite.html"),
+    "politique-cookies": resolve(__dirname, "src/pages/politique-cookies.html"),
+    contact: resolve(__dirname, "src/pages/contact.html"),
+    "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
+    "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
+    "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
+  };
+}
+
 function collectLegacySeoAliasInputs() {
   const aliasEntries: Array<[string, string]> = [
     ["prime-activite/montant-prime-activite-2026", "src/pages/prime-activite/montant-prime-activite-2026.html"],
@@ -134,86 +219,7 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
       rollupOptions: {
         input: {
-          main: resolve(__dirname, "src/index.html"),
-          notaire: resolve(__dirname, "src/pages/notaire.html"),
-          pret: resolve(__dirname, "src/pages/pret.html"),
-          plusvalue: resolve(__dirname, "src/pages/plusvalue.html"),
-          salaire: resolve(__dirname, "src/pages/salaire.html"),
-          impot: resolve(__dirname, "src/pages/impot.html"),
-          charges: resolve(__dirname, "src/pages/charges.html"),
-          ik: resolve(__dirname, "src/pages/ik.html"),
-          ponts: resolve(__dirname, "src/pages/ponts.html"),
-          taxe: resolve(__dirname, "src/pages/taxe.html"),
-          travail: resolve(__dirname, "src/pages/travail.html"),
-          financement: resolve(__dirname, "src/pages/financement.html"),
-          "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
-          simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
-          "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
-            __dirname,
-            "src/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
-          ),
-          apl: resolve(__dirname, "src/pages/apl.html"),
-          "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
-          "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
-          blog: resolve(__dirname, "src/pages/blog.html"),
-          "blog-export-pdf": resolve(
-            __dirname,
-            "src/pages/blog/export-pdf-calculateurs.html",
-          ),
-          "blog-revalorisation-smic-2026": resolve(
-            __dirname,
-            "src/pages/blog/revalorisation-smic-2026.html",
-          ),
-          "blog-inflation-cout-vie-2026": resolve(
-            __dirname,
-            "src/pages/blog/inflation-cout-vie-2026.html",
-          ),
-          "blog-salarie-ou-auto-entrepreneur-2026": resolve(
-            __dirname,
-            "src/pages/blog/salarie-ou-auto-entrepreneur-2026.html",
-          ),
-          "blog-frais-notaire": resolve(
-            __dirname,
-            "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
-          ),
-          "frais-notaire-ancien-neuf": resolve(
-            __dirname,
-            "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
-          ),
-          "blog-departements": resolve(
-            __dirname,
-            "src/pages/blog/frais-notaire-departements.html",
-          ),
-          "comment-calculer-frais-notaire": resolve(
-            __dirname,
-            "src/pages/comment-calculer-frais-notaire.html",
-          ),
-          "comment-calculer-plus-value": resolve(
-            __dirname,
-            "src/pages/comment-calculer-plus-value.html",
-          ),
-          rsa: resolve(__dirname, "src/pages/rsa.html"),
-          "rsa-vs-smic": resolve(__dirname, "src/pages/rsa-vs-smic.html"),
-          "prime-activite": resolve(__dirname, "src/pages/prime-activite.html"),
-          aah: resolve(__dirname, "src/pages/aah.html"),
-          "apl-etudiant": resolve(__dirname, "src/pages/apl-etudiant.html"),
-          are: resolve(__dirname, "src/pages/are.html"),
-          asf: resolve(__dirname, "src/pages/asf.html"),
-          "frais-notaire-75": resolve(__dirname, "src/pages/blog/departements/frais-notaire-75.html"),
-          "frais-notaire-13": resolve(__dirname, "src/pages/blog/departements/frais-notaire-13.html"),
-          "frais-notaire-69": resolve(__dirname, "src/pages/blog/departements/frais-notaire-69.html"),
-          "frais-notaire-31": resolve(__dirname, "src/pages/blog/departements/frais-notaire-31.html"),
-          "frais-notaire-06": resolve(__dirname, "src/pages/blog/departements/frais-notaire-06.html"),
-          methodologie: resolve(__dirname, "src/pages/methodologie.html"),
-          "a-propos": resolve(__dirname, "src/pages/a-propos.html"),
-          sources: resolve(__dirname, "src/pages/sources.html"),
-          "mentions-legales": resolve(__dirname, "src/pages/mentions-legales.html"),
-          "politique-confidentialite": resolve(__dirname, "src/pages/politique-confidentialite.html"),
-          "politique-cookies": resolve(__dirname, "src/pages/politique-cookies.html"),
-          contact: resolve(__dirname, "src/pages/contact.html"),
-          "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
-          "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
-          "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
+          ...collectStaticPageInputs(),
 
           // Pages APL imbriquees presentes sous src/pages/apl/**/index.html
           ...aplNestedInputs,
