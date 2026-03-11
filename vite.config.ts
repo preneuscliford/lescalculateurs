@@ -47,6 +47,42 @@ function collectAplPilotInputs() {
   return inputs;
 }
 
+function collectLegacySeoAliasInputs() {
+  const legacyAliases: Record<string, string> = {
+    "prime-activite-montant-prime-activite-2026": "src/pages/prime-activite/montant-prime-activite-2026.html",
+    "simulateurs-aide-sociale-simulation-globale": "src/pages/simulateurs/aide-sociale-simulation-globale.html",
+    "simulateurs-aides-retraites": "src/pages/simulateurs/aides-retraites.html",
+    "simulateurs-aide-financiere-famille": "src/pages/simulateurs/aide-financiere-famille.html",
+    "blog-departements-frais-notaire-11": "src/pages/blog/departements/frais-notaire-11.html",
+    "blog-departements-frais-notaire-28": "src/pages/blog/departements/frais-notaire-28.html",
+    "salaire-smic-net-2026": "src/pages/salaire/smic-net-2026.html",
+    "pret-taux-endettement-35-pourcent-explication": "src/pages/pret/taux-endettement-35-pourcent-explication.html",
+    "rsa-fin-de-droits-chomage": "src/pages/rsa/rsa-fin-de-droits-chomage.html",
+    "crypto-plus-value": "src/pages/crypto-plus-value.html",
+    "taxe-habitation": "src/pages/taxe-habitation.html",
+    "calculateur-travail": "src/pages/calculateur-travail.html",
+    "plus-value-immobiliere": "src/pages/plus-value-immobiliere.html",
+    "blog-frais-notaire-02": "src/pages/blog/frais-notaire-02.html",
+    "blog-frais-notaire-18": "src/pages/blog/frais-notaire-18.html",
+    "blog-frais-notaire-24": "src/pages/blog/frais-notaire-24.html",
+    "blog-frais-notaire-33": "src/pages/blog/frais-notaire-33.html",
+    "blog-frais-notaire-34": "src/pages/blog/frais-notaire-34.html",
+    "blog-frais-notaire-35": "src/pages/blog/frais-notaire-35.html",
+    "blog-frais-notaire-47": "src/pages/blog/frais-notaire-47.html",
+    "blog-frais-notaire-89": "src/pages/blog/frais-notaire-89.html",
+  };
+
+  const inputs: Record<string, string> = {};
+  for (const [key, relativePath] of Object.entries(legacyAliases)) {
+    const resolvedPath = resolve(__dirname, relativePath);
+    if (fs.existsSync(resolvedPath)) {
+      inputs[key] = resolvedPath;
+    }
+  }
+
+  return inputs;
+}
+
 export default defineConfig(({ command }) => {
   if (command === "serve" || command === "build") {
     generateAplPseoPages();
@@ -54,6 +90,7 @@ export default defineConfig(({ command }) => {
 
   const aplNestedInputs = collectNestedAplInputs();
   const aplPilotInputs = collectAplPilotInputs();
+  const legacySeoAliasInputs = collectLegacySeoAliasInputs();
 
   return {
     root: "src",
@@ -185,6 +222,10 @@ export default defineConfig(({ command }) => {
 
           // Pages pSEO APL du pilote declarees explicitement pour la prod
           ...aplPilotInputs,
+
+          // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
+          ...legacySeoAliasInputs,
+
         },
         output: {
           manualChunks: {
