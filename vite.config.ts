@@ -180,11 +180,58 @@ export default defineConfig(({ command }) => {
           "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
           "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
 
+          "prime-activite-montant-prime-activite-2026": resolve(
+            __dirname,
+            "src/pages/prime-activite/montant-prime-activite-2026.html",
+          ),
+          "simulateurs-aide-sociale-simulation-globale": resolve(
+            __dirname,
+            "src/pages/simulateurs/aide-sociale-simulation-globale.html",
+          ),
+          "simulateurs-aides-retraites": resolve(
+            __dirname,
+            "src/pages/simulateurs/aides-retraites.html",
+          ),
+          "simulateurs-aide-financiere-famille": resolve(
+            __dirname,
+            "src/pages/simulateurs/aide-financiere-famille.html",
+          ),
+          "blog-departements-frais-notaire-11": resolve(
+            __dirname,
+            "src/pages/blog/departements/frais-notaire-11.html",
+          ),
+          "blog-departements-frais-notaire-28": resolve(
+            __dirname,
+            "src/pages/blog/departements/frais-notaire-28.html",
+          ),
+          "salaire-smic-net-2026": resolve(__dirname, "src/pages/salaire/smic-net-2026.html"),
+          "pret-taux-endettement-35-pourcent-explication": resolve(
+            __dirname,
+            "src/pages/pret/taux-endettement-35-pourcent-explication.html",
+          ),
+          "rsa-fin-de-droits-chomage": resolve(
+            __dirname,
+            "src/pages/rsa/rsa-fin-de-droits-chomage.html",
+          ),
+          "crypto-plus-value": resolve(__dirname, "src/pages/crypto-plus-value.html"),
+          "taxe-habitation": resolve(__dirname, "src/pages/taxe-habitation.html"),
+          "calculateur-travail": resolve(__dirname, "src/pages/calculateur-travail.html"),
+          "plus-value-immobiliere": resolve(__dirname, "src/pages/plus-value-immobiliere.html"),
+          "blog-frais-notaire-02": resolve(__dirname, "src/pages/blog/frais-notaire-02.html"),
+          "blog-frais-notaire-18": resolve(__dirname, "src/pages/blog/frais-notaire-18.html"),
+          "blog-frais-notaire-24": resolve(__dirname, "src/pages/blog/frais-notaire-24.html"),
+          "blog-frais-notaire-33": resolve(__dirname, "src/pages/blog/frais-notaire-33.html"),
+          "blog-frais-notaire-34": resolve(__dirname, "src/pages/blog/frais-notaire-34.html"),
+          "blog-frais-notaire-35": resolve(__dirname, "src/pages/blog/frais-notaire-35.html"),
+          "blog-frais-notaire-47": resolve(__dirname, "src/pages/blog/frais-notaire-47.html"),
+          "blog-frais-notaire-89": resolve(__dirname, "src/pages/blog/frais-notaire-89.html"),
+
           // Pages APL imbriquees presentes sous src/pages/apl/**/index.html
           ...aplNestedInputs,
 
           // Pages pSEO APL du pilote declarees explicitement pour la prod
           ...aplPilotInputs,
+
         },
         output: {
           manualChunks: {
