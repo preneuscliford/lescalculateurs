@@ -1319,7 +1319,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-alternant-paris</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti-loyer-500</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1343,6 +1355,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-lyon</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-marseille</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -1350,6 +1368,12 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-paris-petit-revenu</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-petit-salaire</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1367,7 +1391,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-avec-enfant</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-moyen</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1397,6 +1433,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-petit-revenu</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-sans-enfant</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -1404,6 +1446,12 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant-loyer-moyen</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1427,6 +1475,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-petit-loyer</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-studio</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-toulouse</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-province</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -1434,6 +1500,12 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-idf</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1481,6 +1553,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-personne-seule-smic</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-petite-surface-paris</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -1488,6 +1566,18 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-loyer-eleve</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-seul</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

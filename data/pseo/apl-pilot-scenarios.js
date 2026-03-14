@@ -1198,5 +1198,575 @@ export const aplPilotScenarios = [
         "answer": "Parce que le calcul applique un plafond de loyer et tient compte de l ensemble des ressources du foyer."
       }
     ]
+  },
+  {
+    "slug": "apl-personne-seule-smic",
+    "intent": "apl personne seule smic",
+    "title": "APL personne seule au SMIC : estimation 2026",
+    "description": "Estimation APL pour une personne seule avec un salaire proche du SMIC et un loyer courant.",
+    "summary": "Cette page dérive directement du pattern le plus fort observé sur le cluster APL autour du SMIC et de la personne seule.",
+    "audience": "Personne seule au SMIC",
+    "tags": [
+      "celibataire",
+      "smic",
+      "province",
+      "actif"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1430,
+      "loyer_mensuel": 610,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier le salaire net réellement retenu sur la période de référence.",
+      "Comparer avec un loyer autour de 550 EUR puis de 700 EUR.",
+      "Tester aussi un scénario avec reprise d'emploi ou prime d'activité."
+    ],
+    "faq": [
+      {
+        "question": "Une personne seule au SMIC peut-elle encore toucher l'APL ?",
+        "answer": "Oui, dans certains cas. Le loyer, la zone et les revenus retenus peuvent encore laisser une aide logement indicative."
+      },
+      {
+        "question": "Le fait d'être seul change-t-il fortement le calcul ?",
+        "answer": "Oui, la composition du foyer joue sur le plafond de loyer et sur l'équilibre global du calcul."
+      }
+    ]
+  },
+  {
+    "slug": "apl-smic-seul",
+    "intent": "apl smic seul",
+    "title": "APL avec SMIC seul : estimation 2026",
+    "description": "Simulation APL pour une personne seule rémunérée au SMIC avec un loyer moyen.",
+    "summary": "Cette page vise une variante de requête très proche du pattern gagnant déjà testé par Google.",
+    "audience": "Personne seule avec salaire au SMIC",
+    "tags": [
+      "celibataire",
+      "smic",
+      "province",
+      "actif"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1460,
+      "loyer_mensuel": 640,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si le loyer retenu est bien indiqué hors charges.",
+      "Comparer avec un petit loyer si vous hésitez entre deux logements.",
+      "Tester aussi un scénario sans activité pour mesurer l'écart."
+    ],
+    "faq": [
+      {
+        "question": "Le SMIC seul suffit-il à faire tomber l'APL à zéro ?",
+        "answer": "Pas automatiquement. Tout dépend du loyer, de la zone et des ressources retenues par la CAF."
+      },
+      {
+        "question": "Pourquoi deux situations proches peuvent-elles donner des résultats différents ?",
+        "answer": "Parce que le niveau exact de loyer retenu et les revenus de référence peuvent faire varier le calcul final."
+      }
+    ]
+  },
+  {
+    "slug": "apl-celibataire-petit-salaire",
+    "intent": "apl celibataire petit salaire",
+    "title": "APL célibataire avec petit salaire : estimation 2026",
+    "description": "Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+    "summary": "Cette page étend le pattern célibataire plus petit revenu, qui ressort déjà à la fois dans les pages et dans les requêtes.",
+    "audience": "Célibataire avec petit salaire",
+    "tags": [
+      "celibataire",
+      "petit-revenu",
+      "province",
+      "actif"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1180,
+      "loyer_mensuel": 590,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si vous avez des revenus variables ou des primes ponctuelles.",
+      "Comparer avec un loyer légèrement plus élevé en zone tendue.",
+      "Tester un scénario avec personne seule au SMIC pour comparer."
+    ],
+    "faq": [
+      {
+        "question": "Un petit salaire augmente-t-il fortement l'APL ?",
+        "answer": "Il peut rendre l'estimation plus favorable, mais le loyer retenu et la zone restent déterminants."
+      },
+      {
+        "question": "Faut-il déclarer toutes les aides perçues ?",
+        "answer": "Oui, la vérification finale doit toujours intégrer les autres ressources prises en compte par la CAF."
+      }
+    ]
+  },
+  {
+    "slug": "apl-chomage-personne-seule",
+    "intent": "apl chomage personne seule",
+    "title": "APL au chômage pour une personne seule : estimation 2026",
+    "description": "Estimation APL pour une personne seule sans activité avec un loyer courant.",
+    "summary": "Cette page prolonge le pattern chômage qui remonte déjà dans les requêtes et sur la page chômage avec loyer moyen.",
+    "audience": "Personne seule au chômage",
+    "tags": [
+      "celibataire",
+      "chomage",
+      "province",
+      "petit-revenu"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 980,
+      "loyer_mensuel": 610,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si les revenus retenus correspondent bien à votre situation actuelle.",
+      "Comparer avec une reprise d'emploi partielle si vous envisagez un retour rapide au travail.",
+      "Tester aussi un loyer plus bas pour mesurer le reste à charge."
+    ],
+    "faq": [
+      {
+        "question": "Le chômage ouvre-t-il plus facilement droit à l'APL ?",
+        "answer": "Souvent oui si les ressources retenues baissent, mais le montant dépend toujours du loyer plafonné et de la zone."
+      },
+      {
+        "question": "L'ARE est-elle prise en compte ?",
+        "answer": "Oui, selon la période et les règles retenues par la CAF, l'indemnisation chômage peut influencer le calcul."
+      }
+    ]
+  },
+  {
+    "slug": "apl-chomage-avec-enfant",
+    "intent": "apl chomage avec enfant",
+    "title": "APL au chômage avec enfant : estimation 2026",
+    "description": "Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+    "summary": "Cette page permet d'étendre le pattern chômage vers une situation familiale, souvent plus porteuse en besoin utilisateur.",
+    "audience": "Parent avec un enfant au chômage",
+    "tags": [
+      "parent-isole",
+      "chomage",
+      "province",
+      "1-enfant"
+    ],
+    "input": {
+      "situation": "monoparental",
+      "enfants": 1,
+      "revenus_mensuels": 1100,
+      "loyer_mensuel": 760,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si toutes les ressources de remplacement sont bien prises en compte.",
+      "Comparer avec un scénario parent isolé en emploi partiel.",
+      "Tester une variante avec deux enfants si la composition familiale évolue."
+    ],
+    "faq": [
+      {
+        "question": "Le fait d'avoir un enfant change-t-il beaucoup l'estimation APL ?",
+        "answer": "Oui, la composition familiale peut rendre le calcul plus favorable, mais le loyer et les ressources restent décisifs."
+      },
+      {
+        "question": "Les allocations familiales suffisent-elles à annuler l'APL ?",
+        "answer": "Pas automatiquement. Il faut regarder l'ensemble des revenus retenus et le plafond de loyer applicable."
+      }
+    ]
+  },
+  {
+    "slug": "apl-reprise-emploi-loyer-eleve",
+    "intent": "apl reprise emploi loyer eleve",
+    "title": "APL avec reprise d'emploi et loyer élevé : estimation 2026",
+    "description": "Exemple APL pour une personne seule qui reprend une activité avec un loyer déjà élevé.",
+    "summary": "Cette page dérive du pattern reprise d'emploi déjà testé, avec une variable loyer élevé qui aide à capter une intention plus concrète.",
+    "audience": "Personne seule en reprise d'emploi avec loyer élevé",
+    "tags": [
+      "celibataire",
+      "reprise-emploi",
+      "loyer-eleve",
+      "province"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1380,
+      "loyer_mensuel": 820,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer avec un loyer moyen pour mesurer la part réellement retenue.",
+      "Vérifier si vos premiers revenus d'activité changent fortement l'estimation.",
+      "Tester aussi une version chômage si la reprise n'est pas encore stabilisée."
+    ],
+    "faq": [
+      {
+        "question": "Une reprise d'emploi fait-elle baisser l'APL rapidement ?",
+        "answer": "Elle peut réduire l'aide selon les revenus retenus, mais un loyer élevé peut encore laisser un droit indicatif."
+      },
+      {
+        "question": "Le plafond de loyer limite-t-il l'effet d'un loyer plus cher ?",
+        "answer": "Oui, au-delà d'un certain seuil, une partie du loyer n'augmente plus le montant retenu."
+      }
+    ]
+  },
+  {
+    "slug": "apl-couple-petit-revenu",
+    "intent": "apl couple petit revenu",
+    "title": "APL couple avec petit revenu : estimation 2026",
+    "description": "Simulation APL pour un couple sans enfant avec revenus modestes et loyer moyen.",
+    "summary": "Cette page prolonge le pattern couple sans enfant déjà bien positionné, avec un angle plus resserré sur les petits revenus.",
+    "audience": "Couple sans enfant avec petit revenu",
+    "tags": [
+      "couple",
+      "petit-revenu",
+      "province",
+      "sans-enfant"
+    ],
+    "input": {
+      "situation": "couple",
+      "enfants": 0,
+      "revenus_mensuels": 1700,
+      "loyer_mensuel": 690,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si les revenus des deux adultes sont bien additionnés.",
+      "Comparer avec un couple au loyer élevé pour mesurer l'écart.",
+      "Tester aussi une variante avec un enfant si la situation évolue."
+    ],
+    "faq": [
+      {
+        "question": "Un couple sans enfant peut-il encore toucher l'APL avec des revenus modestes ?",
+        "answer": "Oui, surtout si le loyer reste significatif au regard des ressources globales du foyer."
+      },
+      {
+        "question": "Le montant baisse-t-il vite dès que les deux salaires augmentent ?",
+        "answer": "Oui, l'ensemble des revenus retenus du couple peut réduire l'aide assez rapidement."
+      }
+    ]
+  },
+  {
+    "slug": "apl-couple-un-enfant-loyer-moyen",
+    "intent": "apl couple 1 enfant loyer moyen",
+    "title": "APL couple avec 1 enfant et loyer moyen : estimation 2026",
+    "description": "Cas APL pour un couple avec un enfant dans une situation locative standard.",
+    "summary": "Cette page permet de densifier le sous-cluster couple plus enfant, sans repartir d'une combinaison trop large.",
+    "audience": "Couple avec un enfant et loyer moyen",
+    "tags": [
+      "couple",
+      "1-enfant",
+      "province",
+      "famille"
+    ],
+    "input": {
+      "situation": "couple",
+      "enfants": 1,
+      "revenus_mensuels": 2150,
+      "loyer_mensuel": 780,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si l'enfant est bien compté à charge sur toute la période.",
+      "Comparer avec un couple sans enfant pour mesurer l'impact du foyer.",
+      "Tester un logement légèrement plus grand si vous hésitez entre deux loyers."
+    ],
+    "faq": [
+      {
+        "question": "Le premier enfant change-t-il beaucoup le calcul APL ?",
+        "answer": "Il peut améliorer l'estimation, mais le niveau exact de revenus et le loyer retenu restent essentiels."
+      },
+      {
+        "question": "Faut-il un grand loyer pour conserver l'APL en couple avec enfant ?",
+        "answer": "Pas forcément, mais un loyer plus significatif par rapport aux revenus rend l'aide plus probable."
+      }
+    ]
+  },
+  {
+    "slug": "apl-famille-trois-enfants",
+    "intent": "apl 3 enfants",
+    "title": "APL famille avec 3 enfants : estimation 2026",
+    "description": "Estimation APL pour une famille avec trois enfants et un loyer adapté à un logement plus grand.",
+    "summary": "Cette page prolonge naturellement les signaux déjà vus sur les familles avec enfants et la requête générique autour de l'APL avec enfants.",
+    "audience": "Famille avec trois enfants",
+    "tags": [
+      "famille",
+      "3-enfants",
+      "province",
+      "couple"
+    ],
+    "input": {
+      "situation": "couple",
+      "enfants": 3,
+      "revenus_mensuels": 2550,
+      "loyer_mensuel": 980,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier le nombre exact d'enfants retenus au foyer.",
+      "Comparer avec un logement social si vous avez accès à ce type de parc.",
+      "Tester aussi une variante avec deux enfants pour voir l'effet de composition familiale."
+    ],
+    "faq": [
+      {
+        "question": "Avec trois enfants, l'APL monte-t-elle toujours fortement ?",
+        "answer": "Le foyer peut rendre l'estimation plus favorable, mais le niveau global de revenus reste décisif."
+      },
+      {
+        "question": "Un logement plus grand augmente-t-il automatiquement l'APL ?",
+        "answer": "Pas automatiquement, car le plafond de loyer limite la part réellement retenue."
+      }
+    ]
+  },
+  {
+    "slug": "apl-etudiant-studio",
+    "intent": "apl etudiant studio",
+    "title": "APL étudiant en studio : estimation 2026",
+    "description": "Scénario APL pour un étudiant seul en studio avec budget serré.",
+    "summary": "Cette page reste très proche du cluster étudiant déjà visible, avec un angle logement simple et très courant.",
+    "audience": "Étudiant en studio",
+    "tags": [
+      "etudiant",
+      "studio",
+      "province",
+      "petit-revenu"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 520,
+      "loyer_mensuel": 540,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si le studio est bien déclaré en location indépendante.",
+      "Comparer avec une résidence étudiante ou une colocation.",
+      "Tester plusieurs niveaux de revenus si vous avez un job étudiant."
+    ],
+    "faq": [
+      {
+        "question": "Un studio étudiant ouvre-t-il souvent droit à l'APL ?",
+        "answer": "Oui, c'est un cas fréquent, surtout avec peu de revenus et un loyer adapté à la zone."
+      },
+      {
+        "question": "Le CROUS et le studio privé donnent-ils le même résultat ?",
+        "answer": "Non, le type de logement peut modifier le montant retenu et les conditions de calcul."
+      }
+    ]
+  },
+  {
+    "slug": "apl-etudiant-petit-loyer",
+    "intent": "apl etudiant petit loyer",
+    "title": "APL étudiant avec petit loyer : estimation 2026",
+    "description": "Exemple APL pour un étudiant avec un loyer modéré et de faibles revenus.",
+    "summary": "Cette page couvre une variante utile du cluster étudiant, pour les profils qui arbitrent entre petit loyer et aide logement.",
+    "audience": "Étudiant avec petit loyer",
+    "tags": [
+      "etudiant",
+      "petit-loyer",
+      "province",
+      "petit-revenu"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 450,
+      "loyer_mensuel": 420,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si le loyer retenu correspond bien à votre part réelle.",
+      "Comparer avec un studio plus cher ou une colocation.",
+      "Tester aussi un scénario étudiant en grande ville."
+    ],
+    "faq": [
+      {
+        "question": "Un petit loyer réduit-il forcément l'APL d'un étudiant ?",
+        "answer": "Le montant peut être plus faible, mais le reste à charge global peut rester plus favorable."
+      },
+      {
+        "question": "Faut-il quand même faire une simulation si le loyer est bas ?",
+        "answer": "Oui, car même un loyer modéré peut laisser une estimation utile selon vos revenus."
+      }
+    ]
+  },
+  {
+    "slug": "apl-alternant-paris",
+    "intent": "apl alternant paris",
+    "title": "APL alternant à Paris : estimation 2026",
+    "description": "Estimation APL pour un alternant en location à Paris avec salaire modeste.",
+    "summary": "Cette page dérive d'un pattern déjà cliqué sur alternant, en ajoutant l'angle géolocalisé Paris qui reste très défendable.",
+    "audience": "Alternant à Paris",
+    "tags": [
+      "alternant",
+      "paris",
+      "idf",
+      "actif"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 980,
+      "loyer_mensuel": 780,
+      "region": "idf",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier votre revenu net réellement retenu sur la période.",
+      "Comparer avec une colocation si le loyer parisien est élevé.",
+      "Tester aussi un scénario apprenti si votre contrat change."
+    ],
+    "faq": [
+      {
+        "question": "Un alternant à Paris peut-il encore toucher l'APL ?",
+        "answer": "Oui, surtout si le loyer reste élevé au regard du salaire d'alternance et de la zone retenue."
+      },
+      {
+        "question": "Le salaire d'alternance est-il pris en compte ?",
+        "answer": "Oui, il influence le calcul, d'où l'intérêt d'une simulation pré-remplie et d'une vérification finale."
+      }
+    ]
+  },
+  {
+    "slug": "apl-apprenti-loyer-500",
+    "intent": "apl apprenti loyer 500",
+    "title": "APL apprenti avec loyer de 500 EUR : estimation 2026",
+    "description": "Cas APL pour un apprenti avec loyer modéré et revenus de début d'activité.",
+    "summary": "Cette page suit le pattern apprenti déjà testé, avec une variable de loyer simple qui correspond à une vraie recherche utilitaire.",
+    "audience": "Apprenti avec loyer de 500 EUR",
+    "tags": [
+      "apprenti",
+      "petit-loyer",
+      "province",
+      "actif"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 820,
+      "loyer_mensuel": 500,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si le bail indique bien un loyer hors charges.",
+      "Comparer avec un loyer à 600 EUR pour mesurer l'écart.",
+      "Tester aussi une version alternant si votre statut est proche."
+    ],
+    "faq": [
+      {
+        "question": "Un apprenti avec petit loyer peut-il toucher l'APL ?",
+        "answer": "Oui, le statut d'apprenti et le niveau de revenus peuvent laisser une aide indicative selon la zone."
+      },
+      {
+        "question": "Le loyer à 500 EUR est-il trop bas pour garder l'APL ?",
+        "answer": "Pas forcément. Le montant peut être plus modéré, mais l'aide reste possible selon votre situation."
+      }
+    ]
+  },
+  {
+    "slug": "apl-celibataire-lyon",
+    "intent": "apl celibataire lyon",
+    "title": "APL célibataire à Lyon : estimation 2026",
+    "description": "Simulation APL pour une personne seule locataire à Lyon avec budget urbain classique.",
+    "summary": "Cette page complète le trio des grandes villes déjà visibles avec Paris, Marseille et Toulouse.",
+    "audience": "Célibataire à Lyon",
+    "tags": [
+      "celibataire",
+      "lyon",
+      "province",
+      "petit-revenu"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1280,
+      "loyer_mensuel": 690,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer avec Paris si vous hésitez entre deux zones tendues.",
+      "Vérifier si le loyer retenu est bien hors charges.",
+      "Tester aussi un scénario étudiant si votre situation est hybride."
+    ],
+    "faq": [
+      {
+        "question": "Un célibataire à Lyon peut-il encore toucher l'APL ?",
+        "answer": "Oui, surtout avec revenus modérés et loyer urbain significatif, même si le plafond de loyer limite le calcul."
+      },
+      {
+        "question": "Lyon est-elle plus favorable que Paris pour l'APL ?",
+        "answer": "Le calcul dépend de la zone et du loyer retenu. Le reste à charge peut parfois être plus supportable hors Île-de-France."
+      }
+    ]
+  },
+  {
+    "slug": "apl-etudiant-toulouse",
+    "intent": "apl etudiant toulouse",
+    "title": "APL étudiant à Toulouse : estimation 2026",
+    "description": "Exemple APL pour un étudiant à Toulouse avec loyer modéré et revenus limités.",
+    "summary": "Cette page étend le cluster étudiant ville, déjà présent sur Paris et Lyon, vers une ville universitaire très naturelle.",
+    "audience": "Étudiant à Toulouse",
+    "tags": [
+      "etudiant",
+      "toulouse",
+      "province",
+      "petit-revenu"
+    ],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 520,
+      "loyer_mensuel": 560,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Vérifier si le logement est bien éligible à l'APL.",
+      "Comparer avec une colocation si vous avez un budget serré.",
+      "Tester aussi une version étudiant à Lyon pour situer l'écart."
+    ],
+    "faq": [
+      {
+        "question": "Un étudiant à Toulouse peut-il toucher une APL utile ?",
+        "answer": "Oui, avec peu de revenus et un loyer cohérent avec la zone, une estimation indicative reste fréquente."
+      },
+      {
+        "question": "Le montant est-il souvent proche de celui de Lyon ?",
+        "answer": "Pas exactement. Le loyer, la zone et le type de logement font varier l'ordre de grandeur."
+      }
+    ]
   }
 ];
