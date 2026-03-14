@@ -16,6 +16,20 @@ const TEXT_EXTENSIONS = new Set([
 const LT_EXTENSIONS = new Set([".html", ".md", ".txt"]);
 
 const SCOPE_CONFIG = {
+  "priority-pages": [
+    "src/pages/are.html",
+    "src/pages/apl.html",
+    "src/pages/rsa.html",
+    "src/pages/prime-activite.html",
+    "src/pages/asf.html",
+    "src/pages/notaire.html",
+    "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
+    "src/pages/blog/frais-notaire-departements.html",
+    "src/pages/blog/departements/frais-notaire-56.html",
+    "src/pages/blog/departements/frais-notaire-38.html",
+    "src/pages/blog/departements/frais-notaire-06.html",
+    "src/pages/apl/apl-celibataire-smic/index.html",
+  ],
   "pseo-source": [
     "data/pseo",
     "scripts/lib/pseo",

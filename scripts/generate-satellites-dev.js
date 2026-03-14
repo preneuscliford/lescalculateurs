@@ -1,9 +1,13 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const require = createRequire(import.meta.url);
+const { readTextFile } = require("./encoding.cjs");
+const { normalizeFrenchText } = require("./lib/french-normalization.cjs");
 
 const satellitesTxtDir = path.resolve(__dirname, "../pages_satellite_txt");
 const srcPagesDir = path.resolve(__dirname, "../src/pages");
@@ -69,7 +73,7 @@ function main() {
 
   txtFiles.forEach((fileName) => {
     const txtPath = path.join(satellitesTxtDir, fileName);
-    const raw = fs.readFileSync(txtPath, "utf-8");
+    const raw = normalizeFrenchText(readTextFile(txtPath));
     const trimmed = raw.trim();
     if (!trimmed || trimmed === "(placeholder content)") {
       return;
