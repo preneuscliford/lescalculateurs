@@ -2,12 +2,16 @@ import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath, pathToFileURL } from "url";
+import { createRequire } from "module";
 
 import { aplPilotScenarios } from "../data/pseo/apl-pilot-scenarios.js";
 import {
   isGeneratedPseoAplPage,
   renderAPLScenarioPage,
 } from "./lib/pseo/apl-pseo-renderer.js";
+
+const require = createRequire(import.meta.url);
+const { normalizeFrenchText } = require("./lib/french-normalization.cjs");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,7 +28,9 @@ const target = args.get("target") || "src";
 const generatedAt = new Date().toISOString().slice(0, 10);
 
 async function main() {
-  validateScenarios(aplPilotScenarios);
+  const sanitizedScenarios = aplPilotScenarios.map(sanitizeAplScenario);
+
+  validateScenarios(sanitizedScenarios);
 
   const engine = await loadAplEngine();
   const targetConfig = getTargetConfig(target);
@@ -33,10 +39,10 @@ async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedPages(
     outputDir,
-    new Set(aplPilotScenarios.map((item) => normalizeSlug(item.slug))),
+    new Set(sanitizedScenarios.map((item) => normalizeSlug(item.slug))),
   );
 
-  const enriched = aplPilotScenarios.map((scenario) => {
+  const enriched = sanitizedScenarios.map((scenario) => {
     const calc = engine.calculerAPL(scenario.input);
     if (!calc.success || !calc.data) {
       throw new Error(
@@ -80,6 +86,64 @@ async function main() {
   }
 
   console.log(`PSEO APL: ${enriched.length} pages generees dans ${outputDir}`);
+}
+
+function sanitizeAplScenario(scenario) {
+  const sanitizeText = (value) =>
+    typeof value === "string" ? normalizeFrenchText(value) : value;
+
+  const sanitizeFaqItem = (item) => ({
+    ...item,
+    question: sanitizeText(item.question),
+    answer: sanitizeText(item.answer),
+  });
+
+  const sanitizePilotProduct = (pilotProduct) => {
+    if (!pilotProduct) return pilotProduct;
+
+    return {
+      ...pilotProduct,
+      variants: Array.isArray(pilotProduct.variants)
+        ? pilotProduct.variants.map((item) => ({
+            ...item,
+            label: sanitizeText(item.label),
+            description: sanitizeText(item.description),
+          }))
+        : pilotProduct.variants,
+      drivers: Array.isArray(pilotProduct.drivers)
+        ? pilotProduct.drivers.map((item) => ({
+            ...item,
+            title: sanitizeText(item.title),
+            description: sanitizeText(item.description),
+          }))
+        : pilotProduct.drivers,
+      comparisonLinks: Array.isArray(pilotProduct.comparisonLinks)
+        ? pilotProduct.comparisonLinks.map((item) => ({
+            ...item,
+            label: sanitizeText(item.label),
+          }))
+        : pilotProduct.comparisonLinks,
+      journey: Array.isArray(pilotProduct.journey)
+        ? pilotProduct.journey.map(sanitizeText)
+        : pilotProduct.journey,
+    };
+  };
+
+  return {
+    ...scenario,
+    intent: sanitizeText(scenario.intent),
+    title: sanitizeText(scenario.title),
+    description: sanitizeText(scenario.description),
+    summary: sanitizeText(scenario.summary),
+    audience: sanitizeText(scenario.audience),
+    checklist: Array.isArray(scenario.checklist)
+      ? scenario.checklist.map(sanitizeText)
+      : scenario.checklist,
+    faq: Array.isArray(scenario.faq)
+      ? scenario.faq.map(sanitizeFaqItem)
+      : scenario.faq,
+    pilotProduct: sanitizePilotProduct(scenario.pilotProduct),
+  };
 }
 
 function validateScenarios(scenarios) {

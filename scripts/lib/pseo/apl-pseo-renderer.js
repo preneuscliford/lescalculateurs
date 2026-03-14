@@ -1,3 +1,11 @@
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const {
+  normalizeFrenchText: normalizeFrenchCopy,
+  repairMojibakeText,
+} = require("../french-normalization.cjs");
+
 const DOMAIN = "https://www.lescalculateurs.fr";
 const PILLAR_PATH = "/pages/apl";
 const GENERATED_MARKER = "<!-- GENERATED:PSEO:APL -->";
@@ -257,8 +265,10 @@ function repairCorruptedFrench(value) {
 }
 
 function toFrenchDisplayText(value) {
-  return repairCorruptedFrench(value)
-    .replace(/\bScenario\b/g, "Sc\u00e9nario")
+  return normalizeFrenchCopy(
+    repairMojibakeText(
+      repairCorruptedFrench(value)
+        .replace(/\bScenario\b/g, "Sc\u00e9nario")
     .replace(/\bscenario\b/g, "sc\u00e9nario")
     .replace(/\bScenarios\b/g, "Sc\u00e9narios")
     .replace(/\bscenarios\b/g, "sc\u00e9narios")
@@ -438,11 +448,13 @@ function toFrenchDisplayText(value) {
     .replace(/\bA ([0-9])/g, "\u00c0 $1")
     .replace(/\bcomplete\b/g, "compl\u00e8te")
     .replace(/\bComplete\b/g, "Compl\u00e8te")
-    .replace(/\bmodifi?r\b/g, "modifier")
-    .replace(/\brecalcul?r\b/g, "recalculer")
-    .replace(/\bdes son\b/g, "d\u00e8s son")
-    .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
-    .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres");
+        .replace(/\bmodifi?r\b/g, "modifier")
+        .replace(/\brecalcul?r\b/g, "recalculer")
+        .replace(/\bdes son\b/g, "d\u00e8s son")
+        .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
+        .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres"),
+    ),
+  );
 }
 
 function renderText(value) {

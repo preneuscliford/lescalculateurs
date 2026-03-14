@@ -32,7 +32,7 @@ Requetes qui ont deja commence a produire des clics ou des impressions utiles:
 
 - `simulation asf`
 - `simulation rsa`
-- `montant apl chomage`
+- `montant apl chômage`
 - `simulation are`
 - `calcul are 2026`
 - `smic apl`
@@ -40,7 +40,7 @@ Requetes qui ont deja commence a produire des clics ou des impressions utiles:
 - `simulateur prime d'activite`
 - `simulateur are`
 - `apl smic seul`
-- `calcul chomage 2026`
+- `calcul chômage 2026`
 - `simulateur cumul are et salaire`
 - `montant asf 2026`
 - `simulation rsa couple`
@@ -61,19 +61,19 @@ Requetes qui ont deja commence a produire des clics ou des impressions utiles:
 Les requetes qui remontent appartiennent deja a 5 familles claires:
 
 1. `APL`
-   Exemples: `smic apl`, `apl personne seule smic`, `montant apl chomage`
+ Exemples: `smic apl`, `apl personne seule smic`, `montant apl chômage`
 
 2. `RSA`
-   Exemples: `simulation rsa`, `simulation rsa couple`, `simulateur rsa`
+ Exemples: `simulation rsa`, `simulation rsa couple`, `simulateur rsa`
 
 3. `ARE`
-   Exemples: `simulation are`, `calcul are 2026`, `simulateur are france travail 2026`
+ Exemples: `simulation are`, `calcul are 2026`, `simulateur are france travail 2026`
 
 4. `Prime d'activite`
-   Exemples: `simulateur prime d'activite`, `simulateur prime d'activite caf 2026`
+ Exemples: `simulateur prime d'activite`, `simulateur prime d'activite caf 2026`
 
 5. `Longue traine locale / verticale`
-   Exemple: `frais de notaire morbihan`
+ Exemple: `frais de notaire morbihan`
 
 Conclusion:
 Google comprend deja le site comme un mix de:
@@ -91,9 +91,9 @@ Avant de creer de nouveaux lots, on consolide les pages qui sont deja proches de
 
 Pages a renforcer en premier:
 
-- `/pages/apl/apl-celibataire-smic`
-- `/pages/apl/apl-chomage-loyer-moyen`
-- `/pages/apl/apl-celibataire-paris-petit-revenu`
+- `/pages/apl/apl-célibataire-smic`
+- `/pages/apl/apl-chômage-loyer-moyen`
+- `/pages/apl/apl-célibataire-paris-petit-revenu`
 - `/pages/apl/apl-loyer-500-revenu-900`
 
 Intentions a servir mieux:
@@ -101,7 +101,7 @@ Intentions a servir mieux:
 - `smic apl`
 - `apl personne seule smic`
 - `apl smic seul`
-- `montant apl chomage`
+- `montant apl chômage`
 
 ### Lot 2 - RSA
 
@@ -148,7 +148,7 @@ La page doit coller a une seule intention principale.
 Exemples:
 
 - `APL au SMIC pour une personne seule`
-- `APL en cas de chomage`
+- `APL en cas de chômage`
 - `Simulation RSA pour un couple`
 - `Calcul ARE 2026`
 
@@ -166,7 +166,7 @@ Le haut de page doit donner tout de suite:
 - le caractere non contractuel
 - le CTA vers le simulateur complet
 
-### 3. Scenario visible
+### 3. Scénario visible
 
 Chaque page doit afficher:
 
@@ -181,12 +181,12 @@ Chaque page doit afficher:
 Chaque page doit rappeler:
 
 - que l'estimation est indicative
-- que le montant reel depend de la situation declaree
-- que la CAF / France Travail / organisme payeur reste la reference finale
+- que le montant réel depend de la situation declaree
+- que la CAF / France Travail / organisme payeur reste la référence finale
 
 ### 5. FAQ courte et ciblee
 
-2 a 4 questions suffisent, mais elles doivent repondre aux objections reelles.
+2 a 4 questions suffisent, mais elles doivent repondre aux objections réelles.
 
 ### 6. Maillage interne
 
@@ -216,14 +216,14 @@ On les derive a partir des motifs qui montent deja.
 Exemples:
 
 - `apl personne seule smic`
-- `apl celibataire petit revenu`
+- `apl célibataire petit revenu`
 - `rsa couple petit salaire`
 
 ### Pattern B - aide + situation de vie
 
 Exemples:
 
-- `montant apl chomage`
+- `montant apl chômage`
 - `rsa fin de droits`
 - `are cumul salaire`
 
@@ -239,8 +239,8 @@ Exemples:
 
 Exemples:
 
-- `apl etudiant paris`
-- `apl celibataire marseille`
+- `apl étudiant paris`
+- `apl célibataire marseille`
 
 Important:
 les pages ville ne doivent venir qu'apres validation d'un pattern national deja performant.
@@ -267,9 +267,9 @@ Premiere vague de derivation:
 
 - `apl-personne-seule-smic`
 - `apl-smic-seul`
-- `apl-chomage`
-- `apl-chomage-personne-seule`
-- `apl-celibataire-petit-salaire`
+- `apl-chômage`
+- `apl-chômage-personne-seule`
+- `apl-célibataire-petit-salaire`
 
 ### RSA
 
@@ -305,7 +305,7 @@ On n'ouvre pas un nouveau gros lot tant que ces KPI ne sont pas lisibles sur 4 a
 
 On peut passer d'une logique de consolidation a une logique d'extension si:
 
-- plusieurs pages d'un meme cluster prennent des impressions
+- plusieurs pages d'un même cluster prennent des impressions
 - au moins quelques pages obtiennent des clics
 - le CTR est defendable sur les pages d'intention forte
 - Google continue d'indexer les nouvelles pages sans ralentissement net
@@ -317,7 +317,7 @@ Le moat sera:
 
 1. un simulateur meilleur
 2. des pages plus precises sur l'intention
-3. des scenarios reels mieux presentes
+3. des scenarios réels mieux presentes
 4. une vitesse d'execution plus forte
 5. une future couche de donnees proprietaires / observatoire
 
@@ -345,7 +345,7 @@ Le but est d'ameliorer la valeur produit des pages qui prennent deja des impress
 
 Pages pilotes:
 
-1. `APL`: `/pages/apl/apl-celibataire-smic`
+1. `APL`: `/pages/apl/apl-célibataire-smic`
 2. `RSA`: une page existante la plus proche de `simulation rsa` ou `simulation rsa couple`
 3. `ARE`: une page existante la plus proche de `simulation are` ou `cumul are et salaire`
 
@@ -381,7 +381,7 @@ Format:
 Exemples de labels:
 
 - `Tester avec un loyer plus bas`
-- `Comparer avec le chomage`
+- `Comparer avec le chômage`
 - `Voir le cas avec un enfant`
 
 ### Bloc 2 - Ce qui change le plus le montant
@@ -436,7 +436,7 @@ Texte court, tres actionnable, sans jargon.
 
 Page:
 
-- `/pages/apl/apl-celibataire-smic`
+- `/pages/apl/apl-célibataire-smic`
 
 Pourquoi cette page:
 
@@ -452,7 +452,7 @@ Ajouter un bloc sous `Estimation rapide` ou juste apres le scenario:
 
 - `Tester avec un loyer de 500 EUR`
 - `Tester avec un loyer de 700 EUR`
-- `Comparer avec une personne seule au chomage`
+- `Comparer avec une personne seule au chômage`
 
 Destination cible:
 
@@ -464,7 +464,7 @@ Destination cible:
 Texte a couvrir:
 
 - le loyer retenu par rapport au plafond
-- le niveau reel de revenus retenus
+- le niveau réel de revenus retenus
 - l'eventuelle prime d'activite
 - la difference entre province et zone plus tendue
 
@@ -476,8 +476,8 @@ expliquer pourquoi deux personnes au SMIC peuvent obtenir des montants different
 Liens prioritaires:
 
 - `/pages/apl/apl-loyer-500-revenu-900`
-- `/pages/apl/apl-chomage-loyer-moyen`
-- `/pages/apl/apl-celibataire-paris-petit-revenu`
+- `/pages/apl/apl-chômage-loyer-moyen`
+- `/pages/apl/apl-célibataire-paris-petit-revenu`
 - `/pages/apl`
 
 #### 4. Parcours recommande
@@ -553,7 +553,7 @@ faire de cette page une entree produit sur les cas de reprise d'emploi.
 
 Points a couvrir:
 
-- salaire journalier de reference si applicable
+- salaire journalier de référence si applicable
 - duree / situation d'indemnisation
 - reprise d'activite
 - temps partiel
@@ -574,7 +574,7 @@ Texte type:
 
 1. Identifiez si vous etes en simple estimation ou en cumul avec reprise d'emploi.
 2. Comparez un cas sans salaire et un cas a temps partiel.
-3. Lancez ensuite le simulateur complet pour approcher votre situation reelle.
+3. Lancez ensuite le simulateur complet pour approcher votre situation réelle.
 
 ## Ce qu'on cherche a mesurer avec ce pilote
 
@@ -686,7 +686,7 @@ ouvrir le simulateur avec des valeurs deja pre-remplies depuis la page pSEO.
 - Difficulte: moyenne
 
 But:
-montrer l'impact d'un enfant, d'un loyer plus haut, d'un passage au chomage, d'un temps partiel, etc.
+montrer l'impact d'un enfant, d'un loyer plus haut, d'un passage au chômage, d'un temps partiel, etc.
 
 ### 8. Observatoire leger par cluster
 

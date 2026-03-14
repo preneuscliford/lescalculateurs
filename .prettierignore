@@ -1,0 +1,7 @@
+dist
+node_modules
+.vercel
+coverage
+reports
+temp
+ValeursFoncieres-2024.txt
