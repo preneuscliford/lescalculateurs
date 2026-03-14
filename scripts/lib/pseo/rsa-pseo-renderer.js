@@ -139,8 +139,16 @@ function normalizeFrenchText(value) {
     .replace(/\bvotre situation exacte\b/gi, "votre situation exacte");
 }
 
+function normalizeInlineApproxEuro(value) {
+  return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
+    const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
+    if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
+    return `${prefix}~${numeric.toLocaleString("fr-FR")} €`;
+  });
+}
+
 function renderText(value) {
-  return encodeHtmlEntities(escapeHtml(normalizeFrenchText(value)));
+  return encodeHtmlEntities(escapeHtml(normalizeInlineApproxEuro(normalizeFrenchText(value))));
 }
 
 function renderJsonLd(data) {

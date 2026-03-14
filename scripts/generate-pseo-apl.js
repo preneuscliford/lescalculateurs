@@ -25,7 +25,7 @@ const args = new Map(
 );
 
 const target = args.get("target") || "src";
-const generatedAt = new Date().toISOString().slice(0, 10);
+const generatedAt = formatDisplayDate(new Date());
 
 async function main() {
   const sanitizedScenarios = aplPilotScenarios.map(sanitizeAplScenario);
@@ -56,8 +56,8 @@ async function main() {
       estimate: {
         apl: calc.data.apl_estimee,
         formattedApl: formatApproxEuroAscii(calc.data.apl_estimee),
-        formattedRent: formatEuroAscii(scenario.input.loyer_mensuel),
-        formattedRevenue: formatEuroAscii(scenario.input.revenus_mensuels),
+        formattedRent: formatApproxEuroAscii(scenario.input.loyer_mensuel),
+        formattedRevenue: formatApproxEuroAscii(scenario.input.revenus_mensuels),
         reasonZero: calc.data.raison_zero || "",
       },
     };
@@ -304,11 +304,18 @@ function cleanupGeneratedPages(outputDir, allowedSlugs) {
 }
 
 function formatEuroAscii(value) {
-  return `${Math.round(Number(value) || 0)} EUR`;
+  return `${Math.round(Number(value) || 0).toLocaleString("fr-FR")} €`;
 }
 
 function formatApproxEuroAscii(value) {
-  return `~${Math.round(Number(value) || 0)} EUR`;
+  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} €`;
+}
+
+function formatDisplayDate(date) {
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = String(date.getFullYear());
+  return `${day}-${month}-${year}`;
 }
 
 function normalizeSlug(value) {

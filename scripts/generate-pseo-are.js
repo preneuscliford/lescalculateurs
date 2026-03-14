@@ -13,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const outputDir = path.join(repoRoot, "src", "pages", "are");
-const generatedAt = new Date().toISOString().slice(0, 10);
+const generatedAt = formatDisplayDate(new Date());
 
 async function loadAreEngine() {
   const engineSrc = path.join(repoRoot, "src", "utils", "areCalculEngine.ts");
@@ -97,8 +97,8 @@ async function main() {
       ...scenario,
       estimate: {
         amount: result.montantEstime,
-        formattedAmount: `~${Math.round(result.montantEstime)} EUR`,
-        formattedSalary: `${Math.round(scenario.input.salaireReferent)} EUR`,
+        formattedAmount: formatApproxEuro(result.montantEstime),
+        formattedSalary: formatApproxEuro(scenario.input.salaireReferent),
         durationLabel: result.eligible
           ? `Duree max indicative : ${result.durationMax} mois`
           : "Situation a verifier",
@@ -132,3 +132,14 @@ async function main() {
 }
 
 main();
+
+function formatApproxEuro(value) {
+  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} €`;
+}
+
+function formatDisplayDate(date) {
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = String(date.getFullYear());
+  return `${day}-${month}-${year}`;
+}

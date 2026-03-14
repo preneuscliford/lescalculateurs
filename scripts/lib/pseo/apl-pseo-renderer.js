@@ -208,6 +208,12 @@ function repairCorruptedFrench(value) {
     .replace(/\bconventionn\?\b/g, "conventionn\u00e9")
     .replace(/\br\?ponse\b/g, "r\u00e9ponse")
     .replace(/\br\?pond\b/g, "r\u00e9pond")
+    .replace(/\brequ\?te\b/g, "requ\u00eate")
+    .replace(/\brequ\?tes\b/g, "requ\u00eates")
+    .replace(/\bdiff\?rent\b/g, "diff\u00e9rent")
+    .replace(/\bdiff\?rents\b/g, "diff\u00e9rents")
+    .replace(/\bdiff\?rente\b/g, "diff\u00e9rente")
+    .replace(/\bdiff\?rentes\b/g, "diff\u00e9rentes")
     .replace(/\butilit\?\b/g, "utilit\u00e9")
     .replace(/\bcritere\b/g, "crit\u00e8re")
     .replace(/\bcriteres\b/g, "crit\u00e8res")
@@ -443,6 +449,11 @@ function toFrenchDisplayText(value) {
     .replace(/\ba l aide\b/g, "\u00e0 l'aide")
     .replace(/\ba l activite\b/g, "\u00e0 l'activit\u00e9")
     .replace(/\ba l autre\b/g, "\u00e0 l'autre")
+    .replace(/\brequ \u00e0 te\b/gi, "requ\u00eate")
+    .replace(/\bdiff \u00e0 rent\b/gi, "diff\u00e9rent")
+    .replace(/\bdiff \u00e0 rents\b/gi, "diff\u00e9rents")
+    .replace(/le loyer est bien renseign(?:\s|\&#224;|à)+hors charges/gi, "le loyer est bien renseign\u00e9 hors charges")
+    .replace(/verifier que le loyer est bien renseigne(?:\s|\&#224;|à)+hors charges/gi, "v\u00e9rifier que le loyer est bien renseign\u00e9 hors charges")
     .replace(/\ba revenu\b/g, "\u00e0 revenu")
     .replace(/\ba ([0-9])/g, "\u00e0 $1")
     .replace(/\bA ([0-9])/g, "\u00c0 $1")
@@ -457,8 +468,16 @@ function toFrenchDisplayText(value) {
   );
 }
 
+function normalizeInlineApproxEuro(value) {
+  return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
+    const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
+    if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
+    return `${prefix}~${numeric.toLocaleString("fr-FR")} €`;
+  });
+}
+
 function renderText(value) {
-  return encodeHtmlEntities(escapeHtml(toFrenchDisplayText(value)));
+  return encodeHtmlEntities(escapeHtml(normalizeInlineApproxEuro(toFrenchDisplayText(value))));
 }
 
 function renderJsonLd(data) {
