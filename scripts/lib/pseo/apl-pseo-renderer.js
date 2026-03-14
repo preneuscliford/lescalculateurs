@@ -9,6 +9,7 @@ const {
 const DOMAIN = "https://www.lescalculateurs.fr";
 const PILLAR_PATH = "/pages/apl";
 const GENERATED_MARKER = "<!-- GENERATED:PSEO:APL -->";
+const FAVICON_OG_IMAGE = `${DOMAIN}/assets/favicon-32x32.png`;
 
 const SITUATION_LABELS = {
   seul: "Personne seule",
@@ -837,9 +838,16 @@ export function renderAPLScenarioPage({
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${renderText(scenario.title)}" />
     <meta property="og:description" content="${renderText(scenario.description)}" />
+    <meta property="og:image" content="${FAVICON_OG_IMAGE}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${renderText(scenario.title)}" />
     <meta name="twitter:description" content="${renderText(scenario.description)}" />
+    <meta name="twitter:image" content="${FAVICON_OG_IMAGE}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="${targetConfig.stylesHref}" />
     ${renderJsonLd(breadcrumbSchema)}
     ${renderJsonLd(pageSchema)}
