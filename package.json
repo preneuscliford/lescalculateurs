@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/generate-satellites-dev.js && node scripts/clean-satellite-pages.cjs --target=src && node scripts/generate-pseo-apl.js && node scripts/generate-pseo-rsa.js && node scripts/generate-pseo-are.js && npm run text:normalize:pseo && npm run text:normalize:seo:pseo && vite",
-    "build": "node scripts/verify-utf8.cjs && node scripts/generate-pseo-apl.js && node scripts/generate-pseo-rsa.js && node scripts/generate-pseo-are.js && npm run text:normalize:pseo && npm run text:normalize:seo:pseo && tsc && vite build && node scripts/copy-seo-pages.js && node scripts/clean-satellite-pages.cjs --target=dist && node scripts/add-satellites-to-sitemap.cjs && node scripts/verify-utf8.cjs",
+    "dev": "vite",
+    "build": "node scripts/verify-utf8.cjs && tsc && vite build && node scripts/copy-seo-pages.js && node scripts/clean-satellite-pages.cjs --target=dist && node scripts/add-satellites-to-sitemap.cjs && node scripts/verify-utf8.cjs",
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",

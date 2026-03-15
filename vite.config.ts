@@ -2,31 +2,9 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import fs from "fs";
 import path from "path";
-import { execFileSync } from "child_process";
 import { aplPilotScenarios } from "./data/pseo/apl-pilot-scenarios.js";
 import { rsaPilotScenarios } from "./data/pseo/rsa-pilot-scenarios.js";
 import { arePilotScenarios } from "./data/pseo/are-pilot-scenarios.js";
-
-function generateAplPseoPages() {
-  execFileSync(process.execPath, [resolve(__dirname, "scripts/generate-pseo-apl.js")], {
-    cwd: __dirname,
-    stdio: "pipe",
-  });
-}
-
-function generateRsaPseoPages() {
-  execFileSync(process.execPath, [resolve(__dirname, "scripts/generate-pseo-rsa.js")], {
-    cwd: __dirname,
-    stdio: "pipe",
-  });
-}
-
-function generateArePseoPages() {
-  execFileSync(process.execPath, [resolve(__dirname, "scripts/generate-pseo-are.js")], {
-    cwd: __dirname,
-    stdio: "pipe",
-  });
-}
 
 function collectNestedAplInputs() {
   const aplDir = resolve(__dirname, "src/pages/apl");
@@ -79,6 +57,10 @@ function collectStaticPageInputs() {
     financement: resolve(__dirname, "src/pages/financement.html"),
     "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
     simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
+    "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
+      __dirname,
+      "src/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
+    ),
     apl: resolve(__dirname, "src/pages/apl.html"),
     "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
     "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
@@ -224,13 +206,7 @@ function collectArePilotInputs() {
   return inputs;
 }
 
-export default defineConfig(({ command }) => {
-  if (command === "serve" || command === "build") {
-    generateAplPseoPages();
-    generateRsaPseoPages();
-    generateArePseoPages();
-  }
-
+export default defineConfig(() => {
   const aplNestedInputs = collectNestedAplInputs();
   const aplPilotInputs = collectAplPilotInputs();
   const legacySeoAliasInputs = collectLegacySeoAliasInputs();
