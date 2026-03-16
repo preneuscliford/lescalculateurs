@@ -1,5 +1,6 @@
 import "./tailwind.css";
 import { initializeScrollButtons } from "./utils/scrollButtons";
+import { initializeVercelAnalytics } from "./utils/vercelAnalytics";
 
 function ensureGlobalFavicons() {
   const existingIcon = document.querySelector('link[rel="shortcut icon"], link[rel="icon"]');
@@ -46,6 +47,7 @@ function normalizeBrandLockups() {
 }
 
 function initializeContentRuntime() {
+  initializeVercelAnalytics();
   ensureGlobalFavicons();
   normalizeBrandLockups();
   initializeScrollButtons();

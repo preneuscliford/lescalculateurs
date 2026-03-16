@@ -47,6 +47,7 @@
   "blog:update:2026": "node scripts/update-blog-pages.cjs",
   "blog:revert": "node scripts/revert-blog-pages.cjs",
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "chart.js": "^4.5.1",
     "google-auth-library": "^9.14.3",
     "html2canvas": "^1.4.1",
