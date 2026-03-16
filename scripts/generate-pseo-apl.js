@@ -5,6 +5,7 @@ import { fileURLToPath, pathToFileURL } from "url";
 import { createRequire } from "module";
 
 import { aplPilotScenarios } from "../data/pseo/apl-pilot-scenarios.js";
+import { aplAbsenceRevenuScenarios } from "../data/pseo/apl-absence-revenu-scenarios.js";
 import {
   isGeneratedPseoAplPage,
   renderAPLScenarioPage,
@@ -26,9 +27,10 @@ const args = new Map(
 
 const target = args.get("target") || "src";
 const generatedAt = formatDisplayDate(new Date());
+const aplScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
 
 async function main() {
-  const sanitizedScenarios = aplPilotScenarios.map(sanitizeAplScenario);
+  const sanitizedScenarios = aplScenarios.map(sanitizeAplScenario);
 
   validateScenarios(sanitizedScenarios);
 

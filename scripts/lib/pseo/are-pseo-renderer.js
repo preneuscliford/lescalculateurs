@@ -87,7 +87,7 @@ function normalizeInlineApproxEuro(value) {
   return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
     const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
     if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
-    return `${prefix}~${numeric.toLocaleString("fr-FR")} €`;
+    return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
   });
 }
 
@@ -156,13 +156,13 @@ function renderComparisonTable(scenario, estimate, relatedPages) {
                     page.audience || page.title,
                   )}</a>
                 </td>
-                <td class="px-4 py-3 text-right font-semibold text-slate-900">${escapeHtml(
+                <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderText(
                   page.estimate.formattedAmount,
                 )}</td>
-                <td class="px-4 py-3 text-right text-slate-700">${escapeHtml(
+                <td class="px-4 py-3 text-right text-slate-700">${renderText(
                   page.estimate.formattedSalary,
                 )}</td>
-                <td class="px-4 py-3 text-right text-slate-700">${escapeHtml(
+                <td class="px-4 py-3 text-right text-slate-700">${renderText(
                   `${page.input.agePersonne} ans`,
                 )}</td>
               </tr>`,
@@ -313,14 +313,14 @@ export function renderAREScenarioPage({
         <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-900">Estimation rapide</h2>
           <p class="mt-4 text-lg leading-relaxed text-slate-700">${renderText(
-            `Montant indicatif autour de ${estimate.formattedAmount} par mois pour ce scenario type.`,
+            `Montant indicatif autour de ${estimate.formattedAmount} par mois pour ce scénario type.`,
           )}</p>
           <p class="mt-4 text-slate-700 leading-relaxed">${renderText(
-            `Cette estimation correspond a un profil type : ${scenario.audience}.`,
+            `Cette estimation correspond à un profil type : ${scenario.audience}.`,
           )}</p>
           <div class="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-5">
             <p class="text-sm font-semibold uppercase tracking-wide text-orange-700">R&eacute;sultat estim&eacute;</p>
-            <p class="mt-2 text-2xl font-bold text-slate-900">${escapeHtml(estimate.formattedAmount)} / mois</p>
+            <p class="mt-2 text-2xl font-bold text-slate-900">${renderText(estimate.formattedAmount)} / mois</p>
             <p class="mt-2 text-sm text-slate-700">${renderText(estimate.durationLabel)}</p>
           </div>
         </article>
@@ -360,9 +360,10 @@ export function renderAREScenarioPage({
           "Utilisez le simulateur complet pour verifier votre situation exacte, puis confrontez l'estimation aux references officielles.",
         )}</p>
         <a href="${simulatorUrl}" class="mt-6 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700">Lancer une simulation ARE compl&egrave;te</a>
-        <p class="mt-4 text-sm text-slate-600">Derni&egrave;re modification : ${escapeHtml(generatedAt)}</p>
+        <p class="mt-4 text-sm text-slate-600">Derni&egrave;re modification : ${renderText(generatedAt)}</p>
       </section>
     </main>
   </body>
 </html>`;
 }
+

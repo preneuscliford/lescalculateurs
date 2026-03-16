@@ -11,6 +11,35 @@ const scrollButton = document.getElementById(
   "asf-scroll-to-form",
 ) as HTMLButtonElement;
 
+function readNumberParam(params: URLSearchParams, key: string, fallback = 0): number {
+  const value = Number(params.get(key) ?? fallback);
+  return Number.isFinite(value) ? value : fallback;
+}
+
+function applyPrefillFromUrl(): void {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.toString()) return;
+
+  const situation = params.get("asf-situation");
+  const enfants = readNumberParam(params, "asf-enfants", 1);
+  const revenus = readNumberParam(params, "asf-revenus", 0);
+  const autoSubmit = params.get("asf-autosubmit") === "1";
+
+  const situationInput = document.getElementById("asf-situation") as HTMLSelectElement | null;
+  const enfantsInput = document.getElementById("asf-enfants") as HTMLInputElement | null;
+  const revenusInput = document.getElementById("asf-revenus") as HTMLInputElement | null;
+
+  if (situation && situationInput) situationInput.value = situation;
+  if (enfantsInput) enfantsInput.value = String(enfants);
+  if (revenusInput) revenusInput.value = String(revenus);
+
+  if (autoSubmit && form) {
+    requestAnimationFrame(() => {
+      form.requestSubmit();
+    });
+  }
+}
+
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -68,3 +97,5 @@ if (scrollButton) {
     form?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
+
+applyPrefillFromUrl();

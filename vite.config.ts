@@ -3,13 +3,22 @@ import { resolve } from "path";
 import fs from "fs";
 import path from "path";
 import { aplPilotScenarios } from "./data/pseo/apl-pilot-scenarios.js";
+import { aplAbsenceRevenuScenarios } from "./data/pseo/apl-absence-revenu-scenarios.js";
 import { rsaPilotScenarios } from "./data/pseo/rsa-pilot-scenarios.js";
+import { rsaAbsenceRevenuScenarios } from "./data/pseo/rsa-absence-revenu-scenarios.js";
 import { arePilotScenarios } from "./data/pseo/are-pilot-scenarios.js";
+import { areAbsenceRevenuScenarios } from "./data/pseo/are-absence-revenu-scenarios.js";
+import { asfAbsenceRevenuScenarios } from "./data/pseo/asf-absence-revenu-scenarios.js";
+import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absence-revenu-scenarios.js";
+
+const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
+const allRsaPilotScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
+const allArePilotScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
 
 function collectNestedAplInputs() {
   const aplDir = resolve(__dirname, "src/pages/apl");
   if (!fs.existsSync(aplDir)) return {};
-  const pilotSlugs = new Set(aplPilotScenarios.map((scenario) => String(scenario.slug || "").trim()));
+  const pilotSlugs = new Set(allAplPilotScenarios.map((scenario) => String(scenario.slug || "").trim()));
 
   const inputs: Record<string, string> = {};
   const entries = fs.readdirSync(aplDir, { withFileTypes: true });
@@ -28,7 +37,7 @@ function collectNestedAplInputs() {
 function collectAplPilotInputs() {
   const inputs: Record<string, string> = {};
 
-  for (const scenario of aplPilotScenarios) {
+  for (const scenario of allAplPilotScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
 
@@ -170,7 +179,7 @@ function collectLegacySeoAliasInputs() {
 function collectRsaPilotInputs() {
   const inputs: Record<string, string> = {};
 
-  for (const scenario of rsaPilotScenarios) {
+  for (const scenario of allRsaPilotScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
 
@@ -186,7 +195,7 @@ function collectRsaPilotInputs() {
 function collectArePilotInputs() {
   const inputs: Record<string, string> = {};
 
-  for (const scenario of arePilotScenarios) {
+  for (const scenario of allArePilotScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
 
@@ -206,12 +215,60 @@ function collectArePilotInputs() {
   return inputs;
 }
 
+function collectAsfPilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of asfAbsenceRevenuScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/asf", slug, "index.html");
+    const htmlPath = resolve(__dirname, "src/pages/asf", `${slug}.html`);
+
+    if (fs.existsSync(indexPath)) {
+      inputs[`asf-pilot-${slug}`] = indexPath;
+      continue;
+    }
+
+    if (fs.existsSync(htmlPath)) {
+      inputs[`asf-pilot-${slug}`] = htmlPath;
+    }
+  }
+
+  return inputs;
+}
+
+function collectSimulateursPilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of simulateursAbsenceRevenuScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/simulateurs", slug, "index.html");
+    const htmlPath = resolve(__dirname, "src/pages/simulateurs", `${slug}.html`);
+
+    if (fs.existsSync(indexPath)) {
+      inputs[`simulateurs-pilot-${slug}`] = indexPath;
+      continue;
+    }
+
+    if (fs.existsSync(htmlPath)) {
+      inputs[`simulateurs-pilot-${slug}`] = htmlPath;
+    }
+  }
+
+  return inputs;
+}
+
 export default defineConfig(() => {
   const aplNestedInputs = collectNestedAplInputs();
   const aplPilotInputs = collectAplPilotInputs();
   const legacySeoAliasInputs = collectLegacySeoAliasInputs();
   const rsaPilotInputs = collectRsaPilotInputs();
   const arePilotInputs = collectArePilotInputs();
+  const asfPilotInputs = collectAsfPilotInputs();
+  const simulateursPilotInputs = collectSimulateursPilotInputs();
 
   return {
     root: "src",
@@ -270,6 +327,12 @@ export default defineConfig(() => {
 
           // Pages pSEO ARE du pilote declarees explicitement pour la prod
           ...arePilotInputs,
+
+          // Pages pSEO ASF du pilote declarees explicitement pour la prod
+          ...asfPilotInputs,
+
+          // Pages pSEO Simulateurs du pilote declarees explicitement pour la prod
+          ...simulateursPilotInputs,
 
           // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
           ...legacySeoAliasInputs,

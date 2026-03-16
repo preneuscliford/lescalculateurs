@@ -3,23 +3,21 @@ import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath, pathToFileURL } from "url";
 
-import { rsaPilotScenarios } from "../data/pseo/rsa-pilot-scenarios.js";
-import { rsaAbsenceRevenuScenarios } from "../data/pseo/rsa-absence-revenu-scenarios.js";
+import { asfAbsenceRevenuScenarios } from "../data/pseo/asf-absence-revenu-scenarios.js";
 import {
-  isGeneratedPseoRsaPage,
-  renderRSAScenarioPage,
-} from "./lib/pseo/rsa-pseo-renderer.js";
+  isGeneratedPseoAsfPage,
+  renderASFScenarioPage,
+} from "./lib/pseo/asf-pseo-renderer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
-const outputDir = path.join(repoRoot, "src", "pages", "rsa");
+const outputDir = path.join(repoRoot, "src", "pages", "asf");
 const generatedAt = formatDisplayDate(new Date());
-const rsaScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
 
-async function loadRsaEngine() {
-  const engineSrc = path.join(repoRoot, "src", "utils", "rsaCalculEngine.ts");
-  const tempDir = path.join(repoRoot, "temp", "pseo-rsa-engine");
+async function loadAsfEngine() {
+  const engineSrc = path.join(repoRoot, "src", "utils", "asfCalculEngine.ts");
+  const tempDir = path.join(repoRoot, "temp", "pseo-asf-engine");
   fs.mkdirSync(tempDir, { recursive: true });
   execFileSync(
     process.execPath,
@@ -39,30 +37,10 @@ async function loadRsaEngine() {
     ],
     { cwd: repoRoot, stdio: "pipe" },
   );
-  const compiledPath = path.join(tempDir, "rsaCalculEngine.js");
+  const compiledPath = path.join(tempDir, "asfCalculEngine.js");
   const engine = await import(`${pathToFileURL(compiledPath).href}?v=${Date.now()}`);
   fs.rmSync(tempDir, { recursive: true, force: true });
   return engine;
-}
-
-function getTagScore(left, right) {
-  const rightSet = new Set(right);
-  return left.reduce((score, tag) => score + (rightSet.has(tag) ? 1 : 0), 0);
-}
-
-function buildRelatedMap(scenarios) {
-  const relatedMap = new Map();
-  for (const scenario of scenarios) {
-    const related = scenarios
-      .filter((candidate) => candidate.slug !== scenario.slug)
-      .map((candidate) => ({ slug: candidate.slug, score: getTagScore(scenario.tags, candidate.tags) }))
-      .filter((item) => item.score > 0)
-      .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug, "fr"))
-      .slice(0, 4)
-      .map((item) => item.slug);
-    relatedMap.set(scenario.slug, related);
-  }
-  return relatedMap;
 }
 
 function cleanupGeneratedPages(outputRoot, allowedSlugs) {
@@ -74,7 +52,7 @@ function cleanupGeneratedPages(outputRoot, allowedSlugs) {
       const indexPath = path.join(entryPath, "index.html");
       if (!fs.existsSync(indexPath)) continue;
       const content = fs.readFileSync(indexPath, "utf8");
-      if (isGeneratedPseoRsaPage(content) && !allowedSlugs.has(entry.name)) {
+      if (isGeneratedPseoAsfPage(content) && !allowedSlugs.has(entry.name)) {
         fs.rmSync(entryPath, { recursive: true, force: true });
       }
       continue;
@@ -82,7 +60,7 @@ function cleanupGeneratedPages(outputRoot, allowedSlugs) {
     if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
     const slug = entry.name.replace(/\.html$/i, "");
     const content = fs.readFileSync(entryPath, "utf8");
-    if (isGeneratedPseoRsaPage(content) && !allowedSlugs.has(slug)) {
+    if (isGeneratedPseoAsfPage(content) && !allowedSlugs.has(slug)) {
       fs.rmSync(entryPath, { force: true });
     }
   }
@@ -90,31 +68,25 @@ function cleanupGeneratedPages(outputRoot, allowedSlugs) {
 
 async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
-  cleanupGeneratedPages(outputDir, new Set(rsaScenarios.map((item) => item.slug)));
-  const engine = await loadRsaEngine();
+  cleanupGeneratedPages(outputDir, new Set(asfAbsenceRevenuScenarios.map((item) => item.slug)));
+  const engine = await loadAsfEngine();
+  const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
 
-  const enriched = rsaScenarios.map((scenario) => {
-    const result = engine.calculerRSA(scenario.input);
+  const enriched = asfAbsenceRevenuScenarios.map((scenario) => {
+    const result = engine.calculerASF(scenario.input);
     return {
       ...scenario,
       estimate: {
         amount: result.montantEstime,
         formattedAmount: formatApproxEuro(result.montantEstime),
         formattedRevenue: formatApproxEuro(scenario.input.revenus),
-        eligibility: result.eligibilite,
       },
     };
   });
 
-  const relatedMap = buildRelatedMap(enriched);
-  const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
-
   for (const scenario of enriched) {
-    const relatedPages = (relatedMap.get(scenario.slug) || [])
-      .map((slug) => enriched.find((item) => item.slug === slug))
-      .filter(Boolean);
-
-    const html = renderRSAScenarioPage({
+    const relatedPages = enriched.filter((item) => item.slug !== scenario.slug).slice(0, 2);
+    const html = renderASFScenarioPage({
       scenario,
       estimate: scenario.estimate,
       relatedPages,
@@ -128,7 +100,7 @@ async function main() {
     fs.writeFileSync(path.join(nestedDir, "index.html"), html, "utf8");
   }
 
-  console.log(`PSEO RSA: ${enriched.length} pages generees dans ${outputDir}`);
+  console.log(`PSEO ASF: ${enriched.length} pages generees dans ${outputDir}`);
 }
 
 main();

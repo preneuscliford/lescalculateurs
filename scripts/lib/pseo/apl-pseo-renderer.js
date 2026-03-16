@@ -77,8 +77,8 @@ function repairCorruptedFrench(value) {
     .replace(/\?/g, (match, offset, input) => {
       const prev = input[offset - 1] || "";
       const next = input[offset + 1] || "";
-      if (prev === " " && next === " ") return "à";
-      if (prev === " " && /[A-Z]/.test(next)) return "à";
+      if (prev === " " && next === " ") return "Ã ";
+      if (prev === " " && /[A-Z]/.test(next)) return "Ã ";
       return "?";
     })
     .replace(/Sc\?narios/g, "Sc\u00e9narios")
@@ -453,8 +453,8 @@ function toFrenchDisplayText(value) {
     .replace(/\brequ \u00e0 te\b/gi, "requ\u00eate")
     .replace(/\bdiff \u00e0 rent\b/gi, "diff\u00e9rent")
     .replace(/\bdiff \u00e0 rents\b/gi, "diff\u00e9rents")
-    .replace(/le loyer est bien renseign(?:\s|\&#224;|à)+hors charges/gi, "le loyer est bien renseign\u00e9 hors charges")
-    .replace(/verifier que le loyer est bien renseigne(?:\s|\&#224;|à)+hors charges/gi, "v\u00e9rifier que le loyer est bien renseign\u00e9 hors charges")
+    .replace(/le loyer est bien renseign(?:\s|\&#224;|Ã )+hors charges/gi, "le loyer est bien renseign\u00e9 hors charges")
+    .replace(/verifier que le loyer est bien renseigne(?:\s|\&#224;|Ã )+hors charges/gi, "v\u00e9rifier que le loyer est bien renseign\u00e9 hors charges")
     .replace(/\ba revenu\b/g, "\u00e0 revenu")
     .replace(/\ba ([0-9])/g, "\u00e0 $1")
     .replace(/\bA ([0-9])/g, "\u00c0 $1")
@@ -473,7 +473,7 @@ function normalizeInlineApproxEuro(value) {
   return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
     const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
     if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
-    return `${prefix}~${numeric.toLocaleString("fr-FR")} €`;
+    return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
   });
 }
 
@@ -665,15 +665,15 @@ function renderScenarioComparisonTable(scenario, estimate, relatedPages) {
               </a>
               <p class="mt-1 text-xs text-slate-500">${renderText(page.intent)}</p>
             </td>
-            <td class="px-4 py-3 text-right font-semibold text-slate-900">${escapeHtml(
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderText(
               page.estimate.formattedApl.startsWith("~")
                 ? page.estimate.formattedApl
                 : `~${page.estimate.formattedApl}`,
             )}</td>
-            <td class="px-4 py-3 text-right text-slate-700">${escapeHtml(
+            <td class="px-4 py-3 text-right text-slate-700">${renderText(
               page.estimate.formattedRevenue,
             )}</td>
-            <td class="px-4 py-3 text-right text-slate-700">${escapeHtml(
+            <td class="px-4 py-3 text-right text-slate-700">${renderText(
               page.estimate.formattedRent,
             )}</td>
           </tr>`,
@@ -861,8 +861,8 @@ export function renderAPLScenarioPage({
     data-lc-page-cluster="apl"
     data-lc-page-template="scenario"
     data-lc-page-slug="${escapeAttribute(scenario.slug)}"
-    data-lc-page-intent="${escapeAttribute(encodeHtmlEntities(toFrenchDisplayText(scenario.intent)))}"
-    data-lc-page-audience="${escapeAttribute(encodeHtmlEntities(toFrenchDisplayText(scenario.audience)))}"
+    data-lc-page-intent="${escapeAttribute(toFrenchDisplayText(scenario.intent))}"
+    data-lc-page-audience="${escapeAttribute(toFrenchDisplayText(scenario.audience))}"
     data-lc-page-variant="pilot-2026"
   >
     ${GENERATED_MARKER}
@@ -925,7 +925,7 @@ export function renderAPLScenarioPage({
             <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">${renderText(
               "R\u00e9sultat estim\u00e9",
             )}</p>
-            <p class="mt-2 text-2xl font-bold text-slate-900">${escapeHtml(approxAplDisplay)} / mois</p>
+            <p class="mt-2 text-2xl font-bold text-slate-900">${renderText(approxAplDisplay)} / mois</p>
             <p class="mt-2 text-sm text-slate-700">${renderText(
               "Montant indicatif calcul\u00e9 \u00e0 partir du moteur de simulation du site.",
             )}</p>
@@ -991,7 +991,7 @@ export function renderAPLScenarioPage({
         </p>
         <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">Derni&egrave;re modification</p>
-          <p class="mt-2 text-slate-800">${escapeHtml(generatedAt)}</p>
+          <p class="mt-2 text-slate-800">${renderText(generatedAt)}</p>
         </div>
       </section>
 
@@ -1023,3 +1023,4 @@ export function renderAPLScenarioPage({
   </body>
 </html>`;
 }
+

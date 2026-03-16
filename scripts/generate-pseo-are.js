@@ -4,6 +4,7 @@ import { execFileSync } from "child_process";
 import { fileURLToPath, pathToFileURL } from "url";
 
 import { arePilotScenarios } from "../data/pseo/are-pilot-scenarios.js";
+import { areAbsenceRevenuScenarios } from "../data/pseo/are-absence-revenu-scenarios.js";
 import {
   isGeneratedPseoArePage,
   renderAREScenarioPage,
@@ -14,6 +15,7 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const outputDir = path.join(repoRoot, "src", "pages", "are");
 const generatedAt = formatDisplayDate(new Date());
+const areScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
 
 async function loadAreEngine() {
   const engineSrc = path.join(repoRoot, "src", "utils", "areCalculEngine.ts");
@@ -88,10 +90,10 @@ function cleanupGeneratedPages(outputRoot, allowedSlugs) {
 
 async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
-  cleanupGeneratedPages(outputDir, new Set(arePilotScenarios.map((item) => item.slug)));
+  cleanupGeneratedPages(outputDir, new Set(areScenarios.map((item) => item.slug)));
   const engine = await loadAreEngine();
 
-  const enriched = arePilotScenarios.map((scenario) => {
+  const enriched = areScenarios.map((scenario) => {
     const result = engine.calculerARE(scenario.input);
     return {
       ...scenario,

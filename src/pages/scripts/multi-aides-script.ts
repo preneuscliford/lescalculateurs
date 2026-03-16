@@ -35,6 +35,35 @@ function setText(id: string, value: string): void {
   if (el) el.textContent = value;
 }
 
+function applyValue(id: string, value: string | null): void {
+  if (value == null) return;
+  const input = document.getElementById(id) as HTMLInputElement | HTMLSelectElement | null;
+  if (!input) return;
+  input.value = value;
+}
+
+function applyPrefillFromUrl(): void {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.toString()) return;
+
+  applyValue("ma-situation", params.get("ma-situation"));
+  applyValue("ma-enfants", params.get("ma-enfants"));
+  applyValue("ma-revenus", params.get("ma-revenus"));
+  applyValue("ma-revenus-pro", params.get("ma-revenus-pro"));
+  applyValue("ma-autres-revenus", params.get("ma-autres-revenus"));
+  applyValue("ma-loyer", params.get("ma-loyer"));
+  applyValue("ma-region", params.get("ma-region"));
+  applyValue("ma-logement", params.get("ma-logement"));
+  applyValue("ma-activite", params.get("ma-activite"));
+  applyValue("ma-type-activite", params.get("ma-type-activite"));
+
+  if (params.get("ma-autosubmit") === "1" && form) {
+    requestAnimationFrame(() => {
+      form.requestSubmit();
+    });
+  }
+}
+
 const form = document.getElementById("multi-aides-form") as HTMLFormElement | null;
 const resultSection = document.getElementById("multi-aides-result");
 const errorBox = document.getElementById("multi-aides-error");
@@ -155,3 +184,5 @@ if (form) {
     );
   });
 }
+
+applyPrefillFromUrl();
