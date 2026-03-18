@@ -9,6 +9,7 @@ import { rsaAbsenceRevenuScenarios } from "./data/pseo/rsa-absence-revenu-scenar
 import { arePilotScenarios } from "./data/pseo/are-pilot-scenarios.js";
 import { areAbsenceRevenuScenarios } from "./data/pseo/are-absence-revenu-scenarios.js";
 import { asfAbsenceRevenuScenarios } from "./data/pseo/asf-absence-revenu-scenarios.js";
+import { primeAbsenceRevenuScenarios } from "./data/pseo/prime-absence-revenu-scenarios.js";
 import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absence-revenu-scenarios.js";
 
 const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
@@ -238,6 +239,29 @@ function collectAsfPilotInputs() {
   return inputs;
 }
 
+function collectPrimePilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of primeAbsenceRevenuScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/prime-activite", slug, "index.html");
+    const htmlPath = resolve(__dirname, "src/pages/prime-activite", `${slug}.html`);
+
+    if (fs.existsSync(indexPath)) {
+      inputs[`prime-pilot-${slug}`] = indexPath;
+      continue;
+    }
+
+    if (fs.existsSync(htmlPath)) {
+      inputs[`prime-pilot-${slug}`] = htmlPath;
+    }
+  }
+
+  return inputs;
+}
+
 function collectSimulateursPilotInputs() {
   const inputs: Record<string, string> = {};
 
@@ -268,6 +292,7 @@ export default defineConfig(() => {
   const rsaPilotInputs = collectRsaPilotInputs();
   const arePilotInputs = collectArePilotInputs();
   const asfPilotInputs = collectAsfPilotInputs();
+  const primePilotInputs = collectPrimePilotInputs();
   const simulateursPilotInputs = collectSimulateursPilotInputs();
 
   return {
@@ -330,6 +355,9 @@ export default defineConfig(() => {
 
           // Pages pSEO ASF du pilote declarees explicitement pour la prod
           ...asfPilotInputs,
+
+          // Pages pSEO Prime du pilote declarees explicitement pour la prod
+          ...primePilotInputs,
 
           // Pages pSEO Simulateurs du pilote declarees explicitement pour la prod
           ...simulateursPilotInputs,

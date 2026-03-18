@@ -3,9 +3,9 @@ const PILLAR_PATH = "/pages/simulateurs/quelle-aide-selon-mon-profil-2026";
 const GENERATED_MARKER = "<!-- GENERATED:PSEO:SIMULATEURS -->";
 const FAVICON_OG_IMAGE = `${DOMAIN}/assets/favicon-32x32.png`;
 const ACTIVITE_LABELS = {
-  actif: 'En activite',
-  inactif: 'Sans activite',
-  chomage: 'Chomage',
+  actif: "En activité",
+  inactif: "Sans activité",
+  chomage: "Chômage",
 };
 
 function escapeHtml(value) {
@@ -26,6 +26,7 @@ function normalizeFrenchText(value) {
     .replace(/\bVerifier\b/g, "V\u00e9rifier")
     .replace(/\bverifier\b/g, "v\u00e9rifier")
     .replace(/\brenseigne\b/g, "renseign\u00e9")
+    .replace(/\brenseignee\b/g, "renseign\u00e9e")
     .replace(/\bresultats\b/g, "r\u00e9sultats")
     .replace(/\bentree\b/g, "entr\u00e9e")
     .replace(/\bpriorite\b/g, "priorit\u00e9")
@@ -37,11 +38,22 @@ function normalizeFrenchText(value) {
     .replace(/\bactivites\b/g, "activit\u00e9s")
     .replace(/\bpercue\b/g, "per\u00e7ue")
     .replace(/\bpercus\b/g, "per\u00e7us")
+    .replace(/\bpercus\./g, "perçus.")
     .replace(/\bresiduelle\b/g, "r\u00e9siduelle")
     .replace(/\bdepend\b/g, "d\u00e9pend")
     .replace(/\bisole\b/g, "isol\u00e9")
+    .replace(/\bevolue\b/g, "évolue")
+    .replace(/\bdetailes\b/g, "détaillés")
+    .replace(/\bprecises\b/g, "précises")
+    .replace(/\bprioriser\b/g, "prioriser")
+    .replace(/\bprioritaires\b/g, "prioritaires")
+    .replace(/\bdisparait\b/g, "disparaît")
+    .replace(/\bentree global\b/g, "entrée global")
+    .replace(/\bentree\b/g, "entrée")
     .replace(/\ba tester\b/g, "\u00e0 tester")
-    .replace(/\ba verifier\b/g, "\u00e0 v\u00e9rifier");
+    .replace(/\ba verifier\b/g, "\u00e0 v\u00e9rifier")
+    .replace(/\ba comparer\b/g, "\u00e0 comparer")
+    .replace(/\ba prioriser\b/g, "\u00e0 prioriser");
 }
 
 function renderText(value) {

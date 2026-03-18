@@ -38,6 +38,40 @@ const scrollButton = document.getElementById(
   "prime-scroll-to-form",
 ) as HTMLButtonElement;
 
+function initFromURL(): void {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.size) return;
+
+  const fieldIds = [
+    "prime-situation",
+    "prime-enfants",
+    "prime-revenus-pro",
+    "prime-autres-revenus",
+    "prime-logement",
+    "prime-type-activite",
+  ];
+
+  let hasValue = false;
+
+  fieldIds.forEach((fieldId) => {
+    const value = params.get(fieldId);
+    if (value === null) return;
+    const input = document.getElementById(fieldId) as
+      | HTMLInputElement
+      | HTMLSelectElement
+      | null;
+    if (!input) return;
+    input.value = value;
+    hasValue = true;
+  });
+
+  if (hasValue && params.get("prime-autosubmit") === "1") {
+    requestAnimationFrame(() => {
+      form?.requestSubmit();
+    });
+  }
+}
+
 /**
  * Gestion du formulaire
  */
@@ -100,3 +134,5 @@ if (scrollButton) {
     resultDiv.classList.add("invisible");
   });
 });
+
+initFromURL();

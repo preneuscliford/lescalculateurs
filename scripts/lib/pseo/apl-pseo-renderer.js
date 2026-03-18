@@ -258,6 +258,7 @@ function repairCorruptedFrench(value) {
     .replace(/\? elle seule/g, "\u00e0 elle seule")
     .replace(/\bl APL\b/g, "l'APL")
     .replace(/\bL APL\b/g, "L'APL")
+    .replace(/LesCalculateurs\.\s+fr/g, "LesCalculateurs.fr")
     .replace(/\bd un\b/g, "d'un")
     .replace(/\bd une\b/g, "d'une")
     .replace(/\bd autres\b/g, "d'autres")
@@ -895,9 +896,7 @@ export function renderAPLScenarioPage({
           introText,
         )}</p>
         <p class="mt-4 max-w-3xl text-sm leading-relaxed text-slate-100/90">
-          ${renderText(
-            "Le montant affich\u00e9 est calcul\u00e9 \u00e0 partir du moteur de simulation APL utilis\u00e9 sur LesCalculateurs.fr, avec un sc\u00e9nario repr\u00e9sentatif.",
-          )}
+          Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="${simulatorUrl}" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">

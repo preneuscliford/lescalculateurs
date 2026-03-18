@@ -65,7 +65,7 @@
         <h1 class="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl">APL sans revenu avec enfant : estimation 2026</h1>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-slate-100">Exemple d&#39;APL 2026 pour un foyer sans revenu avec un enfant &#224; charge et un loyer mod&#233;r&#233;. Cette page donne un premier ordre de grandeur avant d&#39;utiliser le simulateur complet. </p>
         <p class="mt-4 max-w-3xl text-sm leading-relaxed text-slate-100/90">
-          Le montant affich&#233; est calcul&#233; &#224; partir du moteur de simulation APL utilis&#233; sur LesCalculateurs. fr, avec un sc&#233;nario repr&#233;sentatif. 
+          Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="/pages/apl?situation=monoparental&enfants=1&revenus_mensuels=0&loyer_mensuel=690&region=province&type_logement=location&economie=0#apl-calculator" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">
@@ -214,6 +214,17 @@
           </tr>
           <tr class="border-b border-slate-100 last:border-0">
             <td class="px-4 py-3 align-top">
+              <a href="/pages/apl/apl-sans-revenu-parent-isole" class="font-semibold text-slate-900 hover:text-blue-700">
+                Parent isol&#233; sans revenu avec enfant &#224; charge
+              </a>
+              <p class="mt-1 text-xs text-slate-500">apl sans revenu parent isol&#233;</p>
+            </td>
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">~535 &#8364;</td>
+            <td class="px-4 py-3 text-right text-slate-700">~0 &#8364;</td>
+            <td class="px-4 py-3 text-right text-slate-700">~760 &#8364;</td>
+          </tr>
+          <tr class="border-b border-slate-100 last:border-0">
+            <td class="px-4 py-3 align-top">
               <a href="/pages/apl/apl-fin-de-droits-chomage" class="font-semibold text-slate-900 hover:text-blue-700">
                 Personne en fin de droits ch&#244;mage
               </a>
@@ -225,25 +236,14 @@
           </tr>
           <tr class="border-b border-slate-100 last:border-0">
             <td class="px-4 py-3 align-top">
-              <a href="/pages/apl/apl-sans-revenu-personne-seule" class="font-semibold text-slate-900 hover:text-blue-700">
-                Personne seule sans revenu avec un logement lou&#233;
+              <a href="/pages/apl/apl-sans-revenu-couple-sans-enfant" class="font-semibold text-slate-900 hover:text-blue-700">
+                Couple sans enfant sans revenu
               </a>
-              <p class="mt-1 text-xs text-slate-500">apl sans revenu personne seule</p>
+              <p class="mt-1 text-xs text-slate-500">apl sans revenu couple sans enfant</p>
             </td>
-            <td class="px-4 py-3 text-right font-semibold text-slate-900">~320 &#8364;</td>
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">~420 &#8364;</td>
             <td class="px-4 py-3 text-right text-slate-700">~0 &#8364;</td>
-            <td class="px-4 py-3 text-right text-slate-700">~540 &#8364;</td>
-          </tr>
-          <tr class="border-b border-slate-100 last:border-0">
-            <td class="px-4 py-3 align-top">
-              <a href="/pages/apl/apl-chomage-avec-enfant" class="font-semibold text-slate-900 hover:text-blue-700">
-                Parent avec un enfant au ch&#244;mage
-              </a>
-              <p class="mt-1 text-xs text-slate-500">apl ch&#244;mage avec enfant</p>
-            </td>
-            <td class="px-4 py-3 text-right font-semibold text-slate-900">~327 &#8364;</td>
-            <td class="px-4 py-3 text-right text-slate-700">~1&#8239;100 &#8364;</td>
-            <td class="px-4 py-3 text-right text-slate-700">~760 &#8364;</td>
+            <td class="px-4 py-3 text-right text-slate-700">~720 &#8364;</td>
           </tr>
             </tbody>
           </table>
@@ -261,7 +261,7 @@
         </p>
         <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">Derni&egrave;re modification</p>
-          <p class="mt-2 text-slate-800">16-03-2026</p>
+          <p class="mt-2 text-slate-800">18-03-2026</p>
         </div>
       </section>
 
@@ -290,17 +290,21 @@
         </p>
         <div class="grid gap-3 sm:grid-cols-2">
           
+          <a href="/pages/apl/apl-sans-revenu-parent-isole" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
+            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl sans revenu parent isol&#233;</span>
+            <span class="font-semibold">APL sans revenu pour un parent isol&#233; : estimation 2026</span>
+          </a>
           <a href="/pages/apl/apl-fin-de-droits-chomage" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
             <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl fin de droits ch&#244;mage</span>
             <span class="font-semibold">APL apr&#232;s fin de droits ch&#244;mage : estimation 2026</span>
           </a>
+          <a href="/pages/apl/apl-sans-revenu-couple-sans-enfant" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
+            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl sans revenu couple sans enfant</span>
+            <span class="font-semibold">APL sans revenu pour un couple sans enfant : estimation 2026</span>
+          </a>
           <a href="/pages/apl/apl-sans-revenu-personne-seule" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
             <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl sans revenu personne seule</span>
             <span class="font-semibold">APL sans revenu pour une personne seule : estimation 2026</span>
-          </a>
-          <a href="/pages/apl/apl-chomage-avec-enfant" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-800 hover:border-blue-500 hover:bg-blue-50 transition-colors">
-            <span class="block text-sm uppercase tracking-wide text-slate-500 mb-1">apl ch&#244;mage avec enfant</span>
-            <span class="font-semibold">APL au ch&#244;mage avec enfant : estimation 2026</span>
           </a>
         </div>
       </section>

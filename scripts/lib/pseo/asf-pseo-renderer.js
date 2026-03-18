@@ -16,12 +16,45 @@ function encodeHtmlEntities(value) {
   return String(value).replace(/[^\x20-\x7E]/g, (char) => `&#${char.charCodeAt(0)};`);
 }
 
+function normalizeFrenchText(value) {
+  return String(value)
+    .replace(/\bparent isole\b/gi, "parent isolé")
+    .replace(/\bParent isole\b/g, "Parent isolé")
+    .replace(/\bverifier\b/gi, "vérifier")
+    .replace(/\brepere\b/gi, "repère")
+    .replace(/\btres\b/gi, "très")
+    .replace(/\bconcrete\b/gi, "concrète")
+    .replace(/\bconcretes\b/gi, "concrètes")
+    .replace(/\bfragilite\b/gi, "fragilité")
+    .replace(/\bbudgetaire\b/gi, "budgétaire")
+    .replace(/\ba charge\b/gi, "à charge")
+    .replace(/\bage de moins\b/gi, "âgé de moins")
+    .replace(/\bconstatee\b/gi, "constatée")
+    .replace(/\bimpayee\b/gi, "impayée")
+    .replace(/\binexistante\b/gi, "inexistante")
+    .replace(/\bversee\b/gi, "versée")
+    .replace(/\bverifiees\b/gi, "vérifiées")
+    .replace(/\bseparement\b/gi, "séparément")
+    .replace(/\bmeme\b/gi, "même")
+    .replace(/\bcomplement\b/gi, "complément")
+    .replace(/\bmethode\b/gi, "méthode")
+    .replace(/\bmethodologie\b/gi, "méthodologie")
+    .replace(/\bhypotheses\b/gi, "hypothèses")
+    .replace(/\bquestions frequentes\b/gi, "questions fréquentes")
+    .replace(/\bscenario\b/gi, "scénario")
+    .replace(/\bscenarios\b/gi, "scénarios")
+    .replace(/\bcomplete\b/gi, "complète")
+    .replace(/\bderniere\b/gi, "dernière")
+    .replace(/\bestimee\b/gi, "estimée")
+    .replace(/\ba payer\b/gi, "à payer");
+}
+
 function renderText(value) {
-  return encodeHtmlEntities(escapeHtml(value));
+  return encodeHtmlEntities(escapeHtml(normalizeFrenchText(value)));
 }
 
 function renderAttributeText(value) {
-  return encodeHtmlEntities(escapeHtml(value));
+  return encodeHtmlEntities(escapeHtml(normalizeFrenchText(value)));
 }
 
 function renderJsonLd(data) {
