@@ -54,6 +54,7 @@ function collectAplPilotInputs() {
 function collectStaticPageInputs() {
   return {
     main: resolve(__dirname, "src/index.html"),
+    "404": resolve(__dirname, "src/404.html"),
     notaire: resolve(__dirname, "src/pages/notaire.html"),
     pret: resolve(__dirname, "src/pages/pret.html"),
     plusvalue: resolve(__dirname, "src/pages/plusvalue.html"),
