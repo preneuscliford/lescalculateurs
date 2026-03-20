@@ -2,10 +2,10 @@ export const aplPilotScenarios = [
   {
     "slug": "apl-etudiant-paris",
     "intent": "apl etudiant paris",
-    "title": "APL ?tudiant  ? Paris : estimation 2026",
-    "description": "Sc?nario APL pour un ?tudiant  ? Paris avec un loyer ?lev? et peu de revenus.",
-    "summary": "Cette page cible une intention forte chez les ?tudiants qui cherchent un ordre de grandeur rapide avant une simulation compl?te.",
-    "audience": "?tudiant en location priv?e  ? Paris",
+    "title": "APL étudiant à Paris : estimation 2026",
+    "description": "Scénario APL pour un étudiant à Paris avec un loyer élevé et peu de revenus.",
+    "summary": "Cette page cible une intention forte chez les étudiants qui cherchent un ordre de grandeur rapide avant une simulation complète.",
+    "audience": "étudiant en location privée à Paris",
     "tags": [
       "etudiant",
       "paris",
@@ -22,28 +22,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si le logement est conventionn? ou non.",
-      "Confirmer les revenus r?ellement pris en compte par la CAF.",
-      "Comparer avec un sc?nario CROUS ou colocation si besoin."
+      "Vérifier si le logement est conventionné ou non.",
+      "Confirmer les revenus réellement pris en compte par la CAF.",
+      "Comparer avec un scénario CROUS ou colocation si besoin."
     ],
     "faq": [
       {
-        "question": "Un ?tudiant  ? Paris peut-il toucher l'APL ?",
+        "question": "Un étudiant à Paris peut-il toucher l'APL ?",
         "answer": "Oui, sous conditions de logement et de ressources. Le niveau de loyer reste important, mais le plafond de zone limite le montant retenu."
       },
       {
-        "question": "Un job ?tudiant fait-il baisser l'APL ?",
-        "answer": "Oui, les revenus peuvent r?duire l'aide. Il est utile de tester plusieurs niveaux de salaire mensuel si vous travaillez en parall?le."
+        "question": "Un job étudiant fait-il baisser l'APL ?",
+        "answer": "Oui, les revenus peuvent réduire l'aide. Il est utile de tester plusieurs niveaux de salaire mensuel si vous travaillez en parallÎle."
       }
     ]
   },
   {
     "slug": "apl-etudiant-lyon",
     "intent": "apl etudiant lyon",
-    "title": "APL ?tudiant  ? Lyon : estimation 2026",
-    "description": "Exemple de simulation APL pour un ?tudiant locataire  ? Lyon.",
-    "summary": "Cette page vise les recherches ?tudiantes hors Paris avec une pression locative toujours forte mais plus mod?r?e qu'en ?le-de-France.",
-    "audience": "?tudiant locataire  ? Lyon",
+    "title": "APL étudiant à Lyon : estimation 2026",
+    "description": "Exemple de simulation APL pour un étudiant locataire à Lyon.",
+    "summary": "Cette page vise les recherches étudiantes hors Paris avec une pression locative toujours forte mais plus modérée qu'en Île-de-France.",
+    "audience": "étudiant locataire à Lyon",
     "tags": [
       "etudiant",
       "lyon",
@@ -60,28 +60,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si le loyer retenu est bien hors charges.",
-      "Comparer avec une colocation si le budget est serr?.",
-      "Tester aussi une r?sidence etudiante si ce type de logement est envisage."
+      "Vérifier si le loyer retenu est bien hors charges.",
+      "Comparer avec une colocation si le budget est serré.",
+      "Tester aussi une résidence etudiante si ce type de logement est envisage."
     ],
     "faq": [
       {
-        "question": "L'APL etudiante est-elle diff?rente  ? Lyon et  ? Paris ?",
-        "answer": "La logique de calcul reste la m?me, mais le plafond de loyer d?pend de la zone. Le montant retenu n'est donc pas identique."
+        "question": "L'APL etudiante est-elle différente à Lyon et à Paris ?",
+        "answer": "La logique de calcul reste la même, mais le plafond de loyer dépend de la zone. Le montant retenu n'est donc pas identique."
       },
       {
-        "question": "Faut-il d?clarer les aides familiales pour l'APL ?",
-        "answer": "Cela d?pend de la nature de l'aide. La v?rification finale doit toujours ?tre faite avec les r?gles de la CAF."
+        "question": "Faut-il déclarer les aides familiales pour l'APL ?",
+        "answer": "Cela dépend de la nature de l'aide. La vérification finale doit toujours être faite avec les règles de la CAF."
       }
     ]
   },
   {
     "slug": "apl-etudiant-colocation",
     "intent": "apl etudiant colocation",
-    "title": "APL ?tudiant en colocation : estimation 2026",
-    "description": "Cas pratique d APL pour un ?tudiant en colocation avec quote-part de loyer.",
-    "summary": "Cette page r?pond a une recherche fr?quente chez les ?tudiants qui mutualisent leur logement pour r?duire le reste  ? charge.",
-    "audience": "?tudiant en colocation",
+    "title": "APL étudiant en colocation : estimation 2026",
+    "description": "Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+    "summary": "Cette page répond a une recherche fréquente chez les étudiants qui mutualisent leur logement pour réduire le reste à charge.",
+    "audience": "étudiant en colocation",
     "tags": [
       "etudiant",
       "colocation",
@@ -98,28 +98,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si le bail est individuel ou collectif.",
+      "Vérifier si le bail est individuel ou collectif.",
       "Conserver une trace claire de votre quote-part de loyer.",
       "Comparer avec une location classique pour mesurer l ecart."
     ],
     "faq": [
       {
-        "question": "L'APL en colocation est-elle calculee par personne ?",
-        "answer": "Oui, chaque situation est examinee individuellement. Le loyer retenu correspond en general a votre part r?elle."
+        "question": "L'APL en colocation est-elle calculée par personne ?",
+        "answer": "Oui, chaque situation est examinée individuellement. Le loyer retenu correspond en général a votre part réelle."
       },
       {
         "question": "Une colocation reduit-elle automatiquement l'APL ?",
-        "answer": "Pas automatiquement. Tout d?pend de la part de loyer, des revenus et du type de bail d?clar?."
+        "answer": "Pas automatiquement. Tout dépend de la part de loyer, des revenus et du type de bail déclaré."
       }
     ]
   },
   {
     "slug": "apl-celibataire-paris-petit-revenu",
     "intent": "apl celibataire paris",
-    "title": "APL c?libataire  ? Paris avec petit revenu : estimation 2026",
-    "description": "Estimation APL pour une personne seule  ? Paris avec un revenu modeste.",
-    "summary": "Cette page couvre une requ?te centrale du cluster APL urbain, avec un vrai enjeu de budget logement en zone tendue.",
-    "audience": "C?libataire  ? Paris avec petit revenu",
+    "title": "APL célibataire à Paris avec petit revenu : estimation 2026",
+    "description": "Estimation APL pour une personne seule à Paris avec un revenu modeste.",
+    "summary": "Cette page couvre une requête centrale du cluster APL urbain, avec un vrai enjeu de budget logement en zone tendue.",
+    "audience": "Célibataire à Paris avec petit revenu",
     "tags": [
       "celibataire",
       "paris",
@@ -136,28 +136,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier que le loyer retenu est bien le loyer hors charges.",
+      "Vérifier que le loyer retenu est bien le loyer hors charges.",
       "Tester une variante avec revenus variables si vous avez des primes.",
-      "Comparer avec un sc?nario province si vous envisagez de d?m?nager."
+      "Comparer avec un scénario province si vous envisagez de déménager."
     ],
     "faq": [
       {
-        "question": "Peut-on toucher l'APL  ? Paris en ?tant seul ?",
-        "answer": "Oui, mais le calcul d?pend fortement du revenu et du plafond de loyer applicable ? la zone francilienne."
+        "question": "Peut-on toucher l'APL à Paris en étant seul ?",
+        "answer": "Oui, mais le calcul dépend fortement du revenu et du plafond de loyer applicable à la zone francilienne."
       },
       {
-        "question": "Le reste  ? charge reste-t-il ?lev?  ? Paris m?me avec l'APL ?",
-        "answer": "Souvent oui. L'APL aide a absorber une partie du co?t, mais le plafond de loyer limite l'effet de l'aide."
+        "question": "Le reste à charge reste-t-il élevé à Paris même avec l'APL ?",
+        "answer": "Souvent oui. L'APL aide a absorber une partie du coût, mais le plafond de loyer limite l'effet de l'aide."
       }
     ]
   },
   {
     "slug": "apl-celibataire-smic",
     "intent": "apl smic celibataire",
-    "title": "APL au SMIC pour un c?libataire : estimation 2026",
-    "description": "Sc?nario APL d'une personne seule au SMIC avec un loyer moyen.",
-    "summary": "Cette page sert une requ?te tr?s claire : savoir si un salaire proche du SMIC laisse encore un droit ? l'APL.",
-    "audience": "C?libataire au SMIC",
+    "title": "APL au SMIC pour un célibataire : estimation 2026",
+    "description": "Scénario APL d'une personne seule au SMIC avec un loyer moyen.",
+    "summary": "Cette page sert une requête très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+    "audience": "Célibataire au SMIC",
     "tags": [
       "celibataire",
       "smic",
@@ -174,9 +174,9 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier votre salaire net r?el sur les mois retenus.",
+      "Vérifier votre salaire net réel sur les mois retenus.",
       "Comparer un loyer ? 550 EUR et ? 700 EUR.",
-      "Tester aussi un sc?nario avec prime d'activit? en parall?le."
+      "Tester aussi un scénario avec prime d'activité en parallÎle."
     ],
     "faq": [
       {
@@ -184,7 +184,7 @@ export const aplPilotScenarios = [
         "answer": "Oui dans certains cas, surtout si le loyer reste significatif par rapport au revenu. Le montant peut toutefois baisser assez vite."
       },
       {
-        "question": "Le type de contrat change-t-il le calcul'APL ?",
+        "question": "Le type de contrat change-t-il le calcul de l'APL ?",
         "answer": "Pas directement. Ce sont d'abord les ressources retenues et le logement qui pilotent l'estimation."
       }
     ],
@@ -192,16 +192,16 @@ export const aplPilotScenarios = [
       "variants": [
         {
           "label": "Tester avec un loyer de 500 EUR",
-          "description": "Comparer avec un loyer plus bas pour voir si le reste  ? charge change nettement.",
+          "description": "Comparer avec un loyer plus bas pour voir si le reste à charge change nettement.",
           "href": "/pages/apl/apl-loyer-500-revenu-900"
         },
         {
           "label": "Tester avec un loyer de 700 EUR",
-          "description": "Voir l'impact d'un loyer un peu plus ?lev? a revenu proche.",
+          "description": "Voir l'impact d'un loyer un peu plus élevé a revenu proche.",
           "href": "/pages/apl/apl-cdi-loyer-700"
         },
         {
-          "label": "Comparer avec une personne seule au ch?mage",
+          "label": "Comparer avec une personne seule au chômage",
           "description": "Mesurer l'effet d'une baisse de revenus sur l'estimation APL.",
           "href": "/pages/apl/apl-chomage-loyer-moyen"
         }
@@ -209,19 +209,19 @@ export const aplPilotScenarios = [
       "drivers": [
         {
           "title": "Le loyer retenu dans la limite du plafond",
-          "description": "Un loyer plus ?lev? n'augmente pas toujours l'aide de la m?me facon, car la CAF retient un plafond selon la zone."
+          "description": "Un loyer plus élevé n'augmente pas toujours l'aide de la même facon, car la CAF retient un plafond selon la zone."
         },
         {
-          "title": "Le niveau r?el de revenus retenus",
-          "description": "Deux personnes proches du SMIC peuvent obtenir des r?sultats diff?rents selon les revenus effectivement retenus sur la p?riode de r?f?rence."
+          "title": "Le niveau réel de revenus retenus",
+          "description": "Deux personnes proches du SMIC peuvent obtenir des résultats différents selon les revenus effectivement retenus sur la période de référence."
         },
         {
           "title": "Les aides et revenus qui se cumulent",
-          "description": "Une prime d'activit?, des primes variables ou une reprise d'emploi peuvent modifier l'estimation finale."
+          "description": "Une prime d'activité, des primes variables ou une reprise d'emploi peuvent modifier l'estimation finale."
         },
         {
-          "title": "La zone g?ographique du logement",
-          "description": "? loyer comparable, une grande ville ou une zone plus tendue peut changer le loyer retenu et donc le montant estime."
+          "title": "La zone géographique du logement",
+          "description": "? loyer comparable, une grande ville ou une zone plus tendue peut changer le loyer retenu et donc le montant estim?."
         }
       ],
       "comparisonLinks": [
@@ -230,11 +230,11 @@ export const aplPilotScenarios = [
           "href": "/pages/apl/apl-loyer-500-revenu-900"
         },
         {
-          "label": "APL en cas de ch?mage avec loyer moyen",
+          "label": "APL en cas de chômage avec loyer moyen",
           "href": "/pages/apl/apl-chomage-loyer-moyen"
         },
         {
-          "label": "APL c?libataire  ? Paris avec petit revenu",
+          "label": "APL célibataire à Paris avec petit revenu",
           "href": "/pages/apl/apl-celibataire-paris-petit-revenu"
         },
         {
@@ -243,9 +243,9 @@ export const aplPilotScenarios = [
         }
       ],
       "journey": [
-        "Comparez d'abord votre loyer r?el avec le sc?nario affich?.",
-        "V?rifiez ensuite si vos revenus varient d'un mois  ? l'autre ou si vous percevez d'autres aides.",
-        "Lancez enfin une simulation compl?te pour approcher votre situation exacte."
+        "Comparez d'abord votre loyer réel avec le scénario affiché.",
+        "Vérifiez ensuite si vos revenus varient d'un mois ? l'autre ou si vous percevez d'autres aides.",
+        "Lancez enfin une simulation complète pour approcher votre situation exacte."
       ]
     }
   },
@@ -253,9 +253,9 @@ export const aplPilotScenarios = [
     "slug": "apl-celibataire-loyer-eleve",
     "intent": "apl loyer eleve personne seule",
     "title": "APL avec loyer eleve pour une personne seule : estimation 2026",
-    "description": "Cas APL d'une personne seule avec un loyer sup?rieur au plafond de zone.",
-    "summary": "Cette page r?pond a une frustration tr?s fr?quente : comprendre pourquoi un loyer ?lev? ne se traduit pas toujours par une aide plus forte.",
-    "audience": "Personne seule avec loyer ?lev?",
+    "description": "Cas APL d'une personne seule avec un loyer supérieur au plafond de zone.",
+    "summary": "Cette page répond a une frustration très fréquente : comprendre pourquoi un loyer élevé ne se traduit pas toujours par une aide plus forte.",
+    "audience": "Personne seule avec loyer élevé",
     "tags": [
       "celibataire",
       "loyer-eleve",
@@ -272,28 +272,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le plafond de loyer applicable ? votre zone.",
-      "Tester une solution colocation si le reste  ? charge devient trop fort.",
+      "Vérifier le plafond de loyer applicable ? votre zone.",
+      "Tester une solution colocation si le reste ? charge devient trop fort.",
       "Ne pas supposer que tout le loyer sera retenu dans le calcul."
     ],
     "faq": [
       {
-        "question": "Pourquoi mon loyer n'est-il pas retenu en totalit? ?",
-        "answer": "Le calcul'APL applique un plafond de loyer. Au-del?, la partie excedentaire n'augmente plus l'aide."
+        "question": "Pourquoi mon loyer n'est-il pas retenu en totalité ?",
+        "answer": "Le calcul de l'APL applique un plafond de loyer. Au-delà, la partie excedentaire n'augmente plus l'aide."
       },
       {
-        "question": "Un loyer plus cher donne-t-il toujours plus d APL ?",
-        "answer": "Non. Une fois le plafond atteint, le gain disparait alors que votre reste  ? charge continue d augmenter."
+        "question": "Un loyer plus cher donne-t-il toujours plus d'APL ?",
+        "answer": "Non. Une fois le plafond atteint, le gain dispara?t alors que votre reste à charge continue d augmenter."
       }
     ]
   },
   {
     "slug": "apl-celibataire-marseille",
     "intent": "apl marseille celibataire",
-    "title": "APL c?libataire  ? Marseille : estimation 2026",
-    "description": "Simulation type pour une personne seule  ? Marseille avec loyer interm?diaire.",
-    "summary": "Cette page couvre une grande ville de province avec une requ?te g?olocalis?e claire et une tension locative concr?te.",
-    "audience": "C?libataire  ? Marseille",
+    "title": "APL célibataire à Marseille : estimation 2026",
+    "description": "Simulation type pour une personne seule à Marseille avec loyer intermédiaire.",
+    "summary": "Cette page couvre une grande ville de province avec une requête géolocalisée claire et une tension locative concrète.",
+    "audience": "Célibataire à Marseille",
     "tags": [
       "celibataire",
       "marseille",
@@ -311,27 +311,27 @@ export const aplPilotScenarios = [
     },
     "checklist": [
       "Comparer avec Toulouse ou Lyon si vous cherchez un ordre de grandeur en grande ville.",
-      "V?rifier la part de charges exclue du loyer retenu.",
-      "Tester une variante avec revenu ? 1300 EUR si votre activit? ?volue."
+      "Vérifier la part de charges exclue du loyer retenu.",
+      "Tester une variante avec revenu ? 1300 EUR si votre activité évolue."
     ],
     "faq": [
       {
-        "question": "L'APL  ? Marseille suit-elle la m?me logique qu ailleurs ?",
-        "answer": "Oui, avec un plafond adapte ? la zone province. La ville change surtout le niveau de loyer observe dans la pratique."
+        "question": "L'APL à Marseille suit-elle la même logique qu ailleurs ?",
+        "answer": "Oui, avec un plafond adapté à la zone province. La ville change surtout le niveau de loyer observe dans la pratique."
       },
       {
         "question": "Faut-il un code postal pour simuler l'APL ?",
-        "answer": "Le code postal'aide a affiner la zone exacte dans les outils complets. Cette page donne seulement un sc?nario type."
+        "answer": "Le code postal'aide a affiner la zone exacte dans les outils complets. Cette page donne seulement un scénario type."
       }
     ]
   },
   {
     "slug": "apl-celibataire-toulouse",
     "intent": "apl toulouse celibataire",
-    "title": "APL c?libataire  ? Toulouse : estimation 2026",
-    "description": "Exemple APL pour un actif ou un ?tudiant seul  ? Toulouse.",
+    "title": "APL célibataire à Toulouse : estimation 2026",
+    "description": "Exemple APL pour un actif ou un étudiant seul à Toulouse.",
     "summary": "Cette page couvre une ville universitaire et active avec une vraie demande sur le logement locatif.",
-    "audience": "Personne seule  ? Toulouse",
+    "audience": "Personne seule à Toulouse",
     "tags": [
       "celibataire",
       "toulouse",
@@ -348,18 +348,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier la r?gularit? des revenus si vous ?tes en mission ou en alternance.",
-      "Comparer avec un sc?nario colocation dans un quartier ?tudiant.",
-      "Tester un loyer a 650 EUR si vous visez un T2."
+      "Vérifier la régularité des revenus si vous êtes en mission ou en alternance.",
+      "Comparer avec un scénario colocation dans un quartier étudiant.",
+      "Tester un loyer ? 650 EUR si vous visez un T2."
     ],
     "faq": [
       {
-        "question": "Une personne seule  ? Toulouse peut-elle toucher l'APL ?",
+        "question": "Une personne seule à Toulouse peut-elle toucher l'APL ?",
         "answer": "Oui, surtout avec un revenu modeste et un loyer encore compatible avec les plafonds de zone."
       },
       {
         "question": "Un T1 ou un T2 change-t-il beaucoup l'APL ?",
-        "answer": "Indirectement, via le loyer. Le calcul ne d?pend pas directement de la surface mais du montant retenu."
+        "answer": "Indirectement, via le loyer. Le calcul ne dépend pas directement de la surface mais du montant retenu."
       }
     ]
   },
@@ -367,9 +367,9 @@ export const aplPilotScenarios = [
     "slug": "apl-loyer-500-revenu-900",
     "intent": "apl loyer 500 revenu 900",
     "title": "APL avec 900 EUR de revenus et 500 EUR de loyer : estimation 2026",
-    "description": "Sc?nario budgetaire pour un revenu modeste avec un loyer encore contenu.",
-    "summary": "Cette page garde un angle chiffres tout en r?pondant a une question concr?te de budget logement.",
-    "audience": "Locataire seul avec budget serr?",
+    "description": "Scénario budgetaire pour un revenu modeste avec un loyer encore contenu.",
+    "summary": "Cette page garde un angle chiffres tout en répondant a une question concrète de budget logement.",
+    "audience": "Locataire seul avec budget serré",
     "tags": [
       "celibataire",
       "petit-revenu",
@@ -386,17 +386,17 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si le loyer de 500 EUR est bien indiqu? hors charges.",
-      "Comparer avec un revenu a 800 EUR ou 1000 EUR.",
+      "Vérifier si le loyer de 500 EUR est bien indiqué hors charges.",
+      "Comparer avec un revenu ? 800 EUR ou 1000 EUR.",
       "Tester aussi une version colocation si besoin."
     ],
     "faq": [
       {
         "question": "Avec 900 EUR de revenus peut-on encore toucher une bonne APL ?",
-        "answer": "Souvent oui si le loyer reste significatif. Le montant exact d?pend toutefois de la zone et du logement."
+        "answer": "Souvent oui si le loyer reste significatif. Le montant exact dépend toutefois de la zone et du logement."
       },
       {
-        "question": "Pourquoi utiliser une page sc?nario plutot qu'un calcul unique ?",
+        "question": "Pourquoi utiliser une page scénario plut?t qu'un calcul unique ?",
         "answer": "Parce qu'elle donne un ordre de grandeur rapide, puis oriente vers le simulateur complet pour affiner la situation."
       }
     ]
@@ -405,8 +405,8 @@ export const aplPilotScenarios = [
     "slug": "apl-loyer-800-revenu-1300",
     "intent": "apl loyer 800 revenu 1300",
     "title": "APL avec 1300 EUR de revenus et 800 EUR de loyer : estimation 2026",
-    "description": "Sc?nario de tension budgetaire avec un loyer ?lev? par rapport au revenu.",
-    "summary": "Cette page r?pond a une vraie question de locataire : savoir si un loyer important laisse encore une aide utile.",
+    "description": "Scénario de tension budgetaire avec un loyer élevé par rapport au revenu.",
+    "summary": "Cette page répond a une vraie question de locataire : savoir si un loyer important laisse encore une aide utile.",
     "audience": "Locataire seul avec loyer tendu",
     "tags": [
       "celibataire",
@@ -424,18 +424,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si le logement d?passe le plafond de loyer applicable.",
+      "Vérifier si le logement dépasse le plafond de loyer applicable.",
       "Comparer avec un loyer ? 700 EUR ou 900 EUR.",
-      "Tester un sc?nario studio ou colocation."
+      "Tester un scénario studio ou colocation."
     ],
     "faq": [
       {
         "question": "Un loyer de 800 EUR avec 1300 EUR de revenus laisse-t-il un droit ?",
-        "answer": "Souvent oui en th?orie, mais le plafond de loyer limite vite le gain. Le reste  ? charge reste un critere central."
+        "answer": "Souvent oui en théorie, mais le plafond de loyer limite vite le gain. Le reste à charge reste un critere central."
       },
       {
-        "question": "Pourquoi ce type de sc?nario est-il utile ?",
-        "answer": "Parce qu'il r?pond a une vraie question budgetaire avant une signature de bail ou un changement de logement."
+        "question": "Pourquoi ce type de scénario est-il utile ?",
+        "answer": "Parce qu'il répond a une vraie question budgetaire avant une signature de bail ou un changement de logement."
       }
     ]
   },
@@ -443,9 +443,9 @@ export const aplPilotScenarios = [
     "slug": "apl-cdi-loyer-700",
     "intent": "apl cdi loyer 700",
     "title": "APL avec CDI et loyer de 700 EUR : estimation 2026",
-    "description": "Exemple APL pour un salari? en CDI avec un loyer autour de 700 EUR.",
-    "summary": "Cette page vise une requ?te tr?s concr?te sur le rapport entre salaire stable et niveau de loyer.",
-    "audience": "Salari? en CDI",
+    "description": "Exemple APL pour un salarié en CDI avec un loyer autour de 700 EUR.",
+    "summary": "Cette page vise une requête très concrète sur le rapport entre salaire stable et niveau de loyer.",
+    "audience": "Salarié en CDI",
     "tags": [
       "cdi",
       "actif",
@@ -462,9 +462,9 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si vos primes ou heures suppl?mentaires gonflent le revenu retenu.",
-      "Comparer avec un loyer a 650 EUR ou 750 EUR.",
-      "Tester aussi un sc?nario avec prime d'activit?."
+      "Vérifier si vos primes ou heures supplémentaires gonflent le revenu retenu.",
+      "Comparer avec un loyer ? 650 EUR ou 750 EUR.",
+      "Tester aussi un scénario avec prime d'activité."
     ],
     "faq": [
       {
@@ -472,8 +472,8 @@ export const aplPilotScenarios = [
         "answer": "Oui. Le type de contrat ne bloque pas l'APL. Ce sont surtout le revenu et le loyer qui comptent."
       },
       {
-        "question": "? partir de quel salaire le droit disparait-il ?",
-        "answer": "Il n'existe pas de seuil unique. Tout d?pend de la zone, de la composition du foyer et du loyer retenu."
+        "question": "? partir de quel salaire le droit dispara?t-il ?",
+        "answer": "Il n'existe pas de seuil unique. Tout dépend de la zone, de la composition du foyer et du loyer retenu."
       }
     ]
   },
@@ -481,9 +481,9 @@ export const aplPilotScenarios = [
     "slug": "apl-cdd-loyer-600",
     "intent": "apl cdd loyer 600",
     "title": "APL avec CDD et loyer de 600 EUR : estimation 2026",
-    "description": "Sc?nario APL d'un salari? en CDD avec revenus modestes et loyer moyen.",
+    "description": "Scénario APL d'un salarié en CDD avec revenus modestes et loyer moyen.",
     "summary": "Cette page couvre une recherche plausible dans les phases d'emploi plus instable ou de transition.",
-    "audience": "Salari? en CDD",
+    "audience": "Salarié en CDD",
     "tags": [
       "cdd",
       "actif",
@@ -500,18 +500,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier la moyenne de revenus si vous avez des mois incomplets.",
-      "Comparer avec un sc?nario ch?mage si votre contrat se termine.",
-      "Tester un logement ? 550 EUR puis a 650 EUR."
+      "Vérifier la moyenne de revenus si vous avez des mois incomplets.",
+      "Comparer avec un scénario chômage si votre contrat se termine.",
+      "Tester un logement ? 550 EUR puis ? 650 EUR."
     ],
     "faq": [
       {
-        "question": "Le CDD donne-t-il plus d APL qu'un CDI ?",
-        "answer": "Non. Ce n'est pas le contrat qui pilote l'aide, mais les ressources retenues et les caract?ristiques du logement."
+        "question": "Le CDD donne-t-il plus d'APL qu'un CDI ?",
+        "answer": "Non. Ce n'est pas le contrat qui pilote l'aide, mais les ressources retenues et les caractéristiques du logement."
       },
       {
         "question": "Comment simuler si mes revenus changent souvent ?",
-        "answer": "Il faut tester plusieurs sc?narios repr?sentatifs plutot que supposer un revenu fixe sur toute l ann?e."
+        "answer": "Il faut tester plusieurs scénarios représentatifs plut?t que supposer un revenu fixe sur toute l année."
       }
     ]
   },
@@ -519,9 +519,9 @@ export const aplPilotScenarios = [
     "slug": "apl-chomage-loyer-moyen",
     "intent": "apl chomage loyer moyen",
     "title": "APL au chomage avec loyer moyen : estimation 2026",
-    "description": "Simulation APL d'une personne seule en p?riode de ch?mage avec loyer standard.",
-    "summary": "Cette page traite une intention sensible liee a la baisse de revenus et a la gestion du reste  ? charge.",
-    "audience": "Personne au ch?mage",
+    "description": "Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+    "summary": "Cette page traite une intention sensible liée à la baisse de revenus et a la gestion du reste à charge.",
+    "audience": "Personne au chômage",
     "tags": [
       "chmage",
       "celibataire",
@@ -538,18 +538,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier quelles indemnit?s sont retenues comme ressources.",
-      "Comparer avec un sc?nario RSA si les revenus chutent davantage.",
-      "Tester un sc?nario avec h?bergement gratuit si la situation change."
+      "Vérifier quelles indemnités sont retenues comme ressources.",
+      "Comparer avec un scénario RSA si les revenus chutent davantage.",
+      "Tester un scénario avec hébergement gratuit si la situation change."
     ],
     "faq": [
       {
-        "question": "Le ch?mage augmente-t-il l'APL ?",
-        "answer": "Une baisse de revenus peut rendre l'aide plus favorable. Il faut toutefois int?grer correctement les indemnit?s retenues."
+        "question": "Le chômage augmente-t-il l'APL ?",
+        "answer": "Une baisse de revenus peut rendre l'aide plus favorable. Il faut toutefois intégrer correctement les indemnités retenues."
       },
       {
-        "question": "L'APL au ch?mage suffit-elle pour compenser le loyer ?",
-        "answer": "Rarement ? elle seule. Elle peut r?duire le reste  ? charge, mais ne remplace pas un budget logement complet."
+        "question": "L'APL au chômage suffit-elle pour compenser le loyer ?",
+        "answer": "Rarement ? elle seule. Elle peut réduire le reste à charge, mais ne remplace pas un budget logement complet."
       }
     ]
   },
@@ -557,8 +557,8 @@ export const aplPilotScenarios = [
     "slug": "apl-reprise-emploi",
     "intent": "apl reprise emploi",
     "title": "APL apres une reprise d'emploi : estimation 2026",
-    "description": "Exemple d impact d'une reprise d'activit? sur l'APL.",
-    "summary": "Cette page traite une situation ?volutive utile pour les foyers qui sortent d'une p?riode de ch?mage ou d inactivit?.",
+    "description": "Exemple d'impact d'une reprise d'activité sur l'APL.",
+    "summary": "Cette page traite une situation évolutive utile pour les foyers qui sortent d'une période de chômage ou d inactivité.",
     "audience": "Personne qui reprend'un emploi",
     "tags": [
       "reprise-emploi",
@@ -576,18 +576,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "Comparer l avant et l apr?s reprise d'activit?.",
-      "V?rifier si d'autres aides prennent le relais.",
+      "Comparer l avant et l après reprise d'activité.",
+      "Vérifier si d'autres aides prennent le relais.",
       "Tester plusieurs niveaux de salaire si la reprise est progressive."
     ],
     "faq": [
       {
         "question": "La reprise d'emploi fait-elle baisser l'APL ?",
-        "answer": "Souvent oui a terme, car les revenus augmentent. L'effet exact d?pend du loyer et de la zone."
+        "answer": "Souvent oui à terme, car les revenus augmentent. L'effet exact dépend du loyer et de la zone."
       },
       {
-        "question": "Faut-il prevenir la CAF rapidement apr?s reprise d'emploi ?",
-        "answer": "Oui, pour garder un dossier coh?rent avec votre situation r?elle et ?viter un d?calage entre droits et ressources."
+        "question": "Faut-il prevenir la CAF rapidement après reprise d'emploi ?",
+        "answer": "Oui, pour garder un dossier cohérent avec votre situation réelle et éviter un décalage entre droits et ressources."
       }
     ]
   },
@@ -595,8 +595,8 @@ export const aplPilotScenarios = [
     "slug": "apl-jeune-actif-premier-logement",
     "intent": "apl jeune actif premier logement",
     "title": "APL jeune actif pour un premier logement : estimation 2026",
-    "description": "Cas pratique d APL pour un jeune actif qui prend son premier appartement.",
-    "summary": "Cette page cible une requ?te de d?but de parcours locatif, utile pour capter les nouveaux entrants sur le march?.",
+    "description": "Cas pratique d'APL pour un jeune actif qui prend son premier appartement.",
+    "summary": "Cette page cible une requête de début de parcours locatif, utile pour capter les nouveaux entrants sur le marché.",
     "audience": "Jeune actif premier logement",
     "tags": [
       "jeune-actif",
@@ -614,18 +614,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier la date d entr?e dans le logement.",
-      "Tester un sc?nario avec salaire d essai ou revenu variable.",
+      "Vérifier la date d entrée dans le logement.",
+      "Tester un scénario avec salaire d essai ou revenu variable.",
       "Comparer avec une colocation si le budget est trop tendu."
     ],
     "faq": [
       {
-        "question": "Un jeune actif peut-il toucher l'APL d?s son premier logement ?",
+        "question": "Un jeune actif peut-il toucher l'APL dès son premier logement ?",
         "answer": "Oui si les conditions de logement et de ressources sont remplies. Le premier bail ne bloque pas l'aide."
       },
       {
         "question": "Le salaire du premier emploi supprime-t-il vite l'APL ?",
-        "answer": "Cela d?pend du niveau de loyer. Un revenu modeste peut encore laisser une aide partielle pendant un temps."
+        "answer": "Cela dépend du niveau de loyer. Un revenu modeste peut encore laisser une aide partielle pendant un temps."
       }
     ]
   },
@@ -634,7 +634,7 @@ export const aplPilotScenarios = [
     "intent": "apl alternant",
     "title": "APL alternant : estimation 2026",
     "description": "Estimation APL pour un alternant avec revenu regulier mais modeste.",
-    "summary": "Cette page couvre une requ?te fr?quente chez les jeunes actifs en formation et en entr?e dans la vie professionnelle.",
+    "summary": "Cette page couvre une requête fréquente chez les jeunes actifs en formation et en entrée dans la vie professionnelle.",
     "audience": "Alternant en location",
     "tags": [
       "alternant",
@@ -652,9 +652,9 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si vos revenus d alternance varient selon les mois.",
-      "Comparer avec un sc?nario ?tudiant si votre statut reste proche.",
-      "Tester aussi une r?sidence partagee ou une colocation."
+      "Vérifier si vos revenus d alternance varient selon les mois.",
+      "Comparer avec un scénario étudiant si votre statut reste proche.",
+      "Tester aussi une résidence partagee ou une colocation."
     ],
     "faq": [
       {
@@ -662,8 +662,8 @@ export const aplPilotScenarios = [
         "answer": "Oui, mais le salaire est pris en compte dans les ressources. Il faut donc mesurer son effet sur l'aide."
       },
       {
-        "question": "Alternant et ?tudiant ont-ils la m?me APL ?",
-        "answer": "La logique est proche, mais la structure des revenus peut modifier le r?sultat."
+        "question": "Alternant et étudiant ont-ils la même APL ?",
+        "answer": "La logique est proche, mais la structure des revenus peut modifier le résultat."
       }
     ]
   },
@@ -671,8 +671,8 @@ export const aplPilotScenarios = [
     "slug": "apl-apprenti",
     "intent": "apl apprenti",
     "title": "APL apprenti : estimation 2026",
-    "description": "Sc?nario APL pour un apprenti avec petit salaire et loyer mod?r?.",
-    "summary": "Cette page cible une intention pr?cise souvent recherch?e avec une concurrence encore raisonnable.",
+    "description": "Scénario APL pour un apprenti avec petit salaire et loyer modéré.",
+    "summary": "Cette page cible une intention précise souvent recherchée avec une concurrence encore raisonnable.",
     "audience": "Apprenti locataire",
     "tags": [
       "apprenti",
@@ -690,13 +690,13 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le revenu net r?el verse par l employeur.",
-      "Comparer avec un sc?nario alternance si votre statut est hybride.",
-      "Tester aussi un sc?nario en r?sidence si vous ?tes h?berg? en foyer."
+      "Vérifier le revenu net réel verse par l employeur.",
+      "Comparer avec un scénario alternance si votre statut est hybride.",
+      "Tester aussi un scénario en résidence si vous êtes hébergé en foyer."
     ],
     "faq": [
       {
-        "question": "Un apprenti a-t-il droit ? l'APL ?",
+        "question": "Un apprenti a-t-il droit à l'APL ?",
         "answer": "Oui, sous conditions de logement et de ressources. Les revenus modestes de l apprentissage peuvent laisser une aide."
       },
       {
@@ -710,7 +710,7 @@ export const aplPilotScenarios = [
     "intent": "apl colocation jeune actif",
     "title": "APL jeune actif en colocation : estimation 2026",
     "description": "Cas APL pour un jeune actif en colocation avec revenu modeste.",
-    "summary": "Cette page sert un besoin tr?s concret sur les premiers logements urbains et la gestion du reste  ? charge.",
+    "summary": "Cette page sert un besoin très concret sur les premiers logements urbains et la gestion du reste à charge.",
     "audience": "Jeune actif en colocation",
     "tags": [
       "colocation",
@@ -728,18 +728,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier la quote-part de loyer mentionnee au bail.",
-      "Tester une variante avec revenu a 1400 EUR.",
-      "Comparer avec un studio si vous h?sitez entre les deux."
+      "Vérifier la quote-part de loyer mentionnee au bail.",
+      "Tester une variante avec revenu ? 1400 EUR.",
+      "Comparer avec un studio si vous hésitez entre les deux."
     ],
     "faq": [
       {
-        "question": "La colocation reste-t-elle int?ressante avec l'APL ?",
-        "answer": "Oui si elle reduit suffisamment le reste  ? charge. Il faut raisonner sur votre part de loyer et non sur le loyer total."
+        "question": "La colocation reste-t-elle intéressante avec l'APL ?",
+        "answer": "Oui si elle reduit suffisamment le reste à charge. Il faut raisonner sur votre part de loyer et non sur le loyer total."
       },
       {
-        "question": "Un jeune actif en colocation doit-il d?clarer le loyer total ?",
-        "answer": "Non, la logique porte sur votre quote-part r?elle ou sur ce que le bail permet de justifier."
+        "question": "Un jeune actif en colocation doit-il déclarer le loyer total ?",
+        "answer": "Non, la logique porte sur votre quote-part réelle ou sur ce que le bail permet de justifier."
       }
     ]
   },
@@ -748,7 +748,7 @@ export const aplPilotScenarios = [
     "intent": "apl hlm petit revenu",
     "title": "APL en HLM avec petit revenu : estimation 2026",
     "description": "Exemple APL pour un foyer modeste loge en HLM.",
-    "summary": "Cette page r?pond a une intention claire autour d'un type de logement tr?s fr?quent dans les recherches APL.",
+    "summary": "Cette page répond a une intention claire autour d'un type de logement très fréquent dans les recherches APL.",
     "audience": "Locataire HLM avec petit revenu",
     "tags": [
       "hlm",
@@ -766,17 +766,17 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le montant du loyer net retenu sur l'avis de paiement.",
-      "Tester une variante couple ou parent isol? si la composition du foyer change.",
-      "Comparer avec un logement priv? au m?me niveau de loyer."
+      "Vérifier le montant du loyer net retenu sur l'avis de paiement.",
+      "Tester une variante couple ou parent isolé si la composition du foyer change.",
+      "Comparer avec un logement privé au même niveau de loyer."
     ],
     "faq": [
       {
         "question": "L'APL est-elle plus simple en HLM ?",
-        "answer": "Le type de logement peut clarifier certains param?tres, mais le revenu et la composition du foyer restent decisifs."
+        "answer": "Le type de logement peut clarifier certains paramètres, mais le revenu et la composition du foyer restent decisifs."
       },
       {
-        "question": "Un petit loyer signifie-t-il forc?ment une petite APL ?",
+        "question": "Un petit loyer signifie-t-il forcément une petite APL ?",
         "answer": "Pas toujours, mais un loyer plus faible limite mecaniquement la base de calcul de l'aide."
       }
     ]
@@ -784,10 +784,10 @@ export const aplPilotScenarios = [
   {
     "slug": "apl-petite-surface-paris",
     "intent": "apl studio paris",
-    "title": "APL pour un studio  ? Paris : estimation 2026",
+    "title": "APL pour un studio à Paris : estimation 2026",
     "description": "Exemple APL pour une petite surface parisienne avec revenu limite.",
-    "summary": "Cette page vise les recherches sur les studios parisiens, tr?s fr?quentes chez les jeunes actifs et les ?tudiants.",
-    "audience": "Locataire d'un studio  ? Paris",
+    "summary": "Cette page vise les recherches sur les studios parisiens, très fréquentes chez les jeunes actifs et les étudiants.",
+    "audience": "Locataire d'un studio à Paris",
     "tags": [
       "studio",
       "paris",
@@ -804,28 +804,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier que le loyer est bien renseign? hors charges.",
+      "Vérifier que le loyer est bien renseigné hors charges.",
       "Comparer avec une chambre ou une colocation.",
-      "Tester un revenu a 800 EUR puis a 1200 EUR."
+      "Tester un revenu ? 800 EUR puis ? 1200 EUR."
     ],
     "faq": [
       {
-        "question": "Peut-on toucher l'APL pour un studio  ? Paris ?",
+        "question": "Peut-on toucher l'APL pour un studio à Paris ?",
         "answer": "Oui, surtout avec des revenus modestes. Le calcul reste toutefois limite par le plafond de loyer de la zone."
       },
       {
-        "question": "Studio et chambre donnent-ils la m?me APL ?",
-        "answer": "Pas forc?ment. Le r?sultat d?pend du loyer d?clar? et des caract?ristiques du logement."
+        "question": "Studio et chambre donnent-ils la même APL ?",
+        "answer": "Pas forcément. Le résultat dépend du loyer déclaré et des caractéristiques du logement."
       }
     ]
   },
   {
     "slug": "apl-couple-paris",
     "intent": "apl couple paris",
-    "title": "APL pour un couple  ? Paris : estimation 2026",
+    "title": "APL pour un couple à Paris : estimation 2026",
     "description": "Cas pratique d'un couple parisien avec loyer francilien et revenus intermediaires.",
-    "summary": "Cette page couvre une requ?te g?olocalis?e couple plus loyer tendu, fr?quente sur les budgets de d?but de vie commune.",
-    "audience": "Couple  ? Paris",
+    "summary": "Cette page couvre une requête géolocalisée couple plus loyer tendu, fréquente sur les budgets de début de vie commune.",
+    "audience": "Couple à Paris",
     "tags": [
       "couple",
       "paris",
@@ -842,28 +842,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le loyer hors charges indiqu? dans le bail.",
-      "Tester un sc?nario avec revenus ? 2000 EUR puis ? 2500 EUR.",
+      "Vérifier le loyer hors charges indiqué dans le bail.",
+      "Tester un scénario avec revenus ? 2000 EUR puis ? 2500 EUR.",
       "Comparer avec une proche banlieue si vous etudiez plusieurs options."
     ],
     "faq": [
       {
-        "question": "Un couple  ? Paris peut-il toucher une APL significative ?",
-        "answer": "Oui dans certains cas, mais le plafond de loyer retient seulement une partie du co?t r?el du logement."
+        "question": "Un couple à Paris peut-il toucher une APL significative ?",
+        "answer": "Oui dans certains cas, mais le plafond de loyer retient seulement une partie du coût réel du logement."
       },
       {
-        "question": "Les revenus combin?s annulent-ils souvent l'APL ?",
-        "answer": "Ils peuvent la r?duire rapidement. Il faut donc v?rifier le rapport entre revenus du foyer et loyer."
+        "question": "Les revenus combinés annulent-ils souvent l'APL ?",
+        "answer": "Ils peuvent la réduire rapidement. Il faut donc vérifier le rapport entre revenus du foyer et loyer."
       }
     ]
   },
   {
     "slug": "apl-couple-lyon",
     "intent": "apl couple lyon",
-    "title": "APL pour un couple  ? Lyon : estimation 2026",
-    "description": "Simulation type APL pour un couple  ? Lyon avec logement dans le parc priv?.",
-    "summary": "Cette page couvre une grande ville de province avec une recherche g?olocalis?e utile pour les couples sans enfant.",
-    "audience": "Couple  ? Lyon",
+    "title": "APL pour un couple à Lyon : estimation 2026",
+    "description": "Simulation type APL pour un couple à Lyon avec logement dans le parc privé.",
+    "summary": "Cette page couvre une grande ville de province avec une recherche géolocalisée utile pour les couples sans enfant.",
+    "audience": "Couple à Lyon",
     "tags": [
       "couple",
       "lyon",
@@ -880,18 +880,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si les deux revenus sont stables sur la p?riode retenue.",
-      "Comparer avec un sc?nario couple avec enfant si la situation doit ?voluer vite.",
-      "Tester aussi un loyer ? 700 EUR puis a 850 EUR."
+      "Vérifier si les deux revenus sont stables sur la période retenue.",
+      "Comparer avec un scénario couple avec enfant si la situation doit évoluer vite.",
+      "Tester aussi un loyer ? 700 EUR puis ? 850 EUR."
     ],
     "faq": [
       {
-        "question": "Le calcul'APL d'un couple  ? Lyon reste-t-il interessant ?",
+        "question": "Le calcul de l'APL d'un couple à Lyon reste-t-il int?ressant ?",
         "answer": "Oui dans certains cas, surtout si le loyer reste soutenu au regard des revenus du foyer."
       },
       {
         "question": "Une grande ville de province reste-t-elle en zone province ?",
-        "answer": "Oui dans ce type de sc?nario. La distinction principale oppose ici l ?le-de-France, la province et les DOM."
+        "answer": "Oui dans ce type de scénario. La distinction principale oppose ici l Île-de-France, la province et les DOM."
       }
     ]
   },
@@ -899,8 +899,8 @@ export const aplPilotScenarios = [
     "slug": "apl-couple-sans-enfant",
     "intent": "apl couple sans enfant",
     "title": "APL pour un couple sans enfant : estimation 2026",
-    "description": "Sc?nario APL pour un couple locataire sans enfant avec revenus modestes.",
-    "summary": "Cette page r?pond a une intention large et rentable pour le cluster foyer, avec un cas simple ? comparer.",
+    "description": "Scénario APL pour un couple locataire sans enfant avec revenus modestes.",
+    "summary": "Cette page répond a une intention large et rentable pour le cluster foyer, avec un cas simple ? comparer.",
     "audience": "Couple sans enfant",
     "tags": [
       "couple",
@@ -918,8 +918,8 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "Additionner les deux revenus r?els du foyer.",
-      "Tester le sc?nario avec et sans prime variable.",
+      "Additionner les deux revenus réels du foyer.",
+      "Tester le scénario avec et sans prime variable.",
       "Comparer avec un logement HLM si c'est une option plausible."
     ],
     "faq": [
@@ -928,8 +928,8 @@ export const aplPilotScenarios = [
         "answer": "Oui, le calcul tient compte des ressources du foyer. L'aide peut donc baisser plus vite que pour une personne seule."
       },
       {
-        "question": "Un couple sans enfant a-t-il un plafond different ?",
-        "answer": "Oui, le plafond de loyer et certains param?tres de calcul ?voluent avec la composition du foyer."
+        "question": "Un couple sans enfant a-t-il un plafond diff?rent ?",
+        "answer": "Oui, le plafond de loyer et certains paramètres de calcul évoluent avec la composition du foyer."
       }
     ]
   },
@@ -937,8 +937,8 @@ export const aplPilotScenarios = [
     "slug": "apl-couple-un-enfant",
     "intent": "apl couple 1 enfant",
     "title": "APL couple avec 1 enfant : estimation 2026",
-    "description": "Sc?nario APL pour un couple avec un enfant et loyer familial moyen.",
-    "summary": "Cette page couvre une requ?te large et sert de pivot vers les autres cas famille plus pr?cis.",
+    "description": "Scénario APL pour un couple avec un enfant et loyer familial moyen.",
+    "summary": "Cette page couvre une requête large et sert de pivot vers les autres cas famille plus précis.",
     "audience": "Couple avec un enfant",
     "tags": [
       "couple",
@@ -956,8 +956,8 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier la composition exacte du foyer.",
-      "Comparer avec un sc?nario deux enfants ou parent isol?.",
+      "Vérifier la composition exacte du foyer.",
+      "Comparer avec un scénario deux enfants ou parent isolé.",
       "Tester aussi un logement social si c'est votre cas."
     ],
     "faq": [
@@ -966,8 +966,8 @@ export const aplPilotScenarios = [
         "answer": "Il peut rendre le calcul plus favorable, mais le revenu du foyer reste determinant."
       },
       {
-        "question": "Faut-il recalculer l'APL apr?s une naissance ?",
-        "answer": "Oui, car la composition du foyer influence directement plusieurs param?tres du calcul."
+        "question": "Faut-il recalculer l'APL après une naissance ?",
+        "answer": "Oui, car la composition du foyer influence directement plusieurs paramètres du calcul."
       }
     ]
   },
@@ -975,9 +975,9 @@ export const aplPilotScenarios = [
     "slug": "apl-couple-loyer-eleve",
     "intent": "apl couple loyer eleve",
     "title": "APL pour un couple avec loyer eleve : estimation 2026",
-    "description": "Sc?nario APL pour un couple avec un loyer ?lev? par rapport au revenu du foyer.",
-    "summary": "Cette page r?pond a une question r?currente de budget logement en zone tendue pour les couples sans enfant.",
-    "audience": "Couple avec loyer ?lev?",
+    "description": "Scénario APL pour un couple avec un loyer élevé par rapport au revenu du foyer.",
+    "summary": "Cette page répond a une question récurrente de budget logement en zone tendue pour les couples sans enfant.",
+    "audience": "Couple avec loyer élevé",
     "tags": [
       "couple",
       "loyer-eleve",
@@ -994,28 +994,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le plafond de loyer applicable dans la zone.",
-      "Comparer avec un sc?nario hors ?le-de-France.",
+      "Vérifier le plafond de loyer applicable dans la zone.",
+      "Comparer avec un scénario hors Île-de-France.",
       "Tester une baisse ou une hausse de revenus pour mesurer la sensibilite."
     ],
     "faq": [
       {
-        "question": "Un loyer tr?s ?lev? emp?che-t-il l'APL ?",
-        "answer": "Pas necessairement, mais une partie du loyer peut d?passer le plafond retenu et ne plus augmenter l'aide."
+        "question": "Un loyer très élevé empêche-t-il l'APL ?",
+        "answer": "Pas necessairement, mais une partie du loyer peut dépasser le plafond retenu et ne plus augmenter l'aide."
       },
       {
         "question": "Faut-il viser un logement moins cher pour garder l'APL ?",
-        "answer": "Souvent, un loyer plus raisonnable permet surtout de r?duire le reste  ? charge, m?me si l'aide baisse un peu."
+        "answer": "Souvent, un loyer plus raisonnable permet surtout de réduire le reste à charge, même si l'aide baisse un peu."
       }
     ]
   },
   {
     "slug": "apl-parent-isole-un-enfant",
     "intent": "apl parent isole 1 enfant",
-    "title": "APL parent isol? avec 1 enfant : estimation 2026",
-    "description": "Cas pratique APL pour un parent isol? avec un enfant en location.",
-    "summary": "Cette page vise une intention tr?s concr?te avec un besoin fort de r?ponse rapide sur le niveau d'aide.",
-    "audience": "Parent isol? avec un enfant",
+    "title": "APL parent isolé avec 1 enfant : estimation 2026",
+    "description": "Cas pratique APL pour un parent isolé avec un enfant en location.",
+    "summary": "Cette page vise une intention très concrète avec un besoin fort de réponse rapide sur le niveau d'aide.",
+    "audience": "Parent isolé avec un enfant",
     "tags": [
       "parent-isol",
       "1-enfant",
@@ -1032,28 +1032,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le nombre d enfants  ? charge retenu.",
-      "Comparer avec le RSA ou la prime d'activit? si besoin.",
-      "Tester un sc?nario HLM si le logement est social."
+      "Vérifier le nombre d'enfants ? charge retenu.",
+      "Comparer avec le RSA ou la prime d'activité si besoin.",
+      "Tester un scénario HLM si le logement est social."
     ],
     "faq": [
       {
-        "question": "Un parent isol? touche-t-il plus d APL ?",
-        "answer": "Le calcul peut ?tre plus favorable qu avec un adulte seul, mais il d?pend toujours du revenu et du loyer retenu."
+        "question": "Un parent isolé touche-t-il plus d'APL ?",
+        "answer": "Le calcul peut être plus favorable qu avec un adulte seul, mais il dépend toujours du revenu et du loyer retenu."
       },
       {
         "question": "Les pensions alimentaires changent-elles l'APL ?",
-        "answer": "Oui, elles peuvent modifier les ressources prises en compte. Il faut donc les int?grer a la v?rification finale."
+        "answer": "Oui, elles peuvent modifier les ressources prises en compte. Il faut donc les intégrer a la vérification finale."
       }
     ]
   },
   {
     "slug": "apl-parent-isole-deux-enfants",
     "intent": "apl parent isole 2 enfants",
-    "title": "APL parent isol? avec 2 enfants : estimation 2026",
-    "description": "Sc?nario APL pour un parent solo avec deux enfants et loyer familial.",
-    "summary": "Cette page couvre une recherche a forte utilit? pratique pour les foyers monoparentaux avec charges ?lev?es.",
-    "audience": "Parent isol? avec deux enfants",
+    "title": "APL parent isolé avec 2 enfants : estimation 2026",
+    "description": "Scénario APL pour un parent solo avec deux enfants et loyer familial.",
+    "summary": "Cette page couvre une recherche a forte utilité pratique pour les foyers monoparentaux avec charges élevées.",
+    "audience": "Parent isolé avec deux enfants",
     "tags": [
       "parent-isol",
       "2-enfants",
@@ -1070,28 +1070,28 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si les enfants sont tous consid?r?s  ? charge.",
-      "Tester un sc?nario avec garde alternee si la situation est complexe.",
-      "Comparer avec un logement social si vous ?tes d?j? en HLM."
+      "Vérifier si les enfants sont tous considérés ? charge.",
+      "Tester un scénario avec garde alternee si la situation est complexe.",
+      "Comparer avec un logement social si vous êtes déjà en HLM."
     ],
     "faq": [
       {
         "question": "L'APL monte-t-elle nettement avec deux enfants ?",
-        "answer": "Le calcul est souvent plus favorable, mais il d?pend toujours du revenu et du loyer retenu par la zone."
+        "answer": "Le calcul est souvent plus favorable, mais il dépend toujours du revenu et du loyer retenu par la zone."
       },
       {
-        "question": "Le parent isol? doit-il d?clarer toutes les aides familiales ?",
-        "answer": "Oui, les ressources prises en compte doivent ?tre v?rifiees de maniere compl?te avant de d?d?poser un dossier."
+        "question": "Le parent isolé doit-il déclarer toutes les aides familiales ?",
+        "answer": "Oui, les ressources prises en compte doivent être vérifiées de manière complète avant de déposer un dossier."
       }
     ]
   },
   {
     "slug": "apl-parent-isole-paris",
     "intent": "apl parent isole paris",
-    "title": "APL parent isol?  ? Paris : estimation 2026",
-    "description": "Estimation APL pour un parent solo  ? Paris avec un enfant et loyer francilien.",
-    "summary": "Cette page combine intention familiale et g?olocalisation forte, avec un vrai enjeu de reste  ? charge en ?le-de-France.",
-    "audience": "Parent isol?  ? Paris",
+    "title": "APL parent isolé à Paris : estimation 2026",
+    "description": "Estimation APL pour un parent solo à Paris avec un enfant et loyer francilien.",
+    "summary": "Cette page combine intention familiale et géolocalisation forte, avec un vrai enjeu de reste à charge en Île-de-France.",
+    "audience": "Parent isolé à Paris",
     "tags": [
       "parent-isol",
       "paris",
@@ -1108,18 +1108,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le loyer retenu hors charges.",
+      "Vérifier le loyer retenu hors charges.",
       "Comparer avec une proche banlieue si vous cherchez un ordre de grandeur.",
-      "Tester aussi un sc?nario avec deux enfants si la situation ?volue vite."
+      "Tester aussi un scénario avec deux enfants si la situation évolue vite."
     ],
     "faq": [
       {
-        "question": "Un parent solo  ? Paris peut-il encore toucher une APL utile ?",
-        "answer": "Oui, surtout avec des revenus modestes, mais le co?t du logement reste souvent bien sup?rieur au plafond retenu."
+        "question": "Un parent solo à Paris peut-il encore toucher une APL utile ?",
+        "answer": "Oui, surtout avec des revenus modestes, mais le coût du logement reste souvent bien supérieur au plafond retenu."
       },
       {
-        "question": "Pourquoi le reste  ? charge reste-t-il ?lev?  ? Paris ?",
-        "answer": "Parce que l'APL ne suit pas int?gralement le loyer r?el au-del? du plafond applicable ? la zone."
+        "question": "Pourquoi le reste à charge reste-t-il élevé à Paris ?",
+        "answer": "Parce que l'APL ne suit pas intégralement le loyer réel au-delà du plafond applicable à la zone."
       }
     ]
   },
@@ -1128,7 +1128,7 @@ export const aplPilotScenarios = [
     "intent": "apl famille 2 enfants",
     "title": "APL famille avec 2 enfants en province : estimation 2026",
     "description": "Cas APL pour un couple avec deux enfants dans une grande ville de province.",
-    "summary": "Cette page donne un sc?nario familial tr?s lisible pour comprendre l'impact du foyer sur le calcul.",
+    "summary": "Cette page donne un scénario familial très lisible pour comprendre l'impact du foyer sur le calcul.",
     "audience": "Couple avec deux enfants en province",
     "tags": [
       "famille",
@@ -1146,9 +1146,9 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier le nombre exact d enfants retenus au foyer.",
-      "Comparer avec un logement social si vous y ?tes ?ligibles.",
-      "Tester une variation de revenu si un parent reprend'une activit?."
+      "Vérifier le nombre exact d enfants retenus au foyer.",
+      "Comparer avec un logement social si vous y êtes éligibles.",
+      "Tester une variation de revenu si un parent reprend'une activité."
     ],
     "faq": [
       {
@@ -1156,7 +1156,7 @@ export const aplPilotScenarios = [
         "answer": "Oui, surtout si le logement reste couteux au regard des revenus du foyer. La composition familiale joue souvent en faveur du calcul."
       },
       {
-        "question": "Le couple doit-il d?clarer toutes les ressources du foyer ?",
+        "question": "Le couple doit-il déclarer toutes les ressources du foyer ?",
         "answer": "Oui, y compris les revenus des deux adultes et les autres ressources retenues par la CAF."
       }
     ]
@@ -1164,10 +1164,10 @@ export const aplPilotScenarios = [
   {
     "slug": "apl-famille-idf",
     "intent": "apl famille ile de france",
-    "title": "APL famille en Ile-de-France : estimation 2026",
-    "description": "Simulation type APL pour une famille en ?le-de-France avec loyer ?lev?.",
-    "summary": "Cette page r?pond a une recherche a forte tension budgetaire dans une zone ou le reste  ? charge reste souvent lourd.",
-    "audience": "Famille en ?le-de-France",
+    "title": "APL famille en ?le-de-France : estimation 2026",
+    "description": "Simulation type APL pour une famille en Île-de-France avec loyer élevé.",
+    "summary": "Cette page répond a une recherche a forte tension budgetaire dans une zone ou le reste à charge reste souvent lourd.",
+    "audience": "Famille en Île-de-France",
     "tags": [
       "famille",
       "idf",
@@ -1184,18 +1184,18 @@ export const aplPilotScenarios = [
       "economie": 0
     },
     "checklist": [
-      "V?rifier si le logement d?passe les plafonds de zone.",
-      "Comparer avec un sc?nario province si une mobilit? est envisag?e.",
+      "Vérifier si le logement dépasse les plafonds de zone.",
+      "Comparer avec un scénario province si une mobilité est envisagée.",
       "Tester aussi une variante avec deux enfants."
     ],
     "faq": [
       {
         "question": "Une famille francilienne peut-elle vraiment compter sur l'APL ?",
-        "answer": "L'APL peut aider, mais elle ne suit pas g?n?ralement la hausse r?elle des loyers en zone tendue."
+        "answer": "L'APL peut aider, mais elle ne suit pas généralement la hausse réelle des loyers en zone tendue."
       },
       {
-        "question": "Pourquoi le montant semble parfois faible en ?le-de-France ?",
-        "answer": "Parce que le calcul applique un plafond de loyer et tient compte de l ensemble des ressources du foyer."
+        "question": "Pourquoi le montant semble parfois faible en Île-de-France ?",
+        "answer": "Parce que le calcul applique un plafond de loyer et tient compte de l'ensemble des ressources du foyer."
       }
     ]
   },

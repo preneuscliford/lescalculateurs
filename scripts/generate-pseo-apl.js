@@ -28,6 +28,25 @@ const args = new Map(
 const target = args.get("target") || "src";
 const generatedAt = formatDisplayDate(new Date());
 const aplScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
+const APL_TEXT_FIXES = [
+  [/\brépond a\b/gi, "répond à"],
+  [/\brecherche a\b/gi, "recherche à"],
+  [/\bquestion budgetaire\b/gi, "question budgétaire"],
+  [/\btension budgetaire\b/gi, "tension budgétaire"],
+  [/\bbudgetaire\b/gi, "budgétaire"],
+  [/\bparamêtres\b/gi, "paramètres"],
+  [/\bcas simple \? comparer\b/gi, "cas simple à comparer"],
+  [/\bzone ou\b/gi, "zone où"],
+  [/\bloyer eleve\b/gi, "loyer élevé"],
+  [/\bCouple avec loyer eleve\b/g, "Couple avec loyer élevé"],
+  [/\bapl couple loyer eleve\b/g, "apl couple loyer élevé"],
+  [/\bdebut\b/gi, "début"],
+  [/\bintermediaire\b/gi, "intermédiaire"],
+  [/\bintermediaires\b/gi, "intermédiaires"],
+  [/\bdeterminant\b/gi, "déterminant"],
+  [/\bdeterminants\b/gi, "déterminants"],
+  [/\butilite\b/gi, "utilité"],
+];
 
 async function main() {
   const sanitizedScenarios = aplScenarios.map(sanitizeAplScenario);
@@ -91,8 +110,7 @@ async function main() {
 }
 
 function sanitizeAplScenario(scenario) {
-  const sanitizeText = (value) =>
-    typeof value === "string" ? normalizeFrenchText(value) : value;
+  const sanitizeText = (value) => normalizeAplScenarioText(value);
 
   const sanitizeFaqItem = (item) => ({
     ...item,
@@ -146,6 +164,18 @@ function sanitizeAplScenario(scenario) {
       : scenario.faq,
     pilotProduct: sanitizePilotProduct(scenario.pilotProduct),
   };
+}
+
+function normalizeAplScenarioText(value) {
+  if (typeof value !== "string") return value;
+
+  let output = normalizeFrenchText(value);
+
+  for (const [pattern, replacement] of APL_TEXT_FIXES) {
+    output = output.replace(pattern, replacement);
+  }
+
+  return output;
 }
 
 function validateScenarios(scenarios) {
