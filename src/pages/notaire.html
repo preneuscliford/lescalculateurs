@@ -7,7 +7,7 @@
     <meta name="description" content="Calculez vos frais de notaire 2026 selon le prix du bien, le type d'achat et le département. Estimation gratuite immédiate. " />
     <meta
       name="keywords"
-      content="frais notaire 2026, calculateur frais notaire gratuit, comparaison frais notaire départements, barèmes notaire officiels, émoluments notaire, droits enregistrement, simulation achat immobilier, coût notaire maison appartement, taux notaire france, calcul frais acte, estimation frais notaire département, comparateur frais notaire villes, graphique frais notaire, export csv frais notaire"
+      content="frais notaire 2026, calculateur frais notaire gratuit, comparaison frais notaire départements, barèmes notaire officiels, émoluments notaire, droits d'enregistrement, simulation achat immobilier, coût notaire maison appartement, taux notaire france, calcul frais acte, estimation frais notaire département, comparateur frais notaire villes, graphique frais notaire, export csv frais notaire"
     />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
@@ -24,7 +24,7 @@
     />
     <meta
       property="og:description"
-      content="Estimez vos frais de notaire en 2026 : ancien, neuf (VEFA), droits et emoluments. résultat immediat. "
+      content="Estimez vos frais de notaire en 2026 : ancien, neuf (VEFA), droits et émoluments. résultat immédiat. "
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -33,7 +33,7 @@
     />
     <meta
       name="twitter:description"
-      content="Estimez vos frais de notaire en 2026 : ancien, neuf (VEFA), droits et emoluments. résultat immediat. "
+      content="Estimez vos frais de notaire en 2026 : ancien, neuf (VEFA), droits et émoluments. résultat immédiat. "
     />
 
     <!-- Favicon -->
@@ -164,7 +164,7 @@
         target="_blank"
         rel="noopener"
         style="color: #856404; text-decoration: underline; font-weight: bold"
-        >Notaires. fr</a
+        >Notaires.fr</a
       >
       <span class="hidden md:inline">
  |
@@ -204,7 +204,7 @@
             <a
               href="/pages/methodologie.html"
               class="hidden lg:block text-gray-600 hover:text-blue-600"
-              >📚 Méthodo</a
+              >📚 Méthodologie</a
             >
             <a
               href="/pages/historique-mises-a-jour"
@@ -300,7 +300,7 @@
  </p>
             <div class="mb-3 text-gray-700">
               <p class="mb-2">
- Les droits d’enregistrement (DMTO) varient de
+ Les droits d’d'enregistrement (DMTO) varient de
  <strong>5, 09 % (36 Indre, 976 Mayotte)</strong> ? <strong>6, 32 % (87 départements au taux majoré)</strong>.
  Paris (75) applique le taux majoré de
  <strong>6, 32 %</strong>.
@@ -328,16 +328,16 @@
               </ul>
               <p class="mt-2">
  → Écart maximal  :  <strong>3&nbsp;075&nbsp;€</strong>
- sur les seuls droits d’enregistrement.
+ sur les seuls droits d’d'enregistrement.
  </p>
               <p class="mt-2 text-sm">
  Source  :
  <a
-                  href="https://www.impots.gouv.fr/droits-denregistrement"
+                  href="https://www.impots.gouv.fr/droits-d-enregistrement"
                   target="_blank"
                   rel="nofollow noopener"
                   class="text-blue-600 underline"
-                  >impots. gouv. fr</a
+                  >impots.gouv.fr</a
                 >
  &
  <a
@@ -523,11 +523,11 @@
               <li>
                 <strong>Source : </strong>
                 <a
-                  href="https://www.impots.gouv.fr/droits-denregistrement"
+                  href="https://www.impots.gouv.fr/droits-d-enregistrement"
                   target="_blank"
                   rel="nofollow noopener"
                   class="text-blue-600 underline"
-                  >impots. gouv. fr</a
+                  >impots.gouv.fr</a
                 >
  &
  <a
@@ -715,7 +715,7 @@
             
             <p class="text-center text-sm text-gray-500 mt-4">
  Source : <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf" target="_blank" rel="noopener" class="text-blue-600 underline">
- PDF DMTO 2026 - impots. gouv. fr
+ PDF DMTO 2026 - impots.gouv.fr
  </a>
             </p>
           </div>
@@ -1321,7 +1321,7 @@
               target="_blank"
               rel="noopener"
               class="text-blue-600 hover:underline"
-              >service-public. fr</a
+              >service-public.fr</a
             >
           </li>
           <li>
@@ -1331,7 +1331,7 @@
               target="_blank"
               rel="noopener"
               class="text-blue-600 hover:underline"
-              >service-public. fr (simulateur)</a
+              >service-public.fr (simulateur)</a
             >
           </li>
           <li>
@@ -1365,7 +1365,7 @@
             <a
               href="./methodologie.html"
               class="text-gray-300 hover:text-white transition-colors"
-              >📚 Méthodo</a
+              >📚 Méthodologie</a
             >
             <span class="text-gray-500">|</span>
             <a
@@ -1926,23 +1926,23 @@
                   { min: 60000, max: Infinity, taux: 0.00799 },
                 );
               }
-              let emoluments = 0;
+              let émoluments = 0;
               let reste = prixNetImmobilier;
-              let emolumentsSansRemise = 0;
+              let émolumentsSansRemise = 0;
               for (const tranche of tranches) {
                 if (reste <= 0) break;
                 const montantTranche = Math.min(
                   reste,
                   tranche.max - tranche.min,
                 );
-                emoluments += montantTranche * tranche.taux;
-                emolumentsSansRemise += montantTranche * tranche.taux;
+                émoluments += montantTranche * tranche.taux;
+                émolumentsSansRemise += montantTranche * tranche.taux;
                 reste -= montantTranche;
               }
               let remiseMontant = 0;
               if (remiseVar) {
-                remiseMontant = emoluments * 0.1;
-                emoluments = emoluments * 0.9;
+                remiseMontant = émoluments * 0.1;
+                émoluments = émoluments * 0.9;
               }
 
               // Débours/Formalités par département
@@ -1974,7 +1974,7 @@
 
               // TVA sur émoluments + formalités uniquement
               const tva =
-                Math.round((emoluments + formalites) * 0.2 * 100) / 100;
+                Math.round((émoluments + formalites) * 0.2 * 100) / 100;
 
               // Droits d'enregistrement (ancien depuis JSON structuré, neuf 0,715%)
               let tauxDroits = getDmtoTaux(departement);
@@ -1991,7 +1991,7 @@
               // Total frais de notaire
               const total =
                 Math.round(
-                  (emoluments +
+                  (émoluments +
                     droitsEnregistrement +
                     debours +
                     formalites +
@@ -2009,9 +2009,9 @@
               return {
                 success: true,
                 data: {
-                  emoluments: Math.round(emoluments * 100) / 100,
-                  emolumentsSansRemise:
-                    Math.round(emolumentsSansRemise * 100) / 100,
+                  émoluments: Math.round(émoluments * 100) / 100,
+                  émolumentsSansRemise:
+                    Math.round(émolumentsSansRemise * 100) / 100,
                   remiseMontant: Math.round(remiseMontant * 100) / 100,
                   debours: Math.round(debours * 100) / 100,
                   formalites: Math.round(formalites * 100) / 100,
@@ -2113,7 +2113,7 @@
               <h4 class="font-semibold text-gray-800 mb-3">Détail des frais :</h4>
               <div class="space-y-2 text-sm">
                 <div class="flex justify-between"><span>Émoluments du notaire :</span><span class="font-medium">${formatCurrency(
-                  data.emoluments,
+                  data.émoluments,
                 )}</span></div>
                 ${
                   data.remiseVar
@@ -2259,8 +2259,8 @@
                   ["Prix d'acquisition", fmt(d.prixAchat), " 100%"],
                   [
                     "Émoluments du notaire",
-                    fmt(d.emoluments),
-                    pct(d.emoluments),
+                    fmt(d.émoluments),
+                    pct(d.émoluments),
                   ],
                   [
                     "Droits d'enregistrement",
@@ -2375,8 +2375,8 @@
                   ["Prix d'acquisition", fmt(d.prixAchat), " 100%"],
                   [
                     "Émoluments du notaire",
-                    fmt(d.emoluments),
-                    pct(d.emoluments),
+                    fmt(d.émoluments),
+                    pct(d.émoluments),
                   ],
                   [
                     "Droits d'enregistrement",
@@ -2805,7 +2805,7 @@
           text-decoration: none;
           font-weight: bold;
         "
-        >👉 Estimateur gratuit Notaires. fr</a
+        >👉 Estimateur gratuit Notaires.fr</a
       >
       <p style="font-size: 12px; color: #666; margin-top: 8px">
  Pour un calcul définitif conforme aux barèmes en vigueur

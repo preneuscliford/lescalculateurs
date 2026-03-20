@@ -19,9 +19,6 @@ const COMMON_REPLACEMENTS = [
   ["reelle", "r\u00e9elle"],
   ["reel", "r\u00e9el"],
   ["reels", "r\u00e9els"],
-  ["eleve", "\u00e9lev\u00e9"],
-  ["elevee", "\u00e9lev\u00e9e"],
-  ["eleves", "\u00e9lev\u00e9s"],
   ["meme", "m\u00eame"],
   ["periode", "p\u00e9riode"],
   ["reference", "r\u00e9f\u00e9rence"],
@@ -33,10 +30,6 @@ const COMMON_REPLACEMENTS = [
   ["resultat", "r\u00e9sultat"],
   ["depasser", "d\u00e9passer"],
   ["depasse", "d\u00e9passe"],
-  ["estime", "estim\u00e9"],
-  ["estimee", "estim\u00e9e"],
-  ["elevee", "\u00e9lev\u00e9e"],
-  ["elevees", "\u00e9lev\u00e9es"],
   ["interessant", "int\u00e9ressant"],
   ["interessante", "int\u00e9ressante"],
   ["interessantes", "int\u00e9ressantes"],
@@ -47,16 +40,7 @@ const COMMON_REPLACEMENTS = [
   ["etudiez", "\u00e9tudiez"],
   ["envisage", "envisag\u00e9"],
   ["envisagee", "envisag\u00e9e"],
-  ["verse", "vers\u00e9"],
   ["residence", "r\u00e9sidence"],
-  ["heberge", "h\u00e9berg\u00e9"],
-  ["hebergee", "h\u00e9berg\u00e9e"],
-  ["heberges", "h\u00e9berg\u00e9s"],
-  ["hebergees", "h\u00e9berg\u00e9es"],
-  ["declare", "d\u00e9clar\u00e9"],
-  ["declaree", "d\u00e9clar\u00e9e"],
-  ["declares", "d\u00e9clar\u00e9s"],
-  ["declarees", "d\u00e9clar\u00e9es"],
   ["excedentaire", "exc\u00e9dentaire"],
   ["disparait", "dispara\u00eet"],
   ["mecaniquement", "m\u00e9caniquement"],
@@ -165,10 +149,21 @@ const PLACEHOLDER_REPLACEMENTS = [
   [/\? Lille/g, "\u00e0 Lille"],
   [/\? Nantes/g, "\u00e0 Nantes"],
   [/\? loyer comparable/gi, "\u00c0 loyer comparable"],
-  [/\? charge/gi, "\u00e0 charge"],
+  [/\bheberge\b/gi, "h\u00e9berg\u00e9"],
+  [/\bhebergee\b/gi, "h\u00e9berg\u00e9e"],
+  [/\bheberges\b/gi, "h\u00e9berg\u00e9s"],
+  [/\bhebergees\b/gi, "h\u00e9berg\u00e9es"],
+  [/\bhebergement\b/gi, "h\u00e9bergement"],
 ];
 
 const ARTIFACT_REPLACEMENTS = [
+  [/&([a-zA-Z0-9#]+)\s+;/g, "&$1;"],
+  [/(&#?[a-zA-Z0-9]+;)\s+(?=[A-Za-zÀ-ÿ])/g, "$1"],
+  [/&#39\s+;/g, "&#39;"],
+  [/&#x27\s+;/gi, "&#x27;"],
+  [/d''/g, "d'"],
+  [/([A-Za-z]+\.fr)\s+\./g, "$1."],
+  [/\)\s+,/g, "),"],
   [/Ã /g, "\u00e0 "],
   [/rÃ©pond/gi, "r\u00e9pond"],
   [/affichÃ©/gi, "affich\u00e9"],
@@ -264,6 +259,24 @@ const ARTIFACT_REPLACEMENTS = [
   [/Au-del à/gi, "Au-del\u00e0"],
   [/calcul'APL/gi, "calcul de l'APL"],
   [/d&#39 ;/gi, "d&#39;"],
+  [/caf\. fr/gi, "caf.fr"],
+  [/service-public\. fr/gi, "service-public.fr"],
+  [/francetravail\. fr/gi, "francetravail.fr"],
+  [/france-travail\. fr/gi, "france-travail.fr"],
+  [/impots\. gouv\. fr/gi, "impots.gouv.fr"],
+  [/legifrance\. gouv\. fr/gi, "legifrance.gouv.fr"],
+  [/Notaires\. fr/g, "Notaires.fr"],
+  [/notaires\. fr/g, "notaires.fr"],
+  [/notariat\. fr/gi, "notariat.fr"],
+  [/📚 Méthodo\b/g, "📚 Méthodologie"],
+  [/📘 Méthodo\b/g, "📘 Méthodologie"],
+  [/\. \. \./g, "..."],
+  [/annuairedes/gi, "annuaire des"],
+  [/annuairesur/gi, "annuaire sur"],
+  [/\bàfaire\b/gi, "à faire"],
+  [/\bàun\b/gi, "à un"],
+  [/\bàune\b/gi, "à une"],
+  [/etc\. \)/gi, "etc.)"],
   [/à partir de/gi, "\u00e0 partir de"],
   [/l'APL à$/g, "l'APL ?"],
   [/APL à$/g, "APL ?"],
@@ -310,14 +323,13 @@ function normalizeFrenchText(input) {
 
   output = output.replace(/[ \t]+([,.)\]])/g, "$1");
   output = output.replace(/([(\[])[ \t]+/g, "$1");
-  output = output.replace(/[ \t]*([:;!?])[ \t]*/g, " $1 ");
-  output = output.replace(/([,.;:!?])(?![\s<\n\r])/g, "$1 ");
+  output = output.replace(/([,;:!?])(?![\s<\n\r])/g, "$1 ");
   output = output.replace(/ à\s*$/g, " ?");
   output = output.replace(/[ \t]{2,}/g, " ");
   output = output.replace(/ \n/g, "\n");
   output = output.replace(/\n{3,}/g, "\n\n");
 
-  return output.trim() === "" ? input : output;
+  return output.trim() === "" ? input : output.trim();
 }
 
 module.exports = {
