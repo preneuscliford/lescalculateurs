@@ -2858,19 +2858,19 @@
 
         // Verbaliser un montant
         function verbalize(value) {
-          const num = parseInt(value);
+          const num = parseInt(String(value).replace(/\s/g, ""), 10);
           if (isNaN(num) || num < 10) return value;
           const rounded = Math.round(num / 10) * 10;
-          return "environ " + rounded + " €";
+          return "environ " + rounded.toLocaleString("fr-FR") + " €";
         }
 
         // Traiter un element
         function processElement(el, type) {
           const text = el.textContent || el.innerText || "";
-          const match = text.match(/(\d[\d\s]{2,5})\s*€/);
+          const match = text.match(/(\d(?:[\d\s\u202f]{1,10}\d)?)\s*€/);
           if (!match) return;
 
-          const exactVal = match[1].replace(/s/g, "");
+          const exactVal = match[1].replace(/\s/g, "");
           const verbalVal = verbalize(exactVal);
           const config = CONFIG[type] || CONFIG.GENERIC;
 
@@ -2915,10 +2915,10 @@
           const type = detectType();
 
           // Traiter elements existants
-          document
-            .querySelectorAll(
-              '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span',
-            )
+            document
+              .querySelectorAll(
+                '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result',
+              )
             .forEach(function (el) {
               if (el.textContent.match(/\d{3,6}\s*€/)) {
                 processElement(el, type);
