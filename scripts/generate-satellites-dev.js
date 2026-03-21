@@ -27,11 +27,11 @@ const pillarConfigs = {
   },
   "taxe-fonciere": {
     pillarUrl: "/pages/taxe-fonciere",
-    pillarLabel: "Simulateur Taxe foncière 2026",
+    pillarLabel: "Simulateur taxe foncière 2026",
   },
   plusvalue: {
     pillarUrl: "/pages/plusvalue",
-    pillarLabel: "Simulateur Plus-value immobilière",
+    pillarLabel: "Simulateur plus-value immobilière",
   },
   simulateurs: {
     pillarUrl: "/pages/simulateurs",
@@ -43,7 +43,7 @@ const pillarConfigs = {
   },
   impot: {
     pillarUrl: "/pages/impot",
-    pillarLabel: "Simulateur Impôts 2026",
+    pillarLabel: "Simulateur impôts 2026",
   },
   salaire: {
     pillarUrl: "/pages/salaire",
@@ -53,12 +53,12 @@ const pillarConfigs = {
 
 function main() {
   if (!fs.existsSync(satellitesTxtDir)) {
-    console.warn("⚠️ Dossier satellites introuvable:", satellitesTxtDir);
+    console.warn("Dossier satellites introuvable:", satellitesTxtDir);
     process.exit(0);
   }
 
   if (!fs.existsSync(srcPagesDir)) {
-    console.warn("⚠️ Dossier src/pages introuvable:", srcPagesDir);
+    console.warn("Dossier src/pages introuvable:", srcPagesDir);
     process.exit(1);
   }
 
@@ -125,7 +125,7 @@ function main() {
   });
 
   ensurePillarCleanUrlsDev();
-  console.log(`🛰 Satellites (dev): ${generatedCount} pages générées dans src/pages/`);
+  console.log(`Satellites (dev): ${generatedCount} pages générées dans src/pages/`);
 }
 
 function cleanupGeneratedPagesInDir(dirPath) {
@@ -209,7 +209,7 @@ function parseSatelliteTxtToPages(txt) {
 
   const pageHeaderMatchers = [
     (line) => {
-      const m = line.match(/^PAGE\s*(\d+)\s*[–—-]\s*(.+)$/i);
+      const m = line.match(/^PAGE\s*(\d+)\s*[---]\s*(.+)$/i);
       if (!m) return null;
       return { number: Number(m[1]), title: m[2].trim() };
     },
@@ -255,13 +255,14 @@ function parseSatelliteTxtToPages(txt) {
     if (!current) continue;
 
     const normalized = line.replace(/\s+/g, " ");
+    const marker = normalizeMarker(normalized);
     if (/^Objectif\s*:/i.test(normalized)) {
       current.objective = normalized.replace(/^Objectif\s*:\s*/i, "").trim();
       continue;
     }
-    if (/^Question\s*(ciblée|traitée)\s*:/i.test(normalized)) {
+    if (/^question\s*(ciblee|traitee)\s*:/.test(marker)) {
       current.question = normalized
-        .replace(/^Question\s*(ciblée|traitée)\s*:\s*/i, "")
+        .replace(/^Question\s*(ciblée|ciblee|traitée|traitee)\s*:\s*/iu, "")
         .trim();
       continue;
     }
@@ -275,8 +276,8 @@ function parseSatelliteTxtToPages(txt) {
       current.cta = normalized.replace(/^CTA\s*:\s*/i, "").trim();
       continue;
     }
-    if (/^👉/u.test(normalized) && !current.cta) {
-      current.cta = normalized.replace(/^👉\s*/u, "").trim();
+    if (startsWithLeadEmoji(normalized) && !current.cta) {
+      current.cta = stripLeadEmoji(normalized);
       continue;
     }
 
@@ -310,11 +311,12 @@ function parsePilierBlocksToPages(lines) {
     const content = block.slice(4).map((l) => l.replace(/\s+/g, " ").trim());
 
     const questionLine =
-      content.find((l) => /^Réponse à la question\s*:/i.test(l)) || "";
-    const ctaLine = content.find((l) => /^👉/u.test(l)) || "";
-    const relatedLine = content.find((l) => /^📄\s*Lire aussi\s*:/u.test(l)) || "";
+      content.find((l) => normalizeMarker(l).startsWith("reponse a la question :")) || "";
+    const ctaLine = content.find((l) => startsWithLeadEmoji(l)) || "";
+    const relatedLine =
+      content.find((l) => normalizeMarker(stripLeadEmoji(l)).startsWith("lire aussi :")) || "";
     const footerLine =
-      content.find((l) => /^Retour au pilier\s*:/i.test(l)) || "";
+      content.find((l) => /^(retour au pilier|retour aux simulateurs)\s*:/.test(normalizeMarker(l))) || "";
 
     const bodyLines = [];
     const practiceItems = [];
@@ -323,38 +325,39 @@ function parsePilierBlocksToPages(lines) {
     let mode = null;
     for (const raw of content) {
       const line = raw;
+      const marker = normalizeMarker(line);
       if (/^[=_-]{3,}$/.test(line)) continue;
-      if (/^Réponse rapide$/i.test(line)) {
+      if (marker === "reponse rapide") {
         mode = "quick";
         continue;
       }
-      if (/^En pratique, on regarde surtout$/i.test(line)) {
+      if (marker === "en pratique, on regarde surtout") {
         mode = "practice";
         continue;
       }
-      if (/^Ce qu[’']il faut vérifier$/i.test(line)) {
+      if (marker === "ce qu'il faut verifier") {
         mode = "verify";
         continue;
       }
-      if (/^Aller plus loin$/i.test(line)) {
+      if (marker === "aller plus loin") {
         mode = null;
         continue;
       }
 
       if (
-        /^👉/u.test(line) ||
-        /^📄\s*Lire aussi\s*:/u.test(line) ||
-        /^🧮\s*Accéder au pilier$/u.test(line) ||
-        /^Retour au pilier\s*:/i.test(line) ||
+        startsWithLeadEmoji(line) ||
+        normalizeMarker(stripLeadEmoji(line)).startsWith("lire aussi :") ||
+        normalizeMarker(stripLeadEmoji(line)) === "acceder au pilier" ||
+        /^(retour au pilier|retour aux simulateurs)\s*:/.test(marker) ||
         /^©\s*\d{4}/.test(line)
       ) {
         mode = null;
       }
 
       if (
-        /^Les informations/i.test(line) ||
-        /^Contenu pédagogique/i.test(line) ||
-        /^Réponse à la question\s*:/i.test(line)
+        marker.startsWith("les informations") ||
+        marker.startsWith("contenu pedagogique") ||
+        marker.startsWith("reponse a la question :")
       ) {
         continue;
       }
@@ -369,7 +372,7 @@ function parsePilierBlocksToPages(lines) {
     }
 
     const pillarLabelFooter = footerLine
-      ? footerLine.replace(/^Retour au pilier\s*:\s*/i, "").trim()
+      ? footerLine.replace(/^Retour\s+(au pilier|aux simulateurs)\s*:\s*/iu, "").trim()
       : "";
     const pillarKeyOverride =
       detectPillarKeyFromLabel(pillarLabelHeader) ||
@@ -377,7 +380,7 @@ function parsePilierBlocksToPages(lines) {
       null;
 
     const relatedTitle = relatedLine
-      ? relatedLine.replace(/^📄\s*Lire aussi\s*:\s*/u, "").trim()
+      ? stripLeadEmoji(relatedLine).replace(/^Lire aussi\s*:\s*/iu, "").trim()
       : "";
 
     const contentHints = [...practiceItems, ...verifyItems]
@@ -389,7 +392,7 @@ function parsePilierBlocksToPages(lines) {
       title,
       objective: "",
       question: questionLine,
-      cta: ctaLine ? ctaLine.replace(/^👉\s*/u, "").trim() : "",
+      cta: ctaLine ? stripLeadEmoji(ctaLine) : "",
       contentHints,
       bodyLines,
       relatedTitle,
@@ -403,7 +406,7 @@ function parsePilierBlocksToPages(lines) {
 }
 
 function stripListPrefix(line) {
-  return String(line).replace(/^[-–•]\s*/u, "").trim();
+  return String(line).replace(/^[\-–•·●]+\s*/u, "").trim();
 }
 
 function isPilierBulletLine(line) {
@@ -411,17 +414,38 @@ function isPilierBulletLine(line) {
 }
 
 function detectPillarKeyFromLabel(label) {
-  const s = String(label).toLowerCase();
+  const s = normalizeMarker(label);
   if (!s) return null;
   if (s.includes("apl")) return "apl";
   if (s.includes("rsa")) return "rsa";
-  if (s.includes("prêt") || s.includes("pret")) return "pret";
+  if (s.includes("pret")) return "pret";
   if (s.includes("taxe fonci")) return "taxe-fonciere";
   if (s.includes("plus-value") || s.includes("plus value")) return "plusvalue";
-  if (s.includes("impôt") || s.includes("impot")) return "impot";
+  if (s.includes("impot")) return "impot";
   if (s.includes("salaire")) return "salaire";
   if (s.includes("simulateur")) return "simulateurs";
   return null;
+}
+
+function normalizeMarker(input) {
+  return normalizeFrenchText(String(input || ""))
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[’]/g, "'")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function startsWithLeadEmoji(input) {
+  return /^[👉💡🧮📄]/u.test(String(input || "").trim());
+}
+
+function stripLeadEmoji(input) {
+  return String(input || "")
+    .trim()
+    .replace(/^[👉💡🧮📄]\s*/u, "")
+    .trim();
 }
 
 function slugify(input) {
@@ -437,22 +461,24 @@ function slugify(input) {
 function renderSatelliteHtmlDev({ page, relatedPage }) {
   const domain = "https://www.lescalculateurs.fr";
   const canonical = `${domain}/pages/${page.pillarKey}/${page.slug}`;
-  const safeTitle = page.title || page.question || "Page satellite";
+  const safeTitle = cleanSatelliteText(page.title || page.question || "Page satellite");
   const metaTitle = `${safeTitle} (2026)`;
-  const metaDescription = buildMetaDescription(page);
+  const metaDescription = cleanSatelliteText(buildMetaDescription(page));
 
-  const bullets = buildBullets(page);
-  const paragraphs = buildParagraphs(page);
+  const bullets = buildBullets(page).map(cleanSatelliteText);
+  const paragraphs = buildParagraphs(page).map(cleanSatelliteText);
   const pretEndettementTip = shouldShowPretEndettementTip(page)
-    ? "💡 À titre indicatif, les banques appliquent généralement un taux d’endettement maximal autour de 35 % assurance incluse."
+    ? "💡 À titre indicatif, les banques appliquent généralement un taux d'endettement maximal autour de 35 % assurance incluse."
     : "";
   const ctaText = page.cta
-    ? page.cta.replace(/^👉\s*/u, "")
+    ? stripLeadEmoji(page.cta)
     : "Estimez votre situation avec notre simulateur officiel";
 
   const relatedHref = relatedPage
     ? `/pages/${relatedPage.pillarKey}/${relatedPage.slug}`
     : null;
+  const cleanedPretEndettementTip = cleanSatelliteText(pretEndettementTip);
+  const cleanedCtaText = cleanSatelliteText(ctaText);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -495,7 +521,7 @@ function renderSatelliteHtmlDev({ page, relatedPage }) {
   <body class="bg-gray-50">
     <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" class="font-bold text-lg text-blue-600">🧮 Les Calculateurs</a>
+        <a href="/" class="font-bold text-lg text-blue-600">Les Calculateurs</a>
         <div class="space-x-4">
           ${navLinks
             .map(
@@ -511,10 +537,10 @@ function renderSatelliteHtmlDev({ page, relatedPage }) {
       <div class="max-w-4xl mx-auto px-4">
         <div class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3 py-1 text-sm text-slate-100 mb-4">
           <span class="text-slate-200">Pilier</span>
-          <span class="text-slate-400">•</span>
+          <span class="text-slate-400">&middot;</span>
           <a class="font-semibold text-emerald-300 hover:text-emerald-200 underline decoration-emerald-300/60" href="${escapeHtml(
             page.pillar.pillarUrl,
-          )}">${escapeHtml(page.pillar.pillarLabel)}</a>
+          )}">${escapeHtml(cleanSatelliteText(page.pillar.pillarLabel))}</a>
         </div>
         <h1 class="text-3xl sm:text-4xl font-bold leading-tight">${escapeHtml(
           safeTitle,
@@ -524,7 +550,7 @@ function renderSatelliteHtmlDev({ page, relatedPage }) {
           <a href="${escapeHtml(
             page.pillar.pillarUrl,
           )}" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-colors shadow-lg shadow-green-500/20">
-            👉 ${escapeHtml(ctaText)}
+            ${escapeHtml(cleanedCtaText)}
           </a>
         </div>
       </div>
@@ -548,14 +574,14 @@ function renderSatelliteHtmlDev({ page, relatedPage }) {
         ${
           pretEndettementTip
             ? `<p class="text-sm text-gray-600 leading-relaxed mt-2 mb-0">${escapeHtml(
-                pretEndettementTip,
+                cleanedPretEndettementTip,
               )}</p>`
             : ""
         }
       </section>
 
       <section class="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ce qu’il faut vérifier</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ce qu'il faut vérifier</h2>
         <ul class="list-disc list-inside space-y-2 text-gray-700">
           ${bullets
             .map((b) => `<li>${escapeHtml(b)}</li>`)
@@ -572,14 +598,14 @@ function renderSatelliteHtmlDev({ page, relatedPage }) {
           <a href="${escapeHtml(
             page.pillar.pillarUrl,
           )}" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-10 rounded-lg transition-colors">
-            🧮 Accéder au pilier
+            Accéder au pilier
           </a>
           ${
             relatedHref
               ? `<a href="${escapeHtml(
                   relatedHref,
                 )}" class="inline-flex justify-center bg-white hover:bg-slate-100 text-slate-900 font-semibold py-4 px-10 rounded-lg border border-slate-300 transition-colors">
-            📄 Lire aussi : ${escapeHtml(relatedPage.title)}
+            Lire aussi : ${escapeHtml(cleanSatelliteText(relatedPage.title))}
           </a>`
               : ""
           }
@@ -592,9 +618,9 @@ function renderSatelliteHtmlDev({ page, relatedPage }) {
         <p class="mb-2">
           <a class="text-blue-600 hover:underline" href="${escapeHtml(
             page.pillar.pillarUrl,
-          )}">Retour au pilier : ${escapeHtml(page.pillar.pillarLabel)}</a>
+          )}">Retour au pilier : ${escapeHtml(cleanSatelliteText(page.pillar.pillarLabel))}</a>
         </p>
-        <p>© ${new Date().getFullYear()} LesCalculateurs.fr</p>
+        <p>&copy; ${new Date().getFullYear()} LesCalculateurs.fr</p>
       </div>
     </footer>
   </body>
@@ -605,7 +631,7 @@ function buildMetaDescription(page) {
   const parts = [];
 
   if (page.question) parts.push(page.question);
-  else if (page.title) parts.push(`Réponse à la question : ${page.title}.`);
+  else if (page.title) parts.push(`Réponse à la question : ${page.title}`);
 
   const fromBody =
     page.bodyLines && page.bodyLines.length ? page.bodyLines[0] : "";
@@ -625,7 +651,7 @@ function buildMetaDescription(page) {
   parts.push("Estimation via le simulateur du pilier.");
 
   const base = parts.join(" ").trim();
-  return trimToLength(base, 160);
+  return trimToLength(cleanSatelliteText(base), 160);
 }
 
 function buildParagraphs(page) {
@@ -654,7 +680,7 @@ function buildParagraphs(page) {
     );
   }
 
-  return paragraphs.map((p) => trimToLength(p, 280)).slice(0, 3);
+  return paragraphs.map((p) => trimToLength(cleanSatelliteText(p), 280)).slice(0, 3);
 }
 
 function buildBullets(page) {
@@ -668,29 +694,46 @@ function buildBullets(page) {
     : [];
 
   fromHints.forEach((h) => {
-    if (bullets.length < 8) bullets.push(h);
+    if (bullets.length < 8 && !isStructuralHint(h)) bullets.push(h);
   });
 
   page.bodyLines.forEach((l) => {
     if (bullets.length >= 10) return;
     if (l.length < 20) return;
-    if (/^👉/u.test(l)) return;
-    bullets.push(l.replace(/\.$/, ""));
+    if (startsWithLeadEmoji(l)) return;
+    const cleanedLine = l.replace(/\.$/, "");
+    if (isStructuralHint(cleanedLine)) return;
+    bullets.push(cleanedLine);
   });
 
   if (bullets.length === 0) {
     bullets.push("Votre situation personnelle (revenus, foyer, logement, durée)");
     bullets.push("Les règles en vigueur à la date de votre demande");
-    bullets.push("Les justificatifs demandés par l’organisme");
+    bullets.push("Les justificatifs demandés par l'organisme");
   }
 
-  return bullets.slice(0, 8);
+  return bullets.map(cleanSatelliteText).slice(0, 8);
 }
 
 function trimToLength(s, maxLen) {
   const str = String(s).trim().replace(/\s+/g, " ");
   if (str.length <= maxLen) return str;
   return str.slice(0, maxLen - 1).replace(/\s+\S*$/, "") + "…";
+}
+
+function cleanSatelliteText(value) {
+  return normalizeFrenchText(String(value || ""))
+    .replace(/^ðŸ‘‰\s*/u, "")
+    .replace(/^ðŸ’¡\s*/u, "")
+    .replace(/^ðŸ§®\s*/u, "")
+    .replace(/^ðŸ“„\s*/u, "")
+    .replace(/^[👉💡🧮📄]\s*/u, "")
+    .replace(/(?<!À\s)\bQuelles aides ai-je droit\b/giu, "À quelles aides ai-je droit")
+    .replace(/\bÀ À quelles aides ai-je droit\b/gu, "À quelles aides ai-je droit")
+    .replace(/\be qu['’]il faut vérifier\b/giu, "ce qu'il faut vérifier")
+    .replace(/\?\./g, "?")
+    .replace(/[ \t]+\./g, ".")
+    .trim();
 }
 
 function escapeHtml(s) {
@@ -726,6 +769,17 @@ function toSentence(input) {
     return `${withoutTrailingDot}.`;
   }
   return `${withoutTrailingDot}.`;
+}
+
+function isStructuralHint(input) {
+  const marker = normalizeMarker(input);
+  return (
+    !marker ||
+    marker === "ce qu'il faut verifier" ||
+    marker === "en pratique, on regarde surtout" ||
+    marker === "reponse rapide" ||
+    marker === "aller plus loin"
+  );
 }
 
 main();
