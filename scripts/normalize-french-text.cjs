@@ -142,6 +142,9 @@ function main() {
   for (const filePath of files) {
     const original = fs.readFileSync(filePath, "utf8");
     const extension = path.extname(filePath).toLowerCase();
+    if (htmlMode !== "all" && extension !== ".html") {
+      continue;
+    }
     const normalized =
       extension === ".html" ? normalizeHtmlByOffsets(original, htmlMode) : normalizeFrenchText(original);
 
