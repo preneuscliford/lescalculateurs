@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - pseo-rendered</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - pseo-rendered</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>visible</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>103</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>94</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>307</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl/apl-alternant-paris">/pages/apl/apl-alternant-paris</a><div class="muted">src\pages\apl\apl-alternant-paris\index.html</div></td>
+        <td>Corrections ponctuelles uniquement: espaces avant la ponctuation et séparation de phrases manquante.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Espace superflu avant le point final. (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Ponctuation manquante entre deux propositions; corrige la lisibilité sans changer le sens. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-alternant">/pages/apl/apl-alternant</a><div class="muted">src\pages\apl\apl-alternant\index.html</div></td>
+        <td>Corrections localement sûres détectées dans le texte fourni.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">espace superflu avant le point final. (high)</span></li><li><strong>accent</strong> - revenu regulier => revenu régulier<br><span class="muted">accent sur l'adjectif. (high)</span></li><li><strong>apostrophe</strong> - d alternance => d'alternance<br><span class="muted">usage de l'apostrophe manquante après la préposition. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-apprenti-loyer-500">/pages/apl/apl-apprenti-loyer-500</a><div class="muted">src\pages\apl\apl-apprenti-loyer-500\index.html</div></td>
+        <td>Deux corrections détectées : des formulations de type « Salarié en CDD/CDI » qui doivent être corrigées.</td>
+        <td>2</td>
+        <td><ul><li><strong>grammaire</strong> - Salari à en CDD => Salarié en CDD<br><span class="muted">Erreur de forme du mot 'Salarié' et préposition manquante pour l’expression correcte (high)</span></li><li><strong>grammaire</strong> - Salari à en CDI => Salarié en CDI<br><span class="muted">Erreur de forme du mot 'Salarié' et préposition manquante pour l’expression correcte (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-apprenti">/pages/apl/apl-apprenti</a><div class="muted">src\pages\apl\apl-apprenti\index.html</div></td>
+        <td>Corrections sûres de ponctuation, orthographe et encodage dans le texte fourni (remplacements locaux uniquement).</td>
+        <td>10</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">Espace inutile avant le point final. (high)</span></li><li><strong>ponctuation</strong> - Estimation rapide Estimation indicative => Estimation rapide. Estimation indicative<br><span class="muted">Pour séparer deux propositions, ajout d’un point. (high)</span></li><li><strong>ponctuation</strong> - Situation familiale Personne seule => Situation familiale: Personne seule<br><span class="muted">Ajout d’un séparateur clair (doublepoint). (high)</span></li><li><strong>ponctuation</strong> - Type de logement Location => Type de logement: Location<br><span class="muted">Ajout d’un séparateur clair (doublepoint). (high)</span></li><li><strong>apostrophe</strong> - l employeur. => l'employeur.<br><span class="muted">Ajout de l’apostrophe manquante devant employeur. (high)</span></li><li><strong>ponctuation</strong> - Sur quoi l'estimation est basée Le calcul => Sur quoi l'estimation est basée : Le calcul<br><span class="muted">Ajout d’un séparateur (deux-points). (high)</span></li><li><strong>ponctuation</strong> - méthode L'objectif => méthode. L'objectif<br><span class="muted">Séparation par un point. (high)</span></li><li><strong>ponctuation</strong> - service-public.fr Comparer => service-public.fr. Comparer<br><span class="muted">Séparation par un point. (high)</span></li><li><strong>apostrophe</strong> - d apprentissage => d'apprentissage<br><span class="muted">Correction de l’apostrophe manquante. (high)</span></li><li><strong>accent</strong> - determinent => déterminent<br><span class="muted">Correction orthographique d’accent. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-cdd-loyer-600">/pages/apl/apl-cdd-loyer-600</a><div class="muted">src\pages\apl\apl-cdd-loyer-600\index.html</div></td>
+        <td>Corrections sures proposées sur des fragments évidents d’erreurs orthographiques/grammaticales.</td>
+        <td>4</td>
+        <td><ul><li><strong>orthographe</strong> - Salari à en CDD. => Salarié en CDD<br><span class="muted">erreur d’orthographe et de forme‑grammaticale (high)</span></li><li><strong>orthographe</strong> - d'un salari à en CDD => d'un salarié en CDD<br><span class="muted">erreur d’orthographe et de forme‑grammaticale (high)</span></li><li><strong>orthographe</strong> - caract à ristiques du logement. => caractéristiques du logement.<br><span class="muted">erreur d’orthographe dans un mot composé (high)</span></li><li><strong>orthographe</strong> - Salari à en CDI => Salarié en CDI<br><span class="muted">erreur d’orthographe et de forme‑grammaticale (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-cdi-loyer-700">/pages/apl/apl-cdi-loyer-700</a><div class="muted">src\pages\apl\apl-cdi-loyer-700\index.html</div></td>
+        <td>Corrections mineures et sûres ciblant l’orthographe et la ponctuation dans des fragments clairement mal formés.</td>
+        <td>9</td>
+        <td><ul><li><strong>orthographe</strong> - un salari à en CDI => un salarié en CDI<br><span class="muted">orthographe et accord (high)</span></li><li><strong>orthographe</strong> - Profil Salari à en CDI => Profil Salarié en CDI<br><span class="muted">orthographe (high)</span></li><li><strong>orthographe</strong> - Salari à en CDI => Salarié en CDI<br><span class="muted">orthographe et accord (high)</span></li><li><strong>orthographe</strong> - Salari à en CDD => Salarié en CDD<br><span class="muted">orthographe et accord (high)</span></li><li><strong>ponctuation</strong> - vérifier si vos primes ou heures supplémentaires gonflent le revenu retenu. => Vérifier si vos primes ou heures supplémentaires gonflent le revenu retenu.<br><span class="muted">majuscule en début de phrase (high)</span></li><li><strong>ponctuation</strong> - Sur quoi l'estimation est basée Le calcul tient compte ici du profil du foyer, => Sur quoi l'estimation est basée. Le calcul tient compte ici du profil du foyer,<br><span class="muted">ponctuation manquante (high)</span></li><li><strong>ponctuation</strong> - Ce que cette page ne remplace pas Le résultat reste indicatif. => Ce que cette page ne remplace pas. Le résultat reste indicatif.<br><span class="muted">ponctuation manquante (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre => La méthode. L'objectif est de rendre<br><span class="muted">ponctuation manquante/clé de phrase (medium)</span></li><li><strong>ponctuation</strong> - Pourquoi cette page existe Cette page répond => Pourquoi cette page existe. Cette page répond<br><span class="muted">ponctuation manquante (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-loyer-eleve">/pages/apl/apl-celibataire-loyer-eleve</a><div class="muted">src\pages\apl\apl-celibataire-loyer-eleve\index.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni.</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace superflu avant le point final. (high)</span></li><li><strong>orthographe</strong> - un loyer sup à rieur au plafond de zone. => un loyer supérieur au plafond de zone.<br><span class="muted">orthographe/mot mal écrit. (high)</span></li><li><strong>orthographe</strong> - Résultat estimé ~192 € / mois. => Résultat estimé ~192 € par mois.<br><span class="muted">remplacement de l'abréviation incorrecte par l'expression complète correcte. (high)</span></li><li><strong>accent</strong> - APL apres une reprise d'emploi => APL après une reprise d'emploi<br><span class="muted">accent sur 'après'. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-lyon">/pages/apl/apl-celibataire-lyon</a><div class="muted">src\pages\apl\apl-celibataire-lyon\index.html</div></td>
+        <td>Corrections de ponctuation et espacement identifiées (pas de réécriture de contenu).</td>
+        <td>6</td>
+        <td><ul><li><strong>espacement</strong> - caf.fr . => caf.fr.<br><span class="muted">Espacement avant une ponctuation qui est cassé. (high)</span></li><li><strong>ponctuation</strong> - Sur quoi l'estimation est basée Le calcul tient compte => Sur quoi l'estimation est basée : Le calcul tient compte<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li><li><strong>ponctuation</strong> - Ce que cette page ne remplace pas Le résultat reste indicatif. => Ce que cette page ne remplace pas : Le résultat reste indicatif.<br><span class="muted">Ponctuation manquante entre propositions. (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode : L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Ponctuation manquante séparant l’introduction de l’objectif. (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">Séparation entre deux éléments par ponctuation. (high)</span></li><li><strong>ponctuation</strong> - Comparer plusieurs scénarios Ce tableau permet => Comparer plusieurs scénarios : Ce tableau permet<br><span class="muted">Ponctuation manquante entre propositions. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-marseille">/pages/apl/apl-celibataire-marseille</a><div class="muted">src\pages\apl\apl-celibataire-marseille\index.html</div></td>
+        <td>Corrections d’erreurs évidentes (orthographe/accents/encodage) localisées dans le texte.</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - une requ à te g à olocalis à e claire et une tension locative concr à te => une requête géolocalisée et une tension locative concrète<br><span class="muted">fragment illisible -&gt; correction locale et littérale pour restituer le sens. (high)</span></li><li><strong>orthographe</strong> - loyer interm à diaire => loyer intermédiaire<br><span class="muted">fragment illisible -&gt; correction locale et littérale. (high)</span></li><li><strong>apostrophe</strong> - Le code postal'aide a affiner => Le code postal aide à affiner<br><span class="muted">apostrophe manquante et accent inattendu. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-paris-petit-revenu">/pages/apl/apl-celibataire-paris-petit-revenu</a><div class="muted">src\pages\apl\apl-celibataire-paris-petit-revenu\index.html</div></td>
+        <td>Corrections corrigibles identifiées dans le texte (français).</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - envisagéz de déménager => envisagez de déménager<br><span class="muted">erreur de conjugaison/grammaire (high)</span></li><li><strong>accent</strong> - a absorber => à absorber<br><span class="muted">erreur d'accent (high)</span></li><li><strong>orthographe</strong> - requ à te centrale => requête centrale<br><span class="muted">erreur de frappe/orthographe (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-petit-salaire">/pages/apl/apl-celibataire-petit-salaire</a><div class="muted">src\pages\apl\apl-celibataire-petit-salaire\index.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni.</td>
+        <td>6</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace avant la ponctuation finale. (high)</span></li><li><strong>orthographe</strong> - apl célibataire petit salaire => APL célibataire petit salaire<br><span class="muted">majuscule manquante à l'acronyme APL. (high)</span></li><li><strong>orthographe</strong> - apl loyer élevé => APL loyer élevé<br><span class="muted">majuscule manquante à l'acronyme APL et cohérence de l'expression. (high)</span></li><li><strong>orthographe</strong> - apl marseille célibataire => APL Marseille célibataire<br><span class="muted">majuscule manquante et nom de ville à capitaliser. (high)</span></li><li><strong>orthographe</strong> - apl smic célibataire => APL SMIC célibataire<br><span class="muted">majuscule et acronyme SMIC à capitaliser. (high)</span></li><li><strong>orthographe</strong> - apl au SMIC => APL au SMIC<br><span class="muted">majuscule manquante à l'acronyme SMIC et cohérence avec le style des autres occurrences. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>Corrections simples et sûres de fautes évidentes (accents, orthographe, graphems, fragments cassés). Pas de réécriture de phrases complètes ni d’ajout de sens.</td>
+        <td>7</td>
+        <td><ul><li><strong>orthographe</strong> - Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL. => Cette page sert une requête très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.<br><span class="muted">orthographe et mot manquant (requête) (high)</span></li><li><strong>orthographe</strong> - diff à rents selon les revenus => différents selon les revenus<br><span class="muted">erreur de mot et d’accents, correction lexicale locale (high)</span></li><li><strong>orthographe</strong> - V à rifiez ensuite si vos revenus varient => Vérifiez ensuite si vos revenus varient<br><span class="muted">fragment cassé, correction locale (high)</span></li><li><strong>orthographe</strong> - compl à te pour approcher => complète pour approcher<br><span class="muted">fragment cassé (high)</span></li><li><strong>grammaire</strong> - À loyer comparable, une grande ville => Avec un loyer comparable, une grande ville<br><span class="muted">préposition incorrecte (high)</span></li><li><strong>orthographe</strong> - diff à rents selon les revenus effectivement retenus => différents selon les revenus effectivement retenus<br><span class="muted">erreur de mot (high)</span></li><li><strong>ponctuation</strong> - Voir la fiche service-public.fr Comparer plusieurs scénarios => Voir la fiche service-public.fr. Comparer plusieurs scénarios<br><span class="muted">punctuation manquante (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-toulouse">/pages/apl/apl-celibataire-toulouse</a><div class="muted">src\pages\apl\apl-celibataire-toulouse\index.html</div></td>
+        <td>Corrections strictement localisées pour des fautes évidentes.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espaces avant ponctuation; corriger la ponctuation française. (high)</span></li><li><strong>orthographe</strong> - vérifier la régularité des revenus si vous êtes en mission ou en alternance. => Vérifier la régularité des revenus si vous êtes en mission ou en alternance.<br><span class="muted">majuscules en début de phrase après un point. (high)</span></li><li><strong>orthographe</strong> - apl toulouse célibataire => APL Toulouse célibataire<br><span class="muted">correction de l’abréviation APL et du nom propre, correction stricte locale. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-avec-enfant">/pages/apl/apl-chomage-avec-enfant</a><div class="muted">src\pages\apl\apl-chomage-avec-enfant\index.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">ponctuation manquante entraînant une phrase cassée (high)</span></li><li><strong>ponctuation</strong> - Aller plus loin Si votre situation ressemble à ce scénario, utilisez le simulateur complet pour tester plusieurs paramètres : loyer, revenus, zone géographique et composition du foyer. => Aller plus loin. Si votre situation ressemble à ce scénario, utilisez le simulateur complet pour tester plusieurs paramètres : loyer, revenus, zone géographique et composition du foyer.<br><span class="muted">fusion de phrase manquante et ponctuation/structure (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-loyer-moyen">/pages/apl/apl-chomage-loyer-moyen</a><div class="muted">src\pages\apl\apl-chomage-loyer-moyen\index.html</div></td>
+        <td>Corrections strictement localisées et sûres à apporter au texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>orthographe</strong> - apl chômage loyer moyen => APL chômage loyer moyen<br><span class="muted">correction de la capitalisation de l'acronyme APL (high)</span></li><li><strong>orthographe</strong> - liee a la => liée à la<br><span class="muted">accent et préposition manquante corrigés simultanément (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>Corrigé une faute d’orthographe dans une phrase.</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail. => Comparer avec une reprise d'emploi partielle si vous envisagez un retour rapide au travail.<br><span class="muted">orthographe verbale: conjuguaison incorrecte du verbe envisager à la deuxième personne du pluriel. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-colocation-jeune-actif">/pages/apl/apl-colocation-jeune-actif</a><div class="muted">src\pages\apl\apl-colocation-jeune-actif\index.html</div></td>
+        <td>Corrections ciblées sur des accents et la ponctuation pour des passages évidents.</td>
+        <td>3</td>
+        <td><ul><li><strong>accent</strong> - vérifier la quote-part de loyer mentionnee au bail => vérifier la quote-part de loyer mentionnée au bail<br><span class="muted">accent manquant sur 'mentionnée' (high)</span></li><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace avant le point final à corriger (high)</span></li><li><strong>accent</strong> - redui => réduit<br><span class="muted">accent sur le verbe 'réduit' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-colocation">/pages/apl/apl-colocation</a><div class="muted">src\pages\apl\apl-colocation\index.html</div></td>
+        <td>Corrections sûres détectées sur des passages erronés d’encodage/ponctuation concernant le nom de domaine. Aucune reformulation ou ajout de contenu.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - LesCalculateurs. fr => LesCalculateurs.fr<br><span class="muted">ponctuation/espaces dans un nom de domaine (texte séparé par espace incorrect) (high)</span></li><li><strong>ponctuation</strong> - © 2026 LesCalculateurs. fr => © 2026 LesCalculateurs.fr<br><span class="muted">ponctuation/espaces dans un nom de domaine (texte séparé par espace incorrect) (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-loyer-eleve">/pages/apl/apl-couple-loyer-eleve</a><div class="muted">src\pages\apl\apl-couple-loyer-eleve\index.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni.</td>
+        <td>1</td>
+        <td><ul><li><strong>encodage</strong> - Cette page r à pond a une question r à currente de budget logement en zone tendue pour les couples sans enfant. => Cette page répond à une question relative au budget logement en zone tendue pour les couples sans enfant.<br><span class="muted">Texte cassé/encodage typographique qui rend la phrase illisible. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-lyon">/pages/apl/apl-couple-lyon</a><div class="muted">src\pages\apl\apl-couple-lyon\index.html</div></td>
+        <td>Corrections sures et localisées sur l’orthographe/punctuation et quelques accents. Pas de réécriture de phrases ni améliorations de style.</td>
+        <td>7</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace avant la ponctuation finale (high)</span></li><li><strong>orthographe</strong> - logement dans le parc priv à. => logement dans le parc privé.<br><span class="muted">orthographe du mot privé (high)</span></li><li><strong>ponctuation</strong> - vérifier si les deux revenus sont stables sur la période retenue. => Vérifier si les deux revenus sont stables sur la période retenue.<br><span class="muted">majuscule au début de la phrase (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">manque de ponctuation entre deux propositions (high)</span></li><li><strong>orthographe</strong> - l Île-de-France => l'Île-de-France<br><span class="muted">orthographe et élision manquante (high)</span></li><li><strong>orthographe</strong> - ...APL pour un couple à Lyon : estimation 2026 Simulation type APL pour un couple à Lyon avec logement dans le parc priv à. => ...APL pour un couple à Lyon : estimation 2026 Simulation type APL pour un couple à Lyon avec logement dans le parc privé.<br><span class="muted">correction de l’orthographe partielle et de la troncature (high)</span></li><li><strong>orthographe</strong> - apl couple lyon => APL couple Lyon<br><span class="muted">uniformiser les écritures et capitalisation (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-paris">/pages/apl/apl-couple-paris</a><div class="muted">src\pages\apl\apl-couple-paris\index.html</div></td>
+        <td>Corrections brèves et sûres identifiées dans le texte.</td>
+        <td>4</td>
+        <td><ul><li><strong>accent</strong> - intermediaires => intermédiaires<br><span class="muted"> accent manquant sur le i : orthographe correcte intermédiaires (high)</span></li><li><strong>ponctuation</strong> - ne remplace pas Le => ne remplace pas. Le<br><span class="muted"> ponctuation manquante entre deux propositions (high)</span></li><li><strong>ponctuation</strong> - L'objectif est de rendre l'estimation => L'objectif est de rendre l'estimation.<br><span class="muted"> ajout d'une ponctuation finale (high)</span></li><li><strong>ponctuation</strong> - CAF Voir la fiche => CAF. Voir la fiche<br><span class="muted"> ponctuation séparant deux propositions (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-petit-revenu">/pages/apl/apl-couple-petit-revenu</a><div class="muted">src\pages\apl\apl-couple-petit-revenu\index.html</div></td>
+        <td>Corrections sures détectées (correction locale unique).</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">espace inutilo avant le point (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>Correction unique et sûre d'un mot mal orthographié.</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - Oui, le plafond different ? => Oui, le plafond différent ?<br><span class="muted">Erreur d'orthographe avec accent manquant sur 'différent'. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-un-enfant-loyer-moyen">/pages/apl/apl-couple-un-enfant-loyer-moyen</a><div class="muted">src\pages\apl\apl-couple-un-enfant-loyer-moyen\index.html</div></td>
+        <td>Corrections typographiques évidentes uniquement (espaces avant les deux-points, ponctuation, majuscules/minuscules et encodage)</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - APL couple avec 1 enfant et loyer moyen : estimation 2026 Estimation indicative. => APL couple avec 1 enfant et loyer moyen: estimation 2026. Estimation indicative.<br><span class="muted">Espace avant les deux-points et ponctuation manquante avant la fin de la phrase. (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">Manque de ponctuation entre deux fragments de phrase. (high)</span></li><li><strong>orthographe</strong> - Famille en Île-de-France apl famille ile de france => Famille en Île-de-France apl famille Île-de-France<br><span class="muted">Uniformiser la référence géographique et corriger l encodage/majuscule. (medium)</span></li><li><strong>ponctuation</strong> - Estimation rapide Estimation indicative autour de ~87 € par mois. => Estimation rapide. Estimation indicative autour de ~87 € par mois.<br><span class="muted">Ponctuation manquante entre deux énoncés. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-un-enfant">/pages/apl/apl-couple-un-enfant</a><div class="muted">src\pages\apl\apl-couple-un-enfant\index.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni (corrections locales, sans réécriture complète).</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - Résultat estimé ~72 € / mois => Résultat estimé ~72 € par mois<br><span class="muted">ponctuation/orthographe: remplacer le séparateur ambigu par l’expression standard &quot;par mois&quot; (high)</span></li><li><strong>orthographe</strong> - apl famille ile de france ~82 € => apl famille île-de-France ~82 €<br><span class="muted">orthographe/antislash: corriger les noms de lieu et liaisons usuelles (île-de-France) (high)</span></li><li><strong>accent</strong> - determinant => déterminant<br><span class="muted">accent manquant sur un mot fréquent (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-colocation">/pages/apl/apl-etudiant-colocation</a><div class="muted">src\pages\apl\apl-etudiant-colocation\index.html</div></td>
+        <td>Corrections sûres principalement liées à des accents manquants, fautes d’orthographe ou d’accord et erreurs typographiques évidentes dans des fragments courts. Pas de réécriture de phrases complètes ni de corrections ambiguës.</td>
+        <td>6</td>
+        <td><ul><li><strong>accent</strong> - l ecart => l'écart<br><span class="muted">accent manquant (high)</span></li><li><strong>orthographe</strong> - examinee => examinée<br><span class="muted">erreur d’orthographe/accent (high)</span></li><li><strong>orthographe</strong> - calculee => calculée<br><span class="muted">erreur d’orthographe/accent (high)</span></li><li><strong>accent</strong> - en general => en général<br><span class="muted">accent/orthographe (high)</span></li><li><strong>orthographe</strong> - redui t-elle => réduite-t-elle<br><span class="muted">accent et trait d’union manquants (high)</span></li><li><strong>accent</strong> - ecart => écart<br><span class="muted">accent manquant (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-lyon">/pages/apl/apl-etudiant-lyon</a><div class="muted">src\pages\apl\apl-etudiant-lyon\index.html</div></td>
+        <td>Corrections ciblées et sûres sur des erreurs évidentes de français dans le texte fourni.</td>
+        <td>9</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espacement avant la ponctuation finale non conforme. (high)</span></li><li><strong>ponctuation</strong> - méthode L'objectif => méthode. L'objectif<br><span class="muted">manque de ponctuation entre deux propositions; correction locale sans toucher au sens. (high)</span></li><li><strong>orthographe</strong> - r à gles => règles<br><span class="muted">correction d'orthographe pour le mot 'règles'. (high)</span></li><li><strong>orthographe</strong> - apl étudiant lyon => APL étudiant Lyon<br><span class="muted">correction de la capitalisation et de la majuscule propre pour 'APL' et 'Lyon'. (high)</span></li><li><strong>ponctuation</strong> - Questions fréquentes L'APL => Questions fréquentes. L'APL<br><span class="muted">ajout d'une ponctuation manquante et séparation des titres. (high)</span></li><li><strong>orthographe</strong> - apl célibataire lyon => APL célibataire Lyon<br><span class="muted">correction de la capitalisation et de la majuscule propre pour 'APL' et 'Lyon'. (high)</span></li><li><strong>orthographe</strong> - apl étudiant colocation => APL étudiant colocation<br><span class="muted">correction de la capitalisation. (high)</span></li><li><strong>orthographe</strong> - apl étudiant petit loyer => APL étudiant petit loyer<br><span class="muted">correction de la capitalisation. (high)</span></li><li><strong>orthographe</strong> - apl étudiant studio => APL étudiant studio<br><span class="muted">correction de la capitalisation. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-paris">/pages/apl/apl-etudiant-paris</a><div class="muted">src\pages\apl\apl-etudiant-paris\index.html</div></td>
+        <td>Corrections évidentes de typographie et d’encodage localisées sur deux passages.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace avant le point à la fin de la phrase. (high)</span></li><li><strong>orthographe</strong> - simulation compl à te. => simulation complète<br><span class="muted">erreur d’orthographe et séparation involontaire des syllabes dans « complète ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-petit-loyer">/pages/apl/apl-etudiant-petit-loyer</a><div class="muted">src\pages\apl\apl-etudiant-petit-loyer\index.html</div></td>
+        <td>Corrections ciblées et sûres sur la ponctuation et les séparations de phrases.</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - Estimation rapide Estimation indicative autour de ~320 € par mois. => Estimation rapide. Estimation indicative autour de ~320 € par mois.<br><span class="muted">Ponctuation manquante entre deux intitulés/phrases. (high)</span></li><li><strong>ponctuation</strong> - Hypothèses importantes Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes. => Hypothèses importantes. Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li><li><strong>ponctuation</strong> - Questions fréquentes Un petit loyer réduit-il forcément l'APL d'un étudiant ? => Questions fréquentes : Un petit loyer réduit-il forcément l'APL d'un étudiant ?<br><span class="muted">Ajout de deux points après le titre; ponctuation plus claire. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-studio">/pages/apl/apl-etudiant-studio</a><div class="muted">src\pages\apl\apl-etudiant-studio\index.html</div></td>
+        <td>Correction unique d’un espace avant une ponctuation.</td>
+        <td>1</td>
+        <td><ul><li><strong>espacement</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Espacement incorrect avant le point final. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-toulouse">/pages/apl/apl-etudiant-toulouse</a><div class="muted">src\pages\apl\apl-etudiant-toulouse\index.html</div></td>
+        <td>Corrections obligatoires et sécurisées de ponctuation et de petits encodages dans le texte fourni.</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - € / mois => € par mois<br><span class="muted">ponctuation/formatage courant en français pour indiquer la périodicité (high)</span></li><li><strong>ponctuation</strong> - méthode L'objectif => méthode. L'objectif<br><span class="muted">corrige une ponctuation manquante qui change la structure des phrases (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">ajoute une ponctuation séparant deux propositions (high)</span></li><li><strong>ponctuation</strong> - Ouvrir le simulateur APL complet Voir les hypothèses => Ouvrir le simulateur APL complet. Voir les hypothèses<br><span class="muted">ajoute une séparation entre deux phrases (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-famille-deux-enfants-province">/pages/apl/apl-famille-deux-enfants-province</a><div class="muted">src\pages\apl\apl-famille-deux-enfants-province\index.html</div></td>
+        <td>Correction proposée sur un fragment mal écrit.</td>
+        <td>1</td>
+        <td><ul><li><strong>apostrophe</strong> - Tester une variation de revenu si un parent reprend'une activité. => Tester une variation de revenu si un parent reprend une activité.<br><span class="muted">Correction de l'apostrophe incorrecte dans 'reprend'une' qui devrait être 'reprend une'. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-famille-idf">/pages/apl/apl-famille-idf</a><div class="muted">src\pages\apl\apl-famille-idf\index.html</div></td>
+        <td>Corrections ciblées sur des fautes évidentes d’orthographe et d’encodage dans le texte fourni.</td>
+        <td>5</td>
+        <td><ul><li><strong>accent</strong> - budgetaire => budgétaire<br><span class="muted">mot incorrect; forme correcte avec accent sur é. (high)</span></li><li><strong>accent</strong> - zone ou le reste => zone où le reste<br><span class="muted">erreur d’accent et de liaison; correction standard. (high)</span></li><li><strong>orthographe</strong> - r à pond a une recherche => répond à une recherche<br><span class="muted">correction d’une phrase cassée. (high)</span></li><li><strong>ponctuation</strong> - Sur quoi l'estimation est basée Le calcul => Sur quoi l'estimation est basée : Le calcul<br><span class="muted">ponctuation manquante entre clause et énoncé suivant. (high)</span></li><li><strong>orthographe</strong> - g à n à ralement => généralement<br><span class="muted">fragment cassé; correction évidente. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-famille-trois-enfants">/pages/apl/apl-famille-trois-enfants</a><div class="muted">src\pages\apl\apl-famille-trois-enfants\index.html</div></td>
+        <td>Corrections strictement locales pour des erreurs évidentes de français (ponctuation et majuscules) détectées dans le texte fourni.</td>
+        <td>11</td>
+        <td><ul><li><strong>ponctuation</strong> - Type de logement Location => Type de logement : Location<br><span class="muted">manque de deux-points séparant le titre et le contenu (high)</span></li><li><strong>ponctuation</strong> - Hypothèses importantes Cette estimation repose => Hypothèses importantes : Cette estimation repose<br><span class="muted">manque de deux-points (high)</span></li><li><strong>ponctuation</strong> - Sur quoi l'estimation est basée Le calcul tient compte => Sur quoi l'estimation est basée : Le calcul tient compte<br><span class="muted">manque de deux-points (high)</span></li><li><strong>ponctuation</strong> - Ce que cette page ne remplace pas Le résultat reste indicatif. => Ce que cette page ne remplace pas : Le résultat reste indicatif.<br><span class="muted">manque de deux-points (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif => Pourquoi nous montrons la méthode : L'objectif<br><span class="muted">manque de deux-points (high)</span></li><li><strong>ponctuation</strong> - Comparer plusieurs scénarios Ce tableau => Comparer plusieurs scénarios : Ce tableau<br><span class="muted">manque de deux-points (high)</span></li><li><strong>orthographe</strong> - apl 3 enfants ~87 € => APL 3 enfants ~87 €<br><span class="muted">utilisation incorrecte de la majuscule (high)</span></li><li><strong>orthographe</strong> - apl couple 1 enfant ~72 € => APL couple 1 enfant ~72 €<br><span class="muted">utilisation incorrecte de la majuscule (high)</span></li><li><strong>orthographe</strong> - apl couple 1 enfant et loyer moyen : estimation 2026 => APL couple 1 enfant et loyer moyen : estimation 2026<br><span class="muted">utilisation incorrecte de la majuscule (high)</span></li><li><strong>orthographe</strong> - apl famille 2 enfants en province : estimation 2026 => APL famille 2 enfants en province : estimation 2026<br><span class="muted">utilisation incorrecte de la majuscule (high)</span></li><li><strong>orthographe</strong> - apl couple lyon APL pour un couple à Lyon : estimation 2026 => APL couple Lyon APL pour un couple à Lyon : estimation 2026<br><span class="muted">utilisation incorrecte de la majuscule (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-fin-de-droits-chomage">/pages/apl/apl-fin-de-droits-chomage</a><div class="muted">src\pages\apl\apl-fin-de-droits-chomage\index.html</div></td>
+        <td>Corrections d'orthographe locale uniquement. Une erreur identifiée.</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - ... veulent estimér rapidement si l'APL peut amortir ... => ... veulent estimer rapidement si l'APL peut amortir ...<br><span class="muted">erreur d'infinitif : estimér → estimer (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-fin-de-droits-personne-seule">/pages/apl/apl-fin-de-droits-personne-seule</a><div class="muted">src\pages\apl\apl-fin-de-droits-personne-seule\index.html</div></td>
+        <td>Corrections mineures et sûres sur des erreurs évidentes de français (orthographe de verbe et ponctuation).</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - veulent estimér ce que l'APL peut encore couvrir => veulent estimer ce que l'APL peut encore couvrir<br><span class="muted">erreur de conjugaison/orthographe du verbe (high)</span></li><li><strong>orthographe</strong> - et veulent estimér ce que l'APL peut encore couvrir => et veulent estimer ce que l'APL peut encore couvrir<br><span class="muted">erreur de conjugaison/orthographe du verbe (high)</span></li><li><strong>ponctuation</strong> - sur caf.fr . => sur caf.fr.<br><span class="muted">espace avant la ponctuation (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-hlm-petit-revenu">/pages/apl/apl-hlm-petit-revenu</a><div class="muted">src\pages\apl\apl-hlm-petit-revenu\index.html</div></td>
+        <td>Corrections localisées et sûres détectées dans le texte fourni.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Espacement inadéquat avant le point final. (high)</span></li><li><strong>orthographe</strong> - Comparer avec un logement priv à au même niveau de loyer. => Comparer avec un logement privé au même niveau de loyer.<br><span class="muted">Mot « priv » manquant d’accent et omission de l’article/préposition correcte. (high)</span></li><li><strong>grammaire</strong> - ~208 € / mois => ~208 € par mois<br><span class="muted">Expression incorrecte de la périodicité; remplacer par « par mois ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-jeune-actif-premier-logement">/pages/apl/apl-jeune-actif-premier-logement</a><div class="muted">src\pages\apl\apl-jeune-actif-premier-logement\index.html</div></td>
+        <td>Corrections sures de français présentes dans le texte, uniquement des remplacements locaux et littéraux.</td>
+        <td>4</td>
+        <td><ul><li><strong>orthographe</strong> - requ à te de d à but de parcours locatif => requête à but de parcours locatif<br><span class="muted">orthographe et acentuation incorrectes dans le mot 'requête' et phrase mal formulée (high)</span></li><li><strong>orthographe</strong> - à e dans le logement. => entrée dans le logement.<br><span class="muted">correction d'une abréviation/texte cassé 'entrée' manquant et accord contexte (high)</span></li><li><strong>orthographe</strong> - Tester un scénario avec salaire d essai ou revenu variable. => Tester un scénario avec salaire d'essai ou revenu variable.<br><span class="muted">espace inutile dans 'd essai' corrige en 'd'essai' (high)</span></li><li><strong>orthographe</strong> - d à but de parcours locatif => à but de parcours locatif<br><span class="muted">erreur de préposition/fragment cassé à corriger localement (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-loyer-500-revenu-900">/pages/apl/apl-loyer-500-revenu-900</a><div class="muted">src\pages\apl\apl-loyer-500-revenu-900\index.html</div></td>
+        <td>Corrections proposées pour des erreurs évidentes de français dans le texte fourni.</td>
+        <td>4</td>
+        <td><ul><li><strong>orthographe</strong> - budgetaire => budgétaire<br><span class="muted">orthographe (high)</span></li><li><strong>orthographe</strong> - scénario budgetaire => scénario budgétaire<br><span class="muted">orthographe (high)</span></li><li><strong>ponctuation</strong> - Estimation 2026 Estimation indicative. => Estimation 2026. Estimation indicative.<br><span class="muted">ponctuation (high)</span></li><li><strong>ponctuation</strong> - ~302 € / mois Montant indicatif calculé => ~302 € par mois Montant indicatif calculé<br><span class="muted">ponctuation/format (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-loyer-800-revenu-1300">/pages/apl/apl-loyer-800-revenu-1300</a><div class="muted">src\pages\apl\apl-loyer-800-revenu-1300\index.html</div></td>
+        <td>Corrections ciblées et sûres pour améliorer le texte sans changer le sens.</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - APL avec ~1 300 EUR de revenus et ~800 EUR de loyer : estimation 2026 Estimation indicative. => APL avec ~1 300 EUR de revenus et ~800 EUR de loyer : estimation 2026. Estimation indicative.<br><span class="muted">Ponctuation manquante entre deux phrases. (high)</span></li><li><strong>orthographe</strong> - Cette page r à pond a une vraie question de locataire : savoir si un loyer important laisse encore une aide utile. => Cette page répond à une vraie question de locataire : savoir si un loyer important laisse encore une aide utile.<br><span class="muted">Garbled phrase dû à encodage; correction locale et exacte. (high)</span></li><li><strong>orthographe</strong> - Souvent oui en th à orie, mais le plafond de loyer limite vite le gain. => Souvent oui en théorie, mais le plafond de loyer limite vite le gain.<br><span class="muted">Mot mal encodé; correction orthographique et accentuée. (high)</span></li><li><strong>ponctuation</strong> - Hypothèses importantes Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes. => Hypothèses importantes. Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.<br><span class="muted">Punctuation manquante entre deux segments; correction locale et sûre. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-parent-isole-deux-enfants">/pages/apl/apl-parent-isole-deux-enfants</a><div class="muted">src\pages\apl\apl-parent-isole-deux-enfants\index.html</div></td>
+        <td>Corrections sûres et locales sur des erreurs typographiques et ponctuation évidentes.</td>
+        <td>9</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">espace avant le point final après caf.fr. (high)</span></li><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace superflu avant le point. (high)</span></li><li><strong>orthographe</strong> - ~267 € / mois => ~267 €/mois<br><span class="muted">correction typographique de l’espace autour de la barre oblique pour une unité monétaire standard. (high)</span></li><li><strong>ponctuation</strong> - enfants Cette page => enfants. Cette page<br><span class="muted">ajout d’un point pour séparer les phrases. (high)</span></li><li><strong>ponctuation</strong> - Zone Province Type de logement => Zone Province. Type de logement<br><span class="muted">séparation entre deux segments par un point. (high)</span></li><li><strong>ponctuation</strong> - Hypothèses importantes Cette estimation => Hypothèses importantes. Cette estimation<br><span class="muted">séparation entre deux phrases par un point. (high)</span></li><li><strong>orthographe</strong> - vérifier si les enfants sont tous considérés à charge. => Vérifier si les enfants sont tous considérés à charge.<br><span class="muted">mise en majuscule en début de phrase. (high)</span></li><li><strong>ponctuation</strong> - Cette page existe Cette page répond => Cette page existe. Cette page répond<br><span class="muted">séparation entre deux phrases par un point. (high)</span></li><li><strong>ponctuation</strong> - Questions fréquentes L'APL monte-t-elle => Questions fréquentes. L'APL monte-t-elle<br><span class="muted">séparation entre deux phrases par un point. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-parent-isole-paris">/pages/apl/apl-parent-isole-paris</a><div class="muted">src\pages\apl\apl-parent-isole-paris\index.html</div></td>
+        <td>Corrections sûres et localisées détectées dans le texte.</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - g à olocalisation forte => géolocalisation forte<br><span class="muted">erreur d'orthographe/formation du terme (high)</span></li><li><strong>orthographe</strong> - bien sup à rieur au plafond retenu => bien supérieur au plafond retenu<br><span class="muted">erreur d'orthographe et de formulation (high)</span></li><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">ponctuation incorrecte: espace avant le point (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-parent-isole-un-enfant">/pages/apl/apl-parent-isole-un-enfant</a><div class="muted">src\pages\apl\apl-parent-isole-un-enfant\index.html</div></td>
+        <td>Corrections sures identifiées (max. 4) pour des fragments clairement erronés.</td>
+        <td>4</td>
+        <td><ul><li><strong>accent</strong> - concr à te => concrète<br><span class="muted">manque d'accent et d'orthographe correcte (high)</span></li><li><strong>orthographe</strong> - r à ponse => réponse<br><span class="muted">erreur d'orthographe/encodage (high)</span></li><li><strong>accent</strong> - intégrer a la vérification finale => intégrer à la vérification finale<br><span class="muted">erreur d'accentuation sur la préposition (high)</span></li><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace avant le point final; correction typographique évidente (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-personne-seule-smic">/pages/apl/apl-personne-seule-smic</a><div class="muted">src\pages\apl\apl-personne-seule-smic\index.html</div></td>
+        <td>Corrections sûres détectées (français): corrections locales et évidentes uniquement, sans réécriture majeure.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Manque de ponctuation entre deux propositions (high)</span></li><li><strong>espacement</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Espace avant le point inutile (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">Manque de ponctuation entre deux phrases (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-petite-surface-paris">/pages/apl/apl-petite-surface-paris</a><div class="muted">src\pages\apl\apl-petite-surface-paris\index.html</div></td>
+        <td>Corrections simples d'orthographe et d'accent localisées dans le texte.</td>
+        <td>4</td>
+        <td><ul><li><strong>orthographe</strong> - très fr à quentes => très fréquentes<br><span class="muted">orthographe/accent (high)</span></li><li><strong>orthographe</strong> - renseign à hors charges. => renseigné hors charges.<br><span class="muted">orthographe/accent (high)</span></li><li><strong>orthographe</strong> - caract à ristiques => caractéristiques<br><span class="muted">orthographe (high)</span></li><li><strong>grammaire</strong> - reste toutefois limite par le plafond => reste toutefois limité par le plafond<br><span class="muted">grammaire (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-proprietaire-ai-je-droit">/pages/apl/apl-proprietaire-ai-je-droit</a><div class="muted">src\pages\apl\apl-proprietaire-ai-je-droit\index.html</div></td>
+        <td>Corrections sûres de formes d’URL mal encodées/espacées.</td>
+        <td>2</td>
+        <td><ul><li><strong>encodage</strong> - © 2026 LesCalculateurs. fr => © 2026 LesCalculateurs.fr<br><span class="muted">Espacement incorrect avant le domaine et problème d'encodage typographique potentiellement nuisible pour le lien. (high)</span></li><li><strong>encodage</strong> - Retour au pilier : Simulateur APL 2026 © 2026 LesCalculateurs. fr => Retour au pilier : Simulateur APL 2026 © 2026 LesCalculateurs.fr<br><span class="muted">Même correction d’encodage/espacement du domaine dans une autre occurrence. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-refusee-que-faire">/pages/apl/apl-refusee-que-faire</a><div class="muted">src\pages\apl\apl-refusee-que-faire\index.html</div></td>
+        <td>Corrections mineures et sûres sur la ponctuation et l’orthographe de fragments locaux.</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - Réponse rapide Un refus => Réponse rapide : Un refus<br><span class="muted">Ajout de deux-points pour séparer l’intitulé de l’énoncé suivant. (high)</span></li><li><strong>ponctuation</strong> - Aller plus loin Pour une estimation chiffrée adaptée à votre situation, passez par le pilier. => Aller plus loin : Pour une estimation chiffrée adaptée à votre situation, passez par le pilier.<br><span class="muted">Ponctuation manquante après « Aller plus loin ». (high)</span></li><li><strong>espacement</strong> - LesCalculateurs. fr => LesCalculateurs.fr<br><span class="muted">Espacement incorrect autour du point; corriger en un seul mot sans espace. (high)</span></li><li><strong>espacement</strong> - © 2026 LesCalculateurs. fr => © 2026 LesCalculateurs.fr<br><span class="muted">Espacement entre le point et le « fr » corrigé pour former une URL correcte. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-reprise-emploi-loyer-eleve">/pages/apl/apl-reprise-emploi-loyer-eleve</a><div class="muted">src\pages\apl\apl-reprise-emploi-loyer-eleve\index.html</div></td>
+        <td>Corrections sures de français identifiées dans le texte fourni (remplacements locaux et littéraux, sans réécriture complète).</td>
+        <td>6</td>
+        <td><ul><li><strong>apostrophe</strong> - Personne qui reprend'un emploi => Personne qui reprend un emploi<br><span class="muted">apostrophe mal placée dans une expression courante (high)</span></li><li><strong>accent</strong> - apl apres une reprise d'emploi => APL après une reprise d'emploi<br><span class="muted">erreur d'accentuation/majuscule dans le sigle et besoin d'accent sur 'après' (high)</span></li><li><strong>orthographe</strong> - apl reprise emploi loyer élevé ~168 € => APL reprise emploi loyer élevé ~168 €<br><span class="muted">majuscule manquante sur le sigle APL (high)</span></li><li><strong>ponctuation</strong> - estimation 2026 Exemple APL => estimation 2026. Exemple APL<br><span class="muted">ponctuation manquante entre deux énoncés (high)</span></li><li><strong>orthographe</strong> - Célibataire à Lyon apl célibataire lyon => Célibataire à Lyon APL célibataire lyon<br><span class="muted">majuscule manquante sur sigle APL et cohérence dans l’énoncé (medium)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation<br><span class="muted">accentuation et ponctuation manquante entre deux propositions (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-reprise-emploi-personne-seule">/pages/apl/apl-reprise-emploi-personne-seule</a><div class="muted">src\pages\apl\apl-reprise-emploi-personne-seule\index.html</div></td>
+        <td>Corrections ponctuelles uniquement sur des fragments clairement fautifs ou typographiques, sans toucher au sens ni au contenu.</td>
+        <td>6</td>
+        <td><ul><li><strong>ponctuation</strong> - APL en reprise d'emploi pour une personne seule : estimation 2026 Estimation indicative. => APL en reprise d'emploi pour une personne seule : estimation 2026. Estimation indicative.<br><span class="muted">Manque de pointage entre deux phrases. (high)</span></li><li><strong>ponctuation</strong> - Ce que cette page ne remplace pas Le résultat reste indicatif. => Ce que cette page ne remplace pas. Le résultat reste indicatif.<br><span class="muted">Punctuation manquante entre deux propositions. (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Fausse liaison entre deux propositions; ajout d'une ponctuation et séparation. (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">Manque de ponctuation entre deux segments. (high)</span></li><li><strong>ponctuation</strong> - Zone Province Type de logement Location => Zone: Province Type de logement Location<br><span class="muted">Ajout d'un séparateur pour clarifier le champ; correction mineure de ponctuation. (high)</span></li><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">Espace inutile avant le point final. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-reprise-emploi">/pages/apl/apl-reprise-emploi</a><div class="muted">src\pages\apl\apl-reprise-emploi\index.html</div></td>
+        <td>Corrections simples et locales détectées dans le texte (accentuation, apostrophes, espacement autour des points).</td>
+        <td>6</td>
+        <td><ul><li><strong>accent</strong> - APL apres une reprise d'emploi => APL après une reprise d'emploi<br><span class="muted">Accents manquants sur 'après' (high)</span></li><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">Espacement avant le point final à corriger (high)</span></li><li><strong>apostrophe</strong> - Exemple d impact => Exemple d'impact<br><span class="muted">Apostrophe manquante dans 'd'impact' (high)</span></li><li><strong>apostrophe</strong> - reprise'un emploi => reprise un emploi<br><span class="muted">Apostrophe inutile entre reprise et un (high)</span></li><li><strong>apostrophe</strong> - l avant et l après reprise d'activité. => l'avant et l'après reprise d'activité.<br><span class="muted">Corrections d'apostrophes et de liaisons typographiques (high)</span></li><li><strong>accent</strong> - a terme => à terme<br><span class="muted">Accent sur 'à' manquant (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-avec-enfant">/pages/apl/apl-sans-revenu-avec-enfant</a><div class="muted">src\pages\apl\apl-sans-revenu-avec-enfant\index.html</div></td>
+        <td>Corrections uniquement liées à des erreurs évidentes de français dans le texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>orthographe</strong> - apl sans revenu avec enfant => APL sans revenu avec enfant<br><span class="muted">erreur de casse dans un libellé technique (high)</span></li><li><strong>orthographe</strong> - apl fin de droits chômage => APL fin de droits chômage<br><span class="muted">erreur de casse dans un libellé technique (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-couple-sans-enfant">/pages/apl/apl-sans-revenu-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-sans-revenu-couple-sans-enfant\index.html</div></td>
+        <td>Une correction sûre identifiée dans le texte fourni.</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - Tester aussi le RSA couple si le foyer n'a plus aucune ressource. => Tester aussi le RSA couple si le foyer n'a plus aucune ressources.<br><span class="muted">erreur d'accord/grammaire (pluriel du mot 'ressource') (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-parent-isole">/pages/apl/apl-sans-revenu-parent-isole</a><div class="muted">src\pages\apl\apl-sans-revenu-parent-isole\index.html</div></td>
+        <td>Corrections sûres identifiées sur des fragments courts qui ne modifient pas le sens.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-personne-seule">/pages/apl/apl-sans-revenu-personne-seule</a><div class="muted">src\pages\apl\apl-sans-revenu-personne-seule\index.html</div></td>
+        <td>Corrections sûres de français uniquement (remplacements locaux et littéraux).</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li><li><strong>ponctuation</strong> - CAF Voir la fiche service-public.fr => CAF. Voir la fiche service-public.fr<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li><li><strong>orthographe</strong> - apl sans revenu personne seule => APL sans revenu personne seule<br><span class="muted">Erreur de casse du sigle APL. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-smic-couple-sans-enfant">/pages/apl/apl-smic-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-smic-couple-sans-enfant\index.html</div></td>
+        <td>Corrections de ponctuation mineures identifiables dans le texte fourni.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">Espacement avant la ponctuation finale (espace avant le point). (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Manque de ponctuation entre deux propositions; amélioration locale sans changer le sens. (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr.<br><span class="muted">Manque de ponctuation entre deux énoncés successifs. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-smic-seul">/pages/apl/apl-smic-seul</a><div class="muted">src\pages\apl\apl-smic-seul\index.html</div></td>
+        <td>Corrections mineures de ponctuation et d'encodage uniquement, sans modification de sens.</td>
+        <td>6</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">ponctuation (high)</span></li><li><strong>ponctuation</strong> - Ce que cette page ne remplace pas Le résultat reste indicatif. => Ce que cette page ne remplace pas : Le résultat reste indicatif.<br><span class="muted">ajout de ponctuation manquante (deux phrases séparées) (high)</span></li><li><strong>ponctuation</strong> - Consulter notre méthodologie Voir la source officielle CAF Voir la fiche service-public.fr => Consulter notre méthodologie. Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">séparer les phrases par des points pour clarifier (high)</span></li><li><strong>ponctuation</strong> - Pourquoi cette page existe Cette page répond à l'intention de recherche apl smic seul. => Pourquoi cette page existe : Cette page répond à l'intention de recherche apl smic seul.<br><span class="muted">ajout de ponctuation pour clarifier (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">séparer les phrases pour clarifier (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">séparer les phrases pour clarifier (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl">/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl</a><div class="muted">src\pages\apl\comment-savoir-si-un-logement-est-eligible-aux-apl\index.html</div></td>
+        <td>Corrections sûres localisées et mineures de ponctuation uniquement.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Réponse rapide Un logement est éligible => Réponse rapide : Un logement est éligible<br><span class="muted">Ponctuation manquante après l’expression 'Réponse rapide' (high)</span></li><li><strong>ponctuation</strong> - Ce qu’il faut vérifier logement occupé à titre de résidence principale => Ce qu’il faut vérifier : logement occupé à titre de résidence principale<br><span class="muted">Ponctuation manquante après l’expression introductive (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl\index.html</div></td>
+        <td>Corrections sûres de fautes évidentes dans le texte fourni, principalement des accents manquants et des espaces/ponts incorrects.</td>
+        <td>6</td>
+        <td><ul><li><strong>accent</strong> - personnalisee => personnalisée<br><span class="muted">accent manquant sur le e final (high)</span></li><li><strong>orthographe</strong> - base sur => basée sur<br><span class="muted">erreur grammaticale et accent manquant (high)</span></li><li><strong>accent</strong> - baremes => barèmes<br><span class="muted">accent (high)</span></li><li><strong>accent</strong> - estimér => estimer<br><span class="muted">accent superflu sur le verbe (high)</span></li><li><strong>ponctuation</strong> - ressources . Le => ressources. Le<br><span class="muted">espace avant le point (high)</span></li><li><strong>encodage</strong> - caf. fr , service-public. fr => caf.fr, service-public.fr<br><span class="muted">erreurs d'encodage et espaces incorrects autour des points (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/quelles-ressources-pour-l-apl">/pages/apl/quelles-ressources-pour-l-apl</a><div class="muted">src\pages\apl\quelles-ressources-pour-l-apl\index.html</div></td>
+        <td>Corrections ciblées et sûres uniquement sur des fragments clairement problématiques éventuels.</td>
+        <td>3</td>
+        <td><ul><li><strong>espacement</strong> - LesCalculateurs. fr => LesCalculateurs.fr<br><span class="muted">Espace indésirable après le point dans une URL/de nom de domaine. (high)</span></li><li><strong>ponctuation</strong> - Réponse rapide La CAF prend en compte => Réponse rapide. La CAF prend en compte<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li><li><strong>espacement</strong> - © 2026 LesCalculateurs. fr => © 2026 LesCalculateurs.fr<br><span class="muted">Espace indésirable après le point dans l’URL/nom de domaine. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-aides">/pages/are/are-fin-de-droits-aides</a><div class="muted">src\pages\are\are-fin-de-droits-aides\index.html</div></td>
+        <td>Corrections locales et sûres identifiées dans le texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>accent</strong> - &amp;Acirc;ge => Âge<br><span class="muted">Erreur d'encodage HTML → corriger l'accent. (high)</span></li><li><strong>grammaire</strong> - Scénario ARE estimée => Scénario ARE estimé<br><span class="muted">Accord du participe passé avec le nom masculin 'Scénario'. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-quelles-aides">/pages/are/are-fin-de-droits-quelles-aides</a><div class="muted">src\pages\are\are-fin-de-droits-quelles-aides\index.html</div></td>
+        <td>Corrections détectées sur des erreurs évidentes de français, proposées comme remplacements locaux et littéraux.</td>
+        <td>2</td>
+        <td><ul><li><strong>encodage</strong> - &amp;Acirc;ge => Âge<br><span class="muted">encodage (high)</span></li><li><strong>grammaire</strong> - Scénario ARE estimée => Scénario ARE estimé<br><span class="muted">accord de genre (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-rsa-ou-apl">/pages/are/are-fin-de-droits-rsa-ou-apl</a><div class="muted">src\pages\are\are-fin-de-droits-rsa-ou-apl\index.html</div></td>
+        <td>Corrections uniquement des erreurs évidentes (accents/orthographe mineure, encodage) sans toucher au sens ni au style.</td>
+        <td>3</td>
+        <td><ul><li><strong>accent</strong> - &amp;Acirc;ge => Âge<br><span class="muted">accents encodage (high)</span></li><li><strong>grammaire</strong> - Scénario ARE estimée => Scénario ARE estimé<br><span class="muted">accord adjectif masculin/féminin (high)</span></li><li><strong>accent</strong> - &amp;Acirc;ge Personne en fin de droits ARE qui compare RSA et APL => Âge Personne en fin de droits ARE qui compare RSA et APL<br><span class="muted">accents encodage (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-reprise-emploi-temps-partiel">/pages/are/are-reprise-emploi-temps-partiel</a><div class="muted">src\pages\are\are-reprise-emploi-temps-partiel\index.html</div></td>
+        <td>Corrections de casse/encodage identifiables et sûres.</td>
+        <td>2</td>
+        <td><ul><li><strong>encodage</strong> - &amp;Acirc;ge Demandeur d'emploi en reprise à temps partiel => Âge Demandeur d'emploi en reprise à temps partiel<br><span class="muted">correction d'encodage HTML en caractère accentué (high)</span></li><li><strong>encodage</strong> - Scénario ARE estimée Salaire de référence &amp;Acirc;ge => Scénario ARE estimée Salaire de référence Âge<br><span class="muted">correction d'encodage HTML en caractère accentué (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are\index.html</div></td>
+        <td>Corrections strictement localisées sur des erreurs typographiques et de chiffres évidentes.</td>
+        <td>7</td>
+        <td><ul><li><strong>accent</strong> - 57, 43% => 57,43%<br><span class="muted">espace superflu après la virgule dans un nombre; utiliser le format standard français sans espace avant le pourcentage. (high)</span></li><li><strong>ponctuation</strong> - 31, 50€/jour => 31,50 €/jour<br><span class="muted">espace nécessaire entre le chiffre et l'unité pour les montants en EUR selon les usages français. (high)</span></li><li><strong>ponctuation</strong> - 91, 82€/jour => 91,82 €/jour<br><span class="muted">idem; correction de l’espace. (high)</span></li><li><strong>espacement</strong> - 24 000€ Jours => 24 000 € Jours<br><span class="muted">espace manquant entre le chiffre et l’unité monétaire selon les règles typographiques françaises. (high)</span></li><li><strong>ponctuation</strong> - 68, 92€/jour => 68,92 €/jour<br><span class="muted">idem; correction de l’espace. (high)</span></li><li><strong>espacement</strong> - ~2 067€ brut/mois => ~2 067 € brut/mois<br><span class="muted">espace manquant entre le chiffre et l’unité monétaire; respect de l’espace avant l’unité. (high)</span></li><li><strong>espacement</strong> - 120€/jour ARE mensuelle => 120 €/jour ARE mensuelle<br><span class="muted">espace nécessaire entre le chiffre et l’unité monétaire. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026\index.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni (améliorations mineures et corrections d’entités).</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - &amp;Acirc;ge => Âge<br><span class="muted">entité HTML incorrecte pour le caractère majuscule 'Â' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf/asf-parent-isole-sans-pension">/pages/asf/asf-parent-isole-sans-pension</a><div class="muted">src\pages\asf\asf-parent-isole-sans-pension\index.html</div></td>
+        <td>Corrections strictement locales et sûres sur des erreurs typographiques évidentes ou punctuationnelles.</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - Estimation rapide Montant indicatif autour de ~199 € par mois pour ce scénario type. => Estimation rapide : Montant indicatif autour de ~199 € par mois pour ce scénario type.<br><span class="muted">Ajout d'une ponctuation manquante pour clarifier l'intitulé. (high)</span></li><li><strong>ponctuation</strong> - Méthode et sources Cette estimation repose sur le moteur ASF du site et sur un scénario représentatif. => Méthode et sources. Cette estimation repose sur le moteur ASF du site et sur un scénario représentatif.<br><span class="muted">Ajout d'un point pour séparer les propositions. (high)</span></li><li><strong>ponctuation</strong> - Consulter notre méthodologie Voir la source officielle Voir la fiche CAF Questions fréquentes => Consulter notre méthodologie. Voir la source officielle. Voir la fiche CAF. Questions fréquentes<br><span class="muted">Ajout de ponctuation pour séparer les sections. (high)</span></li><li><strong>ponctuation</strong> - Enfants 1 => Enfants : 1<br><span class="muted">Ajout d'un deux-points pour clarifier l'étiquette. (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf/asf-parent-isole-sans-revenu">/pages/asf/asf-parent-isole-sans-revenu</a><div class="muted">src\pages\asf\asf-parent-isole-sans-revenu\index.html</div></td>
+        <td>Aucune erreur évidente détectée dans le texte fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf/asf-sans-pension-et-apl">/pages/asf/asf-sans-pension-et-apl</a><div class="muted">src\pages\asf\asf-sans-pension-et-apl\index.html</div></td>
+        <td>Aucune erreur évidente détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf">/pages/asf</a><div class="muted">src\pages\asf\index.html</div></td>
+        <td>Corrections sûres détectées, principalement des fautes typographiques et encodage.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - (ASF, RSA...) , Fiche ASF Public => (ASF, RSA...), Fiche ASF Public<br><span class="muted">espace avant une virgule (high)</span></li><li><strong>ponctuation</strong> - ressources Particularité : => ressources. Particularité :<br><span class="muted">manque de ponctuation séparant deux idées (high)</span></li><li><strong>ponctuation</strong> - Obtenir un montant indicatif d’ASF mensuel Comprendre => Obtenir un montant indicatif d’ASF mensuel. Comprendre<br><span class="muted">erreur de scission de phrases sans ponctuation (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage">/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage</a><div class="muted">src\pages\prime-activite\prime-activite-reprise-emploi-apres-chomage\index.html</div></td>
+        <td>Correction terminologique nécessaire: faute grammaticale sur le verbe servir avec préposition.</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - Cette page sert les personnes qui reprennent une activité modeste après le chômage => Cette page sert aux personnes qui reprennent une activité modeste après le chômage<br><span class="muted">Le verbe servir est intransitif dans ce contexte et doit être suivi de la préposition 'à' ou 'aux' selon le complément; ici le complément est 'les personnes', donc 'sert aux personnes'. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/combien-touche-t-on-au-rsa">/pages/rsa/combien-touche-t-on-au-rsa</a><div class="muted">src\pages\rsa\combien-touche-t-on-au-rsa\index.html</div></td>
+        <td>Correction d'une ponctuation geste: espace avant le point après caf.fr.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - sur caf.fr . Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026 => sur caf.fr. Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026<br><span class="muted">Ponctuation erronée (espace avant le point). (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa">/pages/rsa</a><div class="muted">src\pages\rsa\index.html</div></td>
+        <td>Corrections strictement localisées et sûres sur des fautes évidentes d’encodage, d’accents, d’apostrophes, d’espaces manquants ou d’orthographe mineure ne changeant pas le sens.</td>
+        <td>7</td>
+        <td><ul><li><strong>encodage</strong> - caf. fr => caf.fr<br><span class="muted">erreur d’encodage/espacement entre le nom de domaine et le TLD (high)</span></li><li><strong>encodage</strong> - service-public. fr => service-public.fr<br><span class="muted">erreur d’encodage/espacement entre le nom de domaine et le TLD (high)</span></li><li><strong>orthographe</strong> - environ environ 600 € / mois pour une personne seule et autour de 900 € / mois => environ 600 € / mois pour une personne seule et autour de 900 € / mois<br><span class="muted">répétition due à duplication par erreur typographique (medium)</span></li><li><strong>orthographe</strong> - versément => versement<br><span class="muted">fautes d’orthographe: vers Ément -&gt; versement (high)</span></li><li><strong>encodage</strong> - caf. fr. => caf.fr<br><span class="muted">erreur d’encodage/espacement entre le nom de domaine et le TLD (high)</span></li><li><strong>orthographe</strong> - estimer ci‑dessus => estimer ci-dessus<br><span class="muted">choix orthographique: ci‑dessus vs ci‑haut/ci‑dessous selon contexte (medium)</span></li><li><strong>encodage</strong> - service-public). fr => service-public.fr<br><span class="muted">erreur d’encodage/espacement (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/qui-a-droit-au-rsa">/pages/rsa/qui-a-droit-au-rsa</a><div class="muted">src\pages\rsa\qui-a-droit-au-rsa\index.html</div></td>
+        <td>Correction d'un symbole de liaison inapproprié dans une indication de montant.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - ~466 € / mois => ~466 € par mois<br><span class="muted">Remplacement du slash par la préposition appropriée pour indiquer la périodicité, afin de respecter l'usage courant du français. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-auto-entrepreneur">/pages/rsa/rsa-auto-entrepreneur</a><div class="muted">src\pages\rsa\rsa-auto-entrepreneur\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-chomage-fin-de-droits">/pages/rsa/rsa-chomage-fin-de-droits</a><div class="muted">src\pages\rsa\rsa-chomage-fin-de-droits\index.html</div></td>
+        <td>Une seule correction sûre détectée: suppression d’un espace avant le point après caf.fr.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - à faire sur caf.fr . => à faire sur caf.fr.<br><span class="muted">Erreur typographique: pas d espace avant le point final en français. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-conditions-2026">/pages/rsa/rsa-conditions-2026</a><div class="muted">src\pages\rsa\rsa-conditions-2026\index.html</div></td>
+        <td>Aucune correction sûre identifiée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-avec-enfant">/pages/rsa/rsa-couple-avec-enfant</a><div class="muted">src\pages\rsa\rsa-couple-avec-enfant\index.html</div></td>
+        <td>Corrections simples et sûres uniquement. Une4 correction locale locale proposée.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . Les Calculateurs => caf.fr. Les Calculateurs<br><span class="muted">espace avant la ponctuation supprimé pour respecter la norme française (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-enfant">/pages/rsa/rsa-couple-sans-enfant</a><div class="muted">src\pages\rsa\rsa-couple-sans-enfant\index.html</div></td>
+        <td>Corrections ciblées et sûres détectées dans le texte fourni.</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - sur caf.fr . => sur caf.fr.<br><span class="muted">Espacement incorrect avant le point final. (high)</span></li><li><strong>grammaire</strong> - Comparer avec le cas personne seule. => Comparer avec le cas d'une personne seule.<br><span class="muted">Correction grammaticale nécessaire pour une expression correcte. (high)</span></li><li><strong>ponctuation</strong> - Méthodologie Voir la source officielle CAF => Méthodologie. Voir la source officielle CAF<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li><li><strong>ponctuation</strong> - Lancer une simulation RSA complète Dernière modification : 18-03-2026 => Lancer une simulation RSA complète. Dernière modification : 18-03-2026<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-revenu-avec-enfant">/pages/rsa/rsa-couple-sans-revenu-avec-enfant</a><div class="muted">src\pages\rsa\rsa-couple-sans-revenu-avec-enfant\index.html</div></td>
+        <td>Corrections sures détectées: ponctuation mal placée après caf.fr et reformulation mineure pour exprimer correctement le montant par mois.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Espacement avant le point final incorrect. (high)</span></li><li><strong>orthographe</strong> -  ~1 141 € / mois =>  ~1 141 € par mois<br><span class="muted">Expression correcte en français: 'par mois' au lieu de '/ mois'. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-revenu">/pages/rsa/rsa-couple-sans-revenu</a><div class="muted">src\pages\rsa\rsa-couple-sans-revenu\index.html</div></td>
+        <td>Correction unique détectée: espace avant le point après caf.fr.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Espace avant le point non conforme aux règles typographiques françaises. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-et-apl-cumul">/pages/rsa/rsa-et-apl-cumul</a><div class="muted">src\pages\rsa\rsa-et-apl-cumul\index.html</div></td>
+        <td>Corrections sûres détectées: ponctuation incorrecte autour d'un lien caf.fr.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . Les => caf.fr. Les<br><span class="muted">espace avant le point final après l'URL; la ponctuation doit être collée au domaine. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-fin-de-droits-chomage-personne-seule">/pages/rsa/rsa-fin-de-droits-chomage-personne-seule</a><div class="muted">src\pages\rsa\rsa-fin-de-droits-chomage-personne-seule\index.html</div></td>
+        <td>Corrections sûres identifiées dans le texte (remplacements locaux et littéraux uniquement).</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Espacement avant le point, correction typographique standard. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-hebergement-gratuit">/pages/rsa/rsa-hebergement-gratuit</a><div class="muted">src\pages\rsa\rsa-hebergement-gratuit\index.html</div></td>
+        <td>Corrige une ponctuation manquante après CAF.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">Ponctuation manquante entre deux propositions. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-interim">/pages/rsa/rsa-interim</a><div class="muted">src\pages\rsa\rsa-interim\index.html</div></td>
+        <td>Correction unique et sûre : remplacement du séparateur inapproprié « / » par le terme attendu « par ».</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Résultat estimé ~218 € / mois => Résultat estimé ~218 € par mois<br><span class="muted">ponctuation et choix du connecteur correct entre montant et période (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-jeune-moins-de-25-ans">/pages/rsa/rsa-jeune-moins-de-25-ans</a><div class="muted">src\pages\rsa\rsa-jeune-moins-de-25-ans\index.html</div></td>
+        <td>Corrections proposées (2 erreurs évidentes uniquement).</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">Espace avant le point final manquant de respect des règles typographiques françaises. (high)</span></li><li><strong>orthographe</strong> - Question fréquentes => Questions fréquentes<br><span class="muted">Accord du nom: pluriel. Forme correcte: Questions fréquentes. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-logement-social">/pages/rsa/rsa-logement-social</a><div class="muted">src\pages\rsa\rsa-logement-social\index.html</div></td>
+        <td>Corrige une erreur de ponctuation simple (espace avant le point après caf.fr).</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace avant la ponctuation, faute typographique courante. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-parent-isole-sans-revenu">/pages/rsa/rsa-parent-isole-sans-revenu</a><div class="muted">src\pages\rsa\rsa-parent-isole-sans-revenu\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-personne-seule-montant">/pages/rsa/rsa-personne-seule-montant</a><div class="muted">src\pages\rsa\rsa-personne-seule-montant\index.html</div></td>
+        <td>Corrections strictement typographiques liées à l’encodage et à la ponctuation identifiables dans le texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">ponctuation: espace avant la ponctuation finale (high)</span></li><li><strong>ponctuation</strong> - CAF Voir la fiche service-public.fr => CAF. Voir la fiche service-public.fr<br><span class="muted">ponctuation: séparer l’abréviation CAF par un point (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-logement">/pages/rsa/rsa-sans-logement</a><div class="muted">src\pages\rsa\rsa-sans-logement\index.html</div></td>
+        <td>Corrections mineures et sûres liées à l’orthographe et à la ponctuation typographique.</td>
+        <td>2</td>
+        <td><ul><li><strong>orthographe</strong> - Logement sans_abri Activité Sans activité => Logement sans-abri Activité Sans activité<br><span class="muted">corrige l’underscore en hyphen pour le terme composé couramment écrit en français (high)</span></li><li><strong>ponctuation</strong> - caf.fr . Comparer plusieurs scénarios => caf.fr. Comparer plusieurs scénarios<br><span class="muted">suppression de l’espace avant le point final, conforme à la ponctuation française standard (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-revenu-avec-enfant">/pages/rsa/rsa-sans-revenu-avec-enfant</a><div class="muted">src\pages\rsa\rsa-sans-revenu-avec-enfant\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-revenu-personne-seule">/pages/rsa/rsa-sans-revenu-personne-seule</a><div class="muted">src\pages\rsa\rsa-sans-revenu-personne-seule\index.html</div></td>
+        <td>Une correction locale et sûre est possible: suppression de l espace avant le point après caf.fr.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Problème d'espacement: il ne faut pas mettre d'espace avant le signe de ponctuation final. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-travail-a-temps-partiel">/pages/rsa/rsa-travail-a-temps-partiel</a><div class="muted">src\pages\rsa\rsa-travail-a-temps-partiel\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aide-financiere-famille">/pages/simulateurs/aide-financiere-famille</a><div class="muted">src\pages\simulateurs\aide-financiere-famille\index.html</div></td>
+        <td>Corrections détectées: espace dans l'URL/nom de domaine.</td>
+        <td>1</td>
+        <td><ul><li><strong>espacement</strong> - © 2026 LesCalculateurs. fr => © 2026 LesCalculateurs.fr<br><span class="muted">Espace inutile entre le point et le domaine; corriger pour une URL correcte. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aide-sociale-simulation-globale">/pages/simulateurs/aide-sociale-simulation-globale</a><div class="muted">src\pages\simulateurs\aide-sociale-simulation-globale\index.html</div></td>
+        <td>Corrections locales et sécurisées détectées dans le texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - LesCalculateurs. fr => LesCalculateurs.fr<br><span class="muted">Espacement entre le point et 'fr' indésirable, forma d'URL incorrecte (high)</span></li><li><strong>ponctuation</strong> - Réponse rapide Une simulation globale => Réponse rapide. Une simulation globale<br><span class="muted">Ponctuation manquante entre deux propositions (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aides-apres-perte-emploi">/pages/simulateurs/aides-apres-perte-emploi</a><div class="muted">src\pages\simulateurs\aides-apres-perte-emploi\index.html</div></td>
+        <td>Corrections locales simples détectées dans le texte.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Activité Chômage => Activité : Chômage<br><span class="muted">Ponctuation manquante après le mot 'Activité' dans une liste ou titre (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aides-jeunes-actifs">/pages/simulateurs/aides-jeunes-actifs</a><div class="muted">src\pages\simulateurs\aides-jeunes-actifs\index.html</div></td>
+        <td>Corrections relevées sur des éléments évidents de français dans le texte fourni (remplacements locaux et littéraux uniquement).</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Réponse rapide Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus. => Réponse rapide : Les jeunes actifs peuvent bénéficier d’aides au logement et de compléments de revenus.<br><span class="muted">Ajout de deux points et correction de la préposition manquante « au logement » pour une tournure standard. (high)</span></li><li><strong>apostrophe</strong> - Aides logement => Aides au logement<br><span class="muted">Ajout de la préposition manquante « au ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aides-retraites">/pages/simulateurs/aides-retraites</a><div class="muted">src\pages\simulateurs\aides-retraites\index.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni (fragment court).</td>
+        <td>2</td>
+        <td><ul><li><strong>grammaire</strong> - d’aides logement => d’aides au logement<br><span class="muted">manque de préposition nécessaire entre 'aides' et 'logement' (high)</span></li><li><strong>ponctuation</strong> - Réponse rapide Les retraités => Réponse rapide : Les retraités<br><span class="muted">périodique ou ponctuation manquante entre 'Réponse rapide' et le reste de la phrase (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/cumul-aides-sociales">/pages/simulateurs/cumul-aides-sociales</a><div class="muted">src\pages\simulateurs\cumul-aides-sociales\index.html</div></td>
+        <td>Corrections sûres de ponctuation et d’orthographe locales relevées dans le texte.</td>
+        <td>3</td>
+        <td><ul><li><strong>apostrophe</strong> - Cumul aides sociales (2026) 🧮 Les Calculateurs Accueil Nos simulateurs Pilier • Nos simulateurs Cumul aides sociales Réponse à la question : Cumul aides sociales. => Cumul d'aides sociales (2026) 🧮 Les Calculateurs Accueil Nos simulateurs Pilier • Nos simulateurs Cumul d'aides sociales Réponse à la question : Cumul d'aides sociales.<br><span class="muted">Ajout de l’apostrophe et de l’article nécessaire pour une accord grammatical correct. (high)</span></li><li><strong>apostrophe</strong> - Réponse à la question : Cumul aides sociales. => Réponse à la question : Cumul d'aides sociales.<br><span class="muted">Ajout de l’article et de l’apostrophe pour une expression correcte. (high)</span></li><li><strong>encodage</strong> - © 2026 LesCalculateurs. fr => © 2026 LesCalculateurs.fr<br><span class="muted">Suppression de l’espace avant .fr pour corriger l’encodage/typographie de l’URL (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs">/pages/simulateurs</a><div class="muted">src\pages\simulateurs\index.html</div></td>
+        <td>Corrections strictement orthographiques ou d’accent simples, localisées et sans modification de sens détectées dans le texte fourni.</td>
+        <td>5</td>
+        <td><ul><li><strong>orthographe</strong> - 📈 Plus-Value Immobilière => 📈 Plus-value immobilière<br><span class="muted">orthographe et casse incorrectes dans une locution courante (plus-value immobilière) (high)</span></li><li><strong>orthographe</strong> - 📊 Charges de Copropriété => 📊 Charges de copropriété<br><span class="muted">consistance grammaticale: copropriété est un nom commun féminin, mais le nom est écrit avec une minuscule en français courant (high)</span></li><li><strong>accent</strong> - Acceder -&gt; 🏘️ Aide au Logement => Accéder → 🏘️ Aide au Logement<br><span class="muted">accent 'é' manquant sur le verbe accéder; correction locale et sans changer le sens (high)</span></li><li><strong>grammaire</strong> - frais d'acquisition immobilière => frais d'acquisition immobiliers<br><span class="muted">accord du nom pluriel 'frais' avec l’adjectif 'immobilière/immobiliers' ; usage standard: 'immobiliers' au pluriel (high)</span></li><li><strong>orthographe</strong> - Accéder → 🏦 Prêt Immobilier => Accéder → 🏦 Prêt immobilier<br><span class="muted">constante de casse: 'Immobilier' en nom commun peut s’écrire en minuscules après une majuscule initiale; correction mineure de casse sans changer le sens (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-ai-je-droit">/pages/simulateurs/quelles-aides-ai-je-droit</a><div class="muted">src\pages\simulateurs\quelles-aides-ai-je-droit\index.html</div></td>
+        <td>Corrections typographiques et de ponctuation locales, sans modifier le sens du texte.</td>
+        <td>5</td>
+        <td><ul><li><strong>ponctuation</strong> - Réponse rapide Les aides dépendent => Réponse rapide : Les aides dépendent<br><span class="muted">Ponctuation manquante introduisant une explication (high)</span></li><li><strong>ponctuation</strong> - Ce qu’il faut vérifier revenus du foyer composition familiale type de logement => Ce qu’il faut vérifier : revenus du foyer, composition familiale, type de logement<br><span class="muted">Manque de ponctuation et de séparateurs entre les éléments (high)</span></li><li><strong>ponctuation</strong> - aides CAF aides chômage => aides CAF, aides chômage<br><span class="muted">Liste sans virgule entre éléments (high)</span></li><li><strong>ponctuation</strong> - Aller plus loin Pour une estimation => Aller plus loin : Pour une estimation<br><span class="muted">Ponctuation manquante introduisant une explication (high)</span></li><li><strong>encodage</strong> - © 2026 LesCalculateurs. fr => © 2026 LesCalculateurs.fr<br><span class="muted">Espâce indésirable dans le nom de domaine (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-couple-sans-revenu">/pages/simulateurs/quelles-aides-couple-sans-revenu</a><div class="muted">src\pages\simulateurs\quelles-aides-couple-sans-revenu\index.html</div></td>
+        <td>Corrections locales et simples à apporter uniquement sur les fragments clairement cassés ou les ponctuations manquantes.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Consulter notre méthodologie Voir les sources officielles CAF => Consulter notre méthodologie. Voir les sources officielles CAF.<br><span class="muted">Manque de fin de phrase entre deux propositions; correction de ponctuation sans changer le sens. (high)</span></li><li><strong>ponctuation</strong> - Questions fréquentes Quelles aides vérifier pour un couple sans revenu ? => Questions fréquentes : Quelles aides vérifier pour un couple sans revenu ?<br><span class="muted">Ajout de deux points pour marquer l’introduction d’une question; correction ponctuelle sans changer le sens. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-fin-de-droits-chomage">/pages/simulateurs/quelles-aides-fin-de-droits-chomage</a><div class="muted">src\pages\simulateurs\quelles-aides-fin-de-droits-chomage\index.html</div></td>
+        <td>1 correction grammaticale locale détectée : ajout de la préposition manquante.</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - Quelles aides après fin de droits chômage ? => Quelles aides après fin de droits au chômage ?<br><span class="muted">Ajout de la préposition « au » pour une construction correcte en français. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-sans-revenu">/pages/simulateurs/quelles-aides-sans-revenu</a><div class="muted">src\pages\simulateurs\quelles-aides-sans-revenu\index.html</div></td>
+        <td>Aucune correction sûre nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

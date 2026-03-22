@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - pillars-rendered</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - pillars-rendered</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>visible</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>11</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>11</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>55</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>Corrections sûres détectées dans le texte (français).</td>
+        <td>5</td>
+        <td><ul><li><strong>encodage</strong> - caf. fr => caf.fr<br><span class="muted">erreur d'encodage/espacement dans l'URL: caf.fr (high)</span></li><li><strong>encodage</strong> - service-public. fr => service-public.fr<br><span class="muted">erreur d'encodage/espacement dans l'URL: service-public.fr (high)</span></li><li><strong>accent</strong> - Scénarios APL a consulter => Scénarios APL à consulter<br><span class="muted">accent manquant sur à (high)</span></li><li><strong>ponctuation</strong> - Prime d'activité. . . ) => Prime d'activité…<br><span class="muted">ellipse correcte à l'usage; correction du motif de ponctuation (high)</span></li><li><strong>grammaire</strong> - Le simulateur estimé un montant d’APL... => Le simulateur estime un montant d’APL...<br><span class="muted">conjugaison/accord du verbe estimer (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni, limitées à des remplacements locaux et littéraux.</td>
+        <td>4</td>
+        <td><ul><li><strong>accent</strong> - SJR × 57, 43% (min 31, 50€/jour, max 91, 82€/jour) => SJR × 57,43% (min 31,50€/jour, max 91,82€/jour)<br><span class="muted">Correction des espaces après les virgules dans les nombres et des espaces autour des pourcentages selon les standards français (high)</span></li><li><strong>accent</strong> - min 31, 50€/jour => min 31,50€/jour<br><span class="muted">Remplacement d’un espace inapproprié après la virgule dans un nombre (high)</span></li><li><strong>accent</strong> - max 91, 82€/jour => max 91,82€/jour<br><span class="muted">Remplacement d’un espace inapproprié après la virgule dans un nombre (high)</span></li><li><strong>orthographe</strong> - francetravail. fr => france-travail.fr<br><span class="muted">Correction d’un nom de domaine mal rendu (espace inséré et majuscules/point manquant) (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf">/pages/asf</a><div class="muted">src\pages\asf.html</div></td>
+        <td>Corrections proposées sur des segments à correction sûre et locale.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - ressources Particularité : => ressources. Particularité :<br><span class="muted">ponctuation manquante entre fin de phrase et début de la suivante (high)</span></li><li><strong>ponctuation</strong> - Familial Estimez => Familial. Estimez<br><span class="muted">erreur de séparation entre phrase et proposition suivante (high)</span></li><li><strong>ponctuation</strong> - RSA...) , Fiche => RSA...), Fiche<br><span class="muted">espace avant une virgule a été introduit incorrectement (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/charges">/pages/charges</a><div class="muted">src\pages\charges.html</div></td>
+        <td>Corrections suggérées uniquement pour des fautes évidentes de ponctuation et d'espaces.</td>
+        <td>5</td>
+        <td><ul><li><strong>ponctuation</strong> - Simulateur Charges Copropriété 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur service-public.fr . 🏠 Accueil | Charges Copropriété Estimation 2026 ✨ Nouveau Simulateur charges de copropriété 2026 — estimation annuelle et mensuelle Estimez vos charges de copropriété selon la surface, le nombre de lots et le type d'immeuble (simulation indicative). => Simulateur Charges Copropriété 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur service-public.fr. 🏠 Accueil | Charges Copropriété Estimation 2026 ✨ Nouveau Simulateur charges de copropriété 2026 — estimation annuelle et mensuelle Estimez vos charges de copropriété selon la surface, le nombre de lots et le type d'immeuble (simulation indicative).<br><span class="muted">Espace avant le point dans service-public.fr et ajustement mineur de ponctuation. (high)</span></li><li><strong>ponctuation</strong> - Source : Charges de copropriété , Appel de fonds , Loi ALUR => Source : Charges de copropriété, Appel de fonds, Loi ALUR<br><span class="muted">Espaces avant les virgules. (high)</span></li><li><strong>ponctuation</strong> - Loi ALUR Calcul : Budget prévisionnel × Quote-part (tantièmes) => Loi ALUR. Calcul : Budget prévisionnel × Quote-part (tantièmes)<br><span class="muted">Ajout d'un séparateur entre deux propositions pour éviter une phrase trop longue. (high)</span></li><li><strong>ponctuation</strong> - Postes : Chauffage, ascenseur, syndic, entretien, eau Moyenne : 25-45€/m²/an selon équipements et région => Postes : Chauffage, ascenseur, syndic, entretien, eau. Moyenne : 25-45 €/m²/an selon équipements et région<br><span class="muted">Ajout d'une ponctuation pour séparation claire des éléments et espace avant unité. (high)</span></li><li><strong>ponctuation</strong> - Montant définitif sur service-public.fr . 🏠 => Montant définitif sur service-public.fr. 🏠<br><span class="muted">Espacement avant le point, correction minimale de ponctuation. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>Corrections évidentes de français localisées dans le texte fourni.</td>
+        <td>6</td>
+        <td><ul><li><strong>ponctuation</strong> - DGFiP , Service‑Public => DGFiP, Service-Public<br><span class="muted">Espacement incorrect autour de la virgule et trait d’union non standard. (high)</span></li><li><strong>grammaire</strong> - basé sur revenu imposable annuel et nombre de parts => basé sur le revenu imposable annuel et le nombre de parts<br><span class="muted">Manque de déterminant instrumentant le nom (high)</span></li><li><strong>ponctuation</strong> - Source : DGFiP , Service‑Public , Simulateur IR complet 2026 , Simulateur brut → net fiscal => Source : DGFiP, Service-Public, Simulateur IR complet 2026, Simulateur brut → net fiscal<br><span class="muted">Espacement et bordures autour des virgules incohérents; résultats améliorent la lisibilité. (high)</span></li><li><strong>ponctuation</strong> - Barème progressif par tranche + quotient familial + décote si applicable Particularité: Décote jusqu'à 1 394€ => Barème progressif par tranche + quotient familial + décote si applicable. Particularité : Décote jusqu’à 1 394€<br><span class="muted">Correction de la ponctuation et de l’espace avant les deux-points/apostrophe. (high)</span></li><li><strong>espacement</strong> - En 2025, le seuil est d'environ 1 808€ pour une personne seule. => En 2025, le seuil est d'environ 1 808 € pour une personne seule.<br><span class="muted">Espaces incohérents devant le symbole euro. (high)</span></li><li><strong>ponctuation</strong> - Outil: Simulation gratuite, barèmes janvier 2026 calculez votre impôt sur le revenu 2026 en quelques secondes ! => Outil : Simulation gratuite, barèmes janvier 2026 calculez votre impôt sur le revenu 2026 en quelques secondes !<br><span class="muted">Espace après deux-points manquant et espace avant le point d’exclamation (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/notaire">/pages/notaire</a><div class="muted">src\pages\notaire.html</div></td>
+        <td>Corrections sûres et locales de ponctuation et encodage dans le texte fourni.</td>
+        <td>8</td>
+        <td><ul><li><strong>ponctuation</strong> - Les droits d’enregistrement (DMTO) varient de 5, 09 % (36 Indre, 976 Mayotte) ? 6, 32 % (87 départements au taux majoré) . => Les droits d’enregistrement (DMTO) varient de 5,09 % (36 Indre, 976 Mayotte) ; 6,32 % (87 départements au taux majoré).<br><span class="muted">Espaces avant le symbole %, ponctuation inadaptée et présence d’un point d’interrogation inutile. (high)</span></li><li><strong>ponctuation</strong> - Paris (75) applique le taux majoré de 6, 32 % . => Paris (75) applique le taux majoré de 6,32 %.<br><span class="muted">Espace avant %, ponctuation excessive. (high)</span></li><li><strong>espacement</strong> - 5, 09% à 6, 32% selon département => 5,09 % à 6,32 % selon département<br><span class="muted">Espaces avant le symbole % et fautes d’encodage. (high)</span></li><li><strong>espacement</strong> - 6, 32 % (majoré : 87 départements) → 15 800 € => 6,32 % (majoré : 87 départements) → 15 800 €<br><span class="muted">Espaces avant %. (high)</span></li><li><strong>espacement</strong> - ~17 500 € ~7% du prix d'achat => ~17 500 € ~7 % du prix d'achat<br><span class="muted">Espace manquant avant %. (high)</span></li><li><strong>espacement</strong> - 2, 4% => 2,4 %<br><span class="muted">Espaces avant % manquants et typographie. (high)</span></li><li><strong>accent</strong> - 3, 870% / 1, 596% / 1, 064% / 0, 799% => 3,870% / 1,596% / 1,064% / 0,799%<br><span class="muted">Espaces et virgules mal placées dans les pourcentages. (high)</span></li><li><strong>ponctuation</strong> - Île-de-France 6, 32% Auvergne-Rhône-Alpes 6, 32% => Île-de-France 6,32 % ; Auvergne-Rhône-Alpes 6,32 %<br><span class="muted">Espaces et ponctuation manquants entre régions et chiffres. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite">/pages/prime-activite</a><div class="muted">src\pages\prime-activite.html</div></td>
+        <td>Corrections sures et locales pour des fautes d’orthographe et de ponctuation évidentes.</td>
+        <td>5</td>
+        <td><ul><li><strong>ponctuation</strong> - mois , généralement => mois, généralement<br><span class="muted">ponctuation inappropriée avant une virgule (high)</span></li><li><strong>orthographe</strong> - estimér votre éligibilité => estimer votre éligibilité<br><span class="muted">erreur d’orthographe du verbe (high)</span></li><li><strong>orthographe</strong> - versément => versement<br><span class="muted">orthographe du nom commun (high)</span></li><li><strong>ponctuation</strong> - mois , généralement => mois, généralement<br><span class="muted">ponctuation inappropriée avant une virgule (high)</span></li><li><strong>ponctuation</strong> - Dépassement de seuils réglementaires Paramètres non pris en compte dans une simulation simplifiée => Dépassement de seuils réglementaires. Paramètres non pris en compte dans une simulation simplifiée<br><span class="muted">ajout d’un séparateur pour clarifier deux phrases (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa">/pages/rsa</a><div class="muted">src\pages\rsa.html</div></td>
+        <td>12 corrections sûres détectées dans le texte fourni (français et encodage).</td>
+        <td>11</td>
+        <td><ul><li><strong>encodage</strong> - caf. fr | 🔄 Historique => caf.fr | 🔄 Historique<br><span class="muted">espace entourant le point dans le nom de domaine (high)</span></li><li><strong>accent</strong> - regles CAF en vigueur => règles CAF en vigueur<br><span class="muted">accent manquant sur 'règles' (high)</span></li><li><strong>ponctuation</strong> - (source : Article L262-1 du CSS ) => (source : Article L262-1 du CSS)<br><span class="muted">espace avant la parenthèse fermante superflue (high)</span></li><li><strong>orthographe</strong> - estimér si vous pouvez être éligible au RSA => estimer si vous pouvez être éligible au RSA<br><span class="muted">ouverture incorrecte du verbe (high)</span></li><li><strong>orthographe</strong> - premier versément est rétroactif => premier versement est rétroactif<br><span class="muted">orthographe de 'versement' (high)</span></li><li><strong>encodage</strong> - caf. fr/service-public. fr => caf.fr/service-public.fr<br><span class="muted">espace et point dans les noms de domaines + format incorrect (high)</span></li><li><strong>encodage</strong> - service-public. fr => service-public.fr<br><span class="muted">format incorrect du domaine (high)</span></li><li><strong>orthographe</strong> - 652, 02€ => 652,02 €<br><span class="muted">espace inapproprié dans le nombre et espace avant euro (high)</span></li><li><strong>orthographe</strong> - 978, 03€ => 978,03 €<br><span class="muted">espace inapproprié dans le nombre et espace avant euro (high)</span></li><li><strong>orthographe</strong> - 7 824, 24 € => 7 824,24 €<br><span class="muted">espace dans les décimales (high)</span></li><li><strong>encodage</strong> - service-public. fr => service-public.fr<br><span class="muted">espace superflu dans le nom de domaine (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/salaire">/pages/salaire</a><div class="muted">src\pages\salaire.html</div></td>
+        <td>Corrections évidentes de ponctuation et de chiffres, sans modifier le sens du texte.</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - Barèmes 2026 : CSG (6.80%), CRDS (0.50%), assurance chômage (3.28%) => Barèmes 2026 : CSG (6,80%), CRDS (0,50%), assurance chômage (3,28%)<br><span class="muted">Utiliser la virgule décimale française. (high)</span></li><li><strong>ponctuation</strong> - Entrez votre salaire brut mensuel , sélectionnez votre statut => Entrez votre salaire brut mensuel, sélectionnez votre statut<br><span class="muted">Espace avant une virgule; correction typographique française. (high)</span></li><li><strong>ponctuation</strong> - dans votre navigateur . => dans votre navigateur.<br><span class="muted">Espace inutile avant le point final. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs">/pages/simulateurs</a><div class="muted">src\pages\simulateurs.html</div></td>
+        <td>Correction orthographique locale unique détectée et appliquée.</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - 📈 Plus-Value Immobilière calculez l'impôt sur votre plus-value avec abattements pour durée de possession et éventuelles exonérations. => 📈 Plus-value immobilière calculez l'impôt sur votre plus-value avec abattements pour durée de possession et éventuelles exonérations.<br><span class="muted">Hyphenation standardisée de l’expression plus-value (orthographe recommandée). (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/taxe">/pages/taxe</a><div class="muted">src\pages\taxe.html</div></td>
+        <td>Corrections sûres liées à l’orthographe, à la ponctuation et à l’espacement visibles dans le texte fourni.</td>
+        <td>4</td>
+        <td><ul><li><strong>espacement</strong> - Simulateur Taxe Foncière 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur impots.gouv.fr ou estimateur gratuit . => Simulateur Taxe Foncière 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur impots.gouv.fr ou estimateur gratuit.<br><span class="muted">Espacement avant le point final. (high)</span></li><li><strong>ponctuation</strong> - Source : Taxe foncière (DGFiP) , Fiche taxe foncière => Source : Taxe foncière (DGFiP), Fiche taxe foncière<br><span class="muted">Espacement incorrect après une parenthèse fermante et avant la virgule. (high)</span></li><li><strong>espacement</strong> - Le moyen le plus fiable est de consulter votre avis de taxe foncière , où la valeur locative cadastrale et les bases utilisées sont indiquées. => Le moyen le plus fiable est de consulter votre avis de taxe foncière, où la valeur locative cadastrale et les bases utilisées sont indiquées.<br><span class="muted">Espacement avant la virgule. (high)</span></li><li><strong>apostrophe</strong> - Cas possible : taxe faible, voire 0 € si des exonérations ou dégrèvements s'appliquent (sous conditions). => Cas possible : taxe faible, voire 0 € si des exonérations ou dégrèvements s’appliquent (sous conditions).<br><span class="muted">Apostrophe typographique incorrecte dans « s'appliquent » (utiliser l’apostrophe standard). (high)</span></li></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

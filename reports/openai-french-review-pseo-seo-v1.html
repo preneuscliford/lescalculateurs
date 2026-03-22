@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - pseo-rendered</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - pseo-rendered</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>seo</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>103</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>43</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>106</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl/apl-alternant-paris">/pages/apl/apl-alternant-paris</a><div class="muted">src\pages\apl\apl-alternant-paris\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-alternant">/pages/apl/apl-alternant</a><div class="muted">src\pages\apl\apl-alternant\index.html</div></td>
+        <td>Corrections d'accents sur « revenu regulier » → « revenu régulier » dans le texte.</td>
+        <td>3</td>
+        <td><ul><li><strong>accent</strong> - revenu regulier => revenu régulier<br><span class="muted">accent sur é (high)</span></li><li><strong>accent</strong> - revenu regulier => revenu régulier<br><span class="muted">accent sur é (high)</span></li><li><strong>accent</strong> - revenu regulier => revenu régulier<br><span class="muted">accent sur é (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-apprenti-loyer-500">/pages/apl/apl-apprenti-loyer-500</a><div class="muted">src\pages\apl\apl-apprenti-loyer-500\index.html</div></td>
+        <td>Une correction mineure détectée dans la répétition du fragment: cas APL en minuscules en milieu de phrase.</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - Cas APL => cas APL<br><span class="muted">Le nom commun 'cas' ne prend pas de majuscule en milieu de phrase; seule la première lettre d'un nom propre est capitalisée. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-apprenti">/pages/apl/apl-apprenti</a><div class="muted">src\pages\apl\apl-apprenti\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-cdd-loyer-600">/pages/apl/apl-cdd-loyer-600</a><div class="muted">src\pages\apl\apl-cdd-loyer-600\index.html</div></td>
+        <td>Corrections sûres pour les trois répétitions : corriger « salarié » et « d'un salari à en CDD » → « salarié en CDD ».</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen. => APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salarié en CDD avec revenus modestes et loyer moyen.<br><span class="muted">erreur d'orthographe sur « salarié » et erreur grammaticale/prépositionnelle « d'un salari à en CDD » qui doit être « d'un salarié en CDD ». (high)</span></li><li><strong>grammaire</strong> - APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen. => APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salarié en CDD avec revenus modestes et loyer moyen.<br><span class="muted">erreur d'orthographe sur « salarié » et erreur grammaticale/prépositionnelle « d'un salari à en CDD » qui doit être « d'un salarié en CDD ». (high)</span></li><li><strong>grammaire</strong> - APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen. => APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salarié en CDD avec revenus modestes et loyer moyen.<br><span class="muted">erreur d'orthographe sur « salarié » et erreur grammaticale/prépositionnelle « d'un salari à en CDD » qui doit être « d'un salarié en CDD ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-cdi-loyer-700">/pages/apl/apl-cdi-loyer-700</a><div class="muted">src\pages\apl\apl-cdi-loyer-700\index.html</div></td>
+        <td>Corrections evidentes détectées : modification orthographique et grammaire nécessaire dans les occurrences de “salari”.</td>
+        <td>2</td>
+        <td><ul><li><strong>grammaire</strong> - salari à en CDI => salarié en CDI<br><span class="muted">orthographe et grammaire : le mot “salari” doit être “salarié” et l’expression “à en CDI” incorrecte doit être remplacée par “en CDI” pour former la locution correcte. (high)</span></li><li><strong>orthographe</strong> - salari à en CDI => salarié en CDI<br><span class="muted">orthographe et grammaire récurrentes identiques à la phrase précédente, correction nécessaire pour toutes les occurrences afin d’assurer cohérence et lisibilité. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-loyer-eleve">/pages/apl/apl-celibataire-loyer-eleve</a><div class="muted">src\pages\apl\apl-celibataire-loyer-eleve\index.html</div></td>
+        <td>Corrections orthographiques locales uniquement pour des fragments identiques présentant une faute dans le mot « supérieur ».</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone. => APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer supérieur au plafond de zone.<br><span class="muted">Correction orthographique du mot « supérieur ». (high)</span></li><li><strong>orthographe</strong> - APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone. => APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer supérieur au plafond de zone.<br><span class="muted">Correction orthographique du mot « supérieur ». (high)</span></li><li><strong>orthographe</strong> - APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone. => APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer supérieur au plafond de zone.<br><span class="muted">Correction orthographique du mot « supérieur ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-lyon">/pages/apl/apl-celibataire-lyon</a><div class="muted">src\pages\apl\apl-celibataire-lyon\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-marseille">/pages/apl/apl-celibataire-marseille</a><div class="muted">src\pages\apl\apl-celibataire-marseille\index.html</div></td>
+        <td>Correction orthographique ciblée sur une faute dans l’expression « loyer interm à diaire ».</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - loyer interm à diaire => loyer intermédiaire<br><span class="muted">orthographe du terme composé « intermédiaire » remplacé par une forme correctement orthographiée (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-paris-petit-revenu">/pages/apl/apl-celibataire-paris-petit-revenu</a><div class="muted">src\pages\apl\apl-celibataire-paris-petit-revenu\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-petit-salaire">/pages/apl/apl-celibataire-petit-salaire</a><div class="muted">src\pages\apl\apl-celibataire-petit-salaire\index.html</div></td>
+        <td>Corrections identifiées sur les textes répétitifs. Une seule correction localisée nécessaire : remplacer « Cas » par « cas ».</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC. => APL célibataire avec petit salaire : estimation 2026 cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.<br><span class="muted">grammaire/orthographe : majuscule après deux-points dans ce contexte de continuation de phrase; « Cas » doit être « cas ». (high)</span></li><li><strong>orthographe</strong> - APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC. => APL célibataire avec petit salaire : estimation 2026 cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.<br><span class="muted">grammaire/orthographe : majuscule après deux-points dans ce contexte de continuation de phrase; « Cas » doit être « cas ». (high)</span></li><li><strong>orthographe</strong> - APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC. => APL célibataire avec petit salaire : estimation 2026 cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.<br><span class="muted">grammaire/orthographe : majuscule après deux-points dans ce contexte de continuation de phrase; « Cas » doit être « cas ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-toulouse">/pages/apl/apl-celibataire-toulouse</a><div class="muted">src\pages\apl\apl-celibataire-toulouse\index.html</div></td>
+        <td>Aucune erreur évidente de français détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-avec-enfant">/pages/apl/apl-chomage-avec-enfant</a><div class="muted">src\pages\apl\apl-chomage-avec-enfant\index.html</div></td>
+        <td>Correction unique nécessaire: ajouter l’article manquant « un » dans « avec enfant » des trois occurrences pour harmoniser le français.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage. => APL au chômage avec un enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.<br><span class="muted">Manque de l’article indéfini « un » avant « enfant » dans l’énoncé. (high)</span></li><li><strong>grammaire</strong> - APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage. => APL au chômage avec un enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.<br><span class="muted">Manque de l’article indéfini « un » avant « enfant » dans l’énoncé. (high)</span></li><li><strong>grammaire</strong> - APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage. => APL au chômage avec un enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.<br><span class="muted">Manque de l’article indéfini « un » avant « enfant » dans l’énoncé. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-loyer-moyen">/pages/apl/apl-chomage-loyer-moyen</a><div class="muted">src\pages\apl\apl-chomage-loyer-moyen\index.html</div></td>
+        <td>Ajout d’un deux-points manquant après « 2026 » dans chaque occurrence.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard. => APL au chômage avec loyer moyen : estimation 2026 : Simulation APL d'une personne seule en période de chômage avec loyer standard.<br><span class="muted">Ponctuation manquante entre « 2026 » et « Simulation ». (high)</span></li><li><strong>ponctuation</strong> - APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard. => APL au chômage avec loyer moyen : estimation 2026 : Simulation APL d'une personne seule en période de chômage avec loyer standard.<br><span class="muted">Ponctuation manquante entre « 2026 » et « Simulation ». (high)</span></li><li><strong>ponctuation</strong> - APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard. => APL au chômage avec loyer moyen : estimation 2026 : Simulation APL d'une personne seule en période de chômage avec loyer standard.<br><span class="muted">Ponctuation manquante entre « 2026 » et « Simulation ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>Aucune correction sûre détectée. Le texte ne présente pas d’erreurs évidentes nécessitant une correction locale conforme aux règles données.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-colocation-jeune-actif">/pages/apl/apl-colocation-jeune-actif</a><div class="muted">src\pages\apl\apl-colocation-jeune-actif\index.html</div></td>
+        <td>Aucune correction sûre détectée. Le texte est correct et identique sur les trois occurrences.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-colocation">/pages/apl/apl-colocation</a><div class="muted">src\pages\apl\apl-colocation\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-loyer-eleve">/pages/apl/apl-couple-loyer-eleve</a><div class="muted">src\pages\apl\apl-couple-loyer-eleve\index.html</div></td>
+        <td>Aucune correction française évidente détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-lyon">/pages/apl/apl-couple-lyon</a><div class="muted">src\pages\apl\apl-couple-lyon\index.html</div></td>
+        <td>Corrections strictes uniquement sur des fautes évidentes d’orthographe/accents dans les fragments fournis.</td>
+        <td>1</td>
+        <td><ul><li><strong>accent</strong> - parc priv à. => parc privé.<br><span class="muted">erreur d’orthographe et de typographie: même mot avec accent manquant et espace incorrect. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-paris">/pages/apl/apl-couple-paris</a><div class="muted">src\pages\apl\apl-couple-paris\index.html</div></td>
+        <td>Correction unique proposée pour l’erreur d’accent sur « intermediaires ». Le reste du texte ne présente pas d’erreurs flagrantes éditoriales selon les règles données.</td>
+        <td>1</td>
+        <td><ul><li><strong>accent</strong> - revenus intermediaires => revenus intermédiaires<br><span class="muted">diacritique manquant sur le mot intermédiaires (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-petit-revenu">/pages/apl/apl-couple-petit-revenu</a><div class="muted">src\pages\apl\apl-couple-petit-revenu\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>Aucune correction sûre trouvée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-un-enfant-loyer-moyen">/pages/apl/apl-couple-un-enfant-loyer-moyen</a><div class="muted">src\pages\apl\apl-couple-un-enfant-loyer-moyen\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-un-enfant">/pages/apl/apl-couple-un-enfant</a><div class="muted">src\pages\apl\apl-couple-un-enfant\index.html</div></td>
+        <td>Ajout de l'article défini manquant avant « loyer familial moyen » dans chaque occurrence.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen. => APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et le loyer familial moyen.<br><span class="muted">Ajout de l'article défini « le » avant le nom ‘loyer familial moyen’ pour améliorer la grammaire. (high)</span></li><li><strong>grammaire</strong> - APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen. => APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et le loyer familial moyen.<br><span class="muted">Ajout de l'article défini « le » avant le nom ‘loyer familial moyen’ pour améliorer la grammaire. (high)</span></li><li><strong>grammaire</strong> - APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen. => APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et le loyer familial moyen.<br><span class="muted">Ajout de l'article défini « le » avant le nom ‘loyer familial moyen’ pour améliorer la grammaire. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-colocation">/pages/apl/apl-etudiant-colocation</a><div class="muted">src\pages\apl\apl-etudiant-colocation\index.html</div></td>
+        <td>Corrections sûres: ajouter un deux-points après « 2026 » dans chaque occurrence.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer. => APL étudiant en colocation : estimation 2026 : Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.<br><span class="muted">Ponctuation manquante entre « 2026 » et « Cas pratique ». (high)</span></li><li><strong>ponctuation</strong> - APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer. => APL étudiant en colocation : estimation 2026 : Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.<br><span class="muted">Ponctuation manquante entre « 2026 » et « Cas pratique ». (high)</span></li><li><strong>ponctuation</strong> - APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer. => APL étudiant en colocation : estimation 2026 : Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.<br><span class="muted">Ponctuation manquante entre « 2026 » et « Cas pratique ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-lyon">/pages/apl/apl-etudiant-lyon</a><div class="muted">src\pages\apl\apl-etudiant-lyon\index.html</div></td>
+        <td>Corrections ciblées: ponctuation manquante après « estimation 2026 ».</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - APL étudiant à Lyon : estimation 2026 Exemple de simulation APL pour un étudiant locataire à Lyon. => APL étudiant à Lyon : estimation 2026. Exemple de simulation APL pour un étudiant locataire à Lyon.<br><span class="muted">Ponctuation manquante entre deux propositions (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-paris">/pages/apl/apl-etudiant-paris</a><div class="muted">src\pages\apl\apl-etudiant-paris\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-petit-loyer">/pages/apl/apl-etudiant-petit-loyer</a><div class="muted">src\pages\apl\apl-etudiant-petit-loyer\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-studio">/pages/apl/apl-etudiant-studio</a><div class="muted">src\pages\apl\apl-etudiant-studio\index.html</div></td>
+        <td>Corrections localisées à l’usage de la majuscule après les deux-points.</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré. => APL étudiant en studio : estimation 2026 scénario APL pour un étudiant seul en studio avec budget serré.<br><span class="muted">majuscule après deux-points non nécessaire pour un mot commun après une énumération (high)</span></li><li><strong>orthographe</strong> - APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré. => APL étudiant en studio : estimation 2026 scénario APL pour un étudiant seul en studio avec budget serré.<br><span class="muted">majuscule après deux-points non nécessaire pour un mot commun après une énumération (high)</span></li><li><strong>orthographe</strong> - APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré. => APL étudiant en studio : estimation 2026 scénario APL pour un étudiant seul en studio avec budget serré.<br><span class="muted">majuscule après deux-points non nécessaire pour un mot commun après une énumération (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-etudiant-toulouse">/pages/apl/apl-etudiant-toulouse</a><div class="muted">src\pages\apl\apl-etudiant-toulouse\index.html</div></td>
+        <td>Corrections sûres identifiées sur le texte fourni.</td>
+        <td>1</td>
+        <td><ul><li><strong>apostrophe</strong> - Exemple APL => Exemple d'APL<br><span class="muted">Lien entre le nom commun et l'acronyme nécessite l'article partitif 'd'' devant une voyelle pour éviter l'ellipse. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-famille-deux-enfants-province">/pages/apl/apl-famille-deux-enfants-province</a><div class="muted">src\pages\apl\apl-famille-deux-enfants-province\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-famille-idf">/pages/apl/apl-famille-idf</a><div class="muted">src\pages\apl\apl-famille-idf\index.html</div></td>
+        <td>Une correction sûre détectée : ajout de l’article manquant devant le nom 'loyer'.</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - avec loyer élevé => avec un loyer élevé<br><span class="muted">manque de l’article devant le nom féminin singulier 'loyer' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-famille-trois-enfants">/pages/apl/apl-famille-trois-enfants</a><div class="muted">src\pages\apl\apl-famille-trois-enfants\index.html</div></td>
+        <td>Aucune correction sûre à apporter.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-fin-de-droits-chomage">/pages/apl/apl-fin-de-droits-chomage</a><div class="muted">src\pages\apl\apl-fin-de-droits-chomage\index.html</div></td>
+        <td>Trois occurrences d'une même phrase identifiée comme contenant une tournureIncorrecte concernant l'expression « fin de droits chômage ».Proposition locale de correction unique pour chaque occurrence.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus. => APL après fin des droits au chômage : estimation 2026 Repère APL 2026 pour une personne en fin des droits au chômage avec forte baisse de revenus.<br><span class="muted">Correction grammaticale: amélioration de l’expression courante « fin des droits au chômage » et reprise cohérente dans la suite de la phrase. (high)</span></li><li><strong>grammaire</strong> - APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus. => APL après fin des droits au chômage : estimation 2026 Repère APL 2026 pour une personne en fin des droits au chômage avec forte baisse de revenus.<br><span class="muted">Correction grammaticale: amélioration de l’expression courante « fin des droits au chômage » et reprise cohérente dans la suite de la phrase. (high)</span></li><li><strong>grammaire</strong> - APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus. => APL après fin des droits au chômage : estimation 2026 Repère APL 2026 pour une personne en fin des droits au chômage avec forte baisse de revenus.<br><span class="muted">Correction grammaticale: amélioration de l’expression courante « fin des droits au chômage » et reprise cohérente dans la suite de la phrase. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-fin-de-droits-personne-seule">/pages/apl/apl-fin-de-droits-personne-seule</a><div class="muted">src\pages\apl\apl-fin-de-droits-personne-seule\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-hlm-petit-revenu">/pages/apl/apl-hlm-petit-revenu</a><div class="muted">src\pages\apl\apl-hlm-petit-revenu\index.html</div></td>
+        <td>Deux corrections locales proposées sur le fragment texte.</td>
+        <td>2</td>
+        <td><ul><li><strong>accent</strong> - loge en HLM => logé en HLM<br><span class="muted">erreur d'accent sur le participe passé 'logé' (correction orthographique/accent) (high)</span></li><li><strong>grammaire</strong> - Exemple APL => exemple APL<br><span class="muted">majuscule après deux-points selon les règles typographiques françaises (après colon on n'écrit pas nécessairement une majuscule) (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-jeune-actif-premier-logement">/pages/apl/apl-jeune-actif-premier-logement</a><div class="muted">src\pages\apl\apl-jeune-actif-premier-logement\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-loyer-500-revenu-900">/pages/apl/apl-loyer-500-revenu-900</a><div class="muted">src\pages\apl\apl-loyer-500-revenu-900\index.html</div></td>
+        <td>Corrections d'accents sur le mot budgétaire répétés dans le texte.</td>
+        <td>3</td>
+        <td><ul><li><strong>accent</strong> - budgetaire => budgétaires<br><span class="muted">accent sur l'e (high)</span></li><li><strong>accent</strong> - budgetaire => budgétaire<br><span class="muted">accent sur l'e (high)</span></li><li><strong>accent</strong> - budgetaire => budgétaire<br><span class="muted">accent sur l'e (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-loyer-800-revenu-1300">/pages/apl/apl-loyer-800-revenu-1300</a><div class="muted">src\pages\apl\apl-loyer-800-revenu-1300\index.html</div></td>
+        <td>Corrections détectées: 2 corrections d'accent et de grammaire dans le fragment.</td>
+        <td>2</td>
+        <td><ul><li><strong>accent</strong> - budgetaire => budgétaire<br><span class="muted">accent manquant sur le mot budgétaire (high)</span></li><li><strong>grammaire</strong> - au revenu => aux revenus<br><span class="muted">accord en nombre avec 'revenus et loyer' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-parent-isole-deux-enfants">/pages/apl/apl-parent-isole-deux-enfants</a><div class="muted">src\pages\apl\apl-parent-isole-deux-enfants\index.html</div></td>
+        <td>Aucune correction sûre nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-parent-isole-paris">/pages/apl/apl-parent-isole-paris</a><div class="muted">src\pages\apl\apl-parent-isole-paris\index.html</div></td>
+        <td>Corrections identifiées: ajout de l’article défini manquant devant « loyer francilien » dans les occurrences répétées.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - et loyer francilien. => et le loyer francilien.<br><span class="muted">Manque de l’article défini « le » avant « loyer francilien ». (high)</span></li><li><strong>grammaire</strong> - et loyer francilien. => et le loyer francilien.<br><span class="muted">Manque de l’article défini « le » avant « loyer francilien ». (high)</span></li><li><strong>grammaire</strong> - et loyer francilien. => et le loyer francilien.<br><span class="muted">Manque de l’article défini « le » avant « loyer francilien ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-parent-isole-un-enfant">/pages/apl/apl-parent-isole-un-enfant</a><div class="muted">src\pages\apl\apl-parent-isole-un-enfant\index.html</div></td>
+        <td>Aucune correction nécessaire détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-personne-seule-smic">/pages/apl/apl-personne-seule-smic</a><div class="muted">src\pages\apl\apl-personne-seule-smic\index.html</div></td>
+        <td>Aucune correction évidente détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-petite-surface-paris">/pages/apl/apl-petite-surface-paris</a><div class="muted">src\pages\apl\apl-petite-surface-paris\index.html</div></td>
+        <td>Corrections ciblées sur trois répétitions de la phrase, portant sur la capitalisation après deux-points et l’accord du complément.</td>
+        <td>6</td>
+        <td><ul><li><strong>ponctuation</strong> - APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite. => APL pour un studio à Paris : estimation 2026 exemple APL pour une petite surface parisienne avec revenu limite.<br><span class="muted">Après deux-points, le mot qui suit est généralement en minuscule s'il n'est pas un nom propre ; correction de la majuscule. (high)</span></li><li><strong>grammaire</strong> - APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite. => APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limité.<br><span class="muted">Accord de l'adjectif « limité » avec le nom masculin « revenu ». (high)</span></li><li><strong>ponctuation</strong> - APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite. => APL pour un studio à Paris : estimation 2026 exemple APL pour une petite surface parisienne avec revenu limite.<br><span class="muted">Après deux-points, le mot qui suit est généralement en minuscule s'il n'est pas un nom propre ; correction de la majuscule. (high)</span></li><li><strong>grammaire</strong> - APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite. => APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limité.<br><span class="muted">Correction nécessaire du participe adjectival « limité » accordé au nom masculin « revenu ». (high)</span></li><li><strong>ponctuation</strong> - APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite. => APL pour un studio à Paris : estimation 2026 exemple APL pour une petite surface parisienne avec revenu limité.<br><span class="muted">Après deux-points, minuscule et correction de l’accord « revenu limité ». (high)</span></li><li><strong>grammaire</strong> - APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite. => APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limité.<br><span class="muted">Correction répétée de l’accord; phrase identique à l’original pour le fragment. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-proprietaire-ai-je-droit">/pages/apl/apl-proprietaire-ai-je-droit</a><div class="muted">src\pages\apl\apl-proprietaire-ai-je-droit\index.html</div></td>
+        <td>Corrections de ponctuation sur les questions. Trois occurrences où un point doit être remplacé par un point d’interrogation (espace insécable avant le ?).</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - ai-je droit. => ai-je droit ?<br><span class="muted">ponctuation (high)</span></li><li><strong>ponctuation</strong> - ai-je droit. => ai-je droit ?<br><span class="muted">ponctuation (high)</span></li><li><strong>ponctuation</strong> - ai-je droit. => ai-je droit ?<br><span class="muted">ponctuation (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-refusee-que-faire">/pages/apl/apl-refusee-que-faire</a><div class="muted">src\pages\apl\apl-refusee-que-faire\index.html</div></td>
+        <td>Aucune correction nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-reprise-emploi-loyer-eleve">/pages/apl/apl-reprise-emploi-loyer-eleve</a><div class="muted">src\pages\apl\apl-reprise-emploi-loyer-eleve\index.html</div></td>
+        <td>Aucune faute évidente remarquée dans le texte fourni. Pas de corrections locales nécessaires.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-reprise-emploi-personne-seule">/pages/apl/apl-reprise-emploi-personne-seule</a><div class="muted">src\pages\apl\apl-reprise-emploi-personne-seule\index.html</div></td>
+        <td>Aucune correction évidente de français détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-reprise-emploi">/pages/apl/apl-reprise-emploi</a><div class="muted">src\pages\apl\apl-reprise-emploi\index.html</div></td>
+        <td>Corrections typographiques simples uniquement (accents, apostrophes, espaces autour des signes de ponctuation).</td>
+        <td>3</td>
+        <td><ul><li><strong>accent</strong> - APL apres une reprise d'emploi : estimation 2026 Exemple d impact d'une reprise d'activité sur l'APL. => APL après une reprise d'emploi : estimation 2026 Exemple d'impact d'une reprise d'activité sur l'APL.<br><span class="muted">erreur d'accent sur 'apres' et erreur d'espace/ponctuation sur 'impact' (high)</span></li><li><strong>ponctuation</strong> - emploi : estimation => emploi: estimation<br><span class="muted">espace avant les deux-points à corriger (high)</span></li><li><strong>apostrophe</strong> - Exemple d impact => Exemple d'impact<br><span class="muted">absence d'apostrophe entre 'd' et 'impact' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-avec-enfant">/pages/apl/apl-sans-revenu-avec-enfant</a><div class="muted">src\pages\apl\apl-sans-revenu-avec-enfant\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le texte fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-couple-sans-enfant">/pages/apl/apl-sans-revenu-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-sans-revenu-couple-sans-enfant\index.html</div></td>
+        <td>Correction unique : mise en minuscule après les deux-points dans trois occurrences.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer. => APL sans revenu pour un couple sans enfant : estimation 2026 ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.<br><span class="muted">Après les deux-points, la majuscule après ponctuation n'est pas conforme aux règles typographiques françaises. (high)</span></li><li><strong>grammaire</strong> - APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer. => APL sans revenu pour un couple sans enfant : estimation 2026 ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.<br><span class="muted">Après les deux-points, la majuscule après ponctuation n'est pas conforme aux règles typographiques françaises. (high)</span></li><li><strong>grammaire</strong> - APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer. => APL sans revenu pour un couple sans enfant : estimation 2026 ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.<br><span class="muted">Après les deux-points, la majuscule après ponctuation n'est pas conforme aux règles typographiques françaises. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-parent-isole">/pages/apl/apl-sans-revenu-parent-isole</a><div class="muted">src\pages\apl\apl-sans-revenu-parent-isole\index.html</div></td>
+        <td>Aucune correction sûre nécessaire. Le texte ne présente pas d’erreurs évidentes de français nécessitant une correction locale.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-sans-revenu-personne-seule">/pages/apl/apl-sans-revenu-personne-seule</a><div class="muted">src\pages\apl\apl-sans-revenu-personne-seule\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-smic-couple-sans-enfant">/pages/apl/apl-smic-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-smic-couple-sans-enfant\index.html</div></td>
+        <td>Corrections de ponctuation uniquement.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - APL au SMIC pour un couple sans enfant : estimation 2026 Exemple d'APL pour un couple sans enfant avec revenus proches du SMIC et loyer moyen. => APL au SMIC pour un couple sans enfant : estimation 2026. Exemple d'APL pour un couple sans enfant avec revenus proches du SMIC et loyer moyen.<br><span class="muted">ponctuation manifestement cassée entre « estimation 2026 » et « Exemple » (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-smic-seul">/pages/apl/apl-smic-seul</a><div class="muted">src\pages\apl\apl-smic-seul\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl">/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl</a><div class="muted">src\pages\apl\comment-savoir-si-un-logement-est-eligible-aux-apl\index.html</div></td>
+        <td>Corrections relevées: ponctuation manquante après une parenthèse.</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - APL (2026) Réponse => APL (2026) : Réponse<br><span class="muted">Ponctuation manquante après le parenthèse fermante. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/quelles-ressources-pour-l-apl">/pages/apl/quelles-ressources-pour-l-apl</a><div class="muted">src\pages\apl\quelles-ressources-pour-l-apl\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-aides">/pages/are/are-fin-de-droits-aides</a><div class="muted">src\pages\are\are-fin-de-droits-aides\index.html</div></td>
+        <td>Corrections locales identifiées (1 type): retirer l espace avant les deux-points après ARE dans chaque occurrence.</td>
+        <td>3</td>
+        <td><ul><li><strong>ponctuation</strong> - Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents. => Fin de droits ARE: quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.<br><span class="muted">Espace avant deux-points incorrect en typographie française. (high)</span></li><li><strong>ponctuation</strong> - Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents. => Fin de droits ARE: quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.<br><span class="muted">Espace avant deux-points Incorrect en typographie française. (high)</span></li><li><strong>ponctuation</strong> - Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents. => Fin de droits ARE: quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.<br><span class="muted">Espace avant deux-points Incorrect en typographie française. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-quelles-aides">/pages/are/are-fin-de-droits-quelles-aides</a><div class="muted">src\pages\are\are-fin-de-droits-quelles-aides\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-rsa-ou-apl">/pages/are/are-fin-de-droits-rsa-ou-apl</a><div class="muted">src\pages\are\are-fin-de-droits-rsa-ou-apl\index.html</div></td>
+        <td>Aucune correction nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-reprise-emploi-temps-partiel">/pages/are/are-reprise-emploi-temps-partiel</a><div class="muted">src\pages\are\are-reprise-emploi-temps-partiel\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are\index.html</div></td>
+        <td>Corrections ciblées et sûres sur des fragments incohérents liés à l’usage des majuscules/acronymes et à des omissions simples.</td>
+        <td>9</td>
+        <td><ul><li><strong>grammaire</strong> - durée d simulation are => durée de simulation ARE<br><span class="muted">erreur d’article et d’accord avec l’acronyme ARE (high)</span></li><li><strong>apostrophe</strong> - simulateur are => simulateur ARE<br><span class="muted">acronyme ARE en majuscules pour le terme technique (high)</span></li><li><strong>grammaire</strong> - are simulation => simulation ARE<br><span class="muted">majuscule requise pour ARE dans ce contexte (high)</span></li><li><strong>orthographe</strong> - simulation are france travail => simulation ARE France Travail<br><span class="muted">majuscule et agencement correct des noms propres (high)</span></li><li><strong>orthographe</strong> - simulation are pole emploi => simulation ARE Pôle emploi<br><span class="muted">majuscule et orthographe du nom propre (high)</span></li><li><strong>grammaire</strong> - simulations are => simulations ARE<br><span class="muted">majuscule ARE requise pour le sigle (high)</span></li><li><strong>grammaire</strong> - calcul are simulateur => calcul ARE simulateur<br><span class="muted">majuscule ARE appropriée dans ce contexte (high)</span></li><li><strong>grammaire</strong> - cumul are et salaire simulation => cumul ARE et salaire simulation<br><span class="muted">majuscule ARE dans l’expression technique (high)</span></li><li><strong>apostrophe</strong> - allocation demandeur emploi => allocation demandeur d’emploi<br><span class="muted">ajout de l’apostrophe manquante pour le terme correct (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026\index.html</div></td>
+        <td>Correction unique: ajouter l'article « du » manquant dans « estimation chômage ».</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - Montant ARE 2026 : calcul et estimation chômage => Montant ARE 2026 : calcul et estimation du chômage<br><span class="muted">omission de l’article contracté nécessaire pour une construction grammaticale correcte (high)</span></li><li><strong>grammaire</strong> - Montant ARE 2026 : calcul et estimation chômage => Montant ARE 2026 : calcul et estimation du chômage<br><span class="muted">omission de l’article contracté nécessaire pour une construction grammaticale correcte (high)</span></li><li><strong>grammaire</strong> - Montant ARE 2026 : calcul et estimation chômage => Montant ARE 2026 : calcul et estimation du chômage<br><span class="muted">omission de l’article contracté nécessaire pour une construction grammaticale correcte (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf/asf-parent-isole-sans-pension">/pages/asf/asf-parent-isole-sans-pension</a><div class="muted">src\pages\asf\asf-parent-isole-sans-pension\index.html</div></td>
+        <td>Aucune erreur évidente détectée dans le texte fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf/asf-parent-isole-sans-revenu">/pages/asf/asf-parent-isole-sans-revenu</a><div class="muted">src\pages\asf\asf-parent-isole-sans-revenu\index.html</div></td>
+        <td>Correction locale nécessaire pour ajouter l'article manquant après « avec » dans trois occurrences identiques.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - avec enfant à charge => avec un enfant à charge<br><span class="muted">article manquant avant le nom « enfant » (high)</span></li><li><strong>grammaire</strong> - avec enfant à charge => avec un enfant à charge<br><span class="muted">article manquant avant le nom « enfant » (high)</span></li><li><strong>grammaire</strong> - avec enfant à charge => avec un enfant à charge<br><span class="muted">article manquant avant le nom « enfant » (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf/asf-sans-pension-et-apl">/pages/asf/asf-sans-pension-et-apl</a><div class="muted">src\pages\asf\asf-sans-pension-et-apl\index.html</div></td>
+        <td>Aucune correction évidente détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf">/pages/asf</a><div class="muted">src\pages\asf\index.html</div></td>
+        <td>1 correction sûre concernant l’expression « Allocation Soutien Familial ».</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - Allocation Soutien Familial => Allocation de Soutien Familial<br><span class="muted">ajout d’une préposition nécessaire en français (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage">/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage</a><div class="muted">src\pages\prime-activite\prime-activite-reprise-emploi-apres-chomage\index.html</div></td>
+        <td>Aucune erreur évidente de français détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/combien-touche-t-on-au-rsa">/pages/rsa/combien-touche-t-on-au-rsa</a><div class="muted">src\pages\rsa\combien-touche-t-on-au-rsa\index.html</div></td>
+        <td>Aucune faute évidente détectée dans le fragment.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa">/pages/rsa</a><div class="muted">src\pages\rsa\index.html</div></td>
+        <td>Correction locale d’un accent manquant sur le mot immédiate.</td>
+        <td>1</td>
+        <td><ul><li><strong>accent</strong> - Simulation gratuite avec estimation immediate. => Simulation gratuite avec estimation immédiate.<br><span class="muted">accent sur le mot 'immédiate' et ajout de l'accent grave sur le 'e' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/qui-a-droit-au-rsa">/pages/rsa/qui-a-droit-au-rsa</a><div class="muted">src\pages\rsa\qui-a-droit-au-rsa\index.html</div></td>
+        <td>Corrige une seule faute identifiée dans le fragment, appliquée localement.</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - scénario type => scénario-type<br><span class="muted">emploi du trait d'union pour un nom composé adjectival (high)</span></li><li><strong>orthographe</strong> - scénario type => scénario-type<br><span class="muted">emploi du trait d'union pour un nom composé adjectival (high)</span></li><li><strong>orthographe</strong> - scénario type => scénario-type<br><span class="muted">emploi du trait d'union pour un nom composé adjectival (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-auto-entrepreneur">/pages/rsa/rsa-auto-entrepreneur</a><div class="muted">src\pages\rsa\rsa-auto-entrepreneur\index.html</div></td>
+        <td>Aucune correction évidente nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-chomage-fin-de-droits">/pages/rsa/rsa-chomage-fin-de-droits</a><div class="muted">src\pages\rsa\rsa-chomage-fin-de-droits\index.html</div></td>
+        <td>Corrections mineures uniquement sur le fragment problématique.&quot;</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - une fin de droits chômage => une fin de droits au chômage<br><span class="muted">ajout de la préposition manquante pour l’expression correcte du chômage (high)</span></li><li><strong>grammaire</strong> - une fin de droits chômage => une fin de droits au chômage<br><span class="muted">ajout de la préposition manquante pour l’expression correcte du chômage (high)</span></li><li><strong>grammaire</strong> - une fin de droits chômage => une fin de droits au chômage<br><span class="muted">ajout de la préposition manquante pour l’expression correcte du chômage (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-conditions-2026">/pages/rsa/rsa-conditions-2026</a><div class="muted">src\pages\rsa\rsa-conditions-2026\index.html</div></td>
+        <td>Aucune correction évidente détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-avec-enfant">/pages/rsa/rsa-couple-avec-enfant</a><div class="muted">src\pages\rsa\rsa-couple-avec-enfant\index.html</div></td>
+        <td>Aucune correction sûre nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-enfant">/pages/rsa/rsa-couple-sans-enfant</a><div class="muted">src\pages\rsa\rsa-couple-sans-enfant\index.html</div></td>
+        <td>Aucune correction sûre nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-revenu-avec-enfant">/pages/rsa/rsa-couple-sans-revenu-avec-enfant</a><div class="muted">src\pages\rsa\rsa-couple-sans-revenu-avec-enfant\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-revenu">/pages/rsa/rsa-couple-sans-revenu</a><div class="muted">src\pages\rsa\rsa-couple-sans-revenu\index.html</div></td>
+        <td>Aucune correction évidente détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-et-apl-cumul">/pages/rsa/rsa-et-apl-cumul</a><div class="muted">src\pages\rsa\rsa-et-apl-cumul\index.html</div></td>
+        <td>Aucune correction nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-fin-de-droits-chomage-personne-seule">/pages/rsa/rsa-fin-de-droits-chomage-personne-seule</a><div class="muted">src\pages\rsa\rsa-fin-de-droits-chomage-personne-seule\index.html</div></td>
+        <td>Correction unique proposée: ajouter la préposition manquante dans l’expression 'fin de droits chômage' -&gt; 'fin de droits au chômage'.</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - fin de droits chômage => fin de droits au chômage<br><span class="muted">préposition manquante, forme courante et grammaticalement correcte (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-hebergement-gratuit">/pages/rsa/rsa-hebergement-gratuit</a><div class="muted">src\pages\rsa\rsa-hebergement-gratuit\index.html</div></td>
+        <td>Aucune correction nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-interim">/pages/rsa/rsa-interim</a><div class="muted">src\pages\rsa\rsa-interim\index.html</div></td>
+        <td>Aucune erreur évidente détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-jeune-moins-de-25-ans">/pages/rsa/rsa-jeune-moins-de-25-ans</a><div class="muted">src\pages\rsa\rsa-jeune-moins-de-25-ans\index.html</div></td>
+        <td>Corrections ciblées sur le fragment donné.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources. => RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec de faibles ressources.<br><span class="muted">Manque de préposition 'de' avant 'faibles ressources' qui est grammaticalement nécessaire. (high)</span></li><li><strong>grammaire</strong> - RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources. => RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec de faibles ressources.<br><span class="muted">Même correction que ci-dessus, appliquée à une autre occurrence. (high)</span></li><li><strong>grammaire</strong> - RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources. => RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec de faibles ressources.<br><span class="muted">Même correction que ci-dessus, appliquée à une autre occurrence. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-logement-social">/pages/rsa/rsa-logement-social</a><div class="muted">src\pages\rsa\rsa-logement-social\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-parent-isole-sans-revenu">/pages/rsa/rsa-parent-isole-sans-revenu</a><div class="muted">src\pages\rsa\rsa-parent-isole-sans-revenu\index.html</div></td>
+        <td>Aucune correction certaine détectée dans le texte fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-personne-seule-montant">/pages/rsa/rsa-personne-seule-montant</a><div class="muted">src\pages\rsa\rsa-personne-seule-montant\index.html</div></td>
+        <td>Aucune correction nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-logement">/pages/rsa/rsa-sans-logement</a><div class="muted">src\pages\rsa\rsa-sans-logement\index.html</div></td>
+        <td>Aucune correction nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-revenu-avec-enfant">/pages/rsa/rsa-sans-revenu-avec-enfant</a><div class="muted">src\pages\rsa\rsa-sans-revenu-avec-enfant\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le texte fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-revenu-personne-seule">/pages/rsa/rsa-sans-revenu-personne-seule</a><div class="muted">src\pages\rsa\rsa-sans-revenu-personne-seule\index.html</div></td>
+        <td>Aucune correction nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-travail-a-temps-partiel">/pages/rsa/rsa-travail-a-temps-partiel</a><div class="muted">src\pages\rsa\rsa-travail-a-temps-partiel\index.html</div></td>
+        <td>Aucune correction certaine détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aide-financiere-famille">/pages/simulateurs/aide-financiere-famille</a><div class="muted">src\pages\simulateurs\aide-financiere-famille\index.html</div></td>
+        <td>Aucune correction évidente détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aide-sociale-simulation-globale">/pages/simulateurs/aide-sociale-simulation-globale</a><div class="muted">src\pages\simulateurs\aide-sociale-simulation-globale\index.html</div></td>
+        <td>Aucune correction sûre nécessaire.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aides-apres-perte-emploi">/pages/simulateurs/aides-apres-perte-emploi</a><div class="muted">src\pages\simulateurs\aides-apres-perte-emploi\index.html</div></td>
+        <td>Corrige un passage grammatical: 'un arrêt brutal de revenu' → 'un arrêt brutal des revenus'</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - ou un arrêt brutal de revenu. => ou un arrêt brutal des revenus.<br><span class="muted">erreur grammaticale: 'de revenu' au singulier ne convient pas avec 'un arrêt brutal des revenus' (expression plus naturelle et correcte en contexte pluriel). (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aides-jeunes-actifs">/pages/simulateurs/aides-jeunes-actifs</a><div class="muted">src\pages\simulateurs\aides-jeunes-actifs\index.html</div></td>
+        <td>Corrigez l'erreur d'orthographe dans l'expression « d’aides logement ».</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus. => Les jeunes actifs peuvent bénéficier d’aides au logement et de compléments de revenus.<br><span class="muted">Manque de préposition 'au' après 'aides' pour former le groupe nominal 'aides au logement'. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/aides-retraites">/pages/simulateurs/aides-retraites</a><div class="muted">src\pages\simulateurs\aides-retraites\index.html</div></td>
+        <td>Correction ponctuation: corriger l’espace avant les deux-points dans « Réponse à la question : ».</td>
+        <td>1</td>
+        <td><ul><li><strong>ponctuation</strong> - Réponse à la question : Aides retraités. => Réponse à la question: Aides retraités.<br><span class="muted">Il faut supprimer l’espace avant les deux-points en français standard. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/cumul-aides-sociales">/pages/simulateurs/cumul-aides-sociales</a><div class="muted">src\pages\simulateurs\cumul-aides-sociales\index.html</div></td>
+        <td>Aucune correction évidente détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs">/pages/simulateurs</a><div class="muted">src\pages\simulateurs\index.html</div></td>
+        <td>Corrections sures limitées à des erreurs évidentes de majuscules/inutiles. Pas de réécriture complète ou d’ajout de contenu.</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - simulateurs gratuits, calculateurs => Simulateurs gratuits, calculateurs<br><span class="muted">majuscule manquante en début de phrase après un point. (high)</span></li><li><strong>orthographe</strong> - Outils Gratuits 2026 — Les Calculateurs => Outils gratuits 2026 — Les calculateurs<br><span class="muted">cohérence de la capitalisation (high)</span></li><li><strong>orthographe</strong> - Outils Gratuits 2026 Accédez => Outils gratuits 2026 Accédez<br><span class="muted">cohérence de la capitalisation (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-ai-je-droit">/pages/simulateurs/quelles-aides-ai-je-droit</a><div class="muted">src\pages\simulateurs\quelles-aides-ai-je-droit\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-couple-sans-revenu">/pages/simulateurs/quelles-aides-couple-sans-revenu</a><div class="muted">src\pages\simulateurs\quelles-aides-couple-sans-revenu\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-fin-de-droits-chomage">/pages/simulateurs/quelles-aides-fin-de-droits-chomage</a><div class="muted">src\pages\simulateurs\quelles-aides-fin-de-droits-chomage\index.html</div></td>
+        <td>Corrections proposées sur des passages répétitifs pour améliorer la grammaire.</td>
+        <td>4</td>
+        <td><ul><li><strong>grammaire</strong> - Quelles aides après fin de droits chômage ? => Quelles aides après la fin des droits au chômage ?<br><span class="muted">Erreur de construction: ajouter l’article et préposition adaptée. (high)</span></li><li><strong>grammaire</strong> - Page repère 2026 pour orienter un foyer vers les aides à vérifier après la fin de droits chômage. => Page repère 2026 pour orienter un foyer vers les aides à vérifier après la fin des droits au chômage.<br><span class="muted">Correction grammaticale: accord et préposition « au chômage ». (high)</span></li><li><strong>grammaire</strong> - Quelles aides après fin de droits chômage ? => Quelles aides après la fin des droits au chômage ?<br><span class="muted">Même correction que premier fragment. (high)</span></li><li><strong>grammaire</strong> - Quelles aides après fin de droits chômage ? => Quelles aides après la fin des droits au chômage ?<br><span class="muted">Même correction que premier fragment. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-sans-revenu">/pages/simulateurs/quelles-aides-sans-revenu</a><div class="muted">src\pages\simulateurs\quelles-aides-sans-revenu\index.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

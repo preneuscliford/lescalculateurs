@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-03-20T18:07:48.894Z",
+  "input": "reports\\openai-french-review-pilot20-visible-v1.json",
+  "summary": {
+    "totalCandidates": 13,
+    "filesWithCandidates": 8
+  },
+  "candidates": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "category": "espacement",
+      "original": "ressources .",
+      "corrected": "ressources.",
+      "reason": "espacement avant ponctuation"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "category": "accent",
+      "original": "parallÎle",
+      "corrected": "parallèle",
+      "reason": "Erreur d’accent dans le mot parallèle."
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "category": "accent",
+      "original": "parallÎe",
+      "corrected": "parallèle",
+      "reason": "Répétition de correction d’accent sur parallèle; même correction adaptée."
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "category": "accent",
+      "original": "different",
+      "corrected": "différent",
+      "reason": "accentuation manquante sur l'adjectif"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "category": "espacement",
+      "original": "min 31, 50€/jour",
+      "corrected": "min 31,50 €/jour",
+      "reason": "même correction d’espacement autour du nombre et de l’unité"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "category": "espacement",
+      "original": "31, 50€/jour",
+      "corrected": "31,50 €/jour",
+      "reason": "espace avant l’unité et autour du symbole €, correction typographique"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "category": "espacement",
+      "original": "91, 82€/jour",
+      "corrected": "91,82 €/jour",
+      "reason": "espace avant l’unité et autour du symbole €, correction typographique"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "url": "/pages/are/are-fin-de-droits-quelles-aides",
+      "category": "encodage",
+      "original": "&Acirc;ge",
+      "corrected": "Âge",
+      "reason": "erreur d’encodage des caractères (mojibake) à corriger"
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "url": "/pages/are/montant-are-2026",
+      "category": "encodage",
+      "original": "Salaire de référence &Acirc;ge Demandeur d'emploi cherchant une estimation ARE",
+      "corrected": "Salaire de référence Âge Demandeur d'emploi cherchant une estimation ARE",
+      "reason": "erreur d'encodage HTML transformant le caractère Â en &Acirc;."
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "category": "espacement",
+      "original": "11 294€",
+      "corrected": "11 294 €",
+      "reason": "espace manquant avant le symbole €"
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "category": "espacement",
+      "original": "28 797€",
+      "corrected": "28 797 €",
+      "reason": "espace manquant avant le symbole €"
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "category": "espacement",
+      "original": "1 808€",
+      "corrected": "1 808 €",
+      "reason": "espace manquant avant le symbole €"
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "url": "/pages/rsa",
+      "category": "accent",
+      "original": "regles CAF en vigueur en 2026",
+      "corrected": "règles CAF en vigueur en 2026",
+      "reason": "accent manquant sur le i (règles)"
+    }
+  ]
+}

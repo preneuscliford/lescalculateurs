@@ -1,0 +1,391 @@
+{
+  "generatedAt": "2026-03-20T15:07:12.810Z",
+  "scope": "simulateurs-rendered",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\simulateurs.html",
+      "url": "/pages/simulateurs",
+      "summary": "Texte correctement écrit selon les règles de français constatées; aucune correction sûre n’est nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille.html",
+      "url": "/pages/simulateurs/aide-financiere-famille",
+      "summary": "Corrections sûres détectées dans le texte fournis (français).",
+      "issues": [
+        {
+          "excerpt": "Réponse rapide Les familles peuvent bénéficier de plusieurs aides selon leur situation.",
+          "original": "Réponse rapide Les familles peuvent bénéficier de plusieurs aides selon leur situation.",
+          "corrected": "Réponse rapide : Les familles peuvent bénéficier de plusieurs aides selon leur situation.",
+          "reason": "Ponctuation manquante après « Réponse rapide ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce qu’il faut vérifier nombre d’enfants revenus logement RSA ASF APL",
+          "original": "Ce qu’il faut vérifier nombre d’enfants revenus logement RSA ASF APL",
+          "corrected": "Ce qu’il faut vérifier : nombre d’enfants, revenus, logement, RSA, ASF, APL",
+          "reason": "Manque de ponctuation et liste non séparée par des virgules.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Aller plus loin Pour une estimation chiffrée adaptée à votre situation, passez par le pilier.",
+          "original": "Aller plus loin Pour une estimation chiffrée adaptée à votre situation, passez par le pilier.",
+          "corrected": "Aller plus loin : Pour une estimation chiffrée adaptée à votre situation, passez par le pilier.",
+          "reason": "Ponctuation manquante après « Aller plus loin ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille\\index.html",
+      "url": "/pages/simulateurs/aide-financiere-famille",
+      "summary": "Correction d’un élément de ponctuation manquant pour clarifier une liste.",
+      "issues": [
+        {
+          "excerpt": "Ce qu’il faut vérifier nombre d’enfants revenus logement RSA ASF APL",
+          "original": "Ce qu’il faut vérifier nombre d’enfants revenus logement RSA ASF APL",
+          "corrected": "Ce qu’il faut vérifier : nombre d’enfants, revenus, logement, RSA, ASF, APL",
+          "reason": "Ponctuation manquante qui rend la liste ambiguë.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale.html",
+      "url": "/pages/simulateurs/aide-sociale-simulation-globale",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale\\index.html",
+      "url": "/pages/simulateurs/aide-sociale-simulation-globale",
+      "summary": "Corrections ponctuelles de ponctuation identifiées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "globale Réponse à la question",
+          "original": "globale Réponse à la question",
+          "corrected": "globale. Réponse à la question",
+          "reason": "manque de ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Réponse rapide Une simulation",
+          "original": "Réponse rapide Une simulation",
+          "corrected": "Réponse rapide : Une simulation",
+          "reason": "manque de ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-apres-perte-emploi.html",
+      "url": "/pages/simulateurs/aides-apres-perte-emploi",
+      "summary": "Aucune erreur évidente de français détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-apres-perte-emploi\\index.html",
+      "url": "/pages/simulateurs/aides-apres-perte-emploi",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs.html",
+      "url": "/pages/simulateurs/aides-jeunes-actifs",
+      "summary": "Corrections obvies identifiées: principalement besoin d’un article devant « logement », ajout de ponctuation manquante et correction de l’URL/encodage du domaine. Pas de réécriture de style ni ajout de contenu.",
+      "issues": [
+        {
+          "excerpt": "d’aides logement et de compléments de revenus",
+          "original": "d’aides logement et de compléments de revenus",
+          "corrected": "d’aides au logement et de compléments de revenus",
+          "reason": "Orthographe/usage: on dit « aides au logement »",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce qu’il faut vérifier APL Prime d’activité situation professionnelle âge revenus logement",
+          "original": "Ce qu’il faut vérifier APL Prime d’activité situation professionnelle âge revenus logement",
+          "corrected": "Ce qu’il faut vérifier : APL, Prime d’activité, situation professionnelle, âge, revenus, logement",
+          "reason": "Ponctuation et liste claire des éléments",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "LesCalculateurs. fr",
+          "original": "LesCalculateurs. fr",
+          "corrected": "LesCalculateurs.fr",
+          "reason": "Encodage/URL: espace inutile avant le domaine",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "Encodage/URL: espace inutile avant le domaine",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs\\index.html",
+      "url": "/pages/simulateurs/aides-jeunes-actifs",
+      "summary": "Corrections cibles identifiées: ajout de l’article 'au' pour 'd’aides au logement' et ponctuation/fix de la liste des facteurs à vérifier.",
+      "issues": [
+        {
+          "excerpt": "Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "original": "Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "corrected": "Les jeunes actifs peuvent bénéficier d’aides au logement et de compléments de revenus.",
+          "reason": "manque d’article prépositionnel 'au' avant 'logement'",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Réponse rapide Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "original": "Réponse rapide Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "corrected": "Réponse rapide : Les jeunes actifs peuvent bénéficier d’aides au logement et de compléments de revenus.",
+          "reason": "ajout de deux points et article prépositionnel manquant",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce qu’il faut vérifier APL Prime d’activité situation professionnelle âge revenus logement.",
+          "original": "Ce qu’il faut vérifier APL Prime d’activité situation professionnelle âge revenus logement.",
+          "corrected": "Ce qu’il faut vérifier : APL, Prime d’activité, situation professionnelle, âge, revenus, logement.",
+          "reason": "ponctuation et liste séparée par virgules avec accords",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites.html",
+      "url": "/pages/simulateurs/aides-retraites",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites\\index.html",
+      "url": "/pages/simulateurs/aides-retraites",
+      "summary": "Corrections mineures de ponctuation et structure locale",
+      "issues": [
+        {
+          "excerpt": "Ce qu'il faut vérifier Le niveau de revenus retenus.",
+          "original": "Ce qu'il faut vérifier Le niveau de revenus retenus.",
+          "corrected": "Ce qu'il faut vérifier : Le niveau de revenus retenus.",
+          "reason": "Manque de ponctuation entre une énumération et son élément",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ouvrir le simulateur global Voir la simulation APL",
+          "original": "Ouvrir le simulateur global Voir la simulation APL",
+          "corrected": "Ouvrir le simulateur global. Voir la simulation APL",
+          "reason": "Séparation claire entre deux actions/sections par un signe de ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales.html",
+      "url": "/pages/simulateurs/cumul-aides-sociales",
+      "summary": "Ajout d’un caractère de ponctuation manquant pour clarifier une phrase.",
+      "issues": [
+        {
+          "excerpt": "Ce qu'il faut vérifier Le cumul possible entre RSA et APL.",
+          "original": "Ce qu'il faut vérifier Le cumul possible entre RSA et APL.",
+          "corrected": "Ce qu'il faut vérifier : Le cumul possible entre RSA et APL.",
+          "reason": "Manque de ponctuation (deux propositions séparées par un deux-points).",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales\\index.html",
+      "url": "/pages/simulateurs/cumul-aides-sociales",
+      "summary": "Corrections très sûres à apporter localement sur des fragments mal ponctués.",
+      "issues": [
+        {
+          "excerpt": "Ce qu'il faut vérifier Le cumul possible entre RSA et APL.",
+          "original": "Ce qu'il faut vérifier Le cumul possible entre RSA et APL.",
+          "corrected": "Ce qu'il faut vérifier. Le cumul possible entre RSA et APL.",
+          "reason": "Punctuation manquante entre deux propositions successives.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\index.html",
+      "url": "/pages/simulateurs",
+      "summary": "Corrections sûres liées à l’utilisation standard de l’expression pour certaines rubriques.",
+      "issues": [
+        {
+          "excerpt": "Simulateur impôts",
+          "original": "Simulateur impôts",
+          "corrected": "Simulateur d'impôt",
+          "reason": "usage courant ✅",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Calculateur salaire",
+          "original": "Calculateur salaire",
+          "corrected": "Calculateur de salaire",
+          "reason": "grammaire/usage courant",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "url": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+      "summary": "Correction unique relevante détectée dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Cette simulation est-elle officielle ? Non.",
+          "original": "Cette simulation est-elle officielle ? Non.",
+          "corrected": "Cette simulation est-elle officielle? Non.",
+          "reason": "Correction de l'espace avant le point d'interrogation selon les règles typographiques françaises.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit.html",
+      "url": "/pages/simulateurs/quelles-aides-ai-je-droit",
+      "summary": "Correction unique concernant l’encodage/espacement d’un nom de domaine.",
+      "issues": [
+        {
+          "excerpt": "LesCalculateurs. fr",
+          "original": "LesCalculateurs. fr",
+          "corrected": "LesCalculateurs.fr",
+          "reason": "espace indésirable dans le nom de domaine",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-ai-je-droit",
+      "summary": "Une correction de ponctuation est proposée : ajouter deux-points après « Réponse rapide ».",
+      "issues": [
+        {
+          "excerpt": "Réponse rapide Les aides dépendent de votre situation familiale, de vos revenus et de votre logement.",
+          "original": "Réponse rapide Les aides dépendent de votre situation familiale, de vos revenus et de votre logement.",
+          "corrected": "Réponse rapide : Les aides dépendent de votre situation familiale, de vos revenus et de votre logement.",
+          "reason": "Ponctuation manquante entre une intitulé et la suite explicative.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-couple-sans-revenu.html",
+      "url": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "summary": "Corrections identifiées et sûres uniquement, localisées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Ouvrir le simulateur complet Voir les hypothèses",
+          "original": "Ouvrir le simulateur complet Voir les hypothèses",
+          "corrected": "Ouvrir le simulateur complet. Voir les hypothèses.",
+          "reason": "Punctuation manquante séparant deux consignes",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-couple-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-fin-de-droits-chomage.html",
+      "url": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-fin-de-droits-chomage\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+      "summary": "1 correction sûre détectée (format de date).",
+      "issues": [
+        {
+          "excerpt": "Dernière modification : 18-03-2026",
+          "original": "Dernière modification : 18-03-2026",
+          "corrected": "Dernière modification : 18/03/2026",
+          "reason": "Format de date français standard (jour/mois/année)",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Corrections de ponctuation locales et sûres détectées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "Consulter notre méthodologie Voir les sources officielles CAF",
+          "original": "Consulter notre méthodologie Voir les sources officielles CAF",
+          "corrected": "Consulter notre méthodologie. Voir les sources officielles CAF",
+          "reason": "Ponctuation manquante entre deux propositions; correction locale et sans changement de sens.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    }
+  ],
+  "summary": {
+    "totalFiles": 23,
+    "filesWithIssues": 15,
+    "totalIssues": 25
+  }
+}

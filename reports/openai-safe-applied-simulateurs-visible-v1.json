@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-03-20T14:51:55.099Z",
+  "input": "reports\\openai-french-review-simulateurs-visible-v1.json",
+  "summary": {
+    "appliedCount": 20,
+    "skippedCount": 2,
+    "filesTouched": 10
+  },
+  "applied": [
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "espace indésirable dans le nom de domaine",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "espace indésirable dans le nom de domaine",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "espace indésirable et séparation incorrecte entre le nom et le domaine de niveau supérieur",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "Correction de l’encodage d’URL/nom de domaine et suppression de l’espace inutile.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale\\index.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "Erreur d’encodage/espace entre le point et le domaine, corrigible localement.",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "espace inutile avant l’extension .fr dans l’URL",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs\\index.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "espace inutile avant l’extension .fr dans l’URL",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "espace incorrect avant l’extension du domaine",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "espace incorrect avant l’extension du domaine",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites\\index.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "erreur d’encodage/espacement autour du point",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "Espacement/encodage incorrect dans l'URL/nom de domaine",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "eligibilite",
+      "corrected": "éligibilité",
+      "category": "accent",
+      "reason": "Accent sur éligibilité",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "appliquees",
+      "corrected": "appliquées",
+      "category": "accent",
+      "reason": "Accent sur appliquées",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "hypotheses",
+      "corrected": "hypothèses",
+      "category": "accent",
+      "reason": "Accent sur hypothèses",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "demarches",
+      "corrected": "démarches",
+      "category": "accent",
+      "reason": "Accent sur démarches",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "premiere",
+      "corrected": "première",
+      "category": "accent",
+      "reason": "Accent sur première",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "separees",
+      "corrected": "séparées",
+      "category": "accent",
+      "reason": "Accent sur séparées",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "activite",
+      "corrected": "activité",
+      "category": "accent",
+      "reason": "Accent sur activité",
+      "replacements": 24
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "espacement",
+      "reason": "Espacement incorrect dans une URL/nom de domaine.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "espacement",
+      "reason": "Espacement incorrect dans une URL/nom de domaine.",
+      "replacements": 1
+    }
+  ],
+  "skipped": [
+    {
+      "filePath": "src\\pages\\simulateurs.html",
+      "original": "Acceder -> 🏘️ Aide au Logement (APL)",
+      "corrected": "Accéder → 🏘️ Aide au Logement (APL)",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "activite Les Calculateurs Simulateurs",
+      "corrected": "activité Les Calculateurs Simulateurs",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    }
+  ]
+}

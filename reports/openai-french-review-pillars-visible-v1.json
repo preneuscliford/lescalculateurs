@@ -1,0 +1,585 @@
+{
+  "generatedAt": "2026-03-20T14:44:14.947Z",
+  "scope": "pillars-rendered",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Corrections sûres détectées dans le texte (français).",
+      "issues": [
+        {
+          "excerpt": "caf. fr",
+          "original": "caf. fr",
+          "corrected": "caf.fr",
+          "reason": "erreur d'encodage/espacement dans l'URL: caf.fr",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "service-public. fr",
+          "original": "service-public. fr",
+          "corrected": "service-public.fr",
+          "reason": "erreur d'encodage/espacement dans l'URL: service-public.fr",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénarios APL a consulter",
+          "original": "Scénarios APL a consulter",
+          "corrected": "Scénarios APL à consulter",
+          "reason": "accent manquant sur à",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Prime d'activité. . . )",
+          "original": "Prime d'activité. . . )",
+          "corrected": "Prime d'activité…",
+          "reason": "ellipse correcte à l'usage; correction du motif de ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le simulateur estimé un montant",
+          "original": "Le simulateur estimé un montant d’APL...",
+          "corrected": "Le simulateur estime un montant d’APL...",
+          "reason": "conjugaison/accord du verbe estimer",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "summary": "Corrections sûres détectées dans le texte fourni, limitées à des remplacements locaux et littéraux.",
+      "issues": [
+        {
+          "excerpt": "SJR × 57, 43% (min 31, 50€/jour, max 91, 82€/jour)",
+          "original": "SJR × 57, 43% (min 31, 50€/jour, max 91, 82€/jour)",
+          "corrected": "SJR × 57,43% (min 31,50€/jour, max 91,82€/jour)",
+          "reason": "Correction des espaces après les virgules dans les nombres et des espaces autour des pourcentages selon les standards français",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "min 31, 50€/jour",
+          "original": "min 31, 50€/jour",
+          "corrected": "min 31,50€/jour",
+          "reason": "Remplacement d’un espace inapproprié après la virgule dans un nombre",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "max 91, 82€/jour",
+          "original": "max 91, 82€/jour",
+          "corrected": "max 91,82€/jour",
+          "reason": "Remplacement d’un espace inapproprié après la virgule dans un nombre",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "francetravail. fr",
+          "original": "francetravail. fr",
+          "corrected": "france-travail.fr",
+          "reason": "Correction d’un nom de domaine mal rendu (espace inséré et majuscules/point manquant)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "url": "/pages/asf",
+      "summary": "Corrections proposées sur des segments à correction sûre et locale.",
+      "issues": [
+        {
+          "excerpt": "ressources Particularité :",
+          "original": "ressources Particularité :",
+          "corrected": "ressources. Particularité :",
+          "reason": "ponctuation manquante entre fin de phrase et début de la suivante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Familial Estimez",
+          "original": "Familial Estimez",
+          "corrected": "Familial. Estimez",
+          "reason": "erreur de séparation entre phrase et proposition suivante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "RSA...) , Fiche",
+          "original": "RSA...) , Fiche",
+          "corrected": "RSA...), Fiche",
+          "reason": "espace avant une virgule a été introduit incorrectement",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\charges.html",
+      "url": "/pages/charges",
+      "summary": "Corrections suggérées uniquement pour des fautes évidentes de ponctuation et d'espaces.",
+      "issues": [
+        {
+          "excerpt": "Simulateur Charges Copropriété 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur service-public.fr . 🏠 Accueil | Charges Copropriété Estimation 2026 ✨ Nouveau Simulateur charges de copropriété 2026 — estimation annuelle et mensuelle Estimez vos charges de copropriété selon la surface, le nombre de lots et le type d'immeuble (simulation indicative).",
+          "original": "Simulateur Charges Copropriété 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur service-public.fr . 🏠 Accueil | Charges Copropriété Estimation 2026 ✨ Nouveau Simulateur charges de copropriété 2026 — estimation annuelle et mensuelle Estimez vos charges de copropriété selon la surface, le nombre de lots et le type d'immeuble (simulation indicative).",
+          "corrected": "Simulateur Charges Copropriété 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur service-public.fr. 🏠 Accueil | Charges Copropriété Estimation 2026 ✨ Nouveau Simulateur charges de copropriété 2026 — estimation annuelle et mensuelle Estimez vos charges de copropriété selon la surface, le nombre de lots et le type d'immeuble (simulation indicative).",
+          "reason": "Espace avant le point dans service-public.fr et ajustement mineur de ponctuation.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Source : Charges de copropriété , Appel de fonds , Loi ALUR",
+          "original": "Source : Charges de copropriété , Appel de fonds , Loi ALUR",
+          "corrected": "Source : Charges de copropriété, Appel de fonds, Loi ALUR",
+          "reason": "Espaces avant les virgules.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Loi ALUR Calcul : Budget prévisionnel × Quote-part (tantièmes)",
+          "original": "Loi ALUR Calcul : Budget prévisionnel × Quote-part (tantièmes)",
+          "corrected": "Loi ALUR. Calcul : Budget prévisionnel × Quote-part (tantièmes)",
+          "reason": "Ajout d'un séparateur entre deux propositions pour éviter une phrase trop longue.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Postes : Chauffage, ascenseur, syndic, entretien, eau Moyenne : 25-45€/m²/an selon équipements et région",
+          "original": "Postes : Chauffage, ascenseur, syndic, entretien, eau Moyenne : 25-45€/m²/an selon équipements et région",
+          "corrected": "Postes : Chauffage, ascenseur, syndic, entretien, eau. Moyenne : 25-45 €/m²/an selon équipements et région",
+          "reason": "Ajout d'une ponctuation pour séparation claire des éléments et espace avant unité.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Montant définitif sur service-public.fr . 🏠",
+          "original": "Montant définitif sur service-public.fr . 🏠",
+          "corrected": "Montant définitif sur service-public.fr. 🏠",
+          "reason": "Espacement avant le point, correction minimale de ponctuation.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "summary": "Corrections évidentes de français localisées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "DGFiP , Service‑Public",
+          "original": "DGFiP , Service‑Public",
+          "corrected": "DGFiP, Service-Public",
+          "reason": "Espacement incorrect autour de la virgule et trait d’union non standard.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "basé sur revenu imposable annuel et nombre de parts",
+          "original": "basé sur revenu imposable annuel et nombre de parts",
+          "corrected": "basé sur le revenu imposable annuel et le nombre de parts",
+          "reason": "Manque de déterminant instrumentant le nom",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Source : DGFiP , Service‑Public , Simulateur IR complet 2026 , Simulateur brut → net fiscal",
+          "original": "Source : DGFiP , Service‑Public , Simulateur IR complet 2026 , Simulateur brut → net fiscal",
+          "corrected": "Source : DGFiP, Service-Public, Simulateur IR complet 2026, Simulateur brut → net fiscal",
+          "reason": "Espacement et bordures autour des virgules incohérents; résultats améliorent la lisibilité.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Barème progressif par tranche + quotient familial + décote si applicable Particularité: Décote jusqu'à 1 394€",
+          "original": "Barème progressif par tranche + quotient familial + décote si applicable Particularité: Décote jusqu'à 1 394€",
+          "corrected": "Barème progressif par tranche + quotient familial + décote si applicable. Particularité : Décote jusqu’à 1 394€",
+          "reason": "Correction de la ponctuation et de l’espace avant les deux-points/apostrophe.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "En 2025, le seuil est d'environ 1 808€ pour une personne seule.",
+          "original": "En 2025, le seuil est d'environ 1 808€ pour une personne seule.",
+          "corrected": "En 2025, le seuil est d'environ 1 808 € pour une personne seule.",
+          "reason": "Espaces incohérents devant le symbole euro.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Outil: Simulation gratuite, barèmes janvier 2026 calculez votre impôt sur le revenu 2026 en quelques secondes !",
+          "original": "Outil: Simulation gratuite, barèmes janvier 2026 calculez votre impôt sur le revenu 2026 en quelques secondes !",
+          "corrected": "Outil : Simulation gratuite, barèmes janvier 2026 calculez votre impôt sur le revenu 2026 en quelques secondes !",
+          "reason": "Espace après deux-points manquant et espace avant le point d’exclamation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "url": "/pages/notaire",
+      "summary": "Corrections sûres et locales de ponctuation et encodage dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Les droits d’enregistrement (DMTO) varient de 5, 09 % (36 Indre, 976 Mayotte) ? 6, 32 % (87 départements au taux majoré) .",
+          "original": "Les droits d’enregistrement (DMTO) varient de 5, 09 % (36 Indre, 976 Mayotte) ? 6, 32 % (87 départements au taux majoré) .",
+          "corrected": "Les droits d’enregistrement (DMTO) varient de 5,09 % (36 Indre, 976 Mayotte) ; 6,32 % (87 départements au taux majoré).",
+          "reason": "Espaces avant le symbole %, ponctuation inadaptée et présence d’un point d’interrogation inutile.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Paris (75) applique le taux majoré de 6, 32 % .",
+          "original": "Paris (75) applique le taux majoré de 6, 32 % .",
+          "corrected": "Paris (75) applique le taux majoré de 6,32 %.",
+          "reason": "Espace avant %, ponctuation excessive.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "5, 09% à 6, 32% selon département",
+          "original": "5, 09% à 6, 32% selon département",
+          "corrected": "5,09 % à 6,32 % selon département",
+          "reason": "Espaces avant le symbole % et fautes d’encodage.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "6, 32 % (majoré : 87 départements) → 15 800 €",
+          "original": "6, 32 % (majoré : 87 départements) → 15 800 €",
+          "corrected": "6,32 % (majoré : 87 départements) → 15 800 €",
+          "reason": "Espaces avant %.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~17 500 € ~7% du prix d'achat",
+          "original": "~17 500 € ~7% du prix d'achat",
+          "corrected": "~17 500 € ~7 % du prix d'achat",
+          "reason": "Espace manquant avant %.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "2, 4%",
+          "original": "2, 4%",
+          "corrected": "2,4 %",
+          "reason": "Espaces avant % manquants et typographie.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "3, 870% / 1, 596% / 1, 064% / 0, 799%",
+          "original": "3, 870% / 1, 596% / 1, 064% / 0, 799%",
+          "corrected": "3,870% / 1,596% / 1,064% / 0,799%",
+          "reason": "Espaces et virgules mal placées dans les pourcentages.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Île-de-France 6, 32% Auvergne-Rhône-Alpes 6, 32%",
+          "original": "Île-de-France 6, 32% Auvergne-Rhône-Alpes 6, 32%",
+          "corrected": "Île-de-France 6,32 % ; Auvergne-Rhône-Alpes 6,32 %",
+          "reason": "Espaces et ponctuation manquants entre régions et chiffres.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "url": "/pages/prime-activite",
+      "summary": "Corrections sures et locales pour des fautes d’orthographe et de ponctuation évidentes.",
+      "issues": [
+        {
+          "excerpt": "mois , généralement",
+          "original": "mois , généralement",
+          "corrected": "mois, généralement",
+          "reason": "ponctuation inappropriée avant une virgule",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimér votre éligibilité",
+          "original": "estimér votre éligibilité",
+          "corrected": "estimer votre éligibilité",
+          "reason": "erreur d’orthographe du verbe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "versément",
+          "original": "versément",
+          "corrected": "versement",
+          "reason": "orthographe du nom commun",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "mois , généralement",
+          "original": "mois , généralement",
+          "corrected": "mois, généralement",
+          "reason": "ponctuation inappropriée avant une virgule",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Dépassement de seuils réglementaires Paramètres non pris en compte dans une simulation simplifiée",
+          "original": "Dépassement de seuils réglementaires Paramètres non pris en compte dans une simulation simplifiée",
+          "corrected": "Dépassement de seuils réglementaires. Paramètres non pris en compte dans une simulation simplifiée",
+          "reason": "ajout d’un séparateur pour clarifier deux phrases",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "url": "/pages/rsa",
+      "summary": "12 corrections sûres détectées dans le texte fourni (français et encodage).",
+      "issues": [
+        {
+          "excerpt": "caf. fr | 🔄 Historique",
+          "original": "caf. fr | 🔄 Historique",
+          "corrected": "caf.fr | 🔄 Historique",
+          "reason": "espace entourant le point dans le nom de domaine",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "règles CAF en vigueur",
+          "original": "regles CAF en vigueur",
+          "corrected": "règles CAF en vigueur",
+          "reason": "accent manquant sur 'règles'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "(source : Article L262-1 du CSS )",
+          "original": "(source : Article L262-1 du CSS )",
+          "corrected": "(source : Article L262-1 du CSS)",
+          "reason": "espace avant la parenthèse fermante superflue",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimér si vous pouvez être éligible au RSA",
+          "original": "estimér si vous pouvez être éligible au RSA",
+          "corrected": "estimer si vous pouvez être éligible au RSA",
+          "reason": "ouverture incorrecte du verbe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "premier versément est rétroactif",
+          "original": "premier versément est rétroactif",
+          "corrected": "premier versement est rétroactif",
+          "reason": "orthographe de 'versement'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf. fr/service-public. fr",
+          "original": "caf. fr/service-public. fr",
+          "corrected": "caf.fr/service-public.fr",
+          "reason": "espace et point dans les noms de domaines + format incorrect",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ou service-public. fr",
+          "original": "service-public. fr",
+          "corrected": "service-public.fr",
+          "reason": "format incorrect du domaine",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "652, 02€",
+          "original": "652, 02€",
+          "corrected": "652,02 €",
+          "reason": "espace inapproprié dans le nombre et espace avant euro",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "978, 03€",
+          "original": "978, 03€",
+          "corrected": "978,03 €",
+          "reason": "espace inapproprié dans le nombre et espace avant euro",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "7 824, 24 €",
+          "original": "7 824, 24 €",
+          "corrected": "7 824,24 €",
+          "reason": "espace dans les décimales",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "service-public. fr",
+          "original": "service-public. fr",
+          "corrected": "service-public.fr",
+          "reason": "espace superflu dans le nom de domaine",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\salaire.html",
+      "url": "/pages/salaire",
+      "summary": "Corrections évidentes de ponctuation et de chiffres, sans modifier le sens du texte.",
+      "issues": [
+        {
+          "excerpt": "Barèmes 2026 : CSG (6.80%), CRDS (0.50%), assurance chômage (3.28%)",
+          "original": "Barèmes 2026 : CSG (6.80%), CRDS (0.50%), assurance chômage (3.28%)",
+          "corrected": "Barèmes 2026 : CSG (6,80%), CRDS (0,50%), assurance chômage (3,28%)",
+          "reason": "Utiliser la virgule décimale française.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Entrez votre salaire brut mensuel , sélectionnez",
+          "original": "Entrez votre salaire brut mensuel , sélectionnez votre statut",
+          "corrected": "Entrez votre salaire brut mensuel, sélectionnez votre statut",
+          "reason": "Espace avant une virgule; correction typographique française.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "dans votre navigateur .",
+          "original": "dans votre navigateur .",
+          "corrected": "dans votre navigateur.",
+          "reason": "Espace inutile avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs.html",
+      "url": "/pages/simulateurs",
+      "summary": "Correction orthographique locale unique détectée et appliquée.",
+      "issues": [
+        {
+          "excerpt": "📈 Plus-Value Immobilière calculez l'impôt sur votre plus-value avec abattements pour durée de possession et éventuelles exonérations.",
+          "original": "📈 Plus-Value Immobilière calculez l'impôt sur votre plus-value avec abattements pour durée de possession et éventuelles exonérations.",
+          "corrected": "📈 Plus-value immobilière calculez l'impôt sur votre plus-value avec abattements pour durée de possession et éventuelles exonérations.",
+          "reason": "Hyphenation standardisée de l’expression plus-value (orthographe recommandée).",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\taxe.html",
+      "url": "/pages/taxe",
+      "summary": "Corrections sûres liées à l’orthographe, à la ponctuation et à l’espacement visibles dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Simulateur Taxe Foncière 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur impots.gouv.fr ou estimateur gratuit .",
+          "original": "Simulateur Taxe Foncière 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur impots.gouv.fr ou estimateur gratuit .",
+          "corrected": "Simulateur Taxe Foncière 2026 - Calcul Gratuit ⚠️ Estimation indicative. Montant définitif sur impots.gouv.fr ou estimateur gratuit.",
+          "reason": "Espacement avant le point final.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Source : Taxe foncière (DGFiP) , Fiche taxe foncière",
+          "original": "Source : Taxe foncière (DGFiP) , Fiche taxe foncière",
+          "corrected": "Source : Taxe foncière (DGFiP), Fiche taxe foncière",
+          "reason": "Espacement incorrect après une parenthèse fermante et avant la virgule.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le moyen le plus fiable est de consulter votre avis de taxe foncière , où la valeur locative cadastrale et les bases utilisées sont indiquées.",
+          "original": "Le moyen le plus fiable est de consulter votre avis de taxe foncière , où la valeur locative cadastrale et les bases utilisées sont indiquées.",
+          "corrected": "Le moyen le plus fiable est de consulter votre avis de taxe foncière, où la valeur locative cadastrale et les bases utilisées sont indiquées.",
+          "reason": "Espacement avant la virgule.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cas possible : taxe faible, voire 0 € si des exonérations ou dégrèvements s'appliquent (sous conditions).",
+          "original": "Cas possible : taxe faible, voire 0 € si des exonérations ou dégrèvements s'appliquent (sous conditions).",
+          "corrected": "Cas possible : taxe faible, voire 0 € si des exonérations ou dégrèvements s’appliquent (sous conditions).",
+          "reason": "Apostrophe typographique incorrecte dans « s'appliquent » (utiliser l’apostrophe standard).",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalFiles": 11,
+    "filesWithIssues": 11,
+    "totalIssues": 55
+  }
+}

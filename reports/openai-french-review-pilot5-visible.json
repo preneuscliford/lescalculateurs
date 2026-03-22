@@ -1,0 +1,237 @@
+{
+  "generatedAt": "2026-03-20T13:00:34.352Z",
+  "scope": "french-pilot-20",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Corrections dEncoding évidentes et fautes simples de français dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "M?thodologie",
+          "original": "M?thodologie",
+          "corrected": "Méthodologie",
+          "reason": "Caractères mal encodés, mot français correct.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mise ? jour",
+          "original": "Mise ? jour",
+          "corrected": "Mise à jour",
+          "reason": "Caractères mal encodés, mot français correct.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation en 2 minutes Ã¢Å¡Â Ã¯Â¸Â",
+          "original": "Estimation en 2 minutes Ã¢Å¡Â Ã¯Â¸Â",
+          "corrected": "Estimation en 2 minutes",
+          "reason": "Gibberish d’encodage.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "MÃ©thodologie",
+          "original": "MÃ©thodologie",
+          "corrected": "Méthodologie",
+          "reason": "Caractères mal encodés, mot correct.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "basÃ© sur",
+          "original": "basÃ© sur",
+          "corrected": "basé sur",
+          "reason": "Caractères d’encodage incorrects.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Loyer plafonnÃ© Ã¢Ë†â€™",
+          "original": "Loyer plafonnÃ© Ã¢Ë†â€™",
+          "corrected": "Loyer plafonné à",
+          "reason": "Encodage incorrect pour les prépositions.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "plafonnÃ©",
+          "original": "plafonnÃ©",
+          "corrected": "plafonné",
+          "reason": "Encodage incorrect.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "propriÃ©taire",
+          "original": "propriÃ©taire",
+          "corrected": "propriétaire",
+          "reason": "Encodage incorrect sur caractère é.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Corriger quelques erreurs évidentes de français dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Cette page sert une requ à te très claire :",
+          "original": "Cette page sert une requ à te très claire :",
+          "corrected": "Cette page sert une requête très claire :",
+          "reason": "expression cassée et faute d’orthographe dans 'requ à te'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à te très claire",
+          "original": "à te très claire",
+          "corrected": "à être très claire",
+          "reason": "erreur de construction grammaticale",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation",
+          "corrected": "Pourquoi nous montrons la méthode : L'objectif est de rendre l'estimation",
+          "reason": "manque de ponctuation et liaison entre phrases",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Corrections sûres identifiées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "page traite une intention sensible liee a la baisse de revenus",
+          "original": "page traite une intention sensible liee a la baisse de revenus",
+          "corrected": "page traite une intention sensible liée à la baisse de revenus",
+          "reason": "erreur d'accents et d'orthographe sur 'liée' et 'à'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "intention sensible liee a la baisse",
+          "original": "intention sensible liee a la baisse",
+          "corrected": "intention sensible liée à la baisse",
+          "reason": "erreur d'accents et d'orthographe sur 'liée' et 'à'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Corrections sures détectées dans le texte fourni (français).",
+      "issues": [
+        {
+          "excerpt": "envisagéz",
+          "original": "envisagéz",
+          "corrected": "envisagez",
+          "reason": "erreur de conjugaison pour le verbe envisager au présent de l’indicatif, 2e personne du pluriel",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "original": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "corrected": "Ce que cette page ne remplace pas. Le résultat reste indicatif.",
+          "reason": "il manque une ponctuation entre deux propositions; correction de la liaison entre phrases",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "La CAF peut retenir d'autres éléments selon votre dossier, votre bail, vos ressources déclarées et votre situation administrative. Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "La CAF peut retenir d'autres éléments selon votre dossier, votre bail, vos ressources déclarées et votre situation administrative. Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "manque de ponctuation entre deux propositions distinctes; division en phrases correcte",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier, avec les références officielles.",
+          "reason": "amélioration de la clarté; virgule ajoutée avant la préposition",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Corrections évidentes de français repérées dans le texte fourni (erreurs d’encodage, ponctuation et orthographe).",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "r à pond a une intention",
+          "original": "r à pond a une intention",
+          "corrected": "répond à une intention",
+          "reason": "erreur d’encodage/orthographe visible.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "différent ?",
+          "original": "different ?",
+          "corrected": "différent ?",
+          "reason": "accent manquant sur 'différent'.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~132 € / mois",
+          "original": "~132 € / mois",
+          "corrected": "~132 €/mois",
+          "reason": "ponctuation typographique française (espace non requise autour de la barre oblique et espace avant/ après).",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalFiles": 5,
+    "filesWithIssues": 5,
+    "totalIssues": 21
+  }
+}

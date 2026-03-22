@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - pillars-rendered</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - pillars-rendered</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>seo</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>11</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>9</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>18</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>Aucune correction sûre détectée dans le texte fourni. Le texte ne présente pas d'erreurs évidentes de français nécessitant une correction locale et littérale.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>orthographe</strong> - durée d simulation are => durée de simulation ARE<br><span class="muted">ajout de l’article et mise en forme correcte de ARE (high)</span></li><li><strong>orthographe</strong> - d Simulateur ARE 2026 => du simulateur ARE 2026<br><span class="muted">corrige l’ellipse et la préposition pour une expression correcte (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf">/pages/asf</a><div class="muted">src\pages\asf.html</div></td>
+        <td>Une correction sûre identifiée : correction de la capitalisation incorrecte dans « Calcul Gratuit ».</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - Simulation ASF 2026 - Calcul Gratuit | Simulateur Allocation Soutien Familial CAF => Simulation ASF 2026 - Calcul gratuit | Simulateur Allocation Soutien Familial CAF<br><span class="muted">Correction orthographique de la majuscule inappropriée après le trait d'union; pas de changement de sens. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/charges">/pages/charges</a><div class="muted">src\pages\charges.html</div></td>
+        <td>Corrige une faute d’orthographe liée à la majuscule en début de phrase sur une liste d’expressions.</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - calcul charges copropriété, simulateur charges copropriété, charges copropriété 2026, estimation charges copropriété, => Calcul charges copropriété, simulateur charges copropriété, charges copropriété 2026, estimation charges copropriété,<br><span class="muted">Le premier élément après une virgule commence par une minuscule alors que c’est le début d’une énumération; correction de l’orthographe/majuscules nécessaire. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>Corrections d'accents sur les expressions liées à l'impôt</td>
+        <td>4</td>
+        <td><ul><li><strong>accent</strong> - simulation impot sur le revenu => simulation impôt sur le revenu<br><span class="muted">accent requis sur 'impôt' (high)</span></li><li><strong>accent</strong> - simulateur impots sur le revenu => simulateur impôt sur le revenu<br><span class="muted">accent requis sur 'impôt' (high)</span></li><li><strong>accent</strong> - simulateur impot sur le revenu => simulateur impôt sur le revenu<br><span class="muted">accent requis sur 'impôt' (high)</span></li><li><strong>accent</strong> - calcul impot 2026 => calcul impôt 2026<br><span class="muted">accent requis sur 'impôt' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/notaire">/pages/notaire</a><div class="muted">src\pages\notaire.html</div></td>
+        <td>Correction locale unique: ajouter 'e' et 'de' manquants dans une expression.</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - le type d frais notaire 2026 => le type de frais notaire 2026<br><span class="muted">erreur grammaticale due à l'omission de la préposition 'de' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite">/pages/prime-activite</a><div class="muted">src\pages\prime-activite.html</div></td>
+        <td>Suggestions de corrections évidentes et localisées uniquement.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Estimez votre prime d simulation => Estimez votre prime de simulation<br><span class="muted">accentuation et préposition manquante (high)</span></li><li><strong>apostrophe</strong> - prime d Calculez => prime de Calculez<br><span class="muted">préposition manquante et correction minime (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa">/pages/rsa</a><div class="muted">src\pages\rsa.html</div></td>
+        <td>Corrections de ponctuation: ajout de points pour séparer les phrases courtes et améliorer la lisibilité sans modifier le contenu. Pas de corrections au-delà des points.</td>
+        <td>2</td>
+        <td><ul><li><strong>ponctuation</strong> - Simulateur RSA 2026 | Montant CAF estimé en 2 minutes Calculez votre RSA 2026 selon votre foyer, vos revenus et votre logement. => Simulateur RSA 2026 | Montant CAF estimé en 2 minutes. Calculez votre RSA 2026 selon votre foyer, vos revenus et votre logement.<br><span class="muted">Pontuation manquante entre deux propositions indépendantes. (high)</span></li><li><strong>ponctuation</strong> - Simulateur RSA 2026 | Estimation CAF gratuite Faites une simulation RSA 2026 gratuite en ligne : montant personne seule, couple et famille. => Simulateur RSA 2026 | Estimation CAF gratuite. Faites une simulation RSA 2026 gratuite en ligne : montant personne seule, couple et famille.<br><span class="muted">Pontuation manquante entre deux propositions indépendantes. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/salaire">/pages/salaire</a><div class="muted">src\pages\salaire.html</div></td>
+        <td>Corrections sûres détectées dans le texte fourni, limitées à des fragments clairement erronés ou mal encodés.</td>
+        <td>2</td>
+        <td><ul><li><strong>grammaire</strong> - Simulation Prélèvement Source => Simulation prélèvement à la source<br><span class="muted">erreur de formulation et absence de préposition adaptée (high)</span></li><li><strong>ponctuation</strong> - Source Simulateur => Source. Simulateur<br><span class="muted">ajout d'une ponctuation manquante entre deux segments (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs">/pages/simulateurs</a><div class="muted">src\pages\simulateurs.html</div></td>
+        <td>Corrections sûres et localisées sur des fragments clairement fautifs.</td>
+        <td>3</td>
+        <td><ul><li><strong>grammaire</strong> - prime d simulateurs gratuits => prime des simulateurs gratuits<br><span class="muted">erreur grammaticale/orthographe du complément (high)</span></li><li><strong>orthographe</strong> - l Outils gratuits 2026 => les outils gratuits 2026<br><span class="muted">erreur d’article et espace superflu (high)</span></li><li><strong>ponctuation</strong> - , l => .<br><span class="muted">ponctuation défectueuse, fragments incohérents; correction mineure de ponctuation (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/taxe">/pages/taxe</a><div class="muted">src\pages\taxe.html</div></td>
+        <td>Aucune erreur évidente de français détectée dans le fragment fourni.</td>
+        <td>0</td>
+        <td><ul></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

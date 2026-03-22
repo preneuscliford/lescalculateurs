@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-03-20T14:51:55.235Z",
+  "input": "reports\\openai-french-review-simulateurs-seo-v1.json",
+  "summary": {
+    "appliedCount": 0,
+    "skippedCount": 1,
+    "filesTouched": 0
+  },
+  "applied": [],
+  "skipped": [
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "Prime d'activite",
+      "corrected": "Prime d'activité",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    }
+  ]
+}

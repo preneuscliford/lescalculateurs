@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport qualite - priority-pages</title>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1520px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    .card strong { display: block; font-size: 1.6rem; margin-top: 4px; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; align-items: center; }
+    input, select { border: 1px solid #d4dbea; border-radius: 10px; padding: 10px 12px; background: white; }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; position: sticky; top: 0; }
+    tr:last-child td { border-bottom: none; }
+    .score { font-weight: 700; }
+    .bad { color: #b42318; }
+    .mid { color: #b54708; }
+    .good { color: #027a48; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #eef2ff; margin: 2px 4px 2px 0; font-size: 12px; }
+    a { color: #0f52ba; text-decoration: none; }
+    .muted { color: #667085; font-size: 12px; margin-top: 4px; }
+    .subscores { display: grid; gap: 3px; min-width: 180px; }
+    .subscores span { white-space: nowrap; }
+    code { word-break: break-word; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport qualite - priority-pages</h1>
+    <p class="muted">Scope: priority-pages - Genere le 2026-03-20T18:55:18.724Z</p>
+    <div class="cards">
+      <div class="card"><span>Pages analysees</span><strong>12</strong></div>
+      <div class="card"><span>Score global moyen</span><strong>98.3/100</strong></div>
+      <div class="card"><span>Encodage moyen</span><strong>100/100</strong></div>
+      <div class="card"><span>Francais moyen</span><strong>100/100</strong></div>
+      <div class="card"><span>SEO moyen</span><strong>92.5/100</strong></div>
+      <div class="card"><span>Utilite moyenne</span><strong>100/100</strong></div>
+    </div>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Filtrer par URL ou fichier" />
+      <select id="filter">
+        <option value="all">Toutes les pages</option>
+        <option value="low">Score <= 60</option>
+        <option value="visible">Visible a corriger</option>
+        <option value="seo">SEO a corriger</option>
+        <option value="utf8">UTF-8</option>
+      </select>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Score global</th>
+          <th>Sous-scores</th>
+          <th>URL</th>
+          <th>Titre</th>
+          <th>Fichier</th>
+          <th>Motifs</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <script>
+    const report = {"generatedAt":"2026-03-20T18:55:18.724Z","scope":"priority-pages","files":[{"filePath":"src\\pages\\blog\\frais-notaire-ancien-neuf-2026.html","url":"/pages/blog/frais-notaire-ancien-neuf-2026","score":95,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":80,"usefulness":100},"penaltyReasons":[{"label":"breadcrumb absent","points":10},{"label":"methodologie absente","points":10}],"title":"Frais de notaire ancien vs neuf (2026) : différences et calcul","visibleLength":6975,"seoLength":450,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":false,"hasMethodology":false,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\blog\\frais-notaire-departements.html","url":"/pages/blog/frais-notaire-departements","score":95,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":80,"usefulness":100},"penaltyReasons":[{"label":"breadcrumb absent","points":10},{"label":"methodologie absente","points":10}],"title":"🏠 Frais de Notaire 2026 par Département — barèmes et droits par région","visibleLength":7011,"seoLength":658,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":false,"hasMethodology":false,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\asf.html","url":"/pages/asf","score":98,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":90,"usefulness":100},"penaltyReasons":[{"label":"breadcrumb absent","points":10}],"title":"Simulation ASF 2026 : calcul gratuit | Simulateur Allocation de soutien familial CAF","visibleLength":4445,"seoLength":935,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":false,"hasMethodology":true,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\blog\\departements\\frais-notaire-06.html","url":"/pages/blog/departements/frais-notaire-06","score":98,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":90,"usefulness":100},"penaltyReasons":[{"label":"methodologie absente","points":10}],"title":"Frais de Notaire Nice 2026 (06) : Calcul Gratuit | Prix Immobilier - LesCalculateurs","visibleLength":7525,"seoLength":768,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":false,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\blog\\departements\\frais-notaire-38.html","url":"/pages/blog/departements/frais-notaire-38","score":98,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":90,"usefulness":100},"penaltyReasons":[{"label":"methodologie absente","points":10}],"title":"Frais de notaire 2026 Isère (38) – Simulation gratuite","visibleLength":7009,"seoLength":615,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":false,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\blog\\departements\\frais-notaire-56.html","url":"/pages/blog/departements/frais-notaire-56","score":98,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":90,"usefulness":100},"penaltyReasons":[{"label":"methodologie absente","points":10}],"title":"Frais de notaire 2026 Morbihan (56) – Simulation gratuite","visibleLength":7008,"seoLength":675,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":false,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\notaire.html","url":"/pages/notaire","score":98,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":90,"usefulness":100},"penaltyReasons":[{"label":"breadcrumb absent","points":10}],"title":"Simulateur frais de notaire 2026 | Ancien, neuf et département","visibleLength":9833,"seoLength":877,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":false,"hasMethodology":true,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\apl.html","url":"/pages/apl","score":100,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":100,"usefulness":100},"penaltyReasons":[],"title":"Simulateur APL 2026 (CAF) | Estimation en 2 minutes","visibleLength":13252,"seoLength":982,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":true,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\apl\\apl-celibataire-smic\\index.html","url":"/pages/apl/apl-celibataire-smic","score":100,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":100,"usefulness":100},"penaltyReasons":[],"title":"APL au SMIC pour un célibataire : estimation 2026","visibleLength":6065,"seoLength":335,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":true,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\are.html","url":"/pages/are","score":100,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":100,"usefulness":100},"penaltyReasons":[],"title":"Simulateur ARE 2026 | Montant, durée et cumul","visibleLength":10551,"seoLength":835,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":true,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\prime-activite.html","url":"/pages/prime-activite","score":100,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":100,"usefulness":100},"penaltyReasons":[],"title":"Simulateur Prime d'activité 2026 | Montant CAF estimé","visibleLength":9839,"seoLength":770,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":true,"hasOfficialSource":true,"hasSimulatorCta":true},{"filePath":"src\\pages\\rsa.html","url":"/pages/rsa","score":100,"utf8Issues":[],"subscores":{"encoding":100,"french":100,"seo":100,"usefulness":100},"penaltyReasons":[],"title":"Simulateur RSA 2026 | Montant CAF estimé en 2 minutes","visibleLength":14395,"seoLength":751,"visibleNormalizationNeeded":false,"seoNormalizationNeeded":false,"hasFaq":true,"hasBreadcrumb":true,"hasMethodology":true,"hasOfficialSource":true,"hasSimulatorCta":true}],"summary":{"totalFiles":12,"minScore":95,"avgScore":98.3,"withUtf8Issues":0,"withVisibleNormalization":0,"withSeoNormalization":0,"avgEncodingScore":100,"avgFrenchScore":100,"avgSeoScore":92.5,"avgUsefulnessScore":100}};
+    const rows = document.getElementById("rows");
+    const search = document.getElementById("search");
+    const filter = document.getElementById("filter");
+
+    function scoreClass(score) {
+      if (score <= 60) return "bad";
+      if (score < 80) return "mid";
+      return "good";
+    }
+
+    function renderPenaltyReasons(item) {
+      const pills = [];
+      if (item.utf8Issues.length) pills.push('<span class="pill">UTF-8</span>');
+      if (item.visibleNormalizationNeeded) pills.push('<span class="pill">Visible</span>');
+      if (item.seoNormalizationNeeded) pills.push('<span class="pill">SEO</span>');
+      if (!item.hasFaq) pills.push('<span class="pill">FAQ manquante</span>');
+      if (!item.hasBreadcrumb) pills.push('<span class="pill">Breadcrumb manquant</span>');
+      if (!item.hasMethodology) pills.push('<span class="pill">Methodo manquante</span>');
+      if (!item.hasOfficialSource) pills.push('<span class="pill">Sources officielles</span>');
+      if (!item.hasSimulatorCta) pills.push('<span class="pill">CTA simulateur</span>');
+
+      const reasons = (item.penaltyReasons || []).slice(0, 4).map((reason) =>
+        '<div class="muted">' + reason.label + ' (-' + reason.points + ')</div>'
+      ).join('');
+
+      return pills.join('') + reasons;
+    }
+
+    function render() {
+      const query = search.value.trim().toLowerCase();
+      const mode = filter.value;
+      const filtered = report.files.filter((item) => {
+        const haystack = [item.url || "", item.filePath, item.title || ""].join(" ").toLowerCase();
+        if (query && !haystack.includes(query)) return false;
+        if (mode === "low" && item.score > 60) return false;
+        if (mode === "visible" && !item.visibleNormalizationNeeded) return false;
+        if (mode === "seo" && !item.seoNormalizationNeeded) return false;
+        if (mode === "utf8" && item.utf8Issues.length === 0) return false;
+        return true;
+      });
+
+      rows.innerHTML = filtered.map((item) => {
+        const urlCell = item.url ? '<a href="' + item.url + '" target="_blank" rel="noreferrer">' + item.url + '</a>' : '<span class="muted">n/a</span>';
+        const title = item.title || '<span class="muted">Sans titre</span>';
+        const subscores = '<div class="subscores">' +
+          '<span>Encodage: <strong>' + item.subscores.encoding + '</strong></span>' +
+          '<span>Francais: <strong>' + item.subscores.french + '</strong></span>' +
+          '<span>SEO: <strong>' + item.subscores.seo + '</strong></span>' +
+          '<span>Utilite: <strong>' + item.subscores.usefulness + '</strong></span>' +
+          '</div>';
+
+        return '<tr>' +
+          '<td class="score ' + scoreClass(item.score) + '">' + item.score + '</td>' +
+          '<td>' + subscores + '</td>' +
+          '<td>' + urlCell + '</td>' +
+          '<td>' + title + '</td>' +
+          '<td><code>' + item.filePath + '</code></td>' +
+          '<td>' + renderPenaltyReasons(item) + '</td>' +
+          '</tr>';
+      }).join('');
+    }
+
+    search.addEventListener("input", render);
+    filter.addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>

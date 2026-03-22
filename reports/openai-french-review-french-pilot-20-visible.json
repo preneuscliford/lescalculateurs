@@ -1,0 +1,1287 @@
+{
+  "generatedAt": "2026-03-20T12:56:05.572Z",
+  "scope": "french-pilot-20",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Corrections d’erreurs d’encodage et d’orthographe évidentes identifiées dans le texte fourni. Pas de réécriture complète, uniquement des fragments à corriger.",
+      "issues": [
+        {
+          "excerpt": "Estimation en 2 minutes Ã¢Å¡Â Ã¯Â¸Â",
+          "original": "Estimation en 2 minutes Ã¢Å¡Â Ã¯Â¸Â",
+          "corrected": "Estimation en 2 minutes",
+          "reason": "Encodage/codage HTML incorrect",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "M?thodologie",
+          "original": "M?thodologie",
+          "corrected": "Méthodologie",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mise ? jour",
+          "original": "Mise ? jour",
+          "corrected": "Mise à jour",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Montant dÃ©finitif sur CAF",
+          "original": "Montant dÃ©finitif sur CAF",
+          "corrected": "Montant définitif sur CAF",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Loyer plafonnÃ©",
+          "original": "Loyer plafonnÃ©",
+          "corrected": "Loyer plafonné",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Loyer plafonnÃ© Ã¢Ë†â€™",
+          "original": "Loyer plafonnÃ© Ã¢Ë†â€™",
+          "corrected": "Loyer plafonné à",
+          "reason": "Encodage incorrect",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "RÃ©sumÃ© rapide",
+          "original": "RÃ©sumÃ© rapide",
+          "corrected": "Résumé rapide",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "DÃ©claration",
+          "original": "DÃ©claration",
+          "corrected": "Déclaration",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "RÃ©fÃ©rence",
+          "original": "RÃ©fÃ©rence",
+          "corrected": "Référence",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "zone gÃ©ographique",
+          "original": "zone gÃ©ographique",
+          "corrected": "zone géographique",
+          "reason": "Erreur d’accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Corrections sûres de français identifiées dans le texte fourni (max 12).",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espacement avant le point; retirer l'espace avant le point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "original": "Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "corrected": "Cette page sert à être très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "reason": "Erreur d'orthographe et de tournure; reformulation proposée.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario utilisé pour cette estimation Cette estimation repose",
+          "original": "Scénario utilisé pour cette estimation Cette estimation repose",
+          "corrected": "Scénario utilisé pour cette estimation. Cette estimation repose",
+          "reason": "Manque de ponctuation entre deux phrases; ajouter un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Peut-on encore toucher l'APL avec un salaire au SMIC ?",
+          "original": "Peut-on encore toucher l'APL avec un salaire au SMIC ?",
+          "corrected": "Peut-on encore toucher l’APL avec un salaire au SMIC ?",
+          "reason": "Typographie française: guillemets typographiques; apostrophe standard.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Oui dans certains cas, surtout si le loyer reste significatif par rapport au revenu.",
+          "original": "Oui dans certains cas, surtout si le loyer reste significatif par rapport au revenu.",
+          "corrected": "Oui, dans certains cas, surtout si le loyer reste significatif par rapport au revenu.",
+          "reason": "Ponctuation manquante après oui et avant la virgule.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone géographique et du type de logement renseignés dans le scénario.",
+          "original": "Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone géographique et du type de logement renseignés dans le scénario.",
+          "corrected": "Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone géographique et du type de logement renseignés dans le scénario.",
+          "reason": "Aucun ajustement nécessaire; inclusion pour traçabilité uniquement.",
+          "category": "grammaire",
+          "confidence": "low",
+          "safe_to_apply": false
+        },
+        {
+          "excerpt": "Voir la fiche service-public.fr",
+          "original": "Voir la fiche service-public.fr",
+          "corrected": "Voir la fiche service-public.fr.",
+          "reason": "Ponctuation manquante; ajouter le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Dernière modification 18-03-2026",
+          "original": "Dernière modification 18-03-2026",
+          "corrected": "Dernière modification 18-03-2026",
+          "reason": "Format date cohérent; pas de correction nécessaire.",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": false
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Corrections sûres détectées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "liee",
+          "original": "liee",
+          "corrected": "liée",
+          "reason": "accent manquant sur le participe passé lié",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "liee a la baisse",
+          "original": "liee a la baisse",
+          "corrected": "liée à la baisse",
+          "reason": "accent et préposition à corriger",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul",
+          "original": "Sur quoi l'estimation est basée Le calcul",
+          "corrected": "Sur quoi l'estimation est basée : Le calcul",
+          "reason": "ponctuation manquante entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à Lyon apl célibataire lyon",
+          "original": "à Lyon apl célibataire lyon",
+          "corrected": "à Lyon, apl célibataire lyon",
+          "reason": "séparation par une virgule manquante entre éléments",
+          "category": "ponctuation",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cela pourrait être plus lisible",
+          "original": "Cela pourrait être plus lisible",
+          "corrected": "Cela pourrait être plus lisible",
+          "reason": "aucune correction nécessaire (exemple neutre de validation)",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": false
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Corrections sûres détectées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "original": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "corrected": "Comparer avec une reprise d'emploi partielle si vous envisagez un retour rapide au travail.",
+          "reason": "Erreur d'accord/forme du verbe 'envisager' à la deuxième personne du pluriel.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "original": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "corrected": "Comparer avec une reprise d'emploi partielle si vous envisagez un retour rapide au travail.",
+          "reason": "Même correction que ci-dessus, vérifiée comme nécessaire.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Corrections évidentes identifiées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Cette page r à pond a une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "original": "Cette page r à pond a une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "corrected": "Cette page répond à une intention large et utile pour le cluster foyer, avec un cas simple à comparer.",
+          "reason": "Fragment garbled et mot incorrect.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cette estimation repose sur un scénario représentatif construit à partir d'un profil type.",
+          "original": "Cette estimation repose sur un scénario représentatif construit à partir d'un profil type.",
+          "corrected": "Cette estimation repose sur un scénario représentatif construit à partir d'un profil type.",
+          "reason": "Terme correct usuel : 'profil type' ou 'profil-type' mais 'profil type' est moins courant; proposer 'profil type'.",
+          "category": "grammaire",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario APL estimée Revenus Loyer Couple sans enfant apl couple sans enfant ~132 € ~1 800 € ~720 €",
+          "original": "Scénario APL estimée Revenus Loyer Couple sans enfant apl couple sans enfant ~132 € ~1 800 € ~720 €",
+          "corrected": "Scénario APL estimé Revenus Loyer Couple sans enfant apl couple sans enfant ~132 € ~1 800 € ~720 €",
+          "reason": "Accord du participe passé avec le nom 'Scénario' (masculin).",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "différent ?",
+          "original": "different ?",
+          "corrected": "différent ?",
+          "reason": "Mot français manquant l’accent circonflexe sur 'différent'.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic\\index.html",
+      "url": "/pages/apl/apl-personne-seule-smic",
+      "summary": "Corrections sûres détectées dans le texte fourni (français).",
+      "issues": [
+        {
+          "excerpt": "Résultat estimé ~153 € / mois",
+          "original": "Résultat estimé ~153 € / mois",
+          "corrected": "Résultat estimé ~153 € par mois",
+          "reason": "fourniture d'un espace inutile et slashes; usage correct du terme 'par mois' en français.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "550 EUR puis de ~700 EUR",
+          "original": "150 EUR puis de ~700 EUR",
+          "corrected": "550 € puis ~700 €",
+          "reason": "utilisation incohérente de l'unité (€) et de la majuscule; corriger en euros (€).",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~153 € ~1 430 € ~610 € célibataire au SMIC apl smic célibataire",
+          "original": "apl smic célibataire",
+          "corrected": "APL SMIC célibataire",
+          "reason": "constance dans l'usage des majuscules et acronyms; correction mineure pour lisibilité et cohérence.",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Loyer autour de ~550 EUR puis de ~700 EUR.",
+          "original": "Loyer autour de ~550 EUR puis de ~700 EUR.",
+          "corrected": "Loyer autour de ~550 € puis ~700 €",
+          "reason": "incohérence dans l’unité et le format; standardiser en € et retirer répétition inutile du symbole.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-seul\\index.html",
+      "url": "/pages/apl/apl-smic-seul",
+      "summary": "Corrections sûres détectées dans le texte fourni (français). Note : n’applique pas de réécriture stylistique, uniquement corrections factuelles et évidentes.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant le point final, corriger la ponctuation.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul tient compte",
+          "original": "Sur quoi l'estimation est basée Le calcul tient compte",
+          "corrected": "Sur quoi l'estimation est basée : le calcul tient compte",
+          "reason": "il manque deux points (ou lettre) après « basée ». Utiliser un deux-points pour introduire la suite.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif",
+          "original": "Pourquoi nous montrons la méthode L'objectif",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif",
+          "reason": "erreur de séparation entre phrases, ajouter un point et commencer la seconde phrase avec majuscule.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Dernière modification 18-03-2026",
+          "original": "Dernière modification 18-03-2026",
+          "corrected": "Dernière modification : 18-03-2026",
+          "reason": "typo éventuel d’un séparateur; l’ajout de deux-points est courant dans les dates.",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Vérifier si le loyer retenu est bien indiqué hors charges.",
+          "original": "Vérifier si le loyer retenu est bien indiqué hors charges.",
+          "corrected": "Vérifier si le loyer retenu est bien indiqué hors charges.",
+          "reason": "aucune correction nécessaire",
+          "category": "grammaire",
+          "confidence": "low",
+          "safe_to_apply": false
+        },
+        {
+          "excerpt": "La CAF peut retenir d'autres éléments selon votre dossier, votre bail, vos ressources déclarées et votre situation administrative.",
+          "original": "La CAF peut retenir d'autres éléments selon votre dossier, votre bail, vos ressources déclarées et votre situation administrative.",
+          "corrected": "La CAF peut retenir d'autres éléments selon votre dossier, votre bail, vos ressources déclarées et votre situationAdministrative.",
+          "reason": "entité 'situation administrative' non modifiée; correction proposée uniquement si nécessaire (ici non nécessaire).",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": false
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "summary": "Corrections d'erreurs d'encodage et d'accents dans le texte (français).",
+      "issues": [
+        {
+          "excerpt": "Montant dÃ©finitif",
+          "original": "Montant dÃ©finitif",
+          "corrected": "Montant définitif",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "DÃ©finitif",
+          "original": "DÃ©finitif",
+          "corrected": "Définitif",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "MÃ©thodologie",
+          "original": "MÃ©thodologie",
+          "corrected": "Méthodologie",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mise ? jour",
+          "original": "Mise ? jour",
+          "corrected": "Mise à jour",
+          "reason": "omission/encodage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "DurÃ©e",
+          "original": "DurÃ©e",
+          "corrected": "Durée",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "chÃ´mage",
+          "original": "chÃ´mage",
+          "corrected": "chômage",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation de vos allocations chÃ´mage",
+          "original": "Estimation de vos allocations chÃ´mage",
+          "corrected": "Estimation de vos allocations chômage",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "SJR Ãƒâ€”",
+          "original": "SJR Ãƒâ€”",
+          "corrected": "SJR =",
+          "reason": "encodage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Minimum journalier 31, 50â‚¬ brut/jour",
+          "original": "Minimum journalier 31, 50â‚¬ brut/jour",
+          "corrected": "Minimum journalier 31,50 € brut/jour",
+          "reason": "encodage/espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Maximum journalier 91, 82â‚¬ brut/jour",
+          "original": "Maximum journalier 91, 82â‚¬ brut/jour",
+          "corrected": "Maximum journalier 91,82 € brut/jour",
+          "reason": "encodage/espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ã‰lÃ©ment BarÃ¨me 2026",
+          "original": "Ã‰lÃ©ment BarÃ¨me 2026",
+          "corrected": "Élément Barème 2026",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ÃƒÂ²",
+          "original": "ÃƒÂ²",
+          "corrected": "à",
+          "reason": "encodage",
+          "category": "encodage",
+          "confidence": "low",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "url": "/pages/are/are-fin-de-droits-quelles-aides",
+      "summary": "Corrections sûres détectées (évidentes erreurs de français ou d’encodage) à appliquer uniquement.",
+      "issues": [
+        {
+          "excerpt": "&Acirc;ge",
+          "original": "&Acirc;ge",
+          "corrected": "Âge",
+          "reason": "Entité HTML mal rendue, encodage incorrect pour l'accent.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Questions fréquentes Que vérifier en premier après une fin de droits ARE ?",
+          "original": "Questions fréquentes Que vérifier en premier après une fin de droits ARE ?",
+          "corrected": "Questions fréquentes : Que vérifier en premier après une fin de droits ARE ?",
+          "reason": "Ajout d’un deux-points manquant et correction de la ponctuation.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario ARE estimée",
+          "original": "Scénario ARE estimée",
+          "corrected": "Scénario ARE estimé",
+          "reason": "Accord du participe passé avec le sujet (« Scénario » est masculin).",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Situation familiale Personne seule Age 41 ans",
+          "original": "Situation familiale Personne seule Age 41 ans",
+          "corrected": "Situation familiale : Personne seule, Âge 41 ans",
+          "reason": "Ponctuation manquante et ajustement de l’ordre des éléments pour la clarté.",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation rapide Montant indicatif autour de ~976 € par mois pour ce scénario type.",
+          "original": "Estimation rapide Montant indicatif autour de ~976 € par mois pour ce scénario type.",
+          "corrected": "Estimation rapide : Montant indicatif autour de ~976 € par mois pour ce scénario type.",
+          "reason": "Ajout de deux-points après le titre pour respecter la norme typographique.",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
+          "original": "Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
+          "corrected": "Cette page donne un premier ordre de grandeur avant d’utiliser le simulateur complet.",
+          "reason": "Léger ajustement de l’apostrophe pour la typographie française (‘utiliser’).",
+          "category": "apostrophe",
+          "confidence": "low",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "url": "/pages/are/montant-are-2026",
+      "summary": "Corrections évidentes détectées dans le texte fourni (erreurs d’encodage et ponctuation/minorités lexicales).",
+      "issues": [
+        {
+          "excerpt": "Scénarios proches Fin de droits ARE : quelles aides en 2026 ?",
+          "original": "Scénarios proches Fin de droits ARE : quelles aides en 2026 ?",
+          "corrected": "Scénarios proches : Fin de droits ARE : quelles aides en 2026 ?",
+          "reason": "Ajout d’un deux-points pour clarifier la séparation des sections; amélioration de la lisibilité.",
+          "category": "ponctuation",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Salaire de référence &Acirc;ge",
+          "original": "Salaire de référence &Acirc;ge",
+          "corrected": "Salaire de référence Âge",
+          "reason": "Codage HTML mal rendu : &Acirc; doit être Â pour 'Âge'.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "url": "/pages/asf",
+      "summary": "Corrections évidentes de français identifiées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Montant définitif sur CAF",
+          "original": "Montant définitif sur CAF | 🔄 Historique",
+          "corrected": "Montant définitif à la CAF | 🔄 Historique",
+          "reason": "Préposition incorrecte avec l'acronyme CAF ( organisme )",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "vous êtes parent seul(e) avec enfant(s) à charge vous assumez",
+          "original": "vous êtes parent seul(e) avec enfant(s) à charge vous assumez seul(e) la charge effective et permanente d'un ou plusieurs enfants ou vous êtes enfant orphelin",
+          "corrected": "vous êtes parent seul(e) avec enfant(s) à charge ; vous assumez seul(e) la charge effective et permanente d'un ou plusieurs enfants, ou vous êtes enfant orphelin",
+          "reason": "Manque de séparation entre propositions; besoin d'une ponctuation pour clarté",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ou vous êtes enfant orphelin",
+          "original": "ou vous êtes enfant orphelin",
+          "corrected": "ou vous êtes un enfant orphelin",
+          "reason": "Article manquant devant le nom énoncé",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Montant mensuel estimé : ---",
+          "original": "Montant mensuel estimé : ---",
+          "corrected": "Montant mensuel estimé : —",
+          "reason": "Utilisation d’un tiret long ou d’un pointillés; correction stylistique mineure",
+          "category": "ponctuation",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Les ressources ne conditionnent pas l'éligibilité à l'ASF.",
+          "original": "💡 Les ressources ne conditionnent pas l'éligibilité à l'ASF.",
+          "corrected": "Les ressources ne conditionnent pas l’éligibilité à l’ASF.",
+          "reason": "Usage des apostrophes typographiques françaises erronées dans le contexte HTML",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Des documents justificatifs seront requis.",
+          "original": "Des documents justificatifs seront requis.",
+          "corrected": "Des documents justificatifs seront requis.",
+          "reason": "Pas d'erreur détectée; item conservé pour vérification. ",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-56.html",
+      "url": "/pages/blog/departements/frais-notaire-56",
+      "summary": "Corrections évidentes trouvées dans le texte. Pas de réécriture complète, uniquement les corrections actionnables.",
+      "issues": [
+        {
+          "excerpt": "Barème2026",
+          "original": "Barème2026",
+          "corrected": "Barème 2026",
+          "reason": "manque d’espace entre le mot Barème et l’année",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à estimér",
+          "original": "à estimér",
+          "corrected": "à estimer",
+          "reason": "orthographe incorrecte du verbe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "calculateur .",
+          "original": "calculateur .",
+          "corrected": "calculateur.",
+          "reason": "problème de ponctuation (espace avant le point)",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "data. gouv. fr",
+          "original": "data. gouv. fr",
+          "corrected": "data.gouv.fr",
+          "reason": "format d’URL HTML mal encodé/norme incorrecte",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à estimér via le calculateur",
+          "original": "à estimér via le calculateur",
+          "corrected": "à estimer via le calculateur",
+          "reason": "orthographe du verbe",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Notaires.fr Pour un calcul",
+          "original": "Notaires.fr Pour un calcul",
+          "corrected": "Notaires.fr. Pour un calcul",
+          "reason": "manque de ponctuation entre Notaires.fr et Pour",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "summary": "Corrections évidentes de français liées à l’encodage et à quelques fautes simples. Ne touche pas au style si c’est déjà acceptable.",
+      "issues": [
+        {
+          "excerpt": "Simulateur impÃƒÂ´ts 2026 : estimation impÃƒÂ´t sur le revenu",
+          "original": "Simulateur impÃƒÂ´ts 2026 : estimation impÃƒÂ´t sur le revenu",
+          "corrected": "Simulateur impôts 2026 : estimation impôt sur le revenu",
+          "reason": "encodage des accents (impôts)",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Montant d?finitif sur impots.gouv.fr",
+          "original": "Montant d?finitif sur impots.gouv.fr",
+          "corrected": "Montant définitif sur impots.gouv.fr",
+          "reason": "apostrophe/encodage",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mise ? jour 12/02 ÃƒÂ°Ã…Â¸Ã‚ÂÃ‚Â",
+          "original": "Mise ? jour 12/02 ÃƒÂ°Ã…Â¸Ã‚ÂÃ‚Â",
+          "corrected": "Mise à jour 12/02",
+          "reason": "encodage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation indicative avant dÃƒÂ©claration.",
+          "original": "Estimation indicative avant dÃƒÂ©claration.",
+          "corrected": "Estimation indicative avant déclaration.",
+          "reason": "accent/encodage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "dÃƒÂ©cisionnaires.",
+          "original": "dÃƒÂ©cisionnaires.",
+          "corrected": "décisionnaires.",
+          "reason": "accent/encodage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Source : DGFiP , ServiceÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ËœPublic",
+          "original": "Source : DGFiP , ServiceÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ËœPublic",
+          "corrected": "Source : DGFiP, Service Public",
+          "reason": "encodage/nom propre",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "DÃƒÂ©cote jusqu'ÃƒÂ 1 394Ã¢â€šÂ¬",
+          "original": "DÃƒÂ©cote jusqu'ÃƒÂ 1 394Ã¢â€šÂ¬",
+          "corrected": "Décote jusqu'à 1 394 €",
+          "reason": "encodage/espace",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "1 808Ã¢â€šÂ¬ pour une personne seule",
+          "original": "1 808Ã¢â€šÂ¬ pour une personne seule",
+          "corrected": "1 808 € pour une personne seule",
+          "reason": "encodage/€",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mes donnÃƒÂ©es sont-elles sÃƒÂ©curisÃƒÂ©es ?",
+          "original": "Mes donnÃƒÂ©es sont-elles sÃƒÂ©curisÃƒÂ©es ?",
+          "corrected": "Mes données sont-elles sécurisées ?",
+          "reason": "accent/encodage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "BarÃƒÂ¨me 2026 : 0% jusqu'ÃƒÂ 11 294Ã¢â€šÂ¬, puis 11%",
+          "original": "BarÃƒÂ¨me 2026 : 0% jusqu'ÃƒÂ 11 294Ã¢â€šÂ¬, puis 11%",
+          "corrected": "Barème 2026 : 0% jusqu'à 11 294 €, puis 11%",
+          "reason": "encodage/ponctuation",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "url": "/pages/notaire",
+      "summary": "Corrections sûres liées principalement à l'espacement autour des symboles monétaires et du pourcentage.",
+      "issues": [
+        {
+          "excerpt": "Les droits d’enregistrement (DMTO) varient de 5, 09 % (36 Indre, 976 Mayotte) ? 6, 32 % (87 départements au taux majoré) .",
+          "original": "Les droits d’enregistrement (DMTO) varient de 5, 09 % (36 Indre, 976 Mayotte) ? 6, 32 % (87 départements au taux majoré) .",
+          "corrected": "Les droits d’enregistrement (DMTO) varient de 5,09 % (36 Indre, 976 Mayotte) ? 6,32 % (87 départements au taux majoré).",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Paris (75) applique le taux majoré de 6, 32 % .",
+          "original": "Paris (75) applique le taux majoré de 6, 32 % .",
+          "corrected": "Paris (75) applique le taux majoré de 6,32 %.",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "La plupart des départements ont voté le taux majoré en 2026.",
+          "original": "La plupart des départements ont voté le taux majoré en 2026.",
+          "corrected": "La plupart des départements ont voté le taux majoré en 2026.",
+          "reason": "orthographe",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": false
+        },
+        {
+          "excerpt": "5, 80 % (standard : 12 départements) → 14 500 €",
+          "original": "5, 80 % (standard : 12 départements) → 14 500 €",
+          "corrected": "5,80 % (standard : 12 départements) → 14 500 €",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "6, 32 % (majoré : 87 départements) → 15 800 €",
+          "original": "6, 32 % (majoré : 87 départements) → 15 800 €",
+          "corrected": "6,32 % (majoré : 87 départements) → 15 800 €",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~17 500 € ~7% du prix d'achat",
+          "original": "~17 500 € ~7% du prix d'achat",
+          "corrected": "~17 500 € ~7 % du prix d'achat",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le notaire ne garde que ~14% des frais, le reste est reversé à l'État et aux collectivités.",
+          "original": "Le notaire ne garde que ~14% des frais, le reste est reversé à l'État et aux collectivités.",
+          "corrected": "Le notaire ne garde que ~14 % des frais, le reste est reversé à l’État et aux collectivités.",
+          "reason": "ponctuation",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "5, 09% à 6, 32% selon département",
+          "original": "5, 09% à 6, 32% selon département",
+          "corrected": "5,09 % à 6,32 % selon département",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "5, 09% (3 dépts)",
+          "original": "5, 09% (3 dépts)",
+          "corrected": "5,09 % (3 dépts)",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "5, 09% à 6, 32%",
+          "original": "5, 09% à 6, 32%",
+          "corrected": "5,09 % à 6,32 %",
+          "reason": "espacement",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "url": "/pages/prime-activite",
+      "summary": "Corrections sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "versément",
+          "original": "suspension du versément",
+          "corrected": "suspension du versement",
+          "reason": "orthographe du mot 'versement'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "prochaine avril 2026",
+          "original": "prochaine avril 2026",
+          "corrected": "prochain avril 2026",
+          "reason": "expression incorrecte ('prochaine avril' n’est pas grammatical)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "versément",
+          "original": "versement",
+          "corrected": "versement",
+          "reason": "vraisemblable correction grammaticale (correction d'un mot mal écrit)",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": false
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "url": "/pages/rsa",
+      "summary": "Propositions de corrections sûres et évidentes liées à l’encodage et à l’orthographe/accents dans le texte fourni. Pas de réécriture complète, juste des corrections ciblées.",
+      "issues": [
+        {
+          "excerpt": "estimÃ©",
+          "original": "estimÃ©",
+          "corrected": "estimé",
+          "reason": "Encodage des caractères accentués; corriger l'accent sur le e",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "BarÃ¨mes",
+          "original": "BarÃ¨mes",
+          "corrected": "Barèmes",
+          "reason": "Encodage des caractères; corriger l'accent grave",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mise Ã jour",
+          "original": "Mise Ã jour",
+          "corrected": "Mise à jour",
+          "reason": "Encodage des caractères; ajouter l'espace et l'accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "dÃ©finitif",
+          "original": "dÃ©finitif",
+          "corrected": "définitif",
+          "reason": "Encodage des caractères; correct accent aigu",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "MÃ©thodologie",
+          "original": "MÃ©thodologie",
+          "corrected": "Méthodologie",
+          "reason": "Encodage des caractères; corriger l'accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mises Ã jour",
+          "original": "Mises Ã jour",
+          "corrected": "Mises à jour",
+          "reason": "Encodage des caractères; ajouter l'espace et l'accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "MÃ©thodologie transparente",
+          "original": "MÃ©thodologie transparente",
+          "corrected": "Méthodologie transparente",
+          "reason": "Encodage des caractères; corriger l'accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "RÃ©sumÃ© rapide",
+          "original": "RÃ©sumÃ© rapide",
+          "corrected": "Résumé rapide",
+          "reason": "Encodage des caractères; corriger les accents",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "sécurité sociale",
+          "original": "sÃ©curitÃ© sociale",
+          "corrected": "sécurité sociale",
+          "reason": "Encodage des caractères; corriger les accents",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Montant forfaitaire Ã¢Ë†â€™ (62% Ãƒâ€” revenus d'activitÃ©)",
+          "original": "Montant forfaitaire Ã¢Ë†â€™ (62% Ãƒâ€” revenus d'activitÃ©)",
+          "corrected": "Montant forfaitaire : 62% des revenus d'activité",
+          "reason": "Encodage et lisibilité; normalisation des caractères et ponctuation",
+          "category": "encodage",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "parent isolÃ©",
+          "original": "parent isolÃ©",
+          "corrected": "parent isolé",
+          "reason": "Encodage des caractères; corriger l'accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "â‚¬",
+          "original": "â‚¬",
+          "corrected": "€",
+          "reason": "Codage des symboles monétaires; normaliser l'euro",
+          "category": "encodage",
+          "confidence": "low",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant.html",
+      "url": "/pages/rsa/rsa-couple-sans-enfant",
+      "summary": "Corrections sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "manque de ponctuation séparant deux expressions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Les Calculateurs Accueil Simulateur RSA",
+          "original": "Les Calculateurs Accueil Simulateur RSA",
+          "corrected": "Les calculateurs Accueil et Simulateur RSA",
+          "reason": "notation des noms communs au pluriel; accentuation/style plus naturel en français",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Comparer avec le cas personne seule.",
+          "original": "Comparer avec le cas personne seule.",
+          "corrected": "Comparer avec le cas d'une personne seule.",
+          "reason": "expression plus naturelle et grammaticalement correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule.html",
+      "url": "/pages/rsa/rsa-sans-revenu-personne-seule",
+      "summary": "Corrections simples et sûres uniquement, sans réécriture du texte.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espacement incorrect avant le point final selon les règles typographiques françaises.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Dernière modification : 18-03-2026",
+          "original": "Dernière modification : 18-03-2026",
+          "corrected": "Dernière modification : 18-03-2026",
+          "reason": "Aucun changement nécessaire techiquement; conservé comme模式 correct.",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "url": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+      "summary": "Corrections d’orthographe et d’accents évidentes dans le texte fourni (12 corrections maximum).",
+      "issues": [
+        {
+          "excerpt": "appliquees automatiquement a RSA",
+          "original": "appliquees automatiquement a RSA",
+          "corrected": "appliquées automatiquement à RSA",
+          "reason": "accent et préposition manquants",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "hypotheses",
+          "original": "hypotheses",
+          "corrected": "hypothèses",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "separees",
+          "original": "separees",
+          "corrected": "séparées",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "accedant",
+          "original": "accedant",
+          "corrected": "accédant",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Heberge a titre gratuit",
+          "original": "Heberge a titre gratuit",
+          "corrected": "héberge à titre gratuit",
+          "reason": "accents et préposition",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Region Île-de-France",
+          "original": "Region Île-de-France",
+          "corrected": "Région Île-de-France",
+          "reason": "préfixe géographique et accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Salarie Independant Apprenti",
+          "original": "Salarie Independant Apprenti",
+          "corrected": "Salarié Indépendant Apprenti",
+          "reason": "accents",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Resultats estimés",
+          "original": "Resultats estimés",
+          "corrected": "Résultats estimés",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "pedagogique",
+          "original": "pedagogique",
+          "corrected": "pédagogique",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "definitifs",
+          "original": "definitifs",
+          "corrected": "définitifs",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "verifies",
+          "original": "verifies",
+          "corrected": "vérifiés",
+          "reason": "accord et accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Consulter les sources et limites des estimations",
+          "original": "Consulter les sources et limites des estimations",
+          "corrected": "Consultez les sources et limites des estimations",
+          "reason": "conjugaison/impératif",
+          "category": "grammaire",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Corrections sûres détectées dans le texte, limitées à 3 éléments actionnables.",
+      "issues": [
+        {
+          "excerpt": "Hypothèses importantes Vérifier que le loyer est bien renseigné hors charges.",
+          "original": "Hypothèses importantes Vérifier que le loyer est bien renseigné hors charges.",
+          "corrected": "Hypothèses importantes. Vérifier que le loyer est bien renseigné hors charges.",
+          "reason": "Manque de ponctuation séparant les phrases.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Dernière modification : 18-03-2026",
+          "original": "Dernière modification : 18-03-2026",
+          "corrected": "Dernière modification : 18 mars 2026",
+          "reason": "Format de date non conforme au français courant.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après fin de droits au chômage ?",
+          "reason": "Expression plus correcte en français.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalFiles": 20,
+    "filesWithIssues": 20,
+    "totalIssues": 126
+  }
+}

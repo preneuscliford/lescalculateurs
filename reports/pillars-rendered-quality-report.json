@@ -1,0 +1,305 @@
+{
+  "generatedAt": "2026-03-20T18:53:56.662Z",
+  "scope": "pillars-rendered",
+  "files": [
+    {
+      "filePath": "src\\pages\\simulateurs.html",
+      "url": "/pages/simulateurs",
+      "score": 95,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 80,
+        "usefulness": 100
+      },
+      "penaltyReasons": [
+        {
+          "label": "FAQ absente",
+          "points": 12
+        },
+        {
+          "label": "source officielle absente",
+          "points": 8
+        }
+      ],
+      "title": "Outils gratuits 2026 | Les Calculateurs",
+      "visibleLength": 1640,
+      "seoLength": 607,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": false,
+      "hasBreadcrumb": true,
+      "hasMethodology": true,
+      "hasOfficialSource": false,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "url": "/pages/asf",
+      "score": 98,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 90,
+        "usefulness": 100
+      },
+      "penaltyReasons": [
+        {
+          "label": "breadcrumb absent",
+          "points": 10
+        }
+      ],
+      "title": "Simulation ASF 2026 : calcul gratuit | Simulateur Allocation de soutien familial CAF",
+      "visibleLength": 4445,
+      "seoLength": 935,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": false,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\charges.html",
+      "url": "/pages/charges",
+      "score": 98,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 90,
+        "usefulness": 100
+      },
+      "penaltyReasons": [
+        {
+          "label": "breadcrumb absent",
+          "points": 10
+        }
+      ],
+      "title": "Simulateur Charges Copropriété 2026 - Calcul Gratuit",
+      "visibleLength": 6734,
+      "seoLength": 712,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": false,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "score": 98,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 90,
+        "usefulness": 100
+      },
+      "penaltyReasons": [
+        {
+          "label": "breadcrumb absent",
+          "points": 10
+        }
+      ],
+      "title": "Simulateur impôts 2026 : estimation impôt sur le revenu",
+      "visibleLength": 6672,
+      "seoLength": 788,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": false,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "url": "/pages/notaire",
+      "score": 98,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 90,
+        "usefulness": 100
+      },
+      "penaltyReasons": [
+        {
+          "label": "breadcrumb absent",
+          "points": 10
+        }
+      ],
+      "title": "Simulateur frais de notaire 2026 | Ancien, neuf et département",
+      "visibleLength": 9833,
+      "seoLength": 877,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": false,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\salaire.html",
+      "url": "/pages/salaire",
+      "score": 98,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 90,
+        "usefulness": 100
+      },
+      "penaltyReasons": [
+        {
+          "label": "breadcrumb absent",
+          "points": 10
+        }
+      ],
+      "title": "Simulateur Salaire Brut Net 2026 - Calcul Gratuit | Simulation Prélèvement Source",
+      "visibleLength": 5699,
+      "seoLength": 1145,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": false,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "score": 100,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 100,
+        "usefulness": 100
+      },
+      "penaltyReasons": [],
+      "title": "Simulateur APL 2026 (CAF) | Estimation en 2 minutes",
+      "visibleLength": 13252,
+      "seoLength": 982,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": true,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "score": 100,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 100,
+        "usefulness": 100
+      },
+      "penaltyReasons": [],
+      "title": "Simulateur ARE 2026 | Montant, durée et cumul",
+      "visibleLength": 10551,
+      "seoLength": 835,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": true,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "url": "/pages/prime-activite",
+      "score": 100,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 100,
+        "usefulness": 100
+      },
+      "penaltyReasons": [],
+      "title": "Simulateur Prime d'activité 2026 | Montant CAF estimé",
+      "visibleLength": 9839,
+      "seoLength": 770,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": true,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "url": "/pages/rsa",
+      "score": 100,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 100,
+        "usefulness": 100
+      },
+      "penaltyReasons": [],
+      "title": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes",
+      "visibleLength": 14395,
+      "seoLength": 751,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": true,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    },
+    {
+      "filePath": "src\\pages\\taxe.html",
+      "url": "/pages/taxe",
+      "score": 100,
+      "utf8Issues": [],
+      "subscores": {
+        "encoding": 100,
+        "french": 100,
+        "seo": 100,
+        "usefulness": 100
+      },
+      "penaltyReasons": [],
+      "title": "Simulateur Taxe Foncière 2026 - Calcul Gratuit",
+      "visibleLength": 8896,
+      "seoLength": 745,
+      "visibleNormalizationNeeded": false,
+      "seoNormalizationNeeded": false,
+      "hasFaq": true,
+      "hasBreadcrumb": true,
+      "hasMethodology": true,
+      "hasOfficialSource": true,
+      "hasSimulatorCta": true
+    }
+  ],
+  "summary": {
+    "totalFiles": 11,
+    "minScore": 95,
+    "avgScore": 98.6,
+    "withUtf8Issues": 0,
+    "withVisibleNormalization": 0,
+    "withSeoNormalization": 0,
+    "avgEncodingScore": 100,
+    "avgFrenchScore": 100,
+    "avgSeoScore": 93.6,
+    "avgUsefulnessScore": 100
+  }
+}

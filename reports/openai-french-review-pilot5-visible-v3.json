@@ -1,0 +1,192 @@
+{
+  "generatedAt": "2026-03-20T13:03:59.813Z",
+  "scope": "french-pilot-20",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Corrections limitées et sûres pour des fragments clairement mal encodés ou avec accents manquants. Pas de réécriture majeure ou changement de sens.",
+      "issues": [
+        {
+          "excerpt": "M?thodologie",
+          "original": "M?thodologie",
+          "corrected": "Méthodologie",
+          "reason": "caractères accentué manquant",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mise ? jour",
+          "original": "Mise ? jour",
+          "corrected": "Mise à jour",
+          "reason": "espace/accents manquants",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "plafonnÃ© Ã¢Ë†â€™ Participation personnelle",
+          "original": "plafonnÃ© Ã¢Ë†â€™ Participation personnelle",
+          "corrected": "plafonné à la participation personnelle",
+          "reason": "encodage mal décodé des caractères",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "BarÃ¨mes",
+          "original": "BarÃ¨mes",
+          "corrected": "Barèmes",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Zone gÃ©ographique",
+          "original": "Zone gÃ©ographique",
+          "corrected": "Zone géographique",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ÃƒÅ½le-de-France",
+          "original": "ÃƒÅ½le-de-France",
+          "corrected": "Île-de-France",
+          "reason": "encodage,décapage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Logement dÃ©cent",
+          "original": "Logement dÃ©cent",
+          "corrected": "Logement décent",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "RÃ©sidence principale",
+          "original": "RÃ©sidence principale",
+          "corrected": "Résidence principale",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Corrections strictement localisées et sûres détectées dans le texte fourni. Une seule correction nécessaire identifiée comme erreur évidente.",
+      "issues": [
+        {
+          "excerpt": "Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "original": "Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "corrected": "Cette page sert une requête très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "reason": "erreur d'orthographe (requ à te → requête), reformulation nécessaire pour le sens correct",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Corrections sures détectées: accent sur liée et ajustement de la ponctuation et de la préposition dans une phrase.",
+      "issues": [
+        {
+          "excerpt": "intention sensible liee a la baisse de revenus et a la gestion du reste à charge",
+          "original": "intention sensible liee a la baisse de revenus et a la gestion du reste à charge",
+          "corrected": "intention sensible liée à la baisse de revenus et à la gestion du reste à charge",
+          "reason": "Correction d'accents et de prépositions pour une expression correcte",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Suppression de l'espace avant le point final après l'URL",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cette page traite une intention sensible liee a la baisse de revenus et a la gestion du reste à charge.",
+          "original": "Cette page traite une intention sensible liee a la baisse de revenus et a la gestion du reste à charge.",
+          "corrected": "Cette page traite une intention sensible liée à la baisse de revenus et à la gestion du reste à charge.",
+          "reason": "Correction d'accents et de prépositions pour une phrase correcte",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Corrigé une erreur grammaticale mineure dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "si vous envisagéz un retour rapide au travail",
+          "original": "si vous envisagéz un retour rapide au travail",
+          "corrected": "si vous envisagez un retour rapide au travail",
+          "reason": "formation du verbe envisager au présent",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Corrections suggérées (évidences et localisées)",
+      "issues": [
+        {
+          "excerpt": "Cette page r à pond a une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "original": "Cette page r à pond a une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "corrected": "Cette page répond à une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "reason": "correction orthographique de 'répond à'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "plafond different ?",
+          "original": "plafond different ?",
+          "corrected": "plafond différent ?",
+          "reason": "accent sur 'différent' et orthographe correcte",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "ponctuation manquante entre deux phrases",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalFiles": 5,
+    "filesWithIssues": 5,
+    "totalIssues": 16
+  }
+}

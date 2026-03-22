@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-03-20T14:51:55.475Z",
+  "input": "reports\\openai-french-review-pillars-seo-v1.json",
+  "summary": {
+    "appliedCount": 4,
+    "skippedCount": 0,
+    "filesTouched": 2
+  },
+  "applied": [
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "décote impôt",
+      "corrected": "décote d'impôt",
+      "category": "apostrophe",
+      "reason": "ajoute l'article et l'apostrophe manquants pour une expression correcte",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "droits enregistrement",
+      "corrected": "droits d'enregistrement",
+      "category": "apostrophe",
+      "reason": "ajout d'une apostrophe et d'une préposition correcte",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "résultat immediat.",
+      "corrected": "résultat immédiat.",
+      "category": "accent",
+      "reason": "accent sur é et orthographe correcte",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "emoluments",
+      "corrected": "émoluments",
+      "category": "accent",
+      "reason": "accent sur é",
+      "replacements": 20
+    }
+  ],
+  "skipped": []
+}

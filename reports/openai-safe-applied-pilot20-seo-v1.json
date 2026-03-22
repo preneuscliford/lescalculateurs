@@ -1,0 +1,280 @@
+{
+  "generatedAt": "2026-03-20T18:11:38.705Z",
+  "input": "reports\\openai-french-review-pilot20-seo-v1.json",
+  "summary": {
+    "appliedCount": 22,
+    "skippedCount": 13,
+    "filesTouched": 11
+  },
+  "applied": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "original": "personnalis&eacute ; e au logement",
+      "corrected": "personnalisée au logement",
+      "category": "encodage",
+      "reason": "correction d’apostrophe/entité pour un mot",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "original": "Sc&#233 ; nario",
+      "corrected": "Scénario",
+      "category": "accent",
+      "reason": "accent sur é et séparation incorrecte autour du point-virgule",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "original": "d&#39 ; une",
+      "corrected": "d'une",
+      "category": "apostrophe",
+      "reason": "apostrophe typographique séparant d' et le mot suivant; correction nécessaire",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "original": "activit&#233 ;",
+      "corrected": "activité",
+      "category": "encodage",
+      "reason": "caractères encodés HTML incorrects",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "original": "ch&#244 ; mage",
+      "corrected": "chômage",
+      "category": "encodage",
+      "reason": "caractères encodés HTML incorrects",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "original": "Sc&#233 ; nario",
+      "corrected": "Scénario",
+      "category": "encodage",
+      "reason": "Encodage des caractères (HTML entity) pour é",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "droit ch&ocirc ; mage simulation",
+      "corrected": "droit chômage simulation",
+      "category": "accent",
+      "reason": "entité HTML cassée et cohérence phrase",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "dur&eacute ; e d",
+      "corrected": "durée d'",
+      "category": "accent",
+      "reason": "correction d'une entité HTML cassée et apostrophe manquante",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "ch&ocirc ; mage",
+      "corrected": "chômage",
+      "category": "accent",
+      "reason": "entité HTML cassée pour le mot 'chômage'",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "original": "Rep&#232 ; re 2026",
+      "corrected": "Repère 2026",
+      "category": "encodage",
+      "reason": "Encodage des caractères HTML pour les lettres accentuées.",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "original": "ch&#244 ; mage",
+      "corrected": "chômage",
+      "category": "encodage",
+      "reason": "Correction des entités HTML pour le mot chômage.",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "original": "anciennet&#233 ;",
+      "corrected": "ancienneté",
+      "category": "accent",
+      "reason": "Encodage HTML → mot 'ancienneté'",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "original": "d&#39 ; une",
+      "corrected": "d'une",
+      "category": "apostrophe",
+      "reason": "Apostrophe HTML encodée → apostrophe",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "original": "&#224 ;",
+      "corrected": "à",
+      "category": "encodage",
+      "reason": "Encodage HTML → caractère latin 'à'",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "original": "d&#39 ;",
+      "corrected": "d'",
+      "category": "apostrophe",
+      "reason": "Apostrophe HTML encodée → apostrophe typographique",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "simulateur impots sur le revenu",
+      "corrected": "simulateur impôt sur le revenu",
+      "category": "accent",
+      "reason": "accent sur impôt manquant",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "impot sur le revenu",
+      "corrected": "impôt sur le revenu",
+      "category": "accent",
+      "reason": "accent manquant",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "résultat immediat.",
+      "corrected": "résultat immédiat.",
+      "category": "accent",
+      "reason": "accent et orthographe",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "enregistrement",
+      "corrected": "d'enregistrement",
+      "category": "apostrophe",
+      "reason": "manque d'apostrophe et ajout de préposition",
+      "replacements": 18
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "emoluments",
+      "corrected": "émoluments",
+      "category": "accent",
+      "reason": "accent sur le e",
+      "replacements": 20
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule.html",
+      "original": "activit&#233 ;",
+      "corrected": "activité.",
+      "category": "encodage",
+      "reason": "Encodage HTML mal interprété pour l'accent é; corriger en accent correct et vérifier la ponctuation.",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "original": "prime d'activité",
+      "corrected": "prime d’activité",
+      "category": "accent",
+      "reason": "accent manquant sur activité",
+      "replacements": 13
+    }
+  ],
+  "skipped": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "original": "&egrave ; ographique",
+      "corrected": "géographique",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl.html",
+      "original": "&eacute ; studenti",
+      "corrected": "étudiant",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "original": "activit&#233 ;",
+      "corrected": "activité",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "original": "ch&#244 ; mage",
+      "corrected": "chômage",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "original": "activit&#233 ;",
+      "corrected": "activité",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "original": "ch&#244 ; mage",
+      "corrected": "chômage",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "original": "Sc&#233 ; nario",
+      "corrected": "Scénario",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "original": "Sc&#233 ; nario",
+      "corrected": "Scénario",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "Estimation ch&ocirc ; mage",
+      "corrected": "Estimation chômage",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "dur&eacute ; e",
+      "corrected": "durée",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "impot sur le revenu",
+      "corrected": "impôt sur le revenu",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "original": "prime d Calculez votre prime d",
+      "corrected": "prime de Calculez votre prime de",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "original": "prime d Simulateur",
+      "corrected": "prime de Simulateur",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    }
+  ]
+}

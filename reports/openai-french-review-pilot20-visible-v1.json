@@ -1,0 +1,812 @@
+{
+  "generatedAt": "2026-03-20T18:01:28.314Z",
+  "scope": "french-pilot-20",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Corrections sures détectées (maximum 12) pour des fautes évidentes de français dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "d’estimér",
+          "original": "d’estimér",
+          "corrected": "d’estimer",
+          "reason": "orthographe-grammaire du verbe estimer à l'infinitif",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ressources .",
+          "original": "ressources .",
+          "corrected": "ressources.",
+          "reason": "espacement avant ponctuation",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation APL : montant mensuel selon zone et revenus Faites",
+          "original": "Estimation APL : montant mensuel selon zone et revenus Faites",
+          "corrected": "Estimation APL : montant mensuel selon zone et revenus. Faites",
+          "reason": "ponctuation manquante entre proposition et phrase suivante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation APL : 180 € à 220 € par mois Charge à payer",
+          "original": "Estimation APL : 180 € à 220 € par mois Charge à payer",
+          "corrected": "Estimation APL : 180 € à 220 € par mois. Charge à payer",
+          "reason": "ponctuation manquante entre propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimerer",
+          "original": "estimerer",
+          "corrected": "estimer",
+          "reason": "erreur de conjugaison/orthographe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Corrections sures détectées dans le texte fourni, principalement des fautes d’encodage et d’orthographe simples.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espace inutile avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "parallÎle",
+          "original": "parallÎle",
+          "corrected": "parallèle",
+          "reason": "Erreur d’accent dans le mot parallèle.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à à l'APL",
+          "original": "à à l'APL",
+          "corrected": "à l'APL",
+          "reason": "Double préposition identique, correction nécessaire pour le sens.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à à Paris",
+          "original": "à à Paris",
+          "corrected": "à Paris",
+          "reason": "Double préposition identique, correction nécessaire.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "diff à rents",
+          "original": "diff à rents",
+          "corrected": "différents",
+          "reason": "Fragment mal encodé; corriger le mot pour reprendre le sens (‘différents’).",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "parallÎe",
+          "original": "parallÎe",
+          "corrected": "parallèle",
+          "reason": "Répétition de correction d’accent sur parallèle; même correction adaptée.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à à charge",
+          "original": "à à charge",
+          "corrected": "à charge",
+          "reason": "Double préposition identique, correction nécessaire.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "parallÎle",
+          "original": "parallÎle",
+          "corrected": "parallèle",
+          "reason": "Correction d’accent dans parall̀ele/ parallèe.",
+          "category": "accent",
+          "confidence": "low",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Corrections d’accents et de répétitions évidentes, uniquement des remplacements locaux sur des fragments courts.",
+      "issues": [
+        {
+          "excerpt": "liee a la baisse de revenus et a la gestion du reste à à charge",
+          "original": "liee a la baisse de revenus et a la gestion du reste à à charge",
+          "corrected": "liée à la baisse de revenus et à la gestion du reste à charge",
+          "reason": "Correction d’orthographe et d’accentuation sur les prépositions",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "reste à à charge",
+          "original": "reste à à charge",
+          "corrected": "reste à charge",
+          "reason": "Doublement de l’article; correction orthographique locale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl marseille célibataire",
+          "original": "apl marseille célibataire",
+          "corrected": "APL célibataire à Marseille",
+          "reason": "Correction de la majuscule et ajout de la préposition manquante",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl célibataire à à Marseille",
+          "original": "apl célibataire à à Marseille",
+          "corrected": "APL célibataire à Marseille",
+          "reason": "Double préposition, correction nécessaire",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl toulouse célibataire APL célibataire à à Toulouse",
+          "original": "apl toulouse célibataire APL célibataire à à Toulouse",
+          "corrected": "APL célibataire à Toulouse",
+          "reason": "Suppression répétitions et correction de majuscule",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Corrections très limitées et sûres sur des fragments ciblés (répétitions d’accent/orthographe évidente et ponctuation manquante). Pas de réécriture ou de changements de sens importants.",
+      "issues": [
+        {
+          "excerpt": "envisagéz",
+          "original": "envisagéz",
+          "corrected": "envisagez",
+          "reason": "erreur d’orthographe/grammaire (forme correcte du verbe)",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à à Marseille",
+          "original": "à à Marseille",
+          "corrected": "à Marseille",
+          "reason": "réduplication de préposition (corriger en une seule occurrence)",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "original": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "corrected": "Ce que cette page ne remplace pas : Le résultat reste indicatif.",
+          "reason": " ponction manquante entre proposition et explication (remplacement par deux-points)",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Corrections sûres et localisées de quelques fragments fortement cassés ou orthographiquement déformés.",
+      "issues": [
+        {
+          "excerpt": "rér à pond à une intention",
+          "original": "rér à pond à une intention",
+          "corrected": "référence à une intention",
+          "reason": "fragment cassé, correction lexicale locale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "rér à pond à une intention large et rentable pour le cluster foyer",
+          "original": "rér à pond à une intention large et rentable pour le cluster foyer",
+          "corrected": "référence à une intention large et rentable pour le cluster foyer",
+          "reason": "correction de fragment cassé et reprise claire",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à à Lyon",
+          "original": "à à Lyon",
+          "corrected": "à Lyon",
+          "reason": "doublepréposition dûe à une répétition typographique",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "different",
+          "original": "different",
+          "corrected": "différent",
+          "reason": "accentuation manquante sur l'adjectif",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "paramêtrès",
+          "original": "paramêtrès",
+          "corrected": "paramètres",
+          "reason": "orthographe incorrecte",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cas d'APL pour Lyon : à Lyon",
+          "original": "apl couple lyon ~57 € ~2 050 € ~790 € Couple sans enfant avec petit revenu apl couple petit revenu ~162 € ~1 700 € ~690 € Locataire HLM avec petit revenu apl hlm petit revenu ~208 € ~980 € ~430 €",
+          "corrected": "apl couple Lyon ~57 € ~2 050 € ~790 € Couple sans enfant avec petit revenu apl couple petit revenu ~162 € ~1 700 € ~690 € Locataire HLM avec petit revenu apl hlm petit revenu ~208 € ~980 € ~430 €",
+          "reason": "correction typographique: double espace ou ponctuation; amélioration mineure de lisibilité sans changer le sens",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic\\index.html",
+      "url": "/pages/apl/apl-personne-seule-smic",
+      "summary": "Corrections sures locales uniquement (ponctuation et insertion minimale) identifiées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Nécessité d'une ponctuation pour séparer deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Questions fréquentes Une personne seule au SMIC peut-elle encore toucher l'APL ?",
+          "original": "Questions fréquentes Une personne seule au SMIC peut-elle encore toucher l'APL ?",
+          "corrected": "Questions fréquentes. Une personne seule au SMIC peut-elle encore toucher l'APL ?",
+          "reason": "Ponctuation manquante entre le titre et le paragraphe; correction normative.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond de loyer et sur l'équilibre global du calcul.",
+          "original": "Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond de loyer et sur l'équilibre global du calcul.",
+          "corrected": "Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond du loyer et sur l'équilibre global du calcul.",
+          "reason": "Amélioration grammaticale mineure: accord/emploi plus correct de l'expression.",
+          "category": "grammaire",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond de loyer et sur l'équilibre global du calcul.",
+          "original": "Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond de loyer et sur l'équilibre global du calcul.",
+          "corrected": "Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond du loyer et sur l'équilibre global du calcul.",
+          "reason": "Correction de l’expression « plafond de loyer » + cooccurrence.",
+          "category": "grammaire",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "aide logement indicative",
+          "original": "aide logement indicative",
+          "corrected": "aide au logement indicative",
+          "reason": "Corrige l’expression française standard « aide au logement ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-seul\\index.html",
+      "url": "/pages/apl/apl-smic-seul",
+      "summary": "Aucune correction sûre détectée (aucune faute évidente relevée selon les critères).",
+      "issues": [],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "summary": "Corrections évidentes localisées dans le texte (accentuation, espaces autour des symboles, ponctuation).",
+      "issues": [
+        {
+          "excerpt": "57, 43%",
+          "original": "57, 43%",
+          "corrected": "57,43%",
+          "reason": "espace injustifiée avant le séparateur décimal; correction typographique",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "31, 50€/jour",
+          "original": "31, 50€/jour",
+          "corrected": "31,50 €/jour",
+          "reason": "espace avant l’unité et autour du symbole €, correction typographique",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "91, 82€/jour",
+          "original": "91, 82€/jour",
+          "corrected": "91,82 €/jour",
+          "reason": "espace avant l’unité et autour du symbole €, correction typographique",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "min 31, 50€/jour",
+          "original": "min 31, 50€/jour",
+          "corrected": "min 31,50 €/jour",
+          "reason": "même correction d’espacement autour du nombre et de l’unité",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ARE journalière = 120€ × 57, 43% = 68, 92€/jour",
+          "original": "ARE journalière = 120€ × 57, 43% = 68, 92€/jour",
+          "corrected": "ARE journalière = 120€ × 57,43% = 68,92€/jour",
+          "reason": "correction des décimales et du pourcentage sans espaces superflus",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à jour Estimez",
+          "original": "à jour Estimez",
+          "corrected": "à jour. Estimez",
+          "reason": "ajout d’un point pour séparer les propositions; correction mineure de ponctuation",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 3
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "url": "/pages/are/are-fin-de-droits-quelles-aides",
+      "summary": "Corrections orthographiques évidentes et corrections d’encodage locales seulement.",
+      "issues": [
+        {
+          "excerpt": "Scénario ARE estimée",
+          "original": "Scénario ARE estimée",
+          "corrected": "Scénario ARE estimé",
+          "reason": "accord du nom masculin 'Scénario' avec l’adjectif 'estimé'",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "&Acirc;ge",
+          "original": "&Acirc;ge",
+          "corrected": "Âge",
+          "reason": "erreur d’encodage des caractères (mojibake) à corriger",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "url": "/pages/are/montant-are-2026",
+      "summary": "Corrections uniquement des fautes évidentes (encodage et orthographe) sans changement de sens ni reformulation.",
+      "issues": [
+        {
+          "excerpt": "Salaire de référence &Acirc;ge Demandeur d'emploi cherchant une estimation ARE",
+          "original": "Salaire de référence &Acirc;ge Demandeur d'emploi cherchant une estimation ARE",
+          "corrected": "Salaire de référence Âge Demandeur d'emploi cherchant une estimation ARE",
+          "reason": "erreur d'encodage HTML transformant le caractère Â en &Acirc;.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario ARE estimée Salaire de référence &Acirc;ge Demandeur d'emploi cherchant une estimation ARE",
+          "original": "Scénario ARE estimée Salaire de référence &Acirc;ge Demandeur d'emploi cherchant une estimation ARE",
+          "corrected": "Scénario ARE estimée Salaire de référence Âge Demandeur d'emploi cherchant une estimation ARE",
+          "reason": "erreur d'encodage HTML transformant le caractère Â en &Acirc;.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Comment estimér rapidement le montant ARE ?",
+          "original": "Comment estimér rapidement le montant ARE ?",
+          "corrected": "Comment estimer rapidement le montant ARE ?",
+          "reason": "forme verbale incorrecte; correction orthographique et grammaticale mineure (infinitif).",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 1
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "url": "/pages/asf",
+      "summary": "Corrigé un problème de ponctuation qui porte sur l’espace avant la virgule dans une liste de sources.",
+      "issues": [
+        {
+          "excerpt": "Source : Simulateurs CAF (ASF, RSA...) , Fiche ASF Public :",
+          "original": "Source : Simulateurs CAF (ASF, RSA...) , Fiche ASF Public :",
+          "corrected": "Source : Simulateurs CAF (ASF, RSA...), Fiche ASF Public :",
+          "reason": "Espace superflu avant la virgule après les parenthèses.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-56.html",
+      "url": "/pages/blog/departements/frais-notaire-56",
+      "summary": "Corrigés locaux et sûrs détectés dans le texte fourni. Deux corrections identifiées (orthographe et ponctuation) sans toucher au sens ni ajouter de contenu.",
+      "issues": [
+        {
+          "excerpt": "à estimér via le calculateur",
+          "original": "à estimér via le calculateur",
+          "corrected": "à estimer via le calculateur",
+          "reason": "erreur orthographique (verbe à l’infinitif mal conjugué dans le contexte)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Notaires.fr .",
+          "original": "Notaires.fr .",
+          "corrected": "Notaires.fr.",
+          "reason": "espace superflu avant la ponctuation terminale",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "summary": "Corrigés des erreurs évidentes de ponctuation et d’orthographe dans le texte fourni (12 problèmes au maximum).",
+      "issues": [
+        {
+          "excerpt": "DGFiP , Service‑Public",
+          "original": "DGFiP , Service‑Public",
+          "corrected": "DGFiP, Service‑Public",
+          "reason": "espace avant une virgule",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "1 808€",
+          "original": "1 808€",
+          "corrected": "1 808 €",
+          "reason": "espace manquant avant le symbole €",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "11 294€",
+          "original": "11 294€",
+          "corrected": "11 294 €",
+          "reason": "espace manquant avant le symbole €",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "28 797€",
+          "original": "28 797€",
+          "corrected": "28 797 €",
+          "reason": "espace manquant avant le symbole €",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "0% jusqu'à 11 294€, puis 11%",
+          "original": "0% jusqu'à 11 294€, puis 11%",
+          "corrected": "0% jusqu\\u2019à 11 294 €, puis 11%",
+          "reason": "réalité typographique (apostrophe)",
+          "category": "apostrophe",
+          "confidence": "low",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimér",
+          "original": "estimér",
+          "corrected": "estimer",
+          "reason": "orthographe d’infinitif",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 3
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "url": "/pages/notaire",
+      "summary": "Corrections sûres limitées à des remplacements locaux d’accents, espaces et ponctuation autour des pourcentages et de quelques signes typographiques. Pas de réécriture de phrases.",
+      "issues": [
+        {
+          "excerpt": "5, 09 %",
+          "original": "5, 09 %",
+          "corrected": "5,09%",
+          "reason": "espace inutile avant le symbole pourcentage",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "6, 32 % (87 départements au taux majoré)",
+          "original": "6, 32 % (87 départements au taux majoré)",
+          "corrected": "6,32% (87 départements au taux majoré)",
+          "reason": "espace inutile avant le pourcentage et ponctuation à corriger",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Paris (75) applique le taux majoré de 6, 32 % .",
+          "original": "Paris (75) applique le taux majoré de 6, 32 % .",
+          "corrected": "Paris (75) applique le taux majoré de 6,32%.",
+          "reason": "espace avant pourcentage et ponctuation incorrecte",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "5, 80 % (standard : 12 départements)",
+          "original": "5, 80 % (standard : 12 départements)",
+          "corrected": "5,80% (standard : 12 départements)",
+          "reason": "espace inutile avant le pourcentage",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "5, 09% (réduit : 36, 976)",
+          "original": "5, 09% (réduit : 36, 976)",
+          "corrected": "5,09% (réduit : 36 976)",
+          "reason": "espace et virgule dans le nombre à corriger",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "250 000 €, l'écart peut",
+          "original": "250 000 €, l'écart peut",
+          "corrected": "250 000€, l'écart peut",
+          "reason": "espace avant la virgule",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "5, 09% à 6, 32%",
+          "original": "5, 09% à 6, 32%",
+          "corrected": "5,09% à 6,32%",
+          "reason": "espaces superflus autour des pourcentages",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "url": "/pages/prime-activite",
+      "summary": "Corrections simples et sûres d’orthographe et de typographie locale détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "suspension du versément.",
+          "original": "suspension du versément.",
+          "corrected": "suspension du versement.",
+          "reason": "erreur d’orthographe du mot 'versement'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "bourses d'étude",
+          "original": "bourses d'étude",
+          "corrected": "bourses d'études",
+          "reason": "accord du mot 'études' au pluriel et à l’usage courant.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ARE ARE et reprise d'emploi à temps partiel",
+          "original": "ARE ARE et reprise d'emploi à temps partiel",
+          "corrected": "ARE et reprise d'emploi à temps partiel",
+          "reason": "duplication accidentelle du sigle ARE.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "url": "/pages/rsa",
+      "summary": "Corrections locales et sûres identifiées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "regles CAF en vigueur en 2026",
+          "original": "regles CAF en vigueur en 2026",
+          "corrected": "règles CAF en vigueur en 2026",
+          "reason": "accent manquant sur le i (règles)",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimér si vous pouvez être éligible au RSA",
+          "original": "estimér si vous pouvez être éligible au RSA",
+          "corrected": "estimer si vous pouvez être éligible au RSA",
+          "reason": "erreur d'accent/orthographe verbale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "versément est rétroactif",
+          "original": "versément est rétroactif",
+          "corrected": "versement est rétroactif",
+          "reason": "mot mal écrit (versement)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "environ environ 600 € / mois",
+          "original": "environ environ 600 € / mois",
+          "corrected": "environ 600 € / mois",
+          "reason": "duplication; correction locale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le premier versément est rétroactif à la date de la demande",
+          "original": "Le premier versément est rétroactif à la date de la demande",
+          "corrected": "Le premier versement est rétroactif à la date de la demande",
+          "reason": "mot mal écrit (versement)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant.html",
+      "url": "/pages/rsa/rsa-couple-sans-enfant",
+      "summary": "Corrections sures détectées (français).",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant la ponctuation à corriger",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~792 € / mois",
+          "original": "~792 € / mois",
+          "corrected": "~792 € par mois",
+          "reason": "remplacement d'une tournure avec slash par une expression correcte",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule.html",
+      "url": "/pages/rsa/rsa-sans-revenu-personne-seule",
+      "summary": "Corriger une espace avant le point après caf.fr.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espace inutile avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "url": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+      "summary": "Corriger une majuscule inappropriée dans une coordonnées d’état de logement.",
+      "issues": [
+        {
+          "excerpt": "Locataire Propriétaire accédant Hébergé à titre gratuit",
+          "original": "Locataire Propriétaire accédant Hébergé à titre gratuit",
+          "corrected": "Locataire Propriétaire accédant hébergé à titre gratuit",
+          "reason": "Erreur d'orthographe: Hébergé doit être écrit avec une minuscule lorsqu'il suit une liste sans majuscule initiale.",
+          "category": "orthographe",
+          "confidence": "low",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": [],
+      "safeIssuesCount": 0
+    }
+  ],
+  "summary": {
+    "totalFiles": 20,
+    "filesWithIssues": 18,
+    "totalIssues": 71,
+    "filesWithSafeIssues": 8,
+    "totalSafeIssues": 13
+  }
+}

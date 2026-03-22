@@ -1,0 +1,312 @@
+{
+  "generatedAt": "2026-03-20T15:07:12.834Z",
+  "scope": "simulateurs-rendered",
+  "mode": "seo",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\simulateurs.html",
+      "url": "/pages/simulateurs",
+      "summary": "Corrections locales et sûres identifiées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "l Outils gratuits 2026 | Les Calculateurs Accédez à nos simulateurs gratuits 2026 pour les aides sociales, l Outils gratuits 2026 | Les Calculateurs Accédez à nos simulateurs gratuits 2026 pour les aides sociales, l",
+          "original": "l Outils gratuits 2026 | Les Calculateurs Accédez à nos simulateurs gratuits 2026 pour les aides sociales, l Outils gratuits 2026 | Les Calculateurs Accédez à nos simulateurs gratuits 2026 pour les aides sociales, l",
+          "corrected": "les outils gratuits 2026 | Les Calculateurs Accédez à nos simulateurs gratuits 2026 pour les aides sociales, l",
+          "reason": "Erreur d'article et capitalisation incorrecte: 'l Outils' devrait être 'les outils'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Accédez à nos simulateurs gratuits 2026 pour les aides sociales, l",
+          "original": "Accédez à nos simulateurs gratuits 2026 pour les aides sociales, l",
+          "corrected": "Accédez à nos simulateurs gratuits 2026 pour les aides sociales.",
+          "reason": "Fragment incomplet après ', l' et terminaison incorrecte; corriger en ajoutant une ponctuation et supprimer le fragment en trop.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille.html",
+      "url": "/pages/simulateurs/aide-financiere-famille",
+      "summary": "Corrections sûres détectées pour les fautes évidentes.",
+      "issues": [
+        {
+          "excerpt": "Aide financière famille (2026)",
+          "original": "Aide financière famille (2026)",
+          "corrected": "Aide financière à la famille (2026)",
+          "reason": "Préposition manquante nécessaire à l’expression correcte « aide financière à la famille »",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Réponse à la question : Aide financière famille.",
+          "original": "Réponse à la question : Aide financière famille.",
+          "corrected": "Réponse à la question : Aide financière à la famille.",
+          "reason": "Préposition manquante nécessaire à l’expression correcte « aide financière à la famille »",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille\\index.html",
+      "url": "/pages/simulateurs/aide-financiere-famille",
+      "summary": "Aucun correctif sûr détecté.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale.html",
+      "url": "/pages/simulateurs/aide-sociale-simulation-globale",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale\\index.html",
+      "url": "/pages/simulateurs/aide-sociale-simulation-globale",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-apres-perte-emploi.html",
+      "url": "/pages/simulateurs/aides-apres-perte-emploi",
+      "summary": "Aucune correction évidente détectable dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-apres-perte-emploi\\index.html",
+      "url": "/pages/simulateurs/aides-apres-perte-emploi",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs.html",
+      "url": "/pages/simulateurs/aides-jeunes-actifs",
+      "summary": "Corrections localisées pour améliorer le texte sans changer le sens ni ajouter de contenu.",
+      "issues": [
+        {
+          "excerpt": "Réponse à la question :",
+          "original": "Réponse à la question :",
+          "corrected": "Réponse à la question:",
+          "reason": "Espacement incorrect avant les deux-points selon les règles typographiques françaises.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d’aides logement",
+          "original": "d’aides logement",
+          "corrected": "d’aides au logement",
+          "reason": "Omission de l’article \"au\" nécessaire après « d’aides » pour indiquer le logement.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs\\index.html",
+      "url": "/pages/simulateurs/aides-jeunes-actifs",
+      "summary": "Corrige une faute de préposition manquante : 'd’aides logement' → 'd’aides au logement'.",
+      "issues": [
+        {
+          "excerpt": "d’aides logement",
+          "original": "d’aides logement",
+          "corrected": "d’aides au logement",
+          "reason": "Préposition manquante; prévoir 'au logement' après 'aides'",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites.html",
+      "url": "/pages/simulateurs/aides-retraites",
+      "summary": "Aucune correction détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites\\index.html",
+      "url": "/pages/simulateurs/aides-retraites",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales.html",
+      "url": "/pages/simulateurs/cumul-aides-sociales",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni (le texte est répétitif et incomplet, mais aucune modification locale fiable ne peut être appliquée sans risque de changer le sens).",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales\\index.html",
+      "url": "/pages/simulateurs/cumul-aides-sociales",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\index.html",
+      "url": "/pages/simulateurs",
+      "summary": "Corrections sûres relevées dans le texte fourni, essentiellement des erreurs d'espacement et d'apostrophe.",
+      "issues": [
+        {
+          "excerpt": "l Outils",
+          "original": "l Outils",
+          "corrected": "les outils",
+          "reason": "erreur d'espacement et d'article (l Outils -> les outils)",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d Outils",
+          "original": "d Outils",
+          "corrected": "d'outils",
+          "reason": "erreur d'apostrophe manquante (d Outils -> d'outils)",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "url": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+      "summary": "Corrections sûres (échantillon limité à des corrections locales et sans changer le sens).",
+      "issues": [
+        {
+          "excerpt": "d Estimez",
+          "original": "d Estimez",
+          "corrected": "d'Estimez",
+          "reason": "espace après la préposition d' est incorrect; apostrophe manquante",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d Une",
+          "original": "d Une",
+          "corrected": "d'Une",
+          "reason": "espace après la préposition d' incorrect; apostrophe manquante",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "activité Simulateur",
+          "original": "activité Simulateur",
+          "corrected": "activité. Simulateur",
+          "reason": "ponctuation manquante entre deux segments",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit.html",
+      "url": "/pages/simulateurs/quelles-aides-ai-je-droit",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-ai-je-droit",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-couple-sans-revenu.html",
+      "url": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "summary": "Aucune correction sûre détectée ; le texte est grammaticalement correct et ne nécessite pas de correction locale.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-couple-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "summary": "Aucune correction sûre détectée. Le texte ne présente pas d'erreur orthographique ou typographique évidente nécessitant une correction locale et ne modifie pas le sens si on applique une correction mineure.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-fin-de-droits-chomage.html",
+      "url": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+      "summary": "Corriger les erreurs de grammaire liées à l’expression des droits au chômage. Propositions locales et littérales uniquement.",
+      "issues": [
+        {
+          "excerpt": "fin de droits chômage",
+          "original": "fin de droits chômage",
+          "corrected": "fin des droits au chômage",
+          "reason": "expression correcte et usage commun pour parler des droits liés au chômage",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "après fin de droits chômage",
+          "original": "après fin de droits chômage",
+          "corrected": "après la fin des droits au chômage",
+          "reason": "ajout de l’article et accord en nombre/forme standard",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-fin-de-droits-chomage\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+      "summary": "Corrections ciblées sur des formulations inexactes de la question principale.",
+      "issues": [
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après la fin des droits au chômage ?",
+          "reason": "Manque d’article et formulation plus naturelle avec l’ancrage 'fin des droits au chômage'.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après la fin des droits au chômage ?",
+          "reason": "Même correction que ci-dessus apportant un article et une construction plus standard.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après la fin des droits au chômage ?",
+          "reason": "Même correction que ci-dessus apportant un article et une construction plus standard.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Aucune correction nécessaire. Le texte est correct.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    }
+  ],
+  "summary": {
+    "totalFiles": 23,
+    "filesWithIssues": 8,
+    "totalIssues": 17
+  }
+}

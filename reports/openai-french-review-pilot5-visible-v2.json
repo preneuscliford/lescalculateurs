@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-03-20T13:02:10.968Z",
+  "scope": "french-pilot-20",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Corrections mineures et évidentes liées à l’encodage ou aux accents dans des fragments courts, sans modification du sens.",
+      "issues": [
+        {
+          "excerpt": "M?thodologie",
+          "original": "M?thodologie",
+          "corrected": "Méthodologie",
+          "reason": "Correction d’un problème d’encodage avec les accents.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mise ? jour",
+          "original": "Mise ? jour",
+          "corrected": "Mise à jour",
+          "reason": "Correction d’un problème d’encodage (caractère manquant/erroné).",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Mises Ã jour",
+          "original": "Mises Ã jour",
+          "corrected": "Mises à jour",
+          "reason": "Correction d’un problème d’encodage.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "vÃ©rifiÃ©",
+          "original": "vÃ©rifiÃ©",
+          "corrected": "vérifié",
+          "reason": "Correction d’un problème d’encodage des accents.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "plafonnÃ©",
+          "original": "plafonnÃ©",
+          "corrected": "plafonné",
+          "reason": "Correction d’un problème d’encodage des accents.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "franÃ§ais",
+          "original": "franÃ§ais",
+          "corrected": "français",
+          "reason": "Correction d’un problème d’encodage des accents.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "610â‚¬",
+          "original": "610â‚¬",
+          "corrected": "610 €",
+          "reason": "Remplacement du caractère d’encodage incorrect par le symbole euro.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "dÃ©clarÃ©",
+          "original": "dÃ©clarÃ©",
+          "corrected": "déclaré",
+          "reason": "Correction d’un problème d’encodage des accents.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Corrections sures détectées dans le texte fourni (remplacements locaux et littéraux uniquement).",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espacement avant le point final à corriger.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "requ à te très claire",
+          "original": "requ à te très claire",
+          "corrected": "requête très claire",
+          "reason": "Erreur dorthographe/orthographe: requ à te → requête et accord; reformulation nécessaire mais locale.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Dernière modification 18-03-2026",
+          "original": "Dernière modification 18-03-2026",
+          "corrected": "Dernière modification le 18-03-2026",
+          "reason": "Ajout optionnel de préposition ‘le’ pour une tournure plus standard. Correction mineure de style.",
+          "category": "grammaire",
+          "confidence": "low",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Corrigé 2 éléments d accents et de préposition sur une phrase.",
+      "issues": [
+        {
+          "excerpt": "liee a la",
+          "original": "liee a la",
+          "corrected": "liée à la",
+          "reason": "accents sur les lettres et préposition correcte",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Corrections sures détectables, limitées à des phrases courtes et locales.",
+      "issues": [
+        {
+          "excerpt": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "original": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "corrected": "Comparer avec une reprise d'emploi partielle si vous envisagez un retour rapide au travail.",
+          "reason": "orthographe du verbe envisager à la deuxième personne du pluriel",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "espace avant une ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "manque de ponctuation entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone géographique et du type de logement renseignés dans le scénario.",
+          "original": "Sur quoi l'estimation est basée Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone géographique et du type de logement renseignés dans le scénario.",
+          "corrected": "Sur quoi l'estimation est basée. Le calcul tient compte ici du profil du foyer, du niveau de revenus, du loyer, de la zone géographique et du type de logement renseignés dans le scénario.",
+          "reason": "ponctuation manquante entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Corrections strictement localisées et fiables pour des passages cassés par l’encodage ou des fautes évidentes.",
+      "issues": [
+        {
+          "excerpt": "Cette page r à pond a une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "original": "Cette page r à pond a une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "corrected": "Cette page répond à une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.",
+          "reason": "correction d’un fragment cassé par encodage, rétablissement de la phrase",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "différent ?",
+          "original": "différent ?",
+          "corrected": "différent ?",
+          "reason": "accent manquant sur le mot différent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalFiles": 5,
+    "filesWithIssues": 5,
+    "totalIssues": 18
+  }
+}

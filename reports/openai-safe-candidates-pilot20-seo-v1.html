@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Safe candidates OpenAI</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    a { color: #0f52ba; text-decoration: none; }
+    code { word-break: break-word; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Safe candidates OpenAI</h1>
+    <div class="cards">
+      <div class="card"><div>Source</div><strong>reports\openai-french-review-pilot20-seo-v1.json</strong></div>
+      <div class="card"><div>Candidats sûrs</div><strong>35</strong></div>
+      <div class="card"><div>Pages touchees</div><strong>12</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Categorie</th><th>Original</th><th>Corrige</th><th>Raison</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>encodage</td>
+        <td><code>personnalis&amp;eacute ; e au logement</code></td>
+        <td><code>personnalisée au logement</code></td>
+        <td>correction d’apostrophe/entité pour un mot</td>
+      </tr><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>encodage</td>
+        <td><code>&amp;egrave ; ographique</code></td>
+        <td><code>géographique</code></td>
+        <td>correction d’entité HTML en mot correct</td>
+      </tr><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>encodage</td>
+        <td><code>&amp;eacute ; studenti</code></td>
+        <td><code>étudiant</code></td>
+        <td>correction d’entité HTML</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>accent</td>
+        <td><code>Sc&amp;#233 ; nario</code></td>
+        <td><code>Scénario</code></td>
+        <td>accent sur é et séparation incorrecte autour du point-virgule</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>apostrophe</td>
+        <td><code>d&amp;#39 ; une</code></td>
+        <td><code>d'une</code></td>
+        <td>apostrophe typographique séparant d' et le mot suivant; correction nécessaire</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>encodage</td>
+        <td><code>activit&amp;#233 ;</code></td>
+        <td><code>activité</code></td>
+        <td>caractères encodés HTML incorrects</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>encodage</td>
+        <td><code>ch&amp;#244 ; mage</code></td>
+        <td><code>chômage</code></td>
+        <td>caractères encodés HTML incorrects</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>encodage</td>
+        <td><code>activit&amp;#233 ;</code></td>
+        <td><code>activité</code></td>
+        <td>caractères encodés HTML incorrects</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>encodage</td>
+        <td><code>ch&amp;#244 ; mage</code></td>
+        <td><code>chômage</code></td>
+        <td>caractères encodés HTML incorrects</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>encodage</td>
+        <td><code>activit&amp;#233 ;</code></td>
+        <td><code>activité</code></td>
+        <td>caractères encodés HTML incorrects</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>encodage</td>
+        <td><code>ch&amp;#244 ; mage</code></td>
+        <td><code>chômage</code></td>
+        <td>caractères encodés HTML incorrects</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>encodage</td>
+        <td><code>Sc&amp;#233 ; nario</code></td>
+        <td><code>Scénario</code></td>
+        <td>Encodage des caractères (HTML entity) pour é</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>encodage</td>
+        <td><code>Sc&amp;#233 ; nario</code></td>
+        <td><code>Scénario</code></td>
+        <td>Encodage des caractères (HTML entity) pour é</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>encodage</td>
+        <td><code>Sc&amp;#233 ; nario</code></td>
+        <td><code>Scénario</code></td>
+        <td>Encodage des caractères (HTML entity) pour é</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>accent</td>
+        <td><code>droit ch&amp;ocirc ; mage simulation</code></td>
+        <td><code>droit chômage simulation</code></td>
+        <td>entité HTML cassée et cohérence phrase</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>accent</td>
+        <td><code>Estimation ch&amp;ocirc ; mage</code></td>
+        <td><code>Estimation chômage</code></td>
+        <td>entité HTML cassée pour 'chômage'</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>accent</td>
+        <td><code>dur&amp;eacute ; e d</code></td>
+        <td><code>durée d'</code></td>
+        <td>correction d'une entité HTML cassée et apostrophe manquante</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>accent</td>
+        <td><code>ch&amp;ocirc ; mage</code></td>
+        <td><code>chômage</code></td>
+        <td>entité HTML cassée pour le mot 'chômage'</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>accent</td>
+        <td><code>dur&amp;eacute ; e</code></td>
+        <td><code>durée</code></td>
+        <td>entité HTML cassée pour le mot 'durée'</td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-quelles-aides">/pages/are/are-fin-de-droits-quelles-aides</a><div class="muted">src\pages\are\are-fin-de-droits-quelles-aides.html</div></td>
+        <td>encodage</td>
+        <td><code>Rep&amp;#232 ; re 2026</code></td>
+        <td><code>Repère 2026</code></td>
+        <td>Encodage des caractères HTML pour les lettres accentuées.</td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-quelles-aides">/pages/are/are-fin-de-droits-quelles-aides</a><div class="muted">src\pages\are\are-fin-de-droits-quelles-aides.html</div></td>
+        <td>encodage</td>
+        <td><code>ch&amp;#244 ; mage</code></td>
+        <td><code>chômage</code></td>
+        <td>Correction des entités HTML pour le mot chômage.</td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026.html</div></td>
+        <td>accent</td>
+        <td><code>anciennet&amp;#233 ;</code></td>
+        <td><code>ancienneté</code></td>
+        <td>Encodage HTML → mot 'ancienneté'</td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026.html</div></td>
+        <td>apostrophe</td>
+        <td><code>d&amp;#39 ; une</code></td>
+        <td><code>d'une</code></td>
+        <td>Apostrophe HTML encodée → apostrophe</td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026.html</div></td>
+        <td>encodage</td>
+        <td><code>&amp;#224 ;</code></td>
+        <td><code>à</code></td>
+        <td>Encodage HTML → caractère latin 'à'</td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026.html</div></td>
+        <td>apostrophe</td>
+        <td><code>d&amp;#39 ;</code></td>
+        <td><code>d'</code></td>
+        <td>Apostrophe HTML encodée → apostrophe typographique</td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>accent</td>
+        <td><code>simulateur impots sur le revenu</code></td>
+        <td><code>simulateur impôt sur le revenu</code></td>
+        <td>accent sur impôt manquant</td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>accent</td>
+        <td><code>impot sur le revenu</code></td>
+        <td><code>impôt sur le revenu</code></td>
+        <td>accent manquant</td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>accent</td>
+        <td><code>impot sur le revenu</code></td>
+        <td><code>impôt sur le revenu</code></td>
+        <td>accent manquant</td>
+      </tr><tr>
+        <td><a href="/pages/notaire">/pages/notaire</a><div class="muted">src\pages\notaire.html</div></td>
+        <td>accent</td>
+        <td><code>résultat immediat.</code></td>
+        <td><code>résultat immédiat.</code></td>
+        <td>accent et orthographe</td>
+      </tr><tr>
+        <td><a href="/pages/notaire">/pages/notaire</a><div class="muted">src\pages\notaire.html</div></td>
+        <td>apostrophe</td>
+        <td><code>enregistrement</code></td>
+        <td><code>d'enregistrement</code></td>
+        <td>manque d'apostrophe et ajout de préposition</td>
+      </tr><tr>
+        <td><a href="/pages/notaire">/pages/notaire</a><div class="muted">src\pages\notaire.html</div></td>
+        <td>accent</td>
+        <td><code>emoluments</code></td>
+        <td><code>émoluments</code></td>
+        <td>accent sur le e</td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite">/pages/prime-activite</a><div class="muted">src\pages\prime-activite.html</div></td>
+        <td>espacement</td>
+        <td><code>prime d Calculez votre prime d</code></td>
+        <td><code>prime de Calculez votre prime de</code></td>
+        <td>Préposition manquante répétée: corriger “d” en “de” avant les segments correspondants.</td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite">/pages/prime-activite</a><div class="muted">src\pages\prime-activite.html</div></td>
+        <td>espacement</td>
+        <td><code>prime d Simulateur</code></td>
+        <td><code>prime de Simulateur</code></td>
+        <td>Espacement et préposition manquants: remplacer “d” par “de” avant le nom.</td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-revenu-personne-seule">/pages/rsa/rsa-sans-revenu-personne-seule</a><div class="muted">src\pages\rsa\rsa-sans-revenu-personne-seule.html</div></td>
+        <td>encodage</td>
+        <td><code>activit&amp;#233 ;</code></td>
+        <td><code>activité.</code></td>
+        <td>Encodage HTML mal interprété pour l'accent é; corriger en accent correct et vérifier la ponctuation.</td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelle-aide-selon-mon-profil-2026">/pages/simulateurs/quelle-aide-selon-mon-profil-2026</a><div class="muted">src\pages\simulateurs\quelle-aide-selon-mon-profil-2026.html</div></td>
+        <td>accent</td>
+        <td><code>prime d'activité</code></td>
+        <td><code>prime d’activité</code></td>
+        <td>accent manquant sur activité</td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

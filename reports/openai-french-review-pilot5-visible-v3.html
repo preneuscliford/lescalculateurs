@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - french-pilot-20</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - french-pilot-20</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>visible</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>5</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>5</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>16</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>Corrections limitées et sûres pour des fragments clairement mal encodés ou avec accents manquants. Pas de réécriture majeure ou changement de sens.</td>
+        <td>8</td>
+        <td><ul><li><strong>accent</strong> - M?thodologie => Méthodologie<br><span class="muted">caractères accentué manquant (high)</span></li><li><strong>accent</strong> - Mise ? jour => Mise à jour<br><span class="muted">espace/accents manquants (high)</span></li><li><strong>encodage</strong> - plafonnÃ© Ã¢Ë†â€™ Participation personnelle => plafonné à la participation personnelle<br><span class="muted">encodage mal décodé des caractères (high)</span></li><li><strong>accent</strong> - BarÃ¨mes => Barèmes<br><span class="muted">accent (high)</span></li><li><strong>accent</strong> - Zone gÃ©ographique => Zone géographique<br><span class="muted">accent (high)</span></li><li><strong>encodage</strong> - ÃƒÅ½le-de-France => Île-de-France<br><span class="muted">encodage,décapage (high)</span></li><li><strong>accent</strong> - Logement dÃ©cent => Logement décent<br><span class="muted">accent (high)</span></li><li><strong>accent</strong> - RÃ©sidence principale => Résidence principale<br><span class="muted">accent (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>Corrections strictement localisées et sûres détectées dans le texte fourni. Une seule correction nécessaire identifiée comme erreur évidente.</td>
+        <td>1</td>
+        <td><ul><li><strong>orthographe</strong> - Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL. => Cette page sert une requête très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.<br><span class="muted">erreur d'orthographe (requ à te → requête), reformulation nécessaire pour le sens correct (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-loyer-moyen">/pages/apl/apl-chomage-loyer-moyen</a><div class="muted">src\pages\apl\apl-chomage-loyer-moyen\index.html</div></td>
+        <td>Corrections sures détectées: accent sur liée et ajustement de la ponctuation et de la préposition dans une phrase.</td>
+        <td>3</td>
+        <td><ul><li><strong>accent</strong> - intention sensible liee a la baisse de revenus et a la gestion du reste à charge => intention sensible liée à la baisse de revenus et à la gestion du reste à charge<br><span class="muted">Correction d'accents et de prépositions pour une expression correcte (high)</span></li><li><strong>ponctuation</strong> - Vérification finale à faire sur caf.fr . => Vérification finale à faire sur caf.fr.<br><span class="muted">Suppression de l'espace avant le point final après l'URL (high)</span></li><li><strong>accent</strong> - Cette page traite une intention sensible liee a la baisse de revenus et a la gestion du reste à charge. => Cette page traite une intention sensible liée à la baisse de revenus et à la gestion du reste à charge.<br><span class="muted">Correction d'accents et de prépositions pour une phrase correcte (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>Corrigé une erreur grammaticale mineure dans le texte fourni.</td>
+        <td>1</td>
+        <td><ul><li><strong>grammaire</strong> - si vous envisagéz un retour rapide au travail => si vous envisagez un retour rapide au travail<br><span class="muted">formation du verbe envisager au présent (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>Corrections suggérées (évidences et localisées)</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - Cette page r à pond a une intention large et rentable pour le cluster foyer, avec un cas simple à comparer. => Cette page répond à une intention large et rentable pour le cluster foyer, avec un cas simple à comparer.<br><span class="muted">correction orthographique de 'répond à' (high)</span></li><li><strong>orthographe</strong> - plafond different ? => plafond différent ?<br><span class="muted">accent sur 'différent' et orthographe correcte (high)</span></li><li><strong>ponctuation</strong> - Voir la source officielle CAF Voir la fiche service-public.fr => Voir la source officielle CAF. Voir la fiche service-public.fr<br><span class="muted">ponctuation manquante entre deux phrases (high)</span></li></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

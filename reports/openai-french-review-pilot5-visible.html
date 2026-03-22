@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - french-pilot-20</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - french-pilot-20</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>visible</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>5</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>5</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>21</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>Corrections dEncoding évidentes et fautes simples de français dans le texte fourni.</td>
+        <td>8</td>
+        <td><ul><li><strong>accent</strong> - M?thodologie => Méthodologie<br><span class="muted">Caractères mal encodés, mot français correct. (high)</span></li><li><strong>accent</strong> - Mise ? jour => Mise à jour<br><span class="muted">Caractères mal encodés, mot français correct. (high)</span></li><li><strong>encodage</strong> - Estimation en 2 minutes Ã¢Å¡Â Ã¯Â¸Â => Estimation en 2 minutes<br><span class="muted">Gibberish d’encodage. (high)</span></li><li><strong>accent</strong> - MÃ©thodologie => Méthodologie<br><span class="muted">Caractères mal encodés, mot correct. (high)</span></li><li><strong>encodage</strong> - basÃ© sur => basé sur<br><span class="muted">Caractères d’encodage incorrects. (high)</span></li><li><strong>encodage</strong> - Loyer plafonnÃ© Ã¢Ë†â€™ => Loyer plafonné à<br><span class="muted">Encodage incorrect pour les prépositions. (high)</span></li><li><strong>encodage</strong> - plafonnÃ© => plafonné<br><span class="muted">Encodage incorrect. (high)</span></li><li><strong>accent</strong> - propriÃ©taire => propriétaire<br><span class="muted">Encodage incorrect sur caractère é. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>Corriger quelques erreurs évidentes de français dans le texte fourni.</td>
+        <td>3</td>
+        <td><ul><li><strong>orthographe</strong> - Cette page sert une requ à te très claire : => Cette page sert une requête très claire :<br><span class="muted">expression cassée et faute d’orthographe dans 'requ à te' (high)</span></li><li><strong>grammaire</strong> - à te très claire => à être très claire<br><span class="muted">erreur de construction grammaticale (high)</span></li><li><strong>ponctuation</strong> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation => Pourquoi nous montrons la méthode : L'objectif est de rendre l'estimation<br><span class="muted">manque de ponctuation et liaison entre phrases (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-loyer-moyen">/pages/apl/apl-chomage-loyer-moyen</a><div class="muted">src\pages\apl\apl-chomage-loyer-moyen\index.html</div></td>
+        <td>Corrections sûres identifiées dans le texte fourni.</td>
+        <td>2</td>
+        <td><ul><li><strong>accent</strong> - page traite une intention sensible liee a la baisse de revenus => page traite une intention sensible liée à la baisse de revenus<br><span class="muted">erreur d'accents et d'orthographe sur 'liée' et 'à' (high)</span></li><li><strong>accent</strong> - intention sensible liee a la baisse => intention sensible liée à la baisse<br><span class="muted">erreur d'accents et d'orthographe sur 'liée' et 'à' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>Corrections sures détectées dans le texte fourni (français).</td>
+        <td>4</td>
+        <td><ul><li><strong>grammaire</strong> - envisagéz => envisagez<br><span class="muted">erreur de conjugaison pour le verbe envisager au présent de l’indicatif, 2e personne du pluriel (high)</span></li><li><strong>ponctuation</strong> - Ce que cette page ne remplace pas Le résultat reste indicatif. => Ce que cette page ne remplace pas. Le résultat reste indicatif.<br><span class="muted">il manque une ponctuation entre deux propositions; correction de la liaison entre phrases (high)</span></li><li><strong>ponctuation</strong> - La CAF peut retenir d'autres éléments selon votre dossier, votre bail, vos ressources déclarées et votre situation administrative. Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => La CAF peut retenir d'autres éléments selon votre dossier, votre bail, vos ressources déclarées et votre situation administrative. Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">manque de ponctuation entre deux propositions distinctes; division en phrases correcte (high)</span></li><li><strong>ponctuation</strong> - L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier, avec les références officielles.<br><span class="muted">amélioration de la clarté; virgule ajoutée avant la préposition (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>Corrections évidentes de français repérées dans le texte fourni (erreurs d’encodage, ponctuation et orthographe).</td>
+        <td>4</td>
+        <td><ul><li><strong>ponctuation</strong> - caf.fr . => caf.fr.<br><span class="muted">espace avant le point final. (high)</span></li><li><strong>orthographe</strong> - r à pond a une intention => répond à une intention<br><span class="muted">erreur d’encodage/orthographe visible. (high)</span></li><li><strong>accent</strong> - different ? => différent ?<br><span class="muted">accent manquant sur 'différent'. (high)</span></li><li><strong>ponctuation</strong> - ~132 € / mois => ~132 €/mois<br><span class="muted">ponctuation typographique française (espace non requise autour de la barre oblique et espace avant/ après). (medium)</span></li></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

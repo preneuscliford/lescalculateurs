@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-03-20T14:51:55.790Z",
+  "input": "reports\\openai-french-review-pseo-seo-v1.json",
+  "summary": {
+    "appliedCount": 7,
+    "skippedCount": 8,
+    "filesTouched": 6
+  },
+  "applied": [
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-toulouse\\index.html",
+      "original": "Exemple APL",
+      "corrected": "Exemple d'APL",
+      "category": "apostrophe",
+      "reason": "Lien entre le nom commun et l'acronyme nécessite l'article partitif 'd'' devant une voyelle pour éviter l'ellipse.",
+      "replacements": 5
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-hlm-petit-revenu\\index.html",
+      "original": "loge en HLM",
+      "corrected": "logé en HLM",
+      "category": "accent",
+      "reason": "erreur d'accent sur le participe passé 'logé' (correction orthographique/accent)",
+      "replacements": 5
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-500-revenu-900\\index.html",
+      "original": "budgetaire",
+      "corrected": "budgétaires",
+      "category": "accent",
+      "reason": "accent sur l'e",
+      "replacements": 5
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-800-revenu-1300\\index.html",
+      "original": "budgetaire",
+      "corrected": "budgétaire",
+      "category": "accent",
+      "reason": "accent manquant sur le mot budgétaire",
+      "replacements": 7
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "original": "allocation demandeur emploi",
+      "corrected": "allocation demandeur d’emploi",
+      "category": "apostrophe",
+      "reason": "ajout de l’apostrophe manquante pour le terme correct",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "original": "simulateur are",
+      "corrected": "simulateur ARE",
+      "category": "apostrophe",
+      "reason": "acronyme ARE en majuscules pour le terme technique",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa\\index.html",
+      "original": "Simulation gratuite avec estimation immediate.",
+      "corrected": "Simulation gratuite avec estimation immédiate.",
+      "category": "accent",
+      "reason": "accent sur le mot 'immédiate' et ajout de l'accent grave sur le 'e'",
+      "replacements": 1
+    }
+  ],
+  "skipped": [
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant\\index.html",
+      "original": "revenu regulier",
+      "corrected": "revenu régulier",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant\\index.html",
+      "original": "revenu regulier",
+      "corrected": "revenu régulier",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant\\index.html",
+      "original": "revenu regulier",
+      "corrected": "revenu régulier",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-lyon\\index.html",
+      "original": "parc priv à.",
+      "corrected": "parc privé.",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-paris\\index.html",
+      "original": "revenus intermediaires",
+      "corrected": "revenus intermédiaires",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-500-revenu-900\\index.html",
+      "original": "budgetaire",
+      "corrected": "budgétaire",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-500-revenu-900\\index.html",
+      "original": "budgetaire",
+      "corrected": "budgétaire",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "original": "Exemple d impact",
+      "corrected": "Exemple d'impact",
+      "category": "apostrophe",
+      "reason": "original introuvable dans le fichier"
+    }
+  ]
+}

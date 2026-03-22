@@ -1,0 +1,3488 @@
+{
+  "generatedAt": "2026-03-20T14:02:26.280Z",
+  "scope": "pseo-rendered",
+  "mode": "visible",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant-paris\\index.html",
+      "url": "/pages/apl/apl-alternant-paris",
+      "summary": "Corrections ponctuelles uniquement: espaces avant la ponctuation et séparation de phrases manquante.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espace superflu avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Ponctuation manquante entre deux propositions; corrige la lisibilité sans changer le sens.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant\\index.html",
+      "url": "/pages/apl/apl-alternant",
+      "summary": "Corrections localement sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "espace superflu avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "revenu regulier",
+          "original": "revenu regulier",
+          "corrected": "revenu régulier",
+          "reason": "accent sur l'adjectif.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d alternance",
+          "original": "d alternance",
+          "corrected": "d'alternance",
+          "reason": "usage de l'apostrophe manquante après la préposition.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-apprenti-loyer-500\\index.html",
+      "url": "/pages/apl/apl-apprenti-loyer-500",
+      "summary": "Deux corrections détectées : des formulations de type « Salarié en CDD/CDI » qui doivent être corrigées.",
+      "issues": [
+        {
+          "excerpt": "Salari à en CDD",
+          "original": "Salari à en CDD",
+          "corrected": "Salarié en CDD",
+          "reason": "Erreur de forme du mot 'Salarié' et préposition manquante pour l’expression correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Salari à en CDI",
+          "original": "Salari à en CDI",
+          "corrected": "Salarié en CDI",
+          "reason": "Erreur de forme du mot 'Salarié' et préposition manquante pour l’expression correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-apprenti\\index.html",
+      "url": "/pages/apl/apl-apprenti",
+      "summary": "Corrections sûres de ponctuation, orthographe et encodage dans le texte fourni (remplacements locaux uniquement).",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espace inutile avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation rapide Estimation indicative",
+          "original": "Estimation rapide Estimation indicative",
+          "corrected": "Estimation rapide. Estimation indicative",
+          "reason": "Pour séparer deux propositions, ajout d’un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Situation familiale Personne seule",
+          "original": "Situation familiale Personne seule",
+          "corrected": "Situation familiale: Personne seule",
+          "reason": "Ajout d’un séparateur clair (doublepoint).",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Type de logement Location",
+          "original": "Type de logement Location",
+          "corrected": "Type de logement: Location",
+          "reason": "Ajout d’un séparateur clair (doublepoint).",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "il employeur.",
+          "original": "l employeur.",
+          "corrected": "l'employeur.",
+          "reason": "Ajout de l’apostrophe manquante devant employeur.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul",
+          "original": "Sur quoi l'estimation est basée Le calcul",
+          "corrected": "Sur quoi l'estimation est basée : Le calcul",
+          "reason": "Ajout d’un séparateur (deux-points).",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "méthode L'objectif",
+          "original": "méthode L'objectif",
+          "corrected": "méthode. L'objectif",
+          "reason": "Séparation par un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "service-public.fr Comparer",
+          "original": "service-public.fr Comparer",
+          "corrected": "service-public.fr. Comparer",
+          "reason": "Séparation par un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d apprentissage",
+          "original": "d apprentissage",
+          "corrected": "d'apprentissage",
+          "reason": "Correction de l’apostrophe manquante.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "determinent",
+          "original": "determinent",
+          "corrected": "déterminent",
+          "reason": "Correction orthographique d’accent.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-cdd-loyer-600\\index.html",
+      "url": "/pages/apl/apl-cdd-loyer-600",
+      "summary": "Corrections sures proposées sur des fragments évidents d’erreurs orthographiques/grammaticales.",
+      "issues": [
+        {
+          "excerpt": "Salari à en CDD.",
+          "original": "Salari à en CDD.",
+          "corrected": "Salarié en CDD",
+          "reason": "erreur d’orthographe et de forme‑grammaticale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d'un salari à en CDD",
+          "original": "d'un salari à en CDD",
+          "corrected": "d'un salarié en CDD",
+          "reason": "erreur d’orthographe et de forme‑grammaticale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caract à ristiques du logement.",
+          "original": "caract à ristiques du logement.",
+          "corrected": "caractéristiques du logement.",
+          "reason": "erreur d’orthographe dans un mot composé",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Salari à en CDI",
+          "original": "Salari à en CDI",
+          "corrected": "Salarié en CDI",
+          "reason": "erreur d’orthographe et de forme‑grammaticale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-cdi-loyer-700\\index.html",
+      "url": "/pages/apl/apl-cdi-loyer-700",
+      "summary": "Corrections mineures et sûres ciblant l’orthographe et la ponctuation dans des fragments clairement mal formés.",
+      "issues": [
+        {
+          "excerpt": "un salari à en CDI",
+          "original": "un salari à en CDI",
+          "corrected": "un salarié en CDI",
+          "reason": "orthographe et accord",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "un salari à",
+          "original": "Profil Salari à en CDI",
+          "corrected": "Profil Salarié en CDI",
+          "reason": "orthographe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Un Salari à en CDI",
+          "original": "Salari à en CDI",
+          "corrected": "Salarié en CDI",
+          "reason": "orthographe et accord",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Salari à en CDD",
+          "original": "Salari à en CDD",
+          "corrected": "Salarié en CDD",
+          "reason": "orthographe et accord",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "vérifier si vos primes ou heures supplémentaires gonflent le revenu retenu.",
+          "original": "vérifier si vos primes ou heures supplémentaires gonflent le revenu retenu.",
+          "corrected": "Vérifier si vos primes ou heures supplémentaires gonflent le revenu retenu.",
+          "reason": "majuscule en début de phrase",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul tient compte",
+          "original": "Sur quoi l'estimation est basée Le calcul tient compte ici du profil du foyer,",
+          "corrected": "Sur quoi l'estimation est basée. Le calcul tient compte ici du profil du foyer,",
+          "reason": "ponctuation manquante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "original": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "corrected": "Ce que cette page ne remplace pas. Le résultat reste indicatif.",
+          "reason": "ponctuation manquante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre",
+          "corrected": "La méthode. L'objectif est de rendre",
+          "reason": "ponctuation manquante/clé de phrase",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi cette page existe Cette page répond",
+          "original": "Pourquoi cette page existe Cette page répond",
+          "corrected": "Pourquoi cette page existe. Cette page répond",
+          "reason": "ponctuation manquante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-loyer-eleve\\index.html",
+      "url": "/pages/apl/apl-celibataire-loyer-eleve",
+      "summary": "Corrections sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace superflu avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "un loyer sup à rieur au plafond de zone.",
+          "original": "un loyer sup à rieur au plafond de zone.",
+          "corrected": "un loyer supérieur au plafond de zone.",
+          "reason": "orthographe/mot mal écrit.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Résultat estimé ~192 € / mois.",
+          "original": "Résultat estimé ~192 € / mois.",
+          "corrected": "Résultat estimé ~192 € par mois.",
+          "reason": "remplacement de l'abréviation incorrecte par l'expression complète correcte.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL apres une reprise d'emploi",
+          "original": "APL apres une reprise d'emploi",
+          "corrected": "APL après une reprise d'emploi",
+          "reason": "accent sur 'après'.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-lyon\\index.html",
+      "url": "/pages/apl/apl-celibataire-lyon",
+      "summary": "Corrections de ponctuation et espacement identifiées (pas de réécriture de contenu).",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espacement avant une ponctuation qui est cassé.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul tient compte",
+          "original": "Sur quoi l'estimation est basée Le calcul tient compte",
+          "corrected": "Sur quoi l'estimation est basée : Le calcul tient compte",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "original": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "corrected": "Ce que cette page ne remplace pas : Le résultat reste indicatif.",
+          "reason": "Ponctuation manquante entre propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode : L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Ponctuation manquante séparant l’introduction de l’objectif.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "Séparation entre deux éléments par ponctuation.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Comparer plusieurs scénarios Ce tableau permet",
+          "original": "Comparer plusieurs scénarios Ce tableau permet",
+          "corrected": "Comparer plusieurs scénarios : Ce tableau permet",
+          "reason": "Ponctuation manquante entre propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-marseille\\index.html",
+      "url": "/pages/apl/apl-celibataire-marseille",
+      "summary": "Corrections d’erreurs évidentes (orthographe/accents/encodage) localisées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "une requ à te g à olocalis à e claire et une tension locative concr à te",
+          "original": "une requ à te g à olocalis à e claire et une tension locative concr à te",
+          "corrected": "une requête géolocalisée et une tension locative concrète",
+          "reason": "fragment illisible -> correction locale et littérale pour restituer le sens.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "loyer interm à diaire",
+          "original": "loyer interm à diaire",
+          "corrected": "loyer intermédiaire",
+          "reason": "fragment illisible -> correction locale et littérale.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Le code postal'aide a affiner",
+          "original": "Le code postal'aide a affiner",
+          "corrected": "Le code postal aide à affiner",
+          "reason": "apostrophe manquante et accent inattendu.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-paris-petit-revenu\\index.html",
+      "url": "/pages/apl/apl-celibataire-paris-petit-revenu",
+      "summary": "Corrections corrigibles identifiées dans le texte (français).",
+      "issues": [
+        {
+          "excerpt": "envisagéz de déménager",
+          "original": "envisagéz de déménager",
+          "corrected": "envisagez de déménager",
+          "reason": "erreur de conjugaison/grammaire",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "a absorber",
+          "original": "a absorber",
+          "corrected": "à absorber",
+          "reason": "erreur d'accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "requ à te centrale",
+          "original": "requ à te centrale",
+          "corrected": "requête centrale",
+          "reason": "erreur de frappe/orthographe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-petit-salaire\\index.html",
+      "url": "/pages/apl/apl-celibataire-petit-salaire",
+      "summary": "Corrections sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant la ponctuation finale.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl célibataire petit salaire",
+          "original": "apl célibataire petit salaire",
+          "corrected": "APL célibataire petit salaire",
+          "reason": "majuscule manquante à l'acronyme APL.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl loyer élevé",
+          "original": "apl loyer élevé",
+          "corrected": "APL loyer élevé",
+          "reason": "majuscule manquante à l'acronyme APL et cohérence de l'expression.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl marseille célibataire",
+          "original": "apl marseille célibataire",
+          "corrected": "APL Marseille célibataire",
+          "reason": "majuscule manquante et nom de ville à capitaliser.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl smic célibataire",
+          "original": "apl smic célibataire",
+          "corrected": "APL SMIC célibataire",
+          "reason": "majuscule et acronyme SMIC à capitaliser.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl au SMIC",
+          "original": "apl au SMIC",
+          "corrected": "APL au SMIC",
+          "reason": "majuscule manquante à l'acronyme SMIC et cohérence avec le style des autres occurrences.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Corrections simples et sûres de fautes évidentes (accents, orthographe, graphems, fragments cassés). Pas de réécriture de phrases complètes ni d’ajout de sens.",
+      "issues": [
+        {
+          "excerpt": "Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "original": "Cette page sert une requ à te très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "corrected": "Cette page sert une requête très claire : savoir si un salaire proche du SMIC laisse encore un droit à l'APL.",
+          "reason": "orthographe et mot manquant (requête)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "diff à rents selon les revenus",
+          "original": "diff à rents selon les revenus",
+          "corrected": "différents selon les revenus",
+          "reason": "erreur de mot et d’accents, correction lexicale locale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "V à rifiez ensuite si vos revenus varient",
+          "original": "V à rifiez ensuite si vos revenus varient",
+          "corrected": "Vérifiez ensuite si vos revenus varient",
+          "reason": "fragment cassé, correction locale",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "compl à te pour approcher",
+          "original": "compl à te pour approcher",
+          "corrected": "complète pour approcher",
+          "reason": "fragment cassé",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "À loyer comparable, une grande ville",
+          "original": "À loyer comparable, une grande ville",
+          "corrected": "Avec un loyer comparable, une grande ville",
+          "reason": "préposition incorrecte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "diff à rents selon les revenus effectivement retenus",
+          "original": "diff à rents selon les revenus effectivement retenus",
+          "corrected": "différents selon les revenus effectivement retenus",
+          "reason": "erreur de mot",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la fiche service-public.fr Comparer plusieurs scénarios",
+          "original": "Voir la fiche service-public.fr Comparer plusieurs scénarios",
+          "corrected": "Voir la fiche service-public.fr. Comparer plusieurs scénarios",
+          "reason": "punctuation manquante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-toulouse\\index.html",
+      "url": "/pages/apl/apl-celibataire-toulouse",
+      "summary": "Corrections strictement localisées pour des fautes évidentes.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espaces avant ponctuation; corriger la ponctuation française.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "vérifier la régularité des revenus",
+          "original": "vérifier la régularité des revenus si vous êtes en mission ou en alternance.",
+          "corrected": "Vérifier la régularité des revenus si vous êtes en mission ou en alternance.",
+          "reason": "majuscules en début de phrase après un point.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl toulouse célibataire",
+          "original": "apl toulouse célibataire",
+          "corrected": "APL Toulouse célibataire",
+          "reason": "correction de l’abréviation APL et du nom propre, correction stricte locale.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-avec-enfant\\index.html",
+      "url": "/pages/apl/apl-chomage-avec-enfant",
+      "summary": "Corrections sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "ponctuation manquante entraînant une phrase cassée",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Aller plus loin Si votre situation ressemble à ce scénario, utilisez le simulateur complet pour tester plusieurs paramètres : loyer, revenus, zone géographique et composition du foyer.",
+          "original": "Aller plus loin Si votre situation ressemble à ce scénario, utilisez le simulateur complet pour tester plusieurs paramètres : loyer, revenus, zone géographique et composition du foyer.",
+          "corrected": "Aller plus loin. Si votre situation ressemble à ce scénario, utilisez le simulateur complet pour tester plusieurs paramètres : loyer, revenus, zone géographique et composition du foyer.",
+          "reason": "fusion de phrase manquante et ponctuation/structure",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Corrections strictement localisées et sûres à apporter au texte fourni.",
+      "issues": [
+        {
+          "excerpt": "apl chômage loyer moyen",
+          "original": "apl chômage loyer moyen",
+          "corrected": "APL chômage loyer moyen",
+          "reason": "correction de la capitalisation de l'acronyme APL",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "liee a la",
+          "original": "liee a la",
+          "corrected": "liée à la",
+          "reason": "accent et préposition manquante corrigés simultanément",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Corrigé une faute d’orthographe dans une phrase.",
+      "issues": [
+        {
+          "excerpt": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "original": "Comparer avec une reprise d'emploi partielle si vous envisagéz un retour rapide au travail.",
+          "corrected": "Comparer avec une reprise d'emploi partielle si vous envisagez un retour rapide au travail.",
+          "reason": "orthographe verbale: conjuguaison incorrecte du verbe envisager à la deuxième personne du pluriel.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-colocation-jeune-actif\\index.html",
+      "url": "/pages/apl/apl-colocation-jeune-actif",
+      "summary": "Corrections ciblées sur des accents et la ponctuation pour des passages évidents.",
+      "issues": [
+        {
+          "excerpt": "vérifier la quote-part de loyer mentionnee au bail",
+          "original": "vérifier la quote-part de loyer mentionnee au bail",
+          "corrected": "vérifier la quote-part de loyer mentionnée au bail",
+          "reason": "accent manquant sur 'mentionnée'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant le point final à corriger",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "redui",
+          "original": "redui",
+          "corrected": "réduit",
+          "reason": "accent sur le verbe 'réduit'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-colocation\\index.html",
+      "url": "/pages/apl/apl-colocation",
+      "summary": "Corrections sûres détectées sur des passages erronés d’encodage/ponctuation concernant le nom de domaine. Aucune reformulation ou ajout de contenu.",
+      "issues": [
+        {
+          "excerpt": "LesCalculateurs. fr",
+          "original": "LesCalculateurs. fr",
+          "corrected": "LesCalculateurs.fr",
+          "reason": "ponctuation/espaces dans un nom de domaine (texte séparé par espace incorrect)",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "ponctuation/espaces dans un nom de domaine (texte séparé par espace incorrect)",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-loyer-eleve\\index.html",
+      "url": "/pages/apl/apl-couple-loyer-eleve",
+      "summary": "Corrections sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Cette page r à pond a une question r à currente de budget logement en zone tendue pour les couples sans enfant.",
+          "original": "Cette page r à pond a une question r à currente de budget logement en zone tendue pour les couples sans enfant.",
+          "corrected": "Cette page répond à une question relative au budget logement en zone tendue pour les couples sans enfant.",
+          "reason": "Texte cassé/encodage typographique qui rend la phrase illisible.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-lyon\\index.html",
+      "url": "/pages/apl/apl-couple-lyon",
+      "summary": "Corrections sures et localisées sur l’orthographe/punctuation et quelques accents. Pas de réécriture de phrases ni améliorations de style.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant la ponctuation finale",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "logement dans le parc priv à.",
+          "original": "logement dans le parc priv à.",
+          "corrected": "logement dans le parc privé.",
+          "reason": "orthographe du mot privé",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "vérifier si les deux revenus sont stables sur la période retenue.",
+          "original": "vérifier si les deux revenus sont stables sur la période retenue.",
+          "corrected": "Vérifier si les deux revenus sont stables sur la période retenue.",
+          "reason": "majuscule au début de la phrase",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "manque de ponctuation entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "l Île-de-France",
+          "original": "l Île-de-France",
+          "corrected": "l'Île-de-France",
+          "reason": "orthographe et élision manquante",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "...APL pour un couple à Lyon : estimation 2026 Simulation type APL pour un couple à Lyon avec logement dans le parc privé.",
+          "original": "...APL pour un couple à Lyon : estimation 2026 Simulation type APL pour un couple à Lyon avec logement dans le parc priv à.",
+          "corrected": "...APL pour un couple à Lyon : estimation 2026 Simulation type APL pour un couple à Lyon avec logement dans le parc privé.",
+          "reason": "correction de l’orthographe partielle et de la troncature",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl couple lyon",
+          "original": "apl couple lyon",
+          "corrected": "APL couple Lyon",
+          "reason": "uniformiser les écritures et capitalisation",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-paris\\index.html",
+      "url": "/pages/apl/apl-couple-paris",
+      "summary": "Corrections brèves et sûres identifiées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "intermediaires",
+          "original": "intermediaires",
+          "corrected": "intermédiaires",
+          "reason": " accent manquant sur le i : orthographe correcte intermédiaires",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ne remplace pas Le",
+          "original": "ne remplace pas Le",
+          "corrected": "ne remplace pas. Le",
+          "reason": " ponctuation manquante entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "L'objectif est de rendre l'estimation",
+          "original": "L'objectif est de rendre l'estimation",
+          "corrected": "L'objectif est de rendre l'estimation.",
+          "reason": " ajout d'une ponctuation finale",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "CAF Voir la fiche",
+          "original": "CAF Voir la fiche",
+          "corrected": "CAF. Voir la fiche",
+          "reason": " ponctuation séparant deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-petit-revenu\\index.html",
+      "url": "/pages/apl/apl-couple-petit-revenu",
+      "summary": "Corrections sures détectées (correction locale unique).",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "espace inutilo avant le point",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Correction unique et sûre d'un mot mal orthographié.",
+      "issues": [
+        {
+          "excerpt": "Oui, le plafond different ?",
+          "original": "Oui, le plafond different ?",
+          "corrected": "Oui, le plafond différent ?",
+          "reason": "Erreur d'orthographe avec accent manquant sur 'différent'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-un-enfant-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-couple-un-enfant-loyer-moyen",
+      "summary": "Corrections typographiques évidentes uniquement (espaces avant les deux-points, ponctuation, majuscules/minuscules et encodage)",
+      "issues": [
+        {
+          "excerpt": "APL couple avec 1 enfant et loyer moyen : estimation 2026 Estimation indicative.",
+          "original": "APL couple avec 1 enfant et loyer moyen : estimation 2026 Estimation indicative.",
+          "corrected": "APL couple avec 1 enfant et loyer moyen: estimation 2026. Estimation indicative.",
+          "reason": "Espace avant les deux-points et ponctuation manquante avant la fin de la phrase.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "Manque de ponctuation entre deux fragments de phrase.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Famille en Île-de-France apl famille ile de france",
+          "original": "Famille en Île-de-France apl famille ile de france",
+          "corrected": "Famille en Île-de-France apl famille Île-de-France",
+          "reason": "Uniformiser la référence géographique et corriger l encodage/majuscule.",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation rapide Estimation indicative autour de ~87 € par mois.",
+          "original": "Estimation rapide Estimation indicative autour de ~87 € par mois.",
+          "corrected": "Estimation rapide. Estimation indicative autour de ~87 € par mois.",
+          "reason": "Ponctuation manquante entre deux énoncés.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-un-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-un-enfant",
+      "summary": "Corrections sûres détectées dans le texte fourni (corrections locales, sans réécriture complète).",
+      "issues": [
+        {
+          "excerpt": "Résultat estimé ~72 € / mois",
+          "original": "Résultat estimé ~72 € / mois",
+          "corrected": "Résultat estimé ~72 € par mois",
+          "reason": "ponctuation/orthographe: remplacer le séparateur ambigu par l’expression standard \"par mois\"",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl famille ile de france ~82 €",
+          "original": "apl famille ile de france ~82 €",
+          "corrected": "apl famille île-de-France ~82 €",
+          "reason": "orthographe/antislash: corriger les noms de lieu et liaisons usuelles (île-de-France)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "determinant",
+          "original": "determinant",
+          "corrected": "déterminant",
+          "reason": "accent manquant sur un mot fréquent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-colocation\\index.html",
+      "url": "/pages/apl/apl-etudiant-colocation",
+      "summary": "Corrections sûres principalement liées à des accents manquants, fautes d’orthographe ou d’accord et erreurs typographiques évidentes dans des fragments courts. Pas de réécriture de phrases complètes ni de corrections ambiguës.",
+      "issues": [
+        {
+          "excerpt": "l ecart",
+          "original": "l ecart",
+          "corrected": "l'écart",
+          "reason": "accent manquant",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "examinee",
+          "original": "examinee",
+          "corrected": "examinée",
+          "reason": "erreur d’orthographe/accent",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "calculee",
+          "original": "calculee",
+          "corrected": "calculée",
+          "reason": "erreur d’orthographe/accent",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "en general",
+          "original": "en general",
+          "corrected": "en général",
+          "reason": "accent/orthographe",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "rédui t-elle",
+          "original": "redui t-elle",
+          "corrected": "réduite-t-elle",
+          "reason": "accent et trait d’union manquants",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ecart",
+          "original": "ecart",
+          "corrected": "écart",
+          "reason": "accent manquant",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-lyon\\index.html",
+      "url": "/pages/apl/apl-etudiant-lyon",
+      "summary": "Corrections ciblées et sûres sur des erreurs évidentes de français dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espacement avant la ponctuation finale non conforme.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "méthode L'objectif",
+          "original": "méthode L'objectif",
+          "corrected": "méthode. L'objectif",
+          "reason": "manque de ponctuation entre deux propositions; correction locale sans toucher au sens.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "r à gles",
+          "original": "r à gles",
+          "corrected": "règles",
+          "reason": "correction d'orthographe pour le mot 'règles'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl étudiant lyon",
+          "original": "apl étudiant lyon",
+          "corrected": "APL étudiant Lyon",
+          "reason": "correction de la capitalisation et de la majuscule propre pour 'APL' et 'Lyon'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Questions fréquentes L'APL",
+          "original": "Questions fréquentes L'APL",
+          "corrected": "Questions fréquentes. L'APL",
+          "reason": "ajout d'une ponctuation manquante et séparation des titres.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl célibataire lyon",
+          "original": "apl célibataire lyon",
+          "corrected": "APL célibataire Lyon",
+          "reason": "correction de la capitalisation et de la majuscule propre pour 'APL' et 'Lyon'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl étudiant colocation",
+          "original": "apl étudiant colocation",
+          "corrected": "APL étudiant colocation",
+          "reason": "correction de la capitalisation.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl étudiant petit loyer",
+          "original": "apl étudiant petit loyer",
+          "corrected": "APL étudiant petit loyer",
+          "reason": "correction de la capitalisation.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl étudiant studio",
+          "original": "apl étudiant studio",
+          "corrected": "APL étudiant studio",
+          "reason": "correction de la capitalisation.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-paris\\index.html",
+      "url": "/pages/apl/apl-etudiant-paris",
+      "summary": "Corrections évidentes de typographie et d’encodage localisées sur deux passages.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant le point à la fin de la phrase.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulation compl à te",
+          "original": "simulation compl à te.",
+          "corrected": "simulation complète",
+          "reason": "erreur d’orthographe et séparation involontaire des syllabes dans « complète ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-petit-loyer\\index.html",
+      "url": "/pages/apl/apl-etudiant-petit-loyer",
+      "summary": "Corrections ciblées et sûres sur la ponctuation et les séparations de phrases.",
+      "issues": [
+        {
+          "excerpt": "Estimation rapide Estimation indicative autour de ~320 € par mois.",
+          "original": "Estimation rapide Estimation indicative autour de ~320 € par mois.",
+          "corrected": "Estimation rapide. Estimation indicative autour de ~320 € par mois.",
+          "reason": "Ponctuation manquante entre deux intitulés/phrases.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Hypothèses importantes Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.",
+          "original": "Hypothèses importantes Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.",
+          "corrected": "Hypothèses importantes. Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Questions fréquentes Un petit loyer réduit-il forcément l'APL d'un étudiant ?",
+          "original": "Questions fréquentes Un petit loyer réduit-il forcément l'APL d'un étudiant ?",
+          "corrected": "Questions fréquentes : Un petit loyer réduit-il forcément l'APL d'un étudiant ?",
+          "reason": "Ajout de deux points après le titre; ponctuation plus claire.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-studio\\index.html",
+      "url": "/pages/apl/apl-etudiant-studio",
+      "summary": "Correction unique d’un espace avant une ponctuation.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espacement incorrect avant le point final.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-toulouse\\index.html",
+      "url": "/pages/apl/apl-etudiant-toulouse",
+      "summary": "Corrections obligatoires et sécurisées de ponctuation et de petits encodages dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "€ / mois",
+          "original": "€ / mois",
+          "corrected": "€ par mois",
+          "reason": "ponctuation/formatage courant en français pour indiquer la périodicité",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "méthode L'objectif",
+          "original": "méthode L'objectif",
+          "corrected": "méthode. L'objectif",
+          "reason": "corrige une ponctuation manquante qui change la structure des phrases",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "ajoute une ponctuation séparant deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ouvrir le simulateur APL complet Voir les hypothèses",
+          "original": "Ouvrir le simulateur APL complet Voir les hypothèses",
+          "corrected": "Ouvrir le simulateur APL complet. Voir les hypothèses",
+          "reason": "ajoute une séparation entre deux phrases",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-deux-enfants-province\\index.html",
+      "url": "/pages/apl/apl-famille-deux-enfants-province",
+      "summary": "Correction proposée sur un fragment mal écrit.",
+      "issues": [
+        {
+          "excerpt": "Tester une variation de revenu si un parent reprend'une activité.",
+          "original": "Tester une variation de revenu si un parent reprend'une activité.",
+          "corrected": "Tester une variation de revenu si un parent reprend une activité.",
+          "reason": "Correction de l'apostrophe incorrecte dans 'reprend'une' qui devrait être 'reprend une'.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-idf\\index.html",
+      "url": "/pages/apl/apl-famille-idf",
+      "summary": "Corrections ciblées sur des fautes évidentes d’orthographe et d’encodage dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "budgetaire",
+          "original": "budgetaire",
+          "corrected": "budgétaire",
+          "reason": "mot incorrect; forme correcte avec accent sur é.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "zone ou le reste",
+          "original": "zone ou le reste",
+          "corrected": "zone où le reste",
+          "reason": "erreur d’accent et de liaison; correction standard.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "r à pond a une recherche",
+          "original": "r à pond a une recherche",
+          "corrected": "répond à une recherche",
+          "reason": "correction d’une phrase cassée.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul",
+          "original": "Sur quoi l'estimation est basée Le calcul",
+          "corrected": "Sur quoi l'estimation est basée : Le calcul",
+          "reason": "ponctuation manquante entre clause et énoncé suivant.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "g à n à ralement",
+          "original": "g à n à ralement",
+          "corrected": "généralement",
+          "reason": "fragment cassé; correction évidente.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-trois-enfants\\index.html",
+      "url": "/pages/apl/apl-famille-trois-enfants",
+      "summary": "Corrections strictement locales pour des erreurs évidentes de français (ponctuation et majuscules) détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Type de logement Location",
+          "original": "Type de logement Location",
+          "corrected": "Type de logement : Location",
+          "reason": "manque de deux-points séparant le titre et le contenu",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Hypothèses importantes Cette estimation repose",
+          "original": "Hypothèses importantes Cette estimation repose",
+          "corrected": "Hypothèses importantes : Cette estimation repose",
+          "reason": "manque de deux-points",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sur quoi l'estimation est basée Le calcul tient compte",
+          "original": "Sur quoi l'estimation est basée Le calcul tient compte",
+          "corrected": "Sur quoi l'estimation est basée : Le calcul tient compte",
+          "reason": "manque de deux-points",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "original": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "corrected": "Ce que cette page ne remplace pas : Le résultat reste indicatif.",
+          "reason": "manque de deux-points",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif",
+          "original": "Pourquoi nous montrons la méthode L'objectif",
+          "corrected": "Pourquoi nous montrons la méthode : L'objectif",
+          "reason": "manque de deux-points",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Comparer plusieurs scénarios Ce tableau",
+          "original": "Comparer plusieurs scénarios Ce tableau",
+          "corrected": "Comparer plusieurs scénarios : Ce tableau",
+          "reason": "manque de deux-points",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl 3 enfants ~87 €",
+          "original": "apl 3 enfants ~87 €",
+          "corrected": "APL 3 enfants ~87 €",
+          "reason": "utilisation incorrecte de la majuscule",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl couple 1 enfant ~72 €",
+          "original": "apl couple 1 enfant ~72 €",
+          "corrected": "APL couple 1 enfant ~72 €",
+          "reason": "utilisation incorrecte de la majuscule",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl couple 1 enfant et loyer moyen : estimation 2026",
+          "original": "apl couple 1 enfant et loyer moyen : estimation 2026",
+          "corrected": "APL couple 1 enfant et loyer moyen : estimation 2026",
+          "reason": "utilisation incorrecte de la majuscule",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl famille 2 enfants en province : estimation 2026",
+          "original": "apl famille 2 enfants en province : estimation 2026",
+          "corrected": "APL famille 2 enfants en province : estimation 2026",
+          "reason": "utilisation incorrecte de la majuscule",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl couple lyon APL pour un couple à Lyon : estimation 2026",
+          "original": "apl couple lyon APL pour un couple à Lyon : estimation 2026",
+          "corrected": "APL couple Lyon APL pour un couple à Lyon : estimation 2026",
+          "reason": "utilisation incorrecte de la majuscule",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-fin-de-droits-chomage\\index.html",
+      "url": "/pages/apl/apl-fin-de-droits-chomage",
+      "summary": "Corrections d'orthographe locale uniquement. Une erreur identifiée.",
+      "issues": [
+        {
+          "excerpt": "... veut estimer rapidement si l'APL peut amortir ...",
+          "original": "... veulent estimér rapidement si l'APL peut amortir ...",
+          "corrected": "... veulent estimer rapidement si l'APL peut amortir ...",
+          "reason": "erreur d'infinitif : estimér → estimer",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-fin-de-droits-personne-seule\\index.html",
+      "url": "/pages/apl/apl-fin-de-droits-personne-seule",
+      "summary": "Corrections mineures et sûres sur des erreurs évidentes de français (orthographe de verbe et ponctuation).",
+      "issues": [
+        {
+          "excerpt": "vont estimer ce que l'APL peut encore couvrir",
+          "original": "veulent estimér ce que l'APL peut encore couvrir",
+          "corrected": "veulent estimer ce que l'APL peut encore couvrir",
+          "reason": "erreur de conjugaison/orthographe du verbe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "et veulent estimér ce que l'APL peut encore",
+          "original": "et veulent estimér ce que l'APL peut encore couvrir",
+          "corrected": "et veulent estimer ce que l'APL peut encore couvrir",
+          "reason": "erreur de conjugaison/orthographe du verbe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "sur caf.fr .",
+          "original": "sur caf.fr .",
+          "corrected": "sur caf.fr.",
+          "reason": "espace avant la ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-hlm-petit-revenu\\index.html",
+      "url": "/pages/apl/apl-hlm-petit-revenu",
+      "summary": "Corrections localisées et sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espacement inadéquat avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Dans le passage « Comparer avec un logement priv à au même niveau de loyer. »",
+          "original": "Comparer avec un logement priv à au même niveau de loyer.",
+          "corrected": "Comparer avec un logement privé au même niveau de loyer.",
+          "reason": "Mot « priv » manquant d’accent et omission de l’article/préposition correcte.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "« ~208 € / mois »",
+          "original": "~208 € / mois",
+          "corrected": "~208 € par mois",
+          "reason": "Expression incorrecte de la périodicité; remplacer par « par mois ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-jeune-actif-premier-logement\\index.html",
+      "url": "/pages/apl/apl-jeune-actif-premier-logement",
+      "summary": "Corrections sures de français présentes dans le texte, uniquement des remplacements locaux et littéraux.",
+      "issues": [
+        {
+          "excerpt": "requ à te de d à but de parcours locatif",
+          "original": "requ à te de d à but de parcours locatif",
+          "corrected": "requête à but de parcours locatif",
+          "reason": "orthographe et acentuation incorrectes dans le mot 'requête' et phrase mal formulée",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à e dans le logement.",
+          "original": "à e dans le logement.",
+          "corrected": "entrée dans le logement.",
+          "reason": "correction d'une abréviation/texte cassé 'entrée' manquant et accord contexte",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Tester un scénario avec salaire d essai ou revenu variable.",
+          "original": "Tester un scénario avec salaire d essai ou revenu variable.",
+          "corrected": "Tester un scénario avec salaire d'essai ou revenu variable.",
+          "reason": "espace inutile dans 'd essai' corrige en 'd'essai'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d à but de parcours locatif",
+          "original": "d à but de parcours locatif",
+          "corrected": "à but de parcours locatif",
+          "reason": "erreur de préposition/fragment cassé à corriger localement",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-500-revenu-900\\index.html",
+      "url": "/pages/apl/apl-loyer-500-revenu-900",
+      "summary": "Corrections proposées pour des erreurs évidentes de français dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "budgetaire",
+          "original": "budgetaire",
+          "corrected": "budgétaire",
+          "reason": "orthographe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "scénario budgetaire",
+          "original": "scénario budgetaire",
+          "corrected": "scénario budgétaire",
+          "reason": "orthographe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation 2026 Estimation indicative.",
+          "original": "Estimation 2026 Estimation indicative.",
+          "corrected": "Estimation 2026. Estimation indicative.",
+          "reason": "ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~302 € / mois Montant indicatif calculé",
+          "original": "~302 € / mois Montant indicatif calculé",
+          "corrected": "~302 € par mois Montant indicatif calculé",
+          "reason": "ponctuation/format",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-800-revenu-1300\\index.html",
+      "url": "/pages/apl/apl-loyer-800-revenu-1300",
+      "summary": "Corrections ciblées et sûres pour améliorer le texte sans changer le sens.",
+      "issues": [
+        {
+          "excerpt": "APL avec ~1 300 EUR de revenus et ~800 EUR de loyer : estimation 2026 Estimation indicative.",
+          "original": "APL avec ~1 300 EUR de revenus et ~800 EUR de loyer : estimation 2026 Estimation indicative.",
+          "corrected": "APL avec ~1 300 EUR de revenus et ~800 EUR de loyer : estimation 2026. Estimation indicative.",
+          "reason": "Ponctuation manquante entre deux phrases.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cette page r à pond a une vraie question de locataire : savoir si un loyer important laisse encore une aide utile.",
+          "original": "Cette page r à pond a une vraie question de locataire : savoir si un loyer important laisse encore une aide utile.",
+          "corrected": "Cette page répond à une vraie question de locataire : savoir si un loyer important laisse encore une aide utile.",
+          "reason": "Garbled phrase dû à encodage; correction locale et exacte.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Souvent oui en th à orie, mais le plafond de loyer limite vite le gain.",
+          "original": "Souvent oui en th à orie, mais le plafond de loyer limite vite le gain.",
+          "corrected": "Souvent oui en théorie, mais le plafond de loyer limite vite le gain.",
+          "reason": "Mot mal encodé; correction orthographique et accentuée.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Hypothèses importantes Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.",
+          "original": "Hypothèses importantes Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.",
+          "corrected": "Hypothèses importantes. Cette estimation repose sur un scénario simplifié et sur des hypothèses moyennes.",
+          "reason": "Punctuation manquante entre deux segments; correction locale et sûre.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-deux-enfants\\index.html",
+      "url": "/pages/apl/apl-parent-isole-deux-enfants",
+      "summary": "Corrections sûres et locales sur des erreurs typographiques et ponctuation évidentes.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "espace avant le point final après caf.fr.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace superflu avant le point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~267 € / mois",
+          "original": "~267 € / mois",
+          "corrected": "~267 €/mois",
+          "reason": "correction typographique de l’espace autour de la barre oblique pour une unité monétaire standard.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "enfants Cette page",
+          "original": "enfants Cette page",
+          "corrected": "enfants. Cette page",
+          "reason": "ajout d’un point pour séparer les phrases.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Zone Province Type de logement",
+          "original": "Zone Province Type de logement",
+          "corrected": "Zone Province. Type de logement",
+          "reason": "séparation entre deux segments par un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Hypothèses importantes Cette estimation",
+          "original": "Hypothèses importantes Cette estimation",
+          "corrected": "Hypothèses importantes. Cette estimation",
+          "reason": "séparation entre deux phrases par un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "vérifier si les enfants sont tous considérés à charge.",
+          "original": "vérifier si les enfants sont tous considérés à charge.",
+          "corrected": "Vérifier si les enfants sont tous considérés à charge.",
+          "reason": "mise en majuscule en début de phrase.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Cette page existe Cette page répond",
+          "original": "Cette page existe Cette page répond",
+          "corrected": "Cette page existe. Cette page répond",
+          "reason": "séparation entre deux phrases par un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Questions fréquentes L'APL monte-t-elle",
+          "original": "Questions fréquentes L'APL monte-t-elle",
+          "corrected": "Questions fréquentes. L'APL monte-t-elle",
+          "reason": "séparation entre deux phrases par un point.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-paris\\index.html",
+      "url": "/pages/apl/apl-parent-isole-paris",
+      "summary": "Corrections sûres et localisées détectées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "g à olocalisation forte",
+          "original": "g à olocalisation forte",
+          "corrected": "géolocalisation forte",
+          "reason": "erreur d'orthographe/formation du terme",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "bien sup à rieur au plafond retenu",
+          "original": "bien sup à rieur au plafond retenu",
+          "corrected": "bien supérieur au plafond retenu",
+          "reason": "erreur d'orthographe et de formulation",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "ponctuation incorrecte: espace avant le point",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-un-enfant\\index.html",
+      "url": "/pages/apl/apl-parent-isole-un-enfant",
+      "summary": "Corrections sures identifiées (max. 4) pour des fragments clairement erronés.",
+      "issues": [
+        {
+          "excerpt": "concr à te",
+          "original": "concr à te",
+          "corrected": "concrète",
+          "reason": "manque d'accent et d'orthographe correcte",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "r à ponse",
+          "original": "r à ponse",
+          "corrected": "réponse",
+          "reason": "erreur d'orthographe/encodage",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "intégrer a la vérification finale",
+          "original": "intégrer a la vérification finale",
+          "corrected": "intégrer à la vérification finale",
+          "reason": "erreur d'accentuation sur la préposition",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant le point final; correction typographique évidente",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic\\index.html",
+      "url": "/pages/apl/apl-personne-seule-smic",
+      "summary": "Corrections sûres détectées (français): corrections locales et évidentes uniquement, sans réécriture majeure.",
+      "issues": [
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Manque de ponctuation entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espace avant le point inutile",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "Manque de ponctuation entre deux phrases",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-petite-surface-paris\\index.html",
+      "url": "/pages/apl/apl-petite-surface-paris",
+      "summary": "Corrections simples d'orthographe et d'accent localisées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "très fr à quentes",
+          "original": "très fr à quentes",
+          "corrected": "très fréquentes",
+          "reason": "orthographe/accent",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "renseign à hors charges.",
+          "original": "renseign à hors charges.",
+          "corrected": "renseigné hors charges.",
+          "reason": "orthographe/accent",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caract à ristiques",
+          "original": "caract à ristiques",
+          "corrected": "caractéristiques",
+          "reason": "orthographe",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "reste toutefois limite par le plafond",
+          "original": "reste toutefois limite par le plafond",
+          "corrected": "reste toutefois limité par le plafond",
+          "reason": "grammaire",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit\\index.html",
+      "url": "/pages/apl/apl-proprietaire-ai-je-droit",
+      "summary": "Corrections sûres de formes d’URL mal encodées/espacées.",
+      "issues": [
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "Espacement incorrect avant le domaine et problème d'encodage typographique potentiellement nuisible pour le lien.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Retour au pilier : Simulateur APL 2026 © 2026 LesCalculateurs. fr",
+          "original": "Retour au pilier : Simulateur APL 2026 © 2026 LesCalculateurs. fr",
+          "corrected": "Retour au pilier : Simulateur APL 2026 © 2026 LesCalculateurs.fr",
+          "reason": "Même correction d’encodage/espacement du domaine dans une autre occurrence.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-refusee-que-faire\\index.html",
+      "url": "/pages/apl/apl-refusee-que-faire",
+      "summary": "Corrections mineures et sûres sur la ponctuation et l’orthographe de fragments locaux.",
+      "issues": [
+        {
+          "excerpt": "Réponse rapide Un refus",
+          "original": "Réponse rapide Un refus",
+          "corrected": "Réponse rapide : Un refus",
+          "reason": "Ajout de deux-points pour séparer l’intitulé de l’énoncé suivant.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Aller plus loin Pour une estimation",
+          "original": "Aller plus loin Pour une estimation chiffrée adaptée à votre situation, passez par le pilier.",
+          "corrected": "Aller plus loin : Pour une estimation chiffrée adaptée à votre situation, passez par le pilier.",
+          "reason": "Ponctuation manquante après « Aller plus loin ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "LesCalculateurs. fr",
+          "original": "LesCalculateurs. fr",
+          "corrected": "LesCalculateurs.fr",
+          "reason": "Espacement incorrect autour du point; corriger en un seul mot sans espace.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "Espacement entre le point et le « fr » corrigé pour former une URL correcte.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi-loyer-eleve\\index.html",
+      "url": "/pages/apl/apl-reprise-emploi-loyer-eleve",
+      "summary": "Corrections sures de français identifiées dans le texte fourni (remplacements locaux et littéraux, sans réécriture complète).",
+      "issues": [
+        {
+          "excerpt": "Personne qui reprend'un emploi",
+          "original": "Personne qui reprend'un emploi",
+          "corrected": "Personne qui reprend un emploi",
+          "reason": "apostrophe mal placée dans une expression courante",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl apres une reprise d'emploi",
+          "original": "apl apres une reprise d'emploi",
+          "corrected": "APL après une reprise d'emploi",
+          "reason": "erreur d'accentuation/majuscule dans le sigle et besoin d'accent sur 'après'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl reprise emploi loyer élevé ~168 €",
+          "original": "apl reprise emploi loyer élevé ~168 €",
+          "corrected": "APL reprise emploi loyer élevé ~168 €",
+          "reason": "majuscule manquante sur le sigle APL",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimation 2026 Exemple APL",
+          "original": "estimation 2026 Exemple APL",
+          "corrected": "estimation 2026. Exemple APL",
+          "reason": "ponctuation manquante entre deux énoncés",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Célibataire à Lyon apl célibataire lyon",
+          "original": "Célibataire à Lyon apl célibataire lyon",
+          "corrected": "Célibataire à Lyon APL célibataire lyon",
+          "reason": "majuscule manquante sur sigle APL et cohérence dans l’énoncé",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation",
+          "reason": "accentuation et ponctuation manquante entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi-personne-seule\\index.html",
+      "url": "/pages/apl/apl-reprise-emploi-personne-seule",
+      "summary": "Corrections ponctuelles uniquement sur des fragments clairement fautifs ou typographiques, sans toucher au sens ni au contenu.",
+      "issues": [
+        {
+          "excerpt": "APL en reprise d'emploi pour une personne seule : estimation 2026 Estimation indicative.",
+          "original": "APL en reprise d'emploi pour une personne seule : estimation 2026 Estimation indicative.",
+          "corrected": "APL en reprise d'emploi pour une personne seule : estimation 2026. Estimation indicative.",
+          "reason": "Manque de pointage entre deux phrases.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "original": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "corrected": "Ce que cette page ne remplace pas. Le résultat reste indicatif.",
+          "reason": "Punctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre...",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Fausse liaison entre deux propositions; ajout d'une ponctuation et séparation.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "Manque de ponctuation entre deux segments.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Zone Province Type de logement Location",
+          "original": "Zone Province Type de logement Location",
+          "corrected": "Zone: Province Type de logement Location",
+          "reason": "Ajout d'un séparateur pour clarifier le champ; correction mineure de ponctuation.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espace inutile avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "url": "/pages/apl/apl-reprise-emploi",
+      "summary": "Corrections simples et locales détectées dans le texte (accentuation, apostrophes, espacement autour des points).",
+      "issues": [
+        {
+          "excerpt": "APL apres une reprise d'emploi",
+          "original": "APL apres une reprise d'emploi",
+          "corrected": "APL après une reprise d'emploi",
+          "reason": "Accents manquants sur 'après'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espacement avant le point final à corriger",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Exemple d impact",
+          "original": "Exemple d impact",
+          "corrected": "Exemple d'impact",
+          "reason": "Apostrophe manquante dans 'd'impact'",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "reprise'un emploi",
+          "original": "reprise'un emploi",
+          "corrected": "reprise un emploi",
+          "reason": "Apostrophe inutile entre reprise et un",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "l avant et l après reprise d'activité.",
+          "original": "l avant et l après reprise d'activité.",
+          "corrected": "l'avant et l'après reprise d'activité.",
+          "reason": "Corrections d'apostrophes et de liaisons typographiques",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "à terme",
+          "original": "a terme",
+          "corrected": "à terme",
+          "reason": "Accent sur 'à' manquant",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-avec-enfant\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-avec-enfant",
+      "summary": "Corrections uniquement liées à des erreurs évidentes de français dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "apl sans revenu avec enfant",
+          "original": "apl sans revenu avec enfant",
+          "corrected": "APL sans revenu avec enfant",
+          "reason": "erreur de casse dans un libellé technique",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl fin de droits chômage",
+          "original": "apl fin de droits chômage",
+          "corrected": "APL fin de droits chômage",
+          "reason": "erreur de casse dans un libellé technique",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-couple-sans-enfant",
+      "summary": "Une correction sûre identifiée dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Tester aussi le RSA couple si le foyer n'a plus aucune ressource.",
+          "original": "Tester aussi le RSA couple si le foyer n'a plus aucune ressource.",
+          "corrected": "Tester aussi le RSA couple si le foyer n'a plus aucune ressources.",
+          "reason": "erreur d'accord/grammaire (pluriel du mot 'ressource')",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-parent-isole\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-parent-isole",
+      "summary": "Corrections sûres identifiées sur des fragments courts qui ne modifient pas le sens.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-personne-seule\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-personne-seule",
+      "summary": "Corrections sûres de français uniquement (remplacements locaux et littéraux).",
+      "issues": [
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "CAF Voir la fiche service-public.fr",
+          "original": "CAF Voir la fiche service-public.fr",
+          "corrected": "CAF. Voir la fiche service-public.fr",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apl sans revenu personne seule",
+          "original": "apl sans revenu personne seule",
+          "corrected": "APL sans revenu personne seule",
+          "reason": "Erreur de casse du sigle APL.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-smic-couple-sans-enfant",
+      "summary": "Corrections de ponctuation mineures identifiables dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espacement avant la ponctuation finale (espace avant le point).",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "Manque de ponctuation entre deux propositions; amélioration locale sans changer le sens.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr.",
+          "reason": "Manque de ponctuation entre deux énoncés successifs.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-seul\\index.html",
+      "url": "/pages/apl/apl-smic-seul",
+      "summary": "Corrections mineures de ponctuation et d'encodage uniquement, sans modification de sens.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "original": "Ce que cette page ne remplace pas Le résultat reste indicatif.",
+          "corrected": "Ce que cette page ne remplace pas : Le résultat reste indicatif.",
+          "reason": "ajout de ponctuation manquante (deux phrases séparées)",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Consulter notre méthodologie Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Consulter notre méthodologie Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Consulter notre méthodologie. Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "séparer les phrases par des points pour clarifier",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi cette page existe Cette page répond à l'intention de recherche apl smic seul.",
+          "original": "Pourquoi cette page existe Cette page répond à l'intention de recherche apl smic seul.",
+          "corrected": "Pourquoi cette page existe : Cette page répond à l'intention de recherche apl smic seul.",
+          "reason": "ajout de ponctuation pour clarifier",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "original": "Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "corrected": "Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.",
+          "reason": "séparer les phrases pour clarifier",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "séparer les phrases pour clarifier",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\comment-savoir-si-un-logement-est-eligible-aux-apl\\index.html",
+      "url": "/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl",
+      "summary": "Corrections sûres localisées et mineures de ponctuation uniquement.",
+      "issues": [
+        {
+          "excerpt": "Réponse rapide Un logement est éligible",
+          "original": "Réponse rapide Un logement est éligible",
+          "corrected": "Réponse rapide : Un logement est éligible",
+          "reason": "Ponctuation manquante après l’expression 'Réponse rapide'",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce qu’il faut vérifier logement occupé à titre de résidence principale",
+          "original": "Ce qu’il faut vérifier logement occupé à titre de résidence principale",
+          "corrected": "Ce qu’il faut vérifier : logement occupé à titre de résidence principale",
+          "reason": "Ponctuation manquante après l’expression introductive",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\index.html",
+      "url": "/pages/apl",
+      "summary": "Corrections sûres de fautes évidentes dans le texte fourni, principalement des accents manquants et des espaces/ponts incorrects.",
+      "issues": [
+        {
+          "excerpt": "personnalisee",
+          "original": "personnalisee",
+          "corrected": "personnalisée",
+          "reason": "accent manquant sur le e final",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "base sur",
+          "original": "base sur",
+          "corrected": "basée sur",
+          "reason": "erreur grammaticale et accent manquant",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "baremes",
+          "original": "baremes",
+          "corrected": "barèmes",
+          "reason": "accent",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimér",
+          "original": "estimér",
+          "corrected": "estimer",
+          "reason": "accent superflu sur le verbe",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ressources . Le",
+          "original": "ressources . Le",
+          "corrected": "ressources. Le",
+          "reason": "espace avant le point",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf. fr , service-public. fr",
+          "original": "caf. fr , service-public. fr",
+          "corrected": "caf.fr, service-public.fr",
+          "reason": "erreurs d'encodage et espaces incorrects autour des points",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\quelles-ressources-pour-l-apl\\index.html",
+      "url": "/pages/apl/quelles-ressources-pour-l-apl",
+      "summary": "Corrections ciblées et sûres uniquement sur des fragments clairement problématiques éventuels.",
+      "issues": [
+        {
+          "excerpt": "LesCalculateurs. fr",
+          "original": "LesCalculateurs. fr",
+          "corrected": "LesCalculateurs.fr",
+          "reason": "Espace indésirable après le point dans une URL/de nom de domaine.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Réponse rapide La CAF prend en compte",
+          "original": "Réponse rapide La CAF prend en compte",
+          "corrected": "Réponse rapide. La CAF prend en compte",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "Espace indésirable après le point dans l’URL/nom de domaine.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-aides\\index.html",
+      "url": "/pages/are/are-fin-de-droits-aides",
+      "summary": "Corrections locales et sûres identifiées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "&Acirc;ge",
+          "original": "&Acirc;ge",
+          "corrected": "Âge",
+          "reason": "Erreur d'encodage HTML → corriger l'accent.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario ARE estimée",
+          "original": "Scénario ARE estimée",
+          "corrected": "Scénario ARE estimé",
+          "reason": "Accord du participe passé avec le nom masculin 'Scénario'.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides\\index.html",
+      "url": "/pages/are/are-fin-de-droits-quelles-aides",
+      "summary": "Corrections détectées sur des erreurs évidentes de français, proposées comme remplacements locaux et littéraux.",
+      "issues": [
+        {
+          "excerpt": "&Acirc;ge",
+          "original": "&Acirc;ge",
+          "corrected": "Âge",
+          "reason": "encodage",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario ARE estimée",
+          "original": "Scénario ARE estimée",
+          "corrected": "Scénario ARE estimé",
+          "reason": "accord de genre",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl\\index.html",
+      "url": "/pages/are/are-fin-de-droits-rsa-ou-apl",
+      "summary": "Corrections uniquement des erreurs évidentes (accents/orthographe mineure, encodage) sans toucher au sens ni au style.",
+      "issues": [
+        {
+          "excerpt": "&Acirc;ge",
+          "original": "&Acirc;ge",
+          "corrected": "Âge",
+          "reason": "accents encodage",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario ARE estimée",
+          "original": "Scénario ARE estimée",
+          "corrected": "Scénario ARE estimé",
+          "reason": "accord adjectif masculin/féminin",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Âge Personne en fin de droits ARE qui compare RSA et APL",
+          "original": "&Acirc;ge Personne en fin de droits ARE qui compare RSA et APL",
+          "corrected": "Âge Personne en fin de droits ARE qui compare RSA et APL",
+          "reason": "accents encodage",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel\\index.html",
+      "url": "/pages/are/are-reprise-emploi-temps-partiel",
+      "summary": "Corrections de casse/encodage identifiables et sûres.",
+      "issues": [
+        {
+          "excerpt": "&Acirc;ge Demandeur d'emploi en reprise à temps partiel",
+          "original": "&Acirc;ge Demandeur d'emploi en reprise à temps partiel",
+          "corrected": "Âge Demandeur d'emploi en reprise à temps partiel",
+          "reason": "correction d'encodage HTML en caractère accentué",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Scénario ARE estimée Salaire de référence &Acirc;ge",
+          "original": "Scénario ARE estimée Salaire de référence &Acirc;ge",
+          "corrected": "Scénario ARE estimée Salaire de référence Âge",
+          "reason": "correction d'encodage HTML en caractère accentué",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "url": "/pages/are",
+      "summary": "Corrections strictement localisées sur des erreurs typographiques et de chiffres évidentes.",
+      "issues": [
+        {
+          "excerpt": "57, 43%",
+          "original": "57, 43%",
+          "corrected": "57,43%",
+          "reason": "espace superflu après la virgule dans un nombre; utiliser le format standard français sans espace avant le pourcentage.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "31, 50€/jour",
+          "original": "31, 50€/jour",
+          "corrected": "31,50 €/jour",
+          "reason": "espace nécessaire entre le chiffre et l'unité pour les montants en EUR selon les usages français.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "91, 82€/jour",
+          "original": "91, 82€/jour",
+          "corrected": "91,82 €/jour",
+          "reason": "idem; correction de l’espace.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "24 000€ Jours",
+          "original": "24 000€ Jours",
+          "corrected": "24 000 € Jours",
+          "reason": "espace manquant entre le chiffre et l’unité monétaire selon les règles typographiques françaises.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "68, 92€/jour",
+          "original": "68, 92€/jour",
+          "corrected": "68,92 €/jour",
+          "reason": "idem; correction de l’espace.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "~2 067€ brut/mois",
+          "original": "~2 067€ brut/mois",
+          "corrected": "~2 067 € brut/mois",
+          "reason": "espace manquant entre le chiffre et l’unité monétaire; respect de l’espace avant l’unité.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "120€/jour ARE mensuelle",
+          "original": "120€/jour ARE mensuelle",
+          "corrected": "120 €/jour ARE mensuelle",
+          "reason": "espace nécessaire entre le chiffre et l’unité monétaire.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026\\index.html",
+      "url": "/pages/are/montant-are-2026",
+      "summary": "Corrections sûres détectées dans le texte fourni (améliorations mineures et corrections d’entités).",
+      "issues": [
+        {
+          "excerpt": "&Acirc;ge",
+          "original": "&Acirc;ge",
+          "corrected": "Âge",
+          "reason": "entité HTML incorrecte pour le caractère majuscule 'Â'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\asf\\asf-parent-isole-sans-pension\\index.html",
+      "url": "/pages/asf/asf-parent-isole-sans-pension",
+      "summary": "Corrections strictement locales et sûres sur des erreurs typographiques évidentes ou punctuationnelles.",
+      "issues": [
+        {
+          "excerpt": "Estimation rapide Montant indicatif autour de ~199 € par mois pour ce scénario type.",
+          "original": "Estimation rapide Montant indicatif autour de ~199 € par mois pour ce scénario type.",
+          "corrected": "Estimation rapide : Montant indicatif autour de ~199 € par mois pour ce scénario type.",
+          "reason": "Ajout d'une ponctuation manquante pour clarifier l'intitulé.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Méthode et sources Cette estimation repose sur le moteur ASF du site et sur un scénario représentatif.",
+          "original": "Méthode et sources Cette estimation repose sur le moteur ASF du site et sur un scénario représentatif.",
+          "corrected": "Méthode et sources. Cette estimation repose sur le moteur ASF du site et sur un scénario représentatif.",
+          "reason": "Ajout d'un point pour séparer les propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Consulter notre méthodologie Voir la source officielle Voir la fiche CAF Questions fréquentes",
+          "original": "Consulter notre méthodologie Voir la source officielle Voir la fiche CAF Questions fréquentes",
+          "corrected": "Consulter notre méthodologie. Voir la source officielle. Voir la fiche CAF. Questions fréquentes",
+          "reason": "Ajout de ponctuation pour séparer les sections.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Enfants 1",
+          "original": "Enfants 1",
+          "corrected": "Enfants : 1",
+          "reason": "Ajout d'un deux-points pour clarifier l'étiquette.",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\asf\\asf-parent-isole-sans-revenu\\index.html",
+      "url": "/pages/asf/asf-parent-isole-sans-revenu",
+      "summary": "Aucune erreur évidente détectée dans le texte fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\asf\\asf-sans-pension-et-apl\\index.html",
+      "url": "/pages/asf/asf-sans-pension-et-apl",
+      "summary": "Aucune erreur évidente détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\asf\\index.html",
+      "url": "/pages/asf",
+      "summary": "Corrections sûres détectées, principalement des fautes typographiques et encodage.",
+      "issues": [
+        {
+          "excerpt": "(ASF, RSA...) , Fiche ASF Public",
+          "original": "(ASF, RSA...) , Fiche ASF Public",
+          "corrected": "(ASF, RSA...), Fiche ASF Public",
+          "reason": "espace avant une virgule",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ressources Particularité :",
+          "original": "ressources Particularité :",
+          "corrected": "ressources. Particularité :",
+          "reason": "manque de ponctuation séparant deux idées",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Obtenir un montant indicatif d’ASF mensuel Comprendre",
+          "original": "Obtenir un montant indicatif d’ASF mensuel Comprendre",
+          "corrected": "Obtenir un montant indicatif d’ASF mensuel. Comprendre",
+          "reason": "erreur de scission de phrases sans ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\prime-activite\\prime-activite-reprise-emploi-apres-chomage\\index.html",
+      "url": "/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage",
+      "summary": "Correction terminologique nécessaire: faute grammaticale sur le verbe servir avec préposition.",
+      "issues": [
+        {
+          "excerpt": "Cette page sert les personnes qui reprennent une activité modeste après le chômage",
+          "original": "Cette page sert les personnes qui reprennent une activité modeste après le chômage",
+          "corrected": "Cette page sert aux personnes qui reprennent une activité modeste après le chômage",
+          "reason": "Le verbe servir est intransitif dans ce contexte et doit être suivi de la préposition 'à' ou 'aux' selon le complément; ici le complément est 'les personnes', donc 'sert aux personnes'.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\combien-touche-t-on-au-rsa\\index.html",
+      "url": "/pages/rsa/combien-touche-t-on-au-rsa",
+      "summary": "Correction d'une ponctuation geste: espace avant le point après caf.fr.",
+      "issues": [
+        {
+          "excerpt": "sur caf.fr . Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026",
+          "original": "sur caf.fr . Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026",
+          "corrected": "sur caf.fr. Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026",
+          "reason": "Ponctuation erronée (espace avant le point).",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\index.html",
+      "url": "/pages/rsa",
+      "summary": "Corrections strictement localisées et sûres sur des fautes évidentes d’encodage, d’accents, d’apostrophes, d’espaces manquants ou d’orthographe mineure ne changeant pas le sens.",
+      "issues": [
+        {
+          "excerpt": "caf. fr",
+          "original": "caf. fr",
+          "corrected": "caf.fr",
+          "reason": "erreur d’encodage/espacement entre le nom de domaine et le TLD",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "service-public. fr",
+          "original": "service-public. fr",
+          "corrected": "service-public.fr",
+          "reason": "erreur d’encodage/espacement entre le nom de domaine et le TLD",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "environ 600 € / mois pour une personne seule et autour de 900 € / mois",
+          "original": "environ environ 600 € / mois pour une personne seule et autour de 900 € / mois",
+          "corrected": "environ 600 € / mois pour une personne seule et autour de 900 € / mois",
+          "reason": "répétition due à duplication par erreur typographique",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "version",
+          "original": "versément",
+          "corrected": "versement",
+          "reason": "fautes d’orthographe: vers Ément -> versement",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf. fr.",
+          "original": "caf. fr.",
+          "corrected": "caf.fr",
+          "reason": "erreur d’encodage/espacement entre le nom de domaine et le TLD",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimer ci‑dessus",
+          "original": "estimer ci‑dessus",
+          "corrected": "estimer ci-dessus",
+          "reason": "choix orthographique: ci‑dessus vs ci‑haut/ci‑dessous selon contexte",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "service-public). fr",
+          "original": "service-public). fr",
+          "corrected": "service-public.fr",
+          "reason": "erreur d’encodage/espacement",
+          "category": "encodage",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\qui-a-droit-au-rsa\\index.html",
+      "url": "/pages/rsa/qui-a-droit-au-rsa",
+      "summary": "Correction d'un symbole de liaison inapproprié dans une indication de montant.",
+      "issues": [
+        {
+          "excerpt": "~466 € / mois",
+          "original": "~466 € / mois",
+          "corrected": "~466 € par mois",
+          "reason": "Remplacement du slash par la préposition appropriée pour indiquer la périodicité, afin de respecter l'usage courant du français.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-auto-entrepreneur\\index.html",
+      "url": "/pages/rsa/rsa-auto-entrepreneur",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-chomage-fin-de-droits\\index.html",
+      "url": "/pages/rsa/rsa-chomage-fin-de-droits",
+      "summary": "Une seule correction sûre détectée: suppression d’un espace avant le point après caf.fr.",
+      "issues": [
+        {
+          "excerpt": "à faire sur caf.fr .",
+          "original": "à faire sur caf.fr .",
+          "corrected": "à faire sur caf.fr.",
+          "reason": "Erreur typographique: pas d espace avant le point final en français.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-conditions-2026\\index.html",
+      "url": "/pages/rsa/rsa-conditions-2026",
+      "summary": "Aucune correction sûre identifiée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-avec-enfant\\index.html",
+      "url": "/pages/rsa/rsa-couple-avec-enfant",
+      "summary": "Corrections simples et sûres uniquement. Une4 correction locale locale proposée.",
+      "issues": [
+        {
+          "excerpt": "caf.fr . Les Calculateurs",
+          "original": "caf.fr . Les Calculateurs",
+          "corrected": "caf.fr. Les Calculateurs",
+          "reason": "espace avant la ponctuation supprimé pour respecter la norme française",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant\\index.html",
+      "url": "/pages/rsa/rsa-couple-sans-enfant",
+      "summary": "Corrections ciblées et sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "sur caf.fr .",
+          "original": "sur caf.fr .",
+          "corrected": "sur caf.fr.",
+          "reason": "Espacement incorrect avant le point final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Comparer avec le cas personne seule.",
+          "original": "Comparer avec le cas personne seule.",
+          "corrected": "Comparer avec le cas d'une personne seule.",
+          "reason": "Correction grammaticale nécessaire pour une expression correcte.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Méthodologie Voir la source officielle CAF",
+          "original": "Méthodologie Voir la source officielle CAF",
+          "corrected": "Méthodologie. Voir la source officielle CAF",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Lancer une simulation RSA complète Dernière modification : 18-03-2026",
+          "original": "Lancer une simulation RSA complète Dernière modification : 18-03-2026",
+          "corrected": "Lancer une simulation RSA complète. Dernière modification : 18-03-2026",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu-avec-enfant\\index.html",
+      "url": "/pages/rsa/rsa-couple-sans-revenu-avec-enfant",
+      "summary": "Corrections sures détectées: ponctuation mal placée après caf.fr et reformulation mineure pour exprimer correctement le montant par mois.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espacement avant le point final incorrect.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": " ~1 141 € / mois",
+          "original": " ~1 141 € / mois",
+          "corrected": " ~1 141 € par mois",
+          "reason": "Expression correcte en français: 'par mois' au lieu de '/ mois'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu\\index.html",
+      "url": "/pages/rsa/rsa-couple-sans-revenu",
+      "summary": "Correction unique détectée: espace avant le point après caf.fr.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espace avant le point non conforme aux règles typographiques françaises.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-et-apl-cumul\\index.html",
+      "url": "/pages/rsa/rsa-et-apl-cumul",
+      "summary": "Corrections sûres détectées: ponctuation incorrecte autour d'un lien caf.fr.",
+      "issues": [
+        {
+          "excerpt": "caf.fr . Les",
+          "original": "caf.fr . Les",
+          "corrected": "caf.fr. Les",
+          "reason": "espace avant le point final après l'URL; la ponctuation doit être collée au domaine.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-fin-de-droits-chomage-personne-seule\\index.html",
+      "url": "/pages/rsa/rsa-fin-de-droits-chomage-personne-seule",
+      "summary": "Corrections sûres identifiées dans le texte (remplacements locaux et littéraux uniquement).",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Espacement avant le point, correction typographique standard.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-hebergement-gratuit\\index.html",
+      "url": "/pages/rsa/rsa-hebergement-gratuit",
+      "summary": "Corrige une ponctuation manquante après CAF.",
+      "issues": [
+        {
+          "excerpt": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "original": "Voir la source officielle CAF Voir la fiche service-public.fr",
+          "corrected": "Voir la source officielle CAF. Voir la fiche service-public.fr",
+          "reason": "Ponctuation manquante entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-interim\\index.html",
+      "url": "/pages/rsa/rsa-interim",
+      "summary": "Correction unique et sûre : remplacement du séparateur inapproprié « / » par le terme attendu « par ».",
+      "issues": [
+        {
+          "excerpt": "Résultat estimé ~218 € / mois",
+          "original": "Résultat estimé ~218 € / mois",
+          "corrected": "Résultat estimé ~218 € par mois",
+          "reason": "ponctuation et choix du connecteur correct entre montant et période",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-jeune-moins-de-25-ans\\index.html",
+      "url": "/pages/rsa/rsa-jeune-moins-de-25-ans",
+      "summary": "Corrections proposées (2 erreurs évidentes uniquement).",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "Espace avant le point final manquant de respect des règles typographiques françaises.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Question fréquentes",
+          "original": "Question fréquentes",
+          "corrected": "Questions fréquentes",
+          "reason": "Accord du nom: pluriel. Forme correcte: Questions fréquentes.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-logement-social\\index.html",
+      "url": "/pages/rsa/rsa-logement-social",
+      "summary": "Corrige une erreur de ponctuation simple (espace avant le point après caf.fr).",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "espace avant la ponctuation, faute typographique courante.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-parent-isole-sans-revenu\\index.html",
+      "url": "/pages/rsa/rsa-parent-isole-sans-revenu",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-personne-seule-montant\\index.html",
+      "url": "/pages/rsa/rsa-personne-seule-montant",
+      "summary": "Corrections strictement typographiques liées à l’encodage et à la ponctuation identifiables dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "caf.fr .",
+          "original": "caf.fr .",
+          "corrected": "caf.fr.",
+          "reason": "ponctuation: espace avant la ponctuation finale",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "CAF Voir la fiche service-public.fr",
+          "original": "CAF Voir la fiche service-public.fr",
+          "corrected": "CAF. Voir la fiche service-public.fr",
+          "reason": "ponctuation: séparer l’abréviation CAF par un point",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-logement\\index.html",
+      "url": "/pages/rsa/rsa-sans-logement",
+      "summary": "Corrections mineures et sûres liées à l’orthographe et à la ponctuation typographique.",
+      "issues": [
+        {
+          "excerpt": "Logement sans_abri Activité Sans activité",
+          "original": "Logement sans_abri Activité Sans activité",
+          "corrected": "Logement sans-abri Activité Sans activité",
+          "reason": "corrige l’underscore en hyphen pour le terme composé couramment écrit en français",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "caf.fr . Comparer plusieurs scénarios",
+          "original": "caf.fr . Comparer plusieurs scénarios",
+          "corrected": "caf.fr. Comparer plusieurs scénarios",
+          "reason": "suppression de l’espace avant le point final, conforme à la ponctuation française standard",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-avec-enfant\\index.html",
+      "url": "/pages/rsa/rsa-sans-revenu-avec-enfant",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule\\index.html",
+      "url": "/pages/rsa/rsa-sans-revenu-personne-seule",
+      "summary": "Une correction locale et sûre est possible: suppression de l espace avant le point après caf.fr.",
+      "issues": [
+        {
+          "excerpt": "Vérification finale à faire sur caf.fr .",
+          "original": "Vérification finale à faire sur caf.fr .",
+          "corrected": "Vérification finale à faire sur caf.fr.",
+          "reason": "Problème d'espacement: il ne faut pas mettre d'espace avant le signe de ponctuation final.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-travail-a-temps-partiel\\index.html",
+      "url": "/pages/rsa/rsa-travail-a-temps-partiel",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille\\index.html",
+      "url": "/pages/simulateurs/aide-financiere-famille",
+      "summary": "Corrections détectées: espace dans l'URL/nom de domaine.",
+      "issues": [
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "Espace inutile entre le point et le domaine; corriger pour une URL correcte.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale\\index.html",
+      "url": "/pages/simulateurs/aide-sociale-simulation-globale",
+      "summary": "Corrections locales et sécurisées détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "LesCalculateurs. fr",
+          "original": "LesCalculateurs. fr",
+          "corrected": "LesCalculateurs.fr",
+          "reason": "Espacement entre le point et 'fr' indésirable, forma d'URL incorrecte",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Réponse rapide Une simulation globale",
+          "original": "Réponse rapide Une simulation globale",
+          "corrected": "Réponse rapide. Une simulation globale",
+          "reason": "Ponctuation manquante entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-apres-perte-emploi\\index.html",
+      "url": "/pages/simulateurs/aides-apres-perte-emploi",
+      "summary": "Corrections locales simples détectées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "Activité Chômage",
+          "original": "Activité Chômage",
+          "corrected": "Activité : Chômage",
+          "reason": "Ponctuation manquante après le mot 'Activité' dans une liste ou titre",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs\\index.html",
+      "url": "/pages/simulateurs/aides-jeunes-actifs",
+      "summary": "Corrections relevées sur des éléments évidents de français dans le texte fourni (remplacements locaux et littéraux uniquement).",
+      "issues": [
+        {
+          "excerpt": "Réponse rapide Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "original": "Réponse rapide Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "corrected": "Réponse rapide : Les jeunes actifs peuvent bénéficier d’aides au logement et de compléments de revenus.",
+          "reason": "Ajout de deux points et correction de la préposition manquante « au logement » pour une tournure standard.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Aides logement",
+          "original": "Aides logement",
+          "corrected": "Aides au logement",
+          "reason": "Ajout de la préposition manquante « au ».",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites\\index.html",
+      "url": "/pages/simulateurs/aides-retraites",
+      "summary": "Corrections sûres détectées dans le texte fourni (fragment court).",
+      "issues": [
+        {
+          "excerpt": "d’aides logement",
+          "original": "d’aides logement",
+          "corrected": "d’aides au logement",
+          "reason": "manque de préposition nécessaire entre 'aides' et 'logement'",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Réponse rapide Les retraités",
+          "original": "Réponse rapide Les retraités",
+          "corrected": "Réponse rapide : Les retraités",
+          "reason": "périodique ou ponctuation manquante entre 'Réponse rapide' et le reste de la phrase",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales\\index.html",
+      "url": "/pages/simulateurs/cumul-aides-sociales",
+      "summary": "Corrections sûres de ponctuation et d’orthographe locales relevées dans le texte.",
+      "issues": [
+        {
+          "excerpt": "Cumul aides sociales (2026) 🧮 Les Calculateurs Accueil Nos simulateurs Pilier • Nos simulateurs Cumul aides sociales Réponse à la question : Cumul aides sociales.",
+          "original": "Cumul aides sociales (2026) 🧮 Les Calculateurs Accueil Nos simulateurs Pilier • Nos simulateurs Cumul aides sociales Réponse à la question : Cumul aides sociales.",
+          "corrected": "Cumul d'aides sociales (2026) 🧮 Les Calculateurs Accueil Nos simulateurs Pilier • Nos simulateurs Cumul d'aides sociales Réponse à la question : Cumul d'aides sociales.",
+          "reason": "Ajout de l’apostrophe et de l’article nécessaire pour une accord grammatical correct.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Réponse à la question : Cumul aides sociales.",
+          "original": "Réponse à la question : Cumul aides sociales.",
+          "corrected": "Réponse à la question : Cumul d'aides sociales.",
+          "reason": "Ajout de l’article et de l’apostrophe pour une expression correcte.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "Suppression de l’espace avant .fr pour corriger l’encodage/typographie de l’URL",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\index.html",
+      "url": "/pages/simulateurs",
+      "summary": "Corrections strictement orthographiques ou d’accent simples, localisées et sans modification de sens détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "📈 Plus-Value Immobilière",
+          "original": "📈 Plus-Value Immobilière",
+          "corrected": "📈 Plus-value immobilière",
+          "reason": "orthographe et casse incorrectes dans une locution courante (plus-value immobilière)",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "📊 Charges de Copropriété",
+          "original": "📊 Charges de Copropriété",
+          "corrected": "📊 Charges de copropriété",
+          "reason": "consistance grammaticale: copropriété est un nom commun féminin, mais le nom est écrit avec une minuscule en français courant",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Acceder -> 🏘️ Aide au Logement",
+          "original": "Acceder -> 🏘️ Aide au Logement",
+          "corrected": "Accéder → 🏘️ Aide au Logement",
+          "reason": "accent 'é' manquant sur le verbe accéder; correction locale et sans changer le sens",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "frais d'acquisition immobilière",
+          "original": "frais d'acquisition immobilière",
+          "corrected": "frais d'acquisition immobiliers",
+          "reason": "accord du nom pluriel 'frais' avec l’adjectif 'immobilière/immobiliers' ; usage standard: 'immobiliers' au pluriel",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Accéder →  🏦 Prêt Immobilier",
+          "original": "Accéder → 🏦 Prêt Immobilier",
+          "corrected": "Accéder → 🏦 Prêt immobilier",
+          "reason": "constante de casse: 'Immobilier' en nom commun peut s’écrire en minuscules après une majuscule initiale; correction mineure de casse sans changer le sens",
+          "category": "orthographe",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-ai-je-droit",
+      "summary": "Corrections typographiques et de ponctuation locales, sans modifier le sens du texte.",
+      "issues": [
+        {
+          "excerpt": "Réponse rapide Les aides dépendent",
+          "original": "Réponse rapide Les aides dépendent",
+          "corrected": "Réponse rapide : Les aides dépendent",
+          "reason": "Ponctuation manquante introduisant une explication",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Ce qu’il faut vérifier revenus du foyer composition familiale type de logement",
+          "original": "Ce qu’il faut vérifier revenus du foyer composition familiale type de logement",
+          "corrected": "Ce qu’il faut vérifier : revenus du foyer, composition familiale, type de logement",
+          "reason": "Manque de ponctuation et de séparateurs entre les éléments",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "aides CAF aides chômage",
+          "original": "aides CAF aides chômage",
+          "corrected": "aides CAF, aides chômage",
+          "reason": "Liste sans virgule entre éléments",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Aller plus loin Pour une estimation",
+          "original": "Aller plus loin Pour une estimation",
+          "corrected": "Aller plus loin : Pour une estimation",
+          "reason": "Ponctuation manquante introduisant une explication",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "© 2026 LesCalculateurs. fr",
+          "original": "© 2026 LesCalculateurs. fr",
+          "corrected": "© 2026 LesCalculateurs.fr",
+          "reason": "Espâce indésirable dans le nom de domaine",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-couple-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "summary": "Corrections locales et simples à apporter uniquement sur les fragments clairement cassés ou les ponctuations manquantes.",
+      "issues": [
+        {
+          "excerpt": "Consulter notre méthodologie Voir les sources officielles CAF",
+          "original": "Consulter notre méthodologie Voir les sources officielles CAF",
+          "corrected": "Consulter notre méthodologie. Voir les sources officielles CAF.",
+          "reason": "Manque de fin de phrase entre deux propositions; correction de ponctuation sans changer le sens.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Questions fréquentes Quelles aides vérifier pour un couple sans revenu ?",
+          "original": "Questions fréquentes Quelles aides vérifier pour un couple sans revenu ?",
+          "corrected": "Questions fréquentes : Quelles aides vérifier pour un couple sans revenu ?",
+          "reason": "Ajout de deux points pour marquer l’introduction d’une question; correction ponctuelle sans changer le sens.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-fin-de-droits-chomage\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+      "summary": "1 correction grammaticale locale détectée : ajout de la préposition manquante.",
+      "issues": [
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après fin de droits au chômage ?",
+          "reason": "Ajout de la préposition « au » pour une construction correcte en français.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Aucune correction sûre nécessaire.",
+      "issues": []
+    }
+  ],
+  "summary": {
+    "totalFiles": 103,
+    "filesWithIssues": 94,
+    "totalIssues": 307
+  }
+}

@@ -1,0 +1,452 @@
+{
+  "generatedAt": "2026-03-20T14:51:55.626Z",
+  "input": "reports\\openai-french-review-pseo-visible-v1.json",
+  "summary": {
+    "appliedCount": 33,
+    "skippedCount": 25,
+    "filesTouched": 20
+  },
+  "applied": [
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant\\index.html",
+      "original": "revenu regulier",
+      "corrected": "revenu régulier",
+      "category": "accent",
+      "reason": "accent sur l'adjectif.",
+      "replacements": 5
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant\\index.html",
+      "original": "d alternance",
+      "corrected": "d'alternance",
+      "category": "apostrophe",
+      "reason": "usage de l'apostrophe manquante après la préposition.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-apprenti\\index.html",
+      "original": "d apprentissage",
+      "corrected": "d'apprentissage",
+      "category": "apostrophe",
+      "reason": "Correction de l’apostrophe manquante.",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-apprenti\\index.html",
+      "original": "l employeur.",
+      "corrected": "l'employeur.",
+      "category": "apostrophe",
+      "reason": "Ajout de l’apostrophe manquante devant employeur.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-apprenti\\index.html",
+      "original": "determinent",
+      "corrected": "déterminent",
+      "category": "accent",
+      "reason": "Correction orthographique d’accent.",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-marseille\\index.html",
+      "original": "Le code postal'aide a affiner",
+      "corrected": "Le code postal aide à affiner",
+      "category": "apostrophe",
+      "reason": "apostrophe manquante et accent inattendu.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-paris-petit-revenu\\index.html",
+      "original": "a absorber",
+      "corrected": "à absorber",
+      "category": "accent",
+      "reason": "erreur d'accent",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-colocation-jeune-actif\\index.html",
+      "original": "redui",
+      "corrected": "réduit",
+      "category": "accent",
+      "reason": "accent sur le verbe 'réduit'",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-paris\\index.html",
+      "original": "intermediaires",
+      "corrected": "intermédiaires",
+      "category": "accent",
+      "reason": " accent manquant sur le i : orthographe correcte intermédiaires",
+      "replacements": 5
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-un-enfant\\index.html",
+      "original": "determinant",
+      "corrected": "déterminant",
+      "category": "accent",
+      "reason": "accent manquant sur un mot fréquent",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-colocation\\index.html",
+      "original": "en general",
+      "corrected": "en général",
+      "category": "accent",
+      "reason": "accent/orthographe",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-colocation\\index.html",
+      "original": "l ecart",
+      "corrected": "l'écart",
+      "category": "accent",
+      "reason": "accent manquant",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-idf\\index.html",
+      "original": "zone ou le reste",
+      "corrected": "zone où le reste",
+      "category": "accent",
+      "reason": "erreur d’accent et de liaison; correction standard.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-idf\\index.html",
+      "original": "budgetaire",
+      "corrected": "budgétaire",
+      "category": "accent",
+      "reason": "mot incorrect; forme correcte avec accent sur é.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "Espacement incorrect avant le domaine et problème d'encodage typographique potentiellement nuisible pour le lien.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-refusee-que-faire\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "espacement",
+      "reason": "Espacement entre le point et le « fr » corrigé pour former une URL correcte.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "original": "APL apres une reprise d'emploi",
+      "corrected": "APL après une reprise d'emploi",
+      "category": "accent",
+      "reason": "Accents manquants sur 'après'",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "original": "Exemple d impact",
+      "corrected": "Exemple d'impact",
+      "category": "apostrophe",
+      "reason": "Apostrophe manquante dans 'd'impact'",
+      "replacements": 5
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "original": "a terme",
+      "corrected": "à terme",
+      "category": "accent",
+      "reason": "Accent sur 'à' manquant",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\index.html",
+      "original": "personnalisee",
+      "corrected": "personnalisée",
+      "category": "accent",
+      "reason": "accent manquant sur le e final",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\index.html",
+      "original": "baremes",
+      "corrected": "barèmes",
+      "category": "accent",
+      "reason": "accent",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\index.html",
+      "original": "estimér",
+      "corrected": "estimer",
+      "category": "accent",
+      "reason": "accent superflu sur le verbe",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\quelles-ressources-pour-l-apl\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "espacement",
+      "reason": "Espace indésirable après le point dans l’URL/nom de domaine.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-aides\\index.html",
+      "original": "&Acirc;ge",
+      "corrected": "Âge",
+      "category": "accent",
+      "reason": "Erreur d'encodage HTML → corriger l'accent.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides\\index.html",
+      "original": "&Acirc;ge",
+      "corrected": "Âge",
+      "category": "encodage",
+      "reason": "encodage",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl\\index.html",
+      "original": "&Acirc;ge",
+      "corrected": "Âge",
+      "category": "accent",
+      "reason": "accents encodage",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "original": "~2 067€ brut/mois",
+      "corrected": "~2 067 € brut/mois",
+      "category": "espacement",
+      "reason": "espace manquant entre le chiffre et l’unité monétaire; respect de l’espace avant l’unité.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "original": "57, 43%",
+      "corrected": "57,43%",
+      "category": "accent",
+      "reason": "espace superflu après la virgule dans un nombre; utiliser le format standard français sans espace avant le pourcentage.",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\rsa\\index.html",
+      "original": "service-public. fr",
+      "corrected": "service-public.fr",
+      "category": "encodage",
+      "reason": "erreur d’encodage/espacement entre le nom de domaine et le TLD",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa\\index.html",
+      "original": "caf. fr.",
+      "corrected": "caf.fr",
+      "category": "encodage",
+      "reason": "erreur d’encodage/espacement entre le nom de domaine et le TLD",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa\\index.html",
+      "original": "caf. fr",
+      "corrected": "caf.fr",
+      "category": "encodage",
+      "reason": "erreur d’encodage/espacement entre le nom de domaine et le TLD",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales\\index.html",
+      "original": "Réponse à la question : Cumul aides sociales.",
+      "corrected": "Réponse à la question : Cumul d'aides sociales.",
+      "category": "apostrophe",
+      "reason": "Ajout de l’article et de l’apostrophe pour une expression correcte.",
+      "replacements": 5
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "Suppression de l’espace avant .fr pour corriger l’encodage/typographie de l’URL",
+      "replacements": 1
+    }
+  ],
+  "skipped": [
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-loyer-eleve\\index.html",
+      "original": "APL apres une reprise d'emploi",
+      "corrected": "APL après une reprise d'emploi",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-lyon\\index.html",
+      "original": "caf.fr .",
+      "corrected": "caf.fr.",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-colocation-jeune-actif\\index.html",
+      "original": "vérifier la quote-part de loyer mentionnee au bail",
+      "corrected": "vérifier la quote-part de loyer mentionnée au bail",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-colocation\\index.html",
+      "original": "ecart",
+      "corrected": "écart",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-studio\\index.html",
+      "original": "Vérification finale à faire sur caf.fr .",
+      "corrected": "Vérification finale à faire sur caf.fr.",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-deux-enfants-province\\index.html",
+      "original": "Tester une variation de revenu si un parent reprend'une activité.",
+      "corrected": "Tester une variation de revenu si un parent reprend une activité.",
+      "category": "apostrophe",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-un-enfant\\index.html",
+      "original": "intégrer a la vérification finale",
+      "corrected": "intégrer à la vérification finale",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-un-enfant\\index.html",
+      "original": "concr à te",
+      "corrected": "concrète",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic\\index.html",
+      "original": "Vérification finale à faire sur caf.fr .",
+      "corrected": "Vérification finale à faire sur caf.fr.",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit\\index.html",
+      "original": "Retour au pilier : Simulateur APL 2026 © 2026 LesCalculateurs. fr",
+      "corrected": "Retour au pilier : Simulateur APL 2026 © 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-refusee-que-faire\\index.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi-loyer-eleve\\index.html",
+      "original": "Personne qui reprend'un emploi",
+      "corrected": "Personne qui reprend un emploi",
+      "category": "apostrophe",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi-loyer-eleve\\index.html",
+      "original": "apl apres une reprise d'emploi",
+      "corrected": "APL après une reprise d'emploi",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "original": "l avant et l après reprise d'activité.",
+      "corrected": "l'avant et l'après reprise d'activité.",
+      "category": "apostrophe",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "original": "reprise'un emploi",
+      "corrected": "reprise un emploi",
+      "category": "apostrophe",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\quelles-ressources-pour-l-apl\\index.html",
+      "original": "LesCalculateurs. fr",
+      "corrected": "LesCalculateurs.fr",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl\\index.html",
+      "original": "&Acirc;ge Personne en fin de droits ARE qui compare RSA et APL",
+      "corrected": "Âge Personne en fin de droits ARE qui compare RSA et APL",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel\\index.html",
+      "original": "&Acirc;ge Demandeur d'emploi en reprise à temps partiel",
+      "corrected": "Âge Demandeur d'emploi en reprise à temps partiel",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel\\index.html",
+      "original": "Scénario ARE estimée Salaire de référence &Acirc;ge",
+      "corrected": "Scénario ARE estimée Salaire de référence Âge",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "original": "120€/jour ARE mensuelle",
+      "corrected": "120 €/jour ARE mensuelle",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "original": "24 000€ Jours",
+      "corrected": "24 000 € Jours",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs\\index.html",
+      "original": "Aides logement",
+      "corrected": "Aides au logement",
+      "category": "apostrophe",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\index.html",
+      "original": "Acceder -> 🏘️ Aide au Logement",
+      "corrected": "Accéder → 🏘️ Aide au Logement",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "original": "© 2026 LesCalculateurs. fr",
+      "corrected": "© 2026 LesCalculateurs.fr",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    }
+  ]
+}

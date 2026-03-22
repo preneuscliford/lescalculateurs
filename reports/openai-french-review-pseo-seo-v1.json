@@ -1,0 +1,1628 @@
+{
+  "generatedAt": "2026-03-20T14:28:38.798Z",
+  "scope": "pseo-rendered",
+  "mode": "seo",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant-paris\\index.html",
+      "url": "/pages/apl/apl-alternant-paris",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-alternant\\index.html",
+      "url": "/pages/apl/apl-alternant",
+      "summary": "Corrections d'accents sur « revenu regulier » → « revenu régulier » dans le texte.",
+      "issues": [
+        {
+          "excerpt": "revenu regulier",
+          "original": "revenu regulier",
+          "corrected": "revenu régulier",
+          "reason": "accent sur é",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "revenu regulier",
+          "original": "revenu regulier",
+          "corrected": "revenu régulier",
+          "reason": "accent sur é",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "revenu regulier",
+          "original": "revenu regulier",
+          "corrected": "revenu régulier",
+          "reason": "accent sur é",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-apprenti-loyer-500\\index.html",
+      "url": "/pages/apl/apl-apprenti-loyer-500",
+      "summary": "Une correction mineure détectée dans la répétition du fragment: cas APL en minuscules en milieu de phrase.",
+      "issues": [
+        {
+          "excerpt": "Cas APL",
+          "original": "Cas APL",
+          "corrected": "cas APL",
+          "reason": "Le nom commun 'cas' ne prend pas de majuscule en milieu de phrase; seule la première lettre d'un nom propre est capitalisée.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-apprenti\\index.html",
+      "url": "/pages/apl/apl-apprenti",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-cdd-loyer-600\\index.html",
+      "url": "/pages/apl/apl-cdd-loyer-600",
+      "summary": "Corrections sûres pour les trois répétitions : corriger « salarié » et « d'un salari à en CDD » → « salarié en CDD ».",
+      "issues": [
+        {
+          "excerpt": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen.",
+          "original": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen.",
+          "corrected": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salarié en CDD avec revenus modestes et loyer moyen.",
+          "reason": "erreur d'orthographe sur « salarié » et erreur grammaticale/prépositionnelle « d'un salari à en CDD » qui doit être « d'un salarié en CDD ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen.",
+          "original": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen.",
+          "corrected": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salarié en CDD avec revenus modestes et loyer moyen.",
+          "reason": "erreur d'orthographe sur « salarié » et erreur grammaticale/prépositionnelle « d'un salari à en CDD » qui doit être « d'un salarié en CDD ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen.",
+          "original": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salari à en CDD avec revenus modestes et loyer moyen.",
+          "corrected": "APL avec CDD et loyer de ~600 EUR : estimation 2026 scénario APL d'un salarié en CDD avec revenus modestes et loyer moyen.",
+          "reason": "erreur d'orthographe sur « salarié » et erreur grammaticale/prépositionnelle « d'un salari à en CDD » qui doit être « d'un salarié en CDD ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-cdi-loyer-700\\index.html",
+      "url": "/pages/apl/apl-cdi-loyer-700",
+      "summary": "Corrections evidentes détectées : modification orthographique et grammaire nécessaire dans les occurrences de “salari”.",
+      "issues": [
+        {
+          "excerpt": "salari à en CDI",
+          "original": "salari à en CDI",
+          "corrected": "salarié en CDI",
+          "reason": "orthographe et grammaire : le mot “salari” doit être “salarié” et l’expression “à en CDI” incorrecte doit être remplacée par “en CDI” pour former la locution correcte.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "salari à en CDI",
+          "original": "salari à en CDI",
+          "corrected": "salarié en CDI",
+          "reason": "orthographe et grammaire récurrentes identiques à la phrase précédente, correction nécessaire pour toutes les occurrences afin d’assurer cohérence et lisibilité.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-loyer-eleve\\index.html",
+      "url": "/pages/apl/apl-celibataire-loyer-eleve",
+      "summary": "Corrections orthographiques locales uniquement pour des fragments identiques présentant une faute dans le mot « supérieur ».",
+      "issues": [
+        {
+          "excerpt": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone.",
+          "original": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone.",
+          "corrected": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer supérieur au plafond de zone.",
+          "reason": "Correction orthographique du mot « supérieur ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone.",
+          "original": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone.",
+          "corrected": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer supérieur au plafond de zone.",
+          "reason": "Correction orthographique du mot « supérieur ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone.",
+          "original": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer sup à rieur au plafond de zone.",
+          "corrected": "APL avec loyer élevé pour une personne seule : estimation 2026 Cas APL d'une personne seule avec un loyer supérieur au plafond de zone.",
+          "reason": "Correction orthographique du mot « supérieur ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-lyon\\index.html",
+      "url": "/pages/apl/apl-celibataire-lyon",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-marseille\\index.html",
+      "url": "/pages/apl/apl-celibataire-marseille",
+      "summary": "Correction orthographique ciblée sur une faute dans l’expression « loyer interm à diaire ».",
+      "issues": [
+        {
+          "excerpt": "loyer interm à diaire",
+          "original": "loyer interm à diaire",
+          "corrected": "loyer intermédiaire",
+          "reason": "orthographe du terme composé « intermédiaire » remplacé par une forme correctement orthographiée",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-paris-petit-revenu\\index.html",
+      "url": "/pages/apl/apl-celibataire-paris-petit-revenu",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-petit-salaire\\index.html",
+      "url": "/pages/apl/apl-celibataire-petit-salaire",
+      "summary": "Corrections identifiées sur les textes répétitifs. Une seule correction localisée nécessaire : remplacer « Cas » par « cas ».",
+      "issues": [
+        {
+          "excerpt": "APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "original": "APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "corrected": "APL célibataire avec petit salaire : estimation 2026 cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "reason": "grammaire/orthographe : majuscule après deux-points dans ce contexte de continuation de phrase; « Cas » doit être « cas ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "original": "APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "corrected": "APL célibataire avec petit salaire : estimation 2026 cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "reason": "grammaire/orthographe : majuscule après deux-points dans ce contexte de continuation de phrase; « Cas » doit être « cas ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "original": "APL célibataire avec petit salaire : estimation 2026 Cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "corrected": "APL célibataire avec petit salaire : estimation 2026 cas APL pour un célibataire avec un revenu modeste légèrement inférieur au SMIC.",
+          "reason": "grammaire/orthographe : majuscule après deux-points dans ce contexte de continuation de phrase; « Cas » doit être « cas ».",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-toulouse\\index.html",
+      "url": "/pages/apl/apl-celibataire-toulouse",
+      "summary": "Aucune erreur évidente de français détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-avec-enfant\\index.html",
+      "url": "/pages/apl/apl-chomage-avec-enfant",
+      "summary": "Correction unique nécessaire: ajouter l’article manquant « un » dans « avec enfant » des trois occurrences pour harmoniser le français.",
+      "issues": [
+        {
+          "excerpt": "APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "original": "APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "corrected": "APL au chômage avec un enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "reason": "Manque de l’article indéfini « un » avant « enfant » dans l’énoncé.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "original": "APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "corrected": "APL au chômage avec un enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "reason": "Manque de l’article indéfini « un » avant « enfant » dans l’énoncé.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "original": "APL au chômage avec enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "corrected": "APL au chômage avec un enfant : estimation 2026 Scénario APL pour un parent avec un enfant et des revenus en baisse liés au chômage.",
+          "reason": "Manque de l’article indéfini « un » avant « enfant » dans l’énoncé.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Ajout d’un deux-points manquant après « 2026 » dans chaque occurrence.",
+      "issues": [
+        {
+          "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "original": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "corrected": "APL au chômage avec loyer moyen : estimation 2026 : Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "reason": "Ponctuation manquante entre « 2026 » et « Simulation ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "original": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "corrected": "APL au chômage avec loyer moyen : estimation 2026 : Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "reason": "Ponctuation manquante entre « 2026 » et « Simulation ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "original": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "corrected": "APL au chômage avec loyer moyen : estimation 2026 : Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "reason": "Ponctuation manquante entre « 2026 » et « Simulation ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Aucune correction sûre détectée. Le texte ne présente pas d’erreurs évidentes nécessitant une correction locale conforme aux règles données.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-colocation-jeune-actif\\index.html",
+      "url": "/pages/apl/apl-colocation-jeune-actif",
+      "summary": "Aucune correction sûre détectée. Le texte est correct et identique sur les trois occurrences.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-colocation\\index.html",
+      "url": "/pages/apl/apl-colocation",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-loyer-eleve\\index.html",
+      "url": "/pages/apl/apl-couple-loyer-eleve",
+      "summary": "Aucune correction française évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-lyon\\index.html",
+      "url": "/pages/apl/apl-couple-lyon",
+      "summary": "Corrections strictes uniquement sur des fautes évidentes d’orthographe/accents dans les fragments fournis.",
+      "issues": [
+        {
+          "excerpt": "parc priv à.",
+          "original": "parc priv à.",
+          "corrected": "parc privé.",
+          "reason": "erreur d’orthographe et de typographie: même mot avec accent manquant et espace incorrect.",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-paris\\index.html",
+      "url": "/pages/apl/apl-couple-paris",
+      "summary": "Correction unique proposée pour l’erreur d’accent sur « intermediaires ». Le reste du texte ne présente pas d’erreurs flagrantes éditoriales selon les règles données.",
+      "issues": [
+        {
+          "excerpt": "revenus intermediaires",
+          "original": "revenus intermediaires",
+          "corrected": "revenus intermédiaires",
+          "reason": "diacritique manquant sur le mot intermédiaires",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-petit-revenu\\index.html",
+      "url": "/pages/apl/apl-couple-petit-revenu",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Aucune correction sûre trouvée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-un-enfant-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-couple-un-enfant-loyer-moyen",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-un-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-un-enfant",
+      "summary": "Ajout de l'article défini manquant avant « loyer familial moyen » dans chaque occurrence.",
+      "issues": [
+        {
+          "excerpt": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen.",
+          "original": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen.",
+          "corrected": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et le loyer familial moyen.",
+          "reason": "Ajout de l'article défini « le » avant le nom ‘loyer familial moyen’ pour améliorer la grammaire.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen.",
+          "original": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen.",
+          "corrected": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et le loyer familial moyen.",
+          "reason": "Ajout de l'article défini « le » avant le nom ‘loyer familial moyen’ pour améliorer la grammaire.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen.",
+          "original": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et loyer familial moyen.",
+          "corrected": "APL couple avec 1 enfant : estimation 2026 scénario APL pour un couple avec un enfant et le loyer familial moyen.",
+          "reason": "Ajout de l'article défini « le » avant le nom ‘loyer familial moyen’ pour améliorer la grammaire.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-colocation\\index.html",
+      "url": "/pages/apl/apl-etudiant-colocation",
+      "summary": "Corrections sûres: ajouter un deux-points après « 2026 » dans chaque occurrence.",
+      "issues": [
+        {
+          "excerpt": "APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "original": "APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "corrected": "APL étudiant en colocation : estimation 2026 : Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "reason": "Ponctuation manquante entre « 2026 » et « Cas pratique ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "original": "APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "corrected": "APL étudiant en colocation : estimation 2026 : Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "reason": "Ponctuation manquante entre « 2026 » et « Cas pratique ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "original": "APL étudiant en colocation : estimation 2026 Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "corrected": "APL étudiant en colocation : estimation 2026 : Cas pratique d'APL pour un étudiant en colocation avec quote-part de loyer.",
+          "reason": "Ponctuation manquante entre « 2026 » et « Cas pratique ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-lyon\\index.html",
+      "url": "/pages/apl/apl-etudiant-lyon",
+      "summary": "Corrections ciblées: ponctuation manquante après « estimation 2026 ».",
+      "issues": [
+        {
+          "excerpt": "APL étudiant à Lyon : estimation 2026 Exemple de simulation APL pour un étudiant locataire à Lyon.",
+          "original": "APL étudiant à Lyon : estimation 2026 Exemple de simulation APL pour un étudiant locataire à Lyon.",
+          "corrected": "APL étudiant à Lyon : estimation 2026. Exemple de simulation APL pour un étudiant locataire à Lyon.",
+          "reason": "Ponctuation manquante entre deux propositions",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-paris\\index.html",
+      "url": "/pages/apl/apl-etudiant-paris",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-petit-loyer\\index.html",
+      "url": "/pages/apl/apl-etudiant-petit-loyer",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-studio\\index.html",
+      "url": "/pages/apl/apl-etudiant-studio",
+      "summary": "Corrections localisées à l’usage de la majuscule après les deux-points.",
+      "issues": [
+        {
+          "excerpt": "APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré.",
+          "original": "APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré.",
+          "corrected": "APL étudiant en studio : estimation 2026 scénario APL pour un étudiant seul en studio avec budget serré.",
+          "reason": "majuscule après deux-points non nécessaire pour un mot commun après une énumération",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré.",
+          "original": "APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré.",
+          "corrected": "APL étudiant en studio : estimation 2026 scénario APL pour un étudiant seul en studio avec budget serré.",
+          "reason": "majuscule après deux-points non nécessaire pour un mot commun après une énumération",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré.",
+          "original": "APL étudiant en studio : estimation 2026 Scénario APL pour un étudiant seul en studio avec budget serré.",
+          "corrected": "APL étudiant en studio : estimation 2026 scénario APL pour un étudiant seul en studio avec budget serré.",
+          "reason": "majuscule après deux-points non nécessaire pour un mot commun après une énumération",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-toulouse\\index.html",
+      "url": "/pages/apl/apl-etudiant-toulouse",
+      "summary": "Corrections sûres identifiées sur le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Exemple APL",
+          "original": "Exemple APL",
+          "corrected": "Exemple d'APL",
+          "reason": "Lien entre le nom commun et l'acronyme nécessite l'article partitif 'd'' devant une voyelle pour éviter l'ellipse.",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-deux-enfants-province\\index.html",
+      "url": "/pages/apl/apl-famille-deux-enfants-province",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-idf\\index.html",
+      "url": "/pages/apl/apl-famille-idf",
+      "summary": "Une correction sûre détectée : ajout de l’article manquant devant le nom 'loyer'.",
+      "issues": [
+        {
+          "excerpt": "avec loyer élevé",
+          "original": "avec loyer élevé",
+          "corrected": "avec un loyer élevé",
+          "reason": "manque de l’article devant le nom féminin singulier 'loyer'",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-famille-trois-enfants\\index.html",
+      "url": "/pages/apl/apl-famille-trois-enfants",
+      "summary": "Aucune correction sûre à apporter.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-fin-de-droits-chomage\\index.html",
+      "url": "/pages/apl/apl-fin-de-droits-chomage",
+      "summary": "Trois occurrences d'une même phrase identifiée comme contenant une tournureIncorrecte concernant l'expression « fin de droits chômage ».Proposition locale de correction unique pour chaque occurrence.",
+      "issues": [
+        {
+          "excerpt": "APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus.",
+          "original": "APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus.",
+          "corrected": "APL après fin des droits au chômage : estimation 2026 Repère APL 2026 pour une personne en fin des droits au chômage avec forte baisse de revenus.",
+          "reason": "Correction grammaticale: amélioration de l’expression courante « fin des droits au chômage » et reprise cohérente dans la suite de la phrase.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus.",
+          "original": "APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus.",
+          "corrected": "APL après fin des droits au chômage : estimation 2026 Repère APL 2026 pour une personne en fin des droits au chômage avec forte baisse de revenus.",
+          "reason": "Correction grammaticale: amélioration de l’expression courante « fin des droits au chômage » et reprise cohérente dans la suite de la phrase.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus.",
+          "original": "APL après fin de droits chômage : estimation 2026 Repère APL 2026 pour une personne en fin de droits chômage avec forte baisse de revenus.",
+          "corrected": "APL après fin des droits au chômage : estimation 2026 Repère APL 2026 pour une personne en fin des droits au chômage avec forte baisse de revenus.",
+          "reason": "Correction grammaticale: amélioration de l’expression courante « fin des droits au chômage » et reprise cohérente dans la suite de la phrase.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-fin-de-droits-personne-seule\\index.html",
+      "url": "/pages/apl/apl-fin-de-droits-personne-seule",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-hlm-petit-revenu\\index.html",
+      "url": "/pages/apl/apl-hlm-petit-revenu",
+      "summary": "Deux corrections locales proposées sur le fragment texte.",
+      "issues": [
+        {
+          "excerpt": "loge en HLM",
+          "original": "loge en HLM",
+          "corrected": "logé en HLM",
+          "reason": "erreur d'accent sur le participe passé 'logé' (correction orthographique/accent)",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Exemple APL",
+          "original": "Exemple APL",
+          "corrected": "exemple APL",
+          "reason": "majuscule après deux-points selon les règles typographiques françaises (après colon on n'écrit pas nécessairement une majuscule)",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-jeune-actif-premier-logement\\index.html",
+      "url": "/pages/apl/apl-jeune-actif-premier-logement",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-500-revenu-900\\index.html",
+      "url": "/pages/apl/apl-loyer-500-revenu-900",
+      "summary": "Corrections d'accents sur le mot budgétaire répétés dans le texte.",
+      "issues": [
+        {
+          "excerpt": "APL avec ~900 EUR de revenus et ~500 EUR de loyer : estimation 2026 scénario budgetaire pour un revenu modeste avec un loyer encore contenu.",
+          "original": "budgetaire",
+          "corrected": "budgétaires",
+          "reason": "accent sur l'e",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL avec ~900 EUR de revenus et ~500 EUR de loyer : estimation 2026 scénario budgetaire pour un revenu modeste avec un loyer encore contenu.",
+          "original": "budgetaire",
+          "corrected": "budgétaire",
+          "reason": "accent sur l'e",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL avec ~900 EUR de revenus et ~500 EUR de loyer : estimation 2026 scénario budgetaire pour un revenu modeste avec un loyer encore contenu.",
+          "original": "budgetaire",
+          "corrected": "budgétaire",
+          "reason": "accent sur l'e",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-loyer-800-revenu-1300\\index.html",
+      "url": "/pages/apl/apl-loyer-800-revenu-1300",
+      "summary": "Corrections détectées: 2 corrections d'accent et de grammaire dans le fragment.",
+      "issues": [
+        {
+          "excerpt": "budgetaire",
+          "original": "budgetaire",
+          "corrected": "budgétaire",
+          "reason": "accent manquant sur le mot budgétaire",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "au revenu",
+          "original": "au revenu",
+          "corrected": "aux revenus",
+          "reason": "accord en nombre avec 'revenus et loyer'",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-deux-enfants\\index.html",
+      "url": "/pages/apl/apl-parent-isole-deux-enfants",
+      "summary": "Aucune correction sûre nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-paris\\index.html",
+      "url": "/pages/apl/apl-parent-isole-paris",
+      "summary": "Corrections identifiées: ajout de l’article défini manquant devant « loyer francilien » dans les occurrences répétées.",
+      "issues": [
+        {
+          "excerpt": "APL parent isolé à Paris : estimation 2026 Estimation APL pour un parent solo à Paris avec un enfant et loyer francilien.",
+          "original": "et loyer francilien.",
+          "corrected": "et le loyer francilien.",
+          "reason": "Manque de l’article défini « le » avant « loyer francilien ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL parent isolé à Paris : estimation 2026 Estimation APL pour un parent solo à Paris avec un enfant et loyer francilien.",
+          "original": "et loyer francilien.",
+          "corrected": "et le loyer francilien.",
+          "reason": "Manque de l’article défini « le » avant « loyer francilien ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL parent isolé à Paris : estimation 2026 Estimation APL pour un parent solo à Paris avec un enfant et loyer francilien.",
+          "original": "et loyer francilien.",
+          "corrected": "et le loyer francilien.",
+          "reason": "Manque de l’article défini « le » avant « loyer francilien ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-parent-isole-un-enfant\\index.html",
+      "url": "/pages/apl/apl-parent-isole-un-enfant",
+      "summary": "Aucune correction nécessaire détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic\\index.html",
+      "url": "/pages/apl/apl-personne-seule-smic",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-petite-surface-paris\\index.html",
+      "url": "/pages/apl/apl-petite-surface-paris",
+      "summary": "Corrections ciblées sur trois répétitions de la phrase, portant sur la capitalisation après deux-points et l’accord du complément.",
+      "issues": [
+        {
+          "excerpt": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "original": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "corrected": "APL pour un studio à Paris : estimation 2026 exemple APL pour une petite surface parisienne avec revenu limite.",
+          "reason": "Après deux-points, le mot qui suit est généralement en minuscule s'il n'est pas un nom propre ; correction de la majuscule.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "original": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "corrected": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limité.",
+          "reason": "Accord de l'adjectif « limité » avec le nom masculin « revenu ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "original": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "corrected": "APL pour un studio à Paris : estimation 2026 exemple APL pour une petite surface parisienne avec revenu limite.",
+          "reason": "Après deux-points, le mot qui suit est généralement en minuscule s'il n'est pas un nom propre ; correction de la majuscule.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "original": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "corrected": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limité.",
+          "reason": "Correction nécessaire du participe adjectival « limité » accordé au nom masculin « revenu ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "original": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "corrected": "APL pour un studio à Paris : estimation 2026 exemple APL pour une petite surface parisienne avec revenu limité.",
+          "reason": "Après deux-points, minuscule et correction de l’accord « revenu limité ».",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "original": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limite.",
+          "corrected": "APL pour un studio à Paris : estimation 2026 Exemple APL pour une petite surface parisienne avec revenu limité.",
+          "reason": "Correction répétée de l’accord; phrase identique à l’original pour le fragment.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit\\index.html",
+      "url": "/pages/apl/apl-proprietaire-ai-je-droit",
+      "summary": "Corrections de ponctuation sur les questions. Trois occurrences où un point doit être remplacé par un point d’interrogation (espace insécable avant le ?).",
+      "issues": [
+        {
+          "excerpt": "... ai-je droit. Cas fréquent, souvent mal compris.",
+          "original": "ai-je droit.",
+          "corrected": "ai-je droit ?",
+          "reason": "ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "... ai-je droit. Cas fréquent, souvent mal compris.",
+          "original": "ai-je droit.",
+          "corrected": "ai-je droit ?",
+          "reason": "ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "... ai-je droit. Cas fréquent, souvent mal compris.",
+          "original": "ai-je droit.",
+          "corrected": "ai-je droit ?",
+          "reason": "ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-refusee-que-faire\\index.html",
+      "url": "/pages/apl/apl-refusee-que-faire",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi-loyer-eleve\\index.html",
+      "url": "/pages/apl/apl-reprise-emploi-loyer-eleve",
+      "summary": "Aucune faute évidente remarquée dans le texte fourni. Pas de corrections locales nécessaires.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi-personne-seule\\index.html",
+      "url": "/pages/apl/apl-reprise-emploi-personne-seule",
+      "summary": "Aucune correction évidente de français détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-reprise-emploi\\index.html",
+      "url": "/pages/apl/apl-reprise-emploi",
+      "summary": "Corrections typographiques simples uniquement (accents, apostrophes, espaces autour des signes de ponctuation).",
+      "issues": [
+        {
+          "excerpt": "APL apres une reprise d'emploi : estimation 2026 Exemple d impact d'une reprise d'activité sur l'APL.",
+          "original": "APL apres une reprise d'emploi : estimation 2026 Exemple d impact d'une reprise d'activité sur l'APL.",
+          "corrected": "APL après une reprise d'emploi : estimation 2026 Exemple d'impact d'une reprise d'activité sur l'APL.",
+          "reason": "erreur d'accent sur 'apres' et erreur d'espace/ponctuation sur 'impact'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "emploi : estimation",
+          "original": "emploi : estimation",
+          "corrected": "emploi: estimation",
+          "reason": "espace avant les deux-points à corriger",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Exemple d impact",
+          "original": "Exemple d impact",
+          "corrected": "Exemple d'impact",
+          "reason": "absence d'apostrophe entre 'd' et 'impact'",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-avec-enfant\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-avec-enfant",
+      "summary": "Aucune correction sûre détectée dans le texte fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-couple-sans-enfant",
+      "summary": "Correction unique : mise en minuscule après les deux-points dans trois occurrences.",
+      "issues": [
+        {
+          "excerpt": "APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "original": "APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "corrected": "APL sans revenu pour un couple sans enfant : estimation 2026 ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "reason": "Après les deux-points, la majuscule après ponctuation n'est pas conforme aux règles typographiques françaises.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "original": "APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "corrected": "APL sans revenu pour un couple sans enfant : estimation 2026 ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "reason": "Après les deux-points, la majuscule après ponctuation n'est pas conforme aux règles typographiques françaises.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "original": "APL sans revenu pour un couple sans enfant : estimation 2026 Ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "corrected": "APL sans revenu pour un couple sans enfant : estimation 2026 ordre de grandeur de l'APL 2026 pour un couple sans enfant qui n'a plus de revenu et paie encore un loyer.",
+          "reason": "Après les deux-points, la majuscule après ponctuation n'est pas conforme aux règles typographiques françaises.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-parent-isole\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-parent-isole",
+      "summary": "Aucune correction sûre nécessaire. Le texte ne présente pas d’erreurs évidentes de français nécessitant une correction locale.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-sans-revenu-personne-seule\\index.html",
+      "url": "/pages/apl/apl-sans-revenu-personne-seule",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-smic-couple-sans-enfant",
+      "summary": "Corrections de ponctuation uniquement.",
+      "issues": [
+        {
+          "excerpt": "APL au SMIC pour un couple sans enfant : estimation 2026 Exemple d'APL pour un couple sans enfant avec revenus proches du SMIC et loyer moyen.",
+          "original": "APL au SMIC pour un couple sans enfant : estimation 2026 Exemple d'APL pour un couple sans enfant avec revenus proches du SMIC et loyer moyen.",
+          "corrected": "APL au SMIC pour un couple sans enfant : estimation 2026. Exemple d'APL pour un couple sans enfant avec revenus proches du SMIC et loyer moyen.",
+          "reason": "ponctuation manifestement cassée entre « estimation 2026 » et « Exemple »",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-seul\\index.html",
+      "url": "/pages/apl/apl-smic-seul",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\comment-savoir-si-un-logement-est-eligible-aux-apl\\index.html",
+      "url": "/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl",
+      "summary": "Corrections relevées: ponctuation manquante après une parenthèse.",
+      "issues": [
+        {
+          "excerpt": "APL (2026) Réponse",
+          "original": "APL (2026) Réponse",
+          "corrected": "APL (2026) : Réponse",
+          "reason": "Ponctuation manquante après le parenthèse fermante.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\apl\\index.html",
+      "url": "/pages/apl",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\apl\\quelles-ressources-pour-l-apl\\index.html",
+      "url": "/pages/apl/quelles-ressources-pour-l-apl",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-aides\\index.html",
+      "url": "/pages/are/are-fin-de-droits-aides",
+      "summary": "Corrections locales identifiées (1 type): retirer l espace avant les deux-points après ARE dans chaque occurrence.",
+      "issues": [
+        {
+          "excerpt": "Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "original": "Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "corrected": "Fin de droits ARE: quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "reason": "Espace avant deux-points incorrect en typographie française.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "original": "Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "corrected": "Fin de droits ARE: quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "reason": "Espace avant deux-points Incorrect en typographie française.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "original": "Fin de droits ARE : quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "corrected": "Fin de droits ARE: quelles aides en 2026 ? Repères utiles après la fin de droits ARE avec orientation vers les aides et simulateurs pertinents.",
+          "reason": "Espace avant deux-points Incorrect en typographie française.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides\\index.html",
+      "url": "/pages/are/are-fin-de-droits-quelles-aides",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl\\index.html",
+      "url": "/pages/are/are-fin-de-droits-rsa-ou-apl",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel\\index.html",
+      "url": "/pages/are/are-reprise-emploi-temps-partiel",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "url": "/pages/are",
+      "summary": "Corrections ciblées et sûres sur des fragments incohérents liés à l’usage des majuscules/acronymes et à des omissions simples.",
+      "issues": [
+        {
+          "excerpt": "durée d simulation are",
+          "original": "durée d simulation are",
+          "corrected": "durée de simulation ARE",
+          "reason": "erreur d’article et d’accord avec l’acronyme ARE",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulateur are",
+          "original": "simulateur are",
+          "corrected": "simulateur ARE",
+          "reason": "acronyme ARE en majuscules pour le terme technique",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "are simulation",
+          "original": "are simulation",
+          "corrected": "simulation ARE",
+          "reason": "majuscule requise pour ARE dans ce contexte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulation are france travail",
+          "original": "simulation are france travail",
+          "corrected": "simulation ARE France Travail",
+          "reason": "majuscule et agencement correct des noms propres",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulation are pole emploi",
+          "original": "simulation are pole emploi",
+          "corrected": "simulation ARE Pôle emploi",
+          "reason": "majuscule et orthographe du nom propre",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulations are",
+          "original": "simulations are",
+          "corrected": "simulations ARE",
+          "reason": "majuscule ARE requise pour le sigle",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "calcul are simulateur",
+          "original": "calcul are simulateur",
+          "corrected": "calcul ARE simulateur",
+          "reason": "majuscule ARE appropriée dans ce contexte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "cumul are et salaire simulation",
+          "original": "cumul are et salaire simulation",
+          "corrected": "cumul ARE et salaire simulation",
+          "reason": "majuscule ARE dans l’expression technique",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "allocation demandeur emploi",
+          "original": "allocation demandeur emploi",
+          "corrected": "allocation demandeur d’emploi",
+          "reason": "ajout de l’apostrophe manquante pour le terme correct",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026\\index.html",
+      "url": "/pages/are/montant-are-2026",
+      "summary": "Correction unique: ajouter l'article « du » manquant dans « estimation chômage ».",
+      "issues": [
+        {
+          "excerpt": "Montant ARE 2026 : calcul et estimation chômage",
+          "original": "Montant ARE 2026 : calcul et estimation chômage",
+          "corrected": "Montant ARE 2026 : calcul et estimation du chômage",
+          "reason": "omission de l’article contracté nécessaire pour une construction grammaticale correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Montant ARE 2026 : calcul et estimation chômage",
+          "original": "Montant ARE 2026 : calcul et estimation chômage",
+          "corrected": "Montant ARE 2026 : calcul et estimation du chômage",
+          "reason": "omission de l’article contracté nécessaire pour une construction grammaticale correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Montant ARE 2026 : calcul et estimation chômage",
+          "original": "Montant ARE 2026 : calcul et estimation chômage",
+          "corrected": "Montant ARE 2026 : calcul et estimation du chômage",
+          "reason": "omission de l’article contracté nécessaire pour une construction grammaticale correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\asf\\asf-parent-isole-sans-pension\\index.html",
+      "url": "/pages/asf/asf-parent-isole-sans-pension",
+      "summary": "Aucune erreur évidente détectée dans le texte fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\asf\\asf-parent-isole-sans-revenu\\index.html",
+      "url": "/pages/asf/asf-parent-isole-sans-revenu",
+      "summary": "Correction locale nécessaire pour ajouter l'article manquant après « avec » dans trois occurrences identiques.",
+      "issues": [
+        {
+          "excerpt": "avec enfant à charge",
+          "original": "avec enfant à charge",
+          "corrected": "avec un enfant à charge",
+          "reason": "article manquant avant le nom « enfant »",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "avec enfant à charge",
+          "original": "avec enfant à charge",
+          "corrected": "avec un enfant à charge",
+          "reason": "article manquant avant le nom « enfant »",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "avec enfant à charge",
+          "original": "avec enfant à charge",
+          "corrected": "avec un enfant à charge",
+          "reason": "article manquant avant le nom « enfant »",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\asf\\asf-sans-pension-et-apl\\index.html",
+      "url": "/pages/asf/asf-sans-pension-et-apl",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\asf\\index.html",
+      "url": "/pages/asf",
+      "summary": "1 correction sûre concernant l’expression « Allocation Soutien Familial ».",
+      "issues": [
+        {
+          "excerpt": "Allocation Soutien Familial",
+          "original": "Allocation Soutien Familial",
+          "corrected": "Allocation de Soutien Familial",
+          "reason": "ajout d’une préposition nécessaire en français",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\prime-activite\\prime-activite-reprise-emploi-apres-chomage\\index.html",
+      "url": "/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage",
+      "summary": "Aucune erreur évidente de français détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\combien-touche-t-on-au-rsa\\index.html",
+      "url": "/pages/rsa/combien-touche-t-on-au-rsa",
+      "summary": "Aucune faute évidente détectée dans le fragment.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\index.html",
+      "url": "/pages/rsa",
+      "summary": "Correction locale d’un accent manquant sur le mot immédiate.",
+      "issues": [
+        {
+          "excerpt": "Simulation gratuite avec estimation immediate.",
+          "original": "Simulation gratuite avec estimation immediate.",
+          "corrected": "Simulation gratuite avec estimation immédiate.",
+          "reason": "accent sur le mot 'immédiate' et ajout de l'accent grave sur le 'e'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\qui-a-droit-au-rsa\\index.html",
+      "url": "/pages/rsa/qui-a-droit-au-rsa",
+      "summary": "Corrige une seule faute identifiée dans le fragment, appliquée localement.",
+      "issues": [
+        {
+          "excerpt": "scénario type",
+          "original": "scénario type",
+          "corrected": "scénario-type",
+          "reason": "emploi du trait d'union pour un nom composé adjectival",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "scénario type",
+          "original": "scénario type",
+          "corrected": "scénario-type",
+          "reason": "emploi du trait d'union pour un nom composé adjectival",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "scénario type",
+          "original": "scénario type",
+          "corrected": "scénario-type",
+          "reason": "emploi du trait d'union pour un nom composé adjectival",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-auto-entrepreneur\\index.html",
+      "url": "/pages/rsa/rsa-auto-entrepreneur",
+      "summary": "Aucune correction évidente nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-chomage-fin-de-droits\\index.html",
+      "url": "/pages/rsa/rsa-chomage-fin-de-droits",
+      "summary": "Corrections mineures uniquement sur le fragment problématique.\"",
+      "issues": [
+        {
+          "excerpt": "une fin de droits chômage",
+          "original": "une fin de droits chômage",
+          "corrected": "une fin de droits au chômage",
+          "reason": "ajout de la préposition manquante pour l’expression correcte du chômage",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "une fin de droits chômage",
+          "original": "une fin de droits chômage",
+          "corrected": "une fin de droits au chômage",
+          "reason": "ajout de la préposition manquante pour l’expression correcte du chômage",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "une fin de droits chômage",
+          "original": "une fin de droits chômage",
+          "corrected": "une fin de droits au chômage",
+          "reason": "ajout de la préposition manquante pour l’expression correcte du chômage",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-conditions-2026\\index.html",
+      "url": "/pages/rsa/rsa-conditions-2026",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-avec-enfant\\index.html",
+      "url": "/pages/rsa/rsa-couple-avec-enfant",
+      "summary": "Aucune correction sûre nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant\\index.html",
+      "url": "/pages/rsa/rsa-couple-sans-enfant",
+      "summary": "Aucune correction sûre nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu-avec-enfant\\index.html",
+      "url": "/pages/rsa/rsa-couple-sans-revenu-avec-enfant",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu\\index.html",
+      "url": "/pages/rsa/rsa-couple-sans-revenu",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-et-apl-cumul\\index.html",
+      "url": "/pages/rsa/rsa-et-apl-cumul",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-fin-de-droits-chomage-personne-seule\\index.html",
+      "url": "/pages/rsa/rsa-fin-de-droits-chomage-personne-seule",
+      "summary": "Correction unique proposée: ajouter la préposition manquante dans l’expression 'fin de droits chômage' -> 'fin de droits au chômage'.",
+      "issues": [
+        {
+          "excerpt": "fin de droits chômage",
+          "original": "fin de droits chômage",
+          "corrected": "fin de droits au chômage",
+          "reason": "préposition manquante, forme courante et grammaticalement correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-hebergement-gratuit\\index.html",
+      "url": "/pages/rsa/rsa-hebergement-gratuit",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-interim\\index.html",
+      "url": "/pages/rsa/rsa-interim",
+      "summary": "Aucune erreur évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-jeune-moins-de-25-ans\\index.html",
+      "url": "/pages/rsa/rsa-jeune-moins-de-25-ans",
+      "summary": "Corrections ciblées sur le fragment donné.",
+      "issues": [
+        {
+          "excerpt": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
+          "original": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
+          "corrected": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec de faibles ressources.",
+          "reason": "Manque de préposition 'de' avant 'faibles ressources' qui est grammaticalement nécessaire.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
+          "original": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
+          "corrected": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec de faibles ressources.",
+          "reason": "Même correction que ci-dessus, appliquée à une autre occurrence.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
+          "original": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
+          "corrected": "RSA jeune de moins de 25 ans (2026) Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec de faibles ressources.",
+          "reason": "Même correction que ci-dessus, appliquée à une autre occurrence.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-logement-social\\index.html",
+      "url": "/pages/rsa/rsa-logement-social",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-parent-isole-sans-revenu\\index.html",
+      "url": "/pages/rsa/rsa-parent-isole-sans-revenu",
+      "summary": "Aucune correction certaine détectée dans le texte fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-personne-seule-montant\\index.html",
+      "url": "/pages/rsa/rsa-personne-seule-montant",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-logement\\index.html",
+      "url": "/pages/rsa/rsa-sans-logement",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-avec-enfant\\index.html",
+      "url": "/pages/rsa/rsa-sans-revenu-avec-enfant",
+      "summary": "Aucune correction sûre détectée dans le texte fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule\\index.html",
+      "url": "/pages/rsa/rsa-sans-revenu-personne-seule",
+      "summary": "Aucune correction nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-travail-a-temps-partiel\\index.html",
+      "url": "/pages/rsa/rsa-travail-a-temps-partiel",
+      "summary": "Aucune correction certaine détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-financiere-famille\\index.html",
+      "url": "/pages/simulateurs/aide-financiere-famille",
+      "summary": "Aucune correction évidente détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aide-sociale-simulation-globale\\index.html",
+      "url": "/pages/simulateurs/aide-sociale-simulation-globale",
+      "summary": "Aucune correction sûre nécessaire.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-apres-perte-emploi\\index.html",
+      "url": "/pages/simulateurs/aides-apres-perte-emploi",
+      "summary": "Corrige un passage grammatical: 'un arrêt brutal de revenu' → 'un arrêt brutal des revenus'",
+      "issues": [
+        {
+          "excerpt": "ou un arrêt brutal de revenu.",
+          "original": "ou un arrêt brutal de revenu.",
+          "corrected": "ou un arrêt brutal des revenus.",
+          "reason": "erreur grammaticale: 'de revenu' au singulier ne convient pas avec 'un arrêt brutal des revenus' (expression plus naturelle et correcte en contexte pluriel).",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-jeunes-actifs\\index.html",
+      "url": "/pages/simulateurs/aides-jeunes-actifs",
+      "summary": "Corrigez l'erreur d'orthographe dans l'expression « d’aides logement ».",
+      "issues": [
+        {
+          "excerpt": "Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "original": "Les jeunes actifs peuvent bénéficier d’aides logement et de compléments de revenus.",
+          "corrected": "Les jeunes actifs peuvent bénéficier d’aides au logement et de compléments de revenus.",
+          "reason": "Manque de préposition 'au' après 'aides' pour former le groupe nominal 'aides au logement'.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites\\index.html",
+      "url": "/pages/simulateurs/aides-retraites",
+      "summary": "Correction ponctuation: corriger l’espace avant les deux-points dans « Réponse à la question : ».",
+      "issues": [
+        {
+          "excerpt": "Mode : seo Analyse ce texte et retourne seulement des corrections sures : Aides retraités (2026) Réponse à la question : Aides retraités. Les retraités peuvent bénéficier d’aides fiscales et d’aides logement sous conditions. Estimation via le simulateur…",
+          "original": "Réponse à la question : Aides retraités.",
+          "corrected": "Réponse à la question: Aides retraités.",
+          "reason": "Il faut supprimer l’espace avant les deux-points en français standard.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales\\index.html",
+      "url": "/pages/simulateurs/cumul-aides-sociales",
+      "summary": "Aucune correction évidente détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\index.html",
+      "url": "/pages/simulateurs",
+      "summary": "Corrections sures limitées à des erreurs évidentes de majuscules/inutiles. Pas de réécriture complète ou d’ajout de contenu.",
+      "issues": [
+        {
+          "excerpt": "simulateurs gratuits, calculateurs",
+          "original": "simulateurs gratuits, calculateurs",
+          "corrected": "Simulateurs gratuits, calculateurs",
+          "reason": "majuscule manquante en début de phrase après un point.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Outils Gratuits 2026 — Les Calculateurs",
+          "original": "Outils Gratuits 2026 — Les Calculateurs",
+          "corrected": "Outils gratuits 2026 — Les calculateurs",
+          "reason": "cohérence de la capitalisation",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Outils Gratuits 2026 Accédez",
+          "original": "Outils Gratuits 2026 Accédez",
+          "corrected": "Outils gratuits 2026 Accédez",
+          "reason": "cohérence de la capitalisation",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-ai-je-droit",
+      "summary": "Aucune correction sûre détectée dans le fragment fourni.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-couple-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-fin-de-droits-chomage\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+      "summary": "Corrections proposées sur des passages répétitifs pour améliorer la grammaire.",
+      "issues": [
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après la fin des droits au chômage ?",
+          "reason": "Erreur de construction: ajouter l’article et préposition adaptée.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Page repère 2026 pour orienter un foyer vers les aides à vérifier après la fin de droits chômage.",
+          "original": "Page repère 2026 pour orienter un foyer vers les aides à vérifier après la fin de droits chômage.",
+          "corrected": "Page repère 2026 pour orienter un foyer vers les aides à vérifier après la fin des droits au chômage.",
+          "reason": "Correction grammaticale: accord et préposition « au chômage ».",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après la fin des droits au chômage ?",
+          "reason": "Même correction que premier fragment.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides après fin de droits chômage ?",
+          "original": "Quelles aides après fin de droits chômage ?",
+          "corrected": "Quelles aides après la fin des droits au chômage ?",
+          "reason": "Même correction que premier fragment.",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu\\index.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": []
+    }
+  ],
+  "summary": {
+    "totalFiles": 103,
+    "filesWithIssues": 43,
+    "totalIssues": 106
+  }
+}

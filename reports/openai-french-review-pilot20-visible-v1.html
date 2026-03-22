@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - french-pilot-20</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    .badge { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .badge.safe { background: #dcfae6; color: #166534; }
+    .badge.review { background: #fff4cc; color: #8a5b00; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - french-pilot-20</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>visible</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>20</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>18</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>71</strong></div>
+      <div class="card"><div>Alertes safe</div><strong>13</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>Corrections sures détectées (maximum 12) pour des fautes évidentes de français dans le texte fourni.</td>
+        <td>5<div class="muted">1 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - d’estimér => d’estimer<br><span class="muted">orthographe-grammaire du verbe estimer à l'infinitif (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - ressources . => ressources.<br><span class="muted">espacement avant ponctuation (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Estimation APL : montant mensuel selon zone et revenus Faites => Estimation APL : montant mensuel selon zone et revenus. Faites<br><span class="muted">ponctuation manquante entre proposition et phrase suivante (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Estimation APL : 180 € à 220 € par mois Charge à payer => Estimation APL : 180 € à 220 € par mois. Charge à payer<br><span class="muted">ponctuation manquante entre propositions (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - estimerer => estimer<br><span class="muted">erreur de conjugaison/orthographe (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>Corrections sures détectées dans le texte fourni, principalement des fautes d’encodage et d’orthographe simples.</td>
+        <td>8<div class="muted">2 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - caf.fr . => caf.fr.<br><span class="muted">Espace inutile avant le point final. (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - parallÎle => parallèle<br><span class="muted">Erreur d’accent dans le mot parallèle. (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - à à l'APL => à l'APL<br><span class="muted">Double préposition identique, correction nécessaire pour le sens. (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - à à Paris => à Paris<br><span class="muted">Double préposition identique, correction nécessaire. (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - diff à rents => différents<br><span class="muted">Fragment mal encodé; corriger le mot pour reprendre le sens (‘différents’). (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - parallÎe => parallèle<br><span class="muted">Répétition de correction d’accent sur parallèle; même correction adaptée. (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - à à charge => à charge<br><span class="muted">Double préposition identique, correction nécessaire. (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - parallÎle => parallèle<br><span class="muted">Correction d’accent dans parall̀ele/ parallèe. (low)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-loyer-moyen">/pages/apl/apl-chomage-loyer-moyen</a><div class="muted">src\pages\apl\apl-chomage-loyer-moyen\index.html</div></td>
+        <td>Corrections d’accents et de répétitions évidentes, uniquement des remplacements locaux sur des fragments courts.</td>
+        <td>5<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - liee a la baisse de revenus et a la gestion du reste à à charge => liée à la baisse de revenus et à la gestion du reste à charge<br><span class="muted">Correction d’orthographe et d’accentuation sur les prépositions (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - reste à à charge => reste à charge<br><span class="muted">Doublement de l’article; correction orthographique locale (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - apl marseille célibataire => APL célibataire à Marseille<br><span class="muted">Correction de la majuscule et ajout de la préposition manquante (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - apl célibataire à à Marseille => APL célibataire à Marseille<br><span class="muted">Double préposition, correction nécessaire (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - apl toulouse célibataire APL célibataire à à Toulouse => APL célibataire à Toulouse<br><span class="muted">Suppression répétitions et correction de majuscule (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>Corrections très limitées et sûres sur des fragments ciblés (répétitions d’accent/orthographe évidente et ponctuation manquante). Pas de réécriture ou de changements de sens importants.</td>
+        <td>3<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>grammaire</strong> <span class="badge safe">safe</span> - envisagéz => envisagez<br><span class="muted">erreur d’orthographe/grammaire (forme correcte du verbe) (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - à à Marseille => à Marseille<br><span class="muted">réduplication de préposition (corriger en une seule occurrence) (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Ce que cette page ne remplace pas Le résultat reste indicatif. => Ce que cette page ne remplace pas : Le résultat reste indicatif.<br><span class="muted"> ponction manquante entre proposition et explication (remplacement par deux-points) (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>Corrections sûres et localisées de quelques fragments fortement cassés ou orthographiquement déformés.</td>
+        <td>6<div class="muted">1 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - rér à pond à une intention => référence à une intention<br><span class="muted">fragment cassé, correction lexicale locale (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - rér à pond à une intention large et rentable pour le cluster foyer => référence à une intention large et rentable pour le cluster foyer<br><span class="muted">correction de fragment cassé et reprise claire (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - à à Lyon => à Lyon<br><span class="muted">doublepréposition dûe à une répétition typographique (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - different => différent<br><span class="muted">accentuation manquante sur l'adjectif (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - paramêtrès => paramètres<br><span class="muted">orthographe incorrecte (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - apl couple lyon ~57 € ~2 050 € ~790 € Couple sans enfant avec petit revenu apl couple petit revenu ~162 € ~1 700 € ~690 € Locataire HLM avec petit revenu apl hlm petit revenu ~208 € ~980 € ~430 € => apl couple Lyon ~57 € ~2 050 € ~790 € Couple sans enfant avec petit revenu apl couple petit revenu ~162 € ~1 700 € ~690 € Locataire HLM avec petit revenu apl hlm petit revenu ~208 € ~980 € ~430 €<br><span class="muted">correction typographique: double espace ou ponctuation; amélioration mineure de lisibilité sans changer le sens (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-personne-seule-smic">/pages/apl/apl-personne-seule-smic</a><div class="muted">src\pages\apl\apl-personne-seule-smic\index.html</div></td>
+        <td>Corrections sures locales uniquement (ponctuation et insertion minimale) identifiées dans le texte fourni.</td>
+        <td>5<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Pourquoi nous montrons la méthode L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles. => Pourquoi nous montrons la méthode. L'objectif est de rendre l'estimation plus lisible, plus transparente et plus simple à vérifier avec les références officielles.<br><span class="muted">Nécessité d'une ponctuation pour séparer deux propositions. (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Questions fréquentes Une personne seule au SMIC peut-elle encore toucher l'APL ? => Questions fréquentes. Une personne seule au SMIC peut-elle encore toucher l'APL ?<br><span class="muted">Ponctuation manquante entre le titre et le paragraphe; correction normative. (high)</span></li><li><strong>grammaire</strong> <span class="badge safe">safe</span> - Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond de loyer et sur l'équilibre global du calcul. => Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond du loyer et sur l'équilibre global du calcul.<br><span class="muted">Amélioration grammaticale mineure: accord/emploi plus correct de l'expression. (low)</span></li><li><strong>grammaire</strong> <span class="badge safe">safe</span> - Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond de loyer et sur l'équilibre global du calcul. => Le fait d'être seul change-t-il fortement le calcul ? Oui, la composition du foyer joue sur le plafond du loyer et sur l'équilibre global du calcul.<br><span class="muted">Correction de l’expression « plafond de loyer » + cooccurrence. (low)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - aide logement indicative => aide au logement indicative<br><span class="muted">Corrige l’expression française standard « aide au logement ». (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-smic-seul">/pages/apl/apl-smic-seul</a><div class="muted">src\pages\apl\apl-smic-seul\index.html</div></td>
+        <td>Aucune correction sûre détectée (aucune faute évidente relevée selon les critères).</td>
+        <td>0<div class="muted">0 safe</div></td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>Corrections évidentes localisées dans le texte (accentuation, espaces autour des symboles, ponctuation).</td>
+        <td>6<div class="muted">3 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - 57, 43% => 57,43%<br><span class="muted">espace injustifiée avant le séparateur décimal; correction typographique (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - 31, 50€/jour => 31,50 €/jour<br><span class="muted">espace avant l’unité et autour du symbole €, correction typographique (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - 91, 82€/jour => 91,82 €/jour<br><span class="muted">espace avant l’unité et autour du symbole €, correction typographique (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - min 31, 50€/jour => min 31,50 €/jour<br><span class="muted">même correction d’espacement autour du nombre et de l’unité (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - ARE journalière = 120€ × 57, 43% = 68, 92€/jour => ARE journalière = 120€ × 57,43% = 68,92€/jour<br><span class="muted">correction des décimales et du pourcentage sans espaces superflus (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - à jour Estimez => à jour. Estimez<br><span class="muted">ajout d’un point pour séparer les propositions; correction mineure de ponctuation (medium)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-quelles-aides">/pages/are/are-fin-de-droits-quelles-aides</a><div class="muted">src\pages\are\are-fin-de-droits-quelles-aides.html</div></td>
+        <td>Corrections orthographiques évidentes et corrections d’encodage locales seulement.</td>
+        <td>2<div class="muted">1 safe</div></td>
+        <td><ul><li><strong>grammaire</strong> <span class="badge safe">safe</span> - Scénario ARE estimée => Scénario ARE estimé<br><span class="muted">accord du nom masculin 'Scénario' avec l’adjectif 'estimé' (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - &amp;Acirc;ge => Âge<br><span class="muted">erreur d’encodage des caractères (mojibake) à corriger (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026.html</div></td>
+        <td>Corrections uniquement des fautes évidentes (encodage et orthographe) sans changement de sens ni reformulation.</td>
+        <td>3<div class="muted">1 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - Salaire de référence &amp;Acirc;ge Demandeur d'emploi cherchant une estimation ARE => Salaire de référence Âge Demandeur d'emploi cherchant une estimation ARE<br><span class="muted">erreur d'encodage HTML transformant le caractère Â en &amp;Acirc;. (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - Scénario ARE estimée Salaire de référence &amp;Acirc;ge Demandeur d'emploi cherchant une estimation ARE => Scénario ARE estimée Salaire de référence Âge Demandeur d'emploi cherchant une estimation ARE<br><span class="muted">erreur d'encodage HTML transformant le caractère Â en &amp;Acirc;. (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - Comment estimér rapidement le montant ARE ? => Comment estimer rapidement le montant ARE ?<br><span class="muted">forme verbale incorrecte; correction orthographique et grammaticale mineure (infinitif). (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf">/pages/asf</a><div class="muted">src\pages\asf.html</div></td>
+        <td>Corrigé un problème de ponctuation qui porte sur l’espace avant la virgule dans une liste de sources.</td>
+        <td>1<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Source : Simulateurs CAF (ASF, RSA...) , Fiche ASF Public : => Source : Simulateurs CAF (ASF, RSA...), Fiche ASF Public :<br><span class="muted">Espace superflu avant la virgule après les parenthèses. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/blog/departements/frais-notaire-56">/pages/blog/departements/frais-notaire-56</a><div class="muted">src\pages\blog\departements\frais-notaire-56.html</div></td>
+        <td>Corrigés locaux et sûrs détectés dans le texte fourni. Deux corrections identifiées (orthographe et ponctuation) sans toucher au sens ni ajouter de contenu.</td>
+        <td>2<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - à estimér via le calculateur => à estimer via le calculateur<br><span class="muted">erreur orthographique (verbe à l’infinitif mal conjugué dans le contexte) (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Notaires.fr . => Notaires.fr.<br><span class="muted">espace superflu avant la ponctuation terminale (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>Corrigés des erreurs évidentes de ponctuation et d’orthographe dans le texte fourni (12 problèmes au maximum).</td>
+        <td>6<div class="muted">3 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - DGFiP , Service‑Public => DGFiP, Service‑Public<br><span class="muted">espace avant une virgule (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - 1 808€ => 1 808 €<br><span class="muted">espace manquant avant le symbole € (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - 11 294€ => 11 294 €<br><span class="muted">espace manquant avant le symbole € (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - 28 797€ => 28 797 €<br><span class="muted">espace manquant avant le symbole € (high)</span></li><li><strong>apostrophe</strong> <span class="badge safe">safe</span> - 0% jusqu'à 11 294€, puis 11% => 0% jusqu\u2019à 11 294 €, puis 11%<br><span class="muted">réalité typographique (apostrophe) (low)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - estimér => estimer<br><span class="muted">orthographe d’infinitif (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/notaire">/pages/notaire</a><div class="muted">src\pages\notaire.html</div></td>
+        <td>Corrections sûres limitées à des remplacements locaux d’accents, espaces et ponctuation autour des pourcentages et de quelques signes typographiques. Pas de réécriture de phrases.</td>
+        <td>7<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - 5, 09 % => 5,09%<br><span class="muted">espace inutile avant le symbole pourcentage (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - 6, 32 % (87 départements au taux majoré) => 6,32% (87 départements au taux majoré)<br><span class="muted">espace inutile avant le pourcentage et ponctuation à corriger (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Paris (75) applique le taux majoré de 6, 32 % . => Paris (75) applique le taux majoré de 6,32%.<br><span class="muted">espace avant pourcentage et ponctuation incorrecte (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - 5, 80 % (standard : 12 départements) => 5,80% (standard : 12 départements)<br><span class="muted">espace inutile avant le pourcentage (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - 5, 09% (réduit : 36, 976) => 5,09% (réduit : 36 976)<br><span class="muted">espace et virgule dans le nombre à corriger (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - 250 000 €, l'écart peut => 250 000€, l'écart peut<br><span class="muted">espace avant la virgule (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - 5, 09% à 6, 32% => 5,09% à 6,32%<br><span class="muted">espaces superflus autour des pourcentages (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite">/pages/prime-activite</a><div class="muted">src\pages\prime-activite.html</div></td>
+        <td>Corrections simples et sûres d’orthographe et de typographie locale détectées dans le texte fourni.</td>
+        <td>3<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - suspension du versément. => suspension du versement.<br><span class="muted">erreur d’orthographe du mot 'versement'. (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - bourses d'étude => bourses d'études<br><span class="muted">accord du mot 'études' au pluriel et à l’usage courant. (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - ARE ARE et reprise d'emploi à temps partiel => ARE et reprise d'emploi à temps partiel<br><span class="muted">duplication accidentelle du sigle ARE. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa">/pages/rsa</a><div class="muted">src\pages\rsa.html</div></td>
+        <td>Corrections locales et sûres identifiées dans le texte fourni.</td>
+        <td>5<div class="muted">1 safe</div></td>
+        <td><ul><li><strong>accent</strong> <span class="badge safe">safe</span> - regles CAF en vigueur en 2026 => règles CAF en vigueur en 2026<br><span class="muted">accent manquant sur le i (règles) (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - estimér si vous pouvez être éligible au RSA => estimer si vous pouvez être éligible au RSA<br><span class="muted">erreur d'accent/orthographe verbale (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - versément est rétroactif => versement est rétroactif<br><span class="muted">mot mal écrit (versement) (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - environ environ 600 € / mois => environ 600 € / mois<br><span class="muted">duplication; correction locale (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - Le premier versément est rétroactif à la date de la demande => Le premier versement est rétroactif à la date de la demande<br><span class="muted">mot mal écrit (versement) (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-enfant">/pages/rsa/rsa-couple-sans-enfant</a><div class="muted">src\pages\rsa\rsa-couple-sans-enfant.html</div></td>
+        <td>Corrections sures détectées (français).</td>
+        <td>2<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - caf.fr . => caf.fr.<br><span class="muted">espace avant la ponctuation à corriger (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - ~792 € / mois => ~792 € par mois<br><span class="muted">remplacement d'une tournure avec slash par une expression correcte (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-revenu-personne-seule">/pages/rsa/rsa-sans-revenu-personne-seule</a><div class="muted">src\pages\rsa\rsa-sans-revenu-personne-seule.html</div></td>
+        <td>Corriger une espace avant le point après caf.fr.</td>
+        <td>1<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - caf.fr . => caf.fr.<br><span class="muted">Espace inutile avant le point final. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelle-aide-selon-mon-profil-2026">/pages/simulateurs/quelle-aide-selon-mon-profil-2026</a><div class="muted">src\pages\simulateurs\quelle-aide-selon-mon-profil-2026.html</div></td>
+        <td>Corriger une majuscule inappropriée dans une coordonnées d’état de logement.</td>
+        <td>1<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - Locataire Propriétaire accédant Hébergé à titre gratuit => Locataire Propriétaire accédant hébergé à titre gratuit<br><span class="muted">Erreur d'orthographe: Hébergé doit être écrit avec une minuscule lorsqu'il suit une liste sans majuscule initiale. (low)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-sans-revenu">/pages/simulateurs/quelles-aides-sans-revenu</a><div class="muted">src\pages\simulateurs\quelles-aides-sans-revenu.html</div></td>
+        <td>Aucune correction sûre détectée dans le fragment fourni.</td>
+        <td>0<div class="muted">0 safe</div></td>
+        <td><ul></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

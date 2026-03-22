@@ -1,0 +1,46 @@
+{
+  "encoding": {
+    "enforced": true,
+    "default": "utf-8",
+    "validation": {
+      "enabled": true,
+      "strictMode": true,
+      "tolerance": 0,
+      "blacklist": ["ðŸ", "Ã©", "Ã¢", "Ã§", "Â", "â€™", "â€'", "ï¿½"]
+    },
+    "rules": [
+      {
+        "id": "rule-1",
+        "name": "No corrupted UTF-8",
+        "pattern": "ðŸ|Ã|â€|ï¿½",
+        "severity": "FATAL",
+        "action": "BLOCK"
+      },
+      {
+        "id": "rule-2",
+        "name": "Must be valid Unicode",
+        "pattern": "\\x00",
+        "severity": "FATAL",
+        "action": "BLOCK"
+      }
+    ],
+    "gates": {
+      "before_execution": true,
+      "before_commit": true,
+      "before_generation": true
+    },
+    "scripts": {
+      "validate": "node scripts/validate-utf8-gate.cjs",
+      "check": "node scripts/check-integrity.cjs",
+      "clean": "node scripts/cleanup-emergency.cjs",
+      "safe-run": "node scripts/safe-run.cjs",
+      "run-correct": "powershell -ExecutionPolicy Bypass -File scripts/run-auto-correct.ps1"
+    }
+  },
+  "protection": {
+    "autoClean": true,
+    "strictMode": true,
+    "requireValidation": true,
+    "blockCorruptedScripts": true
+  }
+}

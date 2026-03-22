@@ -1,0 +1,250 @@
+{
+  "generatedAt": "2026-03-20T15:21:58.950Z",
+  "scope": "pillars-rendered",
+  "mode": "seo",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Aucune correction sûre détectée dans le texte fourni. Le texte ne présente pas d'erreurs évidentes de français nécessitant une correction locale et littérale.",
+      "issues": []
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "summary": "Corrections sûres détectées dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "durée d simulation are",
+          "original": "durée d simulation are",
+          "corrected": "durée de simulation ARE",
+          "reason": "ajout de l’article et mise en forme correcte de ARE",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d Simulateur ARE 2026",
+          "original": "d Simulateur ARE 2026",
+          "corrected": "du simulateur ARE 2026",
+          "reason": "corrige l’ellipse et la préposition pour une expression correcte",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "url": "/pages/asf",
+      "summary": "Une correction sûre identifiée : correction de la capitalisation incorrecte dans « Calcul Gratuit ».",
+      "issues": [
+        {
+          "excerpt": "Simulation ASF 2026 - Calcul Gratuit | Simulateur Allocation Soutien Familial CAF",
+          "original": "Simulation ASF 2026 - Calcul Gratuit | Simulateur Allocation Soutien Familial CAF",
+          "corrected": "Simulation ASF 2026 - Calcul gratuit | Simulateur Allocation Soutien Familial CAF",
+          "reason": "Correction orthographique de la majuscule inappropriée après le trait d'union; pas de changement de sens.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\charges.html",
+      "url": "/pages/charges",
+      "summary": "Corrige une faute d’orthographe liée à la majuscule en début de phrase sur une liste d’expressions.",
+      "issues": [
+        {
+          "excerpt": "calcul charges copropriété, simulateur charges copropriété, charges copropriété 2026, estimation charges copropriété,",
+          "original": "calcul charges copropriété, simulateur charges copropriété, charges copropriété 2026, estimation charges copropriété,",
+          "corrected": "Calcul charges copropriété, simulateur charges copropriété, charges copropriété 2026, estimation charges copropriété,",
+          "reason": "Le premier élément après une virgule commence par une minuscule alors que c’est le début d’une énumération; correction de l’orthographe/majuscules nécessaire.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "summary": "Corrections d'accents sur les expressions liées à l'impôt",
+      "issues": [
+        {
+          "excerpt": "simulation impot sur le revenu",
+          "original": "simulation impot sur le revenu",
+          "corrected": "simulation impôt sur le revenu",
+          "reason": "accent requis sur 'impôt'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulateur impots sur le revenu",
+          "original": "simulateur impots sur le revenu",
+          "corrected": "simulateur impôt sur le revenu",
+          "reason": "accent requis sur 'impôt'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulateur impot sur le revenu",
+          "original": "simulateur impot sur le revenu",
+          "corrected": "simulateur impôt sur le revenu",
+          "reason": "accent requis sur 'impôt'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "calcul impot 2026",
+          "original": "calcul impot 2026",
+          "corrected": "calcul impôt 2026",
+          "reason": "accent requis sur 'impôt'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "url": "/pages/notaire",
+      "summary": "Correction locale unique: ajouter 'e' et 'de' manquants dans une expression.",
+      "issues": [
+        {
+          "excerpt": "le type d frais notaire 2026",
+          "original": "le type d frais notaire 2026",
+          "corrected": "le type de frais notaire 2026",
+          "reason": "erreur grammaticale due à l'omission de la préposition 'de'",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "url": "/pages/prime-activite",
+      "summary": "Suggestions de corrections évidentes et localisées uniquement.",
+      "issues": [
+        {
+          "excerpt": "Estimez votre prime d simulation",
+          "original": "Estimez votre prime d simulation",
+          "corrected": "Estimez votre prime de simulation",
+          "reason": "accentuation et préposition manquante",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "prime d Calculez",
+          "original": "prime d Calculez",
+          "corrected": "prime de Calculez",
+          "reason": "préposition manquante et correction minime",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "url": "/pages/rsa",
+      "summary": "Corrections de ponctuation: ajout de points pour séparer les phrases courtes et améliorer la lisibilité sans modifier le contenu. Pas de corrections au-delà des points.",
+      "issues": [
+        {
+          "excerpt": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes Calculez votre RSA 2026 selon votre foyer, vos revenus et votre logement.",
+          "original": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes Calculez votre RSA 2026 selon votre foyer, vos revenus et votre logement.",
+          "corrected": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes. Calculez votre RSA 2026 selon votre foyer, vos revenus et votre logement.",
+          "reason": "Pontuation manquante entre deux propositions indépendantes.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Simulateur RSA 2026 | Estimation CAF gratuite Faites une simulation RSA 2026 gratuite en ligne : montant personne seule, couple et famille.",
+          "original": "Simulateur RSA 2026 | Estimation CAF gratuite Faites une simulation RSA 2026 gratuite en ligne : montant personne seule, couple et famille.",
+          "corrected": "Simulateur RSA 2026 | Estimation CAF gratuite. Faites une simulation RSA 2026 gratuite en ligne : montant personne seule, couple et famille.",
+          "reason": "Pontuation manquante entre deux propositions indépendantes.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\salaire.html",
+      "url": "/pages/salaire",
+      "summary": "Corrections sûres détectées dans le texte fourni, limitées à des fragments clairement erronés ou mal encodés.",
+      "issues": [
+        {
+          "excerpt": "Simulation Prélèvement Source",
+          "original": "Simulation Prélèvement Source",
+          "corrected": "Simulation prélèvement à la source",
+          "reason": "erreur de formulation et absence de préposition adaptée",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Source Simulateur",
+          "original": "Source Simulateur",
+          "corrected": "Source. Simulateur",
+          "reason": "ajout d'une ponctuation manquante entre deux segments",
+          "category": "ponctuation",
+          "confidence": "medium",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\simulateurs.html",
+      "url": "/pages/simulateurs",
+      "summary": "Corrections sûres et localisées sur des fragments clairement fautifs.",
+      "issues": [
+        {
+          "excerpt": "prime d simulateurs gratuits",
+          "original": "prime d simulateurs gratuits",
+          "corrected": "prime des simulateurs gratuits",
+          "reason": "erreur grammaticale/orthographe du complément",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "l Outils gratuits 2026",
+          "original": "l Outils gratuits 2026",
+          "corrected": "les outils gratuits 2026",
+          "reason": "erreur d’article et espace superflu",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "",
+          "original": ", l",
+          "corrected": ".",
+          "reason": "ponctuation défectueuse, fragments incohérents; correction mineure de ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ]
+    },
+    {
+      "filePath": "src\\pages\\taxe.html",
+      "url": "/pages/taxe",
+      "summary": "Aucune erreur évidente de français détectée dans le fragment fourni.",
+      "issues": []
+    }
+  ],
+  "summary": {
+    "totalFiles": 11,
+    "filesWithIssues": 9,
+    "totalIssues": 18
+  }
+}

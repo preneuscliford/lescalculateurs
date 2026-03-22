@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-03-20T18:07:49.075Z",
+  "input": "reports\\openai-french-review-pilot20-visible-v1.json",
+  "summary": {
+    "appliedCount": 8,
+    "skippedCount": 5,
+    "filesTouched": 5
+  },
+  "applied": [
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "original": "different",
+      "corrected": "différent",
+      "category": "accent",
+      "reason": "accentuation manquante sur l'adjectif",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "min 31, 50€/jour",
+      "corrected": "min 31,50 €/jour",
+      "category": "espacement",
+      "reason": "même correction d’espacement autour du nombre et de l’unité",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "91, 82€/jour",
+      "corrected": "91,82 €/jour",
+      "category": "espacement",
+      "reason": "espace avant l’unité et autour du symbole €, correction typographique",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "original": "&Acirc;ge",
+      "corrected": "Âge",
+      "category": "encodage",
+      "reason": "erreur d’encodage des caractères (mojibake) à corriger",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "11 294€",
+      "corrected": "11 294 €",
+      "category": "espacement",
+      "reason": "espace manquant avant le symbole €",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "28 797€",
+      "corrected": "28 797 €",
+      "category": "espacement",
+      "reason": "espace manquant avant le symbole €",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "1 808€",
+      "corrected": "1 808 €",
+      "category": "espacement",
+      "reason": "espace manquant avant le symbole €",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "original": "regles CAF en vigueur en 2026",
+      "corrected": "règles CAF en vigueur en 2026",
+      "category": "accent",
+      "reason": "accent manquant sur le i (règles)",
+      "replacements": 1
+    }
+  ],
+  "skipped": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "original": "ressources .",
+      "corrected": "ressources.",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "original": "parallÎle",
+      "corrected": "parallèle",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "original": "parallÎe",
+      "corrected": "parallèle",
+      "category": "accent",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "31, 50€/jour",
+      "corrected": "31,50 €/jour",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "original": "Salaire de référence &Acirc;ge Demandeur d'emploi cherchant une estimation ARE",
+      "corrected": "Salaire de référence Âge Demandeur d'emploi cherchant une estimation ARE",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    }
+  ]
+}

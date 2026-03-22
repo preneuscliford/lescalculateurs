@@ -1,0 +1,811 @@
+{
+  "generatedAt": "2026-03-20T18:07:49.233Z",
+  "scope": "french-pilot-20",
+  "mode": "seo",
+  "model": "gpt-5-nano",
+  "files": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "url": "/pages/apl",
+      "summary": "Corrections d’encodage HTML évidentes uniquement (fragments à accents/outils spéciaux).",
+      "issues": [
+        {
+          "excerpt": "r&eacute ; sultat imm&eacute ; diat",
+          "original": "r&eacute ; sultat imm&eacute ; diat",
+          "corrected": "résultat immédiat",
+          "reason": "remplacement d’entités HTML par les caractères accentués",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "bar&egrave ; mes CAF &agrave ; jour",
+          "original": "bar&egrave ; mes CAF &agrave ; jour",
+          "corrected": "barèmes CAF à jour",
+          "reason": "remplacement d’entités par les caractères et reformulation standardisée",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "personnalis&eacute ; e au logement",
+          "original": "personnalis&eacute ; e au logement",
+          "corrected": "personnalisée au logement",
+          "reason": "correction d’apostrophe/entité pour un mot",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "&eacute ; ligibilit&eacute ;",
+          "original": "&eacute ; ligibilit&eacute ;",
+          "corrected": "éligibilité",
+          "reason": "correction d’entité HTML unique en mot",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "&egrave ; ographique",
+          "original": "&egrave ; ographique",
+          "corrected": "géographique",
+          "reason": "correction d’entité HTML en mot correct",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "R&eacute ; sultat imm&eacute ; diat",
+          "original": "R&eacute ; sultat imm&eacute ; diat",
+          "corrected": "Résultat immédiat",
+          "reason": "correction d’entités HTML et majuscule initiale",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "&eacute ; tudiant",
+          "original": "&eacute ; studenti",
+          "corrected": "étudiant",
+          "reason": "correction d’entité HTML",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 3
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "url": "/pages/apl/apl-celibataire-smic",
+      "summary": "Corrections orthographiques et d’encodage pour des entités HTML dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Sc&#233 ; nario",
+          "original": "Sc&#233 ; nario",
+          "corrected": "Scénario",
+          "reason": "accent sur é et séparation incorrecte autour du point-virgule",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d&#39 ; une",
+          "original": "d&#39 ; une",
+          "corrected": "d'une",
+          "reason": "apostrophe typographique séparant d' et le mot suivant; correction nécessaire",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "c&#233 ; libataire",
+          "original": "c&#233 ; libataire",
+          "corrected": "célibataire",
+          "reason": "fusion retardée et accent sur é; mot correct est célibataire",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen\\index.html",
+      "url": "/pages/apl/apl-chomage-loyer-moyen",
+      "summary": "Corrections sûres pour les entités HTML mal rendues et les espaces autour de l'apostrophe dans les répétitions identiques du texte.",
+      "issues": [
+        {
+          "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&#39 ; une personne seule en p&#233 ; riode de ch&#244 ; mage avec loyer standard.",
+          "original": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&#39 ; une personne seule en p&#233 ; riode de ch&#244 ; mage avec loyer standard.",
+          "corrected": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "reason": "Correction des entités HTML et suppression des espaces autour de l'apostrophe et des caractères accentués.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&#39 ; une personne seule en p&#233 ; riode de ch&#244 ; mage avec loyer standard.",
+          "original": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&#39 ; une personne seule en p&#233 ; riode de ch&#244 ; mage avec loyer standard.",
+          "corrected": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "reason": "Correction des entités HTML et suppression des espaces autour de l'apostrophe et des caractères accentués.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&#39 ; une personne seule en p&#233 ; riode de ch&#244 ; mage avec loyer standard.",
+          "original": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&#39 ; une personne seule en p&#233 ; riode de ch&#244 ; mage avec loyer standard.",
+          "corrected": "APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "reason": "Correction des entités HTML et suppression des espaces autour de l'apostrophe et des caractères accentués.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "url": "/pages/apl/apl-chomage-personne-seule",
+      "summary": "Corrections d'encodage HTML pour des mots francais dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "activit&#233 ;",
+          "original": "activit&#233 ;",
+          "corrected": "activité",
+          "reason": "caractères encodés HTML incorrects",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ch&#244 ; mage",
+          "original": "ch&#244 ; mage",
+          "corrected": "chômage",
+          "reason": "caractères encodés HTML incorrects",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "activit&#233 ;",
+          "original": "activit&#233 ;",
+          "corrected": "activité",
+          "reason": "caractères encodés HTML incorrects",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ch&#244 ; mage",
+          "original": "ch&#244 ; mage",
+          "corrected": "chômage",
+          "reason": "caractères encodés HTML incorrects",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "activit&#233 ;",
+          "original": "activit&#233 ;",
+          "corrected": "activité",
+          "reason": "caractères encodés HTML incorrects",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ch&#244 ; mage",
+          "original": "ch&#244 ; mage",
+          "corrected": "chômage",
+          "reason": "caractères encodés HTML incorrects",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 6
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant\\index.html",
+      "url": "/pages/apl/apl-couple-sans-enfant",
+      "summary": "Corriger l'encodage du fragment 'Sc&#233 ; nario' en 'Scénario' dans les occurrences.",
+      "issues": [
+        {
+          "excerpt": "Sc&#233 ; nario",
+          "original": "Sc&#233 ; nario",
+          "corrected": "Scénario",
+          "reason": "Encodage des caractères (HTML entity) pour é",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sc&#233 ; nario",
+          "original": "Sc&#233 ; nario",
+          "corrected": "Scénario",
+          "reason": "Encodage des caractères (HTML entity) pour é",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Sc&#233 ; nario",
+          "original": "Sc&#233 ; nario",
+          "corrected": "Scénario",
+          "reason": "Encodage des caractères (HTML entity) pour é",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 3
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic\\index.html",
+      "url": "/pages/apl/apl-personne-seule-smic",
+      "summary": "Aucune correction sûre détectée dans le texte fourni.",
+      "issues": [],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-seul\\index.html",
+      "url": "/pages/apl/apl-smic-seul",
+      "summary": "Correction unique d’un encodage HTML cassé dans le texte.",
+      "issues": [
+        {
+          "excerpt": "r&#233 ; mun&#233 ; r&#233 ; e",
+          "original": "r&#233 ; mun&#233 ; r&#233 ; e",
+          "corrected": "rémunérée",
+          "reason": "Encodage HTML incorrect provoquant des caractères spéciaux mal affichés.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "r&#233 ; mun&#233 ; r&#233 ; e",
+          "original": "r&#233 ; mun&#233 ; r&#233 ; e",
+          "corrected": "rémunérée",
+          "reason": "Encodage HTML incorrect provoquant des caractères spéciaux mal affichés.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "r&#233 ; mun&#233 ; r&#233 ; e",
+          "original": "r&#233 ; mun&#233 ; r&#233 ; e",
+          "corrected": "rémunérée",
+          "reason": "Encodage HTML incorrect provoquant des caractères spéciaux mal affichés.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "url": "/pages/are",
+      "summary": "Corrections sûres et localisées des entités HTML cassées et abréviations incohérentes liées au texte.",
+      "issues": [
+        {
+          "excerpt": "ch&ocirc ; mage",
+          "original": "ch&ocirc ; mage",
+          "corrected": "chômage",
+          "reason": "entité HTML cassée pour le mot 'chômage'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "dur&eacute ; e",
+          "original": "dur&eacute ; e",
+          "corrected": "durée",
+          "reason": "entité HTML cassée pour le mot 'durée'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d simulation are",
+          "original": "d simulation are",
+          "corrected": "de simulation ARE",
+          "reason": "correction mineure et locale pour l'expression correcte",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "simulation are france travail",
+          "original": "simulation are france travail",
+          "corrected": "simulation ARE France Travail",
+          "reason": "majuscule et nom propre corrects",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "calcul are simulateur",
+          "original": "calcul are simulateur",
+          "corrected": "calcul ARE simulateur",
+          "reason": "majuscule et cohérence avec ARE",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Estimation ch&ocirc ; mage",
+          "original": "Estimation ch&ocirc ; mage",
+          "corrected": "Estimation chômage",
+          "reason": "entité HTML cassée pour 'chômage'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "droit ch&ocirc ; mage simulation",
+          "original": "droit ch&ocirc ; mage simulation",
+          "corrected": "droit chômage simulation",
+          "reason": "entité HTML cassée et cohérence phrase",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "allocation demandeur emploi Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, dur&eacute ; e d Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, dur&eacute ; e d",
+          "original": "allocation demandeur emploi Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, dur&eacute ; e d Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, dur&eacute ; e d",
+          "corrected": "allocation demandeur d’emploi Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, durée d'",
+          "reason": "correction locale des qqs fragments cassés et ajout d'apostrophe sans changer le sens; dernière partie incomplète conservée",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "dur&eacute ; e d",
+          "original": "dur&eacute ; e d",
+          "corrected": "durée d'",
+          "reason": "correction d'une entité HTML cassée et apostrophe manquante",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 5
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "url": "/pages/are/are-fin-de-droits-quelles-aides",
+      "summary": "Corrections sûres sur l’encodage HTML et les accents/espaces dans le texte.",
+      "issues": [
+        {
+          "excerpt": "Rep&#232 ; re 2026",
+          "original": "Rep&#232 ; re 2026",
+          "corrected": "Repère 2026",
+          "reason": "Encodage des caractères HTML pour les lettres accentuées.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "&#224 ; v&#233 ; rifier",
+          "original": "&#224 ; v&#233 ; rifier",
+          "corrected": "à vérifier",
+          "reason": "Correction des entités HTML représentant les caractères et de l’orthographe.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "apr&#232 ; s l&#39 ; arr&#234 ; t",
+          "original": "apr&#232 ; s l&#39 ; arr&#234 ; t",
+          "corrected": "après l'arrêt",
+          "reason": "Correction des entités HTML et de l’orthographe (apostrophe/arrêt).",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "ch&#244 ; mage",
+          "original": "ch&#244 ; mage",
+          "corrected": "chômage",
+          "reason": "Correction des entités HTML pour le mot chômage.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 2
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "url": "/pages/are/montant-are-2026",
+      "summary": "Corrections d’encodage HTML dans le texte fourni (remplacements locaux, sans réécriture du sens).",
+      "issues": [
+        {
+          "excerpt": "&#224 ;",
+          "original": "&#224 ;",
+          "corrected": "à",
+          "reason": "Encodage HTML → caractère latin 'à'",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d&#39 ;",
+          "original": "d&#39 ;",
+          "corrected": "d'",
+          "reason": "Apostrophe HTML encodée → apostrophe typographique",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "r&#233 ; f&#233 ; rence",
+          "original": "r&#233 ; f&#233 ; rence",
+          "corrected": "référence",
+          "reason": "Encodage HTML → mot clair 'référence'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "d&#39 ; une",
+          "original": "d&#39 ; une",
+          "corrected": "d'une",
+          "reason": "Apostrophe HTML encodée → apostrophe",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "anciennet&#233 ;",
+          "original": "anciennet&#233 ;",
+          "corrected": "ancienneté",
+          "reason": "Encodage HTML → mot 'ancienneté'",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 4
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "url": "/pages/asf",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": [],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-56.html",
+      "url": "/pages/blog/departements/frais-notaire-56",
+      "summary": "Corrections d’orthographe/majuscules liées à l’expression « frais de notaire » et à la mention des lieux.",
+      "issues": [
+        {
+          "excerpt": "Droits d Frais de notaire",
+          "original": "Droits d Frais de notaire",
+          "corrected": "droits de notaire",
+          "reason": "erreur d’article et d’espace: 'Droits d Frais' doit être 'droits de notaire'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "frais de notaire morbihan",
+          "original": "frais de notaire morbihan",
+          "corrected": "frais de notaire Morbihan",
+          "reason": "nom propre 'Morbihan' doit être capitalisé",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "frais notaire Morbihan",
+          "original": "frais notaire Morbihan",
+          "corrected": "frais de notaire Morbihan",
+          "reason": "omission de la préposition 'de' entre 'frais' et 'notaire'",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "url": "/pages/impot",
+      "summary": "Corrections essentiellement orthographiques mineures (accent sur impôt et uniformisation de l’usage). Pas de réécriture de phrases ni d’ajouts de mots.",
+      "issues": [
+        {
+          "excerpt": "simulateur impots sur le revenu",
+          "original": "simulateur impots sur le revenu",
+          "corrected": "simulateur impôt sur le revenu",
+          "reason": "accent sur impôt manquant",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "impot sur le revenu",
+          "original": "impot sur le revenu",
+          "corrected": "impôt sur le revenu",
+          "reason": "accent manquant",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "impot sur le revenu",
+          "original": "impot sur le revenu",
+          "corrected": "impôt sur le revenu",
+          "reason": "accent manquant",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 3
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "url": "/pages/notaire",
+      "summary": "Corrections simples d’orthographe, d’apostrophe et de ponctuation locales dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "type d frais",
+          "original": "type d frais",
+          "corrected": "type de frais",
+          "reason": "erreur de préposition/grammaire",
+          "category": "grammaire",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "enregistrement\",\"",
+          "original": "enregistrement",
+          "corrected": "d'enregistrement",
+          "reason": "manque d'apostrophe et ajout de préposition",
+          "category": "apostrophe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "émoluments",
+          "original": "emoluments",
+          "corrected": "émoluments",
+          "reason": "accent sur le e",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "résultat immediat.",
+          "original": "résultat immediat.",
+          "corrected": "résultat immédiat.",
+          "reason": "accent et orthographe",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "département Calculez",
+          "original": "département Calculez",
+          "corrected": "département. Calculez",
+          "reason": "ajout de ponctuation",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "export csv frais",
+          "original": "export csv frais",
+          "corrected": "export CSV frais",
+          "reason": "majuscule à l’acronyme",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 3
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "url": "/pages/prime-activite",
+      "summary": "Corrections sûres et localisées sur des fragments shortes, liées à l’usage de “prime d” vs “prime de” et à des accords de nom. Pas de réécriture complète ni d’ajout d’éléments.",
+      "issues": [
+        {
+          "excerpt": "Estimez votre prime d simulation",
+          "original": "Estimez votre prime d simulation",
+          "corrected": "Estimez votre prime de simulation",
+          "reason": "Orthographe et construction correcte: remplacer “d” par “de” devant “simulation”.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "prime d Simulateur",
+          "original": "prime d Simulateur",
+          "corrected": "prime de Simulateur",
+          "reason": "Espacement et préposition manquants: remplacer “d” par “de” avant le nom.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "prime d Calculez votre prime d",
+          "original": "prime d Calculez votre prime d",
+          "corrected": "prime de Calculez votre prime de",
+          "reason": "Préposition manquante répétée: corriger “d” en “de” avant les segments correspondants.",
+          "category": "espacement",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "prime d",
+          "original": "prime d",
+          "corrected": "prime de",
+          "reason": "Nominalisation incomplète: remplacer “d” par “de” lorsque suivi d’un nom.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "prime d",
+          "original": "prime d",
+          "corrected": "prime de",
+          "reason": "Même correction répétée nécessaire dans le deuxième occurrences.",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "url": "/pages/rsa",
+      "summary": "Corrections visibles et sûres (ponctuation).",
+      "issues": [
+        {
+          "excerpt": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes Calculez",
+          "original": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes Calculez",
+          "corrected": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes. Calculez",
+          "reason": "Manque de point-virgule entre deux phrases.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Simulateur RSA 2026 | Estimation CAF gratuite Faites une",
+          "original": "Simulateur RSA 2026 | Estimation CAF gratuite Faites une",
+          "corrected": "Simulateur RSA 2026 | Estimation CAF gratuite. Faites une",
+          "reason": "Manque de point entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Simulateur RSA 2026 | Estimation CAF gratuite Faites une simulation",
+          "original": "Simulateur RSA 2026 | Estimation CAF gratuite Faites une simulation",
+          "corrected": "Simulateur RSA 2026 | Estimation CAF gratuite. Faites une simulation",
+          "reason": "Manque de point entre deux propositions.",
+          "category": "ponctuation",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant.html",
+      "url": "/pages/rsa/rsa-couple-sans-enfant",
+      "summary": "Aucune correction sûre détectée.",
+      "issues": [],
+      "safeIssuesCount": 0
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule.html",
+      "url": "/pages/rsa/rsa-sans-revenu-personne-seule",
+      "summary": "Corrections identifiées pour des entités HTML mal rendues vers des accents.",
+      "issues": [
+        {
+          "excerpt": "activit&#233 ;",
+          "original": "activit&#233 ;",
+          "corrected": "activité.",
+          "reason": "Encodage HTML mal interprété pour l'accent é; corriger en accent correct et vérifier la ponctuation.",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelle-aide-selon-mon-profil-2026.html",
+      "url": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+      "summary": "Corrections minimes et sûres principalement sur l’orthographe et les accents dans le texte donné.",
+      "issues": [
+        {
+          "excerpt": "prime d'activité",
+          "original": "prime d'activité",
+          "corrected": "prime d’activité",
+          "reason": "accent manquant sur activité",
+          "category": "accent",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "estimér",
+          "original": "estimér",
+          "corrected": "estimer",
+          "reason": "erreur d’accent/orthographe sur l’infinitif",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "url": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "summary": "Corrections sûres pour les entités HTML et l’orthographe dans le texte fourni.",
+      "issues": [
+        {
+          "excerpt": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "original": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "corrected": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.",
+          "reason": "erreur d’orthographe sur le infinitif et encodage HTML à corriger",
+          "category": "orthographe",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "original": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "corrected": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.",
+          "reason": "idem encodage pour &#224 ; et &#233 ; et apostrophe HTML",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "original": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "corrected": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.",
+          "reason": "idem encodage pour &#233 ; et apostrophe HTML",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "original": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "corrected": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.",
+          "reason": "idem encodage et apostrophe HTML",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        },
+        {
+          "excerpt": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "original": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &#224 ; v&#233 ; rifier quand un foyer n&#39 ; a plus de revenu.",
+          "corrected": "Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.",
+          "reason": "idem encodage et apostrophe HTML",
+          "category": "encodage",
+          "confidence": "high",
+          "safe_to_apply": true
+        }
+      ],
+      "safeIssuesCount": 0
+    }
+  ],
+  "summary": {
+    "totalFiles": 20,
+    "filesWithIssues": 17,
+    "totalIssues": 71,
+    "filesWithSafeIssues": 12,
+    "totalSafeIssues": 35
+  }
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Safe candidates OpenAI</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    a { color: #0f52ba; text-decoration: none; }
+    code { word-break: break-word; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Safe candidates OpenAI</h1>
+    <div class="cards">
+      <div class="card"><div>Source</div><strong>reports\openai-french-review-pilot20-visible-v1.json</strong></div>
+      <div class="card"><div>Candidats sûrs</div><strong>13</strong></div>
+      <div class="card"><div>Pages touchees</div><strong>8</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Categorie</th><th>Original</th><th>Corrige</th><th>Raison</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>espacement</td>
+        <td><code>ressources .</code></td>
+        <td><code>ressources.</code></td>
+        <td>espacement avant ponctuation</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>accent</td>
+        <td><code>parallÎle</code></td>
+        <td><code>parallèle</code></td>
+        <td>Erreur d’accent dans le mot parallèle.</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>accent</td>
+        <td><code>parallÎe</code></td>
+        <td><code>parallèle</code></td>
+        <td>Répétition de correction d’accent sur parallèle; même correction adaptée.</td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>accent</td>
+        <td><code>different</code></td>
+        <td><code>différent</code></td>
+        <td>accentuation manquante sur l'adjectif</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>espacement</td>
+        <td><code>min 31, 50€/jour</code></td>
+        <td><code>min 31,50 €/jour</code></td>
+        <td>même correction d’espacement autour du nombre et de l’unité</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>espacement</td>
+        <td><code>31, 50€/jour</code></td>
+        <td><code>31,50 €/jour</code></td>
+        <td>espace avant l’unité et autour du symbole €, correction typographique</td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>espacement</td>
+        <td><code>91, 82€/jour</code></td>
+        <td><code>91,82 €/jour</code></td>
+        <td>espace avant l’unité et autour du symbole €, correction typographique</td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-quelles-aides">/pages/are/are-fin-de-droits-quelles-aides</a><div class="muted">src\pages\are\are-fin-de-droits-quelles-aides.html</div></td>
+        <td>encodage</td>
+        <td><code>&amp;Acirc;ge</code></td>
+        <td><code>Âge</code></td>
+        <td>erreur d’encodage des caractères (mojibake) à corriger</td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026.html</div></td>
+        <td>encodage</td>
+        <td><code>Salaire de référence &amp;Acirc;ge Demandeur d'emploi cherchant une estimation ARE</code></td>
+        <td><code>Salaire de référence Âge Demandeur d'emploi cherchant une estimation ARE</code></td>
+        <td>erreur d'encodage HTML transformant le caractère Â en &amp;Acirc;.</td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>espacement</td>
+        <td><code>11 294€</code></td>
+        <td><code>11 294 €</code></td>
+        <td>espace manquant avant le symbole €</td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>espacement</td>
+        <td><code>28 797€</code></td>
+        <td><code>28 797 €</code></td>
+        <td>espace manquant avant le symbole €</td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>espacement</td>
+        <td><code>1 808€</code></td>
+        <td><code>1 808 €</code></td>
+        <td>espace manquant avant le symbole €</td>
+      </tr><tr>
+        <td><a href="/pages/rsa">/pages/rsa</a><div class="muted">src\pages\rsa.html</div></td>
+        <td>accent</td>
+        <td><code>regles CAF en vigueur en 2026</code></td>
+        <td><code>règles CAF en vigueur en 2026</code></td>
+        <td>accent manquant sur le i (règles)</td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>

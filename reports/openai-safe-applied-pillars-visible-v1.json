@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-03-20T14:51:55.335Z",
+  "input": "reports\\openai-french-review-pillars-visible-v1.json",
+  "summary": {
+    "appliedCount": 10,
+    "skippedCount": 5,
+    "filesTouched": 5
+  },
+  "applied": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "original": "Scénarios APL a consulter",
+      "corrected": "Scénarios APL à consulter",
+      "category": "accent",
+      "reason": "accent manquant sur à",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\apl.html",
+      "original": "service-public. fr",
+      "corrected": "service-public.fr",
+      "category": "encodage",
+      "reason": "erreur d'encodage/espacement dans l'URL: service-public.fr",
+      "replacements": 2
+    },
+    {
+      "filePath": "src\\pages\\apl.html",
+      "original": "caf. fr",
+      "corrected": "caf.fr",
+      "category": "encodage",
+      "reason": "erreur d'encodage/espacement dans l'URL: caf.fr",
+      "replacements": 3
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "min 31, 50€/jour",
+      "corrected": "min 31,50€/jour",
+      "category": "accent",
+      "reason": "Remplacement d’un espace inapproprié après la virgule dans un nombre",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "original": "max 91, 82€/jour",
+      "corrected": "max 91,82€/jour",
+      "category": "accent",
+      "reason": "Remplacement d’un espace inapproprié après la virgule dans un nombre",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\impot.html",
+      "original": "En 2025, le seuil est d'environ 1 808€ pour une personne seule.",
+      "corrected": "En 2025, le seuil est d'environ 1 808 € pour une personne seule.",
+      "category": "espacement",
+      "reason": "Espaces incohérents devant le symbole euro.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "2, 4%",
+      "corrected": "2,4 %",
+      "category": "espacement",
+      "reason": "Espaces avant % manquants et typographie.",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "original": "caf. fr/service-public. fr",
+      "corrected": "caf.fr/service-public.fr",
+      "category": "encodage",
+      "reason": "espace et point dans les noms de domaines + format incorrect",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "original": "regles CAF en vigueur",
+      "corrected": "règles CAF en vigueur",
+      "category": "accent",
+      "reason": "accent manquant sur 'règles'",
+      "replacements": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "original": "service-public. fr",
+      "corrected": "service-public.fr",
+      "category": "encodage",
+      "reason": "format incorrect du domaine",
+      "replacements": 1
+    }
+  ],
+  "skipped": [
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "6, 32 % (majoré : 87 départements) → 15 800 €",
+      "corrected": "6,32 % (majoré : 87 départements) → 15 800 €",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "5, 09% à 6, 32% selon département",
+      "corrected": "5,09 % à 6,32 % selon département",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "original": "~17 500 € ~7% du prix d'achat",
+      "corrected": "~17 500 € ~7 % du prix d'achat",
+      "category": "espacement",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "original": "caf. fr | 🔄 Historique",
+      "corrected": "caf.fr | 🔄 Historique",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "original": "service-public. fr",
+      "corrected": "service-public.fr",
+      "category": "encodage",
+      "reason": "original introuvable dans le fichier"
+    }
+  ]
+}

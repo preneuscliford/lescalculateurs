@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rapport OpenAI - french-pilot-20</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #102033; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,32,51,.08); }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #edf1f7; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #102033; color: white; }
+    .muted { color: #667085; font-size: 12px; }
+    .badge { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .badge.safe { background: #dcfae6; color: #166534; }
+    .badge.review { background: #fff4cc; color: #8a5b00; }
+    ul { margin: 0; padding-left: 18px; }
+    a { color: #0f52ba; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Rapport OpenAI - french-pilot-20</h1>
+    <div class="cards">
+      <div class="card"><div>Mode</div><strong>seo</strong></div>
+      <div class="card"><div>Fichiers analyses</div><strong>20</strong></div>
+      <div class="card"><div>Fichiers avec alertes</div><strong>17</strong></div>
+      <div class="card"><div>Alertes totales</div><strong>71</strong></div>
+      <div class="card"><div>Alertes safe</div><strong>35</strong></div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Resume</th><th>Alertes</th><th>Details</th></tr>
+      </thead>
+      <tbody><tr>
+        <td><a href="/pages/apl">/pages/apl</a><div class="muted">src\pages\apl.html</div></td>
+        <td>Corrections d’encodage HTML évidentes uniquement (fragments à accents/outils spéciaux).</td>
+        <td>7<div class="muted">3 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - r&amp;eacute ; sultat imm&amp;eacute ; diat => résultat immédiat<br><span class="muted">remplacement d’entités HTML par les caractères accentués (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - bar&amp;egrave ; mes CAF &amp;agrave ; jour => barèmes CAF à jour<br><span class="muted">remplacement d’entités par les caractères et reformulation standardisée (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - personnalis&amp;eacute ; e au logement => personnalisée au logement<br><span class="muted">correction d’apostrophe/entité pour un mot (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - &amp;eacute ; ligibilit&amp;eacute ; => éligibilité<br><span class="muted">correction d’entité HTML unique en mot (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - &amp;egrave ; ographique => géographique<br><span class="muted">correction d’entité HTML en mot correct (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - R&amp;eacute ; sultat imm&amp;eacute ; diat => Résultat immédiat<br><span class="muted">correction d’entités HTML et majuscule initiale (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - &amp;eacute ; studenti => étudiant<br><span class="muted">correction d’entité HTML (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-celibataire-smic">/pages/apl/apl-celibataire-smic</a><div class="muted">src\pages\apl\apl-celibataire-smic\index.html</div></td>
+        <td>Corrections orthographiques et d’encodage pour des entités HTML dans le texte fourni.</td>
+        <td>3<div class="muted">2 safe</div></td>
+        <td><ul><li><strong>accent</strong> <span class="badge safe">safe</span> - Sc&amp;#233 ; nario => Scénario<br><span class="muted">accent sur é et séparation incorrecte autour du point-virgule (high)</span></li><li><strong>apostrophe</strong> <span class="badge safe">safe</span> - d&amp;#39 ; une => d'une<br><span class="muted">apostrophe typographique séparant d' et le mot suivant; correction nécessaire (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - c&amp;#233 ; libataire => célibataire<br><span class="muted">fusion retardée et accent sur é; mot correct est célibataire (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-loyer-moyen">/pages/apl/apl-chomage-loyer-moyen</a><div class="muted">src\pages\apl\apl-chomage-loyer-moyen\index.html</div></td>
+        <td>Corrections sûres pour les entités HTML mal rendues et les espaces autour de l'apostrophe dans les répétitions identiques du texte.</td>
+        <td>3<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&amp;#39 ; une personne seule en p&amp;#233 ; riode de ch&amp;#244 ; mage avec loyer standard. => APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.<br><span class="muted">Correction des entités HTML et suppression des espaces autour de l'apostrophe et des caractères accentués. (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&amp;#39 ; une personne seule en p&amp;#233 ; riode de ch&amp;#244 ; mage avec loyer standard. => APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.<br><span class="muted">Correction des entités HTML et suppression des espaces autour de l'apostrophe et des caractères accentués. (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - APL au chômage avec loyer moyen : estimation 2026 Simulation APL d&amp;#39 ; une personne seule en p&amp;#233 ; riode de ch&amp;#244 ; mage avec loyer standard. => APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard.<br><span class="muted">Correction des entités HTML et suppression des espaces autour de l'apostrophe et des caractères accentués. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-chomage-personne-seule">/pages/apl/apl-chomage-personne-seule</a><div class="muted">src\pages\apl\apl-chomage-personne-seule\index.html</div></td>
+        <td>Corrections d'encodage HTML pour des mots francais dans le texte fourni.</td>
+        <td>6<div class="muted">6 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - activit&amp;#233 ; => activité<br><span class="muted">caractères encodés HTML incorrects (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - ch&amp;#244 ; mage => chômage<br><span class="muted">caractères encodés HTML incorrects (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - activit&amp;#233 ; => activité<br><span class="muted">caractères encodés HTML incorrects (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - ch&amp;#244 ; mage => chômage<br><span class="muted">caractères encodés HTML incorrects (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - activit&amp;#233 ; => activité<br><span class="muted">caractères encodés HTML incorrects (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - ch&amp;#244 ; mage => chômage<br><span class="muted">caractères encodés HTML incorrects (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-couple-sans-enfant">/pages/apl/apl-couple-sans-enfant</a><div class="muted">src\pages\apl\apl-couple-sans-enfant\index.html</div></td>
+        <td>Corriger l'encodage du fragment 'Sc&amp;#233 ; nario' en 'Scénario' dans les occurrences.</td>
+        <td>3<div class="muted">3 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - Sc&amp;#233 ; nario => Scénario<br><span class="muted">Encodage des caractères (HTML entity) pour é (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - Sc&amp;#233 ; nario => Scénario<br><span class="muted">Encodage des caractères (HTML entity) pour é (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - Sc&amp;#233 ; nario => Scénario<br><span class="muted">Encodage des caractères (HTML entity) pour é (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-personne-seule-smic">/pages/apl/apl-personne-seule-smic</a><div class="muted">src\pages\apl\apl-personne-seule-smic\index.html</div></td>
+        <td>Aucune correction sûre détectée dans le texte fourni.</td>
+        <td>0<div class="muted">0 safe</div></td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/apl/apl-smic-seul">/pages/apl/apl-smic-seul</a><div class="muted">src\pages\apl\apl-smic-seul\index.html</div></td>
+        <td>Correction unique d’un encodage HTML cassé dans le texte.</td>
+        <td>3<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - r&amp;#233 ; mun&amp;#233 ; r&amp;#233 ; e => rémunérée<br><span class="muted">Encodage HTML incorrect provoquant des caractères spéciaux mal affichés. (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - r&amp;#233 ; mun&amp;#233 ; r&amp;#233 ; e => rémunérée<br><span class="muted">Encodage HTML incorrect provoquant des caractères spéciaux mal affichés. (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - r&amp;#233 ; mun&amp;#233 ; r&amp;#233 ; e => rémunérée<br><span class="muted">Encodage HTML incorrect provoquant des caractères spéciaux mal affichés. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are">/pages/are</a><div class="muted">src\pages\are.html</div></td>
+        <td>Corrections sûres et localisées des entités HTML cassées et abréviations incohérentes liées au texte.</td>
+        <td>9<div class="muted">5 safe</div></td>
+        <td><ul><li><strong>accent</strong> <span class="badge safe">safe</span> - ch&amp;ocirc ; mage => chômage<br><span class="muted">entité HTML cassée pour le mot 'chômage' (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - dur&amp;eacute ; e => durée<br><span class="muted">entité HTML cassée pour le mot 'durée' (high)</span></li><li><strong>grammaire</strong> <span class="badge safe">safe</span> - d simulation are => de simulation ARE<br><span class="muted">correction mineure et locale pour l'expression correcte (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - simulation are france travail => simulation ARE France Travail<br><span class="muted">majuscule et nom propre corrects (high)</span></li><li><strong>grammaire</strong> <span class="badge safe">safe</span> - calcul are simulateur => calcul ARE simulateur<br><span class="muted">majuscule et cohérence avec ARE (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - Estimation ch&amp;ocirc ; mage => Estimation chômage<br><span class="muted">entité HTML cassée pour 'chômage' (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - droit ch&amp;ocirc ; mage simulation => droit chômage simulation<br><span class="muted">entité HTML cassée et cohérence phrase (high)</span></li><li><strong>apostrophe</strong> <span class="badge safe">safe</span> - allocation demandeur emploi Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, dur&amp;eacute ; e d Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, dur&amp;eacute ; e d => allocation demandeur d’emploi Simulateur ARE 2026 | Estimation gratuite Calculez votre ARE 2026 : montant mensuel, durée d'<br><span class="muted">correction locale des qqs fragments cassés et ajout d'apostrophe sans changer le sens; dernière partie incomplète conservée (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - dur&amp;eacute ; e d => durée d'<br><span class="muted">correction d'une entité HTML cassée et apostrophe manquante (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/are-fin-de-droits-quelles-aides">/pages/are/are-fin-de-droits-quelles-aides</a><div class="muted">src\pages\are\are-fin-de-droits-quelles-aides.html</div></td>
+        <td>Corrections sûres sur l’encodage HTML et les accents/espaces dans le texte.</td>
+        <td>4<div class="muted">2 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - Rep&amp;#232 ; re 2026 => Repère 2026<br><span class="muted">Encodage des caractères HTML pour les lettres accentuées. (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - &amp;#224 ; v&amp;#233 ; rifier => à vérifier<br><span class="muted">Correction des entités HTML représentant les caractères et de l’orthographe. (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - apr&amp;#232 ; s l&amp;#39 ; arr&amp;#234 ; t => après l'arrêt<br><span class="muted">Correction des entités HTML et de l’orthographe (apostrophe/arrêt). (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - ch&amp;#244 ; mage => chômage<br><span class="muted">Correction des entités HTML pour le mot chômage. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/are/montant-are-2026">/pages/are/montant-are-2026</a><div class="muted">src\pages\are\montant-are-2026.html</div></td>
+        <td>Corrections d’encodage HTML dans le texte fourni (remplacements locaux, sans réécriture du sens).</td>
+        <td>5<div class="muted">4 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - &amp;#224 ; => à<br><span class="muted">Encodage HTML → caractère latin 'à' (high)</span></li><li><strong>apostrophe</strong> <span class="badge safe">safe</span> - d&amp;#39 ; => d'<br><span class="muted">Apostrophe HTML encodée → apostrophe typographique (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - r&amp;#233 ; f&amp;#233 ; rence => référence<br><span class="muted">Encodage HTML → mot clair 'référence' (high)</span></li><li><strong>apostrophe</strong> <span class="badge safe">safe</span> - d&amp;#39 ; une => d'une<br><span class="muted">Apostrophe HTML encodée → apostrophe (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - anciennet&amp;#233 ; => ancienneté<br><span class="muted">Encodage HTML → mot 'ancienneté' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/asf">/pages/asf</a><div class="muted">src\pages\asf.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0<div class="muted">0 safe</div></td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/blog/departements/frais-notaire-56">/pages/blog/departements/frais-notaire-56</a><div class="muted">src\pages\blog\departements\frais-notaire-56.html</div></td>
+        <td>Corrections d’orthographe/majuscules liées à l’expression « frais de notaire » et à la mention des lieux.</td>
+        <td>3<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - Droits d Frais de notaire => droits de notaire<br><span class="muted">erreur d’article et d’espace: 'Droits d Frais' doit être 'droits de notaire' (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - frais de notaire morbihan => frais de notaire Morbihan<br><span class="muted">nom propre 'Morbihan' doit être capitalisé (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - frais notaire Morbihan => frais de notaire Morbihan<br><span class="muted">omission de la préposition 'de' entre 'frais' et 'notaire' (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/impot">/pages/impot</a><div class="muted">src\pages\impot.html</div></td>
+        <td>Corrections essentiellement orthographiques mineures (accent sur impôt et uniformisation de l’usage). Pas de réécriture de phrases ni d’ajouts de mots.</td>
+        <td>3<div class="muted">3 safe</div></td>
+        <td><ul><li><strong>accent</strong> <span class="badge safe">safe</span> - simulateur impots sur le revenu => simulateur impôt sur le revenu<br><span class="muted">accent sur impôt manquant (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - impot sur le revenu => impôt sur le revenu<br><span class="muted">accent manquant (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - impot sur le revenu => impôt sur le revenu<br><span class="muted">accent manquant (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/notaire">/pages/notaire</a><div class="muted">src\pages\notaire.html</div></td>
+        <td>Corrections simples d’orthographe, d’apostrophe et de ponctuation locales dans le texte fourni.</td>
+        <td>6<div class="muted">3 safe</div></td>
+        <td><ul><li><strong>grammaire</strong> <span class="badge safe">safe</span> - type d frais => type de frais<br><span class="muted">erreur de préposition/grammaire (high)</span></li><li><strong>apostrophe</strong> <span class="badge safe">safe</span> - enregistrement => d'enregistrement<br><span class="muted">manque d'apostrophe et ajout de préposition (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - emoluments => émoluments<br><span class="muted">accent sur le e (high)</span></li><li><strong>accent</strong> <span class="badge safe">safe</span> - résultat immediat. => résultat immédiat.<br><span class="muted">accent et orthographe (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - département Calculez => département. Calculez<br><span class="muted">ajout de ponctuation (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - export csv frais => export CSV frais<br><span class="muted">majuscule à l’acronyme (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/prime-activite">/pages/prime-activite</a><div class="muted">src\pages\prime-activite.html</div></td>
+        <td>Corrections sûres et localisées sur des fragments shortes, liées à l’usage de “prime d” vs “prime de” et à des accords de nom. Pas de réécriture complète ni d’ajout d’éléments.</td>
+        <td>5<div class="muted">2 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - Estimez votre prime d simulation => Estimez votre prime de simulation<br><span class="muted">Orthographe et construction correcte: remplacer “d” par “de” devant “simulation”. (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - prime d Simulateur => prime de Simulateur<br><span class="muted">Espacement et préposition manquants: remplacer “d” par “de” avant le nom. (high)</span></li><li><strong>espacement</strong> <span class="badge safe">safe</span> - prime d Calculez votre prime d => prime de Calculez votre prime de<br><span class="muted">Préposition manquante répétée: corriger “d” en “de” avant les segments correspondants. (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - prime d => prime de<br><span class="muted">Nominalisation incomplète: remplacer “d” par “de” lorsque suivi d’un nom. (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - prime d => prime de<br><span class="muted">Même correction répétée nécessaire dans le deuxième occurrences. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa">/pages/rsa</a><div class="muted">src\pages\rsa.html</div></td>
+        <td>Corrections visibles et sûres (ponctuation).</td>
+        <td>3<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Simulateur RSA 2026 | Montant CAF estimé en 2 minutes Calculez => Simulateur RSA 2026 | Montant CAF estimé en 2 minutes. Calculez<br><span class="muted">Manque de point-virgule entre deux phrases. (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Simulateur RSA 2026 | Estimation CAF gratuite Faites une => Simulateur RSA 2026 | Estimation CAF gratuite. Faites une<br><span class="muted">Manque de point entre deux propositions. (high)</span></li><li><strong>ponctuation</strong> <span class="badge safe">safe</span> - Simulateur RSA 2026 | Estimation CAF gratuite Faites une simulation => Simulateur RSA 2026 | Estimation CAF gratuite. Faites une simulation<br><span class="muted">Manque de point entre deux propositions. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-couple-sans-enfant">/pages/rsa/rsa-couple-sans-enfant</a><div class="muted">src\pages\rsa\rsa-couple-sans-enfant.html</div></td>
+        <td>Aucune correction sûre détectée.</td>
+        <td>0<div class="muted">0 safe</div></td>
+        <td><ul></ul></td>
+      </tr><tr>
+        <td><a href="/pages/rsa/rsa-sans-revenu-personne-seule">/pages/rsa/rsa-sans-revenu-personne-seule</a><div class="muted">src\pages\rsa\rsa-sans-revenu-personne-seule.html</div></td>
+        <td>Corrections identifiées pour des entités HTML mal rendues vers des accents.</td>
+        <td>1<div class="muted">1 safe</div></td>
+        <td><ul><li><strong>encodage</strong> <span class="badge safe">safe</span> - activit&amp;#233 ; => activité.<br><span class="muted">Encodage HTML mal interprété pour l'accent é; corriger en accent correct et vérifier la ponctuation. (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelle-aide-selon-mon-profil-2026">/pages/simulateurs/quelle-aide-selon-mon-profil-2026</a><div class="muted">src\pages\simulateurs\quelle-aide-selon-mon-profil-2026.html</div></td>
+        <td>Corrections minimes et sûres principalement sur l’orthographe et les accents dans le texte donné.</td>
+        <td>2<div class="muted">1 safe</div></td>
+        <td><ul><li><strong>accent</strong> <span class="badge safe">safe</span> - prime d'activité => prime d’activité<br><span class="muted">accent manquant sur activité (high)</span></li><li><strong>orthographe</strong> <span class="badge safe">safe</span> - estimér => estimer<br><span class="muted">erreur d’accent/orthographe sur l’infinitif (high)</span></li></ul></td>
+      </tr><tr>
+        <td><a href="/pages/simulateurs/quelles-aides-sans-revenu">/pages/simulateurs/quelles-aides-sans-revenu</a><div class="muted">src\pages\simulateurs\quelles-aides-sans-revenu.html</div></td>
+        <td>Corrections sûres pour les entités HTML et l’orthographe dans le texte fourni.</td>
+        <td>5<div class="muted">0 safe</div></td>
+        <td><ul><li><strong>orthographe</strong> <span class="badge safe">safe</span> - Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &amp;#224 ; v&amp;#233 ; rifier quand un foyer n&amp;#39 ; a plus de revenu. => Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.<br><span class="muted">erreur d’orthographe sur le infinitif et encodage HTML à corriger (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &amp;#224 ; v&amp;#233 ; rifier quand un foyer n&amp;#39 ; a plus de revenu. => Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.<br><span class="muted">idem encodage pour &amp;#224 ; et &amp;#233 ; et apostrophe HTML (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &amp;#224 ; v&amp;#233 ; rifier quand un foyer n&amp;#39 ; a plus de revenu. => Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.<br><span class="muted">idem encodage pour &amp;#233 ; et apostrophe HTML (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &amp;#224 ; v&amp;#233 ; rifier quand un foyer n&amp;#39 ; a plus de revenu. => Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.<br><span class="muted">idem encodage et apostrophe HTML (high)</span></li><li><strong>encodage</strong> <span class="badge safe">safe</span> - Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimér les aides &amp;#224 ; v&amp;#233 ; rifier quand un foyer n&amp;#39 ; a plus de revenu. => Quelles aides sans revenu ? Simulation 2026 Simulation globale 2026 pour estimer les aides à vérifier quand un foyer n'a plus de revenu.<br><span class="muted">idem encodage et apostrophe HTML (high)</span></li></ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+</body>
+</html>
