@@ -1,6 +1,6 @@
 import {
-  calculerPrimeActivite,
-  formatPrimeActiviteResult,
+ calculerPrimeActivite,
+ formatPrimeActiviteResult,
 } from "../../utils/primeActiviteCalculEngine";
 
 /**
@@ -10,22 +10,22 @@ import {
 // Éléments du formulaire
 const form = document.getElementById("prime-form") as HTMLFormElement;
 const situationSelect = document.getElementById(
-  "prime-situation",
+ "prime-situation",
 ) as HTMLSelectElement;
 const enfantsInput = document.getElementById(
-  "prime-enfants",
+ "prime-enfants",
 ) as HTMLInputElement;
 const revenosProfInput = document.getElementById(
-  "prime-revenus-pro",
+ "prime-revenus-pro",
 ) as HTMLInputElement;
 const autresRevenusInput = document.getElementById(
-  "prime-autres-revenus",
+ "prime-autres-revenus",
 ) as HTMLInputElement;
 const logementSelect = document.getElementById(
-  "prime-logement",
+ "prime-logement",
 ) as HTMLSelectElement;
 const typeActiviteSelect = document.getElementById(
-  "prime-type-activite",
+ "prime-type-activite",
 ) as HTMLSelectElement;
 
 // Éléments de résultat
@@ -35,104 +35,104 @@ const explDisplay = document.getElementById("prime-explication") as HTMLElement;
 
 // Bouton de scroll
 const scrollButton = document.getElementById(
-  "prime-scroll-to-form",
+ "prime-scroll-to-form",
 ) as HTMLButtonElement;
 
 function initFromURL(): void {
-  const params = new URLSearchParams(window.location.search);
-  if (!params.size) return;
+ const params = new URLSearchParams(window.location.search);
+ if (! params.size) return;
 
-  const fieldIds = [
-    "prime-situation",
-    "prime-enfants",
-    "prime-revenus-pro",
-    "prime-autres-revenus",
-    "prime-logement",
-    "prime-type-activite",
-  ];
+ const fieldIds = [
+ "prime-situation",
+ "prime-enfants",
+ "prime-revenus-pro",
+ "prime-autres-revenus",
+ "prime-logement",
+ "prime-type-activite",
+];
 
-  let hasValue = false;
+ let hasValue = false;
 
-  fieldIds.forEach((fieldId) => {
-    const value = params.get(fieldId);
-    if (value === null) return;
-    const input = document.getElementById(fieldId) as
-      | HTMLInputElement
-      | HTMLSelectElement
-      | null;
-    if (!input) return;
-    input.value = value;
-    hasValue = true;
-  });
+ fieldIds.forEach((fieldId) => {
+ const value = params.get(fieldId);
+ if (value === null) return;
+ const input = document.getElementById(fieldId) as
+ | HTMLInputElement
+ | HTMLSelectElement
+ | null;
+ if (! input) return;
+ input.value = value;
+ hasValue = true;
+ });
 
-  if (hasValue && params.get("prime-autosubmit") === "1") {
-    requestAnimationFrame(() => {
-      form?.requestSubmit();
-    });
-  }
+ if (hasValue && params.get("prime-autosubmit") === "1") {
+ requestAnimationFrame(() => {
+ form?.requestSubmit();
+ });
+ }
 }
 
 /**
  * Gestion du formulaire
  */
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+ e.preventDefault();
 
-  const data = {
-    situation: situationSelect.value,
-    enfants: parseInt(enfantsInput.value) || 0,
-    revenusProf: parseInt(revenosProfInput.value) || 0,
-    autresRevenus: parseInt(autresRevenusInput.value) || 0,
-    logement: logementSelect.value,
-    typeActivite: typeActiviteSelect.value,
-  };
+ const data = {
+ situation: situationSelect.value,
+ enfants: parseInt(enfantsInput.value) || 0,
+ revenusProf: parseInt(revenosProfInput.value) || 0,
+ autresRevenus: parseInt(autresRevenusInput.value) || 0,
+ logement: logementSelect.value,
+ typeActivite: typeActiviteSelect.value,
+ };
 
-  // Calcul
-  const result = calculerPrimeActivite(data);
+ // Calcul
+ const result = calculerPrimeActivite(data);
 
-  // Affichage des résultats
-  if (result.success) {
-    const formatted = formatPrimeActiviteResult(result);
-    montantDisplay.textContent = formatted.montantDisplay;
-    explDisplay.textContent = formatted.explDisplay;
+ // Affichage des résultats
+ if (result.success) {
+ const formatted = formatPrimeActiviteResult(result);
+ montantDisplay.textContent = formatted.montantDisplay;
+ explDisplay.textContent = formatted.explDisplay;
 
-    // Affichage du bloc résultat
-    resultDiv.classList.remove("invisible");
-    resultDiv.scrollIntoView({ behavior: "smooth" });
+ // Affichage du bloc résultat
+ resultDiv.classList.remove("invisible");
+ resultDiv.scrollIntoView({ behavior: "smooth" });
 
-    // Dispatch événement personnalisé pour suivi
-    window.dispatchEvent(
-      new CustomEvent("prime-activite-calculated", {
-        detail: result,
-      }),
-    );
-  }
+ // Dispatch événement personnalisé pour suivi
+ window.dispatchEvent(
+ new CustomEvent("prime-activite-calculated", {
+ detail: result,
+ }),
+);
+ }
 });
 
 /**
  * Bouton de scroll vers le formulaire
  */
 if (scrollButton) {
-  scrollButton.addEventListener("click", () => {
-    form.scrollIntoView({ behavior: "smooth" });
-    situationSelect.focus();
-  });
+ scrollButton.addEventListener("click", () => {
+ form.scrollIntoView({ behavior: "smooth" });
+ situationSelect.focus();
+ });
 }
 
 /**
  * Masquer le résultat quand on modifie le formulaire
  */
 [
-  situationSelect,
-  enfantsInput,
-  revenosProfInput,
-  autresRevenusInput,
-  logementSelect,
-  typeActiviteSelect,
+ situationSelect,
+ enfantsInput,
+ revenosProfInput,
+ autresRevenusInput,
+ logementSelect,
+ typeActiviteSelect,
 ].forEach((elem) => {
-  elem.addEventListener("change", () => {
-    resultDiv.classList.add("invisible");
-  });
+ elem.addEventListener("change", () => {
+ resultDiv.classList.add("invisible");
+ });
 });
 
 initFromURL();

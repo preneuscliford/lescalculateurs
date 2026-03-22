@@ -1,0 +1,92 @@
+[
+  {
+    "id": "digits-spelled-out",
+    "reason": "Les années, montants et compteurs restent souvent mieux en chiffres sur le site.",
+    "messageIncludes": "Les chiffres s’écrivent généralement en lettres"
+  },
+  {
+    "id": "caf-acronym-style",
+    "reason": "On conserve la graphie produit \"Caf\" sur le site quand elle est déjà utilisée dans les pages.",
+    "messageIncludes": "acronyme",
+    "matchedTextIn": ["la Caf", "La Caf", "CAF", "caf.fr"]
+  },
+  {
+    "id": "notaire-multivilles-token",
+    "reason": "Terme métier interne des pages notaire locales.",
+    "matchedTextIn": ["multivilles"],
+    "pathIncludes": ["src/pages/notaire.html"]
+  },
+  {
+    "id": "notaire-proper-nouns",
+    "reason": "Noms propres ou tokens locaux remontés à tort par LanguageTool.",
+    "matchedTextIn": ["Massiac", "DITO", "VÉRA", "Vera", "NIL", "SUR"],
+    "pathIncludes": ["src/pages/notaire.html", "src/pages/blog"]
+  },
+  {
+    "id": "dash-style-only",
+    "reason": "Suggestion de style non bloquante sur les tirets.",
+    "messageIncludes": "tiret",
+    "issueTypeIn": ["style", "typographical"]
+  },
+  {
+    "id": "known-domains-and-brands",
+    "reason": "Noms de domaine et marques du site ou de sources officielles.",
+    "matchedTextIn": [
+      "LesCalculateurs.fr",
+      "caf.fr",
+      "service-public.fr",
+      "impots.gouv.fr",
+      "data.gouv.fr",
+      "notaires.fr",
+      "Notaires.fr",
+      "france-travail.fr"
+    ]
+  },
+  {
+    "id": "official-organizations",
+    "reason": "Organismes et marques institutionnelles frequents dans le site.",
+    "matchedTextIn": [
+      "France Travail",
+      "Service-public.fr",
+      "CAF",
+      "Caf",
+      "Notaires.fr",
+      "Caisse d'Allocations Familiales"
+    ]
+  },
+  {
+    "id": "finance-and-aid-acronyms",
+    "reason": "Acronymes metier legitimes des simulateurs.",
+    "matchedTextIn": [
+      "APL",
+      "ARE",
+      "RSA",
+      "ASF",
+      "SJR",
+      "ALS",
+      "ALF",
+      "IDF",
+      "HLM",
+      "PLAI",
+      "PLUS",
+      "CSG",
+      "CRDS",
+      "VEFA",
+      "DMTO"
+    ]
+  },
+  {
+    "id": "common-compound-terms",
+    "reason": "Termes composes legitimes souvent mal interpretes hors contexte.",
+    "matchedTextIn": [
+      "auto-entreprise",
+      "auto-entrepreneur",
+      "temps partiel",
+      "hors charges",
+      "parent isolé",
+      "fin de droits",
+      "revenu fiscal",
+      "reste à charge"
+    ]
+  }
+]

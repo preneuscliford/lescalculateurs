@@ -7,17 +7,17 @@ function fixBlogFile(filePath) {
     let hasChanged = false;
 
     // Pattern: trouver "formatResult: (result) => { ... }," suivi d'un "=> {"
-    // Ce qui indique que la deuxième formatResult n'a pas été correctement supprimée
+    // Ce qui indique que la deuxieme formatResult n'a pas ete correctement supprimee
 
     // Chercher "}, \n => {"
     const badPattern = /},\s*\n\s*=>\s*\{/;
     if (badPattern.test(content)) {
       console.log(
-        `❌ Reste de syntaxe cassée trouvé dans ${path.basename(filePath)}`
+        `❌ Reste de syntaxe cassee trouve dans ${path.basename(filePath)}`
       );
 
       // Supprimer tout ce qui suit jusqu'au prochain "formatResult:" ou "new CalculatorFrame"
-      // Le plus simple: chercher le premier "formatResult:" et supprimer tout après sa fermeture jusqu'à "new CalculatorFrame"
+      // Le plus simple: chercher le premier "formatResult:" et supprimer tout apres sa fermeture jusqu'a "new CalculatorFrame"
 
       // Approche: trouver la section entre },\n => { et },\n };
       const match = content.match(/},\s*\n\s*=>\s*\{[\s\S]*?\},\s*};/);
@@ -28,11 +28,11 @@ function fixBlogFile(filePath) {
       }
     }
 
-    // Vérifier s'il y a des ", => {" orphelins
+    // Verifier s'il y a des ", => {" orphelins
     const orphanPattern = /,\s*=>\s*\{/;
     if (orphanPattern.test(content)) {
       console.log(
-        `❌ Reste orphelin "=> {" trouvé dans ${path.basename(filePath)}`
+        `❌ Reste orphelin "=> {" trouve dans ${path.basename(filePath)}`
       );
 
       // Supprimer jusqu'au prochain }
@@ -45,7 +45,7 @@ function fixBlogFile(filePath) {
 
     if (hasChanged) {
       fs.writeFileSync(filePath, content, "utf-8");
-      console.log(`✅ Corrigé ${path.basename(filePath)}`);
+      console.log(`✅ Corrige ${path.basename(filePath)}`);
       return true;
     } else {
       console.log(`✅ ${path.basename(filePath)} OK`);
@@ -57,14 +57,14 @@ function fixBlogFile(filePath) {
   }
 }
 
-// Traiter tous les fichiers de département
+// Traiter tous les fichiers de departement
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
 const files = fs
   .readdirSync(deptDir)
   .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
 console.log(
-  `\n🔧 Nettoyage des restes de syntaxe cassée dans ${files.length} articles...\n`
+  `\n🔧 Nettoyage des restes de syntaxe cassee dans ${files.length} articles...\n`
 );
 
 let successCount = 0;
@@ -80,9 +80,9 @@ files.forEach((file) => {
 });
 
 console.log(
-  `\n✨ Résultat: ${successCount}/${files.length} traitements réussis`
+  `\n✨ Resultat: ${successCount}/${files.length} traitements reussis`
 );
 if (failCount > 0) {
-  console.log(`⚠️  ${failCount} fichiers n'ont pas pu être traités`);
+  console.log(`⚠️  ${failCount} fichiers n'ont pas pu etre traites`);
 }
-console.log("\n📝 Les restes de syntaxe cassée ont été nettoyés.");
+console.log("\n📝 Les restes de syntaxe cassee ont ete nettoyes.");

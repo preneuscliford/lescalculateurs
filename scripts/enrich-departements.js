@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 /**
- * Liste les fichiers HTML de départements à enrichir.
+ * Liste les fichiers HTML de departements a enrichir.
  * Retourne les chemins absolus des fichiers correspondants.
  */
 function listDepartmentFiles() {
@@ -14,8 +14,8 @@ function listDepartmentFiles() {
 }
 
 /**
- * Extrait le nom du département et le code depuis le contenu ou le nom de fichier.
- * Essaye d'abord le H1, puis le title, et enfin le code à partir du nom de fichier.
+ * Extrait le nom du departement et le code depuis le contenu ou le nom de fichier.
+ * Essaye d'abord le H1, puis le title, et enfin le code a partir du nom de fichier.
  */
 function extractDeptInfo(html, filePath) {
   let name = null;
@@ -31,40 +31,40 @@ function extractDeptInfo(html, filePath) {
     code = titleMatch[1];
   }
 
-  // Essayer d'extraire le nom du département depuis le H1 (après une préposition)
-  const h1NameMatch = html.match(/<h1[^>]*>[\s\S]*?(?:en|dans|au|aux|à)\s+([^<(]+)\s*\((\d{2})\)/i);
+  // Essayer d'extraire le nom du departement depuis le H1 (apres une preposition)
+  const h1NameMatch = html.match(/<h1[^>]*>[\s\S]*?(?:en|dans|au|aux|a)\s+([^<(]+)\s*\((\d{2})\)/i);
   if (h1NameMatch) {
     name = h1NameMatch[1].trim();
     code = code || h1NameMatch[2];
   }
 
-  // Sinon tenter via le title (après une préposition)
-  const titleNameMatch = html.match(/<title>[\s\S]*?(?:en|dans|au|aux|à)\s+([A-Za-zÀ-ÿ'\-\s]+)\s*\((\d{2})\)/i);
+  // Sinon tenter via le title (apres une preposition)
+  const titleNameMatch = html.match(/<title>[\s\S]*?(?:en|dans|au|aux|a)\s+([A-Za-zA-ÿ'\-\s]+)\s*\((\d{2})\)/i);
   if (!name && titleNameMatch) {
     name = titleNameMatch[1].trim();
     code = code || titleNameMatch[2];
   }
 
-  // À défaut, utiliser le code du nom de fichier
+  // A defaut, utiliser le code du nom de fichier
   if (!code) {
     const fileCode = path.basename(filePath).match(/(\d{2})/);
     code = fileCode ? fileCode[1] : null;
   }
 
-  // Sanitize du nom (retirer "Frais de notaire" éventuel)
+  // Sanitize du nom (retirer "Frais de notaire" eventuel)
   if (name) {
     name = name
       .replace(/\bFrais\s+de\s+notaire\b/gi, '')
       .replace(/\bde\s+notaire\b/gi, '')
       .replace(/\bnotaire\b/gi, '')
-      .replace(/^(?:dans\s+le|dans\s+la|dans\s+les|en|au|aux|à)\s+/i, '')
+      .replace(/^(?:dans\s+le|dans\s+la|dans\s+les|en|au|aux|a)\s+/i, '')
       .replace(/\s+/g, ' ')
       .trim();
   }
 
-  // Nom fallback générique
+  // Nom fallback generique
   if (!name) {
-    name = 'Département';
+    name = 'Departement';
   }
   
   // Surcouche: si locales.json fournit une ville propre, l'utiliser
@@ -87,14 +87,14 @@ function extractDeptInfo(html, filePath) {
 }
 
 /**
- * Vérifie si un CTA "Calcul immédiat" est déjà présent pour éviter les duplications.
+ * Verifie si un CTA "Calcul immediat" est deja present pour eviter les duplications.
  */
 function hasCta(html) {
-  return /Calcul\s+immédiat\s*\(10\s*s\)\s*—\s*Gratuit/i.test(html);
+  return /Calcul\s+immediat\s*\(10\s*s\)\s*-\s*Gratuit/i.test(html);
 }
 
 /**
- * Construit le bloc CTA personnalisé pour un département donné.
+ * Construit le bloc CTA personnalise pour un departement donne.
  */
 function buildCtaBlock(name, code) {
   const official = getDepartmentName(code);
@@ -103,8 +103,8 @@ function buildCtaBlock(name, code) {
     .replace(/\bde\s+notaire\b/gi, '')
     .replace(/\bnotaire\b/gi, '')
     .trim();
-  const label = `Calcul immédiat (10 s) — Gratuit`;
-  const desc = `Barème officiel 2024-2025, estimation précise pour ${cleanName} (${code}).`;
+  const label = `Calcul immediat (10 s) - Gratuit`;
+  const desc = `Bareme officiel 2024-2025, estimation precise pour ${cleanName} (${code}).`;
   return (
       `      <!-- CTA BLOCK START -->\n` +
       `      <div class="mb-6 rounded-lg border-2 border-blue-200 bg-blue-50 p-4 sm:p-5">\n` +
@@ -121,7 +121,7 @@ function buildCtaBlock(name, code) {
 }
 
 /**
- * Insère le CTA après l'ouverture de l'élément <article>, sinon avant </body>.
+ * Insere le CTA apres l'ouverture de l'element <article>, sinon avant </body>.
  */
 function insertCta(html, ctaBlock) {
   const articleOpenMatch = html.match(/<article[^>]*>/);
@@ -137,14 +137,14 @@ function insertCta(html, ctaBlock) {
 }
 
 /**
- * Vérifie si une section locale ciblée existe déjà (H2 "Calcul frais de notaire ...").
+ * Verifie si une section locale ciblee existe deja (H2 "Calcul frais de notaire ...").
  */
 function hasLocalSection(html) {
   return /<h2[^>]*>\s*Calcul\s+frais\s+de\s+notaire\s+/i.test(html);
 }
 
 /**
- * Construit une section locale générique (évite duplication en insérant nom/code).
+ * Construit une section locale generique (evite duplication en inserant nom/code).
  */
 function buildLocalSection(name, code) {
   const official = getDepartmentName(code);
@@ -162,13 +162,13 @@ function buildLocalSection(name, code) {
     `        </p>\n` +
     `        <div class="flex gap-3 mb-8">\n` +
     `          <a href="/pages/notaire.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">Calculer maintenant</a>\n` +
-    `          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualités de prêt</a>\n` +
+    `          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualites de pret</a>\n` +
     `        </div>\n`
   );
 }
 
 /**
- * Insère la section locale avant la fin de l'<article> si présent, sinon en fin de contenu.
+ * Insere la section locale avant la fin de l'<article> si present, sinon en fin de contenu.
  */
 function insertLocalSection(html, localBlock) {
   const articleCloseIdx = html.lastIndexOf('</article>');
@@ -179,7 +179,7 @@ function insertLocalSection(html, localBlock) {
 }
 
 /**
- * Charge les données locales (mapping) depuis scripts/locales.json.
+ * Charge les donnees locales (mapping) depuis scripts/locales.json.
  */
 function loadLocales() {
   const p = path.resolve(process.cwd(), 'scripts', 'locales.json');
@@ -193,7 +193,7 @@ function loadLocales() {
 }
 
 /**
- * Construit une section locale spécifique si des données existent.
+ * Construit une section locale specifique si des donnees existent.
  */
 function buildSpecificLocalSection(data, code, deptName) {
   const official = getDepartmentName(code);
@@ -211,23 +211,23 @@ function buildSpecificLocalSection(data, code, deptName) {
     `        </p>\n` +
     `        <div class="flex gap-3 mb-8">\n` +
     `          <a href="/pages/notaire.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-sm">Calculer maintenant</a>\n` +
-    `          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualités de prêt</a>\n` +
+    `          <a href="/pages/pret.html" class="px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-semibold shadow-sm">Voir mensualites de pret</a>\n` +
     `        </div>\n`
   );
 }
 
 /**
- * Met à jour une section locale générique existante vers une version spécifique.
+ * Met a jour une section locale generique existante vers une version specifique.
  */
 function upgradeLocalSection(html, data, code, deptName) {
   const official = getDepartmentName(code);
   const displayName = official || deptName || data.city;
-  // Remplacer le H2 s'il est générique
+  // Remplacer le H2 s'il est generique
   html = html.replace(
     /<h2[^>]*>\s*Calcul\s+frais\s+de\s+notaire\s+[^<]*\(\d{2}\)\s*<\/h2>/i,
     `<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${displayName} (${code})</h2>`
   );
-  // Remplacer le paragraphe indicatif par des données spécifiques
+  // Remplacer le paragraphe indicatif par des donnees specifiques
   const old = computeTotal(code, 200000, 'ancien');
   const neu = computeTotal(code, 200000, 'neuf');
   const oldRate = getDroitsRate(code, 'ancien');
@@ -239,7 +239,7 @@ function upgradeLocalSection(html, data, code, deptName) {
     `          Ancien : ≈ ${formatEuroAmount(old.total)} pour 200 000 € (droits ${oldRatePct}) • Neuf : ≈ ${formatEuroAmount(neu.total)} pour 200 000 € (droits ${neuRatePct}).\n` +
     `        </p>`
   );
-  // Cibler le <p> immédiatement après le H2
+  // Cibler le <p> immediatement apres le H2
   const h2Str = `<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-3">Calcul frais de notaire ${displayName} (${code})</h2>`;
   const h2Pos = html.indexOf(h2Str);
   if (h2Pos !== -1) {
@@ -255,13 +255,13 @@ function upgradeLocalSection(html, data, code, deptName) {
   }
   // Remplacer le contenu de la FAQ
   html = html.replace(
-    /<h3 class="font-semibold text-gray-900 mb-2">FAQ\s+—\s+[^<]+<\/h3>[\s\S]*?<ul[^>]*>[\s\S]*?<\/ul>/i,
+    /<h3 class="font-semibold text-gray-900 mb-2">FAQ\s+-\s+[^<]+<\/h3>[\s\S]*?<ul[^>]*>[\s\S]*?<\/ul>/i,
     (
-      `          <h3 class="font-semibold text-gray-900 mb-2">FAQ — ${deptName || data.city}</h3>\n` +
+      `          <h3 class="font-semibold text-gray-900 mb-2">FAQ - ${deptName || data.city}</h3>\n` +
       `          <ul class="text-sm text-gray-700 space-y-2">\n` +
       `            <li><strong>Combien pour 200 000 € (ancien) ?</strong> ${data.ancienAmount}.</li>\n` +
-      `            <li><strong>Et pour le neuf (VEFA) ?</strong> ${data.neufAmount} grâce aux droits réduits.</li>\n` +
-      `            <li><strong>À savoir :</strong> ${data.note}</li>\n` +
+      `            <li><strong>Et pour le neuf (VEFA) ?</strong> ${data.neufAmount} grace aux droits reduits.</li>\n` +
+      `            <li><strong>A savoir :</strong> ${data.note}</li>\n` +
       `          </ul>`
     )
   );
@@ -279,14 +279,14 @@ function processFile(filePath) {
   const localData = code && locales[code] ? locales[code] : null;
   const deptName = name;
 
-  // Remplacer/insérer CTA systématiquement pour uniformiser et rendre responsive
+  // Remplacer/inserer CTA systematiquement pour uniformiser et rendre responsive
   updated = replaceExistingCta(updated, deptName, code || '');
-  // Insérer un snippet summary (même si CTA déjà présent)
+  // Inserer un snippet summary (meme si CTA deja present)
   const summary = buildSummaryBlock(name, code || '', localData);
   updated = insertSummaryAfterCta(updated, summary);
-  // Assurer la présence de la note d’explication globale
+  // Assurer la presence de la note d'explication globale
   updated = ensureInfoNote(updated);
-  // Dédupliquer la note si plusieurs occurrences
+  // Dedupliquer la note si plusieurs occurrences
   updated = dedupeInfoNotes(updated);
 
   if (!hasLocalSection(updated)) {
@@ -295,7 +295,7 @@ function processFile(filePath) {
       : buildLocalSection(name, code || '');
     updated = insertLocalSection(updated, local);
   } else if (localData) {
-    // Mettre à niveau la section existante vers une version spécifique si possible
+    // Mettre a niveau la section existante vers une version specifique si possible
     updated = upgradeLocalSection(updated, localData, code || '', deptName);
   }
 
@@ -310,7 +310,7 @@ function processFile(filePath) {
 }
 
 /**
- * Vérifie la présence d’un résumé snippet au‑dessus du pli.
+ * Verifie la presence d'un resume snippet au‑dessus du pli.
  */
 function hasSummary(html) {
   return /border-yellow-400/i.test(html);
@@ -321,7 +321,7 @@ function removeSummary(html) {
 }
 
 /**
- * Construit le bloc résumé (2 lignes) basé sur les données locales.
+ * Construit le bloc resume (2 lignes) base sur les donnees locales.
  */
 function buildSummaryBlock(name, code, data) {
   const ancien = computeTotal(code, 200000, 'ancien');
@@ -342,13 +342,13 @@ function buildSummaryBlock(name, code, data) {
     .replace(/\bnotaire\b/gi, '')
     .trim();
   const displayParen = `(${code})`;
-  const label = `💰 Frais de notaire 2025 à ${displayCity} ${displayParen}`;
+  const label = `💰 Frais de notaire 2025 a ${displayCity} ${displayParen}`;
   const oldRatePct = ancienRateNum != null ? `≈ ${formatPercent(ancienRateNum)}` : 'N/A';
   const newRatePct = neufRateNum != null ? `≈ ${formatPercent(neufRateNum)}` : 'N/A';
   const partOld = `≈ ${formatEuroAmount(ancien.total)} pour 200 000 € (ancien, droits ${oldRatePct})`;
   const partNew = `≈ ${formatEuroAmount(neuf.total)} pour 200 000 € (neuf, droits ${newRatePct})`;
   const line1 = `${label} : ${partOld} • ${partNew}`;
-  const line2 = `Inclut droits, émoluments, formalités, CSI et TVA`;
+  const line2 = `Inclut droits, emoluments, formalites, CSI et TVA`;
   return (
     `      <div class="mt-6 mb-8 bg-yellow-50 border-l-4 border-yellow-400 p-4 sm:p-5 rounded-r">\n` +
     `        <p class="text-sm sm:text-base text-gray-800 leading-relaxed"><strong>${line1}</strong><br/><span class="text-xs sm:text-sm text-gray-600">${line2}</span></p>\n` +
@@ -357,7 +357,7 @@ function buildSummaryBlock(name, code, data) {
 }
 
 /**
- * Insère le résumé juste après le CTA si présent, sinon en haut de l’article.
+ * Insere le resume juste apres le CTA si present, sinon en haut de l'article.
  */
 function insertSummaryAfterCta(html, summaryBlock) {
   if (hasSummary(html)) {
@@ -378,13 +378,13 @@ function insertSummaryAfterCta(html, summaryBlock) {
 }
 
 /**
- * Assure la présence de la note d’explication globale sur chaque page
+ * Assure la presence de la note d'explication globale sur chaque page
  */
 function ensureInfoNote(html) {
-  const noteRegex = /Droits\s+réduits\s+uniformisés\s*\(0,715\s*%\)\./i;
+  const noteRegex = /Droits\s+reduits\s+uniformises\s*\(0,715\s*%\)\./i;
   if (noteRegex.test(html)) return html;
-  const note = `        <p class="text-xs sm:text-sm text-gray-600 mb-4">Droits réduits uniformisés (0,715 %).</p>\n`;
-  // Insérer après le résumé si présent
+  const note = `        <p class="text-xs sm:text-sm text-gray-600 mb-4">Droits reduits uniformises (0,715 %).</p>\n`;
+  // Inserer apres le resume si present
   const summaryMarker = 'border-yellow-400';
   const pos = html.indexOf(summaryMarker);
   if (pos !== -1) {
@@ -394,13 +394,13 @@ function ensureInfoNote(html) {
       return html.slice(0, insertPos) + '\n' + note + html.slice(insertPos);
     }
   }
-  // Sinon, insérer après le H2 local si présent
+  // Sinon, inserer apres le H2 local si present
   const h2Match = html.match(/<h2[^>]*>\s*Calcul\s+frais\s+de\s+notaire[\s\S]*?<\/h2>/i);
   if (h2Match) {
     const idx = html.indexOf(h2Match[0]) + h2Match[0].length;
     return html.slice(0, idx) + '\n' + note + html.slice(idx);
   }
-  // Fallback: en haut de l’article
+  // Fallback: en haut de l'article
   const articleOpen = html.match(/<article[^>]*>/);
   if (articleOpen) {
     const idx = html.indexOf(articleOpen[0]) + articleOpen[0].length;
@@ -410,10 +410,10 @@ function ensureInfoNote(html) {
 }
 
 /**
- * Supprime les doublons de la note "Neuf : droits réduits uniformes...".
+ * Supprime les doublons de la note "Neuf : droits reduits uniformes...".
  */
 function dedupeInfoNotes(html) {
-  const re = /<p class="text-xs sm:text-sm text-gray-600 mb-4">Droits réduits uniformisés \(0,715\s*%\)\.<\/p>/gi;
+  const re = /<p class="text-xs sm:text-sm text-gray-600 mb-4">Droits reduits uniformises \(0,715\s*%\)\.<\/p>/gi;
   let seen = false;
   return html.replace(re, (m) => {
     if (seen) return '';
@@ -423,7 +423,7 @@ function dedupeInfoNotes(html) {
 }
 
 /**
- * Remplace un CTA existant par le nouveau CTA responsive avec nettoyage du libellé
+ * Remplace un CTA existant par le nouveau CTA responsive avec nettoyage du libelle
  */
 function replaceExistingCta(html, name, code) {
   const newCta = buildCtaBlock(name, code);
@@ -432,12 +432,12 @@ function replaceExistingCta(html, name, code) {
   if (oldCtaRegex.test(html)) {
     return html.replace(oldCtaRegex, newCta);
   }
-  // Cas avec notre CTA marqué
+  // Cas avec notre CTA marque
   const markedRegex = /<!-- CTA BLOCK START -->[\s\S]*?<!-- CTA BLOCK END -->/i;
   if (markedRegex.test(html)) {
     return html.replace(markedRegex, newCta);
   }
-  // Sinon, insérer en haut de l'article
+  // Sinon, inserer en haut de l'article
   const articleOpenMatch = html.match(/<article[^>]*>/);
   if (articleOpenMatch) {
     const idx = html.indexOf(articleOpenMatch[0]) + articleOpenMatch[0].length;
@@ -447,23 +447,23 @@ function replaceExistingCta(html, name, code) {
 }
 
 /**
- * Met à jour ou insère une FAQ locale longue traîne.
+ * Met a jour ou insere une FAQ locale longue traîne.
  */
 /**
- * Supprime toutes les FAQs visibles (H3 "FAQ — ..." et la liste <ul>)
+ * Supprime toutes les FAQs visibles (H3 "FAQ - ..." et la liste <ul>)
  */
 function removeAllFaq(html) {
-  return html.replace(/<h3 class="font-semibold text-gray-900 mb-2">FAQ\s+—[\s\S]*?<ul[^>]*>[\s\S]*?<\/ul>/gi, '');
+  return html.replace(/<h3 class="font-semibold text-gray-900 mb-2">FAQ\s+-[\s\S]*?<ul[^>]*>[\s\S]*?<\/ul>/gi, '');
 }
 
 /**
- * Point d'entrée: traite tous les fichiers départements.
+ * Point d'entree: traite tous les fichiers departements.
  */
 function main() {
   const files = listDepartmentFiles();
   const results = files.map(processFile);
   const changed = results.filter((r) => r.changed).length;
-  console.log(`Enrichissement terminé: ${changed} fichier(s) modifié(s) sur ${files.length}.`);
+  console.log(`Enrichissement termine: ${changed} fichier(s) modifie(s) sur ${files.length}.`);
 }
 
 main();
@@ -491,7 +491,7 @@ function loadBaremes() {
         .map((s) => s.replace(/['"\s]/g, ''))
         .filter(Boolean)
     : [];
-  // Fallback si parsing échoue
+  // Fallback si parsing echoue
   const std = typeof standard === 'number' ? standard : 0.0581;
   const nf = typeof neuf === 'number' ? neuf : 0.00715;
   const red = typeof reduit === 'number' ? reduit : 0.0509006;
@@ -500,7 +500,7 @@ function loadBaremes() {
 }
 
 /**
- * Charge la configuration JSON fournie (DMTO, barème émoluments, CSI, débours).
+ * Charge la configuration JSON fournie (DMTO, bareme emoluments, CSI, debours).
  */
 function loadFraisConfig() {
   const p = path.resolve(process.cwd(), 'src', 'data', 'frais2026.json');
@@ -516,7 +516,7 @@ function loadFraisConfig() {
 
 /**
  * Formate un pourcentage avec troncature (pas d'arrondi),
- * pour coller aux libellés attendus (ex: 5,80% et 0,71%).
+ * pour coller aux libelles attendus (ex: 5,80% et 0,71%).
  */
 function formatPercent(num) {
   if (typeof num !== 'number' || isNaN(num)) return 'N/A';
@@ -544,7 +544,7 @@ function formatEuroAmount(amount) {
   }
 }
 /**
- * Charge les données départementales (taux droits, débours, formalités)
+ * Charge les donnees departementales (taux droits, debours, formalites)
  */
 function loadDepartements() {
   const p = path.resolve(process.cwd(), 'src', 'data', 'departements.json');
@@ -558,17 +558,17 @@ function loadDepartements() {
 }
 
 /**
- * Normalise le code département en chaîne
+ * Normalise le code departement en chaîne
  */
 function normalizeCode(code) {
   return String(code || '').toUpperCase();
 }
 
 /**
- * Retourne le nom officiel du département depuis departements.json
+ * Retourne le nom officiel du departement depuis departements.json
  */
 /**
- * Retourne le nom officiel du département (compat objet ou tableau).
+ * Retourne le nom officiel du departement (compat objet ou tableau).
  */
 function getDepartmentName(code) {
   const entry = getDeptEntry(code);
@@ -576,7 +576,7 @@ function getDepartmentName(code) {
 }
 
 /**
- * Récupère l'entrée département depuis departements.json (objet ou tableau).
+ * Recupere l'entree departement depuis departements.json (objet ou tableau).
  */
 function getDeptEntry(code) {
   const deps = loadDepartements();
@@ -592,7 +592,7 @@ function getDeptEntry(code) {
 }
 
 /**
- * Calcule les émoluments proportionnels du notaire selon barème officiel
+ * Calcule les emoluments proportionnels du notaire selon bareme officiel
  */
 function computeEmoluments(price) {
   const cfg = loadFraisConfig();
@@ -635,10 +635,10 @@ function computeEmoluments(price) {
 }
 
 /**
- * Retourne droits d’enregistrement en fonction du département et du type
+ * Retourne droits d'enregistrement en fonction du departement et du type
  */
 /**
- * Calcule les droits d'enregistrement en fonction du département et du type.
+ * Calcule les droits d'enregistrement en fonction du departement et du type.
  */
 function computeDroits(code, price, type) {
   const cfg = loadFraisConfig();
@@ -661,10 +661,10 @@ function computeDroits(code, price, type) {
 }
 
 /**
- * Retourne le taux des droits (% en décimal) utilisé
+ * Retourne le taux des droits (% en decimal) utilise
  */
 /**
- * Retourne le taux des droits (% en décimal) utilisé pour affichage/calcul.
+ * Retourne le taux des droits (% en decimal) utilise pour affichage/calcul.
  */
 function getDroitsRate(code, type) {
   const cfg = loadFraisConfig();
@@ -684,10 +684,10 @@ function getDroitsRate(code, type) {
 }
 
 /**
- * Calcule formalités et débours selon type et département
+ * Calcule formalites et debours selon type et departement
  */
 /**
- * Calcule formalités et débours selon type et département (compat data).
+ * Calcule formalites et debours selon type et departement (compat data).
  */
 function computeDeboursFormalites(code, type) {
   const cfg = loadFraisConfig();
@@ -730,7 +730,7 @@ function computeCsi(price) {
 }
 
 /**
- * Calcule TVA (20% sur émoluments + formalités)
+ * Calcule TVA (20% sur emoluments + formalites)
  */
 function computeTva(emoluments, formalites) {
   const cfg = loadFraisConfig();

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// Charger les données depuis departements.json
+// Charger les donnees depuis departements.json
 const deptDataPath = path.join(__dirname, "../src/data/departements.json");
 const deptData = JSON.parse(fs.readFileSync(deptDataPath, "utf-8"));
 
@@ -9,8 +9,8 @@ function fixBlogFile(filePath, departement) {
   try {
     let content = fs.readFileSync(filePath, "utf-8");
 
-    // Trouver et supprimer la DEUXIÈME formatResult (qui écrase la première)
-    // Pattern: chercher le deuxième "formatResult:" dans la section config
+    // Trouver et supprimer la DEUXIÈME formatResult (qui ecrase la premiere)
+    // Pattern: chercher le deuxieme "formatResult:" dans la section config
     const configStart = content.indexOf("const config = {");
     const configEnd = content.indexOf(
       "new CalculatorFrame(containerId, config);"
@@ -18,7 +18,7 @@ function fixBlogFile(filePath, departement) {
 
     if (configStart === -1 || configEnd === -1) {
       console.log(
-        `⚠️  Structure config non trouvée dans ${path.basename(filePath)}`
+        `⚠️  Structure config non trouvee dans ${path.basename(filePath)}`
       );
       return false;
     }
@@ -32,7 +32,7 @@ function fixBlogFile(filePath, departement) {
       return true;
     }
 
-    // Trouver la deuxième occurence de formatResult: et la supprimer
+    // Trouver la deuxieme occurence de formatResult: et la supprimer
     const firstFormatResultIndex = configSection.indexOf("formatResult:");
     const secondFormatResultStart = configSection.indexOf(
       "formatResult:",
@@ -41,12 +41,12 @@ function fixBlogFile(filePath, departement) {
 
     if (secondFormatResultStart === -1) {
       console.log(
-        `✅ ${path.basename(filePath)} OK (une seule formatResult trouvée)`
+        `✅ ${path.basename(filePath)} OK (une seule formatResult trouvee)`
       );
       return true;
     }
 
-    // Trouver la fin de la deuxième formatResult (jusqu'au prochain },)
+    // Trouver la fin de la deuxieme formatResult (jusqu'au prochain },)
     const afterSecond = configSection.substring(secondFormatResultStart);
     let braceCount = 0;
     let endIndex = -1;
@@ -71,7 +71,7 @@ function fixBlogFile(filePath, departement) {
       return false;
     }
 
-    // Supprimer la deuxième formatResult complète
+    // Supprimer la deuxieme formatResult complete
     const beforeSecond = content.substring(
       0,
       configStart + secondFormatResultStart
@@ -86,7 +86,7 @@ function fixBlogFile(filePath, departement) {
 
     fs.writeFileSync(filePath, newContent, "utf-8");
     console.log(
-      `✅ Corrigé ${path.basename(filePath)} (double formatResult supprimée)`
+      `✅ Corrige ${path.basename(filePath)} (double formatResult supprimee)`
     );
     return true;
   } catch (error) {
@@ -95,7 +95,7 @@ function fixBlogFile(filePath, departement) {
   }
 }
 
-// Traiter tous les fichiers de département
+// Traiter tous les fichiers de departement
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
 const files = fs
   .readdirSync(deptDir)
@@ -122,11 +122,11 @@ files.forEach((file) => {
 });
 
 console.log(
-  `\n✨ Résultat: ${successCount}/${files.length} corrections réussies`
+  `\n✨ Resultat: ${successCount}/${files.length} corrections reussies`
 );
 if (failCount > 0) {
-  console.log(`⚠️  ${failCount} fichiers n'ont pas pu être corrigés`);
+  console.log(`⚠️  ${failCount} fichiers n'ont pas pu etre corriges`);
 }
 console.log(
-  "\n📝 Les doublons formatResult ont été supprimés. L'affichage détaillé des frais est maintenant visible."
+  "\n📝 Les doublons formatResult ont ete supprimes. L'affichage detaille des frais est maintenant visible."
 );

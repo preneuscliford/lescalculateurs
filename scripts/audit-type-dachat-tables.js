@@ -34,7 +34,7 @@ function computeTotal(code, price, type, cfg) {
 }
 
 function parseDisplayed(html) {
-  const tbMatch = html.match(/<thead[\s\S]*?>[\s\S]*?Type d’achat[\s\S]*?<\/thead>[\s\S]*?<tbody[\s\S]*?>([\s\S]*?)<\/tbody>/i)
+  const tbMatch = html.match(/<thead[\s\S]*?>[\s\S]*?Type d'achat[\s\S]*?<\/thead>[\s\S]*?<tbody[\s\S]*?>([\s\S]*?)<\/tbody>/i)
   if (!tbMatch) return null
   const tbody = tbMatch[1]
   const rows = [...tbody.matchAll(/<tr[\s\S]*?>[\s\S]*?<td[\s\S]*?>[\s\S]*?<\/td>\s*<td[\s\S]*?>([^<]+)<\/td>\s*<td[\s\S]*?>([^<]+)<\/td>[\s\S]*?<\/tr>/gi)]
@@ -72,7 +72,7 @@ function main() {
       out.push({ file: f, shown: disp, expected: { ancien: { pct: aPct, eur: aEur }, neuf: { pct: nPct, eur: nEur } } })
     }
   }
-  console.log(`Type d’achat audit: ${mismatches} page(s) incohérentes sur ${files.length}.`)
+  console.log(`Type d'achat audit: ${mismatches} page(s) incoherentes sur ${files.length}.`)
   if (out.length) {
     console.log(JSON.stringify(out.slice(0, 10), null, 2))
   }

@@ -39,7 +39,7 @@ clean.forEach((item) => {
 // For cluster 1, which has identical sentences, make them unique
 const cluster1 = report.clusters.find((c) => c.clusterId === 1);
 if (cluster1) {
-  const duplicateSentence = `En 2025, ces frais représentent entre <strong>4% et 6,6% du prix d'achat</strong> selon que vous acquériez`;
+  const duplicateSentence = `En 2025, ces frais representent entre <strong>4% et 6,6% du prix d'achat</strong> selon que vous acqueriez`;
   console.log("Fixing cluster 1:", duplicateSentence);
 
   cluster1.items.forEach((item) => {
@@ -48,7 +48,7 @@ if (cluster1) {
       console.error("No name for code", item.code);
       return;
     }
-    const uniqueSentence = `En 2025, ces frais représentent entre <strong>4% et 6,6% du prix d'achat</strong> selon que vous acquériez un bien dans ${nom}`;
+    const uniqueSentence = `En 2025, ces frais representent entre <strong>4% et 6,6% du prix d'achat</strong> selon que vous acqueriez un bien dans ${nom}`;
 
     const filePath = path.resolve(PAGES_DIR, item.file.split("\\").pop()); // item.file has src\... so take last part
     if (fs.existsSync(filePath)) {

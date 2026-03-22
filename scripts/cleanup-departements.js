@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Liste tous les fichiers HTML des départements.
+ * Liste tous les fichiers HTML des departements.
  */
 function listDeptFiles() {
   const dir = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'departements')
@@ -22,18 +22,18 @@ function replaceBaremesJson(html) {
 }
 
 /**
- * Déduplique les marqueurs CTA consécutifs.
+ * Deduplique les marqueurs CTA consecutifs.
  */
 function dedupeCtaMarkers(html) {
-  // Compresser multiples START consécutifs en un seul
+  // Compresser multiples START consecutifs en un seul
   html = html.replace(/(<!-- CTA BLOCK START -->\s*){2,}/g, '<!-- CTA BLOCK START -->\n')
-  // Compresser multiples END consécutifs en un seul
+  // Compresser multiples END consecutifs en un seul
   html = html.replace(/(<!-- CTA BLOCK END -->\s*){2,}/g, '<!-- CTA BLOCK END -->\n')
   return html
 }
 
 /**
- * Traite un fichier département.
+ * Traite un fichier departement.
  */
 function processFile(file) {
   const before = fs.readFileSync(file, 'utf8')
@@ -48,12 +48,12 @@ function processFile(file) {
 }
 
 /**
- * Entrée principale.
+ * Entree principale.
  */
 function main() {
   const files = listDeptFiles()
   const changed = files.map(processFile).filter(Boolean).length
-  console.log(`Cleanup départements: ${changed} fichier(s) modifié(s) sur ${files.length}.`)
+  console.log(`Cleanup departements: ${changed} fichier(s) modifie(s) sur ${files.length}.`)
 }
 
 main()

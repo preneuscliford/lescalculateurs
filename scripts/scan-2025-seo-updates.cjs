@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Script pour identifier les modifications SEO à faire en 2026
+ * Script pour identifier les modifications SEO a faire en 2026
  * Cherche les "2025" dans les blocs SEO uniquement
  */
 
@@ -27,7 +27,7 @@ const seoPatterns = [
 
 console.log(`
 ╔════════════════════════════════════════════════════════════════╗
-║  🔍 SCAN SEO - Occurrences "2025" à Remplacer en 2026          ║
+║  🔍 SCAN SEO - Occurrences "2025" a Remplacer en 2026          ║
 ╚════════════════════════════════════════════════════════════════╝
 `);
 
@@ -36,7 +36,7 @@ let totalMatches = 0;
 files.forEach((filePath) => {
   const fullPath = path.resolve(path.join(process.cwd(), filePath));
   if (!fs.existsSync(fullPath)) {
-    console.log(`\n⚠️  Fichier non trouvé: ${filePath}\n`);
+    console.log(`\n⚠️  Fichier non trouve: ${filePath}\n`);
     return;
   }
 
@@ -45,7 +45,7 @@ files.forEach((filePath) => {
   const matches = [];
 
   lines.forEach((line, idx) => {
-    // Vérifier si la ligne contient un pattern SEO ET "2025"
+    // Verifier si la ligne contient un pattern SEO ET "2025"
     const hasSEOPattern = seoPatterns.some((pattern) =>
       line.includes(pattern)
     );
@@ -66,7 +66,7 @@ files.forEach((filePath) => {
   }
 
   console.log(`\n📄 ${path.basename(filePath)}`);
-  console.log(`   ${matches.length} occurrence(s) à modifier\n`);
+  console.log(`   ${matches.length} occurrence(s) a modifier\n`);
   console.log(`   ${"─".repeat(66)}`);
 
   matches.forEach((match, idx) => {
@@ -83,19 +83,19 @@ files.forEach((filePath) => {
 console.log(`
 ${"═".repeat(70)}
 
-📊 RÉSUMÉ:
-   Total modifications SEO nécessaires: ${totalMatches}
+📊 RESUME:
+   Total modifications SEO necessaires: ${totalMatches}
    
-   À faire en janvier 2026 :
-   ✓ Vérifier les sources officielles
+   A faire en janvier 2026 :
+   ✓ Verifier les sources officielles
    ✓ Remplacer "2025" par "2026" dans les blocs SEO
    ✓ Tester les calculateurs
-   ✓ Vérifier les rankings SEO
+   ✓ Verifier les rankings SEO
 
 📝 COMMANDE POUR MODIFIER:
    Utiliser find-and-replace avec ces patterns:
    • "2025" → "2026" (dans titles, descriptions, keywords, schema)
-   • "barème officiel 2025" → "barème officiel 2026"
+   • "bareme officiel 2025" → "bareme officiel 2026"
    • "frais notaire 2025" → "frais notaire 2026"
 
 ${"═".repeat(70)}

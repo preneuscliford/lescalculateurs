@@ -1,47 +1,47 @@
 #!/usr/bin/env node
 /**
  * Script final pour restaurer tous les emojis correctement
- * Basé sur l'exemple complet fourni par l'utilisateur
+ * Base sur l'exemple complet fourni par l'utilisateur
  */
 
 import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Mapping complet des emojis à restaurer
+ * Mapping complet des emojis a restaurer
  */
 const EMOJI_REPLACEMENTS = {
   // Sections principales
   '??': '💰',  // Frais de notaire
   '??': '⚠️',  // Avertissement  
   '??': '📊',  // Estimation
-  '??': '❓',  // Questions fréquentes
-  '??': '📌',  // Rappel réglementaire
+  '??': '❓',  // Questions frequentes
+  '??': '📌',  // Rappel reglementaire
   '??': '🔗',  // Voir aussi
-  '??': '🏘️',  // Spécificité locale
+  '??': '🏘️',  // Specificite locale
   '??': '🏡',  // Ancien
   '??': '🏢',  // Neuf
-  '??': '💡',  // Bon à savoir
-  '??': '📈',  // Évolution des prix
+  '??': '💡',  // Bon a savoir
+  '??': '📈',  // Evolution des prix
   '??': '📊',  // Volume de transactions
-  '??': '⭐',  // Attractivité
-  '??': '🎯',  // Tension du marché
-  '??': '🏛️',  // Où trouver un notaire
-  '??': '🧮',  // Accéder au simulateur
+  '??': '⭐',  // Attractivite
+  '??': '🎯',  // Tension du marche
+  '??': '🏛️',  // Ou trouver un notaire
+  '??': '🧮',  // Acceder au simulateur
   '??': '✓',   // Checkmark
-  '??': '👉',  // Flèche
-  '??': '📚',  // Sources et références
-  '??': '📋',  // Méthodologie
+  '??': '👉',  // Fleche
+  '??': '📚',  // Sources et references
+  '??': '📋',  // Methodologie
   '??': '💼',  // Tarifs officiels
   '??': '📄',  // Export PDF
   
-  // Autres emojis qui pourraient être manquants
-  '💰?': '💰',  // Cas spéciaux avec des caractères supplémentaires
+  // Autres emojis qui pourraient etre manquants
+  '💰?': '💰',  // Cas speciaux avec des caracteres supplementaires
   '💰 ': '💰 ', // Espaces autour
 }
 
 /**
- * Pages à corriger spécifiquement
+ * Pages a corriger specifiquement
  */
 const PAGES_TO_FIX = [
   'frais-notaire-75.html',
@@ -69,7 +69,7 @@ function fixEmojis(content) {
 }
 
 /**
- * Traite un fichier spécifique
+ * Traite un fichier specifique
  */
 function processFile(filePath) {
   try {
@@ -88,7 +88,7 @@ function processFile(filePath) {
     const backupPath = filePath + '.backup-final-emojis-' + Date.now()
     fs.writeFileSync(backupPath, content, 'utf8')
     
-    // Écrire le contenu corrigé
+    // Ecrire le contenu corrige
     fs.writeFileSync(filePath, fixedContent, 'utf8')
     
     return { fixed: true, backup: backupPath, missingCount: missingEmojis }
@@ -98,7 +98,7 @@ function processFile(filePath) {
 }
 
 /**
- * Point d'entrée principal
+ * Point d'entree principal
  */
 function main() {
   const targetDir = path.resolve(process.cwd(), 'src/pages/blog/departements')

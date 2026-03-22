@@ -5,8 +5,8 @@ let html = fs.readFileSync(
   "src/pages/blog/frais-notaire-departements.html",
   "utf8",
 );
-html = html.replace(/barème officiel 2025/gi, "barème officiel 2026");
-html = html.replace(/barème 2025/gi, "barème 2026");
+html = html.replace(/bareme officiel 2025/gi, "bareme officiel 2026");
+html = html.replace(/bareme 2025/gi, "bareme 2026");
 html = html.replace(/notaire 2025/gi, "notaire 2026");
 html = html.replace(
   /"dateModified": "2025-10-10T10:00:00Z"/g,
@@ -17,7 +17,7 @@ fs.writeFileSync(
   html,
   "utf8",
 );
-console.log("✓ frais-notaire-departements.html corrigé");
+console.log("✓ frais-notaire-departements.html corrige");
 
 // Corriger frais-notaire-ancien-neuf-2026.html
 html = fs.readFileSync(
@@ -37,6 +37,6 @@ fs.writeFileSync(
   html,
   "utf8",
 );
-console.log("✓ frais-notaire-ancien-neuf-2026.html corrigé");
+console.log("✓ frais-notaire-ancien-neuf-2026.html corrige");
 
-console.log("\n✓ Toutes les dates blog corrigées");
+console.log("\n✓ Toutes les dates blog corrigees");

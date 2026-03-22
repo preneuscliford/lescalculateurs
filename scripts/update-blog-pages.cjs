@@ -8,7 +8,7 @@ const BLOG_DIR = path.join(ROOT, "src/pages/blog");
 const DEPT_DIR = path.join(BLOG_DIR, "departements");
 
 /**
- * Liste récursive des fichiers .html dans un répertoire
+ * Liste recursive des fichiers .html dans un repertoire
  */
 function listHtml(dir) {
   const out = [];
@@ -25,24 +25,24 @@ function listHtml(dir) {
 }
 
 /**
- * Remplace "à " par "en " dans libellés "Frais de notaire {année} à ..."
+ * Remplace "a " par "en " dans libelles "Frais de notaire {annee} a ..."
  */
 function replaceAtoEn(content) {
   return content
-    .replace(/(Frais de notaire\s+20\d{2})\s+à\s+/g, "$1 en ")
-    .replace(/(Frais de notaire\s+\d{4})\s+à\s+/g, "$1 en ");
+    .replace(/(Frais de notaire\s+20\d{2})\s+a\s+/g, "$1 en ")
+    .replace(/(Frais de notaire\s+\d{4})\s+a\s+/g, "$1 en ");
 }
 
 /**
- * Remplace les plages non officielles "2024-2026" ou "2024–2026" par "2025–2026"
+ * Remplace les plages non officielles "2024-2026" ou "2024-2026" par "2025-2026"
  */
 function replaceRanges(content) {
-  return content.replace(/2024[-–]2026/g, "2025–2026");
+  return content.replace(/2024[--]2026/g, "2025-2026");
 }
 
 /**
- * Supprime toute occurrence des lignes d'exemples si elles existent déjà
- * (évite doublons), y compris anciens blocs en style border-l-4
+ * Supprime toute occurrence des lignes d'exemples si elles existent deja
+ * (evite doublons), y compris anciens blocs en style border-l-4
  */
 function removeExistingHighlights(content) {
   content = content.replace(
@@ -53,7 +53,7 @@ function removeExistingHighlights(content) {
 }
 
 /**
- * Insère un bloc d’exemples départementaux si absent
+ * Insere un bloc d'exemples departementaux si absent
  */
 function insertDeptHighlights(content) {
   if (content.includes("<!-- dept-highlights -->")) return content;
@@ -61,9 +61,9 @@ function insertDeptHighlights(content) {
   const block =
     '\n<div class="mt-6 mb-8 bg-yellow-50 border-l-4 border-yellow-400 p-4 sm:p-5 rounded-r" id="dept-highlights">\n' +
     '<!-- dept-highlights -->\n' +
-    '<p class="text-sm sm:text-base text-gray-800 leading-relaxed"><strong>💰 Frais de notaire 2026 : repères rapides</strong><br/>Bien ancien : environ <strong>7–8 %</strong> • Bien neuf (VEFA) : environ <strong>2–3 %</strong>.<br/><span class="text-xs sm:text-sm text-gray-600">Pour un montant exact et à jour, utilisez le calculateur.</span></p>\n' +
+    '<p class="text-sm sm:text-base text-gray-800 leading-relaxed"><strong>💰 Frais de notaire 2026 : reperes rapides</strong><br/>Bien ancien : environ <strong>7-8 %</strong> • Bien neuf (VEFA) : environ <strong>2-3 %</strong>.<br/><span class="text-xs sm:text-sm text-gray-600">Pour un montant exact et a jour, utilisez le calculateur.</span></p>\n' +
     '</div>\n';
-  // insertion après le premier <h1> si présent, sinon en haut du <main>
+  // insertion apres le premier <h1> si present, sinon en haut du <main>
   const h1Match = content.match(/<h1[^>]*>[\s\S]*?<\/h1>/i);
   if (h1Match) {
     const idx = content.indexOf(h1Match[0]) + h1Match[0].length;
@@ -74,7 +74,7 @@ function insertDeptHighlights(content) {
     const idx = content.indexOf(mainMatch[0]) + mainMatch[0].length;
     return content.slice(0, idx) + block + content.slice(idx);
   }
-  // fallback: ajouter en début de corps
+  // fallback: ajouter en debut de corps
   return content.replace(/<body[^>]*>/i, (m) => m + block);
 }
 
@@ -96,7 +96,7 @@ function processFile(filePath) {
 }
 
 /**
- * Point d'entrée
+ * Point d'entree
  */
 function main() {
   const files = [];

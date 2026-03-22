@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// Barèmes de notaire
+// Baremes de notaire
 const baremes = {
   tranches: [
     { min: 0, max: 6500, taux: 0.03945 },
@@ -13,7 +13,7 @@ const baremes = {
   csi: { taux: 0.001, minimum: 15 },
 };
 
-// Taux de droits par département
+// Taux de droits par departement
 const tauxParDepartement = {
   75: 0.059,
   92: 0.059,
@@ -45,7 +45,7 @@ const tauxParDepartement = {
   default: 0.058,
 };
 
-// Frais par département
+// Frais par departement
 const fraisParDepartement = {
   default: { cadastre: 125, conservation: 150, formalites: 200 },
 };
@@ -65,12 +65,12 @@ function getCalculFunction(departement) {
                       return { success: false, error: "Veuillez saisir un prix d'acquisition valide." };
                     }
                     if (montantMobilier < 0 || montantMobilier > prixAchat) {
-                      return { success: false, error: "Le mobilier doit être entre 0 et le prix d'acquisition." };
+                      return { success: false, error: "Le mobilier doit etre entre 0 et le prix d'acquisition." };
                     }
 
                     const prixNetImmobilier = prixAchat - montantMobilier;
                     
-                    // Calcul des émoluments selon les tranches officielles
+                    // Calcul des emoluments selon les tranches officielles
                     let emoluments = 0;
                     const tranches = [
                       { min: 0, max: 6500, taux: 0.03945 },
@@ -86,7 +86,7 @@ function getCalculFunction(departement) {
                     }
                     emoluments = Math.round(emoluments * 100) / 100;
 
-                    // Débours et formalités selon le type de bien
+                    // Debours et formalites selon le type de bien
                     let debours = 330;
                     let formalites = 120;
                     if (typeBien !== "neuf") {
@@ -105,7 +105,7 @@ function getCalculFunction(departement) {
                     }
                     droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
 
-                    // TVA (20% sur émoluments + formalités)
+                    // TVA (20% sur emoluments + formalites)
                     const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
 
                     // Total
@@ -146,10 +146,10 @@ function getFormatResultFunction() {
                   return n.toLocaleString("fr-FR", { style: "currency", currency: "EUR", minimumFractionDigits: 0, maximumFractionDigits: 0 });
                 };
                 return '<div class="space-y-2 text-sm">'
-                  + '<div class="flex justify-between"><span>Émoluments du notaire :</span><span class="font-medium">' + fmt(d.emoluments) + '</span></div>'
+                  + '<div class="flex justify-between"><span>Emoluments du notaire :</span><span class="font-medium">' + fmt(d.emoluments) + '</span></div>'
                   + '<div class="flex justify-between"><span>Droits d'enregistrement :</span><span class="font-medium">' + fmt(d.droitsEnregistrement) + '</span></div>'
-                  + '<div class="flex justify-between"><span>Débours :</span><span class="font-medium">' + fmt(d.debours) + '</span></div>'
-                  + '<div class="flex justify-between"><span>Formalités diverses :</span><span class="font-medium">' + fmt(d.formalites) + '</span></div>'
+                  + '<div class="flex justify-between"><span>Debours :</span><span class="font-medium">' + fmt(d.debours) + '</span></div>'
+                  + '<div class="flex justify-between"><span>Formalites diverses :</span><span class="font-medium">' + fmt(d.formalites) + '</span></div>'
                   + '<div class="flex justify-between"><span>CSI :</span><span class="font-medium">' + fmt(d.csi) + '</span></div>'
                   + '<div class="flex justify-between"><span>TVA (20%) :</span><span class="font-medium">' + fmt(d.tva) + '</span></div>'
                   + '<div class="flex justify-between border-t pt-2 font-bold"><span>Total frais de notaire :</span><span class="text-green-600">' + fmt(d.total) + '</span></div>'
@@ -158,7 +158,7 @@ function getFormatResultFunction() {
               }`;
 }
 
-// Pattern à chercher et remplacer
+// Pattern a chercher et remplacer
 const oldCalculatePattern =
   /calculate:\s*\(values\)\s*=>\s*\{[\s\S]*?return\s*\{[\s\S]*?success:\s*true,[\s\S]*?data:[\s\S]*?\}[\s\S]*?\}[\s\S]*?\}/;
 const oldFormatPattern =
@@ -178,7 +178,7 @@ function updateBlogFile(filePath, departement) {
     content = content.replace(oldFormatPattern, newFormat + ",");
 
     fs.writeFileSync(filePath, content, "utf-8");
-    console.log(`✅ Mise à jour: ${path.basename(filePath)}`);
+    console.log(`✅ Mise a jour: ${path.basename(filePath)}`);
     return true;
   } catch (error) {
     console.error(`❌ Erreur pour ${path.basename(filePath)}:`, error.message);
@@ -186,19 +186,19 @@ function updateBlogFile(filePath, departement) {
   }
 }
 
-// Traiter tous les fichiers de département
+// Traiter tous les fichiers de departement
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
 const files = fs
   .readdirSync(deptDir)
   .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
-console.log(`\n🔄 Mise à jour de ${files.length} articles de département...\n`);
+console.log(`\n🔄 Mise a jour de ${files.length} articles de departement...\n`);
 
 let successCount = 0;
 let failCount = 0;
 
 files.forEach((file) => {
-  // Extraire le numéro du département du nom de fichier
+  // Extraire le numero du departement du nom de fichier
   const match = file.match(/frais-notaire-([^.]+)\.html/);
   if (match) {
     const departement = match[1];
@@ -212,10 +212,10 @@ files.forEach((file) => {
 });
 
 console.log(
-  `\n✨ Résultat: ${successCount}/${files.length} mises à jour réussies`
+  `\n✨ Resultat: ${successCount}/${files.length} mises a jour reussies`
 );
 if (failCount > 0) {
-  console.log(`⚠️  ${failCount} fichiers n'ont pas pu être mis à jour`);
+  console.log(`⚠️  ${failCount} fichiers n'ont pas pu etre mis a jour`);
 }
 console.log(
   "\n📝 N'oubliez pas de commiter: git add -A && git commit -m 'refactor: update all blog calculators with detailed breakdown'"

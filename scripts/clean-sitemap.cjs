@@ -48,7 +48,7 @@ replacements.forEach(({ pattern, replacement, description }) => {
   }
 });
 
-// 2. Vérifier et afficher le résumé
+// 2. Verifier et afficher le resume
 const urlMatches = sitemap.match(/<loc>(.*?)<\/loc>/g) || [];
 const urls = urlMatches.map((m) => m.replace(/<\/?loc>/g, ""));
 
@@ -58,7 +58,7 @@ const withApex = urls.filter((u) =>
 );
 
 console.log("\n" + "-".repeat(80));
-console.log("📊 ÉTAT DU SITEMAP");
+console.log("📊 ETAT DU SITEMAP");
 console.log("-".repeat(80));
 console.log(`Total d'URLs: ${urls.length}`);
 console.log(`Avec .html: ${withHtml.length}`);
@@ -77,9 +77,9 @@ if (withApex.length > 0) {
 // 3. Sauvegarder
 if (before !== sitemap) {
   fs.writeFileSync(sitemapPath, sitemap, "utf8");
-  console.log("\n✅ Sitemap nettoyé et sauvegardé!");
+  console.log("\n✅ Sitemap nettoye et sauvegarde!");
 } else {
-  console.log("\n✅ Sitemap déjà propre, aucun changement.");
+  console.log("\n✅ Sitemap deja propre, aucun changement.");
 }
 
 console.log("\n");

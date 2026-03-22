@@ -6,8 +6,8 @@ const INDEXING_SCOPE = "https://www.googleapis.com/auth/indexing";
 const INDEXING_ENDPOINT = "https://indexing.googleapis.com/v3/urlNotifications:publish";
 
 /**
- * Résout le chemin du fichier d’identifiants.
- * Priorité: env GOOGLE_APPLICATION_CREDENTIALS → argument --creds → défaut.
+ * Resout le chemin du fichier d'identifiants.
+ * Priorite: env GOOGLE_APPLICATION_CREDENTIALS → argument --creds → defaut.
  */
 function resolveCredsPath() {
   const fromEnv = process.env.GOOGLE_APPLICATION_CREDENTIALS;
@@ -56,7 +56,7 @@ function readUrlsFromSitemapFiltered(sitemapPath, includePath, lastmod) {
 }
 
 /**
- * Lit une liste d’URLs depuis un fichier texte (1 URL par ligne).
+ * Lit une liste d'URLs depuis un fichier texte (1 URL par ligne).
  */
 function readUrlsFromFile(filePath) {
   const content = fs.readFileSync(filePath, "utf-8");
@@ -67,7 +67,7 @@ function readUrlsFromFile(filePath) {
 }
 
 /**
- * Récupère un client authentifié Google pour le scope Indexing API.
+ * Recupere un client authentifie Google pour le scope Indexing API.
  */
 async function getAuthClient(credsPath) {
   const auth = new GoogleAuth({ keyFile: credsPath, scopes: [INDEXING_SCOPE] });
@@ -75,7 +75,7 @@ async function getAuthClient(credsPath) {
 }
 
 /**
- * Publie une notification d’indexation pour une URL donnée.
+ * Publie une notification d'indexation pour une URL donnee.
  */
 async function publishUrl(client, url, type) {
   const res = await client.request({
@@ -88,7 +88,7 @@ async function publishUrl(client, url, type) {
 }
 
 /**
- * Parse les arguments CLI et construit la liste d’URLs + type.
+ * Parse les arguments CLI et construit la liste d'URLs + type.
  */
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -137,7 +137,7 @@ function parseArgs() {
 }
 
 /**
- * Point d’entrée: authentifie et publie les notifications pour toutes les URLs.
+ * Point d'entree: authentifie et publie les notifications pour toutes les URLs.
  */
 /**
  * Petite pause utilitaire.
@@ -150,7 +150,7 @@ async function main() {
   const credsPath = resolveCredsPath();
   if (!fs.existsSync(credsPath)) {
     console.error(
-      `Fichier d’identifiants introuvable: ${credsPath}. Configurez GOOGLE_APPLICATION_CREDENTIALS ou --creds=...`
+      `Fichier d'identifiants introuvable: ${credsPath}. Configurez GOOGLE_APPLICATION_CREDENTIALS ou --creds=...`
     );
     process.exit(1);
   }
@@ -165,7 +165,7 @@ async function main() {
 
   if (dryRun) {
     console.log(
-      `🔎 Dry-run activé. ${urls.length} URL(s) prêtes pour type=${type}, delay=${delayMs}ms.`
+      `🔎 Dry-run active. ${urls.length} URL(s) pretes pour type=${type}, delay=${delayMs}ms.`
     );
     console.log(urls.slice(0, 10).map((u, i) => `${i + 1}. ${u}`).join("\n"));
     if (urls.length > 10) console.log(`... (${urls.length - 10} autres)`);
@@ -196,13 +196,13 @@ async function main() {
     }
   }
 
-  console.log(`\nRésumé: OK=${ok} / KO=${ko} / total=${urls.length}`);
+  console.log(`\nResume: OK=${ok} / KO=${ko} / total=${urls.length}`);
   if (errors.length) {
     const reportPath = path.resolve("reports", "indexing-errors.json");
     try {
       fs.mkdirSync(path.dirname(reportPath), { recursive: true });
       fs.writeFileSync(reportPath, JSON.stringify(errors, null, 2), "utf-8");
-      console.log(`📝 Erreurs sauvegardées dans ${reportPath}`);
+      console.log(`📝 Erreurs sauvegardees dans ${reportPath}`);
     } catch (_) {
       // noop
     }

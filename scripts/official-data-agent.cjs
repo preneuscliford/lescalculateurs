@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Agent officiel: récupération et synchronisation des données officielles pour les calculateurs
+ * Agent officiel: recuperation et synchronisation des donnees officielles pour les calculateurs
  * - Sources: Notaires.fr, Service-Public.fr, Impots.gouv.fr, Legifrance
- * - Ecrit les mises à jour vérifiées dans src/data/baremes.json et src/data/departements.json
- * - Journalise les contrôles dans data/monitoring-calendar.json et data/official-sources.json
+ * - Ecrit les mises a jour verifiees dans src/data/baremes.json et src/data/departements.json
+ * - Journalise les controles dans data/monitoring-calendar.json et data/official-sources.json
  */
 
 const fs = require("fs");
@@ -17,7 +17,7 @@ const OFFICIAL_SOURCES_PATH = path.join(ROOT, "data/official-sources.json");
 const GLOBAL_MONITOR_PATH = path.join(ROOT, "data/global-monitoring.json");
 
 /**
- * Charge un JSON de manière sûre
+ * Charge un JSON de maniere sûre
  */
 function loadJsonSafe(p) {
   try {
@@ -28,7 +28,7 @@ function loadJsonSafe(p) {
 }
 
 /**
- * Détermine si une catégorie est "due" (date de publication/next_check atteinte)
+ * Determine si une categorie est "due" (date de publication/next_check atteinte)
  * keys possibles: 'notaire', 'dmto', 'ik', 'ir', 'smic', 'apl'
  */
 function isDue(key, monitor, globalMon) {
@@ -53,11 +53,11 @@ function isDue(key, monitor, globalMon) {
       return today >= d;
     }
   if (key === "ir") {
-      // Par défaut: uniquement à partir du 1er janvier de la nouvelle année
+      // Par defaut: uniquement a partir du 1er janvier de la nouvelle annee
       return today.getUTCMonth() === 0;
     }
   if (key === "smic") {
-      // Par défaut: revalorisation au 1er janvier
+      // Par defaut: revalorisation au 1er janvier
       return today.getUTCMonth() === 0;
     }
   } catch (_) {
@@ -90,14 +90,14 @@ function shallowEqual(a, b) {
 }
 
 /**
- * Sauvegarde un objet JSON avec indentation cohérente
+ * Sauvegarde un objet JSON avec indentation coherente
  */
 function saveJson(p, obj) {
   fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf-8");
 }
 
 /**
- * Effectue une requête HTTP GET simple et renvoie le texte
+ * Effectue une requete HTTP GET simple et renvoie le texte
  */
 async function httpGet(url) {
   const res = await fetch(url, { headers: { "User-Agent": "lescalculateurs-agent/1.0" } });
@@ -110,7 +110,7 @@ function parseFrenchDate(text) {
   if (iso) return iso[1];
   const months = {
     janvier: "01",
-    février: "02",
+    fevrier: "02",
     fevrier: "02",
     mars: "03",
     avril: "04",
@@ -122,10 +122,10 @@ function parseFrenchDate(text) {
     septembre: "09",
     octobre: "10",
     novembre: "11",
-    décembre: "12",
+    decembre: "12",
     decembre: "12",
   };
-  const m = text.match(/publi[ée]?\s*le\s*(\d{1,2})\s+([A-Za-zéèêëàâäïîôöûüç]+)\s+(\d{4})/i);
+  const m = text.match(/publi[ee]?\s*le\s*(\d{1,2})\s+([A-Za-zeeeëaaäïîoöûüc]+)\s+(\d{4})/i);
   if (m) {
     const d = String(m[1]).padStart(2, "0");
     const month = months[(m[2] || "").toLowerCase()];
@@ -136,7 +136,7 @@ function parseFrenchDate(text) {
 }
 
 /**
- * Extrait les tranches d'émoluments notariaux depuis notaires.fr (validation basique par présence des taux)
+ * Extrait les tranches d'emoluments notariaux depuis notaires.fr (validation basique par presence des taux)
  */
 async function fetchNotaireEmoluments() {
   const url = "https://www.notaires.fr/fr/les-baremes-notariaux";
@@ -158,7 +158,7 @@ async function fetchNotaireEmoluments() {
 }
 
 /**
- * Récupère les départements à taux réduits DMTO via impots.gouv.fr (validation par mots-clés)
+ * Recupere les departements a taux reduits DMTO via impots.gouv.fr (validation par mots-cles)
  */
 async function fetchDmtoReducedDepartments() {
   const url = "https://www.impots.gouv.fr/particulier/les-droits-denregistrement";
@@ -175,12 +175,12 @@ async function fetchDmtoReducedDepartments() {
 }
 
 /**
- * Récupère le barème des indemnités kilométriques 2024 (validation simple)
+ * Recupere le bareme des indemnites kilometriques 2024 (validation simple)
  */
 async function fetchIndemnitesKilometriques() {
   const url = "https://www.service-public.fr/particuliers/vosdroits/F1879";
   const html = await httpGet(url);
-  const sanity = html.includes("barème kilométrique") || html.includes("indemnités kilométriques");
+  const sanity = html.includes("bareme kilometrique") || html.includes("indemnites kilometriques");
   const data = {
     voiture: {
       "2024": [
@@ -201,7 +201,7 @@ async function fetchIndemnitesKilometriques() {
 }
 
 /**
- * Récupère le barème de l'impôt sur le revenu (taux et plafonds par tranche)
+ * Recupere le bareme de l'impot sur le revenu (taux et plafonds par tranche)
  */
 async function fetchImpotBareme() {
   const url = "https://www.impots.gouv.fr/particulier/le-bareme-de-limpot-sur-le-revenu";
@@ -214,7 +214,7 @@ async function fetchImpotBareme() {
     { plafond: 177106, taux: 0.41 },
     { plafond: Infinity, taux: 0.45 },
   ];
-  const verified = html.includes("impôt sur le revenu") || html.includes("barème");
+  const verified = html.includes("impot sur le revenu") || html.includes("bareme");
   return {
     annee: new Date().getUTCFullYear(),
     tranches: defaultTranches,
@@ -226,29 +226,29 @@ async function fetchImpotBareme() {
 }
 
 /**
- * Récupère les valeurs du SMIC (horaire, mensuel) depuis Ministère du Travail
+ * Recupere les valeurs du SMIC (horaire, mensuel) depuis Ministere du Travail
  */
 async function fetchSmic() {
   const url = "https://travail-emploi.gouv.fr/salaire-minimum-interprofessionnel-de-croissance-smic";
   const html = await httpGet(url);
-  // Valeurs indicatives (propagation à adapter lors de la prochaine revalorisation)
+  // Valeurs indicatives (propagation a adapter lors de la prochaine revalorisation)
   const currentYear = new Date().getUTCFullYear();
   const verified = html.toLowerCase().includes("smic");
   const data = {
     annee: currentYear,
-    horaire_brut: 11.65, // placeholder à surcharger quand la page officielle évolue
+    horaire_brut: 11.65, // placeholder a surcharger quand la page officielle evolue
     mensuel_brut_35h: 1766.92, // 35h base indicative
   };
   return { data, verified, source: url, checked_at: new Date().toISOString(), publication_date: parseFrenchDate(html) };
 }
 
 /**
- * Récupère plafonds APL simplifiés par zone (CAF / Service‑Public)
+ * Recupere plafonds APL simplifies par zone (CAF / Service‑Public)
  */
 async function fetchAplPlafonds() {
   const url = "https://www.service-public.fr/particuliers/vosdroits/F12006";
   const html = await httpGet(url);
-  const verified = html.toLowerCase().includes("aide personnalisée au logement") || html.toLowerCase().includes("apl");
+  const verified = html.toLowerCase().includes("aide personnalisee au logement") || html.toLowerCase().includes("apl");
   const data = {
     version: `${new Date().getUTCFullYear()}`,
     plafonds_loyer: {
@@ -262,7 +262,7 @@ async function fetchAplPlafonds() {
 }
 
 /**
- * Calcule les jours fériés pour une année (incluant Pâques/Ascension/Pentecôte)
+ * Calcule les jours feries pour une annee (incluant Paques/Ascension/Pentecote)
  */
 function computeHolidays(year) {
   function easterDate(Y) {
@@ -292,9 +292,9 @@ function computeHolidays(year) {
   }
   const fixed = [
     { date: `${year}-01-01`, nom: "Jour de l'An", fixe: true },
-    { date: `${year}-05-01`, nom: "Fête du Travail", fixe: true },
-    { date: `${year}-05-08`, nom: "Fête de la Victoire", fixe: true },
-    { date: `${year}-07-14`, nom: "Fête Nationale", fixe: true },
+    { date: `${year}-05-01`, nom: "Fete du Travail", fixe: true },
+    { date: `${year}-05-08`, nom: "Fete de la Victoire", fixe: true },
+    { date: `${year}-07-14`, nom: "Fete Nationale", fixe: true },
     { date: `${year}-08-15`, nom: "Assomption", fixe: true },
     { date: `${year}-11-01`, nom: "Toussaint", fixe: true },
     { date: `${year}-11-11`, nom: "Armistice", fixe: true },
@@ -305,15 +305,15 @@ function computeHolidays(year) {
   const ascension = addDays(easter, 39);
   const pentecote = addDays(easter, 50);
   const movable = [
-    { date: fmt(lundiPaques), nom: "Lundi de Pâques", fixe: false },
+    { date: fmt(lundiPaques), nom: "Lundi de Paques", fixe: false },
     { date: fmt(ascension), nom: "Ascension", fixe: false },
-    { date: fmt(pentecote), nom: "Lundi de Pentecôte", fixe: false },
+    { date: fmt(pentecote), nom: "Lundi de Pentecote", fixe: false },
   ];
   return [...fixed, ...movable];
 }
 
 /**
- * Met à jour la section jours fériés dans baremes.json pour l'année donnée
+ * Met a jour la section jours feries dans baremes.json pour l'annee donnee
  */
 function updateHolidaysInBaremes(baremes, year) {
   if (!baremes.jours_feries) baremes.jours_feries = {};
@@ -321,7 +321,7 @@ function updateHolidaysInBaremes(baremes, year) {
 }
 
 /**
- * Met à jour baremes.json avec les données vérifiées
+ * Met a jour baremes.json avec les donnees verifiees
  */
 function applyUpdatesToBaremes(baremes, notaire, ik, dmto) {
   if (!baremes.notaire) baremes.notaire = {};
@@ -333,7 +333,7 @@ function applyUpdatesToBaremes(baremes, notaire, ik, dmto) {
 }
 
 /**
- * Met à jour baremes.json avec IR, SMIC et APL
+ * Met a jour baremes.json avec IR, SMIC et APL
  */
 function applyUpdatesAllCalculators(baremes, ir, smic, apl) {
   baremes.impot = {
@@ -345,7 +345,7 @@ function applyUpdatesAllCalculators(baremes, ir, smic, apl) {
 }
 
 /**
- * Met à jour monitoring-calendar.json et data/official-sources.json
+ * Met a jour monitoring-calendar.json et data/official-sources.json
  */
 function applyMonitoringUpdates(monitor, snapshots) {
   monitor.last_updated = new Date().toISOString();
@@ -364,9 +364,9 @@ function applyMonitoringUpdates(monitor, snapshots) {
     date: new Date().toISOString().slice(0, 10),
     version: "auto",
     updates: [
-      `Emoluments notariaux mis à jour (${snapshots.notaire.verified ? "vérifiés" : "non vérifiés"})`,
-      `DMTO départements réduits (${snapshots.dmto.departementsReduits.join(", ")})`,
-      `Barème IK 2024 (${snapshots.ik.verified ? "vérifié" : "non vérifié"})`,
+      `Emoluments notariaux mis a jour (${snapshots.notaire.verified ? "verifies" : "non verifies"})`,
+      `DMTO departements reduits (${snapshots.dmto.departementsReduits.join(", ")})`,
+      `Bareme IK 2024 (${snapshots.ik.verified ? "verifie" : "non verifie"})`,
     ],
     verified_by: "Agent automatique",
   });
@@ -380,7 +380,7 @@ function applyMonitoringUpdates(monitor, snapshots) {
 }
 
 /**
- * Point d'entrée: orchestre la récupération et l'écriture
+ * Point d'entree: orchestre la recuperation et l'ecriture
  */
 async function main() {
   const baremes = loadJsonSafe(BAREMES_PATH) || {};
@@ -482,11 +482,11 @@ async function main() {
     snapshots.apl = { data: baremes?.apl || {}, verified: false, source: "SKIP (non dû)", checked_at: new Date().toISOString() };
   }
 
-  // Appliquer mises à jour uniquement si les nouvelles données diffèrent
+  // Appliquer mises a jour uniquement si les nouvelles donnees different
   if (due.notaire && !tranchesEqual(baremes?.notaire?.tranches, snapshots.notaire.tranches)) {
     applyUpdatesToBaremes(baremes, snapshots.notaire, snapshots.ik, snapshots.dmto);
   } else {
-    // Maintenir IK/DMTO si dues et différentes
+    // Maintenir IK/DMTO si dues et differentes
     if (due.ik && !shallowEqual(baremes?.indemnites_kilometriques, snapshots.ik.data)) {
       baremes.indemnites_kilometriques = snapshots.ik.data;
     }
@@ -498,7 +498,7 @@ async function main() {
   }
   updateHolidaysInBaremes(baremes, new Date().getUTCFullYear());
   updateHolidaysInBaremes(baremes, new Date().getUTCFullYear() + 1);
-  // IR/SMIC/APL si dus et différents
+  // IR/SMIC/APL si dus et differents
   if (due.ir && !tranchesEqual(baremes?.impot?.tranches, snapshots.ir.tranches)) {
     baremes.impot = { annee: snapshots.ir.annee, tranches: snapshots.ir.tranches };
   }
@@ -522,7 +522,7 @@ async function main() {
     apl: { verified: snapshots.apl.verified, source: snapshots.apl.source },
     due_flags: due,
   };
-  console.log("Agent officiel terminé:", report);
+  console.log("Agent officiel termine:", report);
 }
 
 main().catch((e) => {

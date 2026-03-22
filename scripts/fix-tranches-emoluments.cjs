@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// Taux de droits par département
+// Taux de droits par departement
 const tauxParDepartement = {
   75: 0.059,
   92: 0.059,
@@ -33,7 +33,7 @@ const tauxParDepartement = {
   default: 0.058,
 };
 
-// Frais par département
+// Frais par departement
 const fraisParDepartement = {
   default: { cadastre: 125, conservation: 150, formalites: 200 },
 };
@@ -51,7 +51,7 @@ function updateBlogFile(filePath, departement) {
     const calculateEnd = content.indexOf("formatResult:", calculateStart);
 
     if (calculateStart === -1 || calculateEnd === -1) {
-      console.log(`⚠️  Structure non trouvée dans ${path.basename(filePath)}`);
+      console.log(`⚠️  Structure non trouvee dans ${path.basename(filePath)}`);
       return false;
     }
 
@@ -65,12 +65,12 @@ function updateBlogFile(filePath, departement) {
                       return { success: false, error: "Veuillez saisir un prix d'acquisition valide." };
                     }
                     if (montantMobilier < 0 || montantMobilier > prixAchat) {
-                      return { success: false, error: "Le mobilier doit être entre 0 et le prix d'acquisition." };
+                      return { success: false, error: "Le mobilier doit etre entre 0 et le prix d'acquisition." };
                     }
 
                     const prixNetImmobilier = prixAchat - montantMobilier;
                     
-                    // Calcul des émoluments selon les tranches officielles (IDENTIQUE AU CALCULATEUR PRINCIPAL)
+                    // Calcul des emoluments selon les tranches officielles (IDENTIQUE AU CALCULATEUR PRINCIPAL)
                     let emoluments = 0;
                     const tranches = [
                       { min: 0, max: 6500, taux: 0.0387 },
@@ -86,7 +86,7 @@ function updateBlogFile(filePath, departement) {
                     }
                     emoluments = Math.round(emoluments * 100) / 100;
 
-                    // Débours et formalités selon le type de bien
+                    // Debours et formalites selon le type de bien
                     let debours = 330;
                     let formalites = 120;
                     if (typeBien !== "neuf") {
@@ -105,7 +105,7 @@ function updateBlogFile(filePath, departement) {
                     }
                     droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
 
-                    // TVA (20% sur émoluments + formalités)
+                    // TVA (20% sur emoluments + formalites)
                     const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
 
                     // Total
@@ -144,7 +144,7 @@ function updateBlogFile(filePath, departement) {
     content = before + newCalculate + after;
 
     fs.writeFileSync(filePath, content, "utf-8");
-    console.log(`✅ Mise à jour: ${path.basename(filePath)}`);
+    console.log(`✅ Mise a jour: ${path.basename(filePath)}`);
     return true;
   } catch (error) {
     console.error(`❌ Erreur pour ${path.basename(filePath)}:`, error.message);
@@ -152,14 +152,14 @@ function updateBlogFile(filePath, departement) {
   }
 }
 
-// Traiter tous les fichiers de département
+// Traiter tous les fichiers de departement
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
 const files = fs
   .readdirSync(deptDir)
   .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
 console.log(
-  `\n🔄 Correction des tranches d'émoluments dans ${files.length} articles...\n`
+  `\n🔄 Correction des tranches d'emoluments dans ${files.length} articles...\n`
 );
 
 let successCount = 0;
@@ -179,11 +179,11 @@ files.forEach((file) => {
 });
 
 console.log(
-  `\n✨ Résultat: ${successCount}/${files.length} mises à jour réussies`
+  `\n✨ Resultat: ${successCount}/${files.length} mises a jour reussies`
 );
 if (failCount > 0) {
-  console.log(`⚠️  ${failCount} fichiers n'ont pas pu être mis à jour`);
+  console.log(`⚠️  ${failCount} fichiers n'ont pas pu etre mis a jour`);
 }
 console.log(
-  "\n📝 Tranches corrigées: 0.0387, 0.01596, 0.01064, 0.00799 (identiques au calculateur principal)"
+  "\n📝 Tranches corrigees: 0.0387, 0.01596, 0.01064, 0.00799 (identiques au calculateur principal)"
 );

@@ -40,7 +40,7 @@ function analyzeH1Tags(dir) {
   // Trier par H1 count
   results.sort((a, b) => b.h1Count - a.h1Count);
 
-  // Afficher les résultats
+  // Afficher les resultats
   console.log("🏷️  H1 Tags Analysis\n");
 
   if (results.length === 0) {

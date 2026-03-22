@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Corrige le sitemap en supprimant les .html des URLs
- * et en créant un sitemap correct sans redirects
+ * et en creant un sitemap correct sans redirects
  */
 
 import fs from "fs";
@@ -26,7 +26,7 @@ function fixSitemap() {
   const fixed = xml.replace(/(<loc>.*?)(\.html)(<\/loc>)/g, "$1$3");
 
   if (fixed === xml) {
-    console.log("✅ Sitemap déjà correct (aucun .html trouvé)");
+    console.log("✅ Sitemap deja correct (aucun .html trouve)");
     return;
   }
 
@@ -35,7 +35,7 @@ function fixSitemap() {
   // Compter les changements
   const htmlCount = (xml.match(/\.html<\/loc>/g) || []).length;
   console.log(
-    `✅ Sitemap corrigé: ${htmlCount} URLs fixes (suppression de .html)`
+    `✅ Sitemap corrige: ${htmlCount} URLs fixes (suppression de .html)`
   );
 }
 

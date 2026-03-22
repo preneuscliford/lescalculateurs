@@ -1,6 +1,6 @@
 /**
- * SCRIPT OFFICIEL - Application du template définitif LesCalculateurs.fr
- * Génère les 101 pages départementales conformes juridiquement
+ * SCRIPT OFFICIEL - Application du template definitif LesCalculateurs.fr
+ * Genere les 101 pages departementales conformes juridiquement
  *
  * Usage: node scripts/apply-official-template.cjs
  */
@@ -8,58 +8,58 @@
 const fs = require("fs");
 const path = require("path");
 
-// Configuration des départements avec villes-exemples
+// Configuration des departements avec villes-exemples
 const DEPARTEMENTS = {
   "01": {
     nom: "Ain",
     prefecture: "Bourg-en-Bresse",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
   },
   "02": { nom: "Aisne", prefecture: "Laon", region: "Hauts-de-France" },
   "03": {
     nom: "Allier",
     prefecture: "Moulins",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
   },
   "04": {
     nom: "Alpes-de-Haute-Provence",
     prefecture: "Digne-les-Bains",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
   },
   "05": {
     nom: "Hautes-Alpes",
     prefecture: "Gap",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
   },
   "06": {
     nom: "Alpes-Maritimes",
     prefecture: "Nice",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
   },
   "07": {
-    nom: "Ardèche",
+    nom: "Ardeche",
     prefecture: "Privas",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
   },
   "08": {
     nom: "Ardennes",
-    prefecture: "Charleville-Mézières",
+    prefecture: "Charleville-Mezieres",
     region: "Grand Est",
   },
-  "09": { nom: "Ariège", prefecture: "Foix", region: "Occitanie" },
+  "09": { nom: "Ariege", prefecture: "Foix", region: "Occitanie" },
   10: { nom: "Aube", prefecture: "Troyes", region: "Grand Est" },
   11: { nom: "Aude", prefecture: "Carcassonne", region: "Occitanie" },
   12: { nom: "Aveyron", prefecture: "Rodez", region: "Occitanie" },
   13: {
-    nom: "Bouches-du-Rhône",
+    nom: "Bouches-du-Rhone",
     prefecture: "Marseille",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
   },
   14: { nom: "Calvados", prefecture: "Caen", region: "Normandie" },
-  15: { nom: "Cantal", prefecture: "Aurillac", region: "Auvergne-Rhône-Alpes" },
+  15: { nom: "Cantal", prefecture: "Aurillac", region: "Auvergne-Rhone-Alpes" },
   16: {
     nom: "Charente",
-    prefecture: "Angoulême",
+    prefecture: "Angouleme",
     region: "Nouvelle-Aquitaine",
   },
   17: {
@@ -68,43 +68,43 @@ const DEPARTEMENTS = {
     region: "Nouvelle-Aquitaine",
   },
   18: { nom: "Cher", prefecture: "Bourges", region: "Centre-Val de Loire" },
-  19: { nom: "Corrèze", prefecture: "Tulle", region: "Nouvelle-Aquitaine" },
+  19: { nom: "Correze", prefecture: "Tulle", region: "Nouvelle-Aquitaine" },
   21: {
-    nom: "Côte-d'Or",
+    nom: "Cote-d'Or",
     prefecture: "Dijon",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
   },
-  22: { nom: "Côtes-d'Armor", prefecture: "Saint-Brieuc", region: "Bretagne" },
-  23: { nom: "Creuse", prefecture: "Guéret", region: "Nouvelle-Aquitaine" },
+  22: { nom: "Cotes-d'Armor", prefecture: "Saint-Brieuc", region: "Bretagne" },
+  23: { nom: "Creuse", prefecture: "Gueret", region: "Nouvelle-Aquitaine" },
   24: {
     nom: "Dordogne",
-    prefecture: "Périgueux",
+    prefecture: "Perigueux",
     region: "Nouvelle-Aquitaine",
   },
   25: {
     nom: "Doubs",
-    prefecture: "Besançon",
-    region: "Bourgogne-Franche-Comté",
+    prefecture: "Besancon",
+    region: "Bourgogne-Franche-Comte",
   },
-  26: { nom: "Drôme", prefecture: "Valence", region: "Auvergne-Rhône-Alpes" },
-  27: { nom: "Eure", prefecture: "Évreux", region: "Normandie" },
+  26: { nom: "Drome", prefecture: "Valence", region: "Auvergne-Rhone-Alpes" },
+  27: { nom: "Eure", prefecture: "Evreux", region: "Normandie" },
   28: {
     nom: "Eure-et-Loir",
     prefecture: "Chartres",
     region: "Centre-Val de Loire",
   },
-  29: { nom: "Finistère", prefecture: "Quimper", region: "Bretagne" },
+  29: { nom: "Finistere", prefecture: "Quimper", region: "Bretagne" },
   "2A": { nom: "Corse-du-Sud", prefecture: "Ajaccio", region: "Corse" },
   "2B": { nom: "Haute-Corse", prefecture: "Bastia", region: "Corse" },
   30: { nom: "Gard", prefecture: "Nîmes", region: "Occitanie" },
   31: { nom: "Haute-Garonne", prefecture: "Toulouse", region: "Occitanie" },
   32: { nom: "Gers", prefecture: "Auch", region: "Occitanie" },
   33: { nom: "Gironde", prefecture: "Bordeaux", region: "Nouvelle-Aquitaine" },
-  34: { nom: "Hérault", prefecture: "Montpellier", region: "Occitanie" },
+  34: { nom: "Herault", prefecture: "Montpellier", region: "Occitanie" },
   35: { nom: "Ille-et-Vilaine", prefecture: "Rennes", region: "Bretagne" },
   36: {
     nom: "Indre",
-    prefecture: "Châteauroux",
+    prefecture: "Chateauroux",
     region: "Centre-Val de Loire",
   },
   37: {
@@ -112,11 +112,11 @@ const DEPARTEMENTS = {
     prefecture: "Tours",
     region: "Centre-Val de Loire",
   },
-  38: { nom: "Isère", prefecture: "Grenoble", region: "Auvergne-Rhône-Alpes" },
+  38: { nom: "Isere", prefecture: "Grenoble", region: "Auvergne-Rhone-Alpes" },
   39: {
     nom: "Jura",
     prefecture: "Lons-le-Saunier",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
   },
   40: {
     nom: "Landes",
@@ -130,34 +130,34 @@ const DEPARTEMENTS = {
   },
   42: {
     nom: "Loire",
-    prefecture: "Saint-Étienne",
-    region: "Auvergne-Rhône-Alpes",
+    prefecture: "Saint-Etienne",
+    region: "Auvergne-Rhone-Alpes",
   },
   43: {
     nom: "Haute-Loire",
     prefecture: "Le Puy-en-Velay",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
   },
   44: {
     nom: "Loire-Atlantique",
     prefecture: "Nantes",
     region: "Pays de la Loire",
   },
-  45: { nom: "Loiret", prefecture: "Orléans", region: "Centre-Val de Loire" },
+  45: { nom: "Loiret", prefecture: "Orleans", region: "Centre-Val de Loire" },
   46: { nom: "Lot", prefecture: "Cahors", region: "Occitanie" },
   47: {
     nom: "Lot-et-Garonne",
     prefecture: "Agen",
     region: "Nouvelle-Aquitaine",
   },
-  48: { nom: "Lozère", prefecture: "Mende", region: "Occitanie" },
+  48: { nom: "Lozere", prefecture: "Mende", region: "Occitanie" },
   49: {
     nom: "Maine-et-Loire",
     prefecture: "Angers",
     region: "Pays de la Loire",
   },
-  50: { nom: "Manche", prefecture: "Saint-Lô", region: "Normandie" },
-  51: { nom: "Marne", prefecture: "Châlons-en-Champagne", region: "Grand Est" },
+  50: { nom: "Manche", prefecture: "Saint-Lo", region: "Normandie" },
+  51: { nom: "Marne", prefecture: "Chalons-en-Champagne", region: "Grand Est" },
   52: { nom: "Haute-Marne", prefecture: "Chaumont", region: "Grand Est" },
   53: { nom: "Mayenne", prefecture: "Laval", region: "Pays de la Loire" },
   54: { nom: "Meurthe-et-Moselle", prefecture: "Nancy", region: "Grand Est" },
@@ -165,70 +165,70 @@ const DEPARTEMENTS = {
   56: { nom: "Morbihan", prefecture: "Vannes", region: "Bretagne" },
   57: { nom: "Moselle", prefecture: "Metz", region: "Grand Est" },
   58: {
-    nom: "Nièvre",
+    nom: "Nievre",
     prefecture: "Nevers",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
   },
   59: { nom: "Nord", prefecture: "Lille", region: "Hauts-de-France" },
   60: { nom: "Oise", prefecture: "Beauvais", region: "Hauts-de-France" },
-  61: { nom: "Orne", prefecture: "Alençon", region: "Normandie" },
+  61: { nom: "Orne", prefecture: "Alencon", region: "Normandie" },
   62: { nom: "Pas-de-Calais", prefecture: "Arras", region: "Hauts-de-France" },
   63: {
-    nom: "Puy-de-Dôme",
+    nom: "Puy-de-Dome",
     prefecture: "Clermont-Ferrand",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
   },
   64: {
-    nom: "Pyrénées-Atlantiques",
+    nom: "Pyrenees-Atlantiques",
     prefecture: "Pau",
     region: "Nouvelle-Aquitaine",
   },
-  65: { nom: "Hautes-Pyrénées", prefecture: "Tarbes", region: "Occitanie" },
+  65: { nom: "Hautes-Pyrenees", prefecture: "Tarbes", region: "Occitanie" },
   66: {
-    nom: "Pyrénées-Orientales",
+    nom: "Pyrenees-Orientales",
     prefecture: "Perpignan",
     region: "Occitanie",
   },
   67: { nom: "Bas-Rhin", prefecture: "Strasbourg", region: "Grand Est" },
   68: { nom: "Haut-Rhin", prefecture: "Colmar", region: "Grand Est" },
-  69: { nom: "Rhône", prefecture: "Lyon", region: "Auvergne-Rhône-Alpes" },
+  69: { nom: "Rhone", prefecture: "Lyon", region: "Auvergne-Rhone-Alpes" },
   70: {
-    nom: "Haute-Saône",
+    nom: "Haute-Saone",
     prefecture: "Vesoul",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
   },
   71: {
-    nom: "Saône-et-Loire",
-    prefecture: "Mâcon",
-    region: "Bourgogne-Franche-Comté",
+    nom: "Saone-et-Loire",
+    prefecture: "Macon",
+    region: "Bourgogne-Franche-Comte",
   },
   72: { nom: "Sarthe", prefecture: "Le Mans", region: "Pays de la Loire" },
-  73: { nom: "Savoie", prefecture: "Chambéry", region: "Auvergne-Rhône-Alpes" },
+  73: { nom: "Savoie", prefecture: "Chambery", region: "Auvergne-Rhone-Alpes" },
   74: {
     nom: "Haute-Savoie",
     prefecture: "Annecy",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
   },
   75: { nom: "Paris", prefecture: "Paris", region: "Île-de-France" },
   76: { nom: "Seine-Maritime", prefecture: "Rouen", region: "Normandie" },
   77: { nom: "Seine-et-Marne", prefecture: "Melun", region: "Île-de-France" },
   78: { nom: "Yvelines", prefecture: "Versailles", region: "Île-de-France" },
-  79: { nom: "Deux-Sèvres", prefecture: "Niort", region: "Nouvelle-Aquitaine" },
+  79: { nom: "Deux-Sevres", prefecture: "Niort", region: "Nouvelle-Aquitaine" },
   80: { nom: "Somme", prefecture: "Amiens", region: "Hauts-de-France" },
   81: { nom: "Tarn", prefecture: "Albi", region: "Occitanie" },
   82: { nom: "Tarn-et-Garonne", prefecture: "Montauban", region: "Occitanie" },
   83: {
     nom: "Var",
     prefecture: "Toulon",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
   },
   84: {
     nom: "Vaucluse",
     prefecture: "Avignon",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
   },
   85: {
-    nom: "Vendée",
+    nom: "Vendee",
     prefecture: "La Roche-sur-Yon",
     region: "Pays de la Loire",
   },
@@ -238,20 +238,20 @@ const DEPARTEMENTS = {
     prefecture: "Limoges",
     region: "Nouvelle-Aquitaine",
   },
-  88: { nom: "Vosges", prefecture: "Épinal", region: "Grand Est" },
+  88: { nom: "Vosges", prefecture: "Epinal", region: "Grand Est" },
   89: {
     nom: "Yonne",
     prefecture: "Auxerre",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
   },
   90: {
     nom: "Territoire de Belfort",
     prefecture: "Belfort",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
   },
   91: {
     nom: "Essonne",
-    prefecture: "Évry-Courcouronnes",
+    prefecture: "Evry-Courcouronnes",
     region: "Île-de-France",
   },
   92: {
@@ -264,7 +264,7 @@ const DEPARTEMENTS = {
     prefecture: "Bobigny",
     region: "Île-de-France",
   },
-  94: { nom: "Val-de-Marne", prefecture: "Créteil", region: "Île-de-France" },
+  94: { nom: "Val-de-Marne", prefecture: "Creteil", region: "Île-de-France" },
   95: {
     nom: "Val-d'Oise",
     prefecture: "Cergy-Pontoise",
@@ -277,7 +277,7 @@ const DEPARTEMENTS = {
     region: "Martinique",
   },
   973: { nom: "Guyane", prefecture: "Cayenne", region: "Guyane" },
-  974: { nom: "La Réunion", prefecture: "Saint-Denis", region: "La Réunion" },
+  974: { nom: "La Reunion", prefecture: "Saint-Denis", region: "La Reunion" },
   975: {
     nom: "Saint-Pierre-et-Miquelon",
     prefecture: "Saint-Pierre",
@@ -286,7 +286,7 @@ const DEPARTEMENTS = {
   976: { nom: "Mayotte", prefecture: "Mamoudzou", region: "Mayotte" },
 };
 
-// Images Wikimedia Commons par département (récupérées des anciennes pages)
+// Images Wikimedia Commons par departement (recuperees des anciennes pages)
 const IMAGES = {
   "01": "https://commons.wikimedia.org/wiki/Special:FilePath/Monast%C3%A8re%20royal%20de%20Brou%20(%C3%A9glise)%20(1).JPG",
   "02": "https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG",
@@ -386,7 +386,7 @@ const IMAGES = {
   976: "https://commons.wikimedia.org/wiki/Special:FilePath/2004%2012%2012%2018-24-04%20rose%20sea%20in%20mamoudzou%20mayotte%20island.jpg",
 };
 
-// Image par défaut pour les départements sans image
+// Image par defaut pour les departements sans image
 const DEFAULT_IMAGE =
   "https://commons.wikimedia.org/wiki/Special:FilePath/France_location_map-Regions_and_departements-2016.svg";
 
@@ -400,14 +400,14 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frais de notaire ${nom} (${code}) 2026 — Simulateur officiel gratuit</title>
+    <title>Frais de notaire ${nom} (${code}) 2026 - Simulateur officiel gratuit</title>
     <meta
       name="description"
-      content="Calculez vos frais de notaire en ${nom} (${code}) instantanément. Estimation automatique 2026, barème officiel. Aucun email demandé."
+      content="Calculez vos frais de notaire en ${nom} (${code}) instantanement. Estimation automatique 2026, bareme officiel. Aucun email demande."
     />
     <meta
       name="keywords"
-      content="frais notaire ${nom}, frais de notaire 2026 ${nom}, droits d'enregistrement ${nom}, notaires ${nom}, émoluments notaire ${nom}"
+      content="frais notaire ${nom}, frais de notaire 2026 ${nom}, droits d'enregistrement ${nom}, notaires ${nom}, emoluments notaire ${nom}"
     />
     <meta name="author" content="LesCalculateurs.fr" />
     <meta name="robots" content="index, follow" />
@@ -417,9 +417,9 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-${codeUrl}" />
     <meta property="og:url" content="https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-${codeUrl}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Frais de notaire ${nom} (${code}) 2026 — Simulateur officiel gratuit" />
-    <meta property="og:description" content="Calculez vos frais de notaire en ${nom} instantanément. Estimation automatique 2026. Aucun email demandé." />
-    <meta name="twitter:description" content="Calculez vos frais de notaire en ${nom} instantanément. Estimation automatique 2026. Aucun email demandé." />
+    <meta property="og:title" content="Frais de notaire ${nom} (${code}) 2026 - Simulateur officiel gratuit" />
+    <meta property="og:description" content="Calculez vos frais de notaire en ${nom} instantanement. Estimation automatique 2026. Aucun email demande." />
+    <meta name="twitter:description" content="Calculez vos frais de notaire en ${nom} instantanement. Estimation automatique 2026. Aucun email demande." />
     <meta property="og:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
 
     <!-- Favicon -->
@@ -450,28 +450,28 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
               "name": "Quel est le montant des frais de notaire en ${nom} ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "En 2026, les frais de notaire se situent généralement entre 7 % et 9 % du prix d'achat dans l'ancien et entre 2 % et 3 % dans le neuf (VEFA), selon le barème national et les droits d'enregistrement."
+                "text": "En 2026, les frais de notaire se situent generalement entre 7 % et 9 % du prix d'achat dans l'ancien et entre 2 % et 3 % dans le neuf (VEFA), selon le bareme national et les droits d'enregistrement."
               }
             },
             {
               "@type": "Question",
-              "name": "Comment sont calculés les frais de notaire ?",
+              "name": "Comment sont calcules les frais de notaire ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Les frais de notaire comprennent les droits d'enregistrement (taxe départementale), les émoluments du notaire (barème réglementé), les débours et formalités, la contribution de sécurité immobilière (CSI) et la TVA applicable."
+                "text": "Les frais de notaire comprennent les droits d'enregistrement (taxe departementale), les emoluments du notaire (bareme reglemente), les debours et formalites, la contribution de securite immobiliere (CSI) et la TVA applicable."
               }
             },
             {
               "@type": "Question",
-              "name": "Quelle différence entre ancien et neuf (VEFA) ?",
+              "name": "Quelle difference entre ancien et neuf (VEFA) ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "L'achat dans le neuf (VEFA) bénéficie de droits réduits, ce qui permet une économie significative sur les frais de notaire par rapport à l'ancien."
+                "text": "L'achat dans le neuf (VEFA) beneficie de droits reduits, ce qui permet une economie significative sur les frais de notaire par rapport a l'ancien."
               }
             },
             {
               "@type": "Question",
-              "name": "Où trouver un notaire en ${nom} ?",
+              "name": "Ou trouver un notaire en ${nom} ?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Consultez l'annuaire officiel des notaires sur notaires.fr pour trouver un professionnel proche de votre projet immobilier en ${nom}."
@@ -479,10 +479,10 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
             },
             {
               "@type": "Question",
-              "name": "Les frais de notaire sont-ils plus élevés en ${nom} que dans d’autres départements ?",
+              "name": "Les frais de notaire sont-ils plus eleves en ${nom} que dans d'autres departements ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Non. Les frais de notaire sont encadrés au niveau national. ${nom} n’applique pas de taux spécifiques différents, mais des prix immobiliers plus élevés dans certaines zones peuvent augmenter le montant total des frais."
+                "text": "Non. Les frais de notaire sont encadres au niveau national. ${nom} n'applique pas de taux specifiques differents, mais des prix immobiliers plus eleves dans certaines zones peuvent augmenter le montant total des frais."
               }
             }
           ]
@@ -558,30 +558,30 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
 
       <!-- CTA Principal -->
       <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 mb-8 text-white">
-        <h2 class="text-2xl font-bold mb-2">Calcul immédiat (10 s) — Gratuit</h2>
-        <p class="text-blue-100 mb-4">Barème officiel 2026, estimation indicative pour ${nom} (${code}).</p>
+        <h2 class="text-2xl font-bold mb-2">Calcul immediat (10 s) - Gratuit</h2>
+        <p class="text-blue-100 mb-4">Bareme officiel 2026, estimation indicative pour ${nom} (${code}).</p>
         <a href="/pages/notaire.html" class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition">
           Lancer le calcul
         </a>
       </div>
 
-      <!-- Avertissement légal -->
+      <!-- Avertissement legal -->
       <div class="my-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
         <p class="text-sm text-gray-800 m-0">
-          <strong>⚠️ Avertissement :</strong> Les informations présentées sont des estimations indicatives basées sur les barèmes réglementés en vigueur. Elles ne constituent ni un devis notarial, ni un conseil juridique. Seul un notaire est habilité à établir le montant définitif lors de la signature de l'acte authentique.
+          <strong>⚠️ Avertissement :</strong> Les informations presentees sont des estimations indicatives basees sur les baremes reglementes en vigueur. Elles ne constituent ni un devis notarial, ni un conseil juridique. Seul un notaire est habilite a etablir le montant definitif lors de la signature de l'acte authentique.
         </p>
       </div>
 
-      <!-- Résumé frais -->
+      <!-- Resume frais -->
       <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
         <h2 class="text-xl font-bold text-gray-900 mb-3">💰 Frais de notaire 2026 en ${nom} (${code})</h2>
         <p class="text-gray-700 mb-2">Pour un achat immobilier en 2026 :</p>
         <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li><strong>Bien ancien :</strong> généralement environ 7 % à 9 % du prix d'acquisition</li>
-          <li><strong>Bien neuf (VEFA) :</strong> généralement environ 2 % à 3 %, en raison de droits de mutation réduits, le reste étant composé d'émoluments, débours et taxes réglementées</li>
+          <li><strong>Bien ancien :</strong> generalement environ 7 % a 9 % du prix d'acquisition</li>
+          <li><strong>Bien neuf (VEFA) :</strong> generalement environ 2 % a 3 %, en raison de droits de mutation reduits, le reste etant compose d'emoluments, debours et taxes reglementees</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-2">Ces informations sont fournies à titre indicatif et pédagogique. Elles incluent les droits, émoluments, formalités, contribution de sécurité immobilière (CSI) et la TVA applicable.</p>
-        <p class="text-sm text-gray-700">👉 Pour un montant exact et personnalisé, <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">utilisez le calculateur</a>.</p>
+        <p class="text-sm text-gray-600 mb-2">Ces informations sont fournies a titre indicatif et pedagogique. Elles incluent les droits, emoluments, formalites, contribution de securite immobiliere (CSI) et la TVA applicable.</p>
+        <p class="text-sm text-gray-700">👉 Pour un montant exact et personnalise, <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">utilisez le calculateur</a>.</p>
       </div>
 
       <!-- Article Header -->
@@ -591,13 +591,13 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
           <span>•</span>
           <time datetime="2026-01-01">Janvier 2026</time>
           <span>•</span>
-          <span>Guide départemental</span>
+          <span>Guide departemental</span>
         </div>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Frais de notaire 2026 en ${nom} (${code})
         </h1>
         <p class="text-xl text-gray-600 leading-relaxed">
-          Le marché immobilier en ${nom} attire de nombreux acquéreurs, rendant essentielle l'anticipation des frais de notaire. En 2026, ces frais varient principalement selon la nature du bien (ancien ou neuf) et les formalités applicables. Les montants exacts dépendent du prix du bien, de la situation de l'acquéreur et du dossier notarial.
+          Le marche immobilier en ${nom} attire de nombreux acquereurs, rendant essentielle l'anticipation des frais de notaire. En 2026, ces frais varient principalement selon la nature du bien (ancien ou neuf) et les formalites applicables. Les montants exacts dependent du prix du bien, de la situation de l'acquereur et du dossier notarial.
         </p>
       </header>
 
@@ -605,7 +605,7 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
       <figure class="rounded-lg overflow-hidden border border-gray-200 mb-8">
         <img 
           src="${imageUrl}" 
-          alt="Illustration ${nom} — Guide frais de notaire ${code}" 
+          alt="Illustration ${nom} - Guide frais de notaire ${code}" 
           class="w-full h-64 object-cover"
           loading="lazy"
           width="800"
@@ -619,7 +619,7 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
       <!-- Sources officielles -->
       <div class="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
         <p class="text-sm text-gray-700 m-0">
-          <strong>Sources officielles des taux et barèmes :</strong>
+          <strong>Sources officielles des taux et baremes :</strong>
           <a href="https://www.service-public.fr/particuliers/vosdroits/F2167" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">service-public.fr</a> •
           <a href="https://www.notariat.fr/frais-de-notaire" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">notariat.fr</a> •
           <a href="https://www.impots.gouv.fr" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">impots.gouv.fr</a> •
@@ -632,12 +632,12 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
 
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💵 Estimation des frais de notaire</h2>
         <p class="text-gray-700 leading-relaxed mb-6">
-          Les frais d'acquisition immobilière diffèrent selon que vous achetez dans l'ancien ou dans le neuf. En ${nom}, le différentiel ancien / neuf respecte la réglementation nationale.
+          Les frais d'acquisition immobiliere different selon que vous achetez dans l'ancien ou dans le neuf. En ${nom}, le differentiel ancien / neuf respecte la reglementation nationale.
         </p>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Spécificité locale</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Specificite locale</h2>
         <p class="text-gray-700 leading-relaxed mb-6">
-          ${nom} présente des dynamiques immobilières propres, influencées par son attractivité, son tissu urbain et les projets d'aménagement en cours. Ces éléments peuvent impacter indirectement le budget global d'un projet immobilier (prix d'achat, concurrence, délais, conditions de financement), sans modifier les règles nationales applicables aux frais de notaire.
+          ${nom} presente des dynamiques immobilieres propres, influencees par son attractivite, son tissu urbain et les projets d'amenagement en cours. Ces elements peuvent impacter indirectement le budget global d'un projet immobilier (prix d'achat, concurrence, delais, conditions de financement), sans modifier les regles nationales applicables aux frais de notaire.
         </p>
 
         <!-- Tableau comparatif -->
@@ -653,12 +653,12 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
             <tbody>
               <tr class="border-b border-gray-200 hover:bg-orange-50">
                 <td class="px-6 py-4 font-medium text-gray-900">🏡 Ancien</td>
-                <td class="px-6 py-4 text-gray-700">≈ 7 % à 9 %</td>
+                <td class="px-6 py-4 text-gray-700">≈ 7 % a 9 %</td>
                 <td class="px-6 py-4"><a href="/pages/notaire.html" class="text-blue-600 hover:underline font-semibold">Simuler</a></td>
               </tr>
               <tr class="hover:bg-blue-50">
                 <td class="px-6 py-4 font-medium text-gray-900">🏢 Neuf (VEFA)</td>
-                <td class="px-6 py-4 text-gray-700">≈ 2 % à 3 %</td>
+                <td class="px-6 py-4 text-gray-700">≈ 2 % a 3 %</td>
                 <td class="px-6 py-4"><a href="/pages/notaire.html" class="text-blue-600 hover:underline font-semibold">Simuler</a></td>
               </tr>
             </tbody>
@@ -667,90 +667,90 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
           <p class="text-lg text-gray-800 mb-0">
-            <strong>💡 Bon à savoir :</strong> L'écart entre ancien et neuf peut représenter une économie significative selon le prix du bien et la nature du projet.
+            <strong>💡 Bon a savoir :</strong> L'ecart entre ancien et neuf peut representer une economie significative selon le prix du bien et la nature du projet.
           </p>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📝 Exemple pédagogique (non contractuel)</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">Prenons l'exemple d'un achat immobilier à ${ville} :</p>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📝 Exemple pedagogique (non contractuel)</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">Prenons l'exemple d'un achat immobilier a ${ville} :</p>
         <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li><strong>Prix du bien :</strong> à estimer via le calculateur</li>
+          <li><strong>Prix du bien :</strong> a estimer via le calculateur</li>
           <li><strong>Apport personnel :</strong> selon votre projet</li>
-          <li><strong>Frais de notaire :</strong> calculés selon barème officiel</li>
-          <li><strong>Montant à emprunter :</strong> selon votre projet</li>
-          <li><strong>Durée :</strong> selon capacité d'emprunt</li>
+          <li><strong>Frais de notaire :</strong> calcules selon bareme officiel</li>
+          <li><strong>Montant a emprunter :</strong> selon votre projet</li>
+          <li><strong>Duree :</strong> selon capacite d'emprunt</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-6">👉 Ces données sont fournies à titre illustratif. Le calcul exact dépend du projet réel.</p>
+        <p class="text-sm text-gray-600 mb-6">👉 Ces donnees sont fournies a titre illustratif. Le calcul exact depend du projet reel.</p>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💡 Astuces pour réduire vos frais de notaire</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💡 Astuces pour reduire vos frais de notaire</h2>
         <ul class="list-disc list-inside text-gray-700 mb-6">
-          <li><strong>Mobilier hors acte :</strong> certains meubles peuvent être exclus de l'assiette des droits, dans le respect de la réglementation</li>
-          <li><strong>Remises d'émoluments :</strong> possibles dans certains cas sur la part réglementée</li>
-          <li><strong>Aides locales :</strong> certaines collectivités proposent des dispositifs d'aide à l'accession</li>
+          <li><strong>Mobilier hors acte :</strong> certains meubles peuvent etre exclus de l'assiette des droits, dans le respect de la reglementation</li>
+          <li><strong>Remises d'emoluments :</strong> possibles dans certains cas sur la part reglementee</li>
+          <li><strong>Aides locales :</strong> certaines collectivites proposent des dispositifs d'aide a l'accession</li>
         </ul>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📈 Marché immobilier ${nom} 2025–2026</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📈 Marche immobilier ${nom} 2025-2026</h2>
         <ul class="list-disc list-inside text-gray-700 mb-6">
-          <li><strong>Évolution des prix :</strong> tendance variable selon secteurs</li>
-          <li><strong>Volume de transactions :</strong> dépend du contexte local</li>
-          <li><strong>Attractivité :</strong> liée à l'emploi, aux transports et aux projets urbains</li>
-          <li><strong>Tension du marché :</strong> variable selon les communes</li>
+          <li><strong>Evolution des prix :</strong> tendance variable selon secteurs</li>
+          <li><strong>Volume de transactions :</strong> depend du contexte local</li>
+          <li><strong>Attractivite :</strong> liee a l'emploi, aux transports et aux projets urbains</li>
+          <li><strong>Tension du marche :</strong> variable selon les communes</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-6">Sources : DVF, INSEE, Notaires de France, données publiques 2026 (mise à jour janvier).</p>
+        <p class="text-sm text-gray-600 mb-6">Sources : DVF, INSEE, Notaires de France, donnees publiques 2026 (mise a jour janvier).</p>
 
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Prix immobiliers par ville (indicatifs)</h2>
         <ul class="list-disc list-inside text-gray-700 mb-4">
           <li><strong>${ville} :</strong> prix variable selon secteur</li>
           <li><strong>Autres communes :</strong> variations possibles</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-6">📊 Méthodologie : estimations basées sur données publiques, à titre indicatif.</p>
+        <p class="text-sm text-gray-600 mb-6">📊 Methodologie : estimations basees sur donnees publiques, a titre indicatif.</p>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏛️ Où trouver un notaire en ${nom} ?</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏛️ Ou trouver un notaire en ${nom} ?</h2>
         <p class="text-gray-700 leading-relaxed mb-6">
-          Pour un devis exact et personnalisé, consultez l'annuaire officiel des notaires sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline" target="_blank" rel="noopener">notaires.fr</a> et contactez un professionnel proche de votre projet immobilier.
+          Pour un devis exact et personnalise, consultez l'annuaire officiel des notaires sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline" target="_blank" rel="noopener">notaires.fr</a> et contactez un professionnel proche de votre projet immobilier.
         </p>
 
         <!-- CTA Simulateur -->
         <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 my-8 text-white">
           <h2 class="text-2xl font-bold mb-2">💡 Simulez vos frais de notaire 2026</h2>
-          <p class="text-green-100 mb-4">Utilisez notre calculateur officiel pour obtenir une estimation immédiate, gratuite et personnalisée.</p>
+          <p class="text-green-100 mb-4">Utilisez notre calculateur officiel pour obtenir une estimation immediate, gratuite et personnalisee.</p>
           <a href="/pages/notaire.html" class="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition">
-            🧮 Accéder au simulateur gratuit
+            🧮 Acceder au simulateur gratuit
           </a>
-          <p class="text-sm text-green-200 mt-3">✓ Calcul instantané • ✓ Gratuit • ✓ Export PDF</p>
+          <p class="text-sm text-green-200 mt-3">✓ Calcul instantane • ✓ Gratuit • ✓ Export PDF</p>
           <p class="text-sm text-green-100 mt-3">
-            🔗 Voir aussi : <a href="/pages/pret.html" class="underline font-semibold text-white hover:text-green-50">Calculer votre prêt immobilier après frais de notaire</a>
+            🔗 Voir aussi : <a href="/pages/pret.html" class="underline font-semibold text-white hover:text-green-50">Calculer votre pret immobilier apres frais de notaire</a>
           </p>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions fréquentes</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions frequentes</h2>
         <div class="space-y-4 mb-8">
           <details class="bg-gray-50 rounded-lg p-4">
             <summary class="font-semibold text-gray-900 cursor-pointer">Quel est le montant des frais de notaire en ${nom} ?</summary>
-            <p class="mt-2 text-gray-700">En 2026, les frais se situent généralement entre 7 % et 9 % (ancien) ou 2 % à 3 % (neuf).</p>
+            <p class="mt-2 text-gray-700">En 2026, les frais se situent generalement entre 7 % et 9 % (ancien) ou 2 % a 3 % (neuf).</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Comment sont calculés les frais de notaire ?</summary>
-            <p class="mt-2 text-gray-700">Ils comprennent les droits d'enregistrement, émoluments du notaire, débours, CSI et TVA.</p>
+            <summary class="font-semibold text-gray-900 cursor-pointer">Comment sont calcules les frais de notaire ?</summary>
+            <p class="mt-2 text-gray-700">Ils comprennent les droits d'enregistrement, emoluments du notaire, debours, CSI et TVA.</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Quelle différence entre ancien et neuf (VEFA) ?</summary>
-            <p class="mt-2 text-gray-700">Le neuf bénéficie de droits réduits, permettant une économie significative.</p>
+            <summary class="font-semibold text-gray-900 cursor-pointer">Quelle difference entre ancien et neuf (VEFA) ?</summary>
+            <p class="mt-2 text-gray-700">Le neuf beneficie de droits reduits, permettant une economie significative.</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Où trouver un notaire proche de mon projet ?</summary>
+            <summary class="font-semibold text-gray-900 cursor-pointer">Ou trouver un notaire proche de mon projet ?</summary>
             <p class="mt-2 text-gray-700">Consultez l'annuaire officiel sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">notaires.fr</a>.</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Les frais de notaire sont-ils plus élevés en ${nom} que dans d’autres départements ?</summary>
-            <p class="mt-2 text-gray-700">Non. Les frais de notaire sont encadrés au niveau national. ${nom} n’applique pas de taux spécifiques différents, mais des prix immobiliers plus élevés dans certaines zones peuvent augmenter le montant total des frais.</p>
+            <summary class="font-semibold text-gray-900 cursor-pointer">Les frais de notaire sont-ils plus eleves en ${nom} que dans d'autres departements ?</summary>
+            <p class="mt-2 text-gray-700">Non. Les frais de notaire sont encadres au niveau national. ${nom} n'applique pas de taux specifiques differents, mais des prix immobiliers plus eleves dans certaines zones peuvent augmenter le montant total des frais.</p>
           </details>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📌 Rappel réglementaire</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📌 Rappel reglementaire</h2>
         <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
-          <p class="text-gray-700 mb-2">Les frais de notaire comprennent des éléments strictement encadrés par la loi (droits, taxes, émoluments) ainsi que des frais variables selon le dossier.</p>
-          <p class="text-gray-700 mb-0">Leur répartition exacte dépend de la nature de l'acte, du bien, et des formalités requises.</p>
+          <p class="text-gray-700 mb-2">Les frais de notaire comprennent des elements strictement encadres par la loi (droits, taxes, emoluments) ainsi que des frais variables selon le dossier.</p>
+          <p class="text-gray-700 mb-0">Leur repartition exacte depend de la nature de l'acte, du bien, et des formalites requises.</p>
         </div>
 
         <!-- Sources officielles -->
@@ -763,8 +763,8 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
             <a href="https://www.legifrance.gouv.fr" class="text-blue-600 hover:underline">legifrance.gouv.fr</a> •
             <a href="https://www.data.gouv.fr" class="text-blue-600 hover:underline">data.gouv.fr</a>
           </p>
-          <p class="text-xs text-gray-500 mt-3">Contenu rédigé et maintenu par LesCalculateurs.fr — outil indépendant d'estimation basé sur les barèmes notariaux officiels.</p>
-          <p class="text-xs text-gray-400 mt-2">Ce contenu est rédigé à des fins d'information générale et ne saurait être reproduit sans vérification des barèmes en vigueur.</p>
+          <p class="text-xs text-gray-500 mt-3">Contenu redige et maintenu par LesCalculateurs.fr - outil independant d'estimation base sur les baremes notariaux officiels.</p>
+          <p class="text-xs text-gray-400 mt-2">Ce contenu est redige a des fins d'information generale et ne saurait etre reproduit sans verification des baremes en vigueur.</p>
         </div>
 
       </div>
@@ -775,12 +775,12 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-8">
           <a href="/pages/blog.html" class="text-blue-400 hover:underline">← Retour au blog</a>
-          <p class="text-gray-400 text-sm mt-2">Article mis à jour en janvier 2026</p>
+          <p class="text-gray-400 text-sm mt-2">Article mis a jour en janvier 2026</p>
         </div>
 
         <div class="bg-gray-800 rounded-xl p-6 mb-8">
           <h3 class="text-xl font-bold mb-2">Calcul frais de notaire ${nom} (${code})</h3>
-          <p class="text-gray-300 text-sm mb-4">Ancien : environ 7 % à 9 % • Neuf (VEFA) : environ 2 % à 3 %</p>
+          <p class="text-gray-300 text-sm mb-4">Ancien : environ 7 % a 9 % • Neuf (VEFA) : environ 2 % a 3 %</p>
           <div class="flex flex-wrap gap-4">
             <a href="/pages/notaire.html" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
               Calculer maintenant
@@ -789,7 +789,7 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
         </div>
 
         <p class="text-center text-gray-500 text-sm">
-          © 2026 LesCalculateurs.fr — Tous droits réservés
+          © 2026 LesCalculateurs.fr - Tous droits reserves
         </p>
       </div>
     </footer>
@@ -835,7 +835,7 @@ function main() {
     const filename = `frais-notaire-${code}.html`;
     const filepath = path.join(outputDir, filename);
 
-    // Récupérer l'image du département ou utiliser l'image par défaut
+    // Recuperer l'image du departement ou utiliser l'image par defaut
     const imageUrl = IMAGES[code] || DEFAULT_IMAGE;
 
     const html = generateTemplate(
@@ -853,11 +853,11 @@ function main() {
   }
 
   console.log("");
-  console.log(`🎉 ${count} pages générées avec le template officiel !`);
+  console.log(`🎉 ${count} pages generees avec le template officiel !`);
   console.log("");
-  console.log("✔ Zéro risque juridique");
-  console.log("✔ Zéro contradiction");
-  console.log("✔ 100 % aligné avec le simulateur");
+  console.log("✔ Zero risque juridique");
+  console.log("✔ Zero contradiction");
+  console.log("✔ 100 % aligne avec le simulateur");
 }
 
 main();

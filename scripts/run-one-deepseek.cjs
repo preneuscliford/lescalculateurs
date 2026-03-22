@@ -123,7 +123,7 @@ if (!item) {
       // maybe change header label in ~30% cases
       const ancienLabel =
         hashTo01(codeSafe + "lbl") > 0.7
-          ? "Droits + émoluments (ancien)"
+          ? "Droits + emoluments (ancien)"
           : "Frais ancien";
 
       const ancienPct = ancien_pct; // already jittered
@@ -143,23 +143,23 @@ if (!item) {
       };
 
       const rowsHtml = rows.map(makeRow).join("\n");
-      return `<table><thead><tr><th>Prix du bien</th><th>${ancienLabel}</th><th>Frais neuf</th><th>Économie</th></tr></thead><tbody>${rowsHtml}</tbody></table>`;
+      return `<table><thead><tr><th>Prix du bien</th><th>${ancienLabel}</th><th>Frais neuf</th><th>Economie</th></tr></thead><tbody>${rowsHtml}</tbody></table>`;
     }
 
     function buildLocalAdvices(name, villes) {
       const city =
         (villes && villes[0] && villes[0].nom) || (villes && villes[0]) || name;
-      const adv1 = `Dans ${city}, vérifiez les périmètres de rénovation urbaine : certaines aides locales réduisent les coûts de travaux.`;
-      const adv2 = `Consultez la mairie de ${city} pour connaître les dispositifs d'exonération temporaires sur la taxe foncière lors de nouvelles constructions.`;
+      const adv1 = `Dans ${city}, verifiez les perimetres de renovation urbaine : certaines aides locales reduisent les coûts de travaux.`;
+      const adv2 = `Consultez la mairie de ${city} pour connaître les dispositifs d'exoneration temporaires sur la taxe fonciere lors de nouvelles constructions.`;
       // ensure short (<=25 words)
       return [adv1, adv2].map((s) => s.split("\n").join(" ").trim());
     }
 
     function buildLocalFaqs(name, code) {
-      const q1 = `Peut-on financer les frais de notaire par un prêt local si l'on est frontalier ${name}?`;
-      const a1 = `Certains établissements locaux proposent des prêts spécifiques pour les frontaliers; rapprochez-vous des banques de la zone pour une offre personnalisée.`;
-      const q2 = `Existe-t-il une surtaxe pour les résidences secondaires dans le ${name} ?`;
-      const a2 = `La fiscalité locale varie selon les communes : certaines appliquent des majorations, vérifiez auprès de la commune concernée.`;
+      const q1 = `Peut-on financer les frais de notaire par un pret local si l'on est frontalier ${name}?`;
+      const a1 = `Certains etablissements locaux proposent des prets specifiques pour les frontaliers; rapprochez-vous des banques de la zone pour une offre personnalisee.`;
+      const q2 = `Existe-t-il une surtaxe pour les residences secondaires dans le ${name} ?`;
+      const a2 = `La fiscalite locale varie selon les communes : certaines appliquent des majorations, verifiez aupres de la commune concernee.`;
       return [
         { q: q1, a: a1 },
         { q: q2, a: a2 },
@@ -168,16 +168,16 @@ if (!item) {
 
     function shuffleSources() {
       const base = [
-        { label: "Tarif 2025 – CSN", url: "https://notaires.fr" },
+        { label: "Tarif 2025 - CSN", url: "https://notaires.fr" },
         {
-          label: "Base DVF 2024 – DGFiP",
+          label: "Base DVF 2024 - DGFiP",
           url: "https://data.dvf.etalab.gouv.fr",
         },
         {
-          label: "Annuaire – notaires.fr",
+          label: "Annuaire - notaires.fr",
           url: "https://annuaire.notaires.fr",
         },
-        { label: `Stats démo – INSEE ${region}`, url: "https://insee.fr" },
+        { label: `Stats demo - INSEE ${region}`, url: "https://insee.fr" },
       ];
       // deterministic shuffle
       const t = hashTo01(codeSafe);

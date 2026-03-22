@@ -1,6 +1,6 @@
 /**
- * CORRECTION CRITIQUE - Bug neuf affiché avec taux ancien
- * Utilise la SOURCE UNIQUE DE VÉRITÉ
+ * CORRECTION CRITIQUE - Bug neuf affiche avec taux ancien
+ * Utilise la SOURCE UNIQUE DE VERITE
  */
 
 import fs from "node:fs";
@@ -30,7 +30,7 @@ function processFile(filePath) {
   let html = fs.readFileSync(filePath, "utf8");
   const original = html;
 
-  // Calculer avec les modules centralisés
+  // Calculer avec les modules centralises
   const ancien = calculFraisNotaire(PRIX_EXEMPLE, "ancien", code);
   const neuf = calculFraisNotaire(PRIX_EXEMPLE, "neuf");
 
@@ -54,7 +54,7 @@ function processFile(filePath) {
     `$1${neufTotal} €$2${neufPct}`,
   );
 
-  // FIX 3: Bloc encadré principal - format complet
+  // FIX 3: Bloc encadre principal - format complet
   html = html.replace(
     /(Frais de notaire 202\d [^:]+:\s*≈\s*)[\d\s]+\s*€(\s*pour\s*200\s*000\s*€\s*\(ancien,?\s*droits?\s*≈?\s*)[\d,\.]+\s*%(\)\s*•\s*≈\s*)[\d\s]+\s*€(\s*pour\s*200\s*000\s*€\s*\(neuf,?\s*droits?\s*≈?\s*)[\d,\.]+\s*%/gi,
     `$1${ancienTotal} €$2${ancienPct}$3${neufTotal} €$4${neufPct}`,
@@ -72,7 +72,7 @@ function processFile(filePath) {
     `$1≈ ${ancienPct}$2`,
   );
 
-  // FIX 6: Pattern générique pour les 2 lignes "Immobilier ancien" et "Immobilier neuf"
+  // FIX 6: Pattern generique pour les 2 lignes "Immobilier ancien" et "Immobilier neuf"
   // dans les blocs tarifs
   html = html.replace(
     /(<div[^>]*>\s*<span[^>]*>Immobilier ancien<\/span><span[^>]*font-mono[^>]*>)[^<]+(<\/span>\s*<\/div>\s*<div[^>]*>\s*<span[^>]*>Immobilier neuf[^<]*<\/span><span[^>]*font-mono[^>]*>)[^<]+(<\/span>)/gi,
@@ -99,13 +99,13 @@ function main() {
   console.log("");
   console.log("Taux corrects:");
   console.log(
-    `  • Ancien majoré: ${(NOTAIRE_2026.dmto.majore * 100).toFixed(2)}%`,
+    `  • Ancien majore: ${(NOTAIRE_2026.dmto.majore * 100).toFixed(2)}%`,
   );
   console.log(
     `  • Ancien standard: ${(NOTAIRE_2026.dmto.standard * 100).toFixed(2)}%`,
   );
   console.log(
-    `  • Ancien réduit: ${(NOTAIRE_2026.dmto.reduit * 100).toFixed(2)}%`,
+    `  • Ancien reduit: ${(NOTAIRE_2026.dmto.reduit * 100).toFixed(2)}%`,
   );
   console.log(
     `  • NEUF: ${(NOTAIRE_2026.neuf.droits * 100).toFixed(2)}% ← CRITIQUE`,
@@ -137,7 +137,7 @@ function main() {
   }
 
   console.log("");
-  console.log(`✓ ${updated} fichiers corrigés`);
+  console.log(`✓ ${updated} fichiers corriges`);
 }
 
 main();

@@ -44,7 +44,7 @@ function main() {
   }
 
   process.stdout.write(
-    `✅ AdSense supprimé de ${changedFiles} fichier(s) HTML dans src/\n`,
+    `✅ AdSense supprime de ${changedFiles} fichier(s) HTML dans src/\n`,
   );
 }
 

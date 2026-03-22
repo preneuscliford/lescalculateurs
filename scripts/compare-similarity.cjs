@@ -19,7 +19,7 @@ function stripHtml(html) {
 
 function tokenize(text) {
   return text
-    .replace(/[^a-z0-9àâäéèêëîïôöùûüç'\- ]+/gi, " ")
+    .replace(/[^a-z0-9aaäeeeëîïoöuûüc'\- ]+/gi, " ")
     .split(/\s+/)
     .filter(Boolean);
 }

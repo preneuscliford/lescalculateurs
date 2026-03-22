@@ -1,6 +1,6 @@
 /**
- * Script de mise à jour des pages départements frais de notaire
- * Sans dépendance externe (pas de glob)
+ * Script de mise a jour des pages departements frais de notaire
+ * Sans dependance externe (pas de glob)
  */
 
 const fs = require("fs");
@@ -17,14 +17,14 @@ function updateFile(filePath) {
   const originalContent = content;
 
   // ========================================
-  // 1. Corrections des taux DMTO obsolètes
+  // 1. Corrections des taux DMTO obsoletes
   // ========================================
 
-  // Ancien taux réduit incorrect
+  // Ancien taux reduit incorrect
   content = content.replace(/3,80\s*%/g, "5,09%");
   content = content.replace(/≈\s*3,80/g, "≈ 5,09");
 
-  // Ancien taux majoré incorrect (IDF)
+  // Ancien taux majore incorrect (IDF)
   content = content.replace(/6,45\s*%/g, "6,32%");
   content = content.replace(/≈\s*6,45/g, "≈ 6,32");
 
@@ -33,7 +33,7 @@ function updateFile(filePath) {
   content = content.replace(/≈\s*5,81/g, "≈ 6,32");
 
   // ========================================
-  // 2. Mise à jour années
+  // 2. Mise a jour annees
   // ========================================
 
   // 2025 → 2026 pour les frais notaire
@@ -42,35 +42,35 @@ function updateFile(filePath) {
   content = content.replace(/frais notaire 2025/gi, "frais notaire 2026");
   content = content.replace(/notaire 2025/gi, "notaire 2026");
 
-  // Barèmes
+  // Baremes
   content = content.replace(
-    /Barèmes officiels 2024-2025/g,
-    "Barèmes officiels 2026",
+    /Baremes officiels 2024-2025/g,
+    "Baremes officiels 2026",
   );
   content = content.replace(
-    /barèmes officiels 2024-2025/g,
-    "barèmes officiels 2026",
+    /baremes officiels 2024-2025/g,
+    "baremes officiels 2026",
   );
   content = content.replace(
-    /Barème officiel 2024-2025/g,
-    "Barème officiel 2026",
+    /Bareme officiel 2024-2025/g,
+    "Bareme officiel 2026",
   );
   content = content.replace(
-    /barème officiel 2024-2025/g,
-    "barème officiel 2026",
+    /bareme officiel 2024-2025/g,
+    "bareme officiel 2026",
   );
 
   // ========================================
-  // 3. Mise à jour sources
+  // 3. Mise a jour sources
   // ========================================
 
   content = content.replace(
     /https:\/\/bofip\.impots\.gouv\.fr\/bofip\/4739-PGP\.html/g,
     "https://www.impots.gouv.fr/droits-denregistrement",
   );
-  content = content.replace(/BOFiP — Taux DMTO/g, "impots.gouv.fr — Taux DMTO");
+  content = content.replace(/BOFiP - Taux DMTO/g, "impots.gouv.fr - Taux DMTO");
 
-  // Vérifier si modifié
+  // Verifier si modifie
   if (content !== originalContent) {
     fs.writeFileSync(filePath, content, "utf8");
     return true;
@@ -78,14 +78,14 @@ function updateFile(filePath) {
   return false;
 }
 
-// Exécution
-console.log("🔧 Mise à jour des pages départements...\n");
+// Execution
+console.log("🔧 Mise a jour des pages departements...\n");
 
 const files = fs
   .readdirSync(deptDir)
   .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
-console.log(`📁 ${files.length} fichiers trouvés dans ${deptDir}\n`);
+console.log(`📁 ${files.length} fichiers trouves dans ${deptDir}\n`);
 
 let updatedCount = 0;
 let errorCount = 0;
@@ -102,7 +102,7 @@ for (const file of files) {
   }
 }
 
-console.log(`\n✅ ${updatedCount} fichiers mis à jour`);
+console.log(`\n✅ ${updatedCount} fichiers mis a jour`);
 if (errorCount > 0) {
   console.log(`❌ ${errorCount} erreurs`);
 }

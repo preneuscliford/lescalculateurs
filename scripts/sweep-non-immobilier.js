@@ -3,11 +3,11 @@ import path from 'node:path'
 
 const roots = [path.resolve(process.cwd(), 'src', 'pages')]
 const patterns = [
-  { re: /Indemnités kilométriques\s*2024/gi, rep: 'Indemnités kilométriques 2026' },
-  { re: /barèmes?\s+officiels\s+2025/gi, rep: 'barèmes réglementés en vigueur' },
-  { re: /Conformes aux barèmes officiels\s*2025/gi, rep: 'Conformes aux barèmes réglementés en vigueur' },
-  { re: /Le calculateur N°1 !\s*Simulez[\s\S]*?barèmes officiels\s*2025\./gi, rep: (m) => m.replace(/barèmes officiels\s*2025/gi, 'barèmes officiels') },
-  { re: /Calculs précis en temps réel, conformes aux barèmes officiels\s*2025, sans inscription/gi, rep: 'Calculs précis en temps réel, conformes aux barèmes officiels, sans inscription' },
+  { re: /Indemnites kilometriques\s*2024/gi, rep: 'Indemnites kilometriques 2026' },
+  { re: /baremes?\s+officiels\s+2025/gi, rep: 'baremes reglementes en vigueur' },
+  { re: /Conformes aux baremes officiels\s*2025/gi, rep: 'Conformes aux baremes reglementes en vigueur' },
+  { re: /Le calculateur N°1 !\s*Simulez[\s\S]*?baremes officiels\s*2025\./gi, rep: (m) => m.replace(/baremes officiels\s*2025/gi, 'baremes officiels') },
+  { re: /Calculs precis en temps reel, conformes aux baremes officiels\s*2025, sans inscription/gi, rep: 'Calculs precis en temps reel, conformes aux baremes officiels, sans inscription' },
 ]
 
 function replaceMany(text) {

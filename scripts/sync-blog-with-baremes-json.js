@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url)
 const { readTextFile, writeTextFile } = require('./encoding.cjs')
 
 /**
- * Charge src/data/baremes.json (barème CSN, DMTO, CSI, TVA, frais divers)
+ * Charge src/data/baremes.json (bareme CSN, DMTO, CSI, TVA, frais divers)
  */
 function loadBaremes() {
   const p = path.resolve(process.cwd(), 'src', 'data', 'baremes.json')
@@ -14,7 +14,7 @@ function loadBaremes() {
 }
 
 /**
- * Liste toutes les pages départements à mettre à jour
+ * Liste toutes les pages departements a mettre a jour
  */
 function listDeptPages() {
   const dir = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'departements')
@@ -22,7 +22,7 @@ function listDeptPages() {
 }
 
 /**
- * Calcule les émoluments proportionnels selon bareme.notaire.tranches
+ * Calcule les emoluments proportionnels selon bareme.notaire.tranches
  */
 function computeEmoluments(price, baremes) {
   const tr = baremes.notaire?.tranches || []
@@ -40,7 +40,7 @@ function computeEmoluments(price, baremes) {
 }
 
 /**
- * Retourne le taux DMTO (décimal) pour un code et un type (ancien/neuf)
+ * Retourne le taux DMTO (decimal) pour un code et un type (ancien/neuf)
  */
 function getDmtoRate(code, type, baremes) {
   if (type === 'neuf') return Number(baremes.notaire?.droitsMutation?.neuf || 0.00715)
@@ -49,7 +49,7 @@ function getDmtoRate(code, type, baremes) {
 }
 
 /**
- * Calcule débours et formalités d'après baremes.notaire.fraisDivers
+ * Calcule debours et formalites d'apres baremes.notaire.fraisDivers
  */
 function computeDeboursFormalites(code, baremes) {
   const map = baremes.notaire?.fraisDiversParDepartement || {}
@@ -99,14 +99,14 @@ function approxPct(x) {
 }
 
 /**
- * Formate montant euro (sans décimales)
+ * Formate montant euro (sans decimales)
  */
 function euro(n) {
   return new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' €'
 }
 
 /**
- * Met à jour la table "Type d’achat" pour le code département
+ * Met a jour la table "Type d'achat" pour le code departement
  */
 function updateTypeTable(html, code, baremes) {
   const price = 200000
@@ -125,14 +125,14 @@ function updateTypeTable(html, code, baremes) {
 }
 
 /**
- * Met à jour le bloc "Tarifs Officiels" (émoluments, droits, débours, formalités, CSI)
+ * Met a jour le bloc "Tarifs Officiels" (emoluments, droits, debours, formalites, CSI)
  */
 function updateTarifsBlock(html, code, baremes) {
   const dmtoPct = approxPct(getDmtoRate(code, 'ancien', baremes))
   const map = baremes.notaire?.fraisDiversParDepartement || {}
   const fd = map[String(code)] || baremes.notaire?.fraisDivers || {}
   let updated = html
-  // Émoluments tranches (valeurs légales)
+  // Emoluments tranches (valeurs legales)
   updated = updated.replace(/>3\.945%<\/span>/g, '>3,870%<\/span>')
   updated = updated.replace(/>1\.627%<\/span>/g, '>1,596%<\/span>')
   updated = updated.replace(/>1\.085%<\/span>/g, '>1,064%<\/span>')
@@ -140,15 +140,15 @@ function updateTarifsBlock(html, code, baremes) {
   // Droits ancien/Neuf
   updated = updated.replace(/(Immobilier ancien<\/span>\s*<span[^>]*>)[^<]*(<\/span>)/, `$1${dmtoPct}$2`)
   updated = updated.replace(/(Immobilier neuf \(TFPB\)<\/span>\s*<span[^>]*>)[^<]*(<\/span>)/, `$10,71%$2`)
-  // Débours/Formalités/CSI
-  updated = updated.replace(/(Débours \(moyenne\)<\/span>\s*<span[^>]*>)[^<]*(<\/span>)/, `$1${euro((Number(fd.cadastre||0)+Number(fd.conservation||0)))}$2`)
-  updated = updated.replace(/(Formalités<\/span>\s*<span[^>]*>)[^<]*(<\/span>)/, `$1${euro(Number(fd.formalites||0))}$2`)
+  // Debours/Formalites/CSI
+  updated = updated.replace(/(Debours \(moyenne\)<\/span>\s*<span[^>]*>)[^<]*(<\/span>)/, `$1${euro((Number(fd.cadastre||0)+Number(fd.conservation||0)))}$2`)
+  updated = updated.replace(/(Formalites<\/span>\s*<span[^>]*>)[^<]*(<\/span>)/, `$1${euro(Number(fd.formalites||0))}$2`)
   updated = updated.replace(/(CSI<\/span>\s*<span[^>]*><strong>)[^<]*(<\/strong><\/span>)/, `$1min 15€ ou 0,10%$2`)
   return updated
 }
 
 /**
- * Met à jour le résumé jaune "Frais de notaire 2025 à …" avec les montants calculés
+ * Met a jour le resume jaune "Frais de notaire 2025 a …" avec les montants calcules
  */
 function updateSummary(html, code, name, baremes) {
   const price = 200000
@@ -156,14 +156,14 @@ function updateSummary(html, code, name, baremes) {
   const N = computeAll(code, price, 'neuf', baremes)
   const droitAncien = approxPct(getDmtoRate(code, 'ancien', baremes))
   const droitNeuf = approxPct(getDmtoRate(code, 'neuf', baremes))
-  const line = `💰 Frais de notaire 2025 à ${name} (${code}) : ≈ ${euro(A.total)} pour 200 000 € (ancien, droits ${droitAncien}) • ≈ ${euro(N.total)} pour 200 000 € (neuf, droits ${droitNeuf})`
-  // Remplacer la ligne du résumé si présente
+  const line = `💰 Frais de notaire 2025 a ${name} (${code}) : ≈ ${euro(A.total)} pour 200 000 € (ancien, droits ${droitAncien}) • ≈ ${euro(N.total)} pour 200 000 € (neuf, droits ${droitNeuf})`
+  // Remplacer la ligne du resume si presente
   let updated = html.replace(/💰\s*Frais\s*de\s*notaire[\s\S]*?\(neuf,[\s\S]*?\)\s*/i, line)
   return updated
 }
 
 /**
- * Met à jour le bloc local "Calcul frais de notaire …" sous le H2
+ * Met a jour le bloc local "Calcul frais de notaire …" sous le H2
  */
 function updateLocalBlock(html, code, baremes) {
   const price = 200000
@@ -176,7 +176,7 @@ function updateLocalBlock(html, code, baremes) {
 }
 
 /**
- * Récupère le nom du département depuis departements.json
+ * Recupere le nom du departement depuis departements.json
  */
 function getDeptName(code) {
   try {
@@ -195,7 +195,7 @@ function getDeptName(code) {
 }
 
 /**
- * Traite un fichier département: met à jour les trois blocs
+ * Traite un fichier departement: met a jour les trois blocs
  */
 function processFile(file, baremes) {
   const html = readTextFile(file)
@@ -216,7 +216,7 @@ function processFile(file, baremes) {
 }
 
 /**
- * Point d'entrée principal
+ * Point d'entree principal
  */
 function main() {
   const baremes = loadBaremes()
@@ -225,7 +225,7 @@ function main() {
   for (const f of files) {
     if (processFile(f, baremes)) changed++
   }
-  console.log(`Synchronisation blog avec baremes.json: ${changed} fichier(s) mis à jour sur ${files.length}.`)
+  console.log(`Synchronisation blog avec baremes.json: ${changed} fichier(s) mis a jour sur ${files.length}.`)
 }
 
 main()

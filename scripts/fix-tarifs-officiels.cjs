@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Corrige les en-têtes officiels accidentellement modifiés:
+ * Corrige les en-tetes officiels accidentellement modifies:
  * "Tarifs Officiels 2026-2026" → "Tarifs Officiels 2025-2026"
  * S'applique sur toutes les pages HTML du dossier src/pages/blog.
  */
@@ -27,9 +27,9 @@ files.forEach((file) => {
   if (updated !== content) {
     fs.writeFileSync(file, updated, "utf-8");
     fixed++;
-    console.log(`✔ Corrigé: ${path.relative(process.cwd(), file)}`);
+    console.log(`✔ Corrige: ${path.relative(process.cwd(), file)}`);
   }
 });
 
-console.log(`\n✅ Corrections appliquées: ${fixed}`);
+console.log(`\n✅ Corrections appliquees: ${fixed}`);
 

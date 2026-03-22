@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Script d'analyse des 43 URLs avec balise canonique correcte non indexées
+ * Script d'analyse des 43 URLs avec balise canonique correcte non indexees
  */
 
 const canonicalIssueUrls = [
@@ -50,7 +50,7 @@ const canonicalIssueUrls = [
   "https://www.lescalculateurs.fr/pages/blog",
 ];
 
-console.log("\n📊 ANALYSE - 43 URLs AVEC CANONICAL NON INDEXÉES\n");
+console.log("\n📊 ANALYSE - 43 URLs AVEC CANONICAL NON INDEXEES\n");
 console.log("=".repeat(80));
 
 const analysis = {
@@ -94,7 +94,7 @@ console.log("\n📄 Distribution par format:");
 console.log(`  • Avec .html extension:   ${analysis.byFormat["withHtml"]}`);
 console.log(`  • Sans .html extension:   ${analysis.byFormat["withoutHtml"]}`);
 
-console.log("\n⚠️ PROBLÈMES DÉTÉCTÉS:\n");
+console.log("\n⚠️ PROBLÈMES DETECTES:\n");
 
 // Find duplicates (same path, different domain or format)
 let duplicateCount = 0;
@@ -155,58 +155,58 @@ console.log("");
 console.log("1. ⛓️ CHAÎNE DE REDIRECTIONS");
 console.log("   Exemple: /frais-notaire-43.html → /frais-notaire-43");
 console.log("           mais /frais-notaire-43 pourrait rediriger ailleurs");
-console.log("   Solution: Vérifier qu'il n'y a pas de redirection en chaîne");
+console.log("   Solution: Verifier qu'il n'y a pas de redirection en chaîne");
 console.log("");
 
-console.log("2. 🔗 CONTENU DUPLIQUÉ");
+console.log("2. 🔗 CONTENU DUPLIQUE");
 console.log("   Exemple: www.lescalculateurs.fr/pages/blog ET");
 console.log(
-  "            lescalculateurs.fr/pages/blog pointent au même contenu"
+  "            lescalculateurs.fr/pages/blog pointent au meme contenu"
 );
-console.log(`   Trouvé: ${apexDomainUrls.length} URLs apex domain`);
+console.log(`   Trouve: ${apexDomainUrls.length} URLs apex domain`);
 console.log("   Solution: Forcer www ou choisir un domaine canonique");
 console.log("");
 
 console.log("3. 🚫 META ROBOTS NOINDEX");
 console.log('   Les pages pourraient avoir meta robots="noindex"');
-console.log("   Solution: Vérifier et retirer les meta noindex");
+console.log("   Solution: Verifier et retirer les meta noindex");
 console.log("");
 
 console.log("4. 🔐 ROBOTS.TXT");
-console.log("   Certains chemins pourraient être bloqués dans robots.txt");
-console.log("   Solution: Vérifier que /pages/blog/* est autorisé");
+console.log("   Certains chemins pourraient etre bloques dans robots.txt");
+console.log("   Solution: Verifier que /pages/blog/* est autorise");
 console.log("");
 
 console.log("5. 💾 CONTENU FAIBLE/COURT");
-console.log("   Google pourrait considérer le contenu comme trop court");
-console.log("   Solution: Vérifier la longueur du contenu (min 300-500 mots)");
+console.log("   Google pourrait considerer le contenu comme trop court");
+console.log("   Solution: Verifier la longueur du contenu (min 300-500 mots)");
 console.log("");
 
 console.log("6. ⏱️ CRAWL BUDGET");
-console.log("   Google aura épuisé son budget de crawl");
-console.log("   Solution: Réduire les URL à indexer, nettoyer le sitemap");
+console.log("   Google aura epuise son budget de crawl");
+console.log("   Solution: Reduire les URL a indexer, nettoyer le sitemap");
 console.log("");
 
 console.log("=".repeat(80));
 
 console.log("\n✅ RECOMMANDATIONS:\n");
 
-console.log("1. COURT TERME (immédiat):");
+console.log("1. COURT TERME (immediat):");
 console.log("   ✓ Supprimer les URLs avec .html du report");
 console.log("   ✓ Standardiser le domaine (www uniquement dans sitemap)");
-console.log("   ✓ Vérifier meta robots noindex");
-console.log("   ✓ Soumettre le sitemap actualisé à Google Search Console");
+console.log("   ✓ Verifier meta robots noindex");
+console.log("   ✓ Soumettre le sitemap actualise a Google Search Console");
 console.log("");
 
 console.log("2. MOYEN TERME (1-2 semaines):");
-console.log("   ✓ Monitorer si les URLs commencent à être indexées");
-console.log("   ✓ Vérifier que le contenu est assez long (300+ mots)");
-console.log("   ✓ Vérifier que robots.txt n'est pas restrictif");
+console.log("   ✓ Monitorer si les URLs commencent a etre indexees");
+console.log("   ✓ Verifier que le contenu est assez long (300+ mots)");
+console.log("   ✓ Verifier que robots.txt n'est pas restrictif");
 console.log("");
 
 console.log("3. LONG TERME (monitoring):");
-console.log("   ✓ Vérifier la qualité du contenu");
-console.log("   ✓ Vérifier la structure des liens internes");
+console.log("   ✓ Verifier la qualite du contenu");
+console.log("   ✓ Verifier la structure des liens internes");
 console.log("   ✓ Monitorer le crawl budget");
 console.log("");
 
@@ -224,4 +224,4 @@ fs.writeFileSync(
   )
 );
 
-console.log("📝 Données exportées: scripts/canonical-issue-urls.json\n");
+console.log("📝 Donnees exportees: scripts/canonical-issue-urls.json\n");

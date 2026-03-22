@@ -62,7 +62,7 @@ function main() {
   }
 
   process.stdout.write(
-    `✅ autoExportInit décalé (idle) dans ${changedFiles} fichier(s) HTML\n`,
+    `✅ autoExportInit decale (idle) dans ${changedFiles} fichier(s) HTML\n`,
   );
 }
 

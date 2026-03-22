@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Analyse les liens internes dans chaque page HTML
- * pour identifier les pages isolées ou mal liées
+ * pour identifier les pages isolees ou mal liees
  */
 
 import fs from "fs";
@@ -52,7 +52,7 @@ function analyzeInternalLinks(dir) {
   // Trier par link count
   results.sort((a, b) => a.linkCount - b.linkCount);
 
-  // Afficher les résultats
+  // Afficher les resultats
   console.log("🔗 Internal Linking Analysis\n");
 
   const isolated = results.filter((r) => r.linkCount < 2);

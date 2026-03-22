@@ -9,15 +9,15 @@ function main() {
   }
   let html = fs.readFileSync(file, 'utf8')
   html = html.replace(/Frais de Notaire 2025/g, 'Frais de Notaire 2026')
-  html = html.replace(/barèmes officiels 2025/g, 'barèmes officiels 2026')
-  html = html.replace(/Barèmes 2025/g, 'Barèmes 2026')
+  html = html.replace(/baremes officiels 2025/g, 'baremes officiels 2026')
+  html = html.replace(/Baremes 2025/g, 'Baremes 2026')
   html = html.replace(/Calculateur Frais de Notaire 2025/g, 'Calculateur Frais de Notaire 2026')
   html = html.replace(/en 2025/g, 'en 2026')
   html = html.replace(/2025/g, '2026')
   // Restore specific strings not to be 2026 blindly
-  html = html.replace(/barèmes officiels 2026/g, 'barèmes réglementés en vigueur')
+  html = html.replace(/baremes officiels 2026/g, 'baremes reglementes en vigueur')
   html = html.replace(/CSN 2026/g, 'CSN')
-  html = html.replace(/barèmes officiels 2024-2026/g, 'barèmes réglementés en vigueur')
+  html = html.replace(/baremes officiels 2024-2026/g, 'baremes reglementes en vigueur')
   fs.writeFileSync(file, html, 'utf8')
   console.log('notaire.html year updated to 2026')
 }

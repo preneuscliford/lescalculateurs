@@ -12,7 +12,7 @@ function replaceMentions(html) {
   out = out.replace(/≈?\s*5,81\s*%/gi, '≈ 6,32 %')
   out = out.replace(/≈?\s*5,80\s*%/gi, '≈ 6,32 %')
   // Standard phrases
-  out = out.replace(/taux\s+standard\s+autour\s+de\s+≈?\s*5,8[01]\s*%/gi, 'taux usuel constaté autour de ≈ 6,32 %')
+  out = out.replace(/taux\s+standard\s+autour\s+de\s+≈?\s*5,8[01]\s*%/gi, 'taux usuel constate autour de ≈ 6,32 %')
   out = out.replace(/droits d'enregistrement\s*\(5,8%\)/gi, `droits d'enregistrement (≈ 6,32%)`)
   return out
 }

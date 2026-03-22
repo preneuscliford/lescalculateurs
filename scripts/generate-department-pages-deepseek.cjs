@@ -50,13 +50,13 @@ function wrapInTemplate(content, depName, code) {
       <img src="${localHero}"
         onerror="this.onerror=null;this.src='${unsplash}'"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 960px, 1200px"
-        alt="Guide frais de notaire — ${escapeHtml(depName)} (${code})"
+        alt="Guide frais de notaire - ${escapeHtml(depName)} (${code})"
         width="1200" height="675"
         loading="eager" fetchpriority="high" decoding="async"
         class="w-full h-auto object-cover" />
-      <figcaption class="text-sm text-gray-500 px-4 py-2">Image illustrative du département ${escapeHtml(
+      <figcaption class="text-sm text-gray-500 px-4 py-2">Image illustrative du departement ${escapeHtml(
         depName
-      )}. Source : Unsplash / Commons.</figcaption>
+      )}. Source : Unsplash / Commons.</figcaption>
     </figure>`;
 
   const contentWithHero = styledContent.includes("<figure")
@@ -137,7 +137,7 @@ function wrapInTemplate(content, depName, code) {
 
     <footer class="bg-gray-900 text-gray-300 mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-        <p>&copy; ${new Date().getFullYear()} LesCalculateurs.fr - Tous droits réservés</p>
+        <p>&copy; ${new Date().getFullYear()} LesCalculateurs.fr - Tous droits reserves</p>
       </div>
     </footer>
   </body>

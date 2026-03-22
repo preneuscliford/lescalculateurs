@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * Liste récursive des fichiers .html
+ * Liste recursive des fichiers .html
  */
 function listHtmlFiles(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -22,7 +22,7 @@ function listHtmlFiles(dir) {
 }
 
 /**
- * Calcule l'URL canonique propre (sans .html) à partir du chemin fichier
+ * Calcule l'URL canonique propre (sans .html) a partir du chemin fichier
  */
 function computeCanonical(filePath) {
   const rel = path.relative(path.resolve(__dirname, '..', 'src', 'pages'), filePath).replace(/\\/g, '/');
@@ -40,7 +40,7 @@ function setCanonical(html, canonicalUrl) {
   if (/<link\s+rel=["']canonical["']/i.test(html)) {
     return html.replace(/<link\s+rel=["']canonical["'][^>]*>/i, linkTag);
   }
-  // Insérer avant fermeture </head>
+  // Inserer avant fermeture </head>
   if (/<head[^>]*>/i.test(html) && /<\/head>/i.test(html)) {
     return html.replace(/<\/head>/i, `  ${linkTag}\n</head>`);
   }
@@ -64,7 +64,7 @@ function main() {
       console.log(`✔ canonical: ${path.relative(process.cwd(), f)} -> ${canonical}`);
     }
   }
-  console.log(`Done. Canonicals mis à jour: ${updated}`);
+  console.log(`Done. Canonicals mis a jour: ${updated}`);
 }
 
 main();

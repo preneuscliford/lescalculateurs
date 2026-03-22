@@ -15,16 +15,16 @@ console.log(
   "\n╔════════════════════════════════════════════════════════════════╗"
 );
 console.log(
-  "║  🌍 VÉRIFICATION GLOBALE - Tous les Calculateurs               ║"
+  "║  🌍 VERIFICATION GLOBALE - Tous les Calculateurs               ║"
 );
 console.log(
   "╚════════════════════════════════════════════════════════════════╝\n"
 );
 
-console.log(`📊 RÉSUMÉ PLATEFORME:`);
+console.log(`📊 RESUME PLATEFORME:`);
 console.log(`   Total calculateurs: ${globalConfig.summary.total_calculators}`);
-console.log(`   ✅ À jour: ${globalConfig.summary.up_to_date}`);
-console.log(`   ⚠️  À vérifier: ${globalConfig.summary.need_verification}`);
+console.log(`   ✅ A jour: ${globalConfig.summary.up_to_date}`);
+console.log(`   ⚠️  A verifier: ${globalConfig.summary.need_verification}`);
 console.log(`   Dernier audit: ${globalConfig.summary.last_full_audit}`);
 console.log(
   `   Prochain audit complet: ${globalConfig.summary.next_full_audit}\n`
@@ -35,7 +35,7 @@ console.log(
   "╔════════════════════════════════════════════════════════════════╗"
 );
 console.log(
-  "║  📋 ÉTAT DE CHAQUE CALCULATEUR                                 ║"
+  "║  📋 ETAT DE CHAQUE CALCULATEUR                                 ║"
 );
 console.log(
   "╚════════════════════════════════════════════════════════════════╝\n"
@@ -48,7 +48,7 @@ globalConfig.calculators.forEach((calc, idx) => {
   console.log(`   Description: ${calc.description}`);
 
   const sources = Object.keys(calc.data_sources);
-  console.log(`   📌 Sources de données (${sources.length}):`);
+  console.log(`   📌 Sources de donnees (${sources.length}):`);
 
   sources.forEach((key) => {
     const source = calc.data_sources[key];
@@ -61,7 +61,7 @@ globalConfig.calculators.forEach((calc, idx) => {
     else if (daysUntil <= 90) urgency = "🟡 BIENTÔT";
 
     console.log(`      • ${key}`);
-    console.log(`        Fréquence: ${source.frequency}`);
+    console.log(`        Frequence: ${source.frequency}`);
     console.log(
       `        Prochain check: ${source.next_check} (${daysUntil} jours) ${urgency}`
     );
@@ -74,7 +74,7 @@ console.log(
   "\n╔════════════════════════════════════════════════════════════════╗"
 );
 console.log(
-  "║  📅 CALENDRIER GLOBAL DE VÉRIFICATION                          ║"
+  "║  📅 CALENDRIER GLOBAL DE VERIFICATION                          ║"
 );
 console.log(
   "╚════════════════════════════════════════════════════════════════╝\n"
@@ -100,14 +100,14 @@ console.log(
   "\n╔════════════════════════════════════════════════════════════════╗"
 );
 console.log(
-  "║  ⚠️  CALCULATEURS NÉCESSITANT VÉRIFICATION                      ║"
+  "║  ⚠️  CALCULATEURS NECESSITANT VERIFICATION                      ║"
 );
 console.log(
   "╚════════════════════════════════════════════════════════════════╝\n"
 );
 
 const needsVerification = globalConfig.calculators.filter((c) =>
-  c.status.includes("À vérifier")
+  c.status.includes("A verifier")
 );
 needsVerification.forEach((calc) => {
   console.log(`\n❌ ${calc.name}`);
@@ -123,15 +123,15 @@ needsVerification.forEach((calc) => {
   });
 
   if (urgentChecks.length > 0) {
-    console.log(`   🔴 ${urgentChecks.length} vérification(s) URGENTE(S)`);
+    console.log(`   🔴 ${urgentChecks.length} verification(s) URGENTE(S)`);
   }
 
-  console.log(`   À FAIRE:`);
+  console.log(`   A FAIRE:`);
   console.log(`   1. Localiser page du calculateur`);
-  console.log(`   2. Vérifier chaque source de données`);
-  console.log(`   3. Mettre à jour si nécessaire`);
+  console.log(`   2. Verifier chaque source de donnees`);
+  console.log(`   3. Mettre a jour si necessaire`);
   console.log(`   4. Tester calculs avec exemples`);
-  console.log(`   5. Marquer comme "✅ À jour" ici`);
+  console.log(`   5. Marquer comme "✅ A jour" ici`);
 });
 
 // Action plan
@@ -145,21 +145,21 @@ console.log(
   "╚════════════════════════════════════════════════════════════════╝\n"
 );
 
-console.log("Priorité 1 - AVANT le 15 décembre 2025:");
-console.log("  □ Prêt immobilier - Vérifier taux + assurance emprunteur");
-console.log("  □ Frais agence - Vérifier commission moyenne");
+console.log("Priorite 1 - AVANT le 15 decembre 2025:");
+console.log("  □ Pret immobilier - Verifier taux + assurance emprunteur");
+console.log("  □ Frais agence - Verifier commission moyenne");
 
-console.log("\nPriorité 2 - AVANT le 1er janvier 2026:");
-console.log("  □ Plus-value - Vérifier impôt + prélèvement social");
-console.log("  □ Investissement locatif - Vérifier taxe foncière + rendement");
-console.log("  □ APL - Vérifier montants et plafonds");
-console.log("  □ Charges locatives - Vérifier taxe foncière");
-console.log("  □ Notaire - Mise à jour annuelle (tranches, droits, CSI, TVA)");
+console.log("\nPriorite 2 - AVANT le 1er janvier 2026:");
+console.log("  □ Plus-value - Verifier impot + prelevement social");
+console.log("  □ Investissement locatif - Verifier taxe fonciere + rendement");
+console.log("  □ APL - Verifier montants et plafonds");
+console.log("  □ Charges locatives - Verifier taxe fonciere");
+console.log("  □ Notaire - Mise a jour annuelle (tranches, droits, CSI, TVA)");
 
-console.log("\nPriorité 3 - AVANT le 1er février 2026:");
-console.log("  □ Notaire - Révision trimestrielle barèmes");
+console.log("\nPriorite 3 - AVANT le 1er fevrier 2026:");
+console.log("  □ Notaire - Revision trimestrielle baremes");
 
-console.log("\n✅ Exécuter ce script régulièrement pour rester synchronisé!");
+console.log("\n✅ Executer ce script regulierement pour rester synchronise!");
 console.log(
   "📧 Suggestions: configurer rappel mail pour chaque date importante\n"
 );

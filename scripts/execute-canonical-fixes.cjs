@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Script d'exécution AUTOMATIQUE des 4 replacements canonical
+ * Script d'execution AUTOMATIQUE des 4 replacements canonical
  * Version Windows-compatible avec Node.js pur
  */
 
@@ -13,7 +13,7 @@ console.log("=".repeat(80));
 
 const srcDir = path.join(__dirname, "..", "src", "pages");
 
-// Fonction récursive pour lister tous les fichiers .html
+// Fonction recursive pour lister tous les fichiers .html
 function getAllHtmlFiles(dir) {
   let files = [];
   const items = fs.readdirSync(dir, { withFileTypes: true });
@@ -81,7 +81,7 @@ function massReplace(
       }
     });
 
-    console.log(`   ✅ Affecté: ${count} fichier(s)`);
+    console.log(`   ✅ Affecte: ${count} fichier(s)`);
     return count;
   } catch (err) {
     console.error(`   ❌ Erreur: ${err.message}`);
@@ -89,7 +89,7 @@ function massReplace(
   }
 }
 
-console.log(`\n📂 Répertoire: ${srcDir}\n`);
+console.log(`\n📂 Repertoire: ${srcDir}\n`);
 
 // REPLACEMENT 1: /blog/departements/ → /pages/blog/departements/
 const r1 = massReplace(
@@ -121,15 +121,15 @@ const r4 = massReplace(
 );
 
 console.log("\n" + "=".repeat(80));
-console.log("\n📊 RÉSUMÉ DES CORRECTIONS:\n");
-console.log(`  ✅ Replacement 1: ${r1} fichier(s) modifié(s)`);
-console.log(`  ✅ Replacement 2: ${r2} fichier(s) modifié(s)`);
-console.log(`  ✅ Replacement 3: ${r3} fichier(s) modifié(s)`);
-console.log(`  ✅ Replacement 4: ${r4} fichier(s) modifié(s)`);
-console.log(`\n  📈 TOTAL: ${r1 + r2 + r3 + r4} fichier(s) modifié(s)`);
+console.log("\n📊 RESUME DES CORRECTIONS:\n");
+console.log(`  ✅ Replacement 1: ${r1} fichier(s) modifie(s)`);
+console.log(`  ✅ Replacement 2: ${r2} fichier(s) modifie(s)`);
+console.log(`  ✅ Replacement 3: ${r3} fichier(s) modifie(s)`);
+console.log(`  ✅ Replacement 4: ${r4} fichier(s) modifie(s)`);
+console.log(`\n  📈 TOTAL: ${r1 + r2 + r3 + r4} fichier(s) modifie(s)`);
 
-// Vérification post-fix
-console.log("\n✨ Vérification post-fix en cours...\n");
+// Verification post-fix
+console.log("\n✨ Verification post-fix en cours...\n");
 
 function verifyNoPattern(findPattern, description) {
   try {
@@ -147,11 +147,11 @@ function verifyNoPattern(findPattern, description) {
       console.log(`  ✅ ${description}: 0 matches (correct!)`);
     } else {
       console.log(
-        `  ⚠️  ${description}: ${count} fichier(s) avec pattern (vérifier)`
+        `  ⚠️  ${description}: ${count} fichier(s) avec pattern (verifier)`
       );
     }
   } catch (e) {
-    console.log(`  ✅ ${description}: Vérification OK`);
+    console.log(`  ✅ ${description}: Verification OK`);
   }
 }
 
@@ -163,11 +163,11 @@ verifyNoPattern("https://www.lescalculateurs.fr/blog/", "Pas de /blog/ seul");
 verifyNoPattern("https://lescalculateurs.fr/", "Pas d'apex domain");
 
 console.log("\n" + "=".repeat(80));
-console.log("\n✅ CORRECTIONS APPLIQUÉES!\n");
-console.log("Prochaines étapes:");
-console.log("  1. Vérifier les changements: git status");
+console.log("\n✅ CORRECTIONS APPLIQUEES!\n");
+console.log("Prochaines etapes:");
+console.log("  1. Verifier les changements: git status");
 console.log("  2. git add src/pages");
 console.log('  3. git commit -m "fix: Standardize all canonical URLs"');
 console.log("  4. git push");
-console.log("  5. Attendre déploiement Vercel (~1-3 min)");
+console.log("  5. Attendre deploiement Vercel (~1-3 min)");
 console.log("  6. Monitoring Google Search Console\n");

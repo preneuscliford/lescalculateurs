@@ -47,7 +47,7 @@ for (const item of clean) {
     intro:
       item.intro_courte ||
       item.intro ||
-      (item.prix_m2_median ? `Prix médian ${item.prix_m2_median} €/m²` : ""),
+      (item.prix_m2_median ? `Prix median ${item.prix_m2_median} €/m²` : ""),
     notaires: item.notaires_court || item.notaires || "",
   };
 

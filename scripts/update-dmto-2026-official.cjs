@@ -1,12 +1,12 @@
 /**
- * Mise à jour des taux DMTO 2026 - Données officielles du PDF impots.gouv.fr
+ * Mise a jour des taux DMTO 2026 - Donnees officielles du PDF impots.gouv.fr
  * Source: nid_11316_dmto_2026-01-01.pdf
  *
  * Calcul du taux total DMTO:
- * - Taux départemental voté + Taxe communale (1,20%) + Frais d'assiette (0,12%)
- * - 5,00% voté = 5,00 + 1,20 + 0,12 = 6,32%
- * - 4,50% voté = 4,50 + 1,20 + 0,12 = 5,82% (arrondi 5,80%)
- * - 3,80% voté = 3,80 + 1,20 + 0,12 = 5,12% (arrondi 5,09%)
+ * - Taux departemental vote + Taxe communale (1,20%) + Frais d'assiette (0,12%)
+ * - 5,00% vote = 5,00 + 1,20 + 0,12 = 6,32%
+ * - 4,50% vote = 4,50 + 1,20 + 0,12 = 5,82% (arrondi 5,80%)
+ * - 3,80% vote = 3,80 + 1,20 + 0,12 = 5,12% (arrondi 5,09%)
  */
 
 const fs = require("fs");
@@ -14,49 +14,49 @@ const path = require("path");
 
 const rootDir = path.join(__dirname, "..");
 
-// Taux totaux DMTO par département basés sur le PDF officiel
-// 5,00% voté → 6,32% total | 4,50% voté → 5,80% total | 3,80% voté → 5,09% total
+// Taux totaux DMTO par departement bases sur le PDF officiel
+// 5,00% vote → 6,32% total | 4,50% vote → 5,80% total | 3,80% vote → 5,09% total
 const DMTO_2026 = {
-  // Départements ayant voté 5,00% (taux majoré article 116 LF 2025)
+  // Departements ayant vote 5,00% (taux majore article 116 LF 2025)
   "01": 6.32, // Ain - 5,00% depuis 01/01/2026
   "02": 6.32, // Aisne - 5,00% depuis 01/05/2025
   "03": 6.32, // Allier - 5,00% depuis 01/06/2025
   "04": 6.32, // Alpes-de-Haute-Provence - 5,00% depuis 01/06/2025
   "05": 5.8, // Hautes-Alpes - 4,50% seulement
   "06": 5.8, // Alpes-Maritimes - 4,50% seulement
-  "07": 5.8, // Ardèche - 4,50% seulement
+  "07": 5.8, // Ardeche - 4,50% seulement
   "08": 6.32, // Ardennes - 5,00% depuis 01/05/2025
-  "09": 6.32, // Ariège - 5,00% depuis 01/04/2025
+  "09": 6.32, // Ariege - 5,00% depuis 01/04/2025
   10: 6.32, // Aube - 5,00% depuis 01/06/2025
   11: 6.32, // Aude - 5,00% depuis 01/05/2025
   12: 6.32, // Aveyron - 5,00% depuis 01/05/2025
-  13: 6.32, // Bouches-du-Rhône - 5,00% depuis 01/05/2025
+  13: 6.32, // Bouches-du-Rhone - 5,00% depuis 01/05/2025
   14: 6.32, // Calvados - 5,00% depuis 01/05/2025
   15: 6.32, // Cantal - 5,00% depuis 01/05/2025
   16: 5.8, // Charente - 4,50% seulement
   17: 6.32, // Charente-Maritime - 5,00% depuis 01/04/2025
   18: 6.32, // Cher - 5,00% depuis 01/05/2025
-  19: 6.32, // Corrèze - 5,00% depuis 01/04/2025
+  19: 6.32, // Correze - 5,00% depuis 01/04/2025
   "2A": 6.32, // Corse-du-Sud - 5,00% depuis 01/06/2025
   "2B": 6.32, // Haute-Corse - 5,00% depuis 01/06/2025
-  21: 6.32, // Côte-d'Or - 5,00% depuis 01/04/2025
-  22: 6.32, // Côtes-d'Armor - 5,00% depuis 01/05/2025
+  21: 6.32, // Cote-d'Or - 5,00% depuis 01/04/2025
+  22: 6.32, // Cotes-d'Armor - 5,00% depuis 01/05/2025
   23: 6.32, // Creuse - 5,00% depuis 01/05/2025
   24: 6.32, // Dordogne - 5,00% depuis 01/04/2025
   25: 6.32, // Doubs - 5,00% depuis 01/05/2025
-  26: 5.8, // Drôme - 4,50% seulement
+  26: 5.8, // Drome - 4,50% seulement
   27: 5.8, // Eure - 4,50% seulement
   28: 6.32, // Eure-et-Loir - 5,00% depuis 01/04/2025
-  29: 6.32, // Finistère - 5,00% depuis 01/05/2025
+  29: 6.32, // Finistere - 5,00% depuis 01/05/2025
   30: 6.32, // Gard - 5,00% depuis 01/05/2025
   31: 6.32, // Haute-Garonne - 5,00% depuis 01/04/2025
   32: 6.32, // Gers - 5,00% depuis 01/05/2025
   33: 6.32, // Gironde - 5,00% depuis 01/05/2025
-  34: 6.32, // Hérault - 5,00% depuis 01/04/2025
+  34: 6.32, // Herault - 5,00% depuis 01/04/2025
   35: 6.32, // Ille-et-Vilaine - 5,00% depuis 01/04/2025
-  36: 5.09, // Indre - 3,80% (taux réduit)
+  36: 5.09, // Indre - 3,80% (taux reduit)
   37: 6.32, // Indre-et-Loire - 5,00% depuis 01/05/2025
-  38: 6.32, // Isère - 5,00% depuis 01/06/2025
+  38: 6.32, // Isere - 5,00% depuis 01/06/2025
   39: 6.32, // Jura - 5,00% depuis 01/05/2025
   40: 6.32, // Landes - 5,00% depuis 01/06/2025
   41: 6.32, // Loir-et-Cher - 5,00% depuis 01/04/2025
@@ -66,7 +66,7 @@ const DMTO_2026 = {
   45: 6.32, // Loiret - 5,00% depuis 01/04/2025
   46: 6.32, // Lot - 5,00% depuis 01/06/2025
   47: 6.32, // Lot-et-Garonne - 5,00% depuis 01/05/2025
-  48: 5.8, // Lozère - 4,50% seulement
+  48: 5.8, // Lozere - 4,50% seulement
   49: 6.32, // Maine-et-Loire - 5,00% depuis 01/04/2025
   50: 6.32, // Manche - 5,00% depuis 01/05/2025
   51: 6.32, // Marne - 5,00% depuis 01/05/2025
@@ -76,20 +76,20 @@ const DMTO_2026 = {
   55: 6.32, // Meuse - 5,00% depuis 01/05/2025
   56: 6.32, // Morbihan - 5,00% depuis 01/05/2025
   57: 6.32, // Moselle - 5,00% depuis 01/05/2025
-  58: 6.32, // Nièvre - 5,00% depuis 01/05/2025
+  58: 6.32, // Nievre - 5,00% depuis 01/05/2025
   59: 6.32, // Nord - 5,00% depuis 01/05/2025
   60: 5.8, // Oise - 4,50% seulement
   61: 6.32, // Orne - 5,00% depuis 01/05/2025
   62: 6.32, // Pas-de-Calais - 5,00% depuis 01/05/2025
-  63: 6.32, // Puy-de-Dôme - 5,00% depuis 01/04/2025
-  64: 6.32, // Pyrénées-Atlantiques - 5,00% depuis 01/05/2025
-  65: 5.8, // Hautes-Pyrénées - 4,50% seulement
-  66: 6.32, // Pyrénées-Orientales - 5,00% depuis 01/05/2025
+  63: 6.32, // Puy-de-Dome - 5,00% depuis 01/04/2025
+  64: 6.32, // Pyrenees-Atlantiques - 5,00% depuis 01/05/2025
+  65: 5.8, // Hautes-Pyrenees - 4,50% seulement
+  66: 6.32, // Pyrenees-Orientales - 5,00% depuis 01/05/2025
   67: 6.32, // Bas-Rhin (Alsace) - 5,00% depuis 01/05/2025
   68: 6.32, // Haut-Rhin (Alsace) - 5,00% depuis 01/05/2025
-  69: 6.32, // Rhône/Lyon - 5,00% depuis 01/04-05/2025
-  70: 6.32, // Haute-Saône - 5,00% depuis 01/05/2025
-  71: 5.8, // Saône-et-Loire - 4,50% seulement
+  69: 6.32, // Rhone/Lyon - 5,00% depuis 01/04-05/2025
+  70: 6.32, // Haute-Saone - 5,00% depuis 01/05/2025
+  71: 5.8, // Saone-et-Loire - 4,50% seulement
   72: 6.32, // Sarthe - 5,00% depuis 01/05/2025
   73: 6.32, // Savoie - 5,00% depuis 01/05/2025
   74: 6.32, // Haute-Savoie - 5,00% depuis 01/04/2025
@@ -97,13 +97,13 @@ const DMTO_2026 = {
   76: 6.32, // Seine-Maritime - 5,00% depuis 01/05/2025
   77: 6.32, // Seine-et-Marne - 5,00% depuis 01/04/2025
   78: 6.32, // Yvelines - 5,00% depuis 01/05/2025
-  79: 6.32, // Deux-Sèvres - 5,00% depuis 01/06/2025
+  79: 6.32, // Deux-Sevres - 5,00% depuis 01/06/2025
   80: 6.32, // Somme - 5,00% depuis 01/05/2025
   81: 6.32, // Tarn - 5,00% depuis 01/04/2025
   82: 6.32, // Tarn-et-Garonne - 5,00% depuis 01/01/2026
   83: 6.32, // Var - 5,00% depuis 01/05/2025
   84: 6.32, // Vaucluse - 5,00% depuis 01/05/2025
-  85: 6.32, // Vendée - 5,00% depuis 01/05/2025
+  85: 6.32, // Vendee - 5,00% depuis 01/05/2025
   86: 6.32, // Vienne - 5,00% depuis 01/05/2025
   87: 6.32, // Haute-Vienne - 5,00% depuis 01/05/2025
   88: 6.32, // Vosges - 5,00% depuis 01/04/2025
@@ -118,14 +118,14 @@ const DMTO_2026 = {
   971: 5.8, // Guadeloupe - 4,50% seulement
   972: 5.8, // Martinique - 4,50% seulement
   973: 6.32, // Guyane - 5,00% depuis 01/06/2025
-  974: 6.32, // La Réunion - 5,00% depuis 01/01/2026
-  976: 5.09, // Mayotte - 3,80% (taux réduit)
+  974: 6.32, // La Reunion - 5,00% depuis 01/01/2026
+  976: 5.09, // Mayotte - 3,80% (taux reduit)
 };
 
-// Départements à taux réduit (3,80% voté)
+// Departements a taux reduit (3,80% vote)
 const DEPARTEMENTS_REDUITS = ["36", "976"];
 
-// Départements à taux standard (4,50% voté, pas de majoration)
+// Departements a taux standard (4,50% vote, pas de majoration)
 const DEPARTEMENTS_STANDARD = [
   "05",
   "06",
@@ -141,7 +141,7 @@ const DEPARTEMENTS_STANDARD = [
   "972",
 ];
 
-// ===== 1. Mettre à jour frais2026.json =====
+// ===== 1. Mettre a jour frais2026.json =====
 function updatefrais2026Json() {
   const filepath = path.join(rootDir, "src/data/frais2026.json");
   const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
@@ -170,10 +170,10 @@ function updatefrais2026Json() {
   };
 
   fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
-  console.log("✅ frais2026.json mis à jour");
+  console.log("✅ frais2026.json mis a jour");
 }
 
-// ===== 2. Mettre à jour baremes.ts =====
+// ===== 2. Mettre a jour baremes.ts =====
 function updateBaremesTs() {
   const filepath = path.join(rootDir, "src/data/baremes.ts");
   let content = fs.readFileSync(filepath, "utf8");
@@ -181,36 +181,36 @@ function updateBaremesTs() {
   // Remplacer le taux standard
   content = content.replace(
     /standard: 0\.\d+,\s*\/\/.*$/m,
-    "standard: 0.0632, // taux majoré 2026 (5% voté = 6.32% total)",
+    "standard: 0.0632, // taux majore 2026 (5% vote = 6.32% total)",
   );
 
-  // Remplacer le taux réduit
+  // Remplacer le taux reduit
   content = content.replace(
     /reduit: 0\.\d+,\s*\/\/.*$/m,
-    "reduit: 0.0509, // taux réduit 2026 (3.80% voté = 5.09% total)",
+    "reduit: 0.0509, // taux reduit 2026 (3.80% vote = 5.09% total)",
   );
 
-  // Remplacer les départements réduits
+  // Remplacer les departements reduits
   content = content.replace(
     /departementsReduits: \[.*?\],?\s*\/\/.*$/m,
     'departementsReduits: ["36", "976"], // Indre et Mayotte uniquement en 2026',
   );
 
   fs.writeFileSync(filepath, content, "utf8");
-  console.log("✅ baremes.ts mis à jour");
+  console.log("✅ baremes.ts mis a jour");
 }
 
-// ===== 3. Mettre à jour baremes.json =====
+// ===== 3. Mettre a jour baremes.json =====
 function updateBaremesJson() {
   const filepath = path.join(rootDir, "src/data/baremes.json");
   if (!fs.existsSync(filepath)) {
-    console.log("⚠️ baremes.json non trouvé");
+    console.log("⚠️ baremes.json non trouve");
     return;
   }
 
   const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
 
-  // Mettre à jour droitsMutation dans notaire
+  // Mettre a jour droitsMutation dans notaire
   if (data.notaire && data.notaire.droitsMutation) {
     data.notaire.droitsMutation = {
       standard: 0.0632,
@@ -220,7 +220,7 @@ function updateBaremesJson() {
     };
   }
 
-  // Mettre à jour la section dmto
+  // Mettre a jour la section dmto
   if (data.dmto) {
     for (const [dept, taux] of Object.entries(DMTO_2026)) {
       data.dmto[dept] = taux;
@@ -228,27 +228,27 @@ function updateBaremesJson() {
   }
 
   fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
-  console.log("✅ baremes.json mis à jour");
+  console.log("✅ baremes.json mis a jour");
 }
 
-// ===== 4. Mettre à jour notaire.html =====
+// ===== 4. Mettre a jour notaire.html =====
 function updateNotaireHtml() {
   const filepath = path.join(rootDir, "src/pages/notaire.html");
   let content = fs.readFileSync(filepath, "utf8");
 
-  // Mise à jour des taux dans les textes
+  // Mise a jour des taux dans les textes
   content = content.replace(/≈ 3,80%/g, "≈ 5,09%");
   content = content.replace(/≈ 6,45%/g, "≈ 6,32%");
   content = content.replace(/≈ 5,80%/g, "≈ 6,32%");
   content = content.replace(/≈ 5,81%/g, "≈ 6,32%");
-  content = content.replace(/3,80% à 6,45%/g, "5,09% à 6,32%");
+  content = content.replace(/3,80% a 6,45%/g, "5,09% a 6,32%");
 
   fs.writeFileSync(filepath, content, "utf8");
-  console.log("✅ notaire.html mis à jour");
+  console.log("✅ notaire.html mis a jour");
 }
 
-// ===== Exécution =====
-console.log("🔄 Mise à jour des taux DMTO 2026 (données officielles PDF)...\n");
+// ===== Execution =====
+console.log("🔄 Mise a jour des taux DMTO 2026 (donnees officielles PDF)...\n");
 console.log("Source: impots.gouv.fr - nid_11316_dmto_2026-01-01.pdf\n");
 
 updatefrais2026Json();
@@ -256,20 +256,20 @@ updateBaremesTs();
 updateBaremesJson();
 updateNotaireHtml();
 
-console.log("\n✅ Mise à jour terminée!");
-console.log("\n📊 Résumé des taux DMTO 2026:");
+console.log("\n✅ Mise a jour terminee!");
+console.log("\n📊 Resume des taux DMTO 2026:");
 console.log(
-  "   - Taux majoré (5% voté): 6,32% - " +
+  "   - Taux majore (5% vote): 6,32% - " +
     Object.keys(DMTO_2026).filter((d) => DMTO_2026[d] === 6.32).length +
-    " départements",
+    " departements",
 );
 console.log(
-  "   - Taux standard (4,50% voté): 5,80% - " +
+  "   - Taux standard (4,50% vote): 5,80% - " +
     DEPARTEMENTS_STANDARD.length +
-    " départements",
+    " departements",
 );
 console.log(
-  "   - Taux réduit (3,80% voté): 5,09% - " +
+  "   - Taux reduit (3,80% vote): 5,09% - " +
     DEPARTEMENTS_REDUITS.length +
-    " départements (36 Indre, 976 Mayotte)",
+    " departements (36 Indre, 976 Mayotte)",
 );

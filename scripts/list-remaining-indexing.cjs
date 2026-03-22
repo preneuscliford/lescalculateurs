@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Produit la liste des URLs du sitemap dont <lastmod> est différent de la valeur spécifiée.
+ * Produit la liste des URLs du sitemap dont <lastmod> est different de la valeur specifiee.
  * Usage: node scripts/list-remaining-indexing.cjs --lastmod=YYYY-MM-DD
- * Écrit: reports/remaining-urls.txt
+ * Ecrit: reports/remaining-urls.txt
  */
 const fs = require('fs');
 const path = require('path');
@@ -37,7 +37,7 @@ function main() {
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, remaining.join('\n') + '\n', 'utf8');
   console.log(`Restantes: ${remaining.length}`);
-  console.log(`Écrit: ${outPath}`);
+  console.log(`Ecrit: ${outPath}`);
 }
 
 main();

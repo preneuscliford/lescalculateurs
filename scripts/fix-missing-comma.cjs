@@ -11,14 +11,14 @@ function fixMissingSemicolon(filePath) {
       "},\n              formatResult:"
     );
 
-    // Supprimer les formatResult en double (l'ancien après le nouveau)
+    // Supprimer les formatResult en double (l'ancien apres le nouveau)
     content = content.replace(
       /(formatResult: \(result\) => \{[\s\S]*?\+ '<\/div>';[\s\S]*?\},)\s+(formatResult: \(result\) => \{[\s\S]*?\+ '<\/div>';\s*\},)/,
       "$1"
     );
 
     fs.writeFileSync(filePath, content, "utf-8");
-    console.log(`✅ Fixé: ${path.basename(filePath)}`);
+    console.log(`✅ Fixe: ${path.basename(filePath)}`);
     return true;
   } catch (error) {
     console.error(`❌ Erreur pour ${path.basename(filePath)}:`, error.message);
@@ -26,7 +26,7 @@ function fixMissingSemicolon(filePath) {
   }
 }
 
-// Traiter tous les fichiers de département
+// Traiter tous les fichiers de departement
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
 const files = fs
   .readdirSync(deptDir)
@@ -42,4 +42,4 @@ files.forEach((file) => {
   }
 });
 
-console.log(`\n✨ ${successCount}/${files.length} fichiers fixés`);
+console.log(`\n✨ ${successCount}/${files.length} fichiers fixes`);

@@ -2,7 +2,7 @@
 
 /**
  * Script pour supprimer les mini-calculateurs des pages blog
- * Enlève la section: "🧮 Calculer vos frais ici" + tout le code JavaScript associé
+ * Enleve la section: "🧮 Calculer vos frais ici" + tout le code JavaScript associe
  */
 
 const fs = require("fs");
@@ -23,10 +23,10 @@ for (const file of files) {
     const filePath = path.join(blogDir, file);
     let content = fs.readFileSync(filePath, "utf8");
 
-    // Pattern: cherche le bouton + tout le script jusqu'à la fin du </script>
-    // Le pattern cherche depuis "<!-- Mini-calculateur intégré" jusqu'au dernier </script> avant "<!-- Tarifs Officiels"
+    // Pattern: cherche le bouton + tout le script jusqu'a la fin du </script>
+    // Le pattern cherche depuis "<!-- Mini-calculateur integre" jusqu'au dernier </script> avant "<!-- Tarifs Officiels"
     const pattern =
-      /<!-- Mini-calculateur intégré.*?<\/script>\s*(?=<!-- Tarifs Officiels)/s;
+      /<!-- Mini-calculateur integre.*?<\/script>\s*(?=<!-- Tarifs Officiels)/s;
 
     if (pattern.test(content)) {
       content = content.replace(pattern, "");
@@ -44,8 +44,8 @@ for (const file of files) {
   }
 }
 
-console.log(`\n✅ ${removed} mini-calculateurs supprimés`);
+console.log(`\n✅ ${removed} mini-calculateurs supprimes`);
 console.log(`⏭️  ${notFound} pages sans mini-calculateur`);
 console.log(
-  `\n💡 Les utilisateurs utiliseront maintenant /pages/notaire pour les calculs avancés`
+  `\n💡 Les utilisateurs utiliseront maintenant /pages/notaire pour les calculs avances`
 );

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Script de suivi complet de tous les calculateurs
- * Affiche l'état de chaque calculateur et ses tâches de monitoring
+ * Affiche l'etat de chaque calculateur et ses taches de monitoring
  */
 
 const fs = require("fs");
@@ -10,7 +10,7 @@ const monitoring = JSON.parse(
   fs.readFileSync("data/monitoring-calendar.json", "utf-8")
 );
 
-// Grouper les tâches par calculateur
+// Grouper les taches par calculateur
 const tasksByCalculator = {};
 monitoring.monitoring_tasks.forEach((task) => {
   const calc = task.calculator;
@@ -26,7 +26,7 @@ console.log(`
 ╚════════════════════════════════════════════════════════════════╝
 `);
 
-console.log(`\n⏰ DERNIÈRE VÉRIFICATION: ${monitoring.last_updated}\n`);
+console.log(`\n⏰ DERNIÈRE VERIFICATION: ${monitoring.last_updated}\n`);
 
 const calculators = [
   "notaire",
@@ -51,12 +51,12 @@ let okCount = 0;
 calculators.forEach((calc) => {
   if (!tasksByCalculator[calc]) {
     console.log(`\n⚠️  ${calc.toUpperCase()}`);
-    console.log(`   ❌ Aucune tâche de monitoring configurée\n`);
+    console.log(`   ❌ Aucune tache de monitoring configuree\n`);
     return;
   }
 
   console.log(`\n📱 ${calc.toUpperCase()}`);
-  console.log(`   Nombre de tâches: ${tasksByCalculator[calc].length}`);
+  console.log(`   Nombre de taches: ${tasksByCalculator[calc].length}`);
   console.log(`   ${"─".repeat(66)}`);
 
   let calcUrgent = 0;
@@ -79,28 +79,28 @@ calculators.forEach((calc) => {
     else calcOk++;
 
     console.log(`   ${idx + 1}. ${task.task}`);
-    console.log(`      Fréq: ${task.frequency}`);
+    console.log(`      Freq: ${task.frequency}`);
     console.log(
       `      ${task.next_check} (${daysUntil}j) ${urgency}`
     );
   });
 
-  console.log(`\n   Synthèse: 🔴 ${calcUrgent} URGENT | 🟡 ${calcSoon} BIENTÔT | 🟢 ${calcOk} OK\n`);
+  console.log(`\n   Synthese: 🔴 ${calcUrgent} URGENT | 🟡 ${calcSoon} BIENTÔT | 🟢 ${calcOk} OK\n`);
 
   urgentCount += calcUrgent;
   soonCount += calcSoon;
   okCount += calcOk;
 });
 
-// Résumé global
+// Resume global
 console.log(`\n${"═".repeat(70)}`);
 console.log(`\n📈 SYNTHÈSE GLOBALE:\n`);
-console.log(`   Total tâches de monitoring: ${monitoring.monitoring_tasks.length}`);
+console.log(`   Total taches de monitoring: ${monitoring.monitoring_tasks.length}`);
 console.log(`   🔴 URGENT: ${urgentCount}`);
 console.log(`   🟡 BIENTÔT: ${soonCount}`);
 console.log(`   🟢 OK: ${okCount}`);
 
-// Actions à faire immédiatement
+// Actions a faire immediatement
 const urgent = monitoring.monitoring_tasks.filter((task) => {
   const checkDate = new Date(task.next_check);
   const today = new Date();
@@ -110,24 +110,24 @@ const urgent = monitoring.monitoring_tasks.filter((task) => {
 
 if (urgent.length > 0) {
   console.log(`\n${"─".repeat(70)}\n`);
-  console.log(`🚨 ACTIONS PRIORITAIRES (${urgent.length} tâches):\n`);
+  console.log(`🚨 ACTIONS PRIORITAIRES (${urgent.length} taches):\n`);
   urgent.forEach((task, idx) => {
     console.log(`${idx + 1}. [${task.calculator.toUpperCase()}] ${task.task}`);
-    console.log(`   À faire avant: ${task.next_check}`);
+    console.log(`   A faire avant: ${task.next_check}`);
     console.log(`   Source: ${task.source}\n`);
   });
 }
 
-// Alertes configurées
+// Alertes configurees
 console.log(`${"═".repeat(70)}\n`);
-console.log(`📬 ALERTES CONFIGURÉES:\n`);
+console.log(`📬 ALERTES CONFIGUREES:\n`);
 monitoring.alert_rules.alert_on.forEach((alert) => {
   console.log(`  • ${alert}`);
 });
 
 console.log(`\n📧 Notification: ${monitoring.alert_rules.email_notification}`);
 console.log(
-  `⏱️  Intervalle de vérification: tous les ${monitoring.alert_rules.check_interval_days} jours\n`
+  `⏱️  Intervalle de verification: tous les ${monitoring.alert_rules.check_interval_days} jours\n`
 );
 
 console.log(`═`.repeat(70));

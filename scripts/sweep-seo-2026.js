@@ -11,20 +11,20 @@ const roots = [
 function replaceSEO(text) {
   let t = text
   // Titles
-  t = t.replace(/<title>\s*Frais de Notaire 2025([\s\S]*?)<\/title>/gi, '<title>Frais de notaire 2026 — Données officielles (CGI, Loi de finances 2025)</title>')
+  t = t.replace(/<title>\s*Frais de Notaire 2025([\s\S]*?)<\/title>/gi, '<title>Frais de notaire 2026 - Donnees officielles (CGI, Loi de finances 2025)</title>')
   // OG/Twitter
-  t = t.replace(/content="Frais de Notaire 2025([\s\S]*?)"/gi, 'content="Frais de notaire 2026 — Données officielles (CGI, Loi de finances 2025)"')
-  t = t.replace(/content="🏠\s*Frais de Notaire 2025([\s\S]*?)"/gi, 'content="🏠 Frais de notaire 2026 — Données officielles (CGI)"')
-  t = t.replace(/content="Économisez des milliers d'euros sur vos frais de notaire 2025"/gi, 'content="Économisez des milliers d\'euros sur vos frais de notaire 2026"')
+  t = t.replace(/content="Frais de Notaire 2025([\s\S]*?)"/gi, 'content="Frais de notaire 2026 - Donnees officielles (CGI, Loi de finances 2025)"')
+  t = t.replace(/content="🏠\s*Frais de Notaire 2025([\s\S]*?)"/gi, 'content="🏠 Frais de notaire 2026 - Donnees officielles (CGI)"')
+  t = t.replace(/content="Economisez des milliers d'euros sur vos frais de notaire 2025"/gi, 'content="Economisez des milliers d\'euros sur vos frais de notaire 2026"')
   // Meta keywords/descriptions year bump
   t = t.replace(/frais notaire 2025/gi, 'frais notaire 2026')
-  t = t.replace(/barèmes?\s+2025/gi, 'barèmes réglementés en vigueur')
+  t = t.replace(/baremes?\s+2025/gi, 'baremes reglementes en vigueur')
   // JSON-LD name fields
   t = t.replace(/"name":\s*"Calculateur Frais de Notaire 2025"/gi, '"name": "Calculateur Frais de notaire 2026"')
   t = t.replace(/"name":\s*"Calculateur Frais de Notaire 2026"/gi, '"name": "Calculateur Frais de notaire 2026"')
   // Inline headings
   t = t.replace(/Frais de Notaire 2025/gi, 'Frais de notaire 2026')
-  t = t.replace(/Barèmes\s*2025/gi, 'Barèmes 2026')
+  t = t.replace(/Baremes\s*2025/gi, 'Baremes 2026')
   // Footer years
   t = t.replace(/©\s*2025\s*Les Calculateurs/gi, '© 2026 Les Calculateurs')
   return t

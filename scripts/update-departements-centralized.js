@@ -1,6 +1,6 @@
 /**
- * Script de mise à jour des pages départements
- * Utilise la SOURCE UNIQUE DE VÉRITÉ : notaire.baremes.2026.js
+ * Script de mise a jour des pages departements
+ * Utilise la SOURCE UNIQUE DE VERITE : notaire.baremes.2026.js
  */
 
 import fs from "node:fs";
@@ -19,11 +19,11 @@ function formatPctHtml(taux) {
 }
 
 /**
- * Traiter un fichier département
+ * Traiter un fichier departement
  */
 function processFile(filePath) {
   const base = path.basename(filePath);
-  // Extraire le code département (01, 02, ..., 971, 972, 973, 974, 976, 2A, 2B)
+  // Extraire le code departement (01, 02, ..., 971, 972, 973, 974, 976, 2A, 2B)
   const match = base.match(/frais-notaire-(\d+|2A|2B)\.html$/i);
   if (!match) return false;
 
@@ -37,7 +37,7 @@ function processFile(filePath) {
   let html = fs.readFileSync(filePath, "utf8");
   const original = html;
 
-  // Calculer avec les modules centralisés
+  // Calculer avec les modules centralises
   const ancien = calculFraisNotaire(PRIX_EXEMPLE, "ancien", code);
   const neuf = calculFraisNotaire(PRIX_EXEMPLE, "neuf");
 
@@ -47,7 +47,7 @@ function processFile(filePath) {
   const ancienPct = formatPctHtml(dmtoTaux);
   const neufPct = formatPctHtml(NOTAIRE_2026.neuf.droits);
 
-  // Pattern 1: Ligne complète "Frais de notaire 2026 en X : ≈ Y € pour 200 000 €..."
+  // Pattern 1: Ligne complete "Frais de notaire 2026 en X : ≈ Y € pour 200 000 €..."
   html = html.replace(
     /(Frais de notaire 202\d en [^:]+:\s*≈\s*)[\d\s]+\s*€(\s*pour\s*200\s*000\s*€\s*\(ancien,?\s*droits?\s*≈?\s*)[\d,\.]+\s*%(\)\s*•\s*≈\s*)[\d\s]+\s*€(\s*pour\s*200\s*000\s*€\s*\(neuf,?\s*droits?\s*≈?\s*)[\d,\.]+\s*%/gi,
     `$1${ancienTotal} €$2${ancienPct}$3${neufTotal} €$4${neufPct}`,
@@ -74,7 +74,7 @@ function processFile(filePath) {
   html = html.replace(
     /(<span class="font-mono bg-green-100[^"]*">)≈?\s*[\d,\.]+\s*%(<\/span>)/gi,
     (match, p1, p2) => {
-      // Vérifier le contexte pour ancien vs neuf
+      // Verifier le contexte pour ancien vs neuf
       return `${p1}≈ ${ancienPct}${p2}`;
     },
   );
@@ -96,7 +96,7 @@ function processFile(filePath) {
 }
 
 function main() {
-  console.log("=== MISE À JOUR PAGES DÉPARTEMENTS ===");
+  console.log("=== MISE A JOUR PAGES DEPARTEMENTS ===");
   console.log("Source: src/data/notaire.baremes.2026.js");
   console.log("");
 
@@ -117,17 +117,17 @@ function main() {
   }
 
   console.log("");
-  console.log(`✓ ${updated} fichiers mis à jour`);
+  console.log(`✓ ${updated} fichiers mis a jour`);
   console.log("");
-  console.log("Taux utilisés (source unique):");
+  console.log("Taux utilises (source unique):");
   console.log(
-    `  • Majoré: ${(NOTAIRE_2026.dmto.majore * 100).toFixed(2)}% (87 depts)`,
+    `  • Majore: ${(NOTAIRE_2026.dmto.majore * 100).toFixed(2)}% (87 depts)`,
   );
   console.log(
     `  • Standard: ${(NOTAIRE_2026.dmto.standard * 100).toFixed(2)}% (12 depts)`,
   );
   console.log(
-    `  • Réduit: ${(NOTAIRE_2026.dmto.reduit * 100).toFixed(2)}% (2 depts)`,
+    `  • Reduit: ${(NOTAIRE_2026.dmto.reduit * 100).toFixed(2)}% (2 depts)`,
   );
 }
 

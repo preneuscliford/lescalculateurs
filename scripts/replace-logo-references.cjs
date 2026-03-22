@@ -154,7 +154,7 @@ async function main() {
   }, 0);
 
   console.log(
-    `${dryRun ? "[DRY RUN] " : ""}Logo: ${changedFiles.length} fichiers modifiés, ${totalChanges} remplacements.`,
+    `${dryRun ? "[DRY RUN] " : ""}Logo: ${changedFiles.length} fichiers modifies, ${totalChanges} remplacements.`,
   );
 
   for (const file of changedFiles) {

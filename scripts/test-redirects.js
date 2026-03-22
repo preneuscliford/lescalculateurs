@@ -1,16 +1,16 @@
 /**
- * Teste les redirections 301 des anciennes URLs des pages départementales
+ * Teste les redirections 301 des anciennes URLs des pages departementales
  * vers les nouvelles URLs sous /pages/blog/departements/.
  */
 import https from "https";
 
 /**
- * Effectue une requête GET sans suivre automatiquement les redirections.
+ * Effectue une requete GET sans suivre automatiquement les redirections.
  */
 function fetchOnce(url) {
   return new Promise((resolve, reject) => {
     const req = https.request(url, { method: "GET" }, (res) => {
-      // Lire un petit bout de corps pour éviter les sockets pendantes
+      // Lire un petit bout de corps pour eviter les sockets pendantes
       res.on("data", () => {});
       res.on("end", () => {
         resolve({
@@ -25,7 +25,7 @@ function fetchOnce(url) {
 }
 
 /**
- * Teste la redirection pour un code département donné.
+ * Teste la redirection pour un code departement donne.
  */
 async function testRedirect(code) {
   const origin = "https://lescalculateurs.fr";
@@ -73,7 +73,7 @@ async function testRedirect(code) {
 }
 
 /**
- * Point d'entrée: parcourt la liste fournie par GSC et affiche un rapport.
+ * Point d'entree: parcourt la liste fournie par GSC et affiche un rapport.
  */
 async function main() {
   const codes = [
@@ -93,9 +93,9 @@ async function main() {
 
   const okCount = results.filter((r) => r.redirectOk && r.targetOk).length;
   const koCount = results.length - okCount;
-  console.log(`\nRésumé: OK=${okCount} / KO=${koCount} / Total=${results.length}`);
+  console.log(`\nResume: OK=${okCount} / KO=${koCount} / Total=${results.length}`);
   if (koCount > 0) {
-    console.log("Détails KO:");
+    console.log("Details KO:");
     for (const r of results.filter((x) => !(x.redirectOk && x.targetOk))) {
       console.log(`- code=${r.code} status=${r.status} location='${r.location}' targetStatus=${r.targetStatus} error=${r.error || ""}`);
     }

@@ -15,57 +15,57 @@ const FAUTES = {
   calcualteur: "calculateur",
   simualteur: "simulateur",
   simulatuer: "simulateur",
-  éxonération: "exonération",
-  éxonéré: "exonéré",
-  supériure: "supérieure",
-  infériure: "inférieure",
-  déclaratoin: "déclaration",
-  propriétare: "propriétaire",
+  exoneration: "exoneration",
+  exonere: "exonere",
+  superiure: "superieure",
+  inferiure: "inferieure",
+  declaratoin: "declaration",
+  proprietare: "proprietaire",
   imobillier: "immobilier",
   immobillier: "immobilier",
-  immobilié: "immobilier",
+  immobilie: "immobilier",
   fiscall: "fiscal",
   fiscallement: "fiscalement",
-  révenus: "revenus",
+  revenus: "revenus",
   revnus: "revenus",
   salrial: "salarial",
   menstuel: "mensuel",
   menusuel: "mensuel",
   annulle: "annuel",
   annuele: "annuel",
-  calcullé: "calculé",
+  calculle: "calcule",
   estimatoin: "estimation",
-  rémunéraion: "rémunération",
-  rmunération: "rémunération",
-  dédutcible: "déductible",
-  bénéficiares: "bénéficiaires",
-  beneficiaire: "bénéficiaire",
-  prélevement: "prélèvement",
-  prélevements: "prélèvements",
-  prelevement: "prélèvement",
+  remuneraion: "remuneration",
+  rmuneration: "remuneration",
+  dedutcible: "deductible",
+  beneficiares: "beneficiaires",
+  beneficiaire: "beneficiaire",
+  prelevement: "prelevement",
+  prelevements: "prelevements",
+  prelevement: "prelevement",
   qulques: "quelques",
   retraîte: "retraite",
-  retraîté: "retraité",
+  retraîte: "retraite",
   montnat: "montant",
   montantt: "montant",
-  hébergment: "hébergement",
+  hebergment: "hebergement",
   gratuitemnt: "gratuitement",
-  aprés: "après",
-  trés: "très",
-  intérets: "intérêts",
-  interets: "intérêts",
-  intêrets: "intérêts",
-  "en déssous": "en dessous",
+  apres: "apres",
+  tres: "tres",
+  interets: "interets",
+  interets: "interets",
+  interets: "interets",
+  "en dessous": "en dessous",
   plsu: "plus",
   danc: "donc",
   tros: "trop",
   parceque: "parce que",
-  suplémentaire: "supplémentaire",
-  suplementaire: "supplémentaire",
+  suplementaire: "supplementaire",
+  suplementaire: "supplementaire",
   emprunteu: "emprunteur",
   amortissemnt: "amortissement",
   amortisement: "amortissement",
-  propriétair: "propriétaire",
+  proprietair: "proprietaire",
   locatare: "locataire",
   "tout les": "tous les",
   "Tout les": "Tous les",
@@ -73,14 +73,14 @@ const FAUTES = {
   biensûr: "bien sûr",
   certe: "certes",
   ormis: "hormis",
-  neanmoins: "néanmoins",
-  neamoins: "néanmoins",
-  malgrés: "malgré",
-  malgres: "malgré",
-  éléction: "élection",
-  eventuellement: "éventuellement",
-  "depend de": "dépend de",
-  "votre impôts": "votre impôt",
+  neanmoins: "neanmoins",
+  neamoins: "neanmoins",
+  malgres: "malgre",
+  malgres: "malgre",
+  election: "election",
+  eventuellement: "eventuellement",
+  "depend de": "depend de",
+  "votre impots": "votre impot",
   "2 026": "2026",
   "2 025": "2025",
   "l ors": "lors",
@@ -88,12 +88,12 @@ const FAUTES = {
   "Quelque soit": "Quel que soit",
   "quelques soit": "quel que soit",
   "moin de": "moins de",
-  "impôts sur le revenu": "impôt sur le revenu",
-  "Impôts sur le revenu": "Impôt sur le revenu",
+  "impots sur le revenu": "impot sur le revenu",
+  "Impots sur le revenu": "Impot sur le revenu",
   "frais de notaires": "frais de notaire",
   "Frais de notaires": "Frais de notaire",
-  "au delà": "au-delà",
-  "Au delà": "Au-delà",
+  "au dela": "au-dela",
+  "Au dela": "Au-dela",
 
   // Erreurs grammaticales courantes
   "Frais de notaires": "Frais de notaire",
@@ -102,26 +102,26 @@ const FAUTES = {
   "Quelque soit": "Quel que soit",
   "taux margianl": "taux marginal",
   "taux marginale": "taux marginal",
-  "impôts sur le revenu": "impôt sur le revenu",
-  "impôts sur les revenus": "impôt sur le revenu",
-  "Impôts sur le revenu": "Impôt sur le revenu",
-  "taxe foncieres": "taxe foncière",
-  "taxes foncieres": "taxes foncières",
-  "taxe foncières": "taxe foncière",
-  "taxe fonciére": "taxe foncière",
-  "au delà": "au-delà",
-  "Au delà": "Au-delà",
+  "impots sur le revenu": "impot sur le revenu",
+  "impots sur les revenus": "impot sur le revenu",
+  "Impots sur le revenu": "Impot sur le revenu",
+  "taxe foncieres": "taxe fonciere",
+  "taxes foncieres": "taxes foncieres",
+  "taxe foncieres": "taxe fonciere",
+  "taxe fonciere": "taxe fonciere",
+  "au dela": "au-dela",
+  "Au dela": "Au-dela",
   "moin de": "moins de",
   "moin d": "moins d",
   "moins de 25ans": "moins de 25 ans",
 
   // Apostrophes manquantes (attention aux faux positifs)
-  "d apres": "d'après",
+  "d apres": "d'apres",
   "l allocation": "l'allocation",
   "d allocation": "d'allocation",
   "s applique": "s'applique",
-  "l impôt": "l'impôt",
-  "l impot": "l'impôt",
+  "l impot": "l'impot",
+  "l impot": "l'impot",
   "n est": "n'est",
   "c est": "c'est",
   "qu il": "qu'il",
@@ -135,7 +135,7 @@ const FAUTES = {
   "s il": "s'il",
 };
 
-// Patterns à exclure (code, URLs, etc.)
+// Patterns a exclure (code, URLs, etc.)
 const EXCLUDE_PATTERNS = [
   /<script[^>]*>[\s\S]*?<\/script>/gi,
   /<style[^>]*>[\s\S]*?<\/style>/gi,
@@ -168,7 +168,7 @@ function extractTextContent(html) {
   }
   // Retirer les balises HTML
   text = text.replace(/<[^>]+>/g, " ");
-  // Décoder les entités HTML courantes
+  // Decoder les entites HTML courantes
   text = text
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
@@ -185,7 +185,7 @@ function findSpellingErrors(filePath) {
   const errors = [];
 
   for (const [faute, correction] of Object.entries(FAUTES)) {
-    // Recherche insensible à la casse mais préserve la casse originale
+    // Recherche insensible a la casse mais preserve la casse originale
     const regex = new RegExp(
       `\\b${faute.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
       "gi",
@@ -227,11 +227,11 @@ function main() {
   }
 
   if (allErrors.length === 0) {
-    console.log("✅ Aucune erreur d'orthographe détectée !");
+    console.log("✅ Aucune erreur d'orthographe detectee !");
     return;
   }
 
-  console.log(`⚠️ Erreurs trouvées dans ${allErrors.length} fichiers:\n`);
+  console.log(`⚠️ Erreurs trouvees dans ${allErrors.length} fichiers:\n`);
 
   for (const { file, errors } of allErrors) {
     console.log(`📄 ${file}`);
@@ -242,13 +242,13 @@ function main() {
     console.log();
   }
 
-  // Résumé
+  // Resume
   const totalErrors = allErrors.reduce(
     (sum, item) => sum + item.errors.length,
     0,
   );
   console.log(
-    `\n📊 Résumé: ${totalErrors} erreurs dans ${allErrors.length} fichiers`,
+    `\n📊 Resume: ${totalErrors} erreurs dans ${allErrors.length} fichiers`,
   );
 
   // Regrouper par type d'erreur
@@ -260,7 +260,7 @@ function main() {
     }
   }
 
-  console.log("\n📈 Erreurs les plus fréquentes:");
+  console.log("\n📈 Erreurs les plus frequentes:");
   const sorted = Object.entries(errorCounts).sort((a, b) => b[1] - a[1]);
   for (const [error, count] of sorted.slice(0, 10)) {
     console.log(`   ${count}x : ${error}`);

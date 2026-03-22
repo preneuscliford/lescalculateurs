@@ -3,20 +3,20 @@
 const fs = require("fs");
 const path = require("path");
 
-// Charger les données
+// Charger les donnees
 const departements = JSON.parse(
   fs.readFileSync("src/data/departements.json", "utf-8")
 );
 const baremes = JSON.parse(fs.readFileSync("src/data/baremes.json", "utf-8"));
 
-// Fonction pct: convertir decimal en pourcentage formaté
+// Fonction pct: convertir decimal en pourcentage formate
 const pct = (n) => {
   const p = n * 100;
   const t = Math.floor(p * 100) / 100;
   return `${t.toFixed(2)}`;
 };
 
-// Créer les options du sélecteur
+// Creer les options du selecteur
 const options = Object.entries(departements)
   .map(([code, data]) => {
     let tauxDmto = baremes.dmto[code] || 5.81; // Fallback 5.81%
@@ -40,5 +40,5 @@ console.log("]");
 // Sauvegarder dans un fichier temporaire pour copier-coller
 const outputFile = "department-selector-options.js";
 fs.writeFileSync(outputFile, `[\n${options.join(",\n")}\n]\n`);
-console.log(`\n✅ Options générées dans ${outputFile}`);
-console.log(`📋 Total: ${options.length} départements`);
+console.log(`\n✅ Options generees dans ${outputFile}`);
+console.log(`📋 Total: ${options.length} departements`);

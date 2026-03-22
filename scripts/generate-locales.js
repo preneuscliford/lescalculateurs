@@ -16,7 +16,7 @@ function loadExistingLocales() {
 }
 
 /**
- * Liste les fichiers HTML des départements.
+ * Liste les fichiers HTML des departements.
  */
 function listDepartmentFiles() {
   const baseDir = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'departements');
@@ -25,7 +25,7 @@ function listDepartmentFiles() {
 }
 
 /**
- * Extrait le code et le nom du département depuis le contenu (H1/title)
+ * Extrait le code et le nom du departement depuis le contenu (H1/title)
  * et/ou depuis le nom de fichier.
  */
 function extractDeptInfo(html, filePath) {
@@ -41,7 +41,7 @@ function extractDeptInfo(html, filePath) {
   const h1Name = html.match(/<h1[^>]*>[\s\S]*?en\s+([^<(]+)\s*\(\d{2}\)/i);
   if (h1Name) name = h1Name[1].trim();
 
-  const titleName = !name && html.match(/<title>[\s\S]*?\s([A-Za-zÀ-ÿ'\-\s]+)\s*\(\d{2}\)/);
+  const titleName = !name && html.match(/<title>[\s\S]*?\s([A-Za-zA-ÿ'\-\s]+)\s*\(\d{2}\)/);
   if (titleName) name = titleName[1].trim();
 
   if (!code) {
@@ -49,41 +49,41 @@ function extractDeptInfo(html, filePath) {
     code = fileCode ? fileCode[1] : null;
   }
 
-  if (!name) name = 'Département';
+  if (!name) name = 'Departement';
 
   return { code, name };
 }
 
 /**
- * Construit une entrée locale par défaut pour un département.
+ * Construit une entree locale par defaut pour un departement.
  */
 function makeDefaultLocale(name) {
   return {
     city: name,
-    ancienRate: '≈ 7–8%',
-    neufRate: '≈ 2–3%',
-    ancienAmount: '≈ 14 000–15 000 €',
-    neufAmount: '≈ 4 000–5 000 €',
-    note: 'Montants indicatifs, précisez avec le simulateur (barème 2025).',
+    ancienRate: '≈ 7-8%',
+    neufRate: '≈ 2-3%',
+    ancienAmount: '≈ 14 000-15 000 €',
+    neufAmount: '≈ 4 000-5 000 €',
+    note: 'Montants indicatifs, precisez avec le simulateur (bareme 2025).',
     faq: [
       {
-        q: `Quel est le montant des frais de notaire pour une maison à ${name} ?`,
-        a: `Ancien: ${'≈ 7–8%'}, Neuf: ${'≈ 2–3%'}. Pour 200 000 €: ancien ${'≈ 14 000–15 000 €'}, neuf ${'≈ 4 000–5 000 €'}.`
+        q: `Quel est le montant des frais de notaire pour une maison a ${name} ?`,
+        a: `Ancien: ${'≈ 7-8%'}, Neuf: ${'≈ 2-3%'}. Pour 200 000 €: ancien ${'≈ 14 000-15 000 €'}, neuf ${'≈ 4 000-5 000 €'}.`
       },
       {
         q: `Frais de notaire en ${name} : pourquoi varient‑ils ?`,
-        a: `Ils dépendent des droits d'enregistrement, des formalités et des débours locaux. Utilisez le simulateur pour un chiffrage précis.`
+        a: `Ils dependent des droits d'enregistrement, des formalites et des debours locaux. Utilisez le simulateur pour un chiffrage precis.`
       },
       {
-        q: `Comment réduire mes frais de notaire en ${name} ?`,
-        a: `Acheter en neuf (VEFA) réduit les droits. Déduire le mobilier du prix et comparer les scénarios dans le simulateur.`
+        q: `Comment reduire mes frais de notaire en ${name} ?`,
+        a: `Acheter en neuf (VEFA) reduit les droits. Deduire le mobilier du prix et comparer les scenarios dans le simulateur.`
       }
     ]
   };
 }
 
 /**
- * Écrit le JSON fusionné sur disque.
+ * Ecrit le JSON fusionne sur disque.
  */
 function writeLocales(locales) {
   const p = path.resolve(process.cwd(), 'scripts', 'locales.json');
@@ -91,7 +91,7 @@ function writeLocales(locales) {
 }
 
 /**
- * Point d’entrée: génère des locales pour tous les départements présents.
+ * Point d'entree: genere des locales pour tous les departements presents.
  */
 function main() {
   const existing = loadExistingLocales();
@@ -105,14 +105,14 @@ function main() {
     if (!locales[code]) {
       locales[code] = makeDefaultLocale(name);
     } else {
-      // Compléter les champs manquants pour les entrées existantes
+      // Completer les champs manquants pour les entrees existantes
       const def = makeDefaultLocale(name);
       locales[code] = { ...def, ...locales[code] };
     }
   }
 
   writeLocales(locales);
-  console.log(`Locales générées: ${Object.keys(locales).length} codes couverts.`);
+  console.log(`Locales generees: ${Object.keys(locales).length} codes couverts.`);
 }
 
 main();

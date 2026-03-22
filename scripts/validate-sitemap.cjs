@@ -3,9 +3,9 @@
  * Validation du sitemap.xml avec correction automatique:
  * - Domaine: https://www.lescalculateurs.fr obligatoire dans <loc>
  * - Pas d'extension .html dans <loc>
- * - Échappement XML correct dans <image:loc> (aucun & non échappé)
- * - Présence de xmlns:image sur <urlset>
- * - AUTO-CORRECTION des problèmes détectés
+ * - Echappement XML correct dans <image:loc> (aucun & non echappe)
+ * - Presence de xmlns:image sur <urlset>
+ * - AUTO-CORRECTION des problemes detectes
  */
 const fs = require("fs");
 const path = require("path");
@@ -32,7 +32,7 @@ function main() {
         /<urlset/,
         '<urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
       );
-      fixes.push("✅ xmlns:image ajouté");
+      fixes.push("✅ xmlns:image ajoute");
     }
   }
 
@@ -56,7 +56,7 @@ function main() {
       "https://www.lescalculateurs.fr/"
     );
 
-    fixes.push(`✅ Domaines corrigés: ${badDomain.length} URLs`);
+    fixes.push(`✅ Domaines corriges: ${badDomain.length} URLs`);
   }
 
   // 3) Pas d'extension .html dans loc + correction
@@ -64,41 +64,41 @@ function main() {
   const hasHtml = locs.filter((u) => /\.html\b/i.test(u));
   if (hasHtml.length) {
     ok = false;
-    issues.push(`Extensions .html trouvées dans ${hasHtml.length} <loc>`);
+    issues.push(`Extensions .html trouvees dans ${hasHtml.length} <loc>`);
 
     // Corriger: supprimer .html des <loc>
     xml = xml.replace(/<loc>([^<]+)\.html<\/loc>/g, "<loc>$1</loc>");
 
-    fixes.push(`✅ Extensions .html supprimées: ${hasHtml.length} URLs`);
+    fixes.push(`✅ Extensions .html supprimees: ${hasHtml.length} URLs`);
   }
 
-  // 4) Échappement des & dans les image:loc
+  // 4) Echappement des & dans les image:loc
   const imgLocs = [...xml.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map(
     (m) => m[1]
   );
   const badAmp = imgLocs.filter((u) => /&(?!amp;|lt;|gt;|quot;|apos;)/.test(u));
   if (badAmp.length) {
     ok = false;
-    issues.push(`Caractères & non échappés dans ${badAmp.length} <image:loc>`);
+    issues.push(`Caracteres & non echappes dans ${badAmp.length} <image:loc>`);
 
-    // Corriger: échapper les & non échappés
+    // Corriger: echapper les & non echappes
     xml = xml.replace(
       /<image:loc>([^<]*?)&(?!amp;|lt;|gt;|quot;|apos;)([^<]*?)<\/image:loc>/g,
       "<image:loc>$1&amp;$2</image:loc>"
     );
 
-    fixes.push(`✅ Caractères & échappés: ${badAmp.length} URLs`);
+    fixes.push(`✅ Caracteres & echappes: ${badAmp.length} URLs`);
   }
 
-  // Si corrections ont été faites
+  // Si corrections ont ete faites
   if (fixes.length > 0) {
     // Sauvegarder backup
     fs.writeFileSync(backupPath, originalXml, "utf8");
-    console.log("📁 Backup créé: sitemap.xml.backup\n");
+    console.log("📁 Backup cree: sitemap.xml.backup\n");
 
-    // Sauvegarder fichier corrigé
+    // Sauvegarder fichier corrige
     fs.writeFileSync(p, xml, "utf8");
-    console.log("🔧 Corrections appliquées:");
+    console.log("🔧 Corrections appliquees:");
     fixes.forEach((f) => console.log("   " + f));
   }
 
@@ -128,7 +128,7 @@ function main() {
     console.log("✨ Sitemap.xml est maintenant valide!");
     console.log("");
   } else {
-    console.log("⚠️ Problèmes subsistants détectés");
+    console.log("⚠️ Problemes subsistants detectes");
     if (finalHtml.length > 0)
       console.log(`   ${finalHtml.length} URLs avec .html`);
     if (finalBadDomain.length > 0)

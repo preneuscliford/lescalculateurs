@@ -16,7 +16,7 @@ function loadCfg() {
       cfg = JSON.parse(raw);
     } catch {}
   }
-  // Optionnel: fusion partielle avec baremes.generated.json (priorité overrides)
+  // Optionnel: fusion partielle avec baremes.generated.json (priorite overrides)
   if (fs.existsSync(genP)) {
     try {
       const raw2 = fs.readFileSync(genP, "utf8");
@@ -28,7 +28,7 @@ function loadCfg() {
       const dmDept = b?.notaire?.droits_mutation?.ancien?.par_departement || {};
       if (!cfg) cfg = {};
       cfg.dmto_overrides = dmOverrides;
-      cfg.dmto_default = 0.0632; // Taux DMTO majoré 2026 (87 départements)
+      cfg.dmto_default = 0.0632; // Taux DMTO majore 2026 (87 departements)
       cfg.dmto_neuf_default = 0.00715;
       cfg.dmto_departmental = dmDept;
     } catch {}
@@ -132,7 +132,7 @@ function updateDmtoText(html, code, cfg) {
       : (cfg.dmto && cfg.dmto[code]) ||
         (cfg.dmto_overrides && Number(cfg.dmto_overrides[code]) * 100);
   if (val == null) return html;
-  // Remplace la mention des droits d'enregistrement dans un encadré repères
+  // Remplace la mention des droits d'enregistrement dans un encadre reperes
   html = html.replace(
     /(droits d'enregistrement[^<]*?)<strong>[^<%]+%<\/strong>/i,
     `$1<strong>≈ ${String(val).replace(".", ",")}&nbsp;%</strong>`,
@@ -164,16 +164,16 @@ function updateExampleTable(html, code, cfg) {
     /(Neuf[^\n]*?\s*<\/td>\s*<td[^>]*>[^<]+<\/td>\s*<td[^>]*>)[^<€]+€/,
     `$1${euro(N.total)}`,
   );
-  // Éventuelle ligne d'économie
+  // Eventuelle ligne d'economie
   html = html.replace(
-    /(Économie[^<]+:\s*<span[^>]*>)[^<€]+€(<\/span>)/,
+    /(Economie[^<]+:\s*<span[^>]*>)[^<€]+€(<\/span>)/,
     `$1${euro(A.total - N.total)}$2`,
   );
   return html;
 }
 
 function updateSimulationBlock(html, code, cfg) {
-  // Cherche "Prix du bien (ancien)" puis met à jour "Frais de notaire (barème officiel)"
+  // Cherche "Prix du bien (ancien)" puis met a jour "Frais de notaire (bareme officiel)"
   const m = html.match(
     /Prix du bien\s*\(ancien\)[\s\S]*?<span class="font-bold">([^<]+)€<\/span>/i,
   );
@@ -182,7 +182,7 @@ function updateSimulationBlock(html, code, cfg) {
   if (!price) return html;
   const A = computeAll(code, price, "ancien", cfg);
   html = html.replace(
-    /(Frais de notaire\s*\(barème officiel\)[\s\S]*?<span class="font-bold [^"]*">)[^<€]+€(<\/span>)/i,
+    /(Frais de notaire\s*\(bareme officiel\)[\s\S]*?<span class="font-bold [^"]*">)[^<€]+€(<\/span>)/i,
     `$1${euro(A.total)}$2`,
   );
   return html;
@@ -196,7 +196,7 @@ function processFile(file, cfg) {
   html = updateDmtoText(html, code, cfg);
   html = updateExampleTable(html, code, cfg);
   html = updateSimulationBlock(html, code, cfg);
-  // Ajout d'une note source si le DMTO du département est spécifique (≠ 5,80 %)
+  // Ajout d'une note source si le DMTO du departement est specifique (≠ 5,80 %)
   const dmto =
     (cfg.dmto && cfg.dmto[code]) ||
     (cfg.dmto_overrides && Number(cfg.dmto_overrides[code]) * 100);
@@ -205,7 +205,7 @@ function processFile(file, cfg) {
     const perDept = (cfg.dmto_sources_par_departement || {})[code];
     if (perDept && perDept.url) {
       const dateTxt = perDept.date ? ` (date d'effet ${perDept.date})` : "";
-      sourceLinks = `<a href="${perDept.url}" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">Source départementale${dateTxt}</a>`;
+      sourceLinks = `<a href="${perDept.url}" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">Source departementale${dateTxt}</a>`;
     } else {
       sourceLinks = Array.isArray(cfg.sources)
         ? cfg.sources

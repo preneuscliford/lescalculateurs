@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * Nettoie un lot de pages départementales (erreurs UTF-8 visibles + placeholders).
+ * Nettoie un lot de pages departementales (erreurs UTF-8 visibles + placeholders).
  */
 
 import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Retourne le nom de fichier HTML d'une page "frais-notaire-XX.html" à partir d'un code département.
+ * Retourne le nom de fichier HTML d'une page "frais-notaire-XX.html" a partir d'un code departement.
  */
 function toDepartementFileName(code) {
   const normalized = String(code).trim()
@@ -19,7 +19,7 @@ function toDepartementFileName(code) {
 }
 
 /**
- * Applique des corrections d'encodage visibles (emojis remplacés par ??/?, flèches, séparateurs €).
+ * Applique des corrections d'encodage visibles (emojis remplaces par ??/?, fleches, separateurs €).
  */
 function fixVisibleUtf8Artifacts(content) {
   let fixed = content
@@ -41,21 +41,21 @@ function fixVisibleUtf8Artifacts(content) {
   fixed = fixed.replace(/^\s*\?\?\s+/gm, (m) => m.replace('??', '💰').replace('💰 ', '💰 '))
   fixed = fixed.replace(/^\s*\?\?\?\s+/gm, (m) => m.replace('???', '🏘️').replace('🏘️ ', '🏘️ '))
 
-  fixed = fixed.replace(/<h2([^>]*)>\s*\?\?\s*Marché immobilier/gi, '<h2$1>📈 Marché immobilier')
+  fixed = fixed.replace(/<h2([^>]*)>\s*\?\?\s*Marche immobilier/gi, '<h2$1>📈 Marche immobilier')
   fixed = fixed.replace(/<h2([^>]*)>\s*\?\?\s*Simulation/gi, '<h2$1>📊 Simulation')
   fixed = fixed.replace(/<h2([^>]*)>\s*\?\?\s*Exemple/gi, '<h2$1>📊 Exemple')
   fixed = fixed.replace(/<h2([^>]*)>\s*\?\?\s*Conseils/gi, '<h2$1>💡 Conseils')
   fixed = fixed.replace(/<h2([^>]*)>\s*\?\?\s*Astuces/gi, '<h2$1>💡 Astuces')
 
   fixed = fixed.replace(/<strong>\?\?\?\s*(Sp|Fo)/g, '<strong>🏘️ $1')
-  fixed = fixed.replace(/<strong>\?\?\?\s*(Spécificité|Focus)\b/gi, '<strong>🏘️ $1')
-  fixed = fixed.replace(/<strong>\?\?\s*Bon à savoir\b/gi, '<strong>💡 Bon à savoir')
-  fixed = fixed.replace(/<strong>\?\?\s*Bon\s+à\s+savoir\b/gi, '<strong>💡 Bon à savoir')
-  fixed = fixed.replace(/<strong>\?\?\s*Bon\s+savoir\b/gi, '<strong>💡 Bon à savoir')
-  fixed = fixed.replace(/<strong>\?\?\s*À noter\b/gi, '<strong>💡 À noter')
+  fixed = fixed.replace(/<strong>\?\?\?\s*(Specificite|Focus)\b/gi, '<strong>🏘️ $1')
+  fixed = fixed.replace(/<strong>\?\?\s*Bon a savoir\b/gi, '<strong>💡 Bon a savoir')
+  fixed = fixed.replace(/<strong>\?\?\s*Bon\s+a\s+savoir\b/gi, '<strong>💡 Bon a savoir')
+  fixed = fixed.replace(/<strong>\?\?\s*Bon\s+savoir\b/gi, '<strong>💡 Bon a savoir')
+  fixed = fixed.replace(/<strong>\?\?\s*A noter\b/gi, '<strong>💡 A noter')
   fixed = fixed.replace(/<strong>\?\?\s*Conseil\b/gi, '<strong>💡 Conseil')
   fixed = fixed.replace(/<strong>\?\?\s*Sources\b/gi, '<strong>📊 Sources')
-  fixed = fixed.replace(/<strong>\?\?\s*Méthodologie\b/gi, '<strong>📊 Méthodologie')
+  fixed = fixed.replace(/<strong>\?\?\s*Methodologie\b/gi, '<strong>📊 Methodologie')
   fixed = fixed.replace(/<strong>\?\?\s*Astuce\b/gi, '<strong>💡 Astuce')
 
   fixed = fixed.replace(/>\?\?\s*Ancien\b/g, '>🏡 Ancien')
@@ -63,18 +63,18 @@ function fixVisibleUtf8Artifacts(content) {
 
   fixed = fixed.replace(/<p class="text-gray-700">\?\?\s*<strong>Prix/gi, '<p class="text-gray-700">📈 <strong>Prix')
   fixed = fixed.replace(/<p class="text-gray-700">\?\?\s*Volume/gi, '<p class="text-gray-700">📊 Volume')
-  fixed = fixed.replace(/<p class="text-gray-700">\?\?\s*Marché/gi, '<p class="text-gray-700">🎯 Marché')
+  fixed = fixed.replace(/<p class="text-gray-700">\?\?\s*Marche/gi, '<p class="text-gray-700">🎯 Marche')
 
   fixed = fixed.replace(/>\\?\?\s*Voir aussi</g, '>🔎 Voir aussi</')
   fixed = fixed.replace(/>\?\?\s*Voir aussi</g, '>🔎 Voir aussi</')
   fixed = fixed.replace(/>\?\?\s*Tarifs Officiels/gi, '>💼 Tarifs Officiels')
-  fixed = fixed.replace(/>\?\?\s*Hypothèses/gi, '>⚠️ Hypothèses')
-  fixed = fixed.replace(/>\?\?\s*Écarts possibles/gi, '>⚠️ Écarts possibles')
+  fixed = fixed.replace(/>\?\?\s*Hypotheses/gi, '>⚠️ Hypotheses')
+  fixed = fixed.replace(/>\?\?\s*Ecarts possibles/gi, '>⚠️ Ecarts possibles')
   fixed = fixed.replace(/>\?\?\s*Pour un devis exact/gi, '>👉 Pour un devis exact')
-  fixed = fixed.replace(/>\?\?\s*Sources et références/gi, '>📚 Sources et références')
+  fixed = fixed.replace(/>\?\?\s*Sources et references/gi, '>📚 Sources et references')
 
-  fixed = fixed.replace(/>\?\s*Questions fréquentes</g, '>❓ Questions fréquentes</')
-  fixed = fixed.replace(/\?\s*Calcul instantané\s*\?\s*100% gratuit\s*\?\s*Export PDF disponible/g, '✓ Calcul instantané  ✓ 100% gratuit  ✓ Export PDF disponible')
+  fixed = fixed.replace(/>\?\s*Questions frequentes</g, '>❓ Questions frequentes</')
+  fixed = fixed.replace(/\?\s*Calcul instantane\s*\?\s*100% gratuit\s*\?\s*Export PDF disponible/g, '✓ Calcul instantane  ✓ 100% gratuit  ✓ Export PDF disponible')
 
   fixed = fixed.replace(/>\\?\s*Haute-Savoie\s*\(/g, '>← Haute-Savoie (')
   fixed = fixed.replace(/\)\s*\\?\s*<\/a/g, ') →</a')
@@ -91,85 +91,85 @@ function fixVisibleUtf8Artifacts(content) {
 function applyYmyLSafeEdits(content) {
   let fixed = content
 
-  fixed = fixed.replace(/montant calcul[ée]?\s+selon\s+votre\s+situation/gi, 'à estimer via le calculateur')
-  fixed = fixed.replace(/montant calcul\s+selon\s+votre\s+situation/gi, 'à estimer via le calculateur')
-  fixed = fixed.replace(/montant calcul\s+selon votre situation/gi, 'à estimer via le calculateur')
-  fixed = fixed.replace(/montant calculé selon votre situation/gi, 'à estimer via le calculateur')
-  fixed = fixed.replace(/montant calcul\s+selon[^<]*/gi, 'à estimer via le calculateur')
-  fixed = fixed.replace(/<strong>\s*montant calcul[^<]*<\/strong>/gi, '<strong>à estimer via le calculateur</strong>')
+  fixed = fixed.replace(/montant calcul[ee]?\s+selon\s+votre\s+situation/gi, 'a estimer via le calculateur')
+  fixed = fixed.replace(/montant calcul\s+selon\s+votre\s+situation/gi, 'a estimer via le calculateur')
+  fixed = fixed.replace(/montant calcul\s+selon votre situation/gi, 'a estimer via le calculateur')
+  fixed = fixed.replace(/montant calcule selon votre situation/gi, 'a estimer via le calculateur')
+  fixed = fixed.replace(/montant calcul\s+selon[^<]*/gi, 'a estimer via le calculateur')
+  fixed = fixed.replace(/<strong>\s*montant calcul[^<]*<\/strong>/gi, '<strong>a estimer via le calculateur</strong>')
 
-  fixed = fixed.replace(/montant calculé selon votre situation/g, 'à estimer via le calculateur')
-  fixed = fixed.replace(/montant calcul selon votre situation/g, 'à estimer via le calculateur')
-  fixed = fixed.replace(/montant calcul selon votre situation/g, 'à estimer via le calculateur')
+  fixed = fixed.replace(/montant calcule selon votre situation/g, 'a estimer via le calculateur')
+  fixed = fixed.replace(/montant calcul selon votre situation/g, 'a estimer via le calculateur')
+  fixed = fixed.replace(/montant calcul selon votre situation/g, 'a estimer via le calculateur')
 
   fixed = fixed.replace(
-    /s[’']établit à environ\s*<strong>des prix variables selon la commune, le quartier et le type de bien<\/strong>/g,
+    /s['']etablit a environ\s*<strong>des prix variables selon la commune, le quartier et le type de bien<\/strong>/g,
     'varient selon la commune, le quartier et le type de bien'
   )
 
-  fixed = fixed.replace(/rendements\s+de\s+4-5%[^.]*\./gi, 'cela dépend du loyer, du prix, des charges, de la vacance et de la fiscalité.\n')
-  fixed = fixed.replace(/rendements\s+attractifs\s*\(4-5\?% net\)/gi, 'une rentabilité à évaluer au cas par cas')
-  fixed = fixed.replace(/tr[eè]s rentable[^.]*\./gi, 'cela dépend notamment du loyer, du prix d’acquisition, des charges et de la demande locale.\n')
+  fixed = fixed.replace(/rendements\s+de\s+4-5%[^.]*\./gi, 'cela depend du loyer, du prix, des charges, de la vacance et de la fiscalite.\n')
+  fixed = fixed.replace(/rendements\s+attractifs\s*\(4-5\?% net\)/gi, 'une rentabilite a evaluer au cas par cas')
+  fixed = fixed.replace(/tr[ee]s rentable[^.]*\./gi, 'cela depend notamment du loyer, du prix d'acquisition, des charges et de la demande locale.\n')
 
   fixed = fixed.replace(
-    /Pour un bien de\s+200\s*000\s*,\s*l[’']économie peut atteindre[^.]*\./gi,
-    "Selon le type de bien, l’écart de frais entre l’ancien et le neuf (VEFA) peut être significatif ; utilisez le simulateur pour une estimation.\n"
+    /Pour un bien de\s+200\s*000\s*,\s*l['']economie peut atteindre[^.]*\./gi,
+    "Selon le type de bien, l'ecart de frais entre l'ancien et le neuf (VEFA) peut etre significatif ; utilisez le simulateur pour une estimation.\n"
   )
 
-  fixed = fixed.replace(/Entre\s*4%\s*\(neuf\)\s*et\s*7,?\d+%\s*\(ancien\)[^.]*/gi, 'Ancien : environ 7 à 8 % • Neuf (VEFA) : environ 2 à 3 %')
-  fixed = fixed.replace(/environ\s*7,?\d+%\s*du prix d'achat[^.]*ancien[^.]*\./gi, 'Ancien : environ 7 à 8 % du prix d’achat ; Neuf (VEFA) : environ 2 à 3 %.\n')
+  fixed = fixed.replace(/Entre\s*4%\s*\(neuf\)\s*et\s*7,?\d+%\s*\(ancien\)[^.]*/gi, 'Ancien : environ 7 a 8 % • Neuf (VEFA) : environ 2 a 3 %')
+  fixed = fixed.replace(/environ\s*7,?\d+%\s*du prix d'achat[^.]*ancien[^.]*\./gi, 'Ancien : environ 7 a 8 % du prix d'achat ; Neuf (VEFA) : environ 2 a 3 %.\n')
 
-  fixed = fixed.replace(/exon[ée]rations fiscales partielles/gi, 'dispositifs pouvant varier selon les situations et les communes')
-  fixed = fixed.replace(/conventions fiscales franco-suisses[^.]*\./gi, 'Certaines situations peuvent modifier la fiscalité applicable ; vérifiez avec un notaire ou l’administration compétente.\n')
+  fixed = fixed.replace(/exon[ee]rations fiscales partielles/gi, 'dispositifs pouvant varier selon les situations et les communes')
+  fixed = fixed.replace(/conventions fiscales franco-suisses[^.]*\./gi, 'Certaines situations peuvent modifier la fiscalite applicable ; verifiez avec un notaire ou l'administration competente.\n')
 
   return fixed
 }
 
 /**
- * Corrige quelques fautes d'encodage fréquentes (accents/ligatures) sans modifier la structure.
+ * Corrige quelques fautes d'encodage frequentes (accents/ligatures) sans modifier la structure.
  */
 function fixCommonFrenchTypos(content) {
   const replacements = [
-    ['instantanment', 'instantanément'],
-    ['instantanment', 'instantanément'],
-    ['barme', 'barème'],
-    ['barmes', 'barèmes'],
-    ['Barme', 'Barème'],
-    ['intgr', 'intégré'],
-    ['reprsentent', 'représentent'],
-    ['tudes', 'études'],
-    ['O trouver', 'Où trouver'],
-    ['Chteauroux', 'Châteauroux'],
-    ['Besanon', 'Besançon'],
-    ['Montbliard', 'Montbéliard'],
-    ["Ardche", 'Ardèche'],
-    ["Gorges de l'Ardche", "Gorges de l'Ardèche"],
-    ['Dcouvrez', 'Découvrez'],
-    ['rgionales', 'régionales'],
-    ['Rhne', 'Rhône'],
-    ['indiqus', 'indiqués'],
-    ['indiqus', 'indiqués'],
+    ['instantanment', 'instantanement'],
+    ['instantanment', 'instantanement'],
+    ['barme', 'bareme'],
+    ['barmes', 'baremes'],
+    ['Barme', 'Bareme'],
+    ['intgr', 'integre'],
+    ['reprsentent', 'representent'],
+    ['tudes', 'etudes'],
+    ['O trouver', 'Ou trouver'],
+    ['Chteauroux', 'Chateauroux'],
+    ['Besanon', 'Besancon'],
+    ['Montbliard', 'Montbeliard'],
+    ["Ardche", 'Ardeche'],
+    ["Gorges de l'Ardche", "Gorges de l'Ardeche"],
+    ['Dcouvrez', 'Decouvrez'],
+    ['rgionales', 'regionales'],
+    ['Rhne', 'Rhone'],
+    ['indiqus', 'indiques'],
+    ['indiqus', 'indiques'],
     ['titre', 'titre'],
-    ['barmes', 'barèmes'],
-    ['habilit', 'habilité'],
-    ['tablir', 'établir'],
-    ['dfinitif', 'définitif'],
-    ['lacte', "l’acte"],
-    ['carts', 'écarts'],
-    ['Hypothses', 'Hypothèses'],
-    ['rfrences', 'références'],
-    ['rdig', 'rédigé'],
-    ['indpendant', 'indépendant'],
-    ['immobilire', 'immobilière'],
-    ['Suprieur', 'Supérieur'],
-    ['amnagement', 'aménagement'],
-    ['rnnovation', 'rénovation'],
-    ['coles', 'écoles'],
-    ['Idale', 'Idéal'],
-    ['Trs', 'Très'],
-    ['grce', 'grâce'],
-    ['tudiant', 'étudiant'],
-    ['prvoir', 'prévoir']
+    ['barmes', 'baremes'],
+    ['habilit', 'habilite'],
+    ['tablir', 'etablir'],
+    ['dfinitif', 'definitif'],
+    ['lacte', "l'acte"],
+    ['carts', 'ecarts'],
+    ['Hypothses', 'Hypotheses'],
+    ['rfrences', 'references'],
+    ['rdig', 'redige'],
+    ['indpendant', 'independant'],
+    ['immobilire', 'immobiliere'],
+    ['Suprieur', 'Superieur'],
+    ['amnagement', 'amenagement'],
+    ['rnnovation', 'renovation'],
+    ['coles', 'ecoles'],
+    ['Idale', 'Ideal'],
+    ['Trs', 'Tres'],
+    ['grce', 'grace'],
+    ['tudiant', 'etudiant'],
+    ['prvoir', 'prevoir']
   ]
 
   let fixed = content
@@ -180,7 +180,7 @@ function fixCommonFrenchTypos(content) {
 }
 
 /**
- * Remplace les identifiants AdSense corrompus par la valeur utilisée partout dans le repo.
+ * Remplace les identifiants AdSense corrompus par la valeur utilisee partout dans le repo.
  */
 function fixAdsenseAccount(content) {
   return content.replace(
@@ -190,7 +190,7 @@ function fixAdsenseAccount(content) {
 }
 
 /**
- * Traite un fichier spécifique (écrit un backup uniquement si le fichier change).
+ * Traite un fichier specifique (ecrit un backup uniquement si le fichier change).
  */
 function processFile(filePath) {
   try {
@@ -218,7 +218,7 @@ function processFile(filePath) {
 }
 
 /**
- * Résout la liste de fichiers à traiter.
+ * Resout la liste de fichiers a traiter.
  */
 function resolveTargetsFromArgs(args) {
   const raw = args.map((a) => String(a).trim()).filter(Boolean)
@@ -239,7 +239,7 @@ function resolveTargetsFromArgs(args) {
 }
 
 /**
- * Point d'entrée principal.
+ * Point d'entree principal.
  */
 function main() {
   const targetDir = path.resolve(process.cwd(), 'src/pages/blog/departements')
@@ -251,7 +251,7 @@ function main() {
 
   const targets = resolveTargetsFromArgs(process.argv.slice(2))
   if (targets.length === 0) {
-    console.error('Usage: node scripts/fix-final-emoji-issues.js <liste de départements ou fichiers>')
+    console.error('Usage: node scripts/fix-final-emoji-issues.js <liste de departements ou fichiers>')
     console.error('Exemple: node scripts/fix-final-emoji-issues.js 44 36 25 07 52')
     process.exit(1)
   }

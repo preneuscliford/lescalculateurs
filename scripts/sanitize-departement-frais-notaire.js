@@ -13,39 +13,39 @@ const DEPT_NAME_BY_CODE = new Map([
   ["04", "Alpes-de-Haute-Provence"],
   ["05", "Hautes-Alpes"],
   ["06", "Alpes-Maritimes"],
-  ["07", "Ardèche"],
+  ["07", "Ardeche"],
   ["08", "Ardennes"],
-  ["09", "Ariège"],
+  ["09", "Ariege"],
   ["10", "Aube"],
   ["11", "Aude"],
   ["12", "Aveyron"],
-  ["13", "Bouches-du-Rhône"],
+  ["13", "Bouches-du-Rhone"],
   ["14", "Calvados"],
   ["15", "Cantal"],
   ["16", "Charente"],
   ["17", "Charente-Maritime"],
   ["18", "Cher"],
-  ["19", "Corrèze"],
+  ["19", "Correze"],
   ["2A", "Corse-du-Sud"],
   ["2B", "Haute-Corse"],
-  ["21", "Côte-d'Or"],
-  ["22", "Côtes-d'Armor"],
+  ["21", "Cote-d'Or"],
+  ["22", "Cotes-d'Armor"],
   ["23", "Creuse"],
   ["24", "Dordogne"],
   ["25", "Doubs"],
-  ["26", "Drôme"],
+  ["26", "Drome"],
   ["27", "Eure"],
   ["28", "Eure-et-Loir"],
-  ["29", "Finistère"],
+  ["29", "Finistere"],
   ["30", "Gard"],
   ["31", "Haute-Garonne"],
   ["32", "Gers"],
   ["33", "Gironde"],
-  ["34", "Hérault"],
+  ["34", "Herault"],
   ["35", "Ille-et-Vilaine"],
   ["36", "Indre"],
   ["37", "Indre-et-Loire"],
-  ["38", "Isère"],
+  ["38", "Isere"],
   ["39", "Jura"],
   ["40", "Landes"],
   ["41", "Loir-et-Cher"],
@@ -55,7 +55,7 @@ const DEPT_NAME_BY_CODE = new Map([
   ["45", "Loiret"],
   ["46", "Lot"],
   ["47", "Lot-et-Garonne"],
-  ["48", "Lozère"],
+  ["48", "Lozere"],
   ["49", "Maine-et-Loire"],
   ["50", "Manche"],
   ["51", "Marne"],
@@ -65,20 +65,20 @@ const DEPT_NAME_BY_CODE = new Map([
   ["55", "Meuse"],
   ["56", "Morbihan"],
   ["57", "Moselle"],
-  ["58", "Nièvre"],
+  ["58", "Nievre"],
   ["59", "Nord"],
   ["60", "Oise"],
   ["61", "Orne"],
   ["62", "Pas-de-Calais"],
-  ["63", "Puy-de-Dôme"],
-  ["64", "Pyrénées-Atlantiques"],
-  ["65", "Hautes-Pyrénées"],
-  ["66", "Pyrénées-Orientales"],
+  ["63", "Puy-de-Dome"],
+  ["64", "Pyrenees-Atlantiques"],
+  ["65", "Hautes-Pyrenees"],
+  ["66", "Pyrenees-Orientales"],
   ["67", "Bas-Rhin"],
   ["68", "Haut-Rhin"],
-  ["69", "Rhône"],
-  ["70", "Haute-Saône"],
-  ["71", "Saône-et-Loire"],
+  ["69", "Rhone"],
+  ["70", "Haute-Saone"],
+  ["71", "Saone-et-Loire"],
   ["72", "Sarthe"],
   ["73", "Savoie"],
   ["74", "Haute-Savoie"],
@@ -86,13 +86,13 @@ const DEPT_NAME_BY_CODE = new Map([
   ["76", "Seine-Maritime"],
   ["77", "Seine-et-Marne"],
   ["78", "Yvelines"],
-  ["79", "Deux-Sèvres"],
+  ["79", "Deux-Sevres"],
   ["80", "Somme"],
   ["81", "Tarn"],
   ["82", "Tarn-et-Garonne"],
   ["83", "Var"],
   ["84", "Vaucluse"],
-  ["85", "Vendée"],
+  ["85", "Vendee"],
   ["86", "Vienne"],
   ["87", "Haute-Vienne"],
   ["88", "Vosges"],
@@ -106,7 +106,7 @@ const DEPT_NAME_BY_CODE = new Map([
   ["971", "Guadeloupe"],
   ["972", "Martinique"],
   ["973", "Guyane"],
-  ["974", "La Réunion"],
+  ["974", "La Reunion"],
   ["975", "Saint-Pierre-et-Miquelon"],
   ["976", "Mayotte"],
 ]);
@@ -175,9 +175,9 @@ const HEADER_WITH_LOGO = `<header class="bg-white shadow-sm border-b border-gray
 
 function computeTitleForDept(depNom, depCode) {
   const candidates = [
-    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) – Simulation gratuite`,
-    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) – Calcul gratuit`,
-    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) – Simu gratuite`,
+    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) - Simulation gratuite`,
+    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) - Calcul gratuit`,
+    `Frais de notaire ${SEO_YEAR} ${depNom} (${depCode}) - Simu gratuite`,
   ];
   return (
     candidates.find((t) => t.length <= 60) ||
@@ -186,13 +186,13 @@ function computeTitleForDept(depNom, depCode) {
 }
 
 function getDansExpression(depNom, depCode) {
-  if (depCode === "75") return "à Paris";
-  if (depNom === "Mayotte") return "à Mayotte";
-  if (depNom === "La Réunion") return "à La Réunion";
+  if (depCode === "75") return "a Paris";
+  if (depNom === "Mayotte") return "a Mayotte";
+  if (depNom === "La Reunion") return "a La Reunion";
   const a = getArticleDefini(depNom);
   if (a === "les ") return `dans les ${depNom}`;
   if (a === "le ") return `dans le ${depNom}`;
-  if (a === "l'") return `dans l’${depNom}`;
+  if (a === "l'") return `dans l'${depNom}`;
   return `dans la ${depNom}`;
 }
 
@@ -269,24 +269,24 @@ function ensureLogoHeader(html) {
 }
 
 const PROBLEM_PATTERNS = [
-  /�/,
+  /?/,
   /Ã./,
   /\?\?/,
   /\bEn Paris\b/i,
   /\bEn Hauts-de-Seine\b/i,
-  /\bDans\s+(?:du|de\s+la|de\s+l[’']|de)\b/i,
-  /\bDans\s+(?:la|le|les|de|du|des)\s+l[’']/i,
-  /\bDans\s+l[’'][A-ZÉÈÀÂÊÎÔÛÄËÏÖÜÇ]/i,
+  /\bDans\s+(?:du|de\s+la|de\s+l['']|de)\b/i,
+  /\bDans\s+(?:la|le|les|de|du|des)\s+l['']/i,
+  /\bDans\s+l[''][A-ZEÈAÊÎÔÛÄËÏÖÜÇ]/i,
   /\bSource:/i,
   /\bSources:/i,
-  /\bbarèmes:/i,
-  /\b7\s*à\s*8\s*%/i,
+  /\bbaremes:/i,
+  /\b7\s*a\s*8\s*%/i,
   /%%/,
   /%\s*%/,
-  /l['’]écart peut représenter l['’]écart/i,
-  /é{2,}conomie/i,
-  /l'é{2,}conomie/i,
-  /[A-Za-zÀ-ÿ][ \t\u00a0\u202f]{2,}[A-Za-zÀ-ÿ]/,
+  /l['']ecart peut representer l['']ecart/i,
+  /e{2,}conomie/i,
+  /l'e{2,}conomie/i,
+  /[A-Za-zA-ÿ][ \t\u00a0\u202f]{2,}[A-Za-zA-ÿ]/,
   /\bdpartemental\b/i,
   /\bdpartement\b/i,
   /\bdpartements\b/i,
@@ -296,7 +296,7 @@ const PROBLEM_PATTERNS = [
   /\bcot\b/i,
   /\blannuaire\b/i,
   /<\/\/h3>/i,
-  /montant calculé selon votre situation/i,
+  /montant calcule selon votre situation/i,
   /\b6,6\s*%/i,
   /\b4\s*%/i,
   /200\s*000\s*€/i,
@@ -319,14 +319,14 @@ function getArticleDefini(depNom) {
     "Hautes-Alpes",
     "Alpes-Maritimes",
     "Ardennes",
-    "Bouches-du-Rhône",
-    "Côtes-d'Armor",
+    "Bouches-du-Rhone",
+    "Cotes-d'Armor",
     "Hauts-de-Seine",
     "Landes",
-    "Pyrénées-Atlantiques",
-    "Hautes-Pyrénées",
-    "Pyrénées-Orientales",
-    "Deux-Sèvres",
+    "Pyrenees-Atlantiques",
+    "Hautes-Pyrenees",
+    "Pyrenees-Orientales",
+    "Deux-Sevres",
     "Vosges",
     "Yvelines",
   ];
@@ -339,7 +339,7 @@ function getArticleDefini(depNom) {
     "Cantal",
     "Cher",
     "Doubs",
-    "Finistère",
+    "Finistere",
     "Gard",
     "Gers",
     "Jura",
@@ -351,8 +351,8 @@ function getArticleDefini(depNom) {
     "Morbihan",
     "Nord",
     "Pas-de-Calais",
-    "Puy-de-Dôme",
-    "Rhône",
+    "Puy-de-Dome",
+    "Rhone",
     "Tarn",
     "Tarn-et-Garonne",
     "Territoire de Belfort",
@@ -363,10 +363,10 @@ function getArticleDefini(depNom) {
   ];
   if (masculinsSinguliers.includes(depNom)) return "le ";
 
-  const masculinsVoyelle = ["Hérault"];
+  const masculinsVoyelle = ["Herault"];
   if (masculinsVoyelle.includes(depNom)) return "l'";
 
-  const voyelles = ["A", "E", "I", "O", "U", "H", "Y", "Î", "É", "È", "Ê", "À"];
+  const voyelles = ["A", "E", "I", "O", "U", "H", "Y", "Î", "E", "È", "Ê", "A"];
   if (voyelles.includes(depNom.charAt(0))) return "l'";
 
   return "la ";
@@ -374,7 +374,7 @@ function getArticleDefini(depNom) {
 
 function normalizeNameForArticle(s) {
   let out = String(s || "").trim();
-  out = out.replace(/^l[’']/i, "");
+  out = out.replace(/^l['']/i, "");
   out = out.replace(/^(le|la|les)\s+/i, "");
   return out.trim();
 }
@@ -397,74 +397,74 @@ function cleanTextNodes(html) {
     t = t.replace(/%%/g, "%");
     t = t.replace(/%\s*%/g, "%");
     t = t.replace(/(\d)\s*%/g, "$1 %");
-    t = t.replace(/%\s*à\s*/g, "% à ");
+    t = t.replace(/%\s*a\s*/g, "% a ");
 
-    t = t.replace(/\bEn Paris\b/g, "À Paris");
+    t = t.replace(/\bEn Paris\b/g, "A Paris");
     t = t.replace(/\bEn Hauts-de-Seine\b/g, "Dans les Hauts-de-Seine");
-    t = t.replace(/é{2,}conomie/g, "économie");
+    t = t.replace(/e{2,}conomie/g, "economie");
 
     t = t.replace(
-      /\bDans\s+(du|de\s+la|de\s+l[’']|de)\s+([^,.;:!?\n]+)(?=[,.;:!?\n])/g,
+      /\bDans\s+(du|de\s+la|de\s+l['']|de)\s+([^,.;:!?\n]+)(?=[,.;:!?\n])/g,
       (m, _bad, name) => {
         const n = normalizeNameForArticle(name);
         if (!n) return m;
-        if (n === "Paris") return "À Paris";
-        if (n === "Mayotte") return "À Mayotte";
-        if (n === "La Réunion") return "À La Réunion";
+        if (n === "Paris") return "A Paris";
+        if (n === "Mayotte") return "A Mayotte";
+        if (n === "La Reunion") return "A La Reunion";
         const a = getArticleDefini(n);
         if (a === "le ") return `Dans le ${n}`;
         if (a === "la ") return `Dans la ${n}`;
         if (a === "les ") return `Dans les ${n}`;
-        if (a === "l'") return `Dans l’${n}`;
+        if (a === "l'") return `Dans l'${n}`;
         return `Dans ${n}`;
       }
     );
 
     t = t.replace(
-      /\bDans\s+(?:la|le|les|de|du|des)\s+l[’']([^,.;:!?\n]+)(?=[,.;:!?\n])/g,
+      /\bDans\s+(?:la|le|les|de|du|des)\s+l['']([^,.;:!?\n]+)(?=[,.;:!?\n])/g,
       (m, name) => {
         const n = normalizeNameForArticle(name);
         if (!n) return m;
-        if (n === "Paris") return "À Paris";
-        if (n === "Mayotte") return "À Mayotte";
-        if (n === "La Réunion") return "À La Réunion";
+        if (n === "Paris") return "A Paris";
+        if (n === "Mayotte") return "A Mayotte";
+        if (n === "La Reunion") return "A La Reunion";
         const a = getArticleDefini(n);
         if (a === "le ") return `Dans le ${n}`;
         if (a === "la ") return `Dans la ${n}`;
         if (a === "les ") return `Dans les ${n}`;
-        if (a === "l'") return `Dans l’${n}`;
+        if (a === "l'") return `Dans l'${n}`;
         return `Dans ${n}`;
       }
     );
 
     t = t.replace(
-      /\bDans\s+l[’']([^,.;:!?\n]+)(?=[,.;:!?\n])/g,
+      /\bDans\s+l['']([^,.;:!?\n]+)(?=[,.;:!?\n])/g,
       (m, name) => {
         const n = normalizeNameForArticle(name);
         if (!n) return m;
-        if (n === "Paris") return "À Paris";
-        if (n === "Mayotte") return "À Mayotte";
-        if (n === "La Réunion") return "À La Réunion";
+        if (n === "Paris") return "A Paris";
+        if (n === "Mayotte") return "A Mayotte";
+        if (n === "La Reunion") return "A La Reunion";
         const a = getArticleDefini(n);
         if (a === "le ") return `Dans le ${n}`;
         if (a === "la ") return `Dans la ${n}`;
         if (a === "les ") return `Dans les ${n}`;
-        if (a === "l'") return `Dans l’${n}`;
+        if (a === "l'") return `Dans l'${n}`;
         return `Dans ${n}`;
       }
     );
 
-    t = t.replace(/l['’]écart peut représenter l['’]écart/gi, "L’écart peut représenter");
+    t = t.replace(/l['']ecart peut representer l['']ecart/gi, "L'ecart peut representer");
 
-    t = t.replace(/([A-Za-zÀ-ÿ0-9])\s*:(?=\s|$)/g, "$1 :");
-    t = t.replace(/\b7\s*à\s*8\s*%/g, "7 à 9 %");
+    t = t.replace(/([A-Za-zA-ÿ0-9])\s*:(?=\s|$)/g, "$1 :");
+    t = t.replace(/\b7\s*a\s*8\s*%/g, "7 a 9 %");
 
     t = t.replace(/[ \t\u00a0\u202f]{2,}/g, " ");
     t = t.replace(/[ \t\u00a0\u202f]+([,.;!?])/g, "$1");
     t = t.replace(/([,.;:!?])[ \t\u00a0\u202f]{2,}/g, "$1 ");
 
     t = t.replace(
-      /\b(de|du|des|la|le|les|à|en|dans|sur|et|ou|pour)[ \t\u00a0\u202f]+\1\b/gi,
+      /\b(de|du|des|la|le|les|a|en|dans|sur|et|ou|pour)[ \t\u00a0\u202f]+\1\b/gi,
       "$1"
     );
 
@@ -483,84 +483,84 @@ function sanitizeGlobal(html) {
     if (depNom) out = ensureSeoHead(out, depNom, code);
   }
 
-  out = out.replace(/montant calculé selon votre situation/gi, "estimer via le calculateur");
+  out = out.replace(/montant calcule selon votre situation/gi, "estimer via le calculateur");
 
-  out = out.replace(/\bEn Paris\b/gi, "À Paris");
+  out = out.replace(/\bEn Paris\b/gi, "A Paris");
   out = out.replace(/%%/g, "%");
   out = out.replace(/%\s*%/g, "%");
   out = out.replace(
-    /l['’]écart peut représenter l['’]écart/gi,
-    "L’écart peut représenter"
+    /l['']ecart peut representer l['']ecart/gi,
+    "L'ecart peut representer"
   );
 
-  out = out.replace(/é{2,}conomie/gi, "économie");
-  out = out.replace(/l'é{2,}conomie/gi, "l'économie");
+  out = out.replace(/e{2,}conomie/gi, "economie");
+  out = out.replace(/l'e{2,}conomie/gi, "l'economie");
 
-  out = out.replace(/\bdpartemental\b/gi, "départemental");
-  out = out.replace(/\bdpartement\b/gi, "département");
-  out = out.replace(/\bdpartements\b/gi, "départements");
-  out = out.replace(/\bprserv/gi, "préserv");
-  out = out.replace(/\bspcificit/gi, "spécificité");
+  out = out.replace(/\bdpartemental\b/gi, "departemental");
+  out = out.replace(/\bdpartement\b/gi, "departement");
+  out = out.replace(/\bdpartements\b/gi, "departements");
+  out = out.replace(/\bprserv/gi, "preserv");
+  out = out.replace(/\bspcificit/gi, "specificite");
   out = out.replace(/\bmatriser\b/gi, "maîtriser");
   out = out.replace(/\bcot\b/gi, "coût");
-  out = out.replace(/\bconomie\b/gi, "économie");
-  out = out.replace(/\bconomique\b/gi, "économique");
+  out = out.replace(/\bconomie\b/gi, "economie");
+  out = out.replace(/\bconomique\b/gi, "economique");
   out = out.replace(/\blannuaire\b/gi, "l'annuaire");
 
   out = out.replace(/<\/\/h3>/gi, "</h3>");
 
   out = out.replace(
-    /En 2025, les frais de notaire représentent environ 6,6\s*% du prix d'achat dans l'ancien et 4\s*% dans le neuf\./gi,
-    "Ancien : environ 7 à 9 % • Neuf (VEFA) : environ 2 à 3 % du prix d'achat. Utilisez le simulateur pour une estimation personnalisée."
+    /En 2025, les frais de notaire representent environ 6,6\s*% du prix d'achat dans l'ancien et 4\s*% dans le neuf\./gi,
+    "Ancien : environ 7 a 9 % • Neuf (VEFA) : environ 2 a 3 % du prix d'achat. Utilisez le simulateur pour une estimation personnalisee."
   );
 
   out = out.replace(
-    /il applique le barème officiel 2025/gi,
-    "il applique le barème officiel en vigueur"
+    /il applique le bareme officiel 2025/gi,
+    "il applique le bareme officiel en vigueur"
   );
 
   out = out.replace(
-    /Pour un bien de 200\s*000\s*€, l'économie peut atteindre 7\s*600\s*€ en choisissant le neuf \(VEFA\)\./gi,
-    "Le neuf (VEFA) a généralement des frais plus faibles que l'ancien. Utilisez le simulateur pour comparer selon votre prix et votre dossier."
+    /Pour un bien de 200\s*000\s*€, l'economie peut atteindre 7\s*600\s*€ en choisissant le neuf \(VEFA\)\./gi,
+    "Le neuf (VEFA) a generalement des frais plus faibles que l'ancien. Utilisez le simulateur pour comparer selon votre prix et votre dossier."
   );
 
   out = out.replace(
-    /entre\s*<strong>\s*4%\s*et\s*6,6%\s*du prix d'achat\s*<\/strong>\s*selon que vous acquériez/gi,
-    'généralement environ <strong>7 à 8 % (ancien)</strong> et <strong>2 à 3 % (neuf/VEFA)</strong> du prix d\'achat selon que vous acquériez'
+    /entre\s*<strong>\s*4%\s*et\s*6,6%\s*du prix d'achat\s*<\/strong>\s*selon que vous acqueriez/gi,
+    'generalement environ <strong>7 a 8 % (ancien)</strong> et <strong>2 a 3 % (neuf/VEFA)</strong> du prix d\'achat selon que vous acqueriez'
   );
 
-  out = out.replace(/≈\s*6,6\s*%/gi, "environ 7 à 9 %");
-  out = out.replace(/≈\s*4\s*%/gi, "environ 2 à 3 %");
+  out = out.replace(/≈\s*6,6\s*%/gi, "environ 7 a 9 %");
+  out = out.replace(/≈\s*4\s*%/gi, "environ 2 a 3 %");
 
   out = out.replace(
     /Entre\s*<strong>\s*4%\s*<\/strong>\s*\(neuf\)\s*et\s*<strong>\s*6,6%\s*<\/strong>\s*\(ancien\)\s*du prix d'achat/gi,
-    "Neuf (VEFA) : <strong>environ 2 à 3 %</strong> • Ancien : <strong>environ 7 à 9 %</strong> du prix d'achat"
+    "Neuf (VEFA) : <strong>environ 2 a 3 %</strong> • Ancien : <strong>environ 7 a 9 %</strong> du prix d'achat"
   );
 
   out = out.replace(
     /Le\s*<strong>\s*neuf\s*<\/strong>\s*≈\s*4%\s*et l'<strong>\s*ancien\s*<\/strong>\s*≈\s*6,6%\.?/gi,
-    "Le <strong>neuf</strong> se situe généralement autour de <strong>2 à 3 %</strong> et l'<strong>ancien</strong> autour de <strong>7 à 9 %</strong>."
+    "Le <strong>neuf</strong> se situe generalement autour de <strong>2 a 3 %</strong> et l'<strong>ancien</strong> autour de <strong>7 a 9 %</strong>."
   );
 
   out = out.replace(
-    /jusqu'à\s*<strong>\s*7[\s\u202f\u00a0]*600\s*€ d'économie\s*<\/strong>\s*pour un bien à\s*200[\s\u202f\u00a0]*000\s*€\./gi,
-    "l'écart peut représenter une économie notable selon le prix et le dossier."
+    /jusqu'a\s*<strong>\s*7[\s\u202f\u00a0]*600\s*€ d'economie\s*<\/strong>\s*pour un bien a\s*200[\s\u202f\u00a0]*000\s*€\./gi,
+    "l'ecart peut representer une economie notable selon le prix et le dossier."
   );
 
   out = out.replace(
-    /Pour un bien (?:à|de)\s*200[\s\u202f\u00a0]*000\s*€[\s\S]*?7[\s\u202f\u00a0]*600\s*€/gi,
-    "Le neuf (VEFA) a généralement des frais plus faibles que l'ancien. Utilisez le simulateur pour comparer."
+    /Pour un bien (?:a|de)\s*200[\s\u202f\u00a0]*000\s*€[\s\S]*?7[\s\u202f\u00a0]*600\s*€/gi,
+    "Le neuf (VEFA) a generalement des frais plus faibles que l'ancien. Utilisez le simulateur pour comparer."
   );
   out = out.replace(/200[\s\u202f\u00a0]*000\s*€/gi, "un exemple de prix");
-  out = out.replace(/7[\s\u202f\u00a0]*600\s*€/gi, "une économie notable");
+  out = out.replace(/7[\s\u202f\u00a0]*600\s*€/gi, "une economie notable");
 
   out = out.replace(
     /(<tr[^>]*>[\s\S]*?Ancien[\s\S]*?<\/td>\s*<td[^>]*text-gray-700[^>]*>)([\s\S]*?)(<\/td>)/gi,
-    "$1environ 7 à 9 %$3"
+    "$1environ 7 a 9 %$3"
   );
   out = out.replace(
     /(<tr[^>]*>[\s\S]*?(?:Neuf|VEFA)[\s\S]*?<\/td>\s*<td[^>]*text-gray-700[^>]*>)([\s\S]*?)(<\/td>)/gi,
-    "$1environ 2 à 3 %$3"
+    "$1environ 2 a 3 %$3"
   );
 
   out = cleanTextNodes(out);
@@ -569,21 +569,21 @@ function sanitizeGlobal(html) {
 }
 
 // -----------------------------------------------------------------------------
-// HARMONISATION FINALE (PARIS 75) - Nettoyage résiduel
+// HARMONISATION FINALE (PARIS 75) - Nettoyage residuel
 // -----------------------------------------------------------------------------
 function harmonizeParis(articleHtml) {
   let out = articleHtml;
 
-  // Remplace "à estimer via le calculateur" dans les cellules de montant déjà "bold text-orange-600"
-  // pour éviter les doublons ou incohérences de style
+  // Remplace "a estimer via le calculateur" dans les cellules de montant deja "bold text-orange-600"
+  // pour eviter les doublons ou incoherences de style
   
-  // Correction spécifique : ≈ 3 030 €/mois (Paris 75)
+  // Correction specifique : ≈ 3 030 €/mois (Paris 75)
   out = out.replace(
     /≈ 3\s*030\s*€\/mois/gi,
     "variable selon taux"
   );
   
-  // Correction spécifique : 9 788,15 €
+  // Correction specifique : 9 788,15 €
   out = out.replace(
     /9\s*788,15\s*€/gi,
     "estimer via le calculateur"

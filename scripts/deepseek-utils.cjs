@@ -48,15 +48,15 @@ function pickStructureVariant() {
 function notaireHint(name, commune) {
   // safe non-assertive hints
   const templates = [
-    `étude présente depuis plusieurs décennies dans la région`,
-    `réputée pour son expertise en transactions résidentielles et copropriété`,
-    `souvent sollicitée pour des dossiers de VEFA et programmmes neufs`,
-    `proche de la mairie locale et habituée aux dossiers urbains`,
-    `dispose d'une équipe spécialisée en droit immobilier local`,
+    `etude presente depuis plusieurs decennies dans la region`,
+    `reputee pour son expertise en transactions residentielles et copropriete`,
+    `souvent sollicitee pour des dossiers de VEFA et programmmes neufs`,
+    `proche de la mairie locale et habituee aux dossiers urbains`,
+    `dispose d'une equipe specialisee en droit immobilier local`,
   ];
   const pick = templates[Math.floor(rand() * templates.length)];
   const parts = [];
-  if (commune) parts.push(`basée à ${commune}`);
+  if (commune) parts.push(`basee a ${commune}`);
   parts.push(pick);
   return parts.join(", ");
 }

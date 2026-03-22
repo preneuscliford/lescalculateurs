@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Liste les pages départements.
+ * Liste les pages departements.
  */
 function listDeptPages() {
   const dir = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'departements')
@@ -10,14 +10,14 @@ function listDeptPages() {
 }
 
 /**
- * Déduplique les marqueurs "<!-- CTA BLOCK START -->" pour éviter l'empilement.
+ * Deduplique les marqueurs "<!-- CTA BLOCK START -->" pour eviter l'empilement.
  */
 function fixFile(filePath) {
   const original = fs.readFileSync(filePath, 'utf8')
   let html = original
-  // Supprimer répétitions successives du marqueur
+  // Supprimer repetitions successives du marqueur
   html = html.replace(/(<!-- CTA BLOCK START -->\s*){2,}/g, '<!-- CTA BLOCK START -->\n')
-  // Supprimer répétitions du bloc complet si collés
+  // Supprimer repetitions du bloc complet si colles
   html = html.replace(/(<!-- CTA BLOCK START -->[\s\S]*?<!-- CTA BLOCK END -->\s*){2,}/g, (m) => m.replace(/(<!-- CTA BLOCK START -->[\s\S]*?<!-- CTA BLOCK END -->)\s*\1/g, '$1\n'))
 
   if (html !== original) {
@@ -28,13 +28,13 @@ function fixFile(filePath) {
 }
 
 /**
- * Point d'entrée.
+ * Point d'entree.
  */
 function main() {
   const files = listDeptPages()
   const results = files.map(fixFile)
   const changed = results.filter((r) => r.changed).length
-  console.log(`CTA dedupe: ${changed} fichier(s) corrigé(s) sur ${files.length}.`)
+  console.log(`CTA dedupe: ${changed} fichier(s) corrige(s) sur ${files.length}.`)
 }
 
 main()

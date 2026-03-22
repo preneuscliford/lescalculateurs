@@ -26,7 +26,7 @@ function getTextContent(html) {
   // Supprimer les balises HTML
   text = text.replace(/<[^>]+>/g, "");
 
-  // Supprimer les entités HTML
+  // Supprimer les entites HTML
   text = text.replace(/&nbsp;/g, " ");
   text = text.replace(/&[a-z]+;/gi, "");
 
@@ -60,7 +60,7 @@ function analyzeHtmlFiles(dir) {
   // Trier par word count
   results.sort((a, b) => a.wordCount - b.wordCount);
 
-  // Afficher les résultats
+  // Afficher les resultats
   console.log("📊 Word Count Analysis\n");
   console.log("Pages with LOW word count (< 500 words):\n");
 

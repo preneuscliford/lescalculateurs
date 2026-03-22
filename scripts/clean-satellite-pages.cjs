@@ -16,18 +16,18 @@ const TARGET_DIRS = {
 };
 
 const STRING_REPLACEMENTS = [
-  ["Quelles aides ai-je droit ?", "À quelles aides ai-je droit ?"],
+  ["Quelles aides ai-je droit ?", "A quelles aides ai-je droit ?"],
   [
-    "Réponse à la question : À quelles aides ai-je droit ?.",
-    "Réponse à la question : À quelles aides ai-je droit ?",
+    "Reponse a la question : A quelles aides ai-je droit ?.",
+    "Reponse a la question : A quelles aides ai-je droit ?",
   ],
   [
-    "Question traitée : À quelles aides ai-je droit.",
-    "Question traitée : À quelles aides ai-je droit ?",
+    "Question traitee : A quelles aides ai-je droit.",
+    "Question traitee : A quelles aides ai-je droit ?",
   ],
   [
     "📄 Lire aussi : Quelles aides ai-je droit ?",
-    "📄 Lire aussi : À quelles aides ai-je droit ?",
+    "📄 Lire aussi : A quelles aides ai-je droit ?",
   ],
 ];
 
@@ -85,7 +85,7 @@ function main() {
   }
 
   console.log(
-    `Nettoyage satellites ${target}: ${updated} fichier(s) mis à jour sur ${files.length}`,
+    `Nettoyage satellites ${target}: ${updated} fichier(s) mis a jour sur ${files.length}`,
   );
 }
 

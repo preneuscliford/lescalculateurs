@@ -1,43 +1,43 @@
 #!/usr/bin/env node
 /**
- * Script pour restaurer les emojis dans les pages spécifiques
- * Basé sur l'exemple fourni par l'utilisateur
+ * Script pour restaurer les emojis dans les pages specifiques
+ * Base sur l'exemple fourni par l'utilisateur
  */
 
 import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Mapping des emojis à restaurer
+ * Mapping des emojis a restaurer
  */
 const EMOJI_REPLACEMENTS = {
   '??': '💰',  // Frais de notaire
   '??': '⚠️',  // Avertissement
   '??': '📊',  // Estimation
-  '??': '❓',  // Questions fréquentes
-  '??': '📌',  // Rappel réglementaire
+  '??': '❓',  // Questions frequentes
+  '??': '📌',  // Rappel reglementaire
   '??': '🔗',  // Voir aussi
-  '??': '🏘️',  // Spécificité locale
+  '??': '🏘️',  // Specificite locale
   '??': '🏡',  // Ancien
   '??': '🏢',  // Neuf
-  '??': '💡',  // Bon à savoir
-  '??': '📈',  // Évolution des prix
+  '??': '💡',  // Bon a savoir
+  '??': '📈',  // Evolution des prix
   '??': '📊',  // Volume de transactions
-  '??': '⭐',  // Attractivité
-  '??': '🎯',  // Tension du marché
-  '??': '🏛️',  // Où trouver un notaire
-  '??': '🧮',  // Accéder au simulateur
+  '??': '⭐',  // Attractivite
+  '??': '🎯',  // Tension du marche
+  '??': '🏛️',  // Ou trouver un notaire
+  '??': '🧮',  // Acceder au simulateur
   '??': '✓',   // Checkmark
-  '??': '👉',  // Flèche
-  '??': '📚',  // Sources et références
-  '??': '📋',  // Méthodologie
+  '??': '👉',  // Fleche
+  '??': '📚',  // Sources et references
+  '??': '📋',  // Methodologie
   '??': '💼',  // Tarifs officiels
   '??': '📄',  // Export PDF
   '??': '💰',  // Calcul frais de notaire
 }
 
 /**
- * Pages à corriger spécifiquement
+ * Pages a corriger specifiquement
  */
 const PAGES_TO_FIX = [
   'frais-notaire-75.html',
@@ -65,13 +65,13 @@ function fixEmojis(content) {
 }
 
 /**
- * Traite un fichier spécifique
+ * Traite un fichier specifique
  */
 function processFile(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'utf8')
     
-    // Vérifier si le fichier contient des "??" (double question marks)
+    // Verifier si le fichier contient des "??" (double question marks)
     if (!content.includes('??')) {
       return { fixed: false, reason: 'No emoji placeholders found' }
     }
@@ -82,7 +82,7 @@ function processFile(filePath) {
     const backupPath = filePath + '.backup-emojis-' + Date.now()
     fs.writeFileSync(backupPath, content, 'utf8')
     
-    // Écrire le contenu corrigé
+    // Ecrire le contenu corrige
     fs.writeFileSync(filePath, fixedContent, 'utf8')
     
     return { fixed: true, backup: backupPath }
@@ -92,7 +92,7 @@ function processFile(filePath) {
 }
 
 /**
- * Point d'entrée principal
+ * Point d'entree principal
  */
 function main() {
   const targetDir = path.resolve(process.cwd(), 'src/pages/blog/departements')

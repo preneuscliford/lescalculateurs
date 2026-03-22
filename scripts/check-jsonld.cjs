@@ -114,7 +114,7 @@ for (const name of files) {
           changed = true;
           return open + JSON.stringify(parsed, null, 2) + close;
         } catch (err2) {
-          // as a last resort try to wrap as array or object (not safe) — skip
+          // as a last resort try to wrap as array or object (not safe) - skip
           return m;
         }
       }

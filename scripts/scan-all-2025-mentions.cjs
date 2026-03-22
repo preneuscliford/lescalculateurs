@@ -11,7 +11,7 @@ const files = [
   { path: "src/pages/notaire.html", name: "Calculateur Notaire" },
   {
     path: "src/pages/blog/frais-notaire-departements.html",
-    name: "Blog Frais Notaire Départements",
+    name: "Blog Frais Notaire Departements",
   },
   { path: "src/pages/sources.html", name: "Sources Officielles" },
 ];
@@ -25,7 +25,7 @@ console.log(`
 const categoryMap = {
   seo: "🔍 SEO (Meta/Schema)",
   visible: "👁️ Contenu Visible",
-  data: "📊 Données Officielles",
+  data: "📊 Donnees Officielles",
 };
 
 let totalByCategory = {
@@ -38,7 +38,7 @@ files.forEach((file) => {
   const fullPath = path.resolve(path.join(process.cwd(), file.path));
 
   if (!fs.existsSync(fullPath)) {
-    console.log(`\n⚠️  ${file.name}: Fichier non trouvé\n`);
+    console.log(`\n⚠️  ${file.name}: Fichier non trouve\n`);
     return;
   }
 
@@ -56,7 +56,7 @@ files.forEach((file) => {
     const lineNum = idx + 1;
     const trimmed = line.trim().substring(0, 120);
 
-    // Catégoriser
+    // Categoriser
     if (
       line.includes("<meta") ||
       line.includes('"headline"') ||
@@ -67,8 +67,8 @@ files.forEach((file) => {
       matches.seo.push({ lineNum, line: trimmed });
       totalByCategory.seo++;
     } else if (
-      line.includes("barème") ||
-      line.includes("émolument") ||
+      line.includes("bareme") ||
+      line.includes("emolument") ||
       line.includes("tranches") ||
       line.includes("taux") ||
       line.includes("0.0387") ||
@@ -89,7 +89,7 @@ files.forEach((file) => {
     matches.data.length === 0
   ) {
     console.log(`\n✅ ${file.name}`);
-    console.log(`   Aucune mention "2025" trouvée\n`);
+    console.log(`   Aucune mention "2025" trouvee\n`);
     return;
   }
 
@@ -122,10 +122,10 @@ files.forEach((file) => {
     console.log();
   }
 
-  // Données officielles
+  // Donnees officielles
   if (matches.data.length > 0) {
     console.log(
-      `   ${categoryMap.data} - À NE PAS MODIFIER (${matches.data.length}):`
+      `   ${categoryMap.data} - A NE PAS MODIFIER (${matches.data.length}):`
     );
     matches.data.slice(0, 2).forEach((m) => {
       console.log(`      L${m.lineNum}: ${m.line}...`);
@@ -151,17 +151,17 @@ ${"═".repeat(70)}
    → ${totalByCategory.visible} modifications (2025 → 2026)
 
    ${categoryMap.data}
-   → ${totalByCategory.data} occurrences (À LAISSER INTACTES)
+   → ${totalByCategory.data} occurrences (A LAISSER INTACTES)
 
 ${"═".repeat(70)}
 
-✅ À FAIRE EN JANVIER 2026:
+✅ A FAIRE EN JANVIER 2026:
 
-   1️⃣  Vérifier les sources officielles
+   1️⃣  Verifier les sources officielles
    2️⃣  Remplacer ${totalByCategory.seo + totalByCategory.visible} occurrences "2025" → "2026"
-   3️⃣  Laisser les ${totalByCategory.data} données officielles inchangées
+   3️⃣  Laisser les ${totalByCategory.data} donnees officielles inchangees
    4️⃣  Tester les calculateurs
-   5️⃣  Vérifier SEO rankings
+   5️⃣  Verifier SEO rankings
 
 ${"═".repeat(70)}
 `);

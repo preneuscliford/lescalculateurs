@@ -1,5 +1,5 @@
 /**
- * Script de génération automatique du JSON-LD ItemList pour les 101 départements
+ * Script de generation automatique du JSON-LD ItemList pour les 101 departements
  * Usage: node scripts/generate-itemlist-schema.js
  */
 
@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Liste complète des départements français (101)
+// Liste complete des departements francais (101)
 const departements = [
   { code: "01", nom: "Ain" },
   { code: "02", nom: "Aisne" },
@@ -18,39 +18,39 @@ const departements = [
   { code: "04", nom: "Alpes-de-Haute-Provence" },
   { code: "05", nom: "Hautes-Alpes" },
   { code: "06", nom: "Alpes-Maritimes" },
-  { code: "07", nom: "Ardèche" },
+  { code: "07", nom: "Ardeche" },
   { code: "08", nom: "Ardennes" },
-  { code: "09", nom: "Ariège" },
+  { code: "09", nom: "Ariege" },
   { code: "10", nom: "Aube" },
   { code: "11", nom: "Aude" },
   { code: "12", nom: "Aveyron" },
-  { code: "13", nom: "Bouches-du-Rhône" },
+  { code: "13", nom: "Bouches-du-Rhone" },
   { code: "14", nom: "Calvados" },
   { code: "15", nom: "Cantal" },
   { code: "16", nom: "Charente" },
   { code: "17", nom: "Charente-Maritime" },
   { code: "18", nom: "Cher" },
-  { code: "19", nom: "Corrèze" },
+  { code: "19", nom: "Correze" },
   { code: "2A", nom: "Corse-du-Sud" },
   { code: "2B", nom: "Haute-Corse" },
-  { code: "21", nom: "Côte-d'Or" },
-  { code: "22", nom: "Côtes-d'Armor" },
+  { code: "21", nom: "Cote-d'Or" },
+  { code: "22", nom: "Cotes-d'Armor" },
   { code: "23", nom: "Creuse" },
   { code: "24", nom: "Dordogne" },
   { code: "25", nom: "Doubs" },
-  { code: "26", nom: "Drôme" },
+  { code: "26", nom: "Drome" },
   { code: "27", nom: "Eure" },
   { code: "28", nom: "Eure-et-Loir" },
-  { code: "29", nom: "Finistère" },
+  { code: "29", nom: "Finistere" },
   { code: "30", nom: "Gard" },
   { code: "31", nom: "Haute-Garonne" },
   { code: "32", nom: "Gers" },
   { code: "33", nom: "Gironde" },
-  { code: "34", nom: "Hérault" },
+  { code: "34", nom: "Herault" },
   { code: "35", nom: "Ille-et-Vilaine" },
   { code: "36", nom: "Indre" },
   { code: "37", nom: "Indre-et-Loire" },
-  { code: "38", nom: "Isère" },
+  { code: "38", nom: "Isere" },
   { code: "39", nom: "Jura" },
   { code: "40", nom: "Landes" },
   { code: "41", nom: "Loir-et-Cher" },
@@ -60,7 +60,7 @@ const departements = [
   { code: "45", nom: "Loiret" },
   { code: "46", nom: "Lot" },
   { code: "47", nom: "Lot-et-Garonne" },
-  { code: "48", nom: "Lozère" },
+  { code: "48", nom: "Lozere" },
   { code: "49", nom: "Maine-et-Loire" },
   { code: "50", nom: "Manche" },
   { code: "51", nom: "Marne" },
@@ -70,20 +70,20 @@ const departements = [
   { code: "55", nom: "Meuse" },
   { code: "56", nom: "Morbihan" },
   { code: "57", nom: "Moselle" },
-  { code: "58", nom: "Nièvre" },
+  { code: "58", nom: "Nievre" },
   { code: "59", nom: "Nord" },
   { code: "60", nom: "Oise" },
   { code: "61", nom: "Orne" },
   { code: "62", nom: "Pas-de-Calais" },
-  { code: "63", nom: "Puy-de-Dôme" },
-  { code: "64", nom: "Pyrénées-Atlantiques" },
-  { code: "65", nom: "Hautes-Pyrénées" },
-  { code: "66", nom: "Pyrénées-Orientales" },
+  { code: "63", nom: "Puy-de-Dome" },
+  { code: "64", nom: "Pyrenees-Atlantiques" },
+  { code: "65", nom: "Hautes-Pyrenees" },
+  { code: "66", nom: "Pyrenees-Orientales" },
   { code: "67", nom: "Bas-Rhin" },
   { code: "68", nom: "Haut-Rhin" },
-  { code: "69", nom: "Rhône" },
-  { code: "70", nom: "Haute-Saône" },
-  { code: "71", nom: "Saône-et-Loire" },
+  { code: "69", nom: "Rhone" },
+  { code: "70", nom: "Haute-Saone" },
+  { code: "71", nom: "Saone-et-Loire" },
   { code: "72", nom: "Sarthe" },
   { code: "73", nom: "Savoie" },
   { code: "74", nom: "Haute-Savoie" },
@@ -91,13 +91,13 @@ const departements = [
   { code: "76", nom: "Seine-Maritime" },
   { code: "77", nom: "Seine-et-Marne" },
   { code: "78", nom: "Yvelines" },
-  { code: "79", nom: "Deux-Sèvres" },
+  { code: "79", nom: "Deux-Sevres" },
   { code: "80", nom: "Somme" },
   { code: "81", nom: "Tarn" },
   { code: "82", nom: "Tarn-et-Garonne" },
   { code: "83", nom: "Var" },
   { code: "84", nom: "Vaucluse" },
-  { code: "85", nom: "Vendée" },
+  { code: "85", nom: "Vendee" },
   { code: "86", nom: "Vienne" },
   { code: "87", nom: "Haute-Vienne" },
   { code: "88", nom: "Vosges" },
@@ -111,11 +111,11 @@ const departements = [
   { code: "971", nom: "Guadeloupe" },
   { code: "972", nom: "Martinique" },
   { code: "973", nom: "Guyane" },
-  { code: "974", nom: "La Réunion" },
+  { code: "974", nom: "La Reunion" },
   { code: "976", nom: "Mayotte" },
 ];
 
-// Génération du JSON-LD ItemList
+// Generation du JSON-LD ItemList
 function generateItemListSchema() {
   const itemListElements = departements.map((dept, index) => ({
     "@type": "ListItem",
@@ -127,9 +127,9 @@ function generateItemListSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Frais de notaire par département 2025",
+    name: "Frais de notaire par departement 2025",
     description:
-      "Liste complète des 101 départements français avec simulateur de frais de notaire",
+      "Liste complete des 101 departements francais avec simulateur de frais de notaire",
     numberOfItems: departements.length,
     itemListElement: itemListElements,
   };
@@ -137,10 +137,10 @@ function generateItemListSchema() {
   return schema;
 }
 
-// Génération du code HTML à insérer
+// Generation du code HTML a inserer
 function generateHTMLSchema() {
   const schema = generateItemListSchema();
-  return `    <!-- Schema.org ItemList (101 départements) -->
+  return `    <!-- Schema.org ItemList (101 departements) -->
     <script type="application/ld+json">
       ${JSON.stringify(schema, null, 6).replace(/^/gm, "      ").trim()}
     </script>`;
@@ -148,14 +148,14 @@ function generateHTMLSchema() {
 
 // Fonction principale
 function main() {
-  console.log("🔧 Génération du JSON-LD ItemList...\n");
+  console.log("🔧 Generation du JSON-LD ItemList...\n");
 
   const htmlSchema = generateHTMLSchema();
 
-  // Affichage du résultat
-  console.log("✅ JSON-LD généré avec succès !\n");
-  console.log(`📊 Nombre de départements : ${departements.length}`);
-  console.log(`📏 Taille du schema : ${htmlSchema.length} caractères\n`);
+  // Affichage du resultat
+  console.log("✅ JSON-LD genere avec succes !\n");
+  console.log(`📊 Nombre de departements : ${departements.length}`);
+  console.log(`📏 Taille du schema : ${htmlSchema.length} caracteres\n`);
 
   // Sauvegarde dans un fichier
   const outputPath = path.join(__dirname, "../temp/itemlist-schema.html");
@@ -166,14 +166,14 @@ function main() {
   }
 
   fs.writeFileSync(outputPath, htmlSchema, "utf-8");
-  console.log(`💾 Schema sauvegardé : ${outputPath}\n`);
+  console.log(`💾 Schema sauvegarde : ${outputPath}\n`);
 
-  // Affichage d'un aperçu
-  console.log("📄 Aperçu (premières lignes) :\n");
+  // Affichage d'un apercu
+  console.log("📄 Apercu (premieres lignes) :\n");
   const lines = htmlSchema.split("\n");
   console.log(lines.slice(0, 15).join("\n"));
   console.log("      ...");
-  console.log(`      ${lines.length - 15} lignes supplémentaires`);
+  console.log(`      ${lines.length - 15} lignes supplementaires`);
   console.log("    </script>");
 
   console.log(
@@ -184,5 +184,5 @@ function main() {
   );
 }
 
-// Exécution
+// Execution
 main();

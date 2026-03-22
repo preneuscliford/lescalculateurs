@@ -39,11 +39,11 @@ for (const code of Object.keys(tpl)) {
     (deps[code] && deps[code].nom) || text.split(":")[0] || `dep-${code}`;
   // try to extract median number from text
   const m =
-    String(text).match(/médian\s*DVF\s*([0-9\s,.]+)\s*€/i) ||
-    String(text).match(/médian\s*([0-9\s,.]+)\s*€/i);
+    String(text).match(/median\s*DVF\s*([0-9\s,.]+)\s*€/i) ||
+    String(text).match(/median\s*([0-9\s,.]+)\s*€/i);
   const median = m ? Number(String(m[1]).replace(/[^0-9]/g, "")) : undefined;
-  const intro = typeof text === "string" ? text.replace(/\s+–\s*/, ". ") : "";
-  const notaires = `Faites estimer vos droits par une étude notariale ${nom}.`;
+  const intro = typeof text === "string" ? text.replace(/\s+-\s*/, ". ") : "";
+  const notaires = `Faites estimer vos droits par une etude notariale ${nom}.`;
   items.push({
     code: String(code),
     nom,

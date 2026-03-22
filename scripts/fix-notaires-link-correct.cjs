@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Corriger le lien des barèmes notariaux avec le bon URL officiel
+ * Corriger le lien des baremes notariaux avec le bon URL officiel
  */
 
 const fs = require("fs");
@@ -8,7 +8,7 @@ const glob = require("glob");
 
 const blogFiles = glob.sync("src/pages/blog/departements/frais-notaire-*.html");
 
-console.log(`\n🔗 Correction du lien des barèmes notariaux\n`);
+console.log(`\n🔗 Correction du lien des baremes notariaux\n`);
 
 // Mauvais lien
 const oldLink =
@@ -34,6 +34,6 @@ blogFiles.forEach((file) => {
 });
 
 console.log(`\n${"─".repeat(70)}`);
-console.log(`✅ ${updated} fichiers corrigés`);
+console.log(`✅ ${updated} fichiers corriges`);
 console.log(`\nAncien lien: ${oldLink}`);
 console.log(`Nouveau lien: ${newLink}`);

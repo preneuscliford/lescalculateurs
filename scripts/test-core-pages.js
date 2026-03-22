@@ -1,10 +1,10 @@
 /**
- * Vérifie que les pages clés du site répondent bien avec un statut final 200.
+ * Verifie que les pages cles du site repondent bien avec un statut final 200.
  */
 import https from "https";
 
 /**
- * Effectue une requête GET simple.
+ * Effectue une requete GET simple.
  */
 function fetchOnce(url) {
   return new Promise((resolve, reject) => {
@@ -39,7 +39,7 @@ async function follow(url, origin) {
 }
 
 /**
- * Point d'entrée: teste un ensemble d'URLs clés.
+ * Point d'entree: teste un ensemble d'URLs cles.
  */
 async function main() {
   const origin = "https://lescalculateurs.fr";
@@ -75,9 +75,9 @@ async function main() {
 
   const ok = results.filter((r) => r.finalStatus === 200).length;
   const ko = results.length - ok;
-  console.log(`\nRésumé: OK=${ok} / KO=${ko} / Total=${results.length}`);
+  console.log(`\nResume: OK=${ok} / KO=${ko} / Total=${results.length}`);
   if (ko > 0) {
-    console.log("Détails KO:");
+    console.log("Details KO:");
     for (const r of results.filter((x) => x.finalStatus !== 200)) {
       console.log(`- ${r.path} final=${r.finalStatus} hops=${JSON.stringify(r.hops || [])}`);
     }

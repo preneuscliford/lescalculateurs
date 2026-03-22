@@ -1,26 +1,26 @@
 #!/usr/bin/env node
 /**
  * Aligne les textes visibles non‑SEO vers 2026 (hors mentions officielles).
- * Cible: h1–h6, p, li, span, a, strong, em, small, summary.
- * Garde‑fous: ne modifie pas lorsque des mots‑clés officiels apparaissent
- * (barème, BOFiP, impots.gouv, legifrance, service‑public, notaires, officiels),
- * ni les plages “2024–2025” et “2025–2026”.
+ * Cible: h1-h6, p, li, span, a, strong, em, small, summary.
+ * Garde‑fous: ne modifie pas lorsque des mots‑cles officiels apparaissent
+ * (bareme, BOFiP, impots.gouv, legifrance, service‑public, notaires, officiels),
+ * ni les plages "2024-2025" et "2025-2026".
  */
 const fs = require("fs");
 const path = require("path");
 
-/** Détermine si un texte appartient à un contexte officiel. */
+/** Determine si un texte appartient a un contexte officiel. */
 function isOfficial(text) {
   const t = (text || "").toLowerCase();
   const OFFICIAL_GUARDS = [
-    "barème", "barèmes", "officiel", "officiels",
+    "bareme", "baremes", "officiel", "officiels",
     "bofip", "impots.gouv.fr", "bofip.impots.gouv.fr",
     "legifrance.gouv.fr", "service-public.fr", "notaires.fr", "chambre des notaires"
   ];
   return OFFICIAL_GUARDS.some((kw) => t.includes(kw));
 }
 
-/** Récupère tous les fichiers HTML récursivement. */
+/** Recupere tous les fichiers HTML recursivement. */
 function getAllHtmlFiles(dir, acc = []) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const e of entries) {
@@ -53,7 +53,7 @@ function updateVisibleTexts(content) {
   tagPatterns.forEach(({ label, regex }) => {
     content = content.replace(regex, (whole, inner, offset) => {
       if (typeof inner !== "string" || !inner.includes("2025")) return whole;
-      const innerHasOfficialRange = /2024[-–]2025|2025[-–]2026/.test(inner);
+      const innerHasOfficialRange = /2024[--]2025|2025[--]2026/.test(inner);
       if (innerHasOfficialRange || isOfficial(inner)) return whole;
       const start = Math.max(0, (offset || 0) - 120);
       const end = Math.min(content.length, (offset || 0) + whole.length + 120);
@@ -90,7 +90,7 @@ files.forEach((filePath) => {
   }
 });
 
-console.log(`\n✅ Alignement des textes visibles terminé`);
-console.log(`   Fichiers modifiés: ${filesTouched}`);
+console.log(`\n✅ Alignement des textes visibles termine`);
+console.log(`   Fichiers modifies: ${filesTouched}`);
 console.log(`   Remplacements visibles: ${totalApplied}`);
 

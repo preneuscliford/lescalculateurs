@@ -38,18 +38,15 @@ function normalizeFrenchText(value) {
     .replace(/\bactivites\b/g, "activit\u00e9s")
     .replace(/\bpercue\b/g, "per\u00e7ue")
     .replace(/\bpercus\b/g, "per\u00e7us")
-    .replace(/\bpercus\./g, "perçus.")
+    .replace(/\bpercus\./g, "per\u00e7us.")
     .replace(/\bresiduelle\b/g, "r\u00e9siduelle")
     .replace(/\bdepend\b/g, "d\u00e9pend")
     .replace(/\bisole\b/g, "isol\u00e9")
-    .replace(/\bevolue\b/g, "évolue")
-    .replace(/\bdetailes\b/g, "détaillés")
-    .replace(/\bprecises\b/g, "précises")
-    .replace(/\bprioriser\b/g, "prioriser")
-    .replace(/\bprioritaires\b/g, "prioritaires")
-    .replace(/\bdisparait\b/g, "disparaît")
-    .replace(/\bentree global\b/g, "entrée global")
-    .replace(/\bentree\b/g, "entrée")
+    .replace(/\bevolue\b/g, "\u00e9volue")
+    .replace(/\bdetailes\b/g, "d\u00e9taill\u00e9s")
+    .replace(/\bprecises\b/g, "pr\u00e9cises")
+    .replace(/\bdisparait\b/g, "dispara\u00eet")
+    .replace(/\bentree global\b/g, "entr\u00e9e globale")
     .replace(/\ba tester\b/g, "\u00e0 tester")
     .replace(/\ba verifier\b/g, "\u00e0 v\u00e9rifier")
     .replace(/\ba comparer\b/g, "\u00e0 comparer")
@@ -61,7 +58,7 @@ function renderText(value) {
 }
 
 function renderAttributeText(value) {
-  return encodeHtmlEntities(escapeHtml(value));
+  return encodeHtmlEntities(escapeHtml(normalizeFrenchText(value)));
 }
 
 function renderJsonLd(data) {
@@ -104,6 +101,12 @@ export function renderSimulateursScenarioPage({
 }) {
   const simulatorUrl = buildSimulatorUrl(scenario.input);
   const canonicalUrl = `${DOMAIN}/pages/simulateurs/${scenario.slug}`;
+  const faqEntities = (scenario.faq || []).map((item) => ({
+    "@type": "Question",
+    name: normalizeFrenchText(item.question),
+    acceptedAnswer: { "@type": "Answer", text: normalizeFrenchText(item.answer) },
+  }));
+
   return `<!doctype html>
 <html lang="fr">
   <head>
@@ -136,17 +139,13 @@ export function renderSimulateursScenarioPage({
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: `${DOMAIN}/` },
         { "@type": "ListItem", position: 2, name: "Simulateurs", item: `${DOMAIN}/pages/simulateurs` },
-        { "@type": "ListItem", position: 3, name: scenario.title, item: canonicalUrl },
+        { "@type": "ListItem", position: 3, name: normalizeFrenchText(scenario.title), item: canonicalUrl },
       ],
     })}
     ${renderJsonLd({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: (scenario.faq || []).map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-      })),
+      mainEntity: faqEntities,
     })}
   </head>
   <body class="bg-slate-50 text-slate-900" data-lc-page-type="pseo" data-lc-page-cluster="simulateurs" data-lc-page-slug="${escapeHtml(scenario.slug)}">
@@ -237,5 +236,3 @@ export function renderSimulateursScenarioPage({
   </body>
 </html>`;
 }
-
-

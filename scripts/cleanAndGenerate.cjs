@@ -10,28 +10,28 @@ const ARTICLES_DIR = path.join(
   "pages",
   "blog",
   "departements"
-); // dossier où tu stockes tes pages
-const MIN_VARIATION = 0.72; // seuil de similarité max (0 = différent, 1 = identique)
+); // dossier ou tu stockes tes pages
+const MIN_VARIATION = 0.72; // seuil de similarite max (0 = different, 1 = identique)
 
-// Phrases et templates à bannir absolument
+// Phrases et templates a bannir absolument
 const bannedPatterns = [
-  /Négocier les meubles séparément/gi,
-  /Privilégier un jeune notaire/gi,
-  /Marché équilibré/gi,
-  /Forte attractivité économique/gi,
-  /diversité culturelle renforce/gi,
+  /Negocier les meubles separement/gi,
+  /Privilegier un jeune notaire/gi,
+  /Marche equilibre/gi,
+  /Forte attractivite economique/gi,
+  /diversite culturelle renforce/gi,
   /Prix stables/gi,
-  /Volume en léger retrait/gi,
-  /Bon à savoir/gi,
-  /jusqu.?à.?7.?600.?€/gi,
-  /rentabilité étudiante/gi,
+  /Volume en leger retrait/gi,
+  /Bon a savoir/gi,
+  /jusqu.?a.?7.?600.?€/gi,
+  /rentabilite etudiante/gi,
 ];
 
-// Certaines sections entières à réécrire car DeepSeek les répète partout
+// Certaines sections entieres a reecrire car DeepSeek les repete partout
 const structuralBlocks = [
   /Astuces[\s\S]*?(?=<h2|<h3|$)/gi,
-  /Marché immobilier[\s\S]*?(?=<h2|<h3|$)/gi,
-  /Questions fréquentes[\s\S]*?(?=<h2|<h3|$)/gi,
+  /Marche immobilier[\s\S]*?(?=<h2|<h3|$)/gi,
+  /Questions frequentes[\s\S]*?(?=<h2|<h3|$)/gi,
 ];
 
 // --- UTILS --- //
@@ -44,14 +44,14 @@ function similarity(a, b) {
 
 function randomRewrite(text) {
   return (
-    "⟲ RÉÉCRIT AUTOMATIQUEMENT : " +
+    "⟲ REECRIT AUTOMATIQUEMENT : " +
     crypto.randomBytes(8).toString("hex") +
     "\n" +
     text
       .split(".")
       .map((sentence) =>
         sentence.trim().length > 8
-          ? sentence.split(" ").reverse().join(" ") // inversion légère
+          ? sentence.split(" ").reverse().join(" ") // inversion legere
           : sentence
       )
       .join(". ")
@@ -61,8 +61,8 @@ function randomRewrite(text) {
 function rewriteStructuralBlock() {
   return `
 <section>
-<h2>Analyse locale spécifique</h2>
-<p>Cette zone présente une dynamique immobilière particulière, influencée par son économie locale, ses flux résidentiels et l’évolution récente des transactions. Les tendances observées montrent un comportement distinct du marché national, avec des variations propres à ce territoire.</p>
+<h2>Analyse locale specifique</h2>
+<p>Cette zone presente une dynamique immobiliere particuliere, influencee par son economie locale, ses flux residentiels et l'evolution recente des transactions. Les tendances observees montrent un comportement distinct du marche national, avec des variations propres a ce territoire.</p>
 </section>
 `;
 }
@@ -85,7 +85,7 @@ function cleanArticle(generated, existingArticles) {
     cleaned = cleaned.replace(pattern, "");
   }
 
-  // 2. Supprime/réécrit les blocs structurels
+  // 2. Supprime/reecrit les blocs structurels
   for (const pattern of structuralBlocks) {
     cleaned = cleaned.replace(pattern, rewriteStructuralBlock());
   }
@@ -95,7 +95,7 @@ function cleanArticle(generated, existingArticles) {
     if (!oldArticle) continue;
     const sim = similarity(cleaned, oldArticle);
     if (sim > MIN_VARIATION) {
-      console.log("⚠  Doublon détecté → réécriture automatique");
+      console.log("⚠  Doublon detecte → reecriture automatique");
       cleaned = randomRewrite(cleaned);
     }
   }
@@ -168,12 +168,12 @@ function addTailwindClasses(html) {
   return styled;
 }
 
-// --- ENTRY POINT (après génération DeepSeek) --- //
+// --- ENTRY POINT (apres generation DeepSeek) --- //
 function generateFinalArticle(generatedContent, fileName) {
   const existing = loadArticles();
   const cleaned = cleanArticle(generatedContent, existing);
   fs.writeFileSync(path.join(ARTICLES_DIR, fileName), cleaned, "utf8");
-  console.log("✅ Article final nettoyé et sauvegardé :", fileName);
+  console.log("✅ Article final nettoye et sauvegarde :", fileName);
 }
 
 module.exports = {

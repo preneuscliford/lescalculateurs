@@ -78,11 +78,11 @@ console.log(
     const origSentence = item.orig;
 
     // Build prompt for rephrasing
-    const prompt = `Tu es un expert immobilier français. Rephrase cette phrase de manière unique et naturelle pour le département ${deptName}, en gardant le sens exact, les chiffres et le contexte des frais de notaire 2025. Varie les mots et la structure sans changer les informations factuelles.
+    const prompt = `Tu es un expert immobilier francais. Rephrase cette phrase de maniere unique et naturelle pour le departement ${deptName}, en gardant le sens exact, les chiffres et le contexte des frais de notaire 2025. Varie les mots et la structure sans changer les informations factuelles.
 
 Phrase originale : "${origSentence}"
 
-Réponds uniquement avec la phrase rephrasée, sans guillemets ni explications.`;
+Reponds uniquement avec la phrase rephrasee, sans guillemets ni explications.`;
 
     const messages = [{ role: "user", content: prompt }];
 
@@ -132,10 +132,10 @@ Réponds uniquement avec la phrase rephrasée, sans guillemets ni explications.`
       const theadRegex = /<thead[^>]*>[\s\S]*?<\/thead>/i;
       const newThead = `<thead class="bg-gradient-to-r from-blue-600 to-blue-700 text-white"><tr><th class="px-6 py-4 text-left font-semibold" colspan="3">${rephrased}</th></tr></thead>`;
       content = content.replace(theadRegex, newThead);
-    } else if (origSentence.includes("Privilégier un jeune notaire")) {
-      // find the p after "Privilégier un jeune notaire"
+    } else if (origSentence.includes("Privilegier un jeune notaire")) {
+      // find the p after "Privilegier un jeune notaire"
       const h3Index = content.indexOf(
-        '<h3 class="font-bold text-gray-900 mb-2">Privilégier un jeune notaire</h3>'
+        '<h3 class="font-bold text-gray-900 mb-2">Privilegier un jeune notaire</h3>'
       );
       if (h3Index !== -1) {
         const pStart = content.indexOf(

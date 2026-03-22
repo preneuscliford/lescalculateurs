@@ -37,7 +37,7 @@ function normalizeForDup(s) {
     .toLowerCase()
     .replace(/[0-9]+(?:[\s\.\,\u202F][0-9]{3})*/g, "#NUM#")
     .replace(/[\u00A0\u202F]/g, " ")
-    .replace(/[^a-z0-9#\sàâäéèêëîïôöùûüç'-]/g, " ")
+    .replace(/[^a-z0-9#\saaäeeeëîïoöuûüc'-]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }

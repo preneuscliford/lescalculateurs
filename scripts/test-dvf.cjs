@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 /**
- * Test DVF (Demande de valeurs foncières) via fichiers officiels data.gouv.fr
- * - Télécharge le CSV départemental 2024
- * - Parse un échantillon et calcule des métriques simples
- * - Valide la présence des colonnes clés
+ * Test DVF (Demande de valeurs foncieres) via fichiers officiels data.gouv.fr
+ * - Telecharge le CSV departemental 2024
+ * - Parse un echantillon et calcule des metriques simples
+ * - Valide la presence des colonnes cles
  */
 const fs = require("fs");
 const path = require("path");
 
 /**
- * Télécharge le CSV DVF d'un département donné (année 2024)
- * @param {string} deptCode Code du département (ex: "73")
+ * Telecharge le CSV DVF d'un departement donne (annee 2024)
+ * @param {string} deptCode Code du departement (ex: "73")
  * @returns {Promise<string>} Contenu CSV brut
  */
 async function fetchDeptCsv(deptCode) {
@@ -33,9 +33,9 @@ async function fetchDeptCsv(deptCode) {
 }
 
 /**
- * Détecte le séparateur CSV ("," vs ";") en fonction de l'en‑tête
- * @param {string} headerLine Première ligne du CSV
- * @returns {string} séparateur
+ * Detecte le separateur CSV ("," vs ";") en fonction de l'en‑tete
+ * @param {string} headerLine Premiere ligne du CSV
+ * @returns {string} separateur
  */
 function detectSep(headerLine) {
   const semi = (headerLine.match(/;/g) || []).length;
@@ -44,9 +44,9 @@ function detectSep(headerLine) {
 }
 
 /**
- * Parse un CSV en tableau d'objets limité à N lignes
+ * Parse un CSV en tableau d'objets limite a N lignes
  * @param {string} csv Contenu CSV
- * @param {number} limit Nombre max de lignes à parser
+ * @param {number} limit Nombre max de lignes a parser
  * @returns {{rows:object[], headers:string[], sep:string}}
  */
 function parseCsv(csv, limit = 2000) {
@@ -68,8 +68,8 @@ function parseCsv(csv, limit = 2000) {
 }
 
 /**
- * Calcule métriques simples (compte, communes, prix/m² moyen) sur un échantillon
- * @param {object[]} rows Lignes DVF parsées
+ * Calcule metriques simples (compte, communes, prix/m² moyen) sur un echantillon
+ * @param {object[]} rows Lignes DVF parsees
  * @returns {{count:number, communes:Set<string>, pm2:number|null}}
  */
 function computeMetrics(rows) {
@@ -91,17 +91,17 @@ function computeMetrics(rows) {
 }
 
 /**
- * Valide la présence des colonnes clés DVF
- * @param {string[]} headers En‑têtes CSV
+ * Valide la presence des colonnes cles DVF
+ * @param {string[]} headers En‑tetes CSV
  * @returns {string[]} Manquants
  */
 function missingColumns(headers) {
-  const req = ["Valeur fonciere", "Surface reelle bati", "Commune"]; // variantes gérées à l'usage
+  const req = ["Valeur fonciere", "Surface reelle bati", "Commune"]; // variantes gerees a l'usage
   return req.filter((h) => !headers.some((x) => x.toLowerCase() === h.toLowerCase()));
 }
 
 /**
- * Point d'entrée: teste une liste de départements et affiche un rapport
+ * Point d'entree: teste une liste de departements et affiche un rapport
  */
 async function main() {
   const args = process.argv.slice(2);
@@ -115,15 +115,15 @@ async function main() {
       const { rows, headers } = parseCsv(csv, 3000);
       const miss = missingColumns(headers);
       const { count, communes, pm2 } = computeMetrics(rows);
-      console.log(`Lignes échantillon: ${count}`);
-      console.log(`Communes (échantillon): ${Array.from(communes).slice(0, 8).join(", ")}…`);
-      console.log(`Prix/m² moyen (approx échantillon): ${pm2 ?? "n/a"}`);
+      console.log(`Lignes echantillon: ${count}`);
+      console.log(`Communes (echantillon): ${Array.from(communes).slice(0, 8).join(", ")}…`);
+      console.log(`Prix/m² moyen (approx echantillon): ${pm2 ?? "n/a"}`);
       if (miss.length > 0) {
         console.log(`Colonnes manquantes: ${miss.join(", ")}`);
       } else {
-        console.log(`Colonnes clés présentes.`);
+        console.log(`Colonnes cles presentes.`);
       }
-      // Écrit un rapport texte pour consultation
+      // Ecrit un rapport texte pour consultation
       const outDir = path.join(process.cwd(), "reports");
       try { fs.mkdirSync(outDir, { recursive: true }); } catch (_) {}
       const outPath = path.join(outDir, `dvf-test-${d}.txt`);

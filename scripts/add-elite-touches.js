@@ -1,7 +1,7 @@
 /**
- * Script d'ajout des micro-ajustements "niveau élite"
+ * Script d'ajout des micro-ajustements "niveau elite"
  * 1. Note explicative sur le % global
- * 2. Ligne EEAT (Expertise/Autorité/Trust)
+ * 2. Ligne EEAT (Expertise/Autorite/Trust)
  */
 
 import fs from "node:fs";
@@ -11,28 +11,28 @@ function processFile(filePath) {
   let html = fs.readFileSync(filePath, "utf8");
   const original = html;
 
-  // 1. Ajouter note explicative après le tableau des taux
+  // 1. Ajouter note explicative apres le tableau des taux
   // Chercher la fin du tableau et ajouter une note
   if (!html.includes("Taux global indicatif")) {
     html = html.replace(
       /(<\/table>\s*<\/div>\s*<p class="text-xs[^"]*text-gray-500[^"]*mt-2[^"]*">)/gi,
       `</table>
-          <p class="text-xs text-gray-400 mt-2 italic">* Taux global indicatif incluant droits, émoluments, débours, CSI et TVA.</p>
+          <p class="text-xs text-gray-400 mt-2 italic">* Taux global indicatif incluant droits, emoluments, debours, CSI et TVA.</p>
         </div>
         <p class="text-xs text-gray-500 mt-2">`,
     );
   }
 
-  // 2. Ajouter ligne EEAT avant le footer/fin d'article si pas déjà présente
-  if (!html.includes("LesCalculateurs.fr — outil indépendant")) {
+  // 2. Ajouter ligne EEAT avant le footer/fin d'article si pas deja presente
+  if (!html.includes("LesCalculateurs.fr - outil independant")) {
     html = html.replace(
-      /(<!-- Références -->[\s\S]*?<\/ul>\s*<\/div>)/i,
+      /(<!-- References -->[\s\S]*?<\/ul>\s*<\/div>)/i,
       `$1
         
         <!-- EEAT Trust Signal -->
         <div class="mt-8 pt-6 border-t border-gray-200">
           <p class="text-xs text-gray-500 text-center">
-            Contenu rédigé et maintenu par <strong>LesCalculateurs.fr</strong> — outil indépendant d'estimation immobilière basé sur les barèmes notariaux officiels (Conseil Supérieur du Notariat, impots.gouv.fr, Legifrance).
+            Contenu redige et maintenu par <strong>LesCalculateurs.fr</strong> - outil independant d'estimation immobiliere base sur les baremes notariaux officiels (Conseil Superieur du Notariat, impots.gouv.fr, Legifrance).
           </p>
         </div>`,
     );
@@ -46,7 +46,7 @@ function processFile(filePath) {
 }
 
 function main() {
-  console.log("=== AJOUT MICRO-AJUSTEMENTS ÉLITE ===\n");
+  console.log("=== AJOUT MICRO-AJUSTEMENTS ELITE ===\n");
 
   const dir = path.resolve(
     process.cwd(),
@@ -66,9 +66,9 @@ function main() {
     }
   }
 
-  console.log(`✓ ${updated} fichiers mis à jour avec:`);
+  console.log(`✓ ${updated} fichiers mis a jour avec:`);
   console.log('  • Note explicative "Taux global indicatif..."');
-  console.log("  • Signal EEAT (Expertise/Autorité/Trust)");
+  console.log("  • Signal EEAT (Expertise/Autorite/Trust)");
 }
 
 main();

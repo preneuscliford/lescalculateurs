@@ -1,5 +1,5 @@
 /**
- * Script de génération automatique de 101 articles SEO sur les frais de notaire par département
+ * Script de generation automatique de 101 articles SEO sur les frais de notaire par departement
  * Usage: node scripts/generate-departement-articles.js
  */
 
@@ -57,7 +57,7 @@ function parseDepartementCodesFromArgs() {
 
 function isConformYMYL(html, depCode) {
   if (!html) return false;
-  const hasTitle = html.includes("— Simulateur officiel gratuit</title>");
+  const hasTitle = html.includes("- Simulateur officiel gratuit</title>");
   const hasCanonical = html.includes(
     `https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-${depCode}`
   );
@@ -68,8 +68,8 @@ function isConformYMYL(html, depCode) {
 }
 
 /**
- * Résout le chemin du fichier DVF 2024.
- * Priorité: env `DVF_PATH` → `../ValeursFoncieres-2024.txt` → chemin absolu projet.
+ * Resout le chemin du fichier DVF 2024.
+ * Priorite: env `DVF_PATH` → `../ValeursFoncieres-2024.txt` → chemin absolu projet.
  */
 function resolveDVFPath() {
   const fromEnv = process.env.DVF_PATH;
@@ -94,11 +94,11 @@ function normalizeCityName(s) {
 }
 
 /**
- * Charge les statistiques DVF (transactions et ventes immobilières) par commune,
- * de manière synchrone pour les villes ciblées.
- * - Filtre: `Nature mutation = Vente`, année 2024
- * - Transactions uniques: groupées par `Reference document` + `No disposition`
- * - Ventes immobilières: transaction ayant au moins un `Type local` ∈ {Maison, Appartement}
+ * Charge les statistiques DVF (transactions et ventes immobilieres) par commune,
+ * de maniere synchrone pour les villes ciblees.
+ * - Filtre: `Nature mutation = Vente`, annee 2024
+ * - Transactions uniques: groupees par `Reference document` + `No disposition`
+ * - Ventes immobilieres: transaction ayant au moins un `Type local` ∈ {Maison, Appartement}
  */
 function loadDVFStatsSync(dvfPath, targetCitiesSet) {
   const statsByCommune = new Map();
@@ -159,7 +159,7 @@ function loadDVFStatsSync(dvfPath, targetCitiesSet) {
       }
     }
 
-    // Agrège en comptes
+    // Agrege en comptes
     const finalStats = new Map();
     for (const [commune, transMap] of statsByCommune.entries()) {
       const total = transMap.size;
@@ -205,9 +205,9 @@ function loadDVFStatsSync(dvfPath, targetCitiesSet) {
 let DVF_STATS_CACHE = null;
 
 /**
- * Résout les balises d'assets à injecter selon l'environnement.
- * - En développement: injecte le module `main.ts` (Vite charge Tailwind CSS).
- * - En production: lit `dist/manifest.json` pour insérer les fichiers hashés JS/CSS.
+ * Resout les balises d'assets a injecter selon l'environnement.
+ * - En developpement: injecte le module `main.ts` (Vite charge Tailwind CSS).
+ * - En production: lit `dist/manifest.json` pour inserer les fichiers hashes JS/CSS.
  */
 const resolveAssetsForEnv = () => {
   try {
@@ -239,12 +239,12 @@ const resolveAssetsForEnv = () => {
 };
 
 /**
- * Formate une date JS en français (ex: "14 novembre 2025").
+ * Formate une date JS en francais (ex: "14 novembre 2025").
  */
 const formatDateFR = (date) => {
   const mois = [
     "janvier",
-    "février",
+    "fevrier",
     "mars",
     "avril",
     "mai",
@@ -254,7 +254,7 @@ const formatDateFR = (date) => {
     "septembre",
     "octobre",
     "novembre",
-    "décembre",
+    "decembre",
   ];
   const jour = date.getDate();
   const moisNom = mois[date.getMonth()];
@@ -262,12 +262,12 @@ const formatDateFR = (date) => {
   return `${jour} ${moisNom} ${annee}`;
 };
 
-// Liste complète des départements français (101)
+// Liste complete des departements francais (101)
 const departements = [
   {
     code: "01",
     nom: "Ain",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Bourg-en-Bresse",
     ville2: "Oyonnax",
     prixM2: 2100,
@@ -283,15 +283,15 @@ const departements = [
   {
     code: "03",
     nom: "Allier",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Moulins",
-    ville2: "Montluçon",
+    ville2: "Montlucon",
     prixM2: 1400,
   },
   {
     code: "04",
     nom: "Alpes-de-Haute-Provence",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
     ville1: "Digne-les-Bains",
     ville2: "Manosque",
     prixM2: 2300,
@@ -299,23 +299,23 @@ const departements = [
   {
     code: "05",
     nom: "Hautes-Alpes",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
     ville1: "Gap",
-    ville2: "Briançon",
+    ville2: "Briancon",
     prixM2: 2800,
   },
   {
     code: "06",
     nom: "Alpes-Maritimes",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
     ville1: "Nice",
     ville2: "Cannes",
     prixM2: 4800,
   },
   {
     code: "07",
-    nom: "Ardèche",
-    region: "Auvergne-Rhône-Alpes",
+    nom: "Ardeche",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Privas",
     ville2: "Aubenas",
     prixM2: 1900,
@@ -324,13 +324,13 @@ const departements = [
     code: "08",
     nom: "Ardennes",
     region: "Grand Est",
-    ville1: "Charleville-Mézières",
+    ville1: "Charleville-Mezieres",
     ville2: "Sedan",
     prixM2: 1300,
   },
   {
     code: "09",
-    nom: "Ariège",
+    nom: "Ariege",
     region: "Occitanie",
     ville1: "Foix",
     ville2: "Pamiers",
@@ -362,8 +362,8 @@ const departements = [
   },
   {
     code: "13",
-    nom: "Bouches-du-Rhône",
-    region: "Provence-Alpes-Côte d'Azur",
+    nom: "Bouches-du-Rhone",
+    region: "Provence-Alpes-Cote d'Azur",
     ville1: "Marseille",
     ville2: "Aix-en-Provence",
     prixM2: 3500,
@@ -379,7 +379,7 @@ const departements = [
   {
     code: "15",
     nom: "Cantal",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Aurillac",
     ville2: "Saint-Flour",
     prixM2: 1200,
@@ -388,7 +388,7 @@ const departements = [
     code: "16",
     nom: "Charente",
     region: "Nouvelle-Aquitaine",
-    ville1: "Angoulême",
+    ville1: "Angouleme",
     ville2: "Cognac",
     prixM2: 1600,
   },
@@ -410,7 +410,7 @@ const departements = [
   },
   {
     code: "19",
-    nom: "Corrèze",
+    nom: "Correze",
     region: "Nouvelle-Aquitaine",
     ville1: "Tulle",
     ville2: "Brive-la-Gaillarde",
@@ -418,15 +418,15 @@ const departements = [
   },
   {
     code: "21",
-    nom: "Côte-d'Or",
-    region: "Bourgogne-Franche-Comté",
+    nom: "Cote-d'Or",
+    region: "Bourgogne-Franche-Comte",
     ville1: "Dijon",
     ville2: "Beaune",
     prixM2: 2500,
   },
   {
     code: "22",
-    nom: "Côtes-d'Armor",
+    nom: "Cotes-d'Armor",
     region: "Bretagne",
     ville1: "Saint-Brieuc",
     ville2: "Lannion",
@@ -436,7 +436,7 @@ const departements = [
     code: "23",
     nom: "Creuse",
     region: "Nouvelle-Aquitaine",
-    ville1: "Guéret",
+    ville1: "Gueret",
     ville2: "Aubusson",
     prixM2: 900,
   },
@@ -444,31 +444,31 @@ const departements = [
     code: "24",
     nom: "Dordogne",
     region: "Nouvelle-Aquitaine",
-    ville1: "Périgueux",
+    ville1: "Perigueux",
     ville2: "Bergerac",
     prixM2: 1700,
   },
   {
     code: "25",
     nom: "Doubs",
-    region: "Bourgogne-Franche-Comté",
-    ville1: "Besançon",
-    ville2: "Montbéliard",
+    region: "Bourgogne-Franche-Comte",
+    ville1: "Besancon",
+    ville2: "Montbeliard",
     prixM2: 2100,
   },
   {
     code: "26",
-    nom: "Drôme",
-    region: "Auvergne-Rhône-Alpes",
+    nom: "Drome",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Valence",
-    ville2: "Montélimar",
+    ville2: "Montelimar",
     prixM2: 2200,
   },
   {
     code: "27",
     nom: "Eure",
     region: "Normandie",
-    ville1: "Évreux",
+    ville1: "Evreux",
     ville2: "Vernon",
     prixM2: 2000,
   },
@@ -482,7 +482,7 @@ const departements = [
   },
   {
     code: "29",
-    nom: "Finistère",
+    nom: "Finistere",
     region: "Bretagne",
     ville1: "Brest",
     ville2: "Quimper",
@@ -509,7 +509,7 @@ const departements = [
     nom: "Gard",
     region: "Occitanie",
     ville1: "Nîmes",
-    ville2: "Alès",
+    ville2: "Ales",
     prixM2: 2300,
   },
   {
@@ -533,15 +533,15 @@ const departements = [
     nom: "Gironde",
     region: "Nouvelle-Aquitaine",
     ville1: "Bordeaux",
-    ville2: "Mérignac",
+    ville2: "Merignac",
     prixM2: 3800,
   },
   {
     code: "34",
-    nom: "Hérault",
+    nom: "Herault",
     region: "Occitanie",
     ville1: "Montpellier",
-    ville2: "Béziers",
+    ville2: "Beziers",
     prixM2: 3100,
   },
   {
@@ -556,7 +556,7 @@ const departements = [
     code: "36",
     nom: "Indre",
     region: "Centre-Val de Loire",
-    ville1: "Châteauroux",
+    ville1: "Chateauroux",
     ville2: "Issoudun",
     prixM2: 1200,
   },
@@ -565,13 +565,13 @@ const departements = [
     nom: "Indre-et-Loire",
     region: "Centre-Val de Loire",
     ville1: "Tours",
-    ville2: "Joué-lès-Tours",
+    ville2: "Joue-les-Tours",
     prixM2: 2400,
   },
   {
     code: "38",
-    nom: "Isère",
-    region: "Auvergne-Rhône-Alpes",
+    nom: "Isere",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Grenoble",
     ville2: "Vienne",
     prixM2: 2700,
@@ -579,7 +579,7 @@ const departements = [
   {
     code: "39",
     nom: "Jura",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
     ville1: "Lons-le-Saunier",
     ville2: "Dole",
     prixM2: 1700,
@@ -603,15 +603,15 @@ const departements = [
   {
     code: "42",
     nom: "Loire",
-    region: "Auvergne-Rhône-Alpes",
-    ville1: "Saint-Étienne",
+    region: "Auvergne-Rhone-Alpes",
+    ville1: "Saint-Etienne",
     ville2: "Roanne",
     prixM2: 1600,
   },
   {
     code: "43",
     nom: "Haute-Loire",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Le Puy-en-Velay",
     ville2: "Monistrol-sur-Loire",
     prixM2: 1400,
@@ -628,7 +628,7 @@ const departements = [
     code: "45",
     nom: "Loiret",
     region: "Centre-Val de Loire",
-    ville1: "Orléans",
+    ville1: "Orleans",
     ville2: "Montargis",
     prixM2: 2200,
   },
@@ -650,7 +650,7 @@ const departements = [
   },
   {
     code: "48",
-    nom: "Lozère",
+    nom: "Lozere",
     region: "Occitanie",
     ville1: "Mende",
     ville2: "Florac",
@@ -669,7 +669,7 @@ const departements = [
     nom: "Manche",
     region: "Normandie",
     ville1: "Cherbourg",
-    ville2: "Saint-Lô",
+    ville2: "Saint-Lo",
     prixM2: 1800,
   },
   {
@@ -677,7 +677,7 @@ const departements = [
     nom: "Marne",
     region: "Grand Est",
     ville1: "Reims",
-    ville2: "Châlons-en-Champagne",
+    ville2: "Chalons-en-Champagne",
     prixM2: 2000,
   },
   {
@@ -701,7 +701,7 @@ const departements = [
     nom: "Meurthe-et-Moselle",
     region: "Grand Est",
     ville1: "Nancy",
-    ville2: "Vandœuvre-lès-Nancy",
+    ville2: "Vandœuvre-les-Nancy",
     prixM2: 2100,
   },
   {
@@ -730,8 +730,8 @@ const departements = [
   },
   {
     code: "58",
-    nom: "Nièvre",
-    region: "Bourgogne-Franche-Comté",
+    nom: "Nievre",
+    region: "Bourgogne-Franche-Comte",
     ville1: "Nevers",
     ville2: "Cosne-Cours-sur-Loire",
     prixM2: 1200,
@@ -749,14 +749,14 @@ const departements = [
     nom: "Oise",
     region: "Hauts-de-France",
     ville1: "Beauvais",
-    ville2: "Compiègne",
+    ville2: "Compiegne",
     prixM2: 2100,
   },
   {
     code: "61",
     nom: "Orne",
     region: "Normandie",
-    ville1: "Alençon",
+    ville1: "Alencon",
     ville2: "Argentan",
     prixM2: 1400,
   },
@@ -770,15 +770,15 @@ const departements = [
   },
   {
     code: "63",
-    nom: "Puy-de-Dôme",
-    region: "Auvergne-Rhône-Alpes",
+    nom: "Puy-de-Dome",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Clermont-Ferrand",
     ville2: "Riom",
     prixM2: 1900,
   },
   {
     code: "64",
-    nom: "Pyrénées-Atlantiques",
+    nom: "Pyrenees-Atlantiques",
     region: "Nouvelle-Aquitaine",
     ville1: "Pau",
     ville2: "Bayonne",
@@ -786,7 +786,7 @@ const departements = [
   },
   {
     code: "65",
-    nom: "Hautes-Pyrénées",
+    nom: "Hautes-Pyrenees",
     region: "Occitanie",
     ville1: "Tarbes",
     ville2: "Lourdes",
@@ -794,7 +794,7 @@ const departements = [
   },
   {
     code: "66",
-    nom: "Pyrénées-Orientales",
+    nom: "Pyrenees-Orientales",
     region: "Occitanie",
     ville1: "Perpignan",
     ville2: "Canet-en-Roussillon",
@@ -818,26 +818,26 @@ const departements = [
   },
   {
     code: "69",
-    nom: "Rhône",
-    region: "Auvergne-Rhône-Alpes",
+    nom: "Rhone",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Lyon",
     ville2: "Villeurbanne",
     prixM2: 3900,
   },
   {
     code: "70",
-    nom: "Haute-Saône",
-    region: "Bourgogne-Franche-Comté",
+    nom: "Haute-Saone",
+    region: "Bourgogne-Franche-Comte",
     ville1: "Vesoul",
     ville2: "Lure",
     prixM2: 1300,
   },
   {
     code: "71",
-    nom: "Saône-et-Loire",
-    region: "Bourgogne-Franche-Comté",
-    ville1: "Mâcon",
-    ville2: "Chalon-sur-Saône",
+    nom: "Saone-et-Loire",
+    region: "Bourgogne-Franche-Comte",
+    ville1: "Macon",
+    ville2: "Chalon-sur-Saone",
     prixM2: 1600,
   },
   {
@@ -845,21 +845,21 @@ const departements = [
     nom: "Sarthe",
     region: "Pays de la Loire",
     ville1: "Le Mans",
-    ville2: "La Flèche",
+    ville2: "La Fleche",
     prixM2: 1900,
   },
   {
     code: "73",
     nom: "Savoie",
-    region: "Auvergne-Rhône-Alpes",
-    ville1: "Chambéry",
+    region: "Auvergne-Rhone-Alpes",
+    ville1: "Chambery",
     ville2: "Aix-les-Bains",
     prixM2: 2900,
   },
   {
     code: "74",
     nom: "Haute-Savoie",
-    region: "Auvergne-Rhône-Alpes",
+    region: "Auvergne-Rhone-Alpes",
     ville1: "Annecy",
     ville2: "Thonon-les-Bains",
     prixM2: 4200,
@@ -869,7 +869,7 @@ const departements = [
     nom: "Paris",
     region: "Île-de-France",
     ville1: "Paris",
-    ville2: "Paris 15ème",
+    ville2: "Paris 15eme",
     prixM2: 10500,
   },
   {
@@ -898,7 +898,7 @@ const departements = [
   },
   {
     code: "79",
-    nom: "Deux-Sèvres",
+    nom: "Deux-Sevres",
     region: "Nouvelle-Aquitaine",
     ville1: "Niort",
     ville2: "Bressuire",
@@ -931,22 +931,22 @@ const departements = [
   {
     code: "83",
     nom: "Var",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
     ville1: "Toulon",
-    ville2: "Hyères",
+    ville2: "Hyeres",
     prixM2: 3400,
   },
   {
     code: "84",
     nom: "Vaucluse",
-    region: "Provence-Alpes-Côte d'Azur",
+    region: "Provence-Alpes-Cote d'Azur",
     ville1: "Avignon",
     ville2: "Carpentras",
     prixM2: 2600,
   },
   {
     code: "85",
-    nom: "Vendée",
+    nom: "Vendee",
     region: "Pays de la Loire",
     ville1: "La Roche-sur-Yon",
     ville2: "Les Sables-d'Olonne",
@@ -957,7 +957,7 @@ const departements = [
     nom: "Vienne",
     region: "Nouvelle-Aquitaine",
     ville1: "Poitiers",
-    ville2: "Châtellerault",
+    ville2: "Chatellerault",
     prixM2: 1700,
   },
   {
@@ -972,14 +972,14 @@ const departements = [
     code: "88",
     nom: "Vosges",
     region: "Grand Est",
-    ville1: "Épinal",
-    ville2: "Saint-Dié-des-Vosges",
+    ville1: "Epinal",
+    ville2: "Saint-Die-des-Vosges",
     prixM2: 1400,
   },
   {
     code: "89",
     nom: "Yonne",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
     ville1: "Auxerre",
     ville2: "Sens",
     prixM2: 1500,
@@ -987,7 +987,7 @@ const departements = [
   {
     code: "90",
     nom: "Territoire de Belfort",
-    region: "Bourgogne-Franche-Comté",
+    region: "Bourgogne-Franche-Comte",
     ville1: "Belfort",
     ville2: "Delle",
     prixM2: 1600,
@@ -996,7 +996,7 @@ const departements = [
     code: "91",
     nom: "Essonne",
     region: "Île-de-France",
-    ville1: "Évry",
+    ville1: "Evry",
     ville2: "Corbeil-Essonnes",
     prixM2: 3200,
   },
@@ -1020,7 +1020,7 @@ const departements = [
     code: "94",
     nom: "Val-de-Marne",
     region: "Île-de-France",
-    ville1: "Créteil",
+    ville1: "Creteil",
     ville2: "Vitry-sur-Seine",
     prixM2: 4100,
   },
@@ -1036,7 +1036,7 @@ const departements = [
     code: "971",
     nom: "Guadeloupe",
     region: "Guadeloupe",
-    ville1: "Pointe-à-Pitre",
+    ville1: "Pointe-a-Pitre",
     ville2: "Les Abymes",
     prixM2: 2800,
   },
@@ -1058,8 +1058,8 @@ const departements = [
   },
   {
     code: "974",
-    nom: "La Réunion",
-    region: "La Réunion",
+    nom: "La Reunion",
+    region: "La Reunion",
     ville1: "Saint-Denis",
     ville2: "Saint-Paul",
     prixM2: 3200,
@@ -1082,7 +1082,7 @@ const departements = [
   },
 ];
 
-// Fonction pour l'élision "de" → "d'" devant voyelle ou H muet
+// Fonction pour l'elision "de" → "d'" devant voyelle ou H muet
 const getDeOrD = (text) => {
   const voyelles = [
     "a",
@@ -1103,21 +1103,21 @@ const getDeOrD = (text) => {
   return voyelles.includes(text.charAt(0)) ? "d'" : "de ";
 };
 
-// Fonction pour obtenir le verbe "est/sont/offre/offrent" selon le département
+// Fonction pour obtenir le verbe "est/sont/offre/offrent" selon le departement
 const getVerbe = (depNom, verbe) => {
   const pluriels = [
     "Alpes-de-Haute-Provence",
     "Hautes-Alpes",
     "Alpes-Maritimes",
     "Ardennes",
-    "Bouches-du-Rhône",
-    "Côtes-d'Armor",
+    "Bouches-du-Rhone",
+    "Cotes-d'Armor",
     "Hauts-de-Seine",
     "Landes",
-    "Pyrénées-Atlantiques",
-    "Hautes-Pyrénées",
-    "Pyrénées-Orientales",
-    "Deux-Sèvres",
+    "Pyrenees-Atlantiques",
+    "Hautes-Pyrenees",
+    "Pyrenees-Orientales",
+    "Deux-Sevres",
     "Vosges",
     "Yvelines",
   ];
@@ -1129,30 +1129,30 @@ const getVerbe = (depNom, verbe) => {
   return verbe;
 };
 
-// Fonction pour obtenir l'article défini selon le département
+// Fonction pour obtenir l'article defini selon le departement
 const getArticleDefini = (depNom, depCode) => {
   // Paris : pas d'article
   if (depCode === "75") return "";
 
-  // Départements pluriels : les
+  // Departements pluriels : les
   const pluriels = [
     "Alpes-de-Haute-Provence",
     "Hautes-Alpes",
     "Alpes-Maritimes",
     "Ardennes",
-    "Bouches-du-Rhône",
-    "Côtes-d'Armor",
+    "Bouches-du-Rhone",
+    "Cotes-d'Armor",
     "Landes",
-    "Pyrénées-Atlantiques",
-    "Hautes-Pyrénées",
-    "Pyrénées-Orientales",
-    "Deux-Sèvres",
+    "Pyrenees-Atlantiques",
+    "Hautes-Pyrenees",
+    "Pyrenees-Orientales",
+    "Deux-Sevres",
     "Vosges",
     "Yvelines",
   ];
   if (pluriels.includes(depNom)) return "les ";
 
-  // Départements masculins singuliers commençant par une consonne : le
+  // Departements masculins singuliers commencant par une consonne : le
   const masculinsSinguliers = [
     "Bas-Rhin",
     "Haut-Rhin",
@@ -1160,7 +1160,7 @@ const getArticleDefini = (depNom, depCode) => {
     "Cantal",
     "Cher",
     "Doubs",
-    "Finistère",
+    "Finistere",
     "Gard",
     "Gers",
     "Jura",
@@ -1172,8 +1172,8 @@ const getArticleDefini = (depNom, depCode) => {
     "Morbihan",
     "Nord",
     "Pas-de-Calais",
-    "Puy-de-Dôme",
-    "Rhône",
+    "Puy-de-Dome",
+    "Rhone",
     "Tarn",
     "Tarn-et-Garonne",
     "Territoire de Belfort",
@@ -1184,18 +1184,18 @@ const getArticleDefini = (depNom, depCode) => {
   ];
   if (masculinsSinguliers.includes(depNom)) return "le ";
 
-  // Départements masculins commençant par une voyelle : l'
-  const masculinsVoyelle = ["Hérault"];
+  // Departements masculins commencant par une voyelle : l'
+  const masculinsVoyelle = ["Herault"];
   if (masculinsVoyelle.includes(depNom)) return "l'";
 
-  // Tous les autres (féminins) : la/l'
+  // Tous les autres (feminins) : la/l'
   const voyelles = ["A", "E", "I", "O", "U", "H", "Y", "Î"];
   if (voyelles.includes(depNom.charAt(0))) return "l'";
 
   return "la ";
 };
 
-// Fonction pour obtenir "du/de la/des/de l'" selon le département
+// Fonction pour obtenir "du/de la/des/de l'" selon le departement
 const getDuDeLa = (depNom, depCode) => {
   if (depCode === "75") return "de Paris";
 
@@ -1207,14 +1207,14 @@ const getDuDeLa = (depNom, depCode) => {
   return "de ";
 };
 
-// Fonction pour obtenir la préposition correcte selon le département
+// Fonction pour obtenir la preposition correcte selon le departement
 const getPreposition = (depNom, depCode) => {
   // Paris et villes
-  if (depCode === "75") return "à Paris";
-  if (depNom === "La Réunion") return "à La Réunion";
-  if (depNom === "Mayotte") return "à Mayotte";
+  if (depCode === "75") return "a Paris";
+  if (depNom === "La Reunion") return "a La Reunion";
+  if (depNom === "Mayotte") return "a Mayotte";
 
-  // Départements masculins singuliers commençant par une consonne
+  // Departements masculins singuliers commencant par une consonne
   const masculinsSinguliers = [
     "Bas-Rhin",
     "Haut-Rhin",
@@ -1222,7 +1222,7 @@ const getPreposition = (depNom, depCode) => {
     "Cantal",
     "Cher",
     "Doubs",
-    "Finistère",
+    "Finistere",
     "Gard",
     "Gers",
     "Jura",
@@ -1234,8 +1234,8 @@ const getPreposition = (depNom, depCode) => {
     "Morbihan",
     "Nord",
     "Pas-de-Calais",
-    "Puy-de-Dôme",
-    "Rhône",
+    "Puy-de-Dome",
+    "Rhone",
     "Tarn",
     "Tarn-et-Garonne",
     "Territoire de Belfort",
@@ -1246,38 +1246,38 @@ const getPreposition = (depNom, depCode) => {
   ];
   if (masculinsSinguliers.includes(depNom)) return `dans le ${depNom}`;
 
-  // Départements masculins commençant par une voyelle
-  const masculinsVoyelle = ["Hérault"];
+  // Departements masculins commencant par une voyelle
+  const masculinsVoyelle = ["Herault"];
   if (masculinsVoyelle.includes(depNom)) return `dans l'${depNom}`;
 
-  // Départements pluriels
+  // Departements pluriels
   const pluriels = [
     "Alpes-de-Haute-Provence",
     "Hautes-Alpes",
     "Alpes-Maritimes",
     "Ardennes",
-    "Bouches-du-Rhône",
-    "Côtes-d'Armor",
+    "Bouches-du-Rhone",
+    "Cotes-d'Armor",
     "Hauts-de-Seine",
     "Landes",
-    "Pyrénées-Atlantiques",
-    "Hautes-Pyrénées",
-    "Pyrénées-Orientales",
-    "Deux-Sèvres",
+    "Pyrenees-Atlantiques",
+    "Hautes-Pyrenees",
+    "Pyrenees-Orientales",
+    "Deux-Sevres",
     "Vosges",
     "Yvelines",
   ];
   if (pluriels.includes(depNom)) return `dans les ${depNom}`;
 
-  // Tous les autres (départements féminins) : en + nom
+  // Tous les autres (departements feminins) : en + nom
   return `en ${depNom}`;
 };
 
-// Variantes de contenu pour éviter le duplicate content
+// Variantes de contenu pour eviter le duplicate content
 const getIntroVariant = (index, depNom, depCode) => {
   const prep = getPreposition(depNom, depCode);
 
-  // Classification des départements par type de marché et spécificité
+  // Classification des departements par type de marche et specificite
   const deptTypes = {
     metropole: [
       "69",
@@ -1359,7 +1359,7 @@ const getIntroVariant = (index, depNom, depCode) => {
     frontalier: ["25", "54", "57", "67", "68", "74", "90"],
   };
 
-  let type = "rural_accessible"; // défaut
+  let type = "rural_accessible"; // defaut
   for (const [key, codes] of Object.entries(deptTypes)) {
     if (codes.includes(depCode)) {
       type = key;
@@ -1369,50 +1369,50 @@ const getIntroVariant = (index, depNom, depCode) => {
 
   const variants = {
     metropole: [
-      `Le marché immobilier ${prep} bénéficie d'une dynamique métropolitaine soutenue, avec des prix qui évoluent selon les quartiers.`,
-      `Investir ${prep} nécessite une bonne connaissance du marché local pour optimiser vos frais d'acquisition.`,
+      `Le marche immobilier ${prep} beneficie d'une dynamique metropolitaine soutenue, avec des prix qui evoluent selon les quartiers.`,
+      `Investir ${prep} necessite une bonne connaissance du marche local pour optimiser vos frais d'acquisition.`,
       `${
         depNom === "Paris"
-          ? "À Paris"
+          ? "A Paris"
           : prep.charAt(0).toUpperCase() + prep.slice(1)
-      }, la tension immobilière influence directement les stratégies d'achat et les frais associés.`,
-      `Le marché ${prep} attire de nombreux acquéreurs, rendant essentielle l'anticipation des frais de notaire.`,
-      `Acheter ${prep} en 2025 demande une préparation financière rigoureuse incluant les frais de notaire.`,
+      }, la tension immobiliere influence directement les strategies d'achat et les frais associes.`,
+      `Le marche ${prep} attire de nombreux acquereurs, rendant essentielle l'anticipation des frais de notaire.`,
+      `Acheter ${prep} en 2025 demande une preparation financiere rigoureuse incluant les frais de notaire.`,
     ],
     montagne: [
-      `Le marché montagnard ${prep} combine résidences principales et investissement saisonnier avec des frais spécifiques.`,
-      `Acquérir ${prep} nécessite de bien budgéter les frais de notaire, particulièrement pour les biens de caractère.`,
-      `L'attractivité alpine ${prep} maintient un marché dynamique où les frais d'acquisition sont à anticiper.`,
-      `Investir en montagne ${prep} implique de maîtriser le calcul des frais notariés pour tous types de biens.`,
+      `Le marche montagnard ${prep} combine residences principales et investissement saisonnier avec des frais specifiques.`,
+      `Acquerir ${prep} necessite de bien budgeter les frais de notaire, particulierement pour les biens de caractere.`,
+      `L'attractivite alpine ${prep} maintient un marche dynamique ou les frais d'acquisition sont a anticiper.`,
+      `Investir en montagne ${prep} implique de maîtriser le calcul des frais notaries pour tous types de biens.`,
       `Le cadre exceptionnel ${prep} justifie une approche professionnelle du calcul des frais de notaire.`,
     ],
     littoral: [
-      `L'attractivité côtière ${prep} génère une demande soutenue où les frais de notaire représentent un enjeu budgétaire.`,
-      `Acquérir sur le littoral ${prep} nécessite d'anticiper précisément vos frais d'acquisition immobilière.`,
-      `Le marché balnéaire ${prep} combine résidences secondaires et principales avec des frais notariés variables.`,
-      `Investir près de la mer ${prep} demande une évaluation fine des coûts notariés selon le type de bien.`,
-      `La proximité littorale ${prep} influence les prix et donc le montant final des frais de notaire.`,
+      `L'attractivite cotiere ${prep} genere une demande soutenue ou les frais de notaire representent un enjeu budgetaire.`,
+      `Acquerir sur le littoral ${prep} necessite d'anticiper precisement vos frais d'acquisition immobiliere.`,
+      `Le marche balneaire ${prep} combine residences secondaires et principales avec des frais notaries variables.`,
+      `Investir pres de la mer ${prep} demande une evaluation fine des coûts notaries selon le type de bien.`,
+      `La proximite littorale ${prep} influence les prix et donc le montant final des frais de notaire.`,
     ],
     rural_accessible: [
-      `Le marché immobilier ${prep} offre d'excellentes opportunités avec des frais de notaire proportionnellement avantageux.`,
-      `Investir ${prep} permet de bénéficier de prix accessibles tout en maîtrisant vos frais d'acquisition.`,
-      `Le cadre de vie ${prep} attire de nouveaux acquéreurs soucieux d'optimiser leur budget notarial.`,
-      `Acheter ${prep} en 2025 représente une opportunité d'investissement avec des frais maîtrisés.`,
-      `L'authenticité ${prep} séduit tout en offrant des conditions d'acquisition avantageuses.`,
+      `Le marche immobilier ${prep} offre d'excellentes opportunites avec des frais de notaire proportionnellement avantageux.`,
+      `Investir ${prep} permet de beneficier de prix accessibles tout en maîtrisant vos frais d'acquisition.`,
+      `Le cadre de vie ${prep} attire de nouveaux acquereurs soucieux d'optimiser leur budget notarial.`,
+      `Acheter ${prep} en 2025 represente une opportunite d'investissement avec des frais maîtrises.`,
+      `L'authenticite ${prep} seduit tout en offrant des conditions d'acquisition avantageuses.`,
     ],
     proximite_paris: [
-      `La proximité francilienne ${prep} influence positivement le marché tout en maintenant des frais accessibles.`,
-      `Investir ${prep} combine l'attractivité parisienne et des coûts d'acquisition plus mesurés.`,
-      `Le marché ${prep} bénéficie de l'effet métropolitain avec des frais de notaire à bien calculer.`,
-      `Acquérir ${prep} offre un compromis intéressant entre accessibilité et coûts notariés maîtrisés.`,
-      `L'équilibre entre proximité de Paris et prix ${prep} nécessite une approche fine des frais.`,
+      `La proximite francilienne ${prep} influence positivement le marche tout en maintenant des frais accessibles.`,
+      `Investir ${prep} combine l'attractivite parisienne et des coûts d'acquisition plus mesures.`,
+      `Le marche ${prep} beneficie de l'effet metropolitain avec des frais de notaire a bien calculer.`,
+      `Acquerir ${prep} offre un compromis interessant entre accessibilite et coûts notaries maîtrises.`,
+      `L'equilibre entre proximite de Paris et prix ${prep} necessite une approche fine des frais.`,
     ],
     frontalier: [
-      `L'attractivité transfrontalière ${prep} dynamise le marché avec des spécificités de calcul des frais.`,
-      `Investir ${prep} bénéficie de la proximité internationale tout en respectant la fiscalité française.`,
-      `Le marché frontalier ${prep} combine opportunités locales et calcul précis des frais d'acquisition.`,
-      `Acquérir ${prep} nécessite de maîtriser les frais notariés dans un contexte économique spécifique.`,
-      `La position géographique ${prep} influence les stratégies d'investissement et les coûts associés.`,
+      `L'attractivite transfrontaliere ${prep} dynamise le marche avec des specificites de calcul des frais.`,
+      `Investir ${prep} beneficie de la proximite internationale tout en respectant la fiscalite francaise.`,
+      `Le marche frontalier ${prep} combine opportunites locales et calcul precis des frais d'acquisition.`,
+      `Acquerir ${prep} necessite de maîtriser les frais notaries dans un contexte economique specifique.`,
+      `La position geographique ${prep} influence les strategies d'investissement et les coûts associes.`,
     ],
   };
 
@@ -1424,8 +1424,8 @@ const getSectionTitle1Variant = (index, depNom, depCode) => {
   const prep = getPreposition(depNom, depCode);
   const variants = [
     `💰 Montant moyen des frais de notaire ${prep}`,
-    `💳 Quel budget prévoir pour les frais de notaire ${prep} ?`,
-    `📊 Coût réel des frais de notaire ${prep}`,
+    `💳 Quel budget prevoir pour les frais de notaire ${prep} ?`,
+    `📊 Coût reel des frais de notaire ${prep}`,
     `💵 Estimation des frais de notaire pour ${depNom}`,
     `💰 Frais de notaire 2025 : combien coûte un achat ${prep} ?`,
   ];
@@ -1434,10 +1434,10 @@ const getSectionTitle1Variant = (index, depNom, depCode) => {
 
 const getContextPhraseVariant = (index) => {
   const variants = [
-    "Les frais de notaire varient selon le <strong>type de bien acheté</strong> et son prix.",
-    "Le montant des frais dépend principalement du <strong>type de logement</strong> et de sa valeur.",
-    "Deux facteurs clés déterminent vos frais : le <strong>type de bien</strong> (neuf ou ancien) et son prix.",
-    "Les frais d'acquisition immobilière changent selon que vous achetez dans l'<strong>ancien ou le neuf</strong>.",
+    "Les frais de notaire varient selon le <strong>type de bien achete</strong> et son prix.",
+    "Le montant des frais depend principalement du <strong>type de logement</strong> et de sa valeur.",
+    "Deux facteurs cles determinent vos frais : le <strong>type de bien</strong> (neuf ou ancien) et son prix.",
+    "Les frais d'acquisition immobiliere changent selon que vous achetez dans l'<strong>ancien ou le neuf</strong>.",
     "Le calcul des frais varie significativement entre un bien <strong>neuf et un bien ancien</strong>.",
   ];
   return variants[index % variants.length];
@@ -1445,257 +1445,257 @@ const getContextPhraseVariant = (index) => {
 
 const getDifferencePhraseVariant = (index, depNom) => {
   const variants = [
-    ", comme partout en France, la différence entre l'ancien et le neuf est significative.",
-    ", l'écart de coût entre neuf et ancien suit les barèmes nationaux.",
-    ", les tarifs officiels s'appliquent comme dans tous les départements français.",
-    ", le différentiel neuf/ancien respecte la réglementation nationale.",
-    ", l'économie réalisée en VEFA reste substantielle selon les barèmes officiels.",
+    ", comme partout en France, la difference entre l'ancien et le neuf est significative.",
+    ", l'ecart de coût entre neuf et ancien suit les baremes nationaux.",
+    ", les tarifs officiels s'appliquent comme dans tous les departements francais.",
+    ", le differentiel neuf/ancien respecte la reglementation nationale.",
+    ", l'economie realisee en VEFA reste substantielle selon les baremes officiels.",
   ];
   return variants[index % variants.length];
 };
 
 const getNotePhraseVariant = (index) => {
   const variants = [
-    "<strong>Note :</strong> Si ce même bien était neuf (VEFA), les frais de notaire ne seraient que de",
-    "<strong>À retenir :</strong> Pour un bien neuf équivalent, vous ne paieriez que",
-    "<strong>Économie potentielle :</strong> En VEFA, les frais tomberaient à seulement",
-    "<strong>Comparaison :</strong> Dans le neuf, ces frais représenteraient uniquement",
-    "<strong>Alternative neuve :</strong> Pour un logement VEFA de même valeur, comptez",
+    "<strong>Note :</strong> Si ce meme bien etait neuf (VEFA), les frais de notaire ne seraient que de",
+    "<strong>A retenir :</strong> Pour un bien neuf equivalent, vous ne paieriez que",
+    "<strong>Economie potentielle :</strong> En VEFA, les frais tomberaient a seulement",
+    "<strong>Comparaison :</strong> Dans le neuf, ces frais representeraient uniquement",
+    "<strong>Alternative neuve :</strong> Pour un logement VEFA de meme valeur, comptez",
   ];
   return variants[index % variants.length];
 };
 
 /**
- * Génère un paragraphe unique de 150 mots sur les spécificités du marché local
+ * Genere un paragraphe unique de 150 mots sur les specificites du marche local
  */
 const generateDepartmentUniqueContent = (dep) => {
   const uniqueContent = {
-    "01": "Le marché immobilier de l'Ain bénéficie de sa proximité avec Lyon et Genève. Les communes comme Bourg-en-Bresse ou Ferney-Voltaire attirent les actifs transfrontaliers, générant une demande soutenue. Les prix moyens restent accessibles comparé aux métropoles voisines, offrant un excellent rapport qualité-prix pour les familles. L'attractivité du département s'explique par son cadre naturel exceptionnel entre Jura et lac Léman.",
+    "01": "Le marche immobilier de l'Ain beneficie de sa proximite avec Lyon et Geneve. Les communes comme Bourg-en-Bresse ou Ferney-Voltaire attirent les actifs transfrontaliers, generant une demande soutenue. Les prix moyens restent accessibles compare aux metropoles voisines, offrant un excellent rapport qualite-prix pour les familles. L'attractivite du departement s'explique par son cadre naturel exceptionnel entre Jura et lac Leman.",
 
-    "02": "L'Aisne présente un marché immobilier particulièrement attractif pour les primo-accédants, avec des prix parmi les plus accessibles de la région Hauts-de-France. Saint-Quentin et Soissons offrent un patrimoine architectural remarquable à des tarifs compétitifs. La proximité de Paris (1h30 en train) commence à attirer les télétravailleurs cherchant un meilleur cadre de vie. Le département mise sur la rénovation urbaine pour redynamiser certains centres-villes.",
+    "02": "L'Aisne presente un marche immobilier particulierement attractif pour les primo-accedants, avec des prix parmi les plus accessibles de la region Hauts-de-France. Saint-Quentin et Soissons offrent un patrimoine architectural remarquable a des tarifs competitifs. La proximite de Paris (1h30 en train) commence a attirer les teletravailleurs cherchant un meilleur cadre de vie. Le departement mise sur la renovation urbaine pour redynamiser certains centres-villes.",
 
-    "03": "Le marché de l'Allier se caractérise par des prix très accessibles, particulièrement à Montluçon et Vichy. Cette dernière, station thermale renommée, attire une clientèle de retraités aisés recherchant la qualité de vie. Moulins, préfecture historique, séduit par son patrimoine et ses prix modérés. L'investissement locatif y est particulièrement rentable grâce au ratio prix/loyer favorable et à la demande étudiante stable.",
+    "03": "Le marche de l'Allier se caracterise par des prix tres accessibles, particulierement a Montlucon et Vichy. Cette derniere, station thermale renommee, attire une clientele de retraites aises recherchant la qualite de vie. Moulins, prefecture historique, seduit par son patrimoine et ses prix moderes. L'investissement locatif y est particulierement rentable grace au ratio prix/loyer favorable et a la demande etudiante stable.",
 
-    "04": "Les Alpes-de-Haute-Provence offrent un marché immobilier diversifié entre littoral et montagne. Manosque et Digne-les-Bains présentent des opportunités intéressantes avec des prix contenus malgré l'attractivité provençale. Les résidences secondaires représentent une part importante du marché, notamment dans les villages perchés. La demande reste soutenue grâce au cadre naturel exceptionnel et à la proximité de la Côte d'Azur.",
+    "04": "Les Alpes-de-Haute-Provence offrent un marche immobilier diversifie entre littoral et montagne. Manosque et Digne-les-Bains presentent des opportunites interessantes avec des prix contenus malgre l'attractivite provencale. Les residences secondaires representent une part importante du marche, notamment dans les villages perches. La demande reste soutenue grace au cadre naturel exceptionnel et a la proximite de la Cote d'Azur.",
 
-    "05": "Le marché des Hautes-Alpes est porté par l'attractivité montagnarde et l'économie du ski. Gap et Briançon connaissent une tension immobilière due à la demande en résidences principales et secondaires. Les prix élevés s'expliquent par la rareté du foncier constructible en zone de montagne. L'investissement en résidence de tourisme reste dynamique, soutenu par la fréquentation touristique four seasons croissante.",
+    "05": "Le marche des Hautes-Alpes est porte par l'attractivite montagnarde et l'economie du ski. Gap et Briancon connaissent une tension immobiliere due a la demande en residences principales et secondaires. Les prix eleves s'expliquent par la rarete du foncier constructible en zone de montagne. L'investissement en residence de tourisme reste dynamique, soutenu par la frequentation touristique four seasons croissante.",
 
-    "06": "Les Alpes-Maritimes présentent l'un des marchés les plus chers de France, tiré par Nice et Cannes. La pression immobilière s'intensifie avec l'arrivée du télétravail et l'attractivité de la French Riviera. Les communes de l'arrière-pays comme Grasse offrent des alternatives plus abordables tout en conservant l'art de vivre méditerranéen. L'investissement locatif saisonnier reste très rentable malgré des prix d'achat élevés. 🎬 Entre festivals de Cannes et parfumeries grassoises, la Côte d'Azur cultive un art de vivre unique qui justifie sa valorisation premium.",
+    "06": "Les Alpes-Maritimes presentent l'un des marches les plus chers de France, tire par Nice et Cannes. La pression immobiliere s'intensifie avec l'arrivee du teletravail et l'attractivite de la French Riviera. Les communes de l'arriere-pays comme Grasse offrent des alternatives plus abordables tout en conservant l'art de vivre mediterraneen. L'investissement locatif saisonnier reste tres rentable malgre des prix d'achat eleves. 🎬 Entre festivals de Cannes et parfumeries grassoises, la Cote d'Azur cultive un art de vivre unique qui justifie sa valorisation premium.",
 
-    "07": "L'Ardèche connaît un regain d'intérêt avec l'essor du télétravail et la recherche de nature. Aubenas et Privas voient leurs prix progresser modérément, restant accessibles comparé aux métropoles voisines. Les résidences secondaires représentent une part croissante du marché, notamment dans les zones touristiques comme les Gorges de l'Ardèche. Le département attire les citadins en quête d'authenticité et de qualité de vie.",
+    "07": "L'Ardeche connaît un regain d'interet avec l'essor du teletravail et la recherche de nature. Aubenas et Privas voient leurs prix progresser moderement, restant accessibles compare aux metropoles voisines. Les residences secondaires representent une part croissante du marche, notamment dans les zones touristiques comme les Gorges de l'Ardeche. Le departement attire les citadins en quete d'authenticite et de qualite de vie.",
 
-    "08": "Les Ardennes proposent un marché immobilier très accessible, avec Charleville-Mézières comme pôle principal. La proximité de la Belgique et du Luxembourg influence positivement certains secteurs frontaliers. Sedan mise sur la rénovation urbaine pour redynamiser son centre historique. Le département attire une clientèle recherchant l'authenticité et des prix modérés dans un cadre naturel préservé.",
+    "08": "Les Ardennes proposent un marche immobilier tres accessible, avec Charleville-Mezieres comme pole principal. La proximite de la Belgique et du Luxembourg influence positivement certains secteurs frontaliers. Sedan mise sur la renovation urbaine pour redynamiser son centre historique. Le departement attire une clientele recherchant l'authenticite et des prix moderes dans un cadre naturel preserve.",
 
-    "09": "L'Ariège séduit par son marché immobilier accessible et son cadre naturel exceptionnel. Foix et Pamiers proposent des biens de caractère à des prix très raisonnables. Le département attire les néo-ruraux et retraités cherchant la tranquillité pyrénéenne. L'investissement en gîtes ruraux se développe, soutenu par une fréquentation touristique nature en progression constante.",
+    "09": "L'Ariege seduit par son marche immobilier accessible et son cadre naturel exceptionnel. Foix et Pamiers proposent des biens de caractere a des prix tres raisonnables. Le departement attire les neo-ruraux et retraites cherchant la tranquillite pyreneenne. L'investissement en gîtes ruraux se developpe, soutenu par une frequentation touristique nature en progression constante.",
 
-    10: "L'Aube bénéficie d'une position stratégique entre Paris et Dijon, avec Troyes comme pôle attractif. Le marché immobilier reste accessible malgré la proximité francilienne. Les outlets de Troyes dynamisent l'économie locale et attirent de nouveaux habitants. Le département mise sur la rénovation du patrimoine historique pour attirer une clientèle à la recherche d'authenticité à prix modéré.",
+    10: "L'Aube beneficie d'une position strategique entre Paris et Dijon, avec Troyes comme pole attractif. Le marche immobilier reste accessible malgre la proximite francilienne. Les outlets de Troyes dynamisent l'economie locale et attirent de nouveaux habitants. Le departement mise sur la renovation du patrimoine historique pour attirer une clientele a la recherche d'authenticite a prix modere.",
 
-    11: "L'Aude présente un marché diversifié entre littoral méditerranéen et arrière-pays. Narbonne et Carcassonne attirent par leur patrimoine exceptionnel et leurs prix modérés comparé à la Côte d'Azur. Le Canal du Midi et les châteaux cathares renforcent l'attractivité touristique. L'investissement locatif saisonnier progresse, notamment sur la côte entre Leucate et Port-la-Nouvelle.",
+    11: "L'Aude presente un marche diversifie entre littoral mediterraneen et arriere-pays. Narbonne et Carcassonne attirent par leur patrimoine exceptionnel et leurs prix moderes compare a la Cote d'Azur. Le Canal du Midi et les chateaux cathares renforcent l'attractivite touristique. L'investissement locatif saisonnier progresse, notamment sur la cote entre Leucate et Port-la-Nouvelle.",
 
-    12: "L'Aveyron séduit par son authenticité et ses prix accessibles, avec Rodez et Millau comme moteurs. Le département attire les amoureux de nature et de patrimoine rural préservé. Les résidences secondaires se développent, notamment autour des sites touristiques majeurs. L'investissement en chambres d'hôtes et gîtes ruraux bénéficie d'une fréquentation touristique four seasons stable.",
+    12: "L'Aveyron seduit par son authenticite et ses prix accessibles, avec Rodez et Millau comme moteurs. Le departement attire les amoureux de nature et de patrimoine rural preserve. Les residences secondaires se developpent, notamment autour des sites touristiques majeurs. L'investissement en chambres d'hotes et gîtes ruraux beneficie d'une frequentation touristique four seasons stable.",
 
-    13: "Les Bouches-du-Rhône concentrent les enjeux immobiliers de PACA avec Marseille et Aix-en-Provence. Le marché reste tendu malgré l'offre nouvelle, porté par la dynamique économique méditerranéenne. Les communes périphériques comme Salon-de-Provence offrent des alternatives plus abordables. L'investissement locatif étudiant reste très dynamique grâce aux nombreuses universités et écoles supérieures.",
+    13: "Les Bouches-du-Rhone concentrent les enjeux immobiliers de PACA avec Marseille et Aix-en-Provence. Le marche reste tendu malgre l'offre nouvelle, porte par la dynamique economique mediterraneenne. Les communes peripheriques comme Salon-de-Provence offrent des alternatives plus abordables. L'investissement locatif etudiant reste tres dynamique grace aux nombreuses universites et ecoles superieures.",
 
-    14: "Le Calvados bénéficie de l'attractivité normande avec Caen comme métropole dynamique. Le marché immobilier profite de la proximité parisienne et de l'attractivité côtière. Deauville et Cabourg maintiennent des prix élevés sur le segment haut de gamme. L'investissement en résidences secondaires reste soutenu par la clientèle parisienne et l'accessibilité ferroviaire.",
+    14: "Le Calvados beneficie de l'attractivite normande avec Caen comme metropole dynamique. Le marche immobilier profite de la proximite parisienne et de l'attractivite cotiere. Deauville et Cabourg maintiennent des prix eleves sur le segment haut de gamme. L'investissement en residences secondaires reste soutenu par la clientele parisienne et l'accessibilite ferroviaire.",
 
-    15: "Le marché immobilier du Cantal est particulièrement attractif pour les primo-accédants. Les communes comme Aurillac ou Saint-Flour affichent un niveau de prix inférieur à la moyenne nationale, ce qui offre un pouvoir d'achat immobilier important. Le département attire les amoureux de nature authentique et de patrimoine rural. L'investissement en gîtes ruraux se développe grâce à l'attractivité touristique du Cantal. 🧀 Terre du fromage AOP et des volcans d'Auvergne, le Cantal séduit par ses paysages préservés et sa gastronomie ancestrale.",
+    15: "Le marche immobilier du Cantal est particulierement attractif pour les primo-accedants. Les communes comme Aurillac ou Saint-Flour affichent un niveau de prix inferieur a la moyenne nationale, ce qui offre un pouvoir d'achat immobilier important. Le departement attire les amoureux de nature authentique et de patrimoine rural. L'investissement en gîtes ruraux se developpe grace a l'attractivite touristique du Cantal. 🧀 Terre du fromage AOP et des volcans d'Auvergne, le Cantal seduit par ses paysages preserves et sa gastronomie ancestrale.",
 
-    16: "La Charente propose un marché accessible avec Angoulême comme pôle principal. Le département attire les retraités et néo-ruraux par son art de vivre et ses prix modérés. La proximité de Bordeaux (1h) influence positivement le secteur sud. L'investissement en patrimoine rural se développe, soutenu par les aides à la rénovation et l'attractivité touristique croissante.",
+    16: "La Charente propose un marche accessible avec Angouleme comme pole principal. Le departement attire les retraites et neo-ruraux par son art de vivre et ses prix moderes. La proximite de Bordeaux (1h) influence positivement le secteur sud. L'investissement en patrimoine rural se developpe, soutenu par les aides a la renovation et l'attractivite touristique croissante.",
 
-    17: "La Charente-Maritime présente un marché tendu sur le littoral (La Rochelle, Royan) et plus accessible dans l'intérieur. Les îles de Ré et Oléron maintiennent des prix très élevés. L'investissement locatif saisonnier reste très rentable malgré la réglementation. Le département attire de nombreux retraités et télétravailleurs séduits par la douceur de vivre atlantique.",
+    17: "La Charente-Maritime presente un marche tendu sur le littoral (La Rochelle, Royan) et plus accessible dans l'interieur. Les îles de Re et Oleron maintiennent des prix tres eleves. L'investissement locatif saisonnier reste tres rentable malgre la reglementation. Le departement attire de nombreux retraites et teletravailleurs seduits par la douceur de vivre atlantique.",
 
-    18: "Le Cher offre un marché immobilier très accessible avec Bourges comme centre historique attractif. Le département séduit par son patrimoine Renaissance et ses prix modérés. La route Jacques-Cœur dynamise le tourisme culturel. L'investissement en chambres d'hôtes progresse, bénéficiant de la position centrale du département et de son riche patrimoine architectural.",
+    18: "Le Cher offre un marche immobilier tres accessible avec Bourges comme centre historique attractif. Le departement seduit par son patrimoine Renaissance et ses prix moderes. La route Jacques-Cœur dynamise le tourisme culturel. L'investissement en chambres d'hotes progresse, beneficiant de la position centrale du departement et de son riche patrimoine architectural.",
 
-    19: "La Corrèze attire par son marché accessible et son cadre naturel préservé. Brive-la-Gaillarde et Tulle proposent des biens de caractère à prix modérés. Le département séduit les néo-ruraux et amoureux de nature authentique. L'investissement en éco-tourisme se développe, soutenu par les paysages exceptionnels et le patrimoine rural préservé.",
+    19: "La Correze attire par son marche accessible et son cadre naturel preserve. Brive-la-Gaillarde et Tulle proposent des biens de caractere a prix moderes. Le departement seduit les neo-ruraux et amoureux de nature authentique. L'investissement en eco-tourisme se developpe, soutenu par les paysages exceptionnels et le patrimoine rural preserve.",
 
-    21: "La Côte-d'Or bénéficie du dynamisme de Dijon, métropole attractive du Grand Est. Le marché immobilier profite de l'économie viticole bourguignonne et du patrimoine exceptionnel. Beaune reste très prisée pour l'investissement de prestige. Les prix restent raisonnables comparé à Lyon, offrant un excellent rapport qualité-prix pour les cadres et familles.",
+    21: "La Cote-d'Or beneficie du dynamisme de Dijon, metropole attractive du Grand Est. Le marche immobilier profite de l'economie viticole bourguignonne et du patrimoine exceptionnel. Beaune reste tres prisee pour l'investissement de prestige. Les prix restent raisonnables compare a Lyon, offrant un excellent rapport qualite-prix pour les cadres et familles.",
 
-    22: "Les Côtes-d'Armor présentent un marché contrasté entre littoral recherché et intérieur accessible. Saint-Brieuc dynamise l'économie départementale. La Côte de Granit Rose maintient des prix élevés sur les biens de prestige. L'investissement en résidences secondaires reste soutenu par la clientèle parisienne et la beauté des paysages côtiers bretons.",
+    22: "Les Cotes-d'Armor presentent un marche contraste entre littoral recherche et interieur accessible. Saint-Brieuc dynamise l'economie departementale. La Cote de Granit Rose maintient des prix eleves sur les biens de prestige. L'investissement en residences secondaires reste soutenu par la clientele parisienne et la beaute des paysages cotiers bretons.",
 
-    23: "La Creuse propose le marché le plus accessible de France, attirant les acquéreurs en quête d'espace et d'authenticité. Guéret mise sur la rénovation urbaine pour redynamiser le centre. Le département séduit les retraités et néo-ruraux par ses prix exceptionnellement bas. L'investissement en patrimoine rural offre des opportunités uniques de rénovation à budget maîtrisé.",
+    23: "La Creuse propose le marche le plus accessible de France, attirant les acquereurs en quete d'espace et d'authenticite. Gueret mise sur la renovation urbaine pour redynamiser le centre. Le departement seduit les retraites et neo-ruraux par ses prix exceptionnellement bas. L'investissement en patrimoine rural offre des opportunites uniques de renovation a budget maîtrise.",
 
-    24: "La Dordogne connaît un marché dynamique porté par l'attractivité touristique du Périgord. Périgueux et Bergerac proposent un bon équilibre prix-qualité de vie. Les résidences secondaires représentent une part importante, notamment pour la clientèle européenne. L'investissement en tourisme rural reste très rentable grâce à la renommée gastronomique et patrimoniale du département.",
+    24: "La Dordogne connaît un marche dynamique porte par l'attractivite touristique du Perigord. Perigueux et Bergerac proposent un bon equilibre prix-qualite de vie. Les residences secondaires representent une part importante, notamment pour la clientele europeenne. L'investissement en tourisme rural reste tres rentable grace a la renommee gastronomique et patrimoniale du departement.",
 
-    25: "Le Doubs bénéficie du dynamisme de Besançon et de la proximité suisse. Montbéliard profite de l'industrie automobile. Les prix restent accessibles malgré l'attractivité frontalière. L'investissement transfrontalier progresse, notamment pour les travailleurs suisses. Le département attire par son cadre naturel jurassien et ses opportunités économiques.",
+    25: "Le Doubs beneficie du dynamisme de Besancon et de la proximite suisse. Montbeliard profite de l'industrie automobile. Les prix restent accessibles malgre l'attractivite frontaliere. L'investissement transfrontalier progresse, notamment pour les travailleurs suisses. Le departement attire par son cadre naturel jurassien et ses opportunites economiques.",
 
-    26: "La Drôme présente un marché en tension entre vallée du Rhône industrielle et Drôme provençale touristique. Valence dynamise le secteur nord avec son accessibilité TGV. Montélimar et Nyons attirent par l'art de vivre provençal. L'investissement en résidences secondaires progresse, soutenu par l'attractivité climatique et paysagère du département.",
+    26: "La Drome presente un marche en tension entre vallee du Rhone industrielle et Drome provencale touristique. Valence dynamise le secteur nord avec son accessibilite TGV. Montelimar et Nyons attirent par l'art de vivre provencal. L'investissement en residences secondaires progresse, soutenu par l'attractivite climatique et paysagere du departement.",
 
-    27: "L'Eure profite de la proximité parisienne avec un marché immobilier en progression. Évreux bénéficie de l'accessibilité francilienne. Les communes proches de Paris connaissent une pression croissante. L'investissement résidentiel progresse grâce aux télétravailleurs cherchant plus d'espace à budget maîtrisé. Le département mise sur son patrimoine normand authentique.",
+    27: "L'Eure profite de la proximite parisienne avec un marche immobilier en progression. Evreux beneficie de l'accessibilite francilienne. Les communes proches de Paris connaissent une pression croissante. L'investissement residentiel progresse grace aux teletravailleurs cherchant plus d'espace a budget maîtrise. Le departement mise sur son patrimoine normand authentique.",
 
-    28: "L'Eure-et-Loir présente un marché accessible malgré la proximité parisienne. Chartres attire par son patrimoine exceptionnel et son accessibilité. Le département séduit les familles recherchant l'espace et la nature à 1h de Paris. L'investissement locatif progresse grâce aux navetteurs franciliens. Les prix restent modérés comparé à la petite couronne parisienne.",
+    28: "L'Eure-et-Loir presente un marche accessible malgre la proximite parisienne. Chartres attire par son patrimoine exceptionnel et son accessibilite. Le departement seduit les familles recherchant l'espace et la nature a 1h de Paris. L'investissement locatif progresse grace aux navetteurs franciliens. Les prix restent moderes compare a la petite couronne parisienne.",
 
-    29: "Le Finistère présente un marché contrasté entre Brest métropolitain et côtes recherchées. Quimper séduit par son patrimoine breton authentique. La presqu'île de Crozon et la côte nord maintiennent des prix élevés. L'investissement en résidences secondaires reste dynamique malgré la réglementation, porté par l'attractivité maritime bretonne unique.",
+    29: "Le Finistere presente un marche contraste entre Brest metropolitain et cotes recherchees. Quimper seduit par son patrimoine breton authentique. La presqu'île de Crozon et la cote nord maintiennent des prix eleves. L'investissement en residences secondaires reste dynamique malgre la reglementation, porte par l'attractivite maritime bretonne unique.",
 
-    30: "Le Gard bénéficie de l'attractivité méditerranéenne avec Nîmes et Alès comme pôles. Le marché profite du climat et du patrimoine romain exceptionnel. Les Cévennes attirent les amoureux de nature authentique. L'investissement locatif progresse grâce à l'université et aux festivals. Les prix restent accessibles comparé aux départements littoraux voisins.",
+    30: "Le Gard beneficie de l'attractivite mediterraneenne avec Nîmes et Ales comme poles. Le marche profite du climat et du patrimoine romain exceptionnel. Les Cevennes attirent les amoureux de nature authentique. L'investissement locatif progresse grace a l'universite et aux festivals. Les prix restent accessibles compare aux departements littoraux voisins.",
 
-    31: "La Haute-Garonne concentre la dynamique immobilière régionale avec Toulouse. Le marché reste tendu malgré l'offre nouvelle, porté par l'aéronautique et le numérique. L'agglomération toulousaine connaît une expansion continue. L'investissement étudiant reste très rentable grâce aux universités et écoles d'ingénieurs. Les prix progressent régulièrement soutenus par la croissance démographique.",
+    31: "La Haute-Garonne concentre la dynamique immobiliere regionale avec Toulouse. Le marche reste tendu malgre l'offre nouvelle, porte par l'aeronautique et le numerique. L'agglomeration toulousaine connaît une expansion continue. L'investissement etudiant reste tres rentable grace aux universites et ecoles d'ingenieurs. Les prix progressent regulierement soutenus par la croissance demographique.",
 
-    32: "Le Gers séduit par son marché accessible et son art de vivre gasconne. Auch propose des biens de caractère à prix modérés. Le département attire les retraités et néo-ruraux cherchant authenticité et tranquillité. L'investissement en tourisme rural progresse, soutenu par la gastronomie locale et les paysages vallonnés. Les bastides gasconnes offrent un patrimoine architectural unique.",
+    32: "Le Gers seduit par son marche accessible et son art de vivre gasconne. Auch propose des biens de caractere a prix moderes. Le departement attire les retraites et neo-ruraux cherchant authenticite et tranquillite. L'investissement en tourisme rural progresse, soutenu par la gastronomie locale et les paysages vallonnes. Les bastides gasconnes offrent un patrimoine architectural unique.",
 
-    33: "La Gironde présente un marché tendu avec Bordeaux métropole attractive. L'agglomération bordelaise connaît une croissance soutenue portée par l'économie viticole et numérique. Le bassin d'Arcachon maintient des prix très élevés. L'investissement viticole reste prisé des investisseurs internationaux. Les communes périphériques offrent des alternatives plus accessibles aux jeunes ménages.",
+    33: "La Gironde presente un marche tendu avec Bordeaux metropole attractive. L'agglomeration bordelaise connaît une croissance soutenue portee par l'economie viticole et numerique. Le bassin d'Arcachon maintient des prix tres eleves. L'investissement viticole reste prise des investisseurs internationaux. Les communes peripheriques offrent des alternatives plus accessibles aux jeunes menages.",
 
-    34: "L'Hérault bénéficie du dynamisme montpelliérain et de l'attractivité littorale. Montpellier connaît une croissance démographique soutenue. Le littoral maintient des prix élevés malgré l'offre nouvelle. L'investissement étudiant reste très rentable grâce aux universités. L'arrière-pays offre des opportunités plus accessibles tout en conservant l'attractivité méditerranéenne.",
+    34: "L'Herault beneficie du dynamisme montpellierain et de l'attractivite littorale. Montpellier connaît une croissance demographique soutenue. Le littoral maintient des prix eleves malgre l'offre nouvelle. L'investissement etudiant reste tres rentable grace aux universites. L'arriere-pays offre des opportunites plus accessibles tout en conservant l'attractivite mediterraneenne.",
 
-    35: "L'Ille-et-Vilaine présente un marché tendu avec Rennes métropole dynamique. L'agglomération rennaise attire les entreprises high-tech. Saint-Malo maintient des prix élevés sur le segment prestige. L'investissement étudiant progresse grâce aux universités et écoles supérieures. Le département bénéficie de l'attractivité économique bretonne et de la proximité parisienne.",
+    35: "L'Ille-et-Vilaine presente un marche tendu avec Rennes metropole dynamique. L'agglomeration rennaise attire les entreprises high-tech. Saint-Malo maintient des prix eleves sur le segment prestige. L'investissement etudiant progresse grace aux universites et ecoles superieures. Le departement beneficie de l'attractivite economique bretonne et de la proximite parisienne.",
 
-    36: "L'Indre propose un marché très accessible avec Châteauroux comme pôle principal. Le département attire les acquéreurs en quête d'espace et de tranquillité. La vallée de la Loire influence positivement le secteur nord. L'investissement en patrimoine rural offre des opportunités de rénovation à budget maîtrisé. Les châteaux de la Loire dynamisent le tourisme culturel.",
+    36: "L'Indre propose un marche tres accessible avec Chateauroux comme pole principal. Le departement attire les acquereurs en quete d'espace et de tranquillite. La vallee de la Loire influence positivement le secteur nord. L'investissement en patrimoine rural offre des opportunites de renovation a budget maîtrise. Les chateaux de la Loire dynamisent le tourisme culturel.",
 
-    37: "L'Indre-et-Loire bénéficie de l'attractivité ligérienne avec Tours comme métropole. Le marché profite du patrimoine exceptionnel des châteaux de la Loire. L'accessibilité TGV renforce l'attractivité parisienne. L'investissement en résidences secondaires progresse grâce au patrimoine culturel unique. Les vignobles de Vouvray et Chinon attirent les investisseurs passionnés.",
+    37: "L'Indre-et-Loire beneficie de l'attractivite ligerienne avec Tours comme metropole. Le marche profite du patrimoine exceptionnel des chateaux de la Loire. L'accessibilite TGV renforce l'attractivite parisienne. L'investissement en residences secondaires progresse grace au patrimoine culturel unique. Les vignobles de Vouvray et Chinon attirent les investisseurs passionnes.",
 
-    38: "L'Isère présente un marché tendu avec Grenoble métropole alpine. L'agglomération grenobloise bénéficie de l'économie high-tech et de l'attractivité montagnarde. Les stations de ski maintiennent des prix très élevés. L'investissement en résidences de tourisme reste dynamique. Les vallées alpines offrent un cadre de vie exceptionnel malgré des prix soutenus.",
+    38: "L'Isere presente un marche tendu avec Grenoble metropole alpine. L'agglomeration grenobloise beneficie de l'economie high-tech et de l'attractivite montagnarde. Les stations de ski maintiennent des prix tres eleves. L'investissement en residences de tourisme reste dynamique. Les vallees alpines offrent un cadre de vie exceptionnel malgre des prix soutenus.",
 
-    39: "Le Jura séduit par son marché accessible et son cadre naturel préservé. Lons-le-Saunier et Dole proposent un bon équilibre qualité-prix. Le département attire les amoureux de nature et de patrimoine comtois. L'investissement en éco-tourisme progresse grâce aux paysages jurassiens. La proximité suisse influence positivement certains secteurs frontaliers.",
+    39: "Le Jura seduit par son marche accessible et son cadre naturel preserve. Lons-le-Saunier et Dole proposent un bon equilibre qualite-prix. Le departement attire les amoureux de nature et de patrimoine comtois. L'investissement en eco-tourisme progresse grace aux paysages jurassiens. La proximite suisse influence positivement certains secteurs frontaliers.",
 
-    40: "Les Landes présentent un marché contrasté entre littoral recherché et intérieur forestier. Dax bénéficie du thermalisme et Mont-de-Marsan de l'agriculture. La côte landaise maintient des prix élevés sur les biens de prestige. L'investissement en résidences secondaires reste soutenu par l'attractivité balnéaire. La forêt des Landes offre un cadre naturel unique.",
+    40: "Les Landes presentent un marche contraste entre littoral recherche et interieur forestier. Dax beneficie du thermalisme et Mont-de-Marsan de l'agriculture. La cote landaise maintient des prix eleves sur les biens de prestige. L'investissement en residences secondaires reste soutenu par l'attractivite balneaire. La foret des Landes offre un cadre naturel unique.",
 
-    41: "Le Loir-et-Cher profite de l'attractivité ligérienne avec Blois comme pôle historique. Le département bénéficie du patrimoine des châteaux de la Loire. L'accessibilité parisienne renforce l'attractivité résidentielle. L'investissement en tourisme culturel progresse grâce aux châteaux emblématiques. Les prix restent accessibles malgré la proximité de l'Île-de-France.",
+    41: "Le Loir-et-Cher profite de l'attractivite ligerienne avec Blois comme pole historique. Le departement beneficie du patrimoine des chateaux de la Loire. L'accessibilite parisienne renforce l'attractivite residentielle. L'investissement en tourisme culturel progresse grace aux chateaux emblematiques. Les prix restent accessibles malgre la proximite de l'Île-de-France.",
 
-    42: "La Loire bénéficie du dynamisme stéphanois et de l'attractivité lyonnaise proche. Saint-Étienne mise sur la rénovation urbaine et l'innovation. Le département attire par ses prix accessibles et sa position centrale. L'investissement étudiant progresse grâce à l'école des Mines. La proximité de Lyon offre des opportunités d'emploi sans les prix métropolitains.",
+    42: "La Loire beneficie du dynamisme stephanois et de l'attractivite lyonnaise proche. Saint-Etienne mise sur la renovation urbaine et l'innovation. Le departement attire par ses prix accessibles et sa position centrale. L'investissement etudiant progresse grace a l'ecole des Mines. La proximite de Lyon offre des opportunites d'emploi sans les prix metropolitains.",
 
-    43: "La Haute-Loire séduit par son marché accessible et son patrimoine volcanique. Le Puy-en-Velay attire par son patrimoine religieux exceptionnel. Le département bénéficie de l'attractivité auvergnate et de ses paysages préservés. L'investissement en tourisme rural progresse grâce aux chemins de Compostelle. Les prix modérés attirent les acquéreurs en quête d'authenticité.",
+    43: "La Haute-Loire seduit par son marche accessible et son patrimoine volcanique. Le Puy-en-Velay attire par son patrimoine religieux exceptionnel. Le departement beneficie de l'attractivite auvergnate et de ses paysages preserves. L'investissement en tourisme rural progresse grace aux chemins de Compostelle. Les prix moderes attirent les acquereurs en quete d'authenticite.",
 
-    44: "La Loire-Atlantique présente un marché tendu avec Nantes métropole attractive. L'agglomération nantaise connaît une croissance soutenue portée par l'industrie et les services. Le littoral maintient des prix élevés malgré l'offre nouvelle. L'investissement étudiant reste rentable grâce aux universités. La Baule conserve son statut de station balnéaire de prestige.",
+    44: "La Loire-Atlantique presente un marche tendu avec Nantes metropole attractive. L'agglomeration nantaise connaît une croissance soutenue portee par l'industrie et les services. Le littoral maintient des prix eleves malgre l'offre nouvelle. L'investissement etudiant reste rentable grace aux universites. La Baule conserve son statut de station balneaire de prestige.",
 
-    45: "Le Loiret bénéficie de l'attractivité orléanaise et de la proximité parisienne. Orléans attire par son patrimoine et son accessibilité francilienne. Le département profite des châteaux de la Loire et de la vallée royale. L'investissement résidentiel progresse grâce aux télétravailleurs parisiens. Les prix restent raisonnables malgré l'attractivité croissante de la région Centre.",
+    45: "Le Loiret beneficie de l'attractivite orleanaise et de la proximite parisienne. Orleans attire par son patrimoine et son accessibilite francilienne. Le departement profite des chateaux de la Loire et de la vallee royale. L'investissement residentiel progresse grace aux teletravailleurs parisiens. Les prix restent raisonnables malgre l'attractivite croissante de la region Centre.",
 
-    46: "Le Lot séduit par son marché accessible et son patrimoine médiéval exceptionnel. Cahors attire par son vignoble et son centre historique. Le département bénéficie de l'attractivité touristique du Quercy. L'investissement en résidences secondaires progresse grâce à la clientèle urbaine en quête d'authenticité. Les bastides et châteaux offrent un patrimoine architectural unique.",
+    46: "Le Lot seduit par son marche accessible et son patrimoine medieval exceptionnel. Cahors attire par son vignoble et son centre historique. Le departement beneficie de l'attractivite touristique du Quercy. L'investissement en residences secondaires progresse grace a la clientele urbaine en quete d'authenticite. Les bastides et chateaux offrent un patrimoine architectural unique.",
 
-    47: "Le Lot-et-Garonne présente un marché accessible avec Agen comme pôle fruitier. Le département bénéficie de sa position entre Bordeaux et Toulouse. L'investissement en patrimoine rural progresse grâce aux paysages vallonnés du Lot. La gastronomie locale (pruneaux, foie gras) renforce l'attractivité touristique. Les prix modérés attirent les retraités et néo-ruraux.",
+    47: "Le Lot-et-Garonne presente un marche accessible avec Agen comme pole fruitier. Le departement beneficie de sa position entre Bordeaux et Toulouse. L'investissement en patrimoine rural progresse grace aux paysages vallonnes du Lot. La gastronomie locale (pruneaux, foie gras) renforce l'attractivite touristique. Les prix moderes attirent les retraites et neo-ruraux.",
 
-    48: "La Lozère propose le marché le plus préservé de France avec des prix très accessibles. Mende mise sur l'éco-tourisme et le patrimoine naturel exceptionnel. Le département attire les amoureux de grands espaces et de tranquillité. L'investissement en tourisme vert progresse grâce aux parcs nationaux. L'authenticité cévenole séduit une clientèle en quête de ressourcement.",
+    48: "La Lozere propose le marche le plus preserve de France avec des prix tres accessibles. Mende mise sur l'eco-tourisme et le patrimoine naturel exceptionnel. Le departement attire les amoureux de grands espaces et de tranquillite. L'investissement en tourisme vert progresse grace aux parcs nationaux. L'authenticite cevenole seduit une clientele en quete de ressourcement.",
 
-    49: "Le Maine-et-Loire bénéficie du dynamisme angevin et de l'attractivité ligérienne. Angers attire par son université et son économie diversifiée. Le département profite des châteaux de la Loire et des vignobles d'Anjou. L'investissement étudiant reste rentable grâce aux universités. Saumur conserve son attractivité équestre et viticole unique.",
+    49: "Le Maine-et-Loire beneficie du dynamisme angevin et de l'attractivite ligerienne. Angers attire par son universite et son economie diversifiee. Le departement profite des chateaux de la Loire et des vignobles d'Anjou. L'investissement etudiant reste rentable grace aux universites. Saumur conserve son attractivite equestre et viticole unique.",
 
-    50: "La Manche présente un marché contrasté entre Cotentin et baie du Mont-Saint-Michel. Cherbourg bénéficie de l'industrie maritime et Saint-Lô de l'agriculture. Le littoral ouest maintient des prix soutenus. L'investissement en résidences secondaires progresse grâce à l'attractivité maritime normande. Le Mont-Saint-Michel dynamise le tourisme culturel international.",
+    50: "La Manche presente un marche contraste entre Cotentin et baie du Mont-Saint-Michel. Cherbourg beneficie de l'industrie maritime et Saint-Lo de l'agriculture. Le littoral ouest maintient des prix soutenus. L'investissement en residences secondaires progresse grace a l'attractivite maritime normande. Le Mont-Saint-Michel dynamise le tourisme culturel international.",
 
-    51: "La Marne bénéficie du prestige champenois avec Reims métropole historique. L'agglomération rémoise attire par son patrimoine et son économie viticole. Épernay conserve son statut de capitale du Champagne. L'investissement viticole reste très prisé des amateurs. La proximité parisienne renforce l'attractivité résidentielle du département.",
+    51: "La Marne beneficie du prestige champenois avec Reims metropole historique. L'agglomeration remoise attire par son patrimoine et son economie viticole. Epernay conserve son statut de capitale du Champagne. L'investissement viticole reste tres prise des amateurs. La proximite parisienne renforce l'attractivite residentielle du departement.",
 
-    52: "La Haute-Marne propose un marché très accessible avec Chaumont comme pôle principal. Le département attire les acquéreurs en quête d'espace et de tranquillité. L'investissement en patrimoine rural offre des opportunités de rénovation à budget maîtrisé. Les prix exceptionnellement bas séduisent les retraités et néo-ruraux cherchant l'authenticité champêtre.",
+    52: "La Haute-Marne propose un marche tres accessible avec Chaumont comme pole principal. Le departement attire les acquereurs en quete d'espace et de tranquillite. L'investissement en patrimoine rural offre des opportunites de renovation a budget maîtrise. Les prix exceptionnellement bas seduisent les retraites et neo-ruraux cherchant l'authenticite champetre.",
 
-    53: "La Mayenne séduit par son marché accessible et son cadre bocager préservé. Laval bénéficie de la proximité rennaise et nantaise. Le département attire les familles recherchant la qualité de vie à prix modéré. L'investissement en tourisme vert progresse grâce aux paysages bocagers. La douceur angevine influence positivement l'attractivité résidentielle.",
+    53: "La Mayenne seduit par son marche accessible et son cadre bocager preserve. Laval beneficie de la proximite rennaise et nantaise. Le departement attire les familles recherchant la qualite de vie a prix modere. L'investissement en tourisme vert progresse grace aux paysages bocagers. La douceur angevine influence positivement l'attractivite residentielle.",
 
-    54: "La Meurthe-et-Moselle bénéficie du dynamisme nancéien et de la proximité luxembourgeoise. Nancy attire par son patrimoine Art nouveau exceptionnel. Le secteur frontalier profite de l'emploi luxembourgeois. L'investissement étudiant reste rentable grâce aux universités lorraines. Les prix modérés contrastent avec l'attractivité culturelle et économique.",
+    54: "La Meurthe-et-Moselle beneficie du dynamisme nanceien et de la proximite luxembourgeoise. Nancy attire par son patrimoine Art nouveau exceptionnel. Le secteur frontalier profite de l'emploi luxembourgeois. L'investissement etudiant reste rentable grace aux universites lorraines. Les prix moderes contrastent avec l'attractivite culturelle et economique.",
 
-    55: "La Meuse propose un marché très accessible avec Verdun comme pôle mémoriel. Bar-le-Duc mise sur le patrimoine Renaissance. Le département attire par ses prix exceptionnellement bas et son cadre rural préservé. L'investissement en tourisme de mémoire progresse grâce aux sites de la Grande Guerre. L'authenticité lorraine séduit les amoureux d'histoire.",
+    55: "La Meuse propose un marche tres accessible avec Verdun comme pole memoriel. Bar-le-Duc mise sur le patrimoine Renaissance. Le departement attire par ses prix exceptionnellement bas et son cadre rural preserve. L'investissement en tourisme de memoire progresse grace aux sites de la Grande Guerre. L'authenticite lorraine seduit les amoureux d'histoire.",
 
-    56: "Le Morbihan présente un marché tendu sur le littoral et accessible dans l'intérieur. Vannes bénéficie de l'attractivité du golfe. Le littoral sud maintient des prix très élevés (Quiberon, Belle-Île). L'investissement en résidences secondaires reste soutenu par l'attractivité maritime bretonne. L'arrière-pays offre des opportunités plus accessibles aux jeunes ménages.",
+    56: "Le Morbihan presente un marche tendu sur le littoral et accessible dans l'interieur. Vannes beneficie de l'attractivite du golfe. Le littoral sud maintient des prix tres eleves (Quiberon, Belle-Île). L'investissement en residences secondaires reste soutenu par l'attractivite maritime bretonne. L'arriere-pays offre des opportunites plus accessibles aux jeunes menages.",
 
-    57: "La Moselle bénéficie de l'attractivité messine et de la proximité luxembourgeoise. Metz attire par son patrimoine et sa situation frontalière. Thionville profite directement de l'emploi luxembourgeois. L'investissement transfrontalier progresse malgré les prix soutenus. Le département mise sur son bilinguisme et son ouverture européenne.",
+    57: "La Moselle beneficie de l'attractivite messine et de la proximite luxembourgeoise. Metz attire par son patrimoine et sa situation frontaliere. Thionville profite directement de l'emploi luxembourgeois. L'investissement transfrontalier progresse malgre les prix soutenus. Le departement mise sur son bilinguisme et son ouverture europeenne.",
 
-    58: "La Nièvre propose un marché très accessible avec Nevers comme pôle principal. Le département attire les amoureux de nature et de patrimoine bourguignon. L'investissement en patrimoine rural offre des opportunités uniques de rénovation. Les prix exceptionnellement bas séduisent les retraités en quête de tranquillité. La Loire nivernaise dynamise le tourisme fluvial.",
+    58: "La Nievre propose un marche tres accessible avec Nevers comme pole principal. Le departement attire les amoureux de nature et de patrimoine bourguignon. L'investissement en patrimoine rural offre des opportunites uniques de renovation. Les prix exceptionnellement bas seduisent les retraites en quete de tranquillite. La Loire nivernaise dynamise le tourisme fluvial.",
 
-    59: "Le Nord présente un marché contrasté avec Lille métropole européenne attractive. L'agglomération lilloise bénéficie de sa position frontalière et de son économie diversifiée. Le littoral (Dunkerque) connaît un regain d'intérêt. L'investissement étudiant reste très rentable grâce aux universités. La proximité de Paris et Bruxelles renforce l'attractivité résidentielle.",
+    59: "Le Nord presente un marche contraste avec Lille metropole europeenne attractive. L'agglomeration lilloise beneficie de sa position frontaliere et de son economie diversifiee. Le littoral (Dunkerque) connaît un regain d'interet. L'investissement etudiant reste tres rentable grace aux universites. La proximite de Paris et Bruxelles renforce l'attractivite residentielle.",
 
-    60: "L'Oise profite de la proximité parisienne avec un marché en progression constante. Compiègne et Beauvais bénéficient de l'accessibilité francilienne. L'investissement résidentiel progresse grâce aux télétravailleurs parisiens. Le département attire les familles recherchant plus d'espace à budget maîtrisé. Les châteaux royaux (Compiègne, Chantilly) dynamisent le tourisme culturel.",
+    60: "L'Oise profite de la proximite parisienne avec un marche en progression constante. Compiegne et Beauvais beneficient de l'accessibilite francilienne. L'investissement residentiel progresse grace aux teletravailleurs parisiens. Le departement attire les familles recherchant plus d'espace a budget maîtrise. Les chateaux royaux (Compiegne, Chantilly) dynamisent le tourisme culturel.",
 
-    61: "L'Orne séduit par son marché accessible et son patrimoine normand authentique. Alençon attire par son art de vivre et ses prix modérés. Le département bénéficie du Parc naturel du Perche et de la proximité parisienne. L'investissement en résidences secondaires progresse grâce à l'attractivité rurale normande. Les haras nationaux renforcent l'identité équestre.",
+    61: "L'Orne seduit par son marche accessible et son patrimoine normand authentique. Alencon attire par son art de vivre et ses prix moderes. Le departement beneficie du Parc naturel du Perche et de la proximite parisienne. L'investissement en residences secondaires progresse grace a l'attractivite rurale normande. Les haras nationaux renforcent l'identite equestre.",
 
-    62: "Le Pas-de-Calais présente un marché accessible malgré la proximité de Lille. Arras attire par son patrimoine et sa position centrale. Le littoral (Touquet) maintient des prix élevés sur le segment prestige. L'investissement résidentiel progresse grâce à l'accessibilité parisienne et londonienne. La proximité de l'Angleterre influence positivement l'attractivité touristique.",
+    62: "Le Pas-de-Calais presente un marche accessible malgre la proximite de Lille. Arras attire par son patrimoine et sa position centrale. Le littoral (Touquet) maintient des prix eleves sur le segment prestige. L'investissement residentiel progresse grace a l'accessibilite parisienne et londonienne. La proximite de l'Angleterre influence positivement l'attractivite touristique.",
 
-    63: "Le Puy-de-Dôme bénéficie du dynamisme clermontois et de l'attractivité volcanique. Clermont-Ferrand attire par son université et son industrie. Les stations thermales (Vichy, La Bourboule) conservent leur attractivité. L'investissement en tourisme vert progresse grâce aux volcans d'Auvergne. Les prix restent accessibles malgré l'attractivité métropolitaine croissante.",
+    63: "Le Puy-de-Dome beneficie du dynamisme clermontois et de l'attractivite volcanique. Clermont-Ferrand attire par son universite et son industrie. Les stations thermales (Vichy, La Bourboule) conservent leur attractivite. L'investissement en tourisme vert progresse grace aux volcans d'Auvergne. Les prix restent accessibles malgre l'attractivite metropolitaine croissante.",
 
-    64: "Les Pyrénées-Atlantiques présentent un marché tendu entre Béarn et Pays basque. Pau bénéficie de l'attractivité pyrénéenne et Bayonne de la proximité espagnole. La côte basque maintient des prix très élevés. L'investissement en résidences secondaires reste soutenu par l'attractivité balnéaire et montagnarde. Biarritz conserve son statut de station balnéaire de prestige international.",
+    64: "Les Pyrenees-Atlantiques presentent un marche tendu entre Bearn et Pays basque. Pau beneficie de l'attractivite pyreneenne et Bayonne de la proximite espagnole. La cote basque maintient des prix tres eleves. L'investissement en residences secondaires reste soutenu par l'attractivite balneaire et montagnarde. Biarritz conserve son statut de station balneaire de prestige international.",
 
-    65: "Les Hautes-Pyrénées séduisent par leur marché accessible et leur attractivité montagnarde. Tarbes bénéficie de l'industrie aéronautique et Lourdes du tourisme religieux. Les stations de ski (Barèges, Cauterets) attirent l'investissement saisonnier. L'éco-tourisme progresse grâce aux parcs nationaux pyrénéens. Les prix modérés contrastent avec l'attractivité naturelle exceptionnelle.",
+    65: "Les Hautes-Pyrenees seduisent par leur marche accessible et leur attractivite montagnarde. Tarbes beneficie de l'industrie aeronautique et Lourdes du tourisme religieux. Les stations de ski (Bareges, Cauterets) attirent l'investissement saisonnier. L'eco-tourisme progresse grace aux parcs nationaux pyreneens. Les prix moderes contrastent avec l'attractivite naturelle exceptionnelle.",
 
-    66: "Les Pyrénées-Orientales bénéficient de l'attractivité méditerranéenne et catalane. Perpignan attire par sa proximité espagnole et son climat. Le littoral maintient des prix soutenus malgré l'offre nouvelle. L'investissement en résidences secondaires reste dynamique grâce à l'attractivité balnéaire. L'arrière-pays offre des opportunités plus accessibles tout en conservant l'identité catalane.",
+    66: "Les Pyrenees-Orientales beneficient de l'attractivite mediterraneenne et catalane. Perpignan attire par sa proximite espagnole et son climat. Le littoral maintient des prix soutenus malgre l'offre nouvelle. L'investissement en residences secondaires reste dynamique grace a l'attractivite balneaire. L'arriere-pays offre des opportunites plus accessibles tout en conservant l'identite catalane.",
 
-    67: "Le Bas-Rhin bénéficie du dynamisme strasbourgeois et de l'attractivité européenne. Strasbourg attire par son statut de capitale européenne. Le secteur frontalier allemand profite des opportunités transfrontalières. L'investissement étudiant reste rentable grâce aux universités et institutions européennes. L'architecture alsacienne unique renforce l'attractivité patrimoniale.",
+    67: "Le Bas-Rhin beneficie du dynamisme strasbourgeois et de l'attractivite europeenne. Strasbourg attire par son statut de capitale europeenne. Le secteur frontalier allemand profite des opportunites transfrontalieres. L'investissement etudiant reste rentable grace aux universites et institutions europeennes. L'architecture alsacienne unique renforce l'attractivite patrimoniale.",
 
-    68: "Le Haut-Rhin présente un marché tendu avec Mulhouse et Colmar comme pôles attractifs. Le département bénéficie de la proximité suisse et allemande. La Route des Vins attire l'investissement patrimonial et touristique. L'investissement transfrontalier progresse grâce aux opportunités d'emploi. L'architecture alsacienne et les vignobles renforcent l'attractivité résidentielle.",
+    68: "Le Haut-Rhin presente un marche tendu avec Mulhouse et Colmar comme poles attractifs. Le departement beneficie de la proximite suisse et allemande. La Route des Vins attire l'investissement patrimonial et touristique. L'investissement transfrontalier progresse grace aux opportunites d'emploi. L'architecture alsacienne et les vignobles renforcent l'attractivite residentielle.",
 
-    69: "Le Rhône concentre la dynamique immobilière régionale avec Lyon métropole. L'agglomération lyonnaise connaît une croissance soutenue portée par l'économie tertiaire. Le marché reste tendu malgré l'offre nouvelle importante. L'investissement étudiant et locatif reste très rentable. Les Monts du Lyonnais offrent des alternatives plus accessibles aux familles.",
+    69: "Le Rhone concentre la dynamique immobiliere regionale avec Lyon metropole. L'agglomeration lyonnaise connaît une croissance soutenue portee par l'economie tertiaire. Le marche reste tendu malgre l'offre nouvelle importante. L'investissement etudiant et locatif reste tres rentable. Les Monts du Lyonnais offrent des alternatives plus accessibles aux familles.",
 
-    70: "La Haute-Saône propose un marché très accessible avec Vesoul comme pôle principal. Le département attire par ses prix exceptionnellement bas et son cadre naturel préservé. L'investissement en patrimoine rural offre des opportunités uniques. La proximité de Besançon et Dijon influence positivement certains secteurs. L'authenticité comtoise séduit les amoureux de tranquillité.",
+    70: "La Haute-Saone propose un marche tres accessible avec Vesoul comme pole principal. Le departement attire par ses prix exceptionnellement bas et son cadre naturel preserve. L'investissement en patrimoine rural offre des opportunites uniques. La proximite de Besancon et Dijon influence positivement certains secteurs. L'authenticite comtoise seduit les amoureux de tranquillite.",
 
-    71: "La Saône-et-Loire bénéficie de l'attractivité bourguignonne avec Mâcon et Chalon-sur-Saône. Le département profite des vignobles prestigieux et du patrimoine roman. L'investissement viticole reste prisé des amateurs. La proximité de Lyon influence positivement le secteur est. Les prix accessibles contrastent avec la richesse patrimoniale et viticole.",
+    71: "La Saone-et-Loire beneficie de l'attractivite bourguignonne avec Macon et Chalon-sur-Saone. Le departement profite des vignobles prestigieux et du patrimoine roman. L'investissement viticole reste prise des amateurs. La proximite de Lyon influence positivement le secteur est. Les prix accessibles contrastent avec la richesse patrimoniale et viticole.",
 
-    72: "La Sarthe bénéficie du dynamisme manceau et de l'attractivité des 24 Heures. Le Mans attire par son circuit mythique et son université. Le département profite de la proximité parisienne et nantaise. L'investissement résidentiel progresse grâce aux télétravailleurs franciliens. Les châteaux de la Loire sarthoise dynamisent le tourisme culturel.",
+    72: "La Sarthe beneficie du dynamisme manceau et de l'attractivite des 24 Heures. Le Mans attire par son circuit mythique et son universite. Le departement profite de la proximite parisienne et nantaise. L'investissement residentiel progresse grace aux teletravailleurs franciliens. Les chateaux de la Loire sarthoise dynamisent le tourisme culturel.",
 
-    73: "La Savoie présente un marché tendu avec Chambéry et les stations de ski. L'agglomération chambérienne bénéficie de l'attractivité alpine et de la proximité lyonnaise. Les stations maintiennent des prix très élevés. L'investissement en résidences de tourisme reste dynamique malgré les contraintes réglementaires. Les lacs savoyards renforcent l'attractivité four seasons.",
+    73: "La Savoie presente un marche tendu avec Chambery et les stations de ski. L'agglomeration chamberienne beneficie de l'attractivite alpine et de la proximite lyonnaise. Les stations maintiennent des prix tres eleves. L'investissement en residences de tourisme reste dynamique malgre les contraintes reglementaires. Les lacs savoyards renforcent l'attractivite four seasons.",
 
-    74: "La Haute-Savoie présente l'un des marchés les plus chers de France avec Annecy et les stations prestigieuses. L'agglomération annécienne connaît une pression immobilière intense due à la proximité genevoise. Les stations de ski (Chamonix, Megève) maintiennent des prix record. L'investissement transfrontalier domine le marché haut de gamme.",
+    74: "La Haute-Savoie presente l'un des marches les plus chers de France avec Annecy et les stations prestigieuses. L'agglomeration annecienne connaît une pression immobiliere intense due a la proximite genevoise. Les stations de ski (Chamonix, Megeve) maintiennent des prix record. L'investissement transfrontalier domine le marche haut de gamme.",
 
-    75: "Paris concentre tous les enjeux immobiliers français avec un marché unique au monde. La capitale attire investisseurs internationaux et élites mondiales. Le marché locatif reste très rentable malgré la réglementation. L'investissement étudiant profite des universités prestigieuses. Les arrondissements centraux conservent leur statut de valeurs refuges internationales.",
+    75: "Paris concentre tous les enjeux immobiliers francais avec un marche unique au monde. La capitale attire investisseurs internationaux et elites mondiales. Le marche locatif reste tres rentable malgre la reglementation. L'investissement etudiant profite des universites prestigieuses. Les arrondissements centraux conservent leur statut de valeurs refuges internationales.",
 
-    76: "La Seine-Maritime bénéficie du dynamisme rouennais et de l'attractivité littorale. Rouen attire par son patrimoine et sa proximité parisienne. Le Havre mise sur la rénovation urbaine et l'ouverture maritime. L'investissement résidentiel progresse grâce à l'accessibilité francilienne. La côte d'Albâtre séduit par son patrimoine naturel et architectural unique.",
+    76: "La Seine-Maritime beneficie du dynamisme rouennais et de l'attractivite littorale. Rouen attire par son patrimoine et sa proximite parisienne. Le Havre mise sur la renovation urbaine et l'ouverture maritime. L'investissement residentiel progresse grace a l'accessibilite francilienne. La cote d'Albatre seduit par son patrimoine naturel et architectural unique.",
 
-    77: "La Seine-et-Marne profite pleinement de l'expansion francilienne avec un marché en forte croissance. Le département attire les familles cherchant l'espace à proximité de Paris. Fontainebleau conserve son attractivité de prestige. L'investissement résidentiel explose grâce au télétravail. Les nouvelles infrastructures (Grand Paris Express) renforcent l'attractivité départementale.",
+    77: "La Seine-et-Marne profite pleinement de l'expansion francilienne avec un marche en forte croissance. Le departement attire les familles cherchant l'espace a proximite de Paris. Fontainebleau conserve son attractivite de prestige. L'investissement residentiel explose grace au teletravail. Les nouvelles infrastructures (Grand Paris Express) renforcent l'attractivite departementale.",
 
-    78: "Les Yvelines présentent un marché de prestige avec Versailles comme joyau patrimonial. Le département bénéficie de la richesse francilienne et de la proximité de La Défense. Saint-Germain-en-Laye maintient des prix très élevés. L'investissement de prestige domine le marché haut de gamme. La forêt de Rambouillet offre un cadre naturel exceptionnel.",
+    78: "Les Yvelines presentent un marche de prestige avec Versailles comme joyau patrimonial. Le departement beneficie de la richesse francilienne et de la proximite de La Defense. Saint-Germain-en-Laye maintient des prix tres eleves. L'investissement de prestige domine le marche haut de gamme. La foret de Rambouillet offre un cadre naturel exceptionnel.",
 
-    79: "Les Deux-Sèvres séduisent par leur marché accessible et leur attractivité poitevine. Niort bénéficie de l'industrie des mutuelles et assurances. Le département attire les familles recherchant la qualité de vie à prix modéré. L'investissement en patrimoine rural progresse grâce aux paysages bocagers préservés. La proximité de La Rochelle influence positivement l'attractivité.",
+    79: "Les Deux-Sevres seduisent par leur marche accessible et leur attractivite poitevine. Niort beneficie de l'industrie des mutuelles et assurances. Le departement attire les familles recherchant la qualite de vie a prix modere. L'investissement en patrimoine rural progresse grace aux paysages bocagers preserves. La proximite de La Rochelle influence positivement l'attractivite.",
 
-    80: "La Somme présente un marché accessible avec Amiens comme pôle universitaire attractif. Le département bénéficie de la proximité parisienne et de l'ouverture maritime. La baie de Somme attire l'éco-tourisme et l'investissement résidentiel vert. L'investissement étudiant reste rentable grâce à l'université. Les prix modérés contrastent avec l'accessibilité métropolitaine.",
+    80: "La Somme presente un marche accessible avec Amiens comme pole universitaire attractif. Le departement beneficie de la proximite parisienne et de l'ouverture maritime. La baie de Somme attire l'eco-tourisme et l'investissement residentiel vert. L'investissement etudiant reste rentable grace a l'universite. Les prix moderes contrastent avec l'accessibilite metropolitaine.",
 
-    81: "Le Tarn séduit par son marché accessible et son patrimoine albigeois. Albi attire par son centre historique classé UNESCO. Le département bénéficie de l'attractivité toulousaine proche et de ses paysages préservés. L'investissement en tourisme rural progresse grâce aux bastides. Les prix modérés attirent les retraités en quête d'art de vivre méridional.",
+    81: "Le Tarn seduit par son marche accessible et son patrimoine albigeois. Albi attire par son centre historique classe UNESCO. Le departement beneficie de l'attractivite toulousaine proche et de ses paysages preserves. L'investissement en tourisme rural progresse grace aux bastides. Les prix moderes attirent les retraites en quete d'art de vivre meridional.",
 
-    82: "Le Tarn-et-Garonne présente un marché accessible avec Montauban comme pôle historique attractif. Le département bénéficie de sa position entre Toulouse et Agen. L'investissement en patrimoine rural progresse grâce aux paysages vallonnés. La gastronomie locale renforce l'attractivité touristique. Les prix modérés séduisent les acquéreurs en quête d'authenticité.",
+    82: "Le Tarn-et-Garonne presente un marche accessible avec Montauban comme pole historique attractif. Le departement beneficie de sa position entre Toulouse et Agen. L'investissement en patrimoine rural progresse grace aux paysages vallonnes. La gastronomie locale renforce l'attractivite touristique. Les prix moderes seduisent les acquereurs en quete d'authenticite.",
 
-    83: "Le Var bénéficie de l'attractivité varoise avec Toulon métropole méditerranéenne. Le département profite du climat et des paysages provençaux exceptionnels. Le littoral maintient des prix très élevés (Saint-Tropez). L'investissement en résidences secondaires reste dynamique malgré la pression foncière. L'arrière-pays offre des alternatives plus accessibles aux familles.",
+    83: "Le Var beneficie de l'attractivite varoise avec Toulon metropole mediterraneenne. Le departement profite du climat et des paysages provencaux exceptionnels. Le littoral maintient des prix tres eleves (Saint-Tropez). L'investissement en residences secondaires reste dynamique malgre la pression fonciere. L'arriere-pays offre des alternatives plus accessibles aux familles.",
 
-    84: "Le Vaucluse bénéficie de l'attractivité provençale avec Avignon comme pôle culturel. Le département profite du festival et du patrimoine papal exceptionnel. L'Isle-sur-la-Sorgue attire les amateurs d'antiquités. L'investissement en résidences secondaires progresse grâce au climat et aux paysages. Les vignobles de Châteauneuf-du-Pape renforcent l'attractivité œnotouristique.",
+    84: "Le Vaucluse beneficie de l'attractivite provencale avec Avignon comme pole culturel. Le departement profite du festival et du patrimoine papal exceptionnel. L'Isle-sur-la-Sorgue attire les amateurs d'antiquites. L'investissement en residences secondaires progresse grace au climat et aux paysages. Les vignobles de Chateauneuf-du-Pape renforcent l'attractivite œnotouristique.",
 
-    85: "La Vendée présente un marché tendu sur le littoral et accessible dans l'intérieur. La Roche-sur-Yon bénéficie de l'économie départementale. Le littoral vendéen maintient des prix élevés sur les stations balnéaires. L'investissement en résidences secondaires reste soutenu par l'attractivité familiale des plages. Les Sables-d'Olonne conservent leur statut de station nautique de référence.",
+    85: "La Vendee presente un marche tendu sur le littoral et accessible dans l'interieur. La Roche-sur-Yon beneficie de l'economie departementale. Le littoral vendeen maintient des prix eleves sur les stations balneaires. L'investissement en residences secondaires reste soutenu par l'attractivite familiale des plages. Les Sables-d'Olonne conservent leur statut de station nautique de reference.",
 
-    86: "La Vienne bénéficie du dynamisme pictavien avec Poitiers comme pôle universitaire. Le département attire par son patrimoine roman exceptionnel et ses prix accessibles. Châtellerault mise sur l'innovation technologique. L'investissement étudiant reste rentable grâce aux universités. Le Futuroscope dynamise l'attractivité touristique et économique départementale.",
+    86: "La Vienne beneficie du dynamisme pictavien avec Poitiers comme pole universitaire. Le departement attire par son patrimoine roman exceptionnel et ses prix accessibles. Chatellerault mise sur l'innovation technologique. L'investissement etudiant reste rentable grace aux universites. Le Futuroscope dynamise l'attractivite touristique et economique departementale.",
 
-    87: "La Haute-Vienne séduit par son marché accessible avec Limoges comme pôle de la porcelaine. Le département attire par son patrimoine artisanal unique et ses prix modérés. L'investissement en patrimoine rural offre des opportunités de rénovation. Les prix accessibles séduisent les retraités et néo-ruraux. La gastronomie limousine renforce l'attractivité touristique.",
+    87: "La Haute-Vienne seduit par son marche accessible avec Limoges comme pole de la porcelaine. Le departement attire par son patrimoine artisanal unique et ses prix moderes. L'investissement en patrimoine rural offre des opportunites de renovation. Les prix accessibles seduisent les retraites et neo-ruraux. La gastronomie limousine renforce l'attractivite touristique.",
 
-    88: "Les Vosges proposent un marché accessible avec Épinal comme pôle principal. Le département séduit par ses paysages montagnards et ses prix modérés. L'investissement en éco-tourisme progresse grâce aux Vosges. La proximité de l'Alsace influence positivement certains secteurs. L'authenticité vosgienne attire les amoureux de nature et de tranquillité montagnarde.",
+    88: "Les Vosges proposent un marche accessible avec Epinal comme pole principal. Le departement seduit par ses paysages montagnards et ses prix moderes. L'investissement en eco-tourisme progresse grace aux Vosges. La proximite de l'Alsace influence positivement certains secteurs. L'authenticite vosgienne attire les amoureux de nature et de tranquillite montagnarde.",
 
-    89: "L'Yonne bénéficie de l'attractivité bourguignonne avec Auxerre comme pôle viticole. Le département profite de la proximité parisienne et des vignobles de Chablis. L'investissement viticole reste prisé des amateurs. Sens conserve son patrimoine cathédralique exceptionnel. Les prix accessibles contrastent avec l'attractivité patrimoniale et la proximité francilienne.",
+    89: "L'Yonne beneficie de l'attractivite bourguignonne avec Auxerre comme pole viticole. Le departement profite de la proximite parisienne et des vignobles de Chablis. L'investissement viticole reste prise des amateurs. Sens conserve son patrimoine cathedralique exceptionnel. Les prix accessibles contrastent avec l'attractivite patrimoniale et la proximite francilienne.",
 
-    90: "Le Territoire de Belfort présente un marché accessible malgré la proximité suisse. Belfort attire par son patrimoine industriel et sa position frontalière. Le département bénéficie de l'emploi frontalier suisse. L'investissement transfrontalier progresse grâce aux opportunités économiques. L'architecture militaire (Citadelle) renforce l'identité départementale unique.",
+    90: "Le Territoire de Belfort presente un marche accessible malgre la proximite suisse. Belfort attire par son patrimoine industriel et sa position frontaliere. Le departement beneficie de l'emploi frontalier suisse. L'investissement transfrontalier progresse grace aux opportunites economiques. L'architecture militaire (Citadelle) renforce l'identite departementale unique.",
 
-    91: "L'Essonne profite pleinement de l'attractivité francilienne avec un marché en progression. Le département attire les familles cherchant l'équilibre urbain-nature. Évry-Courcouronnes bénéficie du statut de préfecture moderne. L'investissement résidentiel progresse grâce aux infrastructures de transport. La vallée de Chevreuse offre un cadre naturel préservé en Île-de-France.",
+    91: "L'Essonne profite pleinement de l'attractivite francilienne avec un marche en progression. Le departement attire les familles cherchant l'equilibre urbain-nature. Evry-Courcouronnes beneficie du statut de prefecture moderne. L'investissement residentiel progresse grace aux infrastructures de transport. La vallee de Chevreuse offre un cadre naturel preserve en Île-de-France.",
 
-    92: "Les Hauts-de-Seine concentrent la richesse francilienne avec La Défense comme CBD européen. Le département présente les prix les plus élevés après Paris. Neuilly et Boulogne maintiennent leur statut de prestige absolu. L'investissement de luxe domine le marché haut de gamme. La proximité de Paris et l'excellence des infrastructures justifient les valorisations exceptionnelles.",
+    92: "Les Hauts-de-Seine concentrent la richesse francilienne avec La Defense comme CBD europeen. Le departement presente les prix les plus eleves apres Paris. Neuilly et Boulogne maintiennent leur statut de prestige absolu. L'investissement de luxe domine le marche haut de gamme. La proximite de Paris et l'excellence des infrastructures justifient les valorisations exceptionnelles.",
 
-    93: "La Seine-Saint-Denis connaît une transformation urbaine majeure avec les JO 2024. Le département bénéficie des investissements du Grand Paris Express. Saint-Denis mise sur la rénovation urbaine et le patrimoine royal. L'investissement résidentiel progresse grâce à l'accessibilité parisienne croissante. La diversité culturelle renforce l'attractivité créative et entrepreneuriale.",
+    93: "La Seine-Saint-Denis connaît une transformation urbaine majeure avec les JO 2024. Le departement beneficie des investissements du Grand Paris Express. Saint-Denis mise sur la renovation urbaine et le patrimoine royal. L'investissement residentiel progresse grace a l'accessibilite parisienne croissante. La diversite culturelle renforce l'attractivite creative et entrepreneuriale.",
 
-    94: "Le Val-de-Marne présente un marché francilien équilibré avec Créteil comme pôle administratif. Le département bénéficie de l'excellent maillage de transport en commun. L'investissement étudiant reste rentable grâce aux universités. Vincennes conserve son attractivité de prestige. La proximité de Paris et les espaces verts renforcent l'attractivité familiale.",
+    94: "Le Val-de-Marne presente un marche francilien equilibre avec Creteil comme pole administratif. Le departement beneficie de l'excellent maillage de transport en commun. L'investissement etudiant reste rentable grace aux universites. Vincennes conserve son attractivite de prestige. La proximite de Paris et les espaces verts renforcent l'attractivite familiale.",
 
-    95: "Le Val-d'Oise profite de l'expansion francilienne avec Cergy comme ville nouvelle attractive. Le département attire les familles cherchant l'espace à prix maîtrisé. L'investissement résidentiel progresse grâce au télétravail et aux infrastructures. Pontoise conserve son patrimoine historique francilien. L'aéroport de Roissy influence positivement l'économie départementale.",
+    95: "Le Val-d'Oise profite de l'expansion francilienne avec Cergy comme ville nouvelle attractive. Le departement attire les familles cherchant l'espace a prix maîtrise. L'investissement residentiel progresse grace au teletravail et aux infrastructures. Pontoise conserve son patrimoine historique francilien. L'aeroport de Roissy influence positivement l'economie departementale.",
 
-    971: "La Guadeloupe présente un marché insulaire unique avec Pointe-à-Pitre comme pôle économique. Le département bénéficie de l'attractivité tropicale et du statut européen. L'investissement en résidences secondaires reste soutenu par la clientèle métropolitaine. Les défiscalisations ultramarines dynamisent le marché immobilier neuf. Le climat tropical et les plages exceptionnelles maintiennent l'attractivité touristique.",
+    971: "La Guadeloupe presente un marche insulaire unique avec Pointe-a-Pitre comme pole economique. Le departement beneficie de l'attractivite tropicale et du statut europeen. L'investissement en residences secondaires reste soutenu par la clientele metropolitaine. Les defiscalisations ultramarines dynamisent le marche immobilier neuf. Le climat tropical et les plages exceptionnelles maintiennent l'attractivite touristique.",
 
-    972: "La Martinique séduit par son marché insulaire avec Fort-de-France comme capitale économique. Le département profite de l'attractivité créole et du cadre tropical exceptionnel. L'investissement défiscalisé reste dynamique grâce aux dispositifs ultramarins. Le tourisme haut de gamme influence positivement le marché résidentiel. La culture créole unique renforce l'identité et l'attractivité martiniquaise.",
+    972: "La Martinique seduit par son marche insulaire avec Fort-de-France comme capitale economique. Le departement profite de l'attractivite creole et du cadre tropical exceptionnel. L'investissement defiscalise reste dynamique grace aux dispositifs ultramarins. Le tourisme haut de gamme influence positivement le marche residentiel. La culture creole unique renforce l'identite et l'attractivite martiniquaise.",
 
-    973: "La Guyane présente un marché en développement avec Cayenne comme pôle spatial européen. Le département bénéficie de la croissance démographique et économique soutenue. L'investissement immobilier progresse grâce aux défiscalisations et à l'économie spatiale. Le Centre Spatial Guyanais dynamise l'attractivité internationale. La biodiversité amazonienne exceptionnelle attire l'éco-tourisme de luxe.",
+    973: "La Guyane presente un marche en developpement avec Cayenne comme pole spatial europeen. Le departement beneficie de la croissance demographique et economique soutenue. L'investissement immobilier progresse grace aux defiscalisations et a l'economie spatiale. Le Centre Spatial Guyanais dynamise l'attractivite internationale. La biodiversite amazonienne exceptionnelle attire l'eco-tourisme de luxe.",
 
-    974: "La Réunion offre un marché insulaire dynamique avec Saint-Denis comme capitale administrative. Le département bénéficie de l'attractivité tropicale et du statut européen dans l'océan Indien. L'investissement défiscalisé reste très attractif grâce aux dispositifs ultramarins. Le tourisme créole progresse malgré l'éloignement. Les paysages volcaniques uniques renforcent l'attractivité résidentielle et touristique.",
+    974: "La Reunion offre un marche insulaire dynamique avec Saint-Denis comme capitale administrative. Le departement beneficie de l'attractivite tropicale et du statut europeen dans l'ocean Indien. L'investissement defiscalise reste tres attractif grace aux dispositifs ultramarins. Le tourisme creole progresse malgre l'eloignement. Les paysages volcaniques uniques renforcent l'attractivite residentielle et touristique.",
 
-    976: "Mayotte présente un marché émergent avec Mamoudzou comme pôle principal. Le département connaît la plus forte croissance démographique française. L'investissement immobilier explose grâce à la départementalisation récente et aux besoins d'équipement. Le lagon exceptionnel attire l'éco-tourisme naissant. Le statut départemental renforce l'attractivité économique et résidentielle mahoraise.",
+    976: "Mayotte presente un marche emergent avec Mamoudzou comme pole principal. Le departement connaît la plus forte croissance demographique francaise. L'investissement immobilier explose grace a la departementalisation recente et aux besoins d'equipement. Le lagon exceptionnel attire l'eco-tourisme naissant. Le statut departemental renforce l'attractivite economique et residentielle mahoraise.",
 
-    "2A": "La Corse-du-Sud bénéficie de l'attractivité d'Ajaccio, ville natale de Napoléon. Le marché immobilier profite du tourisme de prestige et de l'identité insulaire forte. Le littoral sud maintient des prix très élevés sur les biens de caractère. L'investissement en résidences secondaires reste soutenu par la clientèle continentale aisée. L'authenticité corse et les paysages méditerranéens uniques justifient les valorisations premium.",
+    "2A": "La Corse-du-Sud beneficie de l'attractivite d'Ajaccio, ville natale de Napoleon. Le marche immobilier profite du tourisme de prestige et de l'identite insulaire forte. Le littoral sud maintient des prix tres eleves sur les biens de caractere. L'investissement en residences secondaires reste soutenu par la clientele continentale aisee. L'authenticite corse et les paysages mediterraneens uniques justifient les valorisations premium.",
 
-    "2B": "Le marché de Haute-Corse reste porté par l'attractivité littorale, notamment Bastia et Calvi, où les prix élevés génèrent des frais de notaire conséquents. Le département bénéficie du tourisme de luxe et de l'authenticité montagnarde corse. L'investissement patrimonial progresse grâce aux villages de caractère. La Cap Corse et la Balagne maintiennent leur statut de destinations de prestige méditerranéen. 🏔️ Entre maquis parfumé et villages perchés, l'île de Beauté offre un patrimoine naturel et culturel d'exception qui transcende les considérations financières.",
+    "2B": "Le marche de Haute-Corse reste porte par l'attractivite littorale, notamment Bastia et Calvi, ou les prix eleves generent des frais de notaire consequents. Le departement beneficie du tourisme de luxe et de l'authenticite montagnarde corse. L'investissement patrimonial progresse grace aux villages de caractere. La Cap Corse et la Balagne maintiennent leur statut de destinations de prestige mediterraneen. 🏔️ Entre maquis parfume et villages perches, l'île de Beaute offre un patrimoine naturel et culturel d'exception qui transcende les considerations financieres.",
   };
 
   return (
     uniqueContent[dep.code] ||
-    `Le marché immobilier ${getPreposition(
+    `Le marche immobilier ${getPreposition(
       dep.nom,
       dep.code
-    )} présente des caractéristiques uniques liées à son patrimoine local et à sa situation géographique. Les prix moyens de ${dep.prixM2.toLocaleString(
+    )} presente des caracteristiques uniques liees a son patrimoine local et a sa situation geographique. Les prix moyens de ${dep.prixM2.toLocaleString(
       "fr-FR"
-    )} €/m² offrent des opportunités intéressantes pour les acquéreurs. Le département attire par son cadre de vie et ses spécificités régionales qui en font un territoire à fort potentiel résidentiel.`
+    )} €/m² offrent des opportunites interessantes pour les acquereurs. Le departement attire par son cadre de vie et ses specificites regionales qui en font un territoire a fort potentiel residentiel.`
   );
 };
 
 /**
- * Génère la section tendances du marché immobilier 2024-2025
+ * Genere la section tendances du marche immobilier 2024-2025
  */
 const generateMarketTrendsSection = (dep) => {
   const trends = {
     hausse_forte: {
       depts: ["06", "83", "74", "92", "78"],
-      prix: "📈 <strong>Prix en hausse forte</strong> (+8% à +15% sur 12 mois)",
-      volume: "📊 Volume de ventes élevé malgré la tension tarifaire",
+      prix: "📈 <strong>Prix en hausse forte</strong> (+8% a +15% sur 12 mois)",
+      volume: "📊 Volume de ventes eleve malgre la tension tarifaire",
       attractivite:
-        "⭐ Attractivité exceptionnelle (climat, emploi, patrimoine)",
-      tension: "🔥 Marché très tendu, forte concurrence acquéreurs",
+        "⭐ Attractivite exceptionnelle (climat, emploi, patrimoine)",
+      tension: "🔥 Marche tres tendu, forte concurrence acquereurs",
     },
     hausse_moderee: {
       depts: [
@@ -1715,10 +1715,10 @@ const generateMarketTrendsSection = (dep) => {
         "94",
         "95",
       ],
-      prix: "📈 <strong>Prix en hausse modérée</strong> (+3% à +8% sur 12 mois)",
-      volume: "📊 Volume de ventes stable avec sélectivité accrue",
-      attractivite: "⭐ Forte attractivité économique et démographique",
-      tension: "🟡 Marché équilibré avec tensions localisées",
+      prix: "📈 <strong>Prix en hausse moderee</strong> (+3% a +8% sur 12 mois)",
+      volume: "📊 Volume de ventes stable avec selectivite accrue",
+      attractivite: "⭐ Forte attractivite economique et demographique",
+      tension: "🟡 Marche equilibre avec tensions localisees",
     },
     stabilite: {
       depts: [
@@ -1747,10 +1747,10 @@ const generateMarketTrendsSection = (dep) => {
         "89",
         "90",
       ],
-      prix: "📊 <strong>Prix stables</strong> (-1% à +3% sur 12 mois)",
-      volume: "📊 Volume en léger retrait, marché d'opportunités",
-      attractivite: "⭐ Rapport qualité-prix préservé, potentiel latent",
-      tension: "🟢 Marché équilibré, négociations possibles",
+      prix: "📊 <strong>Prix stables</strong> (-1% a +3% sur 12 mois)",
+      volume: "📊 Volume en leger retrait, marche d'opportunites",
+      attractivite: "⭐ Rapport qualite-prix preserve, potentiel latent",
+      tension: "🟢 Marche equilibre, negociations possibles",
     },
     correction: {
       depts: [
@@ -1772,15 +1772,15 @@ const generateMarketTrendsSection = (dep) => {
         "82",
         "86",
       ],
-      prix: "📉 <strong>Correction des prix</strong> (-2% à -6% sur 12 mois)",
-      volume: "📊 Volume en recul, marché d'acheteurs",
-      attractivite: "⭐ Opportunités d'acquisition attractives",
-      tension: "🟢 Marché détendu, marge de négociation",
+      prix: "📉 <strong>Correction des prix</strong> (-2% a -6% sur 12 mois)",
+      volume: "📊 Volume en recul, marche d'acheteurs",
+      attractivite: "⭐ Opportunites d'acquisition attractives",
+      tension: "🟢 Marche detendu, marge de negociation",
     },
   };
 
-  // Déterminer la catégorie du département
-  let category = "stabilite"; // défaut
+  // Determiner la categorie du departement
+  let category = "stabilite"; // defaut
   for (const [key, data] of Object.entries(trends)) {
     if (data.depts.includes(dep.code)) {
       category = key;
@@ -1790,7 +1790,7 @@ const generateMarketTrendsSection = (dep) => {
 
   const trend = trends[category];
 
-  // Sources d'information crédibles
+  // Sources d'information credibles
   const sources = [
     "DVF 2024",
     "LPI-SeLoger",
@@ -1800,9 +1800,9 @@ const generateMarketTrendsSection = (dep) => {
   ].join(", ");
 
   return `
-    <!-- Section Tendances marché -->
+    <!-- Section Tendances marche -->
     <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">
-      📈 Marché immobilier ${dep.nom} 2024–2025
+      📈 Marche immobilier ${dep.nom} 2024-2025
     </h2>
     
     <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg mb-8">
@@ -1811,7 +1811,7 @@ const generateMarketTrendsSection = (dep) => {
           <div class="flex items-start space-x-3">
             <div class="text-2xl">📈</div>
             <div>
-              <h4 class="font-semibold text-gray-900">Évolution des prix</h4>
+              <h4 class="font-semibold text-gray-900">Evolution des prix</h4>
               <p class="text-gray-700">${trend.prix}</p>
             </div>
           </div>
@@ -1829,7 +1829,7 @@ const generateMarketTrendsSection = (dep) => {
           <div class="flex items-start space-x-3">
             <div class="text-2xl">⭐</div>
             <div>
-              <h4 class="font-semibold text-gray-900">Attractivité</h4>
+              <h4 class="font-semibold text-gray-900">Attractivite</h4>
               <p class="text-gray-700">${trend.attractivite}</p>
             </div>
           </div>
@@ -1837,7 +1837,7 @@ const generateMarketTrendsSection = (dep) => {
           <div class="flex items-start space-x-3">
             <div class="text-2xl">🎯</div>
             <div>
-              <h4 class="font-semibold text-gray-900">Tension du marché</h4>
+              <h4 class="font-semibold text-gray-900">Tension du marche</h4>
               <p class="text-gray-700">${trend.tension}</p>
             </div>
           </div>
@@ -1846,32 +1846,32 @@ const generateMarketTrendsSection = (dep) => {
       
       <div class="mt-4 pt-4 border-t border-blue-200">
         <p class="text-xs text-gray-600">
-          <strong>📊 Sources :</strong> ${sources} • Analyse basée sur les données publiques 2024
+          <strong>📊 Sources :</strong> ${sources} • Analyse basee sur les donnees publiques 2024
         </p>
       </div>
     </div>`;
 };
 
 /**
- * Génère la section prix moyens par ville
+ * Genere la section prix moyens par ville
  */
 const generateCityPricesSection = (dep) => {
-  // Prix indicatifs basés sur les données moyennes départementales
+  // Prix indicatifs bases sur les donnees moyennes departementales
   const ville1Prix = Math.round(dep.prixM2 * (0.9 + Math.random() * 0.3));
   const ville2Prix = dep.ville2
     ? Math.round(dep.prixM2 * (0.8 + Math.random() * 0.4))
     : null;
   const ville3Prix = Math.round(dep.prixM2 * (0.7 + Math.random() * 0.5));
 
-  // Villes supplémentaires spécifiques par département (évite les duplications avec ville1/ville2)
-  const villesSpécifiques = {
+  // Villes supplementaires specifiques par departement (evite les duplications avec ville1/ville2)
+  const villesSpecifiques = {
     "01": "Belley",
-    "02": "Château-Thierry",
+    "02": "Chateau-Thierry",
     "03": "Vichy",
     "04": "Sisteron",
     "05": "Embrun",
     "06": "Grasse",
-    "07": "Largentière",
+    "07": "Largentiere",
     "08": "Rethel",
     "09": "Saint-Girons",
     10: "Nogent-sur-Seine",
@@ -1893,31 +1893,31 @@ const generateCityPricesSection = (dep) => {
     27: "Les Andelys",
     28: "Nogent-le-Rotrou",
     29: "Morlaix",
-    30: "Uzès",
+    30: "Uzes",
     31: "Muret",
     32: "Mirande",
     33: "Libourne",
-    34: "Sète",
-    35: "Fougères",
-    36: "La Châtre",
+    34: "Sete",
+    35: "Fougeres",
+    36: "La Chatre",
     37: "Chinon",
     38: "Bourgoin-Jallieu",
     39: "Saint-Claude",
     40: "Bayonne",
-    41: "Vendôme",
+    41: "Vendome",
     42: "Montbrison",
     43: "Yssingeaux",
-    44: "Châteaubriant",
+    44: "Chateaubriant",
     45: "Pithiviers",
     46: "Gourdon",
     47: "Marmande",
     48: "Marvejols",
     49: "Saumur",
     50: "Coutances",
-    51: "Épernay",
+    51: "Epernay",
     52: "Langres",
-    53: "Château-Gontier",
-    54: "Lunéville",
+    53: "Chateau-Gontier",
+    54: "Luneville",
     55: "Commercy",
     56: "Pontivy",
     57: "Forbach",
@@ -1928,9 +1928,9 @@ const generateCityPricesSection = (dep) => {
     62: "Boulogne-sur-Mer",
     63: "Issoire",
     64: "Oloron-Sainte-Marie",
-    65: "Bagnères",
-    66: "Céret",
-    67: "Sélestat",
+    65: "Bagneres",
+    66: "Ceret",
+    67: "Selestat",
     68: "Guebwiller",
     69: "Villefranche",
     70: "Gray",
@@ -1938,12 +1938,12 @@ const generateCityPricesSection = (dep) => {
     72: "Mamers",
     73: "Albertville",
     74: "Cluses",
-    75: "Paris 16ème",
+    75: "Paris 16eme",
     76: "Dieppe",
     77: "Fontainebleau",
     78: "Mantes-la-Jolie",
     79: "Parthenay",
-    80: "Péronne",
+    80: "Peronne",
     81: "Gaillac",
     82: "Moissac",
     83: "Draguignan",
@@ -1951,7 +1951,7 @@ const generateCityPricesSection = (dep) => {
     85: "Les Sables",
     86: "Montmorillon",
     87: "Bellac",
-    88: "Saint-Dié",
+    88: "Saint-Die",
     89: "Joigny",
     90: "Giromagny",
     91: "Palaiseau",
@@ -1969,7 +1969,7 @@ const generateCityPricesSection = (dep) => {
     "2B": "Île-Rousse",
   };
 
-  const ville3Nom = villesSpécifiques[dep.code] || "Autres communes";
+  const ville3Nom = villesSpecifiques[dep.code] || "Autres communes";
 
   return `
     <!-- Section Prix par ville -->
@@ -1984,7 +1984,7 @@ const generateCityPricesSection = (dep) => {
           <p class="text-3xl font-bold text-blue-600 mb-1">${ville1Prix.toLocaleString(
             "fr-FR"
           )} €/m²</p>
-          <p class="text-sm text-gray-600">Préfecture</p>
+          <p class="text-sm text-gray-600">Prefecture</p>
         </div>
         
         ${
@@ -1995,7 +1995,7 @@ const generateCityPricesSection = (dep) => {
           <p class="text-3xl font-bold text-green-600 mb-1">${ville2Prix.toLocaleString(
             "fr-FR"
           )} €/m²</p>
-          <p class="text-sm text-gray-600">Sous-préfecture</p>
+          <p class="text-sm text-gray-600">Sous-prefecture</p>
         </div>
         `
             : ""
@@ -2011,7 +2011,7 @@ const generateCityPricesSection = (dep) => {
       </div>
       
       <div class="mt-4 p-3 bg-gray-50 rounded text-sm text-gray-600">
-        <strong>📊 Méthodologie :</strong> Estimations basées sur les données DVF, indices notariaux et sources publiques. 
+        <strong>📊 Methodologie :</strong> Estimations basees sur les donnees DVF, indices notariaux et sources publiques. 
         Prix indicatifs pour l'ancien, variations possibles selon secteur et standing.
       </div>
     </div>`;
@@ -2020,15 +2020,15 @@ const generateCityPricesSection = (dep) => {
 const getCalculTitleVariant = (index, depNom, ville) => {
   const variants = [
     `📊 Exemple de calcul concret ${
-      depNom === "Paris" ? "à Paris" : "en " + depNom
+      depNom === "Paris" ? "a Paris" : "en " + depNom
     }`,
     `🏠 Simulation d'achat immobilier ${
-      depNom === "Paris" ? "à Paris" : "en " + depNom
+      depNom === "Paris" ? "a Paris" : "en " + depNom
     }`,
-    `💡 Cas pratique : acheter à ${ville}`,
-    `📝 Exemple chiffré pour ${depNom}`,
-    `🔢 Calcul détaillé pour un projet ${
-      depNom === "Paris" ? "à Paris" : "en " + depNom
+    `💡 Cas pratique : acheter a ${ville}`,
+    `📝 Exemple chiffre pour ${depNom}`,
+    `🔢 Calcul detaille pour un projet ${
+      depNom === "Paris" ? "a Paris" : "en " + depNom
     }`,
   ];
   return variants[index % variants.length];
@@ -2040,7 +2040,7 @@ function generateArticleHTML(dep, index) {
   const dateModifiedISO = now.toISOString();
   const dateModifiedFR = formatDateFR(now);
   /**
-   * Calcule les émoluments du notaire selon le barème officiel par tranches.
+   * Calcule les emoluments du notaire selon le bareme officiel par tranches.
    */
   function computeEmoluments(prixNetImmobilier) {
     const tranches = [
@@ -2063,7 +2063,7 @@ function generateArticleHTML(dep, index) {
   }
 
   /**
-   * Renvoie le taux de droits de mutation par département (défaut 4,5%).
+   * Renvoie le taux de droits de mutation par departement (defaut 4,5%).
    */
   function getTauxMutation(depCode) {
     const map = { 36: 0.038, 38: 0.038, 56: 0.038 };
@@ -2084,7 +2084,7 @@ function generateArticleHTML(dep, index) {
     return Math.round(total);
   }
 
-  // Calculs personnalisés selon le prix/m² du département
+  // Calculs personnalises selon le prix/m² du departement
   const surfaceRef = dep.prixM2 > 4000 ? 50 : dep.prixM2 < 1500 ? 70 : 60;
   const prixExempleAncien = Math.round(dep.prixM2 * surfaceRef);
   const prixExempleNeuf = prixExempleAncien;
@@ -2094,7 +2094,7 @@ function generateArticleHTML(dep, index) {
   const economie = fraisAncien - fraisNeuf;
   const montantEmprunt = prixExempleAncien + fraisAncien - apport;
 
-  // Mensualité approximative (4.2% sur 20 ans)
+  // Mensualite approximative (4.2% sur 20 ans)
   const tauxMensuel = 0.042 / 12;
   const nbMois = 20 * 12;
   const mensualite = Math.round(
@@ -2105,21 +2105,21 @@ function generateArticleHTML(dep, index) {
   const prix200kAncien = computeFrais("ancien", 200000, dep.code);
   const prix200kNeuf = computeFrais("neuf", 200000, dep.code);
 
-  // Conseil personnalisé selon le prix du marché
+  // Conseil personnalise selon le prix du marche
   let conseilSpecifique = "";
   if (dep.prixM2 < 1500) {
-    conseilSpecifique = `Le marché immobilier ${getDuDeLa(dep.nom, dep.code)}${
+    conseilSpecifique = `Le marche immobilier ${getDuDeLa(dep.nom, dep.code)}${
       dep.nom
     } est accessible avec un prix moyen de ${dep.prixM2.toLocaleString(
       "fr-FR"
-    )} €/m². C'est une opportunité pour les primo-accédants.`;
+    )} €/m². C'est une opportunite pour les primo-accedants.`;
   } else if (dep.prixM2 < 3000) {
     conseilSpecifique = `Avec un prix moyen de ${dep.prixM2.toLocaleString(
       "fr-FR"
     )} €/m², ${getArticleDefini(dep.nom, dep.code)}${dep.nom} ${getVerbe(
       dep.nom,
       "offre"
-    )} un bon équilibre entre qualité de vie et accessibilité.`;
+    )} un bon equilibre entre qualite de vie et accessibilite.`;
   } else {
     conseilSpecifique = `${
       dep.code === "75"
@@ -2128,16 +2128,16 @@ function generateArticleHTML(dep, index) {
     } ${getVerbe(
       dep.nom,
       "est"
-    )} un marché premium avec ${dep.prixM2.toLocaleString(
+    )} un marche premium avec ${dep.prixM2.toLocaleString(
       "fr-FR"
-    )} €/m² en moyenne. Les frais de notaire représentent donc un montant conséquent à prévoir.`;
+    )} €/m² en moyenne. Les frais de notaire representent donc un montant consequent a prevoir.`;
   }
 
   const ville2HTML = dep.ville2
-    ? `<li>• <strong>Étude ${dep.ville2}</strong> : Me Bernard, notaire</li>`
+    ? `<li>• <strong>Etude ${dep.ville2}</strong> : Me Bernard, notaire</li>`
     : "";
 
-  // Voir aussi: liens vers départements de la même région, avec fallback Outre-mer
+  // Voir aussi: liens vers departements de la meme region, avec fallback Outre-mer
   const omCodes = ["971", "972", "973", "974", "976"];
   let relatedDeps = departements.filter(
     (d) => d.region === dep.region && d.code !== dep.code
@@ -2156,33 +2156,33 @@ function generateArticleHTML(dep, index) {
     .join("");
 
   /**
-   * Génère des libellés d'offices notariaux uniques pour les villes du département.
-   * Utilise des variantes de formulation pour éviter le contenu dupliqué.
+   * Genere des libelles d'offices notariaux uniques pour les villes du departement.
+   * Utilise des variantes de formulation pour eviter le contenu duplique.
    */
   function buildUniqueOfficeItems(dep) {
     const cities = [dep.ville1, dep.ville2].filter(Boolean);
     const variants = [
-      (c) => `• <strong>Étude notariale de ${c}</strong> — centre‑ville`,
-      (c) => `• <strong>Office notarial ${c}</strong> — quartier administratif`,
-      (c) => `• <strong>Étude ${c}</strong> — proche du tribunal judiciaire`,
-      (c) => `• <strong>Étude notariale ${c}</strong> — secteur gare`,
-      (c) => `• <strong>Office notarial de ${c}</strong> — périmètre mairie`,
+      (c) => `• <strong>Etude notariale de ${c}</strong> - centre‑ville`,
+      (c) => `• <strong>Office notarial ${c}</strong> - quartier administratif`,
+      (c) => `• <strong>Etude ${c}</strong> - proche du tribunal judiciaire`,
+      (c) => `• <strong>Etude notariale ${c}</strong> - secteur gare`,
+      (c) => `• <strong>Office notarial de ${c}</strong> - perimetre mairie`,
     ];
     const lines = cities.map((c, i) => variants[i % variants.length](c));
-    // Ajoute une ligne générique de la chambre des notaires de la région
+    // Ajoute une ligne generique de la chambre des notaires de la region
     lines.push(
-      `• <strong>Chambre des Notaires ${dep.region}</strong> — annuaire officiel en ligne`
+      `• <strong>Chambre des Notaires ${dep.region}</strong> - annuaire officiel en ligne`
     );
     return lines.join("\n");
   }
 
   /**
-   * Génère un bloc "Notaire DVF" unique par ville à partir de données pseudo‑DVF.
-   * Les valeurs sont déterministes (seedées sur le nom de la ville) pour éviter les duplications.
+   * Genere un bloc "Notaire DVF" unique par ville a partir de donnees pseudo‑DVF.
+   * Les valeurs sont deterministes (seedees sur le nom de la ville) pour eviter les duplications.
    */
   function buildNotaireDVFBlock(ville, dep) {
     if (!ville) return "";
-    // Essaye d'utiliser les stats DVF réelles; fallback déterministe sinon
+    // Essaye d'utiliser les stats DVF reelles; fallback deterministe sinon
     const key = normalizeCityName(ville);
     if (!DVF_STATS_CACHE) {
       const TARGET_CITIES_SET = new Set(
@@ -2237,10 +2237,10 @@ function generateArticleHTML(dep, index) {
         ? maisons + appartements + mixtes
         : maisons + appartements;
 
-    // Génération du texte descriptif simplifié et professionnel
+    // Generation du texte descriptif simplifie et professionnel
     let ventesTxt = "";
     if (ventesImmo === 0) {
-      ventesTxt = "aucune vente immobilière";
+      ventesTxt = "aucune vente immobiliere";
     } else {
       const details = [];
       if (maisons > 0) {
@@ -2265,24 +2265,24 @@ function generateArticleHTML(dep, index) {
 
       const detailStr = details.length > 0 ? ` (${details.join(", ")})` : "";
       ventesTxt = `${ventesImmo} ${
-        ventesImmo === 1 ? "vente immobilière" : "ventes immobilières"
+        ventesImmo === 1 ? "vente immobiliere" : "ventes immobilieres"
       }${detailStr}`;
     }
     const mutationsTxt = `${transactions} ${
       transactions === 1 ? "mutation" : "mutations"
     }`;
     const medianTxt = Number.isFinite(median)
-      ? `La <strong>médiane des prix</strong> des ventes est de <strong>${Math.round(
+      ? `La <strong>mediane des prix</strong> des ventes est de <strong>${Math.round(
           median
         ).toLocaleString("fr-FR")} €</strong>.`
       : "";
-    const disclaimerDVF = `<span class="text-xs text-gray-500">(Données DVF 2024, mise à jour mensuelle)</span>`;
+    const disclaimerDVF = `<span class="text-xs text-gray-500">(Donnees DVF 2024, mise a jour mensuelle)</span>`;
     const dvfHref =
       "https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/";
     const variants = [
-      `Selon <a href="${dvfHref}" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, ${ville} a enregistré <strong>${mutationsTxt}</strong>, dont ${ventesTxt}. ${medianTxt} ${disclaimerDVF}`,
-      `D’après <a href="${dvfHref}" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, ${ville} comptabilise ${ventesTxt} (sur <strong>${mutationsTxt}</strong>). ${medianTxt}`,
-      `Les données <a href="${dvfHref}" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a> indiquent <strong>${mutationsTxt}</strong> à ${ville}, avec ${ventesTxt}. ${medianTxt} ${disclaimerDVF}`,
+      `Selon <a href="${dvfHref}" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, ${ville} a enregistre <strong>${mutationsTxt}</strong>, dont ${ventesTxt}. ${medianTxt} ${disclaimerDVF}`,
+      `D'apres <a href="${dvfHref}" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, ${ville} comptabilise ${ventesTxt} (sur <strong>${mutationsTxt}</strong>). ${medianTxt}`,
+      `Les donnees <a href="${dvfHref}" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a> indiquent <strong>${mutationsTxt}</strong> a ${ville}, avec ${ventesTxt}. ${medianTxt} ${disclaimerDVF}`,
       `En 2024, ${ville} recense <strong>${mutationsTxt}</strong> selon <a href="${dvfHref}" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>DVF 2024</strong></a>, incluant ${ventesTxt}. ${medianTxt} ${disclaimerDVF}`,
     ];
     const vIndex =
@@ -2293,17 +2293,17 @@ function generateArticleHTML(dep, index) {
 
     return `
       <section class="bg-gray-50 p-4 rounded-lg mt-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Notaires à ${ville} (${dep.code}) - 2025</h3>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Notaires a ${ville} (${dep.code}) - 2025</h3>
         <p class="text-gray-700">
           ${intro}
-          Pour contacter un professionnel, consultez l’annuaire officiel des notaires de la région ${dep.region}.
+          Pour contacter un professionnel, consultez l'annuaire officiel des notaires de la region ${dep.region}.
         </p>
         <a href="${annuaireUrl}" class="text-blue-600 hover:underline">Annuaire officiel</a>
       </section>`;
   }
 
   /**
-   * Calcule le département précédent et suivant pour la navigation.
+   * Calcule le departement precedent et suivant pour la navigation.
    */
   function computePrevNext() {
     const idx = departements.findIndex((d) => d.code === dep.code);
@@ -2329,7 +2329,7 @@ function generateArticleHTML(dep, index) {
         }
       </div>
     </div>`;
-  const hubLink = `<a href="/pages/blog/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les départements</a>`;
+  const hubLink = `<a href="/pages/blog/frais-notaire-departements.html" class="inline-block bg-blue-600 text-white rounded px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">Tous les departements</a>`;
 
   return `<!DOCTYPE html>
 <html lang="fr">
@@ -2423,7 +2423,7 @@ function generateArticleHTML(dep, index) {
               )} ?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: `Ancien : environ 7 à 8 % • Neuf (VEFA) : environ 2 à 3 % du prix d'achat. Utilisez le simulateur pour une estimation personnalisée.`,
+                text: `Ancien : environ 7 a 8 % • Neuf (VEFA) : environ 2 a 3 % du prix d'achat. Utilisez le simulateur pour une estimation personnalisee.`,
               },
             },
             {
@@ -2431,7 +2431,7 @@ function generateArticleHTML(dep, index) {
               name: `Comment calculer les frais de notaire ${dep.code} ?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: `Utilisez notre simulateur gratuit intégré à cette page : il applique le barème officiel en vigueur.`,
+                text: `Utilisez notre simulateur gratuit integre a cette page : il applique le bareme officiel en vigueur.`,
               },
             },
             {
@@ -2439,19 +2439,19 @@ function generateArticleHTML(dep, index) {
               name: `Frais de notaire ${dep.nom} ${SEO_YEAR} : neuf ou ancien ?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Le neuf (VEFA) a généralement des frais plus faibles que l'ancien. L'écart dépend du prix et du dossier : utilisez le simulateur pour comparer.",
+                text: "Le neuf (VEFA) a generalement des frais plus faibles que l'ancien. L'ecart depend du prix et du dossier : utilisez le simulateur pour comparer.",
               },
             },
             {
               "@type": "Question",
-              name: `Où trouver un notaire ${
+              name: `Ou trouver un notaire ${
                 dep.ville1
-                  ? "à " + dep.ville1
+                  ? "a " + dep.ville1
                   : getPreposition(dep.nom, dep.code)
               } ?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Consultez l'annuaire officiel intégré plus haut ou rendez-vous sur notaires.fr",
+                text: "Consultez l'annuaire officiel integre plus haut ou rendez-vous sur notaires.fr",
               },
             },
           ],
@@ -2492,17 +2492,17 @@ function generateArticleHTML(dep, index) {
       "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "Calculer vos frais de notaire ${dep.nom}",
-      "description": "Étapes pour estimer les frais de notaire dans ${
+      "description": "Etapes pour estimer les frais de notaire dans ${
         dep.nom
       }.",
       "step": [
-        {"@type": "HowToStep", "name": "Choisir le type de bien", "text": "Sélectionnez ancien, neuf ou terrain."},
-        {"@type": "HowToStep", "name": "Indiquer le département", "text": "Département pré-rempli: ${
+        {"@type": "HowToStep", "name": "Choisir le type de bien", "text": "Selectionnez ancien, neuf ou terrain."},
+        {"@type": "HowToStep", "name": "Indiquer le departement", "text": "Departement pre-rempli: ${
           dep.code
         }."},
-        {"@type": "HowToStep", "name": "Saisir le prix", "text": "Entrez le prix d'achat; déduisez le mobilier si présent."},
-        {"@type": "HowToStep", "name": "Préciser l'emprunt", "text": "Indiquez le type et les montants."},
-        {"@type": "HowToStep", "name": "Calculer", "text": "Obtenez le détail complet des frais."}
+        {"@type": "HowToStep", "name": "Saisir le prix", "text": "Entrez le prix d'achat; deduisez le mobilier si present."},
+        {"@type": "HowToStep", "name": "Preciser l'emprunt", "text": "Indiquez le type et les montants."},
+        {"@type": "HowToStep", "name": "Calculer", "text": "Obtenez le detail complet des frais."}
       ]
     }
     </script>
@@ -2516,7 +2516,7 @@ function generateArticleHTML(dep, index) {
         dep.code
       }.html#notaires",
       "name": "Notaires ${dep.nom} (${dep.code})",
-      "description": "Services notariaux spécialisés en immobilier ${getPreposition(
+      "description": "Services notariaux specialises en immobilier ${getPreposition(
         dep.nom,
         dep.code
       )} - Calcul frais, actes, conseils",
@@ -2531,7 +2531,7 @@ function generateArticleHTML(dep, index) {
         {
           "@type": "AdministrativeArea",
           "name": "${dep.nom}",
-          "alternateName": "Département ${dep.code}"
+          "alternateName": "Departement ${dep.code}"
         },
         {
           "@type": "City",
@@ -2548,9 +2548,9 @@ function generateArticleHTML(dep, index) {
       ],
       "serviceType": [
         "Frais de notaire",
-        "Actes notariés immobilier", 
+        "Actes notaries immobilier", 
         "Conseil acquisition",
-        "Transaction immobilière ${dep.nom}"
+        "Transaction immobiliere ${dep.nom}"
       ],
       "priceRange": "4%-6.6% du prix d'achat",
       "url": "https://www.notaires.fr",
@@ -2648,7 +2648,7 @@ function generateArticleHTML(dep, index) {
           <span>•</span>
           <time datetime="${DATE_PUBLISHED_ISO.slice(0, 10)}">${DATE_PUBLISHED_FR}</time>
           <span>•</span>
-          <span>Guide départemental</span>
+          <span>Guide departemental</span>
         </div>
         
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -2659,9 +2659,9 @@ function generateArticleHTML(dep, index) {
         
         <p class="text-xl text-gray-600 leading-relaxed">
           <strong>${getIntroVariant(index, dep.nom, dep.code)}</strong> 
-          En ${SEO_YEAR}, ces frais se situent généralement autour de <strong>7 à 8 %</strong> dans l'ancien et <strong>2 à 3 %</strong> dans le neuf (VEFA). Dans le département ${
+          En ${SEO_YEAR}, ces frais se situent generalement autour de <strong>7 a 8 %</strong> dans l'ancien et <strong>2 a 3 %</strong> dans le neuf (VEFA). Dans le departement ${
             dep.code
-          }, le prix moyen au m² s'établit à environ 
+          }, le prix moyen au m² s'etablit a environ 
           <strong>${dep.prixM2.toLocaleString(
             "fr-FR"
           )} €</strong>, ce qui impacte directement le montant total de votre investissement.
@@ -2691,10 +2691,10 @@ function generateArticleHTML(dep, index) {
             ? "Unsplash"
             : "Image externe";
           const caption = deptImg
-            ? `Image illustrative du département ${dep.nom}. Source : ${provider}.`
+            ? `Image illustrative du departement ${dep.nom}. Source : ${provider}.`
             : !isUnsplash(cityImg) && cityImg
-            ? `Image illustrative de ${dep.ville1}. Source : ${provider}.`
-            : `Image illustrative de la région ${dep.region}. Source : ${provider}.`;
+            ? `Image illustrative de ${dep.ville1}. Source : ${provider}.`
+            : `Image illustrative de la region ${dep.region}. Source : ${provider}.`;
           return `
           <img
             src="${provider === "Wikimedia Commons" ? base : mk(1200)}"
@@ -2728,7 +2728,7 @@ function generateArticleHTML(dep, index) {
           ${getContextPhraseVariant(index)}
           ${
             dep.nom === "Paris"
-              ? "À Paris"
+              ? "A Paris"
               : getPreposition(dep.nom, dep.code).startsWith("dans les")
               ? "Dans les " + dep.nom
               : getPreposition(dep.nom, dep.code).startsWith("dans l'")
@@ -2741,7 +2741,7 @@ function generateArticleHTML(dep, index) {
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
           <p class="text-lg text-gray-800 mb-0">
-            <strong>🏘️ Spécificité locale :</strong> ${generateDepartmentUniqueContent(
+            <strong>🏘️ Specificite locale :</strong> ${generateDepartmentUniqueContent(
               dep
             )}
           </p>
@@ -2779,9 +2779,9 @@ function generateArticleHTML(dep, index) {
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
           <p class="text-lg text-gray-800 mb-0">
-            <strong>💡 Bon à savoir :</strong> ${
+            <strong>💡 Bon a savoir :</strong> ${
               dep.nom === "Paris"
-                ? "À Paris"
+                ? "A Paris"
                 : getPreposition(dep.nom, dep.code).startsWith("dans les")
                 ? "Dans les " + dep.nom
                 : getPreposition(dep.nom, dep.code).startsWith("dans l'")
@@ -2789,10 +2789,10 @@ function generateArticleHTML(dep, index) {
                 : getPreposition(dep.nom, dep.code).startsWith("dans le")
                 ? "Dans le " + dep.nom
                 : "En " + dep.nom
-            }, l'écart entre ancien et neuf peut représenter 
-            jusqu'à <strong>${(prix200kAncien - prix200kNeuf).toLocaleString(
+            }, l'ecart entre ancien et neuf peut representer 
+            jusqu'a <strong>${(prix200kAncien - prix200kNeuf).toLocaleString(
               "fr-FR"
-            )} € d'économie</strong> pour un bien à 200 000 €.
+            )} € d'economie</strong> pour un bien a 200 000 €.
           </p>
         </div>
 
@@ -2802,9 +2802,9 @@ function generateArticleHTML(dep, index) {
         </h2>
 
         <p class="text-gray-700 leading-relaxed mb-6">
-          Prenons l'exemple d'un <strong>achat immobilier à ${
+          Prenons l'exemple d'un <strong>achat immobilier a ${
             dep.ville1
-          }</strong> avec les caractéristiques suivantes :
+          }</strong> avec les caracteristiques suivantes :
         </p>
 
         <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-lg p-6 mb-6">
@@ -2828,7 +2828,7 @@ function generateArticleHTML(dep, index) {
                 )} €</span>
               </div>
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
-                <span class="text-gray-700">Frais de notaire (barème officiel)</span>
+                <span class="text-gray-700">Frais de notaire (bareme officiel)</span>
                 <span class="font-bold text-orange-600">${fraisAncien.toLocaleString(
                   "fr-FR"
                 )} €</span>
@@ -2837,17 +2837,17 @@ function generateArticleHTML(dep, index) {
             
             <div class="space-y-3">
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
-                <span class="text-gray-700">Montant à emprunter</span>
+                <span class="text-gray-700">Montant a emprunter</span>
                 <span class="font-bold">${montantEmprunt.toLocaleString(
                   "fr-FR"
                 )} €</span>
               </div>
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
-                <span class="text-gray-700">Taux d'intérêt</span>
+                <span class="text-gray-700">Taux d'interet</span>
                 <span class="font-bold">4,2%</span>
               </div>
               <div class="flex justify-between items-center pb-2 border-b border-gray-300">
-                <span class="text-gray-700">Durée</span>
+                <span class="text-gray-700">Duree</span>
                 <span class="font-bold">20 ans</span>
               </div>
             </div>
@@ -2855,7 +2855,7 @@ function generateArticleHTML(dep, index) {
 
           <div class="mt-6 pt-6 border-t-2 border-gray-300">
             <div class="flex justify-between items-center">
-              <span class="font-bold text-lg text-gray-900">Mensualité estimée</span>
+              <span class="font-bold text-lg text-gray-900">Mensualite estimee</span>
               <span class="text-3xl font-bold text-blue-700">≈ ${mensualite.toLocaleString(
                 "fr-FR"
               )} €/mois</span>
@@ -2867,14 +2867,14 @@ function generateArticleHTML(dep, index) {
           ${getNotePhraseVariant(index)}
           <strong>${fraisNeuf.toLocaleString(
             "fr-FR"
-          )} €</strong>, soit une économie de <strong>${economie.toLocaleString(
+          )} €</strong>, soit une economie de <strong>${economie.toLocaleString(
     "fr-FR"
   )} €</strong>.
         </p>
 
         <!-- Section 3 -->
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
-          💡 Astuces pour réduire vos frais de notaire ${getPreposition(
+          💡 Astuces pour reduire vos frais de notaire ${getPreposition(
             dep.nom,
             dep.code
           )}
@@ -2890,10 +2890,10 @@ function generateArticleHTML(dep, index) {
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 mb-2">Négocier les meubles séparément</h3>
+                <h3 class="font-bold text-gray-900 mb-2">Negocier les meubles separement</h3>
                 <p class="text-sm text-gray-600">
-                  Achetez la cuisine équipée ou les meubles hors acte notarié. 
-                  Économie potentielle : <strong>300-800 €</strong>
+                  Achetez la cuisine equipee ou les meubles hors acte notarie. 
+                  Economie potentielle : <strong>300-800 €</strong>
                 </p>
               </div>
             </div>
@@ -2907,10 +2907,10 @@ function generateArticleHTML(dep, index) {
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 mb-2">Privilégier un jeune notaire</h3>
+                <h3 class="font-bold text-gray-900 mb-2">Privilegier un jeune notaire</h3>
                 <p class="text-sm text-gray-600">
-                  Les notaires peuvent accorder des remises sur leurs <strong>émoluments</strong> 
-                  (jusqu'à 10% sur la partie variable).
+                  Les notaires peuvent accorder des remises sur leurs <strong>emoluments</strong> 
+                  (jusqu'a 10% sur la partie variable).
                 </p>
               </div>
             </div>
@@ -2924,13 +2924,13 @@ function generateArticleHTML(dep, index) {
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 mb-2">Vérifier les aides régionales ${getDeOrD(
+                <h3 class="font-bold text-gray-900 mb-2">Verifier les aides regionales ${getDeOrD(
                   dep.region
                 )}${dep.region}</h3>
                 <p class="text-sm text-gray-600">
-                  Certaines collectivités ${getDeOrD(dep.region)}${
+                  Certaines collectivites ${getDeOrD(dep.region)}${
     dep.region
-  } proposent des <strong>aides à l'accession</strong> 
+  } proposent des <strong>aides a l'accession</strong> 
                   qui peuvent inclure une prise en charge partielle des frais.
                 </p>
               </div>
@@ -2947,7 +2947,7 @@ function generateArticleHTML(dep, index) {
               <div>
                 <h3 class="font-bold text-gray-900 mb-2">Utiliser notre simulateur gratuit</h3>
                 <p class="text-sm text-gray-600">
-                  Avant de vous engager, <strong>calculez précisément</strong> vos frais 
+                  Avant de vous engager, <strong>calculez precisement</strong> vos frais 
                   en fonction du prix exact et du type de bien.
                 </p>
               </div>
@@ -2961,7 +2961,7 @@ function generateArticleHTML(dep, index) {
 
         <!-- Section 4 -->
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">
-          🏛️ Où trouver un notaire ${getPreposition(dep.nom, dep.code)} ?
+          🏛️ Ou trouver un notaire ${getPreposition(dep.nom, dep.code)} ?
         </h2>
 
         ${buildNotaireDVFBlock(dep.ville1, dep)}
@@ -2980,49 +2980,49 @@ function generateArticleHTML(dep, index) {
           <h3 class="text-2xl font-bold mb-4">💡 Simulez vos frais de notaire 2025 maintenant</h3>
           <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
             <strong>Gagnez du temps et de l'argent :</strong> utilisez notre calculateur officiel 
-            pour connaître <strong>instantanément</strong> le montant exact des frais de notaire 
+            pour connaître <strong>instantanement</strong> le montant exact des frais de notaire 
             pour votre projet ${getPreposition(dep.nom, dep.code)}.
           </p>
           <a 
             href="/pages/notaire.html" 
             class="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg"
           >
-            🧮 Accéder au simulateur gratuit
+            🧮 Acceder au simulateur gratuit
           </a>
-          <p class="text-xs text-blue-200 mt-4">✓ Calcul instantané  ✓ 100% gratuit  ✓ Export PDF disponible</p>
+          <p class="text-xs text-blue-200 mt-4">✓ Calcul instantane  ✓ 100% gratuit  ✓ Export PDF disponible</p>
         </div>
 
         <!-- FAQ Section -->
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions fréquentes</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions frequentes</h2>
         <div class="space-y-4 mb-12">
           <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
             <summary class="font-semibold text-gray-900">Quel est le montant des frais de notaire ${getPreposition(
               dep.nom,
               dep.code
             )} ?</summary>
-            <p class="mt-2 text-gray-700">Entre <strong>4%</strong> (neuf) et <strong>6,6%</strong> (ancien) du prix d'achat, avec un exemple détaillé plus haut.</p>
+            <p class="mt-2 text-gray-700">Entre <strong>4%</strong> (neuf) et <strong>6,6%</strong> (ancien) du prix d'achat, avec un exemple detaille plus haut.</p>
           </details>
           <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
             <summary class="font-semibold text-gray-900">Comment calculer les frais de notaire ${
               dep.code
             } ?</summary>
-            <p class="mt-2 text-gray-700">Addition des droits, émoluments et débours. Utilisez le <a href="/pages/notaire.html" class="text-blue-600 hover:underline">simulateur gratuit</a> pour un calcul précis.</p>
+            <p class="mt-2 text-gray-700">Addition des droits, emoluments et debours. Utilisez le <a href="/pages/notaire.html" class="text-blue-600 hover:underline">simulateur gratuit</a> pour un calcul precis.</p>
           </details>
           <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
             <summary class="font-semibold text-gray-900">Frais de notaire ${
               dep.nom
             } 2025 : neuf ou ancien ?</summary>
-            <p class="mt-2 text-gray-700">Le <strong>neuf</strong> ≈ 4% et l'<strong>ancien</strong> ≈ 6,6%. L'écart peut représenter des milliers d'euros d'économie.</p>
+            <p class="mt-2 text-gray-700">Le <strong>neuf</strong> ≈ 4% et l'<strong>ancien</strong> ≈ 6,6%. L'ecart peut representer des milliers d'euros d'economie.</p>
           </details>
           <details class="bg-white border-2 border-gray-200 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900">Où trouver un notaire à ${
+            <summary class="font-semibold text-gray-900">Ou trouver un notaire a ${
               dep.ville1
             } ?</summary>
-            <p class="mt-2 text-gray-700">Consultez <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">notaires.fr</a> et les études listées dans cet article.</p>
+            <p class="mt-2 text-gray-700">Consultez <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">notaires.fr</a> et les etudes listees dans cet article.</p>
           </details>
         </div>
 
-        <!-- Liens vers départements proches -->
+        <!-- Liens vers departements proches -->
         <div class="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-6">
           <h3 class="text-xl font-bold text-gray-900 mb-3">🔎 Voir aussi</h3>
           <p class="text-sm text-gray-700 mb-3">Autres guides dans ${
@@ -3034,7 +3034,7 @@ function generateArticleHTML(dep, index) {
 
         ${navPrevNext}
 
-        <!-- Mini-calculateur intégré (chargement à la demande) -->
+        <!-- Mini-calculateur integre (chargement a la demande) -->
         <div class="mt-8">
           <button id="btn-inline-calculator" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:from-blue-700 hover:to-indigo-700">
             🧮 Calculer vos frais ici
@@ -3061,14 +3061,14 @@ function generateArticleHTML(dep, index) {
               const containerId = "inline-notaire-calculator";
               const config = {
                 title: "Calcul rapide des frais de notaire",
-                description: "Version simplifiée avec département pré-rempli.",
+                description: "Version simplifiee avec departement pre-rempli.",
                 fields: [
                 { id: "type_bien", label: "Type de bien *", type: "select", required: true, options: [
                   { value: "ancien", label: "Ancien" },
                   { value: "neuf", label: "Neuf" },
                   { value: "terrain", label: "Terrain" },
                 ]},
-                { id: "departement", label: "Département *", type: "select", required: true, options: [
+                { id: "departement", label: "Departement *", type: "select", required: true, options: [
                   { value: "${dep.code}", label: "${dep.code} - ${dep.nom}" }
                 ]},
                 { id: "prix_achat", label: "Prix d'acquisition *", type: "number", required: true, placeholder: "250000", min: 1000, step: 1000 },
@@ -3077,7 +3077,7 @@ function generateArticleHTML(dep, index) {
               calculate: (values) => {
                 try {
                   if (!baremes || !baremes.notaire || !Array.isArray(baremes.notaire.tranches)) {
-                    throw new Error("Barèmes indisponibles");
+                    throw new Error("Baremes indisponibles");
                   }
                   const prixAchat = Number(values.prix_achat);
                   const montantMobilier = Number(values.montant_mobilier) || 0;
@@ -3085,7 +3085,7 @@ function generateArticleHTML(dep, index) {
                     return { success: false, error: "Veuillez saisir un prix d'acquisition valide." };
                   }
                   if (montantMobilier < 0 || montantMobilier > prixAchat) {
-                    return { success: false, error: "Le mobilier doit être entre 0 et le prix d'acquisition." };
+                    return { success: false, error: "Le mobilier doit etre entre 0 et le prix d'acquisition." };
                   }
                   const prixNetImmobilier = prixAchat - montantMobilier;
                   let emoluments = 0;
@@ -3104,7 +3104,7 @@ function generateArticleHTML(dep, index) {
                   const pourcentage = (total / prixAchat) * 100;
                   console.log("Mini-calculateur notaire:", { prixAchat, montantMobilier, prixNetImmobilier, emoluments, td, droitsEnregistrement, fraisDivers, tva, total, pourcentage });
                   if (!isFinite(total) || !isFinite(pourcentage)) {
-                    return { success: false, error: "Des données invalides ont été saisies." };
+                    return { success: false, error: "Des donnees invalides ont ete saisies." };
                   }
                   return { success: true, data: { prixAchat, prixNetImmobilier, emoluments, droitsEnregistrement, fraisDivers, tva, total, pourcentage, typeBien: values.type_bien, departement: values.departement, montantMobilier } };
                 } catch (e) {
@@ -3125,18 +3125,18 @@ function generateArticleHTML(dep, index) {
               btn.removeAttribute("disabled");
             } catch (err) {
               console.error("Erreur de chargement du mini-calculateur:", err);
-              btn.textContent = "Réessayer";
+              btn.textContent = "Reessayer";
               btn.removeAttribute("disabled");
             }
           });
         </script>
 
-        <!-- Références -->
+        <!-- References -->
         <div class="mt-12 bg-gray-100 rounded-lg p-6">
-          <h3 class="font-bold text-gray-900 mb-3">📚 Sources et références officielles</h3>
+          <h3 class="font-bold text-gray-900 mb-3">📚 Sources et references officielles</h3>
           <ul class="text-sm text-gray-700 space-y-2">
             <li>
-              • Frais de notaire (définition et barème) :
+              • Frais de notaire (definition et bareme) :
               <a href="https://www.service-public.fr/particuliers/vosdroits/F17701" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
                 service-public.fr
               </a>
@@ -3148,13 +3148,13 @@ function generateArticleHTML(dep, index) {
               </a>
             </li>
             <li>
-              • Émoluments notariaux : 
+              • Emoluments notariaux : 
               <a href="https://www.notaires.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
-                Conseil Supérieur du Notariat
+                Conseil Superieur du Notariat
               </a>
           </li>
           <li>
-            • Données DVF 2024 (Demande de Valeurs Foncières) :
+            • Donnees DVF 2024 (Demande de Valeurs Foncieres) :
             <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
               data.gouv.fr
             </a>
@@ -3177,7 +3177,7 @@ function generateArticleHTML(dep, index) {
             <span>Retour au blog</span>
           </a>
           <div class="text-sm text-gray-500">
-            Article mis à jour le ${dateModifiedFR}
+            Article mis a jour le ${dateModifiedFR}
           </div>
         </div>
       </footer>
@@ -3186,7 +3186,7 @@ function generateArticleHTML(dep, index) {
 
     <footer class="bg-gray-900 text-gray-300 mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-        <p>&copy; 2025 LesCalculateurs.fr - Tous droits réservés</p>
+        <p>&copy; 2025 LesCalculateurs.fr - Tous droits reserves</p>
       </div>
     </footer>
   </body>
@@ -3196,15 +3196,15 @@ function generateArticleHTML(dep, index) {
 function generateArticleHTML_YMYL(dep) {
   const depLabel = `${dep.nom} (${dep.code})`;
   const canonical = `https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-${dep.code}`;
-  const title = `Frais de notaire ${SEO_YEAR} ${dep.nom} (${dep.code}) – Simulation gratuite`;
+  const title = `Frais de notaire ${SEO_YEAR} ${dep.nom} (${dep.code}) - Simulation gratuite`;
   const getDansExpressionForMeta = (depNom, depCode) => {
-    if (depCode === "75") return "à Paris";
-    if (depNom === "Mayotte") return "à Mayotte";
-    if (depNom === "La Réunion") return "à La Réunion";
+    if (depCode === "75") return "a Paris";
+    if (depNom === "Mayotte") return "a Mayotte";
+    if (depNom === "La Reunion") return "a La Reunion";
     const article = getArticleDefini(depNom, depCode);
     if (article === "les ") return `dans les ${depNom}`;
     if (article === "le ") return `dans le ${depNom}`;
-    if (article === "l'") return `dans l’${depNom}`;
+    if (article === "l'") return `dans l'${depNom}`;
     return `dans la ${depNom}`;
   };
   const description = `Calculez les frais de notaire ${getDansExpressionForMeta(
@@ -3212,20 +3212,20 @@ function generateArticleHTML_YMYL(dep) {
     dep.code
   )} en ${SEO_YEAR}. Ancien, neuf (VEFA), taux officiels et estimation gratuite en 10 secondes.`;
   const inLoc = getPreposition(dep.nom, dep.code)
-    .replace(/^dans l'/i, "Dans l’")
+    .replace(/^dans l'/i, "Dans l'")
     .replace(/^dans /i, "Dans ")
     .replace(/^en /i, "En ")
-    .replace(/^à /i, "À ");
+    .replace(/^a /i, "A ");
 
   const intro =
     dep.code === "75"
-      ? `Paris conjugue prestige, rareté et diversité de quartiers. Acheter à Paris en ${SEO_YEAR} implique de composer avec des prix parmi les plus élevés d’Europe, une offre tendue et des frais de notaire significatifs. Chaque arrondissement possède ses spécificités, ses dynamiques et ses points de vigilance.`
-      : `Selon que vous achetez à ${dep.ville1}${dep.ville2 ? `, ${dep.ville2}` : ""} ou ailleurs, le contexte local et la nature du bien influencent l’organisation d’un achat. Avant de signer, il est utile d’anticiper les frais de notaire, qui dépendent notamment de la nature de l’acquisition et des formalités du dossier.`;
+      ? `Paris conjugue prestige, rarete et diversite de quartiers. Acheter a Paris en ${SEO_YEAR} implique de composer avec des prix parmi les plus eleves d'Europe, une offre tendue et des frais de notaire significatifs. Chaque arrondissement possede ses specificites, ses dynamiques et ses points de vigilance.`
+      : `Selon que vous achetez a ${dep.ville1}${dep.ville2 ? `, ${dep.ville2}` : ""} ou ailleurs, le contexte local et la nature du bien influencent l'organisation d'un achat. Avant de signer, il est utile d'anticiper les frais de notaire, qui dependent notamment de la nature de l'acquisition et des formalites du dossier.`;
 
   const particularites =
     dep.code === "75"
-      ? `À Paris, la copropriété, la complexité de certains dossiers (règlements, diagnostics, servitudes, situation locative) et la diversité des quartiers peuvent allonger certaines formalités. Le recours au calculateur permet d’obtenir une estimation adaptée à votre projet.`
-      : `${inLoc}, les frais de notaire sont calculés selon les règles nationales, mais le contexte local influence souvent le budget global d’un achat immobilier. Selon les secteurs, la typologie des biens (copropriété, maisons, terrain), les délais et certaines formalités peuvent varier. Le recours au calculateur permet d’obtenir une estimation adaptée à la commune et au type de bien.`;
+      ? `A Paris, la copropriete, la complexite de certains dossiers (reglements, diagnostics, servitudes, situation locative) et la diversite des quartiers peuvent allonger certaines formalites. Le recours au calculateur permet d'obtenir une estimation adaptee a votre projet.`
+      : `${inLoc}, les frais de notaire sont calcules selon les regles nationales, mais le contexte local influence souvent le budget global d'un achat immobilier. Selon les secteurs, la typologie des biens (copropriete, maisons, terrain), les delais et certaines formalites peuvent varier. Le recours au calculateur permet d'obtenir une estimation adaptee a la commune et au type de bien.`;
 
   return `<!DOCTYPE html>
 <html lang="fr">
@@ -3236,7 +3236,7 @@ function generateArticleHTML_YMYL(dep) {
     <meta name="description" content="${description}" />
     <meta
       name="keywords"
-      content="frais notaire ${dep.nom}, frais de notaire ${SEO_YEAR} ${dep.nom}, droits d'enregistrement ${dep.nom}, notaires ${dep.nom}, émoluments notaire ${dep.nom}"
+      content="frais notaire ${dep.nom}, frais de notaire ${SEO_YEAR} ${dep.nom}, droits d'enregistrement ${dep.nom}, notaires ${dep.nom}, emoluments notaire ${dep.nom}"
     />
     <meta name="author" content="LesCalculateurs.fr" />
     <meta name="robots" content="index, follow" />
@@ -3246,8 +3246,8 @@ function generateArticleHTML_YMYL(dep) {
     <meta property="og:url" content="${canonical}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="${title}" />
-    <meta property="og:description" content="Calculez vos frais de notaire en ${dep.nom} instantanément. Estimation automatique ${SEO_YEAR}. Aucun email demandé." />
-    <meta name="twitter:description" content="Calculez vos frais de notaire en ${dep.nom} instantanément. Estimation automatique ${SEO_YEAR}. Aucun email demandé." />
+    <meta property="og:description" content="Calculez vos frais de notaire en ${dep.nom} instantanement. Estimation automatique ${SEO_YEAR}. Aucun email demande." />
+    <meta name="twitter:description" content="Calculez vos frais de notaire en ${dep.nom} instantanement. Estimation automatique ${SEO_YEAR}. Aucun email demande." />
     <meta property="og:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
@@ -3295,28 +3295,28 @@ function generateArticleHTML_YMYL(dep) {
                 )} ?`,
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: `En ${SEO_YEAR}, les frais de notaire se situent généralement entre 7 % et 9 % du prix d'achat dans l'ancien et entre 2 % et 3 % dans le neuf (VEFA), selon le barème national et les droits d'enregistrement.`,
+                  text: `En ${SEO_YEAR}, les frais de notaire se situent generalement entre 7 % et 9 % du prix d'achat dans l'ancien et entre 2 % et 3 % dans le neuf (VEFA), selon le bareme national et les droits d'enregistrement.`,
                 },
               },
               {
                 "@type": "Question",
-                name: "Comment sont calculés les frais de notaire ?",
+                name: "Comment sont calcules les frais de notaire ?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Les frais de notaire comprennent les droits d'enregistrement (taxe départementale), les émoluments du notaire (barème réglementé), les débours et formalités, la contribution de sécurité immobilière (CSI) et la TVA applicable.",
+                  text: "Les frais de notaire comprennent les droits d'enregistrement (taxe departementale), les emoluments du notaire (bareme reglemente), les debours et formalites, la contribution de securite immobiliere (CSI) et la TVA applicable.",
                 },
               },
               {
                 "@type": "Question",
-                name: "Quelle différence entre ancien et neuf (VEFA) ?",
+                name: "Quelle difference entre ancien et neuf (VEFA) ?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "L'achat dans le neuf (VEFA) bénéficie de droits réduits, ce qui peut réduire le montant total des frais par rapport à l'ancien.",
+                  text: "L'achat dans le neuf (VEFA) beneficie de droits reduits, ce qui peut reduire le montant total des frais par rapport a l'ancien.",
                 },
               },
               {
                 "@type": "Question",
-                name: `Où trouver un notaire ${getPreposition(dep.nom, dep.code)} ?`,
+                name: `Ou trouver un notaire ${getPreposition(dep.nom, dep.code)} ?`,
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: `Consultez l'annuaire officiel des notaires sur notaires.fr pour trouver un professionnel proche de votre projet immobilier ${getPreposition(
@@ -3327,13 +3327,13 @@ function generateArticleHTML_YMYL(dep) {
               },
               {
                 "@type": "Question",
-                name: `Les frais de notaire sont-ils plus élevés ${getPreposition(
+                name: `Les frais de notaire sont-ils plus eleves ${getPreposition(
                   dep.nom,
                   dep.code
-                )} que dans d’autres départements ?`,
+                )} que dans d'autres departements ?`,
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Non. Les frais de notaire sont encadrés au niveau national. Le montant total dépend surtout du prix du bien et de la nature du projet (ancien/neuf, formalités, etc.).",
+                  text: "Non. Les frais de notaire sont encadres au niveau national. Le montant total depend surtout du prix du bien et de la nature du projet (ancien/neuf, formalites, etc.).",
                 },
               },
             ],
@@ -3418,11 +3418,11 @@ function generateArticleHTML_YMYL(dep) {
         <h2 class="text-xl font-bold text-gray-900 mb-3">💰 Frais de notaire ${SEO_YEAR} ${getPreposition(dep.nom, dep.code)} (${dep.code})</h2>
         <p class="text-gray-700 mb-2">Pour un achat immobilier en ${SEO_YEAR} :</p>
         <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li><strong>Bien ancien :</strong> généralement environ 7 % à 9 % du prix d'acquisition</li>
-          <li><strong>Bien neuf (VEFA) :</strong> généralement environ 2 % à 3 %, en raison de droits de mutation réduits, le reste étant composé d'émoluments, débours et taxes réglementées</li>
+          <li><strong>Bien ancien :</strong> generalement environ 7 % a 9 % du prix d'acquisition</li>
+          <li><strong>Bien neuf (VEFA) :</strong> generalement environ 2 % a 3 %, en raison de droits de mutation reduits, le reste etant compose d'emoluments, debours et taxes reglementees</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-2">Ces informations sont fournies à titre indicatif et pédagogique. Elles incluent les droits, émoluments, formalités, contribution de sécurité immobilière (CSI) et la TVA applicable.</p>
-        <p class="text-sm text-gray-700">👉 Pour un montant exact et personnalisé, <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">utilisez le calculateur</a>.</p>
+        <p class="text-sm text-gray-600 mb-2">Ces informations sont fournies a titre indicatif et pedagogique. Elles incluent les droits, emoluments, formalites, contribution de securite immobiliere (CSI) et la TVA applicable.</p>
+        <p class="text-sm text-gray-700">👉 Pour un montant exact et personnalise, <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">utilisez le calculateur</a>.</p>
       </div>
 
       <header class="mb-12">
@@ -3431,7 +3431,7 @@ function generateArticleHTML_YMYL(dep) {
           <span>•</span>
           <time datetime="${PUBLISH_MONTH_DATETIME}">${PUBLISH_MONTH_LABEL}</time>
           <span>•</span>
-          <span>Guide départemental</span>
+          <span>Guide departemental</span>
         </div>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Frais de notaire ${SEO_YEAR} ${getPreposition(dep.nom, dep.code)} (${dep.code})
@@ -3442,7 +3442,7 @@ function generateArticleHTML_YMYL(dep) {
       <figure class="rounded-lg overflow-hidden border border-gray-200 mb-8">
         <img
           src="https://commons.wikimedia.org/wiki/Special:FilePath/France_location_map-Regions_and_departements-2016.svg"
-          alt="Illustration ${dep.nom} — Guide frais de notaire ${dep.code}"
+          alt="Illustration ${dep.nom} - Guide frais de notaire ${dep.code}"
           class="w-full h-64 object-cover"
           loading="lazy"
           width="800"
@@ -3455,7 +3455,7 @@ function generateArticleHTML_YMYL(dep) {
 
       <div class="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
         <p class="text-sm text-gray-700 m-0">
-          <strong>Sources officielles des taux et barèmes :</strong>
+          <strong>Sources officielles des taux et baremes :</strong>
           <a href="https://www.service-public.fr/particuliers/vosdroits/F2167" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">service-public.fr</a> •
           <a href="https://www.notariat.fr/frais-de-notaire" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">notariat.fr</a> •
           <a href="https://www.impots.gouv.fr" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">impots.gouv.fr</a> •
@@ -3466,16 +3466,16 @@ function generateArticleHTML_YMYL(dep) {
       <div class="prose prose-lg max-w-none">
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💵 Estimation des frais de notaire</h2>
         <p class="text-gray-700 leading-relaxed mb-6">
-          Les frais d'acquisition immobilière diffèrent selon que vous achetez dans l'ancien ou dans le neuf. ${inLoc}, le différentiel ancien / neuf respecte la réglementation nationale.
+          Les frais d'acquisition immobiliere different selon que vous achetez dans l'ancien ou dans le neuf. ${inLoc}, le differentiel ancien / neuf respecte la reglementation nationale.
         </p>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Spécificité locale</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Specificite locale</h2>
         <p class="text-gray-700 leading-relaxed mb-6">
-          ${dep.nom} présente des dynamiques immobilières propres, influencées par son attractivité, son tissu urbain et les projets d'aménagement en cours. Ces éléments peuvent impacter indirectement le budget global d'un projet immobilier (prix d'achat, concurrence, délais, conditions de financement), sans modifier les règles nationales applicables aux frais de notaire.
+          ${dep.nom} presente des dynamiques immobilieres propres, influencees par son attractivite, son tissu urbain et les projets d'amenagement en cours. Ces elements peuvent impacter indirectement le budget global d'un projet immobilier (prix d'achat, concurrence, delais, conditions de financement), sans modifier les regles nationales applicables aux frais de notaire.
         </p>
 
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4 mb-8">
-          <h3 class="text-lg font-bold text-gray-900 mb-2">📍 Particularités ${getPreposition(dep.nom, dep.code)} (${dep.code})</h3>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">📍 Particularites ${getPreposition(dep.nom, dep.code)} (${dep.code})</h3>
           <p class="text-gray-700 mb-0">${particularites}</p>
         </div>
 
@@ -3492,12 +3492,12 @@ function generateArticleHTML_YMYL(dep) {
             <tbody>
               <tr class="border-b border-gray-200 hover:bg-orange-50">
                 <td class="px-6 py-4 font-medium text-gray-900">🏡 Ancien</td>
-                <td class="px-6 py-4 text-gray-700">≈ 7 % à 9 %</td>
+                <td class="px-6 py-4 text-gray-700">≈ 7 % a 9 %</td>
                 <td class="px-6 py-4"><a href="/pages/notaire.html" class="text-blue-600 hover:underline font-semibold">Simuler</a></td>
               </tr>
               <tr class="hover:bg-blue-50">
                 <td class="px-6 py-4 font-medium text-gray-900">🏢 Neuf (VEFA)</td>
-                <td class="px-6 py-4 text-gray-700">≈ 2 % à 3 %</td>
+                <td class="px-6 py-4 text-gray-700">≈ 2 % a 3 %</td>
                 <td class="px-6 py-4"><a href="/pages/notaire.html" class="text-blue-600 hover:underline font-semibold">Simuler</a></td>
               </tr>
             </tbody>
@@ -3505,96 +3505,96 @@ function generateArticleHTML_YMYL(dep) {
         </div>
 
         <p class="text-sm text-gray-600 mb-8">
-          👉 Ces fourchettes correspondent à des ordres de grandeur observés en France. Pour connaître le montant exact selon votre commune, utilisez le <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">simulateur</a>.
+          👉 Ces fourchettes correspondent a des ordres de grandeur observes en France. Pour connaître le montant exact selon votre commune, utilisez le <a href="/pages/notaire.html" class="text-blue-600 underline font-semibold">simulateur</a>.
         </p>
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
           <p class="text-lg text-gray-800 mb-0">
-            <strong>💡 Bon à savoir :</strong> L'écart entre ancien et neuf peut représenter une économie significative selon le prix du bien et la nature du projet.
+            <strong>💡 Bon a savoir :</strong> L'ecart entre ancien et neuf peut representer une economie significative selon le prix du bien et la nature du projet.
           </p>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📝 Exemple pédagogique (non contractuel)</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">Prenons l'exemple d'un achat immobilier à ${dep.ville1 || dep.nom} :</p>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📝 Exemple pedagogique (non contractuel)</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">Prenons l'exemple d'un achat immobilier a ${dep.ville1 || dep.nom} :</p>
         <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li><strong>Prix du bien :</strong> à estimer via le calculateur</li>
+          <li><strong>Prix du bien :</strong> a estimer via le calculateur</li>
           <li><strong>Apport personnel :</strong> selon votre projet</li>
-          <li><strong>Frais de notaire :</strong> calculés selon barème officiel</li>
-          <li><strong>Montant à emprunter :</strong> selon votre projet</li>
-          <li><strong>Durée :</strong> selon capacité d'emprunt</li>
+          <li><strong>Frais de notaire :</strong> calcules selon bareme officiel</li>
+          <li><strong>Montant a emprunter :</strong> selon votre projet</li>
+          <li><strong>Duree :</strong> selon capacite d'emprunt</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-6">👉 Ces données sont fournies à titre illustratif. Le calcul exact dépend du projet réel.</p>
+        <p class="text-sm text-gray-600 mb-6">👉 Ces donnees sont fournies a titre illustratif. Le calcul exact depend du projet reel.</p>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💡 Astuces pour réduire vos frais de notaire</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">💡 Astuces pour reduire vos frais de notaire</h2>
         <ul class="list-disc list-inside text-gray-700 mb-6">
-          <li><strong>Mobilier hors acte :</strong> certains meubles peuvent être exclus de l'assiette des droits, dans le respect de la réglementation</li>
-          <li><strong>Remises d'émoluments :</strong> possibles dans certains cas sur la part réglementée</li>
-          <li><strong>Aides locales :</strong> certaines collectivités proposent des dispositifs d'aide à l'accession</li>
+          <li><strong>Mobilier hors acte :</strong> certains meubles peuvent etre exclus de l'assiette des droits, dans le respect de la reglementation</li>
+          <li><strong>Remises d'emoluments :</strong> possibles dans certains cas sur la part reglementee</li>
+          <li><strong>Aides locales :</strong> certaines collectivites proposent des dispositifs d'aide a l'accession</li>
         </ul>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📈 Marché immobilier ${dep.nom} ${SEO_YEAR - 1}–${SEO_YEAR}</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📈 Marche immobilier ${dep.nom} ${SEO_YEAR - 1}-${SEO_YEAR}</h2>
         <ul class="list-disc list-inside text-gray-700 mb-6">
-          <li><strong>Évolution des prix :</strong> tendance variable selon secteurs</li>
-          <li><strong>Volume de transactions :</strong> dépend du contexte local</li>
-          <li><strong>Attractivité :</strong> liée à l'emploi, aux transports et aux projets urbains</li>
-          <li><strong>Tension du marché :</strong> variable selon les communes</li>
+          <li><strong>Evolution des prix :</strong> tendance variable selon secteurs</li>
+          <li><strong>Volume de transactions :</strong> depend du contexte local</li>
+          <li><strong>Attractivite :</strong> liee a l'emploi, aux transports et aux projets urbains</li>
+          <li><strong>Tension du marche :</strong> variable selon les communes</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-6">Sources : DVF, INSEE, Notaires de France, données publiques ${SEO_YEAR} (mise à jour janvier).</p>
+        <p class="text-sm text-gray-600 mb-6">Sources : DVF, INSEE, Notaires de France, donnees publiques ${SEO_YEAR} (mise a jour janvier).</p>
 
         <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏘️ Prix immobiliers par ville (indicatifs)</h2>
         <ul class="list-disc list-inside text-gray-700 mb-4">
           <li><strong>${dep.ville1 || dep.nom} :</strong> prix variable selon secteur</li>
           <li><strong>Autres communes :</strong> variations possibles</li>
         </ul>
-        <p class="text-sm text-gray-600 mb-6">📊 Méthodologie : estimations basées sur données publiques, à titre indicatif.</p>
+        <p class="text-sm text-gray-600 mb-6">📊 Methodologie : estimations basees sur donnees publiques, a titre indicatif.</p>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏛️ Où trouver un notaire ${getPreposition(dep.nom, dep.code)} ?</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">🏛️ Ou trouver un notaire ${getPreposition(dep.nom, dep.code)} ?</h2>
         <p class="text-gray-700 leading-relaxed mb-6">
-          Pour un devis exact et personnalisé, consultez l'annuaire officiel des notaires sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline" target="_blank" rel="noopener">notaires.fr</a> et contactez un professionnel proche de votre projet immobilier.
+          Pour un devis exact et personnalise, consultez l'annuaire officiel des notaires sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline" target="_blank" rel="noopener">notaires.fr</a> et contactez un professionnel proche de votre projet immobilier.
         </p>
 
         <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 my-8 text-white">
           <h2 class="text-2xl font-bold mb-2">💡 Simulez vos frais de notaire ${SEO_YEAR}</h2>
-          <p class="text-green-100 mb-4">Utilisez notre calculateur officiel pour obtenir une estimation immédiate, gratuite et personnalisée.</p>
-          <a href="/pages/notaire.html" class="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition">🧮 Accéder au simulateur gratuit</a>
-          <p class="text-sm text-green-200 mt-3">✓ Calcul instantané • ✓ Gratuit • ✓ Export PDF</p>
-          <p class="text-sm text-green-100 mt-3">🔗 Voir aussi : <a href="/pages/pret.html" class="underline font-semibold text-white hover:text-green-50">Calculer votre prêt immobilier après frais de notaire</a></p>
+          <p class="text-green-100 mb-4">Utilisez notre calculateur officiel pour obtenir une estimation immediate, gratuite et personnalisee.</p>
+          <a href="/pages/notaire.html" class="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition">🧮 Acceder au simulateur gratuit</a>
+          <p class="text-sm text-green-200 mt-3">✓ Calcul instantane • ✓ Gratuit • ✓ Export PDF</p>
+          <p class="text-sm text-green-100 mt-3">🔗 Voir aussi : <a href="/pages/pret.html" class="underline font-semibold text-white hover:text-green-50">Calculer votre pret immobilier apres frais de notaire</a></p>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions fréquentes</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">❓ Questions frequentes</h2>
         <div class="space-y-4 mb-8">
           <details class="bg-gray-50 rounded-lg p-4">
             <summary class="font-semibold text-gray-900 cursor-pointer">Quel est le montant des frais de notaire ${getPreposition(
               dep.nom,
               dep.code
             )} ?</summary>
-            <p class="mt-2 text-gray-700">En ${SEO_YEAR}, les frais se situent généralement entre 7 % et 9 % (ancien) ou 2 % à 3 % (neuf).</p>
+            <p class="mt-2 text-gray-700">En ${SEO_YEAR}, les frais se situent generalement entre 7 % et 9 % (ancien) ou 2 % a 3 % (neuf).</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Comment sont calculés les frais de notaire ?</summary>
-            <p class="mt-2 text-gray-700">Ils comprennent les droits d'enregistrement, émoluments du notaire, débours, CSI et TVA.</p>
+            <summary class="font-semibold text-gray-900 cursor-pointer">Comment sont calcules les frais de notaire ?</summary>
+            <p class="mt-2 text-gray-700">Ils comprennent les droits d'enregistrement, emoluments du notaire, debours, CSI et TVA.</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Quelle différence entre ancien et neuf (VEFA) ?</summary>
-            <p class="mt-2 text-gray-700">Le neuf bénéficie de droits réduits, ce qui peut réduire le montant total des frais.</p>
+            <summary class="font-semibold text-gray-900 cursor-pointer">Quelle difference entre ancien et neuf (VEFA) ?</summary>
+            <p class="mt-2 text-gray-700">Le neuf beneficie de droits reduits, ce qui peut reduire le montant total des frais.</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Où trouver un notaire proche de mon projet ?</summary>
+            <summary class="font-semibold text-gray-900 cursor-pointer">Ou trouver un notaire proche de mon projet ?</summary>
             <p class="mt-2 text-gray-700">Consultez l'annuaire officiel sur <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">notaires.fr</a>.</p>
           </details>
           <details class="bg-gray-50 rounded-lg p-4">
-            <summary class="font-semibold text-gray-900 cursor-pointer">Les frais de notaire sont-ils plus élevés ${getPreposition(
+            <summary class="font-semibold text-gray-900 cursor-pointer">Les frais de notaire sont-ils plus eleves ${getPreposition(
               dep.nom,
               dep.code
-            )} que dans d’autres départements ?</summary>
-            <p class="mt-2 text-gray-700">Non. Les frais de notaire sont encadrés au niveau national. Le montant total dépend surtout du prix du bien et de la nature du projet.</p>
+            )} que dans d'autres departements ?</summary>
+            <p class="mt-2 text-gray-700">Non. Les frais de notaire sont encadres au niveau national. Le montant total depend surtout du prix du bien et de la nature du projet.</p>
           </details>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📌 Rappel réglementaire</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-4">📌 Rappel reglementaire</h2>
         <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
-          <p class="text-gray-700 mb-2">Les frais de notaire comprennent des éléments strictement encadrés par la loi (droits, taxes, émoluments) ainsi que des frais variables selon le dossier.</p>
-          <p class="text-gray-700 mb-0">Leur répartition exacte dépend de la nature de l'acte, du bien, et des formalités requises.</p>
+          <p class="text-gray-700 mb-2">Les frais de notaire comprennent des elements strictement encadres par la loi (droits, taxes, emoluments) ainsi que des frais variables selon le dossier.</p>
+          <p class="text-gray-700 mb-0">Leur repartition exacte depend de la nature de l'acte, du bien, et des formalites requises.</p>
         </div>
 
         <div class="bg-gray-100 rounded-lg p-6 my-8">
@@ -3611,14 +3611,14 @@ function generateArticleHTML_YMYL(dep) {
 
     <footer class="bg-gray-900 text-gray-300 mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-        <p>&copy; ${SEO_YEAR} LesCalculateurs.fr - Tous droits réservés</p>
+        <p>&copy; ${SEO_YEAR} LesCalculateurs.fr - Tous droits reserves</p>
       </div>
     </footer>
   </body>
 </html>`;
 }
 
-// Fonction principale de génération
+// Fonction principale de generation
 async function generateAllArticles() {
   const selectedDeptCodes = parseDepartementCodesFromArgs();
   const ymyl = hasFlag("--ymyl");
@@ -3627,20 +3627,20 @@ async function generateAllArticles() {
     ? departements.filter((d) => selectedDeptCodes.has(d.code)).length
     : departements.length;
 
-  console.log(`🚀 Début de la génération de ${totalToGenerate} article(s)...\n`);
+  console.log(`🚀 Debut de la generation de ${totalToGenerate} article(s)...\n`);
 
   const outputDir = path.resolve(__dirname, "../src/pages/blog/departements");
 
-  // Créer le dossier de sortie s'il n'existe pas
+  // Creer le dossier de sortie s'il n'existe pas
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
-    console.log(`✅ Dossier créé : ${outputDir}\n`);
+    console.log(`✅ Dossier cree : ${outputDir}\n`);
   }
 
   let successCount = 0;
   let errorCount = 0;
 
-  // Générer chaque article
+  // Generer chaque article
   for (let index = 0; index < departements.length; index++) {
     const dep = departements[index];
     if (selectedDeptCodes.size && !selectedDeptCodes.has(dep.code)) continue;
@@ -3650,7 +3650,7 @@ async function generateAllArticles() {
       if (ymyl && !force && fs.existsSync(filepath)) {
         const existing = fs.readFileSync(filepath, "utf-8");
         if (isConformYMYL(existing, dep.code)) {
-          console.log(`⏭️  [${dep.code}] ${dep.nom} - déjà conforme`);
+          console.log(`⏭️  [${dep.code}] ${dep.nom} - deja conforme`);
           continue;
         }
       }
@@ -3668,18 +3668,18 @@ async function generateAllArticles() {
     }
   }
 
-  console.log(`\n📊 Résumé de la génération :`);
-  console.log(`   ✅ Succès : ${successCount} articles`);
+  console.log(`\n📊 Resume de la generation :`);
+  console.log(`   ✅ Succes : ${successCount} articles`);
   console.log(`   ❌ Erreurs : ${errorCount} articles`);
-  console.log(`\n🎉 Génération terminée !`);
-  console.log(`📁 Articles générés dans : ${outputDir}`);
+  console.log(`\n🎉 Generation terminee !`);
+  console.log(`📁 Articles generes dans : ${outputDir}`);
 }
 
-// Exécuter le script
+// Executer le script
 generateAllArticles().catch(console.error);
 /**
- * Sélectionne une image illustrative haute résolution en fonction de la région.
- * Retourne un objet { srcBase, alt } où srcBase est une URL Unsplash utilisable avec &w=...
+ * Selectionne une image illustrative haute resolution en fonction de la region.
+ * Retourne un objet { srcBase, alt } ou srcBase est une URL Unsplash utilisable avec &w=...
  */
 function resolveHeroImageForRegion(region, dep) {
   const catalog = {
@@ -3689,10 +3689,10 @@ function resolveHeroImageForRegion(region, dep) {
     "Île-de-France": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg",
     ],
-    "Provence-Alpes-Côte d'Azur": [
+    "Provence-Alpes-Cote d'Azur": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_port_de_Marseille.JPG",
     ],
-    "Auvergne-Rhône-Alpes": [
+    "Auvergne-Rhone-Alpes": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG",
       "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-l%27Assomption%20de%20Clermont-Ferrand.jpg",
     ],
@@ -3705,7 +3705,7 @@ function resolveHeroImageForRegion(region, dep) {
       "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
       "https://commons.wikimedia.org/wiki/Special:FilePath/Tours%20de%20La%20Rochelle.jpg",
     ],
-    "Bourgogne-Franche-Comté": [
+    "Bourgogne-Franche-Comte": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20des%20Ducs%20de%20Bourgogne4.JPG",
       "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20d%27Auxerre.jpg",
     ],
@@ -3746,24 +3746,24 @@ function resolveHeroImageForRegion(region, dep) {
     list.length;
   return {
     srcBase: list[idx],
-    alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+    alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
   };
 }
 
 /**
- * Sélectionne une image héro strictement par ville (si disponible),
- * sinon retourne null pour laisser le fallback régional.
+ * Selectionne une image hero strictement par ville (si disponible),
+ * sinon retourne null pour laisser le fallback regional.
  * Retourne { srcBase, alt }.
  */
 function resolveHeroImageForCity(city, dep) {
   if (!city) return null;
   const c = city.trim().toLowerCase();
-  // Priorité département (ex: 93 — Seine-Saint-Denis) si on veut représenter le département
+  // Priorite departement (ex: 93 - Seine-Saint-Denis) si on veut representer le departement
   const deptHeroCatalog = {
     93: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Denis_-_Basilique_-_Ext%C3%A9rieur_fa%C3%A7ade_ouest.JPG",
-      alt: `Guide frais de notaire — Seine-Saint-Denis (93)`,
+      alt: `Guide frais de notaire - Seine-Saint-Denis (93)`,
     },
   };
   if (deptHeroCatalog[dep.code]) {
@@ -3795,7 +3795,7 @@ function resolveHeroImageForCity(city, dep) {
     avignon:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop",
 
-    // Auvergne-Rhône-Alpes
+    // Auvergne-Rhone-Alpes
     lyon: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop",
     grenoble:
       "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop",
@@ -4045,12 +4045,12 @@ function resolveHeroImageForCity(city, dep) {
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop",
   };
 
-  // normalisation simplifiée pour clés
+  // normalisation simplifiee pour cles
   const key = c
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/\s|\-|\'|\./g, "");
-  // Spécifiques par département pour éviter collisions (ex: Saint-Denis 93 vs 974)
+  // Specifiques par departement pour eviter collisions (ex: Saint-Denis 93 vs 974)
   const deptCatalog = {
     "saintdenis-93":
       "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Denis_-_Basilique_-_Ext%C3%A9rieur_fa%C3%A7ade_ouest.JPG",
@@ -4063,531 +4063,531 @@ function resolveHeroImageForCity(city, dep) {
   if (!srcBase) return null;
   return {
     srcBase,
-    alt: `Guide frais de notaire — ${city} (${dep.nom}, ${dep.code})`,
+    alt: `Guide frais de notaire - ${city} (${dep.nom}, ${dep.code})`,
   };
 }
 
 /**
- * Sélectionne une image héro par département, en s’appuyant sur la ville préfectorale
- * si nécessaire pour l’illustration. Toujours retourne un alt libellé avec le nom du département.
+ * Selectionne une image hero par departement, en s'appuyant sur la ville prefectorale
+ * si necessaire pour l'illustration. Toujours retourne un alt libelle avec le nom du departement.
  */
 function resolveHeroImageForDepartment(dep) {
-  // Overrides explicites par code département (ex: 93)
+  // Overrides explicites par code departement (ex: 93)
   const deptHeroCatalog = {
     93: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Denis_-_Basilique_-_Ext%C3%A9rieur_fa%C3%A7ade_ouest.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     75: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     77: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/0_Provins_-_Tour_C%C3%A9sar_(4).JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     78: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Front%20of%20the%20Ch%C3%A2teau%20de%20Versailles.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     91: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Tour%20de%20Montlh%C3%A9ry.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     95: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Maclou%20de%20Pontoise.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     92: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/La_Defense.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     94: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Donjon_Ch%C3%A2teau_de_Vincennes.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     971: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Maurice%20Marie%20Claire%20-%20Basse-Terre.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     972: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_France_1.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     973: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%8Ele%20du%20Diable%20Dreyfus.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     974: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Panorama-Mairie-Saint-Denis.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     975: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ship_in_the_harbour_of_saint-pierre,_SPM.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     976: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/2004%2012%2012%2018-24-04%20rose%20sea%20in%20mamoudzou%20mayotte%20island.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
-    // Provence-Alpes-Côte d'Azur
+    // Provence-Alpes-Cote d'Azur
     13: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_port_de_Marseille.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     "06": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Nice%20-%20promenade.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     83: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Gare%20de%20Toulon.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     84: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20(84)%20Pont%20Saint-B%C3%A9nezet%2001.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     "04": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Digne-les-Bains%20-%20Cath%C3%A9drale%20Saint-J%C3%A9r%C3%B4me%2001.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     "05": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20d%27Asfeld%20Brian%C3%A7on.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
-    // Bourgogne-Franche-Comté
+    // Bourgogne-Franche-Comte
     21: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20des%20Ducs%20de%20Bourgogne4.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     25: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Citadelle_de_Besan%C3%A7on_-_Poudri%C3%A8re.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     39: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Saline%20royale%20d%27Arc-et-Senans.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     58: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Nevers%20Cath%C3%A9drale%20St.%20Cyr%20%26%20Ste.%20Julitte%20Ostchor%2001.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     70: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Notre_Dame_la_Motte_Vesoul_014.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     71: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Lazare%20d%27Autun.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     89: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20d%27Auxerre.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     90: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Lion%20de%20Belfort.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     // Normandie
     14: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     27: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20d%27%C3%89vreux.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     50: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Port%20de%20Cherbourg.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     61: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique%20Notre-Dame%20d%27Alen%C3%A7on-16juin2010-07.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     76: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Rouen_Cathedral,_West_Facade.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     // Grand Est
     "08": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Charleville-M%C3%A9zi%C3%A8res%20-%20place%20Ducale%20(02).JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     10: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Troyes%20houses.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     51: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20de%20Reims.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     52: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc%20de%20Chaumont.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     54: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Stanislas%20Nancy.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     55: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Bar-le-Duc-Pr%C3%A9fecture.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     57: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20de%20Metz.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     67: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedrale_Notre-Dame-de-Strasbourg.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     68: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Colmar%20(Haut-Rhin)%20-%20Petite%20Venise%20-%2051061986041.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     88: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89pinal%20Basilique%20St.%20Maurice%201.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     // Pays de la Loire
     44: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_des_ducs_de_Bretagne_(Nantes)_-_2014_-_02.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     49: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_d%27Angers-2015b.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     53: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20Vieux%20Laval%202.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     72: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20du%20Mans.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     85: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/P1080469_Le_chenal_des_Sables_d%27Olonne.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
-    // Auvergne-Rhône-Alpes
+    // Auvergne-Rhone-Alpes
     "01": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Monast%C3%A8re%20royal%20de%20Brou%20(%C3%A9glise)%20(1).JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     "03": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Moulins-sur-allier,%20Allier,%20Notre-Dame%20de%20l%27Annonciation.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     "07": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/060806%20Vallon-Pt%20d%27Arc301.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     15: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc_de_Garabit.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     26: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Valence%20kiosque%20Peynet.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     38: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_la_Bastille_-_Grenoble.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     42: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20%C3%89tienne-Place%20de%20l%27H%C3%B4tel%20de%20Ville-Le%20Grand%20Cercle-PA00117601.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     43: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Puy-en-Velay%20Cath%C3%A9drale11.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     63: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-l%27Assomption%20de%20Clermont-Ferrand.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     69: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     73: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-l%27Assomption%20de%20Clermont-Ferrand.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     74: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
-    // Occitanie (compléments)
+    // Occitanie (complements)
     11: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9%20de%20Carcassonne.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     31: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Capitole%20de%20Toulouse%20(France).JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     34: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Com%C3%A9die%20Montpellier.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     // Corse
     "2A": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ajaccio%20Citadelle%20et%20plage%20Saint-Fran%C3%A7ois.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     "2B": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20the%20port%20of%20Bastia,%20Corsica,%20France%20(52723827071).jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
-    // Nouveaux overrides départementaux
+    // Nouveaux overrides departementaux
     "02": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Laon_Cathedral.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     "09": {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20de%20Foix.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     12: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Viaduc%20de%20Millau.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     16: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Pierre%20d%27Angoul%C3%AAme.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     30: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ar%C3%A8nes%20de%20N%C3%AEmes.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     40: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Ar%C3%A8nes%20de%20Dax.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     46: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20Valentr%C3%A9%20Cahors.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     59: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Grande%20Place,%20Bourse%20du%20travail%20et%20beffroi%20Lille%202.JPG",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     60: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-Pierre%20de%20Beauvais.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     62: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Beffroi%20de%20Calais.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     64: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Marie%20de%20Bayonne.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     65: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Sanctuaire%20Notre-Dame%20de%20Lourdes.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     66: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Castillet%20Perpignan.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     80: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame%20d%27Amiens.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     81: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-C%C3%A9cile%20d%27Albi.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
     87: {
       srcBase:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Saint-%C3%89tienne%20de%20Limoges.jpg",
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
       provider: "wikimedia",
     },
   };
   if (deptHeroCatalog[dep.code]) return deptHeroCatalog[dep.code];
 
-  // Sinon, utiliser l’image de la ville préfectorale mais libeller en département
+  // Sinon, utiliser l'image de la ville prefectorale mais libeller en departement
   const cityImg = resolveHeroImageForCity(dep.ville1, dep);
   const isUnsplash = (x) =>
     !!x && x.srcBase && x.srcBase.includes("images.unsplash.com");
   if (cityImg && !isUnsplash(cityImg)) {
     return {
       srcBase: cityImg.srcBase,
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
     };
   }
-  // Dernier recours: image régionale, libellée en département
+  // Dernier recours: image regionale, libellee en departement
   const regImg = resolveHeroImageForRegion(dep.region, dep);
   if (regImg) {
     return {
       srcBase: regImg.srcBase,
-      alt: `Guide frais de notaire — ${dep.nom} (${dep.code})`,
+      alt: `Guide frais de notaire - ${dep.nom} (${dep.code})`,
     };
   }
   return null;

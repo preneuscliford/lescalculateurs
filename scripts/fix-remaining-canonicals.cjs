@@ -12,7 +12,7 @@ console.log("=".repeat(80));
 
 const srcDir = path.join(__dirname, "..", "src", "pages");
 
-// Fichiers problématiques et leurs canonicals attendus
+// Fichiers problematiques et leurs canonicals attendus
 const fixes = [
   {
     file: "apl-zones.html",
@@ -132,9 +132,9 @@ fixes.forEach((fix) => {
 });
 
 console.log("\n" + "=".repeat(80));
-console.log(`\n✅ Fichiers corrigés: ${fixedCount} / ${fixes.length}\n`);
+console.log(`\n✅ Fichiers corriges: ${fixedCount} / ${fixes.length}\n`);
 
-console.log("Prochaines étapes:");
+console.log("Prochaines etapes:");
 console.log("  1. node scripts/verify-canonicals-fixed.cjs");
 console.log("  2. git add src/pages");
 console.log('  3. git commit -m "fix: Fix remaining 18 canonical URLs"');

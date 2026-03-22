@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Script pour identifier TOUTES les mentions "2025" sur TOUS les pages
- * Scan récursif complet du site
+ * Scan recursif complet du site
  */
 
 const fs = require("fs");
@@ -29,7 +29,7 @@ const htmlFiles = getAllHtmlFiles(pagesDir);
 
 console.log(`
 ╔════════════════════════════════════════════════════════════════╗
-║  🔍 SCAN RÉCURSIF - Toutes les Pages (${htmlFiles.length} fichiers)       ║
+║  🔍 SCAN RECURSIF - Toutes les Pages (${htmlFiles.length} fichiers)       ║
 ╚════════════════════════════════════════════════════════════════╝
 `);
 
@@ -66,8 +66,8 @@ htmlFiles.forEach((filePath) => {
       matches.seo++;
       grandTotal.seo++;
     } else if (
-      line.includes("barème") ||
-      line.includes("émolument") ||
+      line.includes("bareme") ||
+      line.includes("emolument") ||
       line.includes("tranches") ||
       line.includes("taux") ||
       line.includes("0.0387") ||
@@ -97,7 +97,7 @@ htmlFiles.forEach((filePath) => {
   }
 });
 
-// Trier par nombre total décroissant
+// Trier par nombre total decroissant
 fileStats.sort((a, b) => b.total - a.total);
 
 console.log(`\n📊 PAGES AVEC MENTIONS "2025" (${fileStats.length} pages)\n`);
@@ -135,26 +135,26 @@ console.log(
 console.log(`
 ${"═".repeat(80)}
 
-📋 RÉSUMÉ:
+📋 RESUME:
 
    Pages avec mentions: ${fileStats.length}
    Total fichiers HTML: ${htmlFiles.length}
 
-   À MODIFIER (SEO + Visible):
+   A MODIFIER (SEO + Visible):
    🔍 SEO: ${grandTotal.seo} occurrences (2025 → 2026)
    👁️  Contenu: ${grandTotal.visible} occurrences (2025 → 2026)
    
-   À LAISSER INTACTES:
-   📊 Données officielles: ${grandTotal.data} occurrences
+   A LAISSER INTACTES:
+   📊 Donnees officielles: ${grandTotal.data} occurrences
 
 ${"═".repeat(80)}
 
 🎯 ESTIMATION:
 
    Total modifications: ${grandTotal.seo + grandTotal.visible}
-   Fichiers à traiter: ${fileStats.length}
+   Fichiers a traiter: ${fileStats.length}
    
-   Priorité 1 (Notaire/Impôt/Salaire): ${fileStats
+   Priorite 1 (Notaire/Impot/Salaire): ${fileStats
      .filter((f) =>
        f.path.includes(
          "notaire|impot|salaire|plusvalue|apl|ik|pret|charges|taxe"
@@ -164,13 +164,13 @@ ${"═".repeat(80)}
 
 ${"═".repeat(80)}
 
-📌 PROCHAINE ÉTAPE:
+📌 PROCHAINE ETAPE:
 
-   Créer un script de replacement automatique pour janvier 2026
+   Creer un script de replacement automatique pour janvier 2026
    Remplacer "2025" → "2026" UNIQUEMENT dans:
    ✓ SEO metadata
    ✓ Contenu visible (titres, texte)
-   ✗ PAS les données officielles
+   ✗ PAS les donnees officielles
 
 ${"═".repeat(80)}
 `);

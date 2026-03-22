@@ -33,7 +33,7 @@ const newCode = `  // Build 6 enriched content blocks with H2 headers + emoji + 
   const exampleHtml = \`
     <div class="space-y-2">
       <h2 class="text-2xl font-bold text-gray-900">🔢 Exemple local : \${dep.ville1}</h2>
-      <p class="text-gray-700">Achat à <strong>96 000 €</strong> → Frais : <strong>≈ 6 077 €</strong> (barème officiel). Prix m² : <strong>\${dep.prixM2} €</strong>.</p>
+      <p class="text-gray-700">Achat a <strong>96 000 €</strong> → Frais : <strong>≈ 6 077 €</strong> (bareme officiel). Prix m² : <strong>\${dep.prixM2} €</strong>.</p>
     </div>
   \`;
 
@@ -46,7 +46,7 @@ const newCode = `  // Build 6 enriched content blocks with H2 headers + emoji + 
 
   const faqHtml = \`
     <div class="space-y-2">
-      <h2 class="text-2xl font-bold text-gray-900">❓ Question fréquente</h2>
+      <h2 class="text-2xl font-bold text-gray-900">❓ Question frequente</h2>
       <p class="text-gray-700"><strong>Q :</strong> \${faq.q}</p>
       <p class="text-gray-700 ml-4"><strong>A :</strong> \${faq.a}</p>
     </div>
@@ -55,11 +55,11 @@ const newCode = `  // Build 6 enriched content blocks with H2 headers + emoji + 
   const infoLocaleHtml = \`
     <div class="space-y-2">
       <h2 class="text-2xl font-bold text-gray-900">📍 Info \${dep.region}</h2>
-      <p class="text-gray-700"><strong>Département :</strong> \${dep.nom} (\${dep.code}) | <strong>Grandes villes :</strong> \${dep.ville1}, \${dep.ville2} | <strong>Tarif local :</strong> régularisé annuellement.</p>
+      <p class="text-gray-700"><strong>Departement :</strong> \${dep.nom} (\${dep.code}) | <strong>Grandes villes :</strong> \${dep.ville1}, \${dep.ville2} | <strong>Tarif local :</strong> regularise annuellement.</p>
     </div>
   \`;
 
-  const sourcesHtml = \`<footer class="text-xs text-gray-500 mt-8">Mis à jour le \${dateModifiedFR} · Sources: DVF, Notaires</footer>\`;
+  const sourcesHtml = \`<footer class="text-xs text-gray-500 mt-8">Mis a jour le \${dateModifiedFR} · Sources: DVF, Notaires</footer>\`;
 
   // Block map with 6 enriched blocks
   const blockMap = {

@@ -1,81 +1,81 @@
 #!/usr/bin/env node
 /**
- * Script intelligent pour corriger les pages avec des caractères "?" mal encodés
- * Utilise les pages correctes comme référence pour les corrections
+ * Script intelligent pour corriger les pages avec des caracteres "?" mal encodes
+ * Utilise les pages correctes comme reference pour les corrections
  */
 
 import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Départements avec pages correctes (sans problèmes d'encodage)
+ * Departements avec pages correctes (sans problemes d'encodage)
  */
 const CORRECT_DEPTS = ['06', '83', '34', '56', '84']
 
 /**
- * Départements avec pages problématiques (avec des "?")
+ * Departements avec pages problematiques (avec des "?")
  */
 const PROBLEMATIC_DEPTS = ['75', '93', '01', '91', '88', '976', '973']
 
 /**
- * Patterns de remplacement basés sur les pages correctes
+ * Patterns de remplacement bases sur les pages correctes
  */
 const REPLACEMENTS = {
-  '?? Spécificité locale': '🏘️ Spécificité locale',
+  '?? Specificite locale': '🏘️ Specificite locale',
   '?? Avertissement': '⚠️ Avertissement',
   '?? Estimation des frais': '📊 Estimation des frais',
-  '?? Questions fréquentes': '❓ Questions fréquentes',
-  '?? Rappel réglementaire': '📌 Rappel réglementaire',
+  '?? Questions frequentes': '❓ Questions frequentes',
+  '?? Rappel reglementaire': '📌 Rappel reglementaire',
   '?? Voir aussi': '🔗 Voir aussi',
-  'fran?aise': 'française',
-  'd?mographique': 'démographique',
-  'r?sidentielle': 'résidentielle',
+  'fran?aise': 'francaise',
+  'd?mographique': 'demographique',
+  'r?sidentielle': 'residentielle',
   'mahoraise': 'mahoraise',
-  '?conomique': 'économique',
-  '?mergent': 'émergent',
-  '?co-tourisme': 'éco-tourisme',
-  'd?partemental': 'départemental',
-  'd?partementalisation': 'départementalisation',
-  'besoins d\'?quipement': 'besoins d\'équipement',
+  '?conomique': 'economique',
+  '?mergent': 'emergent',
+  '?co-tourisme': 'eco-tourisme',
+  'd?partemental': 'departemental',
+  'd?partementalisation': 'departementalisation',
+  'besoins d\'?quipement': 'besoins d\'equipement',
   'lagon exceptionnel': 'lagon exceptionnel',
-  'croissance d?mographique': 'croissance démographique',
-  'attractivit?': 'attractivité',
-  'immobilier ?': 'immobilier à',
-  'p?le principal': 'pôle principal',
-  'statut d?partemental': 'statut départemental',
+  'croissance d?mographique': 'croissance demographique',
+  'attractivit?': 'attractivite',
+  'immobilier ?': 'immobilier a',
+  'p?le principal': 'pole principal',
+  'statut d?partemental': 'statut departemental',
   'investissement immobilier': 'investissement immobilier',
   'plus forte croissance': 'plus forte croissance',
-  'forte croissance d?mographique': 'forte croissance démographique',
+  'forte croissance d?mographique': 'forte croissance demographique',
   'conna?t la plus forte': 'connaît la plus forte',
-  'pr?sente un march?': 'présente un marché',
-  'march? ?mergent': 'marché émergent',
-  'attire l\'?co-tourisme': 'attire l\'éco-tourisme',
+  'pr?sente un march?': 'presente un marche',
+  'march? ?mergent': 'marche emergent',
+  'attire l\'?co-tourisme': 'attire l\'eco-tourisme',
   'naissant. Le statut': 'naissant. Le statut',
-  'renforce l\'attractivit?': 'renforce l\'attractivité',
-  '?conomique et r?sidentielle': 'économique et résidentielle',
-  'indiqus': 'indiqués',
+  'renforce l\'attractivit?': 'renforce l\'attractivite',
+  '?conomique et r?sidentielle': 'economique et residentielle',
+  'indiqus': 'indiques',
   'purement informatif': 'purement informatif',
-  'base des barmes': 'base des barèmes',
-  'bar?mes notariaux': 'barèmes notariaux',
+  'base des barmes': 'base des baremes',
+  'bar?mes notariaux': 'baremes notariaux',
   'ne constituent': 'ne constituent',
   'conseil juridique': 'conseil juridique',
   'Seul un notaire': 'Seul un notaire',
-  'habilit? ?': 'habilité à',
-  'tablir le montant': 'établir le montant',
-  'montant dfinitif': 'montant définitif',
+  'habilit? ?': 'habilite a',
+  'tablir le montant': 'etablir le montant',
+  'montant dfinitif': 'montant definitif',
   'lors de la signature': 'lors de la signature',
   'lacte authentique': 'l\'acte authentique',
-  'diffrentiel': 'différentiel',
-  'respecte la rglementation': 'respecte la réglementation',
+  'diffrentiel': 'differentiel',
+  'respecte la rglementation': 'respecte la reglementation',
   'nationale. En': 'nationale. En',
   'selon que vous': 'selon que vous',
   'achetez dans l\'': 'achetez dans l\'',
   'ou le neuf': 'ou le neuf',
   'changent selon': 'changent selon',
   'Seine-Saint-Denis': 'Seine-Saint-Denis',
-  'le diffrentiel': 'le différentiel',
+  'le diffrentiel': 'le differentiel',
   'neuf/ancien': 'neuf/ancien',
-  'rglementation nationale': 'réglementation nationale',
+  'rglementation nationale': 'reglementation nationale',
   'Pour un achat': 'Pour un achat',
   'immobilier en': 'immobilier en',
   'environ 7': 'environ 7',
@@ -87,12 +87,12 @@ const REPLACEMENTS = {
   'jour, utilisez': 'jour, utilisez',
   'le calculateur': 'le calculateur',
   'Pour un montant': 'Pour un montant',
-  'exact et jour': 'exact et à jour',
+  'exact et jour': 'exact et a jour',
   'utilisez le': 'utilisez le'
 }
 
 /**
- * Vérifie si un fichier contient des caractères "?" problématiques
+ * Verifie si un fichier contient des caracteres "?" problematiques
  */
 function hasProblematicChars(content) {
   // Cherche des "?" dans des contextes qui devraient avoir des accents
@@ -128,7 +128,7 @@ function hasProblematicChars(content) {
 }
 
 /**
- * Corrige les caractères problématiques dans le contenu
+ * Corrige les caracteres problematiques dans le contenu
  */
 function fixProblematicChars(content) {
   let fixed = content
@@ -140,14 +140,14 @@ function fixProblematicChars(content) {
   }
   
   // Fixer les "environ X ? Y %" patterns
-  fixed = fixed.replace(/environ (\d+)\s*\?\s*(\d*)\s*%/g, 'environ $1 à $2 %')
-  fixed = fixed.replace(/environ (\d+)\s*\?/g, 'environ $1 à')
+  fixed = fixed.replace(/environ (\d+)\s*\?\s*(\d*)\s*%/g, 'environ $1 a $2 %')
+  fixed = fixed.replace(/environ (\d+)\s*\?/g, 'environ $1 a')
   
   return fixed
 }
 
 /**
- * Traite un fichier spécifique
+ * Traite un fichier specifique
  */
 function processFile(filePath) {
   try {
@@ -163,7 +163,7 @@ function processFile(filePath) {
     const backupPath = filePath + '.backup-' + Date.now()
     fs.writeFileSync(backupPath, content, 'utf8')
     
-    // Écrire le contenu corrigé
+    // Ecrire le contenu corrige
     fs.writeFileSync(filePath, fixedContent, 'utf8')
     
     return { fixed: true, backup: backupPath }
@@ -173,7 +173,7 @@ function processFile(filePath) {
 }
 
 /**
- * Point d'entrée principal
+ * Point d'entree principal
  */
 function main() {
   const targetDir = path.resolve(process.cwd(), 'src/pages/blog/departements')
@@ -190,7 +190,7 @@ function main() {
     details: []
   }
   
-  // Traiter uniquement les départements problématiques
+  // Traiter uniquement les departements problematiques
   for (const dept of PROBLEMATIC_DEPTS) {
     const fileName = `frais-notaire-${dept}.html`
     const filePath = path.join(targetDir, fileName)

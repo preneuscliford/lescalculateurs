@@ -35,7 +35,7 @@ function main() {
   }
   const dep = baremes.notaire?.droits_mutation?.ancien?.par_departement || {}
   const rMin = toTotalRate(0.038) // Indre (36) et Mayotte (976)
-  const rMax = toTotalRate(0.05) // base votée majoritaire (Paris/IDF inclus)
+  const rMax = toTotalRate(0.05) // base votee majoritaire (Paris/IDF inclus)
   const price = 250000
   const minAmt = price * rMin
   const maxAmt = price * rMax
@@ -43,11 +43,11 @@ function main() {
   let html = fs.readFileSync(file, 'utf8')
   // Replace the range sentence
   html = html.replace(
-    /Les droits d’enregistrement \(DMTO\) varient de[\s\S]*?<\/p>/,
+    /Les droits d'enregistrement \(DMTO\) varient de[\s\S]*?<\/p>/,
     `<p class="mb-2">
-                Les droits d’enregistrement (DMTO) varient de
+                Les droits d'enregistrement (DMTO) varient de
                 <strong>${approxPctFromRate(rMin)}</strong> (36, 976)
-                à <strong>${approxPctFromRate(rMax)}</strong> (majorité des départements, dont Paris/92/93/94).
+                a <strong>${approxPctFromRate(rMax)}</strong> (majorite des departements, dont Paris/92/93/94).
               </p>`
   )
   // Replace bullet list with two items (min/max)
@@ -61,8 +61,8 @@ function main() {
   // Replace the max difference line
   const diff = maxAmt - minAmt
   html = html.replace(
-    /→ Écart maximal[^<]*<\/p>/,
-    `→ Écart maximal&nbsp;:&nbsp;<strong>${euro(diff)}</strong> sur les seuls droits d’enregistrement.</p>`
+    /→ Ecart maximal[^<]*<\/p>/,
+    `→ Ecart maximal&nbsp;:&nbsp;<strong>${euro(diff)}</strong> sur les seuls droits d'enregistrement.</p>`
   )
 
   fs.writeFileSync(file, html, 'utf8')

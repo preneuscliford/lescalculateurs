@@ -11,15 +11,9 @@
     <!-- Toggle Buttons -->
     <div class="flex justify-center mb-8">
       <div class="bg-white rounded-full p-1.5 inline-flex shadow-lg">
-        <button id="btn-ancien" class="toggle-mode active px-6 py-3 rounded-full font-bold transition-all bg-blue-600 text-white" onclick="setMode('ancien')">
-          🏠 Ancien
-        </button>
-        <button id="btn-neuf" class="toggle-mode px-6 py-3 rounded-full font-bold transition-all text-gray-600 hover:bg-gray-100" onclick="setMode('neuf')">
-          🏗️ Neuf/VEFA
-        </button>
-        <button id="btn-compare" class="toggle-mode px-6 py-3 rounded-full font-bold transition-all text-gray-600 hover:bg-gray-100" onclick="setMode('compare')">
-          ⚖️ Comparer
-        </button>
+        <button id="btn-ancien" class="toggle-mode active px-6 py-3 rounded-full font-bold transition-all bg-blue-600 text-white" onclick="setMode('ancien')">🏠 Ancien</button>
+        <button id="btn-neuf" class="toggle-mode px-6 py-3 rounded-full font-bold transition-all text-gray-600 hover:bg-gray-100" onclick="setMode('neuf')">🏗️ Neuf/VEFA</button>
+        <button id="btn-compare" class="toggle-mode px-6 py-3 rounded-full font-bold transition-all text-gray-600 hover:bg-gray-100" onclick="setMode('compare')">⚖️ Comparer</button>
       </div>
     </div>
     
@@ -31,8 +25,7 @@
                class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                oninput="updateQuickCalc()">
         <div class="text-center font-bold text-2xl text-blue-600 mt-2">
-          <span id="quick-prix-display">250 000</span> €
-        </div>
+          <span id="quick-prix-display">250 000</span>€</div>
       </div>
       
       <!-- Résultats -->
@@ -63,7 +56,7 @@
           <div class="w-full bg-green-200 rounded-full h-4 mb-2">
             <div class="bg-green-500 h-4 rounded-full transition-all" style="width: 2.4%"></div>
           </div>
-          <p class="text-sm text-green-700">~2,4% du prix d'achat</p>
+          <p class="text-sm text-green-700">~2,4 % du prix d'achat</p>
           <div class="mt-3 text-xs text-green-600 space-y-1">
             <div class="flex justify-between"><span>TVA déjà incluse</span><span>-</span></div>
             <div class="flex justify-between"><span>Émoluments</span><span>~2 400 €</span></div>
@@ -74,7 +67,7 @@
       
       <!-- Comparaison -->
       <div id="compare-result" class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-300 text-center hidden">
-        <p class="font-bold text-yellow-800">💰 Économie en achetant du neuf : <span id="eco-neuf" class="text-2xl">~11 500 €</span></p>
+        <p class="font-bold text-yellow-800">💰 Économie en achetant du neuf :<span id="eco-neuf" class="text-2xl">~11 500 €</span></p>
       </div>
     </div>
   </div>
@@ -163,9 +156,7 @@ function updateQuickCalc() {
       <div id="dept-info" class="text-center mb-4 p-4 bg-blue-50 rounded-lg hidden">
         <p class="font-bold text-lg text-blue-800"><span id="dept-nom">Département</span></p>
         <p class="text-2xl font-bold" id="dept-taux">5,80%</p>
-        <button onclick="selectDept()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700">
-          Utiliser ce département
-        </button>
+        <button onclick="selectDept()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700">Utiliser ce département</button>
       </div>
       
       <!-- Carte simplifiée (représentation régions) -->
@@ -187,7 +178,7 @@ function updateQuickCalc() {
         </div>
         <div class="p-4 bg-green-100 rounded-lg border-2 border-green-300 hover:shadow-lg transition cursor-pointer" onclick="showDept('Bretagne', '5,09% - 6,32%')">
           <p class="font-bold text-green-800">Bretagne</p>
-          <p class="text-2xl font-bold text-green-600">5,09-6,32%</p>
+          <p class="text-2xl font-bold text-green-600">5, 09-6,32%</p>
           <p class="text-xs text-green-700">22, 29, 35, 56*</p>
         </div>
         <div class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer" onclick="showDept('Nouvelle-Aquitaine', '6,32%')">
@@ -212,11 +203,8 @@ function updateQuickCalc() {
         </div>
       </div>
       
-      <p class="text-center text-sm text-gray-500 mt-4">
-        * Isère (38) et Morbihan (56) au taux réduit 5,09%<br>
-        <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf" target="_blank" rel="noopener" class="text-blue-600 underline">
-          Source : PDF DMTO 2026 - impots.gouv.fr
-        </a>
+      <p class="text-center text-sm text-gray-500 mt-4">* Isère (38) et Morbihan (56) au taux réduit 5,09%<br>
+        <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf" target="_blank" rel="noopener" class="text-blue-600 underline">Source : PDF DMTO 2026 - impots.gouv.fr</a>
       </p>
     </div>
   </div>
@@ -253,8 +241,8 @@ function selectDept() {
     <div itemprop="text">
       <p class="mb-2">Pour un bien de <strong>200 000 €</strong>, les frais de notaire se répartissent comme suit :</p>
       <ul class="list-disc list-inside space-y-1 mb-3">
-        <li><strong>Ancien (taux moyen 5,8%) :</strong> ~14 000 à 16 000 € total</li>
-        <li><strong>Neuf/VEFA :</strong> ~4 000 à 6 000 € total (TVA déjà incluse dans le prix)</li>
+        <li><strong>Ancien (taux moyen 5,8%) :</strong>~14 000 à 16 000 € total</li>
+        <li><strong>Neuf/VEFA :</strong>~4 000 à 6 000 € total (TVA déjà incluse dans le prix)</li>
       </ul>
       <p class="text-sm text-gray-600">La différence s'explique par les droits de mutation (DMTO) : ~11 600 € pour l'ancien contre ~1 500 € pour le neuf.</p>
     </div>
@@ -272,7 +260,7 @@ function selectDept() {
       <p class="mb-2">4 moyens légaux de réduire vos frais de notaire :</p>
       <ol class="list-decimal list-inside space-y-2">
         <li><strong>Acheter du neuf :</strong> Les frais passent de ~7-8% à ~2-3%</li>
-        <li><strong>Négocier la remise :</strong> Jusqu'à 10% sur les émoluments pour les biens > 150 000 €</li>
+        <li><strong>Négocier la remise :</strong> Jusqu'à 10% sur les émoluments pour les biens &gt; 150 000 €</li>
         <li><strong>Déduire les meubles :</strong> Pour un bien meublé, déduire la valeur des meubles du prix de vente</li>
         <li><strong>Choisir le département :</strong> Certains départements ont des taux réduits (5,09% vs 6,32%)</li>
       </ol>
@@ -288,7 +276,7 @@ function selectDept() {
   </button>
   <div class="hidden px-6 py-4 bg-gray-50 border-t" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
     <div itemprop="text">
-      <p class="mb-2">Pour un bien de <strong>250 000 €</strong> :</p>
+      <p class="mb-2">Pour un bien de <strong>250 000 €</strong>:</p>
       <div class="grid md:grid-cols-2 gap-4 mb-3">
         <div class="bg-orange-50 p-3 rounded">
           <p class="font-bold text-orange-800">🏠 Ancien</p>
@@ -301,7 +289,7 @@ function selectDept() {
           <p class="text-sm">(2,5% du prix)</p>
         </div>
       </div>
-      <p><strong>Économie :</strong> ~12 500 € en achetant du neuf ! La TVA à 20% étant déjà incluse dans le prix du neuf, vous ne payez que les émoluments et débours du notaire.</p>
+      <p><strong>Économie :</strong>~12 500 € en achetant du neuf ! La TVA à 20% étant déjà incluse dans le prix du neuf, vous ne payez que les émoluments et débours du notaire.</p>
     </div>
   </div>
 </div>
@@ -316,7 +304,7 @@ function selectDept() {
     <div itemprop="text">
       <p class="mb-2"><strong>Partiellement oui.</strong> Voici ce qui est négociable :</p>
       <ul class="list-disc list-inside space-y-1 mb-3">
-        <li><strong>Émoluments :</strong> Remise possible jusqu'à <strong>10%</strong> pour les biens > 150 000 € (à la discrétion du notaire)</li>
+        <li><strong>Émoluments :</strong> Remise possible jusqu'à<strong>10%</strong> pour les biens &gt; 150 000 € (à la discrétion du notaire)</li>
         <li><strong>Taxes et DMTO :</strong> Non négociables (fixés par l'État)</li>
         <li><strong>Débours :</strong> Non négociables (coûts réels)</li>
       </ul>
@@ -333,7 +321,7 @@ function selectDept() {
   </button>
   <div class="hidden px-6 py-4 bg-gray-50 border-t" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
     <div itemprop="text">
-      <p class="mb-2">3 départements ont un taux réduit de <strong>5,09%</strong> (au lieu de 5,80% ou 6,32%) :</p>
+      <p class="mb-2">3 départements ont un taux réduit de <strong>5,09%</strong>(au lieu de 5,80% ou 6,32%) :</p>
       <ul class="list-disc list-inside space-y-1 mb-3">
         <li><strong>Indre (36)</strong></li>
         <li><strong>Isère (38)</strong></li>
@@ -398,8 +386,7 @@ function selectDept() {
       </div>
       
       <p class="text-xs text-gray-500 mt-4">
-        <strong>Le saviez-vous ?</strong> Le notaire ne garde que ~14% des frais, le reste est reversé à l'État et aux collectivités locales.
-      </p>
+        <strong>Le saviez-vous ?</strong> Le notaire ne garde que ~14% des frais, le reste est reversé à l'État et aux collectivités locales.</p>
     </div>
   </div>
 </section>

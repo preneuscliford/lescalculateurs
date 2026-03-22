@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /*
-  Génération des 101 pages Taxe Foncière par département
+  Generation des 101 pages Taxe Fonciere par departement
   
   Usage:
     node scripts/generate-taxe-fonciere-pages-deepseek.cjs       # dry-run
-    node scripts/generate-taxe-fonciere-pages-deepseek.cjs --run # appel API DeepSeek réel
+    node scripts/generate-taxe-fonciere-pages-deepseek.cjs --run # appel API DeepSeek reel
     node scripts/generate-taxe-fonciere-pages-deepseek.cjs --run --only=75  # test sur dept 75
 
   Notes:
   - Lit src/data/taxe-fonciere-departements.json (101 depts)
   - Charge prompt depuis scripts/deepseek-master-prompt-taxe-fonciere.txt
-  - Mode dry-run: écrit payloads dans reports/deepseek-requests-taxe/
-  - Mode --run: appelle API DeepSeek + génère HTML
+  - Mode dry-run: ecrit payloads dans reports/deepseek-requests-taxe/
+  - Mode --run: appelle API DeepSeek + genere HTML
 */
 
 const fs = require("fs");
@@ -31,9 +31,9 @@ function wrapInTemplate(content, depName, code) {
   // Full page structure pour pages taxe-fonciere
   const assets = `<script type="module" src="../../../main.ts"></script>`;
 
-  const title = `Taxe Foncière en ${depName} (${code}) 2025 - Calcul et Simulation Gratuit`;
-  const description = `Calculez votre taxe foncière en ${depName} avec notre simulateur gratuit. Montants moyens, taux, exemples concrets et explications complètes pour le département ${code}.`;
-  const keywords = `taxe foncière ${depName.toLowerCase()}, simulation taxe ${code}, montant moyen ${depName}, calcul taxe foncière 2025, taux ${depName}`;
+  const title = `Taxe Fonciere en ${depName} (${code}) 2025 - Calcul et Simulation Gratuit`;
+  const description = `Calculez votre taxe fonciere en ${depName} avec notre simulateur gratuit. Montants moyens, taux, exemples concrets et explications completes pour le departement ${code}.`;
+  const keywords = `taxe fonciere ${depName.toLowerCase()}, simulation taxe ${code}, montant moyen ${depName}, calcul taxe fonciere 2025, taux ${depName}`;
   const canonical = `https://lescalculateurs.fr/pages/taxe-fonciere/${depName
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "-")}-${code}`;
@@ -48,11 +48,11 @@ function wrapInTemplate(content, depName, code) {
       <img src="${localHero}"
         onerror="this.onerror=null;this.src='${unsplash}'"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 960px, 1200px"
-        alt="Taxe Foncière — ${escapeHtml(depName)} (${code})"
+        alt="Taxe Fonciere - ${escapeHtml(depName)} (${code})"
         width="1200" height="675"
         loading="eager" fetchpriority="high" decoding="async"
         class="w-full h-auto object-cover" />
-      <figcaption class="text-sm text-gray-500 px-4 py-2">Guide complet taxe foncière ${escapeHtml(
+      <figcaption class="text-sm text-gray-500 px-4 py-2">Guide complet taxe fonciere ${escapeHtml(
         depName
       )}. Source : LesCalculateurs.fr</figcaption>
     </figure>`;
@@ -124,7 +124,7 @@ function wrapInTemplate(content, depName, code) {
             <img src="/logo.svg" alt="LesCalculateurs.fr" class="w-8 h-8" />
             <a href="/pages/taxe-fonciere" class="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-              <span>← Taxe Foncière</span>
+              <span>← Taxe Fonciere</span>
             </a>
           </div>
           <a href="/index.html" class="text-sm text-gray-600 hover:text-gray-900">Accueil</a>
@@ -138,7 +138,7 @@ function wrapInTemplate(content, depName, code) {
 
     <footer class="bg-gray-900 text-gray-300 mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-        <p>&copy; ${new Date().getFullYear()} LesCalculateurs.fr - Tous droits réservés</p>
+        <p>&copy; ${new Date().getFullYear()} LesCalculateurs.fr - Tous droits reserves</p>
       </div>
     </footer>
   </body>
@@ -203,7 +203,7 @@ let depts = Object.values(deptData.departements);
 if (onlyArg) {
   const code = onlyArg.split("=")[1];
   depts = depts.filter((d) => d.code === code);
-  console.log(`🎯 Filtré sur département: ${code}`);
+  console.log(`🎯 Filtre sur departement: ${code}`);
 }
 
 fs.mkdirSync(REQUESTS_DIR, { recursive: true });
@@ -236,7 +236,7 @@ async function callDeepSeek(payload) {
 }
 
 async function generateArticles() {
-  console.log(`\n📄 Génération ${depts.length} articles taxe foncière...\n`);
+  console.log(`\n📄 Generation ${depts.length} articles taxe fonciere...\n`);
 
   for (let i = 0; i < depts.length; i++) {
     const dept = depts[i];
@@ -254,7 +254,7 @@ async function generateArticles() {
         {
           role: "system",
           content:
-            "Tu es un expert fiscal français générant des articles SEO uniques sur la taxe foncière par département. Chaque article doit être unique et spécifique au département. Pas de template générique.",
+            "Tu es un expert fiscal francais generant des articles SEO uniques sur la taxe fonciere par departement. Chaque article doit etre unique et specifique au departement. Pas de template generique.",
         },
         {
           role: "user",
@@ -269,12 +269,12 @@ async function generateArticles() {
     if (DRY) {
       const payloadPath = path.join(REQUESTS_DIR, `${slug}-${dept.code}.json`);
       fs.writeFileSync(payloadPath, JSON.stringify(payload, null, 2));
-      console.log(`  ✅ Payload généré: ${filename}`);
+      console.log(`  ✅ Payload genere: ${filename}`);
     } else {
-      // Mode réel: appeler API
+      // Mode reel: appeler API
       try {
         console.log(
-          `  🔄 [${i + 1}/${depts.length}] Génération ${dept.nom} (${
+          `  🔄 [${i + 1}/${depts.length}] Generation ${dept.nom} (${
             dept.code
           })...`
         );
@@ -282,7 +282,7 @@ async function generateArticles() {
         const response = await callDeepSeek(payload);
 
         if (!response.choices || !response.choices[0]) {
-          console.error(`    ❌ Réponse vide`);
+          console.error(`    ❌ Reponse vide`);
           continue;
         }
 
@@ -295,9 +295,9 @@ async function generateArticles() {
         const outputPath = path.join(PAGES_DIR, filename);
         fs.writeFileSync(outputPath, fullHtml);
 
-        console.log(`    ✅ ${filename} généré`);
+        console.log(`    ✅ ${filename} genere`);
 
-        // Délai entre appels (respecter rate limits)
+        // Delai entre appels (respecter rate limits)
         if (i < depts.length - 1) {
           await wait(1500);
         }
@@ -308,7 +308,7 @@ async function generateArticles() {
     }
   }
 
-  console.log(`\n${DRY ? "✅ Payloads générés" : "✅ Articles générés"}!`);
+  console.log(`\n${DRY ? "✅ Payloads generes" : "✅ Articles generes"}!`);
   console.log(`📍 Sortie: ${DRY ? REQUESTS_DIR : PAGES_DIR}`);
 }
 

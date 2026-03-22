@@ -1,5 +1,5 @@
 /**
- * Script de mise à jour des taux DMTO 2026 - Version UTF-8 safe
+ * Script de mise a jour des taux DMTO 2026 - Version UTF-8 safe
  * Source: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf
  */
 
@@ -8,7 +8,7 @@ const path = require("path");
 
 const rootDir = path.join(__dirname, "..");
 
-// ===== 1. Mettre à jour frais2026.json =====
+// ===== 1. Mettre a jour frais2026.json =====
 function updatefrais2026Json() {
   const filepath = path.join(rootDir, "src/data/frais2026.json");
   const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
@@ -21,7 +21,7 @@ function updatefrais2026Json() {
     "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433",
   ];
 
-  // Taux majoré 6.32% pour la majorité, standard 5.80% pour quelques-uns, réduit 5.09% pour 36 et 976
+  // Taux majore 6.32% pour la majorite, standard 5.80% pour quelques-uns, reduit 5.09% pour 36 et 976
   const tauxMajore = 6.32;
   const tauxStandard = 5.8;
   const tauxReduit = 5.09;
@@ -146,7 +146,7 @@ function updatefrais2026Json() {
     976: tauxReduit,
   };
 
-  // Mettre à jour dmto_struct
+  // Mettre a jour dmto_struct
   data.dmto_struct = {
     ancien: {
       default: 0.0632,
@@ -173,10 +173,10 @@ function updatefrais2026Json() {
   };
 
   fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
-  console.log("✅ frais2026.json mis à jour");
+  console.log("✅ frais2026.json mis a jour");
 }
 
-// ===== 2. Mettre à jour baremes.ts =====
+// ===== 2. Mettre a jour baremes.ts =====
 function updateBaremesTs() {
   const filepath = path.join(rootDir, "src/data/baremes.ts");
   let content = fs.readFileSync(filepath, "utf8");
@@ -184,36 +184,36 @@ function updateBaremesTs() {
   // Remplacer le taux standard
   content = content.replace(
     /standard: 0\.0581,\s*\/\/.*$/m,
-    "standard: 0.0632, // taux majoré 2026 (5% voté = 6.32% total)",
+    "standard: 0.0632, // taux majore 2026 (5% vote = 6.32% total)",
   );
 
-  // Remplacer le taux réduit
+  // Remplacer le taux reduit
   content = content.replace(
     /reduit: 0\.0509006,\s*\/\/.*$/m,
-    "reduit: 0.0509, // taux réduit 2026 (Indre, Mayotte)",
+    "reduit: 0.0509, // taux reduit 2026 (Indre, Mayotte)",
   );
 
-  // Remplacer les départements réduits
+  // Remplacer les departements reduits
   content = content.replace(
     /departementsReduits: \["36", "976"\],?/,
     'departementsReduits: ["36", "976"], // Indre et Mayotte uniquement en 2026',
   );
 
   fs.writeFileSync(filepath, content, "utf8");
-  console.log("✅ baremes.ts mis à jour");
+  console.log("✅ baremes.ts mis a jour");
 }
 
-// ===== 3. Mettre à jour baremes.json =====
+// ===== 3. Mettre a jour baremes.json =====
 function updateBaremesJson() {
   const filepath = path.join(rootDir, "src/data/baremes.json");
   if (!fs.existsSync(filepath)) {
-    console.log("⚠️ baremes.json non trouvé");
+    console.log("⚠️ baremes.json non trouve");
     return;
   }
 
   const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
 
-  // Mettre à jour droitsMutation
+  // Mettre a jour droitsMutation
   if (data.notaire && data.notaire.droitsMutation) {
     data.notaire.droitsMutation = {
       standard: 0.0632,
@@ -223,7 +223,7 @@ function updateBaremesJson() {
     };
   }
 
-  // Mettre à jour dmto
+  // Mettre a jour dmto
   if (data.dmto) {
     const tauxMajore = 6.32;
     const tauxStandard = 5.8;
@@ -256,37 +256,37 @@ function updateBaremesJson() {
   }
 
   fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
-  console.log("✅ baremes.json mis à jour");
+  console.log("✅ baremes.json mis a jour");
 }
 
-// ===== 4. Mettre à jour notaire.html =====
+// ===== 4. Mettre a jour notaire.html =====
 function updateNotaireHtml() {
   const filepath = path.join(rootDir, "src/pages/notaire.html");
   let content = fs.readFileSync(filepath, "utf8");
 
   // Texte original de la section DMTO
   const oldBlock = `Les droits d'enregistrement (DMTO) varient de
-                <strong>3,80&nbsp;% (56, 57, 67, 68)</strong> à
+                <strong>3,80&nbsp;% (56, 57, 67, 68)</strong> a
                 <strong>6,45&nbsp;% (92, 93, 94)</strong>. Paris (75) applique
                 un taux de <strong>5,81&nbsp;%</strong>.`;
 
   const newBlock = `Les droits d'enregistrement (DMTO) varient de
-                <strong>5,09&nbsp;% (36 Indre, 976 Mayotte)</strong> à
-                <strong>6,32&nbsp;% (majorité des départements)</strong>. Paris (75) applique
+                <strong>5,09&nbsp;% (36 Indre, 976 Mayotte)</strong> a
+                <strong>6,32&nbsp;% (majorite des departements)</strong>. Paris (75) applique
                 un taux de <strong>6,32&nbsp;%</strong> depuis janvier 2026.`;
 
   content = content.replace(oldBlock, newBlock);
 
   // Mayotte section
   content = content.replace(
-    /Mayotte \(976\) est à <strong>4,00&nbsp;%<\/strong>\. Sur un achat/,
-    "La plupart des départements ont voté le taux majoré en 2026. Sur un achat",
+    /Mayotte \(976\) est a <strong>4,00&nbsp;%<\/strong>\. Sur un achat/,
+    "La plupart des departements ont vote le taux majore en 2026. Sur un achat",
   );
 
   // Exemples de calcul
   content = content.replace(
     /3,80&nbsp;%&nbsp;→&nbsp;<strong>9&nbsp;500&nbsp;€<\/strong>/g,
-    "5,09&nbsp;% (réduit)&nbsp;→&nbsp;<strong>12&nbsp;725&nbsp;€</strong>",
+    "5,09&nbsp;% (reduit)&nbsp;→&nbsp;<strong>12&nbsp;725&nbsp;€</strong>",
   );
 
   content = content.replace(
@@ -300,10 +300,10 @@ function updateNotaireHtml() {
     "",
   );
 
-  // Écart
+  // Ecart
   content = content.replace(
-    /Écart maximal&nbsp;:&nbsp;<strong>6&nbsp;625&nbsp;€<\/strong>/g,
-    "Écart entre taux réduit et standard&nbsp;:&nbsp;<strong>3&nbsp;075&nbsp;€</strong>",
+    /Ecart maximal&nbsp;:&nbsp;<strong>6&nbsp;625&nbsp;€<\/strong>/g,
+    "Ecart entre taux reduit et standard&nbsp;:&nbsp;<strong>3&nbsp;075&nbsp;€</strong>",
   );
 
   // FAQ sections
@@ -311,19 +311,19 @@ function updateNotaireHtml() {
   content = content.replace(/≈ 6,45%/g, "≈ 6,32%");
   content = content.replace(/≈ 5,80%/g, "≈ 6,32%");
   content = content.replace(/≈ 5,81%/g, "≈ 6,32%");
-  content = content.replace(/3,80% à 6,45%/g, "5,09% à 6,32%");
+  content = content.replace(/3,80% a 6,45%/g, "5,09% a 6,32%");
 
-  // Mise à jour section FAQ différences
+  // Mise a jour section FAQ differences
   content = content.replace(
-    /≈ 3,80% \(Bas‑Rhin\/Haut‑Rhin, Morbihan\), ≈ 4,50% \(Corse\s*2A\/2B\), ≈ 5,81% \(Paris\) et ≈ 6,45% \(92\/93\/94\)\. La majorité des\s*départements se situent autour de ≈ 5,80%/g,
-    "≈ 6,32% (majorité des départements). Seuls l'Indre (36) et Mayotte (976) conservent un taux réduit de ≈ 5,09%",
+    /≈ 3,80% \(Bas‑Rhin\/Haut‑Rhin, Morbihan\), ≈ 4,50% \(Corse\s*2A\/2B\), ≈ 5,81% \(Paris\) et ≈ 6,45% \(92\/93\/94\)\. La majorite des\s*departements se situent autour de ≈ 5,80%/g,
+    "≈ 6,32% (majorite des departements). Seuls l'Indre (36) et Mayotte (976) conservent un taux reduit de ≈ 5,09%",
   );
 
   fs.writeFileSync(filepath, content, "utf8");
-  console.log("✅ notaire.html mis à jour");
+  console.log("✅ notaire.html mis a jour");
 }
 
-// ===== 5. Mettre à jour comment-calculer-frais-notaire.html =====
+// ===== 5. Mettre a jour comment-calculer-frais-notaire.html =====
 function updateCommentCalculer() {
   const filepath = path.join(
     rootDir,
@@ -333,34 +333,34 @@ function updateCommentCalculer() {
 
   let content = fs.readFileSync(filepath, "utf8");
 
-  // Mise à jour de la liste des taux
+  // Mise a jour de la liste des taux
   content = content.replace(
     /<li>Taux standard hors Île-de-France : 3,80%<\/li>/,
-    "<li>Taux majoré 2026 (majorité des départements) : 6,32%</li>",
+    "<li>Taux majore 2026 (majorite des departements) : 6,32%</li>",
   );
 
   content = content.replace(
-    /<li>Taux réduit \(primo-accédants résidence principale\) : 3,80%<\/li>/,
-    "<li>Taux réduit (Indre 36, Mayotte 976) : 5,09%</li>",
+    /<li>Taux reduit \(primo-accedants residence principale\) : 3,80%<\/li>/,
+    "<li>Taux reduit (Indre 36, Mayotte 976) : 5,09%</li>",
   );
 
   // Exemple de calcul
   content = content.replace(
     /Achat 300 000 € en Île-de-France = 300 000\s*× 4,50% = 13 500 €/,
-    "Achat 300 000 € avec taux majoré = 300 000 × 6,32% = 18 960 €",
+    "Achat 300 000 € avec taux majore = 300 000 × 6,32% = 18 960 €",
   );
 
-  // Primo-accédants section
+  // Primo-accedants section
   content = content.replace(
-    /<strong>Primo-accédants :<\/strong> DMTO réduit de 3,80% en zone\s*réglementée/,
-    "<strong>Primo-accédants :</strong> Possibilité de taux réduit dans certains départements",
+    /<strong>Primo-accedants :<\/strong> DMTO reduit de 3,80% en zone\s*reglementee/,
+    "<strong>Primo-accedants :</strong> Possibilite de taux reduit dans certains departements",
   );
 
   fs.writeFileSync(filepath, content, "utf8");
-  console.log("✅ comment-calculer-frais-notaire.html mis à jour");
+  console.log("✅ comment-calculer-frais-notaire.html mis a jour");
 }
 
-// ===== 6. Mettre à jour sources.html =====
+// ===== 6. Mettre a jour sources.html =====
 function updateSourcesHtml() {
   const filepath = path.join(rootDir, "src/pages/sources.html");
   if (!fs.existsSync(filepath)) return;
@@ -368,15 +368,15 @@ function updateSourcesHtml() {
   let content = fs.readFileSync(filepath, "utf8");
 
   content = content.replace(
-    /<strong>Droits de mutation \(DMTO\) :<\/strong> 3,80% \(hors IDF\)\s*à 4,50% \(Île-de-France\) en 2025/,
-    "<strong>Droits de mutation (DMTO) :</strong> 6,32% (taux majoré 2026) ou 5,80% (standard) ou 5,09% (réduit: Indre, Mayotte)",
+    /<strong>Droits de mutation \(DMTO\) :<\/strong> 3,80% \(hors IDF\)\s*a 4,50% \(Île-de-France\) en 2025/,
+    "<strong>Droits de mutation (DMTO) :</strong> 6,32% (taux majore 2026) ou 5,80% (standard) ou 5,09% (reduit: Indre, Mayotte)",
   );
 
   fs.writeFileSync(filepath, content, "utf8");
-  console.log("✅ sources.html mis à jour");
+  console.log("✅ sources.html mis a jour");
 }
 
-// ===== 7. Mettre à jour methodologie.html =====
+// ===== 7. Mettre a jour methodologie.html =====
 function updateMethodologie() {
   const filepath = path.join(rootDir, "src/pages/methodologie.html");
   if (!fs.existsSync(filepath)) return;
@@ -387,18 +387,18 @@ function updateMethodologie() {
     /Tarif des notaires 2025/g,
     "Tarif des notaires 2026",
   );
-  content = content.replace(/Barèmes DMTO 2025/g, "Barèmes DMTO 2026");
+  content = content.replace(/Baremes DMTO 2025/g, "Baremes DMTO 2026");
   content = content.replace(
-    /Données conformes CGI 2025/g,
-    "Données conformes CGI 2026",
+    /Donnees conformes CGI 2025/g,
+    "Donnees conformes CGI 2026",
   );
 
   fs.writeFileSync(filepath, content, "utf8");
-  console.log("✅ methodologie.html mis à jour");
+  console.log("✅ methodologie.html mis a jour");
 }
 
-// ===== Exécution =====
-console.log("🔄 Mise à jour des taux DMTO 2026 (UTF-8 safe)...\n");
+// ===== Execution =====
+console.log("🔄 Mise a jour des taux DMTO 2026 (UTF-8 safe)...\n");
 
 updatefrais2026Json();
 updateBaremesTs();
@@ -408,10 +408,10 @@ updateCommentCalculer();
 updateSourcesHtml();
 updateMethodologie();
 
-console.log("\n✅ Mise à jour terminée!");
+console.log("\n✅ Mise a jour terminee!");
 console.log("\n📊 Nouveaux taux DMTO 2026:");
-console.log("   - Taux majoré: 6,32% (majorité des départements)");
+console.log("   - Taux majore: 6,32% (majorite des departements)");
 console.log(
   "   - Taux standard: 5,80% (05, 06, 07, 16, 26, 27, 48, 60, 65, 71, 971, 972)",
 );
-console.log("   - Taux réduit: 5,09% (36 Indre, 976 Mayotte)");
+console.log("   - Taux reduit: 5,09% (36 Indre, 976 Mayotte)");

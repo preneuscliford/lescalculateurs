@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Script pour corriger TOUS les canonicals dans le projet
- * Résultat: Tous les canonicals au format https://www.lescalculateurs.fr/pages/... (SANS .html)
+ * Resultat: Tous les canonicals au format https://www.lescalculateurs.fr/pages/... (SANS .html)
  */
 
 const fs = require("fs");
@@ -17,7 +17,7 @@ let filesFixed = 0;
 const issues = [];
 
 /**
- * Récursivement liste tous les fichiers .html
+ * Recursivement liste tous les fichiers .html
  */
 function getAllHtmlFiles(dir) {
   const files = [];
@@ -35,7 +35,7 @@ function getAllHtmlFiles(dir) {
 }
 
 /**
- * Calcule l'URL canonique correcte à partir du chemin fichier
+ * Calcule l'URL canonique correcte a partir du chemin fichier
  */
 function getCorrectCanonical(filePath) {
   // Relative path from src/pages to the file
@@ -70,7 +70,7 @@ function fixCanonical(filePath, content) {
       wasFixed = true;
     }
   } else {
-    // Pas de canonical trouvé, en ajouter un
+    // Pas de canonical trouve, en ajouter un
     if (/<\/head>/i.test(html)) {
       const newTag = `<link rel="canonical" href="${correctCanonical}" />\n  `;
       html = html.replace(/<\/head>/i, newTag + "</head>");
@@ -109,11 +109,11 @@ htmlFiles.forEach((filePath) => {
   }
 });
 
-// Résumé
+// Resume
 console.log("\n" + "=".repeat(80));
-console.log(`📊 RÉSUMÉ`);
+console.log(`📊 RESUME`);
 console.log("=".repeat(80));
-console.log(`✅ Fichiers traités: ${filesFixed}/${totalFiles}`);
+console.log(`✅ Fichiers traites: ${filesFixed}/${totalFiles}`);
 
 if (issues.length > 0) {
   console.log(`❌ Erreurs: ${issues.length}`);
@@ -122,5 +122,5 @@ if (issues.length > 0) {
   });
 }
 
-console.log("\n✨ Les canonicals sont maintenant standardisés!");
-console.log("📝 Prochaine étape: npm run build && git commit && git push\n");
+console.log("\n✨ Les canonicals sont maintenant standardises!");
+console.log("📝 Prochaine etape: npm run build && git commit && git push\n");

@@ -1,17 +1,17 @@
 /**
- * Script global de mise à jour 2025 → 2026
- * Exclut les données légitimes 2025 :
- * - Barème IR (revenus 2024 = année fiscale 2025)
- * - Jours fériés 2025
- * - Références légales (LF 2025, art. 116, etc.)
- * - Versions de schéma
+ * Script global de mise a jour 2025 → 2026
+ * Exclut les donnees legitimes 2025 :
+ * - Bareme IR (revenus 2024 = annee fiscale 2025)
+ * - Jours feries 2025
+ * - References legales (LF 2025, art. 116, etc.)
+ * - Versions de schema
  * - Dates max dans les inputs
  */
 
 const fs = require("fs");
 const path = require("path");
 
-// Fichiers à traiter
+// Fichiers a traiter
 const filesToUpdate = [
   // Pages principales
   "src/pages/plusvalue.html",
@@ -34,14 +34,14 @@ const keepAsIs = [
   "src/pages/impot.html",
   "src/pages/scripts/impot.ts",
   "src/pages/scripts/impot-pedagogique.ts",
-  "src/pages/sources.html", // IR 2025 légitime
+  "src/pages/sources.html", // IR 2025 legitime
 ];
 
 function updateFile(filePath) {
   const fullPath = path.join(__dirname, "..", filePath);
 
   if (!fs.existsSync(fullPath)) {
-    console.log(`⚠️ Non trouvé: ${filePath}`);
+    console.log(`⚠️ Non trouve: ${filePath}`);
     return false;
   }
 
@@ -49,14 +49,14 @@ function updateFile(filePath) {
   const original = content;
 
   // Ne pas modifier les dates max (max="2025-12-31")
-  // Ne pas modifier les versions de schéma
-  // Ne pas modifier les jours fériés 2025
+  // Ne pas modifier les versions de schema
+  // Ne pas modifier les jours feries 2025
   // Ne pas modifier LF 2025 / art. 116
 
   // Remplacement intelligent ligne par ligne
   const lines = content.split("\n");
   const newLines = lines.map((line) => {
-    // Skip: dates max, versions, jours fériés, références légales
+    // Skip: dates max, versions, jours feries, references legales
     if (
       line.includes('max="2025') ||
       line.includes("version:") ||
@@ -82,9 +82,9 @@ function updateFile(filePath) {
   return false;
 }
 
-console.log("🔧 Mise à jour globale 2025 → 2026\n");
+console.log("🔧 Mise a jour globale 2025 → 2026\n");
 console.log(
-  "⚠️ Exclusions: IR (revenus 2024), jours fériés 2025, LF 2025, dates max\n",
+  "⚠️ Exclusions: IR (revenus 2024), jours feries 2025, LF 2025, dates max\n",
 );
 
 let count = 0;
@@ -98,6 +98,6 @@ for (const file of filesToUpdate) {
   }
 }
 
-console.log(`\n🎯 ${count} fichiers mis à jour`);
-console.log("\n📋 Fichiers conservés en 2025 (légitimes):");
+console.log(`\n🎯 ${count} fichiers mis a jour`);
+console.log("\n📋 Fichiers conserves en 2025 (legitimes):");
 keepAsIs.forEach((f) => console.log(`   - ${f}`));

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Vérifie la minification et compression des fichiers CSS/JS
- * Analyse le répertoire dist après la build
+ * Verifie la minification et compression des fichiers CSS/JS
+ * Analyse le repertoire dist apres la build
  */
 
 import fs from "fs";
@@ -16,7 +16,7 @@ function analyzeFile(filePath) {
   const content = fs.readFileSync(filePath, "utf-8");
   const size = fs.statSync(filePath).size;
 
-  // Vérifier la minification (pas de retours à la ligne inutiles, pas d'espaces)
+  // Verifier la minification (pas de retours a la ligne inutiles, pas d'espaces)
   const isMinified = !content.includes("\n\n") && !content.match(/\n\s+/);
 
   return {

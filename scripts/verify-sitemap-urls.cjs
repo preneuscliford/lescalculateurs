@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Vérifier que tous les URLs du sitemap répondent avec HTTP 200
+ * Verifier que tous les URLs du sitemap repondent avec HTTP 200
  */
 
 const fs = require("fs");
@@ -10,7 +10,7 @@ const https = require("https");
 
 const sitemapPath = path.join(__dirname, "..", "public", "sitemap.xml");
 
-console.log("\n🔍 VÉRIFICATION DES URLS DU SITEMAP\n");
+console.log("\n🔍 VERIFICATION DES URLS DU SITEMAP\n");
 console.log("=".repeat(80));
 
 // Lire et parser le sitemap
@@ -70,7 +70,7 @@ function testUrl(url) {
 
 // Tester les URLs (avec limit concurrentielle)
 async function testAllUrls() {
-  const batchSize = 5; // 5 URLs en parallèle
+  const batchSize = 5; // 5 URLs en parallele
   const results = [];
   let successCount = 0;
   let errorCount = 0;
@@ -112,10 +112,10 @@ async function testAllUrls() {
   return { results, successCount, errorCount };
 }
 
-// Exécuter les tests
+// Executer les tests
 testAllUrls().then(({ results, successCount, errorCount }) => {
   console.log("\n" + "=".repeat(80));
-  console.log("\n📊 RÉSUMÉ:\n");
+  console.log("\n📊 RESUME:\n");
   console.log(`  ✅ URLs OK (200): ${successCount}`);
   console.log(`  ❌ URLs ERREUR: ${errorCount}`);
 
@@ -133,12 +133,12 @@ testAllUrls().then(({ results, successCount, errorCount }) => {
 
   if (errorCount === 0) {
     console.log(
-      `\n✅ VÉRIFICATION RÉUSSIE! Tous les ${successCount} URLs répondent avec 200\n`
+      `\n✅ VERIFICATION REUSSIE! Tous les ${successCount} URLs repondent avec 200\n`
     );
     process.exit(0);
   } else {
     console.log(
-      `\n❌ ${errorCount} URLs ont des problèmes. À corriger avant le push.\n`
+      `\n❌ ${errorCount} URLs ont des problemes. A corriger avant le push.\n`
     );
     process.exit(1);
   }

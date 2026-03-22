@@ -7,7 +7,7 @@ const MONITOR_PATH = path.join(ROOT, "data/monitoring-calendar.json");
 const GLOBAL_MONITOR_PATH = path.join(ROOT, "data/global-monitoring.json");
 
 /**
- * Effectue une requête HTTP GET et renvoie { text, url }
+ * Effectue une requete HTTP GET et renvoie { text, url }
  */
 async function httpGet(url) {
   const res = await fetch(url, { headers: { "User-Agent": "lescalculateurs-agent_juridique/1.0" } });
@@ -17,13 +17,13 @@ async function httpGet(url) {
 }
 
 /**
- * Extrait et normalise une date française depuis contenu HTML
+ * Extrait et normalise une date francaise depuis contenu HTML
  */
 function parseFrenchDate(text) {
   const iso = text.match(/\b(20\d{2}-\d{2}-\d{2})\b/);
   if (iso) return iso[1];
-  const months = { janvier:"01", février:"02", fevrier:"02", mars:"03", avril:"04", mai:"05", juin:"06", juillet:"07", août:"08", aout:"08", septembre:"09", octobre:"10", novembre:"11", décembre:"12", decembre:"12" };
-  const m = text.match(/publi[ée]?\s*le\s*(\d{1,2})\s+([A-Za-zéèêëàâäïîôöûüç]+)\s+(\d{4})/i);
+  const months = { janvier:"01", fevrier:"02", fevrier:"02", mars:"03", avril:"04", mai:"05", juin:"06", juillet:"07", août:"08", aout:"08", septembre:"09", octobre:"10", novembre:"11", decembre:"12", decembre:"12" };
+  const m = text.match(/publi[ee]?\s*le\s*(\d{1,2})\s+([A-Za-zeeeëaaäïîoöûüc]+)\s+(\d{4})/i);
   if (m) {
     const d = String(m[1]).padStart(2, "0");
     const month = months[(m[2] || "").toLowerCase()];
@@ -38,7 +38,7 @@ function parseFrenchDate(text) {
  */
 function extractTitle(html) {
   const m = html.match(/<title[^>]*>([^<]+)<\/title>/i);
-  return m ? m[1].trim() : "Titre non détecté";
+  return m ? m[1].trim() : "Titre non detecte";
 }
 
 /**
@@ -49,7 +49,7 @@ function stripTags(html) {
 }
 
 /**
- * Extrait un extrait textuel autour d’un mot‑clé
+ * Extrait un extrait textuel autour d'un mot‑cle
  */
 function snippet(html, keyword) {
   const idx = html.toLowerCase().indexOf(keyword.toLowerCase());
@@ -61,7 +61,7 @@ function snippet(html, keyword) {
 }
 
 /**
- * Vérifie si le cluster est dû selon les fichiers de monitoring
+ * Verifie si le cluster est dû selon les fichiers de monitoring
  */
 function isDue(cluster, monitor, globalMon) {
   const today = new Date();
@@ -90,7 +90,7 @@ function isDue(cluster, monitor, globalMon) {
 }
 
 /**
- * Liste des domaines autorisés par cluster
+ * Liste des domaines autorises par cluster
  */
 function allowedDomainsFor(cluster) {
   if (cluster === "apl") return ["caf.fr", "service-public.fr"];
@@ -102,13 +102,13 @@ function allowedDomainsFor(cluster) {
 }
 
 /**
- * Assure que l’URL appartient aux domaines autorisés
+ * Assure que l'URL appartient aux domaines autorises
  */
 function assertDomainAllowed(url, domains) {
   const u = new URL(url);
   const host = u.hostname.toLowerCase();
   if (!domains.some((d) => host.endsWith(d))) {
-    throw new Error(`Source non autorisée: ${url}`);
+    throw new Error(`Source non autorisee: ${url}`);
   }
 }
 
@@ -132,12 +132,12 @@ function addSource(output, url, html) {
   output.sources_exactes.push({
     url,
     titre: extractTitle(html),
-    date_publication: parseFrenchDate(html) || "Information officielle non trouvée",
+    date_publication: parseFrenchDate(html) || "Information officielle non trouvee",
   });
 }
 
 /**
- * Ajoute un extrait textuel exact lié à une source
+ * Ajoute un extrait textuel exact lie a une source
  */
 function addExtract(output, source, extrait) {
   output.regles_officielles.push({ source, extrait });
@@ -150,9 +150,9 @@ function collectAPL(htmlSP) {
   const out = makeOutput();
   addSource(out, htmlSP.url, htmlSP.text);
   addExtract(out, htmlSP.url, snippet(htmlSP.text, "Plafond"));
-  out.plafonds = { validite: parseFrenchDate(htmlSP.text) || "Information officielle non trouvée" };
+  out.plafonds = { validite: parseFrenchDate(htmlSP.text) || "Information officielle non trouvee" };
   const zonesExtract = snippet(htmlSP.text, "zone");
-  out.zones_geographiques.push(zonesExtract || "Information officielle non trouvée");
+  out.zones_geographiques.push(zonesExtract || "Information officielle non trouvee");
   return out;
 }
 
@@ -162,10 +162,10 @@ function collectAPL(htmlSP) {
 function collectIR(htmlImpots) {
   const out = makeOutput();
   addSource(out, htmlImpots.url, htmlImpots.text);
-  addExtract(out, htmlImpots.url, snippet(htmlImpots.text, "barème"));
-  out.plafonds = { bareme: "Tranches et taux du barème en vigueur", validite: parseFrenchDate(htmlImpots.text) || "Information officielle non trouvée" };
-  const ex = snippet(htmlImpots.text, "décote");
-  out.exceptions.push(ex || "Information officielle non trouvée");
+  addExtract(out, htmlImpots.url, snippet(htmlImpots.text, "bareme"));
+  out.plafonds = { bareme: "Tranches et taux du bareme en vigueur", validite: parseFrenchDate(htmlImpots.text) || "Information officielle non trouvee" };
+  const ex = snippet(htmlImpots.text, "decote");
+  out.exceptions.push(ex || "Information officielle non trouvee");
   return out;
 }
 
@@ -175,23 +175,23 @@ function collectIR(htmlImpots) {
 function collectIK(htmlSP) {
   const out = makeOutput();
   addSource(out, htmlSP.url, htmlSP.text);
-  addExtract(out, htmlSP.url, snippet(htmlSP.text, "barème kilométrique"));
-  out.plafonds = { type: "Formules par CV et kilométrage", validite: parseFrenchDate(htmlSP.text) || "Information officielle non trouvée" };
-  const ex = snippet(htmlSP.text, "véhicule électrique");
-  out.exceptions.push(ex || "Information officielle non trouvée");
+  addExtract(out, htmlSP.url, snippet(htmlSP.text, "bareme kilometrique"));
+  out.plafonds = { type: "Formules par CV et kilometrage", validite: parseFrenchDate(htmlSP.text) || "Information officielle non trouvee" };
+  const ex = snippet(htmlSP.text, "vehicule electrique");
+  out.exceptions.push(ex || "Information officielle non trouvee");
   return out;
 }
 
 /**
- * Collecte Notaire depuis Service‑Public ou Légifrance
+ * Collecte Notaire depuis Service‑Public ou Legifrance
  */
 function collectNotaire(htmlSPorLegi) {
   const out = makeOutput();
   addSource(out, htmlSPorLegi.url, htmlSPorLegi.text);
-  addExtract(out, htmlSPorLegi.url, snippet(htmlSPorLegi.text, "émoluments"));
-  out.plafonds = { emoluments: "Tranches proportionnelles (barème légal)", validite: parseFrenchDate(htmlSPorLegi.text) || "Information officielle non trouvée" };
+  addExtract(out, htmlSPorLegi.url, snippet(htmlSPorLegi.text, "emoluments"));
+  out.plafonds = { emoluments: "Tranches proportionnelles (bareme legal)", validite: parseFrenchDate(htmlSPorLegi.text) || "Information officielle non trouvee" };
   const ex = snippet(htmlSPorLegi.text, "remise");
-  out.exceptions.push(ex || "Information officielle non trouvée");
+  out.exceptions.push(ex || "Information officielle non trouvee");
   return out;
 }
 
@@ -201,15 +201,15 @@ function collectNotaire(htmlSPorLegi) {
 function collectDMTO(htmlImpots) {
   const out = makeOutput();
   addSource(out, htmlImpots.url, htmlImpots.text);
-  addExtract(out, htmlImpots.url, snippet(htmlImpots.text, "droits d’enregistrement"));
-  out.plafonds = { fourchette: "3,8% à 4,5% (éventuelles hausses encadrées)", validite: parseFrenchDate(htmlImpots.text) || "Information officielle non trouvée" };
-  out.zones_geographiques.push("Variation par département (métropole et DOM)");
-  out.exceptions.push("Primo‑accédants: exemptions/limitations selon textes applicables.");
+  addExtract(out, htmlImpots.url, snippet(htmlImpots.text, "droits d'enregistrement"));
+  out.plafonds = { fourchette: "3,8% a 4,5% (eventuelles hausses encadrees)", validite: parseFrenchDate(htmlImpots.text) || "Information officielle non trouvee" };
+  out.zones_geographiques.push("Variation par departement (metropole et DOM)");
+  out.exceptions.push("Primo‑accedants: exemptions/limitations selon textes applicables.");
   return out;
 }
 
 /**
- * Point d’entrée: sélection des sources autorisées et génération JSON
+ * Point d'entree: selection des sources autorisees et generation JSON
  */
 async function main() {
   const args = process.argv.slice(2);
@@ -251,7 +251,7 @@ async function main() {
       const bof = await httpGet(urlBofip);
       output = collectIR(imp);
       addSource(output, bof.url, bof.text);
-      addExtract(output, bof.url, snippet(bof.text, "Barème pour l’imposition sur les revenus 2024"));
+      addExtract(output, bof.url, snippet(bof.text, "Bareme pour l'imposition sur les revenus 2024"));
     } else if (cluster === "ik") {
       const urlSP = "https://www.service-public.fr/particuliers/vosdroits/F1879";
       const urlBofip = "https://bofip.impots.gouv.fr/bofip/2185-PGP.html/identifiant=BOI-BAREME-000001-20230720";
@@ -261,7 +261,7 @@ async function main() {
       const bof = await httpGet(urlBofip);
       output = collectIK(sp);
       addSource(output, bof.url, bof.text);
-      addExtract(output, bof.url, snippet(bof.text, "Barème applicable aux automobiles"));
+      addExtract(output, bof.url, snippet(bof.text, "Bareme applicable aux automobiles"));
     } else if (cluster === "notaire") {
       const urlSP = "https://www.service-public.fr/particuliers/vosdroits/N367";
       assertDomainAllowed(urlSP, domains);
@@ -273,10 +273,10 @@ async function main() {
       const imp = await httpGet(urlImp);
       output = collectDMTO(imp);
     } else {
-      throw new Error("Cluster non supporté");
+      throw new Error("Cluster non supporte");
     }
   } catch (e) {
-    output.regles_officielles.push({ source: "Information officielle non trouvée", extrait: e.message });
+    output.regles_officielles.push({ source: "Information officielle non trouvee", extrait: e.message });
   }
   const outPath = path.join(ROOT, "data", `agent-juridique-${cluster}-${Date.now()}.json`);
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2) + "\n", "utf-8");

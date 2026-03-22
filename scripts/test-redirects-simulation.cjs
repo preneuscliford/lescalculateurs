@@ -2,7 +2,7 @@
 
 /**
  * Script de simulation des redirects
- * Vérifie que tous les exemples de URLs problématiques vont rediriger correctement
+ * Verifie que tous les exemples de URLs problematiques vont rediriger correctement
  */
 
 const fs = require("fs");
@@ -10,7 +10,7 @@ const fs = require("fs");
 // Charger les redirects depuis vercel.json
 const vercelConfig = JSON.parse(fs.readFileSync("./vercel.json", "utf8"));
 
-// Charger les URLs problématiques
+// Charger les URLs problematiques
 const redirectsData = JSON.parse(
   fs.readFileSync("./scripts/google-indexing-redirects.json", "utf8")
 );
@@ -19,14 +19,14 @@ console.log("\n🧪 SIMULATION DES REDIRECTS\n");
 console.log("=".repeat(80));
 
 /**
- * Applique les règles de redirection aux URLs
+ * Applique les regles de redirection aux URLs
  */
 function simulateRedirect(url) {
   let current = url;
   const history = [current];
 
   for (const rule of vercelConfig.redirects) {
-    // Règle HTTP → HTTPS
+    // Regle HTTP → HTTPS
     if (
       rule.source === "/:path*" &&
       rule.has &&
@@ -38,7 +38,7 @@ function simulateRedirect(url) {
       }
     }
 
-    // Règle Apex → www
+    // Regle Apex → www
     if (rule.source === "/:path*" && rule.has && rule.has[0]?.type === "host") {
       if (current.includes("lescalculateurs.fr") && !current.includes("www.")) {
         current = current.replace(
@@ -49,7 +49,7 @@ function simulateRedirect(url) {
       }
     }
 
-    // Règle .html → sans extension
+    // Regle .html → sans extension
     if (rule.source === "/(.*)\\.html") {
       if (current.endsWith(".html")) {
         current = current.replace(/\.html$/, "");
@@ -57,7 +57,7 @@ function simulateRedirect(url) {
       }
     }
 
-    // Règle /index.html → /
+    // Regle /index.html → /
     if (rule.source === "/index.html") {
       if (current.endsWith("/index.html")) {
         current = current.replace("/index.html", "/");
@@ -69,7 +69,7 @@ function simulateRedirect(url) {
   return { original: url, final: current, history: history };
 }
 
-// Tester un échantillon d'URLs
+// Tester un echantillon d'URLs
 const testUrls = [
   "http://lescalculateurs.fr/",
   "https://lescalculateurs.fr/pages/blog/frais-notaire-13.html",
@@ -96,17 +96,17 @@ testUrls.forEach((url, idx) => {
 
   console.log(`  ✅ URL finale: ${result.final}`);
 
-  // Vérifier que c'est une bonne URL (www, HTTPS, pas de .html)
+  // Verifier que c'est une bonne URL (www, HTTPS, pas de .html)
   const isValid =
     result.final.startsWith("https://www.lescalculateurs.fr") &&
     !result.final.endsWith(".html") &&
     result.final !== url;
 
   if (isValid) {
-    console.log(`  ✓ Résultat valide`);
+    console.log(`  ✓ Resultat valide`);
     correctCount++;
   } else {
-    console.log(`  ✗ Résultat invalide`);
+    console.log(`  ✗ Resultat invalide`);
   }
   totalCount++;
 });
@@ -116,7 +116,7 @@ console.log("\n" + "=".repeat(80));
 // Statistiques globales
 console.log("\n📊 STATISTIQUES GLOBALES:\n");
 
-console.log(`Tests réussis: ${correctCount}/${totalCount}`);
+console.log(`Tests reussis: ${correctCount}/${totalCount}`);
 
 // Analyser tous les redirects
 let validRedirects = 0;
@@ -131,12 +131,12 @@ redirectsData.redirects.forEach((r) => {
   }
 });
 
-console.log(`\nTotal URLs problématiques: ${redirectsData.redirects.length}`);
+console.log(`\nTotal URLs problematiques: ${redirectsData.redirects.length}`);
 console.log(`URLs qui vont bien rediriger: ${validRedirects}`);
-console.log(`URLs avec problème: ${invalidRedirects}`);
+console.log(`URLs avec probleme: ${invalidRedirects}`);
 
 if (validRedirects === redirectsData.redirects.length) {
-  console.log("\n✨ Tous les redirects sont correctement configurés!");
+  console.log("\n✨ Tous les redirects sont correctement configures!");
 } else {
   console.log(
     `\n⚠️ ${invalidRedirects} redirects ne fonctionnent pas correctement`
@@ -150,5 +150,5 @@ console.log("Les redirects vont:");
 console.log("  1. Forcer HTTP → HTTPS");
 console.log("  2. Normaliser apex domain → www");
 console.log("  3. Supprimer les extensions .html");
-console.log("  4. Gérer le root path correctement");
-console.log("\nCe qui résout tous les 94 problèmes d'indexation Google.\n");
+console.log("  4. Gerer le root path correctement");
+console.log("\nCe qui resout tous les 94 problemes d'indexation Google.\n");

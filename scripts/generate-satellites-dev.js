@@ -11,6 +11,7 @@ const { normalizeFrenchText } = require("./lib/french-normalization.cjs");
 
 const satellitesTxtDir = path.resolve(__dirname, "../pages_satellite_txt");
 const srcPagesDir = path.resolve(__dirname, "../src/pages");
+const satelliteKeepMap = loadSatelliteKeepMap();
 
 const pillarConfigs = {
   apl: {
@@ -51,6 +52,16 @@ const pillarConfigs = {
   },
 };
 
+function loadSatelliteKeepMap() {
+  const filePath = path.resolve(__dirname, "../data/pseo/satellite-keep-slugs.json");
+  if (!fs.existsSync(filePath)) return {};
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function getAllowedSatelliteSlugs(pillarKey) {
+  return new Set((satelliteKeepMap[pillarKey] || []).map((slug) => String(slug || "").trim()).filter(Boolean));
+}
+
 function main() {
   if (!fs.existsSync(satellitesTxtDir)) {
     console.warn("Dossier satellites introuvable:", satellitesTxtDir);
@@ -83,12 +94,26 @@ function main() {
     if (pages.length === 0) return;
 
     const defaultPillarKey = detectPillarKeyFromFileName(fileName);
+    const plannedPillarKeys = new Set([defaultPillarKey]);
     const renderedPages = pages.map((p, idx) => {
       const slug = slugify(p.title || `page-${p.number || idx + 1}`);
       const pillarKey = defaultPillarKey === "aide" ? "aide" : p.pillarKeyOverride || defaultPillarKey;
+      plannedPillarKeys.add(pillarKey);
       const pillar = pillarConfigs[pillarKey] || pillarConfigs.simulateurs;
       return { ...p, slug, pillarKey, pillar, idx };
+    }).filter((p) => getAllowedSatelliteSlugs(p.pillarKey).has(p.slug));
+
+    plannedPillarKeys.forEach((pillarKey) => {
+      const outDir = path.join(srcPagesDir, pillarKey);
+      if (!cleanedPillars.has(outDir)) {
+        cleanupGeneratedPagesInDir(outDir, pillarKey);
+        cleanedPillars.add(outDir);
+      }
     });
+
+    if (renderedPages.length === 0) {
+      return;
+    }
 
     const titleIndex = new Map(
       renderedPages
@@ -107,10 +132,6 @@ function main() {
       const html = renderSatelliteHtmlDev({ page: p, relatedPage: related });
 
       const outDir = path.join(srcPagesDir, p.pillarKey);
-      if (!cleanedPillars.has(outDir)) {
-        cleanupGeneratedPagesInDir(outDir);
-        cleanedPillars.add(outDir);
-      }
       if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
       const outPathFlat = path.join(outDir, `${p.slug}.html`);
@@ -128,10 +149,13 @@ function main() {
   console.log(`Satellites (dev): ${generatedCount} pages générées dans src/pages/`);
 }
 
-function cleanupGeneratedPagesInDir(dirPath) {
+function cleanupGeneratedPagesInDir(dirPath, pillarKey) {
   if (!fs.existsSync(dirPath)) return;
+  const allowedSlugs = getAllowedSatelliteSlugs(pillarKey);
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
   entries.forEach((e) => {
+    const stem = e.isDirectory() ? e.name : path.parse(e.name).name;
+    if (allowedSlugs.has(stem)) return;
     if (e.isDirectory()) {
       fs.rmSync(path.join(dirPath, e.name), { recursive: true, force: true });
       return;

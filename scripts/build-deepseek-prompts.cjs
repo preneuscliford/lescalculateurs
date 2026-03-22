@@ -117,53 +117,53 @@ for (let idx = 0; idx < Math.min(max, departements.length); idx++) {
   fs.mkdirSync(depDir, { recursive: true });
   for (const block of blocks) {
     const promptParts = [];
-    promptParts.push(`Génère uniquement le bloc "${block}" pour la page "Frais de notaire 2025 – ${
+    promptParts.push(`Genere uniquement le bloc "${block}" pour la page "Frais de notaire 2025 - ${
       dep.nom
     } (${dep.code})".
 
-⚠ Contraintes obligatoires (à respecter STRICTEMENT) :
+⚠ Contraintes obligatoires (a respecter STRICTEMENT) :
 
 ❌ Interdictions absolues
 
 Tu n'utilises AUCUNE de ces expressions :
 "Au cœur de"
 "Les frais de notaire varient selon…"
-"L'écart entre neuf et ancien…"
+"L'ecart entre neuf et ancien…"
 "Profitez des dispositifs…"
 "Optimisez…"
-"Négociez…"
+"Negociez…"
 "Anticipez…"
-"Astuces pour réduire…"
-"Questions fréquentes – {département}"
-"Dans ce département aux multiples visages"
+"Astuces pour reduire…"
+"Questions frequentes - {departement}"
+"Dans ce departement aux multiples visages"
 "Oui, on observe des variations…"
-" Certaines intercommunalités proposent…"
-"Les transactions influencent les émoluments"
+" Certaines intercommunalites proposent…"
+"Les transactions influencent les emoluments"
 
-Tu ne réutilises AUCUNE phrase des pages Ain (01) et Aisne (02).
+Tu ne reutilises AUCUNE phrase des pages Ain (01) et Aisne (02).
 
 🧱 Style et structure
 
-- Pour "${block}", produis un contenu unique, localisé, sans répétition.
-- Style : très local, contextualisé, phrases courtes, ton neutre, vocabulaire varié.
-- Pas de remplissage AI, pas de patterns répétitifs.
+- Pour "${block}", produis un contenu unique, localise, sans repetition.
+- Style : tres local, contextualise, phrases courtes, ton neutre, vocabulaire varie.
+- Pas de remplissage AI, pas de patterns repetitifs.
 
 📏 Contraintes de longueur
 
-- Intro : 4 à 6 lignes
+- Intro : 4 a 6 lignes
 - Contenu total par bloc : maximum 150 mots
-- Évite les répétitions internes
+- Evite les repetitions internes
 
-🏙️ Villes à mentionner
+🏙️ Villes a mentionner
 
 Utilise ces 3 villes dans le contenu :
-- ${dep.ville1 || "Ville principale non spécifiée"}
-- ${dep.ville2 || "Ville secondaire non spécifiée"}
-- Une troisième ville de ton choix dans le département
+- ${dep.ville1 || "Ville principale non specifiee"}
+- ${dep.ville2 || "Ville secondaire non specifiee"}
+- Une troisieme ville de ton choix dans le departement
 
-Données :
-Département: ${dep.nom} (${dep.code})
-Région: ${dep.region}
+Donnees :
+Departement: ${dep.nom} (${dep.code})
+Region: ${dep.region}
 Prix moyen m²: ${dep.prixM2} €
 
 Rends la sortie en HTML fragment sans balises <html> ni <script>.`);

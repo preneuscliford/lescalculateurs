@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 /**
- * Charge la liste des départements (code -> région) depuis src/data/departements.json
+ * Charge la liste des departements (code -> region) depuis src/data/departements.json
  */
 function loadDepartements() {
   const p = path.resolve(__dirname, "../src/data/departements.json");
@@ -13,17 +13,17 @@ function loadDepartements() {
 }
 
 /**
- * Retourne une image Wikimedia représentative pour une région donnée
+ * Retourne une image Wikimedia representative pour une region donnee
  */
 function regionImage(region) {
   const catalog = {
     "Hauts-de-France": "https://commons.wikimedia.org/wiki/Special:FilePath/Grande%20Place,%20Bourse%20du%20travail%20et%20beffroi%20Lille%202.JPG",
     "Île-de-France": "https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg",
-    "Provence-Alpes-Côte d'Azur": "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_port_de_Marseille.JPG",
-    "Auvergne-Rhône-Alpes": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG",
+    "Provence-Alpes-Cote d'Azur": "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_port_de_Marseille.JPG",
+    "Auvergne-Rhone-Alpes": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique_de_Fourvi%C3%A8re-Lyon.JPG",
     "Occitanie": "https://commons.wikimedia.org/wiki/Special:FilePath/Capitole%20de%20Toulouse%20(France).JPG",
     "Nouvelle-Aquitaine": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux_place_de_la_bourse_with_tram.JPG",
-    "Bourgogne-Franche-Comté": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20des%20Ducs%20de%20Bourgogne4.JPG",
+    "Bourgogne-Franche-Comte": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20des%20Ducs%20de%20Bourgogne4.JPG",
     "Grand Est": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedrale_Notre-Dame-de-Strasbourg.jpg",
     "Pays de la Loire": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_des_ducs_de_Bretagne_(Nantes)_-_2014_-_02.JPG",
     "Centre-Val de Loire": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Croix_d%27Orl%C3%A9ans%202008%20PD%2033.JPG",
@@ -33,7 +33,7 @@ function regionImage(region) {
     "Guadeloupe": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Maurice%20Marie%20Claire%20-%20Basse-Terre.JPG",
     "Martinique": "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_France_1.JPG",
     "Guyane": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%8Ele%20du%20Diable%20Dreyfus.jpg",
-    "La Réunion": "https://commons.wikimedia.org/wiki/Special:FilePath/Plage_de_l%E2%80%99Hermitage_%E2%80%94_La_R%C3%A9union.jpg",
+    "La Reunion": "https://commons.wikimedia.org/wiki/Special:FilePath/Plage_de_l%E2%80%99Hermitage_%E2%80%94_La_R%C3%A9union.jpg",
     "Mayotte": "https://commons.wikimedia.org/wiki/Special:FilePath/2004%2012%2012%2018-24-04%20rose%20sea%20in%20mamoudzou%20mayotte%20island.jpg",
     "Saint-Pierre-et-Miquelon": "https://commons.wikimedia.org/wiki/Special:FilePath/Ship_in_the_harbour_of_saint-pierre,_SPM.JPG",
   };
@@ -41,7 +41,7 @@ function regionImage(region) {
 }
 
 /**
- * Insère <image:image> pour chaque page départementale dans le sitemap.xml
+ * Insere <image:image> pour chaque page departementale dans le sitemap.xml
  */
 function addImagesToSitemap() {
   const depByCode = loadDepartements();
@@ -60,7 +60,7 @@ function addImagesToSitemap() {
     const dep = depByCode.get(normCode) || depByCode.get(normCode.toUpperCase()) || depByCode.get(normCode.replace("2a","2A").replace("2b","2B"));
     const img = dep ? regionImage(dep.region) : "https://lescalculateurs.fr/assets/android-chrome-512x512.png";
     const imageNode = `\n    <image:image>\n      <image:loc>${img}</image:loc>\n    </image:image>`;
-    if (rest.includes("<image:image>")) return m; // déjà présent
+    if (rest.includes("<image:image>")) return m; // deja present
     return `<url>\n    <loc>${loc}</loc>${imageNode}${rest}\n  </url>`;
   });
 
@@ -68,11 +68,11 @@ function addImagesToSitemap() {
 }
 
 /**
- * Point d’entrée
+ * Point d'entree
  */
 function main() {
   addImagesToSitemap();
-  console.log("Sitemap enrichi avec images pour pages départementales.");
+  console.log("Sitemap enrichi avec images pour pages departementales.");
 }
 
 main();

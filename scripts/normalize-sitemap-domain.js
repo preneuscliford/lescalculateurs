@@ -16,7 +16,7 @@ function normalizeSitemapDomain(filePath) {
 }
 
 /**
- * Point d'entrée: normalise les URLs de public/sitemap.xml.
+ * Point d'entree: normalise les URLs de public/sitemap.xml.
  */
 function main() {
   const sitemapPath = path.resolve("public", "sitemap.xml");
@@ -26,9 +26,9 @@ function main() {
   }
   const changed = normalizeSitemapDomain(sitemapPath);
   if (changed) {
-    console.log("✅ sitemap.xml normalisé: URLs sans www");
+    console.log("✅ sitemap.xml normalise: URLs sans www");
   } else {
-    console.log("ℹ️ sitemap.xml déjà normalisé (aucune modification)");
+    console.log("ℹ️ sitemap.xml deja normalise (aucune modification)");
   }
 }
 

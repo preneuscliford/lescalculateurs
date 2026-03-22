@@ -17,7 +17,7 @@ function main() {
   });
 
   fs.writeFileSync(sitemapPath, xml, 'utf8');
-  console.log('Sitemap loc normalisés vers domaine www et sans .html');
+  console.log('Sitemap loc normalises vers domaine www et sans .html');
 }
 
 main();

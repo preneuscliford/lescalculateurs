@@ -16,13 +16,13 @@ function formatDateYYYYMMDD(date) {
 }
 
 /**
- * Met à jour <lastmod> des entrées <url> ciblées dans un sitemap.xml.
- * Cible par défaut: toutes les pages départementales.
+ * Met a jour <lastmod> des entrees <url> ciblees dans un sitemap.xml.
+ * Cible par defaut: toutes les pages departementales.
  * Cibles additionnelles: pages calculateur (notaire, pret, plusvalue, taxe, ik).
  */
 function updateSitemapLastmod(xmlContent, newDate, extraLocs = []) {
   const targets = [
-    "/pages/blog/departements/", // toutes les pages départementales
+    "/pages/blog/departements/", // toutes les pages departementales
     "/pages/notaire.html",
     "/pages/pret.html",
     "/pages/plusvalue.html",
@@ -44,7 +44,7 @@ function updateSitemapLastmod(xmlContent, newDate, extraLocs = []) {
 }
 
 /**
- * Point d'entrée: met à jour public/sitemap.xml avec la date du jour sur les pages ciblées.
+ * Point d'entree: met a jour public/sitemap.xml avec la date du jour sur les pages ciblees.
  */
 async function main() {
   const today = new Date();
@@ -57,7 +57,7 @@ async function main() {
   const xml = fs.readFileSync(sitemapPath, "utf-8");
   const { updated, changed } = updateSitemapLastmod(xml, newDate);
   fs.writeFileSync(sitemapPath, updated, "utf-8");
-  console.log(`✅ sitemap.xml mis à jour: ${changed} entrées modifiées → ${newDate}`);
+  console.log(`✅ sitemap.xml mis a jour: ${changed} entrees modifiees → ${newDate}`);
 }
 
 main().catch((e) => {

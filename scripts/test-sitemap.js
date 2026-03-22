@@ -1,5 +1,5 @@
 /**
- * Vérifie toutes les URLs listées dans public/sitemap.xml.
+ * Verifie toutes les URLs listees dans public/sitemap.xml.
  * Suit les redirections et rapporte le statut final.
  */
 import fs from "fs";
@@ -59,7 +59,7 @@ async function follow(url) {
 }
 
 /**
- * Point d'entrée: lit le sitemap et teste toutes les URLs.
+ * Point d'entree: lit le sitemap et teste toutes les URLs.
  */
 async function main() {
   const sitemapPath = path.resolve("public", "sitemap.xml");
@@ -90,11 +90,11 @@ async function main() {
   const ok200 = results.filter((r) => r.finalStatus === 200).length;
   const redirect4xx = results.filter((r) => r.finalStatus >= 400 && r.finalStatus < 500).length;
   const other = results.length - ok200 - redirect4xx;
-  console.log(`\nRésumé: 200=${ok200} / 4xx=${redirect4xx} / autres=${other} / total=${results.length}`);
+  console.log(`\nResume: 200=${ok200} / 4xx=${redirect4xx} / autres=${other} / total=${results.length}`);
 
   const kos = results.filter((r) => r.finalStatus && r.finalStatus >= 400);
   if (kos.length > 0) {
-    console.log("\nDétails des 4xx:");
+    console.log("\nDetails des 4xx:");
     for (const r of kos.slice(0, 20)) {
       console.log(`- ${r.url} -> final=${r.finalStatus} via ${r.hops && r.hops.length} hops (dernier: ${r.finalUrl})`);
     }

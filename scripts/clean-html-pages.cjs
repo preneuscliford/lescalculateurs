@@ -37,8 +37,8 @@ const removeDuplicateLines = (content) => {
 
 const fixWikimedia = (content, dept) => {
   return content.replace(
-    /fichier hébergé par wikimedia commons\.?|matériel publié sur wikimedia commons\.?|origine : wikimedia commons\.?/gi,
-    `Image illustrative du département ${dept} — Source : Wikimedia Commons.`
+    /fichier heberge par wikimedia commons\.?|materiel publie sur wikimedia commons\.?|origine : wikimedia commons\.?/gi,
+    `Image illustrative du departement ${dept} - Source : Wikimedia Commons.`
   );
 };
 
@@ -54,17 +54,17 @@ const fixDeepSeekMerging = (content) => {
     .replace(/la([A-Z])/g, "la $1")
     .replace(/dans la([A-Z])/g, "dans la $1")
     .replace(/dans le([A-Z])/g, "dans le $1")
-    .replace(/département ([A-Z][a-zâ€™'-]+)'[A-Z][a-z]+/g, "département $1")
-    .replace(/Val-dâ€™Oise/g, "Val-d'Oise")
-    .replace(/d’Oise'Oise/g, "d'Oise");
+    .replace(/departement ([A-Z][a-z''-]+)'[A-Z][a-z]+/g, "departement $1")
+    .replace(/Val-d'Oise/g, "Val-d'Oise")
+    .replace(/d'Oise'Oise/g, "d'Oise");
 };
 
 const fixDepartmentNames = (content, deptName, code) => {
   // Simple fixes for common errors
   return (
     content
-      .replace(/laVal-d’Oise/g, "le Val-d'Oise")
-      .replace(/dans laVal-d’Oise/g, "dans le Val-d'Oise")
+      .replace(/laVal-d'Oise/g, "le Val-d'Oise")
+      .replace(/dans laVal-d'Oise/g, "dans le Val-d'Oise")
       .replace(/laSavoie/g, "la Savoie")
       .replace(/dans laSavoie/g, "dans la Savoie")
       // Add more as needed
@@ -75,20 +75,20 @@ const fixDepartmentNames = (content, deptName, code) => {
 
 const fixDuplicateGuide = (content) => {
   return content.replace(
-    /(Ce guide est pour le département [^\.]+\.)\s*\1/g,
+    /(Ce guide est pour le departement [^\.]+\.)\s*\1/g,
     "$1"
   );
 };
 
 const fixIntro = (content) => {
   return content
-    .replace(/En 2025, à la([A-Z])/g, "En 2025, à la $1")
+    .replace(/En 2025, a la([A-Z])/g, "En 2025, a la $1")
     .replace(/dans la([A-Z])/g, "dans la $1");
 };
 
 const fixDuplicateGuideLine = (content) => {
   const regex =
-    /(Ce guide est pour le département [A-Za-zÀ-ÿ0-9\(\) ]+\.\s*){2,}/gi;
+    /(Ce guide est pour le departement [A-Za-zA-ÿ0-9\(\) ]+\.\s*){2,}/gi;
   return content.replace(regex, (match) => {
     const parts = match.split(".");
     return parts[0] + ".";
@@ -97,8 +97,8 @@ const fixDuplicateGuideLine = (content) => {
 
 const fixIntros = (content) => {
   return content
-    .replace(/En 2025, dans ([A-Za-zÀ-ÿ\- ]+),/g, "En 2025, à $1,")
-    .replace(/Pour le département (\d+),,/g, "Pour le département $1,");
+    .replace(/En 2025, dans ([A-Za-zA-ÿ\- ]+),/g, "En 2025, a $1,")
+    .replace(/Pour le departement (\d+),,/g, "Pour le departement $1,");
 };
 
 // Simple table fix: if lines look like numbers, try to rebuild
@@ -122,18 +122,18 @@ const fixDVFData = (content) => {
 
 const generalCleanup = (content) => {
   return content
-    .replace(/matériel/g, "image")
+    .replace(/materiel/g, "image")
     .replace(/<br\s*\/?>\s*<br\s*\/?>/g, "<br>");
 };
 
 const fixMoreMergers = (content) => {
   return content
-    .replace(/Val-d’Oise€™Oise/g, "Val-d'Oise")
+    .replace(/Val-d'Oise€™Oise/g, "Val-d'Oise")
     .replace(/\.\./g, ".")
-    .replace(/95, présente/g, "95 présente")
+    .replace(/95, presente/g, "95 presente")
     .replace(/la Val-d'Oise/g, "le Val-d'Oise")
     .replace(/dans la Val-d'Oise/g, "dans le Val-d'Oise")
-    .replace(/à la Val-d'Oise/g, "au Val-d'Oise")
+    .replace(/a la Val-d'Oise/g, "au Val-d'Oise")
     .replace(
       "./././components/CalculatorFrame.ts",
       "../../../components/CalculatorFrame.ts"

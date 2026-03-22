@@ -20,14 +20,14 @@ const folder = path.join(
 const ctaBlock = `<!-- CTA Section - Simulation -->
         <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-8 mb-12 text-center">
           <h2 class="text-2xl font-bold text-gray-900 mb-4">📊 Calculez vos frais de notaire</h2>
-          <p class="text-gray-700 mb-6">Chaque projet est unique : prix, type de bien, commune... Pour obtenir une estimation adaptée à votre situation, utilisez notre simulateur.</p>
+          <p class="text-gray-700 mb-6">Chaque projet est unique : prix, type de bien, commune... Pour obtenir une estimation adaptee a votre situation, utilisez notre simulateur.</p>
           <a href="/pages/notaire.html" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 px-8 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-            Accéder au simulateur de frais →
+            Acceder au simulateur de frais →
           </a>
         </div>`;
 
 // Tip block for economy mentions
-const tipBlock = `<strong>💡 Bon à savoir :</strong> Acheter dans le neuf (VEFA) permet généralement de réduire significativement les frais de notaire par rapport à l'ancien. <a href="/pages/notaire.html" class="text-blue-600 hover:underline">Comparez avec notre simulateur</a>.`;
+const tipBlock = `<strong>💡 Bon a savoir :</strong> Acheter dans le neuf (VEFA) permet generalement de reduire significativement les frais de notaire par rapport a l'ancien. <a href="/pages/notaire.html" class="text-blue-600 hover:underline">Comparez avec notre simulateur</a>.`;
 
 let totalFixed = 0;
 
@@ -55,34 +55,34 @@ fs.readdirSync(folder)
       ctaBlock + "\n\n        <!-- Section 3 -->",
     );
 
-    // 2. Remove Débours indicatifs block
+    // 2. Remove Debours indicatifs block
     const deboursPattern =
-      /<div class="bg-white border border-gray-200 rounded-lg p-4 mb-8">\s*<p class="text-sm text-gray-700">\s*<strong>Débours indicatifs[^<]*<\/strong>[^<]*<strong>\d+[\s\d]*€<\/strong>[^<]*<strong>\d+[\s\d]*€<\/strong>[^<]*<\/p>\s*<\/div>/g;
+      /<div class="bg-white border border-gray-200 rounded-lg p-4 mb-8">\s*<p class="text-sm text-gray-700">\s*<strong>Debours indicatifs[^<]*<\/strong>[^<]*<strong>\d+[\s\d]*€<\/strong>[^<]*<strong>\d+[\s\d]*€<\/strong>[^<]*<\/p>\s*<\/div>/g;
     content = content.replace(deboursPattern, "");
 
-    // 3. Replace "X € d'économie pour un bien à Y €" patterns
+    // 3. Replace "X € d'economie pour un bien a Y €" patterns
     content = content.replace(
-      /<strong>[\d\s]+€ d'économie<\/strong> pour un bien à [\d\s]+€/g,
-      "<strong>une économie significative</strong> sur votre achat",
+      /<strong>[\d\s]+€ d'economie<\/strong> pour un bien a [\d\s]+€/g,
+      "<strong>une economie significative</strong> sur votre achat",
     );
 
-    // 4. Replace "vous ne paieriez que X €, soit une économie de Y €"
+    // 4. Replace "vous ne paieriez que X €, soit une economie de Y €"
     content = content.replace(
-      /vous ne\s*paieriez que <strong>[\d\s]+€<\/strong>, soit une économie de\s*<strong>[\d\s]+€<\/strong>/g,
-      'vous réaliseriez une <strong>économie significative</strong>. <a href="/pages/notaire.html" class="text-blue-600">Simulez votre projet</a>',
+      /vous ne\s*paieriez que <strong>[\d\s]+€<\/strong>, soit une economie de\s*<strong>[\d\s]+€<\/strong>/g,
+      'vous realiseriez une <strong>economie significative</strong>. <a href="/pages/notaire.html" class="text-blue-600">Simulez votre projet</a>',
     );
 
-    // 5. Replace "économiser 200-500 €" type patterns
+    // 5. Replace "economiser 200-500 €" type patterns
     content = content.replace(
-      /économiser [\d]+-[\d]+ €/g,
-      "réaliser des économies",
+      /economiser [\d]+-[\d]+ €/g,
+      "realiser des economies",
     );
 
-    // 6. Replace any standalone amounts like "100 000 €" or "198 000 €" in strong tags (not in barème)
+    // 6. Replace any standalone amounts like "100 000 €" or "198 000 €" in strong tags (not in bareme)
     content = content.replace(
-      /<strong>[\d\s]+€<\/strong>\.\s*(?!De |à )/g,
+      /<strong>[\d\s]+€<\/strong>\.\s*(?!De |a )/g,
       (match) => {
-        // Check if this is in a barème context
+        // Check if this is in a bareme context
         if (
           match.includes("6 500") ||
           match.includes("17 000") ||
@@ -95,7 +95,7 @@ fs.readdirSync(folder)
       },
     );
 
-    // 7. Replace Prix médians DVF patterns
+    // 7. Replace Prix medians DVF patterns
     content = content.replace(
       /<strong>[\d\s]+€<\/strong>\. Pour contacter un professionnel/g,
       "<strong>variable selon le secteur</strong>. Pour contacter un professionnel",
@@ -111,38 +111,38 @@ fs.readdirSync(folder)
       "conservation : <strong>variable</strong>",
     );
 
-    // 9. Replace any remaining "jusqu'à X €" patterns
+    // 9. Replace any remaining "jusqu'a X €" patterns
     content = content.replace(
-      /jusqu'à\s*<strong>[\d\s]+€<\/strong>/g,
-      "<strong>une réduction significative</strong>",
+      /jusqu'a\s*<strong>[\d\s]+€<\/strong>/g,
+      "<strong>une reduction significative</strong>",
     );
     content = content.replace(
-      /jusqu'à\s*[\d\s]+€/g,
-      "une réduction significative",
+      /jusqu'a\s*[\d\s]+€/g,
+      "une reduction significative",
     );
 
-    // 10. Replace "l'écart ... peut représenter" economy mentions with generic text
+    // 10. Replace "l'ecart ... peut representer" economy mentions with generic text
     content = content.replace(
-      /l'écart entre ancien et\s*neuf peut représenter jusqu'à\s*<strong>[\d\s]+€ d'économie<\/strong> pour un bien à [\d\s]+€/g,
-      'l\'écart entre ancien et neuf peut représenter <strong>une économie significative</strong>. <a href="/pages/notaire.html" class="text-blue-600 hover:underline">Comparez avec notre simulateur</a>',
+      /l'ecart entre ancien et\s*neuf peut representer jusqu'a\s*<strong>[\d\s]+€ d'economie<\/strong> pour un bien a [\d\s]+€/g,
+      'l\'ecart entre ancien et neuf peut representer <strong>une economie significative</strong>. <a href="/pages/notaire.html" class="text-blue-600 hover:underline">Comparez avec notre simulateur</a>',
     );
 
-    // 11. General pattern for "X € d'économie"
-    content = content.replace(/[\d\s]+€ d'économie/g, "une économie notable");
+    // 11. General pattern for "X € d'economie"
+    content = content.replace(/[\d\s]+€ d'economie/g, "une economie notable");
 
-    // 12. Pattern for "pour un bien à X €"
+    // 12. Pattern for "pour un bien a X €"
     content = content.replace(
-      /pour un bien à [\d\s]+€/g,
+      /pour un bien a [\d\s]+€/g,
       "selon le prix du bien",
     );
 
     // 13. Prix au m² patterns
     content = content.replace(
-      /<strong>[\d\s]+€ par mètre carré<\/strong>/g,
+      /<strong>[\d\s]+€ par metre carre<\/strong>/g,
       "<strong>un prix variable selon les communes</strong>",
     );
     content = content.replace(
-      /[\d\s]+€ par mètre carré/g,
+      /[\d\s]+€ par metre carre/g,
       "un prix variable selon les communes",
     );
     content = content.replace(/≈\s*[\d\s]+€\/m²/g, "variable");
@@ -155,20 +155,20 @@ fs.readdirSync(folder)
       '<a href="/pages/pret.html" class="text-blue-600 hover:underline">Calculer</a>',
     );
 
-    // 14. Economy patterns with "soit une économie de"
+    // 14. Economy patterns with "soit une economie de"
     content = content.replace(
-      /soit une économie de\s*<strong>[\d\s]+€<\/strong>/g,
-      "soit une économie significative",
+      /soit une economie de\s*<strong>[\d\s]+€<\/strong>/g,
+      "soit une economie significative",
     );
     content = content.replace(
-      /soit une économie de\s*<strong>variable/g,
-      'soit une économie significative. <a href="/pages/notaire.html" class="text-blue-600 hover:underline">Simulez</a',
+      /soit une economie de\s*<strong>variable/g,
+      'soit une economie significative. <a href="/pages/notaire.html" class="text-blue-600 hover:underline">Simulez</a',
     );
 
-    // 15. "les frais tomberaient à seulement X €"
+    // 15. "les frais tomberaient a seulement X €"
     content = content.replace(
-      /les frais tomberaient\s*à seulement <strong>[\d\s]+€<\/strong>/g,
-      "les frais seraient <strong>nettement réduits</strong>",
+      /les frais tomberaient\s*a seulement <strong>[\d\s]+€<\/strong>/g,
+      "les frais seraient <strong>nettement reduits</strong>",
     );
 
     // 16. "💡 Cas pratique" sections with amounts - replace whole section

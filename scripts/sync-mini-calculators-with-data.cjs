@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// Charger les données depuis departements.json
+// Charger les donnees depuis departements.json
 const deptDataPath = path.join(__dirname, "../src/data/departements.json");
 const deptData = JSON.parse(fs.readFileSync(deptDataPath, "utf-8"));
 
@@ -12,7 +12,7 @@ function updateBlogFile(filePath, departement) {
 
     if (!depInfo) {
       console.log(
-        `⚠️  Département ${departement} non trouvé dans departements.json`
+        `⚠️  Departement ${departement} non trouve dans departements.json`
       );
       return false;
     }
@@ -27,7 +27,7 @@ function updateBlogFile(filePath, departement) {
     const calculateEnd = content.indexOf("formatResult:", calculateStart);
 
     if (calculateStart === -1 || calculateEnd === -1) {
-      console.log(`⚠️  Structure non trouvée dans ${path.basename(filePath)}`);
+      console.log(`⚠️  Structure non trouvee dans ${path.basename(filePath)}`);
       return false;
     }
 
@@ -41,12 +41,12 @@ function updateBlogFile(filePath, departement) {
                       return { success: false, error: "Veuillez saisir un prix d'acquisition valide." };
                     }
                     if (montantMobilier < 0 || montantMobilier > prixAchat) {
-                      return { success: false, error: "Le mobilier doit être entre 0 et le prix d'acquisition." };
+                      return { success: false, error: "Le mobilier doit etre entre 0 et le prix d'acquisition." };
                     }
 
                     const prixNetImmobilier = prixAchat - montantMobilier;
                     
-                    // Calcul des émoluments selon les tranches officielles (IDENTIQUE AU CALCULATEUR PRINCIPAL)
+                    // Calcul des emoluments selon les tranches officielles (IDENTIQUE AU CALCULATEUR PRINCIPAL)
                     let emoluments = 0;
                     const tranches = [
                       { min: 0, max: 6500, taux: 0.0387 },
@@ -62,16 +62,16 @@ function updateBlogFile(filePath, departement) {
                     }
                     emoluments = Math.round(emoluments * 100) / 100;
 
-                    // Débours et formalités selon le type de bien ET le département
+                    // Debours et formalites selon le type de bien ET le departement
                     let debours = 330; // Neuf: frais d'acte
-                    let formalites = 120; // Neuf: formalités
+                    let formalites = 120; // Neuf: formalites
                     
                     if (typeBien !== "neuf") {
-                      // Ancien: cadastre + conservation (données du département)
+                      // Ancien: cadastre + conservation (donnees du departement)
                       debours = ${cadastre} + ${conservation}; // = ${
       cadastre + conservation
     }
-                      formalites = ${formalites}; // Données du département
+                      formalites = ${formalites}; // Donnees du departement
                     }
 
                     // CSI (fixe)
@@ -85,7 +85,7 @@ function updateBlogFile(filePath, departement) {
                     }
                     droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
 
-                    // TVA (20% sur émoluments + formalités)
+                    // TVA (20% sur emoluments + formalites)
                     const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
 
                     // Total
@@ -129,7 +129,7 @@ function updateBlogFile(filePath, departement) {
         tauxDroits * 100
       ).toFixed(
         1
-      )}% | Cadastre: ${cadastre}€ | Conservation: ${conservation}€ | Formalités: ${formalites}€`
+      )}% | Cadastre: ${cadastre}€ | Conservation: ${conservation}€ | Formalites: ${formalites}€`
     );
     return true;
   } catch (error) {
@@ -138,14 +138,14 @@ function updateBlogFile(filePath, departement) {
   }
 }
 
-// Traiter tous les fichiers de département
+// Traiter tous les fichiers de departement
 const deptDir = path.join(__dirname, "../src/pages/blog/departements");
 const files = fs
   .readdirSync(deptDir)
   .filter((f) => f.startsWith("frais-notaire-") && f.endsWith(".html"));
 
 console.log(
-  `\n🔄 Mise à jour des mini calculateurs avec données de departements.json...\n`
+  `\n🔄 Mise a jour des mini calculateurs avec donnees de departements.json...\n`
 );
 
 let successCount = 0;
@@ -165,11 +165,11 @@ files.forEach((file) => {
 });
 
 console.log(
-  `\n✨ Résultat: ${successCount}/${files.length} mises à jour réussies`
+  `\n✨ Resultat: ${successCount}/${files.length} mises a jour reussies`
 );
 if (failCount > 0) {
-  console.log(`⚠️  ${failCount} fichiers n'ont pas pu être mis à jour`);
+  console.log(`⚠️  ${failCount} fichiers n'ont pas pu etre mis a jour`);
 }
 console.log(
-  "\n📊 Les calculateurs mini utilisent maintenant les vrais tarifs par département depuis departements.json"
+  "\n📊 Les calculateurs mini utilisent maintenant les vrais tarifs par departement depuis departements.json"
 );

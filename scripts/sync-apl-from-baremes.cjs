@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Synchronise APL (plafonds et multiplicateurs région) depuis src/data/baremes.json vers src/pages/apl.html
- * - Met à jour les tableaux des plafonds Zone 1/2/3
- * - Met à jour la logique de calcul: multiplicateur_région et plafond_apl
+ * Synchronise APL (plafonds et multiplicateurs region) depuis src/data/baremes.json vers src/pages/apl.html
+ * - Met a jour les tableaux des plafonds Zone 1/2/3
+ * - Met a jour la logique de calcul: multiplicateur_region et plafond_apl
  */
 
 const fs = require("fs");
@@ -17,7 +17,7 @@ function loadBaremes() {
 }
 
 /**
- * Met à jour les tableaux des plafonds CAF dans apl.html
+ * Met a jour les tableaux des plafonds CAF dans apl.html
  */
 function updateTables(html, apl) {
   const z1 = apl.plafonds_loyer.zone1;
@@ -33,7 +33,7 @@ function updateTables(html, apl) {
   out = out.replace(/>\s*510\s*€\s*</, `> ${z2.seul} €<`);
   out = out.replace(/>\s*560\s*€\s*</, `> ${z2.couple} €<`);
   out = out.replace(/>\s*610\s*€\s*</, (m) => {
-    // éviter collision avec zone 1; ici occurrence sous Zone 2
+    // eviter collision avec zone 1; ici occurrence sous Zone 2
     return m.includes("Zone 2") ? `> ${z2.couple_1_enfant} €<` : m;
   });
   out = out.replace(/>\s*660\s*€\s*</, `> ${z2.couple_2_enfants} €<`);
@@ -46,7 +46,7 @@ function updateTables(html, apl) {
 }
 
 /**
- * Met à jour la logique de calcul (multiplicateur région et plafonds simplifiés)
+ * Met a jour la logique de calcul (multiplicateur region et plafonds simplifies)
  */
 function updateLogic(html, apl) {
   const mult = apl.multiplicateurs_region || { idf: 1.15, province: 1.0, dom: 0.95 };
@@ -61,7 +61,7 @@ function updateLogic(html, apl) {
             if (region === "idf") multiplicateur_region = ${mult.idf};
             else if (region === "dom") multiplicateur_region = ${mult.dom};`
   );
-  // plafond_apl simplifié par zone (on utilise la valeur "seul" par défaut)
+  // plafond_apl simplifie par zone (on utilise la valeur "seul" par defaut)
   out = out.replace(
     /const\s+plafond_apl\s*=\s*region\s*===\s*"idf"\s*\?\s*\d+\s*:\s*\d+;/,
     `const plafond_apl = region === "idf" ? ${z1.seul} : (region === "dom" ? ${z3.seul} : ${z2.seul});`
@@ -70,7 +70,7 @@ function updateLogic(html, apl) {
 }
 
 /**
- * Point d'entrée: applique les mises à jour à src/pages/apl.html
+ * Point d'entree: applique les mises a jour a src/pages/apl.html
  */
 function main() {
   const aplPath = path.resolve(process.cwd(), "src", "pages", "apl.html");
@@ -78,7 +78,7 @@ function main() {
   const baremes = loadBaremes();
   const apl = baremes.apl;
   if (!apl || !apl.plafonds_loyer) {
-    console.warn("⚠️ Données APL manquantes dans baremes.json");
+    console.warn("⚠️ Donnees APL manquantes dans baremes.json");
     return;
   }
   let updated = html;
@@ -86,9 +86,9 @@ function main() {
   updated = updateLogic(updated, apl);
   if (updated !== html) {
     fs.writeFileSync(aplPath, updated, "utf-8");
-    console.log("✅ APL synchronisé dans src/pages/apl.html");
+    console.log("✅ APL synchronise dans src/pages/apl.html");
   } else {
-    console.log("ℹ️ Aucune mise à jour APL nécessaire");
+    console.log("ℹ️ Aucune mise a jour APL necessaire");
   }
 }
 

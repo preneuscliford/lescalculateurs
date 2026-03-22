@@ -76,8 +76,8 @@ for (const item of corr.items) {
     }
 
     if (notaires) {
-      // find the h2 heading for 'Où trouver un notaire' and replace the first <p class="text-gray-700"> after it
-      const h2Re = /<h2[^>]*>\s*🏛️\s*Où trouver un notaire[\s\S]*?<\/h2>/i;
+      // find the h2 heading for 'Ou trouver un notaire' and replace the first <p class="text-gray-700"> after it
+      const h2Re = /<h2[^>]*>\s*🏛️\s*Ou trouver un notaire[\s\S]*?<\/h2>/i;
       const secIndex = out.search(h2Re);
       if (secIndex !== -1) {
         // from that index, find the next <p class="text-gray-700"> occurrence
@@ -86,7 +86,7 @@ for (const item of corr.items) {
         const m = pRe2.exec(tail);
         const replacement = `<p class="text-gray-700">${escapeHtml(
           notaires
-        )} Pour contacter un professionnel, consultez l’annuaire officiel des notaires de la région.</p>`;
+        )} Pour contacter un professionnel, consultez l'annuaire officiel des notaires de la region.</p>`;
         if (m) {
           const before = out.slice(0, secIndex);
           const after = tail.replace(pRe2, replacement);
@@ -99,12 +99,12 @@ for (const item of corr.items) {
             out.slice(0, insertPos) +
             '\n\n      <section class="bg-gray-50 p-4 rounded-lg mt-6">\n        <p class="text-gray-700">' +
             escapeHtml(notaires) +
-            ' Pour contacter un professionnel, consultez l’annuaire officiel des notaires de la région.</p>\n        <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">Annuaire officiel</a>\n      </section>\n' +
+            ' Pour contacter un professionnel, consultez l'annuaire officiel des notaires de la region.</p>\n        <a href="https://www.notaires.fr" class="text-blue-600 hover:underline">Annuaire officiel</a>\n      </section>\n' +
             out.slice(insertPos);
           console.log("Inserted notaires section in", fname);
         }
       } else {
-        console.warn('No "Où trouver un notaire" heading found in', fname);
+        console.warn('No "Ou trouver un notaire" heading found in', fname);
       }
     }
 

@@ -9,9 +9,9 @@ const roots = [
 
 function replaceSources(text) {
   let t = text
-  t = t.replace(/Chambre des Notaires France\s*2026/gi, 'Droits d\'enregistrement — impots.gouv.fr')
-  t = t.replace(/Chambre des Notaires France\s*2025/gi, 'Droits d\'enregistrement — impots.gouv.fr')
-  t = t.replace(/(Source:\s*).*?Chambre des Notaires.*?(<\/li>|<\/p>)/gi, `$1 <a href="https://www.impots.gouv.fr/droits-denregistrement" target="_blank" rel="nofollow noopener" class="text-blue-700 underline">Droits d'enregistrement — impots.gouv.fr</a>$2`)
+  t = t.replace(/Chambre des Notaires France\s*2026/gi, 'Droits d\'enregistrement - impots.gouv.fr')
+  t = t.replace(/Chambre des Notaires France\s*2025/gi, 'Droits d\'enregistrement - impots.gouv.fr')
+  t = t.replace(/(Source:\s*).*?Chambre des Notaires.*?(<\/li>|<\/p>)/gi, `$1 <a href="https://www.impots.gouv.fr/droits-denregistrement" target="_blank" rel="nofollow noopener" class="text-blue-700 underline">Droits d'enregistrement - impots.gouv.fr</a>$2`)
   return t
 }
 

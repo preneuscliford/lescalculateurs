@@ -15,38 +15,38 @@ content = content.replace(
   "5,09&nbsp;% (36 Indre, 976 Mayotte)",
 );
 
-// Correction 2: "6,45 % (92, 93, 94)" -> "6,32 % (87 départements au taux majoré)"
+// Correction 2: "6,45 % (92, 93, 94)" -> "6,32 % (87 departements au taux majore)"
 content = content.replace(
   /6,45&nbsp;% \(92, 93, 94\)/g,
-  "6,32&nbsp;% (87 départements au taux majoré)",
+  "6,32&nbsp;% (87 departements au taux majore)",
 );
 
-// Correction 3: "Paris (75) applique un taux de 5,81 %" -> "Paris (75) applique le taux majoré de 6,32 %"
+// Correction 3: "Paris (75) applique un taux de 5,81 %" -> "Paris (75) applique le taux majore de 6,32 %"
 content = content.replace(
   /Paris \(75\) applique\s+un taux de <strong>5,81&nbsp;%<\/strong>/g,
-  "Paris (75) applique le taux majoré de <strong>6,32&nbsp;%</strong>",
+  "Paris (75) applique le taux majore de <strong>6,32&nbsp;%</strong>",
 );
 
-// Correction 4: "6,32 % (standard)" -> "5,80 % (standard : 12 départements)"
+// Correction 4: "6,32 % (standard)" -> "5,80 % (standard : 12 departements)"
 content = content.replace(
   /6,32&nbsp;% \(standard\)/g,
-  "5,80&nbsp;% (standard : 12 départements)",
+  "5,80&nbsp;% (standard : 12 departements)",
 );
 
-// Correction 5: "5,09 % (réduit)" -> "5,09 % (réduit : 36, 976)"
+// Correction 5: "5,09 % (reduit)" -> "5,09 % (reduit : 36, 976)"
 content = content.replace(
-  /5,09&nbsp;% \(réduit\)&nbsp;/g,
-  "5,09&nbsp;% (réduit : 36, 976)&nbsp;",
+  /5,09&nbsp;% \(reduit\)&nbsp;/g,
+  "5,09&nbsp;% (reduit : 36, 976)&nbsp;",
 );
 
-// Correction 6: Ajouter ligne majoré et corriger le calcul
-// "6,45 % (92, 93, 94) -> 16 125 €" devient "6,32 % (majoré : 87 départements) -> 15 800 €"
+// Correction 6: Ajouter ligne majore et corriger le calcul
+// "6,45 % (92, 93, 94) -> 16 125 €" devient "6,32 % (majore : 87 departements) -> 15 800 €"
 content = content.replace(
   /6,45&nbsp;% \(92, 93, 94\)&nbsp;→&nbsp;<strong\s*>16&nbsp;125&nbsp;€<\/strong/g,
-  "6,32&nbsp;% (majoré : 87 départements)&nbsp;→&nbsp;<strong>15&nbsp;800&nbsp;€</strong",
+  "6,32&nbsp;% (majore : 87 departements)&nbsp;→&nbsp;<strong>15&nbsp;800&nbsp;€</strong",
 );
 
-// Correction 7: "Écart maximal : 6 625 €" -> "Écart maximal : 3 075 €" (15800 - 12725 = 3075)
+// Correction 7: "Ecart maximal : 6 625 €" -> "Ecart maximal : 3 075 €" (15800 - 12725 = 3075)
 content = content.replace(
   /6&nbsp;625&nbsp;€<\/strong>\s+sur les seuls droits/g,
   "3&nbsp;075&nbsp;€</strong> sur les seuls droits",
@@ -54,14 +54,14 @@ content = content.replace(
 
 // Correction 8: La ligne standard 15 800 € doit devenir 14 500 € (5,80% de 250000)
 content = content.replace(
-  /5,80&nbsp;% \(standard : 12 départements\)&nbsp;→&nbsp;<strong\s*>15&nbsp;800&nbsp;€<\/strong/g,
-  "5,80&nbsp;% (standard : 12 départements)&nbsp;→&nbsp;<strong>14&nbsp;500&nbsp;€</strong",
+  /5,80&nbsp;% \(standard : 12 departements\)&nbsp;→&nbsp;<strong\s*>15&nbsp;800&nbsp;€<\/strong/g,
+  "5,80&nbsp;% (standard : 12 departements)&nbsp;→&nbsp;<strong>14&nbsp;500&nbsp;€</strong",
 );
 
 fs.writeFileSync(notaireFile, content, "utf8");
 
-console.log("✅ Section DMTO corrigée avec les taux officiels 2026");
-console.log("   - 5,09% (réduit) : 36 Indre, 976 Mayotte");
-console.log("   - 5,80% (standard) : 12 départements");
-console.log("   - 6,32% (majoré) : 87 départements");
-console.log("   - Paris : 6,32% (majoré)");
+console.log("✅ Section DMTO corrigee avec les taux officiels 2026");
+console.log("   - 5,09% (reduit) : 36 Indre, 976 Mayotte");
+console.log("   - 5,80% (standard) : 12 departements");
+console.log("   - 6,32% (majore) : 87 departements");
+console.log("   - Paris : 6,32% (majore)");

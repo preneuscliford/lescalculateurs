@@ -1,11 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const { pathToFileURL } = require("url");
 
-async function loadAplPilotSlugs() {
-  const filePath = path.resolve(__dirname, "../data/pseo/apl-pilot-scenarios.js");
-  const mod = await import(pathToFileURL(filePath).href);
-  return new Set((mod.aplPilotScenarios || []).map((item) => item.slug));
+function loadSatelliteKeepMap() {
+  const filePath = path.resolve(__dirname, "../data/pseo/satellite-keep-slugs.json");
+  if (!fs.existsSync(filePath)) return {};
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
 async function main() {
@@ -13,19 +12,9 @@ async function main() {
   const srcPagesDir = path.resolve(__dirname, "../src/pages");
   const domain = "https://www.lescalculateurs.fr";
   const today = new Date().toISOString().slice(0, 10);
-  const aplPilotSlugs = await loadAplPilotSlugs();
-
-  const pillars = [
-    "apl",
-    "rsa",
-    "pret",
-    "taxe-fonciere",
-    "plusvalue",
-    "simulateurs",
-    "aide",
-    "impot",
-    "salaire",
-  ];
+  const satelliteKeepMap = loadSatelliteKeepMap();
+  const managedPillars = new Set(Object.keys(satelliteKeepMap));
+  const dedupedSatelliteBlockUrls = new Set(["simulateurs/quelle-aide-selon-mon-profil-2026"]);
 
   const urls = new Set();
 
@@ -33,17 +22,14 @@ async function main() {
     urls.add(`${domain}/pages/aide`);
   }
 
-  for (const pillar of pillars) {
+  for (const [pillar, rawSlugs] of Object.entries(satelliteKeepMap)) {
     const dir = path.join(srcPagesDir, pillar);
-    if (!fs.existsSync(dir)) continue;
-
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const ent of entries) {
-      if (!ent.isDirectory()) continue;
-      const slug = ent.name;
-      if (pillar === "apl" && !aplPilotSlugs.has(slug)) continue;
+    for (const rawSlug of rawSlugs) {
+      const slug = String(rawSlug || "").trim();
+      if (!slug) continue;
       const indexPath = path.join(dir, slug, "index.html");
-      if (!fs.existsSync(indexPath)) continue;
+      const htmlPath = path.join(dir, `${slug}.html`);
+      if (!fs.existsSync(indexPath) && !fs.existsSync(htmlPath)) continue;
       urls.add(`${domain}/pages/${pillar}/${slug}`);
     }
   }
@@ -65,6 +51,18 @@ async function main() {
   const replacement = `${start}\n${block}\n${end}`;
 
   let xml = fs.readFileSync(sitemapPath, "utf8");
+  xml = xml.replace(/\s*<url>\s*<loc>(.*?)<\/loc>[\s\S]*?<\/url>\s*/g, (block, loc) => {
+    const normalizedLoc = String(loc || "").trim();
+    const match = normalizedLoc.match(/^https:\/\/www\.lescalculateurs\.fr\/pages\/([^/]+)\/([^/]+)$/);
+    if (!match) return block;
+
+    const [, pillar, slug] = match;
+    if (!managedPillars.has(pillar)) return block;
+    if (dedupedSatelliteBlockUrls.has(`${pillar}/${slug}`)) return "";
+
+    const keptSlugs = new Set((satelliteKeepMap[pillar] || []).map((item) => String(item || "").trim()).filter(Boolean));
+    return keptSlugs.has(slug) ? block : "";
+  });
 
   if (xml.includes(start) && xml.includes(end)) {
     const re = new RegExp(`${escapeRegExp(start)}[\\s\\S]*?${escapeRegExp(end)}`);
@@ -74,7 +72,7 @@ async function main() {
   }
 
   fs.writeFileSync(sitemapPath, xml, "utf8");
-  console.log(`Sitemap mis à jour: ${sortedUrls.length} URLs satellites`);
+  console.log(`Sitemap mis a jour: ${sortedUrls.length} URLs satellites`);
 }
 
 function escapeRegExp(str) {

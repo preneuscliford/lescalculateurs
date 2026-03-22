@@ -8,13 +8,13 @@ function listDeptPages() {
 
 function fixContent(html) {
   let out = html
-  // 1) Barème officiel 2025 -> 2024-2025
-  out = out.replace(/Barème\s+officiel\s+2025/gi, 'Barème officiel 2024-2025')
-  // 2) Remplacer "Neuf : droits réduits uniformes (0,715%)" -> "Droits réduits uniformisés (0,715 %)"
-  out = out.replace(/Neuf\s*:\s*droits\s+rÉduits\s+uniformes\s*\(0,715%\)/gi, 'Droits réduits uniformisés (0,715 %)')
-  out = out.replace(/Neuf\s*:\s*droits\s+réduits\s+uniformes\s*\(0,715%\)/gi, 'Droits réduits uniformisés (0,715 %)')
-  // 3) Dédupliquer la phrase "Inclut droits, émoluments, formalités, CSI et TVA"
-  const reInclut = /(Inclut\s+droits,\s+émoluments,\s+formalités,\s+CSI\s+et\s+TVA)/gi
+  // 1) Bareme officiel 2025 -> 2024-2025
+  out = out.replace(/Bareme\s+officiel\s+2025/gi, 'Bareme officiel 2024-2025')
+  // 2) Remplacer "Neuf : droits reduits uniformes (0,715%)" -> "Droits reduits uniformises (0,715 %)"
+  out = out.replace(/Neuf\s*:\s*droits\s+rEduits\s+uniformes\s*\(0,715%\)/gi, 'Droits reduits uniformises (0,715 %)')
+  out = out.replace(/Neuf\s*:\s*droits\s+reduits\s+uniformes\s*\(0,715%\)/gi, 'Droits reduits uniformises (0,715 %)')
+  // 3) Dedupliquer la phrase "Inclut droits, emoluments, formalites, CSI et TVA"
+  const reInclut = /(Inclut\s+droits,\s+emoluments,\s+formalites,\s+CSI\s+et\s+TVA)/gi
   let first = true
   out = out.replace(reInclut, (m) => {
     if (first) { first = false; return m }
@@ -34,7 +34,7 @@ function main() {
       changed++
     }
   }
-  console.log(`Micro-fixes: ${changed} fichier(s) corrigé(s) sur ${files.length}.`)
+  console.log(`Micro-fixes: ${changed} fichier(s) corrige(s) sur ${files.length}.`)
 }
 
 main()

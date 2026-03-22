@@ -1,7 +1,7 @@
 /**
  * Script de correction des bandeaux YMYL
  * - Supprime le bandeau des pages hub (simulateurs, aide, blog)
- * - Corrige les liens vers les services appropriés selon le type de calculateur
+ * - Corrige les liens vers les services appropries selon le type de calculateur
  *
  * Usage: node scripts/fix-ymyl-banners.cjs [--dry-run]
  */
@@ -49,14 +49,14 @@ const SERVICE_CONFIG = {
     linkText: "infos officielles",
   },
 
-  // France Travail (chômage)
+  // France Travail (chomage)
   are: {
     url: "https://www.service-public.fr/particuliers/vosdroits/R17654",
     label: "France Travail",
     linkText: "simulateur officiel",
   },
 
-  // Impôts
+  // Impots
   impot: {
     url: "https://simulateur-ir-ifi.impots.gouv.fr/calcul_impot/2026/simplifie/index.htm",
     label: "impots.gouv.fr",
@@ -65,7 +65,7 @@ const SERVICE_CONFIG = {
   salaire: {
     url: "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-particuliers.html",
     label: "URSSAF",
-    linkText: "barèmes officiels",
+    linkText: "baremes officiels",
   },
   taxe: {
     url: "https://www.impots.gouv.fr/particulier/taxe-fonciere",
@@ -78,21 +78,21 @@ const SERVICE_CONFIG = {
     linkText: "infos officielles",
   },
 
-  // Indemnités kilométriques (fiscal)
+  // Indemnites kilometriques (fiscal)
   ik: {
     url: "https://www.service-public.fr/particuliers/vosdroits/F1989",
     label: "service-public.fr",
-    linkText: "barème officiel",
+    linkText: "bareme officiel",
   },
 
-  // Travail / heures supplémentaires
+  // Travail / heures supplementaires
   travail: {
     url: "https://www.service-public.fr/particuliers/vosdroits/F489",
     label: "service-public.fr",
     linkText: "infos officielles",
   },
 
-  // Crypto / Bourse (fiscalité)
+  // Crypto / Bourse (fiscalite)
   crypto: {
     url: "https://www.impots.gouv.fr/particulier/je-calcule-mes-impots",
     label: "impots.gouv.fr",
@@ -104,21 +104,21 @@ const SERVICE_CONFIG = {
     linkText: "infos fiscales",
   },
 
-  // Prêt immobilier
+  // Pret immobilier
   pret: {
     url: "https://www.banque-france.fr/fr/les-taux-monetaires-directeurs",
     label: "Banque de France",
     linkText: "taux en vigueur",
   },
 
-  // Financement personnel / crédit conso
+  // Financement personnel / credit conso
   financement: {
     url: "https://www.banque-france.fr/fr/les-taux-monetaires-directeurs",
     label: "Banque de France",
     linkText: "taux en vigueur",
   },
 
-  // Charges copropriété
+  // Charges copropriete
   charges: {
     url: "https://www.service-public.fr/particuliers/vosdroits/F2613",
     label: "service-public.fr",
@@ -143,19 +143,19 @@ const SERVICE_CONFIG = {
   },
 };
 
-// Regex pour détecter le bandeau sticky-ymyl
+// Regex pour detecter le bandeau sticky-ymyl
 const YMYL_BANNER_REGEX = /<div class="sticky-ymyl"[^>]*>[\s\S]*?<\/div>\n?/g;
 
 /**
- * Génère le HTML du bandeau YMYL approprié
+ * Genere le HTML du bandeau YMYL approprie
  * Note: Pas de mention "simulateur officiel" car nous ne sommes pas un organisme officiel
  */
 function generateBanner(config) {
-  return `<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant définitif sur <a href="${config.url}" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">${config.label}</a>.</div>`;
+  return `<div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;text-align:center;font-size:14px;"><strong>⚠️ Estimation indicative.</strong> Montant definitif sur <a href="${config.url}" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">${config.label}</a>.</div>`;
 }
 
 /**
- * Détermine le service approprié basé sur le chemin du fichier
+ * Determine le service approprie base sur le chemin du fichier
  */
 function getServiceConfig(filePath) {
   const relativePath = path.relative(
@@ -165,10 +165,10 @@ function getServiceConfig(filePath) {
   const fileName = path.basename(filePath, ".html");
   const dirName = path.dirname(relativePath).split(path.sep)[0];
 
-  // Priorité : nom du répertoire parent, puis nom du fichier
+  // Priorite : nom du repertoire parent, puis nom du fichier
   const key = dirName !== "." ? dirName : fileName;
 
-  // Correspondances spéciales
+  // Correspondances speciales
   if (fileName.includes("crypto") || dirName === "crypto-bourse") {
     return SERVICE_CONFIG["crypto-bourse"];
   }
@@ -188,7 +188,7 @@ function getServiceConfig(filePath) {
 }
 
 /**
- * Vérifie si c'est une page hub
+ * Verifie si c'est une page hub
  */
 function isHubPage(filePath) {
   const relativePath = path.relative(
@@ -209,7 +209,7 @@ function processFile(filePath) {
     filePath,
   );
 
-  // Vérifie si le fichier contient un bandeau
+  // Verifie si le fichier contient un bandeau
   const hasBanner = YMYL_BANNER_REGEX.test(content);
   YMYL_BANNER_REGEX.lastIndex = 0; // Reset regex
 
@@ -232,7 +232,7 @@ function processFile(filePath) {
     };
   }
 
-  // Page calculateur : vérifier/corriger le service
+  // Page calculateur : verifier/corriger le service
   const config = getServiceConfig(filePath);
 
   if (!config) {
@@ -252,7 +252,7 @@ function processFile(filePath) {
   const currentBanner = currentBannerMatch[0];
   const newBanner = generateBanner(config);
 
-  // Vérifier si le bandeau est déjà correct
+  // Verifier si le bandeau est deja correct
   if (
     currentBanner.includes(config.url) &&
     currentBanner.includes(config.label)
@@ -290,7 +290,7 @@ function extractServiceFromBanner(banner) {
 }
 
 /**
- * Parcourt récursivement les fichiers HTML
+ * Parcourt recursivement les fichiers HTML
  */
 function walkDir(dir, results = []) {
   const files = fs.readdirSync(dir);
@@ -345,17 +345,17 @@ for (const file of htmlFiles) {
   }
 }
 
-// Affichage des résultats
-console.log("📋 RÉSULTATS\n");
+// Affichage des resultats
+console.log("📋 RESULTATS\n");
 
 if (results.removed.length > 0) {
-  console.log(`🗑️  Bandeaux SUPPRIMÉS (pages hub): ${results.removed.length}`);
+  console.log(`🗑️  Bandeaux SUPPRIMES (pages hub): ${results.removed.length}`);
   results.removed.forEach((r) => console.log(`   - ${r.file}`));
   console.log();
 }
 
 if (results.updated.length > 0) {
-  console.log(`✏️  Bandeaux CORRIGÉS: ${results.updated.length}`);
+  console.log(`✏️  Bandeaux CORRIGES: ${results.updated.length}`);
   results.updated.forEach((r) => {
     console.log(`   - ${r.file}`);
     console.log(`     ${r.oldService} → ${r.newService}`);
@@ -369,12 +369,12 @@ if (results.errors.length > 0) {
   console.log();
 }
 
-// Résumé
-console.log("📊 RÉSUMÉ");
-console.log(`   Total fichiers analysés: ${htmlFiles.length}`);
-console.log(`   Bandeaux supprimés: ${results.removed.length}`);
-console.log(`   Bandeaux corrigés: ${results.updated.length}`);
-console.log(`   Fichiers ignorés: ${results.skipped.length}`);
+// Resume
+console.log("📊 RESUME");
+console.log(`   Total fichiers analyses: ${htmlFiles.length}`);
+console.log(`   Bandeaux supprimes: ${results.removed.length}`);
+console.log(`   Bandeaux corriges: ${results.updated.length}`);
+console.log(`   Fichiers ignores: ${results.skipped.length}`);
 console.log(`   Erreurs: ${results.errors.length}`);
 
 if (DRY_RUN) {

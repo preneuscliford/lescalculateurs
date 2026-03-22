@@ -1,72 +1,72 @@
 #!/usr/bin/env node
 /**
- * Script avancé pour restaurer les emojis et caractères spéciaux dans les pages HTML
- * Basé sur les exemples fournis par l'utilisateur
+ * Script avance pour restaurer les emojis et caracteres speciaux dans les pages HTML
+ * Base sur les exemples fournis par l'utilisateur
  */
 
 import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Mapping complet des emojis et caractères spéciaux pour les pages de blog
+ * Mapping complet des emojis et caracteres speciaux pour les pages de blog
  */
 const EMOJI_REPLACEMENTS = {
   // Emojis dans les titres et sections
   '??': '💰',  // Frais de notaire
   '??': '⚠️',  // Avertissement
    '??': '📊',  // Estimation
-  '??': '❓',  // Questions fréquentes
-  '??': '📌',  // Rappel réglementaire
+  '??': '❓',  // Questions frequentes
+  '??': '📌',  // Rappel reglementaire
   '??': '🔗',  // Voir aussi
-  '??': '🏘️',  // Spécificité locale
+  '??': '🏘️',  // Specificite locale
   '??': '🏡',  // Ancien
   '??': '🏢',  // Neuf
-  '??': '💡',  // Bon à savoir
-  '??': '📈',  // Évolution des prix
+  '??': '💡',  // Bon a savoir
+  '??': '📈',  // Evolution des prix
   '??': '📊',  // Volume de transactions
-  '??': '⭐',  // Attractivité
-  '??': '🎯',  // Tension du marché
-  '??': '🏛️',  // Où trouver un notaire
-  '??': '🧮',  // Accéder au simulateur
+  '??': '⭐',  // Attractivite
+  '??': '🎯',  // Tension du marche
+  '??': '🏛️',  // Ou trouver un notaire
+  '??': '🧮',  // Acceder au simulateur
   '??': '✓',   // Checkmark
-  '??': '👉',  // Flèche
-  '??': '📚',  // Sources et références
-  '??': '📋',  // Méthodologie
+  '??': '👉',  // Fleche
+  '??': '📚',  // Sources et references
+  '??': '📋',  // Methodologie
   '??': '💼',  // Tarifs officiels
   '??': '📄',  // Export PDF
   
-  // Caractères français corrompus
-  'fran?aise': 'française',
-  'd?mographique': 'démographique',
-  'r?sidentielle': 'résidentielle',
+  // Caracteres francais corrompus
+  'fran?aise': 'francaise',
+  'd?mographique': 'demographique',
+  'r?sidentielle': 'residentielle',
   'mahoraise': 'mahoraise',
-  '?conomique': 'économique',
-  '?mergent': 'émergent',
-  '?co-tourisme': 'éco-tourisme',
-  'd?partemental': 'départemental',
-  'd?partementalisation': 'départementalisation',
-  'p?le principal': 'pôle principal',
+  '?conomique': 'economique',
+  '?mergent': 'emergent',
+  '?co-tourisme': 'eco-tourisme',
+  'd?partemental': 'departemental',
+  'd?partementalisation': 'departementalisation',
+  'p?le principal': 'pole principal',
   'conna?t': 'connaît',
-  'pr?sente': 'présente',
-  'march?': 'marché',
-  'attire l\'?co': 'attire l\'éco',
-  'attractivit?': 'attractivité',
-  'indiqus': 'indiqués',
-  'bar?mes': 'barèmes',
-  'habilit?': 'habilité',
-  'tablir': 'établir',
-  'dfinitif': 'définitif',
+  'pr?sente': 'presente',
+  'march?': 'marche',
+  'attire l\'?co': 'attire l\'eco',
+  'attractivit?': 'attractivite',
+  'indiqus': 'indiques',
+  'bar?mes': 'baremes',
+  'habilit?': 'habilite',
+  'tablir': 'etablir',
+  'dfinitif': 'definitif',
   'lacte': 'l\'acte',
-  'diffrentiel': 'différentiel',
-  'rglementation': 'réglementation',
+  'diffrentiel': 'differentiel',
+  'rglementation': 'reglementation',
   'changents': 'changent',
-  'n?cessaires': 'nécessaires',
-  'disponibilit?': 'disponibilité',
-  'immobili?re': 'immobilière',
+  'n?cessaires': 'necessaires',
+  'disponibilit?': 'disponibilite',
+  'immobili?re': 'immobiliere',
   'achetez dans l\'': 'achetez dans l\'',
-  'le diffrentiel': 'le différentiel',
+  'le diffrentiel': 'le differentiel',
   'neuf/ancien': 'neuf/ancien',
-  'rglementation nationale': 'réglementation nationale',
+  'rglementation nationale': 'reglementation nationale',
   'Pour un achat': 'Pour un achat',
   'immobilier en': 'immobilier en',
   'environ 7': 'environ 7',
@@ -78,7 +78,7 @@ const EMOJI_REPLACEMENTS = {
   'jour, utilisez': 'jour, utilisez',
   'le calculateur': 'le calculateur',
   'Pour un montant': 'Pour un montant',
-  'exact et jour': 'exact et à jour',
+  'exact et jour': 'exact et a jour',
   'utilisez le': 'utilisez le',
   'Seine-Saint-Denis': 'Seine-Saint-Denis',
   'estimation purement': 'estimation purement',
@@ -86,12 +86,12 @@ const EMOJI_REPLACEMENTS = {
   'constitue pas': 'constitue pas',
   'conseil juridique': 'conseil juridique',
   'Seul un notaire': 'Seul un notaire',
-  'habilit ? tablir': 'habilité à établir',
-  'montant dfinitif': 'montant définitif',
+  'habilit ? tablir': 'habilite a etablir',
+  'montant dfinitif': 'montant definitif',
   'lors de la signature': 'lors de la signature',
   'lacte authentique': 'l\'acte authentique',
-  'diffrentiel neuf/ancien': 'différentiel neuf/ancien',
-  'respecte la rglementation': 'respecte la réglementation',
+  'diffrentiel neuf/ancien': 'differentiel neuf/ancien',
+  'respecte la rglementation': 'respecte la reglementation',
   'nationale. En': 'nationale. En',
   'selon que vous': 'selon que vous',
   'ou le neuf': 'ou le neuf',
@@ -99,12 +99,12 @@ const EMOJI_REPLACEMENTS = {
 }
 
 /**
- * Départements avec pages problématiques (avec des "?")
+ * Departements avec pages problematiques (avec des "?")
  */
 const PROBLEMATIC_DEPTS = ['75', '93', '01', '91', '88', '976', '973']
 
 /**
- * Vérifie si un fichier contient des caractères "?" problématiques
+ * Verifie si un fichier contient des caracteres "?" problematiques
  */
 function hasProblematicChars(content) {
   // Cherche des "?" dans des contextes qui devraient avoir des accents ou emojis
@@ -140,7 +140,7 @@ function hasProblematicChars(content) {
 }
 
 /**
- * Corrige les caractères problématiques dans le contenu
+ * Corrige les caracteres problematiques dans le contenu
  */
 function fixProblematicChars(content) {
   let fixed = content
@@ -152,14 +152,14 @@ function fixProblematicChars(content) {
   }
   
   // Fixer les "environ X ? Y %" patterns
-  fixed = fixed.replace(/environ (\d+)\s*\?\s*(\d*)\s*%/g, 'environ $1 à $2 %')
-  fixed = fixed.replace(/environ (\d+)\s*\?/g, 'environ $1 à')
+  fixed = fixed.replace(/environ (\d+)\s*\?\s*(\d*)\s*%/g, 'environ $1 a $2 %')
+  fixed = fixed.replace(/environ (\d+)\s*\?/g, 'environ $1 a')
   
   return fixed
 }
 
 /**
- * Traite un fichier spécifique
+ * Traite un fichier specifique
  */
 function processFile(filePath) {
   try {
@@ -175,7 +175,7 @@ function processFile(filePath) {
     const backupPath = filePath + '.backup-' + Date.now()
     fs.writeFileSync(backupPath, content, 'utf8')
     
-    // Écrire le contenu corrigé
+    // Ecrire le contenu corrige
     fs.writeFileSync(filePath, fixedContent, 'utf8')
     
     return { fixed: true, backup: backupPath }
@@ -185,7 +185,7 @@ function processFile(filePath) {
 }
 
 /**
- * Point d'entrée principal
+ * Point d'entree principal
  */
 function main() {
   const targetDir = path.resolve(process.cwd(), 'src/pages/blog/departements')
@@ -202,7 +202,7 @@ function main() {
     details: []
   }
   
-  // Traiter uniquement les départements problématiques
+  // Traiter uniquement les departements problematiques
   for (const dept of PROBLEMATIC_DEPTS) {
     const fileName = `frais-notaire-${dept}.html`
     const filePath = path.join(targetDir, fileName)

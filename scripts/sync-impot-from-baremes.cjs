@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Synchronise le barème IR officiel depuis src/data/baremes.json vers src/pages/scripts/impot.ts
+ * Synchronise le bareme IR officiel depuis src/data/baremes.json vers src/pages/scripts/impot.ts
  * Remplace le tableau `const bareme = [...]` par les tranches issues de baremes.impot.tranches
  */
 
@@ -33,7 +33,7 @@ function syncImpotTs(baremes) {
   const replacement = `const bareme = ${arr};`;
   content = content.replace(/const\s+bareme\s*=\s*\[[\s\S]*?\];/, replacement);
   fs.writeFileSync(target, content, "utf-8");
-  console.log("✅ Barème IR synchronisé dans src/pages/scripts/impot.ts");
+  console.log("✅ Bareme IR synchronise dans src/pages/scripts/impot.ts");
 }
 
 function main() {

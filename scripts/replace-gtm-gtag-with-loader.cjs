@@ -98,7 +98,7 @@ function main() {
   }
 
   process.stdout.write(
-    `✅ GTM/gtag remplacés par third-party-loader.js dans ${changedFiles} fichier(s) HTML\n`,
+    `✅ GTM/gtag remplaces par third-party-loader.js dans ${changedFiles} fichier(s) HTML\n`,
   );
 }
 

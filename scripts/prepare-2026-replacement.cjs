@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Script de remplacement automatique 2025 → 2026 (pages/SEO)
- * À LANCER EN JANVIER 2026 UNIQUEMENT
+ * A LANCER EN JANVIER 2026 UNIQUEMENT
  * ATTENTION: Ce script modifie les fichiers de PRODUCTION
  * Usage:
  *   node scripts/prepare-2026-replacement.cjs           # DRY RUN
@@ -11,34 +11,34 @@
 const fs = require("fs");
 const path = require("path");
 
-// Patterns à remplacer - SEULEMENT contextes SEO et visibles, PAS les données officielles
+// Patterns a remplacer - SEULEMENT contextes SEO et visibles, PAS les donnees officielles
 const replacements = [
   // SEO Meta Tags
   { old: 'content="Frais de notaire 2025', new: 'content="Frais de notaire 2026' },
   { old: 'content="frais notaire 2025', new: 'content="frais notaire 2026' },
   { old: '"headline": "Frais de notaire 2025', new: '"headline": "Frais de notaire 2026' },
-  { old: '"description": "Frais de notaire par département en 2025', new: '"description": "Frais de notaire par département en 2026' },
-  { old: '"description": "Outil de calcul des frais de notaire selon les barèmes officiels 2025', new: '"description": "Outil de calcul des frais de notaire selon les barèmes officiels 2026' },
+  { old: '"description": "Frais de notaire par departement en 2025', new: '"description": "Frais de notaire par departement en 2026' },
+  { old: '"description": "Outil de calcul des frais de notaire selon les baremes officiels 2025', new: '"description": "Outil de calcul des frais de notaire selon les baremes officiels 2026' },
   { old: '"description": "Calculez les frais de notaire en France pour un achat immobilier en 2025', new: '"description": "Calculez les frais de notaire en France pour un achat immobilier en 2026' },
 
   // Titles
   { old: '<title>Frais de Notaire 2025', new: '<title>Frais de Notaire 2026' },
-  { old: '<title>Sources Officielles & Barèmes 2025', new: '<title>Sources Officielles & Barèmes 2026' },
+  { old: '<title>Sources Officielles & Baremes 2025', new: '<title>Sources Officielles & Baremes 2026' },
   { old: '<title>🏠 Frais de Notaire 2025', new: '<title>🏠 Frais de Notaire 2026' },
 
   // OG Tags
-  { old: 'content="Sources Officielles & Barèmes 2025', new: 'content="Sources Officielles & Barèmes 2026' },
+  { old: 'content="Sources Officielles & Baremes 2025', new: 'content="Sources Officielles & Baremes 2026' },
 
   // Contenu visible
   { old: '>Frais de notaire 2025</a>', new: '>Frais de notaire 2026</a>' },
   { old: '>Frais de Notaire 2025<', new: '>Frais de Notaire 2026<' },
-  { old: '<span class="text-xs text-gray-500">Barèmes 2025', new: '<span class="text-xs text-gray-500">Barèmes 2026' },
+  { old: '<span class="text-xs text-gray-500">Baremes 2025', new: '<span class="text-xs text-gray-500">Baremes 2026' },
   { old: '<li><strong>Source:</strong> Chambre des Notaires France 2025</li>', new: '<li><strong>Source:</strong> Chambre des Notaires France 2026</li>' },
-  { old: '>Découvrez les frais de notaire 2025 département', new: '>Découvrez les frais de notaire 2026 département' },
+  { old: '>Decouvrez les frais de notaire 2025 departement', new: '>Decouvrez les frais de notaire 2026 departement' },
   { old: '<p>&copy; 2025 LesCalculateurs.fr', new: '<p>&copy; 2026 LesCalculateurs.fr' },
 
   // Blog headers
-  { old: '>🏠 Frais de Notaire 2025 par Département', new: '>🏠 Frais de Notaire 2026 par Département' },
+  { old: '>🏠 Frais de Notaire 2025 par Departement', new: '>🏠 Frais de Notaire 2026 par Departement' },
 
   // Calculateur headers
   { old: '>Calculateur de frais de notaire 2025', new: '>Calculateur de frais de notaire 2026' },
@@ -74,19 +74,19 @@ console.log(`
 `);
 
 console.log(`\n📋 Configuration:`);
-console.log(`   Fichiers HTML trouvés: ${htmlFiles.length}`);
+console.log(`   Fichiers HTML trouves: ${htmlFiles.length}`);
 console.log(`   Patterns de remplacement: ${replacements.length}`);
 console.log(`\n`);
 
-// Garde-fous: mots-clés qui indiquent données officielles ou sources
+// Garde-fous: mots-cles qui indiquent donnees officielles ou sources
 const OFFICIAL_GUARDS = [
-  "barème", "barèmes", "officiel", "officiels",
+  "bareme", "baremes", "officiel", "officiels",
   "BOFiP", "impots.gouv.fr", "bofip.impots.gouv.fr",
   "legifrance.gouv.fr", "service-public.fr",
-  "indemnités kilométriques", "barème kilométrique"
+  "indemnites kilometriques", "bareme kilometrique"
 ];
 
-// DRY RUN - Compter les occurrences (en excluant contexts protégés)
+// DRY RUN - Compter les occurrences (en excluant contexts proteges)
 let totalReplacements = 0;
 const fileChanges = [];
 
@@ -120,21 +120,21 @@ htmlFiles.forEach((filePath) => {
 
 fileChanges.sort((a, b) => b.changes - a.changes);
 
-console.log(`🔍 DRY RUN - Occurrences à remplacer:\n`);
+console.log(`🔍 DRY RUN - Occurrences a remplacer:\n`);
 fileChanges.forEach((file) => {
   console.log(`   ${file.path.padEnd(50)} : ${file.changes} replacements`);
 });
 
 console.log(`\n${"─".repeat(70)}`);
-console.log(`\nTotal occurrences trouvées: ${totalReplacements}`);
-console.log(`Fichiers affectés: ${fileChanges.length}\n`);
+console.log(`\nTotal occurrences trouvees: ${totalReplacements}`);
+console.log(`Fichiers affectes: ${fileChanges.length}\n`);
 
 console.log(`
 ${"═".repeat(70)}
 
 ✅ PRÊT POUR LE REMPLACEMENT
 
-   Pour exécuter le remplacement réel:
+   Pour executer le remplacement reel:
    node scripts/prepare-2026-replacement.cjs --apply
 
    SAUVEGARDER LES FICHIERS D'ABORD:
@@ -166,7 +166,7 @@ if (process.argv.includes("--apply")) {
       fs.writeFileSync(filePath, content, "utf-8");
       console.log(`   ✔ ${path.relative(process.cwd(), filePath)} : ${applied} remplacements`);
     }
-    // Passe générique: balises SEO courantes avec "2025" → "2026" si non contexte officiel
+    // Passe generique: balises SEO courantes avec "2025" → "2026" si non contexte officiel
     const tagPatterns = [
       { label: "title", regex: /<title>([\s\S]*?)<\/title>/gi },
       { label: "meta-desc", regex: /<meta[^>]+name=["']description["'][^>]+content=["']([\s\S]*?)["'][^>]*>/gi },
@@ -195,7 +195,7 @@ if (process.argv.includes("--apply")) {
         const FORCE_REPLACE_LABELS = new Set(["title", "og-title", "tw-title", "h1", "h2", "h3"]);
         const innerLower = inner.toLowerCase();
         const innerOfficial = OFFICIAL_GUARDS.some((kw) => innerLower.includes(kw.toLowerCase()));
-        const innerHasOfficialRange = /2024[-–]2025|2025[-–]2026/.test(inner);
+        const innerHasOfficialRange = /2024[--]2025|2025[--]2026/.test(inner);
         if (label === "meta-keywords") {
           const segments = inner.split(",").map((s) => s.trim());
           const updatedSegments = segments.map((seg) => {
@@ -211,7 +211,7 @@ if (process.argv.includes("--apply")) {
           }
           return whole;
         } else {
-          // For visible titles, avoid replacing if the inner text itself is official or a 2025–2026 range.
+          // For visible titles, avoid replacing if the inner text itself is official or a 2025-2026 range.
           if (FORCE_REPLACE_LABELS.has(label) && (innerOfficial || innerHasOfficialRange)) return whole;
           if (!FORCE_REPLACE_LABELS.has(label) && isOfficialContext) return whole;
           const replacedInner = inner.replace(/2025/g, "2026");
@@ -225,8 +225,8 @@ if (process.argv.includes("--apply")) {
     });
     if (genericApplied > 0) {
       fs.writeFileSync(filePath, content, "utf-8");
-      console.log(`   ✔ ${path.relative(process.cwd(), filePath)} : ${genericApplied} remplacements génériques`);
+      console.log(`   ✔ ${path.relative(process.cwd(), filePath)} : ${genericApplied} remplacements generiques`);
     }
   });
-  console.log("\n✅ Remplacements appliqués avec garde‑fous. Vérifiez les pages modifiées.");
+  console.log("\n✅ Remplacements appliques avec garde‑fous. Verifiez les pages modifiees.");
 }

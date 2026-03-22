@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Script pour analyser les URLs non indexées de Google Search Console
- * et créer un rapport d'action
+ * Script pour analyser les URLs non indexees de Google Search Console
+ * et creer un rapport d'action
  */
 
 // URLs de la console Google Search Console (avec redirections)
@@ -196,9 +196,9 @@ console.log(`  • /departements/:        ${analysis.byPath["departements"]}`);
 console.log(`  • /pages/blog/(simple):  ${analysis.byPath["simple"]}`);
 console.log(`  • root:                  ${analysis.byPath["root"]}`);
 
-console.log("\n⚠️ PROBLÈMES DETÉCTÉS:");
+console.log("\n⚠️ PROBLÈMES DETECTES:");
 if (analysis.issues.length === 0) {
-  console.log("  ✅ Aucun problème d'indexation en double");
+  console.log("  ✅ Aucun probleme d'indexation en double");
 } else {
   analysis.issues.forEach((issue) => {
     console.log(`\n  ${issue.type}:`);
@@ -237,14 +237,14 @@ console.log(
 
 console.log("\n" + "=".repeat(60));
 console.log(
-  `✅ Total URLs à corriger: ${analysis.urlsNeedingRedirects.length}`
+  `✅ Total URLs a corriger: ${analysis.urlsNeedingRedirects.length}`
 );
 
 // Export redirects
 const fs = require("fs");
 const redirectsJson = {
   generated: new Date().toISOString(),
-  description: "Redirects pour corriger les problèmes d'indexation Google",
+  description: "Redirects pour corriger les problemes d'indexation Google",
   redirects: analysis.urlsNeedingRedirects,
 };
 
@@ -254,5 +254,5 @@ fs.writeFileSync(
 );
 
 console.log(
-  "\n📝 Redirects exportés vers: scripts/google-indexing-redirects.json"
+  "\n📝 Redirects exportes vers: scripts/google-indexing-redirects.json"
 );

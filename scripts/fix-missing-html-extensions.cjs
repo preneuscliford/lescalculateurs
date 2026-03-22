@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Scan HTML files and normalize internal links to use .html and canonical paths.
- * - Fix href/src pointing to département pages without .html by appending .html
+ * - Fix href/src pointing to departement pages without .html by appending .html
  * - Fix legacy blog paths `/pages/blog/frais-notaire-XX(.html)?` to `/pages/blog/departements/frais-notaire-XX.html`
  * - Leave external links untouched
  */
@@ -29,7 +29,7 @@ function normalizeLinks(content) {
   let changed = false;
   let out = content;
 
-  // 1) Département pages without .html → append .html
+  // 1) Departement pages without .html → append .html
   out = out.replace(/href=("|')\/pages\/blog\/departements\/frais-notaire-([0-9A-Za-z]+)(?!\.html)(\1)/g, (m, q, code, q2) => {
     changed = true;
     return `href=${q}/pages/blog/departements/frais-notaire-${code}.html${q2}`;

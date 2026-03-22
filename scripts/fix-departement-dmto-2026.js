@@ -1,9 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// Taux DMTO 2026 officiels par département (en %)
+// Taux DMTO 2026 officiels par departement (en %)
 const DMTO_2026 = {
-  // Taux réduit 5.09%
+  // Taux reduit 5.09%
   36: 5.09, // Indre
   976: 5.09, // Mayotte
   // Taux standard 5.80%
@@ -19,13 +19,13 @@ const DMTO_2026 = {
   71: 5.8,
   971: 5.8,
   972: 5.8,
-  // Tous les autres = 6.32% (taux majoré)
+  // Tous les autres = 6.32% (taux majore)
 };
 
-const DMTO_DEFAULT = 6.32; // Taux majoré 2026 (87 départements)
-const DMTO_NEUF = 0.715; // Droits réduits neuf
+const DMTO_DEFAULT = 6.32; // Taux majore 2026 (87 departements)
+const DMTO_NEUF = 0.715; // Droits reduits neuf
 
-// Configuration émoluments 2025
+// Configuration emoluments 2025
 const EMOLUMENTS = [
   { tranche_max: 6500, taux: 3.87 },
   { tranche_max: 17000, taux: 1.596 },
@@ -89,7 +89,7 @@ function formatPct(rate) {
 
 function processFile(filePath) {
   const base = path.basename(filePath);
-  // Extraire le code département (01, 02, ..., 971, 972, 973, 974, 976, 2A, 2B)
+  // Extraire le code departement (01, 02, ..., 971, 972, 973, 974, 976, 2A, 2B)
   const match = base.match(/frais-notaire-(\d+|2A|2B)\.html$/i);
   if (!match) return false;
 
@@ -119,7 +119,7 @@ function processFile(filePath) {
     return match;
   });
 
-  // Pattern 2: Ligne complète "Frais de notaire 2026 en X : ≈ Y € pour 200 000 € (ancien, droits ≈ Z%) • ≈ W € (neuf, droits ≈ 0,71%)"
+  // Pattern 2: Ligne complete "Frais de notaire 2026 en X : ≈ Y € pour 200 000 € (ancien, droits ≈ Z%) • ≈ W € (neuf, droits ≈ 0,71%)"
   html = html.replace(
     /(Frais de notaire 202\d en [^:]+:\s*≈\s*)[\d\s]+\s*€(\s*pour\s*200\s*000\s*€\s*\(ancien,?\s*droits?\s*≈?\s*)[\d,\.]+\s*%(\)\s*•\s*≈\s*)[\d\s]+\s*€(\s*pour\s*200\s*000\s*€\s*\(neuf,?\s*droits?\s*≈?\s*)[\d,\.]+\s*%/gi,
     `$1${newAncienTotal} €$2${newAncienPct}$3${newNeufTotal} €$4${newNeufPct}`,
@@ -129,7 +129,7 @@ function processFile(filePath) {
   html = html.replace(
     /(≈\s*)[\d\s]+\s*€(\s*pour\s*200\s*000\s*€\s*\((?:ancien,?\s*)?droits?\s*≈?\s*)[\d,\.]+\s*%/gi,
     (match, p1, p2) => {
-      // Détermine si c'est ancien ou neuf par le contexte
+      // Determine si c'est ancien ou neuf par le contexte
       if (/neuf/i.test(match)) {
         return `${p1}${newNeufTotal} €${p2}${newNeufPct}`;
       }
@@ -149,8 +149,8 @@ function processFile(filePath) {
     `$1≈ ${newAncienPct}$2`,
   );
 
-  // Pattern 6: Seul le taux ancien "5,80%" → "6,32%" dans contexte approprié (pas neuf)
-  // Cibler spécifiquement les zones connues
+  // Pattern 6: Seul le taux ancien "5,80%" → "6,32%" dans contexte approprie (pas neuf)
+  // Cibler specifiquement les zones connues
 
   // Pattern 7: Schema.org / JSON-LD updates
   html = html.replace(
@@ -186,7 +186,7 @@ function main() {
   }
 
   console.log(
-    `\n✓ ${updated} fichiers départements mis à jour avec les taux DMTO 2026`,
+    `\n✓ ${updated} fichiers departements mis a jour avec les taux DMTO 2026`,
   );
 }
 

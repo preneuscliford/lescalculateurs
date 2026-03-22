@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Charge la configuration frais2026.json (barème CSN, DMTO, débours, CSI, TVA)
+ * Charge la configuration frais2026.json (bareme CSN, DMTO, debours, CSI, TVA)
  */
 function loadCfg() {
   const p = path.resolve(process.cwd(), 'src', 'data', 'frais2026.json')
@@ -10,7 +10,7 @@ function loadCfg() {
 }
 
 /**
- * Calcule total frais pour un prix et un code département (ancien/neuf)
+ * Calcule total frais pour un prix et un code departement (ancien/neuf)
  */
 function computeTotal(code, price, type, cfg) {
   const tr = cfg.bareme_emoluments_2025?.tranches || []
@@ -36,7 +36,7 @@ function computeTotal(code, price, type, cfg) {
 }
 
 /**
- * Formate un pourcentage approximatif (troncature 2 décimales)
+ * Formate un pourcentage approximatif (troncature 2 decimales)
  */
 function approxPct(x) {
   const pct = x * 100
@@ -45,7 +45,7 @@ function approxPct(x) {
 }
 
 /**
- * Liste les pages départements
+ * Liste les pages departements
  */
 function listDeptPages() {
   const dir = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'departements')
@@ -53,7 +53,7 @@ function listDeptPages() {
 }
 
 /**
- * Harmonise les libellés éditoriaux génériques (7–8%, 2–3%, 5.9%)
+ * Harmonise les libelles editoriaux generiques (7-8%, 2-3%, 5.9%)
  */
 function harmonizeFile(file, cfg) {
   const html = fs.readFileSync(file, 'utf8')
@@ -66,9 +66,9 @@ function harmonizeFile(file, cfg) {
   const aPct = approxPct(A.total / price)
   const nPct = approxPct(N.total / price)
   let updated = html
-  // Remplacer fourchettes génériques par valeurs calculées
-  updated = updated.replace(/≈\s*7[\s–-]8\s*%/g, aPct)
-  updated = updated.replace(/≈\s*2\s*[,\.]?\s*3\s*%|≈\s*2[\s–-]3\s*%/g, nPct)
+  // Remplacer fourchettes generiques par valeurs calculees
+  updated = updated.replace(/≈\s*7[\s--]8\s*%/g, aPct)
+  updated = updated.replace(/≈\s*2\s*[,\.]?\s*3\s*%|≈\s*2[\s--]3\s*%/g, nPct)
   // Corriger 5.9% -> 5,81% uniquement si mention de Paris dans la ligne
   updated = updated.replace(/(Paris[^\n]*?)5\.9\s*%/gi, (m, p1) => `${p1}5,81%`)
   if (updated !== html) {
@@ -79,7 +79,7 @@ function harmonizeFile(file, cfg) {
 }
 
 /**
- * Point d'entrée principal
+ * Point d'entree principal
  */
 function main() {
   const cfg = loadCfg()
@@ -88,7 +88,7 @@ function main() {
   for (const f of files) {
     if (harmonizeFile(f, cfg)) changed++
   }
-  console.log(`Harmonisation éditoriale: ${changed} fichier(s) mis à jour sur ${files.length}.`)
+  console.log(`Harmonisation editoriale: ${changed} fichier(s) mis a jour sur ${files.length}.`)
 }
 
 main()

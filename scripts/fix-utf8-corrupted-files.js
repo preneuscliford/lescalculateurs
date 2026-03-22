@@ -1,104 +1,104 @@
 #!/usr/bin/env node
 /**
  * Script pour corriger les fichiers HTML corrompus par des erreurs d'encodage UTF-8
- * Remplace les caractères mal encodés par leurs équivalents corrects
+ * Remplace les caracteres mal encodes par leurs equivalents corrects
  */
 
 import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Map des caractères mal encodés vers leurs corrections UTF-8
+ * Map des caracteres mal encodes vers leurs corrections UTF-8
  */
 const CORRECTIONS = {
-  'Ã©': 'é',
-  'Ã¨': 'è',
-  'Ã ': 'à',
-  'Ã¢': 'â',
-  'Ãª': 'ê',
+  'e': 'e',
+  'e': 'e',
+  'a': 'a',
+  'a': 'a',
+  'e': 'e',
   'Ã®': 'î',
-  'Ã´': 'ô',
-  'Ã»': 'û',
-  'Ã§': 'ç',
-  'Ã‰': 'É',
+  'Ã´': 'o',
+  'Ã"': 'û',
+  'c': 'c',
+  'Ã‰': 'E',
   'Ãˆ': 'È',
-  'Ã ': 'À',
-  'Ã‚': 'Â',
+  'a': 'A',
+  'Ã‚': '',
   'ÃŠ': 'Ê',
   'ÃŽ': 'Î',
-  'Ã”': 'Ô',
+  'Ã"': 'Ô',
   'Ã›': 'Û',
   'Ã‡': 'Ç',
-  'Ã«': 'ë',
+  'e': 'ë',
   'Ã¯': 'ï',
   'Ã¼': 'ü',
   'Ã¶': 'ö',
   'Ã¤': 'ä',
   'Ã‹': 'Ë',
-  'Ã�': 'Ï',
+  'Ã?': 'Ï',
   'Ãœ': 'Ü',
-  'Ã–': 'Ö',
+  'Ã-': 'Ö',
   'Ã„': 'Ä',
-  'Â«': '«',
-  'Â»': '»',
-  'Â°': '°',
-  'Â²': '²',
-  'Â³': '³',
-  'Â½': '½',
-  'Â¼': '¼',
-  'Â¾': '¾',
-  'â‚¬': '€',
-  'â€œ': '"',
-  'â€': '"',
-  'â€™': '\'',
-  'â€¦': '…',
-  'â€”': '—',
-  'â€“': '–',
-  'â€¢': '•',
-  'â€¡': '‡',
-  'â€ ': '†',
-  'â€°': '‰',
-  'â€¹': '‹',
-  'â€º': '›',
-  'Å“': 'œ',
-  'Å’': 'Œ',
+  '"': '"',
+  '"': '"',
+  '°': '°',
+  '²': '²',
+  '³': '³',
+  '½': '½',
+  '¼': '¼',
+  '¾': '¾',
+  'a‚¬': '€',
+  '"': '"',
+  '-: '"',
+  ''': '\'',
+  'a€¦': '…',
+  'a€"': '-',
+  'a€"': '-',
+  'a€¢': '•',
+  'a€¡': '‡',
+  'a€ ': '†',
+  'a€°': '‰',
+  'a€¹': '‹',
+  'a€º': '›',
+  'Å"': 'œ',
+  'Å'': 'Œ',
   'Å¡': 'š',
   'Å ': 'Š',
   'Å¸': 'Ÿ',
   'Å¾': 'ž',
   'Å½': 'Ž',
-  'Â©': '©',
-  'Â®': '®',
-  'Â™': '™',
-  'Â§': '§',
-  'Â¶': '¶',
-  'Â±': '±',
-  'Âµ': 'µ',
+  '©': '©',
+  '®': '®',
+  '™': '™',
+  '§': '§',
+  '¶': '¶',
+  '±': '±',
+  'µ': 'µ',
   'ÃŸ': 'ß',
-  'âˆž': '∞',
-  'â‰ ': '≠',
-  'â‰¤': '≤',
-  'â‰¥': '≥',
-  'âˆ‚': '∂',
-  'âˆ‘': '∑',
-  'âˆŸ': '∏',
-  'âˆ«': '∫',
-  'âˆš': '√',
-  'âˆ¼': '≈',
-  'â‰ˆ': '≈',
-  'â‰¡': '≡',
-  'â‰ ': '≠',
-  'â€�': '', // Caractère de contrôle
-  '�': '', // Caractère de remplacement
+  'aˆž': '∞',
+  'a‰ ': '≠',
+  'a‰¤': '≤',
+  'a‰¥': '≥',
+  'aˆ‚': '∂',
+  'aˆ'': '∑',
+  'aˆŸ': '∏',
+  'aˆ"': '∫',
+  'aˆš': '√',
+  'aˆ¼': '≈',
+  'a‰ˆ': '≈',
+  'a‰¡': '≡',
+  'a‰ ': '≠',
+  'a€?': '', // Caractere de controle
+  '?': '', // Caractere de remplacement
 }
 
 /**
- * Corrige le contenu d'un texte en remplaçant les caractères mal encodés
+ * Corrige le contenu d'un texte en remplacant les caracteres mal encodes
  */
 function fixCorruptedText(content) {
   let fixed = content
   
-  // Remplacer chaque caractère mal encodé
+  // Remplacer chaque caractere mal encode
   for (const [corrupted, correct] of Object.entries(CORRECTIONS)) {
     const regex = new RegExp(corrupted.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')
     fixed = fixed.replace(regex, correct)
@@ -108,7 +108,7 @@ function fixCorruptedText(content) {
 }
 
 /**
- * Vérifie si un fichier contient des caractères mal encodés
+ * Verifie si un fichier contient des caracteres mal encodes
  */
 function hasCorruptedChars(content) {
   for (const corrupted of Object.keys(CORRECTIONS)) {
@@ -136,7 +136,7 @@ function processFile(filePath) {
     const backupPath = filePath + '.backup-' + Date.now()
     fs.writeFileSync(backupPath, content, 'utf8')
     
-    // Écrire le contenu corrigé
+    // Ecrire le contenu corrige
     fs.writeFileSync(filePath, fixedContent, 'utf8')
     
     return { fixed: true, backup: backupPath }
@@ -146,7 +146,7 @@ function processFile(filePath) {
 }
 
 /**
- * Parcourt récursivement un répertoire
+ * Parcourt recursivement un repertoire
  */
 function walk(dir, onFile) {
   const items = fs.readdirSync(dir, { withFileTypes: true })
@@ -161,7 +161,7 @@ function walk(dir, onFile) {
 }
 
 /**
- * Point d'entrée principal
+ * Point d'entree principal
  */
 function main() {
   const targetDir = path.resolve(process.cwd(), 'src/pages/blog/departements')

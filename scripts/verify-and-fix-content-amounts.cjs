@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * Script de vérification et correction des montants dans les contenus HTML
- * Vérifie que les montants affichés sont bien dans les fourchettes 2026
+ * Script de verification et correction des montants dans les contenus HTML
+ * Verifie que les montants affiches sont bien dans les fourchettes 2026
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// Barèmes officiels 2026 avec fourchettes acceptables
+// Baremes officiels 2026 avec fourchettes acceptables
 const BAREMES_2026 = {
   // RSA
   rsa: {
@@ -31,7 +31,7 @@ const BAREMES_2026 = {
   asf: {
     parEnfant: { min: 174, max: 179, correct: 176.50 },
   },
-  // ARE (à vérifier)
+  // ARE (a verifier)
   are: {
     minJournalier: { min: 30, max: 33, correct: 31.45 },
     maxJournalier: { min: 185, max: 190, correct: 186.92 },
@@ -51,7 +51,7 @@ function extractAmounts(text) {
   for (const pattern of MONTANT_PATTERNS) {
     let match;
     while ((match = pattern.exec(text)) !== null) {
-      // Normaliser le nombre (remplacer espace/espace insécable et virgule française)
+      // Normaliser le nombre (remplacer espace/espace insecable et virgule francaise)
       const normalized = match[1]
         .replace(/\s/g, '')
         .replace(/\./g, '')
@@ -86,10 +86,10 @@ function analyzeFile(filePath) {
   for (const amount of amounts) {
     let checked = false;
     
-    // Vérifier RSA
+    // Verifier RSA
     if (content.substring(Math.max(0, amount.index - 200), amount.index + 50)
         .toLowerCase().includes('rsa')) {
-      // Vérifier selon le contexte
+      // Verifier selon le contexte
       const context = content.substring(Math.max(0, amount.index - 300), amount.index + 100).toLowerCase();
       
       if (context.includes('couple')) {
@@ -99,11 +99,11 @@ function analyzeFile(filePath) {
         }
         checked = true;
       } else if (context.includes('parent') || context.includes('isole')) {
-        // Parent isolé
+        // Parent isole
         if (amount.value > 1000) {
           const check = checkAmountInRange(amount.value, 'rsa', 'parentIsole1enf');
           if (check && !check.inRange) {
-            issues.push({ ...amount, category: 'RSA parent isolé', check, context: 'parent isolé' });
+            issues.push({ ...amount, category: 'RSA parent isole', check, context: 'parent isole' });
           }
         }
         checked = true;
@@ -117,7 +117,7 @@ function analyzeFile(filePath) {
       }
     }
     
-    // Vérifier AAH
+    // Verifier AAH
     if (content.substring(Math.max(0, amount.index - 200), amount.index + 50)
         .toLowerCase().includes('aah')) {
       if (amount.value > 900 && amount.value < 1100) {
@@ -129,7 +129,7 @@ function analyzeFile(filePath) {
       }
     }
     
-    // Vérifier SMIC
+    // Verifier SMIC
     if (content.substring(Math.max(0, amount.index - 200), amount.index + 50)
         .toLowerCase().includes('smic')) {
       if (amount.value > 10 && amount.value < 15) {
@@ -148,7 +148,7 @@ function analyzeFile(filePath) {
       checked = true;
     }
     
-    // Vérifier ASF
+    // Verifier ASF
     if (content.substring(Math.max(0, amount.index - 200), amount.index + 50)
         .toLowerCase().includes('asf')) {
       if (amount.value > 170 && amount.value < 180) {
@@ -215,7 +215,7 @@ function fixAmountsInFile(filePath, dryRun = true) {
   
   // SMIC 12,02 → 11,88
   if (content.includes('12,02') || content.includes('12.02')) {
-    // Vérifier le contexte SMIC
+    // Verifier le contexte SMIC
     if (content.toLowerCase().includes('smic')) {
       fixes.push({ from: '12,02', to: '11,88', category: 'SMIC horaire' });
       if (!dryRun) {
@@ -254,12 +254,12 @@ function main() {
   const allResults = [];
   const allFixes = [];
   
-  console.log('🔍 Vérification des montants dans les contenus HTML...\n');
+  console.log('🔍 Verification des montants dans les contenus HTML...\n');
   
   for (const dir of directories) {
     const dirPath = path.join(process.cwd(), dir);
     if (!fs.existsSync(dirPath)) {
-      console.log(`⚠️ Dossier non trouvé: ${dir}`);
+      console.log(`⚠️ Dossier non trouve: ${dir}`);
       continue;
     }
     
@@ -279,7 +279,7 @@ function main() {
             allResults.push(result);
           }
           
-          // Vérifier corrections possibles
+          // Verifier corrections possibles
           const fixResult = fixAmountsInFile(itemPath, true);
           if (fixResult.fixes.length > 0) {
             allFixes.push(fixResult);
@@ -291,16 +291,16 @@ function main() {
     scanDir(dirPath);
   }
   
-  // Afficher résultats
+  // Afficher resultats
   if (allResults.length === 0 && allFixes.length === 0) {
-    console.log('✅ Aucun montant incorrect détecté dans les contenus HTML !');
+    console.log('✅ Aucun montant incorrect detecte dans les contenus HTML !');
   } else {
-    console.log(`⚠️ ${allResults.length} fichiers avec problèmes détectés`);
+    console.log(`⚠️ ${allResults.length} fichiers avec problemes detectes`);
     console.log(`🔧 ${allFixes.length} fichiers avec corrections possibles\n`);
     
     for (const result of allResults.slice(0, 10)) {
       console.log(`\n📄 ${result.filePath}`);
-      console.log(`   Montants trouvés: ${result.amounts}`);
+      console.log(`   Montants trouves: ${result.amounts}`);
       for (const issue of result.issues) {
         console.log(`   ❌ ${issue.category}: ${issue.original} (attendu: ~${issue.check.expected}€)`);
       }
@@ -325,10 +325,10 @@ function main() {
       const result = fixAmountsInFile(fix.filePath, false);
       if (result.modified) {
         fixedCount++;
-        console.log(`✅ Corrigé: ${fix.filePath}`);
+        console.log(`✅ Corrige: ${fix.filePath}`);
       }
     }
-    console.log(`\n✅ ${fixedCount} fichiers corrigés`);
+    console.log(`\n✅ ${fixedCount} fichiers corriges`);
   }
 }
 

@@ -78,7 +78,7 @@ function main() {
   for (const f of files) {
     if (fixFile(f, cfg)) changed++
   }
-  console.log(`Type d’achat fix: ${changed} fichier(s) mis à jour sur ${files.length}.`)
+  console.log(`Type d'achat fix: ${changed} fichier(s) mis a jour sur ${files.length}.`)
 }
 
 main()

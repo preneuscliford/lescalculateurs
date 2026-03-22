@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Health Check Complet - Exécute tous les analyses en une seule commande
+ * Health Check Complet - Execute tous les analyses en une seule commande
  */
 
 import { exec } from "child_process";

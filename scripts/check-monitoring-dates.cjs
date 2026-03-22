@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Script de suivi des dates de publication
- * Affiche quand vérifier les mises à jour officielles
+ * Affiche quand verifier les mises a jour officielles
  */
 
 const fs = require("fs");
@@ -16,9 +16,9 @@ console.log(`
 ╚════════════════════════════════════════════════════════════════╝
 `);
 
-console.log(`\n⏰ DERNIÈRE VÉRIFICATION: ${monitoring.last_updated}\n`);
+console.log(`\n⏰ DERNIÈRE VERIFICATION: ${monitoring.last_updated}\n`);
 
-console.log(`\n📌 TÂCHES DE MONITORING:\n`);
+console.log(`\n📌 TCHES DE MONITORING:\n`);
 console.log(`${"─".repeat(70)}\n`);
 
 monitoring.monitoring_tasks.forEach((task, idx) => {
@@ -29,9 +29,9 @@ monitoring.monitoring_tasks.forEach((task, idx) => {
     daysUntil <= 30 ? "🔴 URGENT" : daysUntil <= 90 ? "🟡 BIENTÔT" : "🟢 OK";
 
   console.log(`${idx + 1}. ${task.task}`);
-  console.log(`   Fréquence: ${task.frequency}`);
+  console.log(`   Frequence: ${task.frequency}`);
   console.log(
-    `   Prochaine vérification: ${task.next_check} (${daysUntil} jours) ${urgency}`
+    `   Prochaine verification: ${task.next_check} (${daysUntil} jours) ${urgency}`
   );
   console.log(`   Source: ${task.source}`);
   console.log();
@@ -42,13 +42,13 @@ console.log(`${"─".repeat(70)}\n`);
 console.log(`\n📊 BARÈMES ACTUELS:\n`);
 console.log(`Version: ${monitoring.baremes_notariaux.version}`);
 console.log(
-  `Dernière mise à jour: ${monitoring.baremes_notariaux.effective_date}`
+  `Derniere mise a jour: ${monitoring.baremes_notariaux.effective_date}`
 );
 console.log(
-  `Prochaine révision attendue: ${monitoring.baremes_notariaux.next_expected_update}\n`
+  `Prochaine revision attendue: ${monitoring.baremes_notariaux.next_expected_update}\n`
 );
 
-console.log(`Tranches d'émoluments:`);
+console.log(`Tranches d'emoluments:`);
 monitoring.baremes_notariaux.tranches.forEach((t) => {
   console.log(
     `  ${t.min.toLocaleString()} - ${t.max.toLocaleString()}€: ${(
@@ -57,12 +57,12 @@ monitoring.baremes_notariaux.tranches.forEach((t) => {
   );
 });
 
-console.log(`\n\n✅ ACTIONS RECOMMANDÉES:\n`);
-console.log(`1. ✓ Vérifie les sources officielles mensuellement`);
-console.log(`2. ✓ Mets à jour les données dès la publication officielle`);
-console.log(`3. ✓ Teste les calculateurs après chaque mise à jour`);
+console.log(`\n\n✅ ACTIONS RECOMMANDEES:\n`);
+console.log(`1. ✓ Verifie les sources officielles mensuellement`);
+console.log(`2. ✓ Mets a jour les donnees des la publication officielle`);
+console.log(`3. ✓ Teste les calculateurs apres chaque mise a jour`);
 console.log(`4. ✓ Notifie les utilisateurs des changements majeurs`);
-console.log(`5. ✓ Archive les anciennes versions pour référence\n`);
+console.log(`5. ✓ Archive les anciennes versions pour reference\n`);
 
 console.log(`\n📬 ALERTES A CONFIGURER:\n`);
 monitoring.alert_rules.alert_on.forEach((alert) => {

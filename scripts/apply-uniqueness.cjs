@@ -32,23 +32,23 @@ function shortNationalAdvices(code) {
   const v = (code.charCodeAt(0) || 65) % 5;
   const variants = [
     [
-      "Négociez les éléments mobiliers hors acte pour réduire l’assiette taxable.",
-      "Demandez si un jeune notaire propose une remise sur ses émoluments.",
+      "Negociez les elements mobiliers hors acte pour reduire l'assiette taxable.",
+      "Demandez si un jeune notaire propose une remise sur ses emoluments.",
     ],
     [
-      "Prévoyez la VEFA pour réduire significativement les frais sur le neuf.",
-      "Vérifiez l’exonération possible des frais pour certaines aides locales.",
+      "Prevoyez la VEFA pour reduire significativement les frais sur le neuf.",
+      "Verifiez l'exoneration possible des frais pour certaines aides locales.",
     ],
     [
-      "Distinguez mobilier inclus et mobilier vendu séparément pour limiter la base taxable.",
-      "Comparez plusieurs études notariales : les honoraires sont négociables.",
+      "Distinguez mobilier inclus et mobilier vendu separement pour limiter la base taxable.",
+      "Comparez plusieurs etudes notariales : les honoraires sont negociables.",
     ],
     [
-      "En VEFA, vérifiez la répartition TVA/frais pour optimiser votre budget.",
+      "En VEFA, verifiez la repartition TVA/frais pour optimiser votre budget.",
       "Envisagez un frais-partage entre acheteur et vendeur sur certains frais annexes.",
     ],
     [
-      "Demandez l’identification claire des débours pour éviter les frais cachés.",
+      "Demandez l'identification claire des debours pour eviter les frais caches.",
       "Consultez un jeune notaire pour une approche souvent plus flexible sur les honoraires.",
     ],
   ];
@@ -57,18 +57,18 @@ function shortNationalAdvices(code) {
 
 function buildIntro(input) {
   const name =
-    input.departement_nom || input.departement_numero || "le département";
-  const ancien = input.ancien_pct ? (+input.ancien_pct).toFixed(1) : "7 à 8";
-  const neuf = input.neuf_pct ? (+input.neuf_pct).toFixed(1) : "2 à 3";
-  return `<h2>Introduction</h2>\n<p>À ${name}, comptez environ ${ancien}% de droits de mutation (ancien) contre ${neuf}% dans le neuf — un poste à prévoir dans votre budget d’acquisition.</p>`;
+    input.departement_nom || input.departement_numero || "le departement";
+  const ancien = input.ancien_pct ? (+input.ancien_pct).toFixed(1) : "7 a 8";
+  const neuf = input.neuf_pct ? (+input.neuf_pct).toFixed(1) : "2 a 3";
+  return `<h2>Introduction</h2>\n<p>A ${name}, comptez environ ${ancien}% de droits de mutation (ancien) contre ${neuf}% dans le neuf - un poste a prevoir dans votre budget d'acquisition.</p>`;
 }
 
 function buildFaqBlock(input) {
   const localFaqs = ensureArray(input.local_faqs).slice(0, 2);
   const generic = [
     {
-      q: "Quelle différence de frais entre ancien et neuf ?",
-      a: `Globalement, le neuf bénéficie de frais réduits (≈ ${(
+      q: "Quelle difference de frais entre ancien et neuf ?",
+      a: `Globalement, le neuf beneficie de frais reduits (≈ ${(
         +input.neuf_pct || 2
       ).toFixed(2)}%) contre ≈ ${(+input.ancien_pct || 7).toFixed(
         2
@@ -76,7 +76,7 @@ function buildFaqBlock(input) {
     },
     {
       q: "Combien de temps pour finaliser une transaction ?",
-      a: "Comptez en moyenne 8 à 12 semaines entre compromis et signature selon la complexité du dossier.",
+      a: "Comptez en moyenne 8 a 12 semaines entre compromis et signature selon la complexite du dossier.",
     },
   ];
   const faqs = [...generic, ...localFaqs];
@@ -156,7 +156,7 @@ function applyToCode(code) {
   // Advices
   html = replaceSection(
     html,
-    "Conseils d’optimisation",
+    "Conseils d'optimisation",
     buildAdvices(input, code)
   );
 

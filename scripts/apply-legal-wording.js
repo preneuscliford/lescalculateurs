@@ -1,17 +1,17 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-const DISCLAIMER = 'Les calculs reposent sur les barèmes réglementés en vigueur et les taux départementaux connus à date. Ils constituent une estimation indicative et non contractuelle.'
+const DISCLAIMER = 'Les calculs reposent sur les baremes reglementes en vigueur et les taux departementaux connus a date. Ils constituent une estimation indicative et non contractuelle.'
 
 function replaceYearBarreme(html) {
-  html = html.replace(/barème\s*20(2[45]|26)/gi, 'barème réglementé en vigueur')
-  html = html.replace(/Barème\s*officiel\s*20(2[45]|26)/gi, 'barème réglementé en vigueur')
+  html = html.replace(/bareme\s*20(2[45]|26)/gi, 'bareme reglemente en vigueur')
+  html = html.replace(/Bareme\s*officiel\s*20(2[45]|26)/gi, 'bareme reglemente en vigueur')
   return html
 }
 
 function softenStandardWord(html) {
-  html = html.replace(/taux\s+standard\s+autour\s+de/gi, 'taux usuel constaté autour de')
-  html = html.replace(/taux\s+standard\s+national/gi, 'taux usuel constaté')
+  html = html.replace(/taux\s+standard\s+autour\s+de/gi, 'taux usuel constate autour de')
+  html = html.replace(/taux\s+standard\s+national/gi, 'taux usuel constate')
   return html
 }
 

@@ -2,13 +2,13 @@
 
 /**
  * Script de CORRECTION des canonicals
- * Standardiser tous les canonicals pour éviter la chaîne de redirects
+ * Standardiser tous les canonicals pour eviter la chaîne de redirects
  */
 
 const fs = require("fs");
 const path = require("path");
 
-console.log("\n🔧 CORRECTION DES CANONICALS - GÉNÉRER LE PLAN D'ACTION\n");
+console.log("\n🔧 CORRECTION DES CANONICALS - GENERER LE PLAN D'ACTION\n");
 console.log("=".repeat(80));
 
 // Charger l'analyse
@@ -16,37 +16,37 @@ const analysis = JSON.parse(
   fs.readFileSync("./scripts/canonical-analysis-detailed.json", "utf8")
 );
 
-console.log("\n📊 PROBLÈMES À CORRIGER:\n");
+console.log("\n📊 PROBLÈMES A CORRIGER:\n");
 
 console.log("1. 105 URLs avec /pages/ → /blog/ mismatch");
 console.log(
   "   Cause: Canonical pointe vers /blog/ mais fichier est en /pages/"
 );
-console.log("   Impact: Crée redirection supplémentaire");
+console.log("   Impact: Cree redirection supplementaire");
 console.log("   Solution: Canonical doit pointer vers /pages/blog/\n");
 
 console.log("2. 10 URLs avec apex domain + .html");
 console.log("   Cause: Canonical = lescalculateurs.fr/...html");
-console.log("   Impact: Double problème (apex + .html)");
+console.log("   Impact: Double probleme (apex + .html)");
 console.log(
-  "   Solution: Canonical doit être www.lescalculateurs.fr sans .html\n"
+  "   Solution: Canonical doit etre www.lescalculateurs.fr sans .html\n"
 );
 
 console.log("3. 2 URLs avec apex domain seul");
 console.log("   Cause: Canonical = lescalculateurs.fr/...");
 console.log("   Impact: Mismatch avec redirect apex → www");
-console.log("   Solution: Canonical doit être www.lescalculateurs.fr\n");
+console.log("   Solution: Canonical doit etre www.lescalculateurs.fr\n");
 
 console.log("4. 1 URL avec www + .html");
 console.log("   Cause: Canonical = www.lescalculateurs.fr/...html");
 console.log("   Impact: Contredit redirects .html → sans extension");
-console.log("   Solution: Canonical doit être sans .html\n");
+console.log("   Solution: Canonical doit etre sans .html\n");
 
 console.log("=".repeat(80));
 
 console.log("\n✅ PLAN DE CORRECTION:\n");
 
-console.log("OPTION 1: Changer TOUS les canonicals pour matcher le build réel");
+console.log("OPTION 1: Changer TOUS les canonicals pour matcher le build reel");
 console.log("─────────────────────────────────────────────────────────────");
 console.log("");
 console.log("  Actuellement: Vercel build transforme");
@@ -55,11 +55,11 @@ console.log(
   "    → /pages/blog/frais-notaire-01 (dans public/dist/pages/blog/)"
 );
 console.log("");
-console.log("  Les canonicals devraient être:");
+console.log("  Les canonicals devraient etre:");
 console.log("    https://www.lescalculateurs.fr/pages/blog/frais-notaire-01");
 console.log("");
 console.log("  ADVANTAGE:");
-console.log("  • URL réelle = Canonical = une seule URL");
+console.log("  • URL reelle = Canonical = une seule URL");
 console.log("  • Pas de redirection interne");
 console.log("  • Google indexe direct");
 console.log("");
@@ -77,7 +77,7 @@ console.log("");
 console.log("  ADVANTAGE:");
 console.log("  • Canonicals restent /blog/");
 console.log("  • Les URLs finales deviennent /blog/ aussi");
-console.log("  • Cohérence totale");
+console.log("  • Coherence totale");
 console.log("");
 console.log("  ACTION:");
 console.log("  • Ajouter rewrite vercel.json");
@@ -88,7 +88,7 @@ console.log("=".repeat(80));
 
 console.log("\n🎯 RECOMMANDATION: OPTION 1 (plus simple et rapide)\n");
 
-console.log("Les changements à faire:");
+console.log("Les changements a faire:");
 console.log("");
 
 const fixes = {
@@ -122,42 +122,42 @@ Object.entries(fixes).forEach(([key, fix]) => {
   console.log("");
 });
 
-console.log("AVANT (problématique):");
+console.log("AVANT (problematique):");
 console.log(
   '  <link rel="canonical" href="https://www.lescalculateurs.fr/blog/departements/frais-notaire-01" />'
 );
 console.log(
   "  Redirige vers: /pages/blog/departements/frais-notaire-01 (via vercel.json)"
 );
-console.log("  Problème: Canonical ≠ URL réelle");
+console.log("  Probleme: Canonical ≠ URL reelle");
 console.log("");
 
 console.log("APRÈS (correctif):");
 console.log(
   '  <link rel="canonical" href="https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-01" />'
 );
-console.log("  URL réelle: /pages/blog/departements/frais-notaire-01");
-console.log("  Avantage: Canonical = URL réelle, pas de redirection interne");
+console.log("  URL reelle: /pages/blog/departements/frais-notaire-01");
+console.log("  Avantage: Canonical = URL reelle, pas de redirection interne");
 console.log("");
 
 console.log("=".repeat(80));
 
-console.log("\n💡 POURQUOI CELA VA RÉSOUDRE LE PROBLÈME:\n");
+console.log("\n💡 POURQUOI CELA VA RESOUDRE LE PROBLÈME:\n");
 
 console.log("Situation actuelle (MAUVAISE):");
 console.log(
-  "  Google découvre: https://www.lescalculateurs.fr/pages/blog/frais-notaire-01.html"
+  "  Google decouvre: https://www.lescalculateurs.fr/pages/blog/frais-notaire-01.html"
 );
 console.log(
   "  Canonical dit: https://www.lescalculateurs.fr/blog/frais-notaire-01"
 );
 console.log("  CONFLIT! Google ne sait pas laquelle indexer");
-console.log("  RÉSULTAT: Non indexée");
+console.log("  RESULTAT: Non indexee");
 console.log("");
 
-console.log("Après correction:");
+console.log("Apres correction:");
 console.log(
-  "  Google découvre: https://www.lescalculateurs.fr/pages/blog/frais-notaire-01.html"
+  "  Google decouvre: https://www.lescalculateurs.fr/pages/blog/frais-notaire-01.html"
 );
 console.log(
   "  Redirect .html: https://www.lescalculateurs.fr/pages/blog/frais-notaire-01"
@@ -165,8 +165,8 @@ console.log(
 console.log(
   "  Canonical dit: https://www.lescalculateurs.fr/pages/blog/frais-notaire-01"
 );
-console.log("  ✓ PARFAIT! Tout pointe au même endroit");
-console.log("  RÉSULTAT: Indexée!");
+console.log("  ✓ PARFAIT! Tout pointe au meme endroit");
+console.log("  RESULTAT: Indexee!");
 console.log("");
 
 console.log("=".repeat(80));
@@ -215,4 +215,4 @@ fs.writeFileSync(
   JSON.stringify(plan, null, 2)
 );
 
-console.log("\n📝 Plan exporté: scripts/canonical-fix-plan.json\n");
+console.log("\n📝 Plan exporte: scripts/canonical-fix-plan.json\n");

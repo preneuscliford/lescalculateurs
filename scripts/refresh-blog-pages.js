@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url);
 const { readTextFile, writeTextFile } = require("./encoding.cjs");
 
 /**
- * Charge le JSON frais2026 (DMTO, émoluments, CSI, débours)
+ * Charge le JSON frais2026 (DMTO, emoluments, CSI, debours)
  */
 function loadFraisConfig() {
   const p = path.resolve(process.cwd(), "src", "data", "frais2026.json");
@@ -38,7 +38,7 @@ function loadBaremesGen() {
 }
 
 /**
- * Calcule les émoluments proportionnels selon le barème du JSON.
+ * Calcule les emoluments proportionnels selon le bareme du JSON.
  */
 function computeEmoluments(price, cfg) {
   let remaining = price;
@@ -60,11 +60,11 @@ function computeEmoluments(price, cfg) {
 }
 
 /**
- * Calcule les droits d'enregistrement (ancien/neuf) pour un code département.
+ * Calcule les droits d'enregistrement (ancien/neuf) pour un code departement.
  */
 function computeDroits(code, price, cfg, type, baremesGen) {
   if (type === "neuf") return price * 0.007;
-  // Priorité aux taux votés 2026 (base départementale) convertis en taux total
+  // Priorite aux taux votes 2026 (base departementale) convertis en taux total
   const depBase =
     baremesGen?.notaire?.droits_mutation?.ancien?.par_departement?.[code]?.taux;
   const toTotal = (t) => t + 0.012 + 0.0237 * t;
@@ -86,14 +86,14 @@ function computeCsi(price, cfg) {
 }
 
 /**
- * Calcule TVA (20% sur émoluments + formalités)
+ * Calcule TVA (20% sur emoluments + formalites)
  */
 function computeTva(emoluments, formalites) {
   return 0.2 * (emoluments + formalites);
 }
 
 /**
- * Calcule détail et total des frais pour un exemple générique.
+ * Calcule detail et total des frais pour un exemple generique.
  */
 function computeAll(code, price, type, cfg, baremesGen) {
   const emoluments = computeEmoluments(price, cfg);
@@ -107,7 +107,7 @@ function computeAll(code, price, type, cfg, baremesGen) {
 }
 
 /**
- * Formate un montant en euros (sans décimales).
+ * Formate un montant en euros (sans decimales).
  */
 function euro(n) {
   return (
@@ -118,7 +118,7 @@ function euro(n) {
 }
 
 /**
- * Formate un pourcentage en troncature à 2 décimales avec ≈.
+ * Formate un pourcentage en troncature a 2 decimales avec ≈.
  */
 function approxPct(x) {
   const pct = x * 100;
@@ -127,7 +127,7 @@ function approxPct(x) {
 }
 
 /**
- * Met à jour la page comparatif ancien/neuf avec les données calculées.
+ * Met a jour la page comparatif ancien/neuf avec les donnees calculees.
  */
 function updateComparatifPage(cfg, baremesGen) {
   const file = path.resolve(
@@ -140,14 +140,14 @@ function updateComparatifPage(cfg, baremesGen) {
   if (!fs.existsSync(file)) return false;
   let html = readTextFile(file);
 
-  // Exemple générique sur 300 000 € – utiliser un département à 5,00% base (code 01)
+  // Exemple generique sur 300 000 € - utiliser un departement a 5,00% base (code 01)
   const code = "01";
   const priceAncien = 300000;
   const priceNeuf = 300000;
   const A = computeAll(code, priceAncien, "ancien", cfg, baremesGen);
   const N = computeAll(code, priceNeuf, "neuf", cfg, baremesGen);
 
-  // Encadré « En bref »
+  // Encadre " En bref "
   html = html.replace(
     /<strong>6,6% dans l'ancien<\/strong>/,
     `<strong>${approxPct(A.total / priceAncien)} dans l'ancien</strong>`,
@@ -158,11 +158,11 @@ function updateComparatifPage(cfg, baremesGen) {
   );
   const eco = Math.round(A.total - N.total);
   html = html.replace(
-    /<strong>7 800€ sur un bien à 300 000€<\/strong>/,
-    `<strong>${euro(eco)} sur un bien à 300 000€</strong>`,
+    /<strong>7 800€ sur un bien a 300 000€<\/strong>/,
+    `<strong>${euro(eco)} sur un bien a 300 000€</strong>`,
   );
 
-  // Tableau – Droits d'enregistrement ancien et neuf
+  // Tableau - Droits d'enregistrement ancien et neuf
   html = html.replace(
     />5,80 %<\/td>/,
     `>${approxPct(A.droits / priceAncien)}<\/td>`,
@@ -172,86 +172,86 @@ function updateComparatifPage(cfg, baremesGen) {
     `>0,715 % (sur prix HT)<\/td>`,
   );
 
-  // Détail ancien
+  // Detail ancien
   html = html.replace(
-    /Émoluments du notaire<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Émoluments du notaire</span><span class="font-bold">${euro(A.emoluments)}</span>`,
+    /Emoluments du notaire<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Emoluments du notaire</span><span class="font-bold">${euro(A.emoluments)}</span>`,
   );
   html = html.replace(
     /Droits d'enregistrement \(5,8%\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
     `Droits d'enregistrement (${approxPct(A.droits / priceAncien)})</span><span class="font-bold">${euro(A.droits)}</span>`,
   );
   html = html.replace(
-    /Débours \(cadastre, conservation\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Débours (cadastre, conservation)</span><span class="font-bold">${euro(A.debours)}</span>`,
+    /Debours \(cadastre, conservation\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Debours (cadastre, conservation)</span><span class="font-bold">${euro(A.debours)}</span>`,
   );
   html = html.replace(
-    /Formalités diverses<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Formalités diverses</span><span class="font-bold">${euro(A.formalites)}</span>`,
+    /Formalites diverses<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Formalites diverses</span><span class="font-bold">${euro(A.formalites)}</span>`,
   );
   html = html.replace(
-    /Contribution Sécurité Immobilière<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Contribution Sécurité Immobilière</span><span class="font-bold">${euro(A.csi)}</span>`,
+    /Contribution Securite Immobiliere<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Contribution Securite Immobiliere</span><span class="font-bold">${euro(A.csi)}</span>`,
   );
   html = html.replace(
-    /TVA \(20% sur émoluments \+ formalités\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `TVA (20% sur émoluments + formalités)</span><span class="font-bold">${euro(A.tva)}</span>`,
+    /TVA \(20% sur emoluments \+ formalites\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `TVA (20% sur emoluments + formalites)</span><span class="font-bold">${euro(A.tva)}</span>`,
   );
   html = html.replace(
     /Total frais de notaire<\/span>\s*<span class="text-orange-600">[0-9\s]+\s€<\/span>/,
     `Total frais de notaire</span><span class="text-orange-600">${euro(A.total)}</span>`,
   );
   html = html.replace(
-    /Coût total à payer<\/span>\s*<span class="font-bold text-2xl text-orange-700">[0-9\s]+\s€<\/span>/,
-    `Coût total à payer</span><span class="font-bold text-2xl text-orange-700">${euro(priceAncien + A.total)}</span>`,
+    /Coût total a payer<\/span>\s*<span class="font-bold text-2xl text-orange-700">[0-9\s]+\s€<\/span>/,
+    `Coût total a payer</span><span class="font-bold text-2xl text-orange-700">${euro(priceAncien + A.total)}</span>`,
   );
   html = html.replace(
     /<strong>% des frais :<\/strong>\s*[0-9.,]+%/,
     `<strong>% des frais :</strong> ${(Math.floor((A.total / priceAncien) * 10000) / 100).toFixed(2).replace(".", ",")}%`,
   );
 
-  // Détail neuf
+  // Detail neuf
   html = html.replace(
-    /Émoluments du notaire<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    /Emoluments du notaire<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
     (m) => m.replace(/>[^<]+</, `>${euro(N.emoluments)}<`),
   );
   html = html.replace(
-    /Droits d'enregistrement réduits \(0,715%\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Droits d'enregistrement réduits (0,715%)</span><span class="font-bold">${euro(N.droits)}</span>`,
+    /Droits d'enregistrement reduits \(0,715%\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Droits d'enregistrement reduits (0,715%)</span><span class="font-bold">${euro(N.droits)}</span>`,
   );
   html = html.replace(
-    /Débours \(VEFA\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Débours (VEFA)</span><span class="font-bold">${euro(N.debours)}</span>`,
+    /Debours \(VEFA\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Debours (VEFA)</span><span class="font-bold">${euro(N.debours)}</span>`,
   );
   html = html.replace(
-    /Formalités diverses<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Formalités diverses</span><span class="font-bold">${euro(N.formalites)}</span>`,
+    /Formalites diverses<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Formalites diverses</span><span class="font-bold">${euro(N.formalites)}</span>`,
   );
   html = html.replace(
-    /Contribution Sécurité Immobilière<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `Contribution Sécurité Immobilière</span><span class="font-bold">${euro(N.csi)}</span>`,
+    /Contribution Securite Immobiliere<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `Contribution Securite Immobiliere</span><span class="font-bold">${euro(N.csi)}</span>`,
   );
   html = html.replace(
-    /TVA \(20% sur émoluments \+ formalités\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
-    `TVA (20% sur émoluments + formalités)</span><span class="font-bold">${euro(N.tva)}</span>`,
+    /TVA \(20% sur emoluments \+ formalites\)<\/span>\s*<span class="font-bold">[0-9\s]+\s€<\/span>/,
+    `TVA (20% sur emoluments + formalites)</span><span class="font-bold">${euro(N.tva)}</span>`,
   );
   html = html.replace(
     /Total frais notaire<\/span>\s*<span class="text-blue-600">[0-9\s]+\s€<\/span>/,
     `Total frais notaire</span><span class="text-blue-600">${euro(N.total)}</span>`,
   );
   html = html.replace(
-    /Coût total à payer<\/span>\s*<span class="font-bold text-2xl text-blue-700">[0-9\s]+\s€<\/span>/,
-    `Coût total à payer</span><span class="font-bold text-2xl text-blue-700">${euro(priceNeuf + N.total)}</span>`,
+    /Coût total a payer<\/span>\s*<span class="font-bold text-2xl text-blue-700">[0-9\s]+\s€<\/span>/,
+    `Coût total a payer</span><span class="font-bold text-2xl text-blue-700">${euro(priceNeuf + N.total)}</span>`,
   );
   html = html.replace(
     /<strong>% des frais :<\/strong>\s*[0-9.,]+%/,
     `<strong>% des frais :</strong> ${(Math.floor((N.total / priceNeuf) * 10000) / 100).toFixed(2).replace(".", ",")}%`,
   );
 
-  // Économie
+  // Economie
   html = html.replace(
-    /✅ Économie vs ancien : <span class="text-2xl">[0-9\s]+\s€<\/span>/,
-    `✅ Économie vs ancien : <span class="text-2xl">${euro(A.total - N.total)}</span>`,
+    /✅ Economie vs ancien : <span class="text-2xl">[0-9\s]+\s€<\/span>/,
+    `✅ Economie vs ancien : <span class="text-2xl">${euro(A.total - N.total)}</span>`,
   );
 
   writeTextFile(file, html);
@@ -259,7 +259,7 @@ function updateComparatifPage(cfg, baremesGen) {
 }
 
 /**
- * Met à jour les textes génériques de la page « frais-notaire-departements ».
+ * Met a jour les textes generiques de la page " frais-notaire-departements ".
  */
 function updateDepartementsTexts(cfg, baremesGen) {
   const file = path.resolve(
@@ -275,28 +275,28 @@ function updateDepartementsTexts(cfg, baremesGen) {
   // Taux standard autour de 5,81% -> ≈ 6,32%
   html = html.replace(
     /taux standard autour de 5,81 %/i,
-    "taux usuel constaté autour de ≈ 6,32 %",
+    "taux usuel constate autour de ≈ 6,32 %",
   );
   html = html.replace(/≈ 5,80 %/g, "≈ 6,32 %");
 
-  // Liste des départements à taux réduits et spéciaux selon le JSON
-  const txt = `taux réduits à 3,8 % dans quelques départements (ex. Indre, Mayotte), quelques départements à 4,50 % (ex. Hautes‑Alpes), et base votée à 5,00 % donnant ≈ 6,32 % en taux total (Paris et 92/93/94 inclus)`;
+  // Liste des departements a taux reduits et speciaux selon le JSON
+  const txt = `taux reduits a 3,8 % dans quelques departements (ex. Indre, Mayotte), quelques departements a 4,50 % (ex. Hautes‑Alpes), et base votee a 5,00 % donnant ≈ 6,32 % en taux total (Paris et 92/93/94 inclus)`;
   html = html.replace(
-    /taux réduits à 3,8 % dans quelques départements \(ex\. Indre, Isère, Morbihan, Mayotte\)/i,
+    /taux reduits a 3,8 % dans quelques departements \(ex\. Indre, Isere, Morbihan, Mayotte\)/i,
     txt,
   );
 
-  // Fourchettes génériques : ancien 7–8% / neuf 2–3% – remplacer par libellés ≈ si besoin
+  // Fourchettes generiques : ancien 7-8% / neuf 2-3% - remplacer par libelles ≈ si besoin
   html = html.replace(/7 \%/g, "≈ 6,60 %");
   html = html.replace(/8 \%/g, "≈ 7,00 %");
-  html = html.replace(/2 à 3 \%/g, "≈ 1,90 % à ≈ 2,00 %");
+  html = html.replace(/2 a 3 \%/g, "≈ 1,90 % a ≈ 2,00 %");
 
   writeTextFile(file, html);
   return true;
 }
 
 /**
- * Point d'entrée principal.
+ * Point d'entree principal.
  */
 function main() {
   const cfg = loadFraisConfig();

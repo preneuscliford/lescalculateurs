@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * Analyse DÉTAILLÉE des balises canonical
- * Identifier tous les problèmes d'inconsistance
+ * Analyse DETAILLEE des balises canonical
+ * Identifier tous les problemes d'inconsistance
  */
 
 const fs = require("fs");
 const path = require("path");
 
-console.log("\n🔍 ANALYSE DÉTAILLÉE - BALISES CANONICAL\n");
+console.log("\n🔍 ANALYSE DETAILLEE - BALISES CANONICAL\n");
 console.log("=".repeat(80));
 
 // Scanner les fichiers HTML
@@ -47,7 +47,7 @@ function scanHtmlFiles(dir) {
           incomplete: false,
         });
       } else if (partialMatch) {
-        // Canonical tag trouvé mais href manquant
+        // Canonical tag trouve mais href manquant
         canonicalMap.set(relPath, {
           href: null,
           status: "INCOMPLETE",
@@ -56,7 +56,7 @@ function scanHtmlFiles(dir) {
         issues.push({
           file: relPath,
           type: "INCOMPLETE_CANONICAL",
-          message: "Balise canonical trouvée mais href manquant",
+          message: "Balise canonical trouvee mais href manquant",
         });
       } else {
         canonicalMap.set(relPath, {
@@ -71,7 +71,7 @@ function scanHtmlFiles(dir) {
 
 scanHtmlFiles(srcDir);
 
-console.log("\n📊 RÉSUMÉ:\n");
+console.log("\n📊 RESUME:\n");
 console.log(`Total fichiers HTML: ${canonicalMap.size}`);
 console.log(
   `Avec canonical: ${[...canonicalMap.values()].filter((c) => c.href).length}`
@@ -85,7 +85,7 @@ console.log(
   `Incomplets: ${[...canonicalMap.values()].filter((c) => c.incomplete).length}`
 );
 
-console.log("\n⚠️ PROBLÈMES DÉTÉCTÉS:\n");
+console.log("\n⚠️ PROBLÈMES DETECTES:\n");
 
 // Analyser les inconsistences
 const patterns = {
@@ -202,13 +202,13 @@ console.log("=".repeat(80));
 
 console.log("\n🎯 IMPACT SUR GOOGLE SEARCH CONSOLE:\n");
 
-console.log("Pourquoi les 43 URLs ne sont pas indexées:");
+console.log("Pourquoi les 43 URLs ne sont pas indexees:");
 console.log("");
 console.log("1. 🔄 CHAÎNE DE REDIRECTS:");
 console.log("   • Si canonical pointe vers /pages/blog.html");
 console.log("   • Et qu'on redirige .html → sans .html");
 console.log("   • Et qu'on redirige apex → www");
-console.log("   • Cela crée: /pages/blog.html → /pages/blog → /blog");
+console.log("   • Cela cree: /pages/blog.html → /pages/blog → /blog");
 console.log("   • 3 redirects = Google abandonne l'indexation");
 console.log("");
 
@@ -225,13 +225,13 @@ console.log("   • Canonical: /blog/departements/...");
 console.log("   • Mismatch = Google confus");
 console.log("");
 
-console.log("4. ⛓️ .HTML TOUJOURS PRÉSENT:");
+console.log("4. ⛓️ .HTML TOUJOURS PRESENT:");
 console.log(
   `   ${
     patterns.www_with_html.length + patterns.apex_with_html.length
   } canonicals avec .html`
 );
-console.log("   • Canonical devrait être SANS .html");
+console.log("   • Canonical devrait etre SANS .html");
 console.log("   • Cela contredit les redirects vercel.json");
 console.log("");
 
@@ -239,14 +239,14 @@ console.log("=".repeat(80));
 
 console.log("\n✅ SOLUTION REQUISE:\n");
 
-console.log("Standardiser TOUS les canonicals à:");
+console.log("Standardiser TOUS les canonicals a:");
 console.log("  Format: https://www.lescalculateurs.fr/pages/...");
 console.log("  ├─ TOUJOURS www (jamais apex)");
 console.log("  ├─ TOUJOURS https");
 console.log("  └─ JAMAIS .html");
 console.log("");
 
-console.log("Fichiers à corriger:");
+console.log("Fichiers a corriger:");
 console.log(`  • ${patterns.apex_with_html.length} avec apex + .html`);
 console.log(`  • ${patterns.apex_without_html.length} avec apex seul`);
 console.log(`  • ${patterns.www_with_html.length} avec www + .html`);
@@ -257,7 +257,7 @@ console.log(`  • ${patterns.missing.length} sans canonical`);
 console.log(`  • ${issues.length} incomplets`);
 console.log("");
 console.log(
-  `TOTAL À CORRIGER: ${problemCount + patterns.missing.length + issues.length}`
+  `TOTAL A CORRIGER: ${problemCount + patterns.missing.length + issues.length}`
 );
 
 // Export data
@@ -280,5 +280,5 @@ fs.writeFileSync(
 );
 
 console.log(
-  "\n📊 Données exportées: scripts/canonical-analysis-detailed.json\n"
+  "\n📊 Donnees exportees: scripts/canonical-analysis-detailed.json\n"
 );

@@ -1,6 +1,6 @@
 /**
- * Script de copie des pages SEO départementales vers dist/
- * Exécuté automatiquement après le build Vite
+ * Script de copie des pages SEO departementales vers dist/
+ * Execute automatiquement apres le build Vite
  * Injecte automatiquement les bons liens CSS/JS
  */
 
@@ -22,11 +22,22 @@ const legacyBlogDir = path.resolve(__dirname, "../dist/pages/blog");
 const assetsDir = path.resolve(__dirname, "../dist/assets");
 const satellitesTxtDir = path.resolve(__dirname, "../pages_satellite_txt");
 const satellitesTargetDir = path.resolve(__dirname, "../dist/pages");
+const satelliteKeepMap = loadSatelliteKeepMap();
 
-console.log("📦 Copie des pages SEO départementales...\n");
+function loadSatelliteKeepMap() {
+  const filePath = path.resolve(__dirname, "../data/pseo/satellite-keep-slugs.json");
+  if (!fs.existsSync(filePath)) return {};
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function getAllowedSatelliteSlugs(pillarKey) {
+  return new Set((satelliteKeepMap[pillarKey] || []).map((slug) => String(slug || "").trim()).filter(Boolean));
+}
+
+console.log("📦 Copie des pages SEO departementales...\n");
 
 try {
-  // Trouver les fichiers CSS et JS générés par Vite
+  // Trouver les fichiers CSS et JS generes par Vite
   const assetFiles = fs.readdirSync(assetsDir);
   const cssFile = assetFiles.find(
     (f) =>
@@ -50,28 +61,28 @@ try {
 
   if (!calculatorFrameJs || !baremesJs) {
     console.warn(
-      "⚠️ Chunks CalculatorFrame ou baremes introuvables, les imports dynamiques ne seront pas réécrits.",
+      "⚠️ Chunks CalculatorFrame ou baremes introuvables, les imports dynamiques ne seront pas reecrits.",
     );
   }
 
-  console.log(`🎨 CSS trouvé: ${cssFile}`);
-  console.log(`📜 JS trouvé: ${jsFile}\n`);
+  console.log(`🎨 CSS trouve: ${cssFile}`);
+  console.log(`📜 JS trouve: ${jsFile}\n`);
 
-  // Créer les dossiers de destination s'ils n'existent pas
+  // Creer les dossiers de destination s'ils n'existent pas
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
-    console.log("✅ Dossier créé:", targetDir);
+    console.log("✅ Dossier cree:", targetDir);
   }
   if (!fs.existsSync(legacyBlogDir)) {
     fs.mkdirSync(legacyBlogDir, { recursive: true });
-    console.log("✅ Dossier créé:", legacyBlogDir);
+    console.log("✅ Dossier cree:", legacyBlogDir);
   }
 
   // Lire tous les fichiers du dossier source
   const files = fs.readdirSync(sourceDir);
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-  console.log(`📄 ${htmlFiles.length} pages SEO trouvées\n`);
+  console.log(`📄 ${htmlFiles.length} pages SEO trouvees\n`);
 
   let copiedCount = 0;
   let errorCount = 0;
@@ -85,13 +96,13 @@ try {
       // Lire le contenu HTML
       let htmlContent = readTextFile(sourcePath);
 
-      // Remplacer les imports de développement (main.ts) par les bundles hashés
+      // Remplacer les imports de developpement (main.ts) par les bundles hashes
       htmlContent = htmlContent.replace(
         /<script[^>]*type="module"[^>]*src="[^"]*main\.ts"[^>]*><\/script>/g,
         `<script type="module" crossorigin src="../../../assets/${jsFile}"></script>`,
       );
 
-      // Réécrire les imports dynamiques inline du mini-calculateur vers les chunks dist
+      // Reecrire les imports dynamiques inline du mini-calculateur vers les chunks dist
       if (calculatorFrameJs) {
         htmlContent = htmlContent.replace(
           /import\("\.\.\/\.\.\/\.\.\/components\/CalculatorFrame\.ts"\)/g,
@@ -104,13 +115,13 @@ try {
           `import("../../../assets/${baremesJs}")`,
         );
       }
-      // Réécrire import de main.ts si présent dans les scripts inline
+      // Reecrire import de main.ts si present dans les scripts inline
       htmlContent = htmlContent.replace(
         /import\("\.\.\/\.\.\/\.\.\/main\.ts"\)/g,
         `import("../../../assets/${jsFile}")`,
       );
 
-      // Remplacer la destructuration fragile par une résolution robuste des exports minifiés
+      // Remplacer la destructuration fragile par une resolution robuste des exports minifies
       htmlContent = htmlContent.replace(
         /const\s*\[\s*\{\s*CalculatorFrame\s*\}\s*,\s*\{\s*formatCurrency\s*\}\s*,\s*\{\s*baremes\s*\}\s*\]\s*=\s*await\s*Promise\.all\(\s*\[\s*([\s\S]*?)\s*\]\s*\);/g,
         (match, importsBlock) => {
@@ -125,7 +136,7 @@ try {
 
       // Remplacer les chemins CSS/JS absolus par des chemins relatifs corrects
       // De /assets/main-xxx.css vers ../../../assets/main-yyy.css
-      // (pages départementales sont dans dist/pages/blog/departements/)
+      // (pages departementales sont dans dist/pages/blog/departements/)
       htmlContent = htmlContent.replace(
         /href="\/assets\/main-[^"]+\.css"/g,
         `href="../../../assets/${cssFile}"`,
@@ -135,7 +146,7 @@ try {
         `src="../../../assets/${jsFile}"`,
       );
 
-      // Au cas où il y aurait déjà des chemins relatifs
+      // Au cas ou il y aurait deja des chemins relatifs
       htmlContent = htmlContent.replace(
         /href="\.\.\/\.\.\/\.\.\/assets\/main-[^"]+\.css"/g,
         `href="../../../assets/${cssFile}"`,
@@ -145,7 +156,7 @@ try {
         `src="../../../assets/${jsFile}"`,
       );
 
-      // S'assurer que la feuille de style est injectée si absente
+      // S'assurer que la feuille de style est injectee si absente
       if (!/href="\.{2}\/\.{2}\/\.{2}\/assets\/[^"]+\.css"/.test(htmlContent)) {
         htmlContent = htmlContent.replace(/<head>([\s\S]*?)<\/head>/, (m) =>
           m.replace(
@@ -155,7 +166,7 @@ try {
         );
       }
 
-      // Écrire le fichier modifié (chemins pour /departements)
+      // Ecrire le fichier modifie (chemins pour /departements)
       fs.writeFileSync(targetPath, htmlContent, "utf-8");
       copiedCount++;
 
@@ -187,16 +198,16 @@ try {
 
         const legacyPath = path.join(legacyBlogDir, file);
         fs.writeFileSync(legacyPath, legacyContent, "utf-8");
-        console.log(`   ↳ Dupliqué: ${legacyPath}`);
+        console.log(`   ↳ Duplique: ${legacyPath}`);
       } catch (e) {
         console.warn(
-          `⚠️ Duplication legacy échouée pour ${file}: ${e.message}`,
+          `⚠️ Duplication legacy echouee pour ${file}: ${e.message}`,
         );
       }
 
       // Afficher un message tous les 20 fichiers
       if (copiedCount % 20 === 0) {
-        console.log(`   Copié: ${copiedCount}/${htmlFiles.length} pages...`);
+        console.log(`   Copie: ${copiedCount}/${htmlFiles.length} pages...`);
       }
     } catch (err) {
       console.error(`❌ Erreur lors de la copie de ${file}:`, err.message);
@@ -206,7 +217,7 @@ try {
 
   /**
    * Duplique l'article global "ancien vs neuf" sous /departements pour servir une page physique.
-   * - Réécrit les imports vers les bundles hashés
+   * - Reecrit les imports vers les bundles hashes
    * - Ajuste les chemins des assets
    * - Injecte la CSS si absente
    */
@@ -222,7 +233,7 @@ try {
     if (fs.existsSync(globalArticleSrc)) {
       let htmlContent = readTextFile(globalArticleSrc);
 
-      // Réécriture du script main.ts vers le bundle produit (../../main.ts)
+      // Reecriture du script main.ts vers le bundle produit (../../main.ts)
       htmlContent = htmlContent.replace(
         /<script[^>]*type="module"[^>]*src="\.\.\/\.\.\/main\.ts"[^>]*><\/script>/g,
         `<script type="module" crossorigin src="../../../assets/${jsFile}"></script>`,
@@ -251,10 +262,10 @@ try {
         );
       }
 
-      // Écrire la page dupliquée
+      // Ecrire la page dupliquee
       fs.writeFileSync(departementsArticleDst, htmlContent, "utf-8");
       console.log(
-        "✅ Article ancien/neuf copié sous /departements:",
+        "✅ Article ancien/neuf copie sous /departements:",
         departementsArticleDst,
       );
     } else {
@@ -267,9 +278,9 @@ try {
     console.error("❌ Erreur duplication article ancien/neuf:", e.message);
   }
 
-  console.log(`\n✅ Copie terminée !`);
-  console.log(`   • ${copiedCount} pages copiées avec succès`);
-  console.log(`   • CSS/JS injectés automatiquement`);
+  console.log(`\n✅ Copie terminee !`);
+  console.log(`   • ${copiedCount} pages copiees avec succes`);
+  console.log(`   • CSS/JS injectes automatiquement`);
   if (errorCount > 0) {
     console.log(`   • ${errorCount} erreurs`);
   }
@@ -282,11 +293,11 @@ try {
     satellitesTargetDir,
   });
   if (satellitesResult.generatedCount > 0) {
-    console.log("🛰 Pages satellites générées");
-    console.log(`   • ${satellitesResult.generatedCount} pages générées`);
+    console.log("🛰 Pages satellites generees");
+    console.log(`   • ${satellitesResult.generatedCount} pages generees`);
     console.log(`   • Destination: dist/pages/<pilier>/\n`);
   } else {
-    console.log("🛰 Pages satellites : aucune page générée\n");
+    console.log("🛰 Pages satellites : aucune page generee\n");
   }
 } catch (error) {
   console.error("❌ Erreur fatale:", error.message);
@@ -315,15 +326,15 @@ function generateSatellitePages({
     },
     pret: {
       pillarUrl: "/pages/pret",
-      pillarLabel: "Simulateur de prêt immobilier",
+      pillarLabel: "Simulateur de pret immobilier",
     },
     "taxe-fonciere": {
       pillarUrl: "/pages/taxe-fonciere",
-      pillarLabel: "Simulateur Taxe foncière 2026",
+      pillarLabel: "Simulateur Taxe fonciere 2026",
     },
     plusvalue: {
       pillarUrl: "/pages/plusvalue",
-      pillarLabel: "Simulateur Plus-value immobilière",
+      pillarLabel: "Simulateur Plus-value immobiliere",
     },
     simulateurs: {
       pillarUrl: "/pages/simulateurs",
@@ -335,7 +346,7 @@ function generateSatellitePages({
     },
     impot: {
       pillarUrl: "/pages/impot",
-      pillarLabel: "Simulateur Impôts 2026",
+      pillarLabel: "Simulateur Impots 2026",
     },
     salaire: {
       pillarUrl: "/pages/salaire",
@@ -352,32 +363,47 @@ function generateSatellitePages({
     .filter((f) => f.toLowerCase().endsWith(".txt"));
 
   let generatedCount = 0;
+  const cleanedPillars = new Set();
 
   txtFiles.forEach((fileName) => {
     const txtPath = path.join(satellitesTxtDir, fileName);
     const raw = readTextFile(txtPath);
     const trimmed = raw.trim();
     if (!trimmed || trimmed === "(placeholder content)") {
-      console.warn(`⚠️ Satellites TXT ignoré (vide): ${fileName}`);
+      console.warn(`⚠️ Satellites TXT ignore (vide): ${fileName}`);
       return;
     }
 
     const pages = parseSatelliteTxtToPages(trimmed);
     if (pages.length === 0) {
-      console.warn(`⚠️ Aucune page détectée dans: ${fileName}`);
+      console.warn(`⚠️ Aucune page detectee dans: ${fileName}`);
       return;
     }
 
     const defaultPillarKey = detectPillarKeyFromFileName(fileName);
+    const plannedPillarKeys = new Set([defaultPillarKey]);
     const renderedPages = pages.map((p, idx) => {
       const slug = slugify(p.title || `page-${p.number || idx + 1}`);
       const pillarKey =
         defaultPillarKey === "aide"
           ? "aide"
           : p.pillarKeyOverride || defaultPillarKey;
+      plannedPillarKeys.add(pillarKey);
       const pillar = pillarConfigs[pillarKey] || pillarConfigs.simulateurs;
       return { ...p, slug, pillarKey, pillar, idx };
+    }).filter((p) => getAllowedSatelliteSlugs(p.pillarKey).has(p.slug));
+
+    plannedPillarKeys.forEach((pillarKey) => {
+      const outDir = path.join(satellitesTargetDir, pillarKey);
+      if (!cleanedPillars.has(outDir)) {
+        cleanupGeneratedPagesInDir(outDir, pillarKey);
+        cleanedPillars.add(outDir);
+      }
     });
+
+    if (renderedPages.length === 0) {
+      return;
+    }
 
     const titleIndex = new Map(
       renderedPages
@@ -431,6 +457,26 @@ function generateSatellitePages({
   return { generatedCount };
 }
 
+function cleanupGeneratedPagesInDir(dirPath, pillarKey) {
+  if (!fs.existsSync(dirPath)) return;
+  const allowedSlugs = getAllowedSatelliteSlugs(pillarKey);
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  entries.forEach((entry) => {
+    const entryPath = path.join(dirPath, entry.name);
+    const stem = entry.isDirectory() ? entry.name : path.parse(entry.name).name;
+    if (allowedSlugs.has(stem)) return;
+    if (entry.isDirectory()) {
+      fs.rmSync(entryPath, { recursive: true, force: true });
+      return;
+    }
+    if (!entry.isFile()) return;
+    if (entry.name === "index.html") return;
+    if (entry.name.toLowerCase().endsWith(".html")) {
+      fs.rmSync(entryPath, { force: true });
+    }
+  });
+}
+
 function ensurePillarCleanUrls({ cssFile, jsFile, satellitesTargetDir }) {
   const pagesDir = satellitesTargetDir;
   const pillarsWithHtmlEntry = [
@@ -481,7 +527,7 @@ function ensurePillarCleanUrls({ cssFile, jsFile, satellitesTargetDir }) {
     if (!fs.existsSync(taxeDir)) fs.mkdirSync(taxeDir, { recursive: true });
     fs.writeFileSync(path.join(taxeDir, "index.html"), html, "utf-8");
   } catch (e) {
-    console.warn("⚠️ Copie taxe-fonciere/index.html échouée:", e.message);
+    console.warn("⚠️ Copie taxe-fonciere/index.html echouee:", e.message);
   }
 
   try {
@@ -491,7 +537,7 @@ function ensurePillarCleanUrls({ cssFile, jsFile, satellitesTargetDir }) {
     if (!fs.existsSync(aideDir)) fs.mkdirSync(aideDir, { recursive: true });
     fs.copyFileSync(simulateursHtml, path.join(aideDir, "index.html"));
   } catch (e) {
-    console.warn("⚠️ Copie aide/index.html échouée:", e.message);
+    console.warn("⚠️ Copie aide/index.html echouee:", e.message);
   }
 }
 
@@ -524,7 +570,7 @@ function parseSatelliteTxtToPages(txt) {
 
   const pageHeaderMatchers = [
     (line) => {
-      const m = line.match(/^PAGE\s*(\d+)\s*[–—-]\s*(.+)$/i);
+      const m = line.match(/^PAGE\s*(\d+)\s*[---]\s*(.+)$/i);
       if (!m) return null;
       return { number: Number(m[1]), title: m[2].trim() };
     },
@@ -575,9 +621,9 @@ function parseSatelliteTxtToPages(txt) {
       current.objective = normalized.replace(/^Objectif\s*:\s*/i, "").trim();
       continue;
     }
-    if (/^Question\s*(ciblée|traitée)\s*:/i.test(normalized)) {
+    if (/^Question\s*(ciblee|traitee)\s*:/i.test(normalized)) {
       current.question = normalized
-        .replace(/^Question\s*(ciblée|traitée)\s*:\s*/i, "")
+        .replace(/^Question\s*(ciblee|traitee)\s*:\s*/i, "")
         .trim();
       continue;
     }
@@ -635,7 +681,7 @@ function parsePilierBlocksToPages(lines) {
     const content = block.slice(4).map((l) => l.replace(/\s+/g, " ").trim());
 
     const questionLine =
-      content.find((l) => /^Réponse à la question\s*:/i.test(l)) || "";
+      content.find((l) => /^Reponse a la question\s*:/i.test(l)) || "";
     const ctaLine = content.find((l) => /^👉/u.test(l)) || "";
     const relatedLine =
       content.find((l) => /^📄\s*Lire aussi\s*:/u.test(l)) || "";
@@ -650,7 +696,7 @@ function parsePilierBlocksToPages(lines) {
     for (const raw of content) {
       const line = raw;
       if (/^[=_-]{3,}$/.test(line)) continue;
-      if (/^Réponse rapide$/i.test(line)) {
+      if (/^Reponse rapide$/i.test(line)) {
         mode = "quick";
         continue;
       }
@@ -658,7 +704,7 @@ function parsePilierBlocksToPages(lines) {
         mode = "practice";
         continue;
       }
-      if (/^Ce qu[’']il faut vérifier$/i.test(line)) {
+      if (/^Ce qu['']il faut verifier$/i.test(line)) {
         mode = "verify";
         continue;
       }
@@ -670,7 +716,7 @@ function parsePilierBlocksToPages(lines) {
       if (
         /^👉/u.test(line) ||
         /^📄\s*Lire aussi\s*:/u.test(line) ||
-        /^🧮\s*Accéder au pilier$/u.test(line) ||
+        /^🧮\s*Acceder au pilier$/u.test(line) ||
         /^Retour au pilier\s*:/i.test(line) ||
         /^©\s*\d{4}/.test(line)
       ) {
@@ -679,8 +725,8 @@ function parsePilierBlocksToPages(lines) {
 
       if (
         /^Les informations/i.test(line) ||
-        /^Contenu pédagogique/i.test(line) ||
-        /^Réponse à la question\s*:/i.test(line)
+        /^Contenu pedagogique/i.test(line) ||
+        /^Reponse a la question\s*:/i.test(line)
       ) {
         continue;
       }
@@ -731,7 +777,7 @@ function parsePilierBlocksToPages(lines) {
 
 function stripListPrefix(line) {
   return String(line)
-    .replace(/^[-–•]\s*/u, "")
+    .replace(/^[--•]\s*/u, "")
     .trim();
 }
 
@@ -744,10 +790,10 @@ function detectPillarKeyFromLabel(label) {
   if (!s) return null;
   if (s.includes("apl")) return "apl";
   if (s.includes("rsa")) return "rsa";
-  if (s.includes("prêt") || s.includes("pret")) return "pret";
+  if (s.includes("pret") || s.includes("pret")) return "pret";
   if (s.includes("taxe fonci")) return "taxe-fonciere";
   if (s.includes("plus-value") || s.includes("plus value")) return "plusvalue";
-  if (s.includes("impôt") || s.includes("impot")) return "impot";
+  if (s.includes("impot") || s.includes("impot")) return "impot";
   if (s.includes("salaire")) return "salaire";
   if (s.includes("simulateur")) return "simulateurs";
   return null;
@@ -779,7 +825,7 @@ function renderSatelliteHtml({
   const bullets = buildBullets(page);
   const paragraphs = buildParagraphs(page);
   const pretEndettementTip = shouldShowPretEndettementTip(page)
-    ? "💡 À titre indicatif, les banques appliquent généralement un taux d’endettement maximal autour de 35 % assurance incluse."
+    ? "💡 A titre indicatif, les banques appliquent generalement un taux d'endettement maximal autour de 35 % assurance incluse."
     : "";
   const ctaText = page.cta
     ? page.cta.replace(/^👉\s*/u, "")
@@ -873,12 +919,12 @@ function renderSatelliteHtml({
     <main class="max-w-4xl mx-auto px-4 py-12">
       <div class="mb-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
         <p class="text-sm text-gray-800 m-0">
-          Les informations ci-dessous sont pédagogiques et indicatives. Pour un calcul fiable, utilisez le simulateur et référez-vous aux organismes compétents.
+          Les informations ci-dessous sont pedagogiques et indicatives. Pour un calcul fiable, utilisez le simulateur et referez-vous aux organismes competents.
         </p>
       </div>
 
       <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Réponse rapide</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Reponse rapide</h2>
         ${paragraphs
           .map(
             (p) =>
@@ -895,7 +941,7 @@ function renderSatelliteHtml({
       </section>
 
       <section class="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ce qu’il faut vérifier</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ce qu'il faut verifier</h2>
         <ul class="list-disc list-inside space-y-2 text-gray-700">
           ${bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join("")}
         </ul>
@@ -904,13 +950,13 @@ function renderSatelliteHtml({
       <section class="mt-8 bg-slate-50 rounded-lg border border-slate-200 p-6">
         <h2 class="text-xl font-bold text-slate-900 mb-3">Aller plus loin</h2>
         <p class="text-slate-700 mb-4">
-          Pour une estimation chiffrée adaptée à votre situation, passez par le pilier.
+          Pour une estimation chiffree adaptee a votre situation, passez par le pilier.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="${escapeHtml(
             page.pillar.pillarUrl,
           )}" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-10 rounded-lg transition-colors">
-            🧮 Accéder au pilier
+            🧮 Acceder au pilier
           </a>
           ${
             relatedHref
@@ -943,7 +989,7 @@ function buildMetaDescription(page) {
   const parts = [];
 
   if (page.question) parts.push(page.question);
-  else if (page.title) parts.push(`Réponse à la question : ${page.title}.`);
+  else if (page.title) parts.push(`Reponse a la question : ${page.title}.`);
 
   const fromBody =
     page.bodyLines && page.bodyLines.length ? page.bodyLines[0] : "";
@@ -956,7 +1002,7 @@ function buildMetaDescription(page) {
 
   if (!fromBody && page.contentHints) {
     parts.push(
-      `Points clés : ${page.contentHints.replace(/\s*[,;]\s*/g, ", ")}.`,
+      `Points cles : ${page.contentHints.replace(/\s*[,;]\s*/g, ", ")}.`,
     );
   }
 
@@ -989,7 +1035,7 @@ function buildParagraphs(page) {
 
   if (paragraphs.length === 0) {
     paragraphs.push(
-      "Cette page répond à une question précise et vous donne un ordre de grandeur des critères à considérer.",
+      "Cette page repond a une question precise et vous donne un ordre de grandeur des criteres a considerer.",
     );
   }
 
@@ -1019,10 +1065,10 @@ function buildBullets(page) {
 
   if (bullets.length === 0) {
     bullets.push(
-      "Votre situation personnelle (revenus, foyer, logement, durée)",
+      "Votre situation personnelle (revenus, foyer, logement, duree)",
     );
-    bullets.push("Les règles en vigueur à la date de votre demande");
-    bullets.push("Les justificatifs demandés par l’organisme");
+    bullets.push("Les regles en vigueur a la date de votre demande");
+    bullets.push("Les justificatifs demandes par l'organisme");
   }
 
   return bullets.slice(0, 8);

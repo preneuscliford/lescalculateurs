@@ -1,15 +1,15 @@
 /**
- * Script de mise à jour globale des pages frais de notaire
- * - Corrige les références 2025 → 2026 (sauf impôts qui restent en 2025)
+ * Script de mise a jour globale des pages frais de notaire
+ * - Corrige les references 2025 → 2026 (sauf impots qui restent en 2025)
  * - Corrige les anciens taux DMTO (3,80%, 6,45%, 5,81%) → nouveaux taux 2026
- * - Met à jour les sources vers impots.gouv.fr
+ * - Met a jour les sources vers impots.gouv.fr
  */
 
 const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
 
-// Pages à mettre à jour pour les frais de notaire
+// Pages a mettre a jour pour les frais de notaire
 const notairePages = [
   "src/pages/comment-calculer-frais-notaire.html",
   "src/pages/methodologie.html",
@@ -18,12 +18,12 @@ const notairePages = [
   "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
 ];
 
-// Pages de départements
+// Pages de departements
 const deptPagesPattern = "src/pages/blog/departements/frais-notaire-*.html";
 
 function updateFile(filePath) {
   if (!fs.existsSync(filePath)) {
-    console.log(`⚠️ Fichier non trouvé: ${filePath}`);
+    console.log(`⚠️ Fichier non trouve: ${filePath}`);
     return false;
   }
 
@@ -31,10 +31,10 @@ function updateFile(filePath) {
   const originalContent = content;
 
   // ========================================
-  // 1. Corrections des taux DMTO obsolètes
+  // 1. Corrections des taux DMTO obsoletes
   // ========================================
 
-  // Ancien taux réduit incorrect
+  // Ancien taux reduit incorrect
   content = content.replace(
     /3,80\s*%\s*\(56,?\s*57,?\s*67,?\s*68\)/g,
     "5,09% (36 Indre, 976 Mayotte)",
@@ -42,10 +42,10 @@ function updateFile(filePath) {
   content = content.replace(/≈\s*3,80\s*%/g, "5,09%");
   content = content.replace(/3,80%/g, "5,09%");
 
-  // Ancien taux majoré incorrect (IDF)
+  // Ancien taux majore incorrect (IDF)
   content = content.replace(
     /6,45\s*%\s*\(92,?\s*93,?\s*94\)/g,
-    "6,32% (taux majoré)",
+    "6,32% (taux majore)",
   );
   content = content.replace(/≈\s*6,45\s*%/g, "6,32%");
   content = content.replace(/6,45%/g, "6,32%");
@@ -53,13 +53,13 @@ function updateFile(filePath) {
   // Paris ancien taux
   content = content.replace(
     /5,81\s*%\s*\(Paris\)/g,
-    "6,32% (Paris, taux majoré)",
+    "6,32% (Paris, taux majore)",
   );
   content = content.replace(/Paris.*5,81\s*%/g, "Paris 6,32%");
   content = content.replace(/≈\s*5,81\s*%/g, "6,32%");
 
   // ========================================
-  // 2. Mise à jour années (frais notaire uniquement)
+  // 2. Mise a jour annees (frais notaire uniquement)
   // ========================================
 
   // Frais de notaire 2025 → 2026
@@ -67,48 +67,48 @@ function updateFile(filePath) {
   content = content.replace(/Frais de notaire 2025/g, "Frais de notaire 2026");
   content = content.replace(/frais notaire 2025/gi, "frais notaire 2026");
 
-  // Barème notaire 2025 → 2026
-  content = content.replace(/barème notaire 2025/gi, "barème notaire 2026");
-  content = content.replace(/barèmes notaire 2025/gi, "barèmes notaire 2026");
-  content = content.replace(/Barème notaire 2025/g, "Barème notaire 2026");
+  // Bareme notaire 2025 → 2026
+  content = content.replace(/bareme notaire 2025/gi, "bareme notaire 2026");
+  content = content.replace(/baremes notaire 2025/gi, "baremes notaire 2026");
+  content = content.replace(/Bareme notaire 2025/g, "Bareme notaire 2026");
 
-  // Barèmes officiels 2024-2025 → 2026
+  // Baremes officiels 2024-2025 → 2026
   content = content.replace(
-    /Barèmes officiels 2024-2025/g,
-    "Barèmes officiels 2026",
+    /Baremes officiels 2024-2025/g,
+    "Baremes officiels 2026",
   );
   content = content.replace(
-    /barèmes officiels 2024-2025/g,
-    "barèmes officiels 2026",
+    /baremes officiels 2024-2025/g,
+    "baremes officiels 2026",
   );
   content = content.replace(
-    /Barème officiel 2024-2025/g,
-    "Barème officiel 2026",
+    /Bareme officiel 2024-2025/g,
+    "Bareme officiel 2026",
   );
   content = content.replace(
-    /barème officiel 2024-2025/g,
-    "barème officiel 2026",
+    /bareme officiel 2024-2025/g,
+    "bareme officiel 2026",
   );
 
-  // Émoluments 2025 → 2026
+  // Emoluments 2025 → 2026
   content = content.replace(
-    /émoluments notariaux 2025/gi,
-    "émoluments notariaux 2026",
+    /emoluments notariaux 2025/gi,
+    "emoluments notariaux 2026",
   );
   content = content.replace(
-    /Barème des émoluments notariaux 2025/g,
-    "Barème des émoluments notariaux 2026",
+    /Bareme des emoluments notariaux 2025/g,
+    "Bareme des emoluments notariaux 2026",
   );
 
   // ========================================
   // 3. Corrections termes juridiques
   // ========================================
 
-  // exactitude → précision (sécurité juridique)
-  content = content.replace(/avec exactitude/g, "avec précision");
+  // exactitude → precision (securite juridique)
+  content = content.replace(/avec exactitude/g, "avec precision");
 
   // ========================================
-  // 4. Mise à jour sources
+  // 4. Mise a jour sources
   // ========================================
 
   // BOFiP → impots.gouv.fr
@@ -116,9 +116,9 @@ function updateFile(filePath) {
     /https:\/\/bofip\.impots\.gouv\.fr\/bofip\/4739-PGP\.html/g,
     "https://www.impots.gouv.fr/droits-denregistrement",
   );
-  content = content.replace(/BOFiP — Taux DMTO/g, "impots.gouv.fr — Taux DMTO");
+  content = content.replace(/BOFiP - Taux DMTO/g, "impots.gouv.fr - Taux DMTO");
 
-  // Vérifier si modifié
+  // Verifier si modifie
   if (content !== originalContent) {
     fs.writeFileSync(filePath, content, "utf8");
     return true;
@@ -126,8 +126,8 @@ function updateFile(filePath) {
   return false;
 }
 
-// Exécution
-console.log("🔧 Mise à jour des pages frais de notaire...\n");
+// Execution
+console.log("🔧 Mise a jour des pages frais de notaire...\n");
 
 let updatedCount = 0;
 
@@ -138,13 +138,13 @@ for (const page of notairePages) {
     console.log(`✅ ${page}`);
     updatedCount++;
   } else {
-    console.log(`⏭️ ${page} (pas de changement ou non trouvé)`);
+    console.log(`⏭️ ${page} (pas de changement ou non trouve)`);
   }
 }
 
-// Pages départements
+// Pages departements
 const deptPages = glob.sync(path.join(__dirname, "..", deptPagesPattern));
-console.log(`\n📁 ${deptPages.length} pages de départements trouvées`);
+console.log(`\n📁 ${deptPages.length} pages de departements trouvees`);
 
 let deptUpdated = 0;
 for (const fullPath of deptPages) {
@@ -152,11 +152,11 @@ for (const fullPath of deptPages) {
     deptUpdated++;
   }
 }
-console.log(`✅ ${deptUpdated} pages de départements mises à jour`);
+console.log(`✅ ${deptUpdated} pages de departements mises a jour`);
 
 updatedCount += deptUpdated;
 
-console.log(`\n🎯 Total: ${updatedCount} fichiers mis à jour`);
+console.log(`\n🎯 Total: ${updatedCount} fichiers mis a jour`);
 console.log(
-  '\n⚠️ Note: Les pages impôt/IR gardent "barème 2025" car c\'est correct (revenus 2024)',
+  '\n⚠️ Note: Les pages impot/IR gardent "bareme 2025" car c\'est correct (revenus 2024)',
 );

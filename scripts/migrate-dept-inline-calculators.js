@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 /**
- * Liste les pages départements à migrer (HTML).
+ * Liste les pages departements a migrer (HTML).
  */
 function listDeptPages() {
   const dir = path.resolve(process.cwd(), 'src', 'pages', 'blog', 'departements')
@@ -11,7 +11,7 @@ function listDeptPages() {
 
 /**
  * Migre un fichier: remplace l'utilisation de baremes.json par frais2026.json
- * et adapte les lignes clés du calcul inline (tranches, CSI, DMTO).
+ * et adapte les lignes cles du calcul inline (tranches, CSI, DMTO).
  */
 function migrateFile(filePath) {
   const original = fs.readFileSync(filePath, 'utf8')
@@ -23,7 +23,7 @@ function migrateFile(filePath) {
     'const fraisCfg = await (await fetch("../../../data/frais2026.json")).json();'
   )
 
-  // Adapter les tranches émoluments
+  // Adapter les tranches emoluments
   html = html.replace(
     /const\s+tranches\s*=\s*baremes\.notaire\.tranches;/,
     'const tranches = [\n' +
@@ -59,13 +59,13 @@ function migrateFile(filePath) {
 }
 
 /**
- * Point d'entrée principal: migre toutes les pages départements.
+ * Point d'entree principal: migre toutes les pages departements.
  */
 function main() {
   const files = listDeptPages()
   const results = files.map(migrateFile)
   const changed = results.filter((r) => r.changed).length
-  console.log(`Migration inline calculators: ${changed} fichier(s) mis à jour sur ${files.length}.`)
+  console.log(`Migration inline calculators: ${changed} fichier(s) mis a jour sur ${files.length}.`)
 }
 
 main()

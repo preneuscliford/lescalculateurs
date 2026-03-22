@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 /**
- * Vérifie la conformité 2026:
+ * Verifie la conformite 2026:
  * - SEO (title, meta desc/keywords, og/title/desc, twitter/title/desc)
  * - JSON-LD (name, headline, description)
- * - Textes visibles (h1–h6, p, li, span, a, strong, em, small, summary)
+ * - Textes visibles (h1-h6, p, li, span, a, strong, em, small, summary)
  * Signale toute occurrence de "2025" hors contexte officiel.
  */
 const fs = require("fs");
 const path = require("path");
 
 const OFFICIAL_GUARDS = [
-  "barème", "barèmes", "officiel", "officiels",
+  "bareme", "baremes", "officiel", "officiels",
   "bofip", "impots.gouv.fr", "bofip.impots.gouv.fr",
   "legifrance.gouv.fr", "service-public.fr", "notaires.fr", "chambre des notaires",
-  "data.gouv.fr", "dvf", "cgi", "code général des impôts", "urssaf", "urssaf.fr", "dmto",
-  "barème ir", "tranches", "impôt sur le revenu"
+  "data.gouv.fr", "dvf", "cgi", "code general des impots", "urssaf", "urssaf.fr", "dmto",
+  "bareme ir", "tranches", "impot sur le revenu"
 ];
 
 function isOfficial(text) {
@@ -116,7 +116,7 @@ function scanVisible(content) {
     while ((m = regex.exec(content)) !== null) {
       const inner = m[1] || "";
       if (inner.includes("2025")) {
-        const range = /2024[-–]2025|2025[-–]2026/.test(inner);
+        const range = /2024[--]2025|2025[--]2026/.test(inner);
         if (!range && !isOfficial(inner)) {
           issues.push({ label: "visible", value: inner.slice(0, 160) });
         }
@@ -148,9 +148,9 @@ files.forEach((filePath) => {
 });
 
 if (!report.length) {
-  console.log("✅ Conformité 2026: Aucune occurrence non‑officielle de '2025' détectée.");
+  console.log("✅ Conformite 2026: Aucune occurrence non‑officielle de '2025' detectee.");
 } else {
-  console.log("⚠️ Occurrences non‑officielles à corriger:\n");
+  console.log("⚠️ Occurrences non‑officielles a corriger:\n");
   report.forEach((entry) => {
     console.log(`• ${entry.file}`);
     entry.issues.forEach((i) => {

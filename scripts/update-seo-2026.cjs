@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 /**
  * Migration SEO 2025 → 2026 sur toutes les pages HTML.
- * - Met à jour title/og/twitter/meta description/keywords s'ils contiennent "2025" (hors contexte officiel).
- * - Met à jour les blocs JSON-LD (name/headline/description) s'ils contiennent "2025" (hors contexte officiel).
- * - Ne touche pas les dates (datePublished/dateModified) ni les mentions explicitement officielles (barème, BOFiP, impots.gouv, legifrance, service-public, notaires).
+ * - Met a jour title/og/twitter/meta description/keywords s'ils contiennent "2025" (hors contexte officiel).
+ * - Met a jour les blocs JSON-LD (name/headline/description) s'ils contiennent "2025" (hors contexte officiel).
+ * - Ne touche pas les dates (datePublished/dateModified) ni les mentions explicitement officielles (bareme, BOFiP, impots.gouv, legifrance, service-public, notaires).
  */
 const fs = require("fs");
 const path = require("path");
 
 const OFFICIAL_GUARDS = [
-  "barème", "barèmes", "officiel", "officiels",
+  "bareme", "baremes", "officiel", "officiels",
   "bofip", "impots.gouv.fr", "bofip.impots.gouv.fr",
   "legifrance.gouv.fr", "service-public.fr", "notaires.fr", "chambre des notaires"
 ];
@@ -136,8 +136,8 @@ htmlFiles.forEach((filePath) => {
   }
 });
 
-console.log(`\n✅ Migration SEO 2026 terminée`);
-console.log(`   Fichiers modifiés: ${filesTouched}`);
-console.log(`   Mises à jour meta: ${totalMeta}`);
-console.log(`   Mises à jour JSON-LD: ${totalJsonLd}`);
+console.log(`\n✅ Migration SEO 2026 terminee`);
+console.log(`   Fichiers modifies: ${filesTouched}`);
+console.log(`   Mises a jour meta: ${totalMeta}`);
+console.log(`   Mises a jour JSON-LD: ${totalJsonLd}`);
 

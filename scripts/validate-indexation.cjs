@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Checklist complète pour la validation de l'indexation
- * À exécuter après chaque déploiement
+ * Checklist complete pour la validation de l'indexation
+ * A executer apres chaque deploiement
  */
 
 const fs = require("fs");
@@ -14,8 +14,8 @@ console.log("=".repeat(80) + "\n");
 
 const checks = [];
 
-// 1. Vérifier les fichiers de configuration
-console.log("1️⃣ VÉRIFICATION DES FICHIERS DE CONFIGURATION");
+// 1. Verifier les fichiers de configuration
+console.log("1️⃣ VERIFICATION DES FICHIERS DE CONFIGURATION");
 console.log("-".repeat(80));
 
 const filesToCheck = [
@@ -35,8 +35,8 @@ filesToCheck.forEach(({ path: filePath, name }) => {
   }
 });
 
-// 2. Vérifier le contenu des fichiers
-console.log("\n2️⃣ VÉRIFICATION DU CONTENU");
+// 2. Verifier le contenu des fichiers
+console.log("\n2️⃣ VERIFICATION DU CONTENU");
 console.log("-".repeat(80));
 
 // vercel.json
@@ -68,7 +68,7 @@ console.log(`   - URLs: ${urlCount}`);
 console.log(`   - Avec .html: ${hasHtmlUrls ? "❌ PROBLÈME" : "✅ OK"}`);
 console.log(
   `   - Apex domain: ${
-    hasApexUrls.length > 0 ? "❌ " + hasApexUrls.length + " trouvées" : "✅ OK"
+    hasApexUrls.length > 0 ? "❌ " + hasApexUrls.length + " trouvees" : "✅ OK"
   }`
 );
 checks.push({
@@ -90,8 +90,8 @@ checks.push({
   status: allowsPages && hasSitemap ? "PASS" : "FAIL",
 });
 
-// 3. Vérifier les canonicals
-console.log("\n3️⃣ VÉRIFICATION DES CANONICALS");
+// 3. Verifier les canonicals
+console.log("\n3️⃣ VERIFICATION DES CANONICALS");
 console.log("-".repeat(80));
 
 const srcDir = path.join(__dirname, "..", "src", "pages");
@@ -139,10 +139,10 @@ const { totalFiles, withCanonical, issues } = checkCanonicals(srcDir);
 console.log(`✅ Canonicals:`);
 console.log(`   - Total fichiers: ${totalFiles}`);
 console.log(`   - Avec canonical: ${withCanonical}/${totalFiles}`);
-console.log(`   - Problèmes trouvés: ${issues.length}`);
+console.log(`   - Problemes trouves: ${issues.length}`);
 
 if (issues.length > 0) {
-  console.log(`   ❌ Problèmes:`);
+  console.log(`   ❌ Problemes:`);
   issues.slice(0, 5).forEach(({ file, issue }) => {
     console.log(`      • ${file}: ${issue}`);
   });
@@ -153,28 +153,28 @@ checks.push({
   status: issues.length === 0 ? "PASS" : "FAIL",
 });
 
-// 4. Résumé
+// 4. Resume
 console.log("\n" + "=".repeat(80));
-console.log("📊 RÉSUMÉ");
+console.log("📊 RESUME");
 console.log("=".repeat(80) + "\n");
 
 const passed = checks.filter((c) => c.status === "PASS").length;
 const total = checks.length;
 
-console.log(`✅ Vérifications réussies: ${passed}/${total}`);
+console.log(`✅ Verifications reussies: ${passed}/${total}`);
 
 if (passed === total) {
   console.log("\n🎉 TOUT EST CORRECT!");
-  console.log("\n📋 PROCHAINES ÉTAPES:");
-  console.log("  1. Exécuter: npm run build");
-  console.log('  2. Exécuter: git add . && git commit -m "fix: indexation"');
-  console.log("  3. Exécuter: git push");
+  console.log("\n📋 PROCHAINES ETAPES:");
+  console.log("  1. Executer: npm run build");
+  console.log('  2. Executer: git add . && git commit -m "fix: indexation"');
+  console.log("  3. Executer: git push");
   console.log("  4. Attendre 5min pour Vercel");
   console.log("  5. Aller dans Search Console");
   console.log('  6. Cliquer "Valider la correction"');
   console.log("  7. Attendre 3-7 jours pour le recrawl");
 } else {
-  console.log("\n❌ DES PROBLÈMES ONT ÉTÉ TROUVÉS!");
+  console.log("\n❌ DES PROBLÈMES ONT ETE TROUVES!");
   checks
     .filter((c) => c.status === "FAIL")
     .forEach((c) => {

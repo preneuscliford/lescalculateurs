@@ -37,7 +37,7 @@ function main() {
     process.exit(1);
   }
   if (!fs.existsSync(indexedPath)) {
-    console.error("Liste indexée introuvable:", indexedPath);
+    console.error("Liste indexee introuvable:", indexedPath);
     process.exit(1);
   }
   const all = readSitemapUrls(sitemapPath)
@@ -45,12 +45,12 @@ function main() {
   const indexed = readIndexedList(indexedPath);
   const setIndexed = new Set(indexed);
   const nonIndexed = all.filter((u) => !setIndexed.has(u)).sort();
-  console.log(`Non indexées (${nonIndexed.length}):`);
+  console.log(`Non indexees (${nonIndexed.length}):`);
   for (const u of nonIndexed) console.log(u);
   const outPath = path.join(root, "reports", "non-indexed-urls.txt");
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, nonIndexed.join("\n") + "\n", "utf-8");
-  console.log("\nRapport écrit:", outPath);
+  console.log("\nRapport ecrit:", outPath);
 }
 
 main();

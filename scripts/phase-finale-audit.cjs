@@ -1,9 +1,9 @@
 /**
- * PHASE FINALE - Corrections Juridiques Complètes
- * Audit utilisateur: 5 points bloquants à corriger
+ * PHASE FINALE - Corrections Juridiques Completes
+ * Audit utilisateur: 5 points bloquants a corriger
  *
- * ❌ 1. Chiffres déguisés (≈ 7,87) → fourchettes
- * ❌ 2. "Exemple chiffré" → "Exemple pédagogique"
+ * ❌ 1. Chiffres deguises (≈ 7,87) → fourchettes
+ * ❌ 2. "Exemple chiffre" → "Exemple pedagogique"
  * ❌ 3. Fourchettes contradictoires → supprimer
  * ❌ 4. Trop de "variable" → texte explicatif
  * ❌ 5. Fautes d'orthographe → corriger accents
@@ -38,37 +38,37 @@ fs.readdirSync(folder)
     const original = content;
 
     // ============================================
-    // ❌ 1. CHIFFRES DÉGUISÉS → FOURCHETTES
+    // ❌ 1. CHIFFRES DEGUISES → FOURCHETTES
     // ============================================
 
-    // Remplacer les taux précis dans les tableaux (≈ 7,87 → 7 % à 9 %)
+    // Remplacer les taux precis dans les tableaux (≈ 7,87 → 7 % a 9 %)
     content = content.replace(
       /<td class="px-6 py-4 text-gray-700">≈\s*\d+[,.]\d+<\/td>/g,
-      '<td class="px-6 py-4 text-gray-700">7 % à 9 %</td>',
+      '<td class="px-6 py-4 text-gray-700">7 % a 9 %</td>',
     );
 
-    // Taux neuf (≈ 2,28 → 2 % à 3 %)
+    // Taux neuf (≈ 2,28 → 2 % a 3 %)
     content = content.replace(
       /<td class="px-6 py-4 text-gray-700">≈\s*2[,.]\d+<\/td>/g,
-      '<td class="px-6 py-4 text-gray-700">2 % à 3 %</td>',
+      '<td class="px-6 py-4 text-gray-700">2 % a 3 %</td>',
     );
 
-    // Taux ancien dans tableaux (≈ 6,66 à ≈ 8,xx → 7 % à 9 %)
+    // Taux ancien dans tableaux (≈ 6,66 a ≈ 8,xx → 7 % a 9 %)
     content = content.replace(
       /<td class="px-6 py-4 text-gray-700">≈\s*[678][,.]\d+<\/td>/g,
-      '<td class="px-6 py-4 text-gray-700">7 % à 9 %</td>',
+      '<td class="px-6 py-4 text-gray-700">7 % a 9 %</td>',
     );
 
     // Patterns textuels: "≈ 2,28% et l'ancien ≈ 8.0%"
     content = content.replace(
       /Le\s*<strong>neuf<\/strong>\s*≈\s*\d+[,.]\d+%\s*et\s*l['']<strong>ancien<\/strong>\s*≈\s*\d+[,.]?\d*%/g,
-      "Le <strong>neuf</strong> (2 % à 3 %) et l'<strong>ancien</strong> (7 % à 9 %)",
+      "Le <strong>neuf</strong> (2 % a 3 %) et l'<strong>ancien</strong> (7 % a 9 %)",
     );
 
-    // Droits d'enregistrement précis (≈ 6,32% → environ 5 % à 6 %)
+    // Droits d'enregistrement precis (≈ 6,32% → environ 5 % a 6 %)
     content = content.replace(
       /<span class="font-mono bg-green-100 px-3 py-1 rounded">≈\s*[56][,.]\d+%<\/span>/g,
-      '<span class="font-mono bg-green-100 px-3 py-1 rounded">environ 5 % à 6 %</span>',
+      '<span class="font-mono bg-green-100 px-3 py-1 rounded">environ 5 % a 6 %</span>',
     );
 
     // VEFA droits (≈ 0,71% → environ 0,7 %)
@@ -78,21 +78,21 @@ fs.readdirSync(folder)
     );
 
     // ============================================
-    // ❌ 2. "EXEMPLE CHIFFRÉ" → "EXEMPLE PÉDAGOGIQUE"
+    // ❌ 2. "EXEMPLE CHIFFRE" → "EXEMPLE PEDAGOGIQUE"
     // ============================================
 
-    content = content.replace(/📝 Exemple chiffré/g, "📝 Exemple pédagogique");
-    content = content.replace(/Exemple chiffré/g, "Exemple pédagogique");
+    content = content.replace(/📝 Exemple chiffre/g, "📝 Exemple pedagogique");
+    content = content.replace(/Exemple chiffre/g, "Exemple pedagogique");
 
-    // Supprimer les paramètres précis (taux, durée) dans les exemples
+    // Supprimer les parametres precis (taux, duree) dans les exemples
     content = content.replace(
-      /<span class="text-gray-700">Taux d'intérêt<\/span>\s*<span class="font-bold">\d+[,.]\d+%<\/span>/g,
-      '<span class="text-gray-700">Taux d\'intérêt</span>\n                <span class="font-bold">Variable selon profil</span>',
+      /<span class="text-gray-700">Taux d'interet<\/span>\s*<span class="font-bold">\d+[,.]\d+%<\/span>/g,
+      '<span class="text-gray-700">Taux d\'interet</span>\n                <span class="font-bold">Variable selon profil</span>',
     );
 
     content = content.replace(
-      /<span class="text-gray-700">Durée<\/span>\s*<span class="font-bold">\d+\s*ans<\/span>/g,
-      '<span class="text-gray-700">Durée</span>\n                <span class="font-bold">Selon capacité d\'emprunt</span>',
+      /<span class="text-gray-700">Duree<\/span>\s*<span class="font-bold">\d+\s*ans<\/span>/g,
+      '<span class="text-gray-700">Duree</span>\n                <span class="font-bold">Selon capacite d\'emprunt</span>',
     );
 
     // ============================================
@@ -106,11 +106,11 @@ fs.readdirSync(folder)
     );
 
     content = content.replace(
-      /représentent\s*entre\s*\d+\s*%?\s*et\s*\d+[,.]\d*\s*%\s*du prix/gi,
+      /representent\s*entre\s*\d+\s*%?\s*et\s*\d+[,.]\d*\s*%\s*du prix/gi,
       "varient selon la nature du bien (ancien ou neuf) et le prix",
     );
 
-    // Nettoyer les autres fourchettes numériques précises dans le texte
+    // Nettoyer les autres fourchettes numeriques precises dans le texte
     content = content.replace(
       /entre\s*\d+[,.]\d+\s*%\s*et\s*\d+[,.]\d+\s*%/gi,
       (match) => {
@@ -128,7 +128,7 @@ fs.readdirSync(folder)
     // Prix variable/m² → phrase explicative
     content = content.replace(
       /Prix variable\/m²/g,
-      "Prix dépendant de la commune",
+      "Prix dependant de la commune",
     );
     content = content.replace(
       /<strong>variable<\/strong>/g,
@@ -138,44 +138,44 @@ fs.readdirSync(folder)
 
     // "Variable selon profil" est OK, ne pas toucher
 
-    // Économie : variable → formulation plus riche
+    // Economie : variable → formulation plus riche
     content = content.replace(
       /Economie potentielle\s*:\s*<strong>variable<\/strong>/g,
-      "Économie potentielle : <strong>selon les biens comparés</strong>",
+      "Economie potentielle : <strong>selon les biens compares</strong>",
     );
 
     // ============================================
     // ❌ 5. ORTHOGRAPHE / ACCENTS
     // ============================================
 
-    // Corrections dans l'avertissement légal
-    content = content.replace(/Avertissement legal/g, "Avertissement légal");
+    // Corrections dans l'avertissement legal
+    content = content.replace(/Avertissement legal/g, "Avertissement legal");
     content = content.replace(
       /informations presentees/g,
-      "informations présentées",
+      "informations presentees",
     );
-    content = content.replace(/fournies a titre/g, "fournies à titre");
-    content = content.replace(/baremes reglementes/g, "barèmes réglementés");
-    content = content.replace(/premiere estimation/g, "première estimation");
-    content = content.replace(/personnalisee/g, "personnalisée");
-    content = content.replace(/economie(?!s)/g, "économie");
-    content = content.replace(/Economie/g, "Économie");
-    content = content.replace(/reduits/g, "réduits");
-    content = content.replace(/depend(?!ant)/g, "dépend");
-    content = content.replace(/specifiques/g, "spécifiques");
-    content = content.replace(/habilite/g, "habilité");
-    content = content.replace(/determiner/g, "déterminer");
+    content = content.replace(/fournies a titre/g, "fournies a titre");
+    content = content.replace(/baremes reglementes/g, "baremes reglementes");
+    content = content.replace(/premiere estimation/g, "premiere estimation");
+    content = content.replace(/personnalisee/g, "personnalisee");
+    content = content.replace(/economie(?!s)/g, "economie");
+    content = content.replace(/Economie/g, "Economie");
+    content = content.replace(/reduits/g, "reduits");
+    content = content.replace(/depend(?!ant)/g, "depend");
+    content = content.replace(/specifiques/g, "specifiques");
+    content = content.replace(/habilite/g, "habilite");
+    content = content.replace(/determiner/g, "determiner");
 
     // Autres corrections courantes
-    content = content.replace(/representent/g, "représentent");
-    content = content.replace(/refletent/g, "reflètent");
-    content = content.replace(/necessaire/g, "nécessaire");
-    content = content.replace(/generalement/g, "généralement");
-    content = content.replace(/particulierement/g, "particulièrement");
-    content = content.replace(/supplementaires/g, "supplémentaires");
-    content = content.replace(/differentiel/g, "différentiel");
-    content = content.replace(/preferez/g, "préférez");
-    content = content.replace(/negocier/g, "négocier");
+    content = content.replace(/representent/g, "representent");
+    content = content.replace(/refletent/g, "refletent");
+    content = content.replace(/necessaire/g, "necessaire");
+    content = content.replace(/generalement/g, "generalement");
+    content = content.replace(/particulierement/g, "particulierement");
+    content = content.replace(/supplementaires/g, "supplementaires");
+    content = content.replace(/differentiel/g, "differentiel");
+    content = content.replace(/preferez/g, "preferez");
+    content = content.replace(/negocier/g, "negocier");
 
     if (content !== original) {
       fs.writeFileSync(filePath, content, "utf8");
@@ -185,5 +185,5 @@ fs.readdirSync(folder)
   });
 
 console.log(`\n========================================`);
-console.log(`✅ TOTAL: ${totalFixed} fichiers corrigés`);
+console.log(`✅ TOTAL: ${totalFixed} fichiers corriges`);
 console.log(`========================================`);

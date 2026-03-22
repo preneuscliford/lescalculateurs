@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * Parcourt récursivement un dossier et renvoie la liste des fichiers HTML.
+ * Parcourt recursivement un dossier et renvoie la liste des fichiers HTML.
  */
 async function listHtmlFiles(rootDir) {
   const results = [];
@@ -24,7 +24,7 @@ async function listHtmlFiles(rootDir) {
 }
 
 /**
- * Extrait les liens externes d’un contenu HTML simple (href).
+ * Extrait les liens externes d'un contenu HTML simple (href).
  */
 function extractLinks(html) {
   const links = [];
@@ -58,7 +58,7 @@ function extractImageUrls(html) {
 }
 
 /**
- * Vérifie une URL (HEAD puis GET en repli) et renvoie statut et éventuelle erreur.
+ * Verifie une URL (HEAD puis GET en repli) et renvoie statut et eventuelle erreur.
  */
 async function checkUrl(url) {
   try {
@@ -73,7 +73,7 @@ async function checkUrl(url) {
 }
 
 /**
- * Point d’entrée: vérifie tous les liens externes sous src/pages et génère un rapport.
+ * Point d'entree: verifie tous les liens externes sous src/pages et genere un rapport.
  */
 async function main() {
   const pagesDir = path.resolve(__dirname, "../src/pages");

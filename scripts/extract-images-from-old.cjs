@@ -1,6 +1,6 @@
 /**
  * Script pour extraire les URLs d'images des anciennes pages
- * et générer un mapping département -> image
+ * et generer un mapping departement -> image
  */
 
 const { execSync } = require("child_process");
@@ -131,14 +131,14 @@ for (const code of CODES) {
       images[code] = match[1];
       console.log(`✅ ${code}: ${match[1].substring(0, 80)}...`);
     } else {
-      console.log(`⚠️  ${code}: Pas d'image Wikimedia trouvée`);
+      console.log(`⚠️  ${code}: Pas d'image Wikimedia trouvee`);
     }
   } catch (e) {
     console.log(`❌ ${code}: Erreur - ${e.message.substring(0, 50)}`);
   }
 }
 
-console.log("\n\n// === MAPPING À COPIER DANS LE TEMPLATE ===\n");
+console.log("\n\n// === MAPPING A COPIER DANS LE TEMPLATE ===\n");
 console.log("const IMAGES = {");
 for (const [code, url] of Object.entries(images)) {
   console.log(`  "${code}": "${url}",`);
