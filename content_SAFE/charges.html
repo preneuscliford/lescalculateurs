@@ -600,8 +600,8 @@
               <strong>Source:</strong> Loi ALUR + documentation Serviceâ€'public
             </li>
             <li>
-              <strong>Calcul:</strong> estimation en â‚¬/m²/an puis conversion en
-              â‚¬/mois et â‚¬/an pour votre surface
+              <strong>Calcul:</strong> estimation en €/m²/an puis conversion en
+              €/mois et €/an pour votre surface
             </li>
             <li>
               <strong>Particularite:</strong> charges courantes (syndic,
@@ -749,8 +749,8 @@
               itemtype="https://schema.org/Answer"
             >
               <p class="text-gray-600" itemprop="text">
-                Entre 20-60â‚¬/m²/an selon les regions. Paris : 40-80â‚¬/m², grandes
-                villes : 25-50â‚¬/m², petites villes : 15-3un montant modeste/m². Les immeubles
+                Entre 20-60€/m²/an selon les regions. Paris : 40-80€/m², grandes
+                villes : 25-50€/m², petites villes : 15-3un montant modeste/m². Les immeubles
                 avec ascenseur coûtent 3environ 0 A 1 % plus cher. Les moyennes varient
                 fortement selon la localisation et les equipements ; ces
                 chiffres sont donnes A titre indicatif.
@@ -1048,7 +1048,7 @@
                   )}</p>
                 </div>
                 <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <p class="text-sm text-gray-600">Total (â‚¬/m²/an)</p>
+                  <p class="text-sm text-gray-600">Total (€/m²/an)</p>
                   <p class="text-2xl font-bold text-green-700">${d.chargesTotales.toFixed(
                     1,
                   )}</p>
@@ -1127,19 +1127,19 @@
                   <span class="text-gray-600">Charges courantes :</span>
                   <span class="font-semibold">${d.chargesCourantes.toFixed(
                     1,
-                  )} â‚¬/m²/an</span>
+                  )} €/m²/an</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Charges exceptionnelles :</span>
                   <span class="font-semibold">${d.chargesExceptionnelles.toFixed(
                     1,
-                  )} â‚¬/m²/an</span>
+                  )} €/m²/an</span>
                 </div>
                 <div class="border-t pt-2 flex justify-between text-lg">
                   <span class="font-bold text-gray-900">Total :</span>
                   <span class="font-bold text-green-700">${d.chargesTotales.toFixed(
                     1,
-                  )} â‚¬/m²/an</span>
+                  )} €/m²/an</span>
                 </div>
               </div>
             </div>
@@ -1159,7 +1159,7 @@
                       d.ecartMoyenne,
                     ).toFixed(1)}% ${
                       d.ecartMoyenne > 0 ? "au-dessus" : "en-dessous"
-                    } d'une moyenne indicative (${d.moyenneNationale} â‚¬/m²/an)
+                    } d'une moyenne indicative (${d.moyenneNationale} €/m²/an)
                   </p>
                 </div>
               </div>
@@ -1173,28 +1173,28 @@
                   <span class="font-semibold">${(
                     (d.repartition.entretien * d.surface) /
                     12
-                  ).toFixed(0)} â‚¬/mois</span>
+                  ).toFixed(0)} €/mois</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Services et equipements (2environ 4 A 6 %) :</span>
                   <span class="font-semibold">${(
                     (d.repartition.services * d.surface) /
                     12
-                  ).toFixed(0)} â‚¬/mois</span>
+                  ).toFixed(0)} €/mois</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Syndic et administration (2environ 4 A 6 %) :</span>
                   <span class="font-semibold">${(
                     (d.repartition.syndic * d.surface) /
                     12
-                  ).toFixed(0)} â‚¬/mois</span>
+                  ).toFixed(0)} €/mois</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Assurances et divers (1environ 4 A 6 %) :</span>
                   <span class="font-semibold">${(
                     (d.repartition.assurances * d.surface) /
                     12
-                  ).toFixed(0)} â‚¬/mois</span>
+                  ).toFixed(0)} €/mois</span>
                 </div>
               </div>
             </div>
@@ -1493,11 +1493,11 @@
                   label: labelText || autoLabel,
                   mensuel: formatCurrency(d.montantMensuel),
                   annuel: formatCurrency(d.montantAnnuel),
-                  total_m2_an: `${d.chargesTotales.toFixed(1)} â‚¬/m²/an`,
-                  courantes_m2_an: `${d.chargesCourantes.toFixed(1)} â‚¬/m²/an`,
+                  total_m2_an: `${d.chargesTotales.toFixed(1)} €/m²/an`,
+                  courantes_m2_an: `${d.chargesCourantes.toFixed(1)} €/m²/an`,
                   exceptionnelles_m2_an: `${d.chargesExceptionnelles.toFixed(
                     1,
-                  )} â‚¬/m²/an`,
+                  )} €/m²/an`,
                 });
 
                 resetBtn.classList.remove("hidden");

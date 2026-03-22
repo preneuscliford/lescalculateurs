@@ -77,8 +77,8 @@ function repairCorruptedFrench(value) {
     .replace(/\?/g, (match, offset, input) => {
       const prev = input[offset - 1] || "";
       const next = input[offset + 1] || "";
-      if (prev === " " && next === " ") return "Ã ";
-      if (prev === " " && /[A-Z]/.test(next)) return "Ã ";
+      if (prev === " " && next === " ") return "à";
+      if (prev === " " && /[A-Z]/.test(next)) return "à";
       return "?";
     })
     .replace(/Sc\?narios/g, "Sc\u00e9narios")
@@ -454,8 +454,8 @@ function toFrenchDisplayText(value) {
     .replace(/\brequ \u00e0 te\b/gi, "requ\u00eate")
     .replace(/\bdiff \u00e0 rent\b/gi, "diff\u00e9rent")
     .replace(/\bdiff \u00e0 rents\b/gi, "diff\u00e9rents")
-    .replace(/le loyer est bien renseign(?:\s|\&#224;|Ã )+hors charges/gi, "le loyer est bien renseign\u00e9 hors charges")
-    .replace(/verifier que le loyer est bien renseigne(?:\s|\&#224;|Ã )+hors charges/gi, "v\u00e9rifier que le loyer est bien renseign\u00e9 hors charges")
+    .replace(/le loyer est bien renseign(?:\s|\&#224;|à)+hors charges/gi, "le loyer est bien renseign\u00e9 hors charges")
+    .replace(/verifier que le loyer est bien renseigne(?:\s|\&#224;|à)+hors charges/gi, "v\u00e9rifier que le loyer est bien renseign\u00e9 hors charges")
     .replace(/\ba revenu\b/g, "\u00e0 revenu")
     .replace(/\ba ([0-9])/g, "\u00e0 $1")
     .replace(/\bA ([0-9])/g, "\u00c0 $1")

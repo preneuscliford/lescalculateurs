@@ -1173,7 +1173,7 @@
             ["Nom de l'actif:", data.userInputs.nomActif || "Non specifie"],
             [
               "Prix d'achat:",
-              `${data.userInputs.prixAchat.toLocaleString("fr-FR")} â‚¬`,
+              `${data.userInputs.prixAchat.toLocaleString("fr-FR")} €`,
             ],
             [
               "Quantite achetee:",
@@ -1182,11 +1182,11 @@
             ["Date d'achat:", data.userInputs.dateAchat],
             [
               "Frais d'achat:",
-              `${data.userInputs.fraisAchat.toLocaleString("fr-FR")} â‚¬`,
+              `${data.userInputs.fraisAchat.toLocaleString("fr-FR")} €`,
             ],
             [
               "Prix de vente:",
-              `${data.userInputs.prixVente.toLocaleString("fr-FR")} â‚¬`,
+              `${data.userInputs.prixVente.toLocaleString("fr-FR")} €`,
             ],
             [
               "Quantite vendue:",
@@ -1195,7 +1195,7 @@
             ["Date de vente:", data.userInputs.dateVente],
             [
               "Frais de vente:",
-              `${data.userInputs.fraisVente.toLocaleString("fr-FR")} â‚¬`,
+              `${data.userInputs.fraisVente.toLocaleString("fr-FR")} €`,
             ],
             [
               "Regime fiscal:",
@@ -1228,19 +1228,19 @@
               "Montant d'achat (frais inclus):",
               `${data.results.montantAchat.toLocaleString("fr-FR", {
                 minimumFractionDigits: 2,
-              })} â‚¬`,
+              })} €`,
             ],
             [
               "Montant de vente (frais deduits):",
               `${data.results.montantVente.toLocaleString("fr-FR", {
                 minimumFractionDigits: 2,
-              })} â‚¬`,
+              })} €`,
             ],
             [
               "Plus-value brute:",
               `${data.results.plusValueBrute.toLocaleString("fr-FR", {
                 minimumFractionDigits: 2,
-              })} â‚¬`,
+              })} €`,
             ],
             ["Rendement:", `${data.results.rendement.toFixed(2)}%`],
             [
@@ -1254,7 +1254,7 @@
               "Plus-value apres abattement:",
               `${data.results.plusValueApresAbattement.toLocaleString("fr-FR", {
                 minimumFractionDigits: 2,
-              })} â‚¬`,
+              })} €`,
             ],
             [
               "Taux d'imposition:",
@@ -1264,7 +1264,7 @@
               "Impot A payer:",
               `${data.results.impot.toLocaleString("fr-FR", {
                 minimumFractionDigits: 2,
-              })} â‚¬`,
+              })} €`,
             ],
           ];
 
@@ -1303,7 +1303,7 @@
           pdf.text(
             `${data.results.gainNet.toLocaleString("fr-FR", {
               minimumFractionDigits: 2,
-            })} â‚¬`,
+            })} €`,
             100,
             yPosition
           );

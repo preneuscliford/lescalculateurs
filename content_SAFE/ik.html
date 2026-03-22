@@ -314,7 +314,7 @@
                 <div class="bg-white rounded-lg p-4 shadow-sm">
                   <h3 class="font-bold text-gray-900 mb-1">ðŸŽ¯ Scénarios typiques</h3>
                   <p class="text-sm text-gray-600">
-                    "Trajet plus longâ€, "autre véhiculeâ€, "autre fréquenceâ€.
+                    "Trajet plus long", "autre véhicule", "autre fréquence".
                   </p>
                 </div>
                 <div class="bg-white rounded-lg p-4 shadow-sm">
@@ -362,7 +362,7 @@
             <p class="ai-response text-gray-700">
               Indemnité = Kilomètres Ã— Tarif barématique (variable selon
               puissance du véhicule et kilométrage). Exemple voiture 5 CV :
-              0,585â‚¬ jusqu'À 5 000 km, 0,415â‚¬ de 5 001–20 000 km, 0,36un montant modeste
+              0,585€ jusqu'À 5 000 km, 0,415€ de 5 001–20 000 km, 0,36un montant modeste
               au-delÀ. Le barème fiscal est reconduit régulièrement; nous appliquons le dernier barème connu.
             </p>
           </section>
@@ -714,7 +714,7 @@
               <p class="text-sm text-gray-600 mt-3 m-0">
                 Indemnité moyenne par km : <strong>${data.indemniteParKm.toFixed(
                   3
-                )} â‚¬</strong>
+                )} €</strong>
               </p>
             </div>
             
@@ -784,8 +784,8 @@
                   data.typeVehicule === "voiture" ? "Voiture" : "Deux-roues",
                 ],
                 ["Distance annuelle (km)", data.kilometres],
-                ["Indemnité par km (â‚¬)", data.indemniteParKm.toFixed(3)],
-                ["Indemnités totales (â‚¬)", data.total],
+                ["Indemnité par km (€)", data.indemniteParKm.toFixed(3)],
+                ["Indemnités totales (€)", data.total],
                 ...(data.puissance
                   ? [["Puissance fiscale", data.puissance]]
                   : []),

@@ -339,27 +339,27 @@
               </p>
               <p class="mb-2">
                 La plupart des departements ont vote le taux majore en 2026. Sur
-                un achat de 250&nbsp;000&nbsp;â‚¬&nbsp;:
+                un achat de 250&nbsp;000&nbsp;€&nbsp;:
               </p>
               <ul class="list-disc pl-6">
                 <li>
                   5,09&nbsp;% (reduit : 36, 976)&nbsp;â†'&nbsp;<strong
-                    >12&nbsp;725&nbsp;â‚¬</strong
+                    >12&nbsp;725&nbsp;€</strong
                   >
                 </li>
                 <li>
                   5,80&nbsp;% (standard : 12 departements)&nbsp;â†'&nbsp;<strong
-                    >14&nbsp;500&nbsp;â‚¬</strong
+                    >14&nbsp;500&nbsp;€</strong
                   >
                 </li>
                 <li>
                   6,32&nbsp;% (majore : 87 departements)&nbsp;â†'&nbsp;<strong
-                    >15&nbsp;800&nbsp;â‚¬</strong
+                    >15&nbsp;800&nbsp;€</strong
                   >
                 </li>
               </ul>
               <p class="mt-2">
-                â†' Ecart maximal&nbsp;:&nbsp;<strong>3&nbsp;075&nbsp;â‚¬</strong>
+                â†' Ecart maximal&nbsp;:&nbsp;<strong>3&nbsp;075&nbsp;€</strong>
                 sur les seuls droits d'enregistrement.
               </p>
               <p class="mt-2 text-sm">
@@ -1466,7 +1466,7 @@
               placeholder: "250000",
               min: 1000,
               step: 1000,
-              suffix: "â‚¬",
+              suffix: "€",
             },
             {
               id: "montant_mobilier",
@@ -1475,7 +1475,7 @@
               placeholder: "0",
               min: 0,
               step: 500,
-              suffix: "â‚¬",
+              suffix: "€",
             },
             {
               id: "type_emprunt",
@@ -1506,7 +1506,7 @@
               placeholder: "0",
               min: 0,
               step: 1000,
-              suffix: "â‚¬",
+              suffix: "€",
             },
             {
               id: "autres_prets",
@@ -1515,7 +1515,7 @@
               placeholder: "0",
               min: 0,
               step: 1000,
-              suffix: "â‚¬",
+              suffix: "€",
             },
           ],
           calculate: (values) => {
@@ -1573,7 +1573,7 @@
               const { debours, formalites } = getDeboursForm(
                 values.departement,
               );
-              // CSI 0,10% (min 15â‚¬)
+              // CSI 0,10% (min 15€)
               const csi = Math.max(
                 prixNetImmobilier * Number(bjson.notaire?.csi?.taux || 0.001),
                 Number(bjson.notaire?.csi?.minimum || 15),
@@ -1872,7 +1872,7 @@
               const departementLabel = deptMap[d.departement] || d.departement;
 
               return {
-                headers: ["Description", "Montant (â‚¬)", "Pourcentage du prix"],
+                headers: ["Description", "Montant (€)", "Pourcentage du prix"],
                 rows: [
                   ["--- INFORMATIONS ---", "", ""],
                   ["Type de bien", typeBienLabel, ""],
@@ -1988,7 +1988,7 @@
                     : "Avec garantie hypothecaire";
               const departementLabel = deptMap[d.departement] || d.departement;
               return {
-                headers: ["Description", "Montant (â‚¬)", "Pourcentage du prix"],
+                headers: ["Description", "Montant (€)", "Pourcentage du prix"],
                 rows: [
                   ["--- INFORMATIONS ---", "", ""],
                   ["Type de bien", typeBienLabel, ""],
