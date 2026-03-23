@@ -1,0 +1,26 @@
+[
+  {
+    "error": ":File",
+    "suggestion": ": File",
+    "type": "punctuation",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\blog\\departements\\frais-notaire-01.html"
+  },
+  {
+    "error": ".Number",
+    "suggestion": ". Number",
+    "type": "punctuation",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\charges\\index.html"
+  },
+  {
+    "error": ".Chart",
+    "suggestion": ". Chart",
+    "type": "punctuation",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\plusvalue\\index.html"
+  },
+  {
+    "error": ";Paris",
+    "suggestion": "; Paris",
+    "type": "punctuation",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\src\\pages\\apl\\index.html"
+  }
+]

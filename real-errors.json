@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-03-22T17:59:23.826Z",
+  "summary": {
+    "totalFiles": 176,
+    "filesWithErrors": 3,
+    "totalErrors": 5
+  },
+  "corrections": {
+    "src\\pages\\contact.html": [
+      {
+        "rule": "A_ACCENT",
+        "message": "Accent manquant",
+        "suggestions": [
+          "à"
+        ],
+        "context": " class=\"mb-4 text-sm text-gray-600\">Derniere mise a jour: 04/03/2026</p>\r\n\r\n    <h2 class=\"text-xl fo",
+        "offset": 1432,
+        "length": 1
+      }
+    ],
+    "src\\pages\\comment-calculer-frais-notaire.html": [
+      {
+        "rule": "MOIS",
+        "message": "Les mois s'écrivent sans majuscule",
+        "suggestions": [
+          "janvier"
+        ],
+        "context": "\n          <strong>Dernière mise à jour :</strong>Janvier 2026 (Chambre des\r\n Notaires & Service-public.fr)",
+        "offset": 12005,
+        "length": 7
+      }
+    ],
+    "src\\pages\\aides\\cumul-aides-rsa-apl-prime-activite.html": [
+      {
+        "rule": "APOS_M",
+        "message": "Apostrophe manquante",
+        "suggestions": [
+          "d'activité"
+        ],
+        "context": "/>\r\n    <title>Cumul aides 2026 : RSA, APL, Prime d activité</title>\r\n    <meta name=\"description\" content=\"V?",
+        "offset": 199,
+        "length": 10
+      },
+      {
+        "rule": "APOS_M",
+        "message": "Apostrophe manquante",
+        "suggestions": [
+          "d'activité"
+        ],
+        "context": "ifiez les règles de cumul entre RSA, APL et Prime d activité en 2026.\" />\r\n    <link rel=\"canonical\" href=\"htt",
+        "offset": 311,
+        "length": 10
+      },
+      {
+        "rule": "APOS_M",
+        "message": "Apostrophe manquante",
+        "suggestions": [
+          "d'activité"
+        ],
+        "context": "-gray-900 mb-4\">Peut-on cumuler RSA, APL et Prime d activité ?</h1>\r\n      <p class=\"text-gray-700 mb-6\">Cette",
+        "offset": 1703,
+        "length": 10
+      }
+    ]
+  }
+}

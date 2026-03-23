@@ -164,7 +164,7 @@
             "name": "Existe-t-il des exonérations ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui : résidence principale, petits propriétaires (< 15000 € de gain), plus-values inférieures À 1000 €, et diverses situations professionnelles. Vérifiez votre éligibilité."
+              "text": "Oui : résidence principale, petits propriétaires (< 15000 â‚¬ de gain), plus-values inférieures À 1000 â‚¬, et diverses situations professionnelles. Vérifiez votre éligibilité."
             }
           },
           {
@@ -402,7 +402,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">
-                Prix de vente (€)
+                Prix de vente (â‚¬)
               </label>
               <input
                 type="number"
@@ -416,7 +416,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">
-                Prix d'acquisition (€)
+                Prix d'acquisition (â‚¬)
               </label>
               <input
                 type="number"
@@ -430,7 +430,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">
-                Frais d'acquisition (€)
+                Frais d'acquisition (â‚¬)
               </label>
               <input
                 type="number"
@@ -447,7 +447,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">
-                Travaux et améliorations (€)
+                Travaux et améliorations (â‚¬)
               </label>
               <input
                 type="number"
@@ -498,7 +498,7 @@
               <option value="principale">Résidence principale</option>
               <option value="secondaire">Résidence secondaire</option>
               <option value="investissement">Investissement locatif</option>
-              <option value="terrain">Terrain À bâtir</option>
+              <option value="terrain">Terrain À bÃ¢tir</option>
             </select>
           </div>
 
@@ -555,7 +555,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">
-                  Prix de vente (€) *
+                  Prix de vente (â‚¬) *
                 </label>
                 <input
                   type="number"
@@ -570,7 +570,7 @@
 
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">
-                  Prix d'acquisition (€) *
+                  Prix d'acquisition (â‚¬) *
                 </label>
                 <input
                   type="number"
@@ -585,7 +585,7 @@
 
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">
-                  Frais d'acquisition (€)
+                  Frais d'acquisition (â‚¬)
                 </label>
                 <input
                   type="number"
@@ -599,7 +599,7 @@
 
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">
-                  Travaux (€)
+                  Travaux (â‚¬)
                 </label>
                 <input
                   type="number"
@@ -650,7 +650,7 @@
                 <option value="principale">Résidence principale</option>
                 <option value="secondaire">Résidence secondaire</option>
                 <option value="investissement">Investissement locatif</option>
-                <option value="terrain">Terrain À bâtir</option>
+                <option value="terrain">Terrain À bÃ¢tir</option>
               </select>
             </div>
 
@@ -1037,7 +1037,7 @@
               ? "Résidence secondaire"
               : typeBien === "investissement"
               ? "Investissement locatif"
-              : "Terrain À bâtir";
+              : "Terrain À bÃ¢tir";
 
           const forfaitTravauxApplique =
             dureeAnnes > 5 && prixAchat * 0.15 > travaux;
@@ -1070,7 +1070,7 @@
               <h3 class="text-xl font-bold text-blue-900 mb-4">âœ… Aucun impôt À payer</h3>
               <p class="text-gray-700">Vous n'avez pas de plus-value imposable. La vente génère une moins-value de <strong>${Math.abs(
                 plusValueBrute
-              ).toLocaleString("fr-FR")} €</strong>.</p>
+              ).toLocaleString("fr-FR")} â‚¬</strong>.</p>
               <div class="mt-4 bg-white border border-blue-200 rounded-lg p-4">
                 <h4 class="font-semibold text-gray-900 mb-2">Pourquoi un montant modeste ?</h4>
                 <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
@@ -1157,7 +1157,7 @@
           let impotIR = plusValueIR * tauxIR;
           const impotPS = plusValuePS * tauxPS;
 
-          // Surtaxe si plus-value IR > 50 000€
+          // Surtaxe si plus-value IR > 50 000â‚¬
           let surtaxe = 0;
           if (plusValueIR > 50000) {
             const tranche = plusValueIR - 50000;
@@ -1360,7 +1360,7 @@
                   surtaxe > 0
                     ? `
                 <div class="flex justify-between">
-                  <span class="text-gray-600">Surtaxe (plus-value &gt; 50k€) :</span>
+                  <span class="text-gray-600">Surtaxe (plus-value &gt; 50kâ‚¬) :</span>
                   <span class="font-semibold">${formatCurrency(surtaxe)}</span>
                 </div>
                 `

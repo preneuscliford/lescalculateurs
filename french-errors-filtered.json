@@ -1,0 +1,593 @@
+[
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "                   Jusqu'a 3 scenarios cote a cote, avec les ecart...",
+    "error": "Jusqu'a",
+    "suggestions": [
+      "Jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 19,
+      "end": 26
+    },
+    "context": "                   Jusqu'a 3 scenarios cote a cote, avec les ecart..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "Loyers plafonnes par la CAF",
+    "error": "plafonnes",
+    "suggestions": [
+      "plafonnés",
+      "plafonnées",
+      "plafonnent",
+      "plafonne",
+      "Loyers",
+      "plafonds",
+      "plafond"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 7,
+      "end": 16
+    },
+    "context": "Loyers plafonnes par la CAF"
+  },
+  {
+    "file": "content_SAFE\\asf.html",
+    "text": "               Les parents isoles avec enfant(s) de moins de 21 ans A cha...",
+    "error": "isoles",
+    "suggestions": [
+      "isolés",
+      "isolées",
+      "isolent",
+      "isole",
+      "parents",
+      "isolé",
+      "isolée",
+      "idoles",
+      "soles",
+      "Issole"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 27,
+      "end": 33
+    },
+    "context": "               Les parents isoles avec enfant(s) de moins de 21 ans A cha..."
+  },
+  {
+    "file": "content_SAFE\\blog\\revalorisation-smic-2026.html",
+    "text": "               Non : la différence brut / net réduit l’impact visible.         ...",
+    "error": "brut",
+    "suggestions": [
+      "brute"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 35,
+      "end": 39
+    },
+    "context": "               Non : la différence brut / net réduit l’impact visible.         ..."
+  },
+  {
+    "file": "content_SAFE\\blog\\salarie-ou-auto-entrepreneur-2026.html",
+    "text": "...es sont proportionnelles, mais couvrent des protections différentes : comparez toujours “net + sécurité”.  ...",
+    "error": " différentes : comparez tou",
+    "suggestions": [
+      "différentes protections"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 58,
+      "end": 85
+    },
+    "context": "...es sont proportionnelles, mais couvrent des protections différentes : comparez toujours “net + sécurité”.  ..."
+  },
+  {
+    "file": "content_SAFE\\charges.html",
+    "text": "...uls reposent sur des ordres de grandeur observes et           constituent une estimation...",
+    "error": "      co",
+    "suggestions": [
+      "observe",
+      "observent"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 59,
+      "end": 67
+    },
+    "context": "...uls reposent sur des ordres de grandeur observes et           constituent une estimation..."
+  },
+  {
+    "file": "content_SAFE\\charges.html",
+    "text": "...rdres de grandeur observes et           constituent une estimation indicative et non contra...",
+    "error": "et non cont",
+    "suggestions": [
+      "constitues"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 81,
+      "end": 92
+    },
+    "context": "...rdres de grandeur observes et           constituent une estimation indicative et non contra..."
+  },
+  {
+    "file": "content_SAFE\\financement\\index.html",
+    "text": "Crédit auto, conso existants",
+    "error": "existants",
+    "suggestions": [
+      "existante",
+      "existantes"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 19,
+      "end": 28
+    },
+    "context": "Crédit auto, conso existants"
+  },
+  {
+    "file": "content_SAFE\\financement.html",
+    "text": "Crédit auto, conso existants",
+    "error": "existants",
+    "suggestions": [
+      "existante",
+      "existantes"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 19,
+      "end": 28
+    },
+    "context": "Crédit auto, conso existants"
+  },
+  {
+    "file": "content_SAFE\\impot\\index.html",
+    "text": "Mensualité prêt",
+    "error": "prêt",
+    "suggestions": [
+      "prête"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 11,
+      "end": 15
+    },
+    "context": "Mensualité prêt"
+  },
+  {
+    "file": "content_SAFE\\impot\\simulateur-impots-gratuit-a-quoi-sert-il\\index.html",
+    "text": "Ssimulateur impôts gratuit : à quoi sert- 2026 – Simulateur | LesC...",
+    "error": "gratuit",
+    "suggestions": [
+      "gratuits"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 19,
+      "end": 26
+    },
+    "context": "Ssimulateur impôts gratuit : à quoi sert- 2026 – Simulateur | LesC..."
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": " Decote jusqu'A 1 39un montant modeste | 1 part =      ...",
+    "error": "jusqu'A",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 8,
+      "end": 15
+    },
+    "context": " Decote jusqu'A 1 39un montant modeste | 1 part =      ..."
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": ". Ideal pour les salaries,               independants et retraite...",
+    "error": "salaries",
+    "suggestions": [
+      "salariés",
+      "salariées",
+      "salarient",
+      "salarie",
+      "salaires",
+      "salarié",
+      "salariée",
+      "salaire"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 17,
+      "end": 25
+    },
+    "context": ". Ideal pour les salaries,               independants et retraite..."
+  },
+  {
+    "file": "content_SAFE\\notaire.html",
+    "text": "Economisez jusqu'A 3 50un montant modeste",
+    "error": "jusqu'A",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 11,
+      "end": 18
+    },
+    "context": "Economisez jusqu'A 3 50un montant modeste"
+  },
+  {
+    "file": "content_SAFE\\notaire.html",
+    "text": "                 Comparez jusqu'A 4 villes simultanement avec un graphiqu...",
+    "error": "jusqu'A",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 26,
+      "end": 33
+    },
+    "context": "                 Comparez jusqu'A 4 villes simultanement avec un graphiqu..."
+  },
+  {
+    "file": "content_SAFE\\notaire.html",
+    "text": "...   Notre calculateur permet de comparer jusqu'A 4 villes                 simultanement....",
+    "error": "illes  ",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 54,
+      "end": 61
+    },
+    "context": "...   Notre calculateur permet de comparer jusqu'A 4 villes                 simultanement...."
+  },
+  {
+    "file": "content_SAFE\\pret\\duree-ideale-d-un-pret-immobilier\\index.html",
+    "text": "... Durée idéale d’un prêt immobilier. Une durée courte réduit le coût total mais augmente la m...",
+    "error": "le coût tota",
+    "suggestions": [
+      "courte durée"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 63,
+      "end": 75
+    },
+    "context": "... Durée idéale d’un prêt immobilier. Une durée courte réduit le coût total mais augmente la m..."
+  },
+  {
+    "file": "content_SAFE\\pret\\duree-ideale-d-un-pret-immobilier\\index.html",
+    "text": "Une durée courte réduit le coût total mais augmente la m...",
+    "error": "durée courte",
+    "suggestions": [
+      "courte durée"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 4,
+      "end": 16
+    },
+    "context": "Une durée courte réduit le coût total mais augmente la m..."
+  },
+  {
+    "file": "content_SAFE\\pret\\duree-ideale-d-un-pret-immobilier\\index.html",
+    "text": "Une durée courte réduit le coût total mais augmente la m...",
+    "error": "durée courte",
+    "suggestions": [
+      "courte durée"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 4,
+      "end": 16
+    },
+    "context": "Une durée courte réduit le coût total mais augmente la m..."
+  },
+  {
+    "file": "content_SAFE\\pret\\duree-ideale-d-un-pret-immobilier.html",
+    "text": "... Durée idéale d’un prêt immobilier. Une durée courte réduit le coût total mais augmente la m...",
+    "error": "le coût tota",
+    "suggestions": [
+      "courte durée"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 63,
+      "end": 75
+    },
+    "context": "... Durée idéale d’un prêt immobilier. Une durée courte réduit le coût total mais augmente la m..."
+  },
+  {
+    "file": "content_SAFE\\pret\\duree-ideale-d-un-pret-immobilier.html",
+    "text": "Une durée courte réduit le coût total mais augmente la m...",
+    "error": "durée courte",
+    "suggestions": [
+      "courte durée"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 4,
+      "end": 16
+    },
+    "context": "Une durée courte réduit le coût total mais augmente la m..."
+  },
+  {
+    "file": "content_SAFE\\pret\\duree-ideale-d-un-pret-immobilier.html",
+    "text": "Une durée courte réduit le coût total mais augmente la m...",
+    "error": "durée courte",
+    "suggestions": [
+      "courte durée"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 4,
+      "end": 16
+    },
+    "context": "Une durée courte réduit le coût total mais augmente la m..."
+  },
+  {
+    "file": "content_SAFE\\pret\\index.html",
+    "text": "...lier finance un bien immobilier sur des durées longues,           avec des frais spécifiques (...",
+    "error": "    avec des f",
+    "suggestions": [
+      "longues durées"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 65,
+      "end": 79
+    },
+    "context": "...lier finance un bien immobilier sur des durées longues,           avec des frais spécifiques (..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...te = (capital Ã— i Ã— (1+i)^n) / ((1+i)^n âˆ' 1) + assurance (approx.).             ...",
+    "error": "ce (",
+    "suggestions": [
+      "n'a",
+      "n'as",
+      "n'ai"
+    ],
+    "rule": "APOS_M",
+    "position": {
+      "start": 61,
+      "end": 65
+    },
+    "context": "...te = (capital Ã— i Ã— (1+i)^n) / ((1+i)^n âˆ' 1) + assurance (approx.).             ..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...anque de France (publications et seuils observes) & conditions bancaires 2026",
+    "error": " observe",
+    "suggestions": [
+      "observés",
+      "observées",
+      "observent",
+      "observe",
+      "seuils"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 42,
+      "end": 50
+    },
+    "context": "...anque de France (publications et seuils observes) & conditions bancaires 2026"
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...      Calculez votre capacite d'emprunt maximale selon vos revenus et                 ch...",
+    "error": " selon v",
+    "suggestions": [
+      "maximal"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 51,
+      "end": 59
+    },
+    "context": "...      Calculez votre capacite d'emprunt maximale selon vos revenus et                 ch..."
+  },
+  {
+    "file": "content_SAFE\\rsa.html",
+    "text": "...       forfaitaires sont revalorises et peuvent evoluer.             ",
+    "error": "       ",
+    "suggestions": [
+      "peux"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 62,
+      "end": 69
+    },
+    "context": "...       forfaitaires sont revalorises et peuvent evoluer.             "
+  },
+  {
+    "file": "content_SAFE\\salaire\\index.html",
+    "text": "               Comparez vos salaires net/brut : cadre vs non-cadre             ",
+    "error": "net",
+    "suggestions": [
+      "nets"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 37,
+      "end": 40
+    },
+    "context": "               Comparez vos salaires net/brut : cadre vs non-cadre             "
+  },
+  {
+    "file": "content_SAFE\\salaire\\index.html",
+    "text": "...            🤔 Quelle est la différence brut/net ?             ",
+    "error": "brut",
+    "suggestions": [
+      "brute"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 43,
+      "end": 47
+    },
+    "context": "...            🤔 Quelle est la différence brut/net ?             "
+  },
+  {
+    "file": "content_SAFE\\salaire\\index.html",
+    "text": "Mensualité prêt",
+    "error": "prêt",
+    "suggestions": [
+      "prête"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 11,
+      "end": 15
+    },
+    "context": "Mensualité prêt"
+  },
+  {
+    "file": "content_SAFE\\salaire-seo.html",
+    "text": "               Comparez vos salaires net/brut : cadre vs non-cadre             ",
+    "error": "net",
+    "suggestions": [
+      "nets"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 37,
+      "end": 40
+    },
+    "context": "               Comparez vos salaires net/brut : cadre vs non-cadre             "
+  },
+  {
+    "file": "content_SAFE\\salaire-seo.html",
+    "text": "...            🤔 Quelle est la différence brut/net ?             ",
+    "error": "brut",
+    "suggestions": [
+      "brute"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 43,
+      "end": 47
+    },
+    "context": "...            🤔 Quelle est la différence brut/net ?             "
+  },
+  {
+    "file": "content_SAFE\\salaire-seo.html",
+    "text": "Mensualité prêt",
+    "error": "prêt",
+    "suggestions": [
+      "prête"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 11,
+      "end": 15
+    },
+    "context": "Mensualité prêt"
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "               Comparez vos salaires net/brut : cadre vs non-cadre             ",
+    "error": "net",
+    "suggestions": [
+      "nets"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 37,
+      "end": 40
+    },
+    "context": "               Comparez vos salaires net/brut : cadre vs non-cadre             "
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "...À 1 %                 cotisations | PAS variable selon revenus               ",
+    "error": "     ",
+    "suggestions": [
+      "variables"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 75,
+      "end": 83
+    },
+    "context": "...À 1 %                 cotisations | PAS variable selon revenus               "
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "...          ðŸ¤” Quelle est la différence brut/net ?             ",
+    "error": "ut/n",
+    "suggestions": [
+      "brute"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 45,
+      "end": 49
+    },
+    "context": "...          ðŸ¤” Quelle est la différence brut/net ?             "
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "Mensualité prêt",
+    "error": "prêt",
+    "suggestions": [
+      "prête"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 11,
+      "end": 15
+    },
+    "context": "Mensualité prêt"
+  },
+  {
+    "file": "content_SAFE\\sources.html",
+    "text": " Répartition salarié / employeur                 ",
+    "error": "salarié",
+    "suggestions": [
+      "salariée"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 13,
+      "end": 20
+    },
+    "context": " Répartition salarié / employeur                 "
+  },
+  {
+    "file": "content_SAFE\\taxe\\index.html",
+    "text": "...urquoi deux logements similaires paient des montants                 différents ?               ",
+    "error": "             différents ?              ",
+    "suggestions": [
+      "différents montants"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 59,
+      "end": 98
+    },
+    "context": "...urquoi deux logements similaires paient des montants                 différents ?               "
+  },
+  {
+    "file": "content_SAFE\\taxe.html",
+    "text": "...urquoi deux logements similaires paient des montants                 différents ?               ",
+    "error": "             différents ?              ",
+    "suggestions": [
+      "différents montants"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 59,
+      "end": 98
+    },
+    "context": "...urquoi deux logements similaires paient des montants                 différents ?               "
+  }
+]

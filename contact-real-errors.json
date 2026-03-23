@@ -1,0 +1,249 @@
+{
+  "file": "src/pages/contact.html",
+  "visibleTextLength": 716,
+  "totalDetected": 25,
+  "realErrors": [
+    {
+      "message": "La préposition « à » est attendue après « mise ».",
+      "shortMessage": "",
+      "replacements": [
+        {
+          "value": "à"
+        }
+      ],
+      "offset": 74,
+      "length": 1,
+      "context": {
+        "text": "...eurs          Contact     Derniere mise a jour: 04/03/2026      Adresse email    ...",
+        "offset": 43,
+        "length": 1
+      },
+      "sentence": "Contact\n    Derniere mise a jour: 04/03/2026",
+      "type": {
+        "typeName": "Other"
+      },
+      "rule": {
+        "id": "A_ACCENT",
+        "subId": "10",
+        "sourceFile": "grammar.xml",
+        "description": "Usage de a/à",
+        "issueType": "uncategorized",
+        "category": {
+          "id": "CAT_GRAMMAIRE",
+          "name": "Grammaire"
+        },
+        "isPremium": false
+      },
+      "ignoreForIncompleteSentence": true,
+      "contextForSureMatch": -1
+    },
+    {
+      "message": "Les deux-points sont précédés d’une espace insécable.",
+      "shortMessage": "Insérer une espace insécable",
+      "replacements": [
+        {
+          "value": "jour :"
+        }
+      ],
+      "offset": 76,
+      "length": 5,
+      "context": {
+        "text": "...rs          Contact     Derniere mise a jour: 04/03/2026      Adresse email     Vous ...",
+        "offset": 43,
+        "length": 5
+      },
+      "sentence": "Contact\n    Derniere mise a jour: 04/03/2026",
+      "type": {
+        "typeName": "Other"
+      },
+      "rule": {
+        "id": "FRENCH_WHITESPACE",
+        "description": "Insertion des espaces fines insécables",
+        "issueType": "uncategorized",
+        "category": {
+          "id": "MISC",
+          "name": "Règles de base"
+        },
+        "isPremium": false
+      },
+      "ignoreForIncompleteSentence": false,
+      "contextForSureMatch": 0
+    },
+    {
+      "message": "La majuscule n’est employée qu’au début d’une phrase ou pour les noms propres (noms, toponymes, etc.).",
+      "shortMessage": "",
+      "replacements": [
+        {
+          "value": "email. Vous"
+        },
+        {
+          "value": "email vous"
+        },
+        {
+          "value": "email, vous"
+        }
+      ],
+      "offset": 106,
+      "length": 14,
+      "context": {
+        "text": "...re mise a jour: 04/03/2026      Adresse email     Vous pouvez nous ecrire a:contact@lescalcula...",
+        "offset": 43,
+        "length": 14
+      },
+      "sentence": "Adresse email\n    Vous pouvez nous ecrire a:contact@lescalculateurs.fr",
+      "type": {
+        "typeName": "Other"
+      },
+      "rule": {
+        "id": "PRONOMS_PERSONNELS_MINUSCULE",
+        "subId": "1",
+        "sourceFile": "grammar.xml",
+        "description": "pronoms personnels en minuscule",
+        "issueType": "uncategorized",
+        "category": {
+          "id": "CASING",
+          "name": "majuscules"
+        },
+        "isPremium": false
+      },
+      "ignoreForIncompleteSentence": true,
+      "contextForSureMatch": -1
+    },
+    {
+      "message": "Une espace est requise.",
+      "shortMessage": "",
+      "replacements": [
+        {
+          "value": ": "
+        }
+      ],
+      "offset": 141,
+      "length": 1,
+      "context": {
+        "text": "...esse email     Vous pouvez nous ecrire a:contact@lescalculateurs.fr      Sujets t...",
+        "offset": 43,
+        "length": 1
+      },
+      "sentence": "Adresse email\n    Vous pouvez nous ecrire a:contact@lescalculateurs.fr",
+      "type": {
+        "typeName": "Other"
+      },
+      "rule": {
+        "id": "DEUX_POINTS_ESPACE",
+        "subId": "1",
+        "sourceFile": "grammar.xml",
+        "description": "deux points espace",
+        "issueType": "typographical",
+        "category": {
+          "id": "CAT_TYPOGRAPHIE",
+          "name": "Typographie"
+        },
+        "isPremium": false
+      },
+      "ignoreForIncompleteSentence": false,
+      "contextForSureMatch": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « traites » avec les noms précédents.",
+      "shortMessage": "",
+      "replacements": [
+        {
+          "value": "traits"
+        }
+      ],
+      "offset": 181,
+      "length": 7,
+      "context": {
+        "text": "...:contact@lescalculateurs.fr      Sujets traites            Question sur un simulateur o...",
+        "offset": 43,
+        "length": 7
+      },
+      "sentence": "Sujets traites",
+      "type": {
+        "typeName": "Other"
+      },
+      "rule": {
+        "id": "AGREEMENT_POSTPONED_ADJ",
+        "subId": "1",
+        "sourceFile": "grammar.xml",
+        "description": "concordance adjectif après les noms",
+        "issueType": "uncategorized",
+        "category": {
+          "id": "AGREEMENT",
+          "name": "Concordances"
+        },
+        "isPremium": false
+      },
+      "ignoreForIncompleteSentence": true,
+      "contextForSureMatch": -1
+    },
+    {
+      "message": "La préposition « à » est généralement attendue après un verbe conjugué.",
+      "shortMessage": "",
+      "replacements": [
+        {
+          "value": "à"
+        }
+      ],
+      "offset": 320,
+      "length": 1,
+      "context": {
+        "text": "...ge ou un calcul.       Demande relative a la vie privee et au consentement.      ...",
+        "offset": 43,
+        "length": 1
+      },
+      "sentence": "Demande relative a la vie privee et au consentement.",
+      "type": {
+        "typeName": "Other"
+      },
+      "rule": {
+        "id": "A_A_ACCENT2",
+        "subId": "1",
+        "sourceFile": "grammar.xml",
+        "description": "verbe conjugué + a → à",
+        "issueType": "uncategorized",
+        "category": {
+          "id": "CAT_HOMONYMES_PARONYMES",
+          "name": "Confusion d’homonymes et paronymes"
+        },
+        "isPremium": false
+      },
+      "ignoreForIncompleteSentence": true,
+      "contextForSureMatch": -1
+    },
+    {
+      "message": "Cet adjectif précède généralement le nom.",
+      "shortMessage": "",
+      "replacements": [
+        {
+          "value": "courte description"
+        }
+      ],
+      "offset": 474,
+      "length": 18,
+      "context": {
+        "text": "...ement     Indiquez l'URL concernee, une description courte du probleme, et si possible une capture...",
+        "offset": 43,
+        "length": 18
+      },
+      "sentence": "Pour accelerer le traitement\n    Indiquez l'URL concernee, une description courte du probleme, et si possible une capture d'ecran.",
+      "type": {
+        "typeName": "Other"
+      },
+      "rule": {
+        "id": "PLACE_ADJ",
+        "subId": "2",
+        "sourceFile": "grammar.xml",
+        "description": "place adj",
+        "issueType": "uncategorized",
+        "category": {
+          "id": "CAT_TOURS_CRITIQUES",
+          "name": "Tours critiqués divers (barbarismes, impropriétés, solécismes, etc.)"
+        },
+        "isPremium": false
+      },
+      "ignoreForIncompleteSentence": true,
+      "contextForSureMatch": 8
+    }
+  ]
+}

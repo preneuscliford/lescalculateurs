@@ -7,7 +7,7 @@
     <meta name="description" content="Taxe Foncière 2026 – Calculateur officiel | LesCalculateurs. Outil gratuit pour estimer votre situation. Résultat immédiat.">
     <meta
       name="keywords"
-      content="taxe foncière 2026 calcul, simulation taxe foncière gratuite, valeur locative cadastrale explication, taux taxe foncière commune, exonération taxe foncière personnes âgées, dégrèvement taxe foncière revenus modestes, plafonnement taxe foncière, taxe foncière logement neuf, construction neuve exonération 2 ans, taxe ordures ménagères calcul, comment calculer taxe foncière, augmentation taxe foncière 2026, contestation avis taxe foncière"
+      content="taxe foncière 2026 calcul, simulation taxe foncière gratuite, valeur locative cadastrale explication, taux taxe foncière commune, exonération taxe foncière personnes Ã¢gées, dégrèvement taxe foncière revenus modestes, plafonnement taxe foncière, taxe foncière logement neuf, construction neuve exonération 2 ans, taxe ordures ménagères calcul, comment calculer taxe foncière, augmentation taxe foncière 2026, contestation avis taxe foncière"
     />
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/taxe" />
     <script type="application/ld+json">
@@ -467,7 +467,7 @@
         </h2>
         <p class="text-gray-600 mb-4">
           La valeur locative cadastrale correspond À un loyer théorique
-          "cadastral" servant de base de calcul. Elle ne correspond pas
+          "cadastralâ€ servant de base de calcul. Elle ne correspond pas
           nécessairement au loyer du marché.
         </p>
 
@@ -480,8 +480,8 @@
           <strong>avis de taxe foncière</strong>, où la valeur locative
           cadastrale et les bases utilisées sont indiquées. Des données existent
           À l'échelle des communes, mais elles ne permettent pas de déduire
-          précisément la valeur locative d'un logement "par ville" ou "par
-          adresse" dans tous les cas.
+          précisément la valeur locative d'un logement "par villeâ€ ou "par
+          adresseâ€ dans tous les cas.
         </p>
         <ul class="text-gray-600 space-y-2 ml-4 list-disc list-inside">
           <li>Sur votre avis : valeur locative / base / taux</li>
@@ -503,7 +503,7 @@
         </h2>
         <p class="text-gray-600 mb-4">
           Certaines situations peuvent ouvrir droit À des exonérations ou
-          dégrèvements (âge, handicap, ressources, logement neuf, travaux,
+          dégrèvements (Ã¢ge, handicap, ressources, logement neuf, travaux,
           situations particulières). Les critères exacts sont définis par les
           textes et appliqués par l'administration fiscale.
         </p>
@@ -601,7 +601,7 @@
               <div class="text-3xl mb-2">âœï¸</div>
               <h3 class="font-bold text-gray-900 mb-1">Dégrèvements</h3>
               <p class="text-sm text-gray-600">
-                Exonérations/dégrèvements possibles (âge, handicap, revenus,
+                Exonérations/dégrèvements possibles (Ã¢ge, handicap, revenus,
                 logement neuf), selon conditions
               </p>
             </div>
@@ -665,7 +665,7 @@
                 class="text-blue-700 underline"
                 >Service-public.fr</a
               >
-              — Taxe foncière sur les propriétés bâties
+              — Taxe foncière sur les propriétés bÃ¢ties
             </li>
             <li>
               <a
@@ -703,7 +703,7 @@
           <ul class="space-y-2 text-gray-700 mb-4">
             <li>
               <strong>Valeur locative cadastrale:</strong> base de la taxe
-              foncière sur les propriétés bâties (TFPB), fournie par
+              foncière sur les propriétés bÃ¢ties (TFPB), fournie par
               l'administration fiscale
             </li>
             <li>
@@ -713,7 +713,7 @@
             </li>
             <li>
               <strong>Dégrèvements/exonérations:</strong> possibles sous
-              conditions (âge, handicap, revenus, logement neuf, travaux,
+              conditions (Ã¢ge, handicap, revenus, logement neuf, travaux,
               situations particulières)
             </li>
             <li>
@@ -815,7 +815,7 @@
           </h3>
           <ul class="text-sm text-gray-700 space-y-2">
             <li>
-              â€¢ Taxe foncière sur les propriétés bâties:
+              â€¢ Taxe foncière sur les propriétés bÃ¢ties:
               <a
                 href="https://www.service-public.fr/particuliers/vosdroits/F59"
                 target="_blank"
@@ -851,7 +851,7 @@
           fields: [
             {
               id: "valeur_locative",
-              label: "Valeur locative cadastrale annuelle (€)",
+              label: "Valeur locative cadastrale annuelle (â‚¬)",
               type: "number",
               required: true,
               placeholder: "8000",
@@ -941,7 +941,7 @@
                     .taux;
                 degrevementTotal += degAge;
                 degrevements.push({
-                  nom: "Personne âgée (sous conditions)",
+                  nom: "Personne Ã¢gée (sous conditions)",
                   montant: degAge,
                 });
               }
@@ -1134,14 +1134,14 @@
               return {
                 headers: ["Paramètre", "Valeur"],
                 rows: [
-                  ["Valeur locative cadastrale (€)", data.valeurLocative],
+                  ["Valeur locative cadastrale (â‚¬)", data.valeurLocative],
                   [
                     "Taux global utilisé (%)",
                     (data.tauxUtilise * 100).toFixed(2),
                   ],
-                  ["Taxe brute (€)", data.taxeBrute],
-                  ["Dégrèvements (€)", data.degrevementTotal],
-                  ["Taxe foncière 2026 (€)", data.taxeFonciere],
+                  ["Taxe brute (â‚¬)", data.taxeBrute],
+                  ["Dégrèvements (â‚¬)", data.degrevementTotal],
+                  ["Taxe foncière 2026 (â‚¬)", data.taxeFonciere],
                   ["Région", data.region],
                 ],
               };
@@ -1247,7 +1247,7 @@
                     },
                     {
                       id: "valeur_locative",
-                      label: "Valeur locative cadastrale annuelle (€)",
+                      label: "Valeur locative cadastrale annuelle (â‚¬)",
                       type: "number",
                       value: lastValues.valeur_locative ?? 8000,
                       required: true,

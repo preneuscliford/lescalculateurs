@@ -1,0 +1,4002 @@
+[
+  {
+    "type": "missing_space_capitals",
+    "position": 843,
+    "found": "sC",
+    "context": "     À propos de Les[sC]Calculateurs.fr\n    ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1235,
+    "found": "sC",
+    "context": "  \n              Les[sC]Calculateurs.fr est ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 5077,
+    "found": "sC",
+    "context": "                 Les[sC]Calculateurs.fr est ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 6390,
+    "found": "sC",
+    "context": "    \n            Les[sC]Calculateurs.fr\n    ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 6938,
+    "found": "sC",
+    "context": "          © 2026 Les[sC]Calculateurs.fr - To",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7050,
+    "found": "tE",
+    "context": "e\n      document.get[tE]ElementById('mobile-",
+    "suggestion": "t E",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7057,
+    "found": "tB",
+    "context": " document.getElement[tB]ById('mobile-menu-bu",
+    "suggestion": "t B",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7059,
+    "found": "yI",
+    "context": "ocument.getElementBy[yI]Id('mobile-menu-butt",
+    "suggestion": "y I",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7087,
+    "found": "dE",
+    "context": "le-menu-button').add[dE]EventListener('click",
+    "suggestion": "d E",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7092,
+    "found": "tL",
+    "context": "nu-button').addEvent[tL]Listener('click', fu",
+    "suggestion": "t L",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7156,
+    "found": "tE",
+    "context": " menu = document.get[tE]ElementById('mobile-",
+    "suggestion": "t E",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7163,
+    "found": "tB",
+    "context": " document.getElement[tB]ById('mobile-menu');",
+    "suggestion": "t B",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7165,
+    "found": "yI",
+    "context": "ocument.getElementBy[yI]Id('mobile-menu');\n ",
+    "suggestion": "y I",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 7202,
+    "found": "sL",
+    "context": ";\n        menu.class[sL]List.toggle('hidden'",
+    "suggestion": "s L",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 0,
+    "found": "\n    \n    ",
+    "context": "\n    \n    <ifra",
+    "length": 10,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 80,
+    "found": "\n    ",
+    "context": "d=GTM-TPFZCGX5\"\n    height=\"0\"",
+    "length": 5,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 154,
+    "found": "\n    \n\n    \n    \n      \n        \n          \n          \n            \n            \n              ",
+    "context": "dden\"></iframe>\n    \n\n    \n   ",
+    "length": 95,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 265,
+    "found": "\n              ",
+    "context": "es Calculateurs\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 293,
+    "found": "\n            \n          \n\n          \n          \n            ",
+    "context": "  ✨ Outils 2026\n            \n ",
+    "length": 60,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 363,
+    "found": "\n            ",
+    "context": "     🏠 Accueil\n            🎯",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 399,
+    "found": "\n            ",
+    "context": "les Simulateurs\n            🧮",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 420,
+    "found": "\n            ",
+    "context": "       🧮 TOP 5\n            📰",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 440,
+    "found": "\n            ",
+    "context": "        📰 Blog\n            📚",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 468,
+    "found": "\n            ",
+    "context": "📚 Méthodologie\n            ℹ️",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 492,
+    "found": "\n          \n\n          \n          \n            \n              \n            \n          \n        \n\n        \n        \n          \n            ",
+    "context": "    ℹ️ À propos\n          \n\n  ",
+    "length": 138,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 640,
+    "found": "\n            ",
+    "context": "     🏠 Accueil\n            🎯",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 667,
+    "found": "\n            ",
+    "context": " 🎯 Simulateurs\n            📰",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 687,
+    "found": "\n            ",
+    "context": "        📰 Blog\n            📚",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 715,
+    "found": "\n            ",
+    "context": "📚 Méthodologie\n            ℹ️",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 739,
+    "found": "\n          \n        \n      \n    \n\n    \n    \n      \n        \n          ",
+    "context": "    ℹ️ À propos\n          \n   ",
+    "length": 70,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 811,
+    "found": "\n        \n        ",
+    "context": "  \n          🎯\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 859,
+    "found": "\n        \n          ",
+    "context": "Calculateurs.fr\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 989,
+    "found": "\n        \n        \n          \n            ",
+    "context": "les françaises.\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1052,
+    "found": "\n          \n          \n            ",
+    "context": "re méthodologie\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1109,
+    "found": "\n          \n        \n      \n    \n\n    \n    \n      \n        \n          \n            ",
+    "context": "ces officielles\n          \n   ",
+    "length": 83,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1205,
+    "found": "\n            \n              ",
+    "context": "  Notre mission\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1386,
+    "found": "\n            \n            \n              ",
+    "context": "jours évidente.\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1567,
+    "found": "\n            \n            \n              \n              ",
+    "context": "t pédagogiques.\n            \n ",
+    "length": 56,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1677,
+    "found": "\n            \n          \n          \n            \n              ",
+    "context": "nstitutionnelle\n            \n ",
+    "length": 63,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1742,
+    "found": "\n              ",
+    "context": "             🧮\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1760,
+    "found": "\n              ",
+    "context": "            15+\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1786,
+    "found": "\n            \n            \n              ",
+    "context": "    Simulateurs\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1829,
+    "found": "\n              ",
+    "context": "             📊\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1848,
+    "found": "\n              ",
+    "context": "           100%\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1870,
+    "found": "\n            \n            \n              ",
+    "context": "        Gratuit\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1915,
+    "found": "\n              ",
+    "context": "           🇫🇷\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1937,
+    "found": "\n              ",
+    "context": "        Sources\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1963,
+    "found": "\n            \n            \n              ",
+    "context": "    Officielles\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2006,
+    "found": "\n              ",
+    "context": "             🆕\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2025,
+    "found": "\n              ",
+    "context": "           2026\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2046,
+    "found": "\n            \n          \n        \n      \n    \n\n    \n    \n      \n        \n          ",
+    "context": "         À jour\n            \n ",
+    "length": 83,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2148,
+    "found": "\n          ",
+    "context": "ue nous faisons\n          Des ",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2225,
+    "found": "\n        \n\n        \n          \n          \n            \n              ",
+    "context": "mation publique\n        \n\n    ",
+    "length": 69,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2296,
+    "found": "\n            \n            ",
+    "context": "             📋\n            \n ",
+    "length": 26,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2344,
+    "found": "\n            ",
+    "context": "tion de barèmes\n            No",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2452,
+    "found": "\n          \n\n          \n          \n            \n              ",
+    "context": "ons françaises.\n          \n\n  ",
+    "length": 62,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2516,
+    "found": "\n            \n            ",
+    "context": "             🧮\n            \n ",
+    "length": 26,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2560,
+    "found": "\n            ",
+    "context": "ulateurs clairs\n            De",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2661,
+    "found": "\n          \n\n          \n          \n            \n              ",
+    "context": "e grand public.\n          \n\n  ",
+    "length": 62,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2725,
+    "found": "\n            \n            ",
+    "context": "             🔗\n            \n ",
+    "length": 26,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2778,
+    "found": "\n            ",
+    "context": "vers l'officiel\n            No",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2886,
+    "found": "\n          \n        \n      \n    \n\n    \n    \n      \n        \n          \n          \n            \n              \n                ",
+    "context": "aque situation.\n          \n   ",
+    "length": 126,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3014,
+    "found": "\n              \n              ",
+    "context": "             ⚠️\n              ",
+    "length": 30,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3074,
+    "found": "\n            \n            \n              \n                ",
+    "context": "fournissons pas\n            \n ",
+    "length": 58,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3133,
+    "found": "\n                ",
+    "context": "              ✕\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3183,
+    "found": "\n              \n              \n                ",
+    "context": "x personnalisés\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3231,
+    "found": "\n                ",
+    "context": "              ✕\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3265,
+    "found": "\n              \n              \n                ",
+    "context": "avis juridiques\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3313,
+    "found": "\n                ",
+    "context": "              ✕\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3365,
+    "found": "\n              \n              \n                ",
+    "context": "rofessionnelles\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3413,
+    "found": "\n                ",
+    "context": "              ✕\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3470,
+    "found": "\n              \n            \n            \n              \n                ",
+    "context": "ves définitives\n              ",
+    "length": 73,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3642,
+    "found": "\n              \n            \n          \n\n          \n          \n            \n              \n                ",
+    "context": "smes officiels.\n              ",
+    "length": 107,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3750,
+    "found": "\n              \n              ",
+    "context": "              ✓\n              ",
+    "length": 30,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3809,
+    "found": "\n            \n            \n              \n                ",
+    "context": "nt transparence\n            \n ",
+    "length": 58,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3868,
+    "found": "\n                ",
+    "context": "              ✓\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3936,
+    "found": "\n              \n              \n                ",
+    "context": "ement indiquées\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3984,
+    "found": "\n                ",
+    "context": "              ✓\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4041,
+    "found": "\n              \n              \n                ",
+    "context": "urs mentionnées\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4089,
+    "found": "\n                ",
+    "context": "              ✓\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4149,
+    "found": "\n              \n              \n                ",
+    "context": "ement affichées\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4197,
+    "found": "\n                ",
+    "context": "              ✓\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4243,
+    "found": "\n              \n            \n            \n              \n                ",
+    "context": "à jour visibles\n              ",
+    "length": 73,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4376,
+    "found": "\n              \n            \n          \n        \n      \n    \n\n    \n    \n      \n        ",
+    "context": "et responsable.\n              ",
+    "length": 87,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4488,
+    "found": "\n        \n          ",
+    "context": "e site existe ?\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4680,
+    "found": "\n        \n        \n          \n            ",
+    "context": "ces préalables.\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4796,
+    "found": "\n          \n        \n      \n    \n\n    \n    \n      \n        \n          ",
+    "context": "jours évidente\"\n          \n   ",
+    "length": 70,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4894,
+    "found": "\n          \n          \n            \n              \n                ",
+    "context": "ère le projet ?\n          \n   ",
+    "length": 67,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4966,
+    "found": "\n              \n              \n                ",
+    "context": "          👨‍💻\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5039,
+    "found": "\n                \n                  ",
+    "context": "eur indépendant\n              ",
+    "length": 36,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5218,
+    "found": "\n                \n                \n                  ",
+    "context": "ils numériques.\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5366,
+    "found": "\n                \n                \n                  ",
+    "context": "ation publique.\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5556,
+    "found": "\n                \n              \n            \n\n            \n              ",
+    "context": "s utilisateurs.\n              ",
+    "length": 74,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5652,
+    "found": "\n              \n                \n                  ",
+    "context": "et repose sur :\n              ",
+    "length": 51,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5704,
+    "found": "\n                  ",
+    "context": "              1\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5745,
+    "found": "\n                \n                \n                  ",
+    "context": "nces techniques\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5799,
+    "found": "\n                  ",
+    "context": "              2\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5845,
+    "found": "\n                \n                \n                  ",
+    "context": "barèmes publics\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5899,
+    "found": "\n                  ",
+    "context": "              3\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5943,
+    "found": "\n                \n              \n            \n          \n        \n      \n    \n\n    \n    \n      \n        ",
+    "context": "rme pédagogique\n              ",
+    "length": 104,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6072,
+    "found": "\n        \n          ",
+    "context": "nos simulateurs\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6176,
+    "found": "\n        \n        \n          \n            ",
+    "context": "quelques clics.\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6246,
+    "found": "\n          \n          \n            ",
+    "context": "les simulateurs\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6305,
+    "found": "\n          \n        \n      \n    \n\n    \n    \n      \n        \n          \n            ",
+    "context": "ter nos sources\n          \n   ",
+    "length": 83,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6406,
+    "found": "\n            ",
+    "context": "Calculateurs.fr\n            Ou",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6500,
+    "found": "\n          \n          \n            ",
+    "context": "les françaises.\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6545,
+    "found": "\n            \n              ",
+    "context": "     Navigation\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6580,
+    "found": "\n              ",
+    "context": "        Accueil\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6606,
+    "found": "\n              ",
+    "context": "    Simulateurs\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6625,
+    "found": "\n            \n          \n          \n            ",
+    "context": "           Blog\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6685,
+    "found": "\n            \n              ",
+    "context": "   Informations\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6725,
+    "found": "\n              ",
+    "context": "   Méthodologie\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6759,
+    "found": "\n              ",
+    "context": "ces officielles\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6782,
+    "found": "\n            \n          \n          \n            ",
+    "context": "       À propos\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6841,
+    "found": "\n            ",
+    "context": "    Mise à jour\n            De",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6889,
+    "found": "\n          \n        \n        \n          ",
+    "context": " : Janvier 2026\n          \n   ",
+    "length": 40,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6977,
+    "found": "\n        \n      \n    \n\n    \n      ",
+    "context": "droits réservés\n        \n     ",
+    "length": 34,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7032,
+    "found": "\n      ",
+    "context": "ile menu toggle\n      document",
+    "length": 7,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7123,
+    "found": "\n        ",
+    "context": "', function() {\n        const ",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7184,
+    "found": "\n        ",
+    "context": "'mobile-menu');\n        menu.c",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7225,
+    "found": "\n      ",
+    "context": "ggle('hidden');\n      });\n    ",
+    "length": 7,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7235,
+    "found": "\n    \n  \n\n",
+    "context": "en');\n      });\n    \n  \n\n",
+    "length": 10,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_punctuation",
+    "position": 59,
+    "found": "html?i",
+    "context": "er.com/ns.html?id=GTM-TPFZCGX5\"\n    heig",
+    "suggestion": "html? i",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_punctuation",
+    "position": 113,
+    "found": "display:n",
+    "context": "0\" style=\"display:none;visibility:hidden",
+    "suggestion": "display: n",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_punctuation",
+    "position": 122,
+    "found": "one;v",
+    "context": "\"display:none;visibility:hidden\"></ifram",
+    "suggestion": "one; v",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_punctuation",
+    "position": 127,
+    "found": "isibility:h",
+    "context": "lay:none;visibility:hidden\"></iframe>\n  ",
+    "suggestion": "isibility: h",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\a-propos.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 9098,
+    "found": "sA",
+    "context": "Tous nos simulateurs[sA]Accueil\n\n\n",
+    "suggestion": "s A",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 0,
+    "found": "\n    \n    \n      \n        \n          ",
+    "context": "\n    \n    \n    ",
+    "length": 37,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 56,
+    "found": "\n        \n        \n          ",
+    "context": "es Calculateurs\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 92,
+    "found": "\n          ",
+    "context": "        Accueil\n          APL\n",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 106,
+    "found": "\n          ",
+    "context": "l\n          APL\n          RSA\n",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 120,
+    "found": "\n          ",
+    "context": "L\n          RSA\n          Prim",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 147,
+    "found": "\n          ",
+    "context": "rime d'activité\n          AAH\n",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 161,
+    "found": "\n        \n      \n    \n\n    \n    \n      \n        \n          ",
+    "context": "é\n          AAH\n        \n     ",
+    "length": 59,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 287,
+    "found": "\n         ",
+    "context": " CAF et la MDPH\n         2026\n",
+    "length": 10,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 301,
+    "found": "\n        \n          ",
+    "context": "H\n         2026\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 389,
+    "found": "\n          ",
+    "context": " vos ressources\n          et v",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 466,
+    "found": "\n        \n        \n          ",
+    "context": ", CAF et MDPH).\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 522,
+    "found": "\n        \n        \n          ",
+    "context": " simulation AAH\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 632,
+    "found": "\n        \n      \n    \n\n    \n    \n      \n        ",
+    "context": "décisionnaires.\n        \n     ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 696,
+    "found": "\n        \n          ",
+    "context": "\udccc Résumé rapide\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 853,
+    "found": "\n          ",
+    "context": "ateur officiel.\n          📐 L",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 939,
+    "found": "\n          ",
+    "context": "urces, logement\n          📅 A",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 976,
+    "found": "\n          ",
+    "context": "paramètres 2026\n          ⚠️ I",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1026,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "non contractuel\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1089,
+    "found": "\n        \n          ",
+    "context": "t ce simulateur\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1165,
+    "found": "\n          ",
+    "context": "itre indicatif)\n          Obte",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1212,
+    "found": "\n          ",
+    "context": "dicatif mensuel\n          Comp",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1296,
+    "found": "\n          ",
+    "context": "rces, logement)\n          Test",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1358,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "ant vos données\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1426,
+    "found": "\n\n        ",
+    "context": "nt de calculer)\n\n        🔹 Co",
+    "length": 10,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1469,
+    "found": "\n        \n          ",
+    "context": "r ce simulateur\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1526,
+    "found": "\n          ",
+    "context": "tions demandées\n          Indi",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1583,
+    "found": "\n          ",
+    "context": "tres principaux\n          Lanc",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1614,
+    "found": "\n          ",
+    "context": "z la simulation\n          Cons",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1656,
+    "found": "\n        \n\n        ",
+    "context": "ultat estimatif\n        \n\n    ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1704,
+    "found": "\n        \n          ",
+    "context": "e les résultats\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1758,
+    "found": "\n          ",
+    "context": "dre de grandeur\n          Déta",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1803,
+    "found": "\n          ",
+    "context": " pris en compte\n          Aver",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1862,
+    "found": "\n        \n\n        ",
+    "context": "ituation réelle\n        \n\n    ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1939,
+    "found": "\n        \n          ",
+    "context": "ble / différent\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1995,
+    "found": "\n          ",
+    "context": " réglementaires\n          Para",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2066,
+    "found": "\n          ",
+    "context": "tion simplifiée\n          Règl",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2119,
+    "found": "\n        \n      \n\n      \n      \n        \n          ",
+    "context": "à votre dossier\n        \n     ",
+    "length": 51,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2194,
+    "found": "\n        \n        \n          ",
+    "context": "-ce que l'AAH ?\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2288,
+    "found": "\n          ",
+    "context": "aide financière\n          vers",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2361,
+    "found": "\n          ",
+    "context": " handicap, sous\n          cond",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2397,
+    "found": "\n        \n        \n          ",
+    "context": " d'éligibilité.\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2487,
+    "found": "\n          ",
+    "context": "la MDPH (Maison\n          Dépa",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2540,
+    "found": "\n        \n        \n          ",
+    "context": "s Handicapées).\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2625,
+    "found": "\n          ",
+    "context": "nnu par la MDPH\n          ress",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2676,
+    "found": "\n          ",
+    "context": " les règles CAF\n          domi",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2705,
+    "found": "\n          ",
+    "context": "icile en France\n          âge ",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2734,
+    "found": "\n        \n        \n          ",
+    "context": " minimum 20 ans\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2830,
+    "found": "\n          ",
+    "context": "é compris entre\n          50 %",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2907,
+    "found": "\n          ",
+    "context": "upplémentaires,\n          nota",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2984,
+    "found": "\n          ",
+    "context": "rable d'accès à\n          l'em",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3004,
+    "found": "\n        \n        \n          ",
+    "context": "      l'emploi.\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3096,
+    "found": "\n        \n      \n\n      \n      \n        \n          ",
+    "context": "CAF ci-dessous.\n        \n     ",
+    "length": 51,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3183,
+    "found": "\n        \n        \n          ",
+    "context": "imulation AAH ?\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3248,
+    "found": "\n          ",
+    "context": "z être éligible\n          obte",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3306,
+    "found": "\n          ",
+    "context": "montant mensuel\n          comp",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3378,
+    "found": "\n        \n        \n          ",
+    "context": " et vos revenus\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3451,
+    "found": "\n        \n      \n\n      \n      \n        \n          \n            ",
+    "context": "et pédagogique.\n        \n     ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3534,
+    "found": "\n          \n\n          \n            \n            \n              \n                ",
+    "context": "alculer mon AAH\n          \n\n  ",
+    "length": 81,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3636,
+    "found": "\n              \n              \n                ",
+    "context": "ion familiale *\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3701,
+    "found": "\n                ",
+    "context": "Sélectionnez --\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3736,
+    "found": "\n                ",
+    "context": "ibataire / Seul\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3762,
+    "found": "\n                ",
+    "context": "      En couple\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3791,
+    "found": "\n              \n            \n\n            \n            \n              \n                ",
+    "context": "   Parent isolé\n              ",
+    "length": 87,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3903,
+    "found": "\n              \n              \n            \n\n            \n            \n              \n                ",
+    "context": "nfants à charge\n              ",
+    "length": 102,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4032,
+    "found": "\n              \n              \n                ",
+    "context": "acité reconnu *\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4097,
+    "found": "\n                ",
+    "context": "Sélectionnez --\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4145,
+    "found": "\n                ",
+    "context": "nviron 8 à 10 %\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4180,
+    "found": "\n              \n            \n\n            \n            \n              \n                ",
+    "context": "environ 0 à 1 %\n              ",
+    "length": 87,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4298,
+    "found": "\n              \n              \n            \n\n            \n            \n              \n                ",
+    "context": " du foyer (€) *\n              ",
+    "length": 102,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4423,
+    "found": "\n              \n              \n                ",
+    "context": "n de logement *\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4488,
+    "found": "\n                ",
+    "context": "Sélectionnez --\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4514,
+    "found": "\n                ",
+    "context": "      Locataire\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4543,
+    "found": "\n                ",
+    "context": "   Propriétaire\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4590,
+    "found": "\n              \n            \n\n            \n            \n              ",
+    "context": "logement stable\n              ",
+    "length": 70,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4679,
+    "found": "\n            \n          \n\n          \n          \n            \n              ",
+    "context": "alculer mon AAH\n            \n ",
+    "length": 75,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4780,
+    "found": "\n            \n            \n              \n                ",
+    "context": "on de votre AAH\n            \n ",
+    "length": 58,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4862,
+    "found": "\n                \n                  ",
+    "context": "ensuel estimé :\n              ",
+    "length": 36,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4901,
+    "found": "\n                \n              \n              \n                \n              \n              \n                \n                  ",
+    "context": "            ---\n              ",
+    "length": 130,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5089,
+    "found": "\n                \n                \n                  ",
+    "context": "rces déclarées.\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5193,
+    "found": "\n                  ",
+    "context": "sser le plafond\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5242,
+    "found": "\n                \n                \n                  ",
+    "context": "ixé par la CAF.\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5354,
+    "found": "\n                  ",
+    "context": "exacte et de la\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5399,
+    "found": "\n                \n              \n              \n                \n                  ",
+    "context": "nale de la CAF.\n              ",
+    "length": 83,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5540,
+    "found": "\n                  ",
+    "context": "'activité ou de\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5613,
+    "found": "\n                  ",
+    "context": "tez la CAF pour\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5691,
+    "found": "\n                \n              \n              \n                ",
+    "context": " montant final.\n              ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5818,
+    "found": "\n                ",
+    "context": "CAF reste seule\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5895,
+    "found": "\n                ",
+    "context": "nal. Votre taux\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5955,
+    "found": "\n              \n            \n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "nu par la MDPH.\n              ",
+    "length": 90,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6065,
+    "found": "\n        \n        \n          \n            ",
+    "context": "emple indicatif\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6164,
+    "found": "\n          \n          \n            ",
+    "context": "evenus faibles.\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6257,
+    "found": "\n            ",
+    "context": "xactes et de la\n            co",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6291,
+    "found": "\n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "ition du foyer.\n          \n   ",
+    "length": 62,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6385,
+    "found": "\n        \n        \n          \n            \n              ",
+    "context": "entes sur l'AAH\n        \n     ",
+    "length": 57,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6472,
+    "found": "\n            \n            \n              ",
+    "context": "cier de l'AAH ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6576,
+    "found": "\n              ",
+    "context": " handicap (taux\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6662,
+    "found": "\n              ",
+    "context": "estes peut être\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6741,
+    "found": "\n              ",
+    "context": "t des seuils de\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6777,
+    "found": "\n            \n          \n\n          \n            \n              ",
+    "context": "s s'appliquent.\n            \n ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6876,
+    "found": "\n            \n            \n              ",
+    "context": "-ce cumulable ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6981,
+    "found": "\n              ",
+    "context": "se cumuler sous\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7058,
+    "found": "\n              ",
+    "context": "enus de travail\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7123,
+    "found": "\n            \n          \n\n          \n            \n              ",
+    "context": "nsultez la CAF.\n            \n ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7219,
+    "found": "\n            \n            \n              ",
+    "context": "le différence ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7325,
+    "found": "\n              ",
+    "context": "andicap, le RSA\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7400,
+    "found": "\n              ",
+    "context": ". Elles peuvent\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7481,
+    "found": "\n              ",
+    "context": " CAF pour votre\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7500,
+    "found": "\n            \n          \n\n          \n            \n              ",
+    "context": "           cas.\n            \n ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7588,
+    "found": "\n            \n            \n              ",
+    "context": "re la demande ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7695,
+    "found": "\n              ",
+    "context": "e d'Allocations\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7772,
+    "found": "\n              ",
+    "context": "e des Personnes\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7852,
+    "found": "\n              ",
+    "context": " vous présenter\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7891,
+    "found": "\n            \n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "nt à l'accueil.\n            \n ",
+    "length": 75,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7990,
+    "found": "\n        \n        \n          \n            ",
+    "context": " aides sociales\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8038,
+    "found": "\n            \n              ",
+    "context": "         💜 RSA\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8093,
+    "found": "\n            \n          \n          \n            ",
+    "context": "lidarité Active\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8147,
+    "found": "\n            \n              ",
+    "context": "         🏠 APL\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8205,
+    "found": "\n            \n          \n          \n            ",
+    "context": "sée au Logement\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8272,
+    "found": "\n            \n              ",
+    "context": "rime d'activité\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8332,
+    "found": "\n            \n          \n          \n            ",
+    "context": "enus de travail\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8386,
+    "found": "\n            ",
+    "context": "         📋 ARE\n            Al",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8423,
+    "found": "\n          \n          \n            ",
+    "context": "n Retour Emploi\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8470,
+    "found": "\n            \n              ",
+    "context": "   👨‍👩‍👧 ASF\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8525,
+    "found": "\n            \n          \n          \n            ",
+    "context": "outien Familial\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8588,
+    "found": "\n            ",
+    "context": "🎓 APL Étudiant\n            Po",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8619,
+    "found": "\n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "r les étudiants\n          \n   ",
+    "length": 62,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8702,
+    "found": "\n          \n            ",
+    "context": "s officielles :\n          \n   ",
+    "length": 24,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8743,
+    "found": "\n          \n          ",
+    "context": "rvice-public.fr\n          \n   ",
+    "length": 22,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8766,
+    "found": "\n          \n            ",
+    "context": "   \n          •\n          \n   ",
+    "length": 24,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8796,
+    "found": "\n          \n        \n      \n    \n\n    \n    \n      \n        \n          ",
+    "context": "         caf.fr\n          \n   ",
+    "length": 70,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8921,
+    "found": "\n        \n        \n          ",
+    "context": "atuits français\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9018,
+    "found": "\n          ",
+    "context": "ismes officiels\n          pour",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9055,
+    "found": "\n        \n      \n    \n  ",
+    "context": "mandes réelles.\n        \n     ",
+    "length": 24,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9106,
+    "found": "\n\n\n",
+    "context": "ulateursAccueil\n\n\n",
+    "length": 3,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 9388,
+    "found": "sA",
+    "context": "Tous nos simulateurs[sA]Accueil\n\n\n\n",
+    "suggestion": "s A",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 0,
+    "found": "\n    \n    ",
+    "context": "\n    \n    <ifra",
+    "length": 10,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 17,
+    "found": "\n        ",
+    "context": "   \n    <iframe\n        src=\"h",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 88,
+    "found": "\n        ",
+    "context": "d=GTM-TPFZCGX5\"\n        height",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 107,
+    "found": "\n        ",
+    "context": "     height=\"0\"\n        width=",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 125,
+    "found": "\n        ",
+    "context": "      width=\"0\"\n        style=",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 175,
+    "found": "\n      ",
+    "context": "bility: hidden\"\n      ></ifram",
+    "length": 7,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 191,
+    "found": "\n    ",
+    "context": "      ></iframe\n    >\n    \n\n  ",
+    "length": 5,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 197,
+    "found": "\n    \n\n    \n    \n      \n        \n          ",
+    "context": "></iframe\n    >\n    \n\n    \n   ",
+    "length": 43,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 261,
+    "found": "\n        \n        \n          ",
+    "context": "es Calculateurs\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 297,
+    "found": "\n          ",
+    "context": "        Accueil\n          APL\n",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 311,
+    "found": "\n          ",
+    "context": "l\n          APL\n          RSA\n",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 325,
+    "found": "\n          ",
+    "context": "L\n          RSA\n          Prim",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 352,
+    "found": "\n          ",
+    "context": "rime d'activité\n          AAH\n",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 366,
+    "found": "\n        \n      \n    \n\n    \n    \n      \n        \n          ",
+    "context": "é\n          AAH\n        \n     ",
+    "length": 59,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 492,
+    "found": "\n         ",
+    "context": " CAF et la MDPH\n         2026\n",
+    "length": 10,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 506,
+    "found": "\n        \n          ",
+    "context": "H\n         2026\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 594,
+    "found": "\n          ",
+    "context": " vos ressources\n          et v",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 671,
+    "found": "\n        \n        \n          ",
+    "context": ", CAF et MDPH).\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 729,
+    "found": "\n        \n        \n          ",
+    "context": " simulation AAH\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 843,
+    "found": "\n        \n      \n    \n\n    \n    \n      \n        ",
+    "context": "décisionnaires.\n        \n     ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 909,
+    "found": "\n        \n          ",
+    "context": "Œ Résumé rapide\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1072,
+    "found": "\n          ",
+    "context": "ateur officiel.\n          ðŸ“",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1160,
+    "found": "\n          ",
+    "context": "urces, logement\n          ðŸ“…",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1199,
+    "found": "\n          ",
+    "context": "paramètres 2026\n          âš ï",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1253,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "non contractuel\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1318,
+    "found": "\n        \n          ",
+    "context": "t ce simulateur\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1394,
+    "found": "\n          ",
+    "context": "itre indicatif)\n          Obte",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1441,
+    "found": "\n          ",
+    "context": "dicatif mensuel\n          Comp",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1525,
+    "found": "\n          ",
+    "context": "rces, logement)\n          Test",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1587,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "ant vos données\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1657,
+    "found": "\n\n        ",
+    "context": "nt de calculer)\n\n        ðŸ”¹ ",
+    "length": 10,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1702,
+    "found": "\n        \n          ",
+    "context": "r ce simulateur\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1759,
+    "found": "\n          ",
+    "context": "tions demandées\n          Indi",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1816,
+    "found": "\n          ",
+    "context": "tres principaux\n          Lanc",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1847,
+    "found": "\n          ",
+    "context": "z la simulation\n          Cons",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1889,
+    "found": "\n        \n\n        ",
+    "context": "ultat estimatif\n        \n\n    ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1939,
+    "found": "\n        \n          ",
+    "context": "e les résultats\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1993,
+    "found": "\n          ",
+    "context": "dre de grandeur\n          Déta",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2038,
+    "found": "\n          ",
+    "context": " pris en compte\n          Aver",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2097,
+    "found": "\n        \n\n        ",
+    "context": "ituation réelle\n        \n\n    ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2176,
+    "found": "\n        \n          ",
+    "context": "ble / différent\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2232,
+    "found": "\n          ",
+    "context": " réglementaires\n          Para",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2303,
+    "found": "\n          ",
+    "context": "tion simplifiée\n          Règl",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2356,
+    "found": "\n        \n      \n\n      \n      \n        \n          ",
+    "context": "À votre dossier\n        \n     ",
+    "length": 51,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2433,
+    "found": "\n        \n        \n          ",
+    "context": "-ce que l'AAH ?\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2527,
+    "found": "\n          ",
+    "context": "aide financière\n          vers",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2600,
+    "found": "\n          ",
+    "context": " handicap, sous\n          cond",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2636,
+    "found": "\n        \n        \n          ",
+    "context": " d'éligibilité.\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2726,
+    "found": "\n          ",
+    "context": "la MDPH (Maison\n          Dépa",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2779,
+    "found": "\n        \n        \n          ",
+    "context": "s Handicapées).\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2866,
+    "found": "\n          ",
+    "context": "nnu par la MDPH\n          ress",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2917,
+    "found": "\n          ",
+    "context": " les règles CAF\n          domi",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2946,
+    "found": "\n          ",
+    "context": "icile en France\n          âge ",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 2975,
+    "found": "\n        \n        \n          ",
+    "context": " minimum 20 ans\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3071,
+    "found": "\n          ",
+    "context": "é compris entre\n          50 %",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3148,
+    "found": "\n          ",
+    "context": "upplémentaires,\n          nota",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3225,
+    "found": "\n          ",
+    "context": "rable d'accès À\n          l'em",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3245,
+    "found": "\n        \n        \n          ",
+    "context": "      l'emploi.\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3339,
+    "found": "\n        \n      \n\n      \n      \n        \n          ",
+    "context": "CAF ci-dessous.\n        \n     ",
+    "length": 51,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3428,
+    "found": "\n        \n        \n          ",
+    "context": "imulation AAH ?\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3493,
+    "found": "\n          ",
+    "context": "z être éligible\n          obte",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3551,
+    "found": "\n          ",
+    "context": "montant mensuel\n          comp",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3623,
+    "found": "\n        \n        \n          ",
+    "context": " et vos revenus\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3698,
+    "found": "\n        \n      \n\n      \n      \n        \n          \n            ",
+    "context": "et pédagogique.\n        \n     ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3783,
+    "found": "\n          \n\n          \n            \n            \n              \n                ",
+    "context": "alculer mon AAH\n          \n\n  ",
+    "length": 81,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3885,
+    "found": "\n              \n              \n                ",
+    "context": "ion familiale *\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3950,
+    "found": "\n                ",
+    "context": "Sélectionnez --\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 3985,
+    "found": "\n                ",
+    "context": "ibataire / Seul\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4011,
+    "found": "\n                ",
+    "context": "      En couple\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4040,
+    "found": "\n              \n            \n\n            \n            \n              \n                ",
+    "context": "   Parent isolé\n              ",
+    "length": 87,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4152,
+    "found": "\n              \n              \n            \n\n            \n            \n              \n                ",
+    "context": "nfants À charge\n              ",
+    "length": 102,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4281,
+    "found": "\n              \n              \n                ",
+    "context": "acité reconnu *\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4346,
+    "found": "\n                ",
+    "context": "Sélectionnez --\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4394,
+    "found": "\n                ",
+    "context": "nviron 8 À 10 %\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4431,
+    "found": "\n              \n            \n\n            \n            \n              \n                ",
+    "context": "environ 0 À 1 %\n              ",
+    "length": 87,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4549,
+    "found": "\n              \n              \n            \n\n            \n            \n              \n                ",
+    "context": " du foyer (€) *\n              ",
+    "length": 102,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4674,
+    "found": "\n              \n              \n                ",
+    "context": "n de logement *\n              ",
+    "length": 47,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4739,
+    "found": "\n                ",
+    "context": "Sélectionnez --\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4765,
+    "found": "\n                ",
+    "context": "      Locataire\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4794,
+    "found": "\n                ",
+    "context": "   Propriétaire\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4841,
+    "found": "\n              \n            \n\n            \n            \n              ",
+    "context": "logement stable\n              ",
+    "length": 70,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 4932,
+    "found": "\n            \n          \n\n          \n          \n            \n              ",
+    "context": "alculer mon AAH\n            \n ",
+    "length": 75,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5035,
+    "found": "\n            \n            \n              \n                ",
+    "context": "on de votre AAH\n            \n ",
+    "length": 58,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5117,
+    "found": "\n                \n                  ",
+    "context": "ensuel estimé :\n              ",
+    "length": 36,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5156,
+    "found": "\n                \n              \n              \n                \n              \n              \n                \n                  ",
+    "context": "            ---\n              ",
+    "length": 130,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5344,
+    "found": "\n                \n                \n                  ",
+    "context": "rces déclarées.\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5448,
+    "found": "\n                  ",
+    "context": "sser le plafond\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5497,
+    "found": "\n                \n                \n                  ",
+    "context": "ixé par la CAF.\n              ",
+    "length": 53,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5609,
+    "found": "\n                  ",
+    "context": "exacte et de la\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5654,
+    "found": "\n                \n              \n              \n                \n                  ",
+    "context": "nale de la CAF.\n              ",
+    "length": 83,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5795,
+    "found": "\n                  ",
+    "context": "'activité ou de\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5868,
+    "found": "\n                  ",
+    "context": "tez la CAF pour\n              ",
+    "length": 19,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 5946,
+    "found": "\n                \n              \n              \n                ",
+    "context": " montant final.\n              ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6075,
+    "found": "\n                ",
+    "context": "CAF reste seule\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6152,
+    "found": "\n                ",
+    "context": "nal. Votre taux\n              ",
+    "length": 17,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6212,
+    "found": "\n              \n            \n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "nu par la MDPH.\n              ",
+    "length": 90,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6324,
+    "found": "\n        \n        \n          \n            ",
+    "context": "emple indicatif\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6425,
+    "found": "\n          \n          \n            ",
+    "context": "evenus faibles.\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6518,
+    "found": "\n            ",
+    "context": "xactes et de la\n            co",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6552,
+    "found": "\n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "ition du foyer.\n          \n   ",
+    "length": 62,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6648,
+    "found": "\n        \n        \n          \n            \n              ",
+    "context": "entes sur l'AAH\n        \n     ",
+    "length": 57,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6735,
+    "found": "\n            \n            \n              ",
+    "context": "cier de l'AAH ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6839,
+    "found": "\n              ",
+    "context": " handicap (taux\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 6927,
+    "found": "\n              ",
+    "context": "estes peut être\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7006,
+    "found": "\n              ",
+    "context": "t des seuils de\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7042,
+    "found": "\n            \n          \n\n          \n            \n              ",
+    "context": "s s'appliquent.\n            \n ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7141,
+    "found": "\n            \n            \n              ",
+    "context": "-ce cumulable ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7246,
+    "found": "\n              ",
+    "context": "se cumuler sous\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7323,
+    "found": "\n              ",
+    "context": "enus de travail\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7388,
+    "found": "\n            \n          \n\n          \n            \n              ",
+    "context": "nsultez la CAF.\n            \n ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7484,
+    "found": "\n            \n            \n              ",
+    "context": "le différence ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7590,
+    "found": "\n              ",
+    "context": "andicap, le RSA\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7665,
+    "found": "\n              ",
+    "context": ". Elles peuvent\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7746,
+    "found": "\n              ",
+    "context": " CAF pour votre\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7765,
+    "found": "\n            \n          \n\n          \n            \n              ",
+    "context": "           cas.\n            \n ",
+    "length": 64,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7853,
+    "found": "\n            \n            \n              ",
+    "context": "re la demande ?\n            \n ",
+    "length": 41,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 7960,
+    "found": "\n              ",
+    "context": "e d'Allocations\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8037,
+    "found": "\n              ",
+    "context": "e des Personnes\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8117,
+    "found": "\n              ",
+    "context": " vous présenter\n              ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8156,
+    "found": "\n            \n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "nt À l'accueil.\n            \n ",
+    "length": 75,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8257,
+    "found": "\n        \n        \n          \n            ",
+    "context": " aides sociales\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8307,
+    "found": "\n            \n              ",
+    "context": "       ðŸ’œ RSA\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8362,
+    "found": "\n            \n          \n          \n            ",
+    "context": "lidarité Active\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8418,
+    "found": "\n            \n              ",
+    "context": "       ðŸ  APL\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8476,
+    "found": "\n            \n          \n          \n            ",
+    "context": "sée au Logement\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8545,
+    "found": "\n            \n              ",
+    "context": "rime d'activité\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8605,
+    "found": "\n            \n          \n          \n            ",
+    "context": "enus de travail\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8661,
+    "found": "\n            ",
+    "context": "       ðŸ“‹ ARE\n            Al",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8698,
+    "found": "\n          \n          \n            ",
+    "context": "n Retour Emploi\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8755,
+    "found": "\n            \n              ",
+    "context": "ðŸ‘©â€ðŸ‘§ ASF\n            \n ",
+    "length": 28,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8810,
+    "found": "\n            \n          \n          \n            ",
+    "context": "outien Familial\n            \n ",
+    "length": 48,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8875,
+    "found": "\n            ",
+    "context": "Ž“ APL Étudiant\n            Po",
+    "length": 13,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8906,
+    "found": "\n          \n        \n      \n\n      \n      \n        \n          ",
+    "context": "r les étudiants\n          \n   ",
+    "length": 62,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 8989,
+    "found": "\n          \n            ",
+    "context": "s officielles :\n          \n   ",
+    "length": 24,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9030,
+    "found": "\n          \n          ",
+    "context": "rvice-public.fr\n          \n   ",
+    "length": 22,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9055,
+    "found": "\n          \n            ",
+    "context": " \n          â€¢\n          \n   ",
+    "length": 24,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9085,
+    "found": "\n          \n        \n      \n    \n\n    \n    \n      \n        \n          ",
+    "context": "         caf.fr\n          \n   ",
+    "length": 70,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9211,
+    "found": "\n        \n        \n          ",
+    "context": "atuits français\n        \n     ",
+    "length": 29,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9308,
+    "found": "\n          ",
+    "context": "ismes officiels\n          pour",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9345,
+    "found": "\n        \n      \n    \n  ",
+    "context": "mandes réelles.\n        \n     ",
+    "length": 24,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 9396,
+    "found": "\n\n\n\n",
+    "context": "ulateursAccueil\n\n\n\n",
+    "length": 4,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "missing_space_punctuation",
+    "position": 67,
+    "found": "html?i",
+    "context": "er.com/ns.html?id=GTM-TPFZCGX5\"\n        ",
+    "suggestion": "html? i",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aah.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 66,
+    "found": "lS",
+    "context": "  \n          Accueil[lS]Simulations aides so",
+    "suggestion": "l S",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1108,
+    "found": "tR",
+    "context": "fantsrevenuslogement[tR]RSAASFAPLLes famille",
+    "suggestion": "t R",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1604,
+    "found": "sC",
+    "context": " \n        © 2026 Les[sC]Calculateurs.fr\n    ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1654,
+    "found": "sA",
+    "context": "Tous nos simulateurs[sA]Accueil\n\n",
+    "suggestion": "s A",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 0,
+    "found": "\n    \n      \n        ",
+    "context": "\n    \n      \n  ",
+    "length": 21,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 40,
+    "found": "\n        \n          ",
+    "context": "es Calculateurs\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 93,
+    "found": "\n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " aides sociales\n        \n     ",
+    "length": 54,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 153,
+    "found": "\n          ",
+    "context": "         Pilier\n          •\n  ",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 165,
+    "found": "\n          ",
+    "context": "ier\n          •\n          Simu",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 202,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 248,
+    "found": "\n        ",
+    "context": "re famille 2026\n        Répons",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 510,
+    "found": "\n        \n          \n            ",
+    "context": "ateur officiel.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 575,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": "des familiales.\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 790,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "mes compétents.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 837,
+    "found": "\n        ",
+    "context": " Réponse rapide\n        Les fa",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1003,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": " RSA, ASF, APL.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1058,
+    "found": "\n        \n          ",
+    "context": "l faut vérifier\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1189,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": " leur situation\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1237,
+    "found": "\n        \n          ",
+    "context": "Aller plus loin\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1334,
+    "found": "\n        \n        \n          \n            ",
+    "context": " par le pilier.\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1396,
+    "found": "\n          \n          \n            ",
+    "context": "céder au pilier\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1467,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " aides sociales\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1577,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1620,
+    "found": "\n      \n    \n  ",
+    "context": "Calculateurs.fr\n      \n    \n  ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 66,
+    "found": "lS",
+    "context": "  \n          Accueil[lS]Simulations aides so",
+    "suggestion": "l S",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1108,
+    "found": "tR",
+    "context": "fantsrevenuslogement[tR]RSAASFAPLLes famille",
+    "suggestion": "t R",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1604,
+    "found": "sC",
+    "context": " \n        © 2026 Les[sC]Calculateurs.fr\n    ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1654,
+    "found": "sA",
+    "context": "Tous nos simulateurs[sA]Accueil\n\n",
+    "suggestion": "s A",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 0,
+    "found": "\n    \n      \n        ",
+    "context": "\n    \n      \n  ",
+    "length": 21,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 40,
+    "found": "\n        \n          ",
+    "context": "es Calculateurs\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 93,
+    "found": "\n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " aides sociales\n        \n     ",
+    "length": 54,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 153,
+    "found": "\n          ",
+    "context": "         Pilier\n          •\n  ",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 165,
+    "found": "\n          ",
+    "context": "ier\n          •\n          Simu",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 202,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 248,
+    "found": "\n        ",
+    "context": "re famille 2026\n        Répons",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 510,
+    "found": "\n        \n          \n            ",
+    "context": "ateur officiel.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 575,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": "des familiales.\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 790,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "mes compétents.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 837,
+    "found": "\n        ",
+    "context": " Réponse rapide\n        Les fa",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1003,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": " RSA, ASF, APL.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1058,
+    "found": "\n        \n          ",
+    "context": "l faut vérifier\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1189,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": " leur situation\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1237,
+    "found": "\n        \n          ",
+    "context": "Aller plus loin\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1334,
+    "found": "\n        \n        \n          \n            ",
+    "context": " par le pilier.\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1396,
+    "found": "\n          \n          \n            ",
+    "context": "céder au pilier\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1467,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " aides sociales\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1577,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1620,
+    "found": "\n      \n    \n  ",
+    "context": "Calculateurs.fr\n      \n    \n  ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-financiere-famille.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 66,
+    "found": "lS",
+    "context": "  \n          Accueil[lS]Simulations aides so",
+    "suggestion": "l S",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1334,
+    "found": "sE",
+    "context": "nditions spécifiques[sE]En règle générale, l",
+    "suggestion": "s E",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1848,
+    "found": "sC",
+    "context": " \n        © 2026 Les[sC]Calculateurs.fr\n    ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1898,
+    "found": "sA",
+    "context": "Tous nos simulateurs[sA]Accueil\n\n",
+    "suggestion": "s A",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 0,
+    "found": "\n    \n      \n        ",
+    "context": "\n    \n      \n  ",
+    "length": 21,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 40,
+    "found": "\n        \n          ",
+    "context": "es Calculateurs\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 93,
+    "found": "\n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " aides sociales\n        \n     ",
+    "length": 54,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 153,
+    "found": "\n          ",
+    "context": "         Pilier\n          •\n  ",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 165,
+    "found": "\n          ",
+    "context": "ier\n          •\n          Simu",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 202,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 251,
+    "found": "\n        ",
+    "context": "opriétaire 2026\n        Répons",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 517,
+    "found": "\n        \n          \n            ",
+    "context": "ateur officiel.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 599,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " le simulateur.\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 814,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "mes compétents.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 861,
+    "found": "\n        ",
+    "context": " Réponse rapide\n        En règ",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1131,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "ns spécifiques.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1186,
+    "found": "\n        \n          ",
+    "context": "l faut vérifier\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1421,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "cas spécifiques\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1469,
+    "found": "\n        \n          ",
+    "context": "Aller plus loin\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1566,
+    "found": "\n        \n        \n          \n            ",
+    "context": " par le pilier.\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1628,
+    "found": "\n          \n          \n            ",
+    "context": "céder au pilier\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1711,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": "nt : simulation\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1821,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1864,
+    "found": "\n      \n    \n  ",
+    "context": "Calculateurs.fr\n      \n    \n  ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire\\index.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 66,
+    "found": "lS",
+    "context": "  \n          Accueil[lS]Simulations aides so",
+    "suggestion": "l S",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1334,
+    "found": "sE",
+    "context": "nditions spécifiques[sE]En règle générale, l",
+    "suggestion": "s E",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1848,
+    "found": "sC",
+    "context": " \n        © 2026 Les[sC]Calculateurs.fr\n    ",
+    "suggestion": "s C",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "missing_space_capitals",
+    "position": 1898,
+    "found": "sA",
+    "context": "Tous nos simulateurs[sA]Accueil\n\n",
+    "suggestion": "s A",
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 0,
+    "found": "\n    \n      \n        ",
+    "context": "\n    \n      \n  ",
+    "length": 21,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 40,
+    "found": "\n        \n          ",
+    "context": "es Calculateurs\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 93,
+    "found": "\n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " aides sociales\n        \n     ",
+    "length": 54,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 153,
+    "found": "\n          ",
+    "context": "         Pilier\n          •\n  ",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 165,
+    "found": "\n          ",
+    "context": "ier\n          •\n          Simu",
+    "length": 11,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 202,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 251,
+    "found": "\n        ",
+    "context": "opriétaire 2026\n        Répons",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 517,
+    "found": "\n        \n          \n            ",
+    "context": "ateur officiel.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 599,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": " le simulateur.\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 814,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "mes compétents.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 861,
+    "found": "\n        ",
+    "context": " Réponse rapide\n        En règ",
+    "length": 9,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1131,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "ns spécifiques.\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1186,
+    "found": "\n        \n          ",
+    "context": "l faut vérifier\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1421,
+    "found": "\n        \n      \n\n      \n        ",
+    "context": "cas spécifiques\n        \n     ",
+    "length": 33,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1469,
+    "found": "\n        \n          ",
+    "context": "Aller plus loin\n        \n     ",
+    "length": 20,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1566,
+    "found": "\n        \n        \n          \n            ",
+    "context": " par le pilier.\n        \n     ",
+    "length": 42,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1628,
+    "found": "\n          \n          \n            ",
+    "context": "céder au pilier\n          \n   ",
+    "length": 35,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1711,
+    "found": "\n          \n        \n      \n    \n\n    \n      \n        \n          ",
+    "context": "nt : simulation\n          \n   ",
+    "length": 65,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1821,
+    "found": "\n        \n        ",
+    "context": " aides sociales\n        \n     ",
+    "length": 18,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  },
+  {
+    "type": "multiple_spaces",
+    "position": 1864,
+    "found": "\n      \n    \n  ",
+    "context": "Calculateurs.fr\n      \n    \n  ",
+    "length": 15,
+    "file": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\content_SAFE\\aide\\aide-logement-proprietaire.html"
+  }
+]

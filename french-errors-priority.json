@@ -1,0 +1,819 @@
+[
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "...\": \"Les montants sont regulierement mis a jour selon les baremes officiels 2026. ...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 1244,
+      "end": 1245
+    },
+    "context": "...\": \"Les montants sont regulierement mis a jour selon les baremes officiels 2026. ..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "...ur les baremes           reglementaires publies par la CAF. Pour couvrir les intentions...",
+    "error": "",
+    "suggestions": [
+      "publie",
+      "publient"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 114,
+      "end": 121
+    },
+    "context": "...ur les baremes           reglementaires publies par la CAF. Pour couvrir les intentions..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "📌 Simulation a titre indicatif :",
+    "error": "a",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 14,
+      "end": 15
+    },
+    "context": "📌 Simulation a titre indicatif :"
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "                   Jusqu'a 3 scenarios cote a cote, avec les ecart...",
+    "error": "Jusqu'a",
+    "suggestions": [
+      "Jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 19,
+      "end": 26
+    },
+    "context": "                   Jusqu'a 3 scenarios cote a cote, avec les ecart..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "Loyers plafonnes par la CAF",
+    "error": "plafonnes",
+    "suggestions": [
+      "plafonnés",
+      "plafonnées",
+      "plafonnent",
+      "plafonne",
+      "Loyers",
+      "plafonds",
+      "plafond"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 7,
+      "end": 16
+    },
+    "context": "Loyers plafonnes par la CAF"
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "...revenus et type de logement. Simulation a titre informatif uniquement.\",         ...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 425,
+      "end": 426
+    },
+    "context": "...revenus et type de logement. Simulation a titre informatif uniquement.\",         ..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "...\",             label: \"Nombre d'enfants a charge\",             type: \"number\",   ...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 1064,
+      "end": 1065
+    },
+    "context": "...\",             label: \"Nombre d'enfants a charge\",             type: \"number\",   ..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "...\"text-gray-700\">Votre participation (30 a 40 % revenus − forfait ${formatCurrency...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 6159,
+      "end": 6160
+    },
+    "context": "...\"text-gray-700\">Votre participation (30 a 40 % revenus − forfait ${formatCurrency..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "...ay-600 ml-4\">                     = (30 a 40 % × ${formatCurrency(               ...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 6481,
+      "end": 6482
+    },
+    "context": "...ay-600 ml-4\">                     = (30 a 40 % × ${formatCurrency(               ..."
+  },
+  {
+    "file": "content_SAFE\\apl.html",
+    "text": "...               <p><strong>📌 Simulation a titre indicatif :</strong> Cette estima...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 7185,
+      "end": 7186
+    },
+    "context": "...               <p><strong>📌 Simulation a titre indicatif :</strong> Cette estima..."
+  },
+  {
+    "file": "content_SAFE\\are.html",
+    "text": "                 Enfants a charge               ",
+    "error": "a",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 25,
+      "end": 26
+    },
+    "context": "                 Enfants a charge               "
+  },
+  {
+    "file": "content_SAFE\\are.html",
+    "text": "...e grandeur, puis           referez-vous a la notification France Travail pour le ...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 223,
+      "end": 224
+    },
+    "context": "...e grandeur, puis           referez-vous a la notification France Travail pour le ..."
+  },
+  {
+    "file": "content_SAFE\\are.html",
+    "text": "...rrespond en principe au nombre de jours travailles sur la               periode de referen...",
+    "error": "",
+    "suggestions": [
+      "travaillés",
+      "travaillées",
+      "travaillent",
+      "travaille",
+      "jours"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 177,
+      "end": 187
+    },
+    "context": "...rrespond en principe au nombre de jours travailles sur la               periode de referen..."
+  },
+  {
+    "file": "content_SAFE\\asf.html",
+    "text": "...cation de Soutien Familial pour parents isoles ou orphelins.\",         \"url\": \"https:/...",
+    "error": "",
+    "suggestions": [
+      "isolés",
+      "isolées",
+      "isolent",
+      "isole",
+      "parents",
+      "isolé",
+      "isolée",
+      "idoles",
+      "soles",
+      "Issole"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 301,
+      "end": 307
+    },
+    "context": "...cation de Soutien Familial pour parents isoles ou orphelins.\",         \"url\": \"https:/..."
+  },
+  {
+    "file": "content_SAFE\\asf.html",
+    "text": "               Les parents isoles avec enfant(s) de moins de 21 ans A cha...",
+    "error": "isoles",
+    "suggestions": [
+      "isolés",
+      "isolées",
+      "isolent",
+      "isole",
+      "parents",
+      "isolé",
+      "isolée",
+      "idoles",
+      "soles",
+      "Issole"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 27,
+      "end": 33
+    },
+    "context": "               Les parents isoles avec enfant(s) de moins de 21 ans A cha..."
+  },
+  {
+    "file": "content_SAFE\\asf.html",
+    "text": "...       enfants orphelins ou les enfants prives du soutien familial de               le...",
+    "error": "",
+    "suggestions": [
+      "privés",
+      "privées",
+      "privent",
+      "prive",
+      "enfants",
+      "prises",
+      "privé",
+      "privée",
+      "rives",
+      "primes"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 129,
+      "end": 135
+    },
+    "context": "...       enfants orphelins ou les enfants prives du soutien familial de               le..."
+  },
+  {
+    "file": "content_SAFE\\charges.html",
+    "text": "...uls reposent sur des ordres de grandeur observes et           constituent une estimation...",
+    "error": "      co",
+    "suggestions": [
+      "observe",
+      "observent"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 59,
+      "end": 67
+    },
+    "context": "...uls reposent sur des ordres de grandeur observes et           constituent une estimation..."
+  },
+  {
+    "file": "content_SAFE\\charges.html",
+    "text": "...rdres de grandeur observes et           constituent une estimation indicative et non contra...",
+    "error": "et non cont",
+    "suggestions": [
+      "constitues"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 81,
+      "end": 92
+    },
+    "context": "...rdres de grandeur observes et           constituent une estimation indicative et non contra..."
+  },
+  {
+    "file": "content_SAFE\\financement.html",
+    "text": "Crédit auto, conso existants",
+    "error": "existants",
+    "suggestions": [
+      "existante",
+      "existantes"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 19,
+      "end": 28
+    },
+    "context": "Crédit auto, conso existants"
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": "... impot reduit. Utilise pour les couples maries et contribuables avec enfants.\"        ...",
+    "error": "",
+    "suggestions": [
+      "mariés",
+      "mariées",
+      "marient",
+      "marie",
+      "marins",
+      "marié",
+      "mariée",
+      "maires",
+      "marines",
+      "marées"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 866,
+      "end": 872
+    },
+    "context": "... impot reduit. Utilise pour les couples maries et contribuables avec enfants.\"        ..."
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": "...rts fiscales - Decote. Bareme 2026 : 0% jusqu'A 11 294€, puis               11% jusqu'A...",
+    "error": "",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 143,
+      "end": 150
+    },
+    "context": "...rts fiscales - Decote. Bareme 2026 : 0% jusqu'A 11 294€, puis               11% jusqu'A..."
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": "...jusqu'A 11 294€, puis               11% jusqu'A 28 797€, 3environ 0 A 1 % jusqu'A 82 34...",
+    "error": "",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 183,
+      "end": 190
+    },
+    "context": "...jusqu'A 11 294€, puis               11% jusqu'A 28 797€, 3environ 0 A 1 % jusqu'A 82 34..."
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": "...  11% jusqu'A 28 797€, 3environ 0 A 1 % jusqu'A 82 34un montant modeste, etc.          ...",
+    "error": "",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 217,
+      "end": 224
+    },
+    "context": "...  11% jusqu'A 28 797€, 3environ 0 A 1 % jusqu'A 82 34un montant modeste, etc.          ..."
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": " Decote jusqu'A 1 39un montant modeste | 1 part =      ...",
+    "error": "jusqu'A",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 8,
+      "end": 15
+    },
+    "context": " Decote jusqu'A 1 39un montant modeste | 1 part =      ..."
+  },
+  {
+    "file": "content_SAFE\\impot.html",
+    "text": ". Ideal pour les salaries,               independants et retraite...",
+    "error": "salaries",
+    "suggestions": [
+      "salariés",
+      "salariées",
+      "salarient",
+      "salarie",
+      "salaires",
+      "salarié",
+      "salariée",
+      "salaire"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 17,
+      "end": 25
+    },
+    "context": ". Ideal pour les salaries,               independants et retraite..."
+  },
+  {
+    "file": "content_SAFE\\notaire.html",
+    "text": "... et             les taux DMTO officiels publies par l'administration fiscale           ...",
+    "error": "",
+    "suggestions": [
+      "publie",
+      "publient"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 115,
+      "end": 122
+    },
+    "context": "... et             les taux DMTO officiels publies par l'administration fiscale           ..."
+  },
+  {
+    "file": "content_SAFE\\notaire.html",
+    "text": "Economisez jusqu'A 3 50un montant modeste",
+    "error": "jusqu'A",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 11,
+      "end": 18
+    },
+    "context": "Economisez jusqu'A 3 50un montant modeste"
+  },
+  {
+    "file": "content_SAFE\\notaire.html",
+    "text": "                 Comparez jusqu'A 4 villes simultanement avec un graphiqu...",
+    "error": "jusqu'A",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 26,
+      "end": 33
+    },
+    "context": "                 Comparez jusqu'A 4 villes simultanement avec un graphiqu..."
+  },
+  {
+    "file": "content_SAFE\\notaire.html",
+    "text": "...   Notre calculateur permet de comparer jusqu'A 4 villes                 simultanement....",
+    "error": "illes  ",
+    "suggestions": [
+      "jusqu'à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 54,
+      "end": 61
+    },
+    "context": "...   Notre calculateur permet de comparer jusqu'A 4 villes                 simultanement...."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": ".... Le simulateur utilise des taux moyens actualises.\"}         },         {           \"@typ...",
+    "error": "",
+    "suggestions": [
+      "actualisés",
+      "actualisées",
+      "actualisent",
+      "actualise",
+      "moyens",
+      "actualités",
+      "actualismes",
+      "actualité",
+      "actualisme"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 791,
+      "end": 801
+    },
+    "context": ".... Le simulateur utilise des taux moyens actualises.\"}         },         {           \"@typ..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...votre capacite d'emprunt en 2026 - taux actualises, assurance incluse\",       \"url\": \"http...",
+    "error": "",
+    "suggestions": [
+      "actualise",
+      "actualisent"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 235,
+      "end": 245
+    },
+    "context": "...votre capacite d'emprunt en 2026 - taux actualises, assurance incluse\",       \"url\": \"http..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...te = (capital Ã— i Ã— (1+i)^n) / ((1+i)^n âˆ' 1) + assurance (approx.).             ...",
+    "error": "ce (",
+    "suggestions": [
+      "n'a",
+      "n'as",
+      "n'ai"
+    ],
+    "rule": "APOS_M",
+    "position": {
+      "start": 61,
+      "end": 65
+    },
+    "context": "...te = (capital Ã— i Ã— (1+i)^n) / ((1+i)^n âˆ' 1) + assurance (approx.).             ..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...anque de France (publications et seuils observes) & conditions bancaires 2026",
+    "error": " observe",
+    "suggestions": [
+      "observés",
+      "observées",
+      "observent",
+      "observe",
+      "seuils"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 42,
+      "end": 50
+    },
+    "context": "...anque de France (publications et seuils observes) & conditions bancaires 2026"
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...     Decouvrez votre capacite d'emprunt maximale et optimisez vos           mensualites ...",
+    "error": "",
+    "suggestions": [
+      "maximal"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 280,
+      "end": 288
+    },
+    "context": "...     Decouvrez votre capacite d'emprunt maximale et optimisez vos           mensualites ..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...      Calculez votre capacite d'emprunt maximale selon vos revenus et                 ch...",
+    "error": " selon v",
+    "suggestions": [
+      "maximal"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 51,
+      "end": 59
+    },
+    "context": "...      Calculez votre capacite d'emprunt maximale selon vos revenus et                 ch..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...o finance un achat avec des durees plus courtes et des regles           differentes. Po...",
+    "error": "",
+    "suggestions": [
+      "courts"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 218,
+      "end": 225
+    },
+    "context": "...o finance un achat avec des durees plus courtes et des regles           differentes. Po..."
+  },
+  {
+    "file": "content_SAFE\\pret.html",
+    "text": "...alculateur utilise les taux moyens 2026 observes :                 environ 3,5-4,environ...",
+    "error": "",
+    "suggestions": [
+      "observés",
+      "observées",
+      "observent",
+      "observe"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 141,
+      "end": 149
+    },
+    "context": "...alculateur utilise les taux moyens 2026 observes :                 environ 3,5-4,environ..."
+  },
+  {
+    "file": "content_SAFE\\prime-activite.html",
+    "text": "...\": \"Les montants sont regulierement mis a jour selon les baremes officiels 2026. ...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 1088,
+      "end": 1089
+    },
+    "context": "...\": \"Les montants sont regulierement mis a jour selon les baremes officiels 2026. ..."
+  },
+  {
+    "file": "content_SAFE\\prime-activite.html",
+    "text": "                 Nombre d'enfants a charge               ",
+    "error": "a",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 34,
+      "end": 35
+    },
+    "context": "                 Nombre d'enfants a charge               "
+  },
+  {
+    "file": "content_SAFE\\prime-activite.html",
+    "text": "           💡 Exemple fourni a titre illustratif uniquement.         ",
+    "error": "a",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 29,
+      "end": 30
+    },
+    "context": "           💡 Exemple fourni a titre illustratif uniquement.         "
+  },
+  {
+    "file": "content_SAFE\\prime-activite.html",
+    "text": "...        Vous pouvez faire votre demande a tout moment aupres de votre CAF,       ...",
+    "error": "u",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 47,
+      "end": 48
+    },
+    "context": "...        Vous pouvez faire votre demande a tout moment aupres de votre CAF,       ..."
+  },
+  {
+    "file": "content_SAFE\\prime-activite.html",
+    "text": "...af.fr ou en vous presentant directement a l'accueil.             ",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 150,
+      "end": 151
+    },
+    "context": "...af.fr ou en vous presentant directement a l'accueil.             "
+  },
+  {
+    "file": "content_SAFE\\rsa.html",
+    "text": "...\": \"Les montants sont regulierement mis a jour selon les baremes officiels 2026. ...",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 1088,
+      "end": 1089
+    },
+    "context": "...\": \"Les montants sont regulierement mis a jour selon les baremes officiels 2026. ..."
+  },
+  {
+    "file": "content_SAFE\\rsa.html",
+    "text": "                 Nombre d'enfants a charge               ",
+    "error": "a",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 34,
+      "end": 35
+    },
+    "context": "                 Nombre d'enfants a charge               "
+  },
+  {
+    "file": "content_SAFE\\rsa.html",
+    "text": "...       forfaitaires sont revalorises et peuvent evoluer.             ",
+    "error": "       ",
+    "suggestions": [
+      "peux"
+    ],
+    "rule": "ACCORD_SUJET_VERBE",
+    "position": {
+      "start": 62,
+      "end": 69
+    },
+    "context": "...       forfaitaires sont revalorises et peuvent evoluer.             "
+  },
+  {
+    "file": "content_SAFE\\rsa.html",
+    "text": "           💡 Exemple fourni a titre illustratif uniquement.         ",
+    "error": "a",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 29,
+      "end": 30
+    },
+    "context": "           💡 Exemple fourni a titre illustratif uniquement.         "
+  },
+  {
+    "file": "content_SAFE\\rsa.html",
+    "text": "...   caf.fr ou vous presenter directement a l'accueil.             ",
+    "error": "",
+    "suggestions": [
+      "à"
+    ],
+    "rule": "A_ACCENT",
+    "position": {
+      "start": 199,
+      "end": 200
+    },
+    "context": "...   caf.fr ou vous presenter directement a l'accueil.             "
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "               Comparez vos salaires net/brut : cadre vs non-cadre             ",
+    "error": "net",
+    "suggestions": [
+      "nets"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 37,
+      "end": 40
+    },
+    "context": "               Comparez vos salaires net/brut : cadre vs non-cadre             "
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "...À 1 %                 cotisations | PAS variable selon revenus               ",
+    "error": "     ",
+    "suggestions": [
+      "variables"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 75,
+      "end": 83
+    },
+    "context": "...À 1 %                 cotisations | PAS variable selon revenus               "
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "...          ðŸ¤” Quelle est la différence brut/net ?             ",
+    "error": "ut/n",
+    "suggestions": [
+      "brute"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 45,
+      "end": 49
+    },
+    "context": "...          ðŸ¤” Quelle est la différence brut/net ?             "
+  },
+  {
+    "file": "content_SAFE\\salaire.html",
+    "text": "Mensualité prêt",
+    "error": "prêt",
+    "suggestions": [
+      "prête"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 11,
+      "end": 15
+    },
+    "context": "Mensualité prêt"
+  },
+  {
+    "file": "content_SAFE\\sources.html",
+    "text": " Répartition salarié / employeur                 ",
+    "error": "salarié",
+    "suggestions": [
+      "salariée"
+    ],
+    "rule": "AGREEMENT_POSTPONED_ADJ",
+    "position": {
+      "start": 13,
+      "end": 20
+    },
+    "context": " Répartition salarié / employeur                 "
+  },
+  {
+    "file": "content_SAFE\\taxe.html",
+    "text": "...urquoi deux logements similaires paient des montants                 différents ?               ",
+    "error": "             différents ?              ",
+    "suggestions": [
+      "différents montants"
+    ],
+    "rule": "PLACE_ADJ",
+    "position": {
+      "start": 59,
+      "end": 98
+    },
+    "context": "...urquoi deux logements similaires paient des montants                 différents ?               "
+  }
+]

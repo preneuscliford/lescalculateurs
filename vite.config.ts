@@ -15,24 +15,11 @@ import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absen
 const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
 const allRsaPilotScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
 const allArePilotScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
-const satelliteKeepMap = loadSatelliteKeepMap();
-
-function loadSatelliteKeepMap(): Record<string, string[]> {
-  const filePath = resolve(__dirname, "data/pseo/satellite-keep-slugs.json");
-  if (!fs.existsSync(filePath)) return {};
-  return JSON.parse(fs.readFileSync(filePath, "utf8")) as Record<string, string[]>;
-}
-
-function getKeptSatelliteSlugs(pillar: string): Set<string> {
-  return new Set((satelliteKeepMap[pillar] || []).map((slug) => String(slug || "").trim()).filter(Boolean));
-}
 
 function collectNestedAplInputs() {
   const aplDir = resolve(__dirname, "src/pages/apl");
   if (!fs.existsSync(aplDir)) return {};
   const pilotSlugs = new Set(allAplPilotScenarios.map((scenario) => String(scenario.slug || "").trim()));
-  const keptSlugs = getKeptSatelliteSlugs("apl");
-  if (keptSlugs.size === 0) return {};
 
   const inputs: Record<string, string> = {};
   const entries = fs.readdirSync(aplDir, { withFileTypes: true });
@@ -40,7 +27,6 @@ function collectNestedAplInputs() {
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
     if (pilotSlugs.has(entry.name)) continue;
-    if (!keptSlugs.has(entry.name)) continue;
     const indexPath = path.join(aplDir, entry.name, "index.html");
     if (!fs.existsSync(indexPath)) continue;
     inputs[`apl-${entry.name}`] = indexPath;
@@ -50,14 +36,11 @@ function collectNestedAplInputs() {
 }
 
 function collectAplPilotInputs() {
-  const keptSlugs = getKeptSatelliteSlugs("apl");
-  if (keptSlugs.size === 0) return {};
   const inputs: Record<string, string> = {};
 
   for (const scenario of allAplPilotScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
-    if (!keptSlugs.has(slug)) continue;
 
     const indexPath = resolve(__dirname, "src/pages/apl", slug, "index.html");
     if (!fs.existsSync(indexPath)) continue;
@@ -196,14 +179,11 @@ function collectLegacySeoAliasInputs() {
 }
 
 function collectRsaPilotInputs() {
-  const keptSlugs = getKeptSatelliteSlugs("rsa");
-  if (keptSlugs.size === 0) return {};
   const inputs: Record<string, string> = {};
 
   for (const scenario of allRsaPilotScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
-    if (!keptSlugs.has(slug)) continue;
 
     const indexPath = resolve(__dirname, "src/pages/rsa", slug, "index.html");
     if (!fs.existsSync(indexPath)) continue;
@@ -215,14 +195,11 @@ function collectRsaPilotInputs() {
 }
 
 function collectArePilotInputs() {
-  const keptSlugs = getKeptSatelliteSlugs("are");
-  if (keptSlugs.size === 0) return {};
   const inputs: Record<string, string> = {};
 
   for (const scenario of allArePilotScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
-    if (!keptSlugs.has(slug)) continue;
 
     const indexPath = resolve(__dirname, "src/pages/are", slug, "index.html");
     const htmlPath = resolve(__dirname, "src/pages/are", `${slug}.html`);
@@ -241,14 +218,11 @@ function collectArePilotInputs() {
 }
 
 function collectAsfPilotInputs() {
-  const keptSlugs = getKeptSatelliteSlugs("asf");
-  if (keptSlugs.size === 0) return {};
   const inputs: Record<string, string> = {};
 
   for (const scenario of asfAbsenceRevenuScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
-    if (!keptSlugs.has(slug)) continue;
 
     const indexPath = resolve(__dirname, "src/pages/asf", slug, "index.html");
     const htmlPath = resolve(__dirname, "src/pages/asf", `${slug}.html`);
@@ -267,14 +241,11 @@ function collectAsfPilotInputs() {
 }
 
 function collectPrimePilotInputs() {
-  const keptSlugs = getKeptSatelliteSlugs("prime-activite");
-  if (keptSlugs.size === 0) return {};
   const inputs: Record<string, string> = {};
 
   for (const scenario of primeAbsenceRevenuScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
-    if (!keptSlugs.has(slug)) continue;
 
     const indexPath = resolve(__dirname, "src/pages/prime-activite", slug, "index.html");
     const htmlPath = resolve(__dirname, "src/pages/prime-activite", `${slug}.html`);
@@ -293,14 +264,11 @@ function collectPrimePilotInputs() {
 }
 
 function collectSimulateursPilotInputs() {
-  const keptSlugs = getKeptSatelliteSlugs("simulateurs");
-  if (keptSlugs.size === 0) return {};
   const inputs: Record<string, string> = {};
 
   for (const scenario of simulateursAbsenceRevenuScenarios) {
     const slug = String(scenario.slug || "").trim();
     if (!slug) continue;
-    if (!keptSlugs.has(slug)) continue;
 
     const indexPath = resolve(__dirname, "src/pages/simulateurs", slug, "index.html");
     const htmlPath = resolve(__dirname, "src/pages/simulateurs", `${slug}.html`);
@@ -318,31 +286,6 @@ function collectSimulateursPilotInputs() {
   return inputs;
 }
 
-function collectKeptSatelliteInputs() {
-  const inputs: Record<string, string> = {};
-
-  for (const [pillar, slugs] of Object.entries(satelliteKeepMap)) {
-    for (const rawSlug of slugs) {
-      const slug = String(rawSlug || "").trim();
-      if (!slug) continue;
-
-      const indexPath = resolve(__dirname, "src/pages", pillar, slug, "index.html");
-      const htmlPath = resolve(__dirname, "src/pages", pillar, `${slug}.html`);
-
-      if (fs.existsSync(indexPath)) {
-        inputs[`satellite-${pillar}-${slug}`] = indexPath;
-        continue;
-      }
-
-      if (fs.existsSync(htmlPath)) {
-        inputs[`satellite-${pillar}-${slug}`] = htmlPath;
-      }
-    }
-  }
-
-  return inputs;
-}
-
 export default defineConfig(() => {
   const aplNestedInputs = collectNestedAplInputs();
   const aplPilotInputs = collectAplPilotInputs();
@@ -352,7 +295,6 @@ export default defineConfig(() => {
   const asfPilotInputs = collectAsfPilotInputs();
   const primePilotInputs = collectPrimePilotInputs();
   const simulateursPilotInputs = collectSimulateursPilotInputs();
-  const keptSatelliteInputs = collectKeptSatelliteInputs();
 
   return {
     root: "src",
@@ -363,7 +305,7 @@ export default defineConfig(() => {
         name: "clean-urls-html",
         apply: "serve",
         configureServer(server) {
-          server.middlewares.use((req, res, next) => {
+          server.middlewares.use((req, _res, next) => {
             const url = req.url || "/";
             const [pathname, search] = url.split("?");
 
@@ -385,13 +327,6 @@ export default defineConfig(() => {
 
             if (fs.existsSync(candidateIndex)) {
               req.url = `/${cleanPath}/index.html${search ? `?${search}` : ""}`;
-              return next();
-            }
-
-            const fallback404 = path.join(rootDir, "404.html");
-            if (fs.existsSync(fallback404)) {
-              res.statusCode = 404;
-              req.url = `/404.html${search ? `?${search}` : ""}`;
               return next();
             }
 
@@ -427,9 +362,6 @@ export default defineConfig(() => {
 
           // Pages pSEO Simulateurs du pilote declarees explicitement pour la prod
           ...simulateursPilotInputs,
-
-          // Satellites explicitement conserves apres nettoyage Search Console
-          ...keptSatelliteInputs,
 
           // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
           ...legacySeoAliasInputs,

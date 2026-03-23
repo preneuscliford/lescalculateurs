@@ -162,9 +162,9 @@
   <body class="bg-gray-50">
     <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:8px 12px;text-align:center;font-size:13px;">
       <strong>⚠️ Estimation indicative.</strong> 
-      <span class="hidden sm:inline">Montant définitif sur</span>
+      <span class="hidden sm:inline">Montant définitif sur </span>
       <a href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-particuliers.html" target="_blank" rel="noopener" style="color:#856404;text-decoration:underline;font-weight:bold;">URSSAF</a>
-      <span class="hidden md:inline">|<a href="/pages/historique-mises-a-jour" style="color:#856404;text-decoration:underline;">🔄 Historique</a></span>
+      <span class="hidden md:inline"> | <a href="/pages/historique-mises-a-jour" style="color:#856404;text-decoration:underline;">🔄 Historique</a></span>
     </div>
 
     <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -180,7 +180,7 @@
           <nav class="hidden md:flex items-center space-x-4 text-sm">
             <a href="/" class="text-gray-600 hover:text-blue-600">🏠 Accueil</a>
             <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">🎯 Outils</a>
-            <a href="/pages/methodologie.html" class="hidden lg:block text-gray-600 hover:text-blue-600">📚 Méthodologie</a>
+            <a href="/pages/methodologie.html" class="hidden lg:block text-gray-600 hover:text-blue-600">📚 Méthodo</a>
             <a href="/pages/historique-mises-a-jour" class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded">🔄 Màj 12/02</a>
           </nav>
 
@@ -195,7 +195,7 @@
           <nav class="flex flex-col space-y-2 text-sm">
             <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
             <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1">🎯 Simulateurs</a>
-            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1">📚 Méthodologielogie</a>
+            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1">📚 Méthodologie</a>
             <a href="/pages/historique-mises-a-jour" class="text-blue-600 hover:text-blue-800 font-medium py-1 bg-blue-50 rounded px-2">🔄 Mises à jour</a>
           </nav>
         </div>
@@ -206,11 +206,17 @@
       <!-- Intro SEO -->
       <section class="mb-8">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">Simulateur salaire brut net 2026 — calcul estimé des cotisations URSSAF</h2>
-          <p class="text-gray-600 mb-4 text-sm">calculez votre salaire net 2026 en quelques secondes, à partir de
- votre brut, votre statut (cadre / non-cadre) et votre taux PAS.</p>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Simulateur salaire brut net 2026 — calcul estimé des cotisations URSSAF
+          </h2>
+          <p class="text-gray-600 mb-4 text-sm">
+            calculez votre salaire net 2026 en quelques secondes, à partir de
+            votre brut, votre statut (cadre / non-cadre) et votre taux PAS.
+          </p>
           <div class="mb-6">
-            <a href="#salaire-calculator" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">Lancer la simulation</a>
+            <a href="#salaire-calculator" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">
+              Lancer la simulation
+            </a>
           </div>
         </div>
       </section>
@@ -218,13 +224,14 @@
       <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-            <span class="mr-2">📌</span>Résumé rapide</h2>
+            <span class="mr-2">📌</span> Résumé rapide
+          </h2>
           <ul class="space-y-2 text-gray-700 text-sm">
-            <li><strong>Source :</strong> <a href="https://www.urssaf.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">URSSAF</a>,<a href="https://www.impots.gouv.fr/particulier" target="_blank" rel="noopener" class="text-blue-600 hover:underline">impots.gouv.fr</a>,<a href="https://www.service-public.fr/particuliers/vosdroits/F559" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Salaire net (service-public)</a></li>
-            <li><strong>Calcul :</strong>Brut − cotisations salariales (≈8% non-cadre, ≈14% cadre) = Net avant impôt</li>
-            <li><strong>PAS :</strong>Prélèvement à la source selon taux personnalisé</li>
-            <li><strong>Barèmes 2026 :</strong>CSG (6.80%), CRDS (0.50%), assurance chômage (3.28%)</li>
-            <li><strong>Outil :</strong>100% gratuit, sans création de compte</li>
+            <li><strong>Source :</strong> <a href="https://www.urssaf.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">URSSAF</a>, <a href="https://www.impots.gouv.fr/particulier" target="_blank" rel="noopener" class="text-blue-600 hover:underline">impots.gouv.fr</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/F559" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Salaire net (service-public)</a></li>
+            <li><strong>Calcul :</strong> Brut − cotisations salariales (≈8% non-cadre, ≈14% cadre) = Net avant impôt</li>
+            <li><strong>PAS :</strong> Prélèvement à la source selon taux personnalisé</li>
+            <li><strong>Barèmes 2026 :</strong> CSG (6.80%), CRDS (0.50%), assurance chômage (3.28%)</li>
+            <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
           </ul>
         </div>
       </section>
@@ -233,7 +240,7 @@
         <div class="max-w-4xl mx-auto">
           <h2 class="text-2xl font-bold text-gray-900 mb-4">🧾 Ce que permet ce simulateur</h2>
           <ul class="list-disc list-inside space-y-2 text-gray-700">
-            <li>Obtenir un<strong>montant indicatif</strong>(net avant impôt / net après PAS)</li>
+            <li>Obtenir un <strong>montant indicatif</strong> (net avant impôt / net après PAS)</li>
             <li>Comprendre l’impact de vos paramètres (statut, PAS, brut)</li>
             <li>Comparer plusieurs scénarios</li>
             <li>Exporter les résultats (PNG / PDF)</li>
@@ -255,9 +262,9 @@
 
           <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Comment lire les résultats</h3>
           <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-6">
-            <li><strong>Montant estimé</strong>: ordre de grandeur</li>
-            <li><strong>Détail</strong>: paramètres pris en compte</li>
-            <li><strong>Avertissement</strong>: dépend de votre situation réelle</li>
+            <li><strong>Montant estimé</strong> : ordre de grandeur</li>
+            <li><strong>Détail</strong> : paramètres pris en compte</li>
+            <li><strong>Avertissement</strong> : dépend de votre situation réelle</li>
           </ul>
 
           <h3 class="text-lg font-semibold text-gray-900 mb-2">🔹 Pourquoi le résultat peut être nul / faible / différent</h3>
@@ -276,38 +283,53 @@
         <div class="max-w-4xl mx-auto">
           <div class="flex items-center gap-3 mb-4">
             <span class="text-4xl">📊</span>
-            <h2 class="text-2xl font-bold text-gray-900">Comparez vos salaires net/brut : cadre vs non-cadre</h2>
+            <h2 class="text-2xl font-bold text-gray-900">
+              Comparez vos salaires net/brut : cadre vs non-cadre
+            </h2>
           </div>
           <div class="prose prose-lg text-gray-700 mb-4">
             <p class="mb-3">
-              <strong>Simulez plusieurs scénarios</strong>pour optimiser votre
- négociation salariale ! Comparez un brut de 2 000€ vs 2 500€, ou
- cadre vs non-cadre, avec<strong>graphiques colorés en temps réel</strong>.</p>
+              <strong>Simulez plusieurs scénarios</strong> pour optimiser votre
+              négociation salariale ! Comparez un brut de 2 000€ vs 2 500€, ou
+              cadre vs non-cadre, avec
+              <strong>graphiques colorés en temps réel</strong>.
+            </p>
             <p class="mb-3">
               <strong
                 >La différence cadre/non-cadre peut atteindre 80-100€ net par
- mois</strong
-              >pour un même brut. Visualisez instantanément l'impact sur votre
- budget mensuel et annuel avec notre<strong>outil de comparaison interactif</strong>.</p>
+                mois</strong
+              >
+              pour un même brut. Visualisez instantanément l'impact sur votre
+              budget mensuel et annuel avec notre
+              <strong>outil de comparaison interactif</strong>.
+            </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-4">
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <div class="text-3xl mb-2">🔄</div>
-              <h3 class="font-bold text-gray-900 mb-1">Comparaison multi-scénarios</h3>
-              <p class="text-sm text-gray-600">Créez plusieurs simulations et comparez les résultats avec
- graphiques distincts</p>
+              <h3 class="font-bold text-gray-900 mb-1">
+                Comparaison multi-scénarios
+              </h3>
+              <p class="text-sm text-gray-600">
+                Créez plusieurs simulations et comparez les résultats avec
+                graphiques distincts
+              </p>
             </div>
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <div class="text-3xl mb-2">💰</div>
               <h3 class="font-bold text-gray-900 mb-1">Impact budget</h3>
-              <p class="text-sm text-gray-600">Visualisez vos économies/gains mensuels et annuels pour chaque
- scénario</p>
+              <p class="text-sm text-gray-600">
+                Visualisez vos économies/gains mensuels et annuels pour chaque
+                scénario
+              </p>
             </div>
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <div class="text-3xl mb-2">📥</div>
               <h3 class="font-bold text-gray-900 mb-1">Export PNG / PDF</h3>
-              <p class="text-sm text-gray-600">Téléchargez vos comparaisons pour partager avec votre employeur</p>
+              <p class="text-sm text-gray-600">
+                Téléchargez vos comparaisons pour partager avec votre employeur
+              </p>
             </div>
           </div>
         </div>
@@ -321,11 +343,15 @@
         <button
           id="salaire-add-to-compare"
           class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
-        >➕ Ajouter à la comparaison</button>
+        >
+          ➕ Ajouter à la comparaison
+        </button>
         <button
           id="salaire-reset-compare"
           class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
-        >🔄 Réinitialiser</button>
+        >
+          🔄 Réinitialiser
+        </button>
       </div>
 
       <!-- Comparaison (masquée par défaut) -->
@@ -334,48 +360,66 @@
       <section class="mt-10 mb-8">
         <div class="max-w-4xl mx-auto">
           <section class="ai-intro mb-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-2">❓ Comment passer du salaire brut au salaire net en 2026 ?</h2>
-            <p class="ai-response text-gray-700">Net = Brut - Cotisations salariales (~8% pour non-cadre, ~10% pour
- cadre) - CSG-CRDS (~8%) = NET AVANT IMPÔT. Net après impôt = NET
- AVANT - Prélèvement à la source (taux variable selon situation
- fiscale).</p>
+            <h2 class="text-xl font-bold text-gray-900 mb-2">
+              ❓ Comment passer du salaire brut au salaire net en 2026 ?
+            </h2>
+            <p class="ai-response text-gray-700">
+              Net = Brut - Cotisations salariales (~8% pour non-cadre, ~10% pour
+              cadre) - CSG-CRDS (~8%) = NET AVANT IMPÔT. Net après impôt = NET
+              AVANT - Prélèvement à la source (taux variable selon situation
+              fiscale).
+            </p>
           </section>
 
           <section class="ai-summary mb-6">
             <h3 class="text-lg font-bold text-gray-900 mb-3">📌 Résumé rapide</h3>
             <ul class="space-y-2 text-gray-700">
               <li>
-                <strong>Source:</strong>URSSAF 2026 + Direction Générale des
- Finances Publiques</li>
+                <strong>Source:</strong> URSSAF 2026 + Direction Générale des
+                Finances Publiques
+              </li>
               <li>
-                <strong>Calcul:</strong>Brut - Cotisations sociales - CSG-CRDS
- - Prélèvement à la source</li>
+                <strong>Calcul:</strong> Brut - Cotisations sociales - CSG-CRDS
+                - Prélèvement à la source
+              </li>
               <li>
-                <strong>Particularité:</strong>Non-cadre ~8% | Cadre ~10%
- cotisations | PAS variable selon revenus</li>
+                <strong>Particularité:</strong> Non-cadre ~8% | Cadre ~10%
+                cotisations | PAS variable selon revenus
+              </li>
               <li>
-                <strong>Outil:</strong>Simulation gratuite, cotisations janvier
- 2026</li>
+                <strong>Outil:</strong> Simulation gratuite, cotisations janvier
+                2026
+              </li>
             </ul>
           </section>
 
           <div class="prose prose-lg text-gray-600 space-y-3">
-            <p>calculez votre<strong>salaire net 2026</strong>en quelques
- secondes ! Entrez votre brut mensuel, votre statut (cadre ou
- non-cadre) et votre taux PAS. Notre calculateur applique
- automatiquement les<strong>cotisations salariales officielles</strong>pour afficher
- votre net avant et après impôt.</p>
-            <p>Que vous soyez<strong>salarié du privé</strong>,<strong>cadre</strong>ou<strong>non-cadre</strong>, vous obtenez
- une estimation précise incluant les cotisations d'assurance
- maladie, allocations familiales, retraite complémentaire et
- prélèvement à la source (PAS).</p>
+            <p>
+              calculez votre <strong>salaire net 2026</strong> en quelques
+              secondes ! Entrez votre brut mensuel, votre statut (cadre ou
+              non-cadre) et votre taux PAS. Notre calculateur applique
+              automatiquement les
+              <strong>cotisations salariales officielles</strong> pour afficher
+              votre net avant et après impôt.
+            </p>
+            <p>
+              Que vous soyez <strong>salarié du privé</strong>,
+              <strong>cadre</strong> ou <strong>non-cadre</strong>, vous obtenez
+              une estimation précise incluant les cotisations d'assurance
+              maladie, allocations familiales, retraite complémentaire et
+              prélèvement à la source (PAS).
+            </p>
             <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
-              <p class="m-0 text-sm">Source officielle :<a
+              <p class="m-0 text-sm">
+                Source officielle :
+                <a
                   class="text-blue-700 underline"
                   href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-particuliers.html/portail/"
                   rel="nofollow noopener"
                   target="_blank"
-                >URSSAF — Taux et montants des cotisations 2026</a>
+                >
+                  URSSAF — Taux et montants des cotisations 2026
+                </a>
               </p>
             </div>
           </div>
@@ -384,65 +428,89 @@
 
       <!-- FAQ Schema.org -->
       <section id="aide" class="max-w-4xl mx-auto mt-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">❓ FAQ - Salaire Brut/Net 2026</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+          ❓ FAQ - Salaire Brut/Net 2026
+        </h2>
 
         <div class="space-y-6">
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">💡 Comment calculer mon salaire net ?</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              💡 Comment calculer mon salaire net ?
+            </h3>
             <div>
-              <p class="text-gray-600">Entrez votre<strong>salaire brut mensuel</strong>, sélectionnez
- votre<strong>statut</strong>(cadre ou non-cadre), et indiquez
- votre<strong>taux PAS</strong>si connu. Notre calculateur
- soustrait automatiquement les cotisations salariales officielles
- 2026.</p>
+              <p class="text-gray-600">
+                Entrez votre <strong>salaire brut mensuel</strong>, sélectionnez
+                votre <strong>statut</strong> (cadre ou non-cadre), et indiquez
+                votre <strong>taux PAS</strong> si connu. Notre calculateur
+                soustrait automatiquement les cotisations salariales officielles
+                2026.
+              </p>
             </div>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">🤔 Quelle est la différence brut/net ?</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              🤔 Quelle est la différence brut/net ?
+            </h3>
             <div>
-              <p class="text-gray-600">Le<strong>brut</strong>est votre salaire avant toute retenue.
- Le<strong>net</strong>est après cotisations salariales (~8% du
- brut pour non-cadre). Le<strong>net après impôt</strong>tient
- compte du PAS (prélèvement à la source).</p>
+              <p class="text-gray-600">
+                Le <strong>brut</strong> est votre salaire avant toute retenue.
+                Le <strong>net</strong> est après cotisations salariales (~8% du
+                brut pour non-cadre). Le <strong>net après impôt</strong> tient
+                compte du PAS (prélèvement à la source).
+              </p>
             </div>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">📊 Cadre vs Non-cadre : quelle différence ?</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              📊 Cadre vs Non-cadre : quelle différence ?
+            </h3>
             <div>
-              <p class="text-gray-600">Les<strong>cadres</strong>cotisent davantage pour la retraite
- supplémentaire (AGIRC-ARRCO). Pour un même brut, un cadre aura
- un net légèrement inférieur. Notre calculateur applique les taux
- officiels 2026.</p>
+              <p class="text-gray-600">
+                Les <strong>cadres</strong> cotisent davantage pour la retraite
+                supplémentaire (AGIRC-ARRCO). Pour un même brut, un cadre aura
+                un net légèrement inférieur. Notre calculateur applique les taux
+                officiels 2026.
+              </p>
             </div>
           </div>
 
           <div
             class="bg-white rounded-lg p-6 shadow-sm border-2 border-blue-200"
           >
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">🎯 Comment utiliser la comparaison multi-scénarios ?</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              🎯 Comment utiliser la comparaison multi-scénarios ?
+            </h3>
             <div>
               <div class="text-gray-700">
                 <ol class="text-sm space-y-2 list-decimal list-inside">
-                  <li>Effectuez un<strong>premier calcul</strong></li>
-                  <li>Cliquez sur<strong>"➕ Ajouter à la comparaison"</strong>
+                  <li>Effectuez un <strong>premier calcul</strong></li>
+                  <li>
+                    Cliquez sur <strong>"➕ Ajouter à la comparaison"</strong>
                   </li>
                   <li>Modifiez un paramètre (brut, statut, PAS)</li>
-                  <li>Confirmez pour<strong>recalculer et ajouter</strong></li>
-                  <li>Voyez vos<strong>graphiques colorés</strong>avec tous les
- scénarios</li>
-                  <li>Exportez en<strong>PNG ou PDF</strong>pour partager</li>
+                  <li>Confirmez pour <strong>recalculer et ajouter</strong></li>
+                  <li>
+                    Voyez vos <strong>graphiques colorés</strong> avec tous les
+                    scénarios
+                  </li>
+                  <li>Exportez en <strong>PNG ou PDF</strong> pour partager</li>
                 </ol>
               </div>
             </div>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">🔒 Mes données sont-elles sécurisées ?</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              🔒 Mes données sont-elles sécurisées ?
+            </h3>
             <div>
-              <p class="text-gray-600">Oui ! Tous les calculs s'effectuent<strong>directement dans votre navigateur</strong>. Aucune
- donnée personnelle n'est envoyée sur nos serveurs ni conservée.</p>
+              <p class="text-gray-600">
+                Oui ! Tous les calculs s'effectuent
+                <strong>directement dans votre navigateur</strong>. Aucune
+                donnée personnelle n'est envoyée sur nos serveurs ni conservée.
+              </p>
             </div>
           </div>
         </div>
@@ -452,7 +520,9 @@
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Outils complémentaires</h3>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">
+          🔗 Outils complémentaires
+        </h3>
         <div class="flex flex-wrap gap-3">
           <a
             href="/pages/impot.html"
@@ -490,17 +560,23 @@
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div class="mt-12 bg-gray-100 rounded-lg p-6">
-        <h3 class="font-bold text-gray-900 mb-3">📚 Sources et références officielles</h3>
+        <h3 class="font-bold text-gray-900 mb-3">
+          📚 Sources et références officielles
+        </h3>
         <ul class="text-sm text-gray-700 space-y-2">
-          <li>• Cotisations salariales 2026 :<a
+          <li>
+            • Cotisations salariales 2026 :
+            <a
               href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-particuliers.html/portail/"
               target="_blank"
               rel="noopener"
               class="text-blue-600 hover:underline"
-              >urssaf.fr/accueil/outils-documentation/taux-barèmes/taux-cotisations-particuliers.html</a
+              >urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-particuliers.html</a
             >
           </li>
-          <li>• Prélèvement à la source (PAS) :<a
+          <li>
+            • Prélèvement à la source (PAS) :
+            <a
               href="https://www.impots.gouv.fr/particulier/prelevement-la-source"
               target="_blank"
               rel="noopener"
@@ -508,7 +584,9 @@
               >impots.gouv.fr</a
             >
           </li>
-          <li>• Barèmes salaire et cotisations :<a
+          <li>
+            • Barèmes salaire et cotisations :
+            <a
               href="https://www.service-public.fr/particuliers"
               target="_blank"
               rel="noopener"
@@ -562,16 +640,20 @@
             </div>
           </a>
         </div>
-        <p class="text-sm text-gray-600 mt-4">💡<strong>Astuce :</strong>Votre<strong>salaire net imposable</strong>(visible sur votre fiche de paie) sert de base pour calculer votre impôt sur le revenu.</p>
+        <p class="text-sm text-gray-600 mt-4">
+          💡 <strong>Astuce :</strong> Votre <strong>salaire net imposable</strong> (visible sur votre fiche de paie) sert de base pour calculer votre impôt sur le revenu.
+        </p>
       </div>
     </section>
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center space-y-4">
-          <p class="text-gray-300">© 2026 Les Calculateurs - Salaire brut/net selon barèmes en vigueur</p>
+          <p class="text-gray-300">
+            © 2026 Les Calculateurs - Salaire brut/net selon barèmes en vigueur
+          </p>
           <div class="flex gap-4 text-sm flex-wrap justify-center">
-            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📚 Méthodologielogie</a>
+            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📚 Méthodologie</a>
             <span class="text-gray-500">|</span>
             <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">🏛️ Sources</a>
             <span class="text-gray-500">|</span>
