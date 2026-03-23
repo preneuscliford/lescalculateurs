@@ -29,7 +29,7 @@ function collectNestedAplInputs() {
     if (pilotSlugs.has(entry.name)) continue;
     const indexPath = path.join(aplDir, entry.name, "index.html");
     if (!fs.existsSync(indexPath)) continue;
-    inputs[`apl-${entry.name}`] = indexPath;
+    inputs[`pages/apl/${entry.name}`] = indexPath;
   }
 
   return inputs;
@@ -45,7 +45,7 @@ function collectAplPilotInputs() {
     const indexPath = resolve(__dirname, "src/pages/apl", slug, "index.html");
     if (!fs.existsSync(indexPath)) continue;
 
-    inputs[`apl-pilot-${slug}`] = indexPath;
+    inputs[`pages/apl/${slug}`] = indexPath;
   }
 
   return inputs;
@@ -71,6 +71,10 @@ function collectStaticPageInputs() {
     "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
       __dirname,
       "src/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
+    ),
+    "pages/aides/cumul-aides-rsa-apl-prime-activite/index": resolve(
+      __dirname,
+      "src/pages/aides/cumul-aides-rsa-apl-prime-activite.html",
     ),
     apl: resolve(__dirname, "src/pages/apl.html"),
     "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
@@ -112,6 +116,10 @@ function collectStaticPageInputs() {
       __dirname,
       "src/pages/comment-calculer-plus-value.html",
     ),
+    "pages/impot/impot-couple-ou-separe/index": resolve(
+      __dirname,
+      "src/pages/impot/impot-couple-ou-separe.html",
+    ),
     rsa: resolve(__dirname, "src/pages/rsa.html"),
     "rsa-vs-smic": resolve(__dirname, "src/pages/rsa-vs-smic.html"),
     "prime-activite": resolve(__dirname, "src/pages/prime-activite.html"),
@@ -119,6 +127,14 @@ function collectStaticPageInputs() {
     "apl-etudiant": resolve(__dirname, "src/pages/apl-etudiant.html"),
     are: resolve(__dirname, "src/pages/are.html"),
     asf: resolve(__dirname, "src/pages/asf.html"),
+    "pages/notaire/frais-notaire-ancien-2026/index": resolve(
+      __dirname,
+      "src/pages/notaire/frais-notaire-ancien-2026.html",
+    ),
+    "pages/notaire/frais-notaire-neuf-2026/index": resolve(
+      __dirname,
+      "src/pages/notaire/frais-notaire-neuf-2026.html",
+    ),
     "frais-notaire-75": resolve(__dirname, "src/pages/blog/departements/frais-notaire-75.html"),
     "frais-notaire-13": resolve(__dirname, "src/pages/blog/departements/frais-notaire-13.html"),
     "frais-notaire-69": resolve(__dirname, "src/pages/blog/departements/frais-notaire-69.html"),
@@ -188,7 +204,7 @@ function collectRsaPilotInputs() {
     const indexPath = resolve(__dirname, "src/pages/rsa", slug, "index.html");
     if (!fs.existsSync(indexPath)) continue;
 
-    inputs[`rsa-pilot-${slug}`] = indexPath;
+    inputs[`pages/rsa/${slug}`] = indexPath;
   }
 
   return inputs;
@@ -205,12 +221,12 @@ function collectArePilotInputs() {
     const htmlPath = resolve(__dirname, "src/pages/are", `${slug}.html`);
 
     if (fs.existsSync(indexPath)) {
-      inputs[`are-pilot-${slug}`] = indexPath;
+      inputs[`pages/are/${slug}`] = indexPath;
       continue;
     }
 
     if (fs.existsSync(htmlPath)) {
-      inputs[`are-pilot-${slug}`] = htmlPath;
+      inputs[`pages/are/${slug}`] = htmlPath;
     }
   }
 
@@ -228,12 +244,12 @@ function collectAsfPilotInputs() {
     const htmlPath = resolve(__dirname, "src/pages/asf", `${slug}.html`);
 
     if (fs.existsSync(indexPath)) {
-      inputs[`asf-pilot-${slug}`] = indexPath;
+      inputs[`pages/asf/${slug}`] = indexPath;
       continue;
     }
 
     if (fs.existsSync(htmlPath)) {
-      inputs[`asf-pilot-${slug}`] = htmlPath;
+      inputs[`pages/asf/${slug}`] = htmlPath;
     }
   }
 
@@ -251,12 +267,12 @@ function collectPrimePilotInputs() {
     const htmlPath = resolve(__dirname, "src/pages/prime-activite", `${slug}.html`);
 
     if (fs.existsSync(indexPath)) {
-      inputs[`prime-pilot-${slug}`] = indexPath;
+      inputs[`pages/prime-activite/${slug}`] = indexPath;
       continue;
     }
 
     if (fs.existsSync(htmlPath)) {
-      inputs[`prime-pilot-${slug}`] = htmlPath;
+      inputs[`pages/prime-activite/${slug}`] = htmlPath;
     }
   }
 
@@ -274,12 +290,12 @@ function collectSimulateursPilotInputs() {
     const htmlPath = resolve(__dirname, "src/pages/simulateurs", `${slug}.html`);
 
     if (fs.existsSync(indexPath)) {
-      inputs[`simulateurs-pilot-${slug}`] = indexPath;
+      inputs[`pages/simulateurs/${slug}`] = indexPath;
       continue;
     }
 
     if (fs.existsSync(htmlPath)) {
-      inputs[`simulateurs-pilot-${slug}`] = htmlPath;
+      inputs[`pages/simulateurs/${slug}`] = htmlPath;
     }
   }
 
