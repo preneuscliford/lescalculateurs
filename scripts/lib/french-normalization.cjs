@@ -497,7 +497,8 @@ function repairMojibakeText(input) {
   return output;
 }
 
-function normalizeFrenchText(input) {
+function normalizeFrenchText(input, options = {}) {
+  const preserveOuterWhitespace = options.preserveOuterWhitespace === true;
   let output = repairMojibakeText(input);
 
   for (const [pattern, replacement] of WHOLE_TEXT_REPLACEMENTS) {
@@ -530,7 +531,18 @@ function normalizeFrenchText(input) {
   output = output.replace(/ \n/g, "\n");
   output = output.replace(/\n{3,}/g, "\n\n");
 
-  return output.trim() === "" ? input : output.trim();
+  const normalizedCore = output.trim();
+  if (normalizedCore === "") {
+    return input;
+  }
+
+  if (!preserveOuterWhitespace) {
+    return normalizedCore;
+  }
+
+  const leadingWhitespace = String(input).match(/^\s*/u)?.[0] || "";
+  const trailingWhitespace = String(input).match(/\s*$/u)?.[0] || "";
+  return `${leadingWhitespace}${normalizedCore}${trailingWhitespace}`;
 }
 
 module.exports = {
