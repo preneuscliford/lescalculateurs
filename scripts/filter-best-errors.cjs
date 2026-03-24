@@ -27,12 +27,11 @@ const log = {
 const VALUABLE_RULES = new Set([
   // Accents
   'A_ACCENT',
+  'A_A_ACCENT2',
   'APOS_M',
-  
-  // Accord
-  'ACCORD_SUJET_VERBE',
-  'AGREEMENT_POSTPONED_ADJ',
-  'PLACE_ADJ',
+  'MOIS',
+  'DEUX_POINTS_ESPACE',
+  'PRONOMS_PERSONNELS_MINUSCULE',
   
   // Grammaire
   'grammatecte_typo_ponctuation_superflue4',

@@ -105,12 +105,9 @@ function isValidError(error) {
     "A_ACCENT",
     "A_A_ACCENT2",
     "APOS_M",
-    "AGREEMENT_POSTPONED_ADJ",
     "MOIS",
     "DEUX_POINTS_ESPACE",
-    "PLACE_ADJ",
     "PRONOMS_PERSONNELS_MINUSCULE",
-    "ACCORD_SUJET_VERBE",
     "ACCORDER_VERBE_IMPERS",
   ];
   

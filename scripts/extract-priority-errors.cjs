@@ -32,8 +32,12 @@ const HIGH_PRIORITY_PAGES = new Set([
 
 // Règles sûres
 const SAFE_RULES = new Set([
-  'A_ACCENT', 'APOS_M', 'ACCORD_SUJET_VERBE', 
-  'AGREEMENT_POSTPONED_ADJ', 'PLACE_ADJ'
+  'A_ACCENT',
+  'A_A_ACCENT2',
+  'APOS_M',
+  'MOIS',
+  'DEUX_POINTS_ESPACE',
+  'PRONOMS_PERSONNELS_MINUSCULE'
 ]);
 
 function filterPriority(errors) {

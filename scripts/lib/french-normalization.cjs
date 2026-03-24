@@ -1,3 +1,5 @@
+const { normalizeFrenchCaseStyle } = require("./french-case-style.cjs");
+
 const COMMON_REPLACEMENTS = [
   ["A loyer", "\u00c0 loyer"],
   ["A Paris", "\u00c0 Paris"],
@@ -38,8 +40,6 @@ const COMMON_REPLACEMENTS = [
   ["partagee", "partag\u00e9e"],
   ["alternee", "altern\u00e9e"],
   ["etudiez", "\u00e9tudiez"],
-  ["envisage", "envisag\u00e9"],
-  ["envisagee", "envisag\u00e9e"],
   ["residence", "r\u00e9sidence"],
   ["excedentaire", "exc\u00e9dentaire"],
   ["disparait", "dispara\u00eet"],
@@ -65,8 +65,6 @@ const COMMON_REPLACEMENTS = [
   ["verifications", "v\u00e9rifications"],
   ["supplementaires", "suppl\u00e9mentaires"],
   ["necessaires", "n\u00e9cessaires"],
-  ["marche", "march\u00e9"],
-  ["marches", "march\u00e9s"],
   ["depend", "d\u00e9pend"],
   ["connectees", "connect\u00e9es"],
   ["residentielles", "r\u00e9sidentielles"],
@@ -87,7 +85,6 @@ const COMMON_REPLACEMENTS = [
   ["marquee", "marqu\u00e9e"],
   ["demandees", "demand\u00e9es"],
   ["liees", "li\u00e9es"],
-  ["poles", "p\u00f4les"],
   ["copropriete", "copropri\u00e9t\u00e9"],
   ["melangent", "m\u00e9langent"],
   ["periurbain", "p\u00e9riurbain"],
@@ -101,7 +98,136 @@ const COMMON_REPLACEMENTS = [
   ["couts", "co\u00fbts"],
   ["estimee", "estim\u00e9e"],
   ["estimees", "estim\u00e9es"],
+  ["fr\u00e9elance", "freelance"],
 ];
+
+const WHOLE_TEXT_REPLACEMENTS = [
+  [/\bM[àa]j\b/g, "Mise à jour"],
+  [/\bm[àa]j\b/g, "mise à jour"],
+  [/àce/g, "à ce"],
+  [/fréelance/gi, "freelance"],
+  [/\bd'ou\b/gi, "d'où"],
+  [/APL étudiant a Paris/g, "APL étudiant à Paris"],
+  [/pas a lui seul/gi, "pas à lui seul"],
+  [/correspond en général a votre/gi, "correspond en général à votre"],
+  [/répondant a une question/gi, "répondant à une question"],
+  [/intégrer a la vérification finale/gi, "intégrer à la vérification finale"],
+  [/identiques a ceux/gi, "identiques à ceux"],
+  [/compare a d'autres/gi, "comparé à d'autres"],
+  [/ville a une maison/gi, "ville à une maison"],
+  [/liées a chaque achat/gi, "liées à chaque achat"],
+  [/connectées a l'axe/gi, "connectées à l'axe"],
+  [/reliés a Paris/gi, "reliés à Paris"],
+  [/zones a règles locales spécifiques/gi, "zones à règles locales spécifiques"],
+  [/propres a chaque dossier/gi, "propres à chaque dossier"],
+  [/concernent a la fois/gi, "concernent à la fois"],
+  [/applique a l'acte/gi, "appliqué à l'acte"],
+  [/communes a dominante pavillonnaire/gi, "communes à dominante pavillonnaire"],
+  [/liés a la localisation et a l'état/gi, "liés à la localisation et à l'état"],
+  [/consentement a tout moment/gi, "consentement à tout moment"],
+  [/modifiées a tout moment/gi, "modifiées à tout moment"],
+  [/reste à chargé/gi, "reste à charge"],
+  [/reste fonde sur/gi, "reste fondé sur"],
+  [/est caractérise par/gi, "est caractérisé par"],
+  [/\bDerniere\b/g, "Dernière"],
+  [/\bderniere\b/g, "dernière"],
+  [/\bmise a jour\b/gi, "mise à jour"],
+  [/\becrire a\b/gi, "écrire à"],
+  [/\brelative a\b/gi, "relative à"],
+  [/\becrire\b/gi, "écrire"],
+  [/\bSujets traites\b/g, "Sujets traités"],
+  [/\btraites\b/g, "traités"],
+  [/\bprivee\b/gi, "privée"],
+  [/\beditoriale\b/gi, "éditoriale"],
+  [/\baccelerer\b/gi, "accélérer"],
+  [/\bconcernee\b/gi, "concernée"],
+  [/\bprobleme\b/gi, "problème"],
+  [/\becran\b/gi, "écran"],
+  [/\bpersonnalise\b/gi, "personnalisé"],
+  [/\bpersonnalises\b/gi, "personnalisés"],
+  [/\ba verifier\b/gi, "à vérifier"],
+  [/\ba prevoir\b/gi, "à prévoir"],
+  [/\ba regulariser\b/gi, "à régulariser"],
+  [/\ba vérifier\b/g, "à vérifier"],
+  [/\ba prévoir\b/g, "à prévoir"],
+  [/\ba régulariser\b/g, "à régulariser"],
+  [/ la…/g, " là…"],
+];
+
+const CASE_AWARE_ACCENT_WORDS = [
+  ["estimér", "estimer"],
+  ["versément", "versement"],
+  ["vérsé", "versé"],
+  ["envisagéable", "envisageable"],
+  ["envisagéz", "envisagez"],
+  ["complèter", "compléter"],
+  ["demarché", "démarche"],
+  ["diversés", "diverses"],
+  ["fréelance", "freelance"],
+  ["poles", "pôles"],
+  ["métropôles", "métropoles"],
+  ["formalites", "formalités"],
+  ["ecarts", "écarts"],
+  ["moderee", "modérée"],
+  ["etat", "état"],
+  ["qualite", "qualité"],
+  ["apres", "après"],
+  ["caractere", "caractère"],
+  ["interieur", "intérieur"],
+  ["situes", "situés"],
+  ["metropole", "métropole"],
+  ["mobilite", "mobilité"],
+  ["capacite", "capacité"],
+  ["negociation", "négociation"],
+  ["acces", "accès"],
+  ["delais", "délais"],
+  ["frequemment", "fréquemment"],
+  ["regionale", "régionale"],
+  ["limitee", "limitée"],
+  ["modere", "modéré"],
+  ["traitees", "traitées"],
+  ["legale", "légale"],
+  ["legales", "légales"],
+  ["confidentialite", "confidentialité"],
+  ["donnees", "données"],
+  ["acceder", "accéder"],
+  ["saone", "saône"],
+  ["ardeche", "ardèche"],
+  ["ariege", "ariège"],
+  ["orleans", "orléans"],
+  ["pyrenees-atlantiques", "pyrénées-atlantiques"],
+  ["haute-saone", "haute-saône"],
+  ["deux-sevres", "deux-sèvres"],
+  ["metropôles", "métropoles"],
+];
+
+function escapeRegex(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function preserveLeadingCase(source, replacement) {
+  if (!source) {
+    return replacement;
+  }
+
+  const first = source.charAt(0);
+  if (first === first.toUpperCase() && first !== first.toLowerCase()) {
+    return replacement.charAt(0).toUpperCase() + replacement.slice(1);
+  }
+
+  return replacement;
+}
+
+function applyCaseAwareAccentWordReplacements(input) {
+  let output = input;
+
+  for (const [plainWord, accentedWord] of CASE_AWARE_ACCENT_WORDS) {
+    const pattern = new RegExp(`(^|[^\\p{L}\\p{N}])(${escapeRegex(plainWord)})(?=$|[^\\p{L}\\p{N}])`, "giu");
+    output = output.replace(pattern, (match, prefix, word) => `${prefix}${preserveLeadingCase(word, accentedWord)}`);
+  }
+
+  return output;
+}
 
 const APOSTROPHE_PATTERNS = [
   [/\bd apres\b/gi, "d'apr\u00e8s"],
@@ -374,6 +500,13 @@ function repairMojibakeText(input) {
 function normalizeFrenchText(input) {
   let output = repairMojibakeText(input);
 
+  for (const [pattern, replacement] of WHOLE_TEXT_REPLACEMENTS) {
+    output = output.replace(pattern, replacement);
+  }
+
+  output = applyCaseAwareAccentWordReplacements(output);
+  output = normalizeFrenchCaseStyle(output);
+
   for (const [pattern, replacement] of PLACEHOLDER_REPLACEMENTS) {
     output = output.replace(pattern, replacement);
   }
@@ -393,7 +526,6 @@ function normalizeFrenchText(input) {
   output = output.replace(/[ \t]+([,.)\]])/g, "$1");
   output = output.replace(/([(\[])[ \t]+/g, "$1");
   output = output.replace(/([,;:!?])(?![\s<\n\r])/g, "$1 ");
-  output = output.replace(/ à\s*$/g, " ?");
   output = output.replace(/[ \t]{2,}/g, " ");
   output = output.replace(/ \n/g, "\n");
   output = output.replace(/\n{3,}/g, "\n\n");

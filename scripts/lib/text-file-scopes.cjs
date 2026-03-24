@@ -97,6 +97,7 @@ const SCOPE_CONFIG = {
     "src/pages/prime-activite.html",
     "src/pages/asf.html",
     "src/pages/notaire.html",
+    "src/pages/contact.html",
     "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
     "src/pages/blog/frais-notaire-departements.html",
     "src/pages/blog/departements/frais-notaire-56.html",
