@@ -148,4 +148,104 @@
     "messageIncludes": "appara",
     "matchedTextIn": ["général", "générale"]
   }
+,
+  {
+    "id": "lt-are-agreement-false-positives",
+    "reason": "Faux positifs rÃ©currents sur les intitulÃ©s et formulations autour de l'ARE.",
+    "ruleIdIn": ["AGREEMENT_POSTPONED_ADJ", "ETRE_VPPA_OU_ADJ"],
+    "matchedTextIn": ["estimÃ©e", "journaliÃ¨re", "mensuelle", "partielle", "conservÃ©e", "incluse", "modÃ©rÃ©e", "rÃ©duite"],
+    "pathIncludes": ["src/pages/are"]
+  },
+  {
+    "id": "lt-are-pronoun-false-positive",
+    "reason": "LanguageTool accorde parfois l'acronyme ARE au masculin Ã  tort dans les formulations interrogatives.",
+    "ruleIdEquals": "grammalecte_gv2__conj_sujet_verbe_interrogatif_pronom__b3_a1_1",
+    "matchedTextEquals": "est-elle",
+    "replacementEquals": "est-il",
+    "pathIncludes": ["src/pages/are"]
+  },
+  {
+    "id": "lt-aide-revenus-agreement-false-positives",
+    "reason": "Titres et listes d'aides avec revenus : faux positifs d'accord hors contexte.",
+    "ruleIdEquals": "AGREEMENT_POSTPONED_ADJ",
+    "matchedTextEquals": "revenus",
+    "replacementIn": ["revenu", "revenue", "revenues"],
+    "pathIncludes": ["src/pages/aide"]
+  },
+  {
+    "id": "lt-aide-revenus-title-collage",
+    "reason": "Collage de titres ou de listes dans l'extraction linÃ©aire des pages d'aides.",
+    "ruleIdIn": ["J_N", "J_N2"],
+    "matchedTextIn": ["revenus Ã¢ge", "revenus dÃ©claration"],
+    "pathIncludes": ["src/pages/aide"]
+  },
+  {
+    "id": "lt-ou-ambiguous",
+    "reason": "La suggestion Â« oÃ¹ Â» reste ambiguÃ« hors contexte fort.",
+    "ruleIdEquals": "OU",
+    "matchedTextEquals": "ou"
+  },
+  {
+    "id": "lt-mois-moi-false-positive",
+    "reason": "Comparaison mois / moi erronÃ©e dans les formulations calendaires ou de durÃ©e.",
+    "messageIncludes": "moins probable que â€˜moiâ€™",
+    "matchedTextEquals": "mois"
+  },
+  {
+    "id": "lt-apl-dom-tom-table-collage",
+    "reason": "Collage de cellules dans le tableau DOM-TOM, faux positifs d'accord.",
+    "ruleIdIn": ["J_N", "J_N2"],
+    "matchedTextIn": ["Ã‰quilibrÃ© Martinique", "tendu RÃ©union", "diffÃ©rents outre-mer"],
+    "pathIncludes": ["src/pages/apl-dom-tom.html"]
+  },
+  {
+    "id": "lt-apl-scenarios-collage",
+    "reason": "Collage de blocs UI autour du libellÃ© des scÃ©narios proches.",
+    "ruleIdEquals": "J_N2",
+    "matchedTextEquals": "complet scÃ©narios",
+    "pathIncludes": ["src/pages/apl/apl-celibataire-smic"]
+  },
+  {
+    "id": "lt-a-propos-numbered-list",
+    "reason": "Extraction linÃ©aire d'une liste numÃ©rotÃ©e dans la page Ã  propos.",
+    "ruleIdEquals": "AGREEMENT_NUMERAL_SINGULAR",
+    "matchedTextEquals": "CompÃ©tences",
+    "pathIncludes": ["src/pages/a-propos.html"]
+  },
+  {
+    "id": "lt-aah-footer-indicatifs",
+    "reason": "Le footer Â« calculs indicatifs Â» est correct ; faux positif de collage de fin de page.",
+    "ruleIdEquals": "ETRE_VPPA_OU_ADJ",
+    "matchedTextEquals": "indicatifs",
+    "pathIncludes": ["src/pages/aah"]
+  },
+  {
+    "id": "lt-apl-charge-exclue",
+    "reason": "L'expression Â« part de charges exclue Â» est correcte dans ce contexte.",
+    "ruleIdEquals": "V_SUB_V_IND",
+    "matchedTextEquals": "exclue",
+    "pathIncludes": ["src/pages/apl/apl-celibataire-marseille"]
+  },
+  {
+    "id": "lt-apl-smic-couple-negation-collage",
+    "reason": "Faux positif issu du collage Â« Estimation indicative. vÃ©rification finale... Â».",
+    "ruleIdEquals": "P_V_PAS",
+    "matchedTextEquals": "est",
+    "replacementEquals": "n'est",
+    "pathIncludes": ["src/pages/apl/apl-smic-couple-sans-enfant"]
+  },
+  {
+    "id": "lt-apl-charge-groups",
+    "reason": "Groupes nominaux corrects mal interprÃ©tÃ©s hors contexte.",
+    "ruleIdEquals": "D_N_E_OU_E",
+    "matchedTextIn": ["charge global", "charge encore Ã©levÃ©"],
+    "pathIncludes": ["src/pages/apl"]
+  },
+  {
+    "id": "lt-aide-vigueur-fragment",
+    "reason": "Le point final est dÃ©jÃ  prÃ©sent dans le HTML ; faux positif d'extraction.",
+    "ruleIdEquals": "POINT",
+    "matchedTextEquals": "vigueur",
+    "pathIncludes": ["src/pages/aide/index.html"]
+  }
 ]

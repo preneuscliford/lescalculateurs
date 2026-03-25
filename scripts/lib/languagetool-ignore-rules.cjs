@@ -56,6 +56,7 @@ function ruleMatches(rule, context) {
     matchedText,
     primaryReplacement,
     issueType,
+    ruleId,
   } = context;
 
   if (rule.pathIncludes && !includesAnyString(filePath, rule.pathIncludes)) {
@@ -67,6 +68,14 @@ function ruleMatches(rule, context) {
   }
 
   if (rule.messageIncludes && !message.toLowerCase().includes(normalizeValue(rule.messageIncludes).toLowerCase())) {
+    return false;
+  }
+
+  if (rule.ruleIdEquals && normalizeValue(rule.ruleIdEquals) !== ruleId) {
+    return false;
+  }
+
+  if (rule.ruleIdIn && !matchesAnyString(ruleId, rule.ruleIdIn)) {
     return false;
   }
 
@@ -109,6 +118,7 @@ function findIgnoreRule(filePath, text, match) {
     matchedText: getMatchedText(text, match),
     primaryReplacement: getPrimaryReplacement(match),
     issueType: normalizeValue(match?.rule?.issueType || ""),
+    ruleId: normalizeValue(match?.rule?.id || ""),
   };
 
   return rules.find((rule) => ruleMatches(rule, context)) || null;

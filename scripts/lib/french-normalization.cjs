@@ -102,6 +102,18 @@ const COMMON_REPLACEMENTS = [
 ];
 
 const WHOLE_TEXT_REPLACEMENTS = [
+  [/\?\./g, "?"],
+  [/\? partir/gi, "\u00c0 partir"],
+  [/dispara\? t-il/gi, "dispara\u00eet-il"],
+  [/plut\? t que/gi, "plut\u00f4t que"],
+  [/toute l ann\u00e9e/gi, "toute l'ann\u00e9e"],
+  [/toute l ann?e/gi, "toute l'ann\u00e9e"],
+  [/parallÎle/gi, "parall\u00e8le"],
+  [/d'activitÃ©ou/gi, "d'activit\u00e9 ou"],
+  [/aides Ã vÃ©rifier/gi, "aides \u00e0 v\u00e9rifier"],
+  [/\(\+ \u00e9lev\u00e9 que autres DOM\)/g, "(plus \u00e9lev\u00e9 que les autres DOM)"],
+  [/\(moins cher que autres DOM\)/g, "(moins cher que les autres DOM)"],
+  [/Le saviez-vous\?\s+/g, "Le saviez-vous ? "],
   [/\bM[àa]j\b/g, "Mise à jour"],
   [/\bm[àa]j\b/g, "mise à jour"],
   [/àce/g, "à ce"],
@@ -155,6 +167,8 @@ const WHOLE_TEXT_REPLACEMENTS = [
 ];
 
 const CASE_AWARE_ACCENT_WORDS = [
+  ["d\u00e9march\u00e9", "d\u00e9marche"],
+  ["d\u00e9march\u00e9s", "d\u00e9marches"],
   ["estimér", "estimer"],
   ["versément", "versement"],
   ["vérsé", "versé"],
@@ -227,6 +241,10 @@ function applyCaseAwareAccentWordReplacements(input) {
   }
 
   return output;
+}
+
+function normalizeLeadingImperatives(input) {
+  return String(input).replace(/(^|[.!?]\s+)(v\u00e9rifier)\b/gu, (match, prefix) => `${prefix}V\u00e9rifiez`);
 }
 
 const APOSTROPHE_PATTERNS = [
@@ -321,13 +339,13 @@ const PLACEHOLDER_REPLACEMENTS = [
   [/activit\?/gi, "activit\u00e9"],
   [/ch\?mage/gi, "ch\u00f4mage"],
   [/co\?t/gi, "co\u00fbt"],
-  [/\? Paris/g, "\u00e0 Paris"],
-  [/\? Lyon/g, "\u00e0 Lyon"],
-  [/\? Marseille/g, "\u00e0 Marseille"],
-  [/\? Toulouse/g, "\u00e0 Toulouse"],
-  [/\? Lille/g, "\u00e0 Lille"],
-  [/\? Nantes/g, "\u00e0 Nantes"],
-  [/\? loyer comparable/gi, "\u00c0 loyer comparable"],
+  [/(^|[\s([])\? Paris\b/g, "$1\u00e0 Paris"],
+  [/(^|[\s([])\? Lyon\b/g, "$1\u00e0 Lyon"],
+  [/(^|[\s([])\? Marseille\b/g, "$1\u00e0 Marseille"],
+  [/(^|[\s([])\? Toulouse\b/g, "$1\u00e0 Toulouse"],
+  [/(^|[\s([])\? Lille\b/g, "$1\u00e0 Lille"],
+  [/(^|[\s([])\? Nantes\b/g, "$1\u00e0 Nantes"],
+  [/(^|[\s([])\? loyer comparable/gi, "$1\u00c0 loyer comparable"],
   [/\bheberge\b/gi, "h\u00e9berg\u00e9"],
   [/\bhebergee\b/gi, "h\u00e9berg\u00e9e"],
   [/\bheberges\b/gi, "h\u00e9berg\u00e9s"],
@@ -506,6 +524,7 @@ function normalizeFrenchText(input, options = {}) {
   }
 
   output = applyCaseAwareAccentWordReplacements(output);
+  output = normalizeLeadingImperatives(output);
   output = normalizeFrenchCaseStyle(output);
 
   for (const [pattern, replacement] of PLACEHOLDER_REPLACEMENTS) {

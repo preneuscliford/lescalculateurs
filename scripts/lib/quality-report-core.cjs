@@ -4,6 +4,7 @@ const { collectFiles } = require("./text-file-scopes.cjs");
 const { inspectUtf8Buffer } = require("./utf8-quality.cjs");
 const { decodeHtmlEntities, extractSeoTextFromHtml, extractVisibleTextFromHtml } = require("./html-text-utils.cjs");
 const { normalizeFrenchText } = require("./french-normalization.cjs");
+const { normalizeHtmlByOffsets } = require("../normalize-french-text.cjs");
 
 function parseTitle(content) {
   const match = content.match(/<title>([\s\S]*?)<\/title>/i);
@@ -35,19 +36,33 @@ function clampScore(value) {
   return Math.max(0, Math.min(100, Math.round(value)));
 }
 
+function canonicalizeExtractedText(value) {
+  return String(value || "")
+    .replace(/\s+/g, " ")
+    .replace(/([([])\s+/g, "$1")
+    .replace(/([?!])\s+\./g, "$1.")
+    .trim();
+}
+
 function buildChecks(content) {
   const lowered = content.toLowerCase();
   const visibleText = extractVisibleTextFromHtml(content);
   const seoText = extractSeoTextFromHtml(content);
   const visibleNormalized = normalizeFrenchText(visibleText);
   const seoNormalized = normalizeFrenchText(seoText);
+  const visibleHtmlNormalized = normalizeHtmlByOffsets(content, "visible");
+  const seoHtmlNormalized = normalizeHtmlByOffsets(content, "seo");
 
   return {
     title: parseTitle(content),
     visibleLength: visibleText.length,
     seoLength: seoText.length,
-    visibleNormalizationNeeded: visibleText !== visibleNormalized,
-    seoNormalizationNeeded: seoText !== seoNormalized,
+    visibleNormalizationNeeded:
+      visibleHtmlNormalized !== content &&
+      canonicalizeExtractedText(visibleText) !== canonicalizeExtractedText(visibleNormalized),
+    seoNormalizationNeeded:
+      seoHtmlNormalized !== content &&
+      canonicalizeExtractedText(seoText) !== canonicalizeExtractedText(seoNormalized),
     hasFaq:
       lowered.includes("faqpage") || lowered.includes("questions frequentes") || lowered.includes("questions fr"),
     hasBreadcrumb:
