@@ -449,4 +449,34 @@ export const rsaPilotScenarios = [
       },
     ],
   },
+  {
+    slug: "rsa-personne-seule-logement-social",
+    title: "RSA personne seule en logement social (2026)",
+    description: "Estimation indicative du RSA pour une personne seule en logement social avec faibles ressources.",
+    summary: "Cette page teste un transfert du motif logement social vers le cluster RSA sans partir sur un angle trop large.",
+    audience: "Personne seule en logement social",
+    tags: ["rsa", "personne-seule", "logement-social"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenus: 180,
+      logement: "loue",
+      activite: "inactif",
+    },
+    checklist: [
+      "Verifier si une aide logement est deja percue en plus du RSA.",
+      "Comparer avec le cas personne seule montant pour situer l'ordre de grandeur.",
+      "Tester aussi l'APL si le loyer social reste significatif.",
+    ],
+    faq: [
+      {
+        question: "Le logement social change-t-il le RSA d'une personne seule ?",
+        answer: "Le logement peut influencer l'estimation, surtout selon les aides logement deja percues et la situation declaree.",
+      },
+      {
+        question: "Faut-il verifier aussi l'APL ?",
+        answer: "Oui, car RSA et aide au logement peuvent se lire ensemble pour comprendre votre budget reel.",
+      },
+    ],
+  },
 ];

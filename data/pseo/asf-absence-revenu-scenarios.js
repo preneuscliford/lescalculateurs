@@ -98,4 +98,37 @@ export const asfAbsenceRevenuScenarios = [
       },
     ],
   },
+  {
+    slug: "asf-parent-isole-deux-enfants",
+    title: "ASF parent isole avec 2 enfants : estimation 2026",
+    description:
+      "Estimation indicative de l'ASF 2026 pour un parent isole avec deux enfants a charge et ressources modestes.",
+    summary:
+      "Cette page reprend le motif parent isole en l'etendant a un foyer avec deux enfants, pour tester un transfert propre hors APL.",
+    audience: "Parent isole avec deux enfants a charge",
+    tags: ["asf", "parent-isole", "2-enfants", "faibles-ressources"],
+    input: {
+      situation: "parentisole",
+      nombreEnfants: 2,
+      revenus: 650,
+      enfantACharge: true,
+    },
+    checklist: [
+      "Verifier que les deux enfants sont bien a charge et ages de moins de 21 ans.",
+      "Comparer avec le cas parent isole sans revenu si la situation se degrade.",
+      "Tester aussi l'APL si vous supportez un loyer important.",
+    ],
+    faq: [
+      {
+        question: "L'ASF augmente-t-elle avec deux enfants ?",
+        answer:
+          "Oui, le montant estime depend du nombre d'enfants eligibles a charge.",
+      },
+      {
+        question: "Faut-il aussi verifier RSA et APL ?",
+        answer:
+          "Oui, surtout si le foyer reste fragile et que le budget logement pese lourd.",
+      },
+    ],
+  },
 ];

@@ -34,4 +34,39 @@ export const primeAbsenceRevenuScenarios = [
       },
     ],
   },
+  {
+    slug: "prime-activite-reprise-emploi-personne-seule",
+    title: "Prime d'activite en reprise d'emploi pour une personne seule : estimation 2026",
+    description:
+      "Estimation indicative de la Prime d'activite 2026 pour une personne seule qui reprend un emploi modeste.",
+    summary:
+      "Cette page transpose le motif reprise d'emploi vers un cas tres simple de personne seule, pour tester le transfert du pattern hors APL.",
+    audience: "Personne seule en reprise d'emploi avec petit salaire",
+    tags: ["prime-activite", "reprise-emploi", "personne-seule", "petit-salaire"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenusProf: 180,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Verifier si vos revenus d'activite depassent bien le seuil minimum de la Prime d'activite.",
+      "Comparer avec une reprise d'emploi apres chomage si vous aviez une allocation residuelle.",
+      "Tester aussi l'APL si le logement reste votre premiere depense.",
+    ],
+    faq: [
+      {
+        question: "Une personne seule qui reprend un emploi peut-elle toucher la Prime d'activite ?",
+        answer:
+          "Oui, dans certains cas, surtout si les revenus d'activite restent modestes et reguliers.",
+      },
+      {
+        question: "Pourquoi comparer Prime d'activite et APL ?",
+        answer:
+          "Parce que la Prime d'activite soutient le revenu, tandis que l'APL agit sur le budget logement. Les deux peuvent etre utiles a comparer.",
+      },
+    ],
+  },
 ];

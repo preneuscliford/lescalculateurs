@@ -1768,5 +1768,566 @@ export const aplPilotScenarios = [
         "answer": "Pas exactement. Le loyer, la zone et le type de logement font varier l'ordre de grandeur."
       }
     ]
+  },
+  {
+    "slug": "apl-smic-couple-un-enfant",
+    "intent": "apl smic couple un enfant",
+    "title": "APL au SMIC pour un couple avec 1 enfant : estimation 2026",
+    "description": "Scenario APL pour un couple avec un enfant et des revenus proches du SMIC.",
+    "summary": "Cette page prolonge le motif SMIC vers un foyer familial simple, avec une intention concrete sur le maintien de l'aide.",
+    "audience": "Couple avec un enfant et revenus proches du SMIC",
+    "tags": ["couple", "smic", "1-enfant", "famille"],
+    "input": {
+      "situation": "couple",
+      "enfants": 1,
+      "revenus_mensuels": 2350,
+      "loyer_mensuel": 840,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier les revenus reels du couple sur la periode retenue.",
+      "Comparer avec le cas couple sans enfant si votre foyer change.",
+      "Tester aussi un loyer plus haut si vous cherchez un logement plus grand."
+    ],
+    "faq": [
+      {
+        "question": "Un couple au SMIC avec un enfant peut-il encore toucher l'APL ?",
+        "answer": "Oui dans certains cas, surtout si le loyer reste significatif au regard des revenus du foyer et de la zone."
+      },
+      {
+        "question": "Le premier enfant change-t-il beaucoup l'estimation APL ?",
+        "answer": "Il peut rendre l'estimation plus favorable, mais le revenu global et le loyer retenu restent decisifs."
+      }
+    ]
+  },
+  {
+    "slug": "apl-smic-parent-isole-un-enfant",
+    "intent": "apl smic parent isole un enfant",
+    "title": "APL au SMIC pour un parent isole avec 1 enfant : estimation 2026",
+    "description": "Estimation APL pour un parent isole avec un enfant et un revenu proche du SMIC.",
+    "summary": "Cette page combine deux motifs solides du cluster APL : SMIC et parent isole.",
+    "audience": "Parent isole avec un enfant et salaire proche du SMIC",
+    "tags": ["parent-isole", "smic", "1-enfant", "famille"],
+    "input": {
+      "situation": "monoparental",
+      "enfants": 1,
+      "revenus_mensuels": 1450,
+      "loyer_mensuel": 760,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si l'enfant est bien retenu a charge sur toute la periode.",
+      "Comparer avec un parent isole sans revenu si la situation evolue.",
+      "Tester aussi une variante avec logement social si votre loyer baisse."
+    ],
+    "faq": [
+      {
+        "question": "Un parent isole au SMIC peut-il toucher l'APL ?",
+        "answer": "Oui, selon le loyer, la zone et les ressources retenues. Le parent isole reste souvent un profil pertinent pour l'aide au logement."
+      },
+      {
+        "question": "Le SMIC annule-t-il forcement l'APL pour un parent isole ?",
+        "answer": "Non. Le droit depend du foyer, du loyer retenu et de l'ensemble des ressources declarees."
+      }
+    ]
+  },
+  {
+    "slug": "apl-smic-parent-isole-deux-enfants",
+    "intent": "apl smic parent isole deux enfants",
+    "title": "APL au SMIC pour un parent isole avec 2 enfants : estimation 2026",
+    "description": "Scenario APL pour un parent isole avec deux enfants et un salaire proche du SMIC.",
+    "summary": "Cette page densifie le motif parent isole en ajoutant une composition familiale plus forte.",
+    "audience": "Parent isole avec deux enfants et revenu proche du SMIC",
+    "tags": ["parent-isole", "smic", "2-enfants", "famille"],
+    "input": {
+      "situation": "monoparental",
+      "enfants": 2,
+      "revenus_mensuels": 1500,
+      "loyer_mensuel": 860,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si les deux enfants sont bien pris en compte dans le foyer.",
+      "Comparer avec le cas parent isole avec un enfant pour mesurer l'ecart.",
+      "Tester aussi une version logement social si vous changez de parc locatif."
+    ],
+    "faq": [
+      {
+        "question": "Deux enfants rendent-ils l'APL plus favorable pour un parent isole ?",
+        "answer": "La composition familiale peut ameliorer l'estimation, mais le loyer retenu et les revenus restent centraux."
+      },
+      {
+        "question": "Le revenu proche du SMIC supprime-t-il automatiquement l'aide ?",
+        "answer": "Non, pas automatiquement. L'estimation depend encore de la zone et du logement."
+      }
+    ]
+  },
+  {
+    "slug": "apl-smic-logement-social",
+    "intent": "apl smic logement social",
+    "title": "APL au SMIC en logement social : estimation 2026",
+    "description": "Estimation APL pour une personne seule au SMIC en logement social.",
+    "summary": "Cette page relie le motif SMIC a un type de logement tres concret et souvent cherche.",
+    "audience": "Personne seule au SMIC en logement social",
+    "tags": ["smic", "logement-social", "hlm", "celibataire"],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1450,
+      "loyer_mensuel": 470,
+      "region": "province",
+      "type_logement": "hlm",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si le loyer indique correspond bien au loyer hors charges.",
+      "Comparer avec un logement prive si vous hesitez entre deux options.",
+      "Tester aussi une version couple si le foyer change a court terme."
+    ],
+    "faq": [
+      {
+        "question": "Le logement social change-t-il l'estimation APL ?",
+        "answer": "Oui, indirectement, via le niveau de loyer et la situation de logement retenue dans la simulation."
+      },
+      {
+        "question": "Peut-on toucher l'APL au SMIC en HLM ?",
+        "answer": "Oui, dans de nombreux cas, surtout si le loyer reste coherent avec vos revenus et votre zone."
+      }
+    ]
+  },
+  {
+    "slug": "apl-loyer-600-smic",
+    "intent": "apl loyer 600 smic",
+    "title": "APL avec loyer de 600 EUR et salaire au SMIC : estimation 2026",
+    "description": "Scenario budgetaire pour une personne seule avec un loyer de 600 EUR et un revenu proche du SMIC.",
+    "summary": "Cette page renforce le motif chiffres + SMIC deja valide par les pages gagnantes du cluster.",
+    "audience": "Personne seule au SMIC avec loyer de 600 EUR",
+    "tags": ["smic", "loyer", "budget", "celibataire"],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1450,
+      "loyer_mensuel": 600,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer avec un loyer de 500 EUR et de 700 EUR.",
+      "Verifier si vos revenus mensuels sont stables d'un mois a l'autre.",
+      "Tester aussi une version logement social si vous avez cette option."
+    ],
+    "faq": [
+      {
+        "question": "Avec un loyer de 600 EUR et le SMIC, l'APL reste-t-elle possible ?",
+        "answer": "Oui dans certains cas, car le loyer et la zone peuvent encore laisser une estimation utile."
+      },
+      {
+        "question": "Pourquoi raisonner avec un couple revenu + loyer ?",
+        "answer": "Parce que c'est une facon simple de repondre a une question budgetaire concrete avant une simulation plus complete."
+      }
+    ]
+  },
+  {
+    "slug": "apl-loyer-700-personne-seule",
+    "intent": "apl loyer 700 personne seule",
+    "title": "APL avec loyer de 700 EUR pour une personne seule : estimation 2026",
+    "description": "Estimation APL pour une personne seule avec un loyer de 700 EUR et un revenu modere.",
+    "summary": "Cette page pousse le motif loyer vers une situation tres concrete de personne seule.",
+    "audience": "Personne seule avec loyer de 700 EUR",
+    "tags": ["loyer", "personne-seule", "budget", "celibataire"],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1300,
+      "loyer_mensuel": 700,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer avec un loyer de 600 EUR puis 800 EUR.",
+      "Verifier si votre logement depasse le plafond de loyer retenu.",
+      "Tester aussi une version couple si vous partagez bientot le logement."
+    ],
+    "faq": [
+      {
+        "question": "Une personne seule avec 700 EUR de loyer peut-elle encore toucher l'APL ?",
+        "answer": "Oui, selon le revenu retenu et la zone. Le plafond de loyer peut toutefois limiter le montant final."
+      },
+      {
+        "question": "Un loyer plus haut donne-t-il toujours plus d'APL ?",
+        "answer": "Non. Au-dela d'un certain niveau, le plafond de loyer peut freiner l'effet sur l'estimation."
+      }
+    ]
+  },
+  {
+    "slug": "apl-loyer-900-couple-un-enfant",
+    "intent": "apl loyer 900 couple un enfant",
+    "title": "APL avec loyer de 900 EUR pour un couple avec 1 enfant : estimation 2026",
+    "description": "Scenario APL pour un couple avec un enfant et un loyer de 900 EUR.",
+    "summary": "Cette page combine le motif loyer fort avec une structure familiale deja visible dans le cluster APL.",
+    "audience": "Couple avec un enfant et loyer de 900 EUR",
+    "tags": ["loyer", "couple", "1-enfant", "famille"],
+    "input": {
+      "situation": "couple",
+      "enfants": 1,
+      "revenus_mensuels": 2300,
+      "loyer_mensuel": 900,
+      "region": "idf",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si le loyer est coherent avec votre zone de logement.",
+      "Comparer avec un loyer moyen si vous hesitez entre deux biens.",
+      "Tester aussi une version avec deux enfants si la famille s'agrandit."
+    ],
+    "faq": [
+      {
+        "question": "Un loyer de 900 EUR laisse-t-il encore un droit a l'APL pour un couple avec enfant ?",
+        "answer": "Oui dans certains cas, mais le plafond de loyer applicable limite vite la part reellement retenue."
+      },
+      {
+        "question": "La zone geographique change-t-elle beaucoup le resultat ?",
+        "answer": "Oui, car les plafonds de loyer et le niveau du marche locatif ne sont pas les memes partout."
+      }
+    ]
+  },
+  {
+    "slug": "apl-chomage-couple-sans-enfant",
+    "intent": "apl chomage couple sans enfant",
+    "title": "APL au chomage pour un couple sans enfant : estimation 2026",
+    "description": "Estimation APL pour un couple sans enfant avec revenus en baisse lies au chomage.",
+    "summary": "Cette page etend le motif chomage vers le foyer couple sans enfant, encore absent du cluster.",
+    "audience": "Couple sans enfant au chomage ou avec faibles revenus de remplacement",
+    "tags": ["chomage", "couple", "sans-enfant", "apl"],
+    "input": {
+      "situation": "couple",
+      "enfants": 0,
+      "revenus_mensuels": 1400,
+      "loyer_mensuel": 760,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si les deux adultes sont bien dans une situation de revenus en baisse.",
+      "Comparer avec le cas couple avec un enfant si le foyer change.",
+      "Tester aussi une version sans revenu si la situation se degrade."
+    ],
+    "faq": [
+      {
+        "question": "Un couple au chomage peut-il encore toucher l'APL ?",
+        "answer": "Oui, selon le niveau de revenus retenus et le loyer, un droit indicatif peut subsister."
+      },
+      {
+        "question": "Deux revenus de remplacement annulent-ils toujours l'aide ?",
+        "answer": "Non. Le calcul depend du loyer retenu, de la zone et des ressources exactes du foyer."
+      }
+    ]
+  },
+  {
+    "slug": "apl-chomage-couple-un-enfant",
+    "intent": "apl chomage couple un enfant",
+    "title": "APL au chomage pour un couple avec 1 enfant : estimation 2026",
+    "description": "Scenario APL pour un couple avec un enfant et des revenus de remplacement ou de chomage.",
+    "summary": "Cette page relie le motif chomage a une structure familiale concrete et frequente.",
+    "audience": "Couple avec un enfant en situation de chomage",
+    "tags": ["chomage", "couple", "1-enfant", "famille"],
+    "input": {
+      "situation": "couple",
+      "enfants": 1,
+      "revenus_mensuels": 1500,
+      "loyer_mensuel": 820,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si toutes les ressources de remplacement sont bien prises en compte.",
+      "Comparer avec le cas parent isole si la composition familiale change.",
+      "Tester aussi un loyer plus bas pour mesurer le reste a charge."
+    ],
+    "faq": [
+      {
+        "question": "Le chomage d'un couple avec enfant peut-il laisser un droit a l'APL ?",
+        "answer": "Oui, surtout si le loyer reste significatif au regard des revenus de remplacement du foyer."
+      },
+      {
+        "question": "Le premier enfant change-t-il l'estimation ?",
+        "answer": "Il peut ameliorer l'estimation, mais le niveau de revenus et le loyer retenu restent essentiels."
+      }
+    ]
+  },
+  {
+    "slug": "apl-chomage-parent-isole-un-enfant",
+    "intent": "apl chomage parent isole un enfant",
+    "title": "APL au chomage pour un parent isole avec 1 enfant : estimation 2026",
+    "description": "Estimation APL pour un parent isole avec un enfant et revenus en baisse lies au chomage.",
+    "summary": "Cette page combine les motifs chomage, parent isole et enfant dans un angle distinct des pages deja en ligne.",
+    "audience": "Parent isole avec un enfant en situation de chomage",
+    "tags": ["chomage", "parent-isole", "1-enfant", "apl"],
+    "input": {
+      "situation": "monoparental",
+      "enfants": 1,
+      "revenus_mensuels": 1100,
+      "loyer_mensuel": 740,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si l'enfant est bien comptabilise a charge.",
+      "Comparer avec une reprise d'emploi si votre situation evolue bientot.",
+      "Tester aussi une version sans revenu si la baisse de ressources se poursuit."
+    ],
+    "faq": [
+      {
+        "question": "Un parent isole au chomage peut-il encore toucher l'APL ?",
+        "answer": "Oui, selon le loyer, la zone et les revenus retenus. La composition familiale peut rendre l'estimation plus favorable."
+      },
+      {
+        "question": "Le chomage change-t-il fortement l'estimation APL ?",
+        "answer": "Il peut modifier l'aide si les ressources retenues baissent, mais le logement reste un facteur decisif."
+      }
+    ]
+  },
+  {
+    "slug": "apl-reprise-emploi-couple-sans-enfant",
+    "intent": "apl reprise emploi couple sans enfant",
+    "title": "APL en reprise d'emploi pour un couple sans enfant : estimation 2026",
+    "description": "Scenario APL pour un couple sans enfant qui reprend une activite apres une baisse de revenus.",
+    "summary": "Cette page etend le motif reprise d'emploi vers un foyer couple, sans dupliquer les pages deja existantes.",
+    "audience": "Couple sans enfant en reprise d'emploi",
+    "tags": ["reprise-emploi", "couple", "sans-enfant", "apl"],
+    "input": {
+      "situation": "couple",
+      "enfants": 0,
+      "revenus_mensuels": 1900,
+      "loyer_mensuel": 760,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer la situation avant et apres reprise d'emploi.",
+      "Verifier si les revenus d'activite sont stabilises ou encore progressifs.",
+      "Tester aussi un cas avec un enfant si le foyer change."
+    ],
+    "faq": [
+      {
+        "question": "Une reprise d'emploi en couple fait-elle baisser l'APL rapidement ?",
+        "answer": "Elle peut reduire l'aide, mais le loyer et le niveau exact des ressources continuent de piloter l'estimation."
+      },
+      {
+        "question": "Faut-il refaire une simulation apres retour au travail ?",
+        "answer": "Oui, car la transition entre inactivite, chomage et reprise d'emploi peut changer le resultat."
+      }
+    ]
+  },
+  {
+    "slug": "apl-reprise-emploi-loyer-moyen",
+    "intent": "apl reprise emploi loyer moyen",
+    "title": "APL avec reprise d'emploi et loyer moyen : estimation 2026",
+    "description": "Estimation APL pour une personne seule qui reprend une activite avec un loyer moyen.",
+    "summary": "Cette page renforce le motif reprise d'emploi avec un angle loyer moyen plus naturel que le loyer eleve.",
+    "audience": "Personne seule en reprise d'emploi avec loyer moyen",
+    "tags": ["reprise-emploi", "loyer-moyen", "celibataire", "apl"],
+    "input": {
+      "situation": "seul",
+      "enfants": 0,
+      "revenus_mensuels": 1280,
+      "loyer_mensuel": 640,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer avec le cas loyer eleve deja en ligne.",
+      "Verifier si vos revenus de reprise sont deja stabilises.",
+      "Tester aussi une version personne seule au chomage pour mesurer l'ecart."
+    ],
+    "faq": [
+      {
+        "question": "Une reprise d'emploi avec loyer moyen laisse-t-elle encore un droit a l'APL ?",
+        "answer": "Oui dans certains cas, surtout si le loyer reste significatif par rapport au revenu retenu."
+      },
+      {
+        "question": "Pourquoi une page loyer moyen est-elle utile ?",
+        "answer": "Parce qu'elle correspond mieux a une recherche pratique que des loyers extremes et donne un repere plus courant."
+      }
+    ]
+  },
+  {
+    "slug": "apl-parent-isole-trois-enfants",
+    "intent": "apl parent isole trois enfants",
+    "title": "APL parent isole avec 3 enfants : estimation 2026",
+    "description": "Scenario APL pour un parent isole avec trois enfants et un logement familial.",
+    "summary": "Cette page consolide le sous-cluster parent isole avec un angle familial plus fort et distinct.",
+    "audience": "Parent isole avec trois enfants",
+    "tags": ["parent-isole", "3-enfants", "famille", "apl"],
+    "input": {
+      "situation": "monoparental",
+      "enfants": 3,
+      "revenus_mensuels": 1650,
+      "loyer_mensuel": 980,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier le nombre exact d'enfants a charge retenus dans le foyer.",
+      "Comparer avec le cas parent isole avec deux enfants deja present.",
+      "Tester aussi une version logement social si le reste a charge devient trop fort."
+    ],
+    "faq": [
+      {
+        "question": "Trois enfants rendent-ils l'APL plus favorable pour un parent isole ?",
+        "answer": "La composition familiale peut renforcer l'estimation, mais le revenu retenu et le loyer restent importants."
+      },
+      {
+        "question": "Faut-il un loyer eleve pour garder une aide ?",
+        "answer": "Pas forcement, mais le loyer retenu doit rester coherent avec la zone et la taille du foyer."
+      }
+    ]
+  },
+  {
+    "slug": "apl-parent-isole-logement-social",
+    "intent": "apl parent isole logement social",
+    "title": "APL parent isole en logement social : estimation 2026",
+    "description": "Estimation APL pour un parent isole en logement social avec un enfant a charge.",
+    "summary": "Cette page consolide le motif parent isole avec un angle logement social encore absent.",
+    "audience": "Parent isole en logement social",
+    "tags": ["parent-isole", "logement-social", "hlm", "apl"],
+    "input": {
+      "situation": "monoparental",
+      "enfants": 1,
+      "revenus_mensuels": 980,
+      "loyer_mensuel": 520,
+      "region": "province",
+      "type_logement": "hlm",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier si le logement social est bien renseigne comme tel dans votre simulation.",
+      "Comparer avec une location privee si vous etes en attente de mutation.",
+      "Tester aussi une variante avec deux enfants si votre foyer est plus grand."
+    ],
+    "faq": [
+      {
+        "question": "Le logement social change-t-il beaucoup l'APL d'un parent isole ?",
+        "answer": "Il peut changer le resultat via le niveau de loyer et le type de logement retenu."
+      },
+      {
+        "question": "Un parent isole en HLM peut-il toujours percevoir l'APL ?",
+        "answer": "Oui, dans de nombreux cas, surtout avec un revenu modeste et un enfant a charge."
+      }
+    ]
+  },
+  {
+    "slug": "apl-famille-un-enfant-province",
+    "intent": "apl famille un enfant province",
+    "title": "APL famille avec 1 enfant en province : estimation 2026",
+    "description": "Estimation APL pour une famille avec un enfant et un loyer courant en province.",
+    "summary": "Cette page consolide le cluster famille avec un angle plus simple que les variantes tres ciblees existantes.",
+    "audience": "Famille avec un enfant en province",
+    "tags": ["famille", "1-enfant", "province", "couple"],
+    "input": {
+      "situation": "couple",
+      "enfants": 1,
+      "revenus_mensuels": 2200,
+      "loyer_mensuel": 780,
+      "region": "province",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer avec un couple sans enfant pour mesurer l'effet du foyer.",
+      "Verifier si le loyer retenu est bien hors charges.",
+      "Tester aussi une version Paris si vous comparez deux zones."
+    ],
+    "faq": [
+      {
+        "question": "Une famille avec un enfant en province peut-elle encore toucher l'APL ?",
+        "answer": "Oui, selon le revenu du foyer, le loyer et la zone, une estimation utile reste frequente."
+      },
+      {
+        "question": "Le premier enfant suffit-il a changer nettement l'estimation ?",
+        "answer": "Il peut ameliorer l'aide, mais le niveau de revenus et le loyer retenu restent tres importants."
+      }
+    ]
+  },
+  {
+    "slug": "apl-famille-deux-enfants-paris",
+    "intent": "apl famille deux enfants paris",
+    "title": "APL famille avec 2 enfants a Paris : estimation 2026",
+    "description": "Scenario APL pour une famille avec deux enfants et un logement a Paris.",
+    "summary": "Cette page consolide le sous-cluster famille avec un angle geographique distinct et defendable.",
+    "audience": "Famille avec deux enfants a Paris",
+    "tags": ["famille", "2-enfants", "paris", "idf"],
+    "input": {
+      "situation": "couple",
+      "enfants": 2,
+      "revenus_mensuels": 2600,
+      "loyer_mensuel": 1100,
+      "region": "idf",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Comparer avec la version province deja presente dans le cluster famille.",
+      "Verifier si le logement parisien depasse le plafond retenu.",
+      "Tester aussi une version avec trois enfants si la composition du foyer evolue."
+    ],
+    "faq": [
+      {
+        "question": "Deux enfants a Paris suffisent-ils a garder une APL ?",
+        "answer": "Oui dans certains cas, mais le niveau de loyer parisien et les revenus du foyer influencent fortement le resultat."
+      },
+      {
+        "question": "Paris change-t-il beaucoup l'ordre de grandeur ?",
+        "answer": "Oui, car les plafonds de zone et les niveaux de loyer n'y sont pas comparables a ceux de la province."
+      }
+    ]
+  },
+  {
+    "slug": "apl-famille-trois-enfants-paris",
+    "intent": "apl famille trois enfants paris",
+    "title": "APL famille avec 3 enfants a Paris : estimation 2026",
+    "description": "Estimation APL pour une famille avec trois enfants et un loyer eleve a Paris.",
+    "summary": "Cette page apporte un angle nettement distinct sur le motif famille nombreuse en zone tendue.",
+    "audience": "Famille avec trois enfants a Paris",
+    "tags": ["famille", "3-enfants", "paris", "idf"],
+    "input": {
+      "situation": "couple",
+      "enfants": 3,
+      "revenus_mensuels": 2850,
+      "loyer_mensuel": 1250,
+      "region": "idf",
+      "type_logement": "location",
+      "economie": 0
+    },
+    "checklist": [
+      "Verifier le nombre d'enfants retenus dans le calcul.",
+      "Comparer avec la version famille trois enfants deja presente hors Paris.",
+      "Tester aussi un logement social si vous comparez deux situations de logement."
+    ],
+    "faq": [
+      {
+        "question": "Une famille nombreuse a Paris peut-elle encore toucher l'APL ?",
+        "answer": "Oui dans certains cas, mais le montant depend du revenu global, du loyer retenu et du plafond applicable."
+      },
+      {
+        "question": "Le loyer parisien augmente-t-il toujours l'APL ?",
+        "answer": "Non. Une fois le plafond de loyer atteint, la hausse du loyer ne se traduit pas automatiquement par plus d'aide."
+      }
+    ]
   }
 ];
