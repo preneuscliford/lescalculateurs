@@ -221,7 +221,7 @@ export const aplPilotScenarios = [
         },
         {
           "title": "La zone géographique du logement",
-          "description": "? loyer comparable, une grande ville ou une zone plus tendue peut changer le loyer retenu et donc le montant estim?."
+          "description": "À loyer comparable, une grande ville ou une zone plus tendue peut changer le loyer retenu et donc le montant estimé."
         }
       ],
       "comparisonLinks": [
@@ -283,7 +283,7 @@ export const aplPilotScenarios = [
       },
       {
         "question": "Un loyer plus cher donne-t-il toujours plus d'APL ?",
-        "answer": "Non. Une fois le plafond atteint, le gain dispara?t alors que votre reste à charge continue d augmenter."
+        "answer": "Non. Une fois le plafond atteint, le gain disparaît alors que votre reste à charge continue d'augmenter."
       }
     ]
   },
@@ -396,7 +396,7 @@ export const aplPilotScenarios = [
         "answer": "Souvent oui si le loyer reste significatif. Le montant exact dépend toutefois de la zone et du logement."
       },
       {
-        "question": "Pourquoi utiliser une page scénario plut?t qu'un calcul unique ?",
+        "question": "Pourquoi partir de cette estimation avant le calcul complet ?",
         "answer": "Parce qu'elle donne un ordre de grandeur rapide, puis oriente vers le simulateur complet pour affiner la situation."
       }
     ]
@@ -472,7 +472,7 @@ export const aplPilotScenarios = [
         "answer": "Oui. Le type de contrat ne bloque pas l'APL. Ce sont surtout le revenu et le loyer qui comptent."
       },
       {
-        "question": "? partir de quel salaire le droit dispara?t-il ?",
+        "question": "À partir de quel salaire le droit disparaît-il ?",
         "answer": "Il n'existe pas de seuil unique. Tout dépend de la zone, de la composition du foyer et du loyer retenu."
       }
     ]
@@ -511,7 +511,7 @@ export const aplPilotScenarios = [
       },
       {
         "question": "Comment simuler si mes revenus changent souvent ?",
-        "answer": "Il faut tester plusieurs scénarios représentatifs plut?t que supposer un revenu fixe sur toute l année."
+        "answer": "Il faut tester plusieurs scénarios représentatifs plutôt que supposer un revenu fixe sur toute l'année."
       }
     ]
   },
@@ -701,7 +701,7 @@ export const aplPilotScenarios = [
       },
       {
         "question": "Le contrat d apprentissage change-t-il le calcul ?",
-        "answer": "Le statut ne suffit pas a lui seul. Ce sont surtout les revenus et le logement qui determinent l'estimation."
+        "answer": "Le statut ne suffit pas à lui seul. Ce sont surtout les revenus et le logement qui déterminent l'estimation."
       }
     ]
   },
@@ -963,7 +963,7 @@ export const aplPilotScenarios = [
     "faq": [
       {
         "question": "Le premier enfant change-t-il beaucoup l'APL ?",
-        "answer": "Il peut rendre le calcul plus favorable, mais le revenu du foyer reste determinant."
+        "answer": "Il peut rendre le calcul plus favorable, mais le revenu du foyer reste déterminant."
       },
       {
         "question": "Faut-il recalculer l'APL après une naissance ?",
@@ -1153,7 +1153,7 @@ export const aplPilotScenarios = [
     "faq": [
       {
         "question": "Une famille avec deux enfants peut-elle encore toucher l'APL ?",
-        "answer": "Oui, surtout si le logement reste couteux au regard des revenus du foyer. La composition familiale joue souvent en faveur du calcul."
+        "answer": "Oui, surtout si le logement reste coûteux au regard des revenus du foyer. La composition familiale joue souvent en faveur du calcul."
       },
       {
         "question": "Le couple doit-il déclarer toutes les ressources du foyer ?",
@@ -1240,8 +1240,8 @@ export const aplPilotScenarios = [
   {
     "slug": "apl-smic-seul",
     "intent": "apl smic seul",
-    "title": "APL avec SMIC seul : estimation 2026",
-    "description": "Simulation APL pour une personne seule rémunérée au SMIC avec un loyer moyen.",
+    "title": "APL au SMIC pour une personne seule : montant et estimation 2026",
+    "description": "Estimation APL pour une personne seule au SMIC : montant indicatif selon un loyer moyen et accès au simulateur complet.",
     "summary": "Cette page vise une variante de requête très proche du pattern gagnant déjà testé par Google.",
     "audience": "Personne seule avec salaire au SMIC",
     "tags": [
@@ -1860,7 +1860,7 @@ export const aplPilotScenarios = [
     "faq": [
       {
         "question": "Deux enfants rendent-ils l'APL plus favorable pour un parent isole ?",
-        "answer": "La composition familiale peut ameliorer l'estimation, mais le loyer retenu et les revenus restent centraux."
+        "answer": "La composition familiale peut améliorer l'estimation, mais le loyer retenu et les revenus restent centraux."
       },
       {
         "question": "Le revenu proche du SMIC supprime-t-il automatiquement l'aide ?",
@@ -2062,7 +2062,7 @@ export const aplPilotScenarios = [
       },
       {
         "question": "Le premier enfant change-t-il l'estimation ?",
-        "answer": "Il peut ameliorer l'estimation, mais le niveau de revenus et le loyer retenu restent essentiels."
+        "answer": "Il peut améliorer l'estimation, mais le niveau de revenus et le loyer retenu restent essentiels."
       }
     ]
   },
@@ -2260,7 +2260,7 @@ export const aplPilotScenarios = [
       },
       {
         "question": "Le premier enfant suffit-il a changer nettement l'estimation ?",
-        "answer": "Il peut ameliorer l'aide, mais le niveau de revenus et le loyer retenu restent tres importants."
+        "answer": "Il peut améliorer l'aide, mais le niveau de revenus et le loyer retenu restent très importants."
       }
     ]
   },

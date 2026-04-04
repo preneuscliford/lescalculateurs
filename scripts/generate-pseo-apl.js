@@ -175,6 +175,32 @@ function normalizeAplScenarioText(value) {
     output = output.replace(pattern, replacement);
   }
 
+  output = output
+    .replace(/^(?:Scenario|Scénario|scenario|scénario) APL pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Exemple d'APL|Exemple APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Cas APL|Cas pratique d'APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Simulation type APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scenario|scénario) budgetaire pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scenario|scénario) budgétaire pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scenario|scénario) de tension budgetaire avec\b/i, "Estimation APL avec")
+    .replace(/^(?:scenario|scénario) de tension budgétaire avec\b/i, "Estimation APL avec")
+    .replace(
+      /^Pourquoi utiliser une page scénar.io plutôt qu'un calcul unique \?$/i,
+      "Pourquoi partir de cette estimation avant le calcul complet ?",
+    );
+
+  output = output
+    .replace(/^Pourquoi utiliser une page .*calcul unique \?$/i, "Pourquoi partir de cette estimation avant le calcul complet ?")
+    .replace(/\bplut\?\s*t\b/gi, "plutôt")
+    .replace(/\bdispara\?\s*t\b/gi, "disparaît")
+    .replace(/estim\?/gi, "estimé")
+    .replace(/\bdeterminent\b/gi, "déterminent")
+    .replace(/\bdetermine\b/gi, "détermine")
+    .replace(/\bameliore\b/gi, "améliore")
+    .replace(/\bameliorer\b/gi, "améliorer")
+    .replace(/\bcouteux\b/gi, "coûteux")
+    .replace(/\ba changer\b/gi, "à changer");
+
   return output;
 }
 

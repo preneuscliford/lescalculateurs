@@ -273,7 +273,7 @@ function repairCorruptedFrench(value) {
 }
 
 function toFrenchDisplayText(value) {
-  return normalizeFrenchCopy(
+  return fixResidualFrenchGlitches(normalizeFrenchCopy(
     repairMojibakeText(
       repairCorruptedFrench(value)
         .replace(/\bScenario\b/g, "Sc\u00e9nario")
@@ -466,8 +466,57 @@ function toFrenchDisplayText(value) {
         .replace(/\bdes son\b/g, "d\u00e8s son")
         .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
         .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres"),
-    ),
+      ),
+  ));
+}
+
+function fixResidualFrenchGlitches(value) {
+  return String(value)
+    .replace(/\bplut\?\s*t\b/gi, "plutôt")
+    .replace(/\bdispara\?\s*t\b/gi, "disparaît")
+    .replace(/\bestim\?\b/gi, "estimé")
+    .replace(/\bdeterminent\b/gi, "déterminent")
+    .replace(/\bdetermine\b/gi, "détermine")
+    .replace(/\bameliore\b/gi, "améliore")
+    .replace(/\bameliorer\b/gi, "améliorer")
+    .replace(/\bcouteux\b/gi, "coûteux")
+    .replace(/\ba changer\b/gi, "à changer")
+    .replace(/estim\?/gi, "estimé");
+}
+
+function toUserFacingDescription(value) {
+  return toFrenchDisplayText(value)
+    .replace(/^(?:Scénario|scénario) APL pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Exemple d'APL|Exemple APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Cas APL|Cas pratique d'APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Simulation type APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scénario) budgétaire pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scénario) de tension budgétaire avec\b/i, "Estimation APL avec");
+}
+
+function toUserFacingFaqQuestion(value) {
+  return toFrenchDisplayText(value).replace(
+    /^Pourquoi utiliser une page scénario plut.?t qu'un calcul unique \?$/i,
+    "Pourquoi partir de cette estimation avant le calcul complet ?",
   );
+}
+
+function toPublicDescription(value) {
+  return toFrenchDisplayText(value)
+    .replace(/^(?:Scénario|scénario|ScÃ©nario|scÃ©nario) APL pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Exemple d'APL|Exemple APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Cas APL|Cas pratique d'APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Simulation type APL) pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scénario|scÃ©nario) budgétaire pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scénario|scÃ©nario) de tension budgétaire avec\b/i, "Estimation APL avec");
+}
+
+function toPublicFaqQuestion(value) {
+  const question = toFrenchDisplayText(value);
+  if (/^Pourquoi utiliser une page/i.test(question) && /calcul unique \?$/i.test(question)) {
+    return "Pourquoi partir de cette estimation avant le calcul complet ?";
+  }
+  return question;
 }
 
 function normalizeInlineApproxEuro(value) {
@@ -744,7 +793,7 @@ export function renderAPLScenarioPage({
     "@type": "FAQPage",
     mainEntity: scenario.faq.map((item) => ({
       "@type": "Question",
-      name: toFrenchDisplayText(item.question),
+      name: toPublicFaqQuestion(item.question),
       acceptedAnswer: {
         "@type": "Answer",
         text: toFrenchDisplayText(item.answer),
@@ -756,7 +805,7 @@ export function renderAPLScenarioPage({
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: toFrenchDisplayText(scenario.title),
-    description: toFrenchDisplayText(scenario.description),
+    description: toPublicDescription(scenario.description),
     url: canonicalUrl,
     isPartOf: `${DOMAIN}${PILLAR_PATH}`,
     publisher: {
@@ -777,7 +826,7 @@ export function renderAPLScenarioPage({
       (item) => `
           <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4">
             <summary class="cursor-pointer list-none font-semibold text-slate-900">${renderText(
-              item.question,
+              toPublicFaqQuestion(item.question),
             )}</summary>
             <p class="mt-3 text-slate-700 leading-relaxed">${renderText(item.answer)}</p>
           </details>`,
@@ -804,8 +853,10 @@ export function renderAPLScenarioPage({
     relatedPages,
   );
 
+  const displayDescription = toPublicDescription(scenario.description);
+
   const introText = toFrenchDisplayText(
-    `${scenario.description} Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.`,
+    `${displayDescription} Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.`,
   );
 
   const tableRows = [
@@ -831,18 +882,18 @@ export function renderAPLScenarioPage({
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${renderText(scenario.title)}</title>
-    <meta name="description" content="${renderText(scenario.description)}" />
+    <meta name="description" content="${renderText(displayDescription)}" />
     <meta name="robots" content="index, follow" />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
     <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${renderText(scenario.title)}" />
-    <meta property="og:description" content="${renderText(scenario.description)}" />
+    <meta property="og:description" content="${renderText(displayDescription)}" />
     <meta property="og:image" content="${FAVICON_OG_IMAGE}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${renderText(scenario.title)}" />
-    <meta name="twitter:description" content="${renderText(scenario.description)}" />
+    <meta name="twitter:description" content="${renderText(displayDescription)}" />
     <meta name="twitter:image" content="${FAVICON_OG_IMAGE}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
@@ -932,10 +983,12 @@ export function renderAPLScenarioPage({
         </article>
 
         <aside class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">Profil</p>
+          <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">Situation type</p>
           <p class="mt-3 text-lg font-semibold text-slate-950">${renderText(scenario.audience)}</p>
           <p class="mt-3 text-sm leading-relaxed text-slate-600">
-            ${renderText(scenario.summary)}
+            ${renderText(
+              "Utilisez cette estimation comme point de départ, puis ajustez le loyer, la zone et les revenus dans le simulateur APL complet pour coller à votre situation réelle.",
+            )}
           </p>
         </aside>
       </section>
@@ -982,10 +1035,10 @@ export function renderAPLScenarioPage({
       ${pilotDriversHtml}
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 class="text-2xl font-bold text-slate-900">Pourquoi cette page existe</h2>
+        <h2 class="text-2xl font-bold text-slate-900">Comment utiliser cette estimation</h2>
         <p class="mt-4 text-slate-700 leading-relaxed">
           ${renderText(
-            `Cette page r\u00e9pond \u00e0 l'intention de recherche ${scenario.intent}. Son objectif est de fournir une estimation r\u00e9aliste, d'expliquer les principaux facteurs qui influencent l'APL et d'orienter vers le simulateur d\u00e9taill\u00e9 pour affiner la situation.`,
+            "Cette page vous donne un ordre de grandeur pour une situation type. Si votre cas s'en rapproche, utilisez le simulateur complet pour ajuster le loyer, la zone, les revenus et la composition du foyer.",
           )}
         </p>
         <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
