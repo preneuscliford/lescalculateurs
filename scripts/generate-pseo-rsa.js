@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { fileURLToPath, pathToFileURL } from "url";
+import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 import { rsaPilotScenarios } from "../data/pseo/rsa-pilot-scenarios.js";
 import { rsaAbsenceRevenuScenarios } from "../data/pseo/rsa-absence-revenu-scenarios.js";
@@ -13,6 +14,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
+const require = createRequire(import.meta.url);
 const outputDir = path.join(repoRoot, "src", "pages", "rsa");
 const generatedAt = formatDisplayDate(new Date());
 const rsaScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
@@ -21,6 +23,11 @@ async function loadRsaEngine() {
   const engineSrc = path.join(repoRoot, "src", "utils", "rsaCalculEngine.ts");
   const tempDir = path.join(repoRoot, "temp", "pseo-rsa-engine");
   fs.mkdirSync(tempDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(tempDir, "package.json"),
+    JSON.stringify({ type: "commonjs" }, null, 2),
+    "utf8",
+  );
   execFileSync(
     process.execPath,
     [
@@ -29,18 +36,22 @@ async function loadRsaEngine() {
       "--outDir",
       tempDir,
       "--module",
-      "ES2020",
+      "CommonJS",
       "--target",
       "ES2020",
       "--moduleResolution",
       "node",
+      "--resolveJsonModule",
+      "true",
+      "--esModuleInterop",
+      "true",
       "--skipLibCheck",
       "true",
     ],
     { cwd: repoRoot, stdio: "pipe" },
   );
-  const compiledPath = path.join(tempDir, "rsaCalculEngine.js");
-  const engine = await import(`${pathToFileURL(compiledPath).href}?v=${Date.now()}`);
+  const compiledPath = path.join(tempDir, "utils", "rsaCalculEngine.js");
+  const engine = require(compiledPath);
   fs.rmSync(tempDir, { recursive: true, force: true });
   return engine;
 }

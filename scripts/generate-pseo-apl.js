@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { fileURLToPath, pathToFileURL } from "url";
+import { fileURLToPath } from "url";
 import { createRequire } from "module";
 
 import { aplPilotScenarios } from "../data/pseo/apl-pilot-scenarios.js";
@@ -242,6 +242,11 @@ async function loadAplEngine() {
   const tempDir = path.join(repoRoot, "temp", "pseo-engine");
 
   fs.mkdirSync(tempDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(tempDir, "package.json"),
+    JSON.stringify({ type: "commonjs" }, null, 2),
+    "utf8",
+  );
 
   execFileSync(
     process.execPath,
@@ -251,11 +256,15 @@ async function loadAplEngine() {
       "--outDir",
       tempDir,
       "--module",
-      "ES2020",
+      "CommonJS",
       "--target",
       "ES2020",
       "--moduleResolution",
       "node",
+      "--resolveJsonModule",
+      "true",
+      "--esModuleInterop",
+      "true",
       "--skipLibCheck",
       "true",
     ],
@@ -265,10 +274,8 @@ async function loadAplEngine() {
     },
   );
 
-  const compiledPath = path.join(tempDir, "aplCalculEngine.js");
-  const engine = await import(
-    `${pathToFileURL(compiledPath).href}?v=${Date.now()}`
-  );
+  const compiledPath = path.join(tempDir, "utils", "aplCalculEngine.js");
+  const engine = require(compiledPath);
   fs.rmSync(tempDir, { recursive: true, force: true });
   return engine;
 }

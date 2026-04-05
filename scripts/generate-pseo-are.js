@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { fileURLToPath, pathToFileURL } from "url";
+import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 import { arePilotScenarios } from "../data/pseo/are-pilot-scenarios.js";
 import { areAbsenceRevenuScenarios } from "../data/pseo/are-absence-revenu-scenarios.js";
@@ -13,6 +14,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
+const require = createRequire(import.meta.url);
 const outputDir = path.join(repoRoot, "src", "pages", "are");
 const generatedAt = formatDisplayDate(new Date());
 const areScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
@@ -21,6 +23,11 @@ async function loadAreEngine() {
   const engineSrc = path.join(repoRoot, "src", "utils", "areCalculEngine.ts");
   const tempDir = path.join(repoRoot, "temp", "pseo-are-engine");
   fs.mkdirSync(tempDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(tempDir, "package.json"),
+    JSON.stringify({ type: "commonjs" }, null, 2),
+    "utf8",
+  );
   execFileSync(
     process.execPath,
     [
@@ -29,18 +36,22 @@ async function loadAreEngine() {
       "--outDir",
       tempDir,
       "--module",
-      "ES2020",
+      "CommonJS",
       "--target",
       "ES2020",
       "--moduleResolution",
       "node",
+      "--resolveJsonModule",
+      "true",
+      "--esModuleInterop",
+      "true",
       "--skipLibCheck",
       "true",
     ],
     { cwd: repoRoot, stdio: "pipe" },
   );
-  const compiledPath = path.join(tempDir, "areCalculEngine.js");
-  const engine = await import(`${pathToFileURL(compiledPath).href}?v=${Date.now()}`);
+  const compiledPath = path.join(tempDir, "utils", "areCalculEngine.js");
+  const engine = require(compiledPath);
   fs.rmSync(tempDir, { recursive: true, force: true });
   return engine;
 }
