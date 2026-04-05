@@ -1,0 +1,6297 @@
+{
+  "generatedAt": "2026-03-27T19:45:52.114Z",
+  "input": {
+    "workbookPath": "C:\\Users\\prene\\Downloads\\lescalculateurs.fr-Performance-on-Search-2026-03-27 (1).xlsx",
+    "sheets": [
+      "Graphique",
+      "Requêtes",
+      "Pages",
+      "Pays",
+      "Appareils",
+      "Apparence dans les résultats de",
+      "Filtres"
+    ],
+    "qualityPath": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\reports\\pseo-quality-report.json",
+    "triagePath": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\reports\\languagetool-triage-site.json"
+  },
+  "scoringSystem": {
+    "principle": "Le score ne depend pas d'une fenetre de dates. Il apprend sur toutes les pages pSEO observees pour identifier les motifs d'intention qui produisent du trafic.",
+    "observedTrafficScore": "40% clics normalises, 30% impressions normalisees, 15% CTR normalise, 15% position organique",
+    "opportunityScoreObserved": "40% preuve trafic, 20% intent tokens, 10% force du cluster, 20% readiness, 10% position",
+    "opportunityScoreUnobserved": "45% intent tokens, 20% force du cluster, 35% readiness"
+  },
+  "summary": {
+    "observedPages": 64,
+    "scoredPages": 106,
+    "totalClicks": 130,
+    "totalImpressions": 8213,
+    "learnedTokens": 42,
+    "topCluster": "apl"
+  },
+  "clusterInsights": [
+    {
+      "cluster": "apl",
+      "pages": 48,
+      "clicks": 125,
+      "impressions": 7773,
+      "trafficScoreSum": 2284.9,
+      "weightedPosition": 63104.69000000002,
+      "avgTrafficScore": 47.6,
+      "avgPosition": 8.12
+    },
+    {
+      "cluster": "simulateurs",
+      "pages": 3,
+      "clicks": 2,
+      "impressions": 200,
+      "trafficScoreSum": 103.2,
+      "weightedPosition": 4210.46,
+      "avgTrafficScore": 34.4,
+      "avgPosition": 21.05
+    },
+    {
+      "cluster": "rsa",
+      "pages": 9,
+      "clicks": 3,
+      "impressions": 201,
+      "trafficScoreSum": 239.20000000000002,
+      "weightedPosition": 2708.7000000000003,
+      "avgTrafficScore": 26.6,
+      "avgPosition": 13.48
+    },
+    {
+      "cluster": "are",
+      "pages": 3,
+      "clicks": 0,
+      "impressions": 31,
+      "trafficScoreSum": 64.6,
+      "weightedPosition": 206.03000000000003,
+      "avgTrafficScore": 21.5,
+      "avgPosition": 6.65
+    },
+    {
+      "cluster": "prime-activite",
+      "pages": 1,
+      "clicks": 0,
+      "impressions": 8,
+      "trafficScoreSum": 18.9,
+      "weightedPosition": 106,
+      "avgTrafficScore": 18.9,
+      "avgPosition": 13.25
+    }
+  ],
+  "topTokens": [
+    {
+      "token": "smic",
+      "pages": 3,
+      "clicks": 49,
+      "impressions": 1251,
+      "avgPosition": 6.33,
+      "avgTrafficScore": 89.2,
+      "liftVsAverage": 46.8,
+      "tokenScore": 81.3
+    },
+    {
+      "token": "chomage",
+      "pages": 3,
+      "clicks": 23,
+      "impressions": 936,
+      "avgPosition": 7.15,
+      "avgTrafficScore": 75.3,
+      "liftVsAverage": 33,
+      "tokenScore": 71
+    },
+    {
+      "token": "moyen",
+      "pages": 2,
+      "clicks": 12,
+      "impressions": 646,
+      "avgPosition": 6.76,
+      "avgTrafficScore": 69.3,
+      "liftVsAverage": 26.9,
+      "tokenScore": 63.4
+    },
+    {
+      "token": "loyer-moyen",
+      "pages": 2,
+      "clicks": 12,
+      "impressions": 646,
+      "avgPosition": 6.76,
+      "avgTrafficScore": 69.3,
+      "liftVsAverage": 26.9,
+      "tokenScore": 63.4
+    },
+    {
+      "token": "loyer",
+      "pages": 10,
+      "clicks": 22,
+      "impressions": 1945,
+      "avgPosition": 8.98,
+      "avgTrafficScore": 50,
+      "liftVsAverage": 7.6,
+      "tokenScore": 62.5
+    },
+    {
+      "token": "enfants",
+      "pages": 3,
+      "clicks": 15,
+      "impressions": 591,
+      "avgPosition": 6.26,
+      "avgTrafficScore": 61.7,
+      "liftVsAverage": 19.4,
+      "tokenScore": 60.8
+    },
+    {
+      "token": "celibataire",
+      "pages": 7,
+      "clicks": 25,
+      "impressions": 1513,
+      "avgPosition": 8.17,
+      "avgTrafficScore": 48,
+      "liftVsAverage": 5.7,
+      "tokenScore": 57.7
+    },
+    {
+      "token": "enfant",
+      "pages": 6,
+      "clicks": 15,
+      "impressions": 974,
+      "avgPosition": 6.41,
+      "avgTrafficScore": 48.7,
+      "liftVsAverage": 6.3,
+      "tokenScore": 56.8
+    },
+    {
+      "token": "emploi",
+      "pages": 3,
+      "clicks": 6,
+      "impressions": 45,
+      "avgPosition": 5.65,
+      "avgTrafficScore": 53.8,
+      "liftVsAverage": 11.4,
+      "tokenScore": 54.8
+    },
+    {
+      "token": "reprise",
+      "pages": 2,
+      "clicks": 5,
+      "impressions": 37,
+      "avgPosition": 5.06,
+      "avgTrafficScore": 57.9,
+      "liftVsAverage": 15.5,
+      "tokenScore": 54.8
+    },
+    {
+      "token": "reprise-emploi",
+      "pages": 2,
+      "clicks": 5,
+      "impressions": 37,
+      "avgPosition": 5.06,
+      "avgTrafficScore": 57.9,
+      "liftVsAverage": 15.5,
+      "tokenScore": 54.8
+    },
+    {
+      "token": "personne",
+      "pages": 4,
+      "clicks": 14,
+      "impressions": 756,
+      "avgPosition": 7.14,
+      "avgTrafficScore": 50.5,
+      "liftVsAverage": 8.1,
+      "tokenScore": 54.7
+    },
+    {
+      "token": "paris",
+      "pages": 6,
+      "clicks": 6,
+      "impressions": 608,
+      "avgPosition": 6.46,
+      "avgTrafficScore": 45.2,
+      "liftVsAverage": 2.8,
+      "tokenScore": 54.2
+    },
+    {
+      "token": "couple",
+      "pages": 9,
+      "clicks": 10,
+      "impressions": 1156,
+      "avgPosition": 7.05,
+      "avgTrafficScore": 39.9,
+      "liftVsAverage": -2.5,
+      "tokenScore": 53.9
+    },
+    {
+      "token": "eleve",
+      "pages": 3,
+      "clicks": 5,
+      "impressions": 754,
+      "avgPosition": 10.7,
+      "avgTrafficScore": 51.8,
+      "liftVsAverage": 9.4,
+      "tokenScore": 53.3
+    },
+    {
+      "token": "loyer-eleve",
+      "pages": 3,
+      "clicks": 5,
+      "impressions": 754,
+      "avgPosition": 10.7,
+      "avgTrafficScore": 51.8,
+      "liftVsAverage": 9.4,
+      "tokenScore": 53.3
+    },
+    {
+      "token": "etudiant",
+      "pages": 6,
+      "clicks": 6,
+      "impressions": 834,
+      "avgPosition": 10.44,
+      "avgTrafficScore": 43.3,
+      "liftVsAverage": 0.9,
+      "tokenScore": 52.7
+    },
+    {
+      "token": "famille",
+      "pages": 3,
+      "clicks": 10,
+      "impressions": 382,
+      "avgPosition": 6.58,
+      "avgTrafficScore": 50.3,
+      "liftVsAverage": 7.9,
+      "tokenScore": 52.2
+    },
+    {
+      "token": "alternant",
+      "pages": 2,
+      "clicks": 4,
+      "impressions": 425,
+      "avgPosition": 6.58,
+      "avgTrafficScore": 54.2,
+      "liftVsAverage": 11.8,
+      "tokenScore": 52.1
+    },
+    {
+      "token": "parent",
+      "pages": 4,
+      "clicks": 6,
+      "impressions": 620,
+      "avgPosition": 5.89,
+      "avgTrafficScore": 44.7,
+      "liftVsAverage": 2.3,
+      "tokenScore": 50.3
+    }
+  ],
+  "topObservedPages": [
+    {
+      "route": "/pages/apl/apl-smic-seul",
+      "cluster": "apl",
+      "title": "APL avec SMIC seul : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 81.3,
+      "clusterIntentScore": 47.6,
+      "proofScore": 95.8,
+      "opportunityScore": 88,
+      "observedClicks": 20,
+      "observedImpressions": 467,
+      "observedCtr": 0.042800000000000005,
+      "observedPosition": 6.32,
+      "explainability": {
+        "tokens": [
+          "smic"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-smic",
+      "cluster": "apl",
+      "title": "APL au SMIC pour un célibataire : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 2,
+      "languageScore": 76,
+      "readinessScore": 94,
+      "tokenIntentScore": 69.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 97.2,
+      "opportunityScore": 85,
+      "observedClicks": 22,
+      "observedImpressions": 483,
+      "observedCtr": 0.0455,
+      "observedPosition": 6.25,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "smic",
+          "celibataire-smic"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          },
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          }
+        ],
+        "weakSignals": [
+          "celibataire-smic"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-famille-trois-enfants",
+      "cluster": "apl",
+      "title": "APL famille avec 3 enfants : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 56.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 83.8,
+      "opportunityScore": 78.3,
+      "observedClicks": 10,
+      "observedImpressions": 205,
+      "observedCtr": 0.048799999999999996,
+      "observedPosition": 6.16,
+      "explainability": {
+        "tokens": [
+          "famille",
+          "trois",
+          "enfants",
+          "famille-trois",
+          "trois-enfants"
+        ],
+        "drivers": [
+          {
+            "token": "enfants",
+            "tokenScore": 60.8,
+            "liftVsAverage": 19.4,
+            "pages": 3
+          },
+          {
+            "token": "famille",
+            "tokenScore": 52.2,
+            "liftVsAverage": 7.9,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "trois",
+          "famille-trois",
+          "trois-enfants"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-chomage-loyer-moyen",
+      "cluster": "apl",
+      "title": "APL au chômage avec loyer moyen : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 65.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 77.6,
+      "opportunityScore": 77.3,
+      "observedClicks": 9,
+      "observedImpressions": 460,
+      "observedCtr": 0.0196,
+      "observedPosition": 6.98,
+      "explainability": {
+        "tokens": [
+          "chomage",
+          "loyer",
+          "moyen",
+          "chomage-loyer",
+          "loyer-moyen"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          },
+          {
+            "token": "loyer-moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "chomage-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-personne-seule-smic",
+      "cluster": "apl",
+      "title": "APL personne seule au SMIC : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 68,
+      "clusterIntentScore": 47.6,
+      "proofScore": 74.5,
+      "opportunityScore": 76.7,
+      "observedClicks": 7,
+      "observedImpressions": 301,
+      "observedCtr": 0.0233,
+      "observedPosition": 6.46,
+      "explainability": {
+        "tokens": [
+          "personne",
+          "smic",
+          "personne-smic"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          },
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "personne-smic"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-chomage-avec-enfant",
+      "cluster": "apl",
+      "title": "APL au chômage avec enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 63.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 75.5,
+      "opportunityScore": 76.6,
+      "observedClicks": 7,
+      "observedImpressions": 79,
+      "observedCtr": 0.0886,
+      "observedPosition": 5.89,
+      "explainability": {
+        "tokens": [
+          "chomage",
+          "enfant",
+          "chomage-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          }
+        ],
+        "weakSignals": [
+          "chomage-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-chomage-personne-seule",
+      "cluster": "apl",
+      "title": "APL au chômage pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 62.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 72.9,
+      "opportunityScore": 73.9,
+      "observedClicks": 7,
+      "observedImpressions": 397,
+      "observedCtr": 0.0176,
+      "observedPosition": 7.6,
+      "explainability": {
+        "tokens": [
+          "chomage",
+          "personne",
+          "chomage-personne"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "chomage-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-parent-isole-deux-enfants",
+      "cluster": "apl",
+      "title": "APL parent isoléà avec 2 enfants : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 53.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 68.9,
+      "opportunityScore": 72,
+      "observedClicks": 5,
+      "observedImpressions": 302,
+      "observedCtr": 0.0166,
+      "observedPosition": 5.78,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "deux",
+          "enfants",
+          "parent-isole",
+          "isole-deux",
+          "deux-enfants"
+        ],
+        "drivers": [
+          {
+            "token": "enfants",
+            "tokenScore": 60.8,
+            "liftVsAverage": 19.4,
+            "pages": 3
+          },
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "isole-deux"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-un-enfant-loyer-moyen",
+      "cluster": "apl",
+      "title": "APL couple avec 1 enfant et loyer moyen : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 63.1,
+      "clusterIntentScore": 47.6,
+      "proofScore": 61,
+      "opportunityScore": 70.5,
+      "observedClicks": 3,
+      "observedImpressions": 186,
+      "observedCtr": 0.0161,
+      "observedPosition": 6.2,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "loyer",
+          "moyen",
+          "couple-enfant",
+          "enfant-loyer",
+          "loyer-moyen"
+        ],
+        "drivers": [
+          {
+            "token": "moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          },
+          {
+            "token": "loyer-moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          },
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          }
+        ],
+        "weakSignals": [
+          "enfant-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-sans-enfant",
+      "cluster": "apl",
+      "title": "APL pour un couple sans enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 65.5,
+      "opportunityScore": 70.2,
+      "observedClicks": 4,
+      "observedImpressions": 455,
+      "observedCtr": 0.0088,
+      "observedPosition": 6.29,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-reprise-emploi",
+      "cluster": "apl",
+      "title": "APL apres une reprise d'emploi : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 62.5,
+      "opportunityScore": 70.1,
+      "observedClicks": 3,
+      "observedImpressions": 27,
+      "observedCtr": 0.11109999999999999,
+      "observedPosition": 4.56,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "reprise-emploi"
+        ],
+        "drivers": [
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          },
+          {
+            "token": "reprise-emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-alternant",
+      "cluster": "apl",
+      "title": "APL alternant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.1,
+      "clusterIntentScore": 47.6,
+      "proofScore": 61.1,
+      "opportunityScore": 68.1,
+      "observedClicks": 3,
+      "observedImpressions": 368,
+      "observedCtr": 0.008199999999999999,
+      "observedPosition": 6.68,
+      "explainability": {
+        "tokens": [
+          "alternant"
+        ],
+        "drivers": [
+          {
+            "token": "alternant",
+            "tokenScore": 52.1,
+            "liftVsAverage": 11.8,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-loyer-800-revenu-1300",
+      "cluster": "apl",
+      "title": "APL avec ~1 300 EUR de revenus et ~800 EUR de loyer : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 60.4,
+      "opportunityScore": 67.9,
+      "observedClicks": 3,
+      "observedImpressions": 153,
+      "observedCtr": 0.0196,
+      "observedPosition": 7.49,
+      "explainability": {
+        "tokens": [
+          "loyer",
+          "800",
+          "revenu",
+          "1300",
+          "loyer-800",
+          "800-revenu",
+          "revenu-1300"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "800",
+          "1300",
+          "loyer-800"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-paris",
+      "cluster": "apl",
+      "title": "APL pour un couple à à Paris : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.1,
+      "clusterIntentScore": 47.6,
+      "proofScore": 56.5,
+      "opportunityScore": 67,
+      "observedClicks": 2,
+      "observedImpressions": 84,
+      "observedCtr": 0.023799999999999998,
+      "observedPosition": 5.94,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "paris",
+          "couple-paris"
+        ],
+        "drivers": [
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          }
+        ],
+        "weakSignals": [
+          "couple-paris"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-cdi-loyer-700",
+      "cluster": "apl",
+      "title": "APL avec CDI et loyer de ~700 EUR : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 62.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 54.2,
+      "opportunityScore": 66.8,
+      "observedClicks": 2,
+      "observedImpressions": 179,
+      "observedCtr": 0.011200000000000002,
+      "observedPosition": 7.87,
+      "explainability": {
+        "tokens": [
+          "cdi",
+          "loyer",
+          "700",
+          "cdi-loyer",
+          "loyer-700"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          }
+        ],
+        "weakSignals": [
+          "cdi",
+          "700",
+          "cdi-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-paris",
+      "cluster": "apl",
+      "title": "APL étudiant à à Paris : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 53.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 55.5,
+      "opportunityScore": 66.1,
+      "observedClicks": 2,
+      "observedImpressions": 228,
+      "observedCtr": 0.0088,
+      "observedPosition": 6.62,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "paris",
+          "etudiant-paris"
+        ],
+        "drivers": [
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          },
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          }
+        ],
+        "weakSignals": [
+          "etudiant-paris"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-reprise-emploi-loyer-eleve",
+      "cluster": "apl",
+      "title": "APL avec reprise d'emploi et loyer élevé : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 57.4,
+      "clusterIntentScore": 47.6,
+      "proofScore": 53.2,
+      "opportunityScore": 66.1,
+      "observedClicks": 2,
+      "observedImpressions": 10,
+      "observedCtr": 0.2,
+      "observedPosition": 6.4,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "loyer",
+          "eleve",
+          "reprise-emploi",
+          "emploi-loyer",
+          "loyer-eleve"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "emploi-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-toulouse",
+      "cluster": "apl",
+      "title": "APL étudiant à Toulouse : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 49.7,
+      "clusterIntentScore": 47.6,
+      "proofScore": 55.9,
+      "opportunityScore": 65.9,
+      "observedClicks": 2,
+      "observedImpressions": 110,
+      "observedCtr": 0.0182,
+      "observedPosition": 5.76,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "toulouse",
+          "etudiant-toulouse"
+        ],
+        "drivers": [
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          },
+          {
+            "token": "toulouse",
+            "tokenScore": 46.6,
+            "liftVsAverage": 4.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "etudiant-toulouse"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-apprenti",
+      "cluster": "apl",
+      "title": "APL apprenti : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 46.3,
+      "clusterIntentScore": 47.6,
+      "proofScore": 59.2,
+      "opportunityScore": 65,
+      "observedClicks": 3,
+      "observedImpressions": 339,
+      "observedCtr": 0.0088,
+      "observedPosition": 9.05,
+      "explainability": {
+        "tokens": [
+          "apprenti"
+        ],
+        "drivers": [
+          {
+            "token": "apprenti",
+            "tokenScore": 46.3,
+            "liftVsAverage": 4.1,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-loyer-eleve",
+      "cluster": "apl",
+      "title": "APL avec loyer élevé pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 57.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 54.5,
+      "opportunityScore": 64.3,
+      "observedClicks": 2,
+      "observedImpressions": 579,
+      "observedCtr": 0.0034999999999999996,
+      "observedPosition": 11.85,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "loyer",
+          "eleve",
+          "celibataire-loyer",
+          "loyer-eleve"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          },
+          {
+            "token": "eleve",
+            "tokenScore": 53.3,
+            "liftVsAverage": 9.4,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "celibataire-loyer"
+        ]
+      }
+    }
+  ],
+  "nextToPush": [
+    {
+      "route": "/pages/apl/apl-smic-couple-sans-enfant",
+      "cluster": "apl",
+      "title": "APL au SMIC pour un couple sans enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 64,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 72.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "smic",
+          "couple",
+          "enfant",
+          "smic-couple",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          },
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          }
+        ],
+        "weakSignals": [
+          "smic-couple"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-reprise-emploi-personne-seule",
+      "cluster": "apl",
+      "title": "APL en reprise d'emploi pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 69.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "personne",
+          "reprise-emploi",
+          "emploi-personne"
+        ],
+        "drivers": [
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          },
+          {
+            "token": "reprise-emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "emploi-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-loyer-500-revenu-900",
+      "cluster": "apl",
+      "title": "APL avec ~900 EUR de revenus et ~500 EUR de loyer : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 69,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "loyer",
+          "500",
+          "revenu",
+          "900",
+          "loyer-500",
+          "500-revenu",
+          "revenu-900"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "500",
+          "900",
+          "loyer-500"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-un-enfant",
+      "cluster": "apl",
+      "title": "APL couple avec 1 enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 68.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-sans-revenu-couple-sans-enfant",
+      "cluster": "apl",
+      "title": "APL sans revenu pour un couple sans enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 68.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "couple",
+          "enfant",
+          "revenu-couple",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "revenu-couple"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-sans-revenu-avec-enfant",
+      "cluster": "apl",
+      "title": "APL sans revenu avec enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 51.6,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 67.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "enfant",
+          "revenu-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "revenu-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-sans-revenu-parent-isole",
+      "cluster": "apl",
+      "title": "APL sans revenu pour un parent isolé : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 50.3,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 67.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "parent",
+          "isole",
+          "revenu-parent",
+          "parent-isole"
+        ],
+        "drivers": [
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "parent-isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "revenu-parent"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-fin-de-droits-chomage",
+      "cluster": "apl",
+      "title": "APL après fin de droits chômage : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 48.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 66.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "chomage",
+          "fin-chomage"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "fin-chomage"
+        ]
+      }
+    },
+    {
+      "route": "/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage",
+      "cluster": "prime-activite",
+      "title": "Prime d'activité après reprise d'emploi post-chômage : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 60.2,
+      "clusterIntentScore": 18.9,
+      "proofScore": 0,
+      "opportunityScore": 65.9,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "chomage",
+          "reprise-emploi",
+          "emploi-chomage"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "emploi-chomage"
+        ]
+      }
+    },
+    {
+      "route": "/pages/asf/asf-parent-isole-sans-pension",
+      "cluster": "asf",
+      "title": "ASF parent isolé sans pension : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 50.3,
+      "clusterIntentScore": 35,
+      "proofScore": 0,
+      "opportunityScore": 64.6,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "pension",
+          "parent-isole",
+          "isole-pension"
+        ],
+        "drivers": [
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "parent-isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "pension",
+          "isole-pension"
+        ]
+      }
+    },
+    {
+      "route": "/pages/asf/asf-parent-isole-sans-revenu",
+      "cluster": "asf",
+      "title": "ASF parent isolé sans revenu : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 50.3,
+      "clusterIntentScore": 35,
+      "proofScore": 0,
+      "opportunityScore": 64.6,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "revenu",
+          "parent-isole",
+          "isole-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "parent-isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "isole-revenu"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-personne-seule-montant",
+      "cluster": "rsa",
+      "title": "RSA personne seule : montant (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 54.7,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 64.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "personne"
+        ],
+        "drivers": [
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-hlm-petit-revenu",
+      "cluster": "apl",
+      "title": "APL en HLM avec petit revenu : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 41.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 63.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "hlm",
+          "petit",
+          "revenu",
+          "hlm-petit",
+          "petit-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "petit",
+            "tokenScore": 41.4,
+            "liftVsAverage": -9.5,
+            "pages": 4
+          },
+          {
+            "token": "petit-revenu",
+            "tokenScore": 37.5,
+            "liftVsAverage": -7.7,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "hlm",
+          "hlm-petit"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-sans-revenu-avec-enfant",
+      "cluster": "rsa",
+      "title": "RSA sans revenu avec enfant : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 51.6,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 63,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "enfant",
+          "revenu-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "revenu-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-fin-de-droits-personne-seule",
+      "cluster": "apl",
+      "title": "APL en fin de droits pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 40.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 62.9,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "personne",
+          "fin-personne"
+        ],
+        "drivers": [
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "fin-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-fin-de-droits-chomage-personne-seule",
+      "cluster": "rsa",
+      "title": "RSA après fin de droits chômage pour une personne seule : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 50.8,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 62.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "chomage",
+          "personne",
+          "fin-chomage",
+          "chomage-personne"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "fin-chomage",
+          "chomage-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/are/are-reprise-emploi-temps-partiel",
+      "cluster": "are",
+      "title": "ARE et reprise d'emploi à temps partiel : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 54.8,
+      "clusterIntentScore": 21.5,
+      "proofScore": 0,
+      "opportunityScore": 62.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "temps",
+          "partiel",
+          "reprise-emploi",
+          "emploi-temps",
+          "temps-partiel"
+        ],
+        "drivers": [
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          },
+          {
+            "token": "reprise-emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "temps",
+          "partiel",
+          "emploi-temps"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "cluster": "simulateurs",
+      "title": "Quelles aides pour un couple sans revenu ? Simulation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 45.5,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 62.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aides",
+          "couple",
+          "revenu",
+          "aides-couple",
+          "couple-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "aides-couple",
+          "couple-revenu"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-couple-sans-revenu-avec-enfant",
+      "cluster": "rsa",
+      "title": "RSA couple sans revenu avec enfant : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 52.4,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 62.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "revenu",
+          "enfant",
+          "couple-revenu",
+          "revenu-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "couple-revenu",
+          "revenu-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/aide-financiere-famille",
+      "cluster": "simulateurs",
+      "title": "Aide financiere famille : reperes 2026",
+      "qualityScore": 87,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 90.3,
+      "tokenIntentScore": 52.2,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 62,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aide",
+          "financiere",
+          "famille",
+          "aide-financiere",
+          "financiere-famille"
+        ],
+        "drivers": [
+          {
+            "token": "famille",
+            "tokenScore": 52.2,
+            "liftVsAverage": 7.9,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "aide",
+          "financiere",
+          "aide-financiere"
+        ]
+      }
+    }
+  ],
+  "scoredPages": [
+    {
+      "route": "/pages/apl/apl-smic-seul",
+      "cluster": "apl",
+      "title": "APL avec SMIC seul : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 81.3,
+      "clusterIntentScore": 47.6,
+      "proofScore": 95.8,
+      "opportunityScore": 88,
+      "observedClicks": 20,
+      "observedImpressions": 467,
+      "observedCtr": 0.042800000000000005,
+      "observedPosition": 6.32,
+      "explainability": {
+        "tokens": [
+          "smic"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-smic",
+      "cluster": "apl",
+      "title": "APL au SMIC pour un célibataire : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 2,
+      "languageScore": 76,
+      "readinessScore": 94,
+      "tokenIntentScore": 69.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 97.2,
+      "opportunityScore": 85,
+      "observedClicks": 22,
+      "observedImpressions": 483,
+      "observedCtr": 0.0455,
+      "observedPosition": 6.25,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "smic",
+          "celibataire-smic"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          },
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          }
+        ],
+        "weakSignals": [
+          "celibataire-smic"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-famille-trois-enfants",
+      "cluster": "apl",
+      "title": "APL famille avec 3 enfants : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 56.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 83.8,
+      "opportunityScore": 78.3,
+      "observedClicks": 10,
+      "observedImpressions": 205,
+      "observedCtr": 0.048799999999999996,
+      "observedPosition": 6.16,
+      "explainability": {
+        "tokens": [
+          "famille",
+          "trois",
+          "enfants",
+          "famille-trois",
+          "trois-enfants"
+        ],
+        "drivers": [
+          {
+            "token": "enfants",
+            "tokenScore": 60.8,
+            "liftVsAverage": 19.4,
+            "pages": 3
+          },
+          {
+            "token": "famille",
+            "tokenScore": 52.2,
+            "liftVsAverage": 7.9,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "trois",
+          "famille-trois",
+          "trois-enfants"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-chomage-loyer-moyen",
+      "cluster": "apl",
+      "title": "APL au chômage avec loyer moyen : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 65.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 77.6,
+      "opportunityScore": 77.3,
+      "observedClicks": 9,
+      "observedImpressions": 460,
+      "observedCtr": 0.0196,
+      "observedPosition": 6.98,
+      "explainability": {
+        "tokens": [
+          "chomage",
+          "loyer",
+          "moyen",
+          "chomage-loyer",
+          "loyer-moyen"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          },
+          {
+            "token": "loyer-moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "chomage-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-personne-seule-smic",
+      "cluster": "apl",
+      "title": "APL personne seule au SMIC : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 68,
+      "clusterIntentScore": 47.6,
+      "proofScore": 74.5,
+      "opportunityScore": 76.7,
+      "observedClicks": 7,
+      "observedImpressions": 301,
+      "observedCtr": 0.0233,
+      "observedPosition": 6.46,
+      "explainability": {
+        "tokens": [
+          "personne",
+          "smic",
+          "personne-smic"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          },
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "personne-smic"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-chomage-avec-enfant",
+      "cluster": "apl",
+      "title": "APL au chômage avec enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 63.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 75.5,
+      "opportunityScore": 76.6,
+      "observedClicks": 7,
+      "observedImpressions": 79,
+      "observedCtr": 0.0886,
+      "observedPosition": 5.89,
+      "explainability": {
+        "tokens": [
+          "chomage",
+          "enfant",
+          "chomage-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          }
+        ],
+        "weakSignals": [
+          "chomage-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-chomage-personne-seule",
+      "cluster": "apl",
+      "title": "APL au chômage pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 62.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 72.9,
+      "opportunityScore": 73.9,
+      "observedClicks": 7,
+      "observedImpressions": 397,
+      "observedCtr": 0.0176,
+      "observedPosition": 7.6,
+      "explainability": {
+        "tokens": [
+          "chomage",
+          "personne",
+          "chomage-personne"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "chomage-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-smic-couple-sans-enfant",
+      "cluster": "apl",
+      "title": "APL au SMIC pour un couple sans enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 64,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 72.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "smic",
+          "couple",
+          "enfant",
+          "smic-couple",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "smic",
+            "tokenScore": 81.3,
+            "liftVsAverage": 46.8,
+            "pages": 3
+          },
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          }
+        ],
+        "weakSignals": [
+          "smic-couple"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-parent-isole-deux-enfants",
+      "cluster": "apl",
+      "title": "APL parent isoléà avec 2 enfants : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 53.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 68.9,
+      "opportunityScore": 72,
+      "observedClicks": 5,
+      "observedImpressions": 302,
+      "observedCtr": 0.0166,
+      "observedPosition": 5.78,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "deux",
+          "enfants",
+          "parent-isole",
+          "isole-deux",
+          "deux-enfants"
+        ],
+        "drivers": [
+          {
+            "token": "enfants",
+            "tokenScore": 60.8,
+            "liftVsAverage": 19.4,
+            "pages": 3
+          },
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "isole-deux"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-un-enfant-loyer-moyen",
+      "cluster": "apl",
+      "title": "APL couple avec 1 enfant et loyer moyen : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 63.1,
+      "clusterIntentScore": 47.6,
+      "proofScore": 61,
+      "opportunityScore": 70.5,
+      "observedClicks": 3,
+      "observedImpressions": 186,
+      "observedCtr": 0.0161,
+      "observedPosition": 6.2,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "loyer",
+          "moyen",
+          "couple-enfant",
+          "enfant-loyer",
+          "loyer-moyen"
+        ],
+        "drivers": [
+          {
+            "token": "moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          },
+          {
+            "token": "loyer-moyen",
+            "tokenScore": 63.4,
+            "liftVsAverage": 26.9,
+            "pages": 2
+          },
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          }
+        ],
+        "weakSignals": [
+          "enfant-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-sans-enfant",
+      "cluster": "apl",
+      "title": "APL pour un couple sans enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 65.5,
+      "opportunityScore": 70.2,
+      "observedClicks": 4,
+      "observedImpressions": 455,
+      "observedCtr": 0.0088,
+      "observedPosition": 6.29,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-reprise-emploi",
+      "cluster": "apl",
+      "title": "APL apres une reprise d'emploi : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 62.5,
+      "opportunityScore": 70.1,
+      "observedClicks": 3,
+      "observedImpressions": 27,
+      "observedCtr": 0.11109999999999999,
+      "observedPosition": 4.56,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "reprise-emploi"
+        ],
+        "drivers": [
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          },
+          {
+            "token": "reprise-emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-reprise-emploi-personne-seule",
+      "cluster": "apl",
+      "title": "APL en reprise d'emploi pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 69.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "personne",
+          "reprise-emploi",
+          "emploi-personne"
+        ],
+        "drivers": [
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          },
+          {
+            "token": "reprise-emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "emploi-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-loyer-500-revenu-900",
+      "cluster": "apl",
+      "title": "APL avec ~900 EUR de revenus et ~500 EUR de loyer : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 69,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "loyer",
+          "500",
+          "revenu",
+          "900",
+          "loyer-500",
+          "500-revenu",
+          "revenu-900"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "500",
+          "900",
+          "loyer-500"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-un-enfant",
+      "cluster": "apl",
+      "title": "APL couple avec 1 enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 68.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-sans-revenu-couple-sans-enfant",
+      "cluster": "apl",
+      "title": "APL sans revenu pour un couple sans enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 68.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "couple",
+          "enfant",
+          "revenu-couple",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "revenu-couple"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-alternant",
+      "cluster": "apl",
+      "title": "APL alternant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.1,
+      "clusterIntentScore": 47.6,
+      "proofScore": 61.1,
+      "opportunityScore": 68.1,
+      "observedClicks": 3,
+      "observedImpressions": 368,
+      "observedCtr": 0.008199999999999999,
+      "observedPosition": 6.68,
+      "explainability": {
+        "tokens": [
+          "alternant"
+        ],
+        "drivers": [
+          {
+            "token": "alternant",
+            "tokenScore": 52.1,
+            "liftVsAverage": 11.8,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-loyer-800-revenu-1300",
+      "cluster": "apl",
+      "title": "APL avec ~1 300 EUR de revenus et ~800 EUR de loyer : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 60.4,
+      "opportunityScore": 67.9,
+      "observedClicks": 3,
+      "observedImpressions": 153,
+      "observedCtr": 0.0196,
+      "observedPosition": 7.49,
+      "explainability": {
+        "tokens": [
+          "loyer",
+          "800",
+          "revenu",
+          "1300",
+          "loyer-800",
+          "800-revenu",
+          "revenu-1300"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "800",
+          "1300",
+          "loyer-800"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-sans-revenu-avec-enfant",
+      "cluster": "apl",
+      "title": "APL sans revenu avec enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 51.6,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 67.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "enfant",
+          "revenu-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "revenu-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-sans-revenu-parent-isole",
+      "cluster": "apl",
+      "title": "APL sans revenu pour un parent isolé : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 50.3,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 67.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "parent",
+          "isole",
+          "revenu-parent",
+          "parent-isole"
+        ],
+        "drivers": [
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "parent-isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "revenu-parent"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-paris",
+      "cluster": "apl",
+      "title": "APL pour un couple à à Paris : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.1,
+      "clusterIntentScore": 47.6,
+      "proofScore": 56.5,
+      "opportunityScore": 67,
+      "observedClicks": 2,
+      "observedImpressions": 84,
+      "observedCtr": 0.023799999999999998,
+      "observedPosition": 5.94,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "paris",
+          "couple-paris"
+        ],
+        "drivers": [
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          }
+        ],
+        "weakSignals": [
+          "couple-paris"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-cdi-loyer-700",
+      "cluster": "apl",
+      "title": "APL avec CDI et loyer de ~700 EUR : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 62.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 54.2,
+      "opportunityScore": 66.8,
+      "observedClicks": 2,
+      "observedImpressions": 179,
+      "observedCtr": 0.011200000000000002,
+      "observedPosition": 7.87,
+      "explainability": {
+        "tokens": [
+          "cdi",
+          "loyer",
+          "700",
+          "cdi-loyer",
+          "loyer-700"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          }
+        ],
+        "weakSignals": [
+          "cdi",
+          "700",
+          "cdi-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-fin-de-droits-chomage",
+      "cluster": "apl",
+      "title": "APL après fin de droits chômage : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 48.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 66.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "chomage",
+          "fin-chomage"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "fin-chomage"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-paris",
+      "cluster": "apl",
+      "title": "APL étudiant à à Paris : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 53.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 55.5,
+      "opportunityScore": 66.1,
+      "observedClicks": 2,
+      "observedImpressions": 228,
+      "observedCtr": 0.0088,
+      "observedPosition": 6.62,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "paris",
+          "etudiant-paris"
+        ],
+        "drivers": [
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          },
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          }
+        ],
+        "weakSignals": [
+          "etudiant-paris"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-reprise-emploi-loyer-eleve",
+      "cluster": "apl",
+      "title": "APL avec reprise d'emploi et loyer élevé : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 57.4,
+      "clusterIntentScore": 47.6,
+      "proofScore": 53.2,
+      "opportunityScore": 66.1,
+      "observedClicks": 2,
+      "observedImpressions": 10,
+      "observedCtr": 0.2,
+      "observedPosition": 6.4,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "loyer",
+          "eleve",
+          "reprise-emploi",
+          "emploi-loyer",
+          "loyer-eleve"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "emploi-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-toulouse",
+      "cluster": "apl",
+      "title": "APL étudiant à Toulouse : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 49.7,
+      "clusterIntentScore": 47.6,
+      "proofScore": 55.9,
+      "opportunityScore": 65.9,
+      "observedClicks": 2,
+      "observedImpressions": 110,
+      "observedCtr": 0.0182,
+      "observedPosition": 5.76,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "toulouse",
+          "etudiant-toulouse"
+        ],
+        "drivers": [
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          },
+          {
+            "token": "toulouse",
+            "tokenScore": 46.6,
+            "liftVsAverage": 4.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "etudiant-toulouse"
+        ]
+      }
+    },
+    {
+      "route": "/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage",
+      "cluster": "prime-activite",
+      "title": "Prime d'activité après reprise d'emploi post-chômage : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 60.2,
+      "clusterIntentScore": 18.9,
+      "proofScore": 0,
+      "opportunityScore": 65.9,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "chomage",
+          "reprise-emploi",
+          "emploi-chomage"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "emploi-chomage"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-apprenti",
+      "cluster": "apl",
+      "title": "APL apprenti : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 46.3,
+      "clusterIntentScore": 47.6,
+      "proofScore": 59.2,
+      "opportunityScore": 65,
+      "observedClicks": 3,
+      "observedImpressions": 339,
+      "observedCtr": 0.0088,
+      "observedPosition": 9.05,
+      "explainability": {
+        "tokens": [
+          "apprenti"
+        ],
+        "drivers": [
+          {
+            "token": "apprenti",
+            "tokenScore": 46.3,
+            "liftVsAverage": 4.1,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/asf/asf-parent-isole-sans-pension",
+      "cluster": "asf",
+      "title": "ASF parent isolé sans pension : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 50.3,
+      "clusterIntentScore": 35,
+      "proofScore": 0,
+      "opportunityScore": 64.6,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "pension",
+          "parent-isole",
+          "isole-pension"
+        ],
+        "drivers": [
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "parent-isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "pension",
+          "isole-pension"
+        ]
+      }
+    },
+    {
+      "route": "/pages/asf/asf-parent-isole-sans-revenu",
+      "cluster": "asf",
+      "title": "ASF parent isolé sans revenu : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 50.3,
+      "clusterIntentScore": 35,
+      "proofScore": 0,
+      "opportunityScore": 64.6,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "revenu",
+          "parent-isole",
+          "isole-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "parent-isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "isole-revenu"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-personne-seule-montant",
+      "cluster": "rsa",
+      "title": "RSA personne seule : montant (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 54.7,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 64.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "personne"
+        ],
+        "drivers": [
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-loyer-eleve",
+      "cluster": "apl",
+      "title": "APL avec loyer élevé pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 57.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 54.5,
+      "opportunityScore": 64.3,
+      "observedClicks": 2,
+      "observedImpressions": 579,
+      "observedCtr": 0.0034999999999999996,
+      "observedPosition": 11.85,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "loyer",
+          "eleve",
+          "celibataire-loyer",
+          "loyer-eleve"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          },
+          {
+            "token": "eleve",
+            "tokenScore": 53.3,
+            "liftVsAverage": 9.4,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "celibataire-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-parent-isole-un-enfant",
+      "cluster": "apl",
+      "title": "APL parent isoléà avec 1 enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 49.5,
+      "opportunityScore": 64.1,
+      "observedClicks": 1,
+      "observedImpressions": 229,
+      "observedCtr": 0.0044,
+      "observedPosition": 5.5,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "enfant",
+          "parent-isole",
+          "isole-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "isole-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-marseille",
+      "cluster": "apl",
+      "title": "APL célibataire à à Marseille : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 57.7,
+      "clusterIntentScore": 47.6,
+      "proofScore": 47.4,
+      "opportunityScore": 63.6,
+      "observedClicks": 1,
+      "observedImpressions": 85,
+      "observedCtr": 0.0118,
+      "observedPosition": 5.55,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "marseille",
+          "celibataire-marseille"
+        ],
+        "drivers": [
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          }
+        ],
+        "weakSignals": [
+          "marseille",
+          "celibataire-marseille"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-loyer-eleve",
+      "cluster": "apl",
+      "title": "APL pour un couple avec loyer élevé : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 56.6,
+      "clusterIntentScore": 47.6,
+      "proofScore": 47.6,
+      "opportunityScore": 63.4,
+      "observedClicks": 1,
+      "observedImpressions": 165,
+      "observedCtr": 0.0060999999999999995,
+      "observedPosition": 6.93,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "loyer",
+          "eleve",
+          "couple-loyer",
+          "loyer-eleve"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "eleve",
+            "tokenScore": 53.3,
+            "liftVsAverage": 9.4,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "couple-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-hlm-petit-revenu",
+      "cluster": "apl",
+      "title": "APL en HLM avec petit revenu : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 41.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 63.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "hlm",
+          "petit",
+          "revenu",
+          "hlm-petit",
+          "petit-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "petit",
+            "tokenScore": 41.4,
+            "liftVsAverage": -9.5,
+            "pages": 4
+          },
+          {
+            "token": "petit-revenu",
+            "tokenScore": 37.5,
+            "liftVsAverage": -7.7,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "hlm",
+          "hlm-petit"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-alternant-paris",
+      "cluster": "apl",
+      "title": "APL alternant à Paris : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 53.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 47.3,
+      "opportunityScore": 63.1,
+      "observedClicks": 1,
+      "observedImpressions": 57,
+      "observedCtr": 0.0175,
+      "observedPosition": 5.95,
+      "explainability": {
+        "tokens": [
+          "alternant",
+          "paris",
+          "alternant-paris"
+        ],
+        "drivers": [
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          },
+          {
+            "token": "alternant",
+            "tokenScore": 52.1,
+            "liftVsAverage": 11.8,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "alternant-paris"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-petite-surface-paris",
+      "cluster": "apl",
+      "title": "APL pour un studio à à Paris : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 47.1,
+      "opportunityScore": 63.1,
+      "observedClicks": 1,
+      "observedImpressions": 105,
+      "observedCtr": 0.0095,
+      "observedPosition": 6.35,
+      "explainability": {
+        "tokens": [
+          "petite",
+          "surface",
+          "paris",
+          "petite-surface",
+          "surface-paris"
+        ],
+        "drivers": [
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          }
+        ],
+        "weakSignals": [
+          "petite",
+          "surface",
+          "petite-surface"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-sans-revenu-avec-enfant",
+      "cluster": "rsa",
+      "title": "RSA sans revenu avec enfant : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 51.6,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 63,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "enfant",
+          "revenu-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "revenu-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-fin-de-droits-personne-seule",
+      "cluster": "apl",
+      "title": "APL en fin de droits pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 40.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 62.9,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "personne",
+          "fin-personne"
+        ],
+        "drivers": [
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "fin-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-fin-de-droits-chomage-personne-seule",
+      "cluster": "rsa",
+      "title": "RSA après fin de droits chômage pour une personne seule : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 50.8,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 62.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "chomage",
+          "personne",
+          "fin-chomage",
+          "chomage-personne"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "fin-chomage",
+          "chomage-personne"
+        ]
+      }
+    },
+    {
+      "route": "/pages/are/are-reprise-emploi-temps-partiel",
+      "cluster": "are",
+      "title": "ARE et reprise d'emploi à temps partiel : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 54.8,
+      "clusterIntentScore": 21.5,
+      "proofScore": 0,
+      "opportunityScore": 62.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "reprise",
+          "emploi",
+          "temps",
+          "partiel",
+          "reprise-emploi",
+          "emploi-temps",
+          "temps-partiel"
+        ],
+        "drivers": [
+          {
+            "token": "reprise",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          },
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          },
+          {
+            "token": "reprise-emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 15.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "temps",
+          "partiel",
+          "emploi-temps"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/quelles-aides-couple-sans-revenu",
+      "cluster": "simulateurs",
+      "title": "Quelles aides pour un couple sans revenu ? Simulation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 45.5,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 62.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aides",
+          "couple",
+          "revenu",
+          "aides-couple",
+          "couple-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "aides-couple",
+          "couple-revenu"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-couple-sans-revenu-avec-enfant",
+      "cluster": "rsa",
+      "title": "RSA couple sans revenu avec enfant : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 52.4,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 62.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "revenu",
+          "enfant",
+          "couple-revenu",
+          "revenu-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "couple-revenu",
+          "revenu-enfant"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/aide-financiere-famille",
+      "cluster": "simulateurs",
+      "title": "Aide financiere famille : reperes 2026",
+      "qualityScore": 87,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 90.3,
+      "tokenIntentScore": 52.2,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 62,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aide",
+          "financiere",
+          "famille",
+          "aide-financiere",
+          "financiere-famille"
+        ],
+        "drivers": [
+          {
+            "token": "famille",
+            "tokenScore": 52.2,
+            "liftVsAverage": 7.9,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "aide",
+          "financiere",
+          "aide-financiere"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+      "cluster": "simulateurs",
+      "title": "Quelles aides après fin de droits chômage ? Simulation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 44.7,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 62,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aides",
+          "fin",
+          "chomage",
+          "aides-fin",
+          "fin-chomage"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "aides-fin",
+          "fin-chomage"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-chomage-fin-de-droits",
+      "cluster": "rsa",
+      "title": "RSA chômage après fin de droits (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 48.9,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 61.8,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "chomage",
+          "fin",
+          "chomage-fin"
+        ],
+        "drivers": [
+          {
+            "token": "chomage",
+            "tokenScore": 71,
+            "liftVsAverage": 33,
+            "pages": 3
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "chomage-fin"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-hebergement-gratuit",
+      "cluster": "rsa",
+      "title": "RSA avec hébergement gratuit (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 62.2,
+      "opportunityScore": 60.8,
+      "observedClicks": 3,
+      "observedImpressions": 63,
+      "observedCtr": 0.047599999999999996,
+      "observedPosition": 10.63,
+      "explainability": {
+        "tokens": [
+          "hebergement"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "hebergement"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-refusee-que-faire",
+      "cluster": "apl",
+      "title": "APL refusée : que faire ? (2026)",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 60.3,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "refusee",
+          "que",
+          "refusee-que"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "refusee",
+          "que",
+          "refusee-que"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-toulouse",
+      "cluster": "apl",
+      "title": "APL célibataire à à Toulouse : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 37.8,
+      "opportunityScore": 59.5,
+      "observedClicks": 0,
+      "observedImpressions": 161,
+      "observedCtr": 0,
+      "observedPosition": 4.98,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "toulouse",
+          "celibataire-toulouse"
+        ],
+        "drivers": [
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          },
+          {
+            "token": "toulouse",
+            "tokenScore": 46.6,
+            "liftVsAverage": 4.5,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "celibataire-toulouse"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-colocation",
+      "cluster": "apl",
+      "title": "APL étudiant en colocation : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 45.6,
+      "clusterIntentScore": 47.6,
+      "proofScore": 45.6,
+      "opportunityScore": 59.2,
+      "observedClicks": 1,
+      "observedImpressions": 159,
+      "observedCtr": 0.0063,
+      "observedPosition": 9.48,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "colocation",
+          "etudiant-colocation"
+        ],
+        "drivers": [
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          },
+          {
+            "token": "colocation",
+            "tokenScore": 38.4,
+            "liftVsAverage": -10.5,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "etudiant-colocation"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-proprietaire-ai-je-droit",
+      "cluster": "apl",
+      "title": "APL propriétaire : ai-je droit ? (2026)",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 59.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "proprietaire"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "proprietaire"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl",
+      "cluster": "apl",
+      "title": "Simulateur APL 2026 (CAF) | Estimation en 2 minutes",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 47.6,
+      "proofScore": 0,
+      "opportunityScore": 59.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [],
+        "drivers": [],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/simulateurs/aides-apres-perte-emploi",
+      "cluster": "simulateurs",
+      "title": "Aides après perte d'emploi : simulation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 45.6,
+      "clusterIntentScore": 34.4,
+      "proofScore": 45.6,
+      "opportunityScore": 58.4,
+      "observedClicks": 1,
+      "observedImpressions": 8,
+      "observedCtr": 0.125,
+      "observedPosition": 8.38,
+      "explainability": {
+        "tokens": [
+          "aides",
+          "perte",
+          "emploi",
+          "aides-perte",
+          "perte-emploi"
+        ],
+        "drivers": [
+          {
+            "token": "emploi",
+            "tokenScore": 54.8,
+            "liftVsAverage": 11.4,
+            "pages": 3
+          },
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "perte",
+          "aides-perte",
+          "perte-emploi"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-apprenti-loyer-500",
+      "cluster": "apl",
+      "title": "APL apprenti avec loyer de ~500 EUR : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.4,
+      "clusterIntentScore": 47.6,
+      "proofScore": 33.7,
+      "opportunityScore": 58.1,
+      "observedClicks": 0,
+      "observedImpressions": 71,
+      "observedCtr": 0,
+      "observedPosition": 5.48,
+      "explainability": {
+        "tokens": [
+          "apprenti",
+          "loyer",
+          "500",
+          "apprenti-loyer",
+          "loyer-500"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "apprenti",
+            "tokenScore": 46.3,
+            "liftVsAverage": 4.1,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "500",
+          "apprenti-loyer",
+          "loyer-500"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-famille-idf",
+      "cluster": "apl",
+      "title": "APL famille en Île-de-France : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 34.6,
+      "opportunityScore": 57.8,
+      "observedClicks": 0,
+      "observedImpressions": 93,
+      "observedCtr": 0,
+      "observedPosition": 6.03,
+      "explainability": {
+        "tokens": [
+          "famille",
+          "idf",
+          "famille-idf"
+        ],
+        "drivers": [
+          {
+            "token": "famille",
+            "tokenScore": 52.2,
+            "liftVsAverage": 7.9,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "idf",
+          "famille-idf"
+        ]
+      }
+    },
+    {
+      "route": "/pages/asf/asf-sans-pension-et-apl",
+      "cluster": "asf",
+      "title": "ASF sans pension et APL : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 35,
+      "proofScore": 0,
+      "opportunityScore": 57.8,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "pension"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "pension"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-lyon",
+      "cluster": "apl",
+      "title": "APL étudiant à à Lyon : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 46.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 37,
+      "opportunityScore": 57.7,
+      "observedClicks": 0,
+      "observedImpressions": 150,
+      "observedCtr": 0,
+      "observedPosition": 5.71,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "lyon",
+          "etudiant-lyon"
+        ],
+        "drivers": [
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          },
+          {
+            "token": "lyon",
+            "tokenScore": 39.6,
+            "liftVsAverage": -8.8,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "etudiant-lyon"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-petit-salaire",
+      "cluster": "apl",
+      "title": "APL célibataire avec petit salaire : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 49.6,
+      "clusterIntentScore": 47.6,
+      "proofScore": 34.5,
+      "opportunityScore": 57.5,
+      "observedClicks": 0,
+      "observedImpressions": 83,
+      "observedCtr": 0,
+      "observedPosition": 5.35,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "petit",
+          "salaire",
+          "celibataire-petit",
+          "petit-salaire"
+        ],
+        "drivers": [
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          },
+          {
+            "token": "petit",
+            "tokenScore": 41.4,
+            "liftVsAverage": -9.5,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "salaire",
+          "celibataire-petit",
+          "petit-salaire"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-paris-petit-revenu",
+      "cluster": "apl",
+      "title": "APL célibataire à à Paris avec petit revenu : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 33.4,
+      "opportunityScore": 57.2,
+      "observedClicks": 0,
+      "observedImpressions": 79,
+      "observedCtr": 0,
+      "observedPosition": 6.61,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "paris",
+          "petit",
+          "revenu",
+          "celibataire-paris",
+          "paris-petit",
+          "petit-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          },
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "celibataire-paris",
+          "paris-petit"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/quelles-aides-ai-je-droit",
+      "cluster": "simulateurs",
+      "title": "À quelles aides ai-je droit ? Guide 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 36.3,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 57.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aides"
+        ],
+        "drivers": [
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-cdd-loyer-600",
+      "cluster": "apl",
+      "title": "APL avec CDD et loyer de ~600 EUR : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 62.5,
+      "clusterIntentScore": 47.6,
+      "proofScore": 29.8,
+      "opportunityScore": 56.8,
+      "observedClicks": 0,
+      "observedImpressions": 48,
+      "observedCtr": 0,
+      "observedPosition": 8.35,
+      "explainability": {
+        "tokens": [
+          "cdd",
+          "loyer",
+          "600",
+          "cdd-loyer",
+          "loyer-600"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          }
+        ],
+        "weakSignals": [
+          "cdd",
+          "600",
+          "cdd-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-petit-revenu",
+      "cluster": "apl",
+      "title": "APL couple avec petit revenu : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 47.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 36,
+      "opportunityScore": 56.4,
+      "observedClicks": 0,
+      "observedImpressions": 169,
+      "observedCtr": 0,
+      "observedPosition": 7.92,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "petit",
+          "revenu",
+          "couple-petit",
+          "petit-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "petit",
+            "tokenScore": 41.4,
+            "liftVsAverage": -9.5,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "couple-petit"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-famille-deux-enfants-province",
+      "cluster": "apl",
+      "title": "APL famille avec 2 enfants en province : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 54.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 32.5,
+      "opportunityScore": 56.3,
+      "observedClicks": 0,
+      "observedImpressions": 84,
+      "observedCtr": 0,
+      "observedPosition": 8.21,
+      "explainability": {
+        "tokens": [
+          "famille",
+          "deux",
+          "enfants",
+          "province",
+          "famille-deux",
+          "deux-enfants",
+          "enfants-province"
+        ],
+        "drivers": [
+          {
+            "token": "enfants",
+            "tokenScore": 60.8,
+            "liftVsAverage": 19.4,
+            "pages": 3
+          },
+          {
+            "token": "famille",
+            "tokenScore": 52.2,
+            "liftVsAverage": 7.9,
+            "pages": 3
+          },
+          {
+            "token": "deux",
+            "tokenScore": 49.5,
+            "liftVsAverage": 8.3,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "province",
+          "famille-deux",
+          "enfants-province"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-couple-lyon",
+      "cluster": "apl",
+      "title": "APL pour un couple à à Lyon : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 46.8,
+      "clusterIntentScore": 47.6,
+      "proofScore": 32.3,
+      "opportunityScore": 56,
+      "observedClicks": 0,
+      "observedImpressions": 53,
+      "observedCtr": 0,
+      "observedPosition": 5.53,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "lyon",
+          "couple-lyon"
+        ],
+        "drivers": [
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "lyon",
+            "tokenScore": 39.6,
+            "liftVsAverage": -8.8,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "couple-lyon"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-celibataire-lyon",
+      "cluster": "apl",
+      "title": "APL célibataire à Lyon : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 48.7,
+      "clusterIntentScore": 47.6,
+      "proofScore": 31.3,
+      "opportunityScore": 56,
+      "observedClicks": 0,
+      "observedImpressions": 43,
+      "observedCtr": 0,
+      "observedPosition": 5.58,
+      "explainability": {
+        "tokens": [
+          "celibataire",
+          "lyon",
+          "celibataire-lyon"
+        ],
+        "drivers": [
+          {
+            "token": "celibataire",
+            "tokenScore": 57.7,
+            "liftVsAverage": 5.7,
+            "pages": 7
+          },
+          {
+            "token": "lyon",
+            "tokenScore": 39.6,
+            "liftVsAverage": -8.8,
+            "pages": 3
+          }
+        ],
+        "weakSignals": [
+          "celibataire-lyon"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-parent-isole-paris",
+      "cluster": "apl",
+      "title": "APL parent isoléà à à Paris : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 51.6,
+      "clusterIntentScore": 47.6,
+      "proofScore": 31.4,
+      "opportunityScore": 55.9,
+      "observedClicks": 0,
+      "observedImpressions": 55,
+      "observedCtr": 0,
+      "observedPosition": 7.09,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "paris",
+          "parent-isole",
+          "isole-paris"
+        ],
+        "drivers": [
+          {
+            "token": "paris",
+            "tokenScore": 54.2,
+            "liftVsAverage": 2.8,
+            "pages": 6
+          },
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "isole-paris"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/combien-touche-t-on-au-rsa",
+      "cluster": "rsa",
+      "title": "Combien touche-t-on au RSA ? (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 55.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "combien",
+          "touche",
+          "combien-touche"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "combien",
+          "touche",
+          "combien-touche"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/qui-a-droit-au-rsa",
+      "cluster": "rsa",
+      "title": "Qui a droit au RSA ? (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 55.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "qui"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "qui"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-travail-a-temps-partiel",
+      "cluster": "rsa",
+      "title": "RSA travail à temps partiel (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 55.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "travail",
+          "temps",
+          "partiel",
+          "travail-temps",
+          "temps-partiel"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "travail",
+          "temps",
+          "partiel"
+        ]
+      }
+    },
+    {
+      "route": "/pages/asf",
+      "cluster": "asf",
+      "title": "Simulation ASF 2026 - Calcul Gratuit | Simulateur Allocation Soutien Familial CAF",
+      "qualityScore": 98,
+      "actionableCount": 2,
+      "languageScore": 76,
+      "readinessScore": 92.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 35,
+      "proofScore": 0,
+      "opportunityScore": 55.1,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [],
+        "drivers": [],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/simulateurs/aides-jeunes-actifs",
+      "cluster": "simulateurs",
+      "title": "Aides jeunes actifs : repères 2026",
+      "qualityScore": 87,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 90.3,
+      "tokenIntentScore": 36.3,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 54.8,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aides",
+          "jeunes",
+          "actifs",
+          "aides-jeunes",
+          "jeunes-actifs"
+        ],
+        "drivers": [
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "jeunes",
+          "actifs",
+          "aides-jeunes"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs",
+      "cluster": "simulateurs",
+      "title": "Outils gratuits 2026 | Les Calculateurs",
+      "qualityScore": 93,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 91.8,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 54.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [],
+        "drivers": [],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/simulateurs/aides-retraites",
+      "cluster": "simulateurs",
+      "title": "Aides retraités (2026)",
+      "qualityScore": 90,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 89.5,
+      "tokenIntentScore": 36.3,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 54.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aides",
+          "retraites",
+          "aides-retraites"
+        ],
+        "drivers": [
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "retraites",
+          "aides-retraites"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/cumul-aides-sociales",
+      "cluster": "simulateurs",
+      "title": "Cumul d'aides sociales (2026)",
+      "qualityScore": 90,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 89.5,
+      "tokenIntentScore": 36.3,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 54.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "cumul",
+          "aides",
+          "sociales",
+          "cumul-aides",
+          "aides-sociales"
+        ],
+        "drivers": [
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "cumul",
+          "sociales",
+          "cumul-aides"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-auto-entrepreneur",
+      "cluster": "rsa",
+      "title": "RSA auto-entrepreneur (2026)",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 54.5,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "auto",
+          "entrepreneur",
+          "auto-entrepreneur"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "auto",
+          "entrepreneur",
+          "auto-entrepreneur"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/aide-sociale-simulation-globale",
+      "cluster": "simulateurs",
+      "title": "Aide sociale : simulation globale 2026",
+      "qualityScore": 87,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 90.3,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 34.4,
+      "proofScore": 0,
+      "opportunityScore": 54.2,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "aide",
+          "sociale",
+          "globale",
+          "aide-sociale",
+          "sociale-globale"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "aide",
+          "sociale",
+          "globale"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-sans-revenu-personne-seule",
+      "cluster": "apl",
+      "title": "APL sans revenu pour une personne seule : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 44.3,
+      "clusterIntentScore": 47.6,
+      "proofScore": 30.2,
+      "opportunityScore": 54.1,
+      "observedClicks": 0,
+      "observedImpressions": 41,
+      "observedCtr": 0,
+      "observedPosition": 6.88,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "personne",
+          "revenu-personne"
+        ],
+        "drivers": [
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "revenu-personne",
+            "tokenScore": 31.9,
+            "liftVsAverage": -15.1,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/rsa",
+      "cluster": "rsa",
+      "title": "Simulateur RSA 2026 | Montant CAF estimé en 2 minutes",
+      "qualityScore": 100,
+      "actionableCount": 2,
+      "languageScore": 76,
+      "readinessScore": 94,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 54,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [],
+        "drivers": [],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-interim",
+      "cluster": "rsa",
+      "title": "RSA intérim (2026)",
+      "qualityScore": 98,
+      "actionableCount": 2,
+      "languageScore": 76,
+      "readinessScore": 92.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 53.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "interim"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "interim"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-jeune-moins-de-25-ans",
+      "cluster": "rsa",
+      "title": "RSA jeune de moins de 25 ans (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 30.2,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 53.4,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "jeune",
+          "moins",
+          "ans",
+          "jeune-moins",
+          "moins-ans"
+        ],
+        "drivers": [
+          {
+            "token": "jeune",
+            "tokenScore": 30.2,
+            "liftVsAverage": -17.4,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "moins",
+          "ans",
+          "jeune-moins"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-studio",
+      "cluster": "apl",
+      "title": "APL étudiant en studio : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 52.7,
+      "clusterIntentScore": 47.6,
+      "proofScore": 38,
+      "opportunityScore": 53.1,
+      "observedClicks": 1,
+      "observedImpressions": 93,
+      "observedCtr": 0.0108,
+      "observedPosition": 26.92,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "studio",
+          "etudiant-studio"
+        ],
+        "drivers": [
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          }
+        ],
+        "weakSignals": [
+          "studio",
+          "etudiant-studio"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-parent-isole-sans-revenu",
+      "cluster": "rsa",
+      "title": "RSA parent isolé sans revenu : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 50.3,
+      "clusterIntentScore": 26.6,
+      "proofScore": 28.8,
+      "opportunityScore": 52,
+      "observedClicks": 0,
+      "observedImpressions": 34,
+      "observedCtr": 0,
+      "observedPosition": 7.5,
+      "explainability": {
+        "tokens": [
+          "parent",
+          "isole",
+          "revenu",
+          "parent-isole",
+          "isole-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "parent",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          },
+          {
+            "token": "parent-isole",
+            "tokenScore": 50.3,
+            "liftVsAverage": 2.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "isole-revenu"
+        ]
+      }
+    },
+    {
+      "route": "/pages/prime-activite/montant-prime-activite-2026",
+      "cluster": "prime-activite",
+      "title": "Montant Prime d'activité 2026 : calcul rapide",
+      "qualityScore": 90,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 92.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 18.9,
+      "proofScore": 0,
+      "opportunityScore": 51.9,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [],
+        "drivers": [],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-logement-social",
+      "cluster": "rsa",
+      "title": "RSA logement social (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 26.4,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 51.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "logement",
+          "social",
+          "logement-social"
+        ],
+        "drivers": [
+          {
+            "token": "logement",
+            "tokenScore": 26.4,
+            "liftVsAverage": -22.4,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "social",
+          "logement-social"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-sans-logement",
+      "cluster": "rsa",
+      "title": "RSA sans logement stable (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 26.4,
+      "clusterIntentScore": 26.6,
+      "proofScore": 0,
+      "opportunityScore": 51.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "logement"
+        ],
+        "drivers": [
+          {
+            "token": "logement",
+            "tokenScore": 26.4,
+            "liftVsAverage": -22.4,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-colocation",
+      "cluster": "apl",
+      "title": "APL colocation (2026)",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 38.4,
+      "clusterIntentScore": 47.6,
+      "proofScore": 23.4,
+      "opportunityScore": 51.3,
+      "observedClicks": 0,
+      "observedImpressions": 6,
+      "observedCtr": 0,
+      "observedPosition": 2,
+      "explainability": {
+        "tokens": [
+          "colocation"
+        ],
+        "drivers": [
+          {
+            "token": "colocation",
+            "tokenScore": 38.4,
+            "liftVsAverage": -10.5,
+            "pages": 3
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-couple-sans-enfant",
+      "cluster": "rsa",
+      "title": "RSA couple sans enfant (2026)",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 26.6,
+      "proofScore": 24.6,
+      "opportunityScore": 50.8,
+      "observedClicks": 0,
+      "observedImpressions": 11,
+      "observedCtr": 0,
+      "observedPosition": 6.36,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/are/are-fin-de-droits-rsa-ou-apl",
+      "cluster": "are",
+      "title": "Fin de droits ARE : RSA ou APL ensuite ?",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 26.8,
+      "clusterIntentScore": 21.5,
+      "proofScore": 0,
+      "opportunityScore": 49.8,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [
+          "fin"
+        ],
+        "drivers": [
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/apl-etudiant-petit-loyer",
+      "cluster": "apl",
+      "title": "APL étudiant avec petit loyer : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 52.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 27.5,
+      "opportunityScore": 49.6,
+      "observedClicks": 0,
+      "observedImpressions": 94,
+      "observedCtr": 0,
+      "observedPosition": 18.02,
+      "explainability": {
+        "tokens": [
+          "etudiant",
+          "petit",
+          "loyer",
+          "etudiant-petit",
+          "petit-loyer"
+        ],
+        "drivers": [
+          {
+            "token": "loyer",
+            "tokenScore": 62.5,
+            "liftVsAverage": 7.6,
+            "pages": 10
+          },
+          {
+            "token": "etudiant",
+            "tokenScore": 52.7,
+            "liftVsAverage": 0.9,
+            "pages": 6
+          },
+          {
+            "token": "petit",
+            "tokenScore": 41.4,
+            "liftVsAverage": -9.5,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "etudiant-petit",
+          "petit-loyer"
+        ]
+      }
+    },
+    {
+      "route": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+      "cluster": "simulateurs",
+      "title": "Simulateur d'aides sociales 2026 | RSA, APL et prime d’activité",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 34.4,
+      "proofScore": 40.1,
+      "opportunityScore": 49.3,
+      "observedClicks": 1,
+      "observedImpressions": 189,
+      "observedCtr": 0.0053,
+      "observedPosition": 21.78,
+      "explainability": {
+        "tokens": [
+          "quelle",
+          "aide",
+          "mon",
+          "profil",
+          "quelle-aide",
+          "aide-mon",
+          "mon-profil"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "quelle",
+          "aide",
+          "mon"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-sans-revenu-personne-seule",
+      "cluster": "rsa",
+      "title": "RSA sans revenu pour une personne seule : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 44.3,
+      "clusterIntentScore": 26.6,
+      "proofScore": 24.4,
+      "opportunityScore": 48.2,
+      "observedClicks": 0,
+      "observedImpressions": 17,
+      "observedCtr": 0,
+      "observedPosition": 9.24,
+      "explainability": {
+        "tokens": [
+          "revenu",
+          "personne",
+          "revenu-personne"
+        ],
+        "drivers": [
+          {
+            "token": "personne",
+            "tokenScore": 54.7,
+            "liftVsAverage": 8.1,
+            "pages": 4
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "revenu-personne",
+            "tokenScore": 31.9,
+            "liftVsAverage": -15.1,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-et-apl-cumul",
+      "cluster": "rsa",
+      "title": "RSA et APL : cumul (2026)",
+      "qualityScore": 98,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 98.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 24.4,
+      "opportunityScore": 48.1,
+      "observedClicks": 0,
+      "observedImpressions": 9,
+      "observedCtr": 0,
+      "observedPosition": 5.44,
+      "explainability": {
+        "tokens": [
+          "cumul"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "cumul"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-colocation-jeune-actif",
+      "cluster": "apl",
+      "title": "APL jeune actif en colocation : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 32.9,
+      "clusterIntentScore": 47.6,
+      "proofScore": 26.6,
+      "opportunityScore": 47.8,
+      "observedClicks": 0,
+      "observedImpressions": 44,
+      "observedCtr": 0,
+      "observedPosition": 12.95,
+      "explainability": {
+        "tokens": [
+          "colocation",
+          "jeune",
+          "actif",
+          "colocation-jeune",
+          "jeune-actif"
+        ],
+        "drivers": [
+          {
+            "token": "colocation",
+            "tokenScore": 38.4,
+            "liftVsAverage": -10.5,
+            "pages": 3
+          },
+          {
+            "token": "jeune",
+            "tokenScore": 30.2,
+            "liftVsAverage": -17.4,
+            "pages": 2
+          },
+          {
+            "token": "actif",
+            "tokenScore": 30.2,
+            "liftVsAverage": -17.4,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "colocation-jeune"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/quelles-ressources-pour-l-apl",
+      "cluster": "apl",
+      "title": "Quelles ressources pour l'APL ? (2026)",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 30.7,
+      "clusterIntentScore": 47.6,
+      "proofScore": 21.6,
+      "opportunityScore": 47.8,
+      "observedClicks": 0,
+      "observedImpressions": 6,
+      "observedCtr": 0,
+      "observedPosition": 7,
+      "explainability": {
+        "tokens": [
+          "ressources"
+        ],
+        "drivers": [
+          {
+            "token": "ressources",
+            "tokenScore": 30.7,
+            "liftVsAverage": -20.8,
+            "pages": 3
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/are",
+      "cluster": "are",
+      "title": "Simulateur ARE 2026 | Montant, durée et cumul",
+      "qualityScore": 100,
+      "actionableCount": 7,
+      "languageScore": 16,
+      "readinessScore": 79,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 21.5,
+      "proofScore": 0,
+      "opportunityScore": 47.7,
+      "observedClicks": 0,
+      "observedImpressions": 0,
+      "observedCtr": 0,
+      "observedPosition": 0,
+      "explainability": {
+        "tokens": [],
+        "drivers": [],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/are/are-fin-de-droits-quelles-aides",
+      "cluster": "are",
+      "title": "Fin de droits ARE : quelles aides après l'absence de revenu ?",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 30,
+      "clusterIntentScore": 21.5,
+      "proofScore": 27.5,
+      "opportunityScore": 47.1,
+      "observedClicks": 0,
+      "observedImpressions": 19,
+      "observedCtr": 0,
+      "observedPosition": 5.79,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "aides",
+          "fin-aides"
+        ],
+        "drivers": [
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          },
+          {
+            "token": "fin-aides",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/are/montant-are-2026",
+      "cluster": "are",
+      "title": "Montant ARE 2026 : calcul et estimation chômage",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 21.5,
+      "proofScore": 23.6,
+      "opportunityScore": 45.6,
+      "observedClicks": 0,
+      "observedImpressions": 11,
+      "observedCtr": 0,
+      "observedPosition": 7.82,
+      "explainability": {
+        "tokens": [],
+        "drivers": [],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/simulateurs/quelles-aides-sans-revenu",
+      "cluster": "simulateurs",
+      "title": "Quelles aides sans revenu ? Simulation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 97,
+      "tokenIntentScore": 41.3,
+      "clusterIntentScore": 34.4,
+      "proofScore": 17.5,
+      "opportunityScore": 45.4,
+      "observedClicks": 0,
+      "observedImpressions": 3,
+      "observedCtr": 0,
+      "observedPosition": 9,
+      "explainability": {
+        "tokens": [
+          "aides",
+          "revenu",
+          "aides-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          },
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          }
+        ],
+        "weakSignals": [
+          "aides-revenu"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-couple-sans-revenu",
+      "cluster": "rsa",
+      "title": "RSA couple sans revenu : estimation 2026",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 50.2,
+      "clusterIntentScore": 26.6,
+      "proofScore": 19.6,
+      "opportunityScore": 43.3,
+      "observedClicks": 0,
+      "observedImpressions": 19,
+      "observedCtr": 0,
+      "observedPosition": 18.95,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "revenu",
+          "couple-revenu"
+        ],
+        "drivers": [
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "revenu",
+            "tokenScore": 46.4,
+            "liftVsAverage": -11.1,
+            "pages": 8
+          }
+        ],
+        "weakSignals": [
+          "couple-revenu"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-conditions-2026",
+      "cluster": "rsa",
+      "title": "RSA conditions 2026",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 35,
+      "clusterIntentScore": 26.6,
+      "proofScore": 18.4,
+      "opportunityScore": 43.3,
+      "observedClicks": 0,
+      "observedImpressions": 4,
+      "observedCtr": 0,
+      "observedPosition": 9.25,
+      "explainability": {
+        "tokens": [
+          "conditions"
+        ],
+        "drivers": [],
+        "weakSignals": [
+          "conditions"
+        ]
+      }
+    },
+    {
+      "route": "/pages/apl/apl-jeune-actif-premier-logement",
+      "cluster": "apl",
+      "title": "APL jeune actif pour un premier logement : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 30.2,
+      "clusterIntentScore": 47.6,
+      "proofScore": 23.4,
+      "opportunityScore": 41.6,
+      "observedClicks": 0,
+      "observedImpressions": 88,
+      "observedCtr": 0,
+      "observedPosition": 38.14,
+      "explainability": {
+        "tokens": [
+          "jeune",
+          "actif",
+          "premier",
+          "logement",
+          "jeune-actif",
+          "actif-premier",
+          "premier-logement"
+        ],
+        "drivers": [
+          {
+            "token": "jeune",
+            "tokenScore": 30.2,
+            "liftVsAverage": -17.4,
+            "pages": 2
+          },
+          {
+            "token": "actif",
+            "tokenScore": 30.2,
+            "liftVsAverage": -17.4,
+            "pages": 2
+          },
+          {
+            "token": "jeune-actif",
+            "tokenScore": 30.2,
+            "liftVsAverage": -17.4,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "premier",
+          "actif-premier",
+          "premier-logement"
+        ]
+      }
+    },
+    {
+      "route": "/pages/rsa/rsa-couple-avec-enfant",
+      "cluster": "rsa",
+      "title": "RSA couple avec enfant (2026)",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 52.9,
+      "clusterIntentScore": 26.6,
+      "proofScore": 16,
+      "opportunityScore": 40.9,
+      "observedClicks": 0,
+      "observedImpressions": 14,
+      "observedCtr": 0,
+      "observedPosition": 31.14,
+      "explainability": {
+        "tokens": [
+          "couple",
+          "enfant",
+          "couple-enfant"
+        ],
+        "drivers": [
+          {
+            "token": "enfant",
+            "tokenScore": 56.8,
+            "liftVsAverage": 6.3,
+            "pages": 6
+          },
+          {
+            "token": "couple",
+            "tokenScore": 53.9,
+            "liftVsAverage": -2.5,
+            "pages": 9
+          },
+          {
+            "token": "couple-enfant",
+            "tokenScore": 48.1,
+            "liftVsAverage": -0.6,
+            "pages": 4
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/prime-activite/plafond-prime-activite-2026",
+      "cluster": "prime-activite",
+      "title": "Plafond Prime d'activité 2026 : simulation et barème",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 28.3,
+      "clusterIntentScore": 18.9,
+      "proofScore": 18.9,
+      "opportunityScore": 40.8,
+      "observedClicks": 0,
+      "observedImpressions": 8,
+      "observedCtr": 0,
+      "observedPosition": 13.25,
+      "explainability": {
+        "tokens": [
+          "plafond"
+        ],
+        "drivers": [
+          {
+            "token": "plafond",
+            "tokenScore": 28.3,
+            "liftVsAverage": -19.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/are/are-fin-de-droits-aides",
+      "cluster": "are",
+      "title": "Fin de droits ARE : quelles aides en 2026 ?",
+      "qualityScore": 98,
+      "actionableCount": 1,
+      "languageScore": 88,
+      "readinessScore": 95.5,
+      "tokenIntentScore": 30,
+      "clusterIntentScore": 21.5,
+      "proofScore": 13.5,
+      "opportunityScore": 39.4,
+      "observedClicks": 0,
+      "observedImpressions": 1,
+      "observedCtr": 0,
+      "observedPosition": 10,
+      "explainability": {
+        "tokens": [
+          "fin",
+          "aides",
+          "fin-aides"
+        ],
+        "drivers": [
+          {
+            "token": "aides",
+            "tokenScore": 36.3,
+            "liftVsAverage": -16.3,
+            "pages": 4
+          },
+          {
+            "token": "fin",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          },
+          {
+            "token": "fin-aides",
+            "tokenScore": 26.8,
+            "liftVsAverage": -21.9,
+            "pages": 2
+          }
+        ],
+        "weakSignals": []
+      }
+    },
+    {
+      "route": "/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl",
+      "cluster": "apl",
+      "title": "Comment savoir si un logement est éligible aux APL ? (2026)",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "languageScore": 100,
+      "readinessScore": 100,
+      "tokenIntentScore": 26.4,
+      "clusterIntentScore": 47.6,
+      "proofScore": 16.5,
+      "opportunityScore": 36.6,
+      "observedClicks": 0,
+      "observedImpressions": 32,
+      "observedCtr": 0,
+      "observedPosition": 54.44,
+      "explainability": {
+        "tokens": [
+          "savoir",
+          "logement",
+          "eligible",
+          "savoir-logement",
+          "logement-eligible"
+        ],
+        "drivers": [
+          {
+            "token": "logement",
+            "tokenScore": 26.4,
+            "liftVsAverage": -22.4,
+            "pages": 2
+          }
+        ],
+        "weakSignals": [
+          "savoir",
+          "eligible",
+          "savoir-logement"
+        ]
+      }
+    }
+  ],
+  "recommendations": [
+    "Le cluster le plus fertile aujourd'hui est apl, avec 125 clics et un traffic score moyen de 47.6/100.",
+    "Les intentions qui portent le mieux la demande actuelle sont smic, chomage, moyen, loyer-moyen, loyer. Le scoring futur doit d'abord reproduire ces motifs avant de s'eloigner.",
+    "Vos pages de preuve sont /pages/apl/apl-smic-seul, /pages/apl/apl-celibataire-smic, /pages/apl/apl-famille-trois-enfants. Elles doivent servir de seed pages et de reference de maillage.",
+    "Les prochaines pages a pousser sans intuition naive sont /pages/apl/apl-smic-couple-sans-enfant, /pages/apl/apl-reprise-emploi-personne-seule, /pages/apl/apl-loyer-500-revenu-900 car elles combinent tokens gagnants et readiness elevee."
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "generatedAt": "2026-03-27T19:06:51.211Z",
+  "input": {
+    "workbookPath": "C:\\Users\\prene\\Downloads\\lescalculateurs.fr-Performance-on-Search-2026-03-27.xlsx",
+    "sheets": [
+      "Requêtes",
+      "Pages",
+      "Pays",
+      "Appareils",
+      "Apparence dans les résultats de",
+      "Filtres"
+    ],
+    "qualityPath": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\reports\\pseo-quality-report.json",
+    "triagePath": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\reports\\languagetool-triage-site.json"
+  },
+  "cluster": {
+    "anchorTokens": [
+      "apl",
+      "smic"
+    ],
+    "matchingTokens": [
+      "apl",
+      "smic"
+    ],
+    "clusterLabel": "apl + smic",
+    "filterValue": "+^(smic et apl|apl smic|apl au smic|apl et smic|apl personne seule smic|apl smic seul|smic apl|montant apl smic|apl 2026 plafond|grille apl 2026|montant apl 2026)$",
+    "filterPatterns": [
+      "smic et apl",
+      "apl smic",
+      "apl au smic",
+      "apl et smic",
+      "apl personne seule smic",
+      "apl smic seul",
+      "smic apl",
+      "montant apl smic",
+      "apl 2026 plafond",
+      "grille apl 2026",
+      "montant apl 2026"
+    ]
+  },
+  "scoringSystem": {
+    "clusterScore": "35% demande (impressions+clics), 20% headroom de position, 20% qualite pSEO, 15% proprete LanguageTool, 10% couverture du cluster",
+    "priorityScore": "65% performance Search Console de la page, 35% readiness (qualite pSEO + proprete redactionnelle)",
+    "expansionScore": "55% readiness de la page deja publiee, 45% force du cluster observe dans Search Console"
+  },
+  "summary": {
+    "totalQueries": 11,
+    "totalTrackedPages": 4,
+    "totalClusterCandidates": 4,
+    "totalClicks": 18,
+    "totalImpressions": 202,
+    "avgCtr": 0.0891,
+    "avgPosition": 6.84,
+    "avgQualityScore": 100,
+    "avgLanguageScore": 91,
+    "demandScore": 71,
+    "rankingScore": 93.3,
+    "coverageScore": 100,
+    "clusterScore": 87.2,
+    "actionMode": "scale-now"
+  },
+  "trackedQueries": [
+    {
+      "query": "smic et apl",
+      "clicks": 4,
+      "impressions": 35,
+      "ctr": 0.1143,
+      "position": 8
+    },
+    {
+      "query": "apl smic",
+      "clicks": 3,
+      "impressions": 46,
+      "ctr": 0.0652,
+      "position": 5.61
+    },
+    {
+      "query": "smic apl",
+      "clicks": 2,
+      "impressions": 25,
+      "ctr": 0.08,
+      "position": 7.2
+    },
+    {
+      "query": "apl au smic",
+      "clicks": 2,
+      "impressions": 21,
+      "ctr": 0.09519999999999999,
+      "position": 5.38
+    },
+    {
+      "query": "apl smic seul",
+      "clicks": 2,
+      "impressions": 17,
+      "ctr": 0.1176,
+      "position": 4.18
+    },
+    {
+      "query": "apl personne seule smic",
+      "clicks": 2,
+      "impressions": 12,
+      "ctr": 0.16670000000000001,
+      "position": 5.33
+    },
+    {
+      "query": "apl et smic",
+      "clicks": 2,
+      "impressions": 12,
+      "ctr": 0.16670000000000001,
+      "position": 5.75
+    },
+    {
+      "query": "montant apl smic",
+      "clicks": 1,
+      "impressions": 8,
+      "ctr": 0.125,
+      "position": 6.88
+    },
+    {
+      "query": "montant apl 2026",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 9.94
+    },
+    {
+      "query": "grille apl 2026",
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+    },
+    {
+      "query": "apl 2026 plafond",
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+    }
+  ],
+  "trackedPages": [
+    {
+      "route": "/pages/apl/apl-celibataire-smic",
+      "title": "APL au SMIC pour un célibataire : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 2,
+      "clicks": 10,
+      "impressions": 75,
+      "ctr": 0.1333,
+      "position": 6.59,
+      "impressionsScore": 69.7,
+      "clicksScore": 61,
+      "ctrScore": 88.9,
+      "positionScore": 95.3,
+      "performanceScore": 74.7,
+      "ltScore": 76,
+      "readinessScore": 92.8,
+      "priorityScore": 81
+    },
+    {
+      "route": "/pages/apl/apl-smic-seul",
+      "title": "APL avec SMIC seul : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "clicks": 5,
+      "impressions": 70,
+      "ctr": 0.07139999999999999,
+      "position": 6.41,
+      "impressionsScore": 68.6,
+      "clicksScore": 45.6,
+      "ctrScore": 47.6,
+      "positionScore": 96.7,
+      "performanceScore": 61.7,
+      "ltScore": 100,
+      "readinessScore": 100,
+      "priorityScore": 75.1
+    },
+    {
+      "route": "/pages/apl/apl-personne-seule-smic",
+      "title": "APL personne seule au SMIC : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 0,
+      "clicks": 3,
+      "impressions": 40,
+      "ctr": 0.075,
+      "position": 6.72,
+      "impressionsScore": 59.7,
+      "clicksScore": 35.3,
+      "ctrScore": 50,
+      "positionScore": 94.2,
+      "performanceScore": 55.6,
+      "ltScore": 100,
+      "readinessScore": 100,
+      "priorityScore": 71.1
+    },
+    {
+      "route": "/pages/apl",
+      "title": "Simulateur APL 2026 (CAF) | Estimation en 2 minutes",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 9.94,
+      "impressionsScore": 46.5,
+      "clicksScore": 0,
+      "ctrScore": 0,
+      "positionScore": 68.5,
+      "performanceScore": 26.5,
+      "ltScore": 88,
+      "readinessScore": 96.4,
+      "priorityScore": 51
+    }
+  ],
+  "expansionCandidates": [
+    {
+      "route": "/pages/apl/apl-smic-couple-sans-enfant",
+      "title": "APL au SMIC pour un couple sans enfant : estimation 2026",
+      "qualityScore": 100,
+      "actionableCount": 1,
+      "ltScore": 88,
+      "readinessScore": 96.4,
+      "expansionScore": 85,
+      "reason": "page deja publiee et qualifiee, mais absente des pages qui remontent dans cet export"
+    }
+  ],
+  "recommendations": [
+    "Le cluster est deja valide par Google: gardez les pages qui performent comme pages seed et poussez leur maillage interne.",
+    "Vous avez 1 page(s) deja prêtes dans le meme noeud lexical sans traction visible sur cet export: elles doivent etre poussees en priorite avant de creer des variantes plus lointaines.",
+    "La page la plus exploitable du cluster est /pages/apl/apl-celibataire-smic avec un priority score de 81/100."
+  ]
+}

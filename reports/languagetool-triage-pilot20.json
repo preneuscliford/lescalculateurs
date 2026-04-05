@@ -1,0 +1,572 @@
+{
+  "generatedAt": "2026-03-25T17:36:04.011Z",
+  "scope": "french-pilot-20",
+  "scannedFiles": 20,
+  "summary": {
+    "totalMatches": 859,
+    "ignored": 589,
+    "style": 244,
+    "actionable": 26,
+    "filesWithActionable": 13
+  },
+  "topIgnoredMessages": [
+    {
+      "message": "Les deux-points sont précédés d’une espace insécable.",
+      "count": 385
+    },
+    {
+      "message": "Faute de frappe possible trouvée.",
+      "count": 105
+    },
+    {
+      "message": "L’acronyme de la Caisse d’Allocations familiales française s’écrit avec une majuscule.",
+      "count": 63
+    },
+    {
+      "message": "Ces deux traits d’union peuvent être associés pour former un tiret.",
+      "count": 18
+    },
+    {
+      "message": "Les chiffres s’écrivent généralement en lettres.",
+      "count": 12
+    },
+    {
+      "message": "Nombre ordinal. Premier : 1ᵉʳ. Première : 1ʳᵉ. Premiers : 1ᵉʳˢ. Premières : 1ʳᵉˢ.",
+      "count": 4
+    },
+    {
+      "message": "Un usage différent des majuscules et des minuscules est recommandé.",
+      "count": 2
+    }
+  ],
+  "topStyleMessages": [
+    {
+      "message": "Le point d’interrogation est précédé d’une espace fine insécable.",
+      "count": 140
+    },
+    {
+      "message": "Cette phrase ne commence pas par une majuscule.",
+      "count": 25
+    },
+    {
+      "message": "Ce mot apparaît déjà dans l’une des phrases précédant immédiatement celle-ci. Utilisez un synonyme pour apporter plus de variété à votre texte, excepté si la répétition est intentionnelle.",
+      "count": 12
+    },
+    {
+      "message": "Un usage différent des majuscules et des minuscules est recommandé.",
+      "count": 11
+    },
+    {
+      "message": "Le point d’exclamation est précédé d’une espace fine insécable.",
+      "count": 10
+    },
+    {
+      "message": "Ces mots semblent répétés.",
+      "count": 8
+    },
+    {
+      "message": "La majuscule n’est employée qu’au début d’une phrase ou pour les noms propres (noms, toponymes, etc.).",
+      "count": 8
+    },
+    {
+      "message": "Un mot est répété.",
+      "count": 7
+    },
+    {
+      "message": "Majuscule en début de phrase, sauf éventuellement lors d’une énumération.",
+      "count": 4
+    },
+    {
+      "message": "Le point-virgule est précédé d’une espace fine insécable.",
+      "count": 3
+    },
+    {
+      "message": "Le préfixe « multi » est généralement associé au terme qu’il précède.",
+      "count": 3
+    },
+    {
+      "message": "Ce nom commence par une minuscule.",
+      "count": 2
+    },
+    {
+      "message": "Il est déconseillé de placer des chiffres en début de phrase. Souhaitez-vous reformuler la phrase ?",
+      "count": 2
+    },
+    {
+      "message": "La virgule doit être omise dans ce contexte.",
+      "count": 2
+    },
+    {
+      "message": "Une virgule est conseillée dans ce contexte.",
+      "count": 2
+    },
+    {
+      "message": "Cette structure peut sembler familière dans un contexte formel.",
+      "count": 1
+    },
+    {
+      "message": "Il peut être plus approprié d’écrire ce chiffre en lettres afin d’assurer la cohérence de la phrase.",
+      "count": 1
+    },
+    {
+      "message": "Le préfixe doit être relié au verbe qui suit.",
+      "count": 1
+    },
+    {
+      "message": "Souhaitez-vous écrire une flèche ou le symbole « ≥ » ?",
+      "count": 1
+    },
+    {
+      "message": "Une virgule semble être requise dans ce contexte.",
+      "count": 1
+    }
+  ],
+  "topActionableMessages": [
+    {
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "count": 2
+    },
+    {
+      "message": "Le verbe devrait être à la 3ᵉ personne du pluriel.",
+      "count": 2
+    },
+    {
+      "message": "Un nom féminin semble plus approprié.",
+      "count": 2
+    },
+    {
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "count": 2
+    },
+    {
+      "message": "« Complet » et « scénarios » ne semblent pas bien accordés.",
+      "count": 1
+    },
+    {
+      "message": "« Démarchés » et « officielles » ne semblent pas bien accordés.",
+      "count": 1
+    },
+    {
+      "message": "Conjugaison erronée. Accord avec “votre situation/ressources…”. Le verbe devrait être à la 3ᵉ personne du singulier.",
+      "count": 1
+    },
+    {
+      "message": "Le mot féminin « réduite » n’est pas accordé en genre avec le mot masculin « ARE ».",
+      "count": 1
+    },
+    {
+      "message": "Le verbe « versée » est généralement à l’infinitif après « quand ».",
+      "count": 1
+    },
+    {
+      "message": "Ne mettez pas un point après un point d’interrogation ou d’exclamation.",
+      "count": 1
+    },
+    {
+      "message": "Un adverbe semble plus approprié.",
+      "count": 1
+    },
+    {
+      "message": "Un participe passé semble plus probable.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez l’accord en genre et en nombre de « indicatifs », le féminin semble plus probable.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « aidé » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « comptabilisés » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « conservée » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « incluse » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « journalière » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « mensuel » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « mensuelle » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance de « partielle » avec les noms précédents.",
+      "count": 1
+    },
+    {
+      "message": "Vérifiez la concordance entre les verbes.",
+      "count": 1
+    }
+  ],
+  "topActionablePairs": [
+    {
+      "pair": "démarché -> démarchée",
+      "count": 2
+    },
+    {
+      "pair": "est-elle -> est-il",
+      "count": 2
+    },
+    {
+      "pair": "estimée -> estimé",
+      "count": 2
+    },
+    {
+      "pair": "?. -> ?",
+      "count": 1
+    },
+    {
+      "pair": "aidé -> aidés",
+      "count": 1
+    },
+    {
+      "pair": "complet scénarios -> complets scénarios",
+      "count": 1
+    },
+    {
+      "pair": "comptabilisés -> comptabilisée",
+      "count": 1
+    },
+    {
+      "pair": "conservée -> conservé",
+      "count": 1
+    },
+    {
+      "pair": "couple -> couplent",
+      "count": 1
+    },
+    {
+      "pair": "démarchés officielles -> démarchées officielles",
+      "count": 1
+    },
+    {
+      "pair": "entrent -> entre",
+      "count": 1
+    },
+    {
+      "pair": "incluse -> inclus",
+      "count": 1
+    },
+    {
+      "pair": "indicatifs -> indicatives",
+      "count": 1
+    },
+    {
+      "pair": "journalière -> journalier",
+      "count": 1
+    },
+    {
+      "pair": "mensuel -> mensuels",
+      "count": 1
+    },
+    {
+      "pair": "mensuelle -> mensuel",
+      "count": 1
+    },
+    {
+      "pair": "ou -> où",
+      "count": 1
+    },
+    {
+      "pair": "partielle -> partiel",
+      "count": 1
+    },
+    {
+      "pair": "réduite -> réduit",
+      "count": 1
+    },
+    {
+      "pair": "suit -> suivent",
+      "count": 1
+    },
+    {
+      "pair": "vérifier -> vérifié",
+      "count": 1
+    },
+    {
+      "pair": "versée -> verser",
+      "count": 1
+    },
+    {
+      "pair": "vise -> visent",
+      "count": 1
+    }
+  ],
+  "actionableFiles": [
+    {
+      "filePath": "src\\pages\\are.html",
+      "actionableCount": 7
+    },
+    {
+      "filePath": "src\\pages\\apl.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "actionableCount": 1
+    }
+  ],
+  "actionableSamples": [
+    {
+      "filePath": "src\\pages\\apl.html",
+      "message": "« Démarchés » et « officielles » ne semblent pas bien accordés.",
+      "matchedText": "démarchés officielles",
+      "replacement": "démarchées officielles",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\apl.html",
+      "message": "Conjugaison erronée. Accord avec “votre situation/ressources…”. Le verbe devrait être à la 3ᵉ personne du singulier.",
+      "matchedText": "entrent",
+      "replacement": "entre",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_gv2__conj_det_sing_nom__b1_a3_1"
+    },
+    {
+      "filePath": "src\\pages\\apl.html",
+      "message": "Un nom féminin semble plus approprié.",
+      "matchedText": "démarché",
+      "replacement": "démarchée",
+      "issueType": "uncategorized",
+      "ruleId": "D_N_E_OU_E"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "message": "Un adverbe semble plus approprié.",
+      "matchedText": "ou",
+      "replacement": "où",
+      "issueType": "uncategorized",
+      "ruleId": "OU"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "message": "Ne mettez pas un point après un point d’interrogation ou d’exclamation.",
+      "matchedText": "?.",
+      "replacement": "?",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_typo_ponctuation_superflue4"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "message": "« Complet » et « scénarios » ne semblent pas bien accordés.",
+      "matchedText": "complet scénarios",
+      "replacement": "complets scénarios",
+      "issueType": "uncategorized",
+      "ruleId": "J_N2"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "matchedText": "est-elle",
+      "replacement": "est-il",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_gv2__conj_sujet_verbe_interrogatif_pronom__b3_a1_1"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « journalière » avec les noms précédents.",
+      "matchedText": "journalière",
+      "replacement": "journalier",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « mensuelle » avec les noms précédents.",
+      "matchedText": "mensuelle",
+      "replacement": "mensuel",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « partielle » avec les noms précédents.",
+      "matchedText": "partielle",
+      "replacement": "partiel",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « conservée » avec les noms précédents.",
+      "matchedText": "conservée",
+      "replacement": "conservé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Le mot féminin « réduite » n’est pas accordé en genre avec le mot masculin « ARE ».",
+      "matchedText": "réduite",
+      "replacement": "réduit",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "matchedText": "est-elle",
+      "replacement": "est-il",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_gv2__conj_sujet_verbe_interrogatif_pronom__b3_a1_1"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « incluse » avec les noms précédents.",
+      "matchedText": "incluse",
+      "replacement": "inclus",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "message": "Vérifiez la concordance de « mensuel » avec les noms précédents.",
+      "matchedText": "mensuel",
+      "replacement": "mensuels",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "message": "Vérifiez l’accord en genre et en nombre de « indicatifs », le féminin semble plus probable.",
+      "matchedText": "indicatifs",
+      "replacement": "indicatives",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "message": "Le verbe devrait être à la 3ᵉ personne du pluriel.",
+      "matchedText": "suit",
+      "replacement": "suivent",
+      "issueType": "uncategorized",
+      "ruleId": "ACCORD_SUJET_VERBE"
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "message": "Le verbe « versée » est généralement à l’infinitif après « quand ».",
+      "matchedText": "versée",
+      "replacement": "verser",
+      "issueType": "uncategorized",
+      "ruleId": "COMMENT_VPPA"
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "message": "Vérifiez la concordance de « comptabilisés » avec les noms précédents.",
+      "matchedText": "comptabilisés",
+      "replacement": "comptabilisée",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "message": "Le verbe devrait être à la 3ᵉ personne du pluriel.",
+      "matchedText": "vise",
+      "replacement": "visent",
+      "issueType": "uncategorized",
+      "ruleId": "ACCORD_SUJET_VERBE"
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "message": "Un nom féminin semble plus approprié.",
+      "matchedText": "démarché",
+      "replacement": "démarchée",
+      "issueType": "uncategorized",
+      "ruleId": "D_N_E_OU_E"
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant.html",
+      "message": "Vérifiez la concordance entre les verbes.",
+      "matchedText": "couple",
+      "replacement": "couplent",
+      "issueType": "uncategorized",
+      "ruleId": "ACCORD_SUJET_VERBE"
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-sans-revenu-personne-seule.html",
+      "message": "Un participe passé semble plus probable.",
+      "matchedText": "vérifier",
+      "replacement": "vérifié",
+      "issueType": "uncategorized",
+      "ruleId": "CONFUSION_E_ER"
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "message": "Vérifiez la concordance de « aidé » avec les noms précédents.",
+      "matchedText": "aidé",
+      "replacement": "aidés",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    }
+  ]
+}

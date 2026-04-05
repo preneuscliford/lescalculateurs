@@ -1,31 +1,12 @@
-/**
- * Moteur de calcul Prime d'activité 2026
- * Basé sur les montants de base CAF et les règles d'éligibilité
- */
-
-// Montants Prime d'activité 2026 (Barèmes CAF officiels)
-// Sources : caf.fr - Montants mensuels bruts au 1er avril 2025
-const PRIME_BASE_MONTANTS = {
-  seul: 170.0,                    // ~170€ pour personne seule
-  couple: 255.0,                  // ~255€ pour couple sans enfant
-  monoparental_1enfant: 280.0,   // ~280€ pour parent isolé + 1 enfant
-  monoparental_2enfants: 320.0,  // ~320€ pour parent isolé + 2 enfants
-  monoparental_3enfants: 360.0,  // ~360€ pour parent isolé + 3 enfants
-};
-
-// Majoration par enfant supplémentaire (majoration forfaitaire CAF)
-const PRIME_MAJORATION_ENFANT = 45.0;  // ~45€ par enfant supplémentaire
-
-// Plafond minimum de revenu d'activité
-const PRIME_SEUIL_MIN_REVENU_ACTIVITE = 150; // Doit travailler minimum
+import { socialBaremes } from "../data/social-baremes";
 
 export interface PrimeActiviteCalculData {
-  situation: string; // 'seul', 'couple', 'monoparental'
+  situation: string;
   enfants: number;
-  revenusProf: number; // Revenus professionnels
-  autresRevenus: number; // Autres revenus (allocations, etc.)
-  logement: string; // 'loue', 'proprio', 'gratuit'
-  typeActivite: string; // 'salarie', 'independant', 'apprenti'
+  revenusProf: number;
+  autresRevenus: number;
+  logement: string;
+  typeActivite: string;
 }
 
 export interface PrimeActiviteResult {
@@ -35,7 +16,9 @@ export interface PrimeActiviteResult {
   explication: string;
   details: {
     montantBase: number;
+    bonification: number;
     majorations: number;
+    forfaitLogement: number;
     revenusProfsComptabilises: number;
     autresRevenusComptabilises: number;
     totalRevenusComptabilises: number;
@@ -43,22 +26,77 @@ export interface PrimeActiviteResult {
   };
 }
 
-/**
- * Calcule l'estimation Prime d'activité
- */
+const primeBaremes = socialBaremes.primeActivite;
+
+function getPrimeForfait(situation: string, enfants: number): number {
+  const nbEnfants = Math.max(0, Math.floor(enfants || 0));
+
+  if (situation === "monoparental") {
+    if (nbEnfants <= 0) return primeBaremes.montantForfaitaire.nonMajoree.unePersonne;
+    if (nbEnfants === 1) return primeBaremes.montantForfaitaire.majoree.isole1Enfant;
+    if (nbEnfants === 2) return primeBaremes.montantForfaitaire.majoree.isole2Enfants;
+    if (nbEnfants === 3) return primeBaremes.montantForfaitaire.majoree.isole3Enfants;
+    return (
+      primeBaremes.montantForfaitaire.majoree.isole4Enfants +
+      (nbEnfants - 4) * primeBaremes.montantForfaitaire.majoree.personneSupplementaire
+    );
+  }
+
+  if (situation === "couple") {
+    if (nbEnfants <= 0) return primeBaremes.montantForfaitaire.nonMajoree.coupleOuIsole1Enfant;
+    if (nbEnfants === 1) return primeBaremes.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
+    if (nbEnfants === 2) return primeBaremes.montantForfaitaire.nonMajoree.couple2Enfants;
+    if (nbEnfants === 3) return primeBaremes.montantForfaitaire.nonMajoree.couple3Enfants;
+    return (
+      primeBaremes.montantForfaitaire.nonMajoree.couple3Enfants +
+      (nbEnfants - 3) * primeBaremes.montantForfaitaire.nonMajoree.personneSupplementaire
+    );
+  }
+
+  if (nbEnfants <= 0) return primeBaremes.montantForfaitaire.nonMajoree.unePersonne;
+  if (nbEnfants === 1) return primeBaremes.montantForfaitaire.nonMajoree.coupleOuIsole1Enfant;
+  if (nbEnfants === 2) return primeBaremes.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
+  if (nbEnfants === 3) return primeBaremes.montantForfaitaire.nonMajoree.isole3Enfants;
+  return (
+    primeBaremes.montantForfaitaire.nonMajoree.isole3Enfants +
+    (nbEnfants - 3) * primeBaremes.montantForfaitaire.nonMajoree.personneSupplementaire
+  );
+}
+
+function getHousingForfait(logement: string, situation: string, enfants: number): number {
+  if (logement === "loue") return 0;
+
+  const foyerSize = (situation === "couple" ? 2 : 1) + Math.max(0, Math.floor(enfants || 0));
+  if (foyerSize <= 1) return primeBaremes.forfaitLogement.unePersonne;
+  if (foyerSize === 2) return primeBaremes.forfaitLogement.deuxPersonnes;
+  return primeBaremes.forfaitLogement.troisPersonnesOuPlus;
+}
+
+function getBonification(revenusProf: number): number {
+  const revenus = Math.max(0, revenusProf || 0);
+  const { seuilDebut, seuilMaximum, montantMaximum } = primeBaremes.bonification;
+
+  if (revenus < seuilDebut) return 0;
+  if (revenus >= seuilMaximum) return montantMaximum;
+
+  const ratio = (revenus - seuilDebut) / (seuilMaximum - seuilDebut);
+  return Math.round(montantMaximum * ratio * 100) / 100;
+}
+
 export function calculerPrimeActivite(
   data: PrimeActiviteCalculData,
 ): PrimeActiviteResult {
-  // Validation
   if (!data.situation || !data.logement || !data.typeActivite) {
     return {
       success: false,
       montantEstime: 0,
-      eligibilite: "Données incomplètes",
+      eligibilite: "Donnees incompletes",
       explication: "Veuillez remplir tous les champs obligatoires.",
       details: {
         montantBase: 0,
+        bonification: 0,
         majorations: 0,
+        forfaitLogement: 0,
         revenusProfsComptabilises: 0,
         autresRevenusComptabilises: 0,
         totalRevenusComptabilises: 0,
@@ -67,126 +105,81 @@ export function calculerPrimeActivite(
     };
   }
 
-  // Vérification que l'on travaille (condition essentielle)
-  if (data.revenusProf < PRIME_SEUIL_MIN_REVENU_ACTIVITE) {
+  if (data.revenusProf <= 0) {
     return {
       success: true,
       montantEstime: 0,
-      eligibilite: "Non éligible",
+      eligibilite: "Non eligible",
       explication:
-        "La Prime d'activité est réservée aux personnes exerçant une activité professionnelle. Vos revenus d'activité doivent être au minimum 150€/mois.",
+        "La Prime d'activite concerne les personnes qui exercent une activite professionnelle et declarent un revenu d'activite.",
       details: {
         montantBase: 0,
+        bonification: 0,
         majorations: 0,
-        revenusProfsComptabilises: data.revenusProf,
-        autresRevenusComptabilises: data.autresRevenus,
-        totalRevenusComptabilises: data.revenusProf + data.autresRevenus,
+        forfaitLogement: 0,
+        revenusProfsComptabilises: 0,
+        autresRevenusComptabilises: Math.round(data.autresRevenus * 100) / 100,
+        totalRevenusComptabilises: Math.round(data.autresRevenus * 100) / 100,
         montantFinal: 0,
       },
     };
   }
 
-  // Calcul du montant de base selon la situation
-  let montantBase = 0;
-  if (data.situation === "seul") {
-    montantBase = PRIME_BASE_MONTANTS.seul;
-  } else if (data.situation === "couple") {
-    montantBase = PRIME_BASE_MONTANTS.couple;
-  } else if (data.situation === "monoparental") {
-    if (data.enfants === 0) {
-      montantBase = PRIME_BASE_MONTANTS.seul; // Pas de monoparental sans enfant
-    } else if (data.enfants === 1) {
-      montantBase = PRIME_BASE_MONTANTS.monoparental_1enfant;
-    } else if (data.enfants === 2) {
-      montantBase = PRIME_BASE_MONTANTS.monoparental_2enfants;
-    } else if (data.enfants >= 3) {
-      montantBase = PRIME_BASE_MONTANTS.monoparental_3enfants;
-    }
-  }
-
-  // Majorations pour enfants supplémentaires
-  let majorations = 0;
-  if (data.situation === "monoparental" && data.enfants > 3) {
-    majorations = (data.enfants - 3) * PRIME_MAJORATION_ENFANT;
-  } else if (data.situation !== "monoparental" && data.enfants > 0) {
-    majorations = data.enfants * PRIME_MAJORATION_ENFANT;
-  }
-
-  const montantBaseTotal = montantBase + majorations;
-
-  // Calcul de la prise en compte des revenus
-  // Pourcentage d'abattement sur revenus (règle simplifiée : 12%)
-  const tauxAbattement = 0.12;
-  const revenusProfsComptabilises = data.revenusProf * (1 - tauxAbattement);
-  const autresRevenusComptabilises = data.autresRevenus; // Pris intégralement
-
+  const montantBase = getPrimeForfait(data.situation, data.enfants);
+  const bonification = getBonification(data.revenusProf);
+  const forfaitLogement = getHousingForfait(data.logement, data.situation, data.enfants);
+  const revenusProfsComptabilises =
+    data.revenusProf * primeBaremes.revenusProfessionnelsPrisEnCompte;
+  const autresRevenusComptabilises = Math.max(0, data.autresRevenus || 0);
   const totalRevenusComptabilises =
-    revenusProfsComptabilises + autresRevenusComptabilises;
+    Math.max(0, data.revenusProf || 0) + autresRevenusComptabilises + forfaitLogement;
 
-  // Montant final = montant de base - revenus comptabilisés
-  let montantFinal = montantBaseTotal - totalRevenusComptabilises;
+  let montantFinal =
+    montantBase + bonification + revenusProfsComptabilises - totalRevenusComptabilises;
+  montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
 
-  if (montantFinal < 0) {
-    montantFinal = 0;
-  }
+  let eligibilite = "Probablement eligible";
+  let explication =
+    "Cette estimation repose sur le forfait foyer 2026, la bonification individuelle et les revenus declares. La CAF confirmera le montant final a partir de votre declaration trimestrielle.";
 
-  // Détermination de l'éligibilité
-  let eligibilite = "";
-  let explication = "";
-
-  if (data.revenusProf + data.autresRevenus > 2000) {
-    // Seuil très haut indicatif
-    eligibilite = "Probablement non éligible";
+  if (montantFinal === 0) {
+    eligibilite = "Non eligible";
     explication =
-      "Vos revenus totaux semblent dépasser les plafonds d'éligibilité à la Prime d'activité.";
+      "Avec les revenus renseignes, le droit estime a la Prime d'activite est nul ou trop faible. Le resultat peut evoluer en cas de changement de revenus, de foyer ou de logement.";
+  } else if (montantFinal < primeBaremes.montantMinimumVerse) {
+    eligibilite = "Montant trop faible pour versement";
+    explication = `Le droit theorique existe, mais la Prime d'activite n'est versee qu'a partir de ${primeBaremes.montantMinimumVerse} EUR par mois.`;
     montantFinal = 0;
-  } else if (montantFinal <= 0) {
-    eligibilite = "Non éligible";
-    explication =
-      "Vos revenus dépassent le montant de base de la Prime d'activité. Vous ne semblez pas pouvoir en bénéficier selon les informations renseignées. La Prime d'activité dépend de seuils précis et peut évoluer en cas de changement de revenus ou de situation.";
-  } else if (montantFinal < 15) {
-    eligibilite = "Éligible (montant très faible)";
-    explication = `Vous pourriez être éligible à la Prime d'activité, mais le montant estimé est très réduit (${montantFinal.toFixed(2)}€). La CAF évaluera votre dossier.`;
-  } else {
-    eligibilite = "Probablement éligible";
-    explication = `Vous pourriez être éligible à la Prime d'activité. Le montant estimé dépend de votre situation exacte et de la validation par la CAF.`;
   }
 
   return {
     success: true,
-    montantEstime: Math.max(0, montantFinal),
+    montantEstime: montantFinal,
     eligibilite,
     explication,
     details: {
-      montantBase,
-      majorations,
-      revenusProfsComptabilises:
-        Math.round(revenusProfsComptabilises * 100) / 100,
-      autresRevenusComptabilises:
-        Math.round(autresRevenusComptabilises * 100) / 100,
-      totalRevenusComptabilises:
-        Math.round(totalRevenusComptabilises * 100) / 100,
-      montantFinal: Math.max(0, Math.round(montantFinal * 100) / 100),
+      montantBase: Math.round(montantBase * 100) / 100,
+      bonification,
+      majorations: Math.max(0, Math.round((montantBase - primeBaremes.montantForfaitaire.nonMajoree.unePersonne) * 100) / 100),
+      forfaitLogement: Math.round(forfaitLogement * 100) / 100,
+      revenusProfsComptabilises: Math.round(revenusProfsComptabilises * 100) / 100,
+      autresRevenusComptabilises: Math.round(autresRevenusComptabilises * 100) / 100,
+      totalRevenusComptabilises: Math.round(totalRevenusComptabilises * 100) / 100,
+      montantFinal,
     },
   };
 }
 
-/**
- * Formate le résultat pour affichage
- */
 export function formatPrimeActiviteResult(result: PrimeActiviteResult): {
   montantDisplay: string;
   explDisplay: string;
 } {
-  const montantDisplay =
-    result.montantEstime > 0
-      ? `${Math.round(result.montantEstime)}€ / mois`
-      : "Non éligible";
-
-  const explDisplay = result.explication;
-
   return {
-    montantDisplay,
-    explDisplay,
+    montantDisplay:
+      result.montantEstime > 0
+        ? `${Math.round(result.montantEstime)} EUR / mois`
+        : "Non eligible",
+    explDisplay: result.explication,
   };
 }
+

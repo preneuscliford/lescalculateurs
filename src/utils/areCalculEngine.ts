@@ -1,20 +1,17 @@
-/**
- * ARE (Allocation Retour Emploi) - Unemployment Benefits 2026 - Calculation Engine
- * Géré par France Travail (ancien Pôle Emploi)
- */
+import { socialBaremes } from "../data/social-baremes";
 
 export interface AREData {
   situation: "seul" | "couple" | "parent";
-  ancienneteEmploi: number; // months worked in last 28 months
-  salaireReferent: number; // monthly average
-  personnesCharge: number; // dependents
-  agePersonne: number; // age (impacts max duration)
+  ancienneteEmploi: number;
+  salaireReferent: number;
+  personnesCharge: number;
+  agePersonne: number;
 }
 
 export interface AREResult {
   eligible: boolean;
   montantEstime: number;
-  durationMax: number; // months
+  durationMax: number;
   explication: string;
   details: {
     tauxRemplacement: number;
@@ -23,27 +20,30 @@ export interface AREResult {
   };
 }
 
-/**
- * Calculate ARE (Allocation Retour Emploi) - Unemployment benefits
- * France Travail - 2026 rates
- */
-export function calculerARE(data: AREData): AREResult {
-  const {
-    situation,
-    ancienneteEmploi,
-    salaireReferent,
-    personnesCharge,
-    agePersonne,
-  } = data;
+const areBaremes = socialBaremes.are;
 
-  // ARE eligibility: minimum 4 months worked in last 28 months
-  const minAnciennete = 4;
-  if (ancienneteEmploi < minAnciennete) {
+function getReferenceWindow(agePersonne: number): number {
+  return agePersonne >= 55
+    ? areBaremes.reglesEligibilite.fenetreReference55AnsEtPlusMois
+    : areBaremes.reglesEligibilite.fenetreReferenceMoins55AnsMois;
+}
+
+function getDurationCapDays(agePersonne: number): number {
+  if (agePersonne >= 57) return areBaremes.dureeMaximaleJours.aPartirDe57Ans;
+  if (agePersonne >= 55) return areBaremes.dureeMaximaleJours.de55a56Ans;
+  return areBaremes.dureeMaximaleJours.moinsDe55Ans;
+}
+
+export function calculerARE(data: AREData): AREResult {
+  const minAnciennete = areBaremes.reglesEligibilite.dureeAffiliationMois;
+  const referenceWindow = getReferenceWindow(data.agePersonne);
+
+  if (data.ancienneteEmploi < minAnciennete) {
     return {
       eligible: false,
       montantEstime: 0,
       durationMax: 0,
-      explication: `Vous devez justifier d'au minimum ${minAnciennete} mois d'activité dans les 28 derniers mois. Votre durée (${ancienneteEmploi} mois) est insuffisante.`,
+      explication: `Pour ouvrir des droits a l'ARE, il faut avoir travaille au moins ${minAnciennete} mois sur les ${referenceWindow} derniers mois.`,
       details: {
         tauxRemplacement: 0,
         montantMinimum: 0,
@@ -52,42 +52,47 @@ export function calculerARE(data: AREData): AREResult {
     };
   }
 
-  // ARE calculation: 57.43% of reference salary (2026)
-  const tauxRemplacement = 0.5743;
-  let montantEstime = salaireReferent * tauxRemplacement;
+  const salaireMensuel = Math.max(0, data.salaireReferent || 0);
+  const sjr = (salaireMensuel * 12) / 365;
+  const option1 =
+    sjr * areBaremes.calculJournalier.tauxOption1 + areBaremes.calculJournalier.partFixe;
+  const option2 = sjr * areBaremes.calculJournalier.tauxOption2;
+  let allocationJournaliere = Math.max(option1, option2);
+  allocationJournaliere = Math.max(
+    allocationJournaliere,
+    areBaremes.calculJournalier.minimumJournalier,
+  );
+  allocationJournaliere = Math.min(
+    allocationJournaliere,
+    sjr * areBaremes.calculJournalier.plafondPourcentageSjr,
+  );
 
-  // ARE minimum and maximum (2026 rates)
-  // Source : France Travail - Barèmes officiels au 1er janvier 2026
-  const montantMinimum = 31.50; // euros/day minimum ARE 2026
-  const montantMaximumDaily = 91.82; // euros/day maximum ARE 2026
-  const montantMaximum = montantMaximumDaily * 30; // ~2 755€/mois
+  const montantMensuelBrut = Math.round(
+    allocationJournaliere * areBaremes.calculJournalier.coefficientMensuel * 100,
+  ) / 100;
 
-  // Check minimums/maximums
-  if (montantEstime < montantMinimum * 30) {
-    montantEstime = montantMinimum * 30;
-  }
-  if (montantEstime > montantMaximum) {
-    montantEstime = montantMaximum;
-  }
-
-  // Duration: based on age (2026 rules)
-  // - Under 53: max 24 months
-  // - 53 and over: max 36 months
-  let durationMax = agePersonne >= 53 ? 36 : 24;
-  
-  // Note: Actual duration also depends on exact days worked and deferral periods
-
-  montantEstime = Math.round(montantEstime * 100) / 100;
+  const durationCapDays = getDurationCapDays(data.agePersonne);
+  const durationTheoriqueDays = Math.round(Math.max(0, data.ancienneteEmploi) * 30.42);
+  const durationRetenueDays = Math.min(durationTheoriqueDays, durationCapDays);
+  const durationMax = Math.max(1, Math.round(durationRetenueDays / 30.42));
 
   return {
     eligible: true,
-    montantEstime,
+    montantEstime: montantMensuelBrut,
     durationMax,
-    explication: `Montant estimé: ${montantEstime.toFixed(2)}€ brut/mois (base: ${salaireReferent}€ × 57.43% = ${(salaireReferent * 0.5743).toFixed(2)}€, plafonné entre ${(31.50 * 30).toFixed(0)}€ et ${(91.82 * 30).toFixed(0)}€). Durée max: ${durationMax} mois. France Travail confirmera le montant définitif lors de l'étude de votre dossier.`,
+    explication: `Cette estimation applique la formule officielle France Travail sur votre salaire journalier de reference, avec une duree maximale d'environ ${durationMax} mois selon votre anciennete et votre age.`,
     details: {
-      tauxRemplacement,
-      montantMinimum: Math.round(montantMinimum * 30),
-      montantMaximum: Math.round(montantMaximum),
+      tauxRemplacement: Math.round((allocationJournaliere / Math.max(sjr, 1)) * 10000) / 10000,
+      montantMinimum: Math.round(
+        areBaremes.calculJournalier.minimumJournalier *
+          areBaremes.calculJournalier.coefficientMensuel,
+      ),
+      montantMaximum: Math.round(
+        sjr *
+          areBaremes.calculJournalier.plafondPourcentageSjr *
+          areBaremes.calculJournalier.coefficientMensuel,
+      ),
     },
   };
 }
+

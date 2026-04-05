@@ -1,13 +1,10 @@
-/**
- * ASF (Allocation de Soutien Familial) 2026 - Calculation Engine
- * Support allocation for single parents and orphans
- */
+import { socialBaremes } from "../data/social-baremes";
 
 export interface ASFData {
   situation: "parentisole" | "orphelin" | "depourvu";
-  nombreEnfants: number; // number of children under 21
-  revenus: number; // monthly household income
-  enfantACharge: boolean; // at least one child under 21
+  nombreEnfants: number;
+  revenus: number;
+  enfantACharge: boolean;
 }
 
 export interface ASFResult {
@@ -21,20 +18,17 @@ export interface ASFResult {
   };
 }
 
-/**
- * Calculate ASF (Allocation de Soutien Familial)
- * For single parents and orphans - 2026 rates
- */
-export function calculerASF(data: ASFData): ASFResult {
-  const { situation, nombreEnfants, revenus, enfantACharge } = data;
+const asfBaremes = socialBaremes.asf;
 
-  // ASF requires at least one child under 21
-  if (!enfantACharge || nombreEnfants === 0) {
+export function calculerASF(data: ASFData): ASFResult {
+  const { situation, nombreEnfants, enfantACharge } = data;
+
+  if (!enfantACharge || nombreEnfants <= 0) {
     return {
       eligible: false,
       montantEstime: 0,
       explication:
-        "L'ASF nécessite d'avoir au moins un enfant à charge de moins de 21 ans.",
+        "L'ASF s'adresse aux foyers qui ont au moins un enfant a charge de moins de 21 ans.",
       details: {
         montantParEnfant: 0,
         ressourcesMaxi: 0,
@@ -43,45 +37,27 @@ export function calculerASF(data: ASFData): ASFResult {
     };
   }
 
-  // ASF monthly amount 2026 (per child)
-  // Source officielle : service-public.fr - Montant actualisé au 1er avril 2025
-  const montantParEnfant = 199.19; // 2026 rate per child (taux de base)
+  const nombreEnfantsEligibles = Math.max(0, Math.floor(nombreEnfants));
+  const montantParEnfant =
+    situation === "depourvu"
+      ? asfBaremes.montantParEnfantPriveDeuxParents
+      : asfBaremes.montantParEnfant;
+  const montantEstime = Math.round(montantParEnfant * nombreEnfantsEligibles * 100) / 100;
 
-  // Resource ceiling 2026
-  // Single parent with children
-  const ressourcesMaxi = 945 + nombreEnfants * 250;
-
-  // Check resources
-  if (revenus > ressourcesMaxi) {
-    return {
-      eligible: false,
-      montantEstime: 0,
-      explication: `Vos ressources (${revenus}€) dépassent le plafond autorisé (${ressourcesMaxi.toFixed(2)}€). Vous ne pouvez pas bénéficier de l\'ASF actuellement.`,
-      details: {
-        montantParEnfant,
-        ressourcesMaxi,
-        nombreEnfantsEligibles: 0,
-      },
-    };
-  }
-
-  // Calculate estimated amount
-  const nombreEnfantsEligibles = Math.min(
-    nombreEnfants,
-    3, // ASF typically capped at 3 children
-  );
-  let montantEstime = montantParEnfant * nombreEnfantsEligibles;
-
-  montantEstime = Math.round(montantEstime * 100) / 100;
+  const explicationBase =
+    situation === "depourvu"
+      ? "Vous relevez du cas d'un enfant prive du soutien de ses deux parents."
+      : "L'ASF est versee sans condition de ressources quand les conditions familiales sont remplies.";
 
   return {
     eligible: true,
     montantEstime,
-    explication: `En fonction de votre situation familiale (parent isolé, nombre d'enfants à charge), vous pourriez recevoir environ ${montantEstime.toFixed(2)}€ par mois pour ${nombreEnfantsEligibles} enfant(s). Ce montant est indicatif et dépend de l'examen complet de votre dossier par la CAF.`,
+    explication: `${explicationBase} Le montant indicatif est d'environ ${montantEstime.toFixed(2)} EUR par mois pour ${nombreEnfantsEligibles} enfant(s). La CAF confirmera le droit exact selon votre dossier.`,
     details: {
       montantParEnfant,
-      ressourcesMaxi,
+      ressourcesMaxi: 0,
       nombreEnfantsEligibles,
     },
   };
 }
+

@@ -13,6 +13,8 @@
  * @version 2026-01
  */
 
+import { socialBaremes } from "../data/social-baremes";
+
 // ==========================================
 // TYPES & INTERFACES
 // ==========================================
@@ -55,49 +57,19 @@ export interface APLData {
   raison_zero?: string; // Explication si APL = 0
 }
 
-// ==========================================
-// BARÈMES CAF 2026 (simplifiés, cohérents)
-// ==========================================
-
-/**
- * Plafonds de loyer par zone (Barèmes CAF 2026 officiels)
- * Sources: caf.fr, service-public.fr
- */
+const aplBaremes = socialBaremes.apl;
 const PLAFONDS_LOYER_BASE: Record<Zone, number> = {
-  idf: 610, // Île-de-France - Zone 1
-  province: 510, // Province Zone 2 (grandes villes)
-  dom: 430, // DOM-TOM assimilé Zone 3
+  idf: aplBaremes.plafondsLoyer.zone1.seul,
+  province: aplBaremes.plafondsLoyer.zone2.seul,
+  dom: aplBaremes.plafondsLoyer.zone3.seul,
 };
-
-/**
- * Bonus loyer par enfant supplémentaire (majoration CAF)
- */
-const BONUS_LOYER_PAR_ENFANT = 60;
-
-/**
- * Bonus loyer pour couple
- */
-const BONUS_LOYER_COUPLE = 60;
-
-/**
- * Forfait logement (déduit de la participation personnelle)
- */
+const BONUS_LOYER_PAR_ENFANT = aplBaremes.moteur.bonusLoyerParEnfant;
+const BONUS_LOYER_COUPLE = aplBaremes.moteur.bonusLoyerCouple;
 const FORFAIT_LOGEMENT: Record<SituationFamiliale, number> = {
-  seul: 72, // Célibataire
-  couple: 102, // Couple
-  monoparental: 87, // Parent isolé
-  autre: 72, // Autre (défaut)
+  ...aplBaremes.moteur.forfaitLogement,
 };
-
-/**
- * Taux de participation sur les revenus
- */
-const TAUX_PARTICIPATION = 0.3; // 30%
-
-/**
- * Participation minimale (plancher CAF)
- */
-const PARTICIPATION_MINIMUM = 35;
+const TAUX_PARTICIPATION = aplBaremes.moteur.tauxParticipation;
+const PARTICIPATION_MINIMUM = aplBaremes.moteur.participationMinimum;
 
 // ==========================================
 // 🧮 PROPOSITION 2: PLAFONDS APL RÉALISTES
@@ -112,20 +84,14 @@ function getPlafondAPLRealiste(
   enfants: number
 ): number {
   const base: Record<SituationFamiliale, number> = {
-    seul: 320, // Célibataire, 0 enfant → max ~300-350€
-    couple: 420, // Couple, 0 enfant → max ~400-450€
-    monoparental: 500, // Parent isolé → max ~450-550€
-    autre: 350,
+    ...aplBaremes.moteur.plafondAplBase,
   };
-
-  // Bonus par enfant (jusqu'à 3 enfants comptabilisés)
-  const bonusParEnfant = 150;
+  const bonusParEnfant = aplBaremes.moteur.bonusPlafondAplParEnfant;
   const enfantsComptabilises = Math.min(enfants, 3);
 
   let plafond = base[situation] + enfantsComptabilises * bonusParEnfant;
 
-  // Plafond absolu (jamais > 900€ même cas exceptionnels)
-  return Math.min(plafond, 900);
+  return Math.min(plafond, aplBaremes.moteur.plafondAplAbsolu);
 }
 
 // ==========================================

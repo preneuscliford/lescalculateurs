@@ -1,0 +1,1664 @@
+{
+  "generatedAt": "2026-03-25T19:57:36.556Z",
+  "scope": "site-rendered",
+  "scannedFiles": 487,
+  "summary": {
+    "totalMatches": 10454,
+    "ignored": 7518,
+    "style": 2727,
+    "actionable": 209,
+    "filesWithActionable": 161
+  },
+  "topIgnoredMessages": [
+    {
+      "message": "Les deux-points sont précédés d’une espace insécable.",
+      "count": 5801
+    },
+    {
+      "message": "Faute de frappe possible trouvée.",
+      "count": 1105
+    },
+    {
+      "message": "L’acronyme de la Caisse d’Allocations familiales française s’écrit avec une majuscule.",
+      "count": 364
+    },
+    {
+      "message": "Ces deux traits d’union peuvent être associés pour former un tiret.",
+      "count": 94
+    },
+    {
+      "message": "Les chiffres s’écrivent généralement en lettres.",
+      "count": 63
+    },
+    {
+      "message": "Nombre ordinal. Premier : 1ᵉʳ. Première : 1ʳᵉ. Premiers : 1ᵉʳˢ. Premières : 1ʳᵉˢ.",
+      "count": 55
+    },
+    {
+      "message": "Nombre ordinal singulier. Exemples : 2ᵉ, 3ᵉ, 4ᵉ…",
+      "count": 18
+    },
+    {
+      "message": "Un usage différent des majuscules et des minuscules est recommandé.",
+      "count": 7
+    },
+    {
+      "message": "Ce signe est un trait d’union, il ne sert qu’à former des mots composés. Employez un tiret ou un autre signe de ponctuation plus approprié.",
+      "count": 3
+    },
+    {
+      "message": "Le mot « où » indique un lieu, un temps ou une situation.",
+      "count": 3
+    },
+    {
+      "message": "Un adverbe semble plus approprié.",
+      "count": 2
+    },
+    {
+      "message": "Ce nombre ordinal doit être pluriel.",
+      "count": 1
+    },
+    {
+      "message": "Le trait d’union est employé sans espaces pour former des mots, alors que le tiret est encadré par des espaces et placé entre deux mots distincts.",
+      "count": 1
+    },
+    {
+      "message": "Pour évoquer un lieu, un temps ou une situation, écrivez « où ». La conjonction « ou » signale une alternative.",
+      "count": 1
+    }
+  ],
+  "topStyleMessages": [
+    {
+      "message": "Le point d’interrogation est précédé d’une espace fine insécable.",
+      "count": 1627
+    },
+    {
+      "message": "Cette phrase ne commence pas par une majuscule.",
+      "count": 307
+    },
+    {
+      "message": "Ce mot apparaît déjà dans l’une des phrases précédant immédiatement celle-ci. Utilisez un synonyme pour apporter plus de variété à votre texte, excepté si la répétition est intentionnelle.",
+      "count": 207
+    },
+    {
+      "message": "Ces mots semblent répétés.",
+      "count": 143
+    },
+    {
+      "message": "Une virgule est conseillée dans ce contexte.",
+      "count": 59
+    },
+    {
+      "message": "Le point d’exclamation est précédé d’une espace fine insécable.",
+      "count": 52
+    },
+    {
+      "message": "Majuscule en début de phrase, sauf éventuellement lors d’une énumération.",
+      "count": 52
+    },
+    {
+      "message": "Un mot est répété.",
+      "count": 49
+    },
+    {
+      "message": "La majuscule n’est employée qu’au début d’une phrase ou pour les noms propres (noms, toponymes, etc.).",
+      "count": 47
+    },
+    {
+      "message": "Un usage différent des majuscules et des minuscules est recommandé.",
+      "count": 30
+    },
+    {
+      "message": "Le préfixe « multi » est généralement associé au terme qu’il précède.",
+      "count": 17
+    },
+    {
+      "message": "Le point-virgule est précédé d’une espace fine insécable.",
+      "count": 16
+    },
+    {
+      "message": "Faute de typographie.",
+      "count": 13
+    },
+    {
+      "message": "Souhaitez-vous écrire une flèche ou le symbole « ≥ » ?",
+      "count": 11
+    },
+    {
+      "message": "Dans un contexte formel, d’autres structures peuvent être utilisées pour enrichir votre style.",
+      "count": 10
+    },
+    {
+      "message": "Employez une minuscule pour ces points cardinaux.",
+      "count": 9
+    },
+    {
+      "message": "La virgule doit être omise dans ce contexte.",
+      "count": 9
+    },
+    {
+      "message": "Il est déconseillé de placer des chiffres en début de phrase. Souhaitez-vous reformuler la phrase ?",
+      "count": 8
+    },
+    {
+      "message": "En français, l’unité se place après le nombre.",
+      "count": 6
+    },
+    {
+      "message": "Le préfixe « co » est généralement associé au terme qu’il précède.",
+      "count": 6
+    },
+    {
+      "message": "Une virgule semble être requise dans ce contexte.",
+      "count": 4
+    },
+    {
+      "message": "Il peut être plus approprié d’écrire ce chiffre en lettres afin d’assurer la cohérence de la phrase.",
+      "count": 3
+    },
+    {
+      "message": "Ce nom commence par une minuscule.",
+      "count": 2
+    },
+    {
+      "message": "Le préfixe doit être relié au verbe qui suit.",
+      "count": 2
+    },
+    {
+      "message": "Les mois de l’année s’écrivent sans majuscule.",
+      "count": 2
+    }
+  ],
+  "topActionableMessages": [
+    {
+      "message": "Ne mettez pas un point après un point d’interrogation ou d’exclamation.",
+      "count": 22
+    },
+    {
+      "message": "Cet adjectif précède généralement le nom.",
+      "count": 15
+    },
+    {
+      "message": "Vérifiez la concordance entre les verbes.",
+      "count": 14
+    },
+    {
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "count": 10
+    },
+    {
+      "message": "Le participe « modérée » devrait être au singulier masculin.",
+      "count": 8
+    },
+    {
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "count": 8
+    },
+    {
+      "message": "Un nom ou un participe passé semble plus approprié.",
+      "count": 5
+    },
+    {
+      "message": "‘mois’ semble moins probable que ‘moi’.",
+      "count": 4
+    },
+    {
+      "message": "« Revenus » et « âge » ne semblent pas bien accordés.",
+      "count": 4
+    },
+    {
+      "message": "« Revenus » et « déclaration » ne semblent pas bien accordés.",
+      "count": 4
+    },
+    {
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "count": 4
+    },
+    {
+      "message": "Le verbe devrait être à la 3ᵉ personne du pluriel.",
+      "count": 4
+    },
+    {
+      "message": "Un point est requis pour indiquer la fin de cette phrase.",
+      "count": 4
+    },
+    {
+      "message": "Un verbe conjugué à la troisième personne semble plus approprié.",
+      "count": 4
+    },
+    {
+      "message": "Vérifiez l’accord en genre et en nombre de « indicatifs », le féminin semble plus probable.",
+      "count": 4
+    },
+    {
+      "message": "Vérifiez la concordance de « brut » avec les noms précédents.",
+      "count": 4
+    },
+    {
+      "message": "Cette expression ne s’élide pas.",
+      "count": 3
+    },
+    {
+      "message": "Un participe passé semble plus approprié.",
+      "count": 3
+    },
+    {
+      "message": "Vérifiez l’accord avec le nom « charge ».",
+      "count": 3
+    },
+    {
+      "message": "Vérifiez la concordance de « net » avec les noms précédents.",
+      "count": 3
+    },
+    {
+      "message": "Vérifiez la concordance de « retraite » avec les noms précédents.",
+      "count": 3
+    },
+    {
+      "message": "« Choisie » et « seuils » ne semblent pas bien accordés.",
+      "count": 2
+    },
+    {
+      "message": "« Compatible » et « voitures » ne semblent pas bien accordés.",
+      "count": 2
+    },
+    {
+      "message": "« Complet » et « scénarios » ne semblent pas bien accordés.",
+      "count": 2
+    },
+    {
+      "message": "Écrivez avec un trait d’union.",
+      "count": 2
+    }
+  ],
+  "topActionablePairs": [
+    {
+      "pair": "?. -> ?",
+      "count": 22
+    },
+    {
+      "pair": "estimée -> estimé",
+      "count": 10
+    },
+    {
+      "pair": "couple -> couplent",
+      "count": 8
+    },
+    {
+      "pair": "modérée -> modéré",
+      "count": 8
+    },
+    {
+      "pair": "durée courte -> courte durée",
+      "count": 6
+    },
+    {
+      "pair": "brut -> brute",
+      "count": 4
+    },
+    {
+      "pair": "est-elle -> est-il",
+      "count": 4
+    },
+    {
+      "pair": "indicatifs -> indicatives",
+      "count": 4
+    },
+    {
+      "pair": "mois -> moi",
+      "count": 4
+    },
+    {
+      "pair": "revenus -> revenu",
+      "count": 4
+    },
+    {
+      "pair": "revenus âge -> revenu âge",
+      "count": 4
+    },
+    {
+      "pair": "revenus déclaration -> revenue déclaration",
+      "count": 4
+    },
+    {
+      "pair": "vigueur -> vigueur.",
+      "count": 4
+    },
+    {
+      "pair": "net -> nets",
+      "count": 3
+    },
+    {
+      "pair": "restent calcules -> restent calculer",
+      "count": 3
+    },
+    {
+      "pair": "aidé -> aidés",
+      "count": 2
+    },
+    {
+      "pair": "ancien ou très spécifiques -> ancien ou très spécifique",
+      "count": 2
+    },
+    {
+      "pair": "atteint -> atteinte",
+      "count": 2
+    },
+    {
+      "pair": "charge global -> chargé global",
+      "count": 2
+    },
+    {
+      "pair": "choisie seuils -> choisis seuils",
+      "count": 2
+    },
+    {
+      "pair": "Compatible voitures -> Compatibles voitures",
+      "count": 2
+    },
+    {
+      "pair": "complet scénarios -> complets scénarios",
+      "count": 2
+    },
+    {
+      "pair": "comptabilisés -> comptabilisée",
+      "count": 2
+    },
+    {
+      "pair": "conservée -> conservé",
+      "count": 2
+    },
+    {
+      "pair": "des -> dès",
+      "count": 2
+    }
+  ],
+  "actionableFiles": [
+    {
+      "filePath": "src\\pages\\are.html",
+      "actionableCount": 7
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "actionableCount": 7
+    },
+    {
+      "filePath": "src\\pages\\apl-dom-tom.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-87.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\pret\\duree-ideale-d-un-pret-immobilier.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\pret\\duree-ideale-d-un-pret-immobilier\\index.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\salaire.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\salaire\\index.html",
+      "actionableCount": 3
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\asf\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-14.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-36.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-72.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\blog\\export-pdf-calculateurs.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\ik.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\ik\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\politique-confidentialite.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\pret.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\pret\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-interim.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-interim\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\salaire-brut-net-calcul-2026.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\salaire-seo.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\sources.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\taxe-fonciere-par-ville-est-ce-fiable.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\taxe-fonciere-par-ville-est-ce-fiable\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\taxe.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\taxe\\index.html",
+      "actionableCount": 2
+    },
+    {
+      "filePath": "src\\pages\\a-propos.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aah.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aah\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aide-sociale-simulation-globale.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aide-sociale-simulation-globale\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-etudiants.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-etudiants\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-jeunes-actifs.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-jeunes-actifs\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-retraites.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-retraites\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\allocation-logement-simulation.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\allocation-logement-simulation\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\cumul-aides-sociales.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\cumul-aides-sociales\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\quelles-aides-ai-je-droit.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\aide\\quelles-aides-ai-je-droit\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl-zones.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-marseille.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-marseille\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-petit-loyer.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-petit-loyer\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-couple-sans-enfant.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-couple-sans-enfant\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\apl\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-aides.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-aides\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-02.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-06.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-09.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-15.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-23.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-24.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-31.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-32.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-33.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-35.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-43.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-46.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-52.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-55.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-59.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-60.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-61.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-62.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-68.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-74.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-75.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-77.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-79.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-80.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-82.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-88.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\frais-notaire-ancien-neuf-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\frais-notaire-departements.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\revalorisation-smic-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\blog\\salarie-ou-auto-entrepreneur-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\contact.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\crypto-bourse.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\financement.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\financement\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\guide-complet-impot-revenu-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\historique-mises-a-jour.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\impot\\impot-auto-entrepreneur.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\impot\\impot-auto-entrepreneur\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\impot\\tranches-d-impot-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\impot\\tranches-d-impot-2026\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\notaire-enhancements.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\notaire.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\plusvalue.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\plusvalue\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\politique-cookies.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\ponts.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\prime-activite.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa-vs-smic.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-auto-entrepreneur.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-auto-entrepreneur\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-conditions-2026.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-conditions-2026\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-avec-enfant.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-avec-enfant\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu-avec-enfant.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu-avec-enfant\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\rsa\\rsa-couple-sans-revenu\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\aides-retraites\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\cumul-aides-sociales\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-ai-je-droit\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\simulateurs\\quelles-aides-sans-revenu\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\comment-connaitre-la-valeur-locative-cadastrale.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\comment-connaitre-la-valeur-locative-cadastrale\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\comment-contester-sa-taxe-fonciere.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\comment-contester-sa-taxe-fonciere\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\comment-est-calculee-la-taxe-fonciere.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\comment-est-calculee-la-taxe-fonciere\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\estimation-taxe-fonciere-comment-faire.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\estimation-taxe-fonciere-comment-faire\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\pourquoi-la-taxe-fonciere-augmente.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\pourquoi-la-taxe-fonciere-augmente\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\quelle-surface-est-prise-en-compte-pour-la-taxe-fonciere.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\quelle-surface-est-prise-en-compte-pour-la-taxe-fonciere\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\qui-paie-la-taxe-fonciere.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\qui-paie-la-taxe-fonciere\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\taxe-fonciere-locataire-ou-proprietaire.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\taxe-fonciere\\taxe-fonciere-locataire-ou-proprietaire\\index.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\travail.html",
+      "actionableCount": 1
+    },
+    {
+      "filePath": "src\\pages\\travail\\index.html",
+      "actionableCount": 1
+    }
+  ],
+  "actionableSamples": [
+    {
+      "filePath": "src\\pages\\a-propos.html",
+      "message": "« 1 » et « Compétences » ne semblent pas bien accordés en nombre.",
+      "matchedText": "Compétences",
+      "replacement": "Compétence",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_NUMERAL_SINGULAR"
+    },
+    {
+      "filePath": "src\\pages\\aah.html",
+      "message": "Vérifiez l’accord en genre et en nombre de « indicatifs », le féminin semble plus probable.",
+      "matchedText": "indicatifs",
+      "replacement": "indicatives",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aah\\index.html",
+      "message": "Vérifiez l’accord en genre et en nombre de « indicatifs », le féminin semble plus probable.",
+      "matchedText": "indicatifs",
+      "replacement": "indicatives",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aide-sociale-simulation-globale.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenue",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aide-sociale-simulation-globale\\index.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenue",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-etudiants.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenues",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-etudiants\\index.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenues",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-jeunes-actifs.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenu",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-jeunes-actifs\\index.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenu",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-retraites.html",
+      "message": "« Revenus » et « âge » ne semblent pas bien accordés.",
+      "matchedText": "revenus âge",
+      "replacement": "revenu âge",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\aide\\aides-retraites\\index.html",
+      "message": "« Revenus » et « âge » ne semblent pas bien accordés.",
+      "matchedText": "revenus âge",
+      "replacement": "revenu âge",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\aide\\allocation-logement-simulation.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenu",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\allocation-logement-simulation\\index.html",
+      "message": "Vérifiez la concordance de « revenus » avec les noms précédents.",
+      "matchedText": "revenus",
+      "replacement": "revenu",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\aide\\cumul-aides-sociales.html",
+      "message": "« Revenus » et « déclaration » ne semblent pas bien accordés.",
+      "matchedText": "revenus déclaration",
+      "replacement": "revenue déclaration",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\aide\\cumul-aides-sociales\\index.html",
+      "message": "« Revenus » et « déclaration » ne semblent pas bien accordés.",
+      "matchedText": "revenus déclaration",
+      "replacement": "revenue déclaration",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\aide\\index.html",
+      "message": "Un point est requis pour indiquer la fin de cette phrase.",
+      "matchedText": "vigueur",
+      "replacement": "vigueur.",
+      "issueType": "uncategorized",
+      "ruleId": "POINT"
+    },
+    {
+      "filePath": "src\\pages\\aide\\quelles-aides-ai-je-droit.html",
+      "message": "Ne mettez pas un point après un point d’interrogation ou d’exclamation.",
+      "matchedText": "?.",
+      "replacement": "?",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_typo_ponctuation_superflue4"
+    },
+    {
+      "filePath": "src\\pages\\aide\\quelles-aides-ai-je-droit\\index.html",
+      "message": "Ne mettez pas un point après un point d’interrogation ou d’exclamation.",
+      "matchedText": "?.",
+      "replacement": "?",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_typo_ponctuation_superflue4"
+    },
+    {
+      "filePath": "src\\pages\\apl-dom-tom.html",
+      "message": "« Équilibré » et « Martinique » ne semblent pas bien accordés.",
+      "matchedText": "Équilibré Martinique",
+      "replacement": "Équilibrée Martinique",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\apl-dom-tom.html",
+      "message": "« Tendu » et « Réunion » ne semblent pas bien accordés.",
+      "matchedText": "tendu Réunion",
+      "replacement": "tendue Réunion",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\apl-dom-tom.html",
+      "message": "« Différents » et « outre-mer » ne semblent pas bien accordés.",
+      "matchedText": "différents outre-mer",
+      "replacement": "différent outre-mer",
+      "issueType": "uncategorized",
+      "ruleId": "J_N2"
+    },
+    {
+      "filePath": "src\\pages\\apl-zones.html",
+      "message": "Le mot après « très » devrait être un adjectif, adverbe ou participe passé.",
+      "matchedText": "rééduits",
+      "replacement": "réduits",
+      "issueType": "uncategorized",
+      "ruleId": "TRES"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-marseille.html",
+      "message": "L’indicatif semble plus approprié.",
+      "matchedText": "exclue",
+      "replacement": "exclus",
+      "issueType": "uncategorized",
+      "ruleId": "V_SUB_V_IND"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-marseille\\index.html",
+      "message": "L’indicatif semble plus approprié.",
+      "matchedText": "exclue",
+      "replacement": "exclus",
+      "issueType": "uncategorized",
+      "ruleId": "V_SUB_V_IND"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic.html",
+      "message": "Ne mettez pas un point après un point d’interrogation ou d’exclamation.",
+      "matchedText": "?.",
+      "replacement": "?",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_typo_ponctuation_superflue4"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic.html",
+      "message": "« Complet » et « scénarios » ne semblent pas bien accordés.",
+      "matchedText": "complet scénarios",
+      "replacement": "complets scénarios",
+      "issueType": "uncategorized",
+      "ruleId": "J_N2"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "message": "Ne mettez pas un point après un point d’interrogation ou d’exclamation.",
+      "matchedText": "?.",
+      "replacement": "?",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_typo_ponctuation_superflue4"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic\\index.html",
+      "message": "« Complet » et « scénarios » ne semblent pas bien accordés.",
+      "matchedText": "complet scénarios",
+      "replacement": "complets scénarios",
+      "issueType": "uncategorized",
+      "ruleId": "J_N2"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule.html",
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "matchedText": "est-elle",
+      "replacement": "est-il",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_gv2__conj_sujet_verbe_interrogatif_pronom__b3_a1_1"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule\\index.html",
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "matchedText": "est-elle",
+      "replacement": "est-il",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_gv2__conj_sujet_verbe_interrogatif_pronom__b3_a1_1"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-petit-loyer.html",
+      "message": "Vérifiez l’accord avec le nom « charge ».",
+      "matchedText": "charge global",
+      "replacement": "chargé global",
+      "issueType": "uncategorized",
+      "ruleId": "D_N_E_OU_E"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-etudiant-petit-loyer\\index.html",
+      "message": "Vérifiez l’accord avec le nom « charge ».",
+      "matchedText": "charge global",
+      "replacement": "chargé global",
+      "issueType": "uncategorized",
+      "ruleId": "D_N_E_OU_E"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit.html",
+      "message": "Vérifiez l’accord entre « ancien » et « spécifiques ».",
+      "matchedText": "ancien ou très spécifiques",
+      "replacement": "ancien ou très spécifique",
+      "issueType": "uncategorized",
+      "ruleId": "ADJ_ADJ_SENT_END"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-proprietaire-ai-je-droit\\index.html",
+      "message": "Vérifiez l’accord entre « ancien » et « spécifiques ».",
+      "matchedText": "ancien ou très spécifiques",
+      "replacement": "ancien ou très spécifique",
+      "issueType": "uncategorized",
+      "ruleId": "ADJ_ADJ_SENT_END"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-couple-sans-enfant.html",
+      "message": "Un adverbe de négation doit être ajouté afin d’obtenir une négation complète.",
+      "matchedText": "est",
+      "replacement": "n'est",
+      "issueType": "uncategorized",
+      "ruleId": "P_V_PAS"
+    },
+    {
+      "filePath": "src\\pages\\apl\\apl-smic-couple-sans-enfant\\index.html",
+      "message": "Un adverbe de négation doit être ajouté afin d’obtenir une négation complète.",
+      "matchedText": "est",
+      "replacement": "n'est",
+      "issueType": "uncategorized",
+      "ruleId": "P_V_PAS"
+    },
+    {
+      "filePath": "src\\pages\\apl\\index.html",
+      "message": "Vérifiez l’accord avec le nom « charge ».",
+      "matchedText": "charge encore élevé",
+      "replacement": "chargé encore élevé",
+      "issueType": "uncategorized",
+      "ruleId": "D_N_E_OU_E"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « journalière » avec les noms précédents.",
+      "matchedText": "journalière",
+      "replacement": "journalier",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « mensuelle » avec les noms précédents.",
+      "matchedText": "mensuelle",
+      "replacement": "mensuel",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « partielle » avec les noms précédents.",
+      "matchedText": "partielle",
+      "replacement": "partiel",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « conservée » avec les noms précédents.",
+      "matchedText": "conservée",
+      "replacement": "conservé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Le mot féminin « réduite » n’est pas accordé en genre avec le mot masculin « ARE ».",
+      "matchedText": "réduite",
+      "replacement": "réduit",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "matchedText": "est-elle",
+      "replacement": "est-il",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_gv2__conj_sujet_verbe_interrogatif_pronom__b3_a1_1"
+    },
+    {
+      "filePath": "src\\pages\\are.html",
+      "message": "Vérifiez la concordance de « incluse » avec les noms précédents.",
+      "matchedText": "incluse",
+      "replacement": "inclus",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-aides.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-aides\\index.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-quelles-aides\\index.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-fin-de-droits-rsa-ou-apl\\index.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\are-reprise-emploi-temps-partiel\\index.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "message": "Vérifiez la concordance de « journalière » avec les noms précédents.",
+      "matchedText": "journalière",
+      "replacement": "journalier",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "message": "Vérifiez la concordance de « mensuelle » avec les noms précédents.",
+      "matchedText": "mensuelle",
+      "replacement": "mensuel",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "message": "Vérifiez la concordance de « partielle » avec les noms précédents.",
+      "matchedText": "partielle",
+      "replacement": "partiel",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "message": "Vérifiez la concordance de « conservée » avec les noms précédents.",
+      "matchedText": "conservée",
+      "replacement": "conservé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "message": "Le mot féminin « réduite » n’est pas accordé en genre avec le mot masculin « ARE ».",
+      "matchedText": "réduite",
+      "replacement": "réduit",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "message": "Le pronom “elle” n’est pas accordé avec “L’ ARE”.",
+      "matchedText": "est-elle",
+      "replacement": "est-il",
+      "issueType": "uncategorized",
+      "ruleId": "grammalecte_gv2__conj_sujet_verbe_interrogatif_pronom__b3_a1_1"
+    },
+    {
+      "filePath": "src\\pages\\are\\index.html",
+      "message": "Vérifiez la concordance de « incluse » avec les noms précédents.",
+      "matchedText": "incluse",
+      "replacement": "inclus",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\are\\montant-are-2026\\index.html",
+      "message": "Vérifiez la concordance de « estimée » avec les noms précédents.",
+      "matchedText": "estimée",
+      "replacement": "estimé",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "message": "Vérifiez la concordance de « mensuel » avec les noms précédents.",
+      "matchedText": "mensuel",
+      "replacement": "mensuels",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\asf.html",
+      "message": "Vérifiez l’accord en genre et en nombre de « indicatifs », le féminin semble plus probable.",
+      "matchedText": "indicatifs",
+      "replacement": "indicatives",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\asf\\index.html",
+      "message": "Vérifiez la concordance de « mensuel » avec les noms précédents.",
+      "matchedText": "mensuel",
+      "replacement": "mensuels",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\asf\\index.html",
+      "message": "Vérifiez l’accord en genre et en nombre de « indicatifs », le féminin semble plus probable.",
+      "matchedText": "indicatifs",
+      "replacement": "indicatives",
+      "issueType": "uncategorized",
+      "ruleId": "ETRE_VPPA_OU_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-02.html",
+      "message": "Le participe « modérée » devrait être au singulier masculin.",
+      "matchedText": "modérée",
+      "replacement": "modéré",
+      "issueType": "uncategorized",
+      "ruleId": "AUX_AVOIR"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-06.html",
+      "message": "« Digne » et « Hautes-Alpes » ne semblent pas bien accordés.",
+      "matchedText": "Digne Hautes-Alpes",
+      "replacement": "Dignes Hautes-Alpes",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-09.html",
+      "message": "Le participe « modérée » devrait être au singulier masculin.",
+      "matchedText": "modérée",
+      "replacement": "modéré",
+      "issueType": "uncategorized",
+      "ruleId": "AUX_AVOIR"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-14.html",
+      "message": "Vérifiez l’accord entre « littoral » et « communes ».",
+      "matchedText": "littoral et communes",
+      "replacement": "littoral et commun",
+      "issueType": "uncategorized",
+      "ruleId": "ADJ_ADJ_SENT_END"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-14.html",
+      "message": "Un nom ou un participe passé semble plus approprié.",
+      "matchedText": "restent calcules",
+      "replacement": "restent calculer",
+      "issueType": "uncategorized",
+      "ruleId": "CONF_N_V"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-15.html",
+      "message": "Le participe « modérée » devrait être au singulier masculin.",
+      "matchedText": "modérée",
+      "replacement": "modéré",
+      "issueType": "uncategorized",
+      "ruleId": "AUX_AVOIR"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-23.html",
+      "message": "Le participe « modérée » devrait être au singulier masculin.",
+      "matchedText": "modérée",
+      "replacement": "modéré",
+      "issueType": "uncategorized",
+      "ruleId": "AUX_AVOIR"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-24.html",
+      "message": "Vérifiez la concordance de « créé » avec les noms précédents.",
+      "matchedText": "créé",
+      "replacement": "créée",
+      "issueType": "uncategorized",
+      "ruleId": "AGREEMENT_POSTPONED_ADJ"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-31.html",
+      "message": "Cette expression ne s’élide pas.",
+      "matchedText": "l’Haute-Garonne",
+      "replacement": "la Haute-Garonne",
+      "issueType": "uncategorized",
+      "ruleId": "PAS_D_ELISION"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-32.html",
+      "message": "Le mot « très » doit être remplacé, car il ne se place que devant un adjectif, adverbe ou participe passé.",
+      "matchedText": "très",
+      "replacement": "vraiment",
+      "issueType": "uncategorized",
+      "ruleId": "TRES"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-33.html",
+      "message": "Vérifiez l’accord entre « recherché » et « communes ».",
+      "matchedText": "recherché et communes",
+      "replacement": "recherché et commun",
+      "issueType": "uncategorized",
+      "ruleId": "ADJ_ADJ_SENT_END"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-35.html",
+      "message": "« Littoral » et « recherche » ne semblent pas bien accordés.",
+      "matchedText": "littoral recherche",
+      "replacement": "littorale recherche",
+      "issueType": "uncategorized",
+      "ruleId": "J_N"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-36.html",
+      "message": "Après l’auxiliaire « sont », le verbe devrait être au participe passé. Quant à l’accord, celui-ci s’accorde en genre et en nombre avec le sujet du verbe.",
+      "matchedText": "encadres",
+      "replacement": "encadré",
+      "issueType": "uncategorized",
+      "ruleId": "AUX_ETRE_VCONJ"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-36.html",
+      "message": "Le participe « modérée » devrait être au singulier masculin.",
+      "matchedText": "modérée",
+      "replacement": "modéré",
+      "issueType": "uncategorized",
+      "ruleId": "AUX_AVOIR"
+    },
+    {
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-43.html",
+      "message": "Cette expression ne s’élide pas.",
+      "matchedText": "l’Haute-Loire",
+      "replacement": "la Haute-Loire",
+      "issueType": "uncategorized",
+      "ruleId": "PAS_D_ELISION"
+    }
+  ]
+}
