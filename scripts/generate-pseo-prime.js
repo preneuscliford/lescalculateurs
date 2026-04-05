@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { fileURLToPath, pathToFileURL } from "url";
+import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 import { primeAbsenceRevenuScenarios } from "../data/pseo/prime-absence-revenu-scenarios.js";
 import {
@@ -12,6 +13,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
+const require = createRequire(import.meta.url);
 const outputDir = path.join(repoRoot, "src", "pages", "prime-activite");
 const generatedAt = formatDisplayDate(new Date());
 
@@ -19,6 +21,11 @@ async function loadPrimeEngine() {
   const engineSrc = path.join(repoRoot, "src", "utils", "primeActiviteCalculEngine.ts");
   const tempDir = path.join(repoRoot, "temp", "pseo-prime-engine");
   fs.mkdirSync(tempDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(tempDir, "package.json"),
+    JSON.stringify({ type: "commonjs" }, null, 2),
+    "utf8",
+  );
   execFileSync(
     process.execPath,
     [
@@ -27,18 +34,22 @@ async function loadPrimeEngine() {
       "--outDir",
       tempDir,
       "--module",
-      "ES2020",
+      "CommonJS",
       "--target",
       "ES2020",
       "--moduleResolution",
       "node",
+      "--resolveJsonModule",
+      "true",
+      "--esModuleInterop",
+      "true",
       "--skipLibCheck",
       "true",
     ],
     { cwd: repoRoot, stdio: "pipe" },
   );
-  const compiledPath = path.join(tempDir, "primeActiviteCalculEngine.js");
-  const engine = await import(`${pathToFileURL(compiledPath).href}?v=${Date.now()}`);
+  const compiledPath = path.join(tempDir, "utils", "primeActiviteCalculEngine.js");
+  const engine = require(compiledPath);
   fs.rmSync(tempDir, { recursive: true, force: true });
   return engine;
 }
@@ -78,9 +89,9 @@ async function main() {
       ...scenario,
       estimate: {
         amount: result.montantEstime,
-        formattedAmount: formatApproxEuro(result.montantEstime),
-        formattedIncome: formatApproxEuro(scenario.input.revenusProf),
-        formattedOtherIncome: formatApproxEuro(scenario.input.autresRevenus),
+        formattedAmount: formatApproxEuroSafe(result.montantEstime),
+        formattedIncome: formatApproxEuroSafe(scenario.input.revenusProf),
+        formattedOtherIncome: formatApproxEuroSafe(scenario.input.autresRevenus),
         eligibility: result.eligibilite,
       },
     };
@@ -109,6 +120,10 @@ main();
 
 function formatApproxEuro(value) {
   return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} €`;
+}
+
+function formatApproxEuroSafe(value) {
+  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} EUR`;
 }
 
 function formatDisplayDate(date) {
