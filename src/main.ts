@@ -64,7 +64,7 @@ function initializeJourneyTracking() {
       ?.querySelector("h2, h3, [data-lc-section-title]");
     const headingText = normalizeText(sectionHeading?.textContent);
     if (journeySectionRegex.test(headingText)) return true;
-    return /\/pages\/(apl|rsa|are|prime-activite|notaire|impot|charges|taxe|pret|salaire)/.test(toPath);
+    return toPath.startsWith("/pages/");
   };
 
   document.addEventListener("click", (event) => {
