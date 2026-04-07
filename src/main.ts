@@ -111,24 +111,38 @@ function initializeJourneyTracking() {
     return false;
   };
 
+  let observer: MutationObserver | null = null;
+  let observerStopTimer: number | null = null;
+
+  const stopObserver = () => {
+    if (observer) {
+      observer.disconnect();
+      observer = null;
+    }
+    if (observerStopTimer !== null) {
+      window.clearTimeout(observerStopTimer);
+      observerStopTimer = null;
+    }
+  };
+
   const trySendResultView = () => {
     if (resultViewSent) return;
     if (!hasVisibleResult()) return;
     resultViewSent = true;
     trackGaEvent("calculator_result_view", page);
+    stopObserver();
   };
 
-  const observer = new MutationObserver(() => {
+  observer = new MutationObserver(() => {
     trySendResultView();
   });
 
   observer.observe(document.body, {
     childList: true,
     subtree: true,
-    characterData: true,
-    attributes: true,
   });
 
+  observerStopTimer = window.setTimeout(stopObserver, 15000);
   window.setTimeout(trySendResultView, 1200);
 }
 
