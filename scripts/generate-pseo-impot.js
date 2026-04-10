@@ -4,23 +4,23 @@ import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 import { createRequire } from "module";
 
-import { primeAbsenceRevenuScenarios } from "../data/pseo/prime-absence-revenu-scenarios.js";
+import { impotPilotScenarios } from "../data/pseo/impot-pilot-scenarios.js";
 import {
-  isGeneratedPseoPrimePage,
-  renderPrimeScenarioPage,
-} from "./lib/pseo/prime-pseo-renderer.js";
+  isGeneratedPseoImpotPage,
+  renderImpotScenarioPage,
+} from "./lib/pseo/impot-pseo-renderer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const require = createRequire(import.meta.url);
 const { normalizeFrenchText } = require("./lib/french-normalization.cjs");
-const outputDir = path.join(repoRoot, "src", "pages", "prime-activite");
+const outputDir = path.join(repoRoot, "src", "pages", "impot");
 const generatedAt = formatDisplayDate(new Date());
 
-async function loadPrimeEngine() {
-  const engineSrc = path.join(repoRoot, "src", "utils", "primeActiviteCalculEngine.ts");
-  const tempDir = path.join(repoRoot, "temp", "pseo-prime-engine");
+async function loadIrEngine() {
+  const engineSrc = path.join(repoRoot, "src", "utils", "irCalculEngine.ts");
+  const tempDir = path.join(repoRoot, "temp", "pseo-impot-engine");
   fs.mkdirSync(tempDir, { recursive: true });
   fs.writeFileSync(
     path.join(tempDir, "package.json"),
@@ -49,7 +49,7 @@ async function loadPrimeEngine() {
     ],
     { cwd: repoRoot, stdio: "pipe" },
   );
-  const compiledPath = path.join(tempDir, "utils", "primeActiviteCalculEngine.js");
+  const compiledPath = path.join(tempDir, "irCalculEngine.js");
   const engine = require(compiledPath);
   fs.rmSync(tempDir, { recursive: true, force: true });
   return engine;
@@ -64,7 +64,7 @@ function cleanupGeneratedPages(outputRoot, allowedSlugs) {
       const indexPath = path.join(entryPath, "index.html");
       if (!fs.existsSync(indexPath)) continue;
       const content = fs.readFileSync(indexPath, "utf8");
-      if (isGeneratedPseoPrimePage(content) && !allowedSlugs.has(entry.name)) {
+      if (isGeneratedPseoImpotPage(content) && !allowedSlugs.has(entry.name)) {
         fs.rmSync(entryPath, { recursive: true, force: true });
       }
       continue;
@@ -72,36 +72,71 @@ function cleanupGeneratedPages(outputRoot, allowedSlugs) {
     if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
     const slug = entry.name.replace(/\.html$/i, "");
     const content = fs.readFileSync(entryPath, "utf8");
-    if (isGeneratedPseoPrimePage(content) && !allowedSlugs.has(slug)) {
+    if (isGeneratedPseoImpotPage(content) && !allowedSlugs.has(slug)) {
       fs.rmSync(entryPath, { force: true });
     }
   }
 }
 
+function buildRelatedMap(scenarios) {
+  const map = new Map();
+  for (const scenario of scenarios) {
+    const related = scenarios
+      .filter((candidate) => candidate.slug !== scenario.slug)
+      .map((candidate) => ({
+        slug: candidate.slug,
+        score: sharedTagScore(scenario.tags, candidate.tags),
+      }))
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug, "fr"))
+      .slice(0, 3)
+      .map((item) => item.slug);
+    map.set(scenario.slug, related);
+  }
+  return map;
+}
+
+function sharedTagScore(left, right) {
+  const rightSet = new Set(right);
+  return left.reduce((acc, tag) => acc + (rightSet.has(tag) ? 1 : 0), 0);
+}
+
 async function main() {
-  const sanitizedScenarios = primeAbsenceRevenuScenarios.map(sanitizePrimeScenario);
+  const sanitizedScenarios = impotPilotScenarios.map(sanitizeImpotScenario);
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedPages(outputDir, new Set(sanitizedScenarios.map((item) => item.slug)));
-  const engine = await loadPrimeEngine();
+
+  const engine = await loadIrEngine();
   const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
 
   const enriched = sanitizedScenarios.map((scenario) => {
-    const result = engine.calculerPrimeActivite(scenario.input);
+    const result = engine.calculerIR({
+      revenu: scenario.input.revenu,
+      parts: scenario.input.parts,
+    });
+
     return {
       ...scenario,
       estimate: {
-        amount: result.montantEstime,
-        formattedAmount: formatApproxEuroSafe(result.montantEstime),
-        formattedIncome: formatApproxEuroSafe(scenario.input.revenusProf),
-        formattedOtherIncome: formatApproxEuroSafe(scenario.input.autresRevenus),
-        eligibility: result.eligibilite,
+        amount: result.irBrut,
+        formattedAmount: formatApproxEuro(result.irBrut),
+        formattedMensualite: formatApproxEuro(result.mensualiteMoyenne),
+        formattedRevenu: formatApproxEuro(scenario.input.revenu),
+        formattedParts: String(scenario.input.parts).replace(".", ","),
+        formattedTauxMoyen: `${(result.tauxMoyen * 100).toFixed(1).replace(".", ",")} %`,
+        formattedTauxMarginal: `${(result.tauxMarginal * 100).toFixed(0)} %`,
       },
     };
   });
 
+  const relatedMap = buildRelatedMap(enriched);
+
   for (const scenario of enriched) {
-    const relatedPages = enriched.filter((item) => item.slug !== scenario.slug).slice(0, 2);
-    const html = renderPrimeScenarioPage({
+    const relatedPages = (relatedMap.get(scenario.slug) || [])
+      .map((slug) => enriched.find((item) => item.slug === slug))
+      .filter(Boolean);
+
+    const html = renderImpotScenarioPage({
       scenario,
       estimate: scenario.estimate,
       relatedPages,
@@ -115,12 +150,12 @@ async function main() {
     fs.writeFileSync(path.join(nestedDir, "index.html"), html, "utf8");
   }
 
-  console.log(`PSEO Prime: ${enriched.length} pages generees dans ${outputDir}`);
+  console.log(`PSEO Impot: ${enriched.length} pages generees dans ${outputDir}`);
 }
 
 main();
 
-function formatApproxEuroSafe(value) {
+function formatApproxEuro(value) {
   return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} EUR`;
 }
 
@@ -144,6 +179,7 @@ function normalizeText(value) {
     [/\bcompleter\b/gi, "compl\u00e9ter"],
     [/\bregles\b/gi, "r\u00e8gles"],
     [/\bdecote\b/gi, "d\u00e9cote"],
+    [/\bcelibataire\b/gi, "c\u00e9libataire"],
   ];
   for (const [pattern, replacement] of fixes) {
     output = output.replace(pattern, (match) => {
@@ -155,7 +191,18 @@ function normalizeText(value) {
   return output;
 }
 
-function sanitizePrimeScenario(scenario) {
+function sanitizeImpotScenario(scenario) {
+  const preserveInitialCase = (source, normalized) => {
+    if (typeof source !== "string" || typeof normalized !== "string") return normalized;
+    const firstSource = source.trimStart().charAt(0);
+    const firstNormalized = normalized.trimStart().charAt(0);
+    if (!firstSource || !firstNormalized) return normalized;
+    const sourceUpper = firstSource === firstSource.toUpperCase();
+    const normalizedLower = firstNormalized === firstNormalized.toLowerCase();
+    if (!sourceUpper || !normalizedLower) return normalized;
+    return normalized.replace(firstNormalized, firstNormalized.toUpperCase());
+  };
+
   return {
     ...scenario,
     title: normalizeText(scenario.title),
@@ -163,13 +210,13 @@ function sanitizePrimeScenario(scenario) {
     summary: normalizeText(scenario.summary),
     audience: normalizeText(scenario.audience),
     checklist: Array.isArray(scenario.checklist)
-      ? scenario.checklist.map(normalizeText)
+      ? scenario.checklist.map((item) => preserveInitialCase(item, normalizeText(item)))
       : scenario.checklist,
     faq: Array.isArray(scenario.faq)
       ? scenario.faq.map((item) => ({
           ...item,
-          question: normalizeText(item.question),
-          answer: normalizeText(item.answer),
+          question: preserveInitialCase(item.question, normalizeText(item.question)),
+          answer: preserveInitialCase(item.answer, normalizeText(item.answer)),
         }))
       : scenario.faq,
   };

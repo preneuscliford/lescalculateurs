@@ -1,71 +1,176 @@
 export const primeAbsenceRevenuScenarios = [
   {
-    slug: "prime-activite-reprise-emploi-apres-chomage",
-    title: "Prime d'activité après reprise d'emploi post-chômage : estimation 2026",
-    description:
-      "Estimation indicative de la Prime d'activité 2026 pour une reprise d'emploi après une période de chômage ou d'absence de revenu.",
-    summary:
-      "Cette page sert les personnes qui reprennent une activité modeste après le chômage et veulent savoir si la Prime d'activité peut prendre le relais.",
-    audience: "Personne en reprise d'emploi après chômage",
-    tags: ["prime-activite", "reprise-emploi", "chomage", "petit-salaire"],
-    input: {
-      situation: "seul",
-      enfants: 0,
-      revenusProf: 170,
-      autresRevenus: 0,
-      logement: "loue",
-      typeActivite: "salarie",
-    },
-    checklist: [
-      "Vérifier si vos revenus d'activité sont déjà stabilisés ou encore variables.",
-      "Comparer avec une situation sans reprise d'emploi pour voir si la Prime d'activité devient pertinente.",
-      "Tester aussi l'APL et le simulateur global aides si votre loyer reste élevé.",
-    ],
-    faq: [
-      {
-        question: "Peut-on toucher la Prime d'activité après le chômage ?",
-        answer:
-          "Oui, surtout si une reprise d'emploi modeste remplace une période sans revenu ou avec allocation résiduelle.",
-      },
-      {
-        question: "Faut-il aussi vérifier le RSA ou l'APL ?",
-        answer:
-          "Oui, selon votre logement, votre foyer et vos autres revenus, plusieurs aides peuvent rester utiles à comparer.",
-      },
-    ],
-  },
-  {
     slug: "prime-activite-reprise-emploi-personne-seule",
-    title: "Prime d'activite en reprise d'emploi pour une personne seule : estimation 2026",
+    title: "Prime d'activite reprise d'emploi personne seule : estimation 2026",
     description:
       "Estimation indicative de la Prime d'activite 2026 pour une personne seule qui reprend un emploi modeste.",
     summary:
-      "Cette page transpose le motif reprise d'emploi vers un cas tres simple de personne seule, pour tester le transfert du pattern hors APL.",
+      "Cette page cible le pattern reprise d'emploi en version personne seule avec intention transactionnelle forte.",
     audience: "Personne seule en reprise d'emploi avec petit salaire",
     tags: ["prime-activite", "reprise-emploi", "personne-seule", "petit-salaire"],
     input: {
       situation: "seul",
       enfants: 0,
-      revenusProf: 180,
+      revenusProf: 980,
       autresRevenus: 0,
       logement: "loue",
       typeActivite: "salarie",
     },
     checklist: [
-      "Verifier si vos revenus d'activite depassent bien le seuil minimum de la Prime d'activite.",
-      "Comparer avec une reprise d'emploi apres chomage si vous aviez une allocation residuelle.",
-      "Tester aussi l'APL si le logement reste votre premiere depense.",
+      "Verifier que les revenus d'activite sont bien stables.",
+      "Comparer avec un scenario apres chomage si allocation residuelle.",
+      "Tester aussi l'APL si le loyer est eleve.",
     ],
     faq: [
       {
         question: "Une personne seule qui reprend un emploi peut-elle toucher la Prime d'activite ?",
         answer:
-          "Oui, dans certains cas, surtout si les revenus d'activite restent modestes et reguliers.",
+          "Oui, surtout quand les revenus d'activite sont modestes et reguliers.",
       },
       {
-        question: "Pourquoi comparer Prime d'activite et APL ?",
+        question: "Faut-il comparer aussi avec l'APL ?",
         answer:
-          "Parce que la Prime d'activite soutient le revenu, tandis que l'APL agit sur le budget logement. Les deux peuvent etre utiles a comparer.",
+          "Oui, car la Prime agit sur le revenu et l'APL sur le budget logement.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-reprise-emploi-apres-chomage",
+    title: "Prime d'activite apres reprise d'emploi et chomage : estimation 2026",
+    description:
+      "Estimation indicative de la Prime d'activite 2026 apres une periode de chomage.",
+    summary:
+      "Cette page capte l'intention de transition ARE vers emploi avec un angle differencie de la page personne seule standard.",
+    audience: "Personne en reprise d'emploi apres chomage",
+    tags: ["prime-activite", "reprise-emploi", "chomage", "transition"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenusProf: 900,
+      autresRevenus: 120,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Verifier les revenus d'activite et les allocations residuelles.",
+      "Comparer avec un scenario sans autres revenus.",
+      "Verifier aussi RSA ou APL si le budget reste trop serre.",
+    ],
+    faq: [
+      {
+        question: "Peut-on toucher la Prime d'activite apres le chomage ?",
+        answer:
+          "Oui, particulierement en cas de reprise d'emploi avec revenus modestes.",
+      },
+      {
+        question: "Le cumul avec d'autres aides est-il possible ?",
+        answer:
+          "Oui selon la situation, il faut comparer avec APL et RSA.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-temps-partiel-smic",
+    title: "Prime d'activite temps partiel au SMIC : simulation 2026",
+    description:
+      "Page dediee aux revenus temps partiel proches du SMIC pour estimer rapidement la Prime d'activite.",
+    summary:
+      "Cette page cible l'intention forte 'prime activite temps partiel' avec un angle revenu concret.",
+    audience: "Salarie a temps partiel avec revenu proche du SMIC",
+    tags: ["prime-activite", "temps-partiel", "smic", "simulation"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenusProf: 820,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Verifier le revenu moyen mensuel reel.",
+      "Comparer avec un scenario temps plein proche SMIC.",
+      "Tester aussi la page plafond Prime d'activite 2026.",
+    ],
+    faq: [
+      {
+        question: "Le temps partiel ouvre-t-il droit a la Prime d'activite ?",
+        answer:
+          "Souvent oui si vous exercez une activite et que les revenus restent modestes.",
+      },
+      {
+        question: "Pourquoi utiliser un cas proche du SMIC ?",
+        answer:
+          "Parce que cette zone de revenu concentre une grande partie des recherches utiles.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-couple-sans-enfant-smic",
+    title: "Prime d'activite couple sans enfant au SMIC : estimation 2026",
+    description:
+      "Simulation Prime d'activite 2026 pour un couple sans enfant avec revenus d'activite modestes.",
+    summary:
+      "Cette page vise une intention foyer distincte pour eviter la cannibalisation avec les pages personne seule.",
+    audience: "Couple sans enfant avec revenus proches du SMIC",
+    tags: ["prime-activite", "couple", "sans-enfant", "smic"],
+    input: {
+      situation: "couple",
+      enfants: 0,
+      revenusProf: 1550,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Verifier les revenus d'activite du foyer entier.",
+      "Comparer avec un scenario couple + 1 enfant.",
+      "Verifier APL si le loyer est eleve pour le foyer.",
+    ],
+    faq: [
+      {
+        question: "Le statut couple change-t-il le montant estime ?",
+        answer:
+          "Oui, le forfait foyer et les ressources prises en compte changent.",
+      },
+      {
+        question: "Faut-il comparer avec la page personne seule ?",
+        answer:
+          "Non, le bon repere est un scenario de foyer similaire au votre.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-parent-isole-un-enfant",
+    title: "Prime d'activite parent isole avec un enfant : simulation 2026",
+    description:
+      "Estimation Prime d'activite 2026 pour un parent isole avec un enfant et revenus modestes.",
+    summary:
+      "Cette page couvre l'intention parentale forte avec un angle distinct des scenarios couple et personne seule.",
+    audience: "Parent isole avec un enfant",
+    tags: ["prime-activite", "parent-isole", "enfant", "simulation"],
+    input: {
+      situation: "monoparental",
+      enfants: 1,
+      revenusProf: 1050,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Verifier les revenus d'activite et aides complementaires.",
+      "Comparer avec un scenario parent isole sans revenu d'activite.",
+      "Croiser avec ASF et APL selon la situation de logement.",
+    ],
+    faq: [
+      {
+        question: "Un parent isole peut-il toucher la Prime d'activite ?",
+        answer:
+          "Oui, selon les revenus d'activite du foyer et la composition familiale.",
+      },
+      {
+        question: "Pourquoi comparer avec ASF et APL ?",
+        answer:
+          "Parce que ces aides peuvent modifier fortement le budget mensuel total.",
       },
     ],
   },

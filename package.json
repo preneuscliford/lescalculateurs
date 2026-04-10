@@ -79,6 +79,7 @@
     "generate:pseo:apl:dist": "node scripts/generate-pseo-apl.js --target=dist",
     "generate:pseo:rsa": "node scripts/generate-pseo-rsa.js",
     "generate:pseo:are": "node scripts/generate-pseo-are.js",
+    "generate:pseo:impot": "node scripts/generate-pseo-impot.js",
     "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo"
   },
   "blog:update:2026": "node scripts/update-blog-pages.cjs",

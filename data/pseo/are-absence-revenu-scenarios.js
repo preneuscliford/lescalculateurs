@@ -1,13 +1,13 @@
 export const areAbsenceRevenuScenarios = [
   {
-    slug: "are-fin-de-droits-quelles-aides",
-    title: "Fin de droits ARE : quelles aides après l'absence de revenu ?",
+    slug: "are-fin-de-droits-aides-2026",
+    title: "Fin de droits ARE : quelles aides en 2026 ?",
     description:
-      "Repère 2026 pour une personne en fin de droits ARE qui cherche les aides à vérifier après l'arrêt des allocations chômage.",
+      "Repere 2026 pour orienter rapidement vers les aides a verifier apres l'arret des allocations chomage.",
     summary:
-      "Cette page répond aux recherches d'après-ARE et oriente vers les aides essentielles quand il n'y a plus de revenu stable.",
+      "Cette page sert les intentions de transition apres l'ARE et oriente vers RSA, APL et Prime d'activite.",
     audience: "Personne en fin de droits ARE sans revenu stable",
-    tags: ["are", "fin-droits", "sans-revenu", "aides"],
+    tags: ["are", "fin-droits", "aides", "rsa", "apl"],
     input: {
       situation: "seul",
       ancienneteEmploi: 14,
@@ -16,88 +16,54 @@ export const areAbsenceRevenuScenarios = [
       agePersonne: 41,
     },
     checklist: [
-      "Vérifier la date exacte de fin de droits et les allocations encore perçues.",
-      "Comparer ensuite avec le RSA et l'APL selon votre logement.",
-      "Tester aussi le simulateur global aides si vous n'avez plus de revenu mensuel.",
+      "Verifier la date exacte de fin de droits.",
+      "Comparer RSA et APL selon la situation de logement.",
+      "Tester aussi la Prime d'activite en cas de reprise partielle.",
     ],
     faq: [
       {
-        question: "Que vérifier en premier après une fin de droits ARE ?",
+        question: "Que verifier en premier apres une fin de droits ARE ?",
         answer:
-          "Le RSA, l'APL et les autres aides de foyer modeste sont souvent les premiers dispositifs à comparer.",
+          "Le RSA, l'APL et les autres aides de foyer modeste sont souvent les premiers dispositifs a comparer.",
       },
       {
-        question: "Cette page calcule-t-elle un nouveau droit ARE ?",
+        question: "La fin de droits ARE ouvre-t-elle automatiquement le RSA ?",
         answer:
-          "Non. Elle sert surtout de passerelle vers les aides à vérifier quand l'ARE s'arrête.",
+          "Non. Les conditions de ressources et de foyer doivent toujours etre verifiees.",
       },
     ],
   },
   {
-    slug: "are-fin-de-droits-rsa-ou-apl",
-    title: "Fin de droits ARE : RSA ou APL ensuite ?",
+    slug: "are-duree-indemnisation-2026",
+    title: "Duree d'indemnisation ARE 2026 : estimation simple",
     description:
-      "Page repère 2026 pour comparer rapidement les aides à vérifier après la fin de droits ARE, notamment RSA et APL.",
+      "Page dediee a la duree ARE pour comprendre combien de temps l'indemnisation peut durer.",
     summary:
-      "Cette page aide à prioriser la suite après l'ARE quand il faut choisir quelles aides tester en premier selon le logement et le foyer.",
-    audience: "Personne en fin de droits ARE qui compare RSA et APL",
-    tags: ["are", "fin-droits", "rsa", "apl"],
+      "Cette page capte l'intention 'duree are' avec un angle distinct du montant et du cumul salaire.",
+    audience: "Demandeur d'emploi qui veut estimer sa duree ARE",
+    tags: ["are", "duree", "indemnisation"],
     input: {
       situation: "seul",
-      ancienneteEmploi: 12,
-      salaireReferent: 1650,
+      ancienneteEmploi: 20,
+      salaireReferent: 2000,
       personnesCharge: 0,
-      agePersonne: 39,
+      agePersonne: 38,
     },
     checklist: [
-      "Vérifier si une allocation résiduelle est encore perçue au moment de la simulation.",
-      "Comparer votre situation de logement avant de prioriser l'APL ou le RSA.",
-      "Tester aussi le simulateur global aides pour avoir une vue d'ensemble.",
+      "Verifier l'anciennete et les periodes travaillees.",
+      "Comparer la duree estimee avec un cas de reprise d'emploi.",
+      "Verifier la regle officielle avant decision.",
     ],
     faq: [
       {
-        question: "Faut-il tester d'abord le RSA ou l'APL après l'ARE ?",
+        question: "La duree ARE depend-elle du salaire ?",
         answer:
-          "Cela dépend surtout du logement, des revenus encore perçus et de la composition du foyer. Les deux simulations restent souvent utiles.",
+          "Le salaire influence surtout le montant. La duree depend d'abord des periodes d'activite et des regles en vigueur.",
       },
       {
-        question: "La fin de droits ARE donne-t-elle automatiquement droit au RSA ?",
+        question: "Peut-on prolonger l'ARE en reprise partielle ?",
         answer:
-          "Non. Il faut toujours vérifier les conditions de ressources, de foyer et de logement avant d'en déduire un droit.",
-      },
-    ],
-  },
-  {
-    slug: "are-reprise-emploi-temps-partiel",
-    title: "ARE et reprise d'emploi à temps partiel : estimation 2026",
-    description:
-      "Repère ARE 2026 pour une reprise d'emploi à temps partiel avec besoin d'estimer l'impact sur les droits et les aides.",
-    summary:
-      "Cette page cible les personnes qui reprennent une activité réduite et veulent comprendre comment évoluent l'ARE et les aides essentielles.",
-    audience: "Demandeur d'emploi en reprise à temps partiel",
-    tags: ["are", "reprise-emploi", "temps-partiel", "chomage"],
-    input: {
-      situation: "seul",
-      ancienneteEmploi: 18,
-      salaireReferent: 1900,
-      personnesCharge: 0,
-      agePersonne: 36,
-    },
-    checklist: [
-      "Vérifier si vos nouveaux revenus d'activité sont déjà connus ou seulement estimés.",
-      "Comparer avec une situation sans reprise d'emploi pour mesurer l'écart.",
-      "Tester aussi la Prime d'activité si votre reprise devient régulière.",
-    ],
-    faq: [
-      {
-        question: "Une reprise d'emploi à temps partiel change-t-elle fortement l'ARE ?",
-        answer:
-          "Oui, selon vos revenus d'activité et les règles de cumul, l'impact peut être significatif et doit être revérifié.",
-      },
-      {
-        question: "Faut-il aussi tester la Prime d'activité ?",
-        answer:
-          "Oui, surtout si votre reprise devient stable et que vous avez des revenus professionnels modestes.",
+          "Cela depend des regles de cumul et de la situation exacte. Une verification officielle reste necessaire.",
       },
     ],
   },

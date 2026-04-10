@@ -15,6 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const require = createRequire(import.meta.url);
+const { normalizeFrenchText } = require("./lib/french-normalization.cjs");
 const outputDir = path.join(repoRoot, "src", "pages", "are");
 const generatedAt = formatDisplayDate(new Date());
 const areScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
@@ -100,11 +101,12 @@ function cleanupGeneratedPages(outputRoot, allowedSlugs) {
 }
 
 async function main() {
+  const sanitizedScenarios = areScenarios.map(sanitizeAreScenario);
   fs.mkdirSync(outputDir, { recursive: true });
-  cleanupGeneratedPages(outputDir, new Set(areScenarios.map((item) => item.slug)));
+  cleanupGeneratedPages(outputDir, new Set(sanitizedScenarios.map((item) => item.slug)));
   const engine = await loadAreEngine();
 
-  const enriched = areScenarios.map((scenario) => {
+  const enriched = sanitizedScenarios.map((scenario) => {
     const result = engine.calculerARE(scenario.input);
     return {
       ...scenario,
@@ -147,7 +149,7 @@ async function main() {
 main();
 
 function formatApproxEuro(value) {
-  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} €`;
+  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} EUR`;
 }
 
 function formatDisplayDate(date) {
@@ -155,4 +157,49 @@ function formatDisplayDate(date) {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = String(date.getFullYear());
   return `${day}-${month}-${year}`;
+}
+
+function normalizeText(value) {
+  if (typeof value !== "string") return value;
+  let output = normalizeFrenchText(value, { preserveOuterWhitespace: true });
+  const fixes = [
+    [/\bscenario\b/gi, "sc\u00e9nario"],
+    [/\bscenarios\b/gi, "sc\u00e9narios"],
+    [/\bfrequentes\b/gi, "fr\u00e9quentes"],
+    [/\bverifier\b/gi, "v\u00e9rifier"],
+    [/\bverifiez\b/gi, "v\u00e9rifiez"],
+    [/\bcomplete\b/gi, "compl\u00e8te"],
+    [/\bcompleter\b/gi, "compl\u00e9ter"],
+    [/\bduree\b/gi, "dur\u00e9e"],
+    [/\bregles\b/gi, "r\u00e8gles"],
+    [/\bdecote\b/gi, "d\u00e9cote"],
+  ];
+  for (const [pattern, replacement] of fixes) {
+    output = output.replace(pattern, (match) => {
+      const startsUpper = match[0] && match[0] === match[0].toUpperCase();
+      if (!startsUpper) return replacement;
+      return replacement.charAt(0).toUpperCase() + replacement.slice(1);
+    });
+  }
+  return output;
+}
+
+function sanitizeAreScenario(scenario) {
+  return {
+    ...scenario,
+    title: normalizeText(scenario.title),
+    description: normalizeText(scenario.description),
+    summary: normalizeText(scenario.summary),
+    audience: normalizeText(scenario.audience),
+    checklist: Array.isArray(scenario.checklist)
+      ? scenario.checklist.map(normalizeText)
+      : scenario.checklist,
+    faq: Array.isArray(scenario.faq)
+      ? scenario.faq.map((item) => ({
+          ...item,
+          question: normalizeText(item.question),
+          answer: normalizeText(item.answer),
+        }))
+      : scenario.faq,
+  };
 }
