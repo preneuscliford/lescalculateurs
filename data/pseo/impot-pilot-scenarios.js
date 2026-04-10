@@ -5,7 +5,7 @@ export const impotPilotScenarios = [
     description:
       "Estimation indicative de l'impôt sur le revenu 2026 pour une personne seule avec 30 000 EUR de revenu imposable annuel.",
     summary:
-      "Ce cas sert l'intention de simulation concrète avec un revenu annuel proche des recherches fréquentes.",
+      "Ce cas donne un ordre de grandeur concret avec un revenu annuel proche des recherches fréquentes.",
     audience: "Personne seule qui veut un ordre de grandeur de son impôt",
     tags: ["impot", "simulation", "30000", "celibataire"],
     input: {
@@ -36,7 +36,7 @@ export const impotPilotScenarios = [
     description:
       "Simulation indicative de l'impôt 2026 pour un foyer en couple avec 45 000 EUR de revenu imposable et 2 parts.",
     summary:
-      "Ce scénario cible les foyers couples qui veulent un repère rapide avant une simulation personnalisée.",
+      "Ce scénario s'adresse aux couples qui veulent un repère rapide avant une simulation personnalisée.",
     audience: "Couple sans enfant qui veut estimer son impôt",
     tags: ["impot", "couple", "45000", "2-parts"],
     input: {
@@ -67,7 +67,7 @@ export const impotPilotScenarios = [
     description:
       "Estimation indicative de l'impôt 2026 pour un couple avec un enfant, revenu imposable annuel de 60 000 EUR.",
     summary:
-      "Ce cas couvre l'intention familiale avec enfant pour éviter la cannibalisation des scénarios sans enfant.",
+      "Ce cas montre l'impact d'un enfant sur l'estimation, par rapport aux cas sans enfant.",
     audience: "Couple avec enfant qui veut un repère d'impôt",
     tags: ["impot", "famille", "60000", "enfant"],
     input: {

@@ -39,7 +39,7 @@ export const areAbsenceRevenuScenarios = [
     description:
       "Page dediee a la duree ARE pour comprendre combien de temps l'indemnisation peut durer.",
     summary:
-      "Cette page capte l'intention 'duree are' avec un angle distinct du montant et du cumul salaire.",
+      "Cette page répond à la recherche « durée ARE » dans un cas différent du montant et du cumul salaire.",
     audience: "Demandeur d'emploi qui veut estimer sa duree ARE",
     tags: ["are", "duree", "indemnisation"],
     input: {

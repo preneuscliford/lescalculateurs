@@ -5,7 +5,7 @@ export const arePilotScenarios = [
     description:
       "Estimation indicative du montant ARE 2026 a partir du salaire de reference et de l'anciennete.",
     summary:
-      "Cette page capte l'intention principale de calcul ARE avec un scenario simple a comprendre.",
+      "Cette page répond à la question principale sur le calcul ARE avec un scénario simple à comprendre.",
     audience: "Demandeur d'emploi cherchant une estimation ARE",
     tags: ["are", "montant", "2026"],
     input: {
@@ -39,7 +39,7 @@ export const arePilotScenarios = [
     description:
       "Page dediee au cumul ARE et salaire en reprise partielle pour estimer l'impact mensuel.",
     summary:
-      "Cette page cible l'intention forte 'cumul are et salaire simulation' avec un angle concret.",
+      "Cette page répond à la recherche « cumul ARE et salaire simulation » avec un cas concret.",
     audience: "Demandeur d'emploi en reprise partielle",
     tags: ["are", "cumul", "salaire", "temps-partiel"],
     input: {
@@ -73,7 +73,7 @@ export const arePilotScenarios = [
     description:
       "Repere pratique pour comprendre l'effet du salaire de reference sur l'indemnisation ARE.",
     summary:
-      "Cette page sert l'intention de calcul technique ARE avec un angle distinct du cumul et de la fin de droits.",
+      "Cette page répond à la question du calcul technique ARE dans un cas différent du cumul et de la fin de droits.",
     audience: "Utilisateur qui veut comprendre la base de calcul ARE",
     tags: ["are", "salaire-reference", "calcul"],
     input: {

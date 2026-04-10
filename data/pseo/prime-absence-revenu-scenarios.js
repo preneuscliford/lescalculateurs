@@ -5,7 +5,7 @@ export const primeAbsenceRevenuScenarios = [
     description:
       "Estimation indicative de la Prime d'activite 2026 pour une personne seule qui reprend un emploi modeste.",
     summary:
-      "Cette page cible le pattern reprise d'emploi en version personne seule avec intention transactionnelle forte.",
+      "Cette page traite la reprise d'emploi pour une personne seule avec un cas concret.",
     audience: "Personne seule en reprise d'emploi avec petit salaire",
     tags: ["prime-activite", "reprise-emploi", "personne-seule", "petit-salaire"],
     input: {
@@ -40,7 +40,7 @@ export const primeAbsenceRevenuScenarios = [
     description:
       "Estimation indicative de la Prime d'activite 2026 apres une periode de chomage.",
     summary:
-      "Cette page capte l'intention de transition ARE vers emploi avec un angle differencie de la page personne seule standard.",
+      "Cette page traite la transition ARE vers emploi avec un cas différent de la page personne seule standard.",
     audience: "Personne en reprise d'emploi apres chomage",
     tags: ["prime-activite", "reprise-emploi", "chomage", "transition"],
     input: {
@@ -75,7 +75,7 @@ export const primeAbsenceRevenuScenarios = [
     description:
       "Page dediee aux revenus temps partiel proches du SMIC pour estimer rapidement la Prime d'activite.",
     summary:
-      "Cette page cible l'intention forte 'prime activite temps partiel' avec un angle revenu concret.",
+      "Cette page répond à la recherche « prime activité temps partiel » avec un cas de revenu concret.",
     audience: "Salarie a temps partiel avec revenu proche du SMIC",
     tags: ["prime-activite", "temps-partiel", "smic", "simulation"],
     input: {
@@ -110,7 +110,7 @@ export const primeAbsenceRevenuScenarios = [
     description:
       "Simulation Prime d'activite 2026 pour un couple sans enfant avec revenus d'activite modestes.",
     summary:
-      "Cette page vise une intention foyer distincte pour eviter la cannibalisation avec les pages personne seule.",
+      "Cette page propose un cas couple sans enfant, complementaire des cas personne seule.",
     audience: "Couple sans enfant avec revenus proches du SMIC",
     tags: ["prime-activite", "couple", "sans-enfant", "smic"],
     input: {
@@ -145,7 +145,7 @@ export const primeAbsenceRevenuScenarios = [
     description:
       "Estimation Prime d'activite 2026 pour un parent isole avec un enfant et revenus modestes.",
     summary:
-      "Cette page couvre l'intention parentale forte avec un angle distinct des scenarios couple et personne seule.",
+      "Cette page traite une situation parentale fréquente, complémentaire des cas couple et personne seule.",
     audience: "Parent isole avec un enfant",
     tags: ["prime-activite", "parent-isole", "enfant", "simulation"],
     input: {

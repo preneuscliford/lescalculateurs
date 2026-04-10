@@ -71,7 +71,7 @@ export const asfAbsenceRevenuScenarios = [
     description:
       "Page repère 2026 pour un parent isolé sans pension qui veut estimer l'ASF et vérifier aussi l'APL.",
     summary:
-      "Cette page répond à une intention de cumul ou de parcours d'aides entre ASF et APL quand le logement reste à payer.",
+      "Cette page explique comment l'ASF et l'APL peuvent se compléter quand le logement reste à payer.",
     audience: "Parent isolé sans pension avec loyer à payer",
     tags: ["asf", "sans-pension", "apl", "parent-isole"],
     input: {
@@ -104,7 +104,7 @@ export const asfAbsenceRevenuScenarios = [
     description:
       "Estimation indicative de l'ASF 2026 pour un parent isole avec deux enfants a charge et ressources modestes.",
     summary:
-      "Cette page reprend le motif parent isole en l'etendant a un foyer avec deux enfants, pour tester un transfert propre hors APL.",
+      "Cette page traite le cas d'un parent isolé avec deux enfants, en complément des pages APL.",
     audience: "Parent isole avec deux enfants a charge",
     tags: ["asf", "parent-isole", "2-enfants", "faibles-ressources"],
     input: {

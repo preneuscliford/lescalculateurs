@@ -123,7 +123,7 @@ export const rsaPilotScenarios = [
     slug: "rsa-conditions-2026",
     title: "RSA conditions 2026",
     description: "Principales conditions du RSA en 2026 avec un cas type de foyer à faibles ressources.",
-    summary: "Cette page sert de porte d'entrée vers le cluster conditions et éligibilité RSA.",
+    summary: "Cette page sert de porte d'entrée vers les conditions d'éligibilité au RSA.",
     audience: "Foyer qui vérifie les conditions du RSA",
     tags: ["rsa", "conditions", "2026"],
     input: {
@@ -153,7 +153,7 @@ export const rsaPilotScenarios = [
     slug: "rsa-couple-avec-enfant",
     title: "RSA couple avec enfant (2026)",
     description: "Estimation indicative du RSA pour un couple avec enfant et ressources faibles.",
-    summary: "Cette page couvre une intention fréquente de foyer familial avec besoin d'estimation rapide.",
+    summary: "Cette page traite un cas fréquent de foyer familial avec besoin d'estimation rapide.",
     audience: "Couple avec enfant",
     tags: ["rsa", "couple", "enfant"],
     input: {
@@ -213,7 +213,7 @@ export const rsaPilotScenarios = [
     slug: "rsa-et-apl-cumul",
     title: "RSA et APL : cumul (2026)",
     description: "Ordre de grandeur du RSA lorsqu'un foyer perçoit aussi une aide au logement.",
-    summary: "Cette page répond à une intention de cumul très courante entre RSA et APL.",
+    summary: "Cette page répond à un besoin de cumul très courant entre RSA et APL.",
     audience: "Foyer qui cumule RSA et APL",
     tags: ["rsa", "apl", "cumul"],
     input: {
@@ -363,7 +363,7 @@ export const rsaPilotScenarios = [
     slug: "rsa-personne-seule-montant",
     title: "RSA personne seule : montant (2026)",
     description: "Ordre de grandeur du RSA 2026 pour une personne seule avec ressources faibles.",
-    summary: "Cette page sert une requête centrale du cluster RSA et aide à comparer plusieurs cas proches.",
+    summary: "Cette page traite une recherche centrale sur le RSA et aide à comparer plusieurs cas proches.",
     audience: "Personne seule",
     tags: ["rsa", "personne-seule", "montant"],
     input: {
@@ -453,7 +453,7 @@ export const rsaPilotScenarios = [
     slug: "rsa-personne-seule-logement-social",
     title: "RSA personne seule en logement social (2026)",
     description: "Estimation indicative du RSA pour une personne seule en logement social avec faibles ressources.",
-    summary: "Cette page teste un transfert du motif logement social vers le cluster RSA sans partir sur un angle trop large.",
+    summary: "Cette page traite le cas d'une personne seule en logement social, avec un cadre clair et concret.",
     audience: "Personne seule en logement social",
     tags: ["rsa", "personne-seule", "logement-social"],
     input: {
