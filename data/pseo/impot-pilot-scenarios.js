@@ -98,7 +98,7 @@ export const impotPilotScenarios = [
     description:
       "Page pédagogique pour comprendre l'effet du quotient familial avec 2 parts sur l'impôt sur le revenu 2026.",
     summary:
-      "Ce scénario vise l'intention informationnelle forte sur les parts fiscales et leur effet concret.",
+      "Ce scénario permet de comprendre rapidement l'effet des parts fiscales sur le montant de l'impôt.",
     audience: "Contribuable qui veut comprendre l'effet des parts fiscales",
     tags: ["impot", "quotient-familial", "2-parts", "bareme"],
     input: {
