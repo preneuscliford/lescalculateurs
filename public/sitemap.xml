@@ -1444,6 +1444,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-chomage</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-personne-seule</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-hlm-petit-revenu</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -1588,7 +1600,37 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule-loyer-700</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-avec-enfant</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-couple-sans-enfant</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-parent-isole</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-personne-seule</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1607,6 +1649,12 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-logement-social</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-sans-enfant</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1648,6 +1696,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-cumul-salaire-temps-partiel-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-duree-indemnisation-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-aides-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-salaire-reference-calcul-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/are/montant-are-2026</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -1655,6 +1727,24 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-deux-enfants</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-sans-pension</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-sans-revenu</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/asf/asf-sans-pension-et-apl</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1685,6 +1775,36 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/impot/impot-couple-ou-separe</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-decote-2026-simulation</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-quotient-familial-2-parts-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-30000-celibataire-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-45000-couple-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-60000-couple-un-enfant-2026</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1876,7 +1996,31 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-couple-sans-enfant-smic</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-parent-isole-un-enfant</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-personne-seule</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-temps-partiel-smic</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2045,6 +2189,18 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-ai-je-droit</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-couple-sans-revenu</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-fin-de-droits-chomage</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

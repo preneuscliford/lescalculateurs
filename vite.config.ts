@@ -11,10 +11,12 @@ import { areAbsenceRevenuScenarios } from "./data/pseo/are-absence-revenu-scenar
 import { asfAbsenceRevenuScenarios } from "./data/pseo/asf-absence-revenu-scenarios.js";
 import { primeAbsenceRevenuScenarios } from "./data/pseo/prime-absence-revenu-scenarios.js";
 import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absence-revenu-scenarios.js";
+import { impotPilotScenarios } from "./data/pseo/impot-pilot-scenarios.js";
 
 const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
 const allRsaPilotScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
 const allArePilotScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
+const allImpotPilotScenarios = [...impotPilotScenarios];
 
 function collectNestedAplInputs() {
   const aplDir = resolve(__dirname, "src/pages/apl");
@@ -302,8 +304,51 @@ function collectSimulateursPilotInputs() {
   return inputs;
 }
 
+function collectNestedImpotInputs() {
+  const impotDir = resolve(__dirname, "src/pages/impot");
+  if (!fs.existsSync(impotDir)) return {};
+  const pilotSlugs = new Set(allImpotPilotScenarios.map((scenario) => String(scenario.slug || "").trim()));
+
+  const inputs: Record<string, string> = {};
+  const entries = fs.readdirSync(impotDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    if (pilotSlugs.has(entry.name)) continue;
+    const indexPath = path.join(impotDir, entry.name, "index.html");
+    if (!fs.existsSync(indexPath)) continue;
+    inputs[`pages/impot/${entry.name}`] = indexPath;
+  }
+
+  return inputs;
+}
+
+function collectImpotPilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of impotPilotScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/impot", slug, "index.html");
+    const htmlPath = resolve(__dirname, "src/pages/impot", `${slug}.html`);
+
+    if (fs.existsSync(indexPath)) {
+      inputs[`pages/impot/${slug}`] = indexPath;
+      continue;
+    }
+
+    if (fs.existsSync(htmlPath)) {
+      inputs[`pages/impot/${slug}`] = htmlPath;
+    }
+  }
+
+  return inputs;
+}
+
 export default defineConfig(() => {
   const aplNestedInputs = collectNestedAplInputs();
+  const impotNestedInputs = collectNestedImpotInputs();
   const aplPilotInputs = collectAplPilotInputs();
   const legacySeoAliasInputs = collectLegacySeoAliasInputs();
   const rsaPilotInputs = collectRsaPilotInputs();
@@ -311,6 +356,7 @@ export default defineConfig(() => {
   const asfPilotInputs = collectAsfPilotInputs();
   const primePilotInputs = collectPrimePilotInputs();
   const simulateursPilotInputs = collectSimulateursPilotInputs();
+  const impotPilotInputs = collectImpotPilotInputs();
 
   return {
     root: "src",
@@ -364,6 +410,9 @@ export default defineConfig(() => {
           // Pages pSEO APL du pilote declarees explicitement pour la prod
           ...aplPilotInputs,
 
+          // Pages Impot imbriquees presentes sous src/pages/impot/**/index.html
+          ...impotNestedInputs,
+
           // Pages pSEO RSA du pilote declarees explicitement pour la prod
           ...rsaPilotInputs,
 
@@ -378,6 +427,9 @@ export default defineConfig(() => {
 
           // Pages pSEO Simulateurs du pilote declarees explicitement pour la prod
           ...simulateursPilotInputs,
+
+          // Pages pSEO Impot du pilote declarees explicitement pour la prod
+          ...impotPilotInputs,
 
           // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
           ...legacySeoAliasInputs,
