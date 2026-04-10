@@ -73,7 +73,7 @@ export const rsaAbsenceRevenuScenarios = [
     description:
       "Exemple de RSA 2026 pour un parent isolé sans revenu avec enfant à charge.",
     summary:
-      "Cette page cible les situations les plus sensibles de rupture de revenu avec enfant à charge et besoin d'aide rapide.",
+      "Cette page traite les situations de rupture de revenu avec enfant à charge, pour donner un repère rapide et utile.",
     audience: "Parent isolé sans revenu",
     tags: ["rsa", "sans-revenu", "parent-isole", "enfant"],
     input: {

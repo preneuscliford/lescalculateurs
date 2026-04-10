@@ -164,6 +164,31 @@ const WHOLE_TEXT_REPLACEMENTS = [
   [/\ba prévoir\b/g, "à prévoir"],
   [/\ba régulariser\b/g, "à régulariser"],
   [/ la…/g, " là…"],
+  [
+    /Cette page cible l'intention forte ['"]([^'"]+)['"] avec un angle revenu concret\./gi,
+    "Cette page répond à la recherche « $1 » avec un cas de revenu concret.",
+  ],
+  [
+    /Cette page cible l'intention forte ['"]([^'"]+)['"] avec un angle concret\./gi,
+    "Cette page répond à la recherche « $1 » avec un cas concret.",
+  ],
+  [
+    /Cette page cible le pattern reprise d'emploi en version personne seule avec intention transactionnelle forte\./gi,
+    "Cette page répond à la recherche sur la reprise d'emploi pour une personne seule, avec un cas directement exploitable.",
+  ],
+  [
+    /Cette page cible les situations les plus sensibles de rupture de revenu avec enfant à charge et besoin d'aide rapide\./gi,
+    "Cette page traite les situations de rupture de revenu avec enfant à charge, pour donner un repère rapide et utile.",
+  ],
+  [/Cette page cible une intention forte/gi, "Cette page répond à une intention de recherche forte"],
+  [/Cette page cible une intention précise/gi, "Cette page répond à une intention de recherche précise"],
+  [/Cette page cible une requête/gi, "Cette page répond à une requête"],
+  [/Cette page cible les requetes/gi, "Cette page répond aux requêtes"],
+  [/Ce scénario capte l'intention de recherche sur la décote avec un exemple concret et actionnable\./gi, "Ce scénario aide à vérifier rapidement si la décote peut réduire votre impôt dans un cas concret."],
+  [/pattern gagnant/gi, "motif déjà performant"],
+  [/pattern le plus fort/gi, "motif le plus performant"],
+  [/le pattern /gi, "le motif "],
+  [/du pattern /gi, "du motif "],
 ];
 
 const CASE_AWARE_ACCENT_WORDS = [

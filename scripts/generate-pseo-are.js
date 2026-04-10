@@ -115,7 +115,7 @@ async function main() {
         formattedAmount: formatApproxEuro(result.montantEstime),
         formattedSalary: formatApproxEuro(scenario.input.salaireReferent),
         durationLabel: result.eligible
-          ? `Duree max indicative : ${result.durationMax} mois`
+          ? `Durée max indicative : ${result.durationMax} mois`
           : "Situation a verifier",
       },
     };

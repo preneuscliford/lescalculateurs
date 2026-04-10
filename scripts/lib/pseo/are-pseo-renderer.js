@@ -84,11 +84,20 @@ function normalizeFrenchText(value) {
 }
 
 function normalizeInlineApproxEuro(value) {
-  return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
-    const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
-    if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
-    return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
-  });
+  const normalized = String(value).replace(
+    /(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g,
+    (_match, prefix, amount) => {
+      const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
+      if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
+      return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
+    },
+  );
+
+  // Evite les artefacts de type "~1 ~169 EUR" et conserve "~1 169 EUR".
+  return normalized.replace(
+    /~(\d{1,3})[\s\u202f]?~(\d{3}(?:[\s\u202f]\d{3})*)\s*EUR\b/g,
+    (_match, left, right) => `~${left}\u202f${right} EUR`,
+  );
 }
 
 function renderText(value) {
