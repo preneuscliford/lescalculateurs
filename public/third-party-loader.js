@@ -11,8 +11,12 @@
   var BANNER_ID = "lc-consent-banner";
   var MODAL_ID = "lc-consent-modal";
   var STYLE_ID = "lc-consent-style";
+  var ADS_DECISION_TIMEOUT_MS = 2500;
 
   var shouldSkipBaselineLoad = false;
+  var hasGoogleCmpSignal = false;
+  var adsDecisionResolved = false;
+  var adsDecisionTimer = null;
 
   function ensureDataLayerAndGtagStub() {
     window.dataLayer = window.dataLayer || [];
@@ -63,6 +67,100 @@
       }
     }
     document.head.appendChild(script);
+    return script;
+  }
+
+  function ensureGoogleFcStub() {
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    return window.googlefc;
+  }
+
+  function ensureAdsQueueDefaults() {
+    window.adsbygoogle = window.adsbygoogle || [];
+    if (typeof window.adsbygoogle.pauseAdRequests === "undefined") {
+      window.adsbygoogle.pauseAdRequests = 1;
+    }
+    if (typeof window.adsbygoogle.requestNonPersonalizedAds === "undefined") {
+      window.adsbygoogle.requestNonPersonalizedAds = 1;
+    }
+  }
+
+  function clearAdsDecisionTimer() {
+    if (!adsDecisionTimer) return;
+    window.clearTimeout(adsDecisionTimer);
+    adsDecisionTimer = null;
+  }
+
+  function resumeAdsRequests() {
+    ensureAdsQueueDefaults();
+    if (window.adsbygoogle.pauseAdRequests !== 0) {
+      window.adsbygoogle.pauseAdRequests = 0;
+    }
+  }
+
+  function resolveAdsDecision(state, options) {
+    clearAdsDecisionTimer();
+    adsDecisionResolved = true;
+    applyConsentState(state, options || {});
+    resumeAdsRequests();
+  }
+
+  function scheduleAdsDecisionFallback() {
+    clearAdsDecisionTimer();
+    adsDecisionTimer = window.setTimeout(function () {
+      if (adsDecisionResolved) return;
+      resolveAdsDecision(
+        { essential: true, analytics: false, ads: false, source: "timeout" },
+        { immediate: true, skipPersist: true }
+      );
+    }, ADS_DECISION_TIMEOUT_MS);
+  }
+
+  function readGoogleFcConsentState() {
+    try {
+      if (!window.googlefc || typeof window.googlefc.getGoogleConsentModeValues !== "function") {
+        return null;
+      }
+
+      var values = window.googlefc.getGoogleConsentModeValues();
+      var statuses = window.googlefc.ConsentModePurposeStatusEnum || {};
+      var granted = statuses.GRANTED;
+
+      if (!values || typeof granted === "undefined") return null;
+
+      return {
+        essential: true,
+        analytics: values.analyticsStoragePurposeConsentStatus === granted,
+        ads:
+          values.adStoragePurposeConsentStatus === granted &&
+          values.adUserDataPurposeConsentStatus === granted &&
+          values.adPersonalizationPurposeConsentStatus === granted,
+        source: "googlefc"
+      };
+    } catch (_e) {}
+    return null;
+  }
+
+  function registerGoogleCmpCallbacks() {
+    var googlefc = ensureGoogleFcStub();
+
+    googlefc.callbackQueue.push({
+      CONSENT_API_READY: function () {
+        hasGoogleCmpSignal = true;
+      }
+    });
+
+    googlefc.callbackQueue.push({
+      CONSENT_MODE_DATA_READY: function () {
+        hasGoogleCmpSignal = true;
+        var state = readGoogleFcConsentState();
+        if (!state) return;
+        hideBanner();
+        hideModal();
+        resolveAdsDecision(state, { immediate: true, skipPersist: true });
+      }
+    });
   }
 
   function runAfterLoad(callback) {
@@ -124,11 +222,12 @@
   }
 
   function setAdsPersonalization(adsGranted) {
-    window.adsbygoogle = window.adsbygoogle || [];
+    ensureAdsQueueDefaults();
     window.adsbygoogle.requestNonPersonalizedAds = adsGranted ? 0 : 1;
   }
 
   function loadFundingChoices() {
+    ensureGoogleFcStub();
     if (alreadyHasScript("fundingchoicesmessages.google.com/i/pub-")) return;
     addLink("dns-prefetch", "https://fundingchoicesmessages.google.com");
     addLink("preconnect", "https://fundingchoicesmessages.google.com");
@@ -137,6 +236,7 @@
 
   function loadAdsense() {
     if (alreadyHasScript("pagead/js/adsbygoogle.js")) return;
+    ensureAdsQueueDefaults();
     addLink("dns-prefetch", "https://pagead2.googlesyndication.com");
     addLink("preconnect", "https://pagead2.googlesyndication.com", "anonymous");
     addScript(
@@ -249,6 +349,7 @@
   }
 
   function applyConsentState(state, options) {
+    var opts = options || {};
     ensureDataLayerAndGtagStub();
 
     window.gtag("consent", "update", {
@@ -263,13 +364,17 @@
     setAdsPersonalization(!!state.ads);
 
     var loadThirdParty = function () {
-      loadGA4();
-      if (state.analytics) loadGTM();
       loadFundingChoices();
       loadAdsense();
+      loadGA4();
+      if (state.analytics) loadGTM();
     };
 
-    if (options && options.immediate === true) {
+    if (!opts.skipPersist && state && state.source !== "stored" && state.source !== "legacy") {
+      persistConsentState(state, state.source || "runtime");
+    }
+
+    if (opts.immediate === true) {
       shouldSkipBaselineLoad = true;
       loadThirdParty();
     } else {
@@ -363,7 +468,7 @@
       if (action === "accept") {
         var accepted = { essential: true, analytics: true, ads: true };
         persistConsentState(accepted, "customize-modal");
-        applyConsentState(accepted, { immediate: true });
+        resolveAdsDecision(accepted, { immediate: true, skipPersist: true });
         hideModal();
         hideBanner();
         return;
@@ -374,7 +479,7 @@
         var ads = !!modal.querySelector("#lc-modal-ads").checked;
         var custom = { essential: true, analytics: analytics, ads: ads };
         persistConsentState(custom, "customize-modal");
-        applyConsentState(custom, { immediate: true });
+        resolveAdsDecision(custom, { immediate: true, skipPersist: true });
         hideModal();
         hideBanner();
       }
@@ -384,6 +489,7 @@
   }
 
   function showConsentBanner() {
+    if (hasGoogleCmpSignal) return;
     if (document.getElementById(BANNER_ID)) return;
     if (getStoredConsentState()) return;
 
@@ -414,7 +520,7 @@
       if (action === "accept") {
         var accepted = { essential: true, analytics: true, ads: true };
         persistConsentState(accepted, "banner");
-        applyConsentState(accepted, { immediate: true });
+        resolveAdsDecision(accepted, { immediate: true, skipPersist: true });
         hideBanner();
         return;
       }
@@ -422,7 +528,7 @@
       if (action === "reject") {
         var rejected = { essential: true, analytics: false, ads: false };
         persistConsentState(rejected, "banner");
-        applyConsentState(rejected, { immediate: true });
+        resolveAdsDecision(rejected, { immediate: true, skipPersist: true });
         hideBanner();
         return;
       }
@@ -441,7 +547,7 @@
 
     // Stored consent already exists → prevent baseline loader.
     shouldSkipBaselineLoad = true;
-    applyConsentState(stored, { immediate: true });
+    resolveAdsDecision(stored, { immediate: true, skipPersist: true });
     return true;
   }
 
@@ -477,7 +583,11 @@
     try {
       window.localStorage.removeItem(CONSENT_STORAGE_KEY);
     } catch (_e) {}
-    applyConsentState({ essential: true, analytics: false, ads: false }, { immediate: true });
+    adsDecisionResolved = false;
+    resolveAdsDecision(
+      { essential: true, analytics: false, ads: false, source: "reset" },
+      { immediate: true, skipPersist: true }
+    );
     hideModal();
     showConsentBanner();
   };
@@ -486,18 +596,24 @@
     showConsentBanner();
   };
 
+  function scheduleFallbackConsentBanner() {
+    window.setTimeout(function () {
+      if (adsDecisionResolved || hasGoogleCmpSignal || getStoredConsentState()) return;
+      showConsentBanner();
+    }, ADS_DECISION_TIMEOUT_MS + 250);
+  }
+
   applyConsentModeDefaults();
+  ensureAdsQueueDefaults();
+  registerGoogleCmpCallbacks();
 
   var hasStoredConsent = applyStoredConsentOnLoad();
 
   if (!hasStoredConsent) {
     setAdsPersonalization(false);
-    scheduleNonCritical(function () {
-      if (shouldSkipBaselineLoad) return;
-      loadGA4();
-      loadFundingChoices();
-      loadAdsense();
-    }, 3000);
+    loadFundingChoices();
+    loadAdsense();
+    scheduleAdsDecisionFallback();
   }
 
   trackPageContext();
@@ -507,11 +623,11 @@
       "DOMContentLoaded",
       function () {
         trackPageContext();
-        showConsentBanner();
+        scheduleFallbackConsentBanner();
       },
       { once: true }
     );
   } else {
-    showConsentBanner();
+    scheduleFallbackConsentBanner();
   }
 })();
