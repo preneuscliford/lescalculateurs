@@ -323,6 +323,23 @@ function collectNestedImpotInputs() {
   return inputs;
 }
 
+function collectNestedPlusvalueInputs() {
+  const plusvalueDir = resolve(__dirname, "src/pages/plusvalue");
+  if (!fs.existsSync(plusvalueDir)) return {};
+
+  const inputs: Record<string, string> = {};
+  const entries = fs.readdirSync(plusvalueDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const indexPath = path.join(plusvalueDir, entry.name, "index.html");
+    if (!fs.existsSync(indexPath)) continue;
+    inputs[`pages/plusvalue/${entry.name}`] = indexPath;
+  }
+
+  return inputs;
+}
+
 function collectImpotPilotInputs() {
   const inputs: Record<string, string> = {};
 
@@ -349,6 +366,7 @@ function collectImpotPilotInputs() {
 export default defineConfig(() => {
   const aplNestedInputs = collectNestedAplInputs();
   const impotNestedInputs = collectNestedImpotInputs();
+  const plusvalueNestedInputs = collectNestedPlusvalueInputs();
   const aplPilotInputs = collectAplPilotInputs();
   const legacySeoAliasInputs = collectLegacySeoAliasInputs();
   const rsaPilotInputs = collectRsaPilotInputs();
@@ -412,6 +430,9 @@ export default defineConfig(() => {
 
           // Pages Impot imbriquees presentes sous src/pages/impot/**/index.html
           ...impotNestedInputs,
+
+          // Pages Plus-value imbriquees presentes sous src/pages/plusvalue/**/index.html
+          ...plusvalueNestedInputs,
 
           // Pages pSEO RSA du pilote declarees explicitement pour la prod
           ...rsaPilotInputs,
