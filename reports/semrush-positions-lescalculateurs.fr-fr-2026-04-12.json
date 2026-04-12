@@ -1,0 +1,197 @@
+{
+  "preset": "positions",
+  "domain": "lescalculateurs.fr",
+  "database": "fr",
+  "fetchedAt": "2026-04-12T13:53:14.237Z",
+  "header": [
+    "Keyword",
+    "Position",
+    "Search Volume",
+    "CPC",
+    "Url",
+    "Traffic (%)",
+    "Traffic Cost (%)"
+  ],
+  "rows": [
+    [
+      "simulation rsa",
+      "9",
+      "18100",
+      "0.38",
+      "https://www.lescalculateurs.fr/pages/rsa",
+      "35.28",
+      "53.07"
+    ],
+    [
+      "simulation prime d'activité",
+      "21",
+      "74000",
+      "0.32",
+      "https://www.lescalculateurs.fr/pages/prime-activite",
+      "9.02",
+      "11.32"
+    ],
+    [
+      "apl simulation",
+      "18",
+      "60500",
+      "0.32",
+      "https://www.lescalculateurs.fr/pages/apl",
+      "7.31",
+      "9.06"
+    ],
+    [
+      "simulation prime activité",
+      "16",
+      "22200",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/prime-activite",
+      "7.15",
+      "0.00"
+    ],
+    [
+      "simulateur prime d'activité",
+      "18",
+      "22200",
+      "0.32",
+      "https://www.lescalculateurs.fr/pages/prime-activite",
+      "5.36",
+      "6.79"
+    ],
+    [
+      "prime d'activité simulation",
+      "14",
+      "22200",
+      "0.38",
+      "https://www.lescalculateurs.fr/pages/prime-activite",
+      "2.68",
+      "3.88"
+    ],
+    [
+      "simulateur apl",
+      "22",
+      "18100",
+      "0.32",
+      "https://www.lescalculateurs.fr/pages/apl",
+      "2.19",
+      "2.58"
+    ],
+    [
+      "prime activité simulation",
+      "9",
+      "12100",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/prime-activite",
+      "1.46",
+      "0.00"
+    ],
+    [
+      "estimateur apl",
+      "9",
+      "720",
+      "0.33",
+      "https://www.lescalculateurs.fr/pages/apl",
+      "1.38",
+      "1.61"
+    ],
+    [
+      "estimation apl",
+      "12",
+      "5400",
+      "0.43",
+      "https://www.lescalculateurs.fr/pages/apl",
+      "1.30",
+      "1.94"
+    ],
+    [
+      "montant apl zone 3",
+      "7",
+      "590",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/apl-zones",
+      "0.97",
+      "0.00"
+    ],
+    [
+      "apl et chomage",
+      "9",
+      "480",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-moyen",
+      "0.89",
+      "0.00"
+    ],
+    [
+      "simulation rsa couple",
+      "7",
+      "590",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/rsa",
+      "0.89",
+      "0.00"
+    ],
+    [
+      "combien d'apl pour un loyer de 600 euros",
+      "12",
+      "2400",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/apl",
+      "0.73",
+      "0.00"
+    ],
+    [
+      "simulation apl étudiant",
+      "13",
+      "2900",
+      "0.17",
+      "https://www.lescalculateurs.fr/pages/apl-etudiant",
+      "0.65",
+      "0.32"
+    ],
+    [
+      "calcul apl",
+      "24",
+      "5400",
+      "0.09",
+      "https://www.lescalculateurs.fr/pages/apl",
+      "0.65",
+      "0.00"
+    ],
+    [
+      "simulation allocation logement",
+      "19",
+      "5400",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/apl",
+      "0.65",
+      "0.00"
+    ],
+    [
+      "simulation prime activite",
+      "15",
+      "2900",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/prime-activite",
+      "0.65",
+      "0.00"
+    ],
+    [
+      "rsa simulation",
+      "15",
+      "5400",
+      "0.38",
+      "https://www.lescalculateurs.fr/pages/rsa",
+      "0.65",
+      "0.97"
+    ],
+    [
+      "rsa calculer",
+      "9",
+      "880",
+      "0.00",
+      "https://www.lescalculateurs.fr/pages/rsa",
+      "0.56",
+      "0.00"
+    ]
+  ]
+}

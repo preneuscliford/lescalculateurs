@@ -1,0 +1,28 @@
+{
+  "preset": "overview",
+  "domain": "lescalculateurs.fr",
+  "database": "fr",
+  "fetchedAt": "2026-04-12T13:53:13.822Z",
+  "header": [
+    "Domain",
+    "Rank",
+    "Organic Keywords",
+    "Organic Traffic",
+    "Organic Cost",
+    "Adwords Keywords",
+    "Adwords Traffic",
+    "Adwords Cost"
+  ],
+  "rows": [
+    [
+      "lescalculateurs.fr",
+      "200366",
+      "954",
+      "1230",
+      "309",
+      "0",
+      "0",
+      "0"
+    ]
+  ]
+}
