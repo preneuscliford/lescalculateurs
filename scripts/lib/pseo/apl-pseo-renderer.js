@@ -31,6 +31,20 @@ const LOGEMENT_LABELS = {
   colocation: "Colocation",
 };
 
+const APL_SITUATION_HUB_PATH = "/pages/apl/apl-selon-situation-2026";
+const LOT_ONE_APL_SLUGS = new Set([
+  "apl-fin-de-droits-chomage",
+  "apl-chomage-avec-enfant",
+  "apl-smic-couple-sans-enfant",
+  "apl-sans-revenu-parent-isole",
+  "apl-couple-sans-enfant",
+  "apl-couple-un-enfant",
+  "apl-sans-revenu-couple-sans-enfant",
+  "apl-couple-loyer-eleve",
+  "apl-celibataire-loyer-eleve",
+  "apl-fin-de-droits-personne-seule",
+]);
+
 function buildAplSimulatorUrl(input) {
   const params = new URLSearchParams();
   Object.entries(input || {}).forEach(([key, value]) => {
@@ -562,6 +576,40 @@ function renderRelatedLinks(relatedPages) {
       </section>`;
 }
 
+function renderLotOneBridge(scenario, relatedPages) {
+  if (!scenario?.slug || !LOT_ONE_APL_SLUGS.has(scenario.slug)) return "";
+
+  const contextualLinks = (relatedPages || []).slice(0, 2);
+
+  return `
+      <section class="mt-8 rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900">Voir aussi selon votre situation APL</h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          ${renderText(
+            "Si votre profil change (revenus, foyer, loyer), comparez rapidement avec les cas les plus proches pour affiner votre estimation 2026.",
+          )}
+        </p>
+        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+          <a href="${APL_SITUATION_HUB_PATH}" class="rounded-xl border border-blue-200 bg-white px-4 py-4 text-slate-900 transition-colors hover:border-blue-400 hover:bg-blue-100">
+            <span class="font-semibold">${renderText(
+              "APL selon votre situation en 2026",
+            )}</span>
+          </a>
+          <a href="${PILLAR_PATH}" class="rounded-xl border border-blue-200 bg-white px-4 py-4 text-slate-900 transition-colors hover:border-blue-400 hover:bg-blue-100">
+            <span class="font-semibold">${renderText("Simulateur APL complet")}</span>
+          </a>
+          ${contextualLinks
+            .map(
+              (page) => `
+          <a href="/pages/apl/${page.slug}" class="rounded-xl border border-blue-200 bg-white px-4 py-4 text-slate-900 transition-colors hover:border-blue-400 hover:bg-blue-100">
+            <span class="font-semibold">${renderText(page.title)}</span>
+          </a>`,
+            )
+            .join("")}
+        </div>
+      </section>`;
+}
+
 function renderPilotVariants(pilotProduct) {
   if (!pilotProduct?.variants?.length) return "";
 
@@ -1057,6 +1105,7 @@ export function renderAPLScenarioPage({
       ${pilotComparisonHtml}
 
       ${renderRelatedLinks(relatedPages)}
+      ${renderLotOneBridge(scenario, relatedPages)}
 
       ${pilotJourneyHtml}
 
