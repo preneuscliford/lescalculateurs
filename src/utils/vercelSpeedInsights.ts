@@ -10,6 +10,6 @@ export function initializeVercelSpeedInsights() {
   if (typeof window === "undefined") return;
   if (window.__lcVercelSpeedInsightsInjected) return;
 
-  injectSpeedInsights({ debug: false });
+  injectSpeedInsights();
   window.__lcVercelSpeedInsightsInjected = true;
 }
