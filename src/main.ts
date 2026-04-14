@@ -1,6 +1,7 @@
 import "./tailwind.css";
 import { initializeScrollButtons } from "./utils/scrollButtons";
 import { initializeVercelAnalytics } from "./utils/vercelAnalytics";
+import { initializeVercelSpeedInsights } from "./utils/vercelSpeedInsights";
 
 declare global {
   interface Window {
@@ -194,6 +195,7 @@ function normalizeBrandLockups() {
 export function initializeApp() {
   // Add any global initialization logic here
   initializeVercelAnalytics();
+  initializeVercelSpeedInsights();
   ensureGlobalFavicons();
   normalizeBrandLockups();
   initializeJourneyTracking();
