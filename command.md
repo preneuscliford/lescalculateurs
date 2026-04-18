@@ -149,3 +149,89 @@ Decision:
 | /pages/apl/apl-smic-couple-sans-enfant | 0 |  | 0 |  | 0.00% |  | - |  |  |
 | /pages/are/are-fin-de-droits-aides | 0 |  | 0 |  | 0.00% |  | - |  |  |
 | /pages/prime-activite/prime-activite-reprise-emploi-apres-chomage | 0 |  | 0 |  | 0.00% |  | - |  |  |
+
+---
+
+# Plan J+14 (GSC 2026-04-18)
+
+## Snapshot J+7 (pages suivies)
+
+### APL
+- Total: **12 clics / 569 impressions / CTR 2,11 % / Position 7,44**
+- Gagnantes immédiates:
+  - `/pages/apl/apl-chomage-parent-isole-deux-enfants` (3 clics / 85 impr.)
+  - `/pages/apl/apl-loyer-500-personne-seule` (2 clics / 78 impr.)
+  - `/pages/apl/apl-chomage-personne-seule-sans-enfant` (2 clics / 48 impr.)
+
+### ARE
+- Total: **0 clic / 17 impressions / CTR 0,00 % / Position 5,17**
+- Signal présent mais faible volume, priorité maillage + snippet direct.
+
+### Prime d’activité
+- Total: **0 clic / 147 impressions / CTR 0,00 % / Position 7,63**
+- Impression correcte, blocage principal: CTR.
+
+### Impôt
+- Total: **6 clics / 957 impressions / CTR 0,63 % / Position 6,77**
+- Plus gros levier immédiat:
+  - `/pages/impot/impot-decote-2026-simulation` (1 clic / 755 impr. / CTR 0,13 % / pos 7,03)
+
+## Priorité d’exécution (7 prochains jours)
+
+### Bloc A — Gain CTR rapide (priorité absolue)
+Objectif: transformer les impressions déjà présentes en clics.
+
+1. `/pages/impot/impot-decote-2026-simulation`
+2. `/pages/prime-activite/prime-activite-parent-isole-un-enfant`
+3. `/pages/prime-activite/prime-activite-couple-sans-enfant-smic`
+4. `/pages/apl/apl-smic-couple-logement-social`
+
+Actions:
+- Réécrire Title + H1 au format: **mot-clé + 2026 + montant et simulation**.
+- Ajouter un bloc en haut de page: **« Combien pouvez-vous toucher ? »** avec réponse directe en 2 lignes.
+- CTA principal uniforme: **« Calculer mon [aide/impôt] en 2 minutes »**.
+
+### Bloc B — Consolidation APL (gagnants J+7)
+Objectif: pousser les pages qui ont déjà des clics.
+
+1. `/pages/apl/apl-chomage-parent-isole-deux-enfants`
+2. `/pages/apl/apl-loyer-500-personne-seule`
+3. `/pages/apl/apl-chomage-personne-seule-sans-enfant`
+4. `/pages/apl/apl-smic-couple-deux-enfants`
+
+Actions:
+- Ajouter 3 liens internes contextuels:
+  - vers `/pages/apl/apl-selon-situation-2026`
+  - vers 2 variantes proches (même intention).
+- Ajouter mini-FAQ orientée requête exacte.
+- Vérifier cohérence de wording et promesse de simulation dès le premier écran.
+
+### Bloc C — Relance ARE/Prime (zéro clic)
+Objectif: débloquer le premier clic sur les pages avec impressions.
+
+Pages:
+- `/pages/are/are-cumul-salaire-temps-partiel-2026`
+- `/pages/are/are-fin-de-droits-aides-2026`
+- `/pages/prime-activite/prime-activite-temps-partiel-smic`
+- `/pages/prime-activite/prime-activite-reprise-emploi-personne-seule`
+
+Actions:
+- Réponse immédiate en haut: montant indicatif, profil concerné, action.
+- Ajouter bloc « Cas proche » avec liens vers APL/RSA/ARE selon le contexte.
+- Renforcer le signal de confiance (sources officielles + date de vérification).
+
+## KPI J+14 (cibles)
+- `impot-decote-2026-simulation`: CTR **0,13 % -> >= 0,60 %**
+- Cluster Prime d’activité: CTR global **0,00 % -> >= 0,40 %**
+- Cluster ARE: obtenir **>= 3 clics** cumulés.
+- Cluster APL suivi: passer de **12 -> >= 18 clics**.
+
+## Tableau de suivi J+14
+| Page | Impr J+7 | Impr J+14 | Clics J+7 | Clics J+14 | CTR J+7 | CTR J+14 | Pos J+7 | Pos J+14 | Delta |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| /pages/impot/impot-decote-2026-simulation | 755 |  | 1 |  | 0,13 % |  | 7,03 |  |  |
+| /pages/prime-activite/prime-activite-parent-isole-un-enfant | 68 |  | 0 |  | 0,00 % |  | 6,81 |  |  |
+| /pages/prime-activite/prime-activite-couple-sans-enfant-smic | 67 |  | 0 |  | 0,00 % |  | 8,42 |  |  |
+| /pages/apl/apl-chomage-parent-isole-deux-enfants | 85 |  | 3 |  | 3,53 % |  | 5,07 |  |  |
+| /pages/apl/apl-loyer-500-personne-seule | 78 |  | 2 |  | 2,56 % |  | 8,06 |  |  |
+| /pages/are/are-fin-de-droits-aides-2026 | 8 |  | 0 |  | 0,00 % |  | 6,12 |  |  |
