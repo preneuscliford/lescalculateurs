@@ -58,6 +58,7 @@
     "report:pseo": "node scripts/report-pseo-quality.cjs --scope=pseo-rendered",
     "report:pseo:opportunity": "node scripts/report-pseo-opportunity-scoring.cjs",
     "report:keywords:fr": "node scripts/report-keyword-priority-fr.cjs --input=C:/Users/prene/Downloads/www_lescalculateurs_fr_-_keyword_strategy.csv --positions=reports/semrush-positions-lescalculateurs.fr-fr-2026-04-12.json --top=20",
+    "report:search-console:openai": "node scripts/analyze-search-console-openai.cjs --input-dir=seach-console-perf --min-impressions=150 --max-ctr=0.02 --max-pages=8 --strategy=hub-first --max-associated-pages=6 --pseo-only=false",
     "report:cluster": "node scripts/report-cluster-scoring.cjs",
     "report:site": "node scripts/report-site-quality.cjs --scope=site-rendered",
     "report:pilot20": "node scripts/report-site-quality.cjs --scope=french-pilot-20",
@@ -94,7 +95,8 @@
     "chart.js": "^4.5.1",
     "google-auth-library": "^9.14.3",
     "html2canvas": "^1.4.1",
-    "jspdf": "^2.5.2"
+    "jspdf": "^2.5.2",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",

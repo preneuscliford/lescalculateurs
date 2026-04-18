@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulateur prêt immobilier 2026 : mensualité et capacité</title>
+    <title>Simulateur prêt immobilier 2026 — Mensualité & capacité instantanée (gratuit)</title>
     <meta
       name="description"
-      content="Calculez votre mensualité, capacité d'emprunt et taux d'endettement pour un prêt immobilier en 2026."
+      content="Calculez en 1 minute votre capacité d'emprunt et votre mensualité pour 2026. Simulateur gratuit, méthodes bancaires (BdF) et exemples chiffrés. Essayez maintenant."
     />
     <meta
       name="keywords"
@@ -16,37 +16,34 @@
 
     <!-- SEO & Social -->
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/pret" />
-    <meta
-      property="og:url"
-      content="https://www.lescalculateurs.fr/pages/pret"
-    />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/pret" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Simulation Capacité d'Emprunt Immobilier 2026 - Simulateur Gratuit"
+      content="Simulateur prêt immobilier 2026 — Mensualité & capacité instantanée (gratuit)"
     />
     <meta
       property="og:description"
-      content="🏠 Simulation capacité d'emprunt immobilier 2026 : calculez votre capacité d'emprunt avec notre simulateur. Taux d'endettement, mensualités et montant max."
+      content="Calculez en 1 minute votre capacité d'emprunt et votre mensualité pour 2026. Simulateur gratuit, méthodes bancaires (BdF) et exemples chiffrés. Essayez maintenant."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Simulation Capacité d'Emprunt Immobilier 2026 - Simulateur Gratuit"
+      content="Simulateur prêt immobilier 2026 — Mensualité & capacité instantanée (gratuit)"
     />
     <meta
       name="twitter:description"
-      content="🏠 Simulation capacité d'emprunt immobilier 2026 : calculez votre capacité d'emprunt avec notre simulateur."
+      content="Calculez en 1 minute votre capacité d'emprunt et votre mensualité pour 2026. Simulateur gratuit, méthodes bancaires (BdF) et exemples chiffrés. Essayez maintenant."
     />
 
     <!-- JSON-LD: BreadcrumbList & FAQPage -->
-        <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
     <link rel="manifest" href="/assets/site.webmanifest" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
-<script type="application/ld+json">
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -108,23 +105,9 @@
     </script>
 
     <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../assets/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../assets/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
     <link rel="manifest" href="../assets/site.webmanifest" />
     <link rel="shortcut icon" href="../assets/favicon.ico" />
 
@@ -212,6 +195,94 @@
       .table-capacite tr:hover td {
         background: #f9fafb;
       }
+
+      /* Amélioration visibilité des résultats */
+      #resultats-avances {
+        background: #ffffff;
+        padding: 24px;
+        border-radius: 12px;
+      }
+
+      #resultats-avances h2 {
+        color: #111827;
+        font-weight: 700;
+        margin-bottom: 16px;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 12px;
+      }
+
+      #resultats-avances h3 {
+        color: #1f2937;
+        font-weight: 600;
+        margin-top: 12px;
+        margin-bottom: 8px;
+      }
+
+      #resultats-avances p,
+      #resultats-avances li,
+      #resultats-avances div {
+        color: #374151;
+        line-height: 1.6;
+      }
+
+      #resultats-avances .bg-white {
+        border: 1px solid #e5e7eb;
+        background-color: #ffffff;
+      }
+
+      #resultats-avances table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+      }
+
+      #resultats-avances th {
+        background-color: #f3f4f6;
+        color: #111827;
+        font-weight: 600;
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #d1d5db;
+      }
+
+      #resultats-avances td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e5e7eb;
+        color: #1f2937;
+      }
+
+      #resultats-avances tr:nth-child(even) {
+        background-color: #f9fafb;
+      }
+
+      #resultats-avances tr:hover {
+        background-color: #f3f4f6;
+      }
+
+      /* Badges et indicateurs */
+      .badge-success {
+        background-color: #dcfce7;
+        color: #166534;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      .badge-warning {
+        background-color: #fef3c7;
+        color: #92400e;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      .badge-error {
+        background-color: #fee2e2;
+        color: #991b1b;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 600;
+      }
     </style>
   </head>
   <body class="bg-gray-50">
@@ -238,7 +309,8 @@
         style="color: #856404; text-decoration: underline; font-weight: bold"
         >Banque de France</a
       >
-      <span class="hidden md:inline">|<a
+      <span class="hidden md:inline"
+        >|<a
           href="/pages/historique-mises-a-jour"
           style="color: #856404; text-decoration: underline"
           >🔄 Historique</a
@@ -246,9 +318,7 @@
       >
     </div>
 
-    <header
-      class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50"
-    >
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-14">
           <a href="/" class="flex items-center space-x-2">
@@ -257,15 +327,11 @@
               alt="LesCalculateurs"
               class="h-8 w-auto"
             />
-            <span class="font-bold text-gray-900 hidden sm:block"
-              >Les Calculateurs</span
-            >
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
           </a>
           <nav class="hidden md:flex items-center space-x-4 text-sm">
             <a href="/" class="text-gray-600 hover:text-blue-600">🏠 Accueil</a>
-            <a
-              href="/pages/simulateurs.html"
-              class="text-gray-600 hover:text-blue-600"
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600"
               >🎯 Outils</a
             >
             <a
@@ -275,12 +341,7 @@
             >
           </nav>
           <button id="mobile-menu-btn" class="md:hidden text-gray-600">
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -292,12 +353,8 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
           <nav class="flex flex-col space-y-2 text-sm">
-            <a href="/" class="text-gray-600 hover:text-blue-600 py-1"
-              >🏠 Accueil</a
-            >
-            <a
-              href="/pages/simulateurs.html"
-              class="text-gray-600 hover:text-blue-600 py-1"
+            <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1"
               >🎯 Simulateurs</a
             >
           </nav>
@@ -308,30 +365,217 @@
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- H1 et Introduction -->
       <div class="flex flex-col items-center mt-6 mb-8">
-        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 text-center">Simulation prêt immobilier 2026</h1>
-        <h2 class="text-xl sm:text-2xl font-semibold text-gray-700 text-center mt-2">Simulateur gratuit – calculez combien vous pouvez emprunter</h2>
-        <p class="text-sm text-gray-600 mt-4 text-center max-w-2xl">Faites une <strong>simulation de votre capacité d'emprunt immobilier</strong> selon vos revenus,
- charges mensuelles et le taux d'endettement bancaire (~35%). Notre <strong>simulateur de capacité d'emprunt</strong> vous aide à découvrir <strong>combien vous pouvez emprunter</strong> pour votre projet immobilier.</p>
-        <button
-          data-scroll-target="#calculator-container"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors shadow-md mt-6"
-        >🟢 Calculer ma capacité d'emprunt</button>
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 text-center">
+          Simulateur prêt immobilier 2026 — Capacité d'emprunt & mensualité
+        </h1>
+        <p class="text-gray-700 mt-4 text-lg font-medium leading-relaxed text-center max-w-3xl">
+          Découvrez <strong>combien vous pouvez emprunter</strong> en 1 minute — calcul instantané
+          de votre capacité selon revenus, taux d'endettement bancaire et durée du prêt.
+          <span class="text-blue-600 font-bold">100% gratuit, sans inscription.</span>
+        </p>
+        <a
+          href="#calculator-container"
+          class="inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 transition-colors text-lg mt-6"
+        >
+          🚀 Calculer ma capacité d'emprunt
+        </a>
       </div>
 
       <!-- H2 SEO (complémentaire au H1) -->
-      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Simulateur capacité d'emprunt immobilier 2026 — barèmes bancaires et taux en vigueur</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+        Simulateur capacité d'emprunt immobilier 2026 — barèmes bancaires et taux en vigueur
+      </h2>
+
+      <!-- Ce que permet ce simulateur -->
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white shadow border border-gray-200 rounded-lg overflow-hidden">
+            <div class="bg-blue-50 border-b border-blue-200 px-8 py-6">
+              <h2 class="text-2xl font-bold text-blue-900 flex items-center gap-3">
+                <span class="text-3xl">🏦</span>Ce que permet ce simulateur
+              </h2>
+            </div>
+            <div class="p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="inline-block bg-blue-600 text-white font-bold px-3 py-1 rounded text-lg"
+                    >✓</span
+                  >
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Capacité d'emprunt</h3>
+                    <p class="text-sm text-gray-700">
+                      Combien vous pouvez emprunter selon vos revenus
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="inline-block bg-green-600 text-white font-bold px-3 py-1 rounded text-lg"
+                    >✓</span
+                  >
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Mensualité estimée</h3>
+                    <p class="text-sm text-gray-700">Calcul de votre remboursement mensuel</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="inline-block bg-orange-600 text-white font-bold px-3 py-1 rounded text-lg"
+                    >✓</span
+                  >
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Taux d'endettement</h3>
+                    <p class="text-sm text-gray-700">
+                      Évaluation selon barèmes bancaires (35% max)
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="inline-block bg-purple-600 text-white font-bold px-3 py-1 rounded text-lg"
+                    >✓</span
+                  >
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Plusieurs scénarios</h3>
+                    <p class="text-sm text-gray-700">Testez différentes durées et taux</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Résumé rapide -->
-      <section class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100 max-w-3xl mx-auto">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="mr-2">📌</span>Résumé rapide</h3>
-        <ul class="space-y-2 text-gray-700">
-          <li><strong>Source :</strong> <a href="https://www.banque-france.fr/fr/les-taux-monetaires-directeurs" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Taux crédit immobilier (BdF)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/N20373" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Fiche crédit immobilier</a></li>
-          <li><strong>Calcul :</strong> Capacité d'emprunt = (Revenus × 35%) − Charges existantes</li>
-          <li><strong>Règle :</strong> Taux d'endettement maximum 35% assurance incluse</li>
-          <li><strong>Facteurs :</strong> Revenus, durée du prêt, taux d'intérêt, assurance</li>
-          <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
-        </ul>
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white shadow border border-gray-200 rounded-lg overflow-hidden">
+            <div class="bg-blue-50 border-b border-blue-200 px-8 py-6">
+              <h2 class="text-2xl font-bold text-blue-900 flex items-center gap-3">
+                <span class="text-3xl">📌</span>Résumé rapide
+              </h2>
+            </div>
+            <div class="p-8">
+              <div class="space-y-3">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="inline-block bg-blue-600 text-white font-bold px-3 py-1 rounded text-sm"
+                  >
+                    Sources
+                  </div>
+                  <div class="flex-1 space-y-1">
+                    <div>
+                      <a
+                        href="https://www.banque-france.fr/fr/les-taux-monetaires-directeurs"
+                        target="_blank"
+                        rel="noopener"
+                        class="inline-block bg-blue-100 text-blue-950 font-bold px-3 py-1 rounded hover:bg-blue-200 transition-colors"
+                        >🔗 BdF – Taux crédit immobilier</a
+                      >
+                    </div>
+                    <div>
+                      <a
+                        href="https://www.service-public.fr/particuliers/vosdroits/N20373"
+                        target="_blank"
+                        rel="noopener"
+                        class="inline-block bg-blue-100 text-blue-950 font-bold px-3 py-1 rounded hover:bg-blue-200 transition-colors"
+                        >🔗 Service-public – Crédit immobilier</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="inline-block bg-green-600 text-white font-bold px-3 py-1 rounded text-sm"
+                  >
+                    Calcul
+                  </div>
+                  <div class="flex-1 bg-green-50 px-3 py-2 rounded text-gray-900 font-medium">
+                    Capacité = (Revenus × 35%) − Charges existantes
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="inline-block bg-orange-600 text-white font-bold px-3 py-1 rounded text-sm"
+                  >
+                    Règle
+                  </div>
+                  <div class="flex-1 bg-orange-50 px-3 py-2 rounded text-gray-900 font-medium">
+                    Taux d'endettement maximum 35% assurance incluse
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="inline-block bg-purple-600 text-white font-bold px-3 py-1 rounded text-sm"
+                  >
+                    Facteurs
+                  </div>
+                  <div class="flex-1 bg-purple-50 px-3 py-2 rounded text-gray-900 font-medium">
+                    Revenus, durée, taux d'intérêt, assurance, charges
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="inline-block bg-red-600 text-white font-bold px-3 py-1 rounded text-sm"
+                  >
+                    Outil
+                  </div>
+                  <div class="flex-1 bg-red-50 px-3 py-2 rounded text-gray-900 font-medium">
+                    100% gratuit, sans création de compte
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Combien puis-je emprunter ? -->
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <span class="text-3xl">💰</span>Combien puis-je emprunter ?
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
+              <p class="text-xs text-gray-600 font-medium mb-2">EXEMPLE 1</p>
+              <p class="text-2xl font-bold text-blue-700 mb-3">≈ 200 000 €</p>
+              <p class="text-sm text-gray-700 mb-4">
+                Avec <strong>2 500 € nets/mois</strong>, 0 charge autre, sur 20 ans à 4%
+              </p>
+              <a
+                href="#calculator-container"
+                class="text-blue-600 font-bold hover:text-blue-800 text-sm"
+                >→ Voir détails</a
+              >
+            </div>
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
+              <p class="text-xs text-gray-600 font-medium mb-2">EXEMPLE 2</p>
+              <p class="text-2xl font-bold text-green-700 mb-3">≈ 300 000 €</p>
+              <p class="text-sm text-gray-700 mb-4">
+                Avec <strong>3 500 € nets/mois</strong>, 0 charge autre, sur 25 ans à 4%
+              </p>
+              <a
+                href="#calculator-container"
+                class="text-blue-600 font-bold hover:text-blue-800 text-sm"
+                >→ Voir détails</a
+              >
+            </div>
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
+              <p class="text-xs text-gray-600 font-medium mb-2">EXEMPLE 3</p>
+              <p class="text-2xl font-bold text-orange-700 mb-3">≈ 150 000 €</p>
+              <p class="text-sm text-gray-700 mb-4">
+                Avec <strong>2 000 € nets/mois</strong> + 400€ charge, sur 15 ans à 4%
+              </p>
+              <a
+                href="#calculator-container"
+                class="text-blue-600 font-bold hover:text-blue-800 text-sm"
+                >→ Voir détails</a
+              >
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Simulateur -->
@@ -344,14 +588,8 @@
           <h2 class="text-xl font-bold text-gray-900 mb-4">📊 Taux d'endettement</h2>
           <div class="mb-4">
             <div class="flex justify-between mb-2">
-              <span class="text-sm font-medium text-gray-700"
-                >Votre endettement</span
-              >
-              <span
-                id="taux-endettement-valeur"
-                class="text-lg font-bold text-blue-700"
-                >--%</span
-              >
+              <span class="text-sm font-medium text-gray-700">Votre endettement</span>
+              <span id="taux-endettement-valeur" class="text-lg font-bold text-blue-700">--%</span>
             </div>
             <div class="relative h-8 bg-gray-200 rounded-lg overflow-hidden">
               <div
@@ -376,17 +614,14 @@
             </div>
             <div class="flex justify-between mt-2 text-xs">
               <span class="text-green-600 font-semibold">🟢 OK (&lt;30%)</span>
-              <span class="text-yellow-600 font-semibold"
-                >🟡 Limite (30-35%)</span
-              >
-              <span class="text-red-600 font-semibold"
-                >🔴 Risque (&gt;35%)</span
-              >
+              <span class="text-yellow-600 font-semibold">🟡 Limite (30-35%)</span>
+              <span class="text-red-600 font-semibold">🔴 Risque (&gt;35%)</span>
             </div>
           </div>
           <div id="endettement-message" class="p-4 rounded-lg bg-gray-50">
-            <p class="text-sm text-gray-700">Calculez votre capacité pour voir l'évaluation de votre
- endettement.</p>
+            <p class="text-sm text-gray-700">
+              Calculez votre capacité pour voir l'évaluation de votre endettement.
+            </p>
           </div>
         </div>
 
@@ -435,9 +670,7 @@
           <h2 class="text-xl font-bold text-gray-900 mb-4">📊 Risque bancaire estimé</h2>
           <div class="mb-4">
             <div class="flex justify-between mb-2">
-              <span class="text-sm font-medium text-gray-700"
-                >Score de solvabilité</span
-              >
+              <span class="text-sm font-medium text-gray-700">Score de solvabilité</span>
               <span id="risque-score" class="text-lg font-bold">--</span>
             </div>
             <div class="relative h-10 bg-gray-200 rounded-lg overflow-hidden">
@@ -462,31 +695,32 @@
               ></div>
             </div>
             <!-- Légende dynamique (une seule zone selon le score) -->
-            <div
-              id="legende-risque"
-              class="mt-2 text-sm font-semibold text-center"
-            >
-              <span class="text-gray-500"
-                >Calculez pour voir votre évaluation</span
-              >
+            <div id="legende-risque" class="mt-2 text-sm font-semibold text-center">
+              <span class="text-gray-500">Calculez pour voir votre évaluation</span>
             </div>
           </div>
           <div id="risque-message" class="p-4 rounded-lg bg-gray-50">
-            <p class="text-sm text-gray-700">Calculez votre capacité pour voir l'évaluation de votre profil.</p>
+            <p class="text-sm text-gray-700">
+              Calculez votre capacité pour voir l'évaluation de votre profil.
+            </p>
           </div>
         </div>
 
         <!-- 📊 Multi-durée automatique -->
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-xl font-bold text-gray-900 mb-2">📊 Comparaison automatique multi-durées</h2>
-          <p class="text-sm text-gray-600 mb-2">Pour le même projet immobilier, voici comment évoluent vos
- mensualités et le coût total selon la durée choisie.</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-2">
+            📊 Comparaison automatique multi-durées
+          </h2>
+          <p class="text-sm text-gray-600 mb-2">
+            Pour le même projet immobilier, voici comment évoluent vos mensualités et le coût total
+            selon la durée choisie.
+          </p>
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
             <p class="text-xs text-blue-800">
-              <strong>ℹ️ Pourquoi la mensualité reste identique ?</strong> Elle
- correspond à votre capacité maximale (35% d'endettement). La durée
- influence uniquement le montant total empruntable, pas la
- mensualité maximale que vous pouvez supporter.</p>
+              <strong>ℹ️ Pourquoi la mensualité reste identique ?</strong> Elle correspond à votre
+              capacité maximale (35% d'endettement). La durée influence uniquement le montant total
+              empruntable, pas la mensualité maximale que vous pouvez supporter.
+            </p>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full text-sm table-capacite">
@@ -510,10 +744,13 @@
         <div
           class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg shadow-lg p-6 border border-green-200"
         >
-          <h2 class="text-xl font-bold text-gray-900 mb-4">💰 Et si vous augmentiez votre apport ?</h2>
-          <p class="text-sm text-gray-600 mb-4">Découvrez l'impact d'un apport supplémentaire sur votre mensualité
- et votre coût total. même un petit apport peut faire une grande
- différence.</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-4">
+            💰 Et si vous augmentiez votre apport ?
+          </h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Découvrez l'impact d'un apport supplémentaire sur votre mensualité et votre coût total.
+            même un petit apport peut faire une grande différence.
+          </p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <button
               onclick="simulerApport(0)"
@@ -544,24 +781,15 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               <div>
                 <p class="text-sm text-gray-600">Mensualité réduite de</p>
-                <p
-                  class="text-xl font-bold text-green-700"
-                  id="apport-economie-mensualite"
-                >--</p>
+                <p class="text-xl font-bold text-green-700" id="apport-economie-mensualite">--</p>
               </div>
               <div>
                 <p class="text-sm text-gray-600">Économie totale</p>
-                <p
-                  class="text-xl font-bold text-green-700"
-                  id="apport-economie-totale"
-                >--</p>
+                <p class="text-xl font-bold text-green-700" id="apport-economie-totale">--</p>
               </div>
               <div>
                 <p class="text-sm text-gray-600">Nouvelle capacité</p>
-                <p
-                  class="text-xl font-bold text-blue-700"
-                  id="apport-nouvelle-capacite"
-                >--</p>
+                <p class="text-xl font-bold text-blue-700" id="apport-nouvelle-capacite">--</p>
               </div>
             </div>
           </div>
@@ -569,9 +797,13 @@
 
         <!-- Graphique durée vs capacité -->
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-xl font-bold text-gray-900 mb-2">📈 Impact de la durée sur votre capacité d'emprunt</h2>
-          <p class="text-sm text-gray-600 mb-4">Visualisez comment la durée du prêt influence le montant maximal que
- vous pouvez emprunter avec vos revenus actuels.</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-2">
+            📈 Impact de la durée sur votre capacité d'emprunt
+          </h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Visualisez comment la durée du prêt influence le montant maximal que vous pouvez
+            emprunter avec vos revenus actuels.
+          </p>
           <div class="h-64 md:h-80">
             <canvas id="graphique-capacite"></canvas>
           </div>
@@ -593,16 +825,16 @@
 
         <!-- Tableau Quel salaire pour... avec texte SEO (en bas pour longue traîne) -->
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-xl font-bold text-gray-900 mb-2">💶 Quel salaire pour emprunter ? Tableau comparatif</h2>
-          <div
-            class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r-lg"
-          >
+          <h2 class="text-xl font-bold text-gray-900 mb-2">
+            💶 Quel salaire pour emprunter ? Tableau comparatif
+          </h2>
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r-lg">
             <p class="text-sm text-blue-800">
-              <strong>Comment lire ce tableau :</strong> Pour emprunter un
- montant donné (colonne de gauche), sur une durée spécifique, avec
- un endettement maximal de 35%, vous avez besoin du revenu net
- mensuel indiqué. Ces estimations sont basées sur un taux indicatif
- de 4% hors assurance.</p>
+              <strong>Comment lire ce tableau :</strong> Pour emprunter un montant donné (colonne de
+              gauche), sur une durée spécifique, avec un endettement maximal de 35%, vous avez
+              besoin du revenu net mensuel indiqué. Ces estimations sont basées sur un taux
+              indicatif de 4% hors assurance.
+            </p>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full text-sm table-capacite">
@@ -621,12 +853,17 @@
           </div>
           <div class="mt-4 p-4 bg-gray-50 rounded-lg">
             <h3 class="font-semibold text-gray-800 mb-2">📌 Exemple concret</h3>
-            <p class="text-sm text-gray-600">Pour emprunter <strong>200 000 € sur 20 ans</strong> à 4%, avec un
- endettement maximal de 35%, un revenu net mensuel d'environ <strong>3 500 €</strong> est recommandé sans charges existantes.
- Avec 500 € de charges mensuelles, ce montant passe ? <strong>4 500 €</strong>.</p>
+            <p class="text-sm text-gray-600">
+              Pour emprunter <strong>200 000 € sur 20 ans</strong> à 4%, avec un endettement maximal
+              de 35%, un revenu net mensuel d'environ <strong>3 500 €</strong> est recommandé sans
+              charges existantes. Avec 500 € de charges mensuelles, ce montant passe ?
+              <strong>4 500 €</strong>.
+            </p>
           </div>
-          <p class="text-xs text-gray-500 mt-3">* Estimation basée sur un taux de 4% et un endettement de 35%. Hors
- assurance et charges existantes.</p>
+          <p class="text-xs text-gray-500 mt-3">
+            * Estimation basée sur un taux de 4% et un endettement de 35%. Hors assurance et charges
+            existantes.
+          </p>
         </div>
       </div>
 
@@ -635,92 +872,176 @@
         <button
           id="pret-add-to-compare"
           class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
-        >➕ Ajouter à la comparaison</button>
+        >
+          ➕ Ajouter à la comparaison
+        </button>
         <button
           id="pret-reset-compare"
           class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
-        >🔄 Réinitialiser</button>
+        >
+          🔄 Réinitialiser
+        </button>
       </div>
       <div id="pret-comparaison" class="hidden mt-8"></div>
 
+      <!-- Combien puis-je emprunter ? Exemples rapides -->
+      <section class="mt-12 bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          💰 Combien puis-je emprunter ? Exemples concrets
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Découvrez les montants typiques que vous pouvez emprunter selon votre profil et votre
+          salaire mensuel :
+        </p>
+        <div class="mt-5 grid gap-3 sm:grid-cols-3">
+          <div class="rounded-lg bg-white p-4 border border-blue-100">
+            <p class="text-xs text-gray-600 font-medium">EXEMPLE 1</p>
+            <p class="text-lg font-bold text-blue-700 mt-1">≈ 200 000 €</p>
+            <p class="text-xs text-gray-700 mt-2">
+              Couple, revenus ~3 500 € nets, sans charges. Durée 20 ans à 4%.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-4 border border-blue-100">
+            <p class="text-xs text-gray-600 font-medium">EXEMPLE 2</p>
+            <p class="text-lg font-bold text-blue-700 mt-1">≈ 300 000 €</p>
+            <p class="text-xs text-gray-700 mt-2">
+              Couple cadre, revenus ~5 000 € nets. Durée 25 ans à 4,2%.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-4 border border-blue-100">
+            <p class="text-xs text-gray-600 font-medium">EXEMPLE 3</p>
+            <p class="text-lg font-bold text-blue-700 mt-1">≈ 150 000 €</p>
+            <p class="text-xs text-gray-700 mt-2">
+              Personne seule, revenu ~2 600 € nets. Durée 20 ans à 4%.
+            </p>
+          </div>
+        </div>
+        <a
+          href="#calculator-container"
+          class="mt-5 inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700 transition-colors"
+          >✓ Lancer la simulation — 1 min</a
+        >
+      </section>
+
       <!-- Blocs longue traîne stratégiques -->
       <section class="mt-16 space-y-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8">📊 Combien pouvez-vous emprunter ? Guide complet</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">
+          📊 Combien pouvez-vous emprunter ? Guide complet
+        </h2>
 
         <!-- H2 dédié : Quel salaire pour 150 000 € -->
         <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-xl font-bold text-gray-900 mb-4">💶 Quel salaire pour emprunter 150 000 € ?</h2>
-          <p class="text-gray-600 mb-4">Pour emprunter <strong>150 000 €</strong>, le salaire nécessaire
- dépend principalement de la durée du prêt et de vos charges
- existantes. Sur 20 ans à 4%, la mensualité s'élève à environ <strong>908 € hors assurance</strong>. Avec un taux d'endettement
- maximal de 35%, il vous faut un <strong>revenu net mensuel d'environ 2 600 €</strong> sans autres
- charges.</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-4">
+            💶 Quel salaire pour emprunter 150 000 € ?
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Pour emprunter <strong>150 000 €</strong>, le salaire nécessaire dépend principalement
+            de la durée du prêt et de vos charges existantes. Sur 20 ans à 4%, la mensualité s'élève
+            à environ <strong>908 € hors assurance</strong>. Avec un taux d'endettement maximal de
+            35%, il vous faut un <strong>revenu net mensuel d'environ 2 600 €</strong> sans autres
+            charges.
+          </p>
           <div class="bg-gray-50 rounded-lg p-4 mb-4">
             <h3 class="font-semibold text-gray-800 mb-2">Détail du calcul par durée :</h3>
             <ul class="text-gray-700 space-y-2 text-sm">
-              <li>•<strong>15 ans :</strong> Mensualité ~1 108 € → Revenu
- nécessaire ~3 200 € (sans charges)</li>
-              <li>•<strong>20 ans :</strong> Mensualité ~908 € → Revenu
- nécessaire ~2 600 € (sans charges)</li>
-              <li>•<strong>25 ans :</strong> Mensualité ~788 € → Revenu
- nécessaire ~2 300 € (sans charges)</li>
+              <li>
+                •<strong>15 ans :</strong> Mensualité ~1 108 € → Revenu nécessaire ~3 200 € (sans
+                charges)
+              </li>
+              <li>
+                •<strong>20 ans :</strong> Mensualité ~908 € → Revenu nécessaire ~2 600 € (sans
+                charges)
+              </li>
+              <li>
+                •<strong>25 ans :</strong> Mensualité ~788 € → Revenu nécessaire ~2 300 € (sans
+                charges)
+              </li>
             </ul>
           </div>
-          <p class="text-sm text-gray-500">Ce montant correspond généralement à l'achat d'un appartement T2/T3
- en province ou d'un studio dans les grandes villes.</p>
+          <p class="text-sm text-gray-500">
+            Ce montant correspond généralement à l'achat d'un appartement T2/T3 en province ou d'un
+            studio dans les grandes villes.
+          </p>
         </div>
 
         <!-- H2 dédié : Quel salaire pour 200 000 € -->
         <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-xl font-bold text-gray-900 mb-4">💶 Quel salaire pour emprunter 200 000 € ?</h2>
-          <p class="text-gray-600 mb-4">Le seuil des <strong>200 000 €</strong> représente le budget moyen
- pour l'achat d'une première résidence principale en France. À ce
- niveau, sur 20 ans à 4%, la mensualité se situe autour de <strong>1 210 € hors assurance</strong>. Pour respecter le plafond
- d'endettement de 35%, il faut viser un <strong>revenu net mensuel d'environ 3 500 €</strong> sans charges
- préexistantes.</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-4">
+            💶 Quel salaire pour emprunter 200 000 € ?
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Le seuil des <strong>200 000 €</strong> représente le budget moyen pour l'achat d'une
+            première résidence principale en France. À ce niveau, sur 20 ans à 4%, la mensualité se
+            situe autour de <strong>1 210 € hors assurance</strong>. Pour respecter le plafond
+            d'endettement de 35%, il faut viser un
+            <strong>revenu net mensuel d'environ 3 500 €</strong> sans charges préexistantes.
+          </p>
           <div class="bg-gray-50 rounded-lg p-4 mb-4">
             <h3 class="font-semibold text-gray-800 mb-2">Détail du salaire nécessaire :</h3>
             <ul class="text-gray-700 space-y-2 text-sm">
-              <li>•<strong>Sans charges :</strong> Revenu de <strong>3 500 €</strong> minimum (endettement 35%)</li>
-              <li>•<strong>Avec 500 € de charges :</strong> Revenu de <strong>4 500 €</strong> requis</li>
-              <li>•<strong>Option 25 ans (taux 4, 2%) :</strong> Mensualité
- réduite à ~1 080 € → Revenu suffisant de ~3 100 €</li>
+              <li>
+                •<strong>Sans charges :</strong> Revenu de <strong>3 500 €</strong> minimum
+                (endettement 35%)
+              </li>
+              <li>
+                •<strong>Avec 500 € de charges :</strong> Revenu de <strong>4 500 €</strong> requis
+              </li>
+              <li>
+                •<strong>Option 25 ans (taux 4, 2%) :</strong> Mensualité réduite à ~1 080 € →
+                Revenu suffisant de ~3 100 €
+              </li>
             </ul>
           </div>
-          <p class="text-sm text-gray-500">Avec 200 000 €, vous pouvez viser une maison de 80-100m² en région
- ou un trois-pièces en proche banlieue des grandes métropoles.</p>
+          <p class="text-sm text-gray-500">
+            Avec 200 000 €, vous pouvez viser une maison de 80-100m² en région ou un trois-pièces en
+            proche banlieue des grandes métropoles.
+          </p>
         </div>
 
         <!-- H2 dédié : Quel salaire pour 250 000 € -->
         <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-xl font-bold text-gray-900 mb-4">💶 Quel salaire pour emprunter 250 000 € ?</h2>
-          <p class="text-gray-600 mb-4">Un budget de <strong>250 000 €</strong> ouvre les portes de biens
- plus spacieux, idéaux pour une famille. Sur une durée classique de
- 20 ans à 4%, prévoyez une mensualité d'environ <strong>1 515 € hors assurance</strong>. Le revenu net mensuel
- conseillé se situe alors autour de <strong>4 300 €</strong> sans
- autres crédits en cours.</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-4">
+            💶 Quel salaire pour emprunter 250 000 € ?
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Un budget de <strong>250 000 €</strong> ouvre les portes de biens plus spacieux, idéaux
+            pour une famille. Sur une durée classique de 20 ans à 4%, prévoyez une mensualité
+            d'environ <strong>1 515 € hors assurance</strong>. Le revenu net mensuel conseillé se
+            situe alors autour de <strong>4 300 €</strong> sans autres crédits en cours.
+          </p>
           <div class="bg-gray-50 rounded-lg p-4 mb-4">
             <h3 class="font-semibold text-gray-800 mb-2">Combien faut-il gagner ?</h3>
             <ul class="text-gray-700 space-y-2 text-sm">
-              <li>•<strong>Sans crédit en cours :</strong> Revenu d'au moins <strong>4 300 €</strong>
+              <li>
+                •<strong>Sans crédit en cours :</strong> Revenu d'au moins <strong>4 300 €</strong>
               </li>
-              <li>•<strong>Avec 500 € de charges mensuelles :</strong> Revenu de <strong>5 400 €</strong> nécessaire</li>
-              <li>•<strong>Sur 25 ans (taux 4, 2%) :</strong> Mensualité ~1 350 €
- → Revenu minimal de ~3 850 €</li>
+              <li>
+                •<strong>Avec 500 € de charges mensuelles :</strong> Revenu de
+                <strong>5 400 €</strong> nécessaire
+              </li>
+              <li>
+                •<strong>Sur 25 ans (taux 4, 2%) :</strong> Mensualité ~1 350 € → Revenu minimal de
+                ~3 850 €
+              </li>
             </ul>
           </div>
-          <p class="text-sm text-gray-500">Cette enveloppe budgétaire permet d'acquérir une belle maison avec
- terrain en région ou un appartement familial en périphérie des
- grandes agglomérations.</p>
+          <p class="text-sm text-gray-500">
+            Cette enveloppe budgétaire permet d'acquérir une belle maison avec terrain en région ou
+            un appartement familial en périphérie des grandes agglomérations.
+          </p>
         </div>
 
         <!-- H2 dédié : Capacité avec 2000 € net par mois -->
         <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-xl font-bold text-gray-900 mb-4">💵 Quelle capacité d'emprunt avec 2 000 € net par mois ?</h2>
-          <p class="text-gray-600 mb-4">Avec un <strong>salaire net de 2 000 € par mois</strong> et sans
- charges existantes, votre capacité d'emprunt maximale se situe
- autour de <strong>105 000 € sur 20 ans</strong> (taux indicatif 4%).
- La mensualité maximale que vous pouvez supporter est d'environ <strong>700 €</strong>(35% d'endettement).</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-4">
+            💵 Quelle capacité d'emprunt avec 2 000 € net par mois ?
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Avec un <strong>salaire net de 2 000 € par mois</strong> et sans charges existantes,
+            votre capacité d'emprunt maximale se situe autour de
+            <strong>105 000 € sur 20 ans</strong> (taux indicatif 4%). La mensualité maximale que
+            vous pouvez supporter est d'environ <strong>700 €</strong>(35% d'endettement).
+          </p>
           <div class="grid md:grid-cols-3 gap-4 text-sm">
             <div class="bg-blue-50 p-4 rounded-lg text-center">
               <p class="text-gray-600 mb-1">15 ans</p>
@@ -738,19 +1059,23 @@
               <p class="text-xs text-gray-500 mt-1">Mensualité ~700 €</p>
             </div>
           </div>
-          <p class="text-sm text-gray-500 mt-4">💡<strong>Conseil :</strong> Avec 2 000 €/mois, privilégiez une
- durée plus longue (25 ans) pour maximiser votre capacité et viser un
- bien plus conséquent.</p>
+          <p class="text-sm text-gray-500 mt-4">
+            💡<strong>Conseil :</strong> Avec 2 000 €/mois, privilégiez une durée plus longue (25
+            ans) pour maximiser votre capacité et viser un bien plus conséquent.
+          </p>
         </div>
 
         <!-- H2 dédié : Capacité avec 3000 € net par mois -->
         <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-xl font-bold text-gray-900 mb-4">💵 Quelle capacité d'emprunt avec 3 000 € net par mois ?</h2>
-          <p class="text-gray-600 mb-4">Avec un <strong>revenu net de 3 000 € mensuels</strong>, vous entrez
- dans la catégorie des emprunteurs confortables. Votre capacité
- maximale atteint environ <strong>165 000 € sur 20 ans</strong>, avec
- une mensualité maximale d'environ <strong>1 050 €</strong>(35%
- d'endettement).</p>
+          <h2 class="text-xl font-bold text-gray-900 mb-4">
+            💵 Quelle capacité d'emprunt avec 3 000 € net par mois ?
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Avec un <strong>revenu net de 3 000 € mensuels</strong>, vous entrez dans la catégorie
+            des emprunteurs confortables. Votre capacité maximale atteint environ
+            <strong>165 000 € sur 20 ans</strong>, avec une mensualité maximale d'environ
+            <strong>1 050 €</strong>(35% d'endettement).
+          </p>
           <div class="grid md:grid-cols-3 gap-4 text-sm">
             <div class="bg-green-50 p-4 rounded-lg text-center">
               <p class="text-gray-600 mb-1">15 ans</p>
@@ -768,44 +1093,62 @@
               <p class="text-xs text-gray-500 mt-1">Mensualité ~1 050 €</p>
             </div>
           </div>
-          <p class="text-sm text-gray-500 mt-4">💡<strong>Conseil :</strong> Avec 3 000 €/mois, vous pouvez viser
- un bien de 150 000-200 000 € selon la durée, ce qui ouvre de belles
- opportunités sur le marché immobilier actuel.</p>
+          <p class="text-sm text-gray-500 mt-4">
+            💡<strong>Conseil :</strong> Avec 3 000 €/mois, vous pouvez viser un bien de 150 000-200
+            000 € selon la durée, ce qui ouvre de belles opportunités sur le marché immobilier
+            actuel.
+          </p>
         </div>
 
         <!-- Capacité avec 4000 € et 5000 € (complément) -->
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-lg font-bold text-gray-900 mb-4">💵 Avec 4 000 € net/mois</h2>
-            <div class="space-y-2 text-sm">
-              <div class="flex justify-between p-2 bg-purple-50 rounded">
-                <span>Sur 15 ans</span>
-                <span class="font-bold">~170 000 €</span>
+          <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+            <h2 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-purple-300">
+              💵 Avec 4 000 € net/mois
+            </h2>
+            <div class="space-y-3 text-sm">
+              <div
+                class="flex justify-between p-3 bg-purple-100 rounded-lg border border-purple-300"
+              >
+                <span class="font-semibold text-gray-900">Sur 15 ans</span>
+                <span class="font-bold text-purple-900">~170 000 €</span>
               </div>
-              <div class="flex justify-between p-2 bg-purple-50 rounded">
-                <span>Sur 20 ans</span>
-                <span class="font-bold">~220 000 €</span>
+              <div
+                class="flex justify-between p-3 bg-purple-100 rounded-lg border border-purple-300"
+              >
+                <span class="font-semibold text-gray-900">Sur 20 ans</span>
+                <span class="font-bold text-purple-900">~220 000 €</span>
               </div>
-              <div class="flex justify-between p-2 bg-purple-50 rounded">
-                <span>Sur 25 ans</span>
-                <span class="font-bold">~260 000 €</span>
+              <div
+                class="flex justify-between p-3 bg-purple-100 rounded-lg border border-purple-300"
+              >
+                <span class="font-semibold text-gray-900">Sur 25 ans</span>
+                <span class="font-bold text-purple-900">~260 000 €</span>
               </div>
             </div>
           </div>
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-lg font-bold text-gray-900 mb-4">💵 Avec 5 000 € net/mois</h2>
-            <div class="space-y-2 text-sm">
-              <div class="flex justify-between p-2 bg-indigo-50 rounded">
-                <span>Sur 15 ans</span>
-                <span class="font-bold">~215 000 €</span>
+          <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+            <h2 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-indigo-300">
+              💵 Avec 5 000 € net/mois
+            </h2>
+            <div class="space-y-3 text-sm">
+              <div
+                class="flex justify-between p-3 bg-indigo-100 rounded-lg border border-indigo-300"
+              >
+                <span class="font-semibold text-gray-900">Sur 15 ans</span>
+                <span class="font-bold text-indigo-900">~215 000 €</span>
               </div>
-              <div class="flex justify-between p-2 bg-indigo-50 rounded">
-                <span>Sur 20 ans</span>
-                <span class="font-bold">~275 000 €</span>
+              <div
+                class="flex justify-between p-3 bg-indigo-100 rounded-lg border border-indigo-300"
+              >
+                <span class="font-semibold text-gray-900">Sur 20 ans</span>
+                <span class="font-bold text-indigo-900">~275 000 €</span>
               </div>
-              <div class="flex justify-between p-2 bg-indigo-50 rounded">
-                <span>Sur 25 ans</span>
-                <span class="font-bold">~325 000 €</span>
+              <div
+                class="flex justify-between p-3 bg-indigo-100 rounded-lg border border-indigo-300"
+              >
+                <span class="font-semibold text-gray-900">Sur 25 ans</span>
+                <span class="font-bold text-indigo-900">~325 000 €</span>
               </div>
             </div>
           </div>
@@ -814,33 +1157,51 @@
 
       <!-- FAQ -->
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">❓ Questions fréquentes sur la capacité d'emprunt</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          ❓ Questions fréquentes sur la capacité d'emprunt
+        </h2>
         <div class="space-y-4">
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">Quelle est la différence entre simulateur et simulation de capacité d'emprunt ?</h3>
-            <p class="text-gray-600">Le <strong>simulateur de capacité d'emprunt immobilier</strong> est l'outil
- qui effectue les calculs. La <strong>simulation de capacité d'emprunt</strong> est le résultat obtenu (montant max, mensualités, taux d'endettement).
- Notre simulateur gratuit vous permet de faire plusieurs simulations
- pour différents scénarios (durée, taux, apport).</p>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              Quelle est la différence entre simulateur et simulation de capacité d'emprunt ?
+            </h3>
+            <p class="text-gray-600">
+              Le <strong>simulateur de capacité d'emprunt immobilier</strong> est l'outil qui
+              effectue les calculs. La <strong>simulation de capacité d'emprunt</strong> est le
+              résultat obtenu (montant max, mensualités, taux d'endettement). Notre simulateur
+              gratuit vous permet de faire plusieurs simulations pour différents scénarios (durée,
+              taux, apport).
+            </p>
           </div>
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">Quel salaire pour emprunter 200 000 € ?</h3>
-            <p class="text-gray-600">Pour emprunter 200 000 € sur 20 ans à 4%, la mensualité est
- d'environ 1 210 €. Avec un taux d'endettement de 35%, il faut
- généralement un <strong>revenu net mensuel d'environ 3 500 €</strong> sans autres
- charges.</p>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              Quel salaire pour emprunter 200 000 € ?
+            </h3>
+            <p class="text-gray-600">
+              Pour emprunter 200 000 € sur 20 ans à 4%, la mensualité est d'environ 1 210 €. Avec un
+              taux d'endettement de 35%, il faut généralement un
+              <strong>revenu net mensuel d'environ 3 500 €</strong> sans autres charges.
+            </p>
           </div>
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">Quelle est la capacité d'emprunt avec 3 000 € net par mois ?</h3>
-            <p class="text-gray-600">Avec 3 000 € nets mensuels et sans autre crédit, votre capacité
- d'emprunt peut se situer autour de <strong>165 000 € sur 20 ans</strong> (taux 4%) ou 195 000 € sur
- 25 ans.</p>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              Quelle est la capacité d'emprunt avec 3 000 € net par mois ?
+            </h3>
+            <p class="text-gray-600">
+              Avec 3 000 € nets mensuels et sans autre crédit, votre capacité d'emprunt peut se
+              situer autour de <strong>165 000 € sur 20 ans</strong> (taux 4%) ou 195 000 € sur 25
+              ans.
+            </p>
           </div>
           <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">Quel est le taux d'endettement maximum en 2026 ?</h3>
-            <p class="text-gray-600">Les banques appliquent généralement un taux d'endettement maximum
- de <strong>35% assurance incluse</strong>. Ce seuil peut être
- dépassé pour les primo-accédants avec un bon reste à vivre.</p>
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">
+              Quel est le taux d'endettement maximum en 2026 ?
+            </h3>
+            <p class="text-gray-600">
+              Les banques appliquent généralement un taux d'endettement maximum de
+              <strong>35% assurance incluse</strong>. Ce seuil peut être dépassé pour les
+              primo-accédants avec un bon reste à vivre.
+            </p>
           </div>
         </div>
       </section>
@@ -848,7 +1209,9 @@
       <!-- Maillage interne -->
       <section class="mt-16">
         <div class="bg-white border-2 border-gray-200 rounded-lg p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">🔗 Voir aussi - Parcours immobilier complet</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">
+            🔗 Voir aussi - Parcours immobilier complet
+          </h3>
           <div class="flex flex-wrap gap-3">
             <a
               href="/pages/financement.html"
@@ -876,7 +1239,17 @@
               >🏢 Charges de copropriété</a
             >
           </div>
-          <p class="text-sm text-gray-600 mt-4">Recherches utiles : <a href="/pages/apl" class="text-blue-700 hover:underline">simulation APL 2026</a>·<a href="/pages/rsa" class="text-blue-700 hover:underline">simulation RSA 2026</a>·<a href="/pages/notaire" class="text-blue-700 hover:underline">calcul frais de notaire 2026</a>·<a href="/pages/impot" class="text-blue-700 hover:underline">simulateur impôts 2026</a>
+          <p class="text-sm text-gray-600 mt-4">
+            Recherches utiles :
+            <a href="/pages/apl" class="text-blue-700 hover:underline">simulation APL 2026</a>·<a
+              href="/pages/rsa"
+              class="text-blue-700 hover:underline"
+              >simulation RSA 2026</a
+            >·<a href="/pages/notaire" class="text-blue-700 hover:underline"
+              >calcul frais de notaire 2026</a
+            >·<a href="/pages/impot" class="text-blue-700 hover:underline"
+              >simulateur impôts 2026</a
+            >
           </p>
         </div>
       </section>
@@ -884,7 +1257,9 @@
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gray-300">© 2026 Les Calculateurs - Simulateur capacité d'emprunt immobilier</p>
+        <p class="text-gray-300">
+          © 2026 Les Calculateurs - Simulateur capacité d'emprunt immobilier
+        </p>
       </div>
     </footer>
 
@@ -962,6 +1337,7 @@
             step: 0.01,
           },
         ],
+
         calculate: (values) => {
           try {
             // Helper pour convertir les nombres (gerer virgule et point)
@@ -976,8 +1352,7 @@
             const tauxNominal = parseNumber(values.taux_nominal) / 100;
             const tauxMensuel = tauxNominal / 12;
             const revenusMensuels =
-              parseNumber(values.revenus_emprunteur1) +
-              parseNumber(values.revenus_emprunteur2);
+              parseNumber(values.revenus_emprunteur1) + parseNumber(values.revenus_emprunteur2);
             const chargesMensuelles = parseNumber(values.charges_mensuelles);
             const tauxAssurance = parseNumber(values.assurance_taux) / 100;
 
@@ -1024,12 +1399,9 @@
                   (Math.pow(1 + tauxMensuel, dureeMois) - 1)
                 : 1 / dureeMois;
             const coefficientAssurance = tauxAssurance / 12;
-            const coefficientTotal =
-              coefficientAmortissement + coefficientAssurance;
-            const capaciteEmprunt =
-              coefficientTotal > 0 ? mensualiteMax / coefficientTotal : 0;
-            const resteAVivre =
-              revenusMensuels - chargesMensuelles - mensualiteMax;
+            const coefficientTotal = coefficientAmortissement + coefficientAssurance;
+            const capaciteEmprunt = coefficientTotal > 0 ? mensualiteMax / coefficientTotal : 0;
+            const resteAVivre = revenusMensuels - chargesMensuelles - mensualiteMax;
             const tauxEndettementReel =
               ((mensualiteMax + chargesMensuelles) / revenusMensuels) * 100;
 
@@ -1088,8 +1460,7 @@
           const tauxEndettement = Math.min(d.tauxEndettementReel, 50);
           document.getElementById("taux-endettement-valeur").textContent =
             d.tauxEndettementReel.toFixed(1) + "%";
-          document.getElementById("indicateur-position").style.left =
-            tauxEndettement * 2 + "%";
+          document.getElementById("indicateur-position").style.left = tauxEndettement * 2 + "%";
 
           let messageEndettement = "";
           let couleurMessage = "";
@@ -1111,12 +1482,15 @@
           msgDiv.innerHTML = `<p class="text-sm">${messageEndettement}</p><p class="text-xs mt-2 text-gray-600">Reste à vivre estimé : ${formatCurrency(d.resteAVivre)}/mois</p>`;
 
           // Mettre à jour les valeurs du graphique
-          document.getElementById("capacite-15ans").textContent =
-            formatCurrency(d.capacitesParDuree[15]);
-          document.getElementById("capacite-20ans").textContent =
-            formatCurrency(d.capacitesParDuree[20]);
-          document.getElementById("capacite-25ans").textContent =
-            formatCurrency(d.capacitesParDuree[25]);
+          document.getElementById("capacite-15ans").textContent = formatCurrency(
+            d.capacitesParDuree[15],
+          );
+          document.getElementById("capacite-20ans").textContent = formatCurrency(
+            d.capacitesParDuree[20],
+          );
+          document.getElementById("capacite-25ans").textContent = formatCurrency(
+            d.capacitesParDuree[25],
+          );
 
           // Générer le graphique
           genererGraphique(d.capacitesParDuree);
@@ -1265,43 +1639,28 @@
         let interpretationEndettement, interpretationReste;
 
         if (d.tauxEndettementReel < 28)
-          interpretationEndettement =
-            '<span class="text-green-600">OK Excellent</span>';
+          interpretationEndettement = '<span class="text-green-600">OK Excellent</span>';
         else if (d.tauxEndettementReel < 33)
-          interpretationEndettement =
-            '<span class="text-green-600">OK Correct</span>';
+          interpretationEndettement = '<span class="text-green-600">OK Correct</span>';
         else if (d.tauxEndettementReel <= 35)
-          interpretationEndettement =
-            '<span class="text-yellow-600">! Limite</span>';
-        else
-          interpretationEndettement =
-            '<span class="text-red-600">X Trop eleve</span>';
+          interpretationEndettement = '<span class="text-yellow-600">! Limite</span>';
+        else interpretationEndettement = '<span class="text-red-600">X Trop eleve</span>';
 
         if (resteAVivreParPersonne >= 800)
-          interpretationReste =
-            '<span class="text-green-600">OK Confortable</span>';
+          interpretationReste = '<span class="text-green-600">OK Confortable</span>';
         else if (resteAVivreParPersonne >= 600)
           interpretationReste = '<span class="text-yellow-600">! Serre</span>';
-        else
-          interpretationReste = '<span class="text-red-600">X Fragile</span>';
+        else interpretationReste = '<span class="text-red-600">X Fragile</span>';
 
         // Mettre a jour le tableau d'analyse existant
         document.getElementById("analyse-taux").textContent =
           d.tauxEndettementReel.toFixed(1) + "%";
-        document.getElementById("analyse-taux-interp").innerHTML =
-          interpretationEndettement;
-        document.getElementById("analyse-reste").textContent = formatCurrency(
-          d.resteAVivre,
-        );
+        document.getElementById("analyse-taux-interp").innerHTML = interpretationEndettement;
+        document.getElementById("analyse-reste").textContent = formatCurrency(d.resteAVivre);
         document.getElementById("analyse-reste-interp").innerHTML =
-          interpretationReste +
-          " (" +
-          formatCurrency(resteAVivreParPersonne) +
-          "/pers)";
-        document.getElementById("analyse-capacite").textContent =
-          formatCurrency(d.capaciteEmprunt);
-        document.getElementById("analyse-duree").textContent =
-          d.dureeAnnees + " ans";
+          interpretationReste + " (" + formatCurrency(resteAVivreParPersonne) + "/pers)";
+        document.getElementById("analyse-capacite").textContent = formatCurrency(d.capaciteEmprunt);
+        document.getElementById("analyse-duree").textContent = d.dureeAnnees + " ans";
       }
 
       // PHASE 2 : Tableau multi-durees detaille
@@ -1327,22 +1686,11 @@
 
           html += '<tr class="hover:bg-gray-50">';
           html += '<td class="p-3 font-medium">' + duree + " ans</td>";
+          html += '<td class="p-3 font-bold text-blue-700">' + formatCurrency(mensualite) + "</td>";
+          html += '<td class="p-3 text-orange-600">' + formatCurrency(coutTotal) + "</td>";
+          html += '<td class="p-3 text-red-500">' + formatCurrency(interetsTotaux) + "</td>";
           html +=
-            '<td class="p-3 font-bold text-blue-700">' +
-            formatCurrency(mensualite) +
-            "</td>";
-          html +=
-            '<td class="p-3 text-orange-600">' +
-            formatCurrency(coutTotal) +
-            "</td>";
-          html +=
-            '<td class="p-3 text-red-500">' +
-            formatCurrency(interetsTotaux) +
-            "</td>";
-          html +=
-            '<td class="p-3 text-green-700 font-medium">' +
-            formatCurrency(capacite) +
-            "</td>";
+            '<td class="p-3 text-green-700 font-medium">' + formatCurrency(capacite) + "</td>";
           html += "</tr>";
         });
 
@@ -1391,8 +1739,7 @@
         }
 
         // Critère ratio charges existantes
-        const ratioChargesExistants =
-          (chargesMensuelles / revenusMensuels) * 100;
+        const ratioChargesExistants = (chargesMensuelles / revenusMensuels) * 100;
         if (ratioChargesExistants < 10) {
           scoreSolvabilite += 10;
           detailsScore.push("+10 (charges existantes < 10%)");
@@ -1493,23 +1840,12 @@
         if (!data) return;
 
         // Mettre a jour les boutons
-        document
-          .getElementById("btn-apport-0")
-          .classList.remove("ring-2", "ring-green-500");
-        document
-          .getElementById("btn-apport-10k")
-          .classList.remove("ring-2", "ring-green-500");
-        document
-          .getElementById("btn-apport-20k")
-          .classList.remove("ring-2", "ring-green-500");
+        document.getElementById("btn-apport-0").classList.remove("ring-2", "ring-green-500");
+        document.getElementById("btn-apport-10k").classList.remove("ring-2", "ring-green-500");
+        document.getElementById("btn-apport-20k").classList.remove("ring-2", "ring-green-500");
         document
           .getElementById(
-            "btn-apport-" +
-              (montantApport === 0
-                ? "0"
-                : montantApport === 10000
-                  ? "10k"
-                  : "20k"),
+            "btn-apport-" + (montantApport === 0 ? "0" : montantApport === 10000 ? "10k" : "20k"),
           )
           .classList.add("ring-2", "ring-green-500");
 
@@ -1517,11 +1853,11 @@
         document.getElementById("resultat-apport").classList.remove("hidden");
 
         if (montantApport === 0) {
-          document.getElementById("apport-economie-mensualite").textContent =
-            "0 €";
+          document.getElementById("apport-economie-mensualite").textContent = "0 €";
           document.getElementById("apport-economie-totale").textContent = "0 €";
-          document.getElementById("apport-nouvelle-capacite").textContent =
-            formatCurrency(data.capaciteBase);
+          document.getElementById("apport-nouvelle-capacite").textContent = formatCurrency(
+            data.capaciteBase,
+          );
           return;
         }
 
@@ -1558,12 +1894,96 @@
       // Initialisation
       new CalculatorFrame("calculator-container", pretConfig);
 
-      // Mobile menu
-      document
-        .getElementById("mobile-menu-btn")
-        ?.addEventListener("click", function () {
-          document.getElementById("mobile-menu")?.classList.toggle("hidden");
-        });
-    </script>
-  
+      // Fonction pour remplir le formulaire avec les données de l'exemple
+      function remplirFormulaireExemple(revenus1, charges, duree, taux) {
+        // Remplir les champs
+        const inputRevenus = document.getElementById("revenus_emprunteur1");
+        const inputCharges = document.getElementById("charges_mensuelles");
+        const selectDuree = document.getElementById("duree");
+        const inputTaux = document.getElementById("taux_nominal");
 
+        if (inputRevenus) inputRevenus.value = revenus1;
+        if (inputCharges) inputCharges.value = charges;
+        if (selectDuree) selectDuree.value = duree;
+        if (inputTaux) inputTaux.value = taux;
+
+        // Déclencher les événements change pour mettre à jour le formulaire
+        [inputRevenus, inputCharges, selectDuree, inputTaux].forEach((input) => {
+          if (input) {
+            input.dispatchEvent(new Event("change", { bubbles: true }));
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        });
+
+        // Chercher le bouton de calcul et le cliquer
+        const submitButton = document.querySelector("#calculator-form button[type='submit']");
+        if (submitButton) {
+          setTimeout(() => {
+            submitButton.click();
+            // Scroll au calculateur
+            document
+              .getElementById("calculator-container")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 100);
+        }
+      }
+
+      // Ajouter les event listeners aux boutons "Voir détails"
+      document.addEventListener("DOMContentLoaded", () => {
+        // EXEMPLE 1: 2500€, 0 charge, 20 ans, 4%
+        document
+          .querySelector('[href="#calculator-container"]')
+          .closest("a")
+          ?.parentElement?.parentElement?.querySelector("a:nth-of-type(1)")
+          ?.addEventListener("click", function (e) {
+            if (this.href && this.href.includes("calculator-container")) {
+              e.preventDefault();
+              remplirFormulaireExemple(2500, 0, "20", "4");
+            }
+          });
+      });
+
+      // Alternative plus simple: événement click direct sur les boutons "Voir détails"
+      setTimeout(() => {
+        const boutonsExemples = Array.from(document.querySelectorAll("a")).filter((a) =>
+          a.textContent.includes("Voir détails"),
+        );
+
+        boutonsExemples.forEach((btn, index) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Définir les données selon l'exemple
+            let revenus, charges, duree, taux;
+            if (index === 0) {
+              // Exemple 1: 2500€, 0 charge, 20 ans
+              revenus = 2500;
+              charges = 0;
+              duree = "20";
+              taux = "4";
+            } else if (index === 1) {
+              // Exemple 2: 3500€, 0 charge, 25 ans
+              revenus = 3500;
+              charges = 0;
+              duree = "25";
+              taux = "4";
+            } else if (index === 2) {
+              // Exemple 3: 2000€, 400€ charge, 15 ans
+              revenus = 2000;
+              charges = 400;
+              duree = "15";
+              taux = "4";
+            }
+
+            remplirFormulaireExemple(revenus, charges, duree, taux);
+          });
+        });
+      }, 500);
+
+      // Mobile menu
+      document.getElementById("mobile-menu-btn")?.addEventListener("click", function () {
+        document.getElementById("mobile-menu")?.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
