@@ -1,0 +1,832 @@
+{
+  "generatedAt": "2026-04-18T15:41:22.645Z",
+  "inputDir": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\seach-console-perf",
+  "model": "gpt-5-mini",
+  "thresholds": {
+    "minImpressions": 150,
+    "maxCtr": 0.02,
+    "maxPages": 20,
+    "pseoOnly": true
+  },
+  "sources": {
+    "days7": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\seach-console-perf\\lescalculateurs.fr-Performance-on-Search-2026-04-18.xlsx",
+    "days28": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\seach-console-perf\\lescalculateurs.fr-Performance-on-Search-2026-04-18 (1).xlsx"
+  },
+  "summary": {
+    "analyzedPages": 20
+  },
+  "pages": [
+    {
+      "pathname": "/pages/blog/frais-notaire-ancien-neuf-2026",
+      "url": "https://www.lescalculateurs.fr/pages/blog/frais-notaire-ancien-neuf-2026",
+      "impressions7": 2991,
+      "clicks7": 2,
+      "ctr7": 0.0007000000000000001,
+      "pos7": 8.99,
+      "impressions28": 8184,
+      "clicks28": 8,
+      "ctr28": 0.001,
+      "pos28": 8.6,
+      "deltaCtr": -0.0002999999999999999,
+      "deltaPos": 0.39000000000000057,
+      "opportunityScore": 950.6762790697674,
+      "filePath": "src\\pages\\blog\\frais-notaire-ancien-neuf-2026.html",
+      "title": "Frais de notaire ancien vs neuf (2026) : différences et calcul",
+      "h1": "Frais de notaire : ancien ou neuf en 2026 ?",
+      "metaDescription": "Comparez les frais de notaire dans l",
+      "excerpt": "Frais de notaire ancien vs neuf (2026) : différences et calcul ⚠️ Estimation indicative. Montant définitif sur Notaires.fr . ← Blog Accueil Immobilier • 16 janvier 2026 • 7 min de lecture Frais de notaire : ancien ou neuf en 2026 ? Découvrez le montant estimé des frais de notaire selon que vous achetez dans l'ancien ou le neuf. Ordres de grandeur, explications détaillées et économies réelles expliquées. Les calculs reposent sur les barèmes réglementés en vigueur et les taux départementaux connus à date. Ils constituent une estimation indicative et non contractuelle. 💡 En règle générale, les frais de notaire sont plus élevés dans l'ancien que dans le neuf. Ils représentent environ 7 % à 9 % du prix dans l'ancien, contre environ 2 % à 3 % dans le neuf (VEFA), selon la nature du bien et le département. 👉 L'écart peut représenter plusieurs milliers d'euros sur un projet immobilier, mais le",
+      "recommendations": {
+        "diagnostic": "CTR très bas (0,07–0,10 %) malgré une position moyenne autour de la 8ᵉ place. Causes probables : title et meta peu convaincants et tronqués, absence d'éléments attractifs (chiffres concrets, bénéfice immédiat) dans l'extrait SERP, pas de rich snippets (FAQ/HowTo) ni de données structurées, page qui ressemble à un article standard plutôt qu'à une page « utile » orientée action (simulateur). Résultat : les internautes voient peu de valeur immédiate et ne cliquent pas.",
+        "titleSuggestions": [
+          "Frais de notaire 2026 : ancien vs neuf - Calculez l'économie (ex. -7 000€)",
+          "Frais de notaire 2026 (ancien/VEFA) — Estimation rapide & exemple chiffré",
+          "Ancien ou neuf ? Comparez vos frais de notaire 2026 et estimez les économies"
+        ],
+        "metaSuggestions": [
+          "Ancien vs neuf en 2026 : découvrez combien vous paierez de frais de notaire. Exemple chiffré, ordre de grandeur par département et simulateur gratuit en 30s pour voir votre économie.",
+          "Calculez vos frais de notaire 2026 (ancien ou VEFA). Estimation immédiate, exemples concrets et astuces pour réduire le coût. Testez le simulateur gratuit — résultat en moins d'une minute."
+        ],
+        "uxQuickWins": [
+          "Hero : remplacer le titre générique par un message orienté valeur (ex. « Estimez vos frais de notaire 2026 — Ancien vs Neuf en 30s ») + montrer un exemple chiffré visible (p.ex. « Économie moyenne : 7 000 € »).",
+          "CTA visible et actionnable en premier écran : bouton contrasté « Estimer mes frais (30s) » menant au simulateur intégré; ajouter microcopy sous le bouton (« Pas besoin d'identifiant »).",
+          "First-screen : intégrer un mini-calculateur interactif (prix du bien + département) + résultat instantané + bouton « Voir le détail du calcul » pour garder les visiteurs engagés."
+        ],
+        "priorityActions": [
+          "1) Mettre à jour title et meta (A/B testing) pour inclure bénéfice immédiat et chiffres (ex. économie) — gain rapide sur CTR.",
+          "2) Ajouter données structurées (FAQ/HowTo + Speakable si pertinent) et balisage schema.org pour obtenir rich snippets et augmenter l'espace SERP.",
+          "3) Intégrer un simulateur visible en above-the-fold + CTA clair et exemples chiffrés, puis relier la page depuis pages traficées (simulateurs principaux, landing immobilière) pour améliorer signaux et position."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/impot/tranches-d-impot-2026",
+      "url": "https://www.lescalculateurs.fr/pages/impot/tranches-d-impot-2026",
+      "impressions7": 1,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 10,
+      "impressions28": 712,
+      "clicks28": 0,
+      "ctr28": 0,
+      "pos28": 4.11,
+      "deltaCtr": 0,
+      "deltaPos": 5.89,
+      "opportunityScore": 173.2360097323601,
+      "filePath": "src\\pages\\impot\\tranches-d-impot-2026.html",
+      "title": "Tranches d’impôt 2026 (2026)",
+      "h1": "Tranches d’impôt 2026",
+      "metaDescription": "Réponse à la question : quelles sont les tranches d’impôt en 2026. Le barème est progressif. Plus votre revenu est élevé, plus la part supérieure est taxée à…",
+      "excerpt": "Tranches d’impôt 2026 (2026) 🧮 Les Calculateurs Accueil Simulateur Impôts 2026 Pilier • Simulateur Impôts 2026 Tranches d’impôt 2026 Réponse à la question : quelles sont les tranches d’impôt en 2026. Le barème est progressif. Plus votre revenu est élevé, plus la part supérieure est taxée à… 👉 Simulez votre impôt selon les tranches. Les informations ci-dessous sont pédagogiques et indicatives. Pour un calcul fiable, utilisez le simulateur et référez-vous aux organismes compétents. Réponse rapide Plus votre revenu est élevé, plus la part supérieure est taxée à un taux plus fort. En pratique, on regarde surtout : revenu net imposable, nombre de parts, seuils des tranches, barème à jour, évolution de vos revenus, impact des parts fiscales. Ce qu’il faut vérifier revenu net imposable nombre de parts seuils des tranches barème à jour évolution de vos revenus impact des parts fiscales Plus vo",
+      "recommendations": {
+        "diagnostic": "La page apparaît en position correcte (moyenne ~4) mais n’obtient aucun clic : le titre et l’extrait sont trop génériques et peu orientés bénéfice utilisateur ; la meta description est coupée et n’incite pas à l’action ; pas d’éléments attractifs dans le premier écran (pas de résultat rapide, pas de CTA visible \"Simuler\") et aucun extrait enrichi (FAQ/schema) pour capter l’attention. Résultat : l’URL ressemble à une fiche info standard plutôt qu’à un outil utile et immédiat.",
+        "titleSuggestions": [
+          "Tranches d’impôt 2026 — Barème, seuils & simulateur rapide",
+          "Barème impôt 2026 : tranches et calcul instantané ✅",
+          "Tranches d’impôt 2026 (MAJ) — Voir votre tranche et simuler"
+        ],
+        "metaSuggestions": [
+          "Découvrez les tranches d’impôt 2026, les seuils par part et un simulateur pour estimer votre impôt en 2 clics. Rapide, gratuit — testez avec votre revenu net imposable.",
+          "Barème 2026 expliqué : quelles tranches vous concernent et combien vous payez ? Simulez votre impôt en direct (nombre de parts, revenu) et obtenez un résultat indicatif."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher en haut un champ de simulation rapide (revenu net + parts) + bouton visible \"Simuler maintenant\" qui affiche le résultat estimé sans quitter la page.",
+          "First-screen value : montrer directement un exemple chiffré (ex. \"Revenu 30 000€ / 1 part → Impôt estimé : X€\") pour prouver l’utilité avant le scroll.",
+          "CTA clair : remplacer les liens texte par un bouton contrasté « Simuler mon impôt » et un lien secondaire « Voir le barème détaillé » pour capter à la fois les chercheurs d’info et les candidats à la simulation."
+        ],
+        "priorityActions": [
+          "A/B tester immédiatement les 3 nouveaux titres + 2 meta descriptions (changer une variante par semaine). Impact attendu : hausse rapide du CTR en search.",
+          "Ajouter un simulateur/outil interactif en haut de page + résultat instantané (mini-calcul) pour convertir impressions en clics internes et réduire le taux de rebond.",
+          "Publier des FAQ visibles (questions courtes) et implémenter le balisage FAQ schema pour obtenir un extrait enrichi dans Google (augmente fortement la visibilité et le CTR)."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-famille-trois-enfants",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants",
+      "impressions7": 330,
+      "clicks7": 5,
+      "ctr7": 0.0152,
+      "pos7": 6.76,
+      "impressions28": 952,
+      "clicks28": 15,
+      "ctr28": 0.0158,
+      "pos28": 6.25,
+      "deltaCtr": -0.0006000000000000016,
+      "deltaPos": 0.5099999999999998,
+      "opportunityScore": 149.913344,
+      "filePath": "src\\pages\\apl\\apl-famille-trois-enfants.html",
+      "title": "APL famille avec 3 enfants : estimation 2026",
+      "h1": "APL famille avec 3 enfants : estimation 2026",
+      "metaDescription": "Estimation APL pour une famille avec trois enfants et un loyer adapté à un logement plus grand.",
+      "excerpt": "APL famille avec 3 enfants : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL famille avec 3 enfants : estimation 2026 Estimation APL pour une famille avec trois enfants et un loyer adapté à un logement plus grand. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~87 € par mois. Cette estimation correspond à un profil type : Famille avec trois enfants. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situatio",
+      "recommendations": {
+        "diagnostic": "CTR faible (≈1.6%) probable pour ces raisons : 1) Title et H1 identiques et peu différenciants : pas d'incitation claire (pas de bénéfice client, pas de chiffre ni d'appel à l'action). 2) Meta description trop générique et n'affiche pas la valeur rapide (ex. montant indicatif ~87€) ni l'appel à l'action. 3) Extrait et balises ne mettent pas en avant la gratuité/rapidité du simulateur ni la fiabilité (ex. mention CAF). 4) Position moyenne ~6e suggère que snippet doit capter davantage l'attention (numéro, avantage concret, promesse de gain de temps). 5) Absence d'éléments riches dans le snippet (structured data, FAQ, HowTo) qui pourraient augmenter l'espace occupé en SERP.",
+        "titleSuggestions": [
+          "APL famille (3 enfants) – Estimation rapide ≈87€/mois • Simulateur gratuit",
+          "Estimer vos APL pour 3 enfants en 1 min — Résultat indicatif : ~87€/mois",
+          "Simulateur APL famille 3 enfants (2026) – Estimation gratuite et fiable"
+        ],
+        "metaSuggestions": [
+          "Besoin d'une estimation APL pour une famille avec 3 enfants ? Obtenez un résultat indicatif (~87 €/mois) en 1 min avec notre simulateur gratuit. Vérification finale sur caf.fr.",
+          "Estimation rapide des APL pour famille 3 enfants (2026). Simulateur gratuit, résultat indicatif immédiat et explication des hypothèses. Passez au simulateur pour un calcul personnalisé."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher immédiatement l'estimation indicative en gros (ex. « Estimation indicative : ~87 €/mois ») + sous-texte « Résultat moyen pour profil type — lancez le simulateur pour personnaliser ». Cela donne valeur immédiate au visiteur.",
+          "CTA visible et orienté action : bouton principal 'Calculer mon APL en 1 min' (couleur contrastée) et bouton secondaire 'Voir hypothèses' pour les utilisateurs réticents.",
+          "First screen : inclure 3 points rapides sous le titre : 'Gratuit', 'Résultat en 1 min', 'Vérifiable sur CAF' + pictos. Cela réduit la friction et augmente le clic vers le simulateur."
+        ],
+        "priorityActions": [
+          "1) Mettre à jour le title et la meta pour inclure un bénéfice chiffré et un appel à l'action (impact élevé sur CTR en SERP).",
+          "2) Modifier le hero/first-screen pour afficher le montant indicatif (~87€) et un CTA clair 'Calculer mon APL en 1 min' (impact direct sur conversion et comportement utilisateur).",
+          "3) Ajouter balisage structuré (FAQ + HowTo) et snippet enrichi pour occuper plus d'espace en SERP; en parallèle ajouter mentions de confiance (ex. 'Vérification finale sur caf.fr') — améliore visibilité et confiance."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-chomage-loyer-moyen",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-moyen",
+      "impressions7": 549,
+      "clicks7": 7,
+      "ctr7": 0.0128,
+      "pos7": 7.72,
+      "impressions28": 1036,
+      "clicks28": 13,
+      "ctr28": 0.0125,
+      "pos28": 7.52,
+      "deltaCtr": 0.0002999999999999999,
+      "deltaPos": 0.20000000000000018,
+      "opportunityScore": 136.04388297872342,
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen.html",
+      "title": "APL au chômage avec loyer moyen : estimation 2026",
+      "h1": "APL au chômage avec loyer moyen : estimation 2026",
+      "metaDescription": "Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+      "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~312 € par mois. Cette estimation correspond à un profil type : Personne au chômage. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situation administrat",
+      "recommendations": {
+        "diagnostic": "CTR faible (≈1,25%) probablement dû à : titre et meta trop génériques et peu attractifs pour une requête transactionnelle/simulatrice ; absence d'éléments différenciateurs (chiffre, durée, bénéfice) dans l'extrait affiché ; page mal optimisée pour les rich snippets (FAQ/schema) et le visuel du premier écran n'incite pas au clic. La position moyenne ~7,5 indique que la page apparaît souvent sur la 1re page : améliorer titre/meta et rich snippets devrait rapidement augmenter les clics.",
+        "titleSuggestions": [
+          "APL au chômage — Estimation rapide (≈312 €/mois) — Simulation 2026",
+          "Combien d'APL si vous êtes au chômage ? Estimation 2026 en 1 min",
+          "Estimez vos APL au chômage (simulation 2026) — Résultat indicatif immédiat"
+        ],
+        "metaSuggestions": [
+          "Estimation indicative : APL ≈312 €/mois pour une personne au chômage. Lancez notre simulateur gratuit (1 min) pour obtenir votre montant personnalisé et vérifiez ensuite sur caf.fr.",
+          "Simulez vos APL si vous êtes au chômage — résultat indicatif immédiat et gratuit. Obtenez un montant estimé en ~1 minute puis comparez avec les règles CAF (2026)."
+        ],
+        "uxQuickWins": [
+          "Hero : Mettre en haut un bloc clair avec un chiffre attractif (ex. « Estimation indicative : ≈312 €/mois ») + petite mention « pour une personne seule, indicatif ».",
+          "CTA visible et actionnable : bouton contrasté « Obtenir mon estimation (1 min) » menant directement au simulateur pré-rempli ou à la section de calcul.",
+          "First-screen value : proposer un mini-formulaire (3 champs max : statut, loyer, personnes) sur la première vue pour obtenir un résultat instantané sans scroll."
+        ],
+        "priorityActions": [
+          "Haute — Mettre à jour title et meta pour inclure chiffre indicatif, bénéfice immédiat et CTA (voir suggestions). Impact direct sur CTR en SERP.",
+          "Moyenne — Ajouter balisage schema.org : FAQ + HowTo/Estimate + données structurées pour obtenir rich snippets (affichez questions courtes sur la page : \"Comment est calculée l'APL ?\", \"Combien en moyenne ?\"). Augmente visibilité et CTR.",
+          "Moyenne — Améliorer first-screen : afficher estimation indicative, mini-formulaire ou bouton de simulation instantanée, et lien clair vers simulateur complet. Réduit la friction et augmente conversions après clic."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-apprenti",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-apprenti",
+      "impressions7": 223,
+      "clicks7": 3,
+      "ctr7": 0.013500000000000002,
+      "pos7": 7.69,
+      "impressions28": 951,
+      "clicks28": 4,
+      "ctr28": 0.0042,
+      "pos28": 7.02,
+      "deltaCtr": 0.009300000000000003,
+      "deltaPos": 0.6700000000000008,
+      "opportunityScore": 134.9011111111111,
+      "filePath": "src\\pages\\apl\\apl-apprenti.html",
+      "title": "APL apprenti : estimation 2026",
+      "h1": "APL apprenti : estimation 2026",
+      "metaDescription": "Estimation APL pour un apprenti avec petit salaire et loyer modéré.",
+      "excerpt": "APL apprenti : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL apprenti : estimation 2026 Estimation APL pour un apprenti avec petit salaire et loyer modéré. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~306 € par mois. Cette estimation correspond à un profil type : Apprenti locataire. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situation administrative. résultat estimé ~306 € / mois Montant indicat",
+      "recommendations": {
+        "diagnostic": "CTR faible principalement parce que la page n’est pas attractive dans les résultats : titre et meta sont génériques et répétitifs, ils n’exposent pas de bénéfice concret (montant estimé, rapidité, gratuité). Le positionnement moyen (~7) limite le CTR mais on peut augmenter les clics sans remonter immédiatement en SEO en rendant l’extrait plus cliquable. Autres causes : meta trop courte et non différenciante, H1 identique au title (redondance), possible cannibalisation interne / contenu trop similaire à d’autres pages APL, et absence de balisage riche ou d’extraits optimisés (montant visible, FAQ, durée de calcul).",
+        "titleSuggestions": [
+          "APL apprenti — Estimation rapide : ~306 € / mois (simulateur gratuit)",
+          "Combien d’APL pour un apprenti ? Estimation 2026 : ~306 €/mois — Simulateur",
+          "APL apprenti : calculez vite votre aide (estimation indicative ~306€/mois)"
+        ],
+        "metaSuggestions": [
+          "Estimation APL pour apprenti : résultat indicatif ~306 €/mois. Simulateur gratuit, rapide et mis à jour 2026 — obtenez une estimation en 2 minutes et ouvrez le simulateur.",
+          "Besoin d’une estimation APL pour apprenti ? Obtenez une valeur indicative (~306 €/mois), vérifiable sur caf.fr. Simulateur gratuit, rapide et adapté aux petits salaires."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher immédiatement le montant estimé large et lisible (« Estimation indicative : ~306 €/mois ») + sous-texte « résultat rapide, vérification sur caf.fr » pour crédibilité.",
+          "CTA clair et contrasté en premier écran : bouton « Ouvrir le simulateur » + second CTA « Voir les hypothèses » ; placer le CTA principal au-dessus du pli et répéter en bas.",
+          "First-screen value : ajouter en 1ère vue 3 points concis : durée du calcul (ex. « 2 min »), gratuité, et précision (« estimation indicative, vérifiable sur caf.fr »). Inclure icônes et indicateur de mise à jour (ex. « mis à jour 2026 »)."
+        ],
+        "priorityActions": [
+          "(Impact élevé) Remplacer title + meta par versions axées bénéfice avec montant indicatif et CTA ; lancer A/B test (3 variantes) pour mesurer gain de CTR rapidement.",
+          "(Impact moyen) Ajouter balisage structuré : FAQ, HowTo/Estimate schema et données structurées pour permettre un extrait enrichi (montant visible, FAQ) dans les SERP.",
+          "(Impact moyen/technique) Améliorer la première impression sur la page : afficher montant en hero, CTA prioritaire, réduire friction mobile (chargement, boutons visibles) et vérifier cannibalisation interne (balises canonical, titres différenciés entre pages APL)."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-loyer-700-personne-seule",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-loyer-700-personne-seule",
+      "impressions7": 448,
+      "clicks7": 9,
+      "ctr7": 0.020099999999999996,
+      "pos7": 8.28,
+      "impressions28": 1068,
+      "clicks28": 21,
+      "ctr28": 0.0197,
+      "pos28": 8.24,
+      "deltaCtr": 0.0003999999999999976,
+      "deltaPos": 0.03999999999999915,
+      "opportunityScore": 127.05830097087377,
+      "filePath": "src\\pages\\apl\\apl-loyer-700-personne-seule.html",
+      "title": "APL avec loyer de ~700 EUR pour une personne seule : estimation 2026",
+      "h1": "APL avec loyer de ~700 EUR pour une personne seule : estimation 2026",
+      "metaDescription": "Estimation APL pour une personne seule avec un loyer de ~700 EUR et un revenu modéré.",
+      "excerpt": "APL avec loyer de ~700 EUR pour une personne seule : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL avec loyer de ~700 EUR pour une personne seule : estimation 2026 Estimation APL pour une personne seule avec un loyer de ~700 EUR et un revenu modéré. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~192 € par mois. Cette estimation correspond à un profil type : Personne seule avec loyer de ~700 EUR. Elle reste indicative : le montant réel dépend notamment du logement, de",
+      "recommendations": {
+        "error": "fetch failed",
+        "diagnostic": "",
+        "titleSuggestions": [],
+        "metaSuggestions": [],
+        "uxQuickWins": [],
+        "priorityActions": []
+      }
+    },
+    {
+      "pathname": "/pages/impot/impot-decote-2026-simulation",
+      "url": "https://www.lescalculateurs.fr/pages/impot/impot-decote-2026-simulation",
+      "impressions7": 755,
+      "clicks7": 1,
+      "ctr7": 0.0013,
+      "pos7": 7.03,
+      "impressions28": 755,
+      "clicks28": 1,
+      "ctr28": 0.0013,
+      "pos28": 7.03,
+      "deltaCtr": 0,
+      "deltaPos": 0,
+      "opportunityScore": 107.25725462304409,
+      "filePath": "src\\pages\\impot\\impot-decote-2026-simulation.html",
+      "title": "Décote impôt 2026 : montant et simulation",
+      "h1": "Décote impôt 2026 : montant et simulation",
+      "metaDescription": "Calculez l'effet de la décote impôt 2026 et obtenez un montant estimé selon votre revenu imposable.",
+      "excerpt": "Décote impôt 2026 : montant et simulation Imp&ocirc;t sur le revenu 2026 Décote impôt 2026 : montant et simulation Calculez rapidement si la décote 2026 peut réduire votre impôt avec un exemple concret et un montant indicatif. Combien pouvez-vous toucher ? Pour ce scénario, la décote réduit l'impôt estimé et donne un montant final autour de ~1 155 EUR/an . Calculer mon imp&ocirc;t en 2 minutes Voir les hypoth&egrave;ses Derni&egrave;re modification : 10-04-2026 Estimation rapide Montant indicatif autour de ~1 155 EUR par an pour ce sc&eacute;nario. Taux moyen estim&eacute; : 5,3 % | Taux marginal estim&eacute; : 11 % . Mensualit&eacute; moyenne indicative : ~96 EUR . Sc&eacute;nario utilis&eacute; Profil Contribuable qui pense être concerné par la décote Revenu imposable ~22 000 EUR Nombre de parts 1 Imp&ocirc;t estim&eacute; ~1 155 EUR Hypoth&egrave;ses importantes Vérifier le revenu ne",
+      "recommendations": {
+        "error": "OpenAI HTTP 500: {\n  \"error\": {\n    \"message\": \"The server had an error processing your request. Sorry about that! You can retry your request, or contact us through our help center at help.openai.com if you keep seeing this error. (Please include the request ID req_ee779d815a794354af04d894a9bdba20 in your email.)\",\n    \"type\": \"server_error\",\n    \"param\": null,\n    \"code\": null\n  }\n}",
+        "diagnostic": "",
+        "titleSuggestions": [],
+        "metaSuggestions": [],
+        "uxQuickWins": [],
+        "priorityActions": []
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-alternant",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-alternant",
+      "impressions7": 265,
+      "clicks7": 3,
+      "ctr7": 0.0113,
+      "pos7": 5.88,
+      "impressions28": 605,
+      "clicks28": 6,
+      "ctr28": 0.009899999999999999,
+      "pos28": 5.93,
+      "deltaCtr": 0.0014000000000000002,
+      "deltaPos": -0.04999999999999982,
+      "opportunityScore": 101.01357504215852,
+      "filePath": "src\\pages\\apl\\apl-alternant.html",
+      "title": "APL alternant : estimation 2026",
+      "h1": "APL alternant : estimation 2026",
+      "metaDescription": "Estimation APL pour un alternant avec revenu régulier mais modeste.",
+      "excerpt": "APL alternant : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL alternant : estimation 2026 Estimation APL pour un alternant avec revenu régulier mais modeste. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~288 € par mois. Cette estimation correspond à un profil type : Alternant en location. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situation administrative. résultat estimé ~288 € / mois Montant in",
+      "recommendations": {
+        "diagnostic": "CTR faible (≈1%) malgré une position moyenne autour de la 6e place. Probables causes : titre et meta trop neutres et redondants (même texte que H1), absence d'élément différenciateur (chiffre, bénéfice, durée), meta description trop courte et peu incitative, extrait de page peu orienté action. Les resultats SERP n'indiquent pas clairement la valeur immédiate (montant estimé, rapidité de simulation, fiabilité), ni d'incitation au clic (CTA).",
+        "titleSuggestions": [
+          "APL alternant 2026 — Estimation rapide : ~288 €/mois",
+          "Simulateur APL alternant 2026 — Calculez votre aide en 1 min",
+          "Combien d'APL pour un alternant en 2026 ? Estimation instantanée"
+        ],
+        "metaSuggestions": [
+          "Estimez vite votre APL si vous êtes alternant (profil type : location). Résultat indicatif ≈288 €/mois. Simulation rapide et fiable — vérification finale sur caf.fr.",
+          "Alternant ? Obtenez en 1 min une estimation de votre APL 2026 (profil locataire). Montant indicatif, explications des hypothèses et lien vers le simulateur complet."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher en grand l'estimation indicative (« ≈288 €/mois ») + mention « estimation rapide » et badge de confiance « Vérifier sur caf.fr ».",
+          "CTA clair et visible au-dessus de la ligne de flottaison : bouton contrasté « Simuler mon APL en 1 min » menant au simulateur, avec microcopy sous le bouton (« sans compte, résultat immédiat »).",
+          "First-screen : résumé en 3 points (Qui — Alternant en location / Quoi — Estimation ≈288€/mois / Action — Simuler maintenant). Réduire texte introductif et afficher hypothèses clés directement."
+        ],
+        "priorityActions": [
+          "1. Optimiser le title et la meta (mettre un chiffre, promesse de rapidité, CTA implicite) et déployer ces nouvelles balises pour améliorer l'attractivité en SERP.",
+          "2. Mettre en avant le résultat indicatif dans le hero + CTA au-dessus du pli (affichez ≈288 €/mois et bouton « Simuler en 1 min ») pour augmenter le taux de clics depuis la page d'accueil et les partages.",
+          "3. Ajouter un bloc FAQ concis (questions fréquentes + réponses courtes) et marquer via données structurées (FAQ schema) pour obtenir un extrait enrichi dans Google et gagner en visibilité/CTR."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/blog/departements/frais-notaire-75",
+      "url": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-75",
+      "impressions7": 220,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 12.58,
+      "impressions28": 927,
+      "clicks28": 1,
+      "ctr28": 0.0011,
+      "pos28": 11.13,
+      "deltaCtr": -0.0011,
+      "deltaPos": 1.4499999999999993,
+      "opportunityScore": 83.1967924528302,
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-75.html",
+      "title": "Frais de Notaire Paris 2026 : Calcul Gratuit | Prix Immobilier 75 - LesCalculateurs",
+      "h1": "Frais de notaire 2026 à Paris (75)",
+      "metaDescription": "Calculez les frais de notaire à Paris en 2026. Estimation gratuite pour achat immobilier ancien ou neuf (VEFA). Taux officiels 2026 - résultat immédiat !",
+      "excerpt": "Frais de Notaire Paris 2026 : Calcul Gratuit | Prix Immobilier 75 - LesCalculateurs ⚠️ Estimation indicative. Montant définitif sur notaires.fr ou simulateur officiel . ← Blog Accueil 💰 Frais de notaire 2026 à Paris (75) Pour un achat immobilier en 2026 : Bien ancien : généralement environ 7 % à 9 % du prix d'acquisition Bien neuf (VEFA): généralement environ 2 % à 3 %, en raison de droits de mutation réduits, le reste étant composé d'émoluments, débours et taxes réglementées Ces informations sont fournies à titre indicatif et pédagogique. Elles incluent les droits, émoluments, formalités, contribution de sécurité immobilière (CSI) et la TVA applicable. 👉 Pour un montant exact et personnalisé, utilisez le calculateur . Immobilier • janvier 2026 • Guide départemental Frais de notaire 2026 à Paris (75) Paris conjugue prestige, rareté et diversité de quartiers. Acheter à Paris en 2026 imp",
+      "recommendations": {
+        "diagnostic": "CTR très faible (0,11%) malgré volume d’impressions correct : causes probables — titre trop long/générique et sans bénéfice clair ; meta description peu incitative et sans chiffre/action ; page non‑transactionnelle perçue (le simulateur n’est pas mis en avant dans l’extrait) ; absence d’extraits enrichis (FAQ/HowTo) pour occuper plus d’espace SERP ; concurrence forte sur « frais de notaire Paris » et position moyenne ~11 (hors 1re page). Résultat : les utilisateurs voient la page mais ne perçoivent pas d’incitation immédiate (rapidité, gratuité, montant estimé) pour cliquer.",
+        "titleSuggestions": [
+          "Calculez vos frais de notaire à Paris (75) — Résultat immédiat et gratuit",
+          "Frais de notaire Paris 2026 : Estimation gratuite (Ex. : ~7% ancien)",
+          "Simulateur Frais de notaire Paris (75) — Obtenez votre estimation en 1 min"
+        ],
+        "metaSuggestions": [
+          "Calculez gratuitement vos frais de notaire à Paris (75). Estimation instantanée et personnalisée (ancien ≈7–9%, neuf ≈2–3%). Cliquez pour simuler votre achat et voir le montant détaillé.",
+          "Simulateur gratuit — Frais de notaire Paris 2026. Résultat immédiat, explication des composants (droits, émoluments, CSI). Comparez ancien/neuf et obtenez le montant exact en 1 minute."
+        ],
+        "uxQuickWins": [
+          "Placer le simulateur en hero (au‑dessus de la ligne de flottaison) avec un champ prix + bouton visible \"Calculer mes frais — Gratuit\".",
+          "Afficher un résultat exemple (ex : \"Pour 300 000€ : Frais ≈ 21 000€\") près du CTA pour prouver la valeur immédiate.",
+          "Ajouter un bandeau confiance sous le hero : « Basé sur taux officiels 2026 — Vérifiable sur notaires.fr » + micro‑résumé en 1 ligne (ancien/neuf) + CTA clair."
+        ],
+        "priorityActions": [
+          "1. Optimiser titre + meta et lancer A/B testing (impact immédiat sur CTR) — rendre l’intention et le bénéfice explicites (gratuit, immédiat, estimation chiffrée).",
+          "2. Implémenter données structurées (FAQ/HowTo/schema du simulateur) et balisage OpenGraph/Twitter pour enrichir l’extrait SERP et les partages (impact moyen/élevé : augmente surface SERP et taux de clic).",
+          "3. Refaire la première vue (hero) : simulateur actif, résultat exemple, CTA clair, trust‑badge — et améliorer temps de chargement mobile (impact élevé sur conversion après clic et amélioration du positionnement mobile)."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-chomage-personne-seule",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule",
+      "impressions7": 21,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 10.19,
+      "impressions28": 538,
+      "clicks28": 8,
+      "ctr28": 0.0149,
+      "pos28": 6.98,
+      "deltaCtr": -0.0149,
+      "deltaPos": 3.209999999999999,
+      "opportunityScore": 75.92891117478509,
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule.html",
+      "title": "APL au chômage pour une personne seule : estimation 2026",
+      "h1": "APL au chômage pour une personne seule : estimation 2026",
+      "metaDescription": "Estimation APL pour une personne seule sans activité avec un loyer courant.",
+      "excerpt": "APL au chômage pour une personne seule : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL au chômage pour une personne seule : estimation 2026 Estimation APL pour une personne seule sans activité avec un loyer courant. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~288 € par mois. Cette estimation correspond à un profil type : Personne seule au chômage. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situ",
+      "recommendations": {
+        "diagnostic": "Causes probables du CTR faible :\n- Title et H1 identiques et trop génériques : n’attirent pas l’attention ni ne différencient la page des résultats. Pas d’incitation à cliquer (gratuit, rapide, montant indicatif). \n- Meta description trop courte et peu engageante ; n’explique pas la valeur immédiate (ex : montant estimé, rapidité, simulateur). \n- Extrait de page (premier écran) ne met pas en avant l’estimation ni un CTA clair : résultat pas visible dans le snippet, pas d’élément distinctif (chiffre, bénéfice). \n- Manque de signaux de confiance et d’appel à l’action dans le snippet (ex : “simulez maintenant”, “estimation gratuite”) ; position moyenne (~7) rend le CTR dépendant du titre/meta.\n- Mobile/UX possible problème : si le premier écran ne montre pas le simulateur ou le montant indicatif, l’utilisateur n’est pas incité à cliquer.\n\nConclusion : optimiser title + meta + premier écran pour afficher bénéfice concret (montant indicatif, rapidité, gratuit), et ajouter preuve sociale/CTA pour augmenter le taux de clics.",
+        "titleSuggestions": [
+          "Estimation APL au chômage (personne seule) – Simulation rapide 2026",
+          "Simulateur APL pour personne seule au chômage – Estimez vos droits en 2 min (≈288 €/mois)",
+          "APL si vous êtes au chômage (personne seule) – Simulation gratuite et indicative 2026"
+        ],
+        "metaSuggestions": [
+          "Estimez rapidement votre APL si vous êtes une personne seule au chômage. Simulation gratuite et indicative en 2 min — montant moyen affiché ≈288 €/mois. Vérifiez ensuite sur caf.fr.",
+          "Simulateur APL pour personne seule au chômage : calculez vos droits en quelques clics. Résultat indicatif instantané (≈288€/mois) + lien de vérification CAF. Gratuit et rapide."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher en grand le montant indicatif (ex. « Estimation indicative ≈ 288 €/mois »), sous-titre « Simulation gratuite et rapide pour une personne seule au chômage » et bouton CTA visible (« Simuler maintenant »).",
+          "CTA : remplacer liens texte par un bouton coloré au-dessus de la ligne de flottaison (« Simuler maintenant ») + second CTA pour consulter les hypothèses (« Voir les hypothèses »).",
+          "First-screen value : montrer 3 inputs essentiels modifiables (loyer, ressources, situation) et pré-remplir le profil 'Personne seule au chômage' pour obtenir un résultat immédiat; ajouter petit badge de confiance « Estimation indicative — vérifier sur caf.fr »."
+        ],
+        "priorityActions": [
+          "1. Optimiser Title + Meta et A/B tester (impact élevé) : publier 2-3 variantes proposées, suivre CTR et choisir la meilleure. Raison : titre/meta améliorés donnent lift direct du trafic organique.",
+          "2. Mettre en avant le montant indicatif et CTA au premier écran (impact élevé) : afficher ≈288€/mois, bouton « Simuler maintenant » visible sans scroll. Raison : augmente l’attractivité du snippet et la conversion après clic.",
+          "3. Ajouter données structurées FAQ + Open Graph et améliorer le snippet (impact moyen) : inclure FAQ sur estimation/fiabilité et balises OG pour partages. Raison : rend l’extrait plus riche, augmente CTR et confiance."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/blog/departements/frais-notaire-31",
+      "url": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-31",
+      "impressions7": 131,
+      "clicks7": 2,
+      "ctr7": 0.015300000000000001,
+      "pos7": 5.47,
+      "impressions28": 355,
+      "clicks28": 3,
+      "ctr28": 0.0085,
+      "pos28": 5.33,
+      "deltaCtr": 0.0068000000000000005,
+      "deltaPos": 0.13999999999999968,
+      "opportunityScore": 66.03799249530957,
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-31.html",
+      "title": "Frais de Notaire Toulouse 2026 (31) : Calcul Gratuit | Prix Immobilier - LesCalculateurs",
+      "h1": "Frais de notaire 2026 en Haute-Garonne (31)",
+      "metaDescription": "Calculez les frais de notaire dans l’Haute-Garonne en 2026. Ancien, neuf (VEFA), taux officiels et estimation gratuite en 10 secondes.",
+      "excerpt": "Frais de Notaire Toulouse 2026 (31) : Calcul Gratuit | Prix Immobilier - LesCalculateurs ⚠️ Estimation indicative. Montant définitif sur notaires.fr ou simulateur officiel . ← Blog Accueil 💰 Frais de notaire 2026 en Haute-Garonne (31) Pour un achat immobilier en 2026 : Bien ancien : généralement environ 7 % à 9 % du prix d'acquisition Bien neuf (VEFA): généralement environ 2 % à 3 %, en raison de droits de mutation réduits, le reste étant composé d'émoluments, débours et taxes réglementées Ces informations sont fournies à titre indicatif et pédagogique. Elles incluent les droits, émoluments, formalités, contribution de sécurité immobilière (CSI) et la TVA applicable. 👉 Pour un montant exact et personnalisé, utilisez le calculateur . Immobilier • janvier 2026 • Guide départemental Frais de notaire 2026 en Haute-Garonne (31) Selon que vous achetez à Toulouse, Colomiers ou ailleurs, le co",
+      "recommendations": {
+        "diagnostic": "Plusieurs facteurs expliquent le CTR faible (≈1%) malgré une bonne position :\n- Titre peu orienté bénéfice utilisateur : il mélange date, département et marque sans promesse claire ni incitation à cliquer. Toulouse n’apparaît que dans le titre long mais l’accroche manque. \n- Meta description froide : indique l’action (« Calculez ») mais pas la valeur immédiate (montant estimé, rapidité, gratuité mise en avant) ni preuve de confiance. \n- Snippet peu visible/rassurant dans les 1ères lignes : l’extrait affiche un avertissement et du texte générique, pas un résultat d’exemple ou un montant qui attire l’œil. \n- Faible utilisation des éléments favorisant les SERP riches (FAQ visible, chiffres, micro-données) qui augmentent le taux de clics. \n- UX du premier écran (hero) probablement peu orienté conversion : CTA pas mis en avant, pas d’aperçu d’estimation rapide qui donnerait envie de cliquer depuis les résultats.",
+        "titleSuggestions": [
+          "Frais de notaire Toulouse (31) — Estim. immédiate : ≈7% à 9% • Calcul gratuit",
+          "Calculer vos frais de notaire à Toulouse (31) en 10s — Estimation gratuite 2026",
+          "Frais de notaire Toulouse 2026 — Montant estimé & simulateur gratuit (31)"
+        ],
+        "metaSuggestions": [
+          "Obtenez une estimation rapide des frais de notaire à Toulouse (Haute‑Garonne). Gratuit, résultat en 10s et explication détaillée (ancien vs neuf). Essayez le calculateur pour un montant personnalisé.",
+          "Estimation indicative des frais de notaire à Toulouse (31). Résultat instantané en 10s, gratuit et basé sur les taux officiels 2026. Cliquez pour calculer votre coût exact."
+        ],
+        "uxQuickWins": [
+          "Mettre un hero clair avec un montant d’exemple visible (ex : “Pour 200 000€ → frais ≈ 15 000€”) pour capter l’attention et prouver la valeur immédiatement.",
+          "CTA principal au-dessus de la ligne de flottaison : bouton contrasté “Calculer mes frais en 10s” + micro-texte de confiance en dessous (« Estimation indicative, basée sur taux officiels »).",
+          "Afficher 2–3 bullets courts en premier écran : délai (10s), gratuité, précision (ancien vs neuf). Ajouter un mini-formulaire d’une seule question (prix du bien) pour commencer la simulation sans quitter la page."
+        ],
+        "priorityActions": [
+          "1) Réécrire title + meta et lancer A/B test : utiliser format orienté bénéfice (ville + promesse rapide) pour augmenter l’attractivité. Mesurer CTR sur 2 semaines.",
+          "2) Afficher dans le snippet de la page (premier écran) un exemple chiffré visible et CTA immédiat (“Calculer mes frais en 10s”) afin que le SERP reflète la valeur dès l’aperçu de la page. -> réduit friction et augmente clics.",
+          "3) Ajouter balisage FAQ + données structurées (schema) pour viser l’extrait enrichi dans Google (questions fréquentes sur frais notaire, VEFA vs ancien, délai). Cela améliore l’espace occupé dans la SERP et le CTR."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/blog/departements/frais-notaire-13",
+      "url": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-13",
+      "impressions7": 173,
+      "clicks7": 3,
+      "ctr7": 0.0173,
+      "pos7": 6.31,
+      "impressions28": 437,
+      "clicks28": 8,
+      "ctr28": 0.0183,
+      "pos28": 6.57,
+      "deltaCtr": -0.0010000000000000009,
+      "deltaPos": -0.2600000000000007,
+      "opportunityScore": 65.29724505327245,
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-13.html",
+      "title": "Frais de Notaire Marseille 2026 (13) : Calcul Gratuit | Prix Immobilier - LesCalculateurs",
+      "h1": "Frais de notaire 2026 dans les Bouches-du-Rhône (13)",
+      "metaDescription": "Calculez les frais de notaire à Marseille et dans les Bouches-du-Rhône (13) en 2026. Estimation gratuite immédiate pour achat immobilier ancien ou neuf !",
+      "excerpt": "Frais de Notaire Marseille 2026 (13) : Calcul Gratuit | Prix Immobilier - LesCalculateurs ⚠️ Estimation indicative. Montant définitif sur notaires.fr ou simulateur officiel . ← Blog Accueil 💰 Frais de notaire 2026 dans les Bouches-du-Rhône (13) Pour un achat immobilier en 2026 : Bien ancien : généralement environ 7 % à 9 % du prix d'acquisition Bien neuf (VEFA) : généralement environ 2 % à 3 %, en raison de droits de mutation réduits, le reste étant composé d'émoluments, débours et taxes réglementées Ces informations sont fournies à titre indicatif et pédagogique. Elles incluent les droits, émoluments, formalités, contribution de sécurité immobilière (CSI) et la TVA applicable. 👉 Pour un montant exact et personnalisé, utilisez le calculateur . Immobilier • janvier 2026 • Guide départemental Frais de notaire 2026 dans les Bouches-du-Rhône (13) Selon que vous achetez à Marseille, Aix-en-",
+      "recommendations": {
+        "diagnostic": "CTR faible (≈1.8%) probablement dû à : titres et meta trop génériques et longs (diluent le message principal), absence d'appel à l'action clair et orienté résultat dans l'extrait affiché, manque d'éléments différenciants visibles dès le SERP (ex : montant indicatif, « gratuit », « immédiat » déjà présent mais pas mis en avant ou chiffré). Également, la page ne rentre pas assez dans le local (Marseille) dans le titre/description de façon persuasive, et le snippet ne montre pas de bénéfice immédiat (ex : gain de temps, estimation précise). Enfin, balisage structural (title/meta ou structured data) pourrait ne pas exploiter les rich snippets (FAQ, HowTo, BreadCrumbs) pour augmenter visibilité et CTR.",
+        "titleSuggestions": [
+          "Frais de notaire Marseille (13) 2026 — Estimation gratuite et immédiate",
+          "Calculez vos frais de notaire à Marseille 2026 (Bouches‑du‑Rhône) — Gratuit",
+          "Frais de notaire 2026 à Marseille (13) : % indicatifs + simulateur instantané"
+        ],
+        "metaSuggestions": [
+          "Obtenez une estimation gratuite et immédiate des frais de notaire à Marseille (13) pour 2026. Indication rapide pour bien ancien (~7–9%) ou neuf (~2–3%). Calculez maintenant en 30s.",
+          "Calculez vos frais de notaire à Marseille et dans les Bouches‑du‑Rhône (13) — simulation gratuite et personnalisée pour 2026. Exemple : ancien ≈ 7–9% du prix. Lancez le calcul en un clic."
+        ],
+        "uxQuickWins": [
+          "Hero : remplacer texte d'accueil par un mini‑simulateur (champ prix + bouton) visible en first‑screen — résultat indicatif affiché immédiatement (ex : « Pour 250 000€ → frais ≈ 17 500€ »).",
+          "CTA clair et unique en haut : « Estimer mes frais (gratuit, 30s) » en couleur contrastée, répété sur mobile et desktop. Bouton doit déclencher le simulateur ou ancre vers la section calculateur.",
+          "Afficher valeur immédiate + preuve : montrer un exemple chiffré local (Marseille) + badge « Gratuit » + note ‘Estimation indicative — montant final chez le notaire’ + micro‑FAQ (3 questions) pour répondre aux objections."
+        ],
+        "priorityActions": [
+          "Haute — Modifier title + meta pour être plus orientés bénéfice (estimation gratuite, délai, exemple chiffré) et inclure ‘Marseille’ en début pour capter recherche locale. Mesurable : hausse CTR attendu en 20–30% sur 4 semaines.",
+          "Moyenne — Intégrer mini‑simulateur dans le first‑screen + CTA unique. Mesurable : augmentation du taux de clics internes et engagements sur page, réduction du taux de rebond.",
+          "Basse — Ajouter structured data (FAQ/HowTo) et exemples chiffrés dans le snippet via balisage pour obtenir rich snippets. Mesurable : potentielle hausse CTR supplémentaire si Google affiche les rich snippets."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-smic-parent-isole-deux-enfants",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-deux-enfants",
+      "impressions7": 22,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 3.32,
+      "impressions28": 247,
+      "clicks28": 2,
+      "ctr28": 0.008100000000000001,
+      "pos28": 4.67,
+      "deltaCtr": -0.008100000000000001,
+      "deltaPos": -1.35,
+      "opportunityScore": 52.462376873661675,
+      "filePath": "src\\pages\\apl\\apl-smic-parent-isole-deux-enfants.html",
+      "title": "APL au SMIC pour un parent isolé avec 2 enfants : estimation 2026",
+      "h1": "APL au SMIC pour un parent isolé avec 2 enfants : estimation 2026",
+      "metaDescription": "Estimation APL pour un parent isolé avec deux enfants et un salaire proche du SMIC.",
+      "excerpt": "APL au SMIC pour un parent isolé avec 2 enfants : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL au SMIC pour un parent isolé avec 2 enfants : estimation 2026 Estimation APL pour un parent isolé avec deux enfants et un salaire proche du SMIC. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~267 € par mois. Cette estimation correspond à un profil type : Parent isolé avec deux enfants et revenu proche du SMIC. Elle reste indicative : le montant réel dépend notamment du lo",
+      "recommendations": {
+        "diagnostic": "CTR très faible malgré une position moyenne correcte. Causes probables : title et meta trop génériques et peu attractifs (manque de bénéfice clair, chiffres et appel à l'action), balises répétitives (title = H1) et absence d'accroche visible dans le premier écran. L'extrait (snippet) n'affiche pas de montant clair ni d'appel à l'action différenciant ; les utilisateurs ne perçoivent pas rapidement la promesse exacte (gain de temps, montant estimé fiable). Le contenu risque aussi d'être noyé parmi d'autres pages similaires (mots-clés concurrents comme « simulateur APL »).",
+        "titleSuggestions": [
+          "APL 2026 : estimation pour parent isolé (2 enfants) — ~267€/mois (rapide)",
+          "Combien d'APL si vous êtes parent isolé avec 2 enfants ? Estimation 2026",
+          "Simulateur APL 2026 — Parent isolé (2 enfants) : estimation instantanée"
+        ],
+        "metaSuggestions": [
+          "Estimation rapide d'APL pour un parent isolé avec 2 enfants (2026) — montant indicatif ~267 €/mois. Lancez le simulateur en 1 min pour un résultat personnalisé.",
+          "Vous êtes parent isolé avec 2 enfants ? Obtenez une estimation APL 2026 en quelques clics (ex. ~267€/mois). Résultat indicatif — vérification possible sur la CAF."
+        ],
+        "uxQuickWins": [
+          "Premier écran (hero) : afficher immédiatement le chiffrage indicatif (« Estimation indicative : ~267 €/mois ») + bref sous-texte « résultat en 1 min » pour capter l'attention.",
+          "CTA visible et contrasté en haut : bouton « Simuler mon APL » + libellé secondaire « Estimation gratuite et rapide » ; répéter le CTA sticky lors du scroll.",
+          "Afficher au-dessus de la ligne de flottaison un mini-simulateur ou 3 paramètres cliquables (revenu, loyers, enfants) qui mettent à jour le montant instantanément pour démontrer l'utilité."
+        ],
+        "priorityActions": [
+          "Remplacer le title et la meta par des variantes orientées utilisateur (chiffre + promesse + année) pour améliorer le taux de clics organique — testing A/B avec les 3 titles proposés.",
+          "Modifier le premier écran pour afficher le montant indicatif + CTA clair vers le simulateur (mini-simulateur interactif si possible) afin d'augmenter l'engagement et les clics internes.",
+          "Ajouter signaux de confiance visibles (source : CAF, date de mise à jour, méthodologie courte) et un court FAQ/FAQ schema pour réduire l'hésitation et augmenter les clics depuis le SERP."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/salaire/2500-brut-en-net-2026",
+      "url": "https://www.lescalculateurs.fr/pages/salaire/2500-brut-en-net-2026",
+      "impressions7": 71,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 9.21,
+      "impressions28": 293,
+      "clicks28": 0,
+      "ctr28": 0,
+      "pos28": 6.18,
+      "deltaCtr": 0,
+      "deltaPos": 3.030000000000001,
+      "opportunityScore": 47.41100323624596,
+      "filePath": null,
+      "title": "",
+      "metaDescription": "",
+      "h1": "",
+      "excerpt": "",
+      "recommendations": {
+        "diagnostic": "1) Meta et title probablement absents ou non optimisés — la page n’affiche pas de title/H1/meta description connus : Google affiche donc un extrait peu attractif ou générique.\n2) Position moyenne (6–9) mais CTR = 0% : la page apparaît mais n’attire pas l’attention — titres/métadonnées non engageants ou ne répondant pas à l’intention (utilisateur cherche un résultat immédiat : « combien je touche »).\n3) Absence de rich snippet/answer box et d’extrait visible dans le premier écran (pas de résultat net mis en avant) : Google favorise les pages qui donnent une réponse directe.\n4) URL informative mais froide ; manque d’éléments visuels et CTA dans le hero pour capter le clic sur mobile (la majorité des recherches salariales sont mobile).\n5) Manque probable de balisage structuré (FAQ, Calculator, schema.org) et de données méta optimisées (prix, année, terme « brut en net ») — réduit l’attractivité dans les SERP.",
+        "titleSuggestions": [
+          "2500€ brut en net 2026 — Simulateur rapide (salaire net estimé)",
+          "2500€ brut → net en 2026 : calcul immédiat + charges expliquées",
+          "Combien reste sur 2500€ brut en 2026 ? Calcul net instantané"
+        ],
+        "metaSuggestions": [
+          "Découvrez en 1 clic combien vous toucherez net avec 2500€ brut en 2026. Résultat instantané, hypothèses indiquées, et simulateur pour ajuster votre situation. Calculer mon net maintenant.",
+          "2500€ brut en 2026 = ? Obtenez le montant net estimé immédiatement, avec détail des cotisations et simulation personnalisable. Outil rapide pour salariés et freelances — testez votre cas."
+        ],
+        "uxQuickWins": [
+          "Afficher le résultat en clair dans le hero (ex : “2500€ brut = 1 900€ net/mois (estimé)”) avec bouton visible « Calculer mon net » — réponse immédiate au besoin de l’internaute.",
+          "Mettre un CTA primaire sticky sur mobile (« Calculer mon net ») et un mini-formulaire prérempli (2500€) pour lancer le calcul en 1 clic — réduit le frictions et augmente clics internes.",
+          "Ajouter un encadré court « Hypothèses » en premier écran (type de contrat, taux cotisations, net avant impôt) et un lien vers FAQ/explications : rassure l’utilisateur et augmente le taux de clics depuis la SERP via rich snippets (FAQ)."
+        ],
+        "priorityActions": [
+          "1) Mettre en place title + meta optimisés et H1 clair (utiliser suggestions ci-dessus) — impact immédiat sur CTR et indexation (faible effort).",
+          "2) Afficher la réponse directe dans la page et optimiser pour featured snippet : placer au-dessus de la ligne de flottaison le calcul « 2500€ brut = X€ net (2026) » + balisage schema.org/FAQ — fort impact sur CTR et visibilité organique.",
+          "3) Implémenter balisage structuré (FAQ, Speakable/Calculator si possible) et générer rich snippets ; ajouter CTA mobile sticky et A/B tester 2 titres/meta (mesurer CTR 7–14 jours) — impact élevé et mesurable."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-smic-couple-un-enfant",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-un-enfant",
+      "impressions7": 34,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 4.94,
+      "impressions28": 255,
+      "clicks28": 2,
+      "ctr28": 0.0078000000000000005,
+      "pos28": 5.46,
+      "deltaCtr": -0.0078000000000000005,
+      "deltaPos": -0.5199999999999996,
+      "opportunityScore": 46.33901098901099,
+      "filePath": "src\\pages\\apl\\apl-smic-couple-un-enfant.html",
+      "title": "APL au SMIC pour un couple avec 1 enfant : estimation 2026",
+      "h1": "APL au SMIC pour un couple avec 1 enfant : estimation 2026",
+      "metaDescription": "Estimation APL pour un couple avec un enfant et des revenus proches du SMIC.",
+      "excerpt": "APL au SMIC pour un couple avec 1 enfant : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL au SMIC pour un couple avec 1 enfant : estimation 2026 Estimation APL pour un couple avec un enfant et des revenus proches du SMIC. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~27 € par mois. Cette estimation correspond à un profil type : Couple avec un enfant et revenus proches du SMIC. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenu",
+      "recommendations": {
+        "diagnostic": "CTR faible (0,78% sur 28j, 0% sur 7j) probable pour ces raisons : le titre et la meta sont trop génériques et n'incitent pas (manque de chiffre concret et d'appel à agir), l'extrait de SERP n'affiche pas de valeur immédiate (ex : montant) ni d'élément différenciant (gratuit, rapide, fiable), la page ne met pas en avant une estimation claire dans le premier écran (le visiteur ne voit pas tout de suite « ce que j’obtiens »), et il manque des optimisations pour les extraits enrichis (FAQ/estimate) et les cartes sociales qui attirent plus de clics. Position moyenne correcte (~5), donc améliorer titre/meta et snippet devrait rapidement augmenter le CTR.",
+        "titleSuggestions": [
+          "≈27€/mois APL pour un couple (1 enfant) au SMIC — Estimation 2026",
+          "APL au SMIC (couple + 1 enfant) : estimation rapide 2026 — Gratuit",
+          "Combien d’APL si vous êtes 2 et gagnez le SMIC ? Estimation 2026 (~27€/mois)"
+        ],
+        "metaSuggestions": [
+          "Estimation rapide et gratuite : un couple avec 1 enfant au SMIC toucherait ≈27€/mois d’APL (2026). Ouvrez le simulateur pour affiner selon logement et ressources.",
+          "Calculez vite votre APL 2026 : pour un couple avec 1 enfant et revenus proches du SMIC, estimation indicative ≈27€/mois. Lancez le simulateur pour une valeur personnalisée."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher immédiatement le montant estimé « ≈27 € / mois » en gros, suivi d’une phrase courte « estimation indicative pour couple (1 enfant) au SMIC ».",
+          "CTA visible et invitant : bouton contrasté « Lancer le simulateur » + sous-texte « Résultat en 1 min — gratuit » placé dans le premier écran.",
+          "First-screen value : ajouter 3 points clairs sous le hero — 1) précision (indicatif, vérif. CAF), 2) ce qu’il faut comme infos (revenus, loyer), 3) temps pour simuler (« 1 min »)."
+        ],
+        "priorityActions": [
+          "1) Mettre à jour le title + meta avec un nombre concret (~27€/mois) et un verbe d’action ; lancer un A/B test pour mesurer l’impact (fort impact, rapide à déployer).",
+          "2) Rendre le montant estimé visible en hero + CTA clair « Lancer le simulateur » et ajouter un court sous-texte sur la rapidité/fiabilité (impact élevé, améliore conversion depuis le SERP).",
+          "3) Ajouter un bloc FAQ / extraits courts en haut de page (questions types) et balises pour extrait enrichi afin d’obtenir un snippet plus attractif dans Google (impact moyen/élevé pour CTR organique)."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/prime-activite/plafond-prime-activite-2026",
+      "url": "https://www.lescalculateurs.fr/pages/prime-activite/plafond-prime-activite-2026",
+      "impressions7": 0,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 0,
+      "impressions28": 158,
+      "clicks28": 0,
+      "ctr28": 0,
+      "pos28": 3.67,
+      "deltaCtr": 0,
+      "deltaPos": 0,
+      "opportunityScore": 43.05177111716622,
+      "filePath": "src\\pages\\prime-activite\\plafond-prime-activite-2026.html",
+      "title": "Plafond Prime d’activité 2026 : simulation et barème",
+      "h1": "Plafond Prime d’activité 2026 : simulation et conditions",
+      "metaDescription": "V&eacute; rifiez les plafonds de Prime d&rsquo; activit&eacute; 2026, comprenez les revenus retenus et estimez vos droits plus facilement.",
+      "excerpt": "Plafond Prime d’activité 2026 : simulation et barème Les Calculateurs Accueil Simulateur APL 2026 Accueil › APL › Plafond Prime d’activité 2026 : simulation et conditions Réponse pratique APL Plafond Prime d’activité 2026 : simulation et conditions Cette page aide à lire les plafonds de la Prime d’activité sans se perdre dans un barème brut ou un tableau isolé. Simuler ma Prime d’activité Voir mes autres aides possibles Réponse rapide Le plafond de Prime d’activité varie selon la composition du foyer, le niveau de revenus et certaines ressources complémentaires. Un calcul isolé ne suffit pas toujours. Ce qu’il faut vérifier Composition exacte du foyer Revenus d’activité récents Autres ressources prises en compte Temps partiel, alternance ou reprise d’emploi Méthodologie Cette page présente les plafonds comme un repère. Pour un résultat exploitable, il faut recontextualiser les revenus, l",
+      "recommendations": {
+        "diagnostic": "Causes probables du CTR très faible :\n1) Meta description encodée/illisible dans les résultats (ex. \"V&eacute; rifiez\") — rend le snippet non attractif. \n2) Title et snippet trop génériques, ne montrent pas de bénéfice immédiat (pas d'appel à l'action, pas d'indication \"gratuit/rapide\" ni d'exemples chiffrés). \n3) Absence ou mauvaise utilisation du balisage structuré (FAQ/HowTo) — pas d'extraits enrichis pour capter l'attention. \n4) Premier écran peu orienté conversion : CTA peu visible / pas de promesse de résultat concret (ex : montant estimé en 1 min). \n5) Snippet tronqué et contenu d'accroche non différenciant : Google affiche un extrait peu engageant. \nCes points expliquent pourquoi la page, malgré une position moyenne correcte (~3.7), n'obtient aucun clic.",
+        "titleSuggestions": [
+          "Simulateur plafond Prime d’activité 2026 — Estimez votre droit en 2 min",
+          "Plafonds Prime d’activité 2026 : simulateur gratuit et barème chiffré",
+          "Calculez votre Prime d’activité 2026 (plafonds & exemples) — Gratuit"
+        ],
+        "metaSuggestions": [
+          "Simulez gratuitement votre Prime d’activité 2026 et voyez si vous êtes éligible en 2 minutes. Montants et plafonds expliqués avec exemples chiffrés — pas de compte requis.",
+          "Plafond Prime d’activité 2026 : vérifiez vos droits, consultez les montants par composition de foyer et utilisez notre simulateur rapide. Résultat chiffré en 2 min, gratuit."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher un bandeau clair au-dessus de la ligne de flottaison avec CTA visible « Simuler en 2 min » + icône calculatrice + courte promesse (ex. « Résultat chiffré et immédiat »).",
+          "CTA : remplacer texte générique par CTA orienté bénéfice (« Obtenir mon estimation gratuite ») et répéter CTA sur première moitié de la page ; utiliser couleur contrastée.",
+          "First-screen value : montrer un aperçu du résultat type (« Exemple : foyer 1 adulte = plafond 1 800 € */mois ») ou une estimation instantanée sample pour convaincre avant de cliquer sur le simulateur."
+        ],
+        "priorityActions": [
+          "Corriger immédiatement l'encodage de la meta description et du title (supprimer entités HTML mal rendues) — impact immédiat sur lisibilité du snippet et CTR.",
+          "Remplacer le title/meta par versions orientées bénéfice (voir suggestions) + ajouter balisage FAQ/HowTo (schema.org) pour obtenir extraits enrichis et augmenter visibilité dans SERP.",
+          "Optimiser le premier écran : hero explicite + CTA orienté résultat + aperçu chiffré et preuve sociale (ex. « 25 000 simulations réalisées » ou note) ; A/B tester titres/snippets sur 2 semaines."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-personne-seule-smic",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-personne-seule-smic",
+      "impressions7": 0,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 0,
+      "impressions28": 261,
+      "clicks28": 4,
+      "ctr28": 0.015300000000000001,
+      "pos28": 6.17,
+      "deltaCtr": -0.015300000000000001,
+      "deltaPos": 0,
+      "opportunityScore": 41.654246353322534,
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic.html",
+      "title": "APL personne seule au SMIC : estimation 2026",
+      "h1": "APL personne seule au SMIC : estimation 2026",
+      "metaDescription": "Estimation APL pour une personne seule avec un salaire proche du SMIC et un loyer courant.",
+      "excerpt": "APL personne seule au SMIC : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL personne seule au SMIC : estimation 2026 Estimation APL pour une personne seule avec un salaire proche du SMIC et un loyer courant. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~153 € par mois. Cette estimation correspond à un profil type : Personne seule au SMIC. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situation admini",
+      "recommendations": {
+        "diagnostic": "Le CTR est faible (1,53%) parce que le titre et la meta sont trop génériques et peu incitatifs : pas d’avantage immédiat, pas de chiffre visible dans le snippet, pas d’appel à l’action. Le contenu du snippet est tronqué et ne met pas en avant la valeur (montant indicatif ~153€). Il manque des signaux de confiance et des Rich Snippets (FAQ/Schema) pour occuper plus d’espace sur la SERP. Enfin, la première partie de la page (hero / first screen) n’affiche pas assez clairement le gain utilisateur ni un CTA visible pour lancer le simulateur.",
+        "titleSuggestions": [
+          "APL personne seule (SMIC) — Estimation rapide : ~153 €/mois (2026)",
+          "Combien d’APL si vous êtes seule au SMIC ? Estimé ~153 €/mois",
+          "Estimation APL 2026 — Personne seule au SMIC : découvrez votre aide en 30s"
+        ],
+        "metaSuggestions": [
+          "Estimation APL pour une personne seule au SMIC : montant indicatif ~153 €/mois (2026). Simulation gratuite et rapide — lancez le simulateur pour un résultat personnalisé.",
+          "Personne seule au SMIC ? Obtenez une estimation APL en 30s : ≈153 €/mois (valeur indicative). Vérification finale sur caf.fr. Simulateur gratuit et sans compte."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher en grand le montant indicatif « ≈153 €/mois » + petit texte « estimation rapide » et icône confiance (horodatage 2026 + source CAF).",
+          "CTA visible et clair au first screen : bouton contrasté « Simuler mon APL » + sous-texte « 30s — gratuit » qui ouvre directement le simulateur.",
+          "Première ligne de contenu : phrase simple « Personne seule au SMIC — estimation immédiate de votre APL » + micro-FAQ (3 Q/R) visible pour capter l’attention et répondre aux objections."
+        ],
+        "priorityActions": [
+          "Modifier title + meta pour inclure un chiffre concret (~153€), l’avantage (estimation rapide) et un CTA implicite — impact fort sur CTR organique.",
+          "Ajouter JSON-LD FAQ/schema (3 à 5 questions courantes) et balises Title/meta mises à jour pour augmenter la surface du snippet (rich results) et améliorer la visibilité en SERP.",
+          "Optimiser le first screen : mettre en grand le montant indicatif, un bouton CTA contrasté « Simuler mon APL » ouvrant le simulateur en modal ou ancre, et ajouter un badge « Gratuit / 30s » pour réduire les frictions."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/apl/apl-couple-sans-enfant",
+      "url": "https://www.lescalculateurs.fr/pages/apl/apl-couple-sans-enfant",
+      "impressions7": 1,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 8,
+      "impressions28": 267,
+      "clicks28": 1,
+      "ctr28": 0.0037,
+      "pos28": 6.52,
+      "deltaCtr": -0.0037,
+      "deltaPos": 1.4800000000000004,
+      "opportunityScore": 40.799401840490795,
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant.html",
+      "title": "APL pour un couple sans enfant : estimation 2026",
+      "h1": "APL pour un couple sans enfant : estimation 2026",
+      "metaDescription": "Estimation APL pour un couple locataire sans enfant avec revenus modestes.",
+      "excerpt": "APL pour un couple sans enfant : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL pour un couple sans enfant : estimation 2026 Estimation APL pour un couple locataire sans enfant avec revenus modestes. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~132 € par mois. Cette estimation correspond à un profil type : Couple sans enfant. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situation administrative. ré",
+      "recommendations": {
+        "diagnostic": "Faible attractivité en SERP : title et H1 identiques et peu différenciants, pas d’élément émotionnel ni d’appel à l’action ; meta description trop courte et générique, n’explique pas le bénéfice immédiat ni l’estimation chiffrée visible en résultats ; URL et breadcrumb corrects mais l’extrait ne met pas en avant le chiffre clé ~132 €/mois dans les résultats (pas de mise en valeur pour capter l’attention). Position moyenne correcte (6-8) mais CTR trop bas => les pages concurrentes sont plus convaincantes ou affichent des informations attractives (montant, gain, rapidité). Autres causes possibles : absence de données structurées/FAQ pour richesse d’extrait, balises title non optimisées pour intention “estimation rapide”, meta description ne contient pas d’incitation à cliquer ni bénéfice clair (gain de temps / précision).",
+        "titleSuggestions": [
+          "Estimation APL couple sans enfant (≈132 €/mois) — Simulateur rapide",
+          "Combien d’APL pour un couple sans enfant ? Estimation 2026 en 1 min",
+          "APL couple sans enfant : simulation rapide et estimation chiffrée 2026"
+        ],
+        "metaSuggestions": [
+          "Estimez vos APL pour un couple sans enfant en 1 minute — Simulation indicative : ~132 €/mois. Résultat rapide et personnalisé. Vérifiez ensuite sur la CAF.",
+          "Simulation APL pour couple sans enfant — Obtenez une estimation indicative (≈132€/mois) en quelques clics. Gratuit, rapide et utile avant la demande CAF."
+        ],
+        "uxQuickWins": [
+          "Mettre en hero dès le premier écran le chiffre indicatif visible (« Estimation indicative : ~132 €/mois pour un couple sans enfant ») + sous-texte « Résultat en 1 min » pour capter l’attention.",
+          "CTA clair et contrasté en haut : « Obtenir mon estimation » + micro-CTA secondaire « Voir les hypothèses » ; bouton fixe lors du scroll pour faciliter le clic.",
+          "Afficher un mini-formulaire 2 champs (revenus mensuels + loyer) dans le first-screen pour produire une estimation instantanée, ou un bouton « Estimer en 2 champs » réduisant la friction."
+        ],
+        "priorityActions": [
+          "1) Remplacer title + meta par une version orientée utilisateur incluant un chiffre attractif et promesse de rapidité (impact élevé) — augmente visibilité et taux de clics immédiat.",
+          "2) Ajouter balisage FAQ/Schema et mettre en avant estimation chiffrée dans le snippet visible du contenu (hero) pour activer les extraits enrichis et capter l’œil (impact moyen-élevé).",
+          "3) Réduire la friction du parcours : mini-simulateur/CTA visible en first-screen + bouton sticky pour générer plus de clics internes et conversions (impact moyen)."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/aide/simulation-aides-caf",
+      "url": "https://www.lescalculateurs.fr/pages/aide/simulation-aides-caf",
+      "impressions7": 44,
+      "clicks7": 0,
+      "ctr7": 0,
+      "pos7": 28.66,
+      "impressions28": 329,
+      "clicks28": 1,
+      "ctr28": 0.003,
+      "pos28": 8.21,
+      "deltaCtr": -0.003,
+      "deltaPos": 20.45,
+      "opportunityScore": 39.95286236297198,
+      "filePath": "src\\pages\\aide\\simulation-aides-caf.html",
+      "title": "Simulation aides CAF (2026)",
+      "h1": "Simulation aides CAF",
+      "metaDescription": "Réponse à la question : Simulation aides CAF. Les aides CAF principales peuvent être estimées via des simulations en ligne. Estimation via le simulateur du…",
+      "excerpt": "Simulation aides CAF (2026) 🧮 Les Calculateurs Accueil Simulations aides sociales Pilier • Simulations aides sociales Simulation aides CAF Réponse à la question : Simulation aides CAF. Les aides CAF principales peuvent être estimées via des simulations en ligne. Estimation via le simulateur du… 👉 Simulez vos aides CAF gratuitement. Les informations ci-dessous sont pédagogiques et indicatives. Pour un calcul fiable, utilisez le simulateur et référez-vous aux organismes compétents. Réponse rapide Les aides CAF principales peuvent être estimées via des simulations en ligne. En pratique, on regarde surtout : APL, RSA, AAH, ASF, situation exacte, ressources déclarées, logement. Ce qu’il faut vérifier APL RSA AAH ASF situation exacte ressources déclarées logement Les aides CAF principales peuvent être estimées via des simulations en ligne Aller plus loin Pour une estimation chiffrée adaptée ",
+      "recommendations": {
+        "diagnostic": "Causes probables du CTR très faible : 1) Title et meta actuels sont génériques et peu attractifs (pas d'avantage concret ni d'appel à l'action). 2) Snippet répétitif et coupé («…»), sans valeur immédiate (pas de promesse chiffrée ni bénéfice clair). 3) Position moyenne (8e sur 28 jours) : la page apparaît mais n'incite pas au clic. 4) Absence d'éléments d'accroche visibles dans le premier écran (ex : résultat rapide, simulateur accessible, preuve sociale) qui pourraient être repris dans le snippet via balisage enrichi. 5) Mobile / UX du premier écran peut ne pas montrer immédiatement le simulateur ou l'appel à l'action, décourageant le clic depuis mobile.",
+        "titleSuggestions": [
+          "Simulateur aides CAF 2026 – Estimez APL, RSA, AAH en 2 min",
+          "Calculer vos aides CAF (APL, RSA…) – Estimation gratuite 2026",
+          "Combien allez‑vous toucher de la CAF ? Simulateur rapide 2026"
+        ],
+        "metaSuggestions": [
+          "Estimez vite vos aides CAF (APL, RSA, AAH) en 2 minutes. Simulateur gratuit et indicatif — entrez situation + ressources pour une estimation immédiate. Aucun téléchargement.",
+          "Obtenez une estimation immédiate de vos aides CAF : APL, RSA, AAH, ASF. Gratuit, simple et confidentiel — simulez en 2 min et voyez le montant indicatif."
+        ],
+        "uxQuickWins": [
+          "Hero : afficher immédiatement un champ minimal (situation + revenus + logement) + bouton « Simuler en 2 min » pour montrer qu'on a un calcul rapide sans quitter la page.",
+          "CTA : remplacer les liens texte par un bouton visible et contrasté « Simuler mes aides maintenant » en haut (first screen) et rendre le simulateur accessible en 1 clic.",
+          "First‑screen value : afficher un exemple chiffré anonyme (« Exemple : foyer solo = ~250€/mois d’APL ») + label « Estimation indicative » pour donner une promesse concrète avant clic."
+        ],
+        "priorityActions": [
+          "Haute (impact immédiat) : Remplacer title + meta par une version orientée bénéfice et temps (ex. « Estimez en 2 min »). Mesure : augmentation CTR visible en 2 semaines.",
+          "Moyenne (fort impact) : Mettre le simulateur / formulaire court directement dans le premier écran et transformer le CTA en bouton unique. Mesure : baisse du taux de rebond et hausse des conversions.",
+          "Moyenne (optimisation recherche) : Ajouter le balisage FAQ et/ou HowTo pour obtenir rich snippets (questions fréquentes + bouton simuler) et inclure données structurées pour afficher des extraits enrichis. Mesure : amélioration des impressions qualifiées et du CTR."
+        ]
+      }
+    },
+    {
+      "pathname": "/pages/blog/departements/frais-notaire-30",
+      "url": "https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-30",
+      "impressions7": 20,
+      "clicks7": 1,
+      "ctr7": 0.05,
+      "pos7": 2.45,
+      "impressions28": 181,
+      "clicks28": 3,
+      "ctr28": 0.0166,
+      "pos28": 4.77,
+      "deltaCtr": 0.0334,
+      "deltaPos": -2.3199999999999994,
+      "opportunityScore": 37.315597484276736,
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-30.html",
+      "title": "Frais de notaire 2026 Gard (30) – Simulation gratuite",
+      "h1": "Frais de notaire 2026 dans le Gard (30)",
+      "metaDescription": "Calculez les frais de notaire dans le Gard en 2026. Ancien, neuf (VEFA), taux en vigueur et estimation gratuite en 10 secondes.",
+      "excerpt": "Frais de notaire 2026 Gard (30) – Simulation gratuite ⚠️ Estimation indicative. Montant définitif sur notaires.fr . ← Blog Accueil 💰 Frais de notaire 2026 dans le Gard (30) Pour un achat immobilier en 2026 : Bien ancien : généralement environ 7 % à 9 % du prix d'acquisition Bien neuf (VEFA): généralement environ 2 % à 3 %, en raison de droits de mutation réduits, le reste étant composé d'émoluments, débours et taxes réglementées Ces informations sont fournies à titre indicatif et pédagogique. Elles incluent les droits, émoluments, formalités, contribution de sécurité immobilière (CSI) et la TVA applicable. 👉 Pour un montant estimé et personnalisé, utilisez le calculateur . Immobilier • janvier 2026 • Guide départemental Frais de notaire 2026 dans le Gard (30) Selon que vous achetez à Nîmes, Alès ou ailleurs, le contexte local et la nature du bien influencent l’organisation d’un achat. ",
+      "recommendations": {
+        "diagnostic": "CTR faible (1,66% sur 28 j) probablement dû à : titre trop générique et long sans bénéfice concret, meta description peu persuasive malgré l'info '10 secondes', absence d'éléments différenciants dans l'extrait (ex. montant indicatif ou bouton d'action visible depuis le SERP), et manque de signaux de confiance/urbaine (ex. Nîmes, Alès) dans le snippet. Position moyenne (~4–5) aide, mais la copie du snippet n'incite pas au clic. Sur la page, le premier écran ne transforme pas l'intention (CTA peu saillant, pas d'exemple chiffré immédiat, pas d'élément qui promet une réponse rapide et fiable).",
+        "titleSuggestions": [
+          "Frais de notaire Gard (30) 2026 – Estimez le montant en 10s (gratuit)",
+          "Combien de frais de notaire à Nîmes (Gard) en 2026 ? Simulation 10s",
+          "Estimation frais de notaire 2026 – Gard (30) : ancien / neuf, gratuite"
+        ],
+        "metaSuggestions": [
+          "Calculez en 10s vos frais de notaire pour le Gard (30). Montant indicatif pour ancien ou VEFA, résultats immédiats et gratuits. Testez la simulation maintenant.",
+          "Frais de notaire 2026 pour le Gard (Nîmes, Alès) : estimation gratuite en 10 secondes. Ancien ≈7–9%, Neuf ≈2–3%. Obtenez votre montant personnalisé."
+        ],
+        "uxQuickWins": [
+          "Hero : remplacer le titre visuel par une promesse claire + CTA principal 'Estimer en 10s' (bouton contrasté), sous-titre montrant 2 exemples chiffrés (ex. 'Sur €200k : ≈€14k ancien / ≈€4k neuf').",
+          "First-screen value : intégrer le formulaire de simulation minimal (prix du bien, ancien/neuf) directement au-dessus de la ligne de flottaison pour obtenir un résultat instantané sans quitter la page.",
+          "Confiance et contexte : ajouter badge 'Estimation indicative – voir notaires.fr' + micro-mentions locales (ex. 'Estimation pour Nîmes, Alès, Uzès') et un court témoignage ou nombre d'estimations réalisées."
+        ],
+        "priorityActions": [
+          "1) Optimiser le snippet SERP immédiatement : remplacer le title et la meta par les suggestions ci-dessus et lancer un A/B (ou surveiller) pour mesurer CTR. Impact : très élevé, effort faible.",
+          "2) Mettre la simulation en first-screen et CTA très visible : champ prix + bouton 'Estimer en 10s' + affichage instantané d'un exemple chiffré. Impact : élevé sur conversion depuis la page et sur signaux utilisateur (dwell), effort moyen.",
+          "3) Ajouter balisage structuré (FAQ + HowTo/estimations) et contenus courts locaux (Nîmes, Alès) pour obtenir rich snippets (ex. Q&A dans le SERP) et capter plus de clics. Impact : moyen-élevé, effort technique moyen."
+        ]
+      }
+    }
+  ]
+}

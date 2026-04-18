@@ -178,30 +178,28 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
+    <header class="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 text-white py-12 md:py-20">
       <div class="max-w-4xl mx-auto px-4">
-        <div class="inline-block bg-white/20 rounded-full px-4 py-1 text-sm mb-4">
-          Calculateur 2026
+        <div class="inline-block bg-yellow-400 text-blue-900 rounded-full px-4 py-1.5 text-xs md:text-sm font-bold mb-4 md:mb-6">
+          ⚡ Calculateur 2026 - GRATUIT
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Salaire brut en net 2026</h1>
-        <p class="text-xl text-green-100 mb-4 max-w-3xl">
-          Calculez votre vrai salaire : convertissez brut en net instantanément. Simulateur gratuit
-          avec tous les statuts (cadre, non-cadre, fonctionnaire).
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 tracking-tight leading-tight">Brut → Net instantanément</h1>
+        <p class="text-lg md:text-xl lg:text-2xl font-semibold text-blue-100 mb-3 md:mb-4 max-w-3xl">
+          Découvrez votre VRAI salaire net en 10 secondes. Simple, gratuit, 100% fiable.
         </p>
-        <p class="text-sm text-green-200 mb-8 max-w-3xl">
-          Calcul basé sur les taux de cotisations salariales en vigueur en 2026 (URSSAF /
-          AGIRC-ARRCO).
+        <p class="text-sm md:text-base text-blue-200 mb-6 md:mb-10 max-w-3xl font-medium">
+          Calculs 2026 URSSAF, cadre, non-cadre, fonctionnaire — Tous les statuts inclus.
         </p>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
           <a
             href="/pages/salaire"
-            class="bg-white text-green-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-colors shadow-lg"
-            >🧮 Calculer mon salaire net</a
+            class="bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-black py-3 md:py-5 px-6 md:px-10 rounded-lg md:rounded-xl transition-all shadow-2xl text-sm md:text-lg transform hover:scale-105 uppercase tracking-wide text-center"
+            >🧮 Calculer maintenant</a
           >
           <a
             href="#calcul"
-            class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-colors"
-            >📊 Voir la méthode</a
+            class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 md:py-5 px-6 md:px-10 rounded-lg md:rounded-xl transition-all shadow-xl text-sm md:text-lg border-2 border-white text-center"
+            >📊 Voir méthode de calcul</a
           >
         </div>
       </div>
@@ -209,16 +207,16 @@
 
     <main class="max-w-4xl mx-auto px-4 py-12">
       <!-- Calculateur rapide avec DaisyUI -->
-      <section class="mb-12">
+      <section class="mb-8 md:mb-12 -mt-8 md:-mt-12 relative z-10 px-3 md:px-0">
         <div
-          class="card bg-gradient-to-br from-green-50 to-emerald-50 shadow-xl border border-green-200"
+          class="card bg-gradient-to-br from-blue-50 to-blue-100 shadow-2xl border-4 border-blue-600 rounded-xl md:rounded-2xl"
         >
-          <div class="card-body p-8">
-            <h2 class="card-title text-3xl mb-2 text-gray-900">
-              🧮 Convertissez brut en net instantanément
+          <div class="card-body p-6 md:p-10">
+            <h2 class="card-title text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4 text-blue-900 leading-tight">
+              ⚡ Convertissez brut en net INSTANTANÉMENT
             </h2>
-            <p class="text-gray-600 mb-6">
-              Entrez votre salaire brut pour découvrir votre net réel en quelques secondes.
+            <p class="text-base md:text-lg text-gray-700 mb-6 md:mb-8 font-semibold">
+              Saisissez votre salaire brut et découvrez immédiatement votre net réel. Aucun email requis.
             </p>
 
             <!-- Tabs pour le statut -->
@@ -262,10 +260,10 @@
             </div>
 
             <!-- Input Salaire Brut -->
-            <div class="form-control mb-6">
-              <label class="label">
-                <span class="label-text font-bold text-gray-900">Salaire brut mensuel (€)</span>
-                <span class="label-text-alt text-xl font-bold text-green-700" id="brut-display"
+            <div class="form-control mb-6 md:mb-8">
+              <label class="label flex-col md:flex-row md:justify-between">
+                <span class="label-text font-black text-lg md:text-xl text-blue-900 mb-2 md:mb-0">Salaire brut mensuel (€)</span>
+                <span class="label-text-alt text-3xl md:text-4xl font-black text-blue-700" id="brut-display"
                   >2 500</span
                 >
               </label>
@@ -279,45 +277,46 @@
                 class="range range-lg range-success accent-green-600"
                 oninput="updateSalaire()"
               />
-              <div class="flex justify-between text-xs text-gray-500 px-2 mt-2">
+              <div class="flex justify-between text-xs text-gray-900 font-semibold px-2 mt-2">
                 <span>1 000 €</span>
                 <span>10 000 €</span>
               </div>
             </div>
 
             <!-- Résultats en temps réel -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
               <!-- Salaire Net -->
-              <div class="stat bg-white rounded-lg shadow-sm border border-green-200">
-                <div class="stat-title text-gray-600">Salaire Net Mensuel</div>
-                <div class="stat-value text-2xl font-bold text-green-700" id="net-display">
+              <div class="stat bg-gradient-to-br from-green-500 to-green-600 rounded-lg md:rounded-xl shadow-lg border-4 border-green-700 p-4 md:p-6">
+                <div class="stat-title text-green-100 text-sm md:text-lg font-bold">Salaire Net Mensuel</div>
+                <div class="stat-value text-2xl md:text-4xl font-black text-white" id="net-display">
                   1 950 €
                 </div>
-                <div class="stat-desc text-gray-500">À payer chaque mois</div>
+                <div class="stat-desc text-green-50 font-semibold text-xs md:text-sm">Ce que vous percevez réellement</div>
               </div>
 
               <!-- Charges retenues -->
-              <div class="stat bg-white rounded-lg shadow-sm border border-orange-200">
-                <div class="stat-title text-gray-600">Charges Retenues</div>
-                <div class="stat-value text-2xl font-bold text-orange-600" id="charges-display">
+              <div class="stat bg-gradient-to-br from-red-500 to-red-600 rounded-lg md:rounded-xl shadow-lg border-4 border-red-700 p-4 md:p-6">
+                <div class="stat-title text-red-100 text-sm md:text-lg font-bold">Charges Retenues</div>
+                <div class="stat-value text-2xl md:text-4xl font-black text-white" id="charges-display">
                   550 €
                 </div>
-                <div class="stat-desc text-gray-500" id="charges-percent">-22%</div>
+                <div class="stat-desc text-red-50 font-semibold text-xs md:text-sm" id="charges-percent">-22%</div>
               </div>
 
               <!-- Net conservé -->
-              <div class="stat bg-white rounded-lg shadow-sm border border-blue-200">
-                <div class="stat-title text-gray-600">Part Conservée</div>
-                <div class="stat-value text-2xl font-bold text-blue-700" id="percent-display">
+              <div class="stat bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg md:rounded-xl shadow-lg border-4 border-blue-700 p-4 md:p-6">
+                <div class="stat-title text-blue-100 text-sm md:text-lg font-bold">Part Conservée</div>
+                <div class="stat-value text-2xl md:text-4xl font-black text-white" id="percent-display">
                   78%
                 </div>
-                <div class="stat-desc text-gray-500">Ratio net/brut</div>
+                <div class="stat-desc text-blue-50 font-semibold text-xs md:text-sm">Votre ratio net/brut</div>
               </div>
             </div>
 
             <!-- Bouton CTA -->
-            <a href="/pages/salaire" class="btn btn-lg btn-success w-full text-white font-bold">
-              🚀 Calculateur complet avec détails impôt & fiche de paie
+            <a href="/pages/salaire" class="btn w-full text-white font-black bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 border-0 rounded-lg md:rounded-xl py-3 md:py-6 px-4 md:px-6 text-sm md:text-lg shadow-xl transform hover:scale-105 transition-all uppercase tracking-wide">
+              <span class="md:hidden">🚀 Simulateur complet</span>
+              <span class="hidden md:inline">🚀 Simulateur complet — Détails impôt & fiche de paie</span>
             </a>
           </div>
         </div>
@@ -357,144 +356,144 @@
 
       <!-- Snippet Position 0 - Featured Snippet Optimization -->
       <section
-        class="bg-gradient-to-r from-green-100 to-emerald-100 rounded-lg border-2 border-green-300 p-6 mb-8 shadow-md"
+        class="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg md:rounded-xl border-4 border-yellow-500 p-6 md:p-8 mb-8 shadow-lg mx-3 md:mx-0"
       >
-        <h2 class="text-xl font-bold text-green-900 mb-4">💬 Conversion brut net 2026 en résumé</h2>
-        <div class="grid md:grid-cols-2 gap-4">
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-center gap-2">
-              <span class="bg-green-500 text-white font-bold px-2 py-1 rounded text-sm"
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-orange-900 mb-6 md:mb-8">💬 Conversion brut net 2026 en un coup d'œil</h2>
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+          <ul class="space-y-3 md:space-y-4 text-gray-900 text-sm md:text-base">
+            <li class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-3">
+              <span class="bg-green-600 text-white font-black px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm whitespace-nowrap"
                 >Non-cadre</span
               >
-              retirez environ <strong>22%</strong> du brut
+              <strong class="text-base md:text-lg">retirez -22%</strong> du brut
             </li>
-            <li class="flex items-center gap-2">
-              <span class="bg-blue-500 text-white font-bold px-2 py-1 rounded text-sm">Cadre</span>
-              retirez environ <strong>25%</strong> du brut
+            <li class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-3">
+              <span class="bg-blue-600 text-white font-black px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm whitespace-nowrap">Cadre</span>
+              <strong class="text-base md:text-lg">retirez -25%</strong> du brut
             </li>
-            <li class="flex items-center gap-2">
-              <span class="bg-purple-500 text-white font-bold px-2 py-1 rounded text-sm"
+            <li class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-3">
+              <span class="bg-purple-600 text-white font-black px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm whitespace-nowrap"
                 >Fonctionnaire</span
               >
-              retirez environ <strong>15-20%</strong> du brut
+              <strong class="text-base md:text-lg">retirez -15-20%</strong> du brut
             </li>
           </ul>
-          <div class="bg-white rounded-lg p-4 border border-green-200">
-            <p class="text-green-900 font-semibold mb-2">📌 Exemple rapide</p>
-            <p class="text-gray-700">
-              <strong>2 500 € brut</strong>→<strong>~1 950 € net</strong> (non-cadre)
+          <div class="bg-white rounded-lg p-4 md:p-5 border-4 border-orange-400 shadow-md">
+            <p class="text-orange-900 font-black mb-3 md:mb-4 text-sm md:text-base">📌 Exemple rapide</p>
+            <p class="text-gray-900 text-xs md:text-sm font-bold">
+              <strong class="text-sm md:text-base">2 500 € brut</strong> → <strong class="text-green-600 text-sm md:text-base">~1 950 € net</strong> (non-cadre)
             </p>
-            <p class="text-gray-700">
-              <strong>2 500 € brut</strong>→<strong>~1 875 € net</strong> (cadre)
+            <p class="text-gray-900 text-xs md:text-sm font-bold mt-2">
+              <strong class="text-sm md:text-base">2 500 € brut</strong> → <strong class="text-blue-600 text-sm md:text-base">~1 875 € net</strong> (cadre)
             </p>
           </div>
         </div>
       </section>
 
       <!-- Intro avec chiffres clés -->
-      <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-          <div class="bg-green-50 rounded-lg p-6">
-            <div class="text-4xl font-bold text-green-700 mb-2">75-78%</div>
-            <div class="text-gray-700">Du brut conservé par un salarié non-cadre</div>
+      <section class="bg-white rounded-lg md:rounded-xl shadow-xl border-4 border-blue-600 p-6 md:p-8 mb-8 mx-3 md:mx-0">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+          <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-lg md:rounded-xl p-5 md:p-6 shadow-lg border-4 border-green-700">
+            <div class="text-3xl md:text-4xl font-black text-white mb-2 md:mb-3">75-78%</div>
+            <div class="text-green-100 font-black text-xs md:text-sm">Du brut conservé par un non-cadre</div>
           </div>
-          <div class="bg-blue-50 rounded-lg p-6">
-            <div class="text-4xl font-bold text-blue-700 mb-2">72-75%</div>
-            <div class="text-gray-700">Du brut conservé par un cadre</div>
+          <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg md:rounded-xl p-5 md:p-6 shadow-lg border-4 border-blue-700">
+            <div class="text-3xl md:text-4xl font-black text-white mb-2 md:mb-3">72-75%</div>
+            <div class="text-blue-100 font-black text-xs md:text-sm">Du brut conservé par un cadre</div>
           </div>
-          <div class="bg-purple-50 rounded-lg p-6">
-            <div class="text-4xl font-bold text-purple-700 mb-2">~1 426€</div>
-            <div class="text-gray-700">Net mensuel SMIC 2026 (temps plein)</div>
+          <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg md:rounded-xl p-5 md:p-6 shadow-lg border-4 border-purple-700">
+            <div class="text-3xl md:text-4xl font-black text-white mb-2 md:mb-3">~1 426€</div>
+            <div class="text-purple-100 font-black text-xs md:text-sm">Net mensuel SMIC 2026</div>
           </div>
         </div>
       </section>
 
       <!-- Combien garderez-vous en net ? Exemples rapides -->
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+      <section class="bg-white rounded-lg md:rounded-xl shadow-lg p-6 md:p-8 mb-8 mx-3 md:mx-0">
+        <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4 md:mb-6">
           💵 Combien garderez-vous en net ? Exemples rapides
         </h2>
-        <p class="text-gray-600 mb-6">
+        <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 font-semibold">
           Découvrez votre salaire net réel selon votre profil et votre statut :
         </p>
-        <div class="mt-5 grid gap-3 sm:grid-cols-3">
-          <div class="rounded-lg bg-white p-4 border border-green-100">
-            <p class="text-xs text-gray-600 font-medium">EXEMPLE 1</p>
-            <p class="text-lg font-bold text-green-700 mt-1">2 500 € → 1 950 €</p>
-            <p class="text-xs text-gray-700 mt-2">Salarié non-cadre. Différence : -550€ (-22%)</p>
+        <div class="mt-6 grid gap-4 md:gap-5 sm:grid-cols-3">
+          <div class="rounded-lg md:rounded-xl bg-white p-4 md:p-5 border-4 border-green-200 shadow-md">
+            <p class="text-xs md:text-sm text-gray-600 font-black">EXEMPLE 1</p>
+            <p class="text-xl md:text-2xl font-black text-green-700 mt-2 md:mt-3">2 500 € → 1 950 €</p>
+            <p class="text-xs md:text-sm text-gray-700 mt-2 md:mt-3 font-semibold">Salarié non-cadre. Différence : <strong>-550€ (-22%)</strong></p>
           </div>
-          <div class="rounded-lg bg-white p-4 border border-blue-100">
-            <p class="text-xs text-gray-600 font-medium">EXEMPLE 2</p>
-            <p class="text-lg font-bold text-blue-700 mt-1">2 500 € → 1 875 €</p>
-            <p class="text-xs text-gray-700 mt-2">
-              Cadre en retraite complémentaire. Différence : -625€ (-25%)
+          <div class="rounded-lg md:rounded-xl bg-white p-4 md:p-5 border-4 border-blue-200 shadow-md">
+            <p class="text-xs md:text-sm text-gray-600 font-black">EXEMPLE 2</p>
+            <p class="text-xl md:text-2xl font-black text-blue-700 mt-2 md:mt-3">2 500 € → 1 875 €</p>
+            <p class="text-xs md:text-sm text-gray-700 mt-2 md:mt-3 font-semibold">
+              Cadre en retraite complémentaire. Différence : <strong>-625€ (-25%)</strong>
             </p>
           </div>
-          <div class="rounded-lg bg-white p-4 border border-purple-100">
-            <p class="text-xs text-gray-600 font-medium">EXEMPLE 3</p>
-            <p class="text-lg font-bold text-purple-700 mt-1">1 800 € → 1 426 €</p>
-            <p class="text-xs text-gray-700 mt-2">SMIC 2026 non-cadre. Net conservé : 79%</p>
+          <div class="rounded-lg md:rounded-xl bg-white p-4 md:p-5 border-4 border-purple-200 shadow-md">
+            <p class="text-xs md:text-sm text-gray-600 font-black">EXEMPLE 3</p>
+            <p class="text-xl md:text-2xl font-black text-purple-700 mt-2 md:mt-3">1 800 € → 1 426 €</p>
+            <p class="text-xs md:text-sm text-gray-700 mt-2 md:mt-3 font-semibold">SMIC 2026 non-cadre. Net conservé : <strong>79%</strong></p>
           </div>
         </div>
         <a
           href="/pages/salaire"
-          class="mt-5 inline-flex items-center justify-center rounded-lg bg-green-600 px-5 py-3 font-semibold text-white hover:bg-green-700 transition-colors"
+          class="mt-6 inline-flex items-center justify-center rounded-lg md:rounded-xl bg-green-600 px-6 md:px-8 py-3 md:py-4 font-black text-white hover:bg-green-700 transition-colors text-sm md:text-base"
           >✓ Calculer mon net réel — 10 sec</a
         >
       </section>
 
       <!-- Tableau comparatif -->
-      <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
-          📊 Tableau de conversion Brut → Net 2026
+      <section class="bg-white rounded-lg md:rounded-xl shadow-xl border-4 border-blue-600 p-6 md:p-10 mb-8 mx-3 md:mx-0">
+        <h2 class="text-2xl md:text-3xl font-black text-blue-900 mb-6 md:mb-8 text-center md:text-left">
+          📊 TABLEAU DE CONVERSION BRUT → NET 2026
         </h2>
 
-        <div class="overflow-x-auto">
-          <table class="w-full comparison-table">
+        <div class="overflow-x-auto rounded-lg bg-white">
+          <table class="w-full text-sm md:text-base">
             <thead>
-              <tr>
-                <th class="text-left p-3">Salaire Brut Mensuel</th>
-                <th class="text-center p-3">Net Non-Cadre</th>
-                <th class="text-center p-3">Net Cadre</th>
-                <th class="text-center p-3">Net Fonctionnaire</th>
+              <tr class="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-900 shadow-2xl">
+                <th class="text-left p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Salaire Brut</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Non-Cadre</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Cadre</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Fonctionnaire</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="font-semibold">1 800 € (SMIC)</td>
-                <td class="text-center text-green-700 font-bold">~1 426 €</td>
-                <td class="text-center text-blue-700 font-bold">~1 350 €</td>
-                <td class="text-center text-purple-700 font-bold">~1 440 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-blue-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">1 800 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~1 426 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~1 350 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~1 440 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">2 000 €</td>
-                <td class="text-center text-green-700 font-bold">~1 560 €</td>
-                <td class="text-center text-blue-700 font-bold">~1 500 €</td>
-                <td class="text-center text-purple-700 font-bold">~1 580 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">2 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~1 560 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~1 500 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~1 580 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">2 500 €</td>
-                <td class="text-center text-green-700 font-bold">~1 950 €</td>
-                <td class="text-center text-blue-700 font-bold">~1 875 €</td>
-                <td class="text-center text-purple-700 font-bold">~1 975 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-blue-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">2 500 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~1 950 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~1 875 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~1 975 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">3 000 €</td>
-                <td class="text-center text-green-700 font-bold">~2 340 €</td>
-                <td class="text-center text-blue-700 font-bold">~2 250 €</td>
-                <td class="text-center text-purple-700 font-bold">~2 370 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">3 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~2 340 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~2 250 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~2 370 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">4 000 €</td>
-                <td class="text-center text-green-700 font-bold">~3 080 €</td>
-                <td class="text-center text-blue-700 font-bold">~3 000 €</td>
-                <td class="text-center text-purple-700 font-bold">~3 160 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-blue-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">4 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~3 080 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~3 000 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~3 160 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">5 000 €</td>
-                <td class="text-center text-green-700 font-bold">~3 800 €</td>
-                <td class="text-center text-blue-700 font-bold">~3 750 €</td>
-                <td class="text-center text-purple-700 font-bold">~3 950 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">5 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~3 800 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~3 750 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~3 950 €</td>
               </tr>
             </tbody>
           </table>
@@ -505,149 +504,141 @@
         </p>
 
         <!-- Variations possibles -->
-        <div class="bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4 mt-6">
-          <p class="font-bold text-amber-800 mb-2">⚠️ Pourquoi votre net peut varier</p>
-          <p class="text-amber-900 mb-2">Les taux de cotisations peuvent différer selon :</p>
-          <ul class="text-amber-900 space-y-1 text-sm">
-            <li>
-              •<strong>Convention collective</strong>– certains secteurs ont des taux spécifiques
-            </li>
-            <li>•<strong>Mutuelle entreprise</strong>– part salariale variable</li>
-            <li>•<strong>Taux accident du travail</strong>– varie selon l'activité</li>
-            <li>
-              •<strong>Région Alsace-Moselle</strong>– +1, 3% de cotisation maladie supplémentaire
-            </li>
-            <li>•<strong>Prévoyance et retraite supplémentaire</strong> optionnelles</li>
+        <div class="bg-gradient-to-r from-red-100 to-orange-100 border-l-4 md:border-l-8 border-red-600 rounded-r-lg md:rounded-r-xl p-4 md:p-8 mt-6 md:mt-8 shadow-lg">
+          <p class="font-black text-red-900 mb-3 text-lg md:text-xl">⚠️ ATTENTION : Pourquoi votre net peut varier</p>
+          <p class="text-red-900 mb-4 font-bold text-base md:text-lg">Les taux de cotisations peuvent différer selon :</p>
+          <ul class="text-red-900 space-y-2 font-semibold text-sm md:text-lg">
+            <li>• <strong>Convention collective</strong> – certains secteurs ont des taux spécifiques</li>
+            <li>• <strong>Mutuelle entreprise</strong> – part salariale variable</li>
+            <li>• <strong>Taux accident du travail</strong> – varie selon l'activité</li>
+            <li>• <strong>Région Alsace-Moselle</strong> – +1,3% de cotisation maladie supplémentaire</li>
+            <li>• <strong>Prévoyance et retraite supplémentaire</strong> optionnelles</li>
           </ul>
         </div>
       </section>
 
       <!-- Tableau conversion annuelle -->
-      <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
-          📅 Calcul salaire annuel : Brut → Net 2026
+      <section class="bg-white rounded-lg md:rounded-xl shadow-xl border-4 border-blue-600 p-6 md:p-10 mb-8 mx-3 md:mx-0">
+        <h2 class="text-2xl md:text-3xl font-black text-blue-900 mb-6 md:mb-8 text-center md:text-left">
+          📅 TABLEAU DE CONVERSION ANNUEL : Brut → Net 2026
         </h2>
-        <p class="text-gray-700 mb-6">
-          Pour un calculateur salaire 2026 complet, voici la conversion brut net sur une base
-          annuelle :
+        <p class="text-base md:text-lg text-gray-700 mb-6 md:mb-8 font-semibold">
+          Pour un calcul complet, voici la conversion brut net sur une base annuelle :
         </p>
 
-        <div class="overflow-x-auto">
-          <table class="w-full comparison-table">
+        <div class="overflow-x-auto rounded-lg bg-white">
+          <table class="w-full text-sm md:text-base">
             <thead>
-              <tr>
-                <th class="text-left p-3">Salaire Brut Annuel</th>
-                <th class="text-center p-3">Net Non-Cadre</th>
-                <th class="text-center p-3">Net Cadre</th>
-                <th class="text-center p-3">Net Fonctionnaire</th>
+              <tr class="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-900 shadow-2xl">
+                <th class="text-left p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap border-r-4 border-blue-400">Salaire Brut Annuel</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap border-r-4 border-blue-400">Net Non-Cadre</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap border-r-4 border-blue-400">Net Cadre</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Net Fonctionnaire</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="font-semibold">25 000 €</td>
-                <td class="text-center text-green-700 font-bold">~19 500 €</td>
-                <td class="text-center text-blue-700 font-bold">~18 750 €</td>
-                <td class="text-center text-purple-700 font-bold">~20 000 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-blue-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">25 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~19 500 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~18 750 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~20 000 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">30 000 €</td>
-                <td class="text-center text-green-700 font-bold">~23 400 €</td>
-                <td class="text-center text-blue-700 font-bold">~22 500 €</td>
-                <td class="text-center text-purple-700 font-bold">~24 000 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">30 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~23 400 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~22 500 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~24 000 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">35 000 €</td>
-                <td class="text-center text-green-700 font-bold">~27 300 €</td>
-                <td class="text-center text-blue-700 font-bold">~26 250 €</td>
-                <td class="text-center text-purple-700 font-bold">~28 000 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-blue-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">35 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~27 300 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~26 250 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~28 000 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">40 000 €</td>
-                <td class="text-center text-green-700 font-bold">~31 200 €</td>
-                <td class="text-center text-blue-700 font-bold">~30 000 €</td>
-                <td class="text-center text-purple-700 font-bold">~32 000 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">40 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~31 200 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~30 000 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~32 000 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">50 000 €</td>
-                <td class="text-center text-green-700 font-bold">~39 000 €</td>
-                <td class="text-center text-blue-700 font-bold">~37 500 €</td>
-                <td class="text-center text-purple-700 font-bold">~40 000 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-blue-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">50 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~39 000 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~37 500 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~40 000 €</td>
               </tr>
-              <tr>
-                <td class="font-semibold">60 000 €</td>
-                <td class="text-center text-green-700 font-bold">~46 800 €</td>
-                <td class="text-center text-blue-700 font-bold">~45 000 €</td>
-                <td class="text-center text-purple-700 font-bold">~48 000 €</td>
+              <tr class="border-b-4 border-blue-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-blue-300">60 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~46 800 €</td>
+                <td class="bg-blue-100 text-center text-blue-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-blue-300">~45 000 €</td>
+                <td class="bg-purple-100 text-center text-purple-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">~48 000 €</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="text-sm text-gray-500 mt-4">
+        <p class="text-base text-gray-700 mt-6 font-semibold">
           * Calcul salaire net annuel indicatif, avant impôt à la source.
         </p>
       </section>
 
       <!-- Méthode de calcul -->
-      <section id="calcul" class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
-          🧮 Comment calculer son salaire brut en net ?
+      <section id="calcul" class="bg-white rounded-xl shadow-xl border-4 border-blue-600 p-10 mb-8">
+        <h2 class="text-3xl font-black text-blue-900 mb-8">
+          🧮 COMMENT CALCULER SON SALAIRE BRUT EN NET ?
         </h2>
 
-        <p class="text-gray-700 mb-6">
-          La <strong>conversion brut net</strong> est essentielle pour connaître votre vrai salaire.
-          Voici la méthode de <strong>calcul salaire net</strong> utilisée par notre simulateur :
+        <p class="text-lg text-gray-700 mb-8 font-semibold">
+          La <strong>conversion brut net</strong> est essentielle pour connaître votre vrai salaire. Voici la méthode de <strong>calcul salaire net</strong> utilisée par notre simulateur :
         </p>
 
-        <div class="bg-green-50 rounded-lg p-6 mb-6">
-          <h3 class="text-xl font-bold text-green-900 mb-3">La formule de calcul</h3>
-          <div class="bg-white rounded-lg p-4 font-mono text-lg text-center">
+        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-8 mb-8 shadow-lg border-4 border-green-700">
+          <h3 class="text-2xl font-black text-white mb-4">📁 La formule de calcul</h3>
+          <div class="bg-white rounded-lg p-6 font-mono text-2xl text-center font-black text-blue-900 shadow-md">
             Salaire Net = Brut - Cotisations salariales
           </div>
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Les étapes du calcul</h3>
-        <div class="space-y-4">
-          <div class="flex gap-4 items-start">
+        <h3 class="text-2xl font-black text-blue-900 mb-6">Les étapes du calcul</h3>
+        <div class="space-y-5">
+          <div class="flex gap-6 items-start bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl border-l-8 border-green-600">
             <div
-              class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold"
+              class="flex-shrink-0 w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center font-black text-2xl shadow-lg"
             >
               1
             </div>
             <div>
-              <h4 class="font-bold text-gray-900">Partez du salaire brut</h4>
-              <p class="text-gray-700">
+              <h4 class="font-black text-gray-900 text-xl">Partez du salaire brut</h4>
+              <p class="text-gray-700 text-base font-semibold">
                 C'est le montant figurant sur votre contrat de travail, avant toute déduction.
               </p>
             </div>
           </div>
 
-          <div class="flex gap-4 items-start">
+          <div class="flex gap-6 items-start bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-xl border-l-8 border-orange-600">
             <div
-              class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold"
+              class="flex-shrink-0 w-14 h-14 bg-orange-600 text-white rounded-full flex items-center justify-center font-black text-2xl shadow-lg"
             >
               2
             </div>
             <div>
-              <h4 class="font-bold text-gray-900">Déduisez les cotisations salariales</h4>
-              <p class="text-gray-700">
-                Retraite de base (6, 9%), retraite complémentaire (3-8%), CSG/CRDS (9, 2%), etc.
+              <h4 class="font-black text-gray-900 text-xl">Déduisez les cotisations salariales</h4>
+              <p class="text-gray-700 text-base font-semibold">
+                Retraite de base (6,9%), retraite complémentaire (3-8%), CSG/CRDS (9,2%), etc.
               </p>
             </div>
           </div>
 
-          <div class="flex gap-4 items-start">
+          <div class="flex gap-6 items-start bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border-l-8 border-blue-600">
             <div
-              class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold"
+              class="flex-shrink-0 w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-2xl shadow-lg"
             >
               3
             </div>
             <div>
-              <h4 class="font-bold text-gray-900">Obtenez le net imposable</h4>
-              <p class="text-gray-700">C'est la base de calcul de votre impôt sur le revenu.</p>
+              <h4 class="font-black text-gray-900 text-xl">Obtenez le net imposable</h4>
+              <p class="text-gray-700 text-base font-semibold">C'est la base de calcul de votre impôt sur le revenu.</p>
             </div>
           </div>
-
-          <div class="flex gap-4 items-start">
             <div
               class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold"
             >
@@ -811,118 +802,109 @@
       </section>
 
       <!-- Coût employeur -->
-      <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">💼 Coût total employeur 2026</h2>
-        <p class="text-gray-700 mb-6">
-          Le <strong>coût employeur</strong> représente ce que l'entreprise paie réellement, charges
-          patronales incluses. C'est un élément clé pour négocier son salaire.
+      <section class="bg-white rounded-lg md:rounded-xl shadow-xl border-4 border-orange-600 p-6 md:p-10 mb-8 mx-3 md:mx-0">
+        <h2 class="text-2xl md:text-3xl font-black text-orange-900 mb-6 md:mb-8">💼 COÛT TOTAL EMPLOYEUR 2026</h2>
+        <p class="text-base md:text-lg text-gray-700 mb-6 md:mb-8 font-semibold">
+          Le <strong>coût employeur</strong> est ce que votre entreprise paie VRAIMENT pour vous. Incluant toutes les charges patronales (~40-45%). C'est crucial pour négocier.
         </p>
 
-        <div class="bg-orange-50 rounded-lg p-6 mb-6">
-          <h3 class="text-xl font-bold text-orange-900 mb-3">Formule du coût employeur</h3>
-          <div class="bg-white rounded-lg p-4 font-mono text-lg text-center">
+        <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg md:rounded-xl p-6 md:p-8 mb-6 md:mb-8 shadow-lg border-4 border-orange-700">
+          <h3 class="text-xl md:text-2xl font-black text-white mb-3 md:mb-4">📊 Formule du coût employeur</h3>
+          <div class="bg-white rounded-lg p-4 md:p-6 font-mono text-lg md:text-xl text-center font-black text-orange-900 shadow-md">
             Coût employeur = Brut + Charges patronales (~40-45%)
           </div>
         </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full comparison-table">
+        <div class="overflow-x-auto rounded-lg bg-white">
+          <table class="w-full text-sm md:text-base">
             <thead>
-              <tr>
-                <th class="text-left p-3">Salaire Brut</th>
-                <th class="text-center p-3">Net Salarié</th>
-                <th class="text-center p-3">Coût Employeur</th>
-                <th class="text-center p-3">Écart</th>
+              <tr class="bg-gradient-to-r from-orange-800 via-orange-700 to-orange-900 shadow-2xl">
+                <th class="text-left p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Salaire Brut</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Net Salarié</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Coût Employeur</th>
+                <th class="text-center p-3 md:p-4 lg:p-5 font-black text-white text-sm md:text-base lg:text-lg whitespace-nowrap">Ratio</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="font-semibold">2 000 €</td>
-                <td class="text-center text-green-700 font-bold">~1 560 €</td>
-                <td class="text-center text-orange-700 font-bold">~2 800 €</td>
-                <td class="text-center text-gray-600">1, 8x le net</td>
+              <tr class="border-b-4 border-orange-600 shadow-md">
+                <td class="bg-orange-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-orange-300">2 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~1 560 €</td>
+                <td class="bg-orange-100 text-center text-orange-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~2 800 €</td>
+                <td class="bg-gray-100 text-center text-gray-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">1,8x</td>
               </tr>
-              <tr>
-                <td class="font-semibold">3 000 €</td>
-                <td class="text-center text-green-700 font-bold">~2 340 €</td>
-                <td class="text-center text-orange-700 font-bold">~4 200 €</td>
-                <td class="text-center text-gray-600">1, 8x le net</td>
+              <tr class="border-b-4 border-orange-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-orange-300">3 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~2 340 €</td>
+                <td class="bg-orange-100 text-center text-orange-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~4 200 €</td>
+                <td class="bg-gray-100 text-center text-gray-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">1,8x</td>
               </tr>
-              <tr>
-                <td class="font-semibold">4 000 €</td>
-                <td class="text-center text-green-700 font-bold">~3 080 €</td>
-                <td class="text-center text-orange-700 font-bold">~5 600 €</td>
-                <td class="text-center text-gray-600">1, 8x le net</td>
+              <tr class="border-b-4 border-orange-600 shadow-md">
+                <td class="bg-orange-50 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-orange-300">4 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~3 080 €</td>
+                <td class="bg-orange-100 text-center text-orange-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~5 600 €</td>
+                <td class="bg-gray-100 text-center text-gray-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">1,8x</td>
               </tr>
-              <tr>
-                <td class="font-semibold">5 000 €</td>
-                <td class="text-center text-green-700 font-bold">~3 800 €</td>
-                <td class="text-center text-orange-700 font-bold">~7 000 €</td>
-                <td class="text-center text-gray-600">1, 8x le net</td>
+              <tr class="border-b-4 border-orange-600 shadow-md">
+                <td class="bg-white font-black text-sm md:text-base lg:text-lg py-3 md:py-4 px-3 md:px-4 text-gray-900 border-r-2 border-orange-300">5 000 €</td>
+                <td class="bg-green-100 text-center text-green-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~3 800 €</td>
+                <td class="bg-orange-100 text-center text-orange-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4 border-r-2 border-orange-300">~7 000 €</td>
+                <td class="bg-gray-100 text-center text-gray-900 font-black text-sm md:text-base lg:text-lg py-3 md:py-4">1,8x</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <!-- À retenir -->
-        <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg p-4 mt-6">
-          <p class="font-bold text-emerald-800 mb-2">✅ À retenir</p>
-          <ul class="text-emerald-900 space-y-1">
-            <li>• Le coût employeur est environ <strong>1, 8x</strong> votre salaire net</li>
-            <li>
-              • Les charges patronales (~40-45%) financent la Sécurité sociale, chômage, retraite
-            </li>
-            <li>
-              • Utile pour négocier : proposez une augmentation du brut en montrant l'impact limité
-              sur le coût employeur
-            </li>
+        <div class="bg-gradient-to-r from-emerald-500 to-green-600 rounded-lg md:rounded-xl border-4 border-green-700 p-4 md:p-8 mt-6 md:mt-8 shadow-lg">
+          <p class="font-black text-white mb-3 md:mb-4 text-lg md:text-xl">✅ À RETENIR : Coût employeur vs salaire</p>
+          <ul class="text-white space-y-2 md:space-y-3 font-semibold text-sm md:text-lg">
+            <li>• Le coût employeur est environ <strong class="text-2xl">1,8x</strong> votre salaire net</li>
+            <li>• Les charges patronales (~40-45%) financent la Sécurité sociale, chômage, retraite</li>
+            <li>• Utile pour négocier : proposez une augmentation du brut en montrant l'impact limité</li>
+            <li>• Plus le brut augmente, plus les charges patronales réelles s'accroissent aussi</li>
           </ul>
         </div>
       </section>
 
       <!-- SMIC 2026 -->
       <section
-        class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-8 mb-8 border border-yellow-200"
+        class="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-lg md:rounded-xl p-6 md:p-10 mb-8 border-4 border-yellow-500 shadow-xl mx-3 md:mx-0"
       >
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">
-          📈 SMIC 2026 : combien gagne-t-on net ?
+        <h2 class="text-2xl md:text-3xl font-black text-yellow-900 mb-6 md:mb-8">
+          📈 SMIC 2026 : COMBIEN GAGNE-T-ON NET ?
         </h2>
 
-        <div class="grid md:grid-cols-3 gap-4 mb-6">
-          <div class="bg-white rounded-lg p-4 text-center shadow-sm">
-            <div class="text-sm text-gray-600 mb-1">Brut mensuel</div>
-            <div class="text-2xl font-bold text-gray-900">~1 823 €</div>
-            <div class="text-xs text-gray-500">Base 35h/semaine</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+          <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-lg md:rounded-xl p-5 md:p-6 text-center shadow-lg border-4 border-green-700">
+            <div class="text-sm md:text-base text-green-100 font-bold mb-2 uppercase tracking-widest">Brut mensuel</div>
+            <div class="text-3xl md:text-4xl font-black text-white">~1 823 €</div>
+            <div class="text-xs md:text-sm text-green-50 font-semibold mt-2">Base 35h/semaine (12,02€/h)</div>
           </div>
-          <div class="bg-white rounded-lg p-4 text-center shadow-sm">
-            <div class="text-sm text-gray-600 mb-1">Net à payer</div>
-            <div class="text-2xl font-bold text-green-700">~1 443 €</div>
-            <div class="text-xs text-gray-500">Après charges</div>
+          <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg md:rounded-xl p-5 md:p-6 text-center shadow-lg border-4 border-blue-700">
+            <div class="text-sm md:text-base text-blue-100 font-bold mb-2 uppercase tracking-widest">Net à payer</div>
+            <div class="text-3xl md:text-4xl font-black text-white">~1 443 €</div>
+            <div class="text-xs md:text-sm text-blue-50 font-semibold mt-2">Ce que vous percevez réellement</div>
           </div>
-          <div class="bg-white rounded-lg p-4 text-center shadow-sm">
-            <div class="text-sm text-gray-600 mb-1">Net imposable</div>
-            <div class="text-2xl font-bold text-blue-700">~1 590 €</div>
-            <div class="text-xs text-gray-500">Avant impôt</div>
+          <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg md:rounded-xl p-5 md:p-6 text-center shadow-lg border-4 border-purple-700">
+            <div class="text-sm md:text-base text-purple-100 font-bold mb-2 uppercase tracking-widest">Net imposable</div>
+            <div class="text-3xl md:text-4xl font-black text-white">~1 590 €</div>
+            <div class="text-xs md:text-sm text-purple-50 font-semibold mt-2">Base de calcul impôt</div>
           </div>
         </div>
 
-        <p class="text-gray-700">
-          Le SMIC horaire brut 2026 est de <strong>12, 02 €</strong>
-          <em>(revalorisation officielle au 1er janvier 2026 – voir service-public.fr)</em>. Pour un
-          temps plein de 35 heures par semaine, cela représente environ 1 823, 03 € brut mensuel.
+        <p class="text-base md:text-lg text-gray-800 font-semibold mb-4 md:mb-6">
+          Le SMIC horaire brut 2026 est de <strong class="text-2xl">12,02 €</strong> (revalorisation officielle au 1er janvier 2026). Pour un temps plein de 35 heures par semaine, cela représente environ <strong>1 823,03 € brut mensuel</strong>.
         </p>
 
-        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-4">
-          <p class="text-amber-800 text-sm">
-            ⚠️ Le montant définitif du SMIC 2026 sera confirmé par décret. Consultez
+        <div class="bg-red-100 border-l-4 md:border-l-8 border-red-600 rounded-r-lg md:rounded-r-xl p-4 md:p-6 shadow-md">
+          <p class="text-red-900 text-sm md:text-base font-bold">
+            ⚠️ IMPORTANT : Le montant définitif du SMIC 2026 sera confirmé par décret. Consultez
             <a
               href="https://www.service-public.fr"
               target="_blank"
               rel="noopener"
-              class="underline font-semibold"
-              >service-public.fr</a
-            >
-            pour les chiffres officiels.
+              class="underline font-black text-red-700 hover:text-red-900">service-public.fr</a>
+            pour les chiffres officiels et à jour.
           </p>
         </div>
       </section>

@@ -183,4 +183,21 @@
   .eeat-block {
     @apply mb-8 p-6 bg-white border rounded-lg;
   }
+
+  /* Table styles - NO GRAY BACKGROUND */
+  table {
+    @apply w-full bg-white;
+  }
+
+  table thead tr {
+    @apply !bg-gradient-to-r !from-blue-800 !via-blue-700 !to-blue-900 !shadow-2xl;
+  }
+
+  table thead th {
+    @apply !text-white !font-black;
+  }
+
+  .overflow-x-auto {
+    @apply !bg-white;
+  }
 }
