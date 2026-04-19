@@ -32,6 +32,183 @@ const LOGEMENT_LABELS = {
 };
 
 const APL_SITUATION_HUB_PATH = "/pages/apl/apl-selon-situation-2026";
+const APL_BRIEF_OVERRIDES = {
+  "apl-smic-seul": {
+    metaTitle: "APL au SMIC seul : estimation indicative 2026 (~144 EUR)",
+    metaDescription:
+      "Estimation indicative APL 2026 pour une personne seule au SMIC : ~144 EUR par mois dans ce scénario type. Ouvrez le simulateur complet et consultez caf.fr.",
+    heroTitle:
+      "APL au SMIC pour une personne seule : estimation indicative 2026",
+    introText:
+      "Estimation indicative APL 2026 pour une personne seule au SMIC avec loyer moyen. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
+    directAnswer:
+      "Estimation indicative : ~144 EUR par mois pour une personne seule au SMIC avec loyer moyen en 2026.",
+    directAnswerDetails:
+      "Le montant final dépend du loyer retenu, de la zone, des ressources réellement prises en compte et de votre situation administrative. Consultez toujours caf.fr.",
+    secondaryCtaLabel: "Consulter caf.fr",
+    methodSteps: [
+      {
+        title: "Sources utilisées",
+        description:
+          "Cette estimation est calculée avec le moteur APL du site et doit être recoupée avec les informations officielles de la CAF.",
+      },
+      {
+        title: "Hypothèse standard du scénario",
+        description:
+          "Le cas type retient ici une personne seule, 1 460 EUR de revenus mensuels, 640 EUR de loyer et une zone province.",
+      },
+      {
+        title: "Marge de variation",
+        description:
+          "Le résultat réel peut varier selon le loyer plafonné, la zone exacte, les autres revenus du foyer et la période retenue par la CAF.",
+      },
+    ],
+    faq: [
+      {
+        question: "Peut-on encore toucher l'APL avec un salaire au SMIC ?",
+        answer:
+          "Oui, dans certains cas. Une personne seule au SMIC peut encore garder un droit si le loyer reste significatif au regard des ressources retenues par la CAF.",
+      },
+      {
+        question: "Quel montant d'APL pour une personne seule au SMIC en 2026 ?",
+        answer:
+          "Dans ce scénario type, l'estimation indicative tourne autour de 144 EUR par mois. Le montant final dépend du loyer retenu, de la zone et des ressources réellement prises en compte.",
+      },
+      {
+        question: "Le SMIC suffit-il à faire tomber l'APL à zéro ?",
+        answer:
+          "Pas automatiquement. Tout dépend du loyer, de la zone et des ressources retenues par la CAF. Un loyer plus bas ou plus haut peut faire varier le résultat.",
+      },
+      {
+        question:
+          "Pourquoi deux personnes seules au SMIC peuvent-elles avoir une APL différente ?",
+        answer:
+          "Parce que le niveau exact du loyer retenu, la zone géographique, les autres revenus et la période de référence peuvent modifier le calcul final.",
+      },
+      {
+        question: "Comment vérifier cette estimation APL au SMIC ?",
+        answer:
+          "Le plus utile est d'ouvrir le simulateur APL complet avec votre loyer réel, puis de vérifier votre résultat final sur caf.fr avant toute démarche.",
+      },
+    ],
+  },
+  "apl-chomage-loyer-moyen": {
+    metaTitle: "Estimation APL 2026 : chômage et loyer moyen (~312 EUR)",
+    metaDescription:
+      "Estimation indicative APL 2026 pour une personne au chômage avec loyer moyen : ~312 EUR par mois. Utilisez notre simulateur complet et consultez caf.fr.",
+    heroTitle: "APL au chômage : estimation indicative avec loyer moyen en 2026",
+    introText:
+      "Estimation indicative APL 2026 pour une personne seule au chômage avec loyer moyen. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
+    directAnswer:
+      "Estimation indicative : ~312 EUR par mois pour une personne seule au chômage avec loyer moyen en 2026.",
+    directAnswerDetails:
+      "Le montant final dépend du loyer retenu, de la zone, des indemnités chômage réellement prises en compte et de votre situation administrative. Consultez toujours le résultat sur caf.fr.",
+    secondaryCtaLabel: "Consulter caf.fr",
+    methodSteps: [
+      {
+        title: "Sources utilisées",
+        description:
+          "Cette estimation repose sur le moteur APL du site et doit être rapprochée des informations publiées par la CAF et Service-Public.",
+      },
+      {
+        title: "Hypothèse standard du scénario",
+        description:
+          "Le cas type retient ici une personne seule, 900 EUR de revenus mensuels, 570 EUR de loyer et une zone province.",
+      },
+      {
+        title: "Marge de variation",
+        description:
+          "Le montant réel peut évoluer selon les indemnités chômage retenues, le loyer plafonné, la zone exacte et les autres ressources déclarées.",
+      },
+    ],
+    faq: [
+      {
+        question: "Qui peut toucher l'APL au chômage ?",
+        answer:
+          "Une personne seule ou un foyer au chômage peut parfois conserver ou ouvrir un droit si le logement est éligible et si les ressources retenues par la CAF restent modestes. Estimation indicative à vérifier sur caf.fr.",
+      },
+      {
+        question:
+          "Quel montant d'APL pour une personne au chômage avec loyer moyen en 2026 ?",
+        answer:
+          "Dans ce scénario type, l'estimation indicative tourne autour de 312 EUR par mois. Le montant final dépend du loyer retenu, de la zone, des indemnités chômage et des autres ressources du foyer.",
+      },
+      {
+        question: "Les indemnités chômage sont-elles prises en compte pour l'APL ?",
+        answer:
+          "Oui, les indemnités chômage peuvent être retenues dans le calcul. C'est pourquoi deux situations de chômage proches peuvent donner des résultats différents selon les montants réellement pris en compte.",
+      },
+      {
+        question: "L'APL au chômage suffit-elle pour payer le loyer ?",
+        answer:
+          "Rarement à elle seule. L'APL peut réduire le reste à charge, mais elle ne remplace pas un budget logement complet. Il faut vérifier le montant final sur caf.fr.",
+      },
+      {
+        question: "Où vérifier son APL au chômage après cette estimation ?",
+        answer:
+          "Le bon réflexe est d'ouvrir le simulateur APL complet avec vos paramètres réels, puis de vérifier le résultat final sur caf.fr avec votre dossier exact.",
+      },
+    ],
+  },
+  "apl-famille-trois-enfants": {
+    metaTitle: "APL famille 3 enfants : estimation indicative 2026 (~87 EUR)",
+    metaDescription:
+      "Estimation indicative APL 2026 pour une famille avec 3 enfants : ~87 EUR par mois. Ouvrez le simulateur complet et consultez le montant final sur caf.fr.",
+    heroTitle:
+      "APL famille avec 3 enfants : estimation indicative 2026",
+    introText:
+      "Estimation indicative APL 2026 pour une famille avec 3 enfants. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
+    directAnswer:
+      "Estimation indicative : ~87 EUR par mois pour une famille avec 3 enfants en 2026, dans ce scénario type.",
+    directAnswerDetails:
+      "Le montant final dépend du loyer retenu, de la zone, des ressources du foyer et de la composition familiale exacte. Consultez toujours caf.fr.",
+    secondaryCtaLabel: "Consulter caf.fr",
+    methodSteps: [
+      {
+        title: "Sources utilisées",
+        description:
+          "Cette estimation repose sur le moteur APL du site et doit être comparée aux informations officielles de la CAF et de Service-Public.",
+      },
+      {
+        title: "Hypothèse standard du scénario",
+        description:
+          "Le cas type retient ici un couple avec 3 enfants, 2 550 EUR de revenus mensuels, 980 EUR de loyer et une zone province.",
+      },
+      {
+        title: "Marge de variation",
+        description:
+          "Le montant réel peut varier selon le loyer plafonné, la zone exacte, la composition du foyer retenue et les autres ressources prises en compte.",
+      },
+    ],
+    faq: [
+      {
+        question: "Quel montant d'APL pour une famille avec 3 enfants en 2026 ?",
+        answer:
+          "Dans ce scénario type, l'estimation indicative tourne autour de 87 EUR par mois. Le montant final dépend du loyer retenu, de la zone, des ressources du foyer et de la composition familiale exacte.",
+      },
+      {
+        question: "Avec trois enfants, l'APL monte-t-elle toujours fortement ?",
+        answer:
+          "Pas toujours. La présence de trois enfants peut rendre le calcul plus favorable, mais le niveau global de revenus du foyer et le loyer plafonné restent décisifs.",
+      },
+      {
+        question: "Un logement plus grand augmente-t-il automatiquement l'APL ?",
+        answer:
+          "Pas automatiquement, car le plafond de loyer limite la part réellement retenue. Un logement plus cher peut donc augmenter le reste à charge sans faire monter l'aide au même rythme.",
+      },
+      {
+        question: "Pourquoi vérifier le résultat d'APL famille sur caf.fr ?",
+        answer:
+          "Parce que la CAF tient compte de la situation réelle du foyer, du logement, des ressources retenues et des éventuelles aides déjà perçues. L'estimation affichée ici reste indicative.",
+      },
+      {
+        question: "Comment affiner cette estimation pour une famille avec 3 enfants ?",
+        answer:
+          "Le plus simple est d'ouvrir le simulateur APL complet avec votre loyer réel, votre zone et vos revenus actuels, puis de vérifier le résultat final sur caf.fr.",
+      },
+    ],
+  },
+};
 const LOT_ONE_APL_SLUGS = new Set([
   "apl-fin-de-droits-chomage",
   "apl-chomage-avec-enfant",
@@ -517,12 +694,12 @@ function toUserFacingFaqQuestion(value) {
 
 function toPublicDescription(value) {
   return toFrenchDisplayText(value)
-    .replace(/^(?:Scénario|scénario|ScÃ©nario|scÃ©nario) APL pour\b/i, "Estimation APL pour")
+    .replace(/^(?:Scénario|scénario|ScÃ©nario|scénario) APL pour\b/i, "Estimation APL pour")
     .replace(/^(?:Exemple d'APL|Exemple APL) pour\b/i, "Estimation APL pour")
     .replace(/^(?:Cas APL|Cas pratique d'APL) pour\b/i, "Estimation APL pour")
     .replace(/^(?:Simulation type APL) pour\b/i, "Estimation APL pour")
-    .replace(/^(?:scénario|scÃ©nario) budgétaire pour\b/i, "Estimation APL pour")
-    .replace(/^(?:scénario|scÃ©nario) de tension budgétaire avec\b/i, "Estimation APL avec");
+    .replace(/^(?:scénario|scénario) budgétaire pour\b/i, "Estimation APL pour")
+    .replace(/^(?:scénario|scénario) de tension budgétaire avec\b/i, "Estimation APL avec");
 }
 
 function toPublicFaqQuestion(value) {
@@ -549,6 +726,42 @@ function renderJsonLd(data) {
   return `<script type="application/ld+json">${escapeJsonUnicode(
     JSON.stringify(data),
   )}</script>`;
+}
+
+function buildAplBriefConfig(scenario, estimate, simulatorUrl) {
+  const slugOverrides = APL_BRIEF_OVERRIDES[scenario?.slug] || {};
+  const customConfig = {
+    ...(scenario?.briefEnhancements || {}),
+    ...slugOverrides,
+  };
+  const amount = estimate?.formattedApl?.startsWith("~")
+    ? estimate.formattedApl
+    : `~${estimate?.formattedApl || ""}`.trim();
+
+  return {
+    metaTitle: customConfig.metaTitle || scenario.title,
+    metaDescription: customConfig.metaDescription || scenario.description,
+    heroTitle: customConfig.heroTitle || scenario.title,
+    introText: customConfig.introText || null,
+    directAnswerLabel: customConfig.directAnswerLabel || "Réponse rapide",
+    directAnswer:
+      customConfig.directAnswer ||
+      `Estimation indicative : ${amount} par mois dans ce scénario type. Vérification finale à faire sur caf.fr.`,
+    directAnswerDetails:
+      customConfig.directAnswerDetails ||
+      "Le montant final dépend du loyer retenu, de la zone, des ressources réellement prises en compte par la CAF et de votre situation administrative.",
+    primaryCtaLabel:
+      customConfig.primaryCtaLabel || "Ouvrir le simulateur APL complet",
+    primaryCtaHref: customConfig.primaryCtaHref || simulatorUrl,
+    secondaryCtaLabel: customConfig.secondaryCtaLabel || "Vérifier sur caf.fr",
+    secondaryCtaHref:
+      customConfig.secondaryCtaHref ||
+      "https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/aides-au-logement",
+    methodSteps: Array.isArray(customConfig.methodSteps)
+      ? customConfig.methodSteps.slice(0, 3)
+      : [],
+    faq: Array.isArray(customConfig.faq) ? customConfig.faq : scenario?.faq || [],
+  };
 }
 
 function renderRelatedLinks(relatedPages) {
@@ -696,7 +909,30 @@ function renderPilotJourney(pilotProduct) {
       </section>`;
 }
 
-function renderMethodologySources() {
+function renderMethodologySources(briefConfig = {}) {
+  const methodStepsHtml = briefConfig.methodSteps.length
+    ? `
+        <div class="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+          <h3 class="text-lg font-semibold text-slate-900">Méthode en 3 points</h3>
+          <ol class="mt-4 space-y-3">
+            ${briefConfig.methodSteps
+              .map(
+                (step, index) => `
+            <li class="flex gap-3">
+              <span class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white">${index + 1}</span>
+              <div>
+                <p class="font-semibold text-slate-900">${renderText(step.title || "")}</p>
+                <p class="mt-1 text-sm leading-relaxed text-slate-700">${renderText(
+                  step.description || "",
+                )}</p>
+              </div>
+            </li>`,
+              )
+              .join("")}
+          </ol>
+        </div>`
+    : "";
+
   return `
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">M&eacute;thodologie et sources</h2>
@@ -731,6 +967,7 @@ function renderMethodologySources() {
             )}</p>
           </article>
         </div>
+        ${methodStepsHtml}
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/pages/methodologie" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
             Consulter notre m&eacute;thodologie
@@ -816,6 +1053,9 @@ export function renderAPLScenarioPage({
   generatedAt,
 }) {
   const canonicalUrl = `${DOMAIN}/pages/apl/${scenario.slug}`;
+  const simulatorUrl = buildAplSimulatorUrl(scenario.input);
+  const briefConfig = buildAplBriefConfig(scenario, estimate, simulatorUrl);
+  const faqItems = briefConfig.faq;
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -830,7 +1070,7 @@ export function renderAPLScenarioPage({
       {
         "@type": "ListItem",
         position: 3,
-        name: toFrenchDisplayText(scenario.title),
+        name: toFrenchDisplayText(briefConfig.heroTitle || scenario.title),
         item: canonicalUrl,
       },
     ],
@@ -839,7 +1079,7 @@ export function renderAPLScenarioPage({
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: scenario.faq.map((item) => ({
+    mainEntity: faqItems.map((item) => ({
       "@type": "Question",
       name: toPublicFaqQuestion(item.question),
       acceptedAnswer: {
@@ -852,8 +1092,8 @@ export function renderAPLScenarioPage({
   const pageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: toFrenchDisplayText(scenario.title),
-    description: toPublicDescription(scenario.description),
+    name: toFrenchDisplayText(briefConfig.heroTitle || scenario.title),
+    description: toPublicDescription(briefConfig.metaDescription),
     url: canonicalUrl,
     isPartOf: `${DOMAIN}${PILLAR_PATH}`,
     publisher: {
@@ -869,7 +1109,7 @@ export function renderAPLScenarioPage({
     )
     .join("");
 
-  const faqHtml = scenario.faq
+  const faqHtml = faqItems
     .map(
       (item) => `
           <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4">
@@ -887,7 +1127,6 @@ export function renderAPLScenarioPage({
   const approxAplDisplay = estimate.formattedApl.startsWith("~")
     ? estimate.formattedApl
     : `~${estimate.formattedApl}`;
-  const simulatorUrl = buildAplSimulatorUrl(scenario.input);
   const pilotVariantsHtml = renderPilotVariants(scenario.pilotProduct);
   const pilotDriversHtml = renderPilotDrivers(scenario.pilotProduct);
   const pilotComparisonHtml = renderPilotComparison(
@@ -901,11 +1140,13 @@ export function renderAPLScenarioPage({
     relatedPages,
   );
 
-  const displayDescription = toPublicDescription(scenario.description);
+  const displayDescription = toPublicDescription(briefConfig.metaDescription);
 
-  const introText = toFrenchDisplayText(
-    `${displayDescription} Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.`,
-  );
+  const introText = briefConfig.introText
+    ? toFrenchDisplayText(briefConfig.introText)
+    : toFrenchDisplayText(
+        `${displayDescription} Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.`,
+      );
 
   const tableRows = [
     ["Situation familiale", toFrenchDisplayText(SITUATION_LABELS[scenario.input.situation] || scenario.input.situation)],
@@ -929,18 +1170,18 @@ export function renderAPLScenarioPage({
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${renderText(scenario.title)}</title>
+    <title>${renderText(briefConfig.metaTitle)}</title>
     <meta name="description" content="${renderText(displayDescription)}" />
     <meta name="robots" content="index, follow" />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
     <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="${renderText(scenario.title)}" />
+    <meta property="og:title" content="${renderText(briefConfig.metaTitle)}" />
     <meta property="og:description" content="${renderText(displayDescription)}" />
     <meta property="og:image" content="${FAVICON_OG_IMAGE}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${renderText(scenario.title)}" />
+    <meta name="twitter:title" content="${renderText(briefConfig.metaTitle)}" />
     <meta name="twitter:description" content="${renderText(displayDescription)}" />
     <meta name="twitter:image" content="${FAVICON_OG_IMAGE}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
@@ -989,17 +1230,35 @@ export function renderAPLScenarioPage({
           Estimation indicative 2026
         </p>
         <h1 class="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl">${renderText(
-          scenario.title,
+          briefConfig.heroTitle,
         )}</h1>
         <p class="mt-4 max-w-3xl text-base leading-relaxed text-slate-100">${renderText(
           introText,
         )}</p>
+        <div class="mt-6 max-w-3xl rounded-2xl border border-white/15 bg-white/10 p-5 shadow-lg backdrop-blur-sm">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">${renderText(
+            briefConfig.directAnswerLabel,
+          )}</p>
+          <p class="mt-2 text-lg font-semibold leading-relaxed text-white">${renderText(
+            briefConfig.directAnswer,
+          )}</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-100/90">${renderText(
+            briefConfig.directAnswerDetails,
+          )}</p>
+        </div>
         <p class="mt-4 max-w-3xl text-sm leading-relaxed text-slate-100/90">
           Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="${simulatorUrl}" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">
-            Ouvrir le simulateur APL complet
+          <a href="${escapeAttribute(
+            briefConfig.primaryCtaHref,
+          )}" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition-colors hover:bg-emerald-400">
+            ${renderText(briefConfig.primaryCtaLabel)}
+          </a>
+          <a href="${escapeAttribute(
+            briefConfig.secondaryCtaHref,
+          )}" target="_blank" rel="noopener" class="rounded-xl border border-sky-200 bg-sky-100/95 px-5 py-3 font-semibold text-sky-950 transition-colors hover:bg-sky-50">
+            ${renderText(briefConfig.secondaryCtaLabel)}
           </a>
           <a href="#hypotheses" class="rounded-xl border border-white/30 bg-white/5 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/15">
             Voir les hypoth&egrave;ses
@@ -1074,7 +1333,7 @@ export function renderAPLScenarioPage({
         </p>
       </section>
 
-      ${renderMethodologySources()}
+      ${renderMethodologySources(briefConfig)}
 
       ${scenarioComparisonHtml}
 
@@ -1116,7 +1375,9 @@ export function renderAPLScenarioPage({
             "Si votre situation ressemble \u00e0 ce sc\u00e9nario, utilisez le simulateur complet pour tester plusieurs param\u00e8tres : loyer, revenus, zone g\u00e9ographique et composition du foyer. Vous obtiendrez ainsi une estimation plus proche de votre situation r\u00e9elle.",
           )}
         </p>
-        <a href="${simulatorUrl}" class="mt-6 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
+        <a href="${escapeAttribute(
+          briefConfig.primaryCtaHref,
+        )}" class="mt-6 inline-flex rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
           Lancer une simulation APL compl&egrave;te
         </a>
       </section>
