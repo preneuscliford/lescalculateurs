@@ -10,6 +10,40 @@ const bareme = [
   { plafond: Infinity, taux: 0.45 },
 ];
 
+let chartReadyPromise: Promise<void> | null = null;
+
+function ensureChartReady() {
+  if (!chartReadyPromise) {
+    chartReadyPromise = import("chart.js")
+      .then(
+        ({
+          Chart,
+          BarController,
+          BarElement,
+          CategoryScale,
+          LinearScale,
+          Tooltip,
+          Legend,
+        }) => {
+          Chart.register(
+            BarController,
+            BarElement,
+            CategoryScale,
+            LinearScale,
+            Tooltip,
+            Legend
+          );
+          (window as any).Chart = Chart;
+        }
+      )
+      .catch((error) => {
+        console.error("Chargement de Chart.js impossible", error);
+      });
+  }
+
+  return chartReadyPromise;
+}
+
 // Fonction pour calculer la distribution du revenu par tranche
 function calculateDistribution(qf: number) {
   const distribution = [];
@@ -560,7 +594,9 @@ const impotConfig = {
 
     // Retourner le HTML et initialiser les éléments interactifs
     setTimeout(() => {
-      initComparisonUI(casesWithIR, d);
+      ensureChartReady().finally(() => {
+        initComparisonUI(casesWithIR, d);
+      });
     }, 100);
 
     return mainHTML;
