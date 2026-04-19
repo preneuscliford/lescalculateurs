@@ -736,7 +736,7 @@
             <div class="border-t pt-4">
               <div class="space-y-2 text-sm">
                 <div class="flex justify-between">
-                  <span>Type de véhicule :</span>
+                  <span class="text-gray-900">Type de véhicule :</span>
                   <span class="font-medium">${
                     data.typeVehicule === "voiture" ? "Voiture" : "Deux-roues"
                   }</span>
@@ -745,7 +745,7 @@
                   data.puissance
                     ? `
                 <div class="flex justify-between">
-                  <span>Puissance fiscale :</span>
+                  <span class="text-gray-900">Puissance fiscale :</span>
                   <span class="font-medium">${data.puissance}</span>
                 </div>
                 `
@@ -755,7 +755,7 @@
                   data.cylindree
                     ? `
                 <div class="flex justify-between">
-                  <span>Cylindrée :</span>
+                  <span class="text-gray-900">Cylindrée :</span>
                   <span class="font-medium">${data.cylindree.replace("_", " ")}</span>
                 </div>
                 `

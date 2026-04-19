@@ -724,14 +724,14 @@
               } :</h4>
               <div class="space-y-2 text-sm">
                 <div class="flex justify-between">
-                  <span>Heures normales (≤35h) :</span>
+                  <span class="text-gray-900">Heures normales (≤35h) :</span>
                   <span class="font-medium">${data.heuresNormales.toFixed(1)}h</span>
                 </div>
                 ${
                   data.heuresSup1 > 0
                     ? `
                 <div class="flex justify-between">
-                  <span>Heures sup. majorées +${data.majoration1 * 100}% :</span>
+                  <span class="text-gray-900">Heures sup. majorées +${data.majoration1 * 100}% :</span>
                   <span class="font-medium">${data.heuresSup1.toFixed(1)}h</span>
                 </div>
                 `
@@ -741,7 +741,7 @@
                   data.heuresSup2 > 0
                     ? `
                 <div class="flex justify-between">
-                  <span>Heures sup. majorées +${data.majoration2 * 100}% :</span>
+                  <span class="text-gray-900">Heures sup. majorées +${data.majoration2 * 100}% :</span>
                   <span class="font-medium">${data.heuresSup2.toFixed(1)}h</span>
                 </div>
                 `
