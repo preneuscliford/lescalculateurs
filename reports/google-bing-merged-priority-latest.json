@@ -1,0 +1,1655 @@
+{
+  "generatedAt": "2026-04-19T08:18:17.686Z",
+  "inputs": {
+    "google": "seach-console-perf\\lescalculateurs.fr-Performance-on-Search-2026-04-18 (1).xlsx",
+    "bing": "seach-console-perf\\www.lescalculateurs.fr_KeywordReport_4_19_2026.csv"
+  },
+  "excluded": [
+    "/pages/apl",
+    "/pages/are",
+    "/pages/rsa",
+    "/pages/prime-activite",
+    "/pages/apl-zones",
+    "/pages/pret",
+    "/pages/notaire"
+  ],
+  "summary": {
+    "googleCandidates": 61,
+    "bingTargets": 4,
+    "totalMerged": 20
+  },
+  "merged": [
+    {
+      "page": "/pages/impot",
+      "filePath": "src\\pages\\impot.html",
+      "pageType": "hub_or_pillar",
+      "google": null,
+      "bing": {
+        "source": "bing",
+        "page": "/pages/impot",
+        "filePath": "src\\pages\\impot.html",
+        "pageType": "hub_or_pillar",
+        "cluster": "impot",
+        "impressions": 28195,
+        "clicks": 239,
+        "ctr": 0.008476680262457882,
+        "position": 6.3280441071111895,
+        "score": 4504.5841202460815,
+        "notes": [],
+        "keywords": [
+          {
+            "keyword": "simulateur impôts 2026",
+            "impressions": 9877,
+            "clicks": 78,
+            "ctr": 0.0079,
+            "position": 6.615582545307279,
+            "score": 1481.195591301455,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          },
+          {
+            "keyword": "simulation impôts 2026",
+            "impressions": 5210,
+            "clicks": 52,
+            "ctr": 0.01,
+            "position": 5.176405451055662,
+            "score": 996.4250383339102,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          },
+          {
+            "keyword": "simulateur impots",
+            "impressions": 2001,
+            "clicks": 12,
+            "ctr": 0.006,
+            "position": 6.5402489755122435,
+            "score": 304.11594534812315,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          },
+          {
+            "keyword": "calcul impôts 2026",
+            "impressions": 1026,
+            "clicks": 21,
+            "ctr": 0.020499999999999997,
+            "position": 5.059449707602339,
+            "score": 198.6316809296344,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          },
+          {
+            "keyword": "simulation impôt 2026",
+            "impressions": 603,
+            "clicks": 8,
+            "ctr": 0.013300000000000001,
+            "position": 5.101156218905472,
+            "score": 116.63632213319312,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          },
+          {
+            "keyword": "simulateur impots 2026",
+            "impressions": 632,
+            "clicks": 9,
+            "ctr": 0.014199999999999999,
+            "position": 6.025320727848102,
+            "score": 103.40123424807447,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          },
+          {
+            "keyword": "impots 2026",
+            "impressions": 780,
+            "clicks": 5,
+            "ctr": 0.0064,
+            "position": 7.803858974358972,
+            "score": 99.31086691166931,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          },
+          {
+            "keyword": "impôt sur le revenu 2026",
+            "impressions": 679,
+            "clicks": 3,
+            "ctr": 0.0044,
+            "position": 6.821787334315169,
+            "score": 99.0960824298203,
+            "cluster": "impot",
+            "targetPage": "/pages/impot"
+          }
+        ]
+      },
+      "mergedScore": 4504.5841202460815,
+      "rationale": [
+        "Bing: 28195 impressions cumulees, CTR 0.85%, position moyenne 6.33"
+      ]
+    },
+    {
+      "page": "/pages/salaire-brut-net-calcul-2026",
+      "filePath": "src\\pages\\salaire-brut-net-calcul-2026.html",
+      "pageType": "hub_or_pillar",
+      "google": {
+        "source": "google",
+        "page": "/pages/salaire-brut-net-calcul-2026",
+        "filePath": "src\\pages\\salaire-brut-net-calcul-2026.html",
+        "pageType": "hub_or_pillar",
+        "impressions": 2962,
+        "clicks": 1,
+        "ctr": 0.0003,
+        "position": 2.73,
+        "score": 1084.6561904761904,
+        "notes": []
+      },
+      "bing": {
+        "source": "bing",
+        "page": "/pages/salaire-brut-net-calcul-2026",
+        "filePath": "src\\pages\\salaire-brut-net-calcul-2026.html",
+        "pageType": "hub_or_pillar",
+        "cluster": "salaire",
+        "impressions": 1860,
+        "clicks": 12,
+        "ctr": 0.0064516129032258064,
+        "position": 5.748927473118281,
+        "score": 322.8657867651227,
+        "notes": [],
+        "keywords": [
+          {
+            "keyword": "brut en net 2026",
+            "impressions": 1029,
+            "clicks": 2,
+            "ctr": 0.0019,
+            "position": 5.857151214771623,
+            "score": 175.34887906083296,
+            "cluster": "salaire",
+            "targetPage": "/pages/salaire-brut-net-calcul-2026"
+          },
+          {
+            "keyword": "salaire brut en net 2026",
+            "impressions": 386,
+            "clicks": 4,
+            "ctr": 0.0104,
+            "position": 6.160613212435233,
+            "score": 62.00447696163751,
+            "cluster": "salaire",
+            "targetPage": "/pages/salaire-brut-net-calcul-2026"
+          },
+          {
+            "keyword": "calcul brut en net 2026",
+            "impressions": 167,
+            "clicks": 0,
+            "ctr": 0,
+            "position": 5.425150898203593,
+            "score": 30.782553911136002,
+            "cluster": "salaire",
+            "targetPage": "/pages/salaire-brut-net-calcul-2026"
+          },
+          {
+            "keyword": "calcul salaire brut en net 2026",
+            "impressions": 145,
+            "clicks": 4,
+            "ctr": 0.027600000000000003,
+            "position": 5.034471724137931,
+            "score": 28.006513438933567,
+            "cluster": "salaire",
+            "targetPage": "/pages/salaire-brut-net-calcul-2026"
+          },
+          {
+            "keyword": "salaire brut net 2026",
+            "impressions": 133,
+            "clicks": 2,
+            "ctr": 0.015,
+            "position": 4.902264661654135,
+            "score": 26.723363392582716,
+            "cluster": "salaire",
+            "targetPage": "/pages/salaire-brut-net-calcul-2026"
+          }
+        ]
+      },
+      "mergedScore": 1407.5219772413132,
+      "rationale": [
+        "Google: 2962 impressions, CTR 0.03%, position 2.73",
+        "Bing: 1860 impressions cumulees, CTR 0.65%, position moyenne 5.75"
+      ]
+    },
+    {
+      "page": "/pages/blog/frais-notaire-ancien-neuf-2026",
+      "filePath": "src\\pages\\blog\\frais-notaire-ancien-neuf-2026.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/blog/frais-notaire-ancien-neuf-2026",
+        "filePath": "src\\pages\\blog\\frais-notaire-ancien-neuf-2026.html",
+        "pageType": "pseo",
+        "impressions": 8184,
+        "clicks": 8,
+        "ctr": 0.001,
+        "position": 8.6,
+        "score": 950.6762790697674,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 950.6762790697674,
+      "rationale": [
+        "Google: 8184 impressions, CTR 0.10%, position 8.60"
+      ]
+    },
+    {
+      "page": "/pages/asf",
+      "filePath": "src\\pages\\asf.html",
+      "pageType": "hub_or_pillar",
+      "google": {
+        "source": "google",
+        "page": "/pages/asf",
+        "filePath": "src\\pages\\asf.html",
+        "pageType": "hub_or_pillar",
+        "impressions": 3449,
+        "clicks": 55,
+        "ctr": 0.0159,
+        "position": 8.13,
+        "score": 417.48596555965554,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 417.48596555965554,
+      "rationale": [
+        "Google: 3449 impressions, CTR 1.59%, position 8.13"
+      ]
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-06",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-06.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/blog/departements/frais-notaire-06",
+        "filePath": "src\\pages\\blog\\departements\\frais-notaire-06.html",
+        "pageType": "pseo",
+        "impressions": 1212,
+        "clicks": 36,
+        "ctr": 0.0297,
+        "position": 4.69,
+        "score": 250.74703624733473,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 250.74703624733473,
+      "rationale": [
+        "Google: 1212 impressions, CTR 2.97%, position 4.69"
+      ]
+    },
+    {
+      "page": "/pages/apl/apl-smic-seul",
+      "filePath": "src\\pages\\apl\\apl-smic-seul.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/apl/apl-smic-seul",
+        "filePath": "src\\pages\\apl\\apl-smic-seul.html",
+        "pageType": "pseo",
+        "impressions": 1656,
+        "clicks": 76,
+        "ctr": 0.045899999999999996,
+        "position": 6.44,
+        "score": 245.33999999999997,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 245.33999999999997,
+      "rationale": [
+        "Google: 1656 impressions, CTR 4.59%, position 6.44"
+      ]
+    },
+    {
+      "page": "/pages/impot/tranches-d-impot-2026",
+      "filePath": "src\\pages\\impot\\tranches-d-impot-2026.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/impot/tranches-d-impot-2026",
+        "filePath": "src\\pages\\impot\\tranches-d-impot-2026.html",
+        "pageType": "pseo",
+        "impressions": 712,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 4.11,
+        "score": 173.2360097323601,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 173.2360097323601,
+      "rationale": [
+        "Google: 712 impressions, CTR 0.00%, position 4.11"
+      ]
+    },
+    {
+      "page": "/pages/charges",
+      "filePath": "src\\pages\\charges.html",
+      "pageType": "hub_or_pillar",
+      "google": {
+        "source": "google",
+        "page": "/pages/charges",
+        "filePath": "src\\pages\\charges.html",
+        "pageType": "hub_or_pillar",
+        "impressions": 1136,
+        "clicks": 42,
+        "ctr": 0.037000000000000005,
+        "position": 7.25,
+        "score": 150.89213793103448,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 150.89213793103448,
+      "rationale": [
+        "Google: 1136 impressions, CTR 3.70%, position 7.25"
+      ]
+    },
+    {
+      "page": "/pages/apl/apl-famille-trois-enfants",
+      "filePath": "src\\pages\\apl\\apl-famille-trois-enfants.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/apl/apl-famille-trois-enfants",
+        "filePath": "src\\pages\\apl\\apl-famille-trois-enfants.html",
+        "pageType": "pseo",
+        "impressions": 952,
+        "clicks": 15,
+        "ctr": 0.0158,
+        "position": 6.25,
+        "score": 149.913344,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 149.913344,
+      "rationale": [
+        "Google: 952 impressions, CTR 1.58%, position 6.25"
+      ]
+    },
+    {
+      "page": "/pages/guide-complet-impot-revenu-2026",
+      "filePath": "src\\pages\\guide-complet-impot-revenu-2026.html",
+      "pageType": "hub_or_pillar",
+      "google": {
+        "source": "google",
+        "page": "/pages/guide-complet-impot-revenu-2026",
+        "filePath": "src\\pages\\guide-complet-impot-revenu-2026.html",
+        "pageType": "hub_or_pillar",
+        "impressions": 1538,
+        "clicks": 16,
+        "ctr": 0.0104,
+        "position": 10.55,
+        "score": 144.26585781990522,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 144.26585781990522,
+      "rationale": [
+        "Google: 1538 impressions, CTR 1.04%, position 10.55"
+      ]
+    },
+    {
+      "page": "/pages/aah",
+      "filePath": "src\\pages\\aah.html",
+      "pageType": "hub_or_pillar",
+      "google": {
+        "source": "google",
+        "page": "/pages/aah",
+        "filePath": "src\\pages\\aah.html",
+        "pageType": "hub_or_pillar",
+        "impressions": 1598,
+        "clicks": 36,
+        "ctr": 0.0225,
+        "position": 11.01,
+        "score": 141.87511353315168,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 141.87511353315168,
+      "rationale": [
+        "Google: 1598 impressions, CTR 2.25%, position 11.01"
+      ]
+    },
+    {
+      "page": "/pages/apl/apl-chomage-loyer-moyen",
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/apl/apl-chomage-loyer-moyen",
+        "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen.html",
+        "pageType": "pseo",
+        "impressions": 1036,
+        "clicks": 13,
+        "ctr": 0.0125,
+        "position": 7.52,
+        "score": 136.04388297872342,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 136.04388297872342,
+      "rationale": [
+        "Google: 1036 impressions, CTR 1.25%, position 7.52"
+      ]
+    },
+    {
+      "page": "/pages/apl/apl-apprenti",
+      "filePath": "src\\pages\\apl\\apl-apprenti.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/apl/apl-apprenti",
+        "filePath": "src\\pages\\apl\\apl-apprenti.html",
+        "pageType": "pseo",
+        "impressions": 951,
+        "clicks": 4,
+        "ctr": 0.0042,
+        "position": 7.02,
+        "score": 134.9011111111111,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 134.9011111111111,
+      "rationale": [
+        "Google: 951 impressions, CTR 0.42%, position 7.02"
+      ]
+    },
+    {
+      "page": "/pages/apl/apl-loyer-700-personne-seule",
+      "filePath": "src\\pages\\apl\\apl-loyer-700-personne-seule.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/apl/apl-loyer-700-personne-seule",
+        "filePath": "src\\pages\\apl\\apl-loyer-700-personne-seule.html",
+        "pageType": "pseo",
+        "impressions": 1068,
+        "clicks": 21,
+        "ctr": 0.0197,
+        "position": 8.24,
+        "score": 127.05830097087377,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 127.05830097087377,
+      "rationale": [
+        "Google: 1068 impressions, CTR 1.97%, position 8.24"
+      ]
+    },
+    {
+      "page": "/pages/apl/apl-celibataire-smic",
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/apl/apl-celibataire-smic",
+        "filePath": "src\\pages\\apl\\apl-celibataire-smic.html",
+        "pageType": "pseo",
+        "impressions": 889,
+        "clicks": 19,
+        "ctr": 0.021400000000000002,
+        "position": 6.91,
+        "score": 125.90092619392185,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 125.90092619392185,
+      "rationale": [
+        "Google: 889 impressions, CTR 2.14%, position 6.91"
+      ]
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-34",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-34.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/blog/departements/frais-notaire-34",
+        "filePath": "src\\pages\\blog\\departements\\frais-notaire-34.html",
+        "pageType": "pseo",
+        "impressions": 660,
+        "clicks": 30,
+        "ctr": 0.0455,
+        "position": 5.19,
+        "score": 121.38150289017341,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 121.38150289017341,
+      "rationale": [
+        "Google: 660 impressions, CTR 4.55%, position 5.19"
+      ]
+    },
+    {
+      "page": "/pages/taxe",
+      "filePath": "src\\pages\\taxe.html",
+      "pageType": "hub_or_pillar",
+      "google": {
+        "source": "google",
+        "page": "/pages/taxe",
+        "filePath": "src\\pages\\taxe.html",
+        "pageType": "hub_or_pillar",
+        "impressions": 644,
+        "clicks": 14,
+        "ctr": 0.0217,
+        "position": 7.06,
+        "score": 89.23869688385268,
+        "notes": []
+      },
+      "bing": {
+        "source": "bing",
+        "page": "/pages/taxe",
+        "filePath": "src\\pages\\taxe.html",
+        "pageType": "hub_or_pillar",
+        "cluster": "taxe",
+        "impressions": 249,
+        "clicks": 3,
+        "ctr": 0.012048192771084338,
+        "position": 8.30926265060241,
+        "score": 29.60695916648687,
+        "notes": [],
+        "keywords": [
+          {
+            "keyword": "taxe foncière 2026",
+            "impressions": 249,
+            "clicks": 3,
+            "ctr": 0.012,
+            "position": 8.30926265060241,
+            "score": 29.60695916648687,
+            "cluster": "taxe",
+            "targetPage": "/pages/taxe"
+          }
+        ]
+      },
+      "mergedScore": 118.84565605033956,
+      "rationale": [
+        "Google: 644 impressions, CTR 2.17%, position 7.06",
+        "Bing: 249 impressions cumulees, CTR 1.20%, position moyenne 8.31"
+      ]
+    },
+    {
+      "page": null,
+      "filePath": null,
+      "pageType": "hub_or_pillar",
+      "google": null,
+      "bing": {
+        "source": "bing",
+        "page": null,
+        "filePath": null,
+        "pageType": "hub_or_pillar",
+        "cluster": "autres",
+        "impressions": 592,
+        "clicks": 5,
+        "ctr": 0.008445945945945946,
+        "position": 5.648652195945945,
+        "score": 114.70705801055901,
+        "notes": [],
+        "keywords": [
+          {
+            "keyword": "simulation allocation logement",
+            "impressions": 193,
+            "clicks": 5,
+            "ctr": 0.0259,
+            "position": 3.740940932642487,
+            "score": 50.25508378374785,
+            "cluster": "autres",
+            "targetPage": null
+          },
+          {
+            "keyword": "simulation aide au logement",
+            "impressions": 164,
+            "clicks": 0,
+            "ctr": 0,
+            "position": 4.823173170731708,
+            "score": 34.00251125031037,
+            "cluster": "autres",
+            "targetPage": null
+          },
+          {
+            "keyword": "calcul plus value immobilière simulateur",
+            "impressions": 146,
+            "clicks": 0,
+            "ctr": 0,
+            "position": 7.18492808219178,
+            "score": 20.320314737995588,
+            "cluster": "autres",
+            "targetPage": null
+          },
+          {
+            "keyword": "tranche imposition 2026",
+            "impressions": 89,
+            "clicks": 0,
+            "ctr": 0,
+            "position": 8.786523595505617,
+            "score": 10.12914823850519,
+            "cluster": "autres",
+            "targetPage": null
+          }
+        ]
+      },
+      "mergedScore": 114.70705801055901,
+      "rationale": [
+        "Bing: 592 impressions cumulees, CTR 0.84%, position moyenne 5.65"
+      ]
+    },
+    {
+      "page": "/pages/impot/impot-decote-2026-simulation",
+      "filePath": "src\\pages\\impot\\impot-decote-2026-simulation.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/impot/impot-decote-2026-simulation",
+        "filePath": "src\\pages\\impot\\impot-decote-2026-simulation.html",
+        "pageType": "pseo",
+        "impressions": 755,
+        "clicks": 1,
+        "ctr": 0.0013,
+        "position": 7.03,
+        "score": 107.25725462304409,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 107.25725462304409,
+      "rationale": [
+        "Google: 755 impressions, CTR 0.13%, position 7.03"
+      ]
+    },
+    {
+      "page": "/pages/apl/apl-alternant",
+      "filePath": "src\\pages\\apl\\apl-alternant.html",
+      "pageType": "pseo",
+      "google": {
+        "source": "google",
+        "page": "/pages/apl/apl-alternant",
+        "filePath": "src\\pages\\apl\\apl-alternant.html",
+        "pageType": "pseo",
+        "impressions": 605,
+        "clicks": 6,
+        "ctr": 0.009899999999999999,
+        "position": 5.93,
+        "score": 101.01357504215852,
+        "notes": []
+      },
+      "bing": null,
+      "mergedScore": 101.01357504215852,
+      "rationale": [
+        "Google: 605 impressions, CTR 0.99%, position 5.93"
+      ]
+    }
+  ],
+  "googlePages": [
+    {
+      "source": "google",
+      "page": "/pages/salaire-brut-net-calcul-2026",
+      "filePath": "src\\pages\\salaire-brut-net-calcul-2026.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 2962,
+      "clicks": 1,
+      "ctr": 0.0003,
+      "position": 2.73,
+      "score": 1084.6561904761904,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/frais-notaire-ancien-neuf-2026",
+      "filePath": "src\\pages\\blog\\frais-notaire-ancien-neuf-2026.html",
+      "pageType": "pseo",
+      "impressions": 8184,
+      "clicks": 8,
+      "ctr": 0.001,
+      "position": 8.6,
+      "score": 950.6762790697674,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/asf",
+      "filePath": "src\\pages\\asf.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 3449,
+      "clicks": 55,
+      "ctr": 0.0159,
+      "position": 8.13,
+      "score": 417.48596555965554,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-06",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-06.html",
+      "pageType": "pseo",
+      "impressions": 1212,
+      "clicks": 36,
+      "ctr": 0.0297,
+      "position": 4.69,
+      "score": 250.74703624733473,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-smic-seul",
+      "filePath": "src\\pages\\apl\\apl-smic-seul.html",
+      "pageType": "pseo",
+      "impressions": 1656,
+      "clicks": 76,
+      "ctr": 0.045899999999999996,
+      "position": 6.44,
+      "score": 245.33999999999997,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/impot/tranches-d-impot-2026",
+      "filePath": "src\\pages\\impot\\tranches-d-impot-2026.html",
+      "pageType": "pseo",
+      "impressions": 712,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 4.11,
+      "score": 173.2360097323601,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/charges",
+      "filePath": "src\\pages\\charges.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 1136,
+      "clicks": 42,
+      "ctr": 0.037000000000000005,
+      "position": 7.25,
+      "score": 150.89213793103448,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-famille-trois-enfants",
+      "filePath": "src\\pages\\apl\\apl-famille-trois-enfants.html",
+      "pageType": "pseo",
+      "impressions": 952,
+      "clicks": 15,
+      "ctr": 0.0158,
+      "position": 6.25,
+      "score": 149.913344,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/guide-complet-impot-revenu-2026",
+      "filePath": "src\\pages\\guide-complet-impot-revenu-2026.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 1538,
+      "clicks": 16,
+      "ctr": 0.0104,
+      "position": 10.55,
+      "score": 144.26585781990522,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/aah",
+      "filePath": "src\\pages\\aah.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 1598,
+      "clicks": 36,
+      "ctr": 0.0225,
+      "position": 11.01,
+      "score": 141.87511353315168,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-chomage-loyer-moyen",
+      "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen.html",
+      "pageType": "pseo",
+      "impressions": 1036,
+      "clicks": 13,
+      "ctr": 0.0125,
+      "position": 7.52,
+      "score": 136.04388297872342,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-apprenti",
+      "filePath": "src\\pages\\apl\\apl-apprenti.html",
+      "pageType": "pseo",
+      "impressions": 951,
+      "clicks": 4,
+      "ctr": 0.0042,
+      "position": 7.02,
+      "score": 134.9011111111111,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-loyer-700-personne-seule",
+      "filePath": "src\\pages\\apl\\apl-loyer-700-personne-seule.html",
+      "pageType": "pseo",
+      "impressions": 1068,
+      "clicks": 21,
+      "ctr": 0.0197,
+      "position": 8.24,
+      "score": 127.05830097087377,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-celibataire-smic",
+      "filePath": "src\\pages\\apl\\apl-celibataire-smic.html",
+      "pageType": "pseo",
+      "impressions": 889,
+      "clicks": 19,
+      "ctr": 0.021400000000000002,
+      "position": 6.91,
+      "score": 125.90092619392185,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-34",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-34.html",
+      "pageType": "pseo",
+      "impressions": 660,
+      "clicks": 30,
+      "ctr": 0.0455,
+      "position": 5.19,
+      "score": 121.38150289017341,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/impot/impot-decote-2026-simulation",
+      "filePath": "src\\pages\\impot\\impot-decote-2026-simulation.html",
+      "pageType": "pseo",
+      "impressions": 755,
+      "clicks": 1,
+      "ctr": 0.0013,
+      "position": 7.03,
+      "score": 107.25725462304409,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-alternant",
+      "filePath": "src\\pages\\apl\\apl-alternant.html",
+      "pageType": "pseo",
+      "impressions": 605,
+      "clicks": 6,
+      "ctr": 0.009899999999999999,
+      "position": 5.93,
+      "score": 101.01357504215852,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/taxe",
+      "filePath": "src\\pages\\taxe.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 644,
+      "clicks": 14,
+      "ctr": 0.0217,
+      "position": 7.06,
+      "score": 89.23869688385268,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-35",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-35.html",
+      "pageType": "pseo",
+      "impressions": 457,
+      "clicks": 23,
+      "ctr": 0.050300000000000004,
+      "position": 4.91,
+      "score": 88.39366598778004,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-75",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-75.html",
+      "pageType": "pseo",
+      "impressions": 927,
+      "clicks": 1,
+      "ctr": 0.0011,
+      "position": 11.13,
+      "score": 83.1967924528302,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-971",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-971.html",
+      "pageType": "pseo",
+      "impressions": 312,
+      "clicks": 11,
+      "ctr": 0.0353,
+      "position": 3.85,
+      "score": 78.1782857142857,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-83",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-83.html",
+      "pageType": "pseo",
+      "impressions": 349,
+      "clicks": 22,
+      "ctr": 0.063,
+      "position": 4.3,
+      "score": 76.04953488372094,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-chomage-personne-seule",
+      "filePath": "src\\pages\\apl\\apl-chomage-personne-seule.html",
+      "pageType": "pseo",
+      "impressions": 538,
+      "clicks": 8,
+      "ctr": 0.0149,
+      "position": 6.98,
+      "score": 75.92891117478509,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-972",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-972.html",
+      "pageType": "pseo",
+      "impressions": 288,
+      "clicks": 10,
+      "ctr": 0.0347,
+      "position": 3.68,
+      "score": 75.54521739130433,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/rsa-vs-smic",
+      "filePath": "src\\pages\\rsa-vs-smic.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 529,
+      "clicks": 4,
+      "ctr": 0.0076,
+      "position": 7.72,
+      "score": 68.00253886010364,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-74",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-74.html",
+      "pageType": "pseo",
+      "impressions": 356,
+      "clicks": 9,
+      "ctr": 0.0253,
+      "position": 5.14,
+      "score": 67.5084046692607,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-31",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-31.html",
+      "pageType": "pseo",
+      "impressions": 355,
+      "clicks": 3,
+      "ctr": 0.0085,
+      "position": 5.33,
+      "score": 66.03799249530957,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-13",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-13.html",
+      "pageType": "pseo",
+      "impressions": 437,
+      "clicks": 8,
+      "ctr": 0.0183,
+      "position": 6.57,
+      "score": 65.29724505327245,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-parent-isole-trois-enfants",
+      "filePath": "src\\pages\\apl\\apl-parent-isole-trois-enfants.html",
+      "pageType": "pseo",
+      "impressions": 353,
+      "clicks": 9,
+      "ctr": 0.0255,
+      "position": 5.64,
+      "score": 60.99264184397164,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-84",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-84.html",
+      "pageType": "pseo",
+      "impressions": 196,
+      "clicks": 5,
+      "ctr": 0.0255,
+      "position": 3.28,
+      "score": 58.232317073170734,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-loyer-600-smic",
+      "filePath": "src\\pages\\apl\\apl-loyer-600-smic.html",
+      "pageType": "pseo",
+      "impressions": 435,
+      "clicks": 9,
+      "ctr": 0.0207,
+      "position": 7.42,
+      "score": 57.411792452830184,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-smic-parent-isole-deux-enfants",
+      "filePath": "src\\pages\\apl\\apl-smic-parent-isole-deux-enfants.html",
+      "pageType": "pseo",
+      "impressions": 247,
+      "clicks": 2,
+      "ctr": 0.008100000000000001,
+      "position": 4.67,
+      "score": 52.462376873661675,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-11",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-11.html",
+      "pageType": "pseo",
+      "impressions": 224,
+      "clicks": 17,
+      "ctr": 0.0759,
+      "position": 3.97,
+      "score": 52.140654911838794,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-94",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-94.html",
+      "pageType": "pseo",
+      "impressions": 241,
+      "clicks": 6,
+      "ctr": 0.024900000000000002,
+      "position": 4.76,
+      "score": 49.36955882352941,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-57",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-57.html",
+      "pageType": "pseo",
+      "impressions": 250,
+      "clicks": 13,
+      "ctr": 0.052000000000000005,
+      "position": 4.86,
+      "score": 48.76543209876543,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/salaire/2500-brut-en-net-2026",
+      "filePath": null,
+      "pageType": "pseo",
+      "impressions": 293,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.18,
+      "score": 47.41100323624596,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-smic-couple-un-enfant",
+      "filePath": "src\\pages\\apl\\apl-smic-couple-un-enfant.html",
+      "pageType": "pseo",
+      "impressions": 255,
+      "clicks": 2,
+      "ctr": 0.0078000000000000005,
+      "position": 5.46,
+      "score": 46.33901098901099,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/impot/impot-couple-ou-separe",
+      "filePath": "src\\pages\\impot\\impot-couple-ou-separe.html",
+      "pageType": "pseo",
+      "impressions": 375,
+      "clicks": 11,
+      "ctr": 0.029300000000000003,
+      "position": 8.2,
+      "score": 44.39176829268293,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-92",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-92.html",
+      "pageType": "pseo",
+      "impressions": 253,
+      "clicks": 6,
+      "ctr": 0.023700000000000002,
+      "position": 5.63,
+      "score": 43.872806394316164,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/prime-activite/plafond-prime-activite-2026",
+      "filePath": "src\\pages\\prime-activite\\plafond-prime-activite-2026.html",
+      "pageType": "pseo",
+      "impressions": 158,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 3.67,
+      "score": 43.05177111716622,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/crypto-bourse",
+      "filePath": "src\\pages\\crypto-bourse.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 265,
+      "clicks": 6,
+      "ctr": 0.0226,
+      "position": 6.13,
+      "score": 42.253017944535074,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-personne-seule-smic",
+      "filePath": "src\\pages\\apl\\apl-personne-seule-smic.html",
+      "pageType": "pseo",
+      "impressions": 261,
+      "clicks": 4,
+      "ctr": 0.015300000000000001,
+      "position": 6.17,
+      "score": 41.654246353322534,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-couple-sans-enfant",
+      "filePath": "src\\pages\\apl\\apl-couple-sans-enfant.html",
+      "pageType": "pseo",
+      "impressions": 267,
+      "clicks": 1,
+      "ctr": 0.0037,
+      "position": 6.52,
+      "score": 40.799401840490795,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/aide/simulation-aides-caf",
+      "filePath": "src\\pages\\aide\\simulation-aides-caf.html",
+      "pageType": "pseo",
+      "impressions": 329,
+      "clicks": 1,
+      "ctr": 0.003,
+      "position": 8.21,
+      "score": 39.95286236297198,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-44",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-44.html",
+      "pageType": "pseo",
+      "impressions": 221,
+      "clicks": 10,
+      "ctr": 0.0452,
+      "position": 5.43,
+      "score": 38.860184162062616,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-28",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-28.html",
+      "pageType": "pseo",
+      "impressions": 191,
+      "clicks": 11,
+      "ctr": 0.0576,
+      "position": 4.8,
+      "score": 37.49966666666667,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-30",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-30.html",
+      "pageType": "pseo",
+      "impressions": 181,
+      "clicks": 3,
+      "ctr": 0.0166,
+      "position": 4.77,
+      "score": 37.315597484276736,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/taxe-fonciere",
+      "filePath": "src\\pages\\taxe-fonciere\\index.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 415,
+      "clicks": 20,
+      "ctr": 0.0482,
+      "position": 10.6,
+      "score": 37.263867924528306,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/frais-notaire-83",
+      "filePath": null,
+      "pageType": "pseo",
+      "impressions": 231,
+      "clicks": 6,
+      "ctr": 0.026000000000000002,
+      "position": 6.36,
+      "score": 35.37641509433962,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-56",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-56.html",
+      "pageType": "pseo",
+      "impressions": 222,
+      "clicks": 11,
+      "ctr": 0.0495,
+      "position": 6.09,
+      "score": 34.648768472906404,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl-dom-tom",
+      "filePath": "src\\pages\\apl-dom-tom.html",
+      "pageType": "hub_or_pillar",
+      "impressions": 168,
+      "clicks": 2,
+      "ctr": 0.011899999999999999,
+      "position": 4.86,
+      "score": 34.15654320987654,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/notaire/frais-notaire-neuf-2026",
+      "filePath": "src\\pages\\notaire\\frais-notaire-neuf-2026.html",
+      "pageType": "pseo",
+      "impressions": 162,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 4.88,
+      "score": 33.19672131147541,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-62",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-62.html",
+      "pageType": "pseo",
+      "impressions": 168,
+      "clicks": 3,
+      "ctr": 0.0179,
+      "position": 4.98,
+      "score": 33.13108433734939,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/frais-notaire-95",
+      "filePath": null,
+      "pageType": "pseo",
+      "impressions": 172,
+      "clicks": 9,
+      "ctr": 0.052300000000000006,
+      "position": 5.1,
+      "score": 31.961647058823534,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/salaire/3000-brut-en-net-2026",
+      "filePath": null,
+      "pageType": "pseo",
+      "impressions": 198,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.23,
+      "score": 31.781701444622794,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-parent-isole-logement-social",
+      "filePath": "src\\pages\\apl\\apl-parent-isole-logement-social.html",
+      "pageType": "pseo",
+      "impressions": 188,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.64,
+      "score": 28.313253012048197,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-85",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-85.html",
+      "pageType": "pseo",
+      "impressions": 156,
+      "clicks": 11,
+      "ctr": 0.0705,
+      "position": 5.14,
+      "score": 28.210505836575877,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-38",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-38.html",
+      "pageType": "pseo",
+      "impressions": 174,
+      "clicks": 10,
+      "ctr": 0.0575,
+      "position": 6.27,
+      "score": 26.1555023923445,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-91",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-91.html",
+      "pageType": "pseo",
+      "impressions": 174,
+      "clicks": 3,
+      "ctr": 0.0172,
+      "position": 7.11,
+      "score": 24.051645569620252,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/apl/apl-celibataire-loyer-eleve",
+      "filePath": "src\\pages\\apl\\apl-celibataire-loyer-eleve.html",
+      "pageType": "pseo",
+      "impressions": 203,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 10.39,
+      "score": 19.538017324350335,
+      "notes": []
+    },
+    {
+      "source": "google",
+      "page": "/pages/blog/departements/frais-notaire-16",
+      "filePath": "src\\pages\\blog\\departements\\frais-notaire-16.html",
+      "pageType": "pseo",
+      "impressions": 176,
+      "clicks": 3,
+      "ctr": 0.017,
+      "position": 10.97,
+      "score": 15.771011850501367,
+      "notes": []
+    }
+  ],
+  "bingTargets": [
+    {
+      "source": "bing",
+      "page": "/pages/impot",
+      "filePath": "src\\pages\\impot.html",
+      "pageType": "hub_or_pillar",
+      "cluster": "impot",
+      "impressions": 28195,
+      "clicks": 239,
+      "ctr": 0.008476680262457882,
+      "position": 6.3280441071111895,
+      "score": 4504.5841202460815,
+      "notes": [],
+      "keywords": [
+        {
+          "keyword": "simulateur impôts 2026",
+          "impressions": 9877,
+          "clicks": 78,
+          "ctr": 0.0079,
+          "position": 6.615582545307279,
+          "score": 1481.195591301455,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulation impôts 2026",
+          "impressions": 5210,
+          "clicks": 52,
+          "ctr": 0.01,
+          "position": 5.176405451055662,
+          "score": 996.4250383339102,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulateur impots",
+          "impressions": 2001,
+          "clicks": 12,
+          "ctr": 0.006,
+          "position": 6.5402489755122435,
+          "score": 304.11594534812315,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "calcul impôts 2026",
+          "impressions": 1026,
+          "clicks": 21,
+          "ctr": 0.020499999999999997,
+          "position": 5.059449707602339,
+          "score": 198.6316809296344,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulation impôt 2026",
+          "impressions": 603,
+          "clicks": 8,
+          "ctr": 0.013300000000000001,
+          "position": 5.101156218905472,
+          "score": 116.63632213319312,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulateur impots 2026",
+          "impressions": 632,
+          "clicks": 9,
+          "ctr": 0.014199999999999999,
+          "position": 6.025320727848102,
+          "score": 103.40123424807447,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "impots 2026",
+          "impressions": 780,
+          "clicks": 5,
+          "ctr": 0.0064,
+          "position": 7.803858974358972,
+          "score": 99.31086691166931,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "impôt sur le revenu 2026",
+          "impressions": 679,
+          "clicks": 3,
+          "ctr": 0.0044,
+          "position": 6.821787334315169,
+          "score": 99.0960824298203,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        }
+      ]
+    },
+    {
+      "source": "bing",
+      "page": "/pages/salaire-brut-net-calcul-2026",
+      "filePath": "src\\pages\\salaire-brut-net-calcul-2026.html",
+      "pageType": "hub_or_pillar",
+      "cluster": "salaire",
+      "impressions": 1860,
+      "clicks": 12,
+      "ctr": 0.0064516129032258064,
+      "position": 5.748927473118281,
+      "score": 322.8657867651227,
+      "notes": [],
+      "keywords": [
+        {
+          "keyword": "brut en net 2026",
+          "impressions": 1029,
+          "clicks": 2,
+          "ctr": 0.0019,
+          "position": 5.857151214771623,
+          "score": 175.34887906083296,
+          "cluster": "salaire",
+          "targetPage": "/pages/salaire-brut-net-calcul-2026"
+        },
+        {
+          "keyword": "salaire brut en net 2026",
+          "impressions": 386,
+          "clicks": 4,
+          "ctr": 0.0104,
+          "position": 6.160613212435233,
+          "score": 62.00447696163751,
+          "cluster": "salaire",
+          "targetPage": "/pages/salaire-brut-net-calcul-2026"
+        },
+        {
+          "keyword": "calcul brut en net 2026",
+          "impressions": 167,
+          "clicks": 0,
+          "ctr": 0,
+          "position": 5.425150898203593,
+          "score": 30.782553911136002,
+          "cluster": "salaire",
+          "targetPage": "/pages/salaire-brut-net-calcul-2026"
+        },
+        {
+          "keyword": "calcul salaire brut en net 2026",
+          "impressions": 145,
+          "clicks": 4,
+          "ctr": 0.027600000000000003,
+          "position": 5.034471724137931,
+          "score": 28.006513438933567,
+          "cluster": "salaire",
+          "targetPage": "/pages/salaire-brut-net-calcul-2026"
+        },
+        {
+          "keyword": "salaire brut net 2026",
+          "impressions": 133,
+          "clicks": 2,
+          "ctr": 0.015,
+          "position": 4.902264661654135,
+          "score": 26.723363392582716,
+          "cluster": "salaire",
+          "targetPage": "/pages/salaire-brut-net-calcul-2026"
+        }
+      ]
+    },
+    {
+      "source": "bing",
+      "page": null,
+      "filePath": null,
+      "pageType": "hub_or_pillar",
+      "cluster": "autres",
+      "impressions": 592,
+      "clicks": 5,
+      "ctr": 0.008445945945945946,
+      "position": 5.648652195945945,
+      "score": 114.70705801055901,
+      "notes": [],
+      "keywords": [
+        {
+          "keyword": "simulation allocation logement",
+          "impressions": 193,
+          "clicks": 5,
+          "ctr": 0.0259,
+          "position": 3.740940932642487,
+          "score": 50.25508378374785,
+          "cluster": "autres",
+          "targetPage": null
+        },
+        {
+          "keyword": "simulation aide au logement",
+          "impressions": 164,
+          "clicks": 0,
+          "ctr": 0,
+          "position": 4.823173170731708,
+          "score": 34.00251125031037,
+          "cluster": "autres",
+          "targetPage": null
+        },
+        {
+          "keyword": "calcul plus value immobilière simulateur",
+          "impressions": 146,
+          "clicks": 0,
+          "ctr": 0,
+          "position": 7.18492808219178,
+          "score": 20.320314737995588,
+          "cluster": "autres",
+          "targetPage": null
+        },
+        {
+          "keyword": "tranche imposition 2026",
+          "impressions": 89,
+          "clicks": 0,
+          "ctr": 0,
+          "position": 8.786523595505617,
+          "score": 10.12914823850519,
+          "cluster": "autres",
+          "targetPage": null
+        }
+      ]
+    },
+    {
+      "source": "bing",
+      "page": "/pages/taxe",
+      "filePath": "src\\pages\\taxe.html",
+      "pageType": "hub_or_pillar",
+      "cluster": "taxe",
+      "impressions": 249,
+      "clicks": 3,
+      "ctr": 0.012048192771084338,
+      "position": 8.30926265060241,
+      "score": 29.60695916648687,
+      "notes": [],
+      "keywords": [
+        {
+          "keyword": "taxe foncière 2026",
+          "impressions": 249,
+          "clicks": 3,
+          "ctr": 0.012,
+          "position": 8.30926265060241,
+          "score": 29.60695916648687,
+          "cluster": "taxe",
+          "targetPage": "/pages/taxe"
+        }
+      ]
+    }
+  ]
+}

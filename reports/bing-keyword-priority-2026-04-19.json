@@ -1,0 +1,857 @@
+{
+  "generatedAt": "2026-04-19T08:06:30.251Z",
+  "input": "seach-console-perf\\www.lescalculateurs.fr_KeywordReport_4_19_2026.csv",
+  "thresholds": {
+    "minImpressions": 80,
+    "maxPosition": 12,
+    "top": 40
+  },
+  "summary": {
+    "totalKeywords": 40,
+    "totalClusters": 8
+  },
+  "clusters": [
+    {
+      "cluster": "impot",
+      "targetPage": "/pages/impot",
+      "keywordCount": 16,
+      "impressions": 24582,
+      "clicks": 206,
+      "score": 3975.644414797719,
+      "keywords": [
+        {
+          "keyword": "simulateur impôts 2026",
+          "impressions": 9877,
+          "clicks": 78,
+          "ctr": 0.0079,
+          "position": 6.615582545307279,
+          "score": 1481.195591301455,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulation impôts 2026",
+          "impressions": 5210,
+          "clicks": 52,
+          "ctr": 0.01,
+          "position": 5.176405451055662,
+          "score": 996.4250383339102,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulateur impots",
+          "impressions": 2001,
+          "clicks": 12,
+          "ctr": 0.006,
+          "position": 6.5402489755122435,
+          "score": 304.11594534812315,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "calcul impôts 2026",
+          "impressions": 1026,
+          "clicks": 21,
+          "ctr": 0.020499999999999997,
+          "position": 5.059449707602339,
+          "score": 198.6316809296344,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulation impôt 2026",
+          "impressions": 603,
+          "clicks": 8,
+          "ctr": 0.013300000000000001,
+          "position": 5.101156218905472,
+          "score": 116.63632213319312,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulateur impots 2026",
+          "impressions": 632,
+          "clicks": 9,
+          "ctr": 0.014199999999999999,
+          "position": 6.025320727848102,
+          "score": 103.40123424807447,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "impots 2026",
+          "impressions": 780,
+          "clicks": 5,
+          "ctr": 0.0064,
+          "position": 7.803858974358972,
+          "score": 99.31086691166931,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "impôt sur le revenu 2026",
+          "impressions": 679,
+          "clicks": 3,
+          "ctr": 0.0044,
+          "position": 6.821787334315169,
+          "score": 99.0960824298203,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulateur impot",
+          "impressions": 624,
+          "clicks": 0,
+          "ctr": 0,
+          "position": 6.578527564102565,
+          "score": 94.85405266142186,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulateur impôt 2026",
+          "impressions": 617,
+          "clicks": 5,
+          "ctr": 0.008100000000000001,
+          "position": 6.560763047001621,
+          "score": 93.28218312650314,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulation impots",
+          "impressions": 458,
+          "clicks": 4,
+          "ctr": 0.0087,
+          "position": 5.997824672489084,
+          "score": 75.69667751084572,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        },
+        {
+          "keyword": "simulation impots 2026",
+          "impressions": 412,
+          "clicks": 1,
+          "ctr": 0.0024,
+          "position": 5.5291330097087386,
+          "score": 74.33556025479862,
+          "cluster": "impot",
+          "targetPage": "/pages/impot"
+        }
+      ]
+    },
+    {
+      "cluster": "apl",
+      "targetPage": "/pages/apl",
+      "keywordCount": 9,
+      "impressions": 15705,
+      "clicks": 183,
+      "score": 3855.0578447218613,
+      "keywords": [
+        {
+          "keyword": "simulation apl",
+          "impressions": 7183,
+          "clicks": 58,
+          "ctr": 0.008100000000000001,
+          "position": 4.165261645551998,
+          "score": 1710.533048412086,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "caf simulation apl",
+          "impressions": 2349,
+          "clicks": 15,
+          "ctr": 0.0064,
+          "position": 4.1179302256279255,
+          "score": 566.7814343901623,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "apl simulation",
+          "impressions": 1936,
+          "clicks": 17,
+          "ctr": 0.0088,
+          "position": 4.108986157024794,
+          "score": 467.01622411633275,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "simulateur apl",
+          "impressions": 1229,
+          "clicks": 32,
+          "ctr": 0.026000000000000002,
+          "position": 4.366155492270138,
+          "score": 274.16476626159005,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "estimation apl",
+          "impressions": 859,
+          "clicks": 9,
+          "ctr": 0.0105,
+          "position": 3.762519557625146,
+          "score": 225.90726426323133,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "simulation apl caf 2026",
+          "impressions": 615,
+          "clicks": 33,
+          "ctr": 0.0537,
+          "position": 3.0422705691056913,
+          "score": 191.29610163867767,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "simulation caf apl",
+          "impressions": 546,
+          "clicks": 11,
+          "ctr": 0.020100000000000003,
+          "position": 3.3571408424908418,
+          "score": 159.36936372411355,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "caf apl simulation",
+          "impressions": 536,
+          "clicks": 2,
+          "ctr": 0.0037,
+          "position": 3.542902425373135,
+          "score": 150.7286218710237,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        },
+        {
+          "keyword": "simulation apl caf",
+          "impressions": 452,
+          "clicks": 6,
+          "ctr": 0.013300000000000001,
+          "position": 4.081861946902655,
+          "score": 109.26102004464386,
+          "cluster": "apl",
+          "targetPage": "/pages/apl"
+        }
+      ]
+    },
+    {
+      "cluster": "prime-activite",
+      "targetPage": "/pages/prime-activite",
+      "keywordCount": 5,
+      "impressions": 5482,
+      "clicks": 62,
+      "score": 1207.5273127116943,
+      "keywords": [
+        {
+          "keyword": "simulation prime activité",
+          "impressions": 2184,
+          "clicks": 34,
+          "ctr": 0.015600000000000001,
+          "position": 4.245876144688644,
+          "score": 506.35711611358295,
+          "cluster": "prime-activite",
+          "targetPage": "/pages/prime-activite"
+        },
+        {
+          "keyword": "prime d'activité simulation",
+          "impressions": 1076,
+          "clicks": 7,
+          "ctr": 0.006500000000000001,
+          "position": 4.836422304832714,
+          "score": 221.0323939106421,
+          "cluster": "prime-activite",
+          "targetPage": "/pages/prime-activite"
+        },
+        {
+          "keyword": "simulation prime d'activité",
+          "impressions": 1049,
+          "clicks": 13,
+          "ctr": 0.0124,
+          "position": 4.8493613918017155,
+          "score": 213.63481009096145,
+          "cluster": "prime-activite",
+          "targetPage": "/pages/prime-activite"
+        },
+        {
+          "keyword": "caf simulation prime activité",
+          "impressions": 519,
+          "clicks": 3,
+          "ctr": 0.0058,
+          "position": 3.79576570327553,
+          "score": 135.93826393307944,
+          "cluster": "prime-activite",
+          "targetPage": "/pages/prime-activite"
+        },
+        {
+          "keyword": "simulateur prime d'activité",
+          "impressions": 654,
+          "clicks": 5,
+          "ctr": 0.0076,
+          "position": 4.970941284403669,
+          "score": 130.56472866342853,
+          "cluster": "prime-activite",
+          "targetPage": "/pages/prime-activite"
+        }
+      ]
+    },
+    {
+      "cluster": "autres",
+      "targetPage": null,
+      "keywordCount": 3,
+      "impressions": 3388,
+      "clicks": 26,
+      "score": 749.9177737055095,
+      "keywords": [
+        {
+          "keyword": "simulation caf",
+          "impressions": 2115,
+          "clicks": 12,
+          "ctr": 0.0057,
+          "position": 4.465723215130024,
+          "score": 470.90793555569047,
+          "cluster": "autres",
+          "targetPage": null
+        },
+        {
+          "keyword": "caf simulation",
+          "impressions": 657,
+          "clicks": 2,
+          "ctr": 0.003,
+          "position": 4.581441248097414,
+          "score": 142.9744406898203,
+          "cluster": "autres",
+          "targetPage": null
+        },
+        {
+          "keyword": "simulateur caf",
+          "impressions": 616,
+          "clicks": 12,
+          "ctr": 0.0195,
+          "position": 4.439932629870129,
+          "score": 136.03539745999865,
+          "cluster": "autres",
+          "targetPage": null
+        }
+      ]
+    },
+    {
+      "cluster": "salaire",
+      "targetPage": "/pages/salaire-brut-net-calcul-2026",
+      "keywordCount": 2,
+      "impressions": 1415,
+      "clicks": 6,
+      "score": 237.35335602247045,
+      "keywords": [
+        {
+          "keyword": "brut en net 2026",
+          "impressions": 1029,
+          "clicks": 2,
+          "ctr": 0.0019,
+          "position": 5.857151214771623,
+          "score": 175.34887906083296,
+          "cluster": "salaire",
+          "targetPage": "/pages/salaire-brut-net-calcul-2026"
+        },
+        {
+          "keyword": "salaire brut en net 2026",
+          "impressions": 386,
+          "clicks": 4,
+          "ctr": 0.0104,
+          "position": 6.160613212435233,
+          "score": 62.00447696163751,
+          "cluster": "salaire",
+          "targetPage": "/pages/salaire-brut-net-calcul-2026"
+        }
+      ]
+    },
+    {
+      "cluster": "are",
+      "targetPage": "/pages/are",
+      "keywordCount": 3,
+      "impressions": 1053,
+      "clicks": 27,
+      "score": 225.76666184107134,
+      "keywords": [
+        {
+          "keyword": "simulation chomage",
+          "impressions": 515,
+          "clicks": 5,
+          "ctr": 0.0097,
+          "position": 6.071830485436894,
+          "score": 83.99518089696849,
+          "cluster": "are",
+          "targetPage": "/pages/are"
+        },
+        {
+          "keyword": "simulation are",
+          "impressions": 233,
+          "clicks": 14,
+          "ctr": 0.0601,
+          "position": 2.6094424892703865,
+          "score": 83.92470840054138,
+          "cluster": "are",
+          "targetPage": "/pages/are"
+        },
+        {
+          "keyword": "simulateur chomage",
+          "impressions": 305,
+          "clicks": 8,
+          "ctr": 0.0262,
+          "position": 5.134409180327869,
+          "score": 57.84677254356145,
+          "cluster": "are",
+          "targetPage": "/pages/are"
+        }
+      ]
+    },
+    {
+      "cluster": "notaire",
+      "targetPage": "/pages/notaire",
+      "keywordCount": 1,
+      "impressions": 463,
+      "clicks": 7,
+      "score": 92.9685234580013,
+      "keywords": [
+        {
+          "keyword": "frais de notaire 2026",
+          "impressions": 463,
+          "clicks": 7,
+          "ctr": 0.0151,
+          "position": 4.904979481641469,
+          "score": 92.9685234580013,
+          "cluster": "notaire",
+          "targetPage": "/pages/notaire"
+        }
+      ]
+    },
+    {
+      "cluster": "rsa",
+      "targetPage": "/pages/rsa",
+      "keywordCount": 1,
+      "impressions": 524,
+      "clicks": 0,
+      "score": 79.81871138548614,
+      "keywords": [
+        {
+          "keyword": "simulation rsa",
+          "impressions": 524,
+          "clicks": 0,
+          "ctr": 0,
+          "position": 6.564876717557253,
+          "score": 79.81871138548614,
+          "cluster": "rsa",
+          "targetPage": "/pages/rsa"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "simulation apl",
+      "impressions": 7183,
+      "clicks": 58,
+      "ctr": 0.008100000000000001,
+      "position": 4.165261645551998,
+      "score": 1710.533048412086,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "simulateur impôts 2026",
+      "impressions": 9877,
+      "clicks": 78,
+      "ctr": 0.0079,
+      "position": 6.615582545307279,
+      "score": 1481.195591301455,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulation impôts 2026",
+      "impressions": 5210,
+      "clicks": 52,
+      "ctr": 0.01,
+      "position": 5.176405451055662,
+      "score": 996.4250383339102,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "caf simulation apl",
+      "impressions": 2349,
+      "clicks": 15,
+      "ctr": 0.0064,
+      "position": 4.1179302256279255,
+      "score": 566.7814343901623,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "simulation prime activité",
+      "impressions": 2184,
+      "clicks": 34,
+      "ctr": 0.015600000000000001,
+      "position": 4.245876144688644,
+      "score": 506.35711611358295,
+      "cluster": "prime-activite",
+      "targetPage": "/pages/prime-activite"
+    },
+    {
+      "keyword": "simulation caf",
+      "impressions": 2115,
+      "clicks": 12,
+      "ctr": 0.0057,
+      "position": 4.465723215130024,
+      "score": 470.90793555569047,
+      "cluster": "autres",
+      "targetPage": null
+    },
+    {
+      "keyword": "apl simulation",
+      "impressions": 1936,
+      "clicks": 17,
+      "ctr": 0.0088,
+      "position": 4.108986157024794,
+      "score": 467.01622411633275,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "simulateur impots",
+      "impressions": 2001,
+      "clicks": 12,
+      "ctr": 0.006,
+      "position": 6.5402489755122435,
+      "score": 304.11594534812315,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulateur apl",
+      "impressions": 1229,
+      "clicks": 32,
+      "ctr": 0.026000000000000002,
+      "position": 4.366155492270138,
+      "score": 274.16476626159005,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "estimation apl",
+      "impressions": 859,
+      "clicks": 9,
+      "ctr": 0.0105,
+      "position": 3.762519557625146,
+      "score": 225.90726426323133,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "prime d'activité simulation",
+      "impressions": 1076,
+      "clicks": 7,
+      "ctr": 0.006500000000000001,
+      "position": 4.836422304832714,
+      "score": 221.0323939106421,
+      "cluster": "prime-activite",
+      "targetPage": "/pages/prime-activite"
+    },
+    {
+      "keyword": "simulation prime d'activité",
+      "impressions": 1049,
+      "clicks": 13,
+      "ctr": 0.0124,
+      "position": 4.8493613918017155,
+      "score": 213.63481009096145,
+      "cluster": "prime-activite",
+      "targetPage": "/pages/prime-activite"
+    },
+    {
+      "keyword": "calcul impôts 2026",
+      "impressions": 1026,
+      "clicks": 21,
+      "ctr": 0.020499999999999997,
+      "position": 5.059449707602339,
+      "score": 198.6316809296344,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulation apl caf 2026",
+      "impressions": 615,
+      "clicks": 33,
+      "ctr": 0.0537,
+      "position": 3.0422705691056913,
+      "score": 191.29610163867767,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "brut en net 2026",
+      "impressions": 1029,
+      "clicks": 2,
+      "ctr": 0.0019,
+      "position": 5.857151214771623,
+      "score": 175.34887906083296,
+      "cluster": "salaire",
+      "targetPage": "/pages/salaire-brut-net-calcul-2026"
+    },
+    {
+      "keyword": "simulation caf apl",
+      "impressions": 546,
+      "clicks": 11,
+      "ctr": 0.020100000000000003,
+      "position": 3.3571408424908418,
+      "score": 159.36936372411355,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "caf apl simulation",
+      "impressions": 536,
+      "clicks": 2,
+      "ctr": 0.0037,
+      "position": 3.542902425373135,
+      "score": 150.7286218710237,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "caf simulation",
+      "impressions": 657,
+      "clicks": 2,
+      "ctr": 0.003,
+      "position": 4.581441248097414,
+      "score": 142.9744406898203,
+      "cluster": "autres",
+      "targetPage": null
+    },
+    {
+      "keyword": "simulateur caf",
+      "impressions": 616,
+      "clicks": 12,
+      "ctr": 0.0195,
+      "position": 4.439932629870129,
+      "score": 136.03539745999865,
+      "cluster": "autres",
+      "targetPage": null
+    },
+    {
+      "keyword": "caf simulation prime activité",
+      "impressions": 519,
+      "clicks": 3,
+      "ctr": 0.0058,
+      "position": 3.79576570327553,
+      "score": 135.93826393307944,
+      "cluster": "prime-activite",
+      "targetPage": "/pages/prime-activite"
+    },
+    {
+      "keyword": "simulateur prime d'activité",
+      "impressions": 654,
+      "clicks": 5,
+      "ctr": 0.0076,
+      "position": 4.970941284403669,
+      "score": 130.56472866342853,
+      "cluster": "prime-activite",
+      "targetPage": "/pages/prime-activite"
+    },
+    {
+      "keyword": "simulation impôt 2026",
+      "impressions": 603,
+      "clicks": 8,
+      "ctr": 0.013300000000000001,
+      "position": 5.101156218905472,
+      "score": 116.63632213319312,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulation apl caf",
+      "impressions": 452,
+      "clicks": 6,
+      "ctr": 0.013300000000000001,
+      "position": 4.081861946902655,
+      "score": 109.26102004464386,
+      "cluster": "apl",
+      "targetPage": "/pages/apl"
+    },
+    {
+      "keyword": "simulateur impots 2026",
+      "impressions": 632,
+      "clicks": 9,
+      "ctr": 0.014199999999999999,
+      "position": 6.025320727848102,
+      "score": 103.40123424807447,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "impots 2026",
+      "impressions": 780,
+      "clicks": 5,
+      "ctr": 0.0064,
+      "position": 7.803858974358972,
+      "score": 99.31086691166931,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "impôt sur le revenu 2026",
+      "impressions": 679,
+      "clicks": 3,
+      "ctr": 0.0044,
+      "position": 6.821787334315169,
+      "score": 99.0960824298203,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulateur impot",
+      "impressions": 624,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.578527564102565,
+      "score": 94.85405266142186,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulateur impôt 2026",
+      "impressions": 617,
+      "clicks": 5,
+      "ctr": 0.008100000000000001,
+      "position": 6.560763047001621,
+      "score": 93.28218312650314,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "frais de notaire 2026",
+      "impressions": 463,
+      "clicks": 7,
+      "ctr": 0.0151,
+      "position": 4.904979481641469,
+      "score": 92.9685234580013,
+      "cluster": "notaire",
+      "targetPage": "/pages/notaire"
+    },
+    {
+      "keyword": "simulation chomage",
+      "impressions": 515,
+      "clicks": 5,
+      "ctr": 0.0097,
+      "position": 6.071830485436894,
+      "score": 83.99518089696849,
+      "cluster": "are",
+      "targetPage": "/pages/are"
+    },
+    {
+      "keyword": "simulation are",
+      "impressions": 233,
+      "clicks": 14,
+      "ctr": 0.0601,
+      "position": 2.6094424892703865,
+      "score": 83.92470840054138,
+      "cluster": "are",
+      "targetPage": "/pages/are"
+    },
+    {
+      "keyword": "simulation rsa",
+      "impressions": 524,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.564876717557253,
+      "score": 79.81871138548614,
+      "cluster": "rsa",
+      "targetPage": "/pages/rsa"
+    },
+    {
+      "keyword": "simulation impots",
+      "impressions": 458,
+      "clicks": 4,
+      "ctr": 0.0087,
+      "position": 5.997824672489084,
+      "score": 75.69667751084572,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulation impots 2026",
+      "impressions": 412,
+      "clicks": 1,
+      "ctr": 0.0024,
+      "position": 5.5291330097087386,
+      "score": 74.33556025479862,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "impôts 2026",
+      "impressions": 533,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.110682176360225,
+      "score": 65.71580397435703,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulation impot",
+      "impressions": 456,
+      "clicks": 1,
+      "ctr": 0.0022,
+      "position": 7.1951703947368415,
+      "score": 63.23641762991789,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "salaire brut en net 2026",
+      "impressions": 386,
+      "clicks": 4,
+      "ctr": 0.0104,
+      "position": 6.160613212435233,
+      "score": 62.00447696163751,
+      "cluster": "salaire",
+      "targetPage": "/pages/salaire-brut-net-calcul-2026"
+    },
+    {
+      "keyword": "simulateur chomage",
+      "impressions": 305,
+      "clicks": 8,
+      "ctr": 0.0262,
+      "position": 5.134409180327869,
+      "score": 57.84677254356145,
+      "cluster": "are",
+      "targetPage": "/pages/are"
+    },
+    {
+      "keyword": "impôts sur le revenu 2026",
+      "impressions": 363,
+      "clicks": 5,
+      "ctr": 0.013800000000000002,
+      "position": 6.4600528925619845,
+      "score": 55.41604781784146,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    },
+    {
+      "keyword": "simulation impot 2026",
+      "impressions": 311,
+      "clicks": 2,
+      "ctr": 0.0064,
+      "position": 5.691318006430868,
+      "score": 54.294910186153125,
+      "cluster": "impot",
+      "targetPage": "/pages/impot"
+    }
+  ]
+}

@@ -22,6 +22,8 @@ function parseArgs(argv) {
     inputDir: args.get("input-dir") || "seach-console-perf",
     minImpressions: Number.parseInt(args.get("min-impressions") || "200", 10),
     maxCtr: Number.parseFloat(args.get("max-ctr") || "0.012"),
+    minPosition: Number.parseFloat(args.get("min-position") || "4"),
+    maxPosition: Number.parseFloat(args.get("max-position") || "12"),
     maxPages: Number.parseInt(args.get("max-pages") || "20", 10),
     pseoOnly: args.get("pseo-only") !== "false",
     strategy: args.get("strategy") || "hub-first",
@@ -144,6 +146,28 @@ function getHubCluster(pathname) {
   return segments[1];
 }
 
+function isPseoPath(pathname) {
+  const segments = getSegments(pathname);
+  return segments.length >= 3 && segments[0] === "pages";
+}
+
+function inferPageType(page) {
+  if (page.associatedPages?.length && isHubPath(page.pathname)) {
+    return "hub";
+  }
+
+  if (isPseoPath(page.pathname)) {
+    return "pseo";
+  }
+
+  return "ymyl_pillar";
+}
+
+function isWithinPositionWindow(position, options) {
+  if (!Number.isFinite(position) || position <= 0) return false;
+  return position >= options.minPosition && position <= options.maxPosition;
+}
+
 function isSatelliteForHub(pathname, hubPath) {
   return pathname.startsWith(`${hubPath}/`);
 }
@@ -170,6 +194,13 @@ function buildPageMetrics(pathname, m7, m28) {
   };
 }
 
+function buildPriorityScore(page, options) {
+  const position = Math.max(page.pos28 || 0, 1);
+  const ctrPenalty = 1 - Math.min(Math.max(page.ctr28 || 0, 0), 1);
+  const positionBoost = isWithinPositionWindow(position, options) ? 1.25 : 0.35;
+  return page.impressions28 * ctrPenalty * (1 / position) * positionBoost;
+}
+
 function detectCandidates(d7Data, d28Data, options) {
   const m7 = mapByPath(d7Data.entries);
   const m28 = mapByPath(d28Data.entries);
@@ -188,9 +219,10 @@ function detectCandidates(d7Data, d28Data, options) {
 
     if (v28.impressions < options.minImpressions) continue;
     if (v28.ctr > options.maxCtr) continue;
+    if (!isWithinPositionWindow(v28.position, options)) continue;
 
     const opportunityScore = v28.impressions * (1 - v28.ctr) * (1 / Math.max(v28.position, 1));
-    scored.push({
+    const page = {
       pathname,
       url: v28.url || v7.url || `https://www.lescalculateurs.fr${pathname}`,
       impressions7: v7.impressions,
@@ -204,10 +236,15 @@ function detectCandidates(d7Data, d28Data, options) {
       deltaCtr: v7.ctr - v28.ctr,
       deltaPos: v7.position && v28.position ? v7.position - v28.position : 0,
       opportunityScore,
+    };
+
+    scored.push({
+      ...page,
+      priorityScore: buildPriorityScore(page, options),
     });
   }
 
-  scored.sort((a, b) => b.opportunityScore - a.opportunityScore);
+  scored.sort((a, b) => b.priorityScore - a.priorityScore);
   return scored.slice(0, Math.max(1, options.maxPages));
 }
 
@@ -222,7 +259,9 @@ function detectHubCandidates(d7Data, d28Data, options) {
     .map((pathname) => buildPageMetrics(pathname, m7, m28))
     .filter((page) => page.impressions28 >= options.minImpressions)
     .filter((page) => page.ctr28 <= options.maxCtr)
-    .sort((a, b) => b.opportunityScore - a.opportunityScore)
+    .filter((page) => isWithinPositionWindow(page.pos28, options))
+    .map((page) => ({ ...page, priorityScore: buildPriorityScore(page, options) }))
+    .sort((a, b) => b.priorityScore - a.priorityScore)
     .slice(0, Math.max(1, options.maxPages));
 
   return hubs.map((hub) => {
@@ -239,6 +278,7 @@ function detectHubCandidates(d7Data, d28Data, options) {
       ...hub,
       cluster: getHubCluster(hub.pathname),
       associatedPages: satellites,
+      pageType: "hub",
     };
   });
 }
@@ -291,6 +331,7 @@ function enrichWithPageContent(candidates) {
     if (!filePath) {
       return {
         ...item,
+        pageType: item.pageType || inferPageType(item),
         filePath: null,
         title: "",
         metaDescription: "",
@@ -307,6 +348,7 @@ function enrichWithPageContent(candidates) {
 
     return {
       ...item,
+      pageType: item.pageType || inferPageType(item),
       filePath: path.relative(process.cwd(), filePath),
       title,
       h1,
@@ -323,171 +365,215 @@ function enrichHubsWithPageContent(hubs) {
   }));
 }
 
-function buildPrompt(page) {
-  return [
-    {
-      role: "system",
-      content:
-        "Tu es un expert SEO CTR Google pour un site de simulateurs francais. Tu dois produire des recommandations concretes, actionnables, en francais naturel, sans blabla.",
-    },
-    {
-      role: "user",
-      content: [
-        "Analyse cette page et propose des optimisations CTR.",
-        `URL: ${page.url}`,
-        `Path: ${page.pathname}`,
-        `Title actuel: ${page.title || "(inconnu)"}`,
-        `H1 actuel: ${page.h1 || "(inconnu)"}`,
-        `Meta description actuelle: ${page.metaDescription || "(inconnue)"}`,
-        `Donnees 28 jours: impressions=${page.impressions28}, clics=${page.clicks28}, ctr=${(page.ctr28 * 100).toFixed(2)}%, position=${page.pos28.toFixed(2)}`,
-        `Donnees 7 jours: impressions=${page.impressions7}, clics=${page.clicks7}, ctr=${(page.ctr7 * 100).toFixed(2)}%, position=${page.pos7 ? page.pos7.toFixed(2) : "0.00"}`,
-        `Extrait de la page: ${page.excerpt || "(non disponible)"}`,
-        "",
-        "Objectif:",
-        "1) Diagnostic clair des causes possibles du CTR faible.",
-        "2) Proposer 3 titles optimises.",
-        "3) Proposer 2 meta descriptions optimisees.",
-        "4) Donner 3 quick wins UX actionnables (hero, CTA, first-screen value).",
-        "5) Donner 3 actions prioritaires classees par impact.",
-        "",
-        "Contraintes:",
-        "- Francais naturel, style humain.",
-        "- Promesse concrete, orientee utilisateur.",
-        "- Pas de jargon interne.",
-        "- Pas de contenu trompeur.",
-      ].join("\n"),
-    },
-  ];
-}
-
-function buildHubPrompt(page) {
-  const associatedSummary = (page.associatedPages || [])
+function buildAssociatedSummary(page) {
+  return (page.associatedPages || [])
     .map(
       (child, index) =>
         `${index + 1}. ${child.pathname} | impr28=${child.impressions28} | clics28=${child.clicks28} | ctr28=${(child.ctr28 * 100).toFixed(2)}% | pos28=${child.pos28.toFixed(2)}`,
     )
     .join("\n");
+}
+
+function buildTypeSpecificInstructions(page) {
+  if (page.pageType === "hub") {
+    return [
+      "Type de page: hub.",
+      "Le hub doit optimiser: title/meta, reponse directe, bloc situations, navigation vers satellites et CTA principal.",
+      "Les recommandations doivent favoriser le hub sans cannibaliser les pages pSEO associees.",
+      "Associer chaque suggestion de maillage a des satellites reellement utiles.",
+    ].join("\n");
+  }
+
+  if (page.pageType === "pseo") {
+    return [
+      "Type de page: pSEO.",
+      "La page doit optimiser: promesse de recherche, cas concret, snippet reponse directe, featured snippet potential, et lien de retour vers le hub parent.",
+      "Ne propose pas de gros blocs generiques: reste specifique au scenario.",
+    ].join("\n");
+  }
+
+  return [
+    "Type de page: YMYL/pilier.",
+    "Les recommandations doivent rester prudentes et ne pas encourager de reecriture agressive.",
+    "Prioriser titre, meta, reponse directe, clarté above-the-fold, structure FAQ et CTA sobres.",
+  ].join("\n");
+}
+
+function buildPrompt(page) {
+  const associatedSummary = buildAssociatedSummary(page);
 
   return [
     {
       role: "system",
       content:
-        "Tu es un expert SEO CTR Google pour un site de simulateurs francais. Tu travailles en mode hub-first: la page hub est prioritaire et doit etre optimisee avec son maillage vers les pages satellites pSEO associees.",
+        "Tu es un expert SEO CTR Google pour un site francais de simulateurs et contenus YMYL. Tu rends une analyse strictement exploitable, concrete, prudente et sans jargon interne.",
     },
     {
       role: "user",
       content: [
-        "Analyse cette page hub et ses pages pSEO associees.",
-        `URL hub: ${page.url}`,
-        `Path hub: ${page.pathname}`,
-        `Title actuel hub: ${page.title || "(inconnu)"}`,
-        `H1 actuel hub: ${page.h1 || "(inconnu)"}`,
-        `Meta actuelle hub: ${page.metaDescription || "(inconnue)"}`,
-        `Donnees hub 28 jours: impressions=${page.impressions28}, clics=${page.clicks28}, ctr=${(page.ctr28 * 100).toFixed(2)}%, position=${page.pos28.toFixed(2)}`,
-        `Donnees hub 7 jours: impressions=${page.impressions7}, clics=${page.clicks7}, ctr=${(page.ctr7 * 100).toFixed(2)}%, position=${page.pos7.toFixed(2)}`,
+        "Analyse cette page et renvoie uniquement des recommandations de faible ou moyen risque editorial.",
+        `Type de page detecte: ${page.pageType}`,
+        `URL: ${page.url}`,
+        `Path: ${page.pathname}`,
+        `Fichier local: ${page.filePath || "(introuvable)"}`,
+        `Title actuel: ${page.title || "(inconnu)"}`,
+        `H1 actuel: ${page.h1 || "(inconnu)"}`,
+        `Meta description actuelle: ${page.metaDescription || "(inconnue)"}`,
+        `Donnees 28 jours: impressions=${page.impressions28}, clics=${page.clicks28}, ctr=${(page.ctr28 * 100).toFixed(2)}%, position=${page.pos28.toFixed(2)}`,
+        `Donnees 7 jours: impressions=${page.impressions7}, clics=${page.clicks7}, ctr=${(page.ctr7 * 100).toFixed(2)}%, position=${page.pos7 ? page.pos7.toFixed(2) : "0.00"}`,
+        `Priority score: ${(page.priorityScore || 0).toFixed(2)}`,
+        `Extrait de page: ${page.excerpt || "(non disponible)"}`,
+        associatedSummary ? `Pages associees:\n${associatedSummary}` : "Pages associees: (aucune)",
         "",
-        "Pages satellites associees:",
-        associatedSummary || "(aucune)",
-        "",
-        `Extrait hub: ${page.excerpt || "(non disponible)"}`,
-        "",
-        "Objectif:",
-        "1) Diagnostiquer pourquoi le hub capte beaucoup d'impressions mais sous-performe au clic.",
-        "2) Proposer 3 titles optimises pour la page hub.",
-        "3) Proposer 2 meta descriptions optimisees pour la page hub.",
-        "4) Donner 3 quick wins UX pour la page hub.",
-        "5) Donner 3 recommandations de maillage interne entre le hub et ses pages satellites.",
-        "6) Donner 3 actions prioritaires classees par impact.",
+        "Objectif de sortie:",
+        "1) diagnostic du probleme de CTR / positionnement",
+        "2) 3 titles optimises",
+        "3) 2 meta descriptions optimisees",
+        "4) 1 reponse directe type snippet",
+        "5) 1 proposition above-the-fold",
+        "6) recommandations de liens internes",
+        "7) 3 actions prioritaires classees",
+        "8) un bloc safe_apply_candidates reserve aux changements faibles risques",
         "",
         "Contraintes:",
-        "- Francais naturel, style humain.",
-        "- Promesse concrete, orientee utilisateur.",
-        "- Pas de jargon interne.",
-        "- Le hub reste la priorite, les satellites servent a renforcer l'intention et la navigation.",
+        "- Francais naturel et humain.",
+        "- Pas de jargon interne ni de formulation robotique.",
+        "- Ne pas inventer de chiffres non justifies.",
+        "- Rester prudent sur les pages YMYL/pilier.",
+        "- Les suggestions doivent etre directement utilisables par un autre agent pour implementation manuelle.",
+        "",
+        buildTypeSpecificInstructions(page),
       ].join("\n"),
     },
   ];
 }
 
-function buildSchema() {
-  return {
-    type: "object",
-    additionalProperties: false,
-    properties: {
-      diagnostic: { type: "string" },
-      titleSuggestions: {
-        type: "array",
-        minItems: 3,
-        maxItems: 3,
-        items: { type: "string" },
-      },
-      metaSuggestions: {
-        type: "array",
-        minItems: 2,
-        maxItems: 2,
-        items: { type: "string" },
-      },
-      uxQuickWins: {
-        type: "array",
-        minItems: 3,
-        maxItems: 3,
-        items: { type: "string" },
-      },
-      priorityActions: {
-        type: "array",
-        minItems: 3,
-        maxItems: 3,
-        items: { type: "string" },
-      },
-    },
-    required: ["diagnostic", "titleSuggestions", "metaSuggestions", "uxQuickWins", "priorityActions"],
+function buildRecommendationSchema() {
+  const stringArray3 = {
+    type: "array",
+    minItems: 3,
+    maxItems: 3,
+    items: { type: "string" },
   };
-}
 
-function buildHubSchema() {
   return {
     type: "object",
     additionalProperties: false,
     properties: {
-      diagnostic: { type: "string" },
-      titleSuggestions: {
+      pageType: {
+        type: "string",
+        enum: ["hub", "pseo", "ymyl_pillar"],
+      },
+      diagnostic: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          summary: { type: "string" },
+          primaryIssue: { type: "string" },
+          whyNow: { type: "string" },
+        },
+        required: ["summary", "primaryIssue", "whyNow"],
+      },
+      titles: {
         type: "array",
         minItems: 3,
         maxItems: 3,
-        items: { type: "string" },
+        items: {
+          type: "object",
+          additionalProperties: false,
+          properties: {
+            value: { type: "string" },
+            reason: { type: "string" },
+          },
+          required: ["value", "reason"],
+        },
       },
-      metaSuggestions: {
+      metas: {
         type: "array",
         minItems: 2,
         maxItems: 2,
-        items: { type: "string" },
+        items: {
+          type: "object",
+          additionalProperties: false,
+          properties: {
+            value: { type: "string" },
+            reason: { type: "string" },
+          },
+          required: ["value", "reason"],
+        },
       },
-      uxQuickWins: {
+      snippet_answer: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          question: { type: "string" },
+          answer: { type: "string" },
+        },
+        required: ["question", "answer"],
+      },
+      above_the_fold: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          intro: { type: "string" },
+          cta: { type: "string" },
+          trust_signal: { type: "string" },
+        },
+        required: ["intro", "cta", "trust_signal"],
+      },
+      internal_links: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          strategy: { type: "string" },
+          suggestions: stringArray3,
+        },
+        required: ["strategy", "suggestions"],
+      },
+      priority_actions: {
         type: "array",
         minItems: 3,
         maxItems: 3,
-        items: { type: "string" },
+        items: {
+          type: "object",
+          additionalProperties: false,
+          properties: {
+            action: { type: "string" },
+            impact: { type: "string", enum: ["high", "medium", "low"] },
+            risk: { type: "string", enum: ["low", "medium"] },
+          },
+          required: ["action", "impact", "risk"],
+        },
       },
-      internalLinkingRecommendations: {
-        type: "array",
-        minItems: 3,
-        maxItems: 3,
-        items: { type: "string" },
-      },
-      priorityActions: {
-        type: "array",
-        minItems: 3,
-        maxItems: 3,
-        items: { type: "string" },
+      safe_apply_candidates: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          title: { type: "string" },
+          meta: { type: "string" },
+          snippet_answer: { type: "string" },
+          above_the_fold_intro: { type: "string" },
+          cta: { type: "string" },
+          notes: {
+            type: "array",
+            minItems: 2,
+            maxItems: 4,
+            items: { type: "string" },
+          },
+        },
+        required: ["title", "meta", "snippet_answer", "above_the_fold_intro", "cta", "notes"],
       },
     },
     required: [
+      "pageType",
       "diagnostic",
-      "titleSuggestions",
-      "metaSuggestions",
-      "uxQuickWins",
-      "internalLinkingRecommendations",
-      "priorityActions",
+      "titles",
+      "metas",
+      "snippet_answer",
+      "above_the_fold",
+      "internal_links",
+      "priority_actions",
+      "safe_apply_candidates",
     ],
   };
 }
@@ -519,44 +605,8 @@ async function requestOpenAi(apiKey, page) {
       text: {
         format: {
           type: "json_schema",
-          name: "seo_ctr_reco",
-          schema: buildSchema(),
-          strict: true,
-        },
-      },
-    }),
-  });
-
-  if (!response.ok) {
-    const body = await response.text();
-    throw new Error(`OpenAI HTTP ${response.status}: ${body.slice(0, 500)}`);
-  }
-
-  const payload = await response.json();
-  const content = extractOutputText(payload);
-  if (!content) {
-    throw new Error("Reponse OpenAI vide.");
-  }
-  return JSON.parse(content);
-}
-
-async function requestOpenAiHub(apiKey, page) {
-  const response = await fetch(OPENAI_API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: OPENAI_MODEL,
-      store: false,
-      reasoning: { effort: "low" },
-      input: buildHubPrompt(page),
-      text: {
-        format: {
-          type: "json_schema",
-          name: "seo_hub_ctr_reco",
-          schema: buildHubSchema(),
+          name: "seo_ctr_reco_v2",
+          schema: buildRecommendationSchema(),
           strict: true,
         },
       },
@@ -598,22 +648,24 @@ function buildMarkdownReport(result) {
   lines.push(`- Fichier 28 jours: \`${path.basename(result.sources.days28)}\``);
   lines.push(`- Seuil impressions 28j: \`${result.thresholds.minImpressions}\``);
   lines.push(`- Seuil CTR max 28j: \`${formatPct(result.thresholds.maxCtr)}\``);
+  lines.push(`- Fenetre position cible: \`${result.thresholds.minPosition}\` a \`${result.thresholds.maxPosition}\``);
   lines.push(`- Pages analysees: \`${result.summary.analyzedPages}\``);
   lines.push(`- Modele OpenAI: \`${result.model}\``);
   lines.push(`- Strategie: \`${result.strategy}\``);
   lines.push("");
   lines.push("## Pages prioritaires");
-  lines.push("| Page | Impr 28j | Clics 28j | CTR 28j | Pos 28j | Score |");
-  lines.push("|---|---:|---:|---:|---:|---:|");
+  lines.push("| Page | Type | Impr 28j | Clics 28j | CTR 28j | Pos 28j | Priority Score |");
+  lines.push("|---|---|---:|---:|---:|---:|---:|");
   for (const p of result.pages) {
     lines.push(
-      `| ${p.pathname} | ${p.impressions28} | ${p.clicks28} | ${formatPct(p.ctr28)} | ${p.pos28.toFixed(2)} | ${p.opportunityScore.toFixed(2)} |`,
+      `| ${p.pathname} | ${p.pageType} | ${p.impressions28} | ${p.clicks28} | ${formatPct(p.ctr28)} | ${p.pos28.toFixed(2)} | ${(p.priorityScore || 0).toFixed(2)} |`,
     );
   }
 
   for (const p of result.pages) {
     lines.push("");
     lines.push(`## ${p.pathname}`);
+    lines.push(`- Type detecte: ${p.pageType}`);
     lines.push(`- URL: ${p.url}`);
     lines.push(`- Fichier local: \`${p.filePath || "introuvable"}\``);
     lines.push(`- Title actuel: ${p.title || "(inconnu)"}`);
@@ -635,24 +687,41 @@ function buildMarkdownReport(result) {
 
     lines.push("");
     lines.push("Diagnostic:");
-    lines.push(p.recommendations.diagnostic);
+    lines.push(`- Resume: ${p.recommendations.diagnostic.summary}`);
+    lines.push(`- Probleme principal: ${p.recommendations.diagnostic.primaryIssue}`);
+    lines.push(`- Pourquoi maintenant: ${p.recommendations.diagnostic.whyNow}`);
     lines.push("");
     lines.push("Titles proposes:");
-    for (const title of p.recommendations.titleSuggestions) lines.push(`- ${title}`);
+    for (const title of p.recommendations.titles) lines.push(`- ${title.value} — ${title.reason}`);
     lines.push("");
     lines.push("Metas proposees:");
-    for (const meta of p.recommendations.metaSuggestions) lines.push(`- ${meta}`);
+    for (const meta of p.recommendations.metas) lines.push(`- ${meta.value} — ${meta.reason}`);
     lines.push("");
-    lines.push("Quick wins UX:");
-    for (const ux of p.recommendations.uxQuickWins) lines.push(`- ${ux}`);
+    lines.push("Snippet answer:");
+    lines.push(`- ${p.recommendations.snippet_answer.question}`);
+    lines.push(`- ${p.recommendations.snippet_answer.answer}`);
     lines.push("");
-    if (p.recommendations.internalLinkingRecommendations?.length) {
-      lines.push("Recommandations de maillage:");
-      for (const item of p.recommendations.internalLinkingRecommendations) lines.push(`- ${item}`);
-      lines.push("");
-    }
+    lines.push("Above the fold:");
+    lines.push(`- Intro: ${p.recommendations.above_the_fold.intro}`);
+    lines.push(`- CTA: ${p.recommendations.above_the_fold.cta}`);
+    lines.push(`- Signal de confiance: ${p.recommendations.above_the_fold.trust_signal}`);
+    lines.push("");
+    lines.push("Recommandations de maillage:");
+    lines.push(`- Strategie: ${p.recommendations.internal_links.strategy}`);
+    for (const item of p.recommendations.internal_links.suggestions) lines.push(`- ${item}`);
+    lines.push("");
     lines.push("Actions prioritaires:");
-    for (const action of p.recommendations.priorityActions) lines.push(`- ${action}`);
+    for (const action of p.recommendations.priority_actions) {
+      lines.push(`- [impact=${action.impact}][risk=${action.risk}] ${action.action}`);
+    }
+    lines.push("");
+    lines.push("Safe apply candidates:");
+    lines.push(`- Title: ${p.recommendations.safe_apply_candidates.title}`);
+    lines.push(`- Meta: ${p.recommendations.safe_apply_candidates.meta}`);
+    lines.push(`- Snippet: ${p.recommendations.safe_apply_candidates.snippet_answer}`);
+    lines.push(`- Intro: ${p.recommendations.safe_apply_candidates.above_the_fold_intro}`);
+    lines.push(`- CTA: ${p.recommendations.safe_apply_candidates.cta}`);
+    for (const note of p.recommendations.safe_apply_candidates.notes) lines.push(`- Note: ${note}`);
   }
 
   lines.push("");
@@ -686,30 +755,90 @@ async function main() {
       analyzed.push({
         ...page,
         recommendations: {
-          diagnostic: "dry-run actif: appel OpenAI saute.",
-          titleSuggestions: [],
-          metaSuggestions: [],
-          uxQuickWins: [],
-          priorityActions: [],
+          pageType: page.pageType,
+          diagnostic: {
+            summary: "dry-run actif: appel OpenAI saute.",
+            primaryIssue: "analyse non executee",
+            whyNow: "aucune reponse modele en dry-run",
+          },
+          titles: [
+            { value: "", reason: "" },
+            { value: "", reason: "" },
+            { value: "", reason: "" },
+          ],
+          metas: [
+            { value: "", reason: "" },
+            { value: "", reason: "" },
+          ],
+          snippet_answer: {
+            question: "",
+            answer: "",
+          },
+          above_the_fold: {
+            intro: "",
+            cta: "",
+            trust_signal: "",
+          },
+          internal_links: {
+            strategy: "",
+            suggestions: ["", "", ""],
+          },
+          priority_actions: [
+            { action: "", impact: "medium", risk: "low" },
+            { action: "", impact: "medium", risk: "low" },
+            { action: "", impact: "medium", risk: "low" },
+          ],
+          safe_apply_candidates: {
+            title: "",
+            meta: "",
+            snippet_answer: "",
+            above_the_fold_intro: "",
+            cta: "",
+            notes: ["", ""],
+          },
         },
       });
       continue;
     }
 
     try {
-      const recommendations =
-        options.strategy === "hub-first" ? await requestOpenAiHub(apiKey, page) : await requestOpenAi(apiKey, page);
+      const recommendations = await requestOpenAi(apiKey, page);
       analyzed.push({ ...page, recommendations });
     } catch (error) {
       analyzed.push({
         ...page,
         recommendations: {
           error: error.message,
-          diagnostic: "",
-          titleSuggestions: [],
-          metaSuggestions: [],
-          uxQuickWins: [],
-          priorityActions: [],
+          pageType: page.pageType,
+          diagnostic: {
+            summary: "",
+            primaryIssue: "",
+            whyNow: "",
+          },
+          titles: [],
+          metas: [],
+          snippet_answer: {
+            question: "",
+            answer: "",
+          },
+          above_the_fold: {
+            intro: "",
+            cta: "",
+            trust_signal: "",
+          },
+          internal_links: {
+            strategy: "",
+            suggestions: [],
+          },
+          priority_actions: [],
+          safe_apply_candidates: {
+            title: "",
+            meta: "",
+            snippet_answer: "",
+            above_the_fold_intro: "",
+            cta: "",
+            notes: [],
+          },
         },
       });
     }
@@ -723,6 +852,8 @@ async function main() {
     thresholds: {
       minImpressions: options.minImpressions,
       maxCtr: options.maxCtr,
+      minPosition: options.minPosition,
+      maxPosition: options.maxPosition,
       maxPages: options.maxPages,
       pseoOnly: options.pseoOnly,
     },
@@ -738,17 +869,23 @@ async function main() {
 
   const outputBase =
     options.reportPrefix ||
-    `search-console-openai-reco-${dateStamp}`;
+    `search-console-openai-reco-v2-${dateStamp}`;
   const reportsDir = path.resolve(process.cwd(), "reports");
   if (!fs.existsSync(reportsDir)) fs.mkdirSync(reportsDir, { recursive: true });
 
   const jsonPath = path.join(reportsDir, `${outputBase}.json`);
   const mdPath = path.join(reportsDir, `${outputBase}.md`);
+  const latestJsonPath = path.join(reportsDir, "search-console-openai-reco-v2-latest.json");
+  const latestMdPath = path.join(reportsDir, "search-console-openai-reco-v2-latest.md");
   fs.writeFileSync(jsonPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
   fs.writeFileSync(mdPath, `${buildMarkdownReport(report)}\n`, "utf8");
+  fs.writeFileSync(latestJsonPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  fs.writeFileSync(latestMdPath, `${buildMarkdownReport(report)}\n`, "utf8");
 
   console.log(`Rapport JSON: ${path.relative(process.cwd(), jsonPath)}`);
   console.log(`Rapport Markdown: ${path.relative(process.cwd(), mdPath)}`);
+  console.log(`Rapport JSON latest: ${path.relative(process.cwd(), latestJsonPath)}`);
+  console.log(`Rapport Markdown latest: ${path.relative(process.cwd(), latestMdPath)}`);
 }
 
 main().catch((error) => {

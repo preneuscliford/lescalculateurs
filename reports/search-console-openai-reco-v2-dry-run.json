@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-19T07:47:21.436Z",
+  "inputDir": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\seach-console-perf",
+  "model": "gpt-5-mini",
+  "strategy": "hub-first",
+  "thresholds": {
+    "minImpressions": 150,
+    "maxCtr": 0.02,
+    "minPosition": 4,
+    "maxPosition": 12,
+    "maxPages": 5,
+    "pseoOnly": false
+  },
+  "sources": {
+    "days7": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\seach-console-perf\\lescalculateurs.fr-Performance-on-Search-2026-04-18.xlsx",
+    "days28": "C:\\Users\\prene\\OneDrive\\Bureau\\lesCalculateurs\\seach-console-perf\\lescalculateurs.fr-Performance-on-Search-2026-04-18 (1).xlsx"
+  },
+  "summary": {
+    "analyzedPages": 5
+  },
+  "pages": [
+    {
+      "pathname": "/pages/apl",
+      "url": "https://www.lescalculateurs.fr/pages/apl",
+      "impressions7": 12217,
+      "clicks7": 60,
+      "ctr7": 0.0049,
+      "pos7": 8.26,
+      "impressions28": 42240,
+      "clicks28": 172,
+      "ctr28": 0.0040999999999999995,
+      "pos28": 8.23,
+      "deltaCtr": 0.0008000000000000004,
+      "deltaPos": 0.02999999999999936,
+      "opportunityScore": 5111.399270959902,
+      "priorityScore": 6389.2490886998785,
+      "cluster": "apl",
+      "associatedPages": [
+        {
+          "pathname": "/pages/apl/apl-smic-seul",
+          "url": "https://www.lescalculateurs.fr/pages/apl/apl-smic-seul",
+          "impressions7": 506,
+          "clicks7": 25,
+          "ctr7": 0.049400000000000006,
+          "pos7": 6.47,
+          "impressions28": 1656,
+          "clicks28": 76,
+          "ctr28": 0.045899999999999996,
+          "pos28": 6.44,
+          "deltaCtr": 0.00350000000000001,
+          "deltaPos": 0.02999999999999936,
+          "opportunityScore": 245.33999999999997,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\apl\\apl-smic-seul.html",
+          "title": "APL au SMIC pour une personne seule : montant et estimation 2026",
+          "h1": "APL au SMIC pour une personne seule : montant et estimation 2026",
+          "metaDescription": "Estimation APL pour une personne seule au SMIC : montant indicatif selon un loyer moyen et accès au simulateur complet.",
+          "excerpt": "APL au SMIC pour une personne seule : montant et estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL au SMIC pour une personne seule : montant et estimation 2026 Estimation APL pour une personne seule au SMIC : montant indicatif selon un loyer moyen et accès au simulateur complet. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~144 € par mois. Cette estimation correspond à un profil type : Personne seule avec salaire au SMIC. Elle reste indicative : le montant réel dépend n"
+        },
+        {
+          "pathname": "/pages/apl/apl-loyer-700-personne-seule",
+          "url": "https://www.lescalculateurs.fr/pages/apl/apl-loyer-700-personne-seule",
+          "impressions7": 448,
+          "clicks7": 9,
+          "ctr7": 0.020099999999999996,
+          "pos7": 8.28,
+          "impressions28": 1068,
+          "clicks28": 21,
+          "ctr28": 0.0197,
+          "pos28": 8.24,
+          "deltaCtr": 0.0003999999999999976,
+          "deltaPos": 0.03999999999999915,
+          "opportunityScore": 127.05830097087377,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\apl\\apl-loyer-700-personne-seule.html",
+          "title": "APL avec loyer de ~700 EUR pour une personne seule : estimation 2026",
+          "h1": "APL avec loyer de ~700 EUR pour une personne seule : estimation 2026",
+          "metaDescription": "Estimation APL pour une personne seule avec un loyer de ~700 EUR et un revenu modéré.",
+          "excerpt": "APL avec loyer de ~700 EUR pour une personne seule : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL avec loyer de ~700 EUR pour une personne seule : estimation 2026 Estimation APL pour une personne seule avec un loyer de ~700 EUR et un revenu modéré. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~192 € par mois. Cette estimation correspond à un profil type : Personne seule avec loyer de ~700 EUR. Elle reste indicative : le montant réel dépend notamment du logement, de"
+        },
+        {
+          "pathname": "/pages/apl/apl-chomage-loyer-moyen",
+          "url": "https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-moyen",
+          "impressions7": 549,
+          "clicks7": 7,
+          "ctr7": 0.0128,
+          "pos7": 7.72,
+          "impressions28": 1036,
+          "clicks28": 13,
+          "ctr28": 0.0125,
+          "pos28": 7.52,
+          "deltaCtr": 0.0002999999999999999,
+          "deltaPos": 0.20000000000000018,
+          "opportunityScore": 136.04388297872342,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\apl\\apl-chomage-loyer-moyen.html",
+          "title": "APL au chômage avec loyer moyen : estimation 2026",
+          "h1": "APL au chômage avec loyer moyen : estimation 2026",
+          "metaDescription": "Simulation APL d'une personne seule en période de chômage avec loyer standard.",
+          "excerpt": "APL au chômage avec loyer moyen : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL au chômage avec loyer moyen : estimation 2026 Simulation APL d'une personne seule en période de chômage avec loyer standard. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~312 € par mois. Cette estimation correspond à un profil type : Personne au chômage. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situation administrat"
+        },
+        {
+          "pathname": "/pages/apl/apl-famille-trois-enfants",
+          "url": "https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants",
+          "impressions7": 330,
+          "clicks7": 5,
+          "ctr7": 0.0152,
+          "pos7": 6.76,
+          "impressions28": 952,
+          "clicks28": 15,
+          "ctr28": 0.0158,
+          "pos28": 6.25,
+          "deltaCtr": -0.0006000000000000016,
+          "deltaPos": 0.5099999999999998,
+          "opportunityScore": 149.913344,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\apl\\apl-famille-trois-enfants.html",
+          "title": "APL famille avec 3 enfants : estimation 2026",
+          "h1": "APL famille avec 3 enfants : estimation 2026",
+          "metaDescription": "Estimation APL pour une famille avec trois enfants et un loyer adapté à un logement plus grand.",
+          "excerpt": "APL famille avec 3 enfants : estimation 2026 Estimation indicative. vérification finale à faire sur caf.fr . Les Calculateurs Accueil Simulateur APL Estimation indicative 2026 APL famille avec 3 enfants : estimation 2026 Estimation APL pour une famille avec trois enfants et un loyer adapté à un logement plus grand. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Le montant affich&eacute; est calcul&eacute; &agrave; partir du moteur de simulation APL utilis&eacute; sur LesCalculateurs.fr, avec un sc&eacute;nario repr&eacute;sentatif. Ouvrir le simulateur APL complet Voir les hypoth&egrave;ses Estimation rapide Estimation indicative autour de ~87 € par mois. Cette estimation correspond à un profil type : Famille avec trois enfants. Elle reste indicative : le montant réel dépend notamment du logement, des ressources retenues par la CAF et de la situatio"
+        }
+      ],
+      "pageType": "hub",
+      "filePath": "src\\pages\\apl.html",
+      "title": "Simulateur APL 2026 (CAF) : montant estim&eacute; selon loyer & revenus",
+      "h1": "Simulateur APL 2026 : montant estim&eacute; selon votre loyer, vos revenus et votre zone",
+      "metaDescription": "Estimez gratuitement votre APL 2026 en 2 minutes. Montant indicatif selon loyer, revenus et zone. R&eacute;sultat instantan&eacute; + exemples (personne seule, famille). Bas&eacute; sur bar&egrave;mes CAF &agrave; jour.",
+      "excerpt": "Simulateur APL 2026 (CAF) : montant estim&eacute; selon loyer & revenus ⚠️ Estimation indicative. Montant définitif sur CAF | 🔄 Historique Les Calculateurs Accueil Outils 📚 Méthodologie 🔄 Mise à jour 12/02 🏠 Accueil 🎯 Simulateurs 📚 Méthodologie 🔄 Mises à jour Simulateur APL 2026 : montant estim&eacute; selon votre loyer, vos revenus et votre zone ✓ Vérifié le 5 avril 2026 — Barèmes officiels CAF à jour Calculez rapidement votre APL 2026 selon votre loyer, votre foyer et votre niveau de revenus. Simulation gratuite avec r&eacute;sultat indicatif imm&eacute;diat et cas concrets pour les situations les plus recherch&eacute;es. Outil gratuit basé sur les barèmes CAF 2026. Calculer mon APL en 2 minutes Combien pouvez-vous toucher ? Le montant APL dépend de votre loyer, de vos revenus, de votre zone et de votre foyer. À titre indicatif, pour une personne seule avec un loyer moyen, l&rsq",
+      "recommendations": {
+        "pageType": "hub",
+        "diagnostic": {
+          "summary": "dry-run actif: appel OpenAI saute.",
+          "primaryIssue": "analyse non executee",
+          "whyNow": "aucune reponse modele en dry-run"
+        },
+        "titles": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "metas": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "snippet_answer": {
+          "question": "",
+          "answer": ""
+        },
+        "above_the_fold": {
+          "intro": "",
+          "cta": "",
+          "trust_signal": ""
+        },
+        "internal_links": {
+          "strategy": "",
+          "suggestions": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "priority_actions": [
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          }
+        ],
+        "safe_apply_candidates": {
+          "title": "",
+          "meta": "",
+          "snippet_answer": "",
+          "above_the_fold_intro": "",
+          "cta": "",
+          "notes": [
+            "",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "pathname": "/pages/are",
+      "url": "https://www.lescalculateurs.fr/pages/are",
+      "impressions7": 8610,
+      "clicks7": 67,
+      "ctr7": 0.0078000000000000005,
+      "pos7": 7.99,
+      "impressions28": 26808,
+      "clicks28": 211,
+      "ctr28": 0.0079,
+      "pos28": 7.9,
+      "deltaCtr": -0.00010000000000000026,
+      "deltaPos": 0.08999999999999986,
+      "opportunityScore": 3366.6097215189866,
+      "priorityScore": 4208.2621518987335,
+      "cluster": "are",
+      "associatedPages": [
+        {
+          "pathname": "/pages/are/are-fin-de-droits-quelles-aides",
+          "url": "https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-quelles-aides",
+          "impressions7": 0,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 0,
+          "impressions28": 25,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 5.72,
+          "deltaCtr": 0,
+          "deltaPos": 0,
+          "opportunityScore": 4.370629370629371,
+          "pageType": "pseo",
+          "filePath": null,
+          "title": "",
+          "metaDescription": "",
+          "h1": "",
+          "excerpt": ""
+        },
+        {
+          "pathname": "/pages/are/montant-are-2026",
+          "url": "https://www.lescalculateurs.fr/pages/are/montant-are-2026",
+          "impressions7": 0,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 0,
+          "impressions28": 8,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 2.62,
+          "deltaCtr": 0,
+          "deltaPos": 0,
+          "opportunityScore": 3.0534351145038165,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\are\\montant-are-2026.html",
+          "title": "Montant ARE 2026 : calcul et estimation chômage",
+          "h1": "Montant ARE 2026 : calcul et estimation chômage",
+          "metaDescription": "Estimation indicative du montant ARE 2026 à partir du salaire de référence et de l'ancienneté.",
+          "excerpt": "Montant ARE 2026 : calcul et estimation chômage Estimation indicative. V&eacute;rification finale &agrave; faire sur francetravail.fr . Les Calculateurs Accueil Simulateur ARE Estimation indicative 2026 Montant ARE 2026 : calcul et estimation chômage Estimation indicative du montant ARE 2026 à partir du salaire de référence et de l'ancienneté. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Ouvrir le simulateur ARE complet Voir les hypoth&egrave;ses Estimation rapide Montant indicatif autour de ~1 249 EUR par mois pour ce scénario type. Cette estimation correspond à un profil type : Demandeur d'emploi cherchant une estimation ARE. R&eacute;sultat estim&eacute; ~1 249 EUR / mois Durée max indicative : 12 mois Profil Demandeur d'emploi cherchant une estimation ARE Cette page répond à la question principale sur le calcul ARE avec un scénario simple à co"
+        },
+        {
+          "pathname": "/pages/are/are-cumul-salaire-temps-partiel-2026",
+          "url": "https://www.lescalculateurs.fr/pages/are/are-cumul-salaire-temps-partiel-2026",
+          "impressions7": 8,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 4.5,
+          "impressions28": 8,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 4.5,
+          "deltaCtr": 0,
+          "deltaPos": 0,
+          "opportunityScore": 1.7777777777777777,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\are\\are-cumul-salaire-temps-partiel-2026.html",
+          "title": "Cumul ARE et salaire a temps partiel : simulation 2026",
+          "h1": "Cumul ARE et salaire a temps partiel : simulation 2026",
+          "metaDescription": "Page dediee au cumul ARE et salaire en reprise partielle pour estimer l'impact mensuel.",
+          "excerpt": "Cumul ARE et salaire a temps partiel : simulation 2026 Estimation indicative. V&eacute;rification finale &agrave; faire sur francetravail.fr . Les Calculateurs Accueil Simulateur ARE Estimation indicative 2026 Cumul ARE et salaire a temps partiel : simulation 2026 Page dediee au cumul ARE et salaire en reprise partielle pour estimer l'impact mensuel. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Ouvrir le simulateur ARE complet Voir les hypoth&egrave;ses Estimation rapide Montant indicatif autour de ~1 169 EUR par mois pour ce scénario type. Cette estimation correspond à un profil type : Demandeur d'emploi en reprise partielle. R&eacute;sultat estim&eacute; ~1 169 EUR / mois Durée max indicative : 18 mois Profil Demandeur d'emploi en reprise partielle Cette page répond à la recherche « cumul ARE et salaire simulation » avec un cas concret. Sc&eacut"
+        },
+        {
+          "pathname": "/pages/are/are-fin-de-droits-aides-2026",
+          "url": "https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-aides-2026",
+          "impressions7": 8,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 6.12,
+          "impressions28": 8,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 6.12,
+          "deltaCtr": 0,
+          "deltaPos": 0,
+          "opportunityScore": 1.3071895424836601,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\are\\are-fin-de-droits-aides-2026.html",
+          "title": "Fin de droits ARE : quelles aides en 2026 ?",
+          "h1": "Fin de droits ARE : quelles aides en 2026 ?",
+          "metaDescription": "Repere 2026 pour orienter rapidement vers les aides à vérifier après l'arret des allocations chômage.",
+          "excerpt": "Fin de droits ARE : quelles aides en 2026 ? Estimation indicative. V&eacute;rification finale &agrave; faire sur francetravail.fr . Les Calculateurs Accueil Simulateur ARE Estimation indicative 2026 Fin de droits ARE : quelles aides en 2026 ? Repere 2026 pour orienter rapidement vers les aides à vérifier après l'arret des allocations chômage. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Ouvrir le simulateur ARE complet Voir les hypoth&egrave;ses Estimation rapide Montant indicatif autour de ~1 088 EUR par mois pour ce scénario type. Cette estimation correspond à un profil type : Personne en fin de droits ARE sans revenu stable. R&eacute;sultat estim&eacute; ~1 088 EUR / mois Durée max indicative : 14 mois Profil Personne en fin de droits ARE sans revenu stable Cette page traite les situations de transition après l'ARE et oriente vers RSA, APL et P"
+        }
+      ],
+      "pageType": "hub",
+      "filePath": "src\\pages\\are.html",
+      "title": "Simulateur ARE 2026 — Estimez votre allocation ch&ocirc;mage (montant & dur&eacute;e)",
+      "h1": "Simulateur ARE 2026 : montant estim&eacute;, dur&eacute;e et reprise d&rsquo;emploi",
+      "metaDescription": "Calculez votre ARE 2026 en 2 min : montant mensuel, dur&eacute;e d",
+      "excerpt": "Simulateur ARE 2026 — Estimez votre allocation ch&ocirc;mage (montant & dur&eacute;e) ⚠️ Estimation indicative. Montant définitif sur France Travail | 🔄 Historique Les Calculateurs Accueil Outils 📚 Méthodologie 🔄 Mise à jour 12/02 🏠 Accueil 🎯 Simulateurs 📚 Méthodologie 🔄 Mises à jour Simulateur ARE 2026 : montant estim&eacute;, dur&eacute;e et reprise d&rsquo;emploi ARE 2026 : estimez votre montant, votre durée et vos suites après chômage ✓ Vérifié le 5 avril 2026 — Barèmes officiels à jour Estimez votre allocation ch&ocirc;mage selon vos revenus, votre situation et les r&egrave;gles France Travail applicables en 2026. Travail en vigueur en 2026. Calculer mon ARE en 2 minutes ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires. Estimation allocation chômage : montant mensuel et durée d'indemnisation Combien pouvez-vous toucher ? Le montant de l'ARE dép",
+      "recommendations": {
+        "pageType": "hub",
+        "diagnostic": {
+          "summary": "dry-run actif: appel OpenAI saute.",
+          "primaryIssue": "analyse non executee",
+          "whyNow": "aucune reponse modele en dry-run"
+        },
+        "titles": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "metas": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "snippet_answer": {
+          "question": "",
+          "answer": ""
+        },
+        "above_the_fold": {
+          "intro": "",
+          "cta": "",
+          "trust_signal": ""
+        },
+        "internal_links": {
+          "strategy": "",
+          "suggestions": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "priority_actions": [
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          }
+        ],
+        "safe_apply_candidates": {
+          "title": "",
+          "meta": "",
+          "snippet_answer": "",
+          "above_the_fold_intro": "",
+          "cta": "",
+          "notes": [
+            "",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "pathname": "/pages/rsa",
+      "url": "https://www.lescalculateurs.fr/pages/rsa",
+      "impressions7": 10102,
+      "clicks7": 38,
+      "ctr7": 0.0038,
+      "pos7": 8.97,
+      "impressions28": 22877,
+      "clicks28": 101,
+      "ctr28": 0.0044,
+      "pos28": 8.36,
+      "deltaCtr": -0.0006000000000000003,
+      "deltaPos": 0.6100000000000012,
+      "opportunityScore": 2724.442727272728,
+      "priorityScore": 3405.55340909091,
+      "cluster": "rsa",
+      "associatedPages": [
+        {
+          "pathname": "/pages/rsa/rsa-et-apl-cumul",
+          "url": "https://www.lescalculateurs.fr/pages/rsa/rsa-et-apl-cumul",
+          "impressions7": 37,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 8.68,
+          "impressions28": 145,
+          "clicks28": 1,
+          "ctr28": 0.0069,
+          "pos28": 6.64,
+          "deltaCtr": -0.0069,
+          "deltaPos": 2.04,
+          "opportunityScore": 21.686671686746987,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\rsa\\rsa-et-apl-cumul.html",
+          "title": "RSA et APL : cumul (2026)",
+          "h1": "RSA et APL : cumul (2026)",
+          "metaDescription": "ordre de grandeur du RSA lorsqu'un foyer perçoit aussi une aide au logement.",
+          "excerpt": "RSA et APL : cumul (2026) Estimation indicative. V&eacute;rification finale &agrave; faire sur caf.fr . Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026 RSA et APL : cumul (2026) ordre de grandeur du RSA lorsqu'un foyer perçoit aussi une aide au logement. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Ouvrir le simulateur RSA complet Voir les hypoth&egrave;ses Estimation rapide Montant indicatif autour de ~452 € par mois pour ce scénario type. Cette estimation correspond à un profil type : Foyer qui cumule RSA et APL. R&eacute;sultat estim&eacute; ~452 € / mois Probablement éligible Profil Foyer qui cumule RSA et APL Cette page répond à un besoin de cumul très courant entre RSA et APL. Sc&eacute;nario utilis&eacute; pour cette estimation Situation familiale Personne seule Nombre d'enfants 0 Revenus mensuels ~200 € Logement Logement"
+        },
+        {
+          "pathname": "/pages/rsa/rsa-hebergement-gratuit",
+          "url": "https://www.lescalculateurs.fr/pages/rsa/rsa-hebergement-gratuit",
+          "impressions7": 1,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 5,
+          "impressions28": 144,
+          "clicks28": 3,
+          "ctr28": 0.0208,
+          "pos28": 10.03,
+          "deltaCtr": -0.0208,
+          "deltaPos": -5.029999999999999,
+          "opportunityScore": 14.058305084745763,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\rsa\\rsa-hebergement-gratuit.html",
+          "title": "RSA avec hébergement gratuit (2026)",
+          "h1": "RSA avec hébergement gratuit (2026)",
+          "metaDescription": "Estimation indicative du RSA pour une personne hébergée gratuitement.",
+          "excerpt": "RSA avec hébergement gratuit (2026) Estimation indicative. V&eacute;rification finale &agrave; faire sur caf.fr . Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026 RSA avec hébergement gratuit (2026) Estimation indicative du RSA pour une personne hébergée gratuitement. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Ouvrir le simulateur RSA complet Voir les hypoth&egrave;ses Estimation rapide Montant indicatif autour de ~473 € par mois pour ce scénario type. Cette estimation correspond à un profil type : Personne hébergée gratuitement. R&eacute;sultat estim&eacute; ~473 € / mois Probablement éligible Profil Personne hébergée gratuitement Cette page couvre un cas souvent mal compris, avec un impact possible du logement sur le montant final. Sc&eacute;nario utilis&eacute; pour cette estimation Situation familiale Personne seule Nombre "
+        },
+        {
+          "pathname": "/pages/rsa/rsa-couple-sans-enfant",
+          "url": "https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-enfant",
+          "impressions7": 10,
+          "clicks7": 1,
+          "ctr7": 0.1,
+          "pos7": 10.5,
+          "impressions28": 118,
+          "clicks28": 1,
+          "ctr28": 0.0085,
+          "pos28": 3.76,
+          "deltaCtr": 0.0915,
+          "deltaPos": 6.74,
+          "opportunityScore": 31.11622340425532,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\rsa\\rsa-couple-sans-enfant.html",
+          "title": "RSA couple sans enfant (2026)",
+          "h1": "RSA couple sans enfant (2026)",
+          "metaDescription": "Estimation indicative du RSA pour un couple sans enfant avec peu ou pas de revenus.",
+          "excerpt": "RSA couple sans enfant (2026) Estimation indicative. V&eacute;rification finale &agrave; faire sur caf.fr . Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026 RSA couple sans enfant (2026) Estimation indicative du RSA pour un couple sans enfant avec peu ou pas de revenus. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Ouvrir le simulateur RSA complet Voir les hypoth&egrave;ses Estimation rapide Montant indicatif autour de ~678 € par mois pour ce scénario type. Cette estimation correspond à un profil type : Couple sans enfant. R&eacute;sultat estim&eacute; ~678 € / mois Probablement éligible Profil Couple sans enfant Cette page sert une recherche simple sur le RSA couple et permet ensuite de comparer plusieurs variantes. Sc&eacute;nario utilis&eacute; pour cette estimation Situation familiale Couple Nombre d'enfants 0 Revenus mensuels"
+        },
+        {
+          "pathname": "/pages/rsa/rsa-parent-isole-sans-revenu",
+          "url": "https://www.lescalculateurs.fr/pages/rsa/rsa-parent-isole-sans-revenu",
+          "impressions7": 1,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 11,
+          "impressions28": 36,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 8,
+          "deltaCtr": 0,
+          "deltaPos": 3,
+          "opportunityScore": 4.5,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\rsa\\rsa-parent-isole-sans-revenu.html",
+          "title": "RSA parent isolé sans revenu : estimation 2026",
+          "h1": "RSA parent isolé sans revenu : estimation 2026",
+          "metaDescription": "Exemple de RSA 2026 pour un parent isolé sans revenu avec enfant à charge.",
+          "excerpt": "RSA parent isolé sans revenu : estimation 2026 Estimation indicative. V&eacute;rification finale &agrave; faire sur caf.fr . Les Calculateurs Accueil Simulateur RSA Estimation indicative 2026 RSA parent isolé sans revenu : estimation 2026 Exemple de RSA 2026 pour un parent isolé sans revenu avec enfant à charge. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet. Ouvrir le simulateur RSA complet Voir les hypoth&egrave;ses Estimation rapide Montant indicatif autour de ~978 € par mois pour ce scénario type. Cette estimation correspond à un profil type : Parent isolé sans revenu. R&eacute;sultat estim&eacute; ~978 € / mois Probablement éligible Profil Parent isolé sans revenu Cette page traite les situations de rupture de revenu avec enfant à charge, pour donner un repère rapide et utile. Sc&eacute;nario utilis&eacute; pour cette estimation Situation famili"
+        }
+      ],
+      "pageType": "hub",
+      "filePath": "src\\pages\\rsa.html",
+      "title": "RSA 2026 — Calculez votre montant en 1 min (simulation CAF rapide)",
+      "h1": "Simulateur RSA 2026 : montant estim&eacute; selon votre foyer et vos ressources",
+      "metaDescription": "Estimez votre RSA 2026 en quelques clics avec notre simulateur conforme aux bar&egrave;mes CAF. Gratuit, rapide — exemple : personne seule = 651,69 &euro;/mois. Lancez la simulation et obtenez un r&eacute;sultat personnalis&eacute;.",
+      "excerpt": "RSA 2026 — Calculez votre montant en 1 min (simulation CAF rapide) ⚠️ Estimation indicative. Barèmes 2026 applicables — Mise à jour le 21/02/2026 — Montant définitif sur CAF.fr | 🔄 Historique Les Calculateurs Accueil Outils 📚 Méthodologie 🔄 Mise à jour 12/02 🏠 Accueil 🎯 Simulateurs 📚 Méthodologie 🔄 Mises à jour Simulateur RSA 2026 : montant estim&eacute; selon votre foyer et vos ressources ✓ V&eacute;rifi&eacute; le 5 avril 2026 - Bar&egrave;mes CAF officiels &agrave; jour Calculez rapidement votre RSA selon votre foyer, vos ressources et votre logement, avec les r&egrave;gles CAF applicables en 2026. votre logement, avec les règles CAF en vigueur en 2026. Calculer mon RSA en 2 minutes ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires. Combien pouvez-vous toucher ? Pour une personne seule sans revenu, le RSA forfaitaire est de 651,69 &euro; par mois ",
+      "recommendations": {
+        "pageType": "hub",
+        "diagnostic": {
+          "summary": "dry-run actif: appel OpenAI saute.",
+          "primaryIssue": "analyse non executee",
+          "whyNow": "aucune reponse modele en dry-run"
+        },
+        "titles": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "metas": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "snippet_answer": {
+          "question": "",
+          "answer": ""
+        },
+        "above_the_fold": {
+          "intro": "",
+          "cta": "",
+          "trust_signal": ""
+        },
+        "internal_links": {
+          "strategy": "",
+          "suggestions": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "priority_actions": [
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          }
+        ],
+        "safe_apply_candidates": {
+          "title": "",
+          "meta": "",
+          "snippet_answer": "",
+          "above_the_fold_intro": "",
+          "cta": "",
+          "notes": [
+            "",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "pathname": "/pages/prime-activite",
+      "url": "https://www.lescalculateurs.fr/pages/prime-activite",
+      "impressions7": 4982,
+      "clicks7": 35,
+      "ctr7": 0.006999999999999999,
+      "pos7": 9.42,
+      "impressions28": 19683,
+      "clicks28": 161,
+      "ctr28": 0.008199999999999999,
+      "pos28": 9.2,
+      "deltaCtr": -0.0011999999999999997,
+      "deltaPos": 0.22000000000000064,
+      "opportunityScore": 2121.9129782608697,
+      "priorityScore": 2652.391222826087,
+      "cluster": "prime-activite",
+      "associatedPages": [
+        {
+          "pathname": "/pages/prime-activite/plafond-prime-activite-2026",
+          "url": "https://www.lescalculateurs.fr/pages/prime-activite/plafond-prime-activite-2026",
+          "impressions7": 0,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 0,
+          "impressions28": 158,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 3.67,
+          "deltaCtr": 0,
+          "deltaPos": 0,
+          "opportunityScore": 43.05177111716622,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\prime-activite\\plafond-prime-activite-2026.html",
+          "title": "Plafond Prime d’activité 2026 : simulation et barème",
+          "h1": "Plafond Prime d’activité 2026 : simulation et conditions",
+          "metaDescription": "V&eacute; rifiez les plafonds de Prime d&rsquo; activit&eacute; 2026, comprenez les revenus retenus et estimez vos droits plus facilement.",
+          "excerpt": "Plafond Prime d’activité 2026 : simulation et barème Les Calculateurs Accueil Simulateur APL 2026 Accueil › APL › Plafond Prime d’activité 2026 : simulation et conditions Réponse pratique APL Plafond Prime d’activité 2026 : simulation et conditions Cette page aide à lire les plafonds de la Prime d’activité sans se perdre dans un barème brut ou un tableau isolé. Simuler ma Prime d’activité Voir mes autres aides possibles Réponse rapide Le plafond de Prime d’activité varie selon la composition du foyer, le niveau de revenus et certaines ressources complémentaires. Un calcul isolé ne suffit pas toujours. Ce qu’il faut vérifier Composition exacte du foyer Revenus d’activité récents Autres ressources prises en compte Temps partiel, alternance ou reprise d’emploi Méthodologie Cette page présente les plafonds comme un repère. Pour un résultat exploitable, il faut recontextualiser les revenus, l"
+        },
+        {
+          "pathname": "/pages/prime-activite/prime-activite-parent-isole-un-enfant",
+          "url": "https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-parent-isole-un-enfant",
+          "impressions7": 68,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 6.81,
+          "impressions28": 68,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 6.81,
+          "deltaCtr": 0,
+          "deltaPos": 0,
+          "opportunityScore": 9.985315712187958,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\prime-activite\\prime-activite-parent-isole-un-enfant.html",
+          "title": "Prime d'activité parent isolé avec un enfant 2026 : montant et simulation",
+          "h1": "Prime d'activité parent isolé avec un enfant 2026 : montant et simulation",
+          "metaDescription": "Estimez votre Prime d'activité 2026 parent isolé avec un enfant et obtenez un montant indicatif en quelques clics.",
+          "excerpt": "Prime d'activité parent isolé avec un enfant 2026 : montant et simulation Prime d'activit&eacute; 2026 Prime d'activité parent isolé avec un enfant 2026 : montant et simulation Estimez rapidement votre Prime d'activité 2026 en tant que parent isolé avec un enfant, selon vos revenus d'activité. Combien pouvez-vous toucher ? Dans ce cas type, le montant estimatif est autour de ~770 EUR/mois , à ajuster selon vos revenus réels. Calculer ma Prime d'activit&eacute; en 2 minutes Voir les hypoth&egrave;ses Derni&egrave;re modification : 10-04-2026 Estimation rapide Montant indicatif autour de ~770 EUR par mois pour ce sc&eacute;nario type. Cette estimation reste indicative : la Prime d'activit&eacute; d&eacute;pend des revenus professionnels, du foyer et des autres ressources prises en compte. Sc&eacute;nario utilis&eacute; pour cette estimation Profil parent isolé avec un enfant Situation Pare"
+        },
+        {
+          "pathname": "/pages/prime-activite/prime-activite-couple-sans-enfant-smic",
+          "url": "https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-couple-sans-enfant-smic",
+          "impressions7": 67,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 8.42,
+          "impressions28": 67,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 8.42,
+          "deltaCtr": 0,
+          "deltaPos": 0,
+          "opportunityScore": 7.957244655581948,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\prime-activite\\prime-activite-couple-sans-enfant-smic.html",
+          "title": "Prime d'activité couple sans enfant au SMIC 2026 : montant et simulation",
+          "h1": "Prime d'activité couple sans enfant au SMIC 2026 : montant et simulation",
+          "metaDescription": "Calculez la Prime d'activité 2026 pour un couple sans enfant au SMIC et obtenez un montant estimatif.",
+          "excerpt": "Prime d'activité couple sans enfant au SMIC 2026 : montant et simulation Prime d'activit&eacute; 2026 Prime d'activité couple sans enfant au SMIC 2026 : montant et simulation Vérifiez rapidement votre Prime d'activité 2026 pour un foyer couple sans enfant avec des revenus proches du SMIC. Combien pouvez-vous toucher ? Pour ce profil, le montant estimatif tourne autour de ~566 EUR/mois , selon vos revenus d'activité réels. Calculer ma Prime d'activit&eacute; en 2 minutes Voir les hypoth&egrave;ses Derni&egrave;re modification : 10-04-2026 Estimation rapide Montant indicatif autour de ~566 EUR par mois pour ce sc&eacute;nario type. Cette estimation reste indicative : la Prime d'activit&eacute; d&eacute;pend des revenus professionnels, du foyer et des autres ressources prises en compte. Sc&eacute;nario utilis&eacute; pour cette estimation Profil Couple sans enfant avec revenus proches du SM"
+        },
+        {
+          "pathname": "/pages/prime-activite/prime-activite-reprise-emploi-personne-seule",
+          "url": "https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-personne-seule",
+          "impressions7": 2,
+          "clicks7": 0,
+          "ctr7": 0,
+          "pos7": 12,
+          "impressions28": 15,
+          "clicks28": 0,
+          "ctr28": 0,
+          "pos28": 8.4,
+          "deltaCtr": 0,
+          "deltaPos": 3.5999999999999996,
+          "opportunityScore": 1.7857142857142856,
+          "pageType": "pseo",
+          "filePath": "src\\pages\\prime-activite\\prime-activite-reprise-emploi-personne-seule.html",
+          "title": "Prime d'activité reprise d'emploi personne seule : estimation 2026",
+          "h1": "Prime d'activité reprise d'emploi personne seule : estimation 2026",
+          "metaDescription": "Estimation indicative de la Prime d'activité 2026 pour une personne seule qui reprend un emploi modeste.",
+          "excerpt": "Prime d'activité reprise d'emploi personne seule : estimation 2026 Prime d'activit&eacute; 2026 Prime d'activité reprise d'emploi personne seule : estimation 2026 Cette page traite la reprise d'emploi pour une personne seule avec un cas concret. Ouvrir le simulateur Prime d'activit&eacute; complet Voir les hypoth&egrave;ses Derni&egrave;re modification : 10-04-2026 Estimation rapide Montant indicatif autour de ~325 EUR par mois pour ce sc&eacute;nario type. Cette estimation reste indicative : la Prime d'activit&eacute; d&eacute;pend des revenus professionnels, du foyer et des autres ressources prises en compte. Sc&eacute;nario utilis&eacute; pour cette estimation Profil Personne seule en reprise d'emploi avec petit salaire Situation Personne seule Revenus professionnels ~980 EUR Autres revenus ~0 EUR Logement Logement loué Type d'activit&eacute; Salarié Prime estim&eacute;e ~325 EUR Hypo"
+        }
+      ],
+      "pageType": "hub",
+      "filePath": "src\\pages\\prime-activite.html",
+      "title": "Simulateur Prime d'activit&eacute; 2026 — Estimez votre montant CAF en 2 min",
+      "h1": "Prime d'activité 2026 CAF : estimez votre montant selon vos revenus et votre foyer",
+      "metaDescription": "Calculez en 2 minutes votre Prime d",
+      "excerpt": "Simulateur Prime d'activit&eacute; 2026 — Estimez votre montant CAF en 2 min ⚠️ Estimation indicative. Montant définitif sur CAF | 🔄 Historique Les Calculateurs Accueil Outils 📚 Méthodologie 🔄 Mise à jour 12/02 🏠 Accueil 🎯 Simulateurs 📚 Méthodologie 🔄 Mises à jour Prime d'activité 2026 CAF : estimez votre montant selon vos revenus et votre foyer ✓ Vérifié le 5 avril 2026 — Barèmes CAF officiels à jour Calculez une estimation de votre Prime d'activité 2026 selon vos revenus professionnels, votre foyer et votre logement (résultat indicatif CAF). 🟢 Lancer la simulation Prime d'activité ⚠️ Estimation indicative — les organismes officiels restent seuls décisionnaires. Combien pouvez-vous toucher ? Le montant de la prime d&rsquo;activit&eacute; d&eacute;pend surtout de vos revenus nets, de votre foyer et de votre logement. Pour une personne seule autour de 1 200 &euro; nets, l&rsquo;es",
+      "recommendations": {
+        "pageType": "hub",
+        "diagnostic": {
+          "summary": "dry-run actif: appel OpenAI saute.",
+          "primaryIssue": "analyse non executee",
+          "whyNow": "aucune reponse modele en dry-run"
+        },
+        "titles": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "metas": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "snippet_answer": {
+          "question": "",
+          "answer": ""
+        },
+        "above_the_fold": {
+          "intro": "",
+          "cta": "",
+          "trust_signal": ""
+        },
+        "internal_links": {
+          "strategy": "",
+          "suggestions": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "priority_actions": [
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          }
+        ],
+        "safe_apply_candidates": {
+          "title": "",
+          "meta": "",
+          "snippet_answer": "",
+          "above_the_fold_intro": "",
+          "cta": "",
+          "notes": [
+            "",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "pathname": "/pages/apl-zones",
+      "url": "https://www.lescalculateurs.fr/pages/apl-zones",
+      "impressions7": 5938,
+      "clicks7": 15,
+      "ctr7": 0.0025,
+      "pos7": 6.84,
+      "impressions28": 14465,
+      "clicks28": 38,
+      "ctr28": 0.0026,
+      "pos28": 6.98,
+      "deltaCtr": -0.00009999999999999983,
+      "deltaPos": -0.14000000000000057,
+      "opportunityScore": 2066.9614613180515,
+      "priorityScore": 2583.7018266475643,
+      "cluster": "apl-zones",
+      "associatedPages": [],
+      "pageType": "hub",
+      "filePath": "src\\pages\\apl-zones.html",
+      "title": "Zone APL 2026 — Trouvez votre zone (1, 2 ou 3) en 10s et estimez l'impact sur votre APL",
+      "h1": "Zone APL 2026 : dans quelle zone êtes-vous ?",
+      "metaDescription": "Entrez votre commune et d&eacute;couvrez en 10s si vous &ecirc;tes en zone APL 1, 2 ou 3. Voyez imm&eacute;diatement ce que cela change pour votre plafond de loyer et votre estimation d",
+      "excerpt": "Zone APL 2026 — Trouvez votre zone (1, 2 ou 3) en 10s et estimez l'impact sur votre APL content=\"Trouvez votre zone APL 2026 selon votre commune, comprenez la différence entre zone 1, 2 et 3, puis estimez l'impact sur votre APL et votre loyer plafonné.\" /> Les Calculateurs ← Retour Simulateur APL Zone APL 2026 : dans quelle zone êtes-vous ? Vérifiez si votre commune est en zone 1, 2 ou 3 et voyez ce que cela change pour votre loyer plafonné et votre estimation d'APL. Simuler mon APL Trouver ma zone Les calculs reposent sur les barèmes réglementés en vigueur et les taux départementaux connus à date. Ils constituent une estimation indicative et non contractuelle. Les repères les plus utiles pour lire votre zone APL La bonne question n'est pas seulement “quelle est ma zone ?”, mais surtout “qu'est-ce que cela change pour mon loyer pris en compte et mon estimation d'APL ?”. Zone 1 Paris, l'Î",
+      "recommendations": {
+        "pageType": "hub",
+        "diagnostic": {
+          "summary": "dry-run actif: appel OpenAI saute.",
+          "primaryIssue": "analyse non executee",
+          "whyNow": "aucune reponse modele en dry-run"
+        },
+        "titles": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "metas": [
+          {
+            "value": "",
+            "reason": ""
+          },
+          {
+            "value": "",
+            "reason": ""
+          }
+        ],
+        "snippet_answer": {
+          "question": "",
+          "answer": ""
+        },
+        "above_the_fold": {
+          "intro": "",
+          "cta": "",
+          "trust_signal": ""
+        },
+        "internal_links": {
+          "strategy": "",
+          "suggestions": [
+            "",
+            "",
+            ""
+          ]
+        },
+        "priority_actions": [
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          },
+          {
+            "action": "",
+            "impact": "medium",
+            "risk": "low"
+          }
+        ],
+        "safe_apply_candidates": {
+          "title": "",
+          "meta": "",
+          "snippet_answer": "",
+          "above_the_fold_intro": "",
+          "cta": "",
+          "notes": [
+            "",
+            ""
+          ]
+        }
+      }
+    }
+  ]
+}

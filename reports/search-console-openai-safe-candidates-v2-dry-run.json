@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2026-04-19T07:47:33.997Z",
+  "input": "reports\\search-console-openai-reco-v2-dry-run.json",
+  "summary": {
+    "totalCandidates": 5,
+    "filesWithCandidates": 5
+  },
+  "candidates": [
+    {
+      "pathname": "/pages/apl",
+      "url": "https://www.lescalculateurs.fr/pages/apl",
+      "filePath": "src\\pages\\apl.html",
+      "pageType": "hub",
+      "title": "",
+      "meta": "",
+      "snippetAnswer": "",
+      "aboveTheFoldIntro": "",
+      "cta": "",
+      "notes": [
+        "",
+        ""
+      ],
+      "priorityScore": 6389.2490886998785
+    },
+    {
+      "pathname": "/pages/are",
+      "url": "https://www.lescalculateurs.fr/pages/are",
+      "filePath": "src\\pages\\are.html",
+      "pageType": "hub",
+      "title": "",
+      "meta": "",
+      "snippetAnswer": "",
+      "aboveTheFoldIntro": "",
+      "cta": "",
+      "notes": [
+        "",
+        ""
+      ],
+      "priorityScore": 4208.2621518987335
+    },
+    {
+      "pathname": "/pages/rsa",
+      "url": "https://www.lescalculateurs.fr/pages/rsa",
+      "filePath": "src\\pages\\rsa.html",
+      "pageType": "hub",
+      "title": "",
+      "meta": "",
+      "snippetAnswer": "",
+      "aboveTheFoldIntro": "",
+      "cta": "",
+      "notes": [
+        "",
+        ""
+      ],
+      "priorityScore": 3405.55340909091
+    },
+    {
+      "pathname": "/pages/prime-activite",
+      "url": "https://www.lescalculateurs.fr/pages/prime-activite",
+      "filePath": "src\\pages\\prime-activite.html",
+      "pageType": "hub",
+      "title": "",
+      "meta": "",
+      "snippetAnswer": "",
+      "aboveTheFoldIntro": "",
+      "cta": "",
+      "notes": [
+        "",
+        ""
+      ],
+      "priorityScore": 2652.391222826087
+    },
+    {
+      "pathname": "/pages/apl-zones",
+      "url": "https://www.lescalculateurs.fr/pages/apl-zones",
+      "filePath": "src\\pages\\apl-zones.html",
+      "pageType": "hub",
+      "title": "",
+      "meta": "",
+      "snippetAnswer": "",
+      "aboveTheFoldIntro": "",
+      "cta": "",
+      "notes": [
+        "",
+        ""
+      ],
+      "priorityScore": 2583.7018266475643
+    }
+  ]
+}
