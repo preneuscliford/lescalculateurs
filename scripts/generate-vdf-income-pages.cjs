@@ -23,6 +23,79 @@ const TARGET_CITIES = [
   { slug: "lille", name: "Lille", type: "exact" },
 ];
 
+const CITY_BUDGET_CASES = {
+  paris: {
+    rent: 1050,
+    charges: 380,
+    tightRent: 1000,
+    comfortIncome: 3200,
+    note: "Paris demande une marge plus élevée, surtout si le logement est dans le parc privé.",
+  },
+  lyon: {
+    rent: 820,
+    charges: 330,
+    tightRent: 850,
+    comfortIncome: 2600,
+    note: "Lyon reste plus accessible que Paris, mais le logement peut vite peser sur le budget.",
+  },
+  marseille: {
+    rent: 680,
+    charges: 300,
+    tightRent: 700,
+    comfortIncome: 2200,
+    note: "Marseille peut laisser plus de marge si le loyer reste modéré.",
+  },
+  toulouse: {
+    rent: 700,
+    charges: 300,
+    tightRent: 700,
+    comfortIncome: 2300,
+    note: "Toulouse offre un équilibre intéressant si le loyer ne dépasse pas trop le budget médian.",
+  },
+  nice: {
+    rent: 850,
+    charges: 330,
+    tightRent: 850,
+    comfortIncome: 2600,
+    note: "Nice combine revenus élevés et logement cher, ce qui réduit parfois le reste à vivre.",
+  },
+  nantes: {
+    rent: 720,
+    charges: 300,
+    tightRent: 750,
+    comfortIncome: 2300,
+    note: "Nantes reste assez équilibrée, mais la tension locative peut changer fortement le budget.",
+  },
+  montpellier: {
+    rent: 670,
+    charges: 290,
+    tightRent: 700,
+    comfortIncome: 2150,
+    note: "Montpellier est souvent accessible avec un budget maîtrisé, mais la marge est faible au SMIC.",
+  },
+  strasbourg: {
+    rent: 690,
+    charges: 300,
+    tightRent: 700,
+    comfortIncome: 2200,
+    note: "Strasbourg peut rester confortable si le logement est bien calibré.",
+  },
+  bordeaux: {
+    rent: 780,
+    charges: 320,
+    tightRent: 800,
+    comfortIncome: 2450,
+    note: "Bordeaux demande une vigilance particulière sur le loyer, qui peut absorber une grande partie du revenu.",
+  },
+  lille: {
+    rent: 650,
+    charges: 290,
+    tightRent: 650,
+    comfortIncome: 2100,
+    note: "Lille peut être vivable avec un revenu modeste, mais le confort dépend beaucoup du loyer.",
+  },
+};
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -100,8 +173,29 @@ function cityLivingSummary(city, panelMedian) {
   return `${city.cityName} se situe dans une zone intermédiaire du panel. Pour savoir si le budget est confortable, il faut croiser revenu, loyer, impôt et aides éventuelles.`;
 }
 
-function smicAnswer(city) {
-  return `Avec un SMIC à ${city.cityName}, il peut être possible de vivre, mais la marge reste limitée si le loyer est élevé. Le bon réflexe consiste à calculer le salaire net, puis à vérifier les aides au logement et le reste à vivre.`;
+function budgetCaseFor(city) {
+  return CITY_BUDGET_CASES[city.slug] || {
+    rent: 700,
+    charges: 300,
+    tightRent: 700,
+    comfortIncome: 2200,
+    note: "Le niveau de confort dépend surtout du loyer, des charges et des aides possibles.",
+  };
+}
+
+function smicAnswer(city, budgetCase) {
+  return `Oui, mais avec un budget serré si le loyer dépasse ${formatEuro(budgetCase.tightRent)}. À ${city.cityName}, un SMIC peut couvrir les dépenses de base, mais il faut surveiller le logement, les charges et les aides possibles.`;
+}
+
+function panelComparison(city, panelMedian) {
+  const gap = city.disposableMedian - panelMedian;
+  if (gap > 1500) {
+    return `Le revenu médian à ${city.cityName} est au-dessus de la médiane de ce panel de grandes villes. Cela ne garantit pas un meilleur pouvoir d’achat, car le logement peut être plus cher.`;
+  }
+  if (gap < -1500) {
+    return `Le revenu médian à ${city.cityName} est inférieur à la médiane de ce panel de grandes villes. La ville peut toutefois rester intéressante si le coût du logement est plus bas.`;
+  }
+  return `Le revenu médian à ${city.cityName} est proche de la médiane de ce panel de grandes villes. Le confort réel dépend surtout du loyer et de la situation du foyer.`;
 }
 
 function parseCsv() {
@@ -247,6 +341,8 @@ function layout({ title, description, canonicalPath, body, pageSlug, robots = "i
 function cityPage(city, allCities) {
   const panelMedian = median(allCities.map((row) => row.disposableMedian));
   const monthlyMedian = city.disposableMedian / 12;
+  const budgetCase = budgetCaseFor(city);
+  const remainingBudget = monthlyMedian - budgetCase.rent - budgetCase.charges;
   const title = `Revenu moyen à ${city.cityName} en 2026 : combien faut-il pour vivre ?`;
   const description = `Revenu médian à ${city.cityName}, équivalent mensuel, coût de la vie, SMIC et graphiques pour estimer si votre budget est confortable.`;
   const pathName = `/pages/revenus/${city.slug}`;
@@ -265,7 +361,7 @@ function cityPage(city, allCities) {
         </h1>
         <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-100">
           À ${escapeHtml(city.cityName)}, le revenu médian est d’environ ${formatEuro(monthlyMedian)} par mois, soit ${formatEuro(city.disposableMedian)} par an.
-          Avec un SMIC, le budget dépend surtout du loyer, des charges et des aides possibles.
+          ${escapeHtml(smicAnswer(city, budgetCase))}
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#graphiques" class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white hover:bg-emerald-400">Voir les graphiques</a>
@@ -297,11 +393,48 @@ function cityPage(city, allCities) {
         </article>
       </section>
 
+      <section class="mt-8 rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-6 shadow-sm">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-wide text-amber-700">Exemple de reste à vivre</p>
+            <h2 class="mt-2 text-2xl font-bold text-slate-950">Budget type à ${escapeHtml(city.cityName)} avec le revenu médian</h2>
+            <p class="mt-3 max-w-2xl leading-relaxed text-slate-700">
+              Exemple indicatif : ${formatEuro(monthlyMedian)} de revenu mensuel, ${formatEuro(budgetCase.rent)} de loyer et ${formatEuro(budgetCase.charges)} de charges courantes.
+              Il resterait environ ${formatEuro(remainingBudget)} avant alimentation, transport, épargne et dépenses personnelles.
+            </p>
+          </div>
+          <div class="grid min-w-72 grid-cols-2 gap-3 rounded-3xl bg-white p-4 shadow-sm">
+            <div class="rounded-2xl bg-emerald-50 p-4">
+              <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Revenu</p>
+              <p class="mt-1 text-2xl font-black text-emerald-900">${formatEuro(monthlyMedian)}</p>
+            </div>
+            <div class="rounded-2xl bg-rose-50 p-4">
+              <p class="text-xs font-semibold uppercase tracking-wide text-rose-700">Loyer</p>
+              <p class="mt-1 text-2xl font-black text-rose-900">-${formatEuro(budgetCase.rent)}</p>
+            </div>
+            <div class="rounded-2xl bg-orange-50 p-4">
+              <p class="text-xs font-semibold uppercase tracking-wide text-orange-700">Charges</p>
+              <p class="mt-1 text-2xl font-black text-orange-900">-${formatEuro(budgetCase.charges)}</p>
+            </div>
+            <div class="rounded-2xl bg-blue-50 p-4">
+              <p class="text-xs font-semibold uppercase tracking-wide text-blue-700">Reste</p>
+              <p class="mt-1 text-2xl font-black text-blue-900">${formatEuro(remainingBudget)}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="mt-8 grid gap-6 lg:grid-cols-2">
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-950">${escapeHtml(city.cityName)} est-elle une ville chère ?</h2>
           <p class="mt-3 leading-relaxed text-slate-700">
             ${escapeHtml(cityLivingSummary(city, panelMedian))}
+          </p>
+          <p class="mt-3 leading-relaxed text-slate-700">
+            ${escapeHtml(panelComparison(city, panelMedian))}
+          </p>
+          <p class="mt-3 leading-relaxed text-slate-700">
+            ${escapeHtml(budgetCase.note)}
           </p>
           <p class="mt-3 text-sm text-slate-600">
             Ce repère ne remplace pas un budget personnel : deux foyers avec le même revenu peuvent avoir un niveau de vie très différent selon le loyer, les transports et les aides.
@@ -314,11 +447,16 @@ function cityPage(city, allCities) {
         <article class="rounded-3xl border border-blue-200 bg-blue-50 p-6">
           <h2 class="text-2xl font-bold text-slate-950">Peut-on vivre avec un SMIC à ${escapeHtml(city.cityName)} ?</h2>
           <p class="mt-3 leading-relaxed text-slate-700">
-            ${escapeHtml(smicAnswer(city))}
+            ${escapeHtml(smicAnswer(city, budgetCase))}
+          </p>
+          <h3 class="mt-5 text-lg font-bold text-slate-950">Quel salaire pour vivre confortablement à ${escapeHtml(city.cityName)} ?</h3>
+          <p class="mt-2 leading-relaxed text-slate-700">
+            Pour vivre plus confortablement à ${escapeHtml(city.cityName)}, visez environ ${formatEuro(budgetCase.comfortIncome)} nets par mois si vous êtes seul, avec un loyer proche de ${formatEuro(budgetCase.rent)}.
+            Ce seuil reste indicatif : il dépend du quartier, du transport, du foyer et des aides.
           </p>
           <div class="mt-5 flex flex-wrap gap-3">
             <a href="/pages/salaire-brut-net-calcul-2026" class="rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700">Calculer mon salaire net</a>
-            <a href="/pages/apl" class="rounded-xl border border-blue-200 bg-white px-5 py-3 font-semibold text-blue-800 hover:border-blue-400">Calculer mes aides à ${escapeHtml(city.cityName)}</a>
+            <a href="/pages/apl" class="rounded-xl border border-blue-200 bg-white px-5 py-3 font-semibold text-blue-800 hover:border-blue-400">Calculez vos aides à ${escapeHtml(city.cityName)} en 30 secondes</a>
           </div>
         </article>
       </section>
