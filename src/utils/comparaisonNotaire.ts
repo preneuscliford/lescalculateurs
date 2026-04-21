@@ -34,7 +34,7 @@ class ComparaisonNotaire {
   private calculs: CalculNotaire[] = [];
   private maxComparaisons = 4;
   private containerId: string;
-  private currentChart: Chart | null = null;
+  private currentChart: Chart<"bar", number[], string> | null = null;
   private currentChartId: string = "";
   private static SCHEMA_VERSION = "2025-12-10-baremes-json";
 
