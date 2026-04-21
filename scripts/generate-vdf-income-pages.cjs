@@ -312,6 +312,13 @@ function layout({ title, description, canonicalPath, body, pageSlug, robots = "i
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <meta property="og:image" content="${DOMAIN}/assets/favicon-32x32.png" />
+    <meta name="twitter:image" content="${DOMAIN}/assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="/tailwind.css" />
     <script defer src="/third-party-loader.js"></script>
   </head>
