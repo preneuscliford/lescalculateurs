@@ -340,6 +340,28 @@ function collectNestedPlusvalueInputs() {
   return inputs;
 }
 
+function collectVdfIncomeInputs() {
+  const revenusDir = resolve(__dirname, "src/pages/revenus");
+  const inputs: Record<string, string> = {};
+
+  const pillarPath = resolve(__dirname, "src/pages/revenu-median-commune.html");
+  if (fs.existsSync(pillarPath)) {
+    inputs["pages/revenu-median-commune"] = pillarPath;
+  }
+
+  if (!fs.existsSync(revenusDir)) return inputs;
+
+  const entries = fs.readdirSync(revenusDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.isFile() && entry.name.endsWith(".html")) {
+      const slug = entry.name.replace(/\.html$/, "");
+      inputs[`pages/revenus/${slug}`] = path.join(revenusDir, entry.name);
+    }
+  }
+
+  return inputs;
+}
+
 function collectImpotPilotInputs() {
   const inputs: Record<string, string> = {};
 
@@ -375,6 +397,7 @@ export default defineConfig(() => {
   const primePilotInputs = collectPrimePilotInputs();
   const simulateursPilotInputs = collectSimulateursPilotInputs();
   const impotPilotInputs = collectImpotPilotInputs();
+  const vdfIncomeInputs = collectVdfIncomeInputs();
 
   return {
     root: "src",
@@ -433,6 +456,9 @@ export default defineConfig(() => {
 
           // Pages Plus-value imbriquees presentes sous src/pages/plusvalue/**/index.html
           ...plusvalueNestedInputs,
+
+          // Pages revenu par commune generees depuis les donnees VDF
+          ...vdfIncomeInputs,
 
           // Pages pSEO RSA du pilote declarees explicitement pour la prod
           ...rsaPilotInputs,

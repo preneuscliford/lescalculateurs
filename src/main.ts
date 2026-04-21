@@ -2,6 +2,7 @@ import "./tailwind.css";
 import { initializeScrollButtons } from "./utils/scrollButtons";
 import { initializeVercelAnalytics } from "./utils/vercelAnalytics";
 import { initializeVercelSpeedInsights } from "./utils/vercelSpeedInsights";
+import { initializeVdfIncomeCharts } from "./utils/vdfIncomeCharts";
 
 declare global {
   interface Window {
@@ -205,6 +206,9 @@ export function initializeApp() {
 
   // Initialize scroll-to-simulator buttons
   initializeScrollButtons();
+
+  // Initialize VDF income charts only on pages that declare them.
+  initializeVdfIncomeCharts();
 }
 
 // Initialize show more/less functionality for calculators

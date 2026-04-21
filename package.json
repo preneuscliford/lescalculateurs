@@ -59,6 +59,7 @@
     "report:pseo:opportunity": "node scripts/report-pseo-opportunity-scoring.cjs",
     "report:keywords:fr": "node scripts/report-keyword-priority-fr.cjs --input=C:/Users/prene/Downloads/www_lescalculateurs_fr_-_keyword_strategy.csv --positions=reports/semrush-positions-lescalculateurs.fr-fr-2026-04-12.json --top=20",
     "report:keywords:bing": "node scripts/report-bing-keyword-priority.cjs --input=seach-console-perf/www.lescalculateurs.fr_KeywordReport_4_19_2026.csv --top=40 --min-impressions=80 --max-position=12",
+    "report:vdf:income": "node scripts/report-vdf-income-opportunities.cjs",
     "report:priority:merged": "node scripts/report-google-bing-merged-priority.cjs --google-input=\"seach-console-perf/lescalculateurs.fr-Performance-on-Search-2026-04-18 (1).xlsx\" --bing-input=seach-console-perf/www.lescalculateurs.fr_KeywordReport_4_19_2026.csv --top=20 --google-min-impressions=150 --google-min-position=1 --google-max-position=12 --bing-min-impressions=80 --bing-max-position=12",
     "report:priority:merged:openai": "node scripts/analyze-google-bing-openai.cjs --input=reports/google-bing-merged-priority-latest.json --top=12",
     "report:search-console:openai": "node scripts/analyze-search-console-openai.cjs --input-dir=seach-console-perf --min-impressions=150 --max-ctr=0.02 --min-position=4 --max-position=12 --max-pages=8 --strategy=hub-first --max-associated-pages=6 --pseo-only=false",
@@ -89,6 +90,7 @@
     "generate:pseo:rsa": "node scripts/generate-pseo-rsa.js",
     "generate:pseo:are": "node scripts/generate-pseo-are.js",
     "generate:pseo:impot": "node scripts/generate-pseo-impot.js",
+    "generate:vdf:income": "node scripts/generate-vdf-income-pages.cjs",
     "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo"
   },
   "blog:update:2026": "node scripts/update-blog-pages.cjs",
