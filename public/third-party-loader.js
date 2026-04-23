@@ -7,6 +7,7 @@
   var GTM_ID = "GTM-TPFZCGX5";
   var GA4_ID = "G-2HNTGCYQ1X";
   var CONSENT_STORAGE_KEY = "lc_cookie_consent_v1";
+  var USE_CUSTOM_CONSENT_UI = false;
 
   var BANNER_ID = "lc-consent-banner";
   var MODAL_ID = "lc-consent-modal";
@@ -302,6 +303,7 @@
   }
 
   function getStoredConsentState() {
+    if (!USE_CUSTOM_CONSENT_UI) return null;
     try {
       var raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
       if (!raw) return null;
@@ -333,6 +335,7 @@
   }
 
   function persistConsentState(state, source) {
+    if (!USE_CUSTOM_CONSENT_UI) return;
     var payload = {
       status: "custom",
       essential: true,
@@ -430,6 +433,7 @@
   }
 
   function openCustomizeModal() {
+    if (!USE_CUSTOM_CONSENT_UI) return;
     if (document.getElementById(MODAL_ID)) return;
     ensureConsentUIStyle();
 
@@ -512,6 +516,7 @@
   }
 
   function showConsentBanner(force) {
+    if (!USE_CUSTOM_CONSENT_UI) return;
     if (!force && hasGoogleCmpConsentData) return;
     if (document.getElementById(BANNER_ID)) return;
     if (getStoredConsentState()) return;
@@ -565,6 +570,7 @@
   }
 
   function applyStoredConsentOnLoad() {
+    if (!USE_CUSTOM_CONSENT_UI) return false;
     var stored = getStoredConsentState();
     if (!stored) return false;
 
@@ -599,10 +605,16 @@
   }
 
   window.lcOpenCookiePreferences = function () {
+    if (!USE_CUSTOM_CONSENT_UI) return;
     openCustomizeModal();
   };
 
   window.lcResetCookiePreferences = function () {
+    if (!USE_CUSTOM_CONSENT_UI) {
+      hideModal();
+      hideBanner();
+      return;
+    }
     try {
       window.localStorage.removeItem(CONSENT_STORAGE_KEY);
     } catch (_e) {}
@@ -617,10 +629,12 @@
   };
 
   window.lcEnsureCookieBanner = function () {
+    if (!USE_CUSTOM_CONSENT_UI) return;
     showConsentBanner(true);
   };
 
   function scheduleInitialConsentModal() {
+    if (!USE_CUSTOM_CONSENT_UI) return;
     window.setTimeout(function () {
       if (getStoredConsentState() || hasGoogleCmpConsentData) return;
       openCustomizeModal();
@@ -628,6 +642,7 @@
   }
 
   function scheduleFallbackConsentBanner() {
+    if (!USE_CUSTOM_CONSENT_UI) return;
     window.setTimeout(function () {
       if (hasGoogleCmpConsentData || getStoredConsentState()) return;
       hideBanner();
