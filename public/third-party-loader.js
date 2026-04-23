@@ -14,7 +14,8 @@
   var ADS_DECISION_TIMEOUT_MS = 2500;
 
   var shouldSkipBaselineLoad = false;
-  var hasGoogleCmpSignal = false;
+  var hasGoogleCmpApiReady = false;
+  var hasGoogleCmpConsentData = false;
   var adsDecisionResolved = false;
   var adsDecisionTimer = null;
 
@@ -147,13 +148,14 @@
 
     googlefc.callbackQueue.push({
       CONSENT_API_READY: function () {
-        hasGoogleCmpSignal = true;
+        hasGoogleCmpApiReady = true;
       }
     });
 
     googlefc.callbackQueue.push({
       CONSENT_MODE_DATA_READY: function () {
-        hasGoogleCmpSignal = true;
+        hasGoogleCmpApiReady = true;
+        hasGoogleCmpConsentData = true;
         var state = readGoogleFcConsentState();
         if (!state) return;
         hideBanner();
@@ -410,9 +412,14 @@
       "#" + MODAL_ID + " .lc-content{background:#111827;color:#fff;border-radius:16px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 50px -12px rgba(0,0,0,.5)}" +
       "#" + MODAL_ID + " .lc-header{padding:24px 24px 0}" +
       "#" + MODAL_ID + " .lc-body{padding:16px 24px}" +
-      "#" + MODAL_ID + " .lc-row{padding:12px 0;border-bottom:1px solid #374151;display:flex;align-items:center;justify-content:space-between}" +
+      "#" + MODAL_ID + " .lc-row{padding:12px 0;border-bottom:1px solid #374151}" +
       "#" + MODAL_ID + " .lc-row:last-child{border-bottom:none}" +
+      "#" + MODAL_ID + " .lc-option{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;width:100%;cursor:pointer}" +
+      "#" + MODAL_ID + " .lc-option.is-disabled{cursor:not-allowed}" +
+      "#" + MODAL_ID + " .lc-copy-group{flex:1}" +
       "#" + MODAL_ID + " .lc-desc{font-size:12px;color:#9ca3af;margin-top:4px;line-height:1.4}" +
+      "#" + MODAL_ID + " input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 auto;accent-color:#10b981;cursor:pointer}" +
+      "#" + MODAL_ID + " .lc-option.is-disabled input[type=checkbox]{cursor:not-allowed;pointer-events:none}" +
       "#" + MODAL_ID + " .lc-footer{padding:16px 24px 24px;display:flex;gap:10px;justify-content:flex-end;border-top:1px solid #374151}" +
       "#" + MODAL_ID + " .lc-primary{background:#059669;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer}" +
       "#" + MODAL_ID + " .lc-secondary{background:#374151;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer}" +
@@ -438,12 +445,13 @@
       '<div class="lc-content">' +
       '<div class="lc-header"><h2 id="lc-consent-modal-title">Personnaliser les cookies</h2></div>' +
       '<div class="lc-body">' +
-      '<div class="lc-row"><div><strong>Cookies essentiels</strong><div class="lc-desc">Necessaires au fonctionnement du site.</div></div><input type="checkbox" checked disabled></div>' +
-      '<div class="lc-row"><div><strong>Mesure d\'audience</strong><div class="lc-desc">Mesure Analytics, y compris en mode anonymise si refuse.</div></div><input id="lc-modal-analytics" type="checkbox" ' + (current.analytics ? "checked" : "") + '></div>' +
-      '<div class="lc-row"><div><strong>Publicite</strong><div class="lc-desc">Publicites personnalisees si acceptees, non personnalisees sinon.</div></div><input id="lc-modal-ads" type="checkbox" ' + (current.ads ? "checked" : "") + '></div>' +
+      '<div class="lc-row"><label class="lc-option is-disabled"><div class="lc-copy-group"><strong>Cookies essentiels 🔒</strong><div class="lc-desc">Nécessaires au fonctionnement du site. Ils ne peuvent pas être désactivés.</div></div><input type="checkbox" checked aria-disabled="true" tabindex="-1"></label></div>' +
+      '<div class="lc-row"><label class="lc-option" for="lc-modal-analytics"><div class="lc-copy-group"><strong>Mesure d\'audience 📊</strong><div class="lc-desc">Nous aide à comprendre comment le site est utilisé pour l\'améliorer. Vos données restent anonymisées si vous refusez.</div></div><input id="lc-modal-analytics" type="checkbox" ' + (current.analytics ? "checked" : "") + '></label></div>' +
+      '<div class="lc-row"><label class="lc-option" for="lc-modal-ads"><div class="lc-copy-group"><strong>Publicité 📢</strong><div class="lc-desc">Permet d\'afficher des annonces personnalisées en fonction de votre navigation. Vous pouvez refuser : des annonces non personnalisées seront alors affichées.</div></div><input id="lc-modal-ads" type="checkbox" ' + (current.ads ? "checked" : "") + '></label></div>' +
       '</div>' +
       '<div class="lc-footer">' +
       '<button class="lc-link" data-action="close" type="button">Fermer</button>' +
+      '<button class="lc-secondary" data-action="reject" type="button">Essentiel uniquement</button>' +
       '<button class="lc-secondary" data-action="save" type="button">Enregistrer</button>' +
       '<button class="lc-primary" data-action="accept" type="button">Tout accepter</button>' +
       '</div>' +
@@ -453,6 +461,12 @@
     modal.addEventListener("click", function (event) {
       if (event.target === modal) {
         hideModal();
+        return;
+      }
+
+      var lockedOption = event.target && event.target.closest ? event.target.closest(".lc-option.is-disabled") : null;
+      if (lockedOption) {
+        event.preventDefault();
         return;
       }
 
@@ -474,6 +488,15 @@
         return;
       }
 
+      if (action === "reject") {
+        var essentialOnly = { essential: true, analytics: false, ads: false };
+        persistConsentState(essentialOnly, "customize-modal");
+        resolveAdsDecision(essentialOnly, { immediate: true, skipPersist: true });
+        hideModal();
+        hideBanner();
+        return;
+      }
+
       if (action === "save") {
         var analytics = !!modal.querySelector("#lc-modal-analytics").checked;
         var ads = !!modal.querySelector("#lc-modal-ads").checked;
@@ -488,8 +511,8 @@
     document.body.appendChild(modal);
   }
 
-  function showConsentBanner() {
-    if (hasGoogleCmpSignal) return;
+  function showConsentBanner(force) {
+    if (!force && hasGoogleCmpConsentData) return;
     if (document.getElementById(BANNER_ID)) return;
     if (getStoredConsentState()) return;
 
@@ -589,17 +612,26 @@
       { immediate: true, skipPersist: true }
     );
     hideModal();
-    showConsentBanner();
+    hideBanner();
+    openCustomizeModal();
   };
 
   window.lcEnsureCookieBanner = function () {
-    showConsentBanner();
+    showConsentBanner(true);
   };
+
+  function scheduleInitialConsentModal() {
+    window.setTimeout(function () {
+      if (getStoredConsentState() || hasGoogleCmpConsentData) return;
+      openCustomizeModal();
+    }, 600);
+  }
 
   function scheduleFallbackConsentBanner() {
     window.setTimeout(function () {
-      if (adsDecisionResolved || hasGoogleCmpSignal || getStoredConsentState()) return;
-      showConsentBanner();
+      if (hasGoogleCmpConsentData || getStoredConsentState()) return;
+      hideBanner();
+      openCustomizeModal();
     }, ADS_DECISION_TIMEOUT_MS + 250);
   }
 
@@ -613,6 +645,7 @@
     setAdsPersonalization(false);
     loadFundingChoices();
     loadAdsense();
+    scheduleInitialConsentModal();
     scheduleAdsDecisionFallback();
   }
 
