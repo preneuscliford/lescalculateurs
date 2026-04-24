@@ -219,6 +219,25 @@
         🟢 Lancer la simulation
       </button>
 
+      <div id="taxe-calculator"></div>
+
+      <div class="mt-8 flex justify-center gap-3">
+        <button
+          id="taxe-add-to-compare"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
+        >
+          ➕ Ajouter à la comparaison
+        </button>
+        <button
+          id="taxe-reset-compare"
+          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
+        >
+          🔄 Réinitialiser
+        </button>
+      </div>
+
+      <div id="taxe-comparaison" class="hidden mt-8"></div>
+
       <!-- Résumé rapide -->
       <section
         class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100"
@@ -329,25 +348,6 @@
           </div>
         </div>
       </section>
-
-      <div id="taxe-calculator"></div>
-
-      <div class="mt-6 flex justify-center gap-3">
-        <button
-          id="taxe-add-to-compare"
-          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-md transition-colors"
-        >
-          ➕ Ajouter à la comparaison
-        </button>
-        <button
-          id="taxe-reset-compare"
-          class="px-6 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 font-semibold shadow-md transition-colors hidden"
-        >
-          🔄 Réinitialiser
-        </button>
-      </div>
-
-      <div id="taxe-comparaison" class="hidden mt-8"></div>
 
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-6">💡 Exemples chiffrés (indicatifs)</h2>
@@ -825,12 +825,14 @@
               placeholder: "8000",
               min: 100,
               step: 1,
+              quickValues: [3000, 5000, 8000, 10000, 15000, 20000],
             },
             {
               id: "region",
               label: "Région",
               type: "select",
               required: true,
+              defaultValue: "ile_de_france",
               options: [
                 { value: "ile_de_france", label: "Île-de-France" },
                 {
@@ -864,6 +866,7 @@
               min: 0,
               max: 60,
               step: 0.1,
+              quickValues: [25, 30, 33, 35, 40],
             },
             {
               id: "age_proprietaire",
@@ -872,6 +875,7 @@
               placeholder: "45",
               min: 18,
               max: 120,
+              quickValues: [65, 70, 75, 80, 85],
             },
             {
               id: "handicape",

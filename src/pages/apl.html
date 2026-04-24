@@ -1221,6 +1221,7 @@
             min: 0,
             max: 10,
             step: 1,
+            quickValues: [0, 1, 2, 3],
           },
           {
             id: "revenus_mensuels",
@@ -1231,6 +1232,7 @@
             min: 0,
             step: 1,
             suffix: "€",
+            quickValues: [1500, 2000, 2500, 3000],
           },
           {
             id: "type_logement",
@@ -1256,12 +1258,14 @@
             min: 0,
             step: 1,
             suffix: "€",
+            quickValues: [600, 800, 1000, 1200],
           },
           {
             id: "region",
             label: "Région *",
             type: "select",
             required: true,
+            defaultValue: "idf",
             options: [
               { value: "idf", label: "Île-de-France" },
               { value: "province", label: "Province (hors IDF)" },
@@ -1277,6 +1281,7 @@
             min: 0,
             step: 1,
             suffix: "€",
+            quickValues: [500, 1000, 2000, 5000],
           },
         ],
         // ✅ PROPOSITION 1: Moteur de calcul unique (aplCalculEngine.ts)
