@@ -1,0 +1,159 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Les Calculateurs Les Calculateurs Simulateurs France 2026" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Les Calculateurs" [ref=e5]
+        - generic [ref=e6]:
+          - paragraph [ref=e7]: Les Calculateurs
+          - paragraph [ref=e8]: Simulateurs France 2026
+      - navigation [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: "#accueil"
+        - link "Simulateurs" [ref=e11] [cursor=pointer]:
+          - /url: "#simulateurs"
+        - link "Fiabilite" [ref=e12] [cursor=pointer]:
+          - /url: "#fiabilite"
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /pages/blog
+        - link "Methodologie" [ref=e14] [cursor=pointer]:
+          - /url: /pages/methodologie
+      - link "Voir tous les outils" [ref=e15] [cursor=pointer]:
+        - /url: /pages/simulateurs
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: Simulateurs français basés sur des situations réelles
+        - heading "LesCalculateurs.fr" [level=1] [ref=e22]
+        - paragraph [ref=e23]: "Estimez en quelques secondes les montants qui concernent votre situation : frais de notaire, impôt sur le revenu, aides sociales, crédit immobilier ou plus-value."
+        - paragraph [ref=e24]: "LesCalculateurs.fr se concentre sur les situations les plus recherchées par les visiteurs : achat immobilier, fiscalité des particuliers, aides de la CAF et simulation de crédit."
+        - paragraph [ref=e25]: Chaque simulateur explique les règles utilisées, les hypothèses retenues et les limites du calcul afin de garder une estimation claire et compréhensible.
+        - generic [ref=e26]:
+          - link "Lancer une simulation" [ref=e27] [cursor=pointer]:
+            - /url: /pages/simulateurs
+          - link "Comprendre la méthodologie" [ref=e28] [cursor=pointer]:
+            - /url: /pages/methodologie
+        - generic [ref=e29]:
+          - generic [ref=e30]: ✓ Sans inscription
+          - generic [ref=e31]: ✓ Résultat immédiat
+          - generic [ref=e32]: ✓ Méthodes et hypothèses visibles
+      - generic [ref=e34]:
+        - heading "Les simulations les plus consultées" [level=2] [ref=e35]
+        - paragraph [ref=e36]: Les visiteurs utilisent principalement ces outils pour anticiper leurs démarches administratives et financières.
+        - list [ref=e37]:
+          - listitem [ref=e38]: Immobilier
+          - listitem [ref=e39]: Fiscalité
+          - listitem [ref=e40]: Aides sociales
+          - listitem [ref=e41]: Crédit immobilier
+        - link "Acceder aux guides pratiques" [ref=e42] [cursor=pointer]:
+          - /url: /pages/blog
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: Selection principale
+          - heading "Les simulations les plus consultées" [level=2] [ref=e47]
+          - paragraph [ref=e48]: Les visiteurs utilisent principalement ces outils pour anticiper leurs démarches administratives et financières.
+        - link "Voir la liste complete" [ref=e49] [cursor=pointer]:
+          - /url: /pages/simulateurs
+      - generic [ref=e50]:
+        - article [ref=e51]:
+          - paragraph [ref=e52]: Immobilier
+          - heading "Frais de notaire" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Estimation des frais d'acquisition lors d’un achat immobilier avec prise en compte du type de bien, du prix d’achat et du département.
+          - link "Accéder au calculateur" [ref=e55] [cursor=pointer]:
+            - /url: /pages/notaire
+        - article [ref=e56]:
+          - paragraph [ref=e57]: Fiscalite
+          - heading "Impot sur le revenu" [level=3] [ref=e58]
+          - paragraph [ref=e59]: Simulation pédagogique du barème progressif 2026, avec prise en compte du foyer fiscal et des revenus déclarés.
+          - link "Accéder au calculateur" [ref=e60] [cursor=pointer]:
+            - /url: /pages/impot
+        - article [ref=e61]:
+          - paragraph [ref=e62]: Aides
+          - heading "RSA et aides CAF" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Estimation des droits potentiels selon revenus, composition du foyer et situation professionnelle.
+          - link "Accéder au calculateur" [ref=e65] [cursor=pointer]:
+            - /url: /pages/rsa
+        - article [ref=e66]:
+          - paragraph [ref=e67]: Aides logement
+          - heading "APL" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Projection des aides au logement selon les règles générales utilisées par la CAF et les cas les plus fréquents.
+          - link "Accéder au calculateur" [ref=e70] [cursor=pointer]:
+            - /url: /pages/apl
+        - article [ref=e71]:
+          - paragraph [ref=e72]: Credit
+          - heading "Simulation de prêt" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Calculez la mensualité, la capacité d’emprunt et le coût total du crédit en testant différents scénarios.
+          - link "Accéder au calculateur" [ref=e75] [cursor=pointer]:
+            - /url: /pages/pret
+        - article [ref=e76]:
+          - paragraph [ref=e77]: Patrimoine
+          - heading "Plus-value immobilière" [level=3] [ref=e78]
+          - paragraph [ref=e79]: Estimation de la fiscalité lors d’une revente selon prix d’achat, durée de détention, travaux et abattements.
+          - link "Accéder au calculateur" [ref=e80] [cursor=pointer]:
+            - /url: /pages/plusvalue
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - paragraph [ref=e84]: Une plateforme conçue pour des simulations fiables
+        - heading "Une plateforme conçue pour des simulations fiables" [level=2] [ref=e85]
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - heading "Méthodes transparentes" [level=3] [ref=e88]
+            - paragraph [ref=e89]: Chaque calculateur détaille les hypothèses utilisées, les règles appliquées et les limites de l’estimation.
+          - generic [ref=e90]:
+            - heading "Informations vérifiables" [level=3] [ref=e91]
+            - paragraph [ref=e92]: Les contenus s’appuient sur les règles publiques et barèmes officiels, avec mise à jour régulière des pages.
+          - generic [ref=e93]:
+            - heading "Navigation claire" [level=3] [ref=e94]
+            - paragraph [ref=e95]: L’architecture du site relie simulateurs, guides pratiques et pages d’explication pour approfondir chaque sujet.
+          - generic [ref=e96]:
+            - heading "Expérience rapide" [level=3] [ref=e97]
+            - paragraph [ref=e98]: Les outils sont conçus pour fournir un résultat immédiat, sans inscription et sans démarche complexe.
+      - complementary [ref=e99]:
+        - heading "Espace partenaires" [level=3] [ref=e100]
+        - paragraph [ref=e101]: LesCalculateurs.fr développe des outils destinés à simplifier la compréhension des règles administratives et financières.
+        - paragraph [ref=e102]: "Nous privilégions les partenariats qui améliorent :"
+        - list [ref=e103]:
+          - listitem [ref=e104]: la qualité des informations
+          - listitem [ref=e105]: la transparence des calculs
+          - listitem [ref=e106]: l’utilité concrète pour les visiteurs
+        - paragraph [ref=e107]: "Contact : contact@lescalculateurs.fr"
+        - link "Contacter l equipe" [ref=e108] [cursor=pointer]:
+          - /url: /pages/contact
+    - generic [ref=e109]:
+      - heading "Questions frequentes" [level=2] [ref=e110]
+      - generic [ref=e111]:
+        - group [ref=e112]:
+          - generic "Les résultats sont-ils officiels ?" [ref=e113] [cursor=pointer]
+        - group [ref=e114]:
+          - generic "Pourquoi le site demande-t-il le consentement cookies ?" [ref=e115] [cursor=pointer]
+        - group [ref=e116]:
+          - generic "Le site fonctionne-t-il sur mobile ?" [ref=e117] [cursor=pointer]
+        - group [ref=e118]:
+          - generic "Comment signaler une erreur ?" [ref=e119] [cursor=pointer]
+  - contentinfo [ref=e120]:
+    - generic [ref=e121]:
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - paragraph [ref=e124]: Les Calculateurs
+          - paragraph [ref=e125]: Simulateurs gratuits pour mieux comprendre vos decisions financieres.
+        - generic [ref=e126]:
+          - link "Simulateurs" [ref=e127] [cursor=pointer]:
+            - /url: /pages/simulateurs
+          - link "Blog" [ref=e128] [cursor=pointer]:
+            - /url: /pages/blog
+          - link "Methodologie" [ref=e129] [cursor=pointer]:
+            - /url: /pages/methodologie
+          - link "Sources" [ref=e130] [cursor=pointer]:
+            - /url: /pages/sources
+          - link "Mises a jour" [ref=e131] [cursor=pointer]:
+            - /url: /pages/historique-mises-a-jour
+      - generic [ref=e132]:
+        - link "Mentions legales" [ref=e133] [cursor=pointer]:
+          - /url: /pages/mentions-legales
+        - link "Confidentialite" [ref=e134] [cursor=pointer]:
+          - /url: /pages/politique-confidentialite
+        - link "Cookies" [ref=e135] [cursor=pointer]:
+          - /url: /pages/politique-cookies
+        - link "Contact" [ref=e136] [cursor=pointer]:
+          - /url: /pages/contact

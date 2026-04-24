@@ -15,27 +15,10 @@ let chartReadyPromise: Promise<void> | null = null;
 function ensureChartReady() {
   if (!chartReadyPromise) {
     chartReadyPromise = import("chart.js")
-      .then(
-        ({
-          Chart,
-          BarController,
-          BarElement,
-          CategoryScale,
-          LinearScale,
-          Tooltip,
-          Legend,
-        }) => {
-          Chart.register(
-            BarController,
-            BarElement,
-            CategoryScale,
-            LinearScale,
-            Tooltip,
-            Legend
-          );
-          (window as any).Chart = Chart;
-        }
-      )
+      .then(({ Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend }) => {
+        Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+        (window as any).Chart = Chart;
+      })
       .catch((error) => {
         console.error("Chargement de Chart.js impossible", error);
       });
@@ -128,7 +111,8 @@ const impotConfig = {
       required: true,
       placeholder: "38000",
       min: 0,
-      step: 100,
+      step: 1,
+      quickValues: [15000, 25000, 35000, 50000, 75000, 100000],
     },
     {
       id: "parts",
@@ -138,6 +122,39 @@ const impotConfig = {
       placeholder: "1",
       min: 0.5,
       step: 0.5,
+      quickValues: [0.5, 1, 1.5, 2, 2.5, 3],
+    },
+  ],
+  presets: [
+    {
+      emoji: "👤",
+      label: "Célibataire modeste",
+      description: "20 000 € / 1 part",
+      values: { revenu: 20000, parts: 1 },
+    },
+    {
+      emoji: "👫",
+      label: "Couple moyen",
+      description: "40 000 € / 2 parts",
+      values: { revenu: 40000, parts: 2 },
+    },
+    {
+      emoji: "💼",
+      label: "Célibataire bien rémunéré",
+      description: "60 000 € / 1 part",
+      values: { revenu: 60000, parts: 1 },
+    },
+    {
+      emoji: "👨‍👩‍👧",
+      label: "Couple + 1 enfant",
+      description: "50 000 € / 2.5 parts",
+      values: { revenu: 50000, parts: 2.5 },
+    },
+    {
+      emoji: "👨‍👧",
+      label: "Parent isolé + 1 enfant",
+      description: "35 000 € / 1.5 parts",
+      values: { revenu: 35000, parts: 1.5 },
     },
   ],
   calculate: (values: Record<string, any>) => {
@@ -269,11 +286,7 @@ const impotConfig = {
                   .map((c, i) => {
                     const isCurrentCase = c.parts === d.parts;
                     const rowBG = isCurrentCase ? "bg-blue-50" : "bg-white";
-                    const badge = isCurrentCase
-                      ? "✓ Votre cas"
-                      : c.custom
-                      ? "🔧 Perso"
-                      : "";
+                    const badge = isCurrentCase ? "✓ Votre cas" : c.custom ? "🔧 Perso" : "";
 
                     return `
                     <tr class="${rowBG} border-b border-teal-100 hover:bg-teal-50 transition">
@@ -288,17 +301,15 @@ const impotConfig = {
                             : ""
                         }
                       </td>
-                      <td class="p-3 border border-teal-200 text-center">${
-                        c.parts
-                      }</td>
+                      <td class="p-3 border border-teal-200 text-center">${c.parts}</td>
                       <td class="p-3 border border-teal-200 text-right font-bold text-gray-900">${formatCurrency(
-                        c.ir
+                        c.ir,
                       )}</td>
                       <td class="p-3 border border-teal-200 text-center">${c.tauxMoyen.toFixed(
-                        1
+                        1,
                       )}%</td>
                       <td class="p-3 border border-teal-200 text-center">${c.tauxMarginal.toFixed(
-                        0
+                        0,
                       )}%</td>
                       ${
                         c.custom
@@ -337,25 +348,19 @@ const impotConfig = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
           <h4 class="font-semibold text-gray-800">💰 Impôt estimé (barème brut)</h4>
-          <p class="text-2xl font-bold text-blue-600">${formatCurrency(
-            d.irBrut
-          )}</p>
+          <p class="text-2xl font-bold text-blue-600">${formatCurrency(d.irBrut)}</p>
           <p class="text-sm text-gray-600 mt-1">Mensualité: ${formatCurrency(
-            d.mensualiteMoyenne
+            d.mensualiteMoyenne,
           )}</p>
-          <p class="text-xs text-gray-500 mt-2">Taux moyen: ${(
-            d.tauxMoyen * 100
-          ).toFixed(1)}%</p>
+          <p class="text-xs text-gray-500 mt-2">Taux moyen: ${(d.tauxMoyen * 100).toFixed(1)}%</p>
         </div>
         <div class="bg-green-50 p-4 rounded-lg border border-green-200">
           <h4 class="font-semibold text-gray-800">📊 Quotient familial</h4>
-          <p class="text-2xl font-bold text-green-600">${formatCurrency(
-            d.qf
-          )}</p>
+          <p class="text-2xl font-bold text-green-600">${formatCurrency(d.qf)}</p>
           <p class="text-sm text-gray-600 mt-1">${partsExplication}</p>
-          <p class="text-xs text-gray-500 mt-2">Taux marginal: ${(
-            d.tauxMarginal * 100
-          ).toFixed(0)}%</p>
+          <p class="text-xs text-gray-500 mt-2">Taux marginal: ${(d.tauxMarginal * 100).toFixed(
+            0,
+          )}%</p>
         </div>
       </div>
 
@@ -366,9 +371,9 @@ const impotConfig = {
         <h3 class="text-lg font-bold text-green-900 mb-2">✅ Pourquoi l'impôt est à 0 € ?</h3>
         <ul class="text-sm text-green-900 list-disc list-inside space-y-1">
           <li>Votre quotient familial (${formatCurrency(
-            d.qf
+            d.qf,
           )}) reste dans la tranche à 0 % (jusqu'à ${formatCurrency(
-            bareme[0].plafond
+            bareme[0].plafond,
           )} par part).</li>
           <li>Ce résultat est une estimation “barème brut” (hors décote, réductions et crédits d'impôt).</li>
           <li>En pratique, la décote et vos avantages fiscaux peuvent changer le montant final.</li>
@@ -407,19 +412,19 @@ const impotConfig = {
                 <tr class="border-b border-gray-100 hover:bg-gray-50">
                   <td class="p-2 border border-gray-200">${dist.tranche}</td>
                   <td class="p-2 text-center border border-gray-200">${formatCurrency(
-                    dist.de
+                    dist.de,
                   )} à ${dist.a === Infinity ? "∞" : formatCurrency(dist.a)}</td>
                   <td class="p-2 text-center border border-gray-200 font-semibold">${(
                     dist.taux * 100
                   ).toFixed(0)}%</td>
                   <td class="p-2 text-right border border-gray-200">${formatCurrency(
-                    dist.montant
+                    dist.montant,
                   )}</td>
                   <td class="p-2 text-right border border-gray-200 font-semibold">${formatCurrency(
-                    dist.impotParPart
+                    dist.impotParPart,
                   )}</td>
                 </tr>
-              `
+              `,
                 )
                 .join("")}
             </tbody>
@@ -427,13 +432,13 @@ const impotConfig = {
               <tr class="bg-gray-50">
                 <td class="p-2 border border-gray-200 font-semibold" colspan="4">Impôt par part</td>
                 <td class="p-2 border border-gray-200 text-right font-bold">${formatCurrency(
-                  impotParPart
+                  impotParPart,
                 )}</td>
               </tr>
               <tr class="bg-gray-50">
                 <td class="p-2 border border-gray-200 font-semibold" colspan="4">Impôt estimé (toutes parts)</td>
                 <td class="p-2 border border-gray-200 text-right font-bold text-blue-700">${formatCurrency(
-                  d.irBrut
+                  d.irBrut,
                 )}</td>
               </tr>
             </tfoot>
@@ -463,23 +468,18 @@ const impotConfig = {
               ${bareme
                 .map((b, i) => {
                   const prev = i > 0 ? bareme[i - 1].plafond : 0;
-                  const plafond =
-                    b.plafond === Infinity ? "∞" : formatCurrency(b.plafond);
+                  const plafond = b.plafond === Infinity ? "∞" : formatCurrency(b.plafond);
                   const start = formatCurrency(prev);
                   const isCurrent = d.qf > prev && d.qf <= b.plafond;
-                  const className = isCurrent
-                    ? "bg-blue-100 border-blue-300"
-                    : "border-amber-200";
+                  const className = isCurrent ? "bg-blue-100 border-blue-300" : "border-amber-200";
                   return `
                   <tr class="border ${className}">
                     <td class="p-2 border">${i + 1}</td>
                     <td class="p-2 text-center border">${start} à ${plafond}</td>
-                    <td class="p-2 text-center border font-semibold">${(
-                      b.taux * 100
-                    ).toFixed(0)}%</td>
-                    <td class="p-2 text-right border">${
-                      isCurrent ? "✓ Votre tranche" : ""
-                    }</td>
+                    <td class="p-2 text-center border font-semibold">${(b.taux * 100).toFixed(
+                      0,
+                    )}%</td>
+                    <td class="p-2 text-right border">${isCurrent ? "✓ Votre tranche" : ""}</td>
                   </tr>`;
                 })
                 .join("")}
@@ -506,17 +506,17 @@ const impotConfig = {
                   distribution.length === 1
                     ? "100.0"
                     : total > 0
-                    ? ((dist.montant / total) * 100).toFixed(1)
-                    : "0.0";
+                      ? ((dist.montant / total) * 100).toFixed(1)
+                      : "0.0";
                 return `
                 <div>
                   <div class="flex justify-between text-xs mb-1">
                     <span class="font-semibold">Tranche ${i + 1}: ${
-                  dist.montant > 0 ? formatCurrency(dist.montant) : "—"
-                }</span>
-                    <span class="text-gray-600">${pct}% (taxé à ${(
-                  dist.taux * 100
-                ).toFixed(0)}%)</span>
+                      dist.montant > 0 ? formatCurrency(dist.montant) : "—"
+                    }</span>
+                    <span class="text-gray-600">${pct}% (taxé à ${(dist.taux * 100).toFixed(
+                      0,
+                    )}%)</span>
                   </div>
                   <div class="w-full bg-gray-200 rounded-full h-3">
                     <div class="${color} h-3 rounded-full" style="width: ${pct}%"></div>
@@ -527,9 +527,9 @@ const impotConfig = {
           </div>
           <p class="text-xs text-gray-600 mt-3 bg-amber-100 p-2 rounded">
             💡 <strong>Au-dessus de ${formatCurrency(
-              bareme[1].plafond
+              bareme[1].plafond,
             )} par part, la partie correspondante est taxée à 30 % :</strong> environ ${formatCurrency(
-              Math.max(0, Math.min(d.qf, bareme[2].plafond) - bareme[1].plafond)
+              Math.max(0, Math.min(d.qf, bareme[2].plafond) - bareme[1].plafond),
             )} dans votre cas.
           </p>
         </div>
@@ -544,13 +544,9 @@ const impotConfig = {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-white rounded p-3 border border-indigo-200">
             <p class="text-xs font-semibold text-indigo-700 mb-2">📌 Votre situation</p>
-            <p class="text-sm"><strong>Revenu annuel :</strong> ${formatCurrency(
-              d.revenu
-            )}</p>
+            <p class="text-sm"><strong>Revenu annuel :</strong> ${formatCurrency(d.revenu)}</p>
             <p class="text-sm"><strong>Nombre de parts :</strong> ${d.parts}</p>
-            <p class="text-sm"><strong>Quotient familial :</strong> ${formatCurrency(
-              d.qf
-            )}</p>
+            <p class="text-sm"><strong>Quotient familial :</strong> ${formatCurrency(d.qf)}</p>
           </div>
           <div class="bg-white rounded p-3 border border-indigo-200">
             <p class="text-xs font-semibold text-indigo-700 mb-2">💡 Impact des parts</p>
@@ -558,7 +554,7 @@ const impotConfig = {
               d.parts
             } part(s) :</strong> ${formatCurrency(d.irBrut)}</p>
             <p class="text-sm text-indigo-600"><strong>Avec 0.5 part seulement :</strong> ~${formatCurrency(
-              (d.irBrut * d.parts) / 0.5
+              (d.irBrut * d.parts) / 0.5,
             )}</p>
             <p class="text-xs text-gray-600 mt-2">Les enfants ajoutent 0.5 part chacun</p>
             <p class="text-xs text-gray-600 mt-2">
@@ -606,9 +602,7 @@ const impotConfig = {
 // Fonction pour initialiser les éléments interactifs de comparaison
 function initComparisonUI(casesWithIR: any[], currentData: any) {
   // Créer le graphique de comparaison
-  const canvas = document.querySelector(
-    `#chart-comparison`
-  ) as HTMLCanvasElement;
+  const canvas = document.querySelector(`#chart-comparison`) as HTMLCanvasElement;
 
   if (canvas && typeof window !== "undefined" && (window as any).Chart) {
     const Chart = (window as any).Chart;
@@ -626,7 +620,7 @@ function initComparisonUI(casesWithIR: any[], currentData: any) {
             label: "Impôt à payer (€)",
             data,
             backgroundColor: casesWithIR.map((c) =>
-              c.parts === currentData.parts ? "#3b82f6" : "#10b981"
+              c.parts === currentData.parts ? "#3b82f6" : "#10b981",
             ),
             borderColor: "#1e40af",
             borderWidth: 2,
@@ -657,9 +651,7 @@ function initComparisonUI(casesWithIR: any[], currentData: any) {
   }
 
   // Bouton pour ajouter un scénario personnalisé
-  const btnAdd = document.querySelector(
-    "#btn-add-scenario"
-  ) as HTMLButtonElement;
+  const btnAdd = document.querySelector("#btn-add-scenario") as HTMLButtonElement;
   if (btnAdd) {
     btnAdd.addEventListener("click", () => {
       showScenarioModal(currentData.revenu);
@@ -682,8 +674,7 @@ function initComparisonUI(casesWithIR: any[], currentData: any) {
 function showScenarioModal(currentRevenu: number) {
   const modal = document.createElement("div");
   modal.id = "modal-add-scenario";
-  modal.className =
-    "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
+  modal.className = "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
   modal.innerHTML = `
     <div class="bg-white rounded-lg p-8 max-w-md w-full shadow-lg">
       <h3 class="text-xl font-bold text-gray-900 mb-4">➕ Ajouter un scénario</h3>
@@ -750,14 +741,9 @@ function showScenarioModal(currentRevenu: number) {
   const form = document.querySelector("#form-scenario") as HTMLFormElement;
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = (document.querySelector("#scenario-name") as HTMLInputElement)
-      .value;
-    const revenu = Number(
-      (document.querySelector("#scenario-revenu") as HTMLInputElement).value
-    );
-    const parts = Number(
-      (document.querySelector("#scenario-parts") as HTMLInputElement).value
-    );
+    const name = (document.querySelector("#scenario-name") as HTMLInputElement).value;
+    const revenu = Number((document.querySelector("#scenario-revenu") as HTMLInputElement).value);
+    const parts = Number((document.querySelector("#scenario-parts") as HTMLInputElement).value);
 
     const scenario: ComparisonScenario = {
       id: `custom-${Date.now()}`,

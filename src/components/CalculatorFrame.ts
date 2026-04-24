@@ -1,15 +1,23 @@
+export interface CalculatorPreset {
+  label: string;
+  emoji?: string;
+  description?: string;
+  values: Record<string, any>;
+}
+
 export interface CalculatorConfig {
   title: string;
   description: string;
   fields: CalculatorField[];
   calculate: (values: Record<string, any>) => CalculatorResult;
   formatResult: (result: CalculatorResult) => string;
+  presets?: CalculatorPreset[];
   exportCSV?: {
     enabled: boolean;
     filename?: string;
     getCSVData?: (
       result: CalculatorResult,
-      values: Record<string, any>
+      values: Record<string, any>,
     ) => import("../utils/csvExport").CSVData;
   };
   exportXLSX?: {
@@ -17,7 +25,7 @@ export interface CalculatorConfig {
     filename?: string;
     getXLSXData?: (
       result: CalculatorResult,
-      values: Record<string, any>
+      values: Record<string, any>,
     ) => import("../utils/csvExport").CSVData;
   };
 }
@@ -33,6 +41,7 @@ export interface CalculatorField {
   min?: number;
   max?: number;
   step?: number;
+  quickValues?: (string | number)[]; // Quick-fill button values
 }
 
 export interface CalculatorResult {
@@ -61,18 +70,18 @@ export class CalculatorFrame {
   }
 
   private render(): void {
+    const presetsHTML = this.config.presets ? this.renderPresets() : "";
+
     this.container.innerHTML = `
       <div class="max-w-4xl mx-auto p-6">
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">🧮 ${
-            this.config.title
-          }</h2>
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">🧮 ${this.config.title}</h2>
           <p class="text-gray-600 mb-6">${this.config.description}</p>
           
+          ${presetsHTML}
+          
           <form id="calculator-form" class="space-y-4">
-            ${this.config.fields
-              .map((field) => this.renderField(field))
-              .join("")}
+            ${this.config.fields.map((field) => this.renderField(field)).join("")}
             
             <button type="submit" class="calculator-button w-full">
               ▶️ Calculer
@@ -95,29 +104,18 @@ export class CalculatorFrame {
       case "select":
         return `
           <div>
-            <label for="${
-              field.id
-            }" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="${field.id}" class="block text-sm font-medium text-gray-700 mb-2">
               ${field.label} ${field.required ? "*" : ""}
             </label>
-            <select id="${field.id}" name="${
-          field.id
-        }" class="${baseClasses}" ${required}>
+            <select id="${field.id}" name="${field.id}" class="${baseClasses}" ${required}>
               <option value="">Sélectionnez...</option>
               ${
                 field.options
-                  ?.map(
-                    (opt) =>
-                      `<option value="${opt.value}">${opt.label}</option>`
-                  )
+                  ?.map((opt) => `<option value="${opt.value}">${opt.label}</option>`)
                   .join("") || ""
               }
             </select>
-            ${
-              field.help
-                ? `<p class="mt-2 text-sm text-gray-500">${field.help}</p>`
-                : ""
-            }
+            ${field.help ? `<p class="mt-2 text-sm text-gray-500">${field.help}</p>` : ""}
           </div>
         `;
 
@@ -133,13 +131,28 @@ export class CalculatorFrame {
         `;
 
       case "number":
+        const quickValuesHTML = field.quickValues
+          ? `
+            <div class="mb-3 flex flex-wrap gap-2">
+              ${field.quickValues
+                .map(
+                  (val) => `
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="${field.id}" data-value="${val}">
+                  ${typeof val === "number" && val % 1 === 0 ? val.toLocaleString("fr-FR") : val}
+                </button>
+              `,
+                )
+                .join("")}
+            </div>
+          `
+          : "";
+
         return `
           <div>
-            <label for="${
-              field.id
-            }" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="${field.id}" class="block text-sm font-medium text-gray-700 mb-2">
               ${field.label} ${field.required ? "*" : ""}
             </label>
+            ${quickValuesHTML}
             <input type="number" id="${field.id}" name="${field.id}" 
                    class="${baseClasses}" 
                    placeholder="${field.placeholder || ""}"
@@ -153,9 +166,7 @@ export class CalculatorFrame {
       default:
         return `
           <div>
-            <label for="${
-              field.id
-            }" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="${field.id}" class="block text-sm font-medium text-gray-700 mb-2">
               ${field.label} ${field.required ? "*" : ""}
             </label>
             <input type="text" id="${field.id}" name="${field.id}" 
@@ -167,24 +178,106 @@ export class CalculatorFrame {
     }
   }
 
+  private renderPresets(): string {
+    if (!this.config.presets || this.config.presets.length === 0) {
+      return "";
+    }
+
+    const presetsHTML = this.config.presets
+      .map((preset, index) => {
+        const emoji = preset.emoji || "✨";
+        const desc = preset.description
+          ? `<p class="text-xs text-gray-500 mt-1">${preset.description}</p>`
+          : "";
+        return `
+          <button 
+            type="button" 
+            class="preset-button px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all shadow-sm hover:shadow-md font-semibold text-sm"
+            data-preset-index="${index}"
+            title="${preset.description || preset.label}"
+          >
+            ${emoji} ${preset.label}
+          </button>
+        `;
+      })
+      .join("");
+
+    return `
+      <div class="mb-6 pb-6 border-b border-gray-200">
+        <label class="block text-sm font-semibold text-gray-700 mb-3">⚡ Exemples rapides (au clic) :</label>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          ${presetsHTML}
+        </div>
+      </div>
+    `;
+  }
+
+  private applyPreset(presetIndex: number): void {
+    const preset = this.config.presets?.[presetIndex];
+    if (!preset) return;
+
+    const form = this.container.querySelector("#calculator-form") as HTMLFormElement;
+    const resultDiv = this.container.querySelector("#calculator-result") as HTMLElement;
+
+    if (!form || !resultDiv) return;
+
+    // Apply preset values to inputs
+    Object.keys(preset.values).forEach((fieldId) => {
+      const input = form.querySelector(`#${fieldId}`) as HTMLInputElement;
+      if (input) {
+        const value = preset.values[fieldId];
+        if (input.type === "checkbox") {
+          (input as HTMLInputElement).checked = !!value;
+        } else {
+          (input as HTMLInputElement).value = String(value);
+        }
+        this.updateValue(fieldId, input);
+      }
+    });
+
+    // Auto-submit calculation after preset applied
+    setTimeout(() => {
+      this.handleSubmit(form, resultDiv);
+    }, 100);
+  }
+
   private attachEventListeners(): void {
-    const form = this.container.querySelector(
-      "#calculator-form"
-    ) as HTMLFormElement;
-    const resultDiv = this.container.querySelector(
-      "#calculator-result"
-    ) as HTMLElement;
+    const form = this.container.querySelector("#calculator-form") as HTMLFormElement;
+    const resultDiv = this.container.querySelector("#calculator-result") as HTMLElement;
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       this.handleSubmit(form, resultDiv);
     });
 
+    // Preset buttons
+    this.container.querySelectorAll(".preset-button").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const index = parseInt((btn as HTMLElement).getAttribute("data-preset-index") || "0");
+        this.applyPreset(index);
+      });
+    });
+
+    // Quick value buttons for individual fields
+    this.container.querySelectorAll(".quick-value-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const fieldId = (btn as HTMLElement).getAttribute("data-field-id");
+        const value = (btn as HTMLElement).getAttribute("data-value");
+        if (fieldId && value !== null) {
+          const input = form.querySelector(`#${fieldId}`) as HTMLInputElement;
+          if (input) {
+            input.value = value;
+            this.updateValue(fieldId, input);
+          }
+        }
+      });
+    });
+
     // Auto-save values
     this.config.fields.forEach((field) => {
-      const input = this.container.querySelector(
-        `#${field.id}`
-      ) as HTMLInputElement;
+      const input = this.container.querySelector(`#${field.id}`) as HTMLInputElement;
       if (input) {
         input.addEventListener("change", () => {
           this.updateValue(field.id, input);
@@ -198,12 +291,8 @@ export class CalculatorFrame {
    */
   private autoCalculateOnLoad(): void {
     try {
-      const form = this.container.querySelector(
-        "#calculator-form"
-      ) as HTMLFormElement;
-      const resultDiv = this.container.querySelector(
-        "#calculator-result"
-      ) as HTMLElement;
+      const form = this.container.querySelector("#calculator-form") as HTMLFormElement;
+      const resultDiv = this.container.querySelector("#calculator-result") as HTMLElement;
       if (!form || !resultDiv) return;
 
       // Vérifier que tous les champs requis ont une valeur
@@ -229,9 +318,7 @@ export class CalculatorFrame {
           const last = prev[0];
           const vals = last.values || {};
           Object.keys(vals).forEach((k) => {
-            const input = form.querySelector(
-              `#${CSS.escape(k)}`
-            ) as HTMLInputElement;
+            const input = form.querySelector(`#${CSS.escape(k)}`) as HTMLInputElement;
             if (!input) return;
             if (input.type === "checkbox") {
               (input as HTMLInputElement).checked = !!vals[k];
@@ -273,16 +360,14 @@ export class CalculatorFrame {
           field.required &&
           (this.values[field.id] === undefined ||
             this.values[field.id] === null ||
-            this.values[field.id] === "")
+            this.values[field.id] === ""),
       )
       .map((field) => field.label);
 
     if (missingFields.length > 0) {
       this.showResult(resultDiv, {
         success: false,
-        error: `Veuillez remplir les champs obligatoires : ${missingFields.join(
-          ", "
-        )}`,
+        error: `Veuillez remplir les champs obligatoires : ${missingFields.join(", ")}`,
       });
       return;
     }
@@ -339,10 +424,8 @@ export class CalculatorFrame {
 
     if (result.success) {
       // Déterminer si l'export CSV est activé
-      const hasExportCSV =
-        this.config.exportCSV && this.config.exportCSV.enabled === true;
-      const hasExportXLSX =
-        this.config.exportXLSX && this.config.exportXLSX.enabled === true;
+      const hasExportCSV = this.config.exportCSV && this.config.exportCSV.enabled === true;
+      const hasExportXLSX = this.config.exportXLSX && this.config.exportXLSX.enabled === true;
 
       const exportButtons = "";
 
@@ -417,8 +500,7 @@ export class CalculatorFrame {
         obs.observe(document.body, { childList: true, subtree: true });
       }
     } else {
-      resultDiv.className =
-        "mt-6 p-4 bg-red-50 border border-red-200 rounded-lg";
+      resultDiv.className = "mt-6 p-4 bg-red-50 border border-red-200 rounded-lg";
       resultDiv.innerHTML = `
         <div class="text-red-700">
           <strong>Erreur :</strong> ${result.error}
@@ -482,9 +564,7 @@ export class CalculatorFrame {
 
       const filename =
         this.config.exportXLSX?.filename ||
-        `${this.config.title
-          .toLowerCase()
-          .replace(/\s+/g, "_")}_resultats.xlsx`;
+        `${this.config.title.toLowerCase().replace(/\s+/g, "_")}_resultats.xlsx`;
       await exportToXLSX(xlsxData, filename);
     } catch (error) {
       console.error("Erreur lors de l'export XLSX:", error);
@@ -520,14 +600,10 @@ export class CalculatorFrame {
     try {
       const params = new URLSearchParams(window.location.search);
       if (params.size === 0) return;
-      const form = this.container.querySelector(
-        "#calculator-form"
-      ) as HTMLFormElement;
+      const form = this.container.querySelector("#calculator-form") as HTMLFormElement;
       if (!form) return;
       params.forEach((value, key) => {
-        const input = form.querySelector(
-          `#${CSS.escape(key)}`
-        ) as HTMLInputElement;
+        const input = form.querySelector(`#${CSS.escape(key)}`) as HTMLInputElement;
         if (!input) return;
         if (input.type === "checkbox") {
           input.checked = value === "true";
@@ -557,10 +633,7 @@ export class CalculatorFrame {
   /**
    * Sauvegarde le dernier calcul dans localStorage (limité aux 10 derniers).
    */
-  private saveHistory(
-    values: Record<string, any>,
-    result: CalculatorResult
-  ): void {
+  private saveHistory(values: Record<string, any>, result: CalculatorResult): void {
     try {
       const key = `calculator_history_${this.containerId}`;
       const prev: any[] = JSON.parse(localStorage.getItem(key) || "[]");

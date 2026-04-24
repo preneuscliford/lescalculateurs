@@ -65,7 +65,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
         value: v.revenus_mensuels,
         required: true,
         min: 0,
-        step: 100,
+        step: 1,
       },
       {
         id: "type_logement",
@@ -90,7 +90,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
         value: v.loyer_mensuel,
         required: true,
         min: 0,
-        step: 50,
+        step: 1,
       },
       {
         id: "region",
@@ -111,7 +111,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
         value: v.economie || 0,
         required: false,
         min: 0,
-        step: 500,
+        step: 1,
         placeholder: "Laissez vide si inconnu",
       },
     ],
@@ -139,10 +139,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
       });
 
       if (!calcResult.success || !calcResult.data) {
-        alert(
-          calcResult.error ||
-            "Erreur lors du calcul. Veuillez vérifier vos données."
-        );
+        alert(calcResult.error || "Erreur lors du calcul. Veuillez vérifier vos données.");
         return;
       }
 
@@ -152,12 +149,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
         revenus: Number(revenus_mensuels),
         nombre_enfants: Number(enfants) || 0,
         type_logement,
-        zone:
-          region === "idf"
-            ? "zone_1"
-            : region === "province"
-            ? "zone_2"
-            : "zone_3",
+        zone: region === "idf" ? "zone_1" : region === "province" ? "zone_2" : "zone_3",
       };
 
       const result = {
@@ -197,9 +189,7 @@ document.querySelectorAll(".preset-enfants").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const enfants = (e.target as HTMLElement).dataset.enfants;
     // Le champ est généré par CalculatorFrame avec l'ID: apl-calculator_enfants
-    const input = document.getElementById(
-      "apl-calculator_enfants"
-    ) as HTMLInputElement;
+    const input = document.getElementById("apl-calculator_enfants") as HTMLInputElement;
 
     if (input && enfants) {
       input.value = enfants;
@@ -209,17 +199,9 @@ document.querySelectorAll(".preset-enfants").forEach((btn) => {
       input.dispatchEvent(event);
 
       // Visual feedback
-      (e.target as HTMLElement).classList.add(
-        "ring-2",
-        "ring-purple-500",
-        "scale-95"
-      );
+      (e.target as HTMLElement).classList.add("ring-2", "ring-purple-500", "scale-95");
       setTimeout(() => {
-        (e.target as HTMLElement).classList.remove(
-          "ring-2",
-          "ring-purple-500",
-          "scale-95"
-        );
+        (e.target as HTMLElement).classList.remove("ring-2", "ring-purple-500", "scale-95");
       }, 300);
     }
   });

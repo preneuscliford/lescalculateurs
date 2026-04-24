@@ -1,0 +1,34 @@
+- main [ref=e2]:
+  - link "Les Calculateurs Les Calculateurs" [ref=e3] [cursor=pointer]:
+    - /url: /index.html
+    - img "Les Calculateurs" [ref=e4]
+    - generic [ref=e5]: Les Calculateurs
+  - heading "Politique cookies" [level=1] [ref=e6]
+  - paragraph [ref=e7]: "Dernière mise à jour: 04/03/2026"
+  - heading "Pourquoi utilisons-nous des cookies ?" [level=2] [ref=e8]
+  - paragraph [ref=e9]: Les cookies et technologies proches permettent de faire fonctionner le site, mesurer son audience et financer le service via la publicité, selon votre consentement.
+  - heading "Catégories de cookies" [level=2] [ref=e10]
+  - list [ref=e11]:
+    - listitem [ref=e12]:
+      - strong [ref=e13]: Essentiels
+      - text: ": nécessaires au fonctionnement technique (navigation, sécurité, préférences de base)."
+    - listitem [ref=e14]:
+      - strong [ref=e15]: Analytiques
+      - text: ": mesure d'audience et amélioration continue (ex. Google Analytics)."
+    - listitem [ref=e16]:
+      - strong [ref=e17]: Publicitaires
+      - text: ": affichage et mesure des annonces (ex. Google AdSense)."
+  - heading "Gestion du consentement" [level=2] [ref=e18]
+  - paragraph [ref=e19]: Lors de votre première visite, un bandeau vous permet d'accepter, refuser, ou personnaliser vos choix. Les scripts non essentiels sont contrôles par ce choix.
+  - paragraph [ref=e20]: Vos préférences sont enregistrées localement et peuvent être modifiées à tout moment via l'interface de consentement lorsqu'elle est affichée.
+  - generic [ref=e21]:
+    - button "Gérer mes cookies" [ref=e22] [cursor=pointer]
+    - button "Réafficher le bandeau cookies" [ref=e23] [cursor=pointer]
+  - heading "Comment désactiver les cookies ?" [level=2] [ref=e24]
+  - paragraph [ref=e25]: Vous pouvez aussi bloquer/supprimer les cookies depuis les paramètres de votre navigateur. Certaines fonctions du site peuvent alors être dégradées.
+  - heading "Contact" [level=2] [ref=e26]
+  - paragraph [ref=e27]:
+    - text: "Pour toute question sur les cookies:"
+    - link "contact@lescalculateurs.fr" [ref=e28] [cursor=pointer]:
+      - /url: mailto:contact@lescalculateurs.fr
+    - text: .

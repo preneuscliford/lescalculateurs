@@ -1,0 +1,135 @@
+{
+  "generatedAt": "2026-04-21T16:43:49.210Z",
+  "source": "vdf\\revenu-des-francais-a-la-commune-1765372688826.csv",
+  "national": {
+    "medianOfCommuneMedians": 22810,
+    "averageOfCommuneMedians": 23244.470340335865,
+    "medianDeclaredIncome": 22540
+  },
+  "charts": {
+    "topDisposableMedian": {
+      "type": "bar",
+      "title": "Communes significatives avec revenu disponible médian élevé",
+      "label": "Revenu disponible médian",
+      "unit": "euro",
+      "color": "emerald",
+      "labels": [
+        "Archamps",
+        "Échenevex",
+        "Neuilly-sur-Seine",
+        "Feigères",
+        "Collonges-sous-Salève",
+        "Divonne-les-Bains",
+        "Neydens",
+        "Paris 7e Arroissement",
+        "Messery",
+        "Veyrier-du-Lac"
+      ],
+      "values": [
+        54120,
+        49930,
+        48010,
+        47300,
+        46700,
+        46650,
+        45460,
+        45380,
+        44650,
+        44530
+      ]
+    },
+    "lowDisposableMedian": {
+      "type": "bar",
+      "title": "Communes significatives avec revenu disponible médian faible",
+      "label": "Revenu disponible médian",
+      "unit": "euro",
+      "color": "amber",
+      "labels": [
+        "Salazie",
+        "Marseille 3e Arroissement",
+        "Cilaos",
+        "Sainte-Rose",
+        "Sainte-Foy-la-Grae",
+        "Saint-Benoît",
+        "Roubaix",
+        "Grigny",
+        "Le Prêcheur",
+        "Marseille 15e Arroissement"
+      ],
+      "values": [
+        13280,
+        13530,
+        13780,
+        14030,
+        14050,
+        14550,
+        14580,
+        14790,
+        14830,
+        14890
+      ]
+    },
+    "highInequality": {
+      "type": "bar",
+      "title": "Communes avec forte dispersion des revenus",
+      "label": "Rapport D9/D1",
+      "unit": "number",
+      "color": "rose",
+      "labels": [
+        "Ferney-Voltaire",
+        "Paris 7e Arroissement",
+        "Paris 8e Arroissement",
+        "Paris 6e Arroissement",
+        "Paris 16e Arroissement",
+        "Ornex",
+        "Prévessin-Moëns",
+        "Saint-Genis-Pouilly",
+        "Neuilly-sur-Seine",
+        "Gaillard"
+      ],
+      "values": [
+        11.2,
+        10.2,
+        9.6,
+        9.5,
+        9.4,
+        8.8,
+        8.6,
+        8.6,
+        8.1,
+        7.9
+      ]
+    },
+    "socialBenefitsShare": {
+      "type": "bar",
+      "title": "Communes où les prestations sociales pèsent le plus",
+      "label": "Part des prestations sociales",
+      "unit": "percent",
+      "color": "blue",
+      "labels": [
+        "Le Port",
+        "Marseille 3e Arroissement",
+        "Salazie",
+        "Sainte-Rose",
+        "Saint-Benoît",
+        "Denain",
+        "Cilaos",
+        "Saint-Louis",
+        "Saint-Aré",
+        "Roubaix"
+      ],
+      "values": [
+        26.7,
+        26.1,
+        25.3,
+        23.8,
+        23.7,
+        23.3,
+        22.8,
+        22.3,
+        21.9,
+        21.5
+      ]
+    }
+  }
+}

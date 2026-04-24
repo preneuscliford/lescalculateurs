@@ -1229,7 +1229,7 @@
             required: true,
             placeholder: "2500",
             min: 0,
-            step: 100,
+            step: 1,
             suffix: "€",
           },
           {
@@ -1254,7 +1254,7 @@
             required: true,
             placeholder: "800",
             min: 0,
-            step: 50,
+            step: 1,
             suffix: "€",
           },
           {
@@ -1275,7 +1275,7 @@
             required: false,
             placeholder: "Laissez vide si inconnu",
             min: 0,
-            step: 500,
+            step: 1,
             suffix: "€",
           },
         ],
@@ -1295,6 +1295,119 @@
         formatResult: (result) => {
           const { data } = result;
           if (!data) return "Erreur de calcul";
+
+          const formatCompactCurrency = (amount) =>
+            new Intl.NumberFormat("fr-FR", {
+              style: "currency",
+              currency: "EUR",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            }).format(amount);
+
+          const familyLabel =
+            data.situation === "monoparental"
+              ? "parent isol&eacute;"
+              : data.situation === "couple"
+                ? "couple"
+                : "personne seule";
+
+          const needsBudgetHelp =
+            data.reste_charge >= Math.max(420, data.revenus_mensuels * 0.28);
+          const lowIncome = data.revenus_mensuels <= 1600;
+          const hasChildren = Number(data.enfants || 0) > 0;
+
+          let nextStepTitle = "&Eacute;tape suivante recommand&eacute;e";
+          let nextStepText =
+            "Votre estimation est un bon point de d&eacute;part. Le plus utile maintenant est de v&eacute;rifier les aides compl&eacute;mentaires et votre reste &agrave; charge apr&egrave;s logement.";
+          let nextStepCtaHref = "/pages/aides/cumul-aides-rsa-apl-prime-activite.html";
+          let nextStepCtaLabel = "Voir les aides cumulables";
+          let nextStepAltHref = "/pages/charges";
+          let nextStepAltLabel = "Estimer mon budget logement";
+
+          if (data.apl_estimee === 0) {
+            nextStepTitle = "Pourquoi l'APL peut rester nulle";
+            nextStepText =
+              "Dans votre cas, le point prioritaire est de v&eacute;rifier les ressources retenues, le plafond de loyer et l'&eacute;ligibilit&eacute; du logement avant de conclure que vous n'avez droit &agrave; rien.";
+            nextStepCtaHref = "/pages/apl/quelles-ressources-pour-l-apl";
+            nextStepCtaLabel = "V&eacute;rifier les ressources prises en compte";
+            nextStepAltHref =
+              "/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl";
+            nextStepAltLabel = "V&eacute;rifier l'&eacute;ligibilit&eacute; du logement";
+          } else if (needsBudgetHelp) {
+            nextStepTitle = "Reste &agrave; charge encore &eacute;lev&eacute;";
+            nextStepText =
+              "M&ecirc;me avec l'APL, votre charge logement reste lourde. Le plus utile maintenant est de tester les aides cumulables ou de comparer votre budget avec vos charges fixes.";
+            nextStepCtaHref = lowIncome ? "/pages/rsa" : "/pages/prime-activite";
+            nextStepCtaLabel = lowIncome
+              ? "Tester le RSA en compl&eacute;ment"
+              : "Tester la prime d'activit&eacute;";
+            nextStepAltHref = "/pages/charges";
+            nextStepAltLabel = "Calculer mon reste &agrave; vivre";
+          }
+
+          let caseHref = "/pages/apl/apl-celibataire-smic";
+          let caseTitle = "Cas proche &agrave; comparer";
+          let caseText =
+            "Comparez votre r&eacute;sultat avec un sc&eacute;nario type de personne seule avec petit revenu et loyer classique.";
+
+          if (data.situation === "couple" && hasChildren) {
+            caseHref = "/pages/apl/apl-couple-un-enfant";
+            caseTitle = "Comparer avec un couple avec enfant";
+            caseText =
+              "Utile pour voir comment l'aide varie quand le foyer reste &agrave; deux avec un enfant et un loyer comparable.";
+          } else if (data.situation === "couple") {
+            caseHref = "/pages/apl/apl-couple-sans-enfant";
+            caseTitle = "Comparer avec un couple sans enfant";
+            caseText =
+              "Pratique pour mesurer l'effet du loyer et du revenu &agrave; deux sur le montant estim&eacute;.";
+          } else if (data.situation === "monoparental") {
+            caseHref = "/pages/apl/apl-sans-revenu-parent-isole";
+            caseTitle = "Comparer avec un parent isol&eacute;";
+            caseText =
+              "Un bon rep&egrave;re si vous voulez voir comment l'aide bouge quand le budget devient plus tendu avec enfant &agrave; charge.";
+          } else if (lowIncome) {
+            caseHref = "/pages/apl/apl-smic-seul";
+            caseTitle = "Comparer avec un profil au SMIC";
+            caseText =
+              "Ce cas concret aide &agrave; situer rapidement votre estimation face &agrave; un niveau de revenu proche du SMIC.";
+          }
+
+          const yearlyAid = data.apl_estimee * 12;
+          const remainingAfterHousing = Math.max(
+            0,
+            data.revenus_mensuels - data.reste_charge,
+          );
+
+          const bridgeLinks = [
+            {
+              href: "/pages/charges",
+              label: "Charges",
+              desc: "Pour voir ce qu'il reste vraiment apr&egrave;s logement.",
+            },
+            {
+              href: lowIncome ? "/pages/rsa" : "/pages/prime-activite",
+              label: lowIncome ? "RSA" : "Prime d'activit&eacute;",
+              desc: lowIncome
+                ? "V&eacute;rifier si une aide sociale peut compl&eacute;ter votre budget."
+                : "Tester un compl&eacute;ment de revenu si vous travaillez.",
+            },
+            {
+              href: "/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html",
+              label: "Aides selon profil",
+              desc: "Faire le tour des aides possibles pour votre situation.",
+            },
+          ];
+
+          const bridgeLinksHtml = bridgeLinks
+            .map(
+              (link) => `
+                <a href="${link.href}" class="rounded-lg border border-cyan-200 bg-cyan-50 p-3 hover:bg-cyan-100 transition-colors">
+                  <div class="font-semibold text-cyan-900">${link.label}</div>
+                  <div class="mt-1 text-xs text-cyan-800">${link.desc}</div>
+                </a>
+              `,
+            )
+            .join("");
 
           // 🧠 Message pédagogique si APL = 0
           const messageZero =
@@ -1365,6 +1478,54 @@
                   <span class="font-medium text-orange-600">${formatCurrency(
                     data.reste_charge,
                   )}</span>
+                </div>
+              </div>
+
+              <div class="grid gap-4 md:grid-cols-2">
+                <article class="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
+                  <h3 class="text-lg font-bold text-emerald-950">${nextStepTitle}</h3>
+                  <p class="mt-2 text-sm text-emerald-900">${nextStepText}</p>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <a
+                      href="${nextStepCtaHref}"
+                      class="rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700"
+                    >${nextStepCtaLabel}</a>
+                    <a
+                      href="${nextStepAltHref}"
+                      class="rounded-md border border-emerald-300 bg-white px-3 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100"
+                    >${nextStepAltLabel}</a>
+                  </div>
+                </article>
+
+                <article class="rounded-lg border border-cyan-200 bg-white p-4">
+                  <h3 class="text-lg font-bold text-gray-900">Ce que votre estimation sugg&egrave;re</h3>
+                  <ul class="mt-2 space-y-2 text-sm text-gray-700">
+                    <li><strong>Aide annuelle estim&eacute;e :</strong> ${formatCompactCurrency(yearlyAid)}</li>
+                    <li><strong>Reste disponible apr&egrave;s logement :</strong> ${formatCompactCurrency(
+                      remainingAfterHousing,
+                    )}</li>
+                    <li><strong>Profil retenu :</strong> ${familyLabel}${hasChildren ? ` avec ${data.enfants} enfant${data.enfants > 1 ? "s" : ""}` : ""}</li>
+                    <li><strong>Zone retenue :</strong> ${data.zone === "idf" ? "&Icirc;le-de-France" : data.zone === "dom" ? "DOM-TOM" : "Province"}</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <h3 class="text-lg font-bold text-slate-900">${caseTitle}</h3>
+                <p class="mt-2 text-sm text-slate-700">${caseText}</p>
+                <a
+                  href="${caseHref}"
+                  class="mt-3 inline-flex rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+                >Voir le cas proche</a>
+              </div>
+
+              <div class="rounded-lg border border-cyan-200 bg-cyan-50 p-4">
+                <h3 class="text-lg font-bold text-cyan-950">Simulateurs &agrave; encha&icirc;ner</h3>
+                <p class="mt-2 text-sm text-cyan-900">
+                  Apr&egrave;s une estimation APL, les calculs les plus utiles sont souvent le budget mensuel, les aides cumulables et le profil d'aide global.
+                </p>
+                <div class="mt-3 grid gap-3 md:grid-cols-3">
+                  ${bridgeLinksHtml}
                 </div>
               </div>
 

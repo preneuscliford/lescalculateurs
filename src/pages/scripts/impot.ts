@@ -5,7 +5,8 @@ import { calculerIR } from "../../utils/irCalculEngine.ts";
 
 const impotConfig = {
   title: "Impôt sur le revenu 2026",
-  description: "Barème progressif et quotient familial (données officielles).",
+  description:
+    "Barème progressif et quotient familial (estimation indicative, hors décote/réductions/crédits).",
   fields: [
     {
       id: "revenu",
@@ -14,7 +15,8 @@ const impotConfig = {
       required: true,
       placeholder: "38000",
       min: 0,
-      step: 100,
+      step: 1,
+      quickValues: [15000, 25000, 35000, 50000, 75000, 100000],
     },
     {
       id: "parts",
@@ -24,6 +26,39 @@ const impotConfig = {
       placeholder: "1",
       min: 0.5,
       step: 0.5,
+      quickValues: [0.5, 1, 1.5, 2, 2.5, 3],
+    },
+  ],
+  presets: [
+    {
+      emoji: "👤",
+      label: "Célibataire modeste",
+      description: "20 000 € / 1 part",
+      values: { revenu: 20000, parts: 1 },
+    },
+    {
+      emoji: "👫",
+      label: "Couple moyen",
+      description: "40 000 € / 2 parts",
+      values: { revenu: 40000, parts: 2 },
+    },
+    {
+      emoji: "💼",
+      label: "Célibataire bien rémunéré",
+      description: "60 000 € / 1 part",
+      values: { revenu: 60000, parts: 1 },
+    },
+    {
+      emoji: "👨‍👩‍👧",
+      label: "Couple + 1 enfant",
+      description: "50 000 € / 2.5 parts",
+      values: { revenu: 50000, parts: 2.5 },
+    },
+    {
+      emoji: "👨‍👧",
+      label: "Parent isolé + 1 enfant",
+      description: "35 000 € / 1.5 parts",
+      values: { revenu: 35000, parts: 1.5 },
     },
   ],
   calculate: (values: Record<string, any>) => {
@@ -57,21 +92,17 @@ const impotConfig = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-blue-50 p-4 rounded-lg">
           <h4 class="font-semibold text-gray-800">IR brut estimé</h4>
-          <p class="text-xl font-bold text-primary-600">${formatCurrency(
-            d.irBrut
-          )}</p>
+          <p class="text-xl font-bold text-primary-600">${formatCurrency(d.irBrut)}</p>
           <p class="text-sm text-gray-600">Mensualité moyenne: ${formatCurrency(
-            d.mensualiteMoyenne
+            d.mensualiteMoyenne,
           )}</p>
         </div>
         <div class="bg-green-50 p-4 rounded-lg">
           <h4 class="font-semibold text-gray-800">Quotient familial</h4>
-          <p class="text-xl font-bold text-green-600">${formatCurrency(
-            d.qf
-          )}</p>
-          <p class="text-sm text-gray-600">Taux marginal: ${(
-            d.tauxMarginal * 100
-          ).toFixed(0)}% • Taux moyen: ${(d.tauxMoyen * 100).toFixed(1)}%</p>
+          <p class="text-xl font-bold text-green-600">${formatCurrency(d.qf)}</p>
+          <p class="text-sm text-gray-600">Taux marginal: ${(d.tauxMarginal * 100).toFixed(
+            0,
+          )}% • Taux moyen: ${(d.tauxMoyen * 100).toFixed(1)}%</p>
         </div>
       </div>
       <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-2">
@@ -164,14 +195,12 @@ function renderIR() {
         <thead><tr class="bg-blue-50"><th class="p-3 text-left font-semibold">Critère</th>${headers
           .map(
             (h, idx) =>
-              `<th class=\"p-3 text-center font-semibold\">${h}<br><button class="text-xs text-red-600 hover:text-red-800 mt-1" onclick="deleteImpotScenario(${idx})">✕ Supprimer</button></th>`
+              `<th class=\"p-3 text-center font-semibold\">${h}<br><button class="text-xs text-red-600 hover:text-red-800 mt-1" onclick="deleteImpotScenario(${idx})">✕ Supprimer</button></th>`,
           )
           .join("")}</tr></thead>
         <tbody>
           <tr class="hover:bg-gray-50"><td class="p-3">Revenu imposable</td>${compIR
-            .map(
-              (c) => `<td class=\"p-3 text-center\">${fmtEUR(c.revenu)}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.revenu)}</td>`)
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="p-3">Nombre de parts</td>${compIR
             .map((c) => `<td class=\"p-3 text-center\">${c.parts}</td>`)
@@ -180,33 +209,16 @@ function renderIR() {
             .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.qf)}</td>`)
             .join("")}</tr>
           <tr class="bg-green-50 font-semibold"><td class="p-3">IR brut estimé</td>${compIR
-            .map(
-              (c) => `<td class=\"p-3 text-center\">${fmtEUR(c.irBrut)}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.irBrut)}</td>`)
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="p-3">Mensualité moyenne</td>${compIR
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${fmtEUR(
-                  c.mensualiteMoyenne
-                )}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.mensualiteMoyenne)}</td>`)
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="p-3">Taux marginal</td>${compIR
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${(c.tauxMarginal * 100).toFixed(
-                  0
-                )}%</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${(c.tauxMarginal * 100).toFixed(0)}%</td>`)
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="p-3">Taux moyen</td>${compIR
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${(c.tauxMoyen * 100).toFixed(
-                  1
-                )}%</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${(c.tauxMoyen * 100).toFixed(1)}%</td>`)
             .join("")}</tr>
         </tbody>
       </table>
@@ -221,26 +233,9 @@ function renderIR() {
   });
 
   import("chart.js").then(
-    ({
-      Chart,
-      BarController,
-      BarElement,
-      CategoryScale,
-      LinearScale,
-      Tooltip,
-      Legend,
-    }) => {
-      Chart.register(
-        BarController,
-        BarElement,
-        CategoryScale,
-        LinearScale,
-        Tooltip,
-        Legend
-      );
-      const canvas = document.getElementById(
-        chartId
-      ) as HTMLCanvasElement | null;
+    ({ Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend }) => {
+      Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+      const canvas = document.getElementById(chartId) as HTMLCanvasElement | null;
       const ctx = canvas ? canvas.getContext("2d") : null;
       if (!ctx) {
         return;
@@ -279,7 +274,7 @@ function renderIR() {
           },
         },
       });
-    }
+    },
   );
 }
 
@@ -289,74 +284,68 @@ function deleteImpotScenario(index: number) {
 }
 (window as any).deleteImpotScenario = deleteImpotScenario;
 
-document
-  .getElementById("impot-add-to-compare")
-  ?.addEventListener("click", () => {
-    const last = (window as any)["dernierCalcul_impot-calculator"];
-    if (!last || !last.result?.success) {
-      alert("Veuillez d'abord effectuer un calcul.");
-      return;
-    }
+document.getElementById("impot-add-to-compare")?.addEventListener("click", () => {
+  const last = (window as any)["dernierCalcul_impot-calculator"];
+  if (!last || !last.result?.success) {
+    alert("Veuillez d'abord effectuer un calcul.");
+    return;
+  }
 
-    const d = last.result.data;
-    const modal = new ComparisonModal({
-      title: "Ajouter un scénario à la comparaison",
-      fields: [
-        {
-          id: "revenu",
-          label: "Revenu imposable annuel (€)",
-          type: "number",
-          value: d.revenu,
-          required: true,
-          min: 0,
-          step: 100,
-        },
-        {
-          id: "parts",
-          label: "Nombre de parts",
-          type: "number",
-          value: d.parts,
-          required: true,
-          min: 0.5,
-          step: 0.5,
-        },
-      ],
-      onConfirm: (values) => {
-        const revenu = Number(values.revenu);
-        const parts = Number(values.parts);
-        const r = calculerIR({ revenu, parts });
-        const label = `${fmtEUR(r.revenu)} • ${r.parts} part(s)`;
-        compIR.push({
-          label,
-          revenu: r.revenu,
-          parts: r.parts,
-          qf: r.qf,
-          irBrut: r.irBrut,
-          mensualiteMoyenne: r.mensualiteMoyenne,
-          tauxMarginal: r.tauxMarginal,
-          tauxMoyen: r.tauxMoyen,
-        });
-        renderIR();
+  const d = last.result.data;
+  const modal = new ComparisonModal({
+    title: "Ajouter un scénario à la comparaison",
+    fields: [
+      {
+        id: "revenu",
+        label: "Revenu imposable annuel (€)",
+        type: "number",
+        value: d.revenu,
+        required: true,
+        min: 0,
+        step: 1,
       },
-    });
+      {
+        id: "parts",
+        label: "Nombre de parts",
+        type: "number",
+        value: d.parts,
+        required: true,
+        min: 0.5,
+        step: 0.5,
+      },
+    ],
+    onConfirm: (values) => {
+      const revenu = Number(values.revenu);
+      const parts = Number(values.parts);
+      const r = calculerIR({ revenu, parts });
+      const label = `${fmtEUR(r.revenu)} • ${r.parts} part(s)`;
+      compIR.push({
+        label,
+        revenu: r.revenu,
+        parts: r.parts,
+        qf: r.qf,
+        irBrut: r.irBrut,
+        mensualiteMoyenne: r.mensualiteMoyenne,
+        tauxMarginal: r.tauxMarginal,
+        tauxMoyen: r.tauxMoyen,
+      });
+      renderIR();
+    },
+  });
 
-    modal.open();
-  });
-document
-  .getElementById("impot-reset-compare")
-  ?.addEventListener("click", () => {
-    compIR.length = 0;
-    renderIR();
-  });
+  modal.open();
+});
+document.getElementById("impot-reset-compare")?.addEventListener("click", () => {
+  compIR.length = 0;
+  renderIR();
+});
 
 async function irPNG() {
   const c = document.getElementById("impot-comparaison");
   if (!c) return;
   const { default: html2canvas } = await import("html2canvas");
   const excl = [...document.querySelectorAll('[data-export-exclude="true"]')];
-  const prev = excl.map((el) =>
-    el instanceof HTMLElement ? el.style.display : ""
-  );
+  const prev = excl.map((el) => (el instanceof HTMLElement ? el.style.display : ""));
   excl.forEach((el) => {
     if (el instanceof HTMLElement) el.style.display = "none";
   });
@@ -382,9 +371,7 @@ async function irPDF() {
   const { default: html2canvas } = await import("html2canvas");
   const { jsPDF } = await import("jspdf");
   const excl = [...document.querySelectorAll('[data-export-exclude="true"]')];
-  const prev = excl.map((el) =>
-    el instanceof HTMLElement ? el.style.display : ""
-  );
+  const prev = excl.map((el) => (el instanceof HTMLElement ? el.style.display : ""));
   excl.forEach((el) => {
     if (el instanceof HTMLElement) el.style.display = "none";
   });
@@ -413,17 +400,7 @@ async function irPDF() {
       slice.height = srcH;
       const ctx = slice.getContext("2d");
       if (!ctx) break;
-      ctx.drawImage(
-        canvas,
-        0,
-        srcY,
-        canvas.width,
-        srcH,
-        0,
-        0,
-        canvas.width,
-        srcH
-      );
+      ctx.drawImage(canvas, 0, srcY, canvas.width, srcH, 0, 0, canvas.width, srcH);
       const data = slice.toDataURL("image/png");
       pdf.addImage(data, "PNG", 10, y, imgW, sliceH);
       remain -= sliceH;
