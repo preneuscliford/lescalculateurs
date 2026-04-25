@@ -210,7 +210,180 @@
           <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
         </ul>
       </section>
+      <!-- Calculateur AAH -->
+      <section class="mb-12">
+        <div id="aah-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">🧮 Calculer mon AAH</h2>
 
+          <!-- Situations pré-remplies -->
+          <div class="mb-8 p-6 bg-purple-50 rounded-lg border border-purple-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">📋 Situations pré-remplies (exemples rapides)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <button type="button" class="preset-btn px-4 py-3 bg-white border border-purple-300 rounded-lg hover:bg-purple-100 transition font-medium text-gray-800 text-sm" data-preset="seul-80-0">
+                <span class="block font-semibold">Célibataire 80%</span>
+                <span class="text-xs text-gray-600">Sans revenu</span>
+              </button>
+              <button type="button" class="preset-btn px-4 py-3 bg-white border border-purple-300 rounded-lg hover:bg-purple-100 transition font-medium text-gray-800 text-sm" data-preset="seul-80-500">
+                <span class="block font-semibold">Célibataire 80%</span>
+                <span class="text-xs text-gray-600">500€/mois</span>
+              </button>
+              <button type="button" class="preset-btn px-4 py-3 bg-white border border-purple-300 rounded-lg hover:bg-purple-100 transition font-medium text-gray-800 text-sm" data-preset="couple-80-1000">
+                <span class="block font-semibold">Couple 80%</span>
+                <span class="text-xs text-gray-600">1 000€/mois</span>
+              </button>
+              <button type="button" class="preset-btn px-4 py-3 bg-white border border-purple-300 rounded-lg hover:bg-purple-100 transition font-medium text-gray-800 text-sm" data-preset="monoparental-80-1000">
+                <span class="block font-semibold">Parent isolé 80%</span>
+                <span class="text-xs text-gray-600">1 000€/mois</span>
+              </button>
+            </div>
+          </div>
+
+          <form id="aah-form" class="space-y-6">
+            <!-- Situation familiale -->
+            <div>
+              <label for="aah-situation" class="block text-gray-700 font-semibold mb-2"
+                >Situation familiale *</label
+              >
+              <select
+                id="aah-situation"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="seul">Célibataire / Seul</option>
+                <option value="couple">En couple</option>
+                <option value="monoparental">Parent isolé</option>
+              </select>
+            </div>
+
+            <!-- Nombre d'enfants -->
+            <div>
+              <label for="aah-enfants" class="block text-gray-700 font-semibold mb-2"
+                >Nombre d'enfants à charge</label
+              >
+              <div class="mb-3 flex flex-wrap gap-2">
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-enfants" data-value="0">0</button>
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-enfants" data-value="1">1</button>
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-enfants" data-value="2">2</button>
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-enfants" data-value="3">3</button>
+              </div>
+              <input
+                type="number"
+                id="aah-enfants"
+                min="0"
+                max="10"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+
+            <!-- Taux d'incapacité -->
+            <div>
+              <label for="aah-taux" class="block text-gray-700 font-semibold mb-2"
+                >Taux d'incapacité reconnu *</label
+              >
+              <select
+                id="aah-taux"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="50">Entre 50 % et 79 %</option>
+                <option value="80">≥ 80 %</option>
+              </select>
+            </div>
+
+            <!-- Revenus mensuels -->
+            <div>
+              <label for="aah-revenus" class="block text-gray-700 font-semibold mb-2"
+                >Revenus mensuels du foyer (€) *</label
+              >
+              <div class="mb-3 flex flex-wrap gap-2">
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-revenus" data-value="0">0€</button>
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-revenus" data-value="500">500€</button>
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-revenus" data-value="1000">1 000€</button>
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-revenus" data-value="1500">1 500€</button>
+                <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="aah-revenus" data-value="2000">2 000€</button>
+              </div>
+              <input
+                type="number"
+                id="aah-revenus"
+                min="0"
+                value="0"
+                placeholder="Salaires, pensions, allocations..."
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            <!-- Situation de logement -->
+            <div>
+              <label for="aah-logement" class="block text-gray-700 font-semibold mb-2"
+                >Situation de logement *</label
+              >
+              <select
+                id="aah-logement"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="locataire">Locataire</option>
+                <option value="proprio">Propriétaire</option>
+                <option value="heberge">Hébergé / Sans logement stable</option>
+              </select>
+            </div>
+
+            <!-- Bouton Calculer -->
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer mon AAH
+            </button>
+          </form>
+
+          <!-- Résultat -->
+          <div
+            id="aah-result"
+            class="invisible mt-8 min-h-[220px] p-6 bg-purple-50 border-2 border-purple-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-purple-700 mb-4">📊 Estimation de votre AAH</h3>
+            <div id="aah-result-content" class="space-y-4">
+              <div class="text-center">
+                <p class="text-gray-600 mb-2">Montant mensuel estimé :</p>
+                <p class="text-4xl font-bold text-purple-600" id="aah-montant">---</p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-purple-500">
+                <p id="aah-explication" class="text-gray-700"></p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-purple-600">
+                <p class="text-sm text-gray-800">
+                  Cette estimation tient compte de vos ressources déclarées.
+                </p>
+                <p class="text-sm text-gray-800 mt-2">
+                  Le montant de l'AAH ne peut pas dépasser le plafond réglementaire fixé par la CAF.
+                </p>
+                <p class="text-sm text-gray-800 mt-2">
+                  Le montant réel dépendra de votre situation exacte et de la décision finale de la
+                  CAF.
+                </p>
+              </div>
+              <div class="bg-purple-50 p-3 rounded border-l-4 border-purple-500 mt-4">
+                <p class="text-sm text-gray-800">
+                  L'AAH peut être ajustée en cas de reprise d'activité ou de cumul avec d'autres
+                  prestations. Consultez la CAF pour connaître l'impact de votre situation sur le
+                  montant final.
+                </p>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 Ce résultat est indicatif et pédagogique. La CAF reste seule compétente pour
+                l'attribution et le calcul final. Votre taux d'incapacité doit être reconnu par la
+                MDPH.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="mb-10 bg-white border border-gray-200 rounded-lg p-6" style="display: none">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 Résumé rapide (old)</h2>
         <div class="space-y-2 text-gray-700">
@@ -298,145 +471,6 @@
           <li>comprendre l'impact de votre taux d'incapacité et vos revenus</li>
         </ul>
         <p class="text-sm text-gray-600 mt-6">💡 Le résultat est indicatif et pédagogique.</p>
-      </section>
-
-      <!-- Calculateur AAH -->
-      <section class="mb-12">
-        <div id="aah-calculator" class="bg-white p-8 rounded-lg shadow-lg">
-          <h2 class="text-2xl font-bold text-gray-800 mb-6">🧮 Calculer mon AAH</h2>
-
-          <form id="aah-form" class="space-y-6">
-            <!-- Situation familiale -->
-            <div>
-              <label for="aah-situation" class="block text-gray-700 font-semibold mb-2"
-                >Situation familiale *</label
-              >
-              <select
-                id="aah-situation"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                required
-              >
-                <option value="">-- Sélectionnez --</option>
-                <option value="seul">Célibataire / Seul</option>
-                <option value="couple">En couple</option>
-                <option value="monoparental">Parent isolé</option>
-              </select>
-            </div>
-
-            <!-- Nombre d'enfants -->
-            <div>
-              <label for="aah-enfants" class="block text-gray-700 font-semibold mb-2"
-                >Nombre d'enfants à charge</label
-              >
-              <input
-                type="number"
-                id="aah-enfants"
-                min="0"
-                max="10"
-                value="0"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-            </div>
-
-            <!-- Taux d'incapacité -->
-            <div>
-              <label for="aah-taux" class="block text-gray-700 font-semibold mb-2"
-                >Taux d'incapacité reconnu *</label
-              >
-              <select
-                id="aah-taux"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                required
-              >
-                <option value="">-- Sélectionnez --</option>
-                <option value="50">Entre 50 % et 79 %</option>
-                <option value="80">≥ 80 %</option>
-              </select>
-            </div>
-
-            <!-- Revenus mensuels -->
-            <div>
-              <label for="aah-revenus" class="block text-gray-700 font-semibold mb-2"
-                >Revenus mensuels du foyer (€) *</label
-              >
-              <input
-                type="number"
-                id="aah-revenus"
-                min="0"
-                value="0"
-                placeholder="Salaires, pensions, allocations..."
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                required
-              />
-            </div>
-
-            <!-- Situation de logement -->
-            <div>
-              <label for="aah-logement" class="block text-gray-700 font-semibold mb-2"
-                >Situation de logement *</label
-              >
-              <select
-                id="aah-logement"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                required
-              >
-                <option value="">-- Sélectionnez --</option>
-                <option value="locataire">Locataire</option>
-                <option value="proprio">Propriétaire</option>
-                <option value="heberge">Hébergé / Sans logement stable</option>
-              </select>
-            </div>
-
-            <!-- Bouton Calculer -->
-            <button
-              type="submit"
-              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
-            >
-              🟢 Calculer mon AAH
-            </button>
-          </form>
-
-          <!-- Résultat -->
-          <div
-            id="aah-result"
-            class="invisible mt-8 min-h-[220px] p-6 bg-purple-50 border-2 border-purple-500 rounded-lg"
-          >
-            <h3 class="text-2xl font-bold text-purple-700 mb-4">📊 Estimation de votre AAH</h3>
-            <div id="aah-result-content" class="space-y-4">
-              <div class="text-center">
-                <p class="text-gray-600 mb-2">Montant mensuel estimé :</p>
-                <p class="text-4xl font-bold text-purple-600" id="aah-montant">---</p>
-              </div>
-              <div class="bg-white p-4 rounded border-l-4 border-purple-500">
-                <p id="aah-explication" class="text-gray-700"></p>
-              </div>
-              <div class="bg-white p-4 rounded border-l-4 border-purple-600">
-                <p class="text-sm text-gray-800">
-                  Cette estimation tient compte de vos ressources déclarées.
-                </p>
-                <p class="text-sm text-gray-800 mt-2">
-                  Le montant de l'AAH ne peut pas dépasser le plafond réglementaire fixé par la CAF.
-                </p>
-                <p class="text-sm text-gray-800 mt-2">
-                  Le montant réel dépendra de votre situation exacte et de la décision finale de la
-                  CAF.
-                </p>
-              </div>
-              <div class="bg-purple-50 p-3 rounded border-l-4 border-purple-500 mt-4">
-                <p class="text-sm text-gray-800">
-                  L'AAH peut être ajustée en cas de reprise d'activité ou de cumul avec d'autres
-                  prestations. Consultez la CAF pour connaître l'impact de votre situation sur le
-                  montant final.
-                </p>
-              </div>
-              <p class="text-xs text-gray-500 italic">
-                💡 Ce résultat est indicatif et pédagogique. La CAF reste seule compétente pour
-                l'attribution et le calcul final. Votre taux d'incapacité doit être reconnu par la
-                MDPH.
-              </p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- Exemple pédagogique -->

@@ -74,3 +74,47 @@ if (scrollButton) {
     }
   });
 }
+
+/**
+ * Preset buttons for quick scenarios
+ */
+const presetMap: Record<string, { situation: string; taux: string; enfants: string; revenus: string; logement: string }> = {
+  "seul-80-0": { situation: "seul", taux: "80", enfants: "0", revenus: "0", logement: "locataire" },
+  "seul-80-500": { situation: "seul", taux: "80", enfants: "0", revenus: "500", logement: "locataire" },
+  "couple-80-1000": { situation: "couple", taux: "80", enfants: "0", revenus: "1000", logement: "locataire" },
+  "monoparental-80-1000": { situation: "monoparental", taux: "80", enfants: "1", revenus: "1000", logement: "locataire" },
+};
+
+document.querySelectorAll(".preset-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const preset = (btn as HTMLElement).getAttribute("data-preset");
+    if (preset && presetMap[preset]) {
+      const values = presetMap[preset];
+      situationSelect.value = values.situation;
+      tauxInput.value = values.taux;
+      enfantsInput.value = values.enfants;
+      revenusInput.value = values.revenus;
+      logementSelect.value = values.logement;
+      // Auto-submit the form
+      form.requestSubmit();
+    }
+  });
+});
+
+/**
+ * Quick value buttons for numeric fields
+ */
+document.querySelectorAll(".quick-value-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const fieldId = (btn as HTMLElement).getAttribute("data-field-id");
+    const value = (btn as HTMLElement).getAttribute("data-value");
+    if (fieldId && value !== null) {
+      const input = document.getElementById(fieldId) as HTMLInputElement;
+      if (input) {
+        input.value = value;
+      }
+    }
+  });
+});
