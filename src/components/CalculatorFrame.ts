@@ -106,17 +106,15 @@ export class CalculatorFrame {
           ? `
             <div class="mb-3 flex flex-wrap gap-2">
               ${field.quickValues
-                .map(
-                  (val) => {
-                    const option = field.options?.find((opt) => opt.value === val);
-                    const label = option?.label || val;
-                    return `
+                .map((val) => {
+                  const option = field.options?.find((opt) => opt.value === val);
+                  const label = option?.label || val;
+                  return `
                 <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="${field.id}" data-value="${val}">
                   ${label}
                 </button>
               `;
-                  },
-                )
+                })
                 .join("")}
             </div>
           `

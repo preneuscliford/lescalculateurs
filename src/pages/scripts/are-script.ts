@@ -7,21 +7,13 @@ import { calculerARE, type AREData } from "../../utils/areCalculEngine";
 
 const form = document.getElementById("are-form") as HTMLFormElement;
 const resultDiv = document.getElementById("are-result") as HTMLDivElement;
-const scrollButton = document.getElementById(
-  "are-scroll-to-form",
-) as HTMLButtonElement;
+const scrollButton = document.getElementById("are-scroll-to-form") as HTMLButtonElement;
 
 function initFromURL(): void {
   const params = new URLSearchParams(window.location.search);
   if (!params.size) return;
 
-  const fieldIds = [
-    "are-situation",
-    "are-age",
-    "are-anciennete",
-    "are-salaire",
-    "are-enfants",
-  ];
+  const fieldIds = ["are-situation", "are-age", "are-anciennete", "are-salaire", "are-enfants"];
 
   let hasValue = false;
 
@@ -43,20 +35,15 @@ if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const situation = (
-      document.getElementById("are-situation") as HTMLSelectElement
-    )?.value;
+    const situation = (document.getElementById("are-situation") as HTMLSelectElement)?.value;
     const ancienneteEmploi = parseInt(
-      (document.getElementById("are-anciennete") as HTMLInputElement)?.value ||
-        "0",
+      (document.getElementById("are-anciennete") as HTMLInputElement)?.value || "0",
     );
     const salaireReferent = parseFloat(
-      (document.getElementById("are-salaire") as HTMLInputElement)?.value ||
-        "0",
+      (document.getElementById("are-salaire") as HTMLInputElement)?.value || "0",
     );
     const personnesCharge = parseInt(
-      (document.getElementById("are-enfants") as HTMLInputElement)?.value ||
-        "0",
+      (document.getElementById("are-enfants") as HTMLInputElement)?.value || "0",
     );
     const agePersonne = parseInt(
       (document.getElementById("are-age") as HTMLInputElement)?.value || "35",
@@ -78,12 +65,8 @@ if (form) {
     const result = calculerARE(data);
     console.log("ARE Calculation Result:", result);
 
-    const montantDisplay = document.getElementById(
-      "are-montant",
-    ) as HTMLElement;
-    const explicationDisplay = document.getElementById(
-      "are-explication",
-    ) as HTMLElement;
+    const montantDisplay = document.getElementById("are-montant") as HTMLElement;
+    const explicationDisplay = document.getElementById("are-explication") as HTMLElement;
 
     console.log("Montant Display Element:", montantDisplay);
     console.log("Explication Display Element:", explicationDisplay);

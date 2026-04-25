@@ -1,8 +1,8 @@
 import { calculerRSA, formatRSAResult } from "../../utils/rsaCalculEngine";
-import { 
-  initFeedbackForm, 
+import {
+  initFeedbackForm,
   initStatsDisplay,
-  generateProfileHash 
+  generateProfileHash,
 } from "../../components/observatory";
 
 /**
@@ -11,17 +11,11 @@ import {
 
 // Éléments du formulaire
 const form = document.getElementById("rsa-form") as HTMLFormElement;
-const situationSelect = document.getElementById(
-  "rsa-situation",
-) as HTMLSelectElement;
+const situationSelect = document.getElementById("rsa-situation") as HTMLSelectElement;
 const enfantsInput = document.getElementById("rsa-enfants") as HTMLInputElement;
 const revenusInput = document.getElementById("rsa-revenus") as HTMLInputElement;
-const logementSelect = document.getElementById(
-  "rsa-logement",
-) as HTMLSelectElement;
-const activiteSelect = document.getElementById(
-  "rsa-activite",
-) as HTMLSelectElement;
+const logementSelect = document.getElementById("rsa-logement") as HTMLSelectElement;
+const activiteSelect = document.getElementById("rsa-activite") as HTMLSelectElement;
 
 // Éléments de résultat
 const resultDiv = document.getElementById("rsa-result") as HTMLDivElement;
@@ -29,21 +23,13 @@ const montantDisplay = document.getElementById("rsa-montant") as HTMLElement;
 const explDisplay = document.getElementById("rsa-explication") as HTMLElement;
 
 // Bouton de scroll
-const scrollButton = document.getElementById(
-  "rsa-scroll-to-form",
-) as HTMLButtonElement;
+const scrollButton = document.getElementById("rsa-scroll-to-form") as HTMLButtonElement;
 
 function initFromURL(): void {
   const params = new URLSearchParams(window.location.search);
   if (!params.size) return;
 
-  const fieldIds = [
-    "rsa-situation",
-    "rsa-enfants",
-    "rsa-revenus",
-    "rsa-logement",
-    "rsa-activite",
-  ];
+  const fieldIds = ["rsa-situation", "rsa-enfants", "rsa-revenus", "rsa-logement", "rsa-activite"];
 
   let hasValue = false;
 
@@ -113,16 +99,10 @@ if (scrollButton) {
 /**
  * Masquer le résultat quand on modifie le formulaire
  */
-[
-  situationSelect,
-  enfantsInput,
-  revenusInput,
-  logementSelect,
-  activiteSelect,
-].forEach((elem) => {
+[situationSelect, enfantsInput, revenusInput, logementSelect, activiteSelect].forEach((elem) => {
   elem.addEventListener("change", () => {
     resultDiv.classList.add("invisible");
-    
+
     // Masquer aussi l'observatoire
     const observatorySection = document.getElementById("observatory-section");
     if (observatorySection) {
@@ -148,7 +128,6 @@ document.querySelectorAll(".quick-value-btn").forEach((btn) => {
 
 initFromURL();
 
-
 /**
  * Afficher l'observatoire communautaire apres simulation
  */
@@ -160,26 +139,26 @@ async function showObservatory(data: {
 }): Promise<void> {
   const section = document.getElementById("observatory-section");
   if (!section) return;
-  
+
   section.classList.remove("hidden");
-  
+
   // Generer le hash du profil
   const profile = {
     situation: data.situation,
     revenus: getRevenuBracket(data.revenus),
     logement: data.logement,
-    enfants: data.enfants
+    enfants: data.enfants,
   };
-  
+
   const profileHash = await generateProfileHash(profile);
-  
+
   // Afficher les stats existantes
   initStatsDisplay("observatory-stats", {
     profileHash,
     simulatorType: "rsa",
-    profileDescription: getProfileDescription(profile)
+    profileDescription: getProfileDescription(profile),
   });
-  
+
   // Afficher le formulaire
   initFeedbackForm("observatory-feedback", {
     simulatorType: "rsa",
@@ -189,14 +168,14 @@ async function showObservatory(data: {
       setTimeout(() => {
         initStatsDisplay("observatory-stats", {
           profileHash,
-          simulatorType: "rsa"
+          simulatorType: "rsa",
         });
       }, 1000);
     },
     onCancel: () => {
       const feedbackDiv = document.getElementById("observatory-feedback");
       if (feedbackDiv) feedbackDiv.style.display = "none";
-    }
+    },
   });
 }
 
@@ -224,14 +203,14 @@ function getProfileDescription(profile: {
     seul: "Personne seule",
     couple: "Couple",
     celibataire: "Celibataire",
-    monoparentale: "Famille monoparentale"
+    monoparentale: "Famille monoparentale",
   };
-  
+
   const parts = [
     situationLabels[profile.situation] || profile.situation,
     profile.enfants > 0 ? `${profile.enfants} enfant(s)` : null,
-    profile.logement
+    profile.logement,
   ].filter(Boolean);
-  
+
   return parts.join(", ");
 }

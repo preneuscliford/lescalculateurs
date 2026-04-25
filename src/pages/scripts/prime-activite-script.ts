@@ -9,24 +9,12 @@ import {
 
 // Éléments du formulaire
 const form = document.getElementById("prime-form") as HTMLFormElement;
-const situationSelect = document.getElementById(
-  "prime-situation",
-) as HTMLSelectElement;
-const enfantsInput = document.getElementById(
-  "prime-enfants",
-) as HTMLInputElement;
-const revenosProfInput = document.getElementById(
-  "prime-revenus-pro",
-) as HTMLInputElement;
-const autresRevenusInput = document.getElementById(
-  "prime-autres-revenus",
-) as HTMLInputElement;
-const logementSelect = document.getElementById(
-  "prime-logement",
-) as HTMLSelectElement;
-const typeActiviteSelect = document.getElementById(
-  "prime-type-activite",
-) as HTMLSelectElement;
+const situationSelect = document.getElementById("prime-situation") as HTMLSelectElement;
+const enfantsInput = document.getElementById("prime-enfants") as HTMLInputElement;
+const revenosProfInput = document.getElementById("prime-revenus-pro") as HTMLInputElement;
+const autresRevenusInput = document.getElementById("prime-autres-revenus") as HTMLInputElement;
+const logementSelect = document.getElementById("prime-logement") as HTMLSelectElement;
+const typeActiviteSelect = document.getElementById("prime-type-activite") as HTMLSelectElement;
 
 // Éléments de résultat
 const resultDiv = document.getElementById("prime-result") as HTMLDivElement;
@@ -34,9 +22,7 @@ const montantDisplay = document.getElementById("prime-montant") as HTMLElement;
 const explDisplay = document.getElementById("prime-explication") as HTMLElement;
 
 // Bouton de scroll
-const scrollButton = document.getElementById(
-  "prime-scroll-to-form",
-) as HTMLButtonElement;
+const scrollButton = document.getElementById("prime-scroll-to-form") as HTMLButtonElement;
 
 function initFromURL(): void {
   const params = new URLSearchParams(window.location.search);
@@ -56,10 +42,7 @@ function initFromURL(): void {
   fieldIds.forEach((fieldId) => {
     const value = params.get(fieldId);
     if (value === null) return;
-    const input = document.getElementById(fieldId) as
-      | HTMLInputElement
-      | HTMLSelectElement
-      | null;
+    const input = document.getElementById(fieldId) as HTMLInputElement | HTMLSelectElement | null;
     if (!input) return;
     input.value = value;
     hasValue = true;
