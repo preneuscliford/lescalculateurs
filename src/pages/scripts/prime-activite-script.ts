@@ -135,4 +135,19 @@ if (scrollButton) {
   });
 });
 
+// Quick value buttons for numeric fields
+document.querySelectorAll(".quick-value-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const fieldId = (btn as HTMLElement).getAttribute("data-field-id");
+    const value = (btn as HTMLElement).getAttribute("data-value");
+    if (fieldId && value !== null) {
+      const input = document.getElementById(fieldId) as HTMLInputElement;
+      if (input) {
+        input.value = value;
+      }
+    }
+  });
+});
+
 initFromURL();
