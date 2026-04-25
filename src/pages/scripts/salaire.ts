@@ -15,6 +15,12 @@ const salaireConfig = {
       placeholder: "3000",
       min: 500,
       step: 1,
+      quickValues: [
+        { label: "1 800 € Non-cadre", value: 1800 },
+        { label: "1 800 € Cadre", value: 1800 },
+        { label: "2 500 € Non-cadre", value: 2500 },
+        { label: "2 500 € Cadre", value: 2500 },
+      ],
     },
     {
       id: "statut",
@@ -24,6 +30,10 @@ const salaireConfig = {
       options: [
         { value: "non_cadre", label: "Non‑cadre" },
         { value: "cadre", label: "Cadre" },
+      ],
+      quickValues: [
+        { label: "Non-cadre", value: "non_cadre" },
+        { label: "Cadre", value: "cadre" },
       ],
     },
     {
@@ -35,6 +45,12 @@ const salaireConfig = {
       min: 0,
       max: 30,
       step: 0.1,
+      quickValues: [
+        { label: "0%", value: 0 },
+        { label: "10%", value: 10 },
+        { label: "15%", value: 15 },
+        { label: "20%", value: 20 },
+      ],
     },
   ],
   calculate: (values: Record<string, any>) => {
@@ -77,36 +93,32 @@ const salaireConfig = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-blue-50 p-4 rounded-lg">
           <h4 class="font-semibold text-gray-800">Net mensuel avant impôt</h4>
-          <p class="text-xl font-bold text-primary-600">${formatCurrency(
-            d.netAvantImpot
-          )}</p>
+          <p class="text-xl font-bold text-primary-600">${formatCurrency(d.netAvantImpot)}</p>
           <p class="text-sm text-gray-600">Taux cotisations salariales ~ ${(
             d.tauxSalarial * 100
           ).toFixed(1)}%</p>
         </div>
         <div class="bg-green-50 p-4 rounded-lg">
           <h4 class="font-semibold text-gray-800">Net mensuel après PAS</h4>
-          <p class="text-xl font-bold text-green-600">${formatCurrency(
-            d.netApresImpot
-          )}</p>
+          <p class="text-xl font-bold text-green-600">${formatCurrency(d.netApresImpot)}</p>
           <p class="text-sm text-gray-600">PAS mensuel: ${formatCurrency(
-            d.pasMensuel
+            d.pasMensuel,
           )} (${Number(d.tauxPAS || 0).toFixed(1)}% )</p>
         </div>
       </div>
       <div class="border-t pt-4">
         <div class="space-y-2 text-sm">
           <div class="flex justify-between"><span>Brut annuel :</span><span class="font-medium">${formatCurrency(
-            d.brutAnnuel
+            d.brutAnnuel,
           )}</span></div>
           <div class="flex justify-between"><span>Net annuel avant impôt :</span><span class="font-medium">${formatCurrency(
-            d.netAvantImpotAnnuel
+            d.netAvantImpotAnnuel,
           )}</span></div>
           <div class="flex justify-between"><span>PAS annuel :</span><span class="font-medium">${formatCurrency(
-            d.pasAnnuel
+            d.pasAnnuel,
           )}</span></div>
           <div class="flex justify-between"><span>Net annuel après impôt :</span><span class="font-medium">${formatCurrency(
-            d.netApresImpotAnnuel
+            d.netApresImpotAnnuel,
           )}</span></div>
         </div>
       </div>
@@ -196,53 +208,28 @@ function renderSalaireComparaison() {
         <thead><tr class="bg-blue-50"><th class="p-3 text-left font-semibold">Critère</th>${headers
           .map(
             (h, idx) =>
-              `<th class=\"p-3 text-center font-semibold\">${h}<br><button class="text-xs text-red-600 hover:text-red-800 mt-1" onclick="deleteSalaireScenario(${idx})">✕ Supprimer</button></th>`
+              `<th class=\"p-3 text-center font-semibold\">${h}<br><button class="text-xs text-red-600 hover:text-red-800 mt-1" onclick="deleteSalaireScenario(${idx})">✕ Supprimer</button></th>`,
           )
           .join("")}</tr></thead>
         <tbody>
           <tr class="hover:bg-gray-50"><td class="p-3">Brut mensuel</td>${compState
-            .map(
-              (c) => `<td class=\"p-3 text-center\">${formatEUR(c.brut)}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${formatEUR(c.brut)}</td>`)
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="p-3">Net mensuel avant impôt</td>${compState
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${formatEUR(
-                  c.netAvantImpot
-                )}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${formatEUR(c.netAvantImpot)}</td>`)
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="p-3">PAS mensuel</td>${compState
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${formatEUR(c.pasMensuel)}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${formatEUR(c.pasMensuel)}</td>`)
             .join("")}</tr>
           <tr class="bg-green-50 font-semibold"><td class="p-3">Net mensuel après impôt</td>${compState
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${formatEUR(
-                  c.netApresImpot
-                )}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${formatEUR(c.netApresImpot)}</td>`)
             .join("")}</tr>
-          <tr class="bg-gray-100"><td class="p-3" colspan="${
-            compState.length + 1
-          }">Annuel</td></tr>
+          <tr class="bg-gray-100"><td class="p-3" colspan="${compState.length + 1}">Annuel</td></tr>
           <tr class="hover:bg-gray-50"><td class="p-3">Brut annuel</td>${compState
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${formatEUR(c.brut * 12)}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${formatEUR(c.brut * 12)}</td>`)
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="p-3">Net annuel après impôt</td>${compState
-            .map(
-              (c) =>
-                `<td class=\"p-3 text-center\">${formatEUR(
-                  c.netApresImpot * 12
-                )}</td>`
-            )
+            .map((c) => `<td class=\"p-3 text-center\">${formatEUR(c.netApresImpot * 12)}</td>`)
             .join("")}</tr>
         </tbody>
       </table>
@@ -251,34 +238,15 @@ function renderSalaireComparaison() {
   container.innerHTML = html;
 
   // Ajouter le listener pour le bouton "Réinitialiser tout"
-  document
-    .getElementById("salaire-clear-all")
-    ?.addEventListener("click", () => {
-      compState.length = 0;
-      renderSalaireComparaison();
-    });
+  document.getElementById("salaire-clear-all")?.addEventListener("click", () => {
+    compState.length = 0;
+    renderSalaireComparaison();
+  });
 
   import("chart.js").then(
-    ({
-      Chart,
-      BarController,
-      BarElement,
-      CategoryScale,
-      LinearScale,
-      Tooltip,
-      Legend,
-    }) => {
-      Chart.register(
-        BarController,
-        BarElement,
-        CategoryScale,
-        LinearScale,
-        Tooltip,
-        Legend
-      );
-      const canvas = document.getElementById(
-        chartId
-      ) as HTMLCanvasElement | null;
+    ({ Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend }) => {
+      Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+      const canvas = document.getElementById(chartId) as HTMLCanvasElement | null;
       const ctx = canvas ? canvas.getContext("2d") : null;
       if (!ctx) {
         return;
@@ -317,7 +285,7 @@ function renderSalaireComparaison() {
           },
         },
       });
-    }
+    },
   );
 }
 
@@ -327,95 +295,87 @@ function deleteSalaireScenario(index: number) {
 }
 (window as any).deleteSalaireScenario = deleteSalaireScenario;
 
-document
-  .getElementById("salaire-add-to-compare")
-  ?.addEventListener("click", () => {
-    const last = (window as any)["dernierCalcul_salaire-calculator"];
-    if (!last || !last.result?.success) {
-      alert("Veuillez d'abord effectuer un calcul.");
-      return;
-    }
+document.getElementById("salaire-add-to-compare")?.addEventListener("click", () => {
+  const last = (window as any)["dernierCalcul_salaire-calculator"];
+  if (!last || !last.result?.success) {
+    alert("Veuillez d'abord effectuer un calcul.");
+    return;
+  }
 
-    const d = last.result.data;
-    const modal = new ComparisonModal({
-      title: "Ajouter un scénario à la comparaison",
-      fields: [
-        {
-          id: "brut",
-          label: "Salaire brut mensuel (€)",
-          type: "number",
-          value: d.brut,
-          required: true,
-          min: 500,
-          step: 1,
-        },
-        {
-          id: "statut",
-          label: "Statut",
-          type: "select",
-          value: d.statut,
-          required: true,
-          options: [
-            { value: "non_cadre", label: "Non‑cadre" },
-            { value: "cadre", label: "Cadre" },
-          ],
-        },
-        {
-          id: "taux_pas",
-          label: "Taux PAS (%)",
-          type: "number",
-          value: d.tauxPAS || 0,
-          required: false,
-          placeholder: "0 à 30",
-          min: 0,
-          max: 30,
-          step: 0.1,
-        },
-      ],
-      onConfirm: (values) => {
-        const brut = Number(values.brut);
-        const statut = values.statut;
-        const tauxPAS = Number(values.taux_pas) || 0;
-        const r = calculerSalaire({
-          brutMensuel: brut,
-          statut,
-          tauxPAS,
-        });
-
-        const label = `${
-          statut === "cadre" ? "Cadre" : "Non‑cadre"
-        } • PAS ${Number(tauxPAS || 0).toFixed(1)}% • Brut ${formatEUR(
-          brut
-        )}`;
-
-        compState.push({
-          label,
-          brut: r.brut,
-          netAvantImpot: r.netAvantImpot,
-          pasMensuel: r.pasMensuel,
-          netApresImpot: r.netApresImpot,
-        });
-        renderSalaireComparaison();
+  const d = last.result.data;
+  const modal = new ComparisonModal({
+    title: "Ajouter un scénario à la comparaison",
+    fields: [
+      {
+        id: "brut",
+        label: "Salaire brut mensuel (€)",
+        type: "number",
+        value: d.brut,
+        required: true,
+        min: 500,
+        step: 1,
       },
-    });
+      {
+        id: "statut",
+        label: "Statut",
+        type: "select",
+        value: d.statut,
+        required: true,
+        options: [
+          { value: "non_cadre", label: "Non‑cadre" },
+          { value: "cadre", label: "Cadre" },
+        ],
+      },
+      {
+        id: "taux_pas",
+        label: "Taux PAS (%)",
+        type: "number",
+        value: d.tauxPAS || 0,
+        required: false,
+        placeholder: "0 à 30",
+        min: 0,
+        max: 30,
+        step: 0.1,
+      },
+    ],
+    onConfirm: (values) => {
+      const brut = Number(values.brut);
+      const statut = values.statut;
+      const tauxPAS = Number(values.taux_pas) || 0;
+      const r = calculerSalaire({
+        brutMensuel: brut,
+        statut,
+        tauxPAS,
+      });
 
-    modal.open();
+      const label = `${
+        statut === "cadre" ? "Cadre" : "Non‑cadre"
+      } • PAS ${Number(tauxPAS || 0).toFixed(1)}% • Brut ${formatEUR(brut)}`;
+
+      compState.push({
+        label,
+        brut: r.brut,
+        netAvantImpot: r.netAvantImpot,
+        pasMensuel: r.pasMensuel,
+        netApresImpot: r.netApresImpot,
+      });
+      renderSalaireComparaison();
+    },
   });
-document
-  .getElementById("salaire-reset-compare")
-  ?.addEventListener("click", () => {
-    compState.length = 0;
-    renderSalaireComparaison();
-  });
+
+  modal.open();
+});
+document.getElementById("salaire-reset-compare")?.addEventListener("click", () => {
+  compState.length = 0;
+  renderSalaireComparaison();
+});
 
 async function downloadBlocPNG() {
   const container = document.getElementById("salaire-comparaison");
   if (!container) return;
   const { default: html2canvas } = await import("html2canvas");
   const excl = [...document.querySelectorAll('[data-export-exclude="true"]')];
-  const prev = excl.map((el) =>
-    el instanceof HTMLElement ? el.style.display : ""
-  );
+  const prev = excl.map((el) => (el instanceof HTMLElement ? el.style.display : ""));
   excl.forEach((el) => {
     if (el instanceof HTMLElement) el.style.display = "none";
   });
@@ -441,9 +401,7 @@ async function downloadBlocPDF() {
   const { default: html2canvas } = await import("html2canvas");
   const { jsPDF } = await import("jspdf");
   const excl = [...document.querySelectorAll('[data-export-exclude="true"]')];
-  const prev = excl.map((el) =>
-    el instanceof HTMLElement ? el.style.display : ""
-  );
+  const prev = excl.map((el) => (el instanceof HTMLElement ? el.style.display : ""));
   excl.forEach((el) => {
     if (el instanceof HTMLElement) el.style.display = "none";
   });
@@ -472,17 +430,7 @@ async function downloadBlocPDF() {
       slice.height = srcH;
       const ctx = slice.getContext("2d");
       if (!ctx) break;
-      ctx.drawImage(
-        canvas,
-        0,
-        srcY,
-        canvas.width,
-        srcH,
-        0,
-        0,
-        canvas.width,
-        srcH
-      );
+      ctx.drawImage(canvas, 0, srcY, canvas.width, srcH, 0, 0, canvas.width, srcH);
       const data = slice.toDataURL("image/png");
       pdf.addImage(data, "PNG", 10, y, imgW, sliceH);
       remain -= sliceH;
@@ -497,9 +445,42 @@ async function downloadBlocPDF() {
   }
   pdf.save(`comparaison-salaire-${Date.now()}.pdf`);
 }
-document
-  .getElementById("salaire-download-png")
-  ?.addEventListener("click", downloadBlocPNG);
-document
-  .getElementById("salaire-download-pdf")
-  ?.addEventListener("click", downloadBlocPDF);
+document.getElementById("salaire-download-png")?.addEventListener("click", downloadBlocPNG);
+document.getElementById("salaire-download-pdf")?.addEventListener("click", downloadBlocPDF);
+
+/**
+ * Preset situation buttons for quick filling
+ */
+document.querySelectorAll(".preset-situation-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const brut = (btn as HTMLElement).getAttribute("data-brut");
+    const statut = (btn as HTMLElement).getAttribute("data-statut");
+    const pas = (btn as HTMLElement).getAttribute("data-pas");
+
+    if (brut && statut && pas !== null) {
+      const form = document.querySelector("#salaire-calculator form") as HTMLFormElement | null;
+      const brutInput = document.querySelector("#brut") as HTMLInputElement | null;
+      const statutSelect = document.querySelector("#statut") as HTMLSelectElement | null;
+      const pasInput = document.querySelector("#taux_pas") as HTMLInputElement | null;
+
+      if (!form || !brutInput || !statutSelect || !pasInput) return;
+
+      brutInput.value = brut;
+      statutSelect.value = statut;
+      pasInput.value = pas;
+
+      brutInput.dispatchEvent(new Event("input", { bubbles: true }));
+      brutInput.dispatchEvent(new Event("change", { bubbles: true }));
+      statutSelect.dispatchEvent(new Event("change", { bubbles: true }));
+      pasInput.dispatchEvent(new Event("input", { bubbles: true }));
+      pasInput.dispatchEvent(new Event("change", { bubbles: true }));
+
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit();
+      } else {
+        form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+      }
+    }
+  });
+});
