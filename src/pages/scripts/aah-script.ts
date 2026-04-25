@@ -6,15 +6,11 @@ import { calculerAAH, formatAAHResult } from "../../utils/aahCalculEngine";
 
 // Éléments du formulaire
 const form = document.getElementById("aah-form") as HTMLFormElement;
-const situationSelect = document.getElementById(
-  "aah-situation",
-) as HTMLSelectElement;
+const situationSelect = document.getElementById("aah-situation") as HTMLSelectElement;
 const enfantsInput = document.getElementById("aah-enfants") as HTMLInputElement;
 const tauxInput = document.getElementById("aah-taux") as HTMLSelectElement;
 const revenusInput = document.getElementById("aah-revenus") as HTMLInputElement;
-const logementSelect = document.getElementById(
-  "aah-logement",
-) as HTMLSelectElement;
+const logementSelect = document.getElementById("aah-logement") as HTMLSelectElement;
 
 // Éléments de résultat
 const resultDiv = document.getElementById("aah-result") as HTMLDivElement;
@@ -22,9 +18,7 @@ const montantDisplay = document.getElementById("aah-montant") as HTMLElement;
 const explDisplay = document.getElementById("aah-explication") as HTMLElement;
 
 // Bouton de scroll
-const scrollButton = document.getElementById(
-  "aah-scroll-to-form",
-) as HTMLButtonElement;
+const scrollButton = document.getElementById("aah-scroll-to-form") as HTMLButtonElement;
 
 /**
  * Gestion du formulaire
@@ -78,11 +72,32 @@ if (scrollButton) {
 /**
  * Preset buttons for quick scenarios
  */
-const presetMap: Record<string, { situation: string; taux: string; enfants: string; revenus: string; logement: string }> = {
+const presetMap: Record<
+  string,
+  { situation: string; taux: string; enfants: string; revenus: string; logement: string }
+> = {
   "seul-80-0": { situation: "seul", taux: "80", enfants: "0", revenus: "0", logement: "locataire" },
-  "seul-80-500": { situation: "seul", taux: "80", enfants: "0", revenus: "500", logement: "locataire" },
-  "couple-80-1000": { situation: "couple", taux: "80", enfants: "0", revenus: "1000", logement: "locataire" },
-  "monoparental-80-1000": { situation: "monoparental", taux: "80", enfants: "1", revenus: "1000", logement: "locataire" },
+  "seul-80-500": {
+    situation: "seul",
+    taux: "80",
+    enfants: "0",
+    revenus: "500",
+    logement: "locataire",
+  },
+  "couple-80-1000": {
+    situation: "couple",
+    taux: "80",
+    enfants: "0",
+    revenus: "1000",
+    logement: "locataire",
+  },
+  "monoparental-80-1000": {
+    situation: "monoparental",
+    taux: "80",
+    enfants: "1",
+    revenus: "1000",
+    logement: "locataire",
+  },
 };
 
 document.querySelectorAll(".preset-btn").forEach((btn) => {

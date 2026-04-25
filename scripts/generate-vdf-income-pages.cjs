@@ -174,13 +174,15 @@ function cityLivingSummary(city, panelMedian) {
 }
 
 function budgetCaseFor(city) {
-  return CITY_BUDGET_CASES[city.slug] || {
-    rent: 700,
-    charges: 300,
-    tightRent: 700,
-    comfortIncome: 2200,
-    note: "Le niveau de confort dépend surtout du loyer, des charges et des aides possibles.",
-  };
+  return (
+    CITY_BUDGET_CASES[city.slug] || {
+      rent: 700,
+      charges: 300,
+      tightRent: 700,
+      comfortIncome: 2200,
+      note: "Le niveau de confort dépend surtout du loyer, des charges et des aides possibles.",
+    }
+  );
 }
 
 function smicAnswer(city, budgetCase) {
@@ -332,13 +334,29 @@ function layout({ title, description, canonicalPath, body, pageSlug, robots = "i
     <header class="border-b border-slate-200 bg-white">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <a href="/" class="text-lg font-bold text-slate-900">Les Calculateurs</a>
-        <nav class="flex gap-4 text-sm text-slate-600">
+        <button id="menu-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 text-slate-600 hover:text-slate-900">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <nav id="nav-menu" class="hidden md:flex gap-4 text-sm text-slate-600">
           <a href="/">Accueil</a>
           <a href="/pages/simulateurs">Simulateurs</a>
           <a href="/pages/revenu-median-commune">Revenus par commune</a>
         </nav>
       </div>
+      <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-3 text-sm text-slate-600">
+        <a href="/" class="block py-2 hover:text-slate-900">Accueil</a>
+        <a href="/pages/simulateurs" class="block py-2 hover:text-slate-900">Simulateurs</a>
+        <a href="/pages/revenu-median-commune" class="block py-2 hover:text-slate-900">Revenus par commune</a>
+      </nav>
     </header>
+    <script>
+      document.getElementById('menu-toggle')?.addEventListener('click', function() {
+        const mobileNav = document.getElementById('mobile-nav');
+        mobileNav.classList.toggle('hidden');
+      });
+    </script>
     ${body}
     <script type="module" src="/main.ts"></script>
   </body>
@@ -431,7 +449,7 @@ function cityPage(city, allCities) {
         </div>
       </section>
 
-      <section class="mt-8 grid gap-6 lg:grid-cols-2">
+      <section class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-950">${escapeHtml(city.cityName)} est-elle une ville chère ?</h2>
           <p class="mt-3 leading-relaxed text-slate-700">
@@ -468,7 +486,7 @@ function cityPage(city, allCities) {
         </article>
       </section>
 
-      <section id="graphiques" class="mt-8 grid gap-6 lg:grid-cols-2">
+      <section id="graphiques" class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-950">Répartition des revenus à ${escapeHtml(city.cityName)}</h2>
           <p class="mt-2 text-sm leading-relaxed text-slate-600">
@@ -481,7 +499,13 @@ function cityPage(city, allCities) {
             unit: "euro",
             color: "emerald",
             labels: ["D1", "Q1", "Médiane", "Q3", "D9"],
-            values: [city.disposableD1, city.disposableQ1, city.disposableMedian, city.disposableQ3, city.disposableD9],
+            values: [
+              city.disposableD1,
+              city.disposableQ1,
+              city.disposableMedian,
+              city.disposableQ3,
+              city.disposableD9,
+            ],
           })}
         </article>
 
@@ -497,7 +521,12 @@ function cityPage(city, allCities) {
             unit: "percent",
             color: "blue",
             labels: ["Activité", "Pensions", "Patrimoine", "Prestations sociales"],
-            values: [city.activityShare, city.pensionShare, city.propertyShare, city.socialBenefitsShare],
+            values: [
+              city.activityShare,
+              city.pensionShare,
+              city.propertyShare,
+              city.socialBenefitsShare,
+            ],
           })}
         </article>
       </section>
@@ -522,7 +551,9 @@ function cityPage(city, allCities) {
         <div class="mt-4 grid gap-3 md:grid-cols-4">
           ${richer
             .map(
-              (row) => `<a class="rounded-2xl border border-blue-100 bg-white p-4 hover:border-blue-400" href="/pages/revenus/${row.slug}">
+              (
+                row,
+              ) => `<a class="rounded-2xl border border-blue-100 bg-white p-4 hover:border-blue-400" href="/pages/revenus/${row.slug}">
             <span class="font-semibold text-slate-950">${escapeHtml(row.cityName)}</span>
             <span class="mt-1 block text-sm text-slate-600">${formatEuro(row.disposableMedian)}</span>
           </a>`,
@@ -573,21 +604,24 @@ function pillarPage(cities) {
         </div>
       </section>
 
-      <section class="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <section class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-950">Classement des revenus médians des grandes villes</h2>
           <p class="mt-2 text-sm leading-relaxed text-slate-600">
             Le graphique ci-dessous montre l’écart de revenus entre les grandes villes du premier lot.
           </p>
-          ${chartBlock({
-            type: "bar",
-            title: "Revenu disponible médian",
-            label: "Revenu médian",
-            unit: "euro",
-            color: "emerald",
-            labels: sorted.map((row) => row.cityName),
-            values: sorted.map((row) => row.disposableMedian),
-          }, "mt-6 h-96")}
+          ${chartBlock(
+            {
+              type: "bar",
+              title: "Revenu disponible médian",
+              label: "Revenu médian",
+              unit: "euro",
+              color: "emerald",
+              labels: sorted.map((row) => row.cityName),
+              values: sorted.map((row) => row.disposableMedian),
+            },
+            "mt-6 h-64 md:h-80 lg:h-96",
+          )}
         </article>
         <aside class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-950">Réponse rapide</h2>
@@ -613,8 +647,56 @@ function pillarPage(cities) {
 
       <section id="classement" class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-950">Classement détaillé : annuel, mensuel et écart au panel</h2>
-        <div class="mt-5 overflow-x-auto">
-          <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
+        <style>
+          @media (max-width: 768px) {
+            .responsive-table {
+              display: block;
+              border: none;
+            }
+            .responsive-table thead {
+              display: none;
+            }
+            .responsive-table tbody {
+              display: block;
+            }
+            .responsive-table tr {
+              display: block;
+              margin-bottom: 1.5rem;
+              border: 1px solid #e2e8f0;
+              border-radius: 0.5rem;
+              padding: 1rem;
+              background-color: #f8fafc;
+            }
+            .responsive-table td {
+              display: block;
+              text-align: left;
+              padding: 0.5rem 0;
+              border: none;
+            }
+            .responsive-table td::before {
+              content: attr(data-label);
+              font-weight: 600;
+              color: #64748b;
+              display: block;
+              font-size: 0.75rem;
+              text-transform: uppercase;
+              margin-bottom: 0.25rem;
+            }
+            .responsive-table td:first-child {
+              font-size: 1.125rem;
+              font-weight: 700;
+              color: #0f172a;
+              padding-bottom: 0.75rem;
+              border-bottom: 1px solid #cbd5e1;
+              margin-bottom: 0.75rem;
+            }
+            .responsive-table td:first-child::before {
+              display: none;
+            }
+          }
+        </style>
+        <div class="mt-5 overflow-x-auto md:overflow-visible">
+          <table class="responsive-table min-w-full divide-y divide-slate-200 text-left text-sm">
             <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
               <tr>
                 <th class="px-4 py-3">Ville</th>
@@ -629,10 +711,10 @@ function pillarPage(cities) {
                 .map(
                   (city) => `<tr class="hover:bg-slate-50">
                 <td class="px-4 py-3 font-semibold text-slate-950">${escapeHtml(city.cityName)}</td>
-                <td class="px-4 py-3">${formatEuro(city.disposableMedian)}</td>
-                <td class="px-4 py-3">${formatEuro(city.disposableMedian / 12)}</td>
-                <td class="px-4 py-3">${formatSignedEuro(city.disposableMedian - panelMedian)}</td>
-                <td class="px-4 py-3"><a class="font-semibold text-blue-700 hover:text-blue-900" href="/pages/revenus/${city.slug}">Voir la ville</a></td>
+                <td class="px-4 py-3" data-label="Revenu annuel">${formatEuro(city.disposableMedian)}</td>
+                <td class="px-4 py-3" data-label="Équivalent mensuel">${formatEuro(city.disposableMedian / 12)}</td>
+                <td class="px-4 py-3" data-label="Vs médiane du panel">${formatSignedEuro(city.disposableMedian - panelMedian)}</td>
+                <td class="px-4 py-3" data-label="Fiche"><a class="font-semibold text-blue-700 hover:text-blue-900" href="/pages/revenus/${city.slug}">Voir la ville</a></td>
               </tr>`,
                 )
                 .join("")}
@@ -649,7 +731,9 @@ function pillarPage(cities) {
         <div class="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           ${sorted
             .map(
-              (city) => `<a href="/pages/revenus/${city.slug}" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50">
+              (
+                city,
+              ) => `<a href="/pages/revenus/${city.slug}" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50">
             <span class="text-lg font-bold text-slate-950">${escapeHtml(city.cityName)}</span>
             <span class="mt-2 block text-sm text-slate-600">Revenu disponible médian : <strong>${formatEuro(city.disposableMedian)}</strong></span>
             <span class="mt-1 block text-sm text-slate-600">D9/D1 : ${formatNumber(city.disposableD9D1, 1)}</span>
@@ -685,30 +769,36 @@ function pillarPage(cities) {
         </article>
       </section>
 
-      <section class="mt-8 grid gap-6 lg:grid-cols-2">
+      <section class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-950">Part de ménages imposés</h2>
-          ${chartBlock({
-            type: "bar",
-            title: "Ménages fiscaux imposés",
-            label: "Part imposée",
-            unit: "percent",
-            color: "blue",
-            labels: sorted.map((row) => row.cityName),
-            values: sorted.map((row) => row.taxedHouseholdShare),
-          }, "mt-6 h-80")}
+          ${chartBlock(
+            {
+              type: "bar",
+              title: "Ménages fiscaux imposés",
+              label: "Part imposée",
+              unit: "percent",
+              color: "blue",
+              labels: sorted.map((row) => row.cityName),
+              values: sorted.map((row) => row.taxedHouseholdShare),
+            },
+            "mt-6 h-64 md:h-80",
+          )}
         </article>
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold text-slate-950">Dispersion D9/D1</h2>
-          ${chartBlock({
-            type: "bar",
-            title: "Rapport D9/D1",
-            label: "D9/D1",
-            unit: "number",
-            color: "rose",
-            labels: sorted.map((row) => row.cityName),
-            values: sorted.map((row) => row.disposableD9D1),
-          }, "mt-6 h-80")}
+          ${chartBlock(
+            {
+              type: "bar",
+              title: "Rapport D9/D1",
+              label: "D9/D1",
+              unit: "number",
+              color: "rose",
+              labels: sorted.map((row) => row.cityName),
+              values: sorted.map((row) => row.disposableD9D1),
+            },
+            "mt-6 h-64 md:h-80",
+          )}
         </article>
       </section>
 
