@@ -96,6 +96,145 @@ const CITY_BUDGET_CASES = {
   },
 };
 
+const CITY_LOCAL_ANGLES = {
+  paris: {
+    hook: "Paris combine des revenus plus élevés et un logement nettement plus cher, ce qui change complètement le reste à vivre.",
+    compare: "Le vrai sujet n’est pas seulement le revenu médian, mais le rapport entre salaire, loyer et transports.",
+    target: "Les foyers parisiens doivent souvent arbitrer entre centralité, surface et budget mensuel.",
+  },
+  lyon: {
+    hook: "Lyon se situe souvent dans un équilibre intermédiaire, avec un niveau de revenu solide mais une pression locative réelle.",
+    compare: "La ville reste plus abordable que Paris, mais l’écart disparaît vite si le loyer grimpe.",
+    target: "Les ménages lyonnais doivent surtout surveiller le quartier et la taille du logement.",
+  },
+  marseille: {
+    hook: "Marseille peut offrir un reste à vivre plus confortable si le loyer reste mesuré, mais les écarts entre quartiers sont forts.",
+    compare: "Le revenu médian seul ne dit pas tout : le niveau de confort varie énormément selon l’adresse.",
+    target: "Les familles marseillaises doivent comparer centre, littoral et périphérie avant de juger le budget.",
+  },
+  toulouse: {
+    hook: "Toulouse reste souvent un compromis intéressant entre revenus, coût du logement et qualité de vie.",
+    compare: "La ville paraît plus accessible que Paris ou Nice, mais certaines zones deviennent vite chères.",
+    target: "Les jeunes actifs et familles toulousaines doivent surtout surveiller le loyer mensuel.",
+  },
+  nice: {
+    hook: "Nice cumule des revenus corrects et un logement souvent onéreux, surtout si l’on cherche la proximité mer et centre-ville.",
+    compare: "Le budget peut sembler confortable sur le papier puis se tendre à cause du prix du logement.",
+    target: "Les ménages niçois doivent intégrer les écarts de prix entre quartier central et périphérie.",
+  },
+  nantes: {
+    hook: "Nantes garde une image équilibrée, mais la tension locative peut vite modifier le budget réel.",
+    compare: "Le revenu médian est intermédiaire, donc le loyer fait souvent toute la différence.",
+    target: "Les locataires nantais doivent vérifier la stabilité du loyer avant de se projeter.",
+  },
+  montpellier: {
+    hook: "Montpellier est souvent attractive pour les revenus moyens, mais le logement peut absorber une part importante du budget.",
+    compare: "Le pouvoir d’achat y dépend beaucoup du type de logement et de la proximité des pôles d’emploi.",
+    target: "Les étudiants et jeunes actifs montpelliérains doivent regarder le reste à vivre après loyer.",
+  },
+  strasbourg: {
+    hook: "Strasbourg offre un niveau de revenu solide avec une vie locale qui reste soutenue par l’activité transfrontalière.",
+    compare: "Le budget peut être confortable si le logement est bien choisi et si les déplacements restent maîtrisés.",
+    target: "Les ménages strasbourgeois doivent intégrer les coûts de mobilité et le quartier de résidence.",
+  },
+  bordeaux: {
+    hook: "Bordeaux combine un niveau de revenu intéressant et une pression immobilière qui peut réduire le confort réel.",
+    compare: "Le revenu médian a de la valeur, mais le loyer peut vite absorber l’avantage.",
+    target: "Les foyers bordelais doivent arbitrer entre centre-ville, surface et budget mensuel.",
+  },
+  lille: {
+    hook: "Lille peut sembler plus accessible, mais le niveau de revenu médian reste sensible à la qualité du logement et à l’emploi.",
+    compare: "La ville est souvent plus respirable que Paris, à condition de ne pas surpayer le logement.",
+    target: "Les ménages lillois doivent surtout comparer loyer, transports et aides possibles.",
+  },
+};
+
+const CITY_LIVING_QUESTIONS = {
+  paris: {
+    smic: "Un SMIC à Paris reste possible, mais le budget se tend vite dès que le loyer dépasse ~1 000 €.",
+    comfort: "Pour viser un confort réel à Paris, il faut souvent ~3 200 € nets par mois, parfois davantage selon le quartier.",
+  },
+  lyon: {
+    smic: "À Lyon, un SMIC peut tenir si le loyer reste autour de ~850 € ou moins.",
+    comfort: "Pour être vraiment à l’aise à Lyon, il faut souvent viser ~2 600 € nets par mois.",
+  },
+  marseille: {
+    smic: "À Marseille, un SMIC peut rester jouable si le loyer tourne plutôt autour de ~700 €.",
+    comfort: "Un budget plus confortable à Marseille se situe souvent autour de ~2 200 € nets par mois.",
+  },
+  toulouse: {
+    smic: "À Toulouse, un SMIC peut couvrir les bases si le loyer reste proche de ~700 €.",
+    comfort: "Pour vivre confortablement à Toulouse, on regarde souvent ~2 300 € nets par mois.",
+  },
+  nice: {
+    smic: "À Nice, un SMIC devient vite serré si le loyer dépasse ~850 €.",
+    comfort: "Pour être confortable à Nice, il faut souvent viser ~2 600 € nets par mois, parfois plus.",
+  },
+  nantes: {
+    smic: "À Nantes, un SMIC reste plus respirable si le loyer se maintient autour de ~750 €.",
+    comfort: "Un revenu proche de ~2 300 € nets par mois donne souvent plus de marge à Nantes.",
+  },
+  montpellier: {
+    smic: "À Montpellier, un SMIC peut fonctionner si le loyer tourne autour de ~700 €.",
+    comfort: "Pour avoir plus de marge à Montpellier, on vise souvent ~2 150 € nets par mois.",
+  },
+  strasbourg: {
+    smic: "À Strasbourg, un SMIC peut suffire si le logement reste raisonnable, autour de ~700 €.",
+    comfort: "Un budget plus confortable à Strasbourg tourne souvent autour de ~2 200 € nets par mois.",
+  },
+  bordeaux: {
+    smic: "À Bordeaux, un SMIC devient vite serré si le loyer dépasse ~800 €.",
+    comfort: "Pour être vraiment à l’aise à Bordeaux, il faut souvent ~2 450 € nets par mois.",
+  },
+  lille: {
+    smic: "À Lille, un SMIC peut tenir si le loyer reste proche de ~650 €.",
+    comfort: "Pour plus de confort à Lille, on regarde souvent ~2 100 € nets par mois.",
+  },
+};
+
+const CITY_ZONE_HINTS = {
+  paris: {
+    expensive: "Les arrondissements centraux et l’ouest parisien tirent fortement le budget vers le haut.",
+    accessible: "La périphérie et certains secteurs bien desservis restent les options les moins tendues.",
+  },
+  lyon: {
+    expensive: "Le centre et les secteurs très demandés autour des transports restent plus coûteux.",
+    accessible: "Les quartiers plus éloignés ou certains secteurs périphériques offrent plus de marge.",
+  },
+  marseille: {
+    expensive: "Le littoral et certains quartiers centraux font vite monter le budget logement.",
+    accessible: "Des quartiers plus éloignés du centre permettent souvent de souffler davantage.",
+  },
+  toulouse: {
+    expensive: "Les zones proches du centre et des pôles d’emploi se tendent rapidement.",
+    accessible: "Les quartiers plus éloignés du centre restent souvent plus respirables.",
+  },
+  nice: {
+    expensive: "Le centre et la proximité mer font grimper les loyers sans surprise.",
+    accessible: "Les zones un peu plus éloignées du littoral restent plus jouables.",
+  },
+  nantes: {
+    expensive: "Les quartiers très demandés et proches du centre créent une vraie pression locative.",
+    accessible: "Les zones périphériques et moins centrales gardent un meilleur équilibre.",
+  },
+  montpellier: {
+    expensive: "Les secteurs étudiants et très recherchés peuvent vite absorber le budget.",
+    accessible: "Un peu d’éloignement du centre aide souvent à garder du confort.",
+  },
+  strasbourg: {
+    expensive: "Le centre et les zones très accessibles en transport restent les plus chers.",
+    accessible: "Les quartiers un peu plus éloignés permettent souvent de gagner en budget.",
+  },
+  bordeaux: {
+    expensive: "Le centre et les secteurs prisés par les familles restent particulièrement chers.",
+    accessible: "Les communes ou quartiers périphériques offrent souvent un meilleur équilibre.",
+  },
+  lille: {
+    expensive: "Le centre et les secteurs bien desservis restent les plus tendus.",
+    accessible: "Les quartiers moins centraux donnent souvent un peu d’air au budget.",
+  },
+};
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -186,7 +325,15 @@ function budgetCaseFor(city) {
 }
 
 function smicAnswer(city, budgetCase) {
+  const specific = CITY_LIVING_QUESTIONS[city.slug];
+  if (specific?.smic) return specific.smic;
   return `Oui, mais avec un budget serré si le loyer dépasse ${formatEuro(budgetCase.tightRent)}. À ${city.cityName}, un SMIC peut couvrir les dépenses de base, mais il faut surveiller le logement, les charges et les aides possibles.`;
+}
+
+function comfortAnswer(city, budgetCase) {
+  const specific = CITY_LIVING_QUESTIONS[city.slug];
+  if (specific?.comfort) return specific.comfort;
+  return `Pour vivre plus confortablement à ${city.cityName}, visez environ ${formatEuro(budgetCase.comfortIncome)} nets par mois si vous êtes seul, avec un loyer proche de ${formatEuro(budgetCase.rent)}.`;
 }
 
 function panelComparison(city, panelMedian) {
@@ -375,6 +522,11 @@ function cityPage(city, allCities) {
     .filter((row) => row.slug !== city.slug)
     .sort((a, b) => b.disposableMedian - a.disposableMedian)
     .slice(0, 4);
+  const angle = CITY_LOCAL_ANGLES[city.slug] || {
+    hook: `${city.cityName} a son propre équilibre entre revenus, logement et mobilité.`,
+    compare: `Le niveau de vie à ${city.cityName} dépend surtout du loyer et des dépenses fixes.`,
+    target: `Les foyers de ${city.cityName} doivent comparer revenu disponible et coût du logement.`,
+  };
 
   const body = `<main class="mx-auto max-w-6xl px-4 py-10">
       <section class="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-900 p-8 text-white shadow-xl">
@@ -476,7 +628,7 @@ function cityPage(city, allCities) {
           </p>
           <h3 class="mt-5 text-lg font-bold text-slate-950">Quel salaire pour vivre confortablement à ${escapeHtml(city.cityName)} ?</h3>
           <p class="mt-2 leading-relaxed text-slate-700">
-            Pour vivre plus confortablement à ${escapeHtml(city.cityName)}, visez environ ${formatEuro(budgetCase.comfortIncome)} nets par mois si vous êtes seul, avec un loyer proche de ${formatEuro(budgetCase.rent)}.
+            ${escapeHtml(comfortAnswer(city, budgetCase))}
             Ce seuil reste indicatif : il dépend du quartier, du transport, du foyer et des aides.
           </p>
           <div class="mt-5 flex flex-wrap gap-3">
@@ -484,6 +636,23 @@ function cityPage(city, allCities) {
             <a href="/pages/apl" class="rounded-xl border border-blue-200 bg-white px-5 py-3 font-semibold text-blue-800 hover:border-blue-400">Calculez vos aides à ${escapeHtml(city.cityName)} en 30 secondes</a>
           </div>
         </article>
+      </section>
+
+      <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-950">Ce qu’il faut retenir pour ${escapeHtml(city.cityName)}</h2>
+        <div class="mt-4 grid gap-4 md:grid-cols-3">
+          <p class="rounded-2xl bg-slate-50 p-4 text-slate-700">${escapeHtml(angle.hook)}</p>
+          <p class="rounded-2xl bg-slate-50 p-4 text-slate-700">${escapeHtml(angle.compare)}</p>
+          <p class="rounded-2xl bg-slate-50 p-4 text-slate-700">${escapeHtml(angle.target)}</p>
+        </div>
+      </section>
+
+      <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-950">Quartiers à surveiller à ${escapeHtml(city.cityName)}</h2>
+        <div class="mt-4 grid gap-4 md:grid-cols-2">
+          <p class="rounded-2xl bg-rose-50 p-4 text-slate-700">${escapeHtml((CITY_ZONE_HINTS[city.slug] || {}).expensive || "Les quartiers les plus demandés font souvent monter les loyers.")}</p>
+          <p class="rounded-2xl bg-emerald-50 p-4 text-slate-700">${escapeHtml((CITY_ZONE_HINTS[city.slug] || {}).accessible || "Les secteurs plus éloignés du centre gardent souvent un meilleur équilibre budget/logement.")}</p>
+        </div>
       </section>
 
       <section id="graphiques" class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
