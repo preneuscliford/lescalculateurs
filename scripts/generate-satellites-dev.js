@@ -95,13 +95,13 @@ function main() {
 
     const defaultPillarKey = detectPillarKeyFromFileName(fileName);
     const plannedPillarKeys = new Set([defaultPillarKey]);
-    const renderedPages = pages.map((p, idx) => {
+    const renderedPages = dedupePagesBySlug(pages.map((p, idx) => {
       const slug = slugify(p.title || `page-${p.number || idx + 1}`);
       const pillarKey = defaultPillarKey === "aide" ? "aide" : p.pillarKeyOverride || defaultPillarKey;
       plannedPillarKeys.add(pillarKey);
       const pillar = pillarConfigs[pillarKey] || pillarConfigs.simulateurs;
       return { ...p, slug, pillarKey, pillar, idx };
-    }).filter((p) => getAllowedSatelliteSlugs(p.pillarKey).has(p.slug));
+    }).filter((p) => getAllowedSatelliteSlugs(p.pillarKey).has(p.slug)));
 
     plannedPillarKeys.forEach((pillarKey) => {
       const outDir = path.join(srcPagesDir, pillarKey);
@@ -480,6 +480,18 @@ function slugify(input) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "")
     .replace(/-{2,}/g, "-");
+}
+
+function dedupePagesBySlug(pages) {
+  const seen = new Set();
+  const deduped = [];
+  for (const page of pages) {
+    const slug = String(page?.slug || "").trim();
+    if (!slug || seen.has(slug)) continue;
+    seen.add(slug);
+    deduped.push(page);
+  }
+  return deduped;
 }
 
 function renderSatelliteHtmlDev({ page, relatedPage }) {

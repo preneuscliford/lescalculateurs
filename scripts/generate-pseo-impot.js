@@ -102,7 +102,7 @@ function sharedTagScore(left, right) {
 }
 
 async function main() {
-  const sanitizedScenarios = impotPilotScenarios.map(sanitizeImpotScenario);
+  const sanitizedScenarios = dedupeBySlug(impotPilotScenarios.map(sanitizeImpotScenario));
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedPages(outputDir, new Set(sanitizedScenarios.map((item) => item.slug)));
 
@@ -154,6 +154,18 @@ async function main() {
 }
 
 main();
+
+function dedupeBySlug(items) {
+  const seen = new Set();
+  const deduped = [];
+  for (const item of items) {
+    const slug = String(item?.slug || "").trim();
+    if (!slug || seen.has(slug)) continue;
+    seen.add(slug);
+    deduped.push(item);
+  }
+  return deduped;
+}
 
 function formatApproxEuro(value) {
   return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} EUR`;
