@@ -16,10 +16,10 @@ const salaireConfig = {
       min: 500,
       step: 1,
       quickValues: [
-        { label: "1 800 € Non-cadre", value: 1800 },
-        { label: "1 800 € Cadre", value: 1800 },
-        { label: "2 500 € Non-cadre", value: 2500 },
-        { label: "2 500 € Cadre", value: 2500 },
+        { label: "SMIC", value: 1800 },
+        { label: "Moyen", value: 2500 },
+        { label: "Élevé", value: 4000 },
+        { label: "Très élevé", value: 6000 },
       ],
     },
     {
@@ -30,10 +30,6 @@ const salaireConfig = {
       options: [
         { value: "non_cadre", label: "Non‑cadre" },
         { value: "cadre", label: "Cadre" },
-      ],
-      quickValues: [
-        { label: "Non-cadre", value: "non_cadre" },
-        { label: "Cadre", value: "cadre" },
       ],
     },
     {
@@ -459,27 +455,23 @@ document.querySelectorAll(".preset-situation-btn").forEach((btn) => {
     const pas = (btn as HTMLElement).getAttribute("data-pas");
 
     if (brut && statut && pas !== null) {
-      const form = document.querySelector("#salaire-calculator form") as HTMLFormElement | null;
-      const brutInput = document.querySelector("#brut") as HTMLInputElement | null;
-      const statutSelect = document.querySelector("#statut") as HTMLSelectElement | null;
-      const pasInput = document.querySelector("#taux_pas") as HTMLInputElement | null;
+      // Trigger calculator update by simulating form fill
+      const calculator = (window as any)["CalculatorFrame_salaire-calculator"];
+      if (calculator) {
+        // Update the form fields directly
+        const brutInput = document.querySelector('[id="brut"]') as HTMLInputElement;
+        const statutSelect = document.querySelector('[id="statut"]') as HTMLSelectElement;
+        const pasInput = document.querySelector('[id="taux_pas"]') as HTMLInputElement;
 
-      if (!form || !brutInput || !statutSelect || !pasInput) return;
+        if (brutInput) brutInput.value = brut;
+        if (statutSelect) statutSelect.value = statut;
+        if (pasInput) pasInput.value = pas;
 
-      brutInput.value = brut;
-      statutSelect.value = statut;
-      pasInput.value = pas;
-
-      brutInput.dispatchEvent(new Event("input", { bubbles: true }));
-      brutInput.dispatchEvent(new Event("change", { bubbles: true }));
-      statutSelect.dispatchEvent(new Event("change", { bubbles: true }));
-      pasInput.dispatchEvent(new Event("input", { bubbles: true }));
-      pasInput.dispatchEvent(new Event("change", { bubbles: true }));
-
-      if (typeof form.requestSubmit === "function") {
-        form.requestSubmit();
-      } else {
-        form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+        // Find and click the calculate button
+        const calculateBtn = document.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (calculateBtn) {
+          calculateBtn.click();
+        }
       }
     }
   });
