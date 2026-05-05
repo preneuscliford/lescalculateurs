@@ -4,14 +4,14 @@
  */
 
 // PLAFOND STRICT AAH 2026 - Ne jamais dépasser
-// Source : Décret du 29 mars 2025 - applicable au 1er avril 2025
-const AAH_PLAFOND_2026 = 1033.32; // Montant maximum AAH versé (taux plein)
+// Source : Décret du 29 mars 2025 - applicable au 1er mai 2026 (revalorisation +0,9%)
+const AAH_PLAFOND_2026 = 1041.59; // Montant maximum AAH versé (taux plein)
 
 // Montants de référence CAF
 // Note : Depuis la déconjugalisation (oct 2023), seul le montant "seul" est pertinent
 const AAH_MONTANTS_2026 = {
-  seul: 1033.32,  // Taux plein (sans revenus)
-  couple: 1033.32, // Identique depuis déconjugalisation
+  seul: 1041.59, // Taux plein (sans revenus) - Revalorisation +0,9% appliquée
+  couple: 1041.59, // Identique depuis déconjugalisation
 };
 
 // Seuils d'incapacité
@@ -48,11 +48,7 @@ export interface AAHResult {
  */
 export function calculerAAH(data: AAHCalculData): AAHResult {
   // Validation
-  if (
-    !data.situation ||
-    !data.logement ||
-    data.tauxIncapacite < AAH_SEUIL_MIN_INCAPACITE
-  ) {
+  if (!data.situation || !data.logement || data.tauxIncapacite < AAH_SEUIL_MIN_INCAPACITE) {
     return {
       success: false,
       montantEstime: 0,
@@ -150,9 +146,7 @@ export function formatAAHResult(result: AAHResult): {
   explDisplay: string;
 } {
   const montantDisplay =
-    result.montantEstime > 0
-      ? `${Math.round(result.montantEstime)}€ / mois`
-      : "Non éligible";
+    result.montantEstime > 0 ? `${Math.round(result.montantEstime)}€ / mois` : "Non éligible";
 
   const explDisplay = result.explication;
 

@@ -1267,6 +1267,7 @@
     <script type="module" src="../main.ts"></script>
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
+      import { CofidisWidget } from "../components/CofidisWidget.ts";
       import { formatCurrency } from "../main.ts";
 
       let chartInstance = null;
@@ -1900,6 +1901,7 @@
       // Initialisation
       new CalculatorFrame("calculator-container", pretConfig);
 
+      // Initialiser le widget COFIDIS après le DOM
       // Fonction pour remplir le formulaire avec les données de l'exemple
       function remplirFormulaireExemple(revenus1, charges, duree, taux) {
         // Remplir les champs
