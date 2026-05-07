@@ -96,3 +96,30 @@ export function calculerARE(data: AREData): AREResult {
   };
 }
 
+export function formatAREResult(result: AREResult): {
+  montantDisplay: string;
+  explDisplay: string;
+  detailsDisplay: string;
+} {
+  const formatMonnaie = (montant: number) => {
+    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+  };
+
+  const montantDisplay =
+    result.eligible && result.montantEstime > 0
+      ? `${formatMonnaie(result.montantEstime)} / mois`
+      : "Non eligible";
+
+  const detailsDisplay = `
+    • Taux de remplacement : ${(result.details.tauxRemplacement * 100).toFixed(1)}%
+    • Durée maximum : ${result.durationMax} mois
+    • = Montant mensuel estimé : ${formatMonnaie(result.montantEstime)}
+  `.trim().split('\n').filter(l => l.trim()).join('\n');
+
+  return {
+    montantDisplay,
+    explDisplay: result.explication,
+    detailsDisplay,
+  };
+}
+

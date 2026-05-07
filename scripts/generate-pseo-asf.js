@@ -121,7 +121,7 @@ function formatApproxEuro(value) {
 }
 
 function formatApproxEuroSafe(value) {
-  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} EUR`;
+  return `~${(Number(value) || 0).toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} EUR`;
 }
 
 function formatDisplayDate(date) {

@@ -3,7 +3,7 @@
  * Chômage benefits via France Travail
  */
 
-import { calculerARE, type AREData } from "../../utils/areCalculEngine";
+import { calculerARE, formatAREResult, type AREData } from "../../utils/areCalculEngine";
 
 const form = document.getElementById("are-form") as HTMLFormElement;
 const resultDiv = document.getElementById("are-result") as HTMLDivElement;
@@ -65,6 +65,7 @@ if (form) {
     const result = calculerARE(data);
     console.log("ARE Calculation Result:", result);
 
+    const formatted = formatAREResult(result);
     const montantDisplay = document.getElementById("are-montant") as HTMLElement;
     const explicationDisplay = document.getElementById("are-explication") as HTMLElement;
 
@@ -72,14 +73,23 @@ if (form) {
     console.log("Explication Display Element:", explicationDisplay);
 
     if (montantDisplay) {
-      montantDisplay.textContent = result.eligible
-        ? `${result.montantEstime.toFixed(2)}€/mois`
-        : "---";
+      montantDisplay.textContent = formatted.montantDisplay;
       console.log("Montant set to:", montantDisplay.textContent);
     }
     if (explicationDisplay) {
-      explicationDisplay.textContent = result.explication;
+      explicationDisplay.textContent = formatted.explDisplay;
       console.log("Explication set to:", explicationDisplay.textContent);
+    }
+
+    // Affichage du bloc détails
+    const detailsDiv = document.getElementById("are-details");
+    const detailsContent = document.getElementById("are-details-content");
+    if (detailsDiv && detailsContent) {
+      detailsContent.innerHTML = formatted.detailsDisplay
+        .split('\n')
+        .map(line => `<div>${line}</div>`)
+        .join('');
+      detailsDiv.classList.remove("hidden");
     }
 
     if (resultDiv) {

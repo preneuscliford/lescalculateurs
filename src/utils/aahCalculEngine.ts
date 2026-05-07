@@ -144,14 +144,28 @@ export function calculerAAH(data: AAHCalculData): AAHResult {
 export function formatAAHResult(result: AAHResult): {
   montantDisplay: string;
   explDisplay: string;
+  detailsDisplay: string;
 } {
+  const formatMonnaie = (montant: number) => {
+    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+  };
+
   const montantDisplay =
-    result.montantEstime > 0 ? `${Math.round(result.montantEstime)}€ / mois` : "Non éligible";
+    result.montantEstime > 0 
+      ? `${formatMonnaie(result.montantEstime)} / mois` 
+      : "Non éligible";
+
+  const detailsDisplay = `
+    • Montant de base AAH : ${formatMonnaie(result.details.montantBase)}
+    ${result.details.revenusComptabilises > 0 ? `• Revenus déclarés : -${formatMonnaie(result.details.revenusComptabilises)}` : ''}
+    • = Montant estimé : ${formatMonnaie(result.details.montantFinal)}
+  `.trim().split('\n').filter(l => l.trim()).join('\n');
 
   const explDisplay = result.explication;
 
   return {
     montantDisplay,
     explDisplay,
+    detailsDisplay,
   };
 }

@@ -3,7 +3,7 @@
  * Single parent and orphan support
  */
 
-import { calculerASF, type ASFData } from "../../utils/asfCalculEngine";
+import { calculerASF, formatASFResult, type ASFData } from "../../utils/asfCalculEngine";
 
 const form = document.getElementById("asf-form") as HTMLFormElement;
 const resultDiv = document.getElementById("asf-result") as HTMLDivElement;
@@ -65,16 +65,26 @@ if (form) {
 
     const result = calculerASF(data);
 
+    const formatted = formatASFResult(result);
     const montantDisplay = document.getElementById("asf-montant") as HTMLElement;
     const explicationDisplay = document.getElementById("asf-explication") as HTMLElement;
 
     if (montantDisplay) {
-      montantDisplay.textContent = result.eligible
-        ? `${result.montantEstime.toFixed(2)}€/mois`
-        : "---";
+      montantDisplay.textContent = formatted.montantDisplay;
     }
     if (explicationDisplay) {
-      explicationDisplay.textContent = result.explication;
+      explicationDisplay.textContent = formatted.explDisplay;
+    }
+
+    // Affichage du bloc détails
+    const detailsDiv = document.getElementById("asf-details");
+    const detailsContent = document.getElementById("asf-details-content");
+    if (detailsDiv && detailsContent) {
+      detailsContent.innerHTML = formatted.detailsDisplay
+        .split('\n')
+        .map(line => `<div>${line}</div>`)
+        .join('');
+      detailsDiv.classList.remove("hidden");
     }
 
     resultDiv.classList.remove("invisible");

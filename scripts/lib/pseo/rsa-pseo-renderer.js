@@ -144,7 +144,7 @@ function normalizeInlineApproxEuro(value) {
   return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
     const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
     if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
-    return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
+    return `${prefix}~${numeric.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} EUR`;
   });
 }
 

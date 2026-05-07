@@ -61,3 +61,30 @@ export function calculerASF(data: ASFData): ASFResult {
   };
 }
 
+export function formatASFResult(result: ASFResult): {
+  montantDisplay: string;
+  explDisplay: string;
+  detailsDisplay: string;
+} {
+  const formatMonnaie = (montant: number) => {
+    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+  };
+
+  const montantDisplay =
+    result.eligible && result.montantEstime > 0
+      ? `${formatMonnaie(result.montantEstime)} / mois`
+      : "Non éligible";
+
+  const detailsDisplay = `
+    • Montant par enfant : ${formatMonnaie(result.details.montantParEnfant)}
+    • Nombre d'enfants éligibles : ${result.details.nombreEnfantsEligibles}
+    • = Montant total estimé : ${formatMonnaie(result.montantEstime)}
+  `.trim().split('\n').filter(l => l.trim()).join('\n');
+
+  return {
+    montantDisplay,
+    explDisplay: result.explication,
+    detailsDisplay,
+  };
+}
+

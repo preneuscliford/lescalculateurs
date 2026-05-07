@@ -20,6 +20,8 @@ const typeActiviteSelect = document.getElementById("prime-type-activite") as HTM
 const resultDiv = document.getElementById("prime-result") as HTMLDivElement;
 const montantDisplay = document.getElementById("prime-montant") as HTMLElement;
 const explDisplay = document.getElementById("prime-explication") as HTMLElement;
+const detailsDiv = document.getElementById("prime-details") as HTMLDivElement;
+const detailsContent = document.getElementById("prime-details-content") as HTMLDivElement;
 
 // Bouton de scroll
 const scrollButton = document.getElementById("prime-scroll-to-form") as HTMLButtonElement;
@@ -78,6 +80,17 @@ form.addEventListener("submit", (e) => {
     const formatted = formatPrimeActiviteResult(result);
     montantDisplay.textContent = formatted.montantDisplay;
     explDisplay.textContent = formatted.explDisplay;
+
+    // Affichage des détails
+    if (formatted.detailsDisplay) {
+      detailsContent.innerHTML = formatted.detailsDisplay
+        .split('\n')
+        .map(line => `<div>${line}</div>`)
+        .join('');
+      detailsDiv.classList.remove("hidden");
+    } else {
+      detailsDiv.classList.add("hidden");
+    }
 
     // Affichage du bloc résultat
     resultDiv.classList.remove("invisible");

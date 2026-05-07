@@ -93,7 +93,7 @@ function normalizeInlineApproxEuro(value) {
 
       const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
       if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
-      return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
+      return `${prefix}~${numeric.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} EUR`;
     },
   );
 

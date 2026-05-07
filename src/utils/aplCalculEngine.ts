@@ -308,3 +308,37 @@ export const MESSAGES_PEDAGOGIQUES = {
 
   cta_caf: "Pour connaître votre droit réel, consultez la CAF.",
 };
+
+export function formatAPLResult(result: APLResult): {
+  montantDisplay: string;
+  explDisplay: string;
+  detailsDisplay: string;
+} {
+  const formatMonnaie = (montant: number) => {
+    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+  };
+
+  if (!result.success || !result.data) {
+    return {
+      montantDisplay: "Non calculable",
+      explDisplay: result.error || "Erreur dans le calcul",
+      detailsDisplay: "",
+    };
+  }
+
+  const montantDisplay = `${formatMonnaie(result.data.apl_estimee)} / mois`;
+
+  const detailsDisplay = `
+    • Loyer mensuel : ${formatMonnaie(result.data.loyer_mensuel)}
+    • Loyer pris en compte (plafonné) : ${formatMonnaie(result.data.loyer_pris_compte)}
+    • Participation personnelle : ${formatMonnaie(result.data.participation)}
+    • Forfait logement : ${formatMonnaie(result.data.forfait_logement)}
+    • = APL estimée : ${formatMonnaie(result.data.apl_estimee)}
+  `.trim().split('\n').filter(l => l.trim()).join('\n');
+
+  return {
+    montantDisplay,
+    explDisplay: "Allocation personnalisée au logement (APL) estimée selon les barèmes CAF actuels.",
+    detailsDisplay,
+  };
+}

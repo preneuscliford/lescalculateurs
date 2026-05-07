@@ -43,6 +43,17 @@ form.addEventListener("submit", (e) => {
     montantDisplay.textContent = formatted.montantDisplay;
     explDisplay.textContent = formatted.explDisplay;
 
+    // Affichage du bloc détails
+    const detailsDiv = document.getElementById("aah-details");
+    const detailsContent = document.getElementById("aah-details-content");
+    if (detailsDiv && detailsContent) {
+      detailsContent.innerHTML = formatted.detailsDisplay
+        .split('\n')
+        .map(line => `<div>${line}</div>`)
+        .join('');
+      detailsDiv.classList.remove("hidden");
+    }
+
     // Affichage du bloc résultat
     resultDiv.classList.remove("invisible");
     resultDiv.scrollIntoView({ behavior: "smooth" });
