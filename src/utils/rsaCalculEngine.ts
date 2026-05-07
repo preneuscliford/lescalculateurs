@@ -116,13 +116,28 @@ export function calculerRSA(data: RSACalculData): RSAResult {
 export function formatRSAResult(result: RSAResult): {
   montantDisplay: string;
   explDisplay: string;
+  detailsDisplay: string;
 } {
+  const formatMonnaie = (montant: number) => {
+    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+  };
+
+  const montantDisplay =
+    result.montantEstime > 0
+      ? `${formatMonnaie(result.montantEstime)} / mois`
+      : "Non eligible";
+
+  const detailsDisplay = `
+    • Montant de base : ${formatMonnaie(result.details.montantBase)}
+    ${result.details.revenusPris > 0 ? `• Revenus pris en compte : -${formatMonnaie(result.details.revenusPris)}` : ''}
+    ${result.details.forfaitLogement > 0 ? `• Forfait logement : -${formatMonnaie(result.details.forfaitLogement)}` : ''}
+    • = Montant estimé : ${formatMonnaie(result.details.montantFinal)}
+  `.trim().split('\n').filter(l => l.trim()).join('\n');
+
   return {
-    montantDisplay:
-      result.montantEstime > 0
-        ? `${Math.round(result.montantEstime)} EUR / mois`
-        : "Non eligible",
+    montantDisplay,
     explDisplay: result.explication,
+    detailsDisplay,
   };
 }
 

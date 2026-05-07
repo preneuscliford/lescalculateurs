@@ -32,8 +32,8 @@ function revalorise(value: number): number {
 
 export const socialBaremes = {
   rsa: {
-    version: "2026.04",
-    dateEffet: "2026-04-01",
+    version: "2026.05",
+    dateEffet: "2026-05-01",
     sourceUrl:
       "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026",
     sourceUrls: [
@@ -58,8 +58,8 @@ export const socialBaremes = {
     revenusActivitePrisEnCompte: 0.62,
   },
   primeActivite: {
-    version: "2026.04",
-    dateEffet: "2026-04-01",
+    version: "2026.05",
+    dateEffet: "2026-05-01",
     sourceUrl:
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite",
     sourceUrls: [
@@ -99,8 +99,8 @@ export const socialBaremes = {
     montantMinimumVerse: 15,
   },
   asf: {
-    version: "2026.04",
-    dateEffet: "2026-04-01",
+    version: "2026.05",
+    dateEffet: "2026-05-01",
     sourceUrl:
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf",
     sourceUrls: [

@@ -21,6 +21,8 @@ const activiteSelect = document.getElementById("rsa-activite") as HTMLSelectElem
 const resultDiv = document.getElementById("rsa-result") as HTMLDivElement;
 const montantDisplay = document.getElementById("rsa-montant") as HTMLElement;
 const explDisplay = document.getElementById("rsa-explication") as HTMLElement;
+const detailsDiv = document.getElementById("rsa-details") as HTMLDivElement;
+const detailsContent = document.getElementById("rsa-details-content") as HTMLDivElement;
 
 // Bouton de scroll
 const scrollButton = document.getElementById("rsa-scroll-to-form") as HTMLButtonElement;
@@ -69,6 +71,17 @@ form.addEventListener("submit", (e) => {
     const formatted = formatRSAResult(result);
     montantDisplay.textContent = formatted.montantDisplay;
     explDisplay.textContent = formatted.explDisplay;
+    
+    // Affichage des détails
+    if (formatted.detailsDisplay) {
+      detailsContent.innerHTML = formatted.detailsDisplay
+        .split('\n')
+        .map(line => `<div>${line}</div>`)
+        .join('');
+      detailsDiv.classList.remove("hidden");
+    } else {
+      detailsDiv.classList.add("hidden");
+    }
 
     // Affichage du bloc résultat
     resultDiv.classList.remove("invisible");
