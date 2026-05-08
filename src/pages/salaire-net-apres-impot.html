@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur Salaire NET après impôts 2026 - Calcul réel | Les Calculateurs</title>
+    <meta
+      name="description"
+      content="Simulateur Salaire NET 2026 : calculez votre salaire réel après impôts, prélèvement à la source et cotisations sociales. Estimation précise conforme aux barèmes 2026."
+    />
+    <meta
+      name="keywords"
+      content="simulateur salaire net, calcul salaire net, salaire net après impôts, prélèvement à la source, cotisations sociales, simulateur net brut, calculateur salaire, barèmes 2026, salaire net 2026"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/salaire-net-apres-impot" />
+    <meta
+      property="og:url"
+      content="https://www.lescalculateurs.fr/pages/salaire-net-apres-impot"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Simulateur Salaire NET après impôts 2026 - Calcul réel | Les Calculateurs"
+    />
+    <meta
+      property="og:description"
+      content="Simulateur Salaire NET 2026 : calculez votre salaire réel après impôts, prélèvement à la source et cotisations sociales."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Simulateur Salaire NET après impôts 2026 - Calcul réel | Les Calculateurs"
+    />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module">
+      import "/pages/scripts/salaire-net-apres-impot-script.ts";
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://www.lescalculateurs.fr"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Simulateurs",
+            "item": "https://www.lescalculateurs.fr/pages/simulateurs"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Salaire NET 2026",
+            "item": "https://www.lescalculateurs.fr/pages/salaire-net-apres-impot"
+          }
+        ]
+      }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur Salaire NET après impôts 2026",
+        "alternateName": [
+          "Calculateur salaire net",
+          "Simulation salaire net",
+          "Estimation NET brut"
+        ],
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "dateModified": "2026-05-08",
+        "publisher": {
+          "@type": "Organization",
+          "name": "LesCalculateurs.fr",
+          "url": "https://www.lescalculateurs.fr"
+        }
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment se calcule le prélèvement à la source ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le PAS est un impôt retenu sur salaire selon quotient familial et tranches d'imposition. En 2026, les taux vont de 0% à 45% selon revenus et composition familiale."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+
+  <body class="bg-gradient-to-b from-slate-50 to-slate-100">
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumbs text-sm mb-6" aria-label="Fil d'Ariane">
+        <ul class="flex items-center gap-2 text-gray-600">
+          <li><a href="/" class="text-blue-600 hover:text-blue-800 font-medium">Accueil</a></li>
+          <li class="text-gray-400">›</li>
+          <li>
+            <a href="/pages/simulateurs" class="text-blue-600 hover:text-blue-800 font-medium"
+              >Simulateurs</a
+            >
+          </li>
+          <li class="text-gray-400">›</li>
+          <li class="text-gray-600">Salaire NET après impôts 2026</li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="mb-12">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="badge badge-info">Finances personnelles</div>
+          <div class="badge badge-ghost text-xs">Mis a jour mai 2026</div>
+        </div>
+        <h1 class="text-4xl font-bold text-gray-900 mb-3">Salaire NET après impôts 2026</h1>
+        <p class="text-xl text-gray-700">
+          Salaire brut, loyer, credits, aides et depenses : decouvrez votre situation reelle en
+          quelques secondes.
+        </p>
+      </section>
+
+      <!-- Multi-Step Form -->
+      <section class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
+        <!-- Progress Bar -->
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-sm font-semibold text-gray-700"
+              >Etape <span id="current-step">1</span> / 3</span
+            >
+            <button type="button" id="load-saved" class="text-xs text-blue-600 hover:text-blue-800">
+              Charger ma simulation
+            </button>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div id="progress-bar" class="bg-blue-600 h-2 rounded-full" style="width: 33%"></div>
+          </div>
+        </div>
+
+        <form id="salaire-form" class="space-y-8">
+          <!-- Step 1: Revenus -->
+          <fieldset id="step-1" class="border-l-4 border-blue-500 pl-6 space-y-6">
+            <legend class="text-lg font-bold text-gray-900 mb-6">Etape 1 : Vos revenus</legend>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Salaire brut mensuel (EUR)</label
+                >
+                <input
+                  type="number"
+                  name="salaireBrut"
+                  min="0"
+                  step="100"
+                  value="2500"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">Avant prélèvements et cotisations</p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Primes mensuelles (EUR)</label
+                >
+                <input
+                  type="number"
+                  name="primes"
+                  min="0"
+                  step="50"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">Bonus, gratifications, commissions</p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Heures supplementaires (EUR)</label
+                >
+                <input
+                  type="number"
+                  name="heuresSup"
+                  min="0"
+                  step="50"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">Heures supplementaires mensuelles</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Step 2: Situation Familiale -->
+          <fieldset id="step-2" class="border-l-4 border-green-500 pl-6 space-y-6 hidden">
+            <legend class="text-lg font-bold text-gray-900 mb-6">
+              Etape 2 : Votre situation familiale
+            </legend>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Situation familiale</label
+                >
+                <select name="mariageOrPacs" class="select select-bordered w-full px-3 py-2">
+                  <option value="false">Celibataire</option>
+                  <option value="true">Marie(e) / PACS</option>
+                </select>
+                <p class="text-xs text-gray-500 mt-1">Affecte votre quotient familial</p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Nombre d enfants a charge</label
+                >
+                <input
+                  type="number"
+                  name="enfants"
+                  min="0"
+                  max="10"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">Réduit significativement vos impôts</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Step 3: Avantages -->
+          <fieldset id="step-3" class="border-l-4 border-purple-500 pl-6 space-y-6 hidden">
+            <legend class="text-lg font-bold text-gray-900 mb-6">
+              Etape 3 : Avantages non-imposables
+            </legend>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Tickets restaurant mensuels (EUR)</label
+                >
+                <input
+                  type="number"
+                  name="ticketsResto"
+                  min="0"
+                  step="10"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">Non-imposables jusqu a limites legales</p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Mutuelle prise en charge (EUR)</label
+                >
+                <input
+                  type="number"
+                  name="mutuelle"
+                  min="0"
+                  step="10"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">Non-imposable</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Navigation Buttons -->
+          <div class="flex gap-4 justify-between">
+            <button type="button" id="prev-btn" class="btn btn-neutral hidden text-blue-500">
+              Précédent
+            </button>
+            <button type="button" id="next-btn" class="btn btn-primary text-blue-500">
+              Suivant
+            </button>
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn btn-success hidden text-blue-600 font-bold"
+            >
+              Calculer mon salaire NET
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Section - Enriched -->
+      <section id="salaire-results" class="hidden mb-12">
+        <!-- Main Result Card -->
+        <div
+          class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg shadow-md p-8 mb-8 border-2 border-blue-200"
+        >
+          <p class="text-sm text-gray-600 mb-2">Votre salaire NET estimé :</p>
+          <div class="flex items-baseline gap-4">
+            <p id="salaire-montant" class="text-5xl font-bold text-blue-600">-</p>
+            <div>
+              <p id="salaire-explication" class="text-lg text-gray-700">-</p>
+              <p class="text-sm text-gray-600 mt-1">Après cotisations, impôts et prélèvements</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-blue-50 rounded-lg p-6 border border-blue-100">
+            <h3 class="text-sm font-semibold text-gray-700 mb-2">Taux effectif</h3>
+            <p id="salaire-taux" class="text-3xl font-bold text-blue-600">-</p>
+            <p class="text-xs text-gray-600 mt-2">Pourcentage du salaire brut</p>
+          </div>
+          <div class="bg-green-50 rounded-lg p-6 border border-green-100">
+            <h3 class="text-sm font-semibold text-gray-700 mb-2">Annuel estimé</h3>
+            <p id="salaire-annuel" class="text-3xl font-bold text-green-600">-</p>
+            <p class="text-xs text-gray-600 mt-2">NET x 12 mois</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-6 border border-purple-100">
+            <h3 class="text-sm font-semibold text-gray-700 mb-2">Impact budget</h3>
+            <p id="salaire-pourcent" class="text-3xl font-bold text-purple-600">-</p>
+            <p class="text-xs text-gray-600 mt-2">% du revenu</p>
+          </div>
+        </div>
+
+        <!-- Breakdown Visualization -->
+        <div class="bg-white rounded-lg p-6 border border-gray-200 mb-8">
+          <h3 class="text-lg font-bold text-gray-900 mb-6">Ventilation de votre salaire</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-semibold text-gray-700">Salaire brut</span>
+                <span id="breakdown-brut" class="text-sm font-bold text-gray-900">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                <div class="bg-blue-600 h-3" style="width: 100%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-semibold text-gray-700">- Cotisations sociales</span>
+                <span id="breakdown-cotisations" class="text-sm font-bold text-red-600">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div id="breakdown-cotisations-bar" class="bg-red-500 h-3"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-semibold text-gray-700"
+                  >- Impôt prélèvement à la source</span
+                >
+                <span id="breakdown-impot" class="text-sm font-bold text-orange-600">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div id="breakdown-impot-bar" class="bg-orange-500 h-3"></div>
+              </div>
+            </div>
+            <div class="border-t border-gray-300 pt-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-bold text-gray-900">= Salaire NET</span>
+                <span id="breakdown-net" class="text-lg font-bold text-green-600">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div id="breakdown-net-bar" class="bg-green-600 h-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suggestions -->
+        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-lg mb-8">
+          <h3 class="font-bold text-gray-900 mb-3">Suggestions pour augmenter votre NET</h3>
+          <ul id="suggestions-list" class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">+</span>
+              <span>Verifiez votre quotient familial aupres de l administration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">+</span>
+              <span>Negociez les avantages non-imposables : tickets resto, mutuelle</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Detailed Breakdown -->
+        <div id="salaire-details" class="bg-blue-50 p-4 rounded border-l-4 border-blue-500 mb-8">
+          <p class="text-sm font-semibold text-gray-800 mb-3">Détail du calcul :</p>
+          <div
+            class="text-sm text-gray-700 space-y-1 font-mono bg-white p-3 rounded"
+            id="salaire-details-content"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="bg-amber-50 rounded-lg p-6 mb-8 border-l-4 border-amber-500">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">🔗 Allez plus loin avec vos finances</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Comprendre votre pouvoir d'achat</h3>
+            <p class="text-sm text-gray-700 mb-3">
+              Calculez ce qu'il vous reste pour vivre après tous vos frais :
+            </p>
+            <a
+              href="/pages/reste-a-vivre"
+              class="text-blue-600 hover:text-blue-800 font-semibold text-sm"
+              >Simulateur Reste à vivre →</a
+            >
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Avez-vous droit à des aides ?</h3>
+            <p class="text-sm text-gray-700 mb-3">
+              Votre salaire peut ouvrir droit à des allocations :
+            </p>
+            <a
+              href="/pages/prime-activite"
+              class="text-blue-600 hover:text-blue-800 font-semibold text-sm"
+              >Prime d'Activité →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Info Banner -->
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8">
+        <p class="text-blue-800 text-sm">
+          <strong>📌 Estimation indicative :</strong> Cette estimation ne remplace pas un conseil
+          fiscal personnalisé. Pour un calcul précis, consultez
+          <a href="https://www.impots.gouv.fr" target="_blank" class="underline hover:no-underline"
+            >impots.gouv.fr</a
+          >.
+        </p>
+      </div>
+
+      <!-- FAQ Table -->
+      <section class="mb-10 rounded-lg border border-blue-100 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+          <span class="mr-2">📊</span>Barèmes salaire net 2026 : taux et montants par situation
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-blue-100">
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">
+                  Situation
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">
+                  Salaire brut
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">
+                  Cotisations
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">
+                  Impôt PAS
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">
+                  Net estimé
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-blue-100">
+                <td class="p-3 text-gray-900"><strong>Célibataire, 0 enfant</strong></td>
+                <td class="p-3 text-gray-900">2 500€</td>
+                <td class="p-3 text-red-600">-237€</td>
+                <td class="p-3 text-red-600">-86€</td>
+                <td class="p-3 text-green-600"><strong>2 177€</strong></td>
+              </tr>
+              <tr class="border-b border-blue-100 bg-gray-50">
+                <td class="p-3 text-gray-900"><strong>Marié(e), 0 enfant</strong></td>
+                <td class="p-3 text-gray-900">2 500€</td>
+                <td class="p-3 text-red-600">-237€</td>
+                <td class="p-3 text-red-600">-36€</td>
+                <td class="p-3 text-green-600"><strong>2 227€</strong></td>
+              </tr>
+              <tr class="border-b border-blue-100">
+                <td class="p-3 text-gray-900"><strong>Célibataire, 2 enfants</strong></td>
+                <td class="p-3 text-gray-900">2 500€</td>
+                <td class="p-3 text-red-600">-237€</td>
+                <td class="p-3 text-gray-600">0€</td>
+                <td class="p-3 text-green-600"><strong>2 263€</strong></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 text-gray-900"><strong>Marié(e), 2 enfants</strong></td>
+                <td class="p-3 text-gray-900">2 500€</td>
+                <td class="p-3 text-red-600">-237€</td>
+                <td class="p-3 text-gray-600">0€</td>
+                <td class="p-3 text-green-600"><strong>2 263€</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-600 mt-4">
+          <strong>Sources :</strong>
+          <a
+            href="https://www.impots.gouv.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+            >impots.gouv.fr</a
+          >,
+          <a
+            href="https://www.service-public.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-600 hover:underline"
+            >service-public.fr</a
+          >
+          | <em>Barèmes en vigueur mai 2026</em>
+        </p>
+      </section>
+
+      <!-- FAQ Accordion -->
+      <section class="mb-10 rounded-lg border border-blue-100 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">FAQ – Questions fréquentes</h2>
+        <div class="space-y-3">
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Prélèvement à la source : comment ça marche ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Le PAS est un impôt retenu directement sur votre salaire selon votre quotient familial
+              et les tranches d’imposition. En 2026, les taux vont de 0 % (non imposable) à 45 %
+              (très hauts revenus). Le quotient familial tient compte de votre situation :
+              célibataire, marié(e), PACS, enfants à charge.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Tickets-restaurant imposables ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Non, les tickets-restaurant fournis par l’employeur ne sont pas imposables jusqu’à
+              certaines limites légales (environ 11 € par jour). Ils augmentent votre pouvoir
+              d’achat sans impacter votre base imposable ni vos cotisations sociales.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Impact des enfants sur l’impôt
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Chaque enfant à charge augmente votre quotient familial de 0,5 part, ce qui réduit l’
+              impôt prélevé. À partir du 3e enfant, vous bénéficiez d’une part supplémentaire. Cet
+              avantage peut représenter 100 à 300 € d’économies annuelles par enfant selon votre
+              salaire.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Comment maximiser votre salaire net ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Plusieurs stratégies : négociez les avantages non imposables (tickets resto, mutuelle,
+              chèques-vacances), vérifiez votre quotient familial auprès de l’administration,
+              anticipez les heures supplémentaires partiellement exonérées d’impôt.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Quelles cotisations sociales ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Environ 8–10 % : sécurité sociale (8,2 %), retraite complémentaire (6,2 %), assurance
+              chômage (4,05 %), versement transport (0,5 % selon région). Ce montant varie selon
+              votre contrat et votre région.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Info Section -->
+      <section
+        class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg p-6"
+      >
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+          <div class="text-4xl leading-none">💼</div>
+          <div class="flex-1">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">
+              Comprendre votre fiche de paie : du brut au net
+            </h2>
+            <p class="text-gray-700 mb-4">
+              Votre salaire brut est réduit par trois éléments : cotisations sociales (financement
+              sécurité sociale), prélèvement à la source (impôt), et possiblement des avantages
+              non-imposables. Notre simulateur aide à visualiser cet impact.
+            </p>
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-1">💰 Cotisations</h3>
+                <p class="text-sm text-gray-600">
+                  8-10% du brut pour sécurité sociale, retraite, chômage
+                </p>
+              </div>
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-1">📋 Impôt PAS</h3>
+                <p class="text-sm text-gray-600">Retenu selon quotient familial et tranches 2026</p>
+              </div>
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-1">✨ Avantages</h3>
+                <p class="text-sm text-gray-600">Tickets resto, mutuelle (non-imposables)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-16 py-12">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="font-semibold text-white mb-4">🌼 LesCalculateurs.fr</h3>
+            <p class="text-sm">Simulateurs gratuits et fiables pour vos calculs financiers 2026.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-4">Navigation</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-white transition">Accueil</a></li>
+              <li>
+                <a href="/pages/simulateurs" class="hover:text-white transition"
+                  >Tous les simulateurs</a
+                >
+              </li>
+              <li><a href="/pages/a-propos" class="hover:text-white transition">À propos</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-4">Légal</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="/pages/mentions-legales" class="hover:text-white transition"
+                  >Mentions légales</a
+                >
+              </li>
+              <li>
+                <a href="/pages/politique-confidentialite" class="hover:text-white transition"
+                  >Confidentialité</a
+                >
+              </li>
+              <li>
+                <a href="/pages/politique-cookies" class="hover:text-white transition">Cookies</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-sm">
+          <p>© 2026 LesCalculateurs.fr - Tous droits réservés. Données à titre informatif.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

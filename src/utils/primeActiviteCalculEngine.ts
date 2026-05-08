@@ -44,7 +44,8 @@ function getPrimeForfait(situation: string, enfants: number): number {
 
   if (situation === "couple") {
     if (nbEnfants <= 0) return primeBaremes.montantForfaitaire.nonMajoree.coupleOuIsole1Enfant;
-    if (nbEnfants === 1) return primeBaremes.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
+    if (nbEnfants === 1)
+      return primeBaremes.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
     if (nbEnfants === 2) return primeBaremes.montantForfaitaire.nonMajoree.couple2Enfants;
     if (nbEnfants === 3) return primeBaremes.montantForfaitaire.nonMajoree.couple3Enfants;
     return (
@@ -55,7 +56,8 @@ function getPrimeForfait(situation: string, enfants: number): number {
 
   if (nbEnfants <= 0) return primeBaremes.montantForfaitaire.nonMajoree.unePersonne;
   if (nbEnfants === 1) return primeBaremes.montantForfaitaire.nonMajoree.coupleOuIsole1Enfant;
-  if (nbEnfants === 2) return primeBaremes.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
+  if (nbEnfants === 2)
+    return primeBaremes.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
   if (nbEnfants === 3) return primeBaremes.montantForfaitaire.nonMajoree.isole3Enfants;
   return (
     primeBaremes.montantForfaitaire.nonMajoree.isole3Enfants +
@@ -83,9 +85,7 @@ function getBonification(revenusProf: number): number {
   return Math.round(montantMaximum * ratio * 100) / 100;
 }
 
-export function calculerPrimeActivite(
-  data: PrimeActiviteCalculData,
-): PrimeActiviteResult {
+export function calculerPrimeActivite(data: PrimeActiviteCalculData): PrimeActiviteResult {
   if (!data.situation || !data.logement || !data.typeActivite) {
     return {
       success: false,
@@ -160,7 +160,11 @@ export function calculerPrimeActivite(
     details: {
       montantBase: Math.round(montantBase * 100) / 100,
       bonification,
-      majorations: Math.max(0, Math.round((montantBase - primeBaremes.montantForfaitaire.nonMajoree.unePersonne) * 100) / 100),
+      majorations: Math.max(
+        0,
+        Math.round((montantBase - primeBaremes.montantForfaitaire.nonMajoree.unePersonne) * 100) /
+          100,
+      ),
       forfaitLogement: Math.round(forfaitLogement * 100) / 100,
       revenusProfsComptabilises: Math.round(revenusProfsComptabilises * 100) / 100,
       autresRevenusComptabilises: Math.round(autresRevenusComptabilises * 100) / 100,
@@ -176,21 +180,26 @@ export function formatPrimeActiviteResult(result: PrimeActiviteResult): {
   detailsDisplay: string;
 } {
   const formatMonnaie = (montant: number) => {
-    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+    return (
+      montant.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) +
+      " EUR"
+    );
   };
 
   const montantDisplay =
-    result.montantEstime > 0
-      ? `${formatMonnaie(result.montantEstime)} / mois`
-      : "Non eligible";
+    result.montantEstime > 0 ? `${formatMonnaie(result.montantEstime)} / mois` : "Non eligible";
 
   const detailsDisplay = `
     • Montant forfaitaire : ${formatMonnaie(result.details.montantBase)}
-    ${result.details.bonification > 0 ? `• Bonification : +${formatMonnaie(result.details.bonification)}` : ''}
-    ${result.details.revenusProfsComptabilises > 0 ? `• Revenus (61%) : -${formatMonnaie(result.details.revenusProfsComptabilises)}` : ''}
-    ${result.details.forfaitLogement > 0 ? `• Forfait logement : -${formatMonnaie(result.details.forfaitLogement)}` : ''}
+    ${result.details.bonification > 0 ? `• Bonification : +${formatMonnaie(result.details.bonification)}` : ""}
+    ${result.details.revenusProfsComptabilises > 0 ? `• Revenus (61%) : -${formatMonnaie(result.details.revenusProfsComptabilises)}` : ""}
+    ${result.details.forfaitLogement > 0 ? `• Forfait logement : -${formatMonnaie(result.details.forfaitLogement)}` : ""}
     • = Montant estimé : ${formatMonnaie(result.details.montantFinal)}
-  `.trim().split('\n').filter(l => l.trim()).join('\n');
+  `
+    .trim()
+    .split("\n")
+    .filter((l) => l.trim())
+    .join("\n");
 
   return {
     montantDisplay,
@@ -198,4 +207,3 @@ export function formatPrimeActiviteResult(result: PrimeActiviteResult): {
     detailsDisplay,
   };
 }
-

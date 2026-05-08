@@ -79,10 +79,7 @@ const PARTICIPATION_MINIMUM = aplBaremes.moteur.participationMinimum;
  * Plafonds APL réalistes par profil (soft caps anti-bullshit)
  * Basés sur les ordres de grandeur constatés CAF
  */
-function getPlafondAPLRealiste(
-  situation: SituationFamiliale,
-  enfants: number
-): number {
+function getPlafondAPLRealiste(situation: SituationFamiliale, enfants: number): number {
   const base: Record<SituationFamiliale, number> = {
     ...aplBaremes.moteur.plafondAplBase,
   };
@@ -111,8 +108,7 @@ export function calculerAPL(input: APLInput): APLResult {
       return { success: false, error: validation.error };
     }
 
-    const { situation, enfants, revenus_mensuels, loyer_mensuel, region } =
-      input;
+    const { situation, enfants, revenus_mensuels, loyer_mensuel, region } = input;
 
     const revenus = Number(revenus_mensuels);
     const loyer = Number(loyer_mensuel);
@@ -121,8 +117,7 @@ export function calculerAPL(input: APLInput): APLResult {
     // ─────────────────────────────────────────
     // 1️⃣ PLAFOND LOYER (zone + situation + enfants)
     // ─────────────────────────────────────────
-    let plafond_loyer =
-      PLAFONDS_LOYER_BASE[region] || PLAFONDS_LOYER_BASE.province;
+    let plafond_loyer = PLAFONDS_LOYER_BASE[region] || PLAFONDS_LOYER_BASE.province;
 
     // Bonus couple
     if (situation === "couple") {
@@ -137,8 +132,7 @@ export function calculerAPL(input: APLInput): APLResult {
     // ─────────────────────────────────────────
     // 2️⃣ FORFAIT LOGEMENT
     // ─────────────────────────────────────────
-    const forfait_logement =
-      FORFAIT_LOGEMENT[situation] || FORFAIT_LOGEMENT.seul;
+    const forfait_logement = FORFAIT_LOGEMENT[situation] || FORFAIT_LOGEMENT.seul;
 
     // ─────────────────────────────────────────
     // 3️⃣ PARTICIPATION PERSONNELLE
@@ -297,8 +291,7 @@ export const MESSAGES_PEDAGOGIQUES = {
   apl_zero:
     "💡 Avec vos revenus actuels et le plafond de loyer applicable, l'APL est généralement nulle ou très faible selon les règles CAF.",
 
-  apl_plafonne:
-    "ℹ️ Montant plafonné selon les règles généralement constatées par la CAF.",
+  apl_plafonne: "ℹ️ Montant plafonné selon les règles généralement constatées par la CAF.",
 
   disclaimer_comparateur:
     "📊 Les scénarios affichés respectent les plafonds de loyer et de ressources généralement appliqués par la CAF.",
@@ -315,7 +308,10 @@ export function formatAPLResult(result: APLResult): {
   detailsDisplay: string;
 } {
   const formatMonnaie = (montant: number) => {
-    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+    return (
+      montant.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) +
+      " EUR"
+    );
   };
 
   if (!result.success || !result.data) {
@@ -334,11 +330,16 @@ export function formatAPLResult(result: APLResult): {
     • Participation personnelle : ${formatMonnaie(result.data.participation)}
     • Forfait logement : ${formatMonnaie(result.data.forfait_logement)}
     • = APL estimée : ${formatMonnaie(result.data.apl_estimee)}
-  `.trim().split('\n').filter(l => l.trim()).join('\n');
+  `
+    .trim()
+    .split("\n")
+    .filter((l) => l.trim())
+    .join("\n");
 
   return {
     montantDisplay,
-    explDisplay: "Allocation personnalisée au logement (APL) estimée selon les barèmes CAF actuels.",
+    explDisplay:
+      "Allocation personnalisée au logement (APL) estimée selon les barèmes CAF actuels.",
     detailsDisplay,
   };
 }

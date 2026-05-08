@@ -6,10 +6,7 @@ import { createRequire } from "module";
 
 import { aplPilotScenarios } from "../data/pseo/apl-pilot-scenarios.js";
 import { aplAbsenceRevenuScenarios } from "../data/pseo/apl-absence-revenu-scenarios.js";
-import {
-  isGeneratedPseoAplPage,
-  renderAPLScenarioPage,
-} from "./lib/pseo/apl-pseo-renderer.js";
+import { isGeneratedPseoAplPage, renderAPLScenarioPage } from "./lib/pseo/apl-pseo-renderer.js";
 
 const require = createRequire(import.meta.url);
 const { normalizeFrenchText } = require("./lib/french-normalization.cjs");
@@ -159,9 +156,7 @@ function sanitizeAplScenario(scenario) {
     checklist: Array.isArray(scenario.checklist)
       ? scenario.checklist.map(sanitizeText)
       : scenario.checklist,
-    faq: Array.isArray(scenario.faq)
-      ? scenario.faq.map(sanitizeFaqItem)
-      : scenario.faq,
+    faq: Array.isArray(scenario.faq) ? scenario.faq.map(sanitizeFaqItem) : scenario.faq,
     pilotProduct: sanitizePilotProduct(scenario.pilotProduct),
   };
 }
@@ -190,7 +185,10 @@ function normalizeAplScenarioText(value) {
     );
 
   output = output
-    .replace(/^Pourquoi utiliser une page .*calcul unique \?$/i, "Pourquoi partir de cette estimation avant le calcul complet ?")
+    .replace(
+      /^Pourquoi utiliser une page .*calcul unique \?$/i,
+      "Pourquoi partir de cette estimation avant le calcul complet ?",
+    )
     .replace(/\bplut\?\s*t\b/gi, "plutôt")
     .replace(/\bdispara\?\s*t\b/gi, "disparaît")
     .replace(/estim\?/gi, "estimé")

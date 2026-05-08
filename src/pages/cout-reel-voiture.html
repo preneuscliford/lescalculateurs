@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur Coût réel voiture 2026 - Calcul budget auto | Les Calculateurs</title>
+    <meta
+      name="description"
+      content="Simulateur Coût réel voiture 2026 : calculez le coût mensuel complet de votre voiture (carburant, assurance, entretien, parking). Comparateur essence, diesel, hybride, électrique."
+    />
+    <meta
+      name="keywords"
+      content="simulateur coût voiture, calcul coût auto, simulateur essence diesel, coût voiture électrique, assurance voiture, entretien voiture, cout carburant 2026, budget voiture"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/cout-reel-voiture" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/cout-reel-voiture" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Simulateur Coût réel voiture 2026 - Calcul budget auto | Les Calculateurs"
+    />
+    <meta
+      property="og:description"
+      content="Calculez le coût complet de votre voiture en 2026 : carburant, assurance, entretien, parking. Comparez essence, diesel, hybride, électrique."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Simulateur Coût réel voiture 2026 - Calcul budget auto | Les Calculateurs"
+    />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module">
+      import "/pages/scripts/cout-reel-voiture-script.ts";
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://www.lescalculateurs.fr"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Simulateurs",
+            "item": "https://www.lescalculateurs.fr/pages/simulateurs"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Coût réel voiture 2026",
+            "item": "https://www.lescalculateurs.fr/pages/cout-reel-voiture"
+          }
+        ]
+      }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur Coût réel voiture 2026",
+        "alternateName": [
+          "Calculateur coût auto",
+          "Simulation budget voiture",
+          "Comparateur carburant"
+        ],
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "dateModified": "2026-05-08",
+        "publisher": {
+          "@type": "Organization",
+          "name": "LesCalculateurs.fr",
+          "url": "https://www.lescalculateurs.fr"
+        }
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel carburant est le plus économique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le diesel est généralement moins cher à la consommation, mais plus cher à l'achat. L'électrique a le coût au km le plus faible, mais demande un investissement initial élevé. Hybride offre un compromis."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+
+  <body class="bg-gradient-to-b from-slate-50 to-slate-100">
+    <div
+      class="sticky-ymyl"
+      role="alert"
+      style="
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 13px;
+        color: #1f2937;
+      "
+    >
+      <strong>⚠️ Estimation indicative.</strong>
+      <span class="hidden sm:inline"
+        >barèmes mai 2026 applicables — Mise à jour le
+        <time datetime="2026-05-05">05/05/2026</time> — Montant définitif sur</span
+      >
+      <a
+        href="https://www.caf.fr"
+        target="_blank"
+        rel="noopener"
+        style="color: #b45309; text-decoration: underline; font-weight: bold"
+        >CAF.fr</a
+      >
+      <span class="hidden md:inline"
+        >|<a
+          href="/pages/historique-mises-a-jour"
+          style="color: #b45309; text-decoration: underline"
+          >🔄 Historique</a
+        ></span
+      >
+    </div>
+
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <a href="/" class="flex items-center space-x-2">
+            <img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs"
+              class="h-8 w-auto"
+            />
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
+          </a>
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
+            <a
+              href="/pages/methodologie.html"
+              class="hidden lg:block text-gray-600 hover:text-blue-600"
+              >📚 Méthodologie</a
+            >
+            <a
+              href="/pages/historique-mises-a-jour"
+              class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded"
+              >🔄 Mises à jour</a
+            >
+          </nav>
+          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
+          <nav class="flex flex-col space-y-2 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >🎯 Simulateurs</a
+            >
+            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >📚 Méthodologie</a
+            >
+            <a
+              href="/pages/historique-mises-a-jour"
+              class="text-blue-600 hover:text-blue-800 font-medium py-1 bg-blue-50 rounded px-2"
+              >🔄 Mises à jour</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumbs text-sm mb-6" aria-label="Fil d'Ariane">
+        <ul class="flex items-center gap-2 text-gray-600">
+          <li><a href="/" class="text-blue-600 hover:text-blue-800 font-medium">Accueil</a></li>
+          <li class="text-gray-400">›</li>
+          <li>
+            <a href="/pages/simulateurs" class="text-blue-600 hover:text-blue-800 font-medium"
+              >Simulateurs</a
+            >
+          </li>
+          <li class="text-gray-400">›</li>
+          <li class="text-gray-600">Coût réel voiture 2026</li>
+        </ul>
+      </nav>
+
+      <!-- Header -->
+      <section class="mb-8">
+        <div class="badge badge-warning mb-3">Finances personnelles</div>
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Simulateur Coût réel voiture 2026</h1>
+        <p class="text-lg text-gray-700">
+          Calculez le coût mensuel complet de votre voiture : carburant, assurance, entretien,
+          parking, péages. Comparez essence, diesel, hybride et électrique pour faire le bon choix.
+        </p>
+      </section>
+
+      <!-- Comment calcule -->
+      <section class="bg-amber-50 rounded-lg p-6 mb-8 border-l-4 border-amber-500">
+        <h2 class="text-xl font-bold text-gray-900 mb-3">Comment le calcul est effectué</h2>
+        <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+          <div>
+            <p class="mb-2"><strong>Formule simplifiee</strong></p>
+            <ul class="list-disc ml-5 space-y-1">
+              <li>Carburant mensuel = (km_annuel / 12) × (conso / 100) × prix</li>
+              <li>Entretien mensuel = revision_annuelle / 12</li>
+              <li>Assurance mensuelle = assurance_annuelle / 12</li>
+              <li>Total mensuel = carburant + assurance + entretien + parking + autres + credit</li>
+            </ul>
+          </div>
+          <div>
+            <p class="mb-2"><strong>Exemple concret</strong></p>
+            <p>
+              15 000 km/an, essence 6,5 L/100, 1,60 €/L → carburant ≈ 130 €/mois. Avec 50 €
+              d’entretien, 50 € d’assurance et 0 € de parking → total ≈ 230 €/mois.
+            </p>
+            <p class="mt-3 text-xs text-gray-600">Barèmes et prix moyens : mai 2026</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calculator Section -->
+      <section class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">🚗 Simulez votre situation</h2>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm font-semibold text-gray-700"
+            >Étape <span id="current-step">1</span> / 3</span
+          >
+          <button type="button" id="load-saved" class="text-xs text-blue-600 hover:text-blue-800">
+            Charger ma simulation
+          </button>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2 mb-6 overflow-hidden">
+          <div id="progress-bar" class="bg-blue-600 h-2 rounded-full" style="width: 33%"></div>
+        </div>
+
+        <form id="voiture-form" class="space-y-8">
+          <!-- Étape 1: Utilisation -->
+          <fieldset id="step-1" class="border-l-4 border-orange-500 pl-6 space-y-6">
+            <legend class="text-lg font-bold text-gray-900 mb-2">Votre utilisation</legend>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Kilométrage annuel (km)</label
+                >
+                <input
+                  type="number"
+                  name="kmAnnuel"
+                  min="0"
+                  step="1000"
+                  value="15000"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">Moyenne française : ~13 000 km/an</p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Type de carburant</label
+                >
+                <select name="fuelType" class="select select-bordered w-full px-3 py-2">
+                  <option value="essence">Essence</option>
+                  <option value="diesel">Diesel</option>
+                  <option value="hybride">Hybride</option>
+                  <option value="electrique">Électrique</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Consommation</label>
+                <div class="flex gap-2">
+                  <input
+                    type="number"
+                    name="consommation"
+                    min="0"
+                    step="0.5"
+                    value="6.5"
+                    class="input input-bordered w-full px-3 py-2"
+                  />
+                  <span
+                    id="consommation-unit"
+                    class="input input-bordered input-disabled bg-gray-100 w-24 text-blue-600"
+                    >L/100km</span
+                  >
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Prix du carburant</label
+                >
+                <div class="flex gap-2">
+                  <input
+                    type="number"
+                    name="prixCarburant"
+                    min="0"
+                    step="0.01"
+                    value="1.60"
+                    class="input input-bordered w-full px-3 py-2"
+                  />
+                  <span
+                    id="prix-unit"
+                    class="input input-bordered input-disabled bg-gray-100 w-24 text-blue-600"
+                    >€/L</span
+                  >
+                </div>
+                <p class="text-xs text-gray-500 mt-1" id="prix-info">Prix moyen mai 2026</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Étape 2: Coûts fixes -->
+          <fieldset id="step-2" class="border-l-4 border-red-500 pl-6 space-y-6 hidden">
+            <legend class="text-lg font-bold text-gray-900 mb-2">Coûts fixes</legend>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Assurance mensuelle (€)</label
+                >
+                <input
+                  type="number"
+                  name="assuranceMensuel"
+                  min="0"
+                  step="10"
+                  value="50"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Révision / Entretien annuel (€)</label
+                >
+                <input
+                  type="number"
+                  name="entretienAnnuel"
+                  min="0"
+                  step="25"
+                  value="200"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Parking mensuel (€)</label
+                >
+                <input
+                  type="number"
+                  name="parkingMensuel"
+                  min="0"
+                  step="10"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Étape 3: Autres & Financement -->
+          <fieldset id="step-3" class="border-l-4 border-yellow-500 pl-6 space-y-6 hidden">
+            <legend class="text-lg font-bold text-gray-900 mb-2">Autres coûts & financement</legend>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Autres coûts mensuels (€)</label
+                >
+                <input
+                  type="number"
+                  name="othersMensuel"
+                  min="0"
+                  step="10"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Crédit auto mensuel (€)</label
+                >
+                <input
+                  type="number"
+                  name="creditMensuel"
+                  min="0"
+                  step="25"
+                  value="0"
+                  class="input input-bordered w-full px-3 py-2"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Navigation -->
+          <div class="flex gap-4 justify-between">
+            <button type="button" id="prev-btn" class="btn btn-neutral hidden text-blue-500">
+              Précédent
+            </button>
+            <button type="button" id="next-btn" class="btn btn-primary text-blue-500">
+              Suivant
+            </button>
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn btn-success hidden text-blue-700 font-bold"
+            >
+              Calculer le coût réel
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results -->
+      <section id="voiture-results" class="hidden mb-8">
+        <div
+          class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg shadow-md p-8 mb-6 border border-orange-200"
+        >
+          <p class="text-sm text-gray-800 mb-2">Coût mensuel estimé :</p>
+          <p id="voiture-montant" class="text-5xl font-bold text-orange-600">-</p>
+          <p id="voiture-explication" class="text-lg text-gray-700 mt-4">-</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="bg-slate-100 rounded-lg p-6 border border-gray-200">
+            <h3 class="text-sm font-semibold text-gray-700 mb-2">Coût annuel</h3>
+            <p id="voiture-annuel" class="text-3xl font-bold text-orange-600">-</p>
+            <p class="text-xs text-gray-600 mt-2">Budget à prévoir par an</p>
+          </div>
+          <div class="bg-slate-100 rounded-lg p-6 border border-gray-200">
+            <h3 class="text-sm font-semibold text-gray-700 mb-2">Coût au km</h3>
+            <p id="voiture-km" class="text-3xl font-bold text-orange-600">-</p>
+            <p class="text-xs text-gray-600 mt-2">€ par kilomètre</p>
+          </div>
+          <div class="bg-slate-100 rounded-lg p-6 border border-gray-200">
+            <h3 class="text-sm font-semibold text-gray-700 mb-2">Carburant</h3>
+            <p id="voiture-carburant" class="text-3xl font-bold text-orange-600">-</p>
+            <p class="text-xs text-gray-600 mt-2">Dépense principale</p>
+          </div>
+        </div>
+
+        <div
+          id="voiture-details"
+          class="hidden bg-orange-50 p-4 rounded border-l-4 border-orange-500 mb-6"
+        >
+          <p class="text-sm font-semibold text-gray-800 mb-2">💡 Détail du calcul :</p>
+          <div class="text-sm text-gray-700 space-y-1 font-mono" id="voiture-details-content"></div>
+        </div>
+
+        <!-- Suggestions -->
+        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-lg mb-8">
+          <h3 class="font-bold text-gray-900 mb-3">Conseils pour baisser le cout</h3>
+          <ul id="suggestions-list" class="space-y-2 text-sm text-gray-700">
+            <li class="text-gray-600">Suggestions personnalisees apres calcul</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="bg-blue-50 rounded-lg p-6 mb-8 border-l-4 border-blue-500">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">🔗 Gérez votre budget global</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Vérifiez votre reste à vivre</h3>
+            <p class="text-sm text-gray-700 mb-3">
+              Le coût auto peut impacter significativement votre budget :
+            </p>
+            <a
+              href="/pages/reste-a-vivre"
+              class="text-blue-600 hover:text-blue-800 font-semibold text-sm"
+              >Simulateur Reste à vivre →</a
+            >
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Comprenez votre salaire net</h3>
+            <p class="text-sm text-gray-700 mb-3">
+              Pour savoir ce que vous pouvez vraiment dépenser :
+            </p>
+            <a
+              href="/pages/salaire-net-apres-impot"
+              class="text-blue-600 hover:text-blue-800 font-semibold text-sm"
+              >Simulateur Salaire NET →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Info Banner -->
+      <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg mb-8">
+        <p class="text-orange-800 text-sm">
+          <strong>📌 Conseil budgétaire :</strong> Les frais d'automobile représentent environ
+          15-20% du budget mensuel d'une famille française. Ne dépensez pas plus de 200-250€/mois si
+          vous gagnez 2 500€ net.
+        </p>
+      </div>
+
+      <!-- FAQ Table -->
+      <section class="mb-10 rounded-lg border border-orange-100 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+          <span class="mr-2">📊</span>Comparatif carburant 2026 : essence vs diesel vs électrique
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-orange-100">
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-orange-200">
+                  Carburant
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-orange-200">
+                  Consommation
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-orange-200">
+                  Prix
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-orange-200">
+                  15 000 km/an
+                </th>
+                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-orange-200">
+                  €/mois
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-orange-100">
+                <td class="p-3 text-gray-900"><strong>🔴 Essence</strong></td>
+                <td class="p-3 text-gray-900">6,5 L/100km</td>
+                <td class="p-3 text-gray-900">1,60 €/L</td>
+                <td class="p-3 text-gray-900">1 560 L = 2 496€</td>
+                <td class="p-3 text-orange-600"><strong>208€</strong></td>
+              </tr>
+              <tr class="border-b border-orange-100 bg-gray-50">
+                <td class="p-3 text-gray-900"><strong>⚫ Diesel</strong></td>
+                <td class="p-3 text-gray-900">5,5 L/100km</td>
+                <td class="p-3 text-gray-900">1,55 €/L</td>
+                <td class="p-3 text-gray-900">825 L = 1 279€</td>
+                <td class="p-3 text-green-600"><strong>107€</strong></td>
+              </tr>
+              <tr class="border-b border-orange-100">
+                <td class="p-3 text-gray-900"><strong>🟡 Hybride</strong></td>
+                <td class="p-3 text-gray-900">4,5 L/100km</td>
+                <td class="p-3 text-gray-900">1,60 €/L</td>
+                <td class="p-3 text-gray-900">675 L = 1 080€</td>
+                <td class="p-3 text-green-600"><strong>90€</strong></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 text-gray-900"><strong>🟢 Électrique</strong></td>
+                <td class="p-3 text-gray-900">15 kWh/100km</td>
+                <td class="p-3 text-gray-900">0,25 €/kWh</td>
+                <td class="p-3 text-gray-900">2 250 kWh = 562€</td>
+                <td class="p-3 text-green-600"><strong>47€</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-600 mt-4">
+          <strong>Note :</strong> Données mai 2026 | Diesel+coûts = 200€ vs Essence 280€ en tenant
+          compte entretien & assurance | Électrique demande investissement initial élevé
+        </p>
+      </section>
+
+      <!-- FAQ Accordion -->
+      <section class="mb-10 rounded-lg border border-orange-100 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">FAQ – Coût automobile</h2>
+        <div class="space-y-3">
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Quel carburant est le plus économique ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Le diesel consomme moins (≈ 5,5 L/100 km vs 6,5 L essence) mais coûte souvent plus
+              cher à l’achat. L’électrique a le coût au km le plus faible (≈ 40–60 €/mois), mais
+              demande un investissement initial. L’hybride offre un bon compromis selon l’usage.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Diesel ou essence : que préférer ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Diesel : plus de 15 000 km/an et longs trajets/autoroute. Essence : moins de
+              10 000 km/an et ville. L’essence est moins polluante en ville. Électrique : pertinent
+              si recharges faciles à domicile.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Comment réduire le coût de sa voiture ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Réduire le kilométrage (télétravail), comparer et renégocier l’assurance, entretien
+              régulier, pneus adaptés, éviter les péages/autoroutes quand cela a du sens.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              L’électrique est‑il rentable ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              À l’usage, l’électrique coûte moins par km. L’achat initial est plus élevé, mais la
+              rentabilité se voit sur le long terme selon le kilométrage annuel et le prix de
+              l’énergie. Les aides (bonus) améliorent le point d’équilibre.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Quel budget auto idéal ?
+            </summary>
+            <p class="mt-3 text-sm text-gray-700">
+              Les experts recommandent de ne pas dépasser 15–20 % de vos revenus nets. Exemple :
+              pour 2 500 € nets, viser 375–500 €/mois (assurance, carburant, entretien, parking,
+              crédit).
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Info Section -->
+      <section
+        class="mb-8 bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 rounded-lg p-6"
+      >
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+          <div class="text-4xl leading-none">💨</div>
+          <div class="flex-1">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">
+              Comprendre le coût réel d'une voiture
+            </h2>
+            <p class="text-gray-700 mb-4">
+              Beaucoup oublient les frais cachés ! Carburant n'est que 40% du coût. Assurance,
+              entretien, parking, péages font le reste. Les voitures neuves coûtent aussi cher en
+              entretien les 5 premières années.
+            </p>
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-orange-100">
+                <h3 class="font-bold text-gray-900 mb-1">⛽ Carburant</h3>
+                <p class="text-sm text-gray-600">40-50% du budget auto</p>
+              </div>
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-orange-100">
+                <h3 class="font-bold text-gray-900 mb-1">🛡️ Assurance</h3>
+                <p class="text-sm text-gray-600">20-30% du budget auto</p>
+              </div>
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-orange-100">
+                <h3 class="font-bold text-gray-900 mb-1">🔧 Entretien</h3>
+                <p class="text-sm text-gray-600">20-30% du budget auto</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-16 py-12">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="font-semibold text-white mb-4">🌼 LesCalculateurs.fr</h3>
+            <p class="text-sm">Simulateurs gratuits et fiables pour vos calculs financiers 2026.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-4">Navigation</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-white transition">Accueil</a></li>
+              <li>
+                <a href="/pages/simulateurs" class="hover:text-white transition"
+                  >Tous les simulateurs</a
+                >
+              </li>
+              <li><a href="/pages/a-propos" class="hover:text-white transition">À propos</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-4">Légal</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="/pages/mentions-legales" class="hover:text-white transition"
+                  >Mentions légales</a
+                >
+              </li>
+              <li>
+                <a href="/pages/politique-confidentialite" class="hover:text-white transition"
+                  >Confidentialité</a
+                >
+              </li>
+              <li>
+                <a href="/pages/politique-cookies" class="hover:text-white transition">Cookies</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-sm">
+          <p>© 2026 LesCalculateurs.fr - Tous droits réservés. Données à titre informatif.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -40,8 +40,7 @@ export const socialBaremes = {
       "https://www.service-public.fr/particuliers/vosdroits/N19775",
       "https://www.caf.fr/allocataires/caf-des-bouches-du-rhone/offre-de-service/vie-professionnelle/le-revenu-de-solidarite-active-rsa",
     ],
-    note:
-      "Montants 2026 derives de la revalorisation officielle de 0,8 % appliquee au bareme RSA du 1er avril 2025.",
+    note: "Montants 2026 derives de la revalorisation officielle de 0,8 % appliquee au bareme RSA du 1er avril 2025.",
     montantForfaitaireBase: 651.69,
     coefficientsFoyer: {
       seulSansEnfant: 1,
@@ -173,4 +172,3 @@ export const socialBaremes = {
 } as const;
 
 export type SocialBaremes = typeof socialBaremes;
-

@@ -67,9 +67,8 @@ export function calculerARE(data: AREData): AREResult {
     sjr * areBaremes.calculJournalier.plafondPourcentageSjr,
   );
 
-  const montantMensuelBrut = Math.round(
-    allocationJournaliere * areBaremes.calculJournalier.coefficientMensuel * 100,
-  ) / 100;
+  const montantMensuelBrut =
+    Math.round(allocationJournaliere * areBaremes.calculJournalier.coefficientMensuel * 100) / 100;
 
   const durationCapDays = getDurationCapDays(data.agePersonne);
   const durationTheoriqueDays = Math.round(Math.max(0, data.ancienneteEmploi) * 30.42);
@@ -102,7 +101,10 @@ export function formatAREResult(result: AREResult): {
   detailsDisplay: string;
 } {
   const formatMonnaie = (montant: number) => {
-    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+    return (
+      montant.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) +
+      " EUR"
+    );
   };
 
   const montantDisplay =
@@ -114,7 +116,11 @@ export function formatAREResult(result: AREResult): {
     • Taux de remplacement : ${(result.details.tauxRemplacement * 100).toFixed(1)}%
     • Durée maximum : ${result.durationMax} mois
     • = Montant mensuel estimé : ${formatMonnaie(result.montantEstime)}
-  `.trim().split('\n').filter(l => l.trim()).join('\n');
+  `
+    .trim()
+    .split("\n")
+    .filter((l) => l.trim())
+    .join("\n");
 
   return {
     montantDisplay,
@@ -122,4 +128,3 @@ export function formatAREResult(result: AREResult): {
     detailsDisplay,
   };
 }
-

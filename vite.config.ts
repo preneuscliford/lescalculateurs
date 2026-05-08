@@ -152,6 +152,10 @@ function collectStaticPageInputs() {
     "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
     "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
     "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
+    // Money pages (simulateurs principaux)
+    "pages/salaire-net-apres-impot": resolve(__dirname, "src/pages/salaire-net-apres-impot.html"),
+    "pages/reste-a-vivre": resolve(__dirname, "src/pages/reste-a-vivre.html"),
+    "pages/cout-reel-voiture": resolve(__dirname, "src/pages/cout-reel-voiture.html"),
   };
 }
 

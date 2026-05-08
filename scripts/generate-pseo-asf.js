@@ -5,10 +5,7 @@ import { fileURLToPath } from "url";
 import { createRequire } from "module";
 
 import { asfAbsenceRevenuScenarios } from "../data/pseo/asf-absence-revenu-scenarios.js";
-import {
-  isGeneratedPseoAsfPage,
-  renderASFScenarioPage,
-} from "./lib/pseo/asf-pseo-renderer.js";
+import { isGeneratedPseoAsfPage, renderASFScenarioPage } from "./lib/pseo/asf-pseo-renderer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -81,7 +78,10 @@ async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedPages(outputDir, new Set(asfAbsenceRevenuScenarios.map((item) => item.slug)));
   const engine = await loadAsfEngine();
-  const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
+  const targetConfig = {
+    stylesHref: "/tailwind.css",
+    mainScriptTag: '<script type="module" src="/content.ts"></script>',
+  };
 
   const enriched = asfAbsenceRevenuScenarios.map((scenario) => {
     const result = engine.calculerASF(scenario.input);

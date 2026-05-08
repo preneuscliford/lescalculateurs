@@ -67,7 +67,10 @@ export function formatASFResult(result: ASFResult): {
   detailsDisplay: string;
 } {
   const formatMonnaie = (montant: number) => {
-    return montant.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+    return (
+      montant.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) +
+      " EUR"
+    );
   };
 
   const montantDisplay =
@@ -79,7 +82,11 @@ export function formatASFResult(result: ASFResult): {
     • Montant par enfant : ${formatMonnaie(result.details.montantParEnfant)}
     • Nombre d'enfants éligibles : ${result.details.nombreEnfantsEligibles}
     • = Montant total estimé : ${formatMonnaie(result.montantEstime)}
-  `.trim().split('\n').filter(l => l.trim()).join('\n');
+  `
+    .trim()
+    .split("\n")
+    .filter((l) => l.trim())
+    .join("\n");
 
   return {
     montantDisplay,
@@ -87,4 +94,3 @@ export function formatASFResult(result: ASFResult): {
     detailsDisplay,
   };
 }
-

@@ -83,7 +83,10 @@ async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedPages(outputDir, new Set(sanitizedScenarios.map((item) => item.slug)));
   const engine = await loadPrimeEngine();
-  const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
+  const targetConfig = {
+    stylesHref: "/tailwind.css",
+    mainScriptTag: '<script type="module" src="/content.ts"></script>',
+  };
 
   const enriched = sanitizedScenarios.map((scenario) => {
     const result = engine.calculerPrimeActivite(scenario.input);

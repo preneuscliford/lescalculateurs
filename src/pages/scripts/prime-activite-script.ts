@@ -84,9 +84,9 @@ form.addEventListener("submit", (e) => {
     // Affichage des détails
     if (formatted.detailsDisplay) {
       detailsContent.innerHTML = formatted.detailsDisplay
-        .split('\n')
-        .map(line => `<div>${line}</div>`)
-        .join('');
+        .split("\n")
+        .map((line) => `<div>${line}</div>`)
+        .join("");
       detailsDiv.classList.remove("hidden");
     } else {
       detailsDiv.classList.add("hidden");

@@ -86,9 +86,9 @@ if (form) {
     const detailsContent = document.getElementById("are-details-content");
     if (detailsDiv && detailsContent) {
       detailsContent.innerHTML = formatted.detailsDisplay
-        .split('\n')
-        .map(line => `<div>${line}</div>`)
-        .join('');
+        .split("\n")
+        .map((line) => `<div>${line}</div>`)
+        .join("");
       detailsDiv.classList.remove("hidden");
     }
 

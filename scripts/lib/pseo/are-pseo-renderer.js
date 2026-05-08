@@ -143,7 +143,10 @@ function renderMethodologySources() {
 }
 
 function renderComparisonTable(scenario, estimate, relatedPages) {
-  const comparable = [{ ...scenario, estimate }, ...relatedPages.filter((item) => item?.estimate)].slice(0, 4);
+  const comparable = [
+    { ...scenario, estimate },
+    ...relatedPages.filter((item) => item?.estimate),
+  ].slice(0, 4);
   if (comparable.length < 2) return "";
 
   return `
@@ -379,4 +382,3 @@ export function renderAREScenarioPage({
   </body>
 </html>`;
 }
-

@@ -141,11 +141,14 @@ function normalizeFrenchText(value) {
 }
 
 function normalizeInlineApproxEuro(value) {
-  return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
-    const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
-    if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
-    return `${prefix}~${numeric.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} EUR`;
-  });
+  return String(value).replace(
+    /(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g,
+    (_match, prefix, amount) => {
+      const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
+      if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
+      return `${prefix}~${numeric.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} EUR`;
+    },
+  );
 }
 
 function renderText(value) {
@@ -187,7 +190,10 @@ function renderMethodologySources() {
 }
 
 function renderComparisonTable(scenario, estimate, relatedPages) {
-  const comparable = [{ ...scenario, estimate }, ...relatedPages.filter((item) => item?.estimate)].slice(0, 4);
+  const comparable = [
+    { ...scenario, estimate },
+    ...relatedPages.filter((item) => item?.estimate),
+  ].slice(0, 4);
   if (comparable.length < 2) return "";
 
   return `
@@ -389,12 +395,8 @@ export function renderRSAScenarioPage({
         </article>
         <aside class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">Profil</p>
-          <p class="mt-3 text-lg font-semibold text-slate-950">${renderText(
-            scenario.audience,
-          )}</p>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">${renderText(
-            scenario.summary,
-          )}</p>
+          <p class="mt-3 text-lg font-semibold text-slate-950">${renderText(scenario.audience)}</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">${renderText(scenario.summary)}</p>
         </aside>
       </section>
 
@@ -437,4 +439,3 @@ export function renderRSAScenarioPage({
   </body>
 </html>`;
 }
-

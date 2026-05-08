@@ -6,10 +6,7 @@ import { createRequire } from "module";
 
 import { rsaPilotScenarios } from "../data/pseo/rsa-pilot-scenarios.js";
 import { rsaAbsenceRevenuScenarios } from "../data/pseo/rsa-absence-revenu-scenarios.js";
-import {
-  isGeneratedPseoRsaPage,
-  renderRSAScenarioPage,
-} from "./lib/pseo/rsa-pseo-renderer.js";
+import { isGeneratedPseoRsaPage, renderRSAScenarioPage } from "./lib/pseo/rsa-pseo-renderer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -66,7 +63,10 @@ function buildRelatedMap(scenarios) {
   for (const scenario of scenarios) {
     const related = scenarios
       .filter((candidate) => candidate.slug !== scenario.slug)
-      .map((candidate) => ({ slug: candidate.slug, score: getTagScore(scenario.tags, candidate.tags) }))
+      .map((candidate) => ({
+        slug: candidate.slug,
+        score: getTagScore(scenario.tags, candidate.tags),
+      }))
       .filter((item) => item.score > 0)
       .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug, "fr"))
       .slice(0, 4)
@@ -118,7 +118,10 @@ async function main() {
   });
 
   const relatedMap = buildRelatedMap(enriched);
-  const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
+  const targetConfig = {
+    stylesHref: "/tailwind.css",
+    mainScriptTag: '<script type="module" src="/content.ts"></script>',
+  };
 
   for (const scenario of enriched) {
     const relatedPages = (relatedMap.get(scenario.slug) || [])
