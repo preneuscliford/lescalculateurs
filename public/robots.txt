@@ -43,6 +43,9 @@ Allow: /pages/guide-complet-impot-revenu-2026.html
 Allow: /pages/salaire-brut-net-calcul-2026.html
 Allow: /pages/comment-calculer-frais-notaire.html
 Allow: /pages/comment-calculer-plus-value.html
+Allow: /pages/salaire-net-apres-impot
+Allow: /pages/reste-a-vivre
+Allow: /pages/cout-reel-voiture
 
 # Assets autorisés
 Allow: /assets/

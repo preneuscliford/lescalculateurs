@@ -21,7 +21,9 @@ const allImpotPilotScenarios = [...impotPilotScenarios];
 function collectNestedAplInputs() {
   const aplDir = resolve(__dirname, "src/pages/apl");
   if (!fs.existsSync(aplDir)) return {};
-  const pilotSlugs = new Set(allAplPilotScenarios.map((scenario) => String(scenario.slug || "").trim()));
+  const pilotSlugs = new Set(
+    allAplPilotScenarios.map((scenario) => String(scenario.slug || "").trim()),
+  );
 
   const inputs: Record<string, string> = {};
   const entries = fs.readdirSync(aplDir, { withFileTypes: true });
@@ -82,10 +84,7 @@ function collectStaticPageInputs() {
     "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
     "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
     blog: resolve(__dirname, "src/pages/blog.html"),
-    "blog-export-pdf": resolve(
-      __dirname,
-      "src/pages/blog/export-pdf-calculateurs.html",
-    ),
+    "blog-export-pdf": resolve(__dirname, "src/pages/blog/export-pdf-calculateurs.html"),
     "blog-revalorisation-smic-2026": resolve(
       __dirname,
       "src/pages/blog/revalorisation-smic-2026.html",
@@ -98,26 +97,17 @@ function collectStaticPageInputs() {
       __dirname,
       "src/pages/blog/salarie-ou-auto-entrepreneur-2026.html",
     ),
-    "blog-frais-notaire": resolve(
-      __dirname,
-      "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
-    ),
+    "blog-frais-notaire": resolve(__dirname, "src/pages/blog/frais-notaire-ancien-neuf-2026.html"),
     "frais-notaire-ancien-neuf": resolve(
       __dirname,
       "src/pages/blog/frais-notaire-ancien-neuf-2026.html",
     ),
-    "blog-departements": resolve(
-      __dirname,
-      "src/pages/blog/frais-notaire-departements.html",
-    ),
+    "blog-departements": resolve(__dirname, "src/pages/blog/frais-notaire-departements.html"),
     "comment-calculer-frais-notaire": resolve(
       __dirname,
       "src/pages/comment-calculer-frais-notaire.html",
     ),
-    "comment-calculer-plus-value": resolve(
-      __dirname,
-      "src/pages/comment-calculer-plus-value.html",
-    ),
+    "comment-calculer-plus-value": resolve(__dirname, "src/pages/comment-calculer-plus-value.html"),
     "pages/impot/impot-couple-ou-separe/index": resolve(
       __dirname,
       "src/pages/impot/impot-couple-ou-separe.html",
@@ -149,8 +139,14 @@ function collectStaticPageInputs() {
     "politique-confidentialite": resolve(__dirname, "src/pages/politique-confidentialite.html"),
     "politique-cookies": resolve(__dirname, "src/pages/politique-cookies.html"),
     contact: resolve(__dirname, "src/pages/contact.html"),
-    "guide-complet-impot-revenu-2026": resolve(__dirname, "src/pages/guide-complet-impot-revenu-2026.html"),
-    "salaire-brut-net-calcul-2026": resolve(__dirname, "src/pages/salaire-brut-net-calcul-2026.html"),
+    "guide-complet-impot-revenu-2026": resolve(
+      __dirname,
+      "src/pages/guide-complet-impot-revenu-2026.html",
+    ),
+    "salaire-brut-net-calcul-2026": resolve(
+      __dirname,
+      "src/pages/salaire-brut-net-calcul-2026.html",
+    ),
     "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
     // Money pages (simulateurs principaux)
     "pages/salaire-net-apres-impot": resolve(__dirname, "src/pages/salaire-net-apres-impot.html"),
@@ -161,9 +157,18 @@ function collectStaticPageInputs() {
 
 function collectLegacySeoAliasInputs() {
   const aliasEntries: Array<[string, string]> = [
-    ["pages/prime-activite/montant-prime-activite-2026", "src/pages/prime-activite/montant-prime-activite-2026.html"],
-    ["pages/blog/departements/frais-notaire-11", "src/pages/blog/departements/frais-notaire-11.html"],
-    ["pages/blog/departements/frais-notaire-28", "src/pages/blog/departements/frais-notaire-28.html"],
+    [
+      "pages/prime-activite/montant-prime-activite-2026",
+      "src/pages/prime-activite/montant-prime-activite-2026.html",
+    ],
+    [
+      "pages/blog/departements/frais-notaire-11",
+      "src/pages/blog/departements/frais-notaire-11.html",
+    ],
+    [
+      "pages/blog/departements/frais-notaire-28",
+      "src/pages/blog/departements/frais-notaire-28.html",
+    ],
 
     // Alias historiques toujours explores dans Search Console
     ["pages/salaire/smic-net-2026", "src/pages/salaire-brut-net-calcul-2026.html"],
@@ -311,7 +316,9 @@ function collectSimulateursPilotInputs() {
 function collectNestedImpotInputs() {
   const impotDir = resolve(__dirname, "src/pages/impot");
   if (!fs.existsSync(impotDir)) return {};
-  const pilotSlugs = new Set(allImpotPilotScenarios.map((scenario) => String(scenario.slug || "").trim()));
+  const pilotSlugs = new Set(
+    allImpotPilotScenarios.map((scenario) => String(scenario.slug || "").trim()),
+  );
 
   const inputs: Record<string, string> = {};
   const entries = fs.readdirSync(impotDir, { withFileTypes: true });
