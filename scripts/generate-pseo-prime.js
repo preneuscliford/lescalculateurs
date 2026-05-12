@@ -85,7 +85,7 @@ async function main() {
   const engine = await loadPrimeEngine();
   const targetConfig = {
     stylesHref: "/tailwind.css",
-    mainScriptTag: '<script type="module" src="/content.ts"></script>',
+    mainScriptTag: '<script type="module" src="/main.ts"></script>',
   };
 
   const enriched = sanitizedScenarios.map((scenario) => {

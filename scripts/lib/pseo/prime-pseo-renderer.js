@@ -142,14 +142,41 @@ export function renderPrimeScenarioPage({
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: `${DOMAIN}/` },
-        { "@type": "ListItem", position: 2, name: "Prime d'activit\u00e9", item: `${DOMAIN}${PILLAR_PATH}` },
-        { "@type": "ListItem", position: 3, name: normalizeFrenchText(scenario.title), item: canonicalUrl },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Prime d'activit\u00e9",
+          item: `${DOMAIN}${PILLAR_PATH}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: normalizeFrenchText(scenario.title),
+          item: canonicalUrl,
+        },
       ],
     })}
     ${renderJsonLd({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqEntities })}
   </head>
   <body class="bg-slate-50 text-slate-900" data-lc-page-type="pseo" data-lc-page-cluster="prime-activite" data-lc-page-slug="${escapeHtml(scenario.slug)}">
     ${GENERATED_MARKER}
+    <div class="sticky top-0 z-50 border-b border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+      <div class="mx-auto max-w-5xl">
+        Estimation indicative. V&#233;rification finale &#224; faire sur
+        <a href="https://caf.fr" class="font-semibold underline" target="_blank" rel="noopener">caf.fr</a>.
+      </div>
+    </div>
+
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+        <a href="/" class="text-lg font-bold text-slate-900">Les Calculateurs</a>
+        <nav class="flex gap-4 text-sm text-slate-600">
+          <a href="/">Accueil</a>
+          <a href="/pages/prime-activite">Simulateur Prime d&#39;activit&eacute;</a>
+        </nav>
+      </div>
+    </header>
+
     <main class="mx-auto max-w-5xl px-4 py-10">
       <section class="rounded-3xl bg-gradient-to-br from-slate-950 via-green-900 to-emerald-700 px-6 py-10 text-white shadow-xl ring-1 ring-white/10">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">Prime d&#39;activit&eacute; 2026</p>
@@ -207,7 +234,8 @@ export function renderPrimeScenarioPage({
         <div class="mt-6 space-y-4">
           ${scenario.faq
             .map(
-              (item) => `<article class="rounded-xl border border-slate-200 p-4"><h3 class="font-semibold text-slate-900">${renderText(item.question)}</h3><p class="mt-2 text-slate-700">${renderText(item.answer)}</p></article>`,
+              (item) =>
+                `<article class="rounded-xl border border-slate-200 p-4"><h3 class="font-semibold text-slate-900">${renderText(item.question)}</h3><p class="mt-2 text-slate-700">${renderText(item.answer)}</p></article>`,
             )
             .join("")}
         </div>
