@@ -4,8 +4,7 @@ export const primeAbsenceRevenuScenarios = [
     title: "Prime d'activite reprise d'emploi personne seule : estimation 2026",
     description:
       "Estimation indicative de la Prime d'activite 2026 pour une personne seule qui reprend un emploi modeste.",
-    summary:
-      "Cette page traite la reprise d'emploi pour une personne seule avec un cas concret.",
+    summary: "Cette page traite la reprise d'emploi pour une personne seule avec un cas concret.",
     audience: "Personne seule en reprise d'emploi avec petit salaire",
     tags: ["prime-activite", "reprise-emploi", "personne-seule", "petit-salaire"],
     input: {
@@ -23,22 +22,20 @@ export const primeAbsenceRevenuScenarios = [
     ],
     faq: [
       {
-        question: "Une personne seule qui reprend un emploi peut-elle toucher la Prime d'activite ?",
-        answer:
-          "Oui, surtout quand les revenus d'activite sont modestes et reguliers.",
+        question:
+          "Une personne seule qui reprend un emploi peut-elle toucher la Prime d'activite ?",
+        answer: "Oui, surtout quand les revenus d'activite sont modestes et reguliers.",
       },
       {
         question: "Faut-il comparer aussi avec l'APL ?",
-        answer:
-          "Oui, car la Prime agit sur le revenu et l'APL sur le budget logement.",
+        answer: "Oui, car la Prime agit sur le revenu et l'APL sur le budget logement.",
       },
     ],
   },
   {
     slug: "prime-activite-reprise-emploi-apres-chomage",
     title: "Prime d'activite apres reprise d'emploi et chomage : estimation 2026",
-    description:
-      "Estimation indicative de la Prime d'activite 2026 apres une periode de chomage.",
+    description: "Estimation indicative de la Prime d'activite 2026 apres une periode de chomage.",
     summary:
       "Cette page traite la transition ARE vers emploi avec un cas différent de la page personne seule standard.",
     audience: "Personne en reprise d'emploi apres chomage",
@@ -59,13 +56,11 @@ export const primeAbsenceRevenuScenarios = [
     faq: [
       {
         question: "Peut-on toucher la Prime d'activite apres le chomage ?",
-        answer:
-          "Oui, particulierement en cas de reprise d'emploi avec revenus modestes.",
+        answer: "Oui, particulierement en cas de reprise d'emploi avec revenus modestes.",
       },
       {
         question: "Le cumul avec d'autres aides est-il possible ?",
-        answer:
-          "Oui selon la situation, il faut comparer avec APL et RSA.",
+        answer: "Oui selon la situation, il faut comparer avec APL et RSA.",
       },
     ],
   },
@@ -94,13 +89,11 @@ export const primeAbsenceRevenuScenarios = [
     faq: [
       {
         question: "Le temps partiel ouvre-t-il droit a la Prime d'activite ?",
-        answer:
-          "Souvent oui si vous exercez une activite et que les revenus restent modestes.",
+        answer: "Souvent oui si vous exercez une activite et que les revenus restent modestes.",
       },
       {
         question: "Pourquoi utiliser un cas proche du SMIC ?",
-        answer:
-          "Parce que cette zone de revenu concentre une grande partie des recherches utiles.",
+        answer: "Parce que cette zone de revenu concentre une grande partie des recherches utiles.",
       },
     ],
   },
@@ -109,8 +102,7 @@ export const primeAbsenceRevenuScenarios = [
     title: "Prime d'activite couple sans enfant au SMIC : estimation 2026",
     description:
       "Simulation Prime d'activite 2026 pour un couple sans enfant avec revenus d'activite modestes.",
-    summary:
-      "Cette page propose un cas couple sans enfant, complementaire des cas personne seule.",
+    summary: "Cette page propose un cas couple sans enfant, complementaire des cas personne seule.",
     audience: "Couple sans enfant avec revenus proches du SMIC",
     tags: ["prime-activite", "couple", "sans-enfant", "smic"],
     input: {
@@ -129,13 +121,11 @@ export const primeAbsenceRevenuScenarios = [
     faq: [
       {
         question: "Le statut couple change-t-il le montant estime ?",
-        answer:
-          "Oui, le forfait foyer et les ressources prises en compte changent.",
+        answer: "Oui, le forfait foyer et les ressources prises en compte changent.",
       },
       {
         question: "Faut-il comparer avec la page personne seule ?",
-        answer:
-          "Non, le bon repere est un scenario de foyer similaire au votre.",
+        answer: "Non, le bon repere est un scenario de foyer similaire au votre.",
       },
     ],
   },
@@ -164,13 +154,46 @@ export const primeAbsenceRevenuScenarios = [
     faq: [
       {
         question: "Un parent isole peut-il toucher la Prime d'activite ?",
-        answer:
-          "Oui, selon les revenus d'activite du foyer et la composition familiale.",
+        answer: "Oui, selon les revenus d'activite du foyer et la composition familiale.",
       },
       {
         question: "Pourquoi comparer avec ASF et APL ?",
+        answer: "Parce que ces aides peuvent modifier fortement le budget mensuel total.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-couple-4-enfants",
+    title: "Prime d'activite couple avec 4 enfants : calcul 2026",
+    description:
+      "Estimation indicative de la Prime d'activite 2026 pour un couple avec 4 enfants a charge et revenus modestes.",
+    summary:
+      "Cette page traite un cas de famille nombreuse avec besoin d'estimation rapide de la Prime d'activite.",
+    audience: "Couple avec 4 enfants et revenus modestes",
+    tags: ["prime-activite", "couple", "4-enfants", "famille-nombreuse", "simulation"],
+    input: {
+      situation: "couple",
+      enfants: 4,
+      revenusProf: 1780,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Verifier les revenus d'activite et la composition exacte du foyer.",
+      "Comparer avec un scenario couple avec 3 enfants pour mesurer l'ecart.",
+      "Croiser avec APL et allocations familiales selon le budget logement.",
+    ],
+    faq: [
+      {
+        question: "Un couple avec 4 enfants peut-il toucher la Prime d'activite ?",
         answer:
-          "Parce que ces aides peuvent modifier fortement le budget mensuel total.",
+          "Oui, le montant forfaitaire augmente avec le nombre d'enfants a charge, ce qui peut ameliorer l'estimation.",
+      },
+      {
+        question: "Le nombre d'enfants change-t-il beaucoup le montant ?",
+        answer:
+          "Oui. Chaque enfant supplementaire augmente le montant forfaitaire et donc le montant potentiel de la Prime.",
       },
     ],
   },
