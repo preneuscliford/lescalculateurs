@@ -12,6 +12,7 @@ import { asfAbsenceRevenuScenarios } from "./data/pseo/asf-absence-revenu-scenar
 import { primeAbsenceRevenuScenarios } from "./data/pseo/prime-absence-revenu-scenarios.js";
 import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absence-revenu-scenarios.js";
 import { impotPilotScenarios } from "./data/pseo/impot-pilot-scenarios.js";
+import { notaireScenarios } from "./data/pseo/notaire-scenarios.js";
 
 const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
 const allRsaPilotScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
@@ -290,6 +291,53 @@ function collectPrimePilotInputs() {
   return inputs;
 }
 
+function collectNotairePilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of notaireScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/notaire", slug, "index.html");
+    const htmlPath = resolve(__dirname, "src/pages/notaire", `${slug}.html`);
+
+    if (fs.existsSync(indexPath)) {
+      inputs[`pages/notaire/${slug}`] = indexPath;
+      continue;
+    }
+
+    if (fs.existsSync(htmlPath)) {
+      inputs[`pages/notaire/${slug}`] = htmlPath;
+    }
+  }
+
+  return inputs;
+}
+
+function collectNotaireComparisonInputs() {
+  const notaireDir = resolve(__dirname, "src/pages/notaire");
+  if (!fs.existsSync(notaireDir)) return {};
+
+  const pilotSlugs = new Set(
+    notaireScenarios.map((scenario) => String(scenario.slug || "").trim()),
+  );
+
+  const inputs: Record<string, string> = {};
+  const entries = fs.readdirSync(notaireDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    if (pilotSlugs.has(entry.name)) continue;
+
+    const indexPath = path.join(notaireDir, entry.name, "index.html");
+    if (!fs.existsSync(indexPath)) continue;
+
+    inputs[`pages/notaire/${entry.name}`] = indexPath;
+  }
+
+  return inputs;
+}
+
 function collectSimulateursPilotInputs() {
   const inputs: Record<string, string> = {};
 
@@ -409,6 +457,8 @@ export default defineConfig(() => {
   const simulateursPilotInputs = collectSimulateursPilotInputs();
   const impotPilotInputs = collectImpotPilotInputs();
   const vdfIncomeInputs = collectVdfIncomeInputs();
+  const notairePilotInputs = collectNotairePilotInputs();
+  const notaireComparisonInputs = collectNotaireComparisonInputs();
 
   return {
     root: "src",
@@ -488,6 +538,12 @@ export default defineConfig(() => {
 
           // Pages pSEO Impot du pilote declarees explicitement pour la prod
           ...impotPilotInputs,
+
+          // Pages pSEO Notaire du pilote declarees explicitement pour la prod
+          ...notairePilotInputs,
+
+          // Pages pSEO Notaire de comparaison declarees explicitement pour la prod
+          ...notaireComparisonInputs,
 
           // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
           ...legacySeoAliasInputs,

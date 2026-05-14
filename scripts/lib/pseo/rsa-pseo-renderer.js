@@ -347,7 +347,7 @@ export function renderRSAScenarioPage({
     <script defer src="/third-party-loader.js"></script>
     ${targetConfig.mainScriptTag}
   </head>
-  <body class="bg-slate-100 text-slate-900">
+  <body class="bg-slate-100 text-slate-900" data-lc-page-type="pseo" data-lc-page-cluster="rsa" data-lc-page-template="scenario" data-lc-page-intent="${escapeHtml(scenario.title)}" data-lc-page-audience="${escapeHtml(scenario.audience)}" data-lc-page-variant="rsa-2026">
     ${GENERATED_MARKER}
     <div class="sticky top-0 z-50 border-b border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
       <div class="mx-auto max-w-5xl">Estimation indicative. V&eacute;rification finale &agrave; faire sur <a href="https://www.caf.fr" class="font-semibold underline" target="_blank" rel="noopener">caf.fr</a>.</div>

@@ -100,6 +100,7 @@ export function renderASFScenarioPage({
     <title>${renderText(scenario.title)}</title>
     <meta name="description" content="${renderAttributeText(scenario.description)}" />
     <meta name="robots" content="index,follow" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
     <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="${renderAttributeText(scenario.title)}" />
@@ -128,8 +129,9 @@ export function renderASFScenarioPage({
       ],
     })}
     ${renderJsonLd({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqEntities })}
+    ${renderJsonLd({ "@context": "https://schema.org", "@type": "WebPage", "name": normalizeFrenchText(scenario.title), "description": normalizeFrenchText(scenario.description), "url": canonicalUrl, "isPartOf": `${DOMAIN}${PILLAR_PATH}`, "author": { "@type": "Organization", "name": "LesCalculateurs.fr", "url": DOMAIN }, "publisher": { "@type": "Organization", "name": "LesCalculateurs.fr", "url": DOMAIN, "logo": { "@type": "ImageObject", "url": FAVICON_OG_IMAGE } } })}
   </head>
-  <body class="bg-slate-50 text-slate-900" data-lc-page-type="pseo" data-lc-page-cluster="asf" data-lc-page-slug="${escapeHtml(scenario.slug)}">
+  <body class="bg-slate-50 text-slate-900" data-lc-page-type="pseo" data-lc-page-cluster="asf" data-lc-page-slug="${escapeHtml(scenario.slug)}" data-lc-page-template="scenario" data-lc-page-intent="${escapeHtml(scenario.title)}" data-lc-page-audience="${escapeHtml(scenario.audience)}" data-lc-page-variant="asf-2026">
     ${GENERATED_MARKER}
     <main class="mx-auto max-w-5xl px-4 py-10">
       <section class="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-sky-800 px-6 py-10 text-white shadow-xl ring-1 ring-white/10">
