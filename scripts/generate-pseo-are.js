@@ -152,7 +152,7 @@ async function main() {
 main();
 
 function formatApproxEuro(value) {
-  return `~${(Number(value) || 0).toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} EUR`;
+  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} EUR`;
 }
 
 function formatDisplayDate(date) {
@@ -188,20 +188,30 @@ function normalizeText(value) {
 }
 
 function sanitizeAreScenario(scenario) {
+  const preserveInitialCase = (source, normalized) => {
+    if (typeof source !== "string" || typeof normalized !== "string") return normalized;
+    const firstSource = source.trimStart().charAt(0);
+    const firstNormalized = normalized.trimStart().charAt(0);
+    if (!firstSource || !firstNormalized) return normalized;
+    if (firstSource !== firstSource.toUpperCase()) return normalized;
+    if (firstNormalized !== firstNormalized.toLowerCase()) return normalized;
+    return normalized.replace(firstNormalized, firstNormalized.toUpperCase());
+  };
+
   return {
     ...scenario,
-    title: normalizeText(scenario.title),
-    description: normalizeText(scenario.description),
-    summary: normalizeText(scenario.summary),
-    audience: normalizeText(scenario.audience),
+    title: preserveInitialCase(scenario.title, normalizeText(scenario.title)),
+    description: preserveInitialCase(scenario.description, normalizeText(scenario.description)),
+    summary: preserveInitialCase(scenario.summary, normalizeText(scenario.summary)),
+    audience: preserveInitialCase(scenario.audience, normalizeText(scenario.audience)),
     checklist: Array.isArray(scenario.checklist)
-      ? scenario.checklist.map(normalizeText)
+      ? scenario.checklist.map((item) => preserveInitialCase(item, normalizeText(item)))
       : scenario.checklist,
     faq: Array.isArray(scenario.faq)
       ? scenario.faq.map((item) => ({
           ...item,
-          question: normalizeText(item.question),
-          answer: normalizeText(item.answer),
+          question: preserveInitialCase(item.question, normalizeText(item.question)),
+          answer: preserveInitialCase(item.answer, normalizeText(item.answer)),
         }))
       : scenario.faq,
   };

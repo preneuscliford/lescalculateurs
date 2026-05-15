@@ -101,4 +101,72 @@ export const arePilotScenarios = [
       },
     ],
   },
+  {
+    slug: "are-fin-de-droits-rsa-ou-apl",
+    title: "ARE après fin de droits RSA ou APL : estimation 2026",
+    description:
+      "Repère 2026 pour une personne au chômage qui arrive en fin de droits RSA ou APL et veut vérifier son ARE.",
+    summary:
+      "Cette page aide à comprendre quoi vérifier quand une fin de droits RSA ou APL s'ajoute à une situation de chômage ou de reprise partielle.",
+    audience: "Personne en transition de droits avec chômage et aides logement",
+    tags: ["are", "fin-droits", "rsa", "apl", "transition"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 16,
+      salaireReferent: 1850,
+      personnesCharge: 0,
+      agePersonne: 39,
+    },
+    checklist: [
+      "Vérifier la date de fin de droits et les autres aides encore perçues.",
+      "Comparer avec un scénario de reprise partielle si un retour au travail est envisagé.",
+      "Vérifier ensuite les règles officielles de France Travail.",
+    ],
+    faq: [
+      {
+        question: "Que vérifier en premier quand le RSA ou l'APL change ?",
+        answer:
+          "La priorité est de vérifier l'ARE, les aides logement et les ressources restantes du foyer.",
+      },
+      {
+        question: "Cette page remplace-t-elle un calcul France Travail ?",
+        answer:
+          "Non. Elle donne un ordre de grandeur avant une vérification officielle.",
+      },
+    ],
+  },
+  {
+    slug: "are-reprise-emploi-temps-partiel",
+    title: "ARE et reprise d'emploi à temps partiel : estimation 2026",
+    description:
+      "Estimation indicative de l'ARE 2026 pour une reprise d'emploi à temps partiel avec salaire de référence modeste.",
+    summary:
+      "Cette page répond à la question du cumul entre ARE et reprise d'emploi à temps partiel avec un cas concret et simple à comparer.",
+    audience: "Demandeur d'emploi en reprise à temps partiel",
+    tags: ["are", "cumul", "temps-partiel", "reprise-emploi"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 18,
+      salaireReferent: 1950,
+      personnesCharge: 0,
+      agePersonne: 36,
+    },
+    checklist: [
+      "Vérifier les revenus réels de reprise sur le mois.",
+      "Comparer avec un scénario sans reprise d'emploi.",
+      "Vérifier ensuite la Prime d'activité si la reprise devient stable.",
+    ],
+    faq: [
+      {
+        question: "Peut-on cumuler l'ARE et un temps partiel ?",
+        answer:
+          "Oui, dans certains cas, selon les règles de cumul et les revenus d'activité déclarés.",
+      },
+      {
+        question: "Cette page remplace-t-elle le calcul officiel ?",
+        answer:
+          "Non. Elle donne un ordre de grandeur avant une vérification officielle.",
+      },
+    ],
+  },
 ];
