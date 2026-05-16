@@ -37,8 +37,7 @@ const APL_BRIEF_OVERRIDES = {
     metaTitle: "APL au SMIC seul : estimation indicative 2026 (~144 EUR)",
     metaDescription:
       "Estimation indicative APL 2026 pour une personne seule au SMIC : ~144 EUR par mois dans ce scénario type. Ouvrez le simulateur complet et consultez caf.fr.",
-    heroTitle:
-      "APL au SMIC pour une personne seule : estimation indicative 2026",
+    heroTitle: "APL au SMIC pour une personne seule : estimation indicative 2026",
     introText:
       "Estimation indicative APL 2026 pour une personne seule au SMIC avec loyer moyen. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
     directAnswer:
@@ -80,8 +79,7 @@ const APL_BRIEF_OVERRIDES = {
           "Pas automatiquement. Tout dépend du loyer, de la zone et des ressources retenues par la CAF. Un loyer plus bas ou plus haut peut faire varier le résultat.",
       },
       {
-        question:
-          "Pourquoi deux personnes seules au SMIC peuvent-elles avoir une APL différente ?",
+        question: "Pourquoi deux personnes seules au SMIC peuvent-elles avoir une APL différente ?",
         answer:
           "Parce que le niveau exact du loyer retenu, la zone géographique, les autres revenus et la période de référence peuvent modifier le calcul final.",
       },
@@ -128,8 +126,7 @@ const APL_BRIEF_OVERRIDES = {
           "Une personne seule ou un foyer au chômage peut parfois conserver ou ouvrir un droit si le logement est éligible et si les ressources retenues par la CAF restent modestes. Estimation indicative à vérifier sur caf.fr.",
       },
       {
-        question:
-          "Quel montant d'APL pour une personne au chômage avec loyer moyen en 2026 ?",
+        question: "Quel montant d'APL pour une personne au chômage avec loyer moyen en 2026 ?",
         answer:
           "Dans ce scénario type, l'estimation indicative tourne autour de 312 EUR par mois. Le montant final dépend du loyer retenu, de la zone, des indemnités chômage et des autres ressources du foyer.",
       },
@@ -154,8 +151,7 @@ const APL_BRIEF_OVERRIDES = {
     metaTitle: "APL famille 3 enfants : estimation indicative 2026 (~87 EUR)",
     metaDescription:
       "Estimation indicative APL 2026 pour une famille avec 3 enfants : ~87 EUR par mois. Ouvrez le simulateur complet et consultez le montant final sur caf.fr.",
-    heroTitle:
-      "APL famille avec 3 enfants : estimation indicative 2026",
+    heroTitle: "APL famille avec 3 enfants : estimation indicative 2026",
     introText:
       "Estimation indicative APL 2026 pour une famille avec 3 enfants. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
     directAnswer:
@@ -464,201 +460,209 @@ function repairCorruptedFrench(value) {
 }
 
 function toFrenchDisplayText(value) {
-  return fixResidualFrenchGlitches(normalizeFrenchCopy(
-    repairMojibakeText(
-      repairCorruptedFrench(value)
-        .replace(/\bScenario\b/g, "Sc\u00e9nario")
-    .replace(/\bscenario\b/g, "sc\u00e9nario")
-    .replace(/\bScenarios\b/g, "Sc\u00e9narios")
-    .replace(/\bscenarios\b/g, "sc\u00e9narios")
-    .replace(/\bcelibataire\b/g, "c\u00e9libataire")
-    .replace(/\bCelibataire\b/g, "C\u00e9libataire")
-    .replace(/\betudiant\b/g, "\u00e9tudiant")
-    .replace(/\bEtudiant\b/g, "\u00c9tudiant")
-    .replace(/\betudiants\b/g, "\u00e9tudiants")
-    .replace(/\bEtudiants\b/g, "\u00c9tudiants")
-    .replace(/\bparent isole\b/g, "parent isol\u00e9")
-    .replace(/\bParent isole\b/g, "Parent isol\u00e9")
-    .replace(/\bmodifiee\b/g, "modifi\u00e9e")
-    .replace(/\bmodifie\b/g, "modifi\u00e9")
-    .replace(/\bparametres\b/g, "param\u00e8tres")
-    .replace(/\bParametres\b/g, "Param\u00e8tres")
-    .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
-    .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres")
-    .replace(/\bVerification\b/g, "V\u00e9rification")
-    .replace(/\bverification\b/g, "v\u00e9rification")
-    .replace(/\bResultat\b/g, "R\u00e9sultat")
-    .replace(/\bresultat\b/g, "r\u00e9sultat")
-    .replace(/\breelle\b/g, "r\u00e9elle")
-    .replace(/\bReelle\b/g, "R\u00e9elle")
-    .replace(/\breel\b/g, "r\u00e9el")
-    .replace(/\bReel\b/g, "R\u00e9el")
-    .replace(/\breellement\b/g, "r\u00e9ellement")
-    .replace(/\baffiche\b/g, "affich\u00e9")
-    .replace(/\bAffiche\b/g, "Affich\u00e9")
-    .replace(/\bgeographique\b/g, "g\u00e9ographique")
-    .replace(/\bGeographique\b/g, "G\u00e9ographique")
-    .replace(/\bgeographiques\b/g, "g\u00e9ographiques")
-    .replace(/\bspecifique\b/g, "sp\u00e9cifique")
-    .replace(/\bSpecifique\b/g, "Sp\u00e9cifique")
-    .replace(/\bspecifiques\b/g, "sp\u00e9cifiques")
-    .replace(/\bdifferemment\b/g, "diff\u00e9remment")
-    .replace(/\bdifferents\b/g, "diff\u00e9rents")
-    .replace(/\bdifferentes\b/g, "diff\u00e9rentes")
-    .replace(/\bdetail\b/g, "d\u00e9tail")
-    .replace(/\bDetail\b/g, "D\u00e9tail")
-    .replace(/\bregles\b/g, "r\u00e8gles")
-    .replace(/\bRegles\b/g, "R\u00e8gles")
-    .replace(/\bperiode\b/g, "p\u00e9riode")
-    .replace(/\bPeriode\b/g, "P\u00e9riode")
-    .replace(/\bactivite\b/g, "activit\u00e9")
-    .replace(/\bActivite\b/g, "Activit\u00e9")
-    .replace(/\bactivites\b/g, "activit\u00e9s")
-    .replace(/\bfrequentes\b/g, "fr\u00e9quentes")
-    .replace(/\bfrequentes\b/g, "fr\u00e9quentes")
-    .replace(/\bfrequente\b/g, "fr\u00e9quente")
-    .replace(/\bfrancilienne\b/g, "francilienne")
-    .replace(/\beleve\b/g, "\u00e9lev\u00e9")
-    .replace(/\bEleve\b/g, "\u00c9lev\u00e9")
-    .replace(/\belevee\b/g, "\u00e9lev\u00e9e")
-    .replace(/\bElevee\b/g, "\u00c9lev\u00e9e")
-    .replace(/\beleves\b/g, "\u00e9lev\u00e9s")
-    .replace(/\belevee\b/g, "\u00e9lev\u00e9e")
-    .replace(/\bestimee\b/g, "estim\u00e9e")
-    .replace(/\bEstimee\b/g, "Estim\u00e9e")
-    .replace(/\bestime\b/g, "estim\u00e9")
-    .replace(/\bEstime\b/g, "Estim\u00e9")
-    .replace(/\bcalcule\b/g, "calcul\u00e9")
-    .replace(/\bCalcule\b/g, "Calcul\u00e9")
-    .replace(/\bestimation a\b/g, "estimation \u00e0")
-    .replace(/\butilisee\b/g, "utilis\u00e9e")
-    .replace(/\bUtilisee\b/g, "Utilis\u00e9e")
-    .replace(/\butilise\b/g, "utilis\u00e9")
-    .replace(/\bUtilise\b/g, "Utilis\u00e9")
-    .replace(/\bconsidere\b/g, "consid\u00e9r\u00e9")
-    .replace(/\bconsideree\b/g, "consid\u00e9r\u00e9e")
-    .replace(/\bdeclare\b/g, "d\u00e9clar\u00e9")
-    .replace(/\bdeclaree\b/g, "d\u00e9clar\u00e9e")
-    .replace(/\bdeclarees\b/g, "d\u00e9clar\u00e9es")
-    .replace(/\bdemarche\b/g, "d\u00e9marche")
-    .replace(/\bDemarche\b/g, "D\u00e9marche")
-    .replace(/\bdemarches\b/g, "d\u00e9marches")
-    .replace(/\bconseille\b/g, "conseill\u00e9")
-    .replace(/\bConseille\b/g, "Conseill\u00e9")
-    .replace(/\bDerniere\b/g, "Derni\u00e8re")
-    .replace(/\bderniere\b/g, "derni\u00e8re")
-    .replace(/\bmodification\b/g, "modification")
-    .replace(/\bfrequentes\b/g, "fr\u00e9quentes")
-    .replace(/\bfrequents\b/g, "fr\u00e9quents")
-    .replace(/\bconcrete\b/g, "concr\u00e8te")
-    .replace(/\bConcrete\b/g, "Concr\u00e8te")
-    .replace(/\bconcretes\b/g, "concr\u00e8tes")
-    .replace(/\brequete\b/g, "requ\u00eate")
-    .replace(/\bRequete\b/g, "Requ\u00eate")
-    .replace(/\btres\b/g, "tr\u00e8s")
-    .replace(/\bTres\b/g, "Tr\u00e8s")
-    .replace(/\blaisse\b/g, "laisse")
-    .replace(/\bparallele\b/g, "parall\u00e8le")
-    .replace(/\bParallele\b/g, "Parall\u00e8le")
-    .replace(/\bhesitez\b/g, "h\u00e9sitez")
-    .replace(/\bHesitez\b/g, "H\u00e9sitez")
-    .replace(/\bserre\b/g, "serr\u00e9")
-    .replace(/\bSerre\b/g, "Serr\u00e9")
-    .replace(/\bmoderee\b/g, "mod\u00e9r\u00e9e")
-    .replace(/\bModeree\b/g, "Mod\u00e9r\u00e9e")
-    .replace(/\bintegralement\b/g, "int\u00e9gralement")
-    .replace(/\bIntegrablement\b/g, "Int\u00e9gralement")
-    .replace(/\bdetaille\b/g, "d\u00e9taill\u00e9")
-    .replace(/\bDetaille\b/g, "D\u00e9taill\u00e9")
-    .replace(/\brepond\b/g, "r\u00e9pond")
-    .replace(/\bRepond\b/g, "R\u00e9pond")
-    .replace(/\bhypotheses\b/g, "hypoth\u00e8ses")
-    .replace(/\bHypotheses\b/g, "Hypoth\u00e8ses")
-    .replace(/\bgeneree\b/g, "g\u00e9n\u00e9r\u00e9e")
-    .replace(/\bgenerees\b/g, "g\u00e9n\u00e9r\u00e9es")
-    .replace(/\bgeneration\b/g, "g\u00e9n\u00e9ration")
-    .replace(/\bgeneralement\b/g, "g\u00e9n\u00e9ralement")
-    .replace(/\bbeneficier\b/g, "b\u00e9n\u00e9ficier")
-    .replace(/\bbeneficie\b/g, "b\u00e9n\u00e9ficie")
-    .replace(/\bbeneficient\b/g, "b\u00e9n\u00e9ficient")
-    .replace(/\bpret\b/g, "pr\u00eat")
-    .replace(/\bPret\b/g, "Pr\u00eat")
-    .replace(/\bmethodologie\b/g, "m\u00e9thodologie")
-    .replace(/\bMethodologie\b/g, "M\u00e9thodologie")
-    .replace(/\bmethode\b/g, "m\u00e9thode")
-    .replace(/\bMethode\b/g, "M\u00e9thode")
-    .replace(/\bbasee\b/g, "bas\u00e9e")
-    .replace(/\bBasee\b/g, "Bas\u00e9e")
-    .replace(/\bpre-rempli\b/g, "pr\u00e9-rempli")
-    .replace(/\bPre-rempli\b/g, "Pr\u00e9-rempli")
-    .replace(/\bpre-remplie\b/g, "pr\u00e9-remplie")
-    .replace(/\bPre-remplie\b/g, "Pr\u00e9-remplie")
-    .replace(/\bcout\b/g, "co\u00fbt")
-    .replace(/\bCout\b/g, "Co\u00fbt")
-    .replace(/\bevolue\b/g, "\u00e9volue")
-    .replace(/\bEvolue\b/g, "\u00c9volue")
-    .replace(/\bnecessaire\b/g, "n\u00e9cessaire")
-    .replace(/\bNecessaire\b/g, "N\u00e9cessaire")
-    .replace(/\bL intention\b/g, "L'intention")
-    .replace(/\bl intention\b/g, "l'intention")
-    .replace(/\bL objectif\b/g, "L'objectif")
-    .replace(/\bl objectif\b/g, "l'objectif")
-    .replace(/\bL APL\b/g, "L'APL")
-    .replace(/\bl APL\b/g, "l'APL")
-    .replace(/\bd un\b/g, "d'un")
-    .replace(/\bd une\b/g, "d'une")
-    .replace(/\bd autres\b/g, "d'autres")
-    .replace(/ d activite\b/g, " d'activit\u00e9")
-    .replace(/ d activites\b/g, " d'activit\u00e9s")
-    .replace(/\bd abord\b/g, "d'abord")
-    .replace(/\bc est\b/g, "c'est")
-    .replace(/\bC est\b/g, "C'est")
-    .replace(/\bqu un\b/g, "qu'un")
-    .replace(/\bqu une\b/g, "qu'une")
-    .replace(/\blorsqu on\b/g, "lorsqu'on")
-    .replace(/\bLorsqu on\b/g, "Lorsqu'on")
-    .replace(/\bj ai\b/g, "j'ai")
-    .replace(/\bJ ai\b/g, "J'ai")
-    .replace(/\bVerifier\b/g, "V\u00e9rifier")
-    .replace(/\bVerifiez\b/g, "V\u00e9rifiez")
-    .replace(/\bverifiez\b/g, "v\u00e9rifiez")
-    .replace(/\bIle-de-France\b/g, "\u00cele-de-France")
-    .replace(/\ba Paris\b/g, "\u00e0 Paris")
-    .replace(/\ba Lyon\b/g, "\u00e0 Lyon")
-    .replace(/\ba Marseille\b/g, "\u00e0 Marseille")
-    .replace(/\ba Toulouse\b/g, "\u00e0 Toulouse")
-    .replace(/\ba Lille\b/g, "\u00e0 Lille")
-    .replace(/\ba Nantes\b/g, "\u00e0 Nantes")
-    .replace(/\ba Bordeaux\b/g, "\u00e0 Bordeaux")
-    .replace(/\ba Nice\b/g, "\u00e0 Nice")
-    .replace(/\ba Rennes\b/g, "\u00e0 Rennes")
-    .replace(/\ba Strasbourg\b/g, "\u00e0 Strasbourg")
-    .replace(/\ba Montpellier\b/g, "\u00e0 Montpellier")
-    .replace(/\ba partir\b/g, "\u00e0 partir")
-    .replace(/\ba la CAF\b/g, "\u00e0 la CAF")
-    .replace(/\ba votre situation\b/g, "\u00e0 votre situation")
-    .replace(/\ba l intention\b/g, "\u00e0 l'intention")
-    .replace(/\ba l estimation\b/g, "\u00e0 l'estimation")
-    .replace(/\ba l aide\b/g, "\u00e0 l'aide")
-    .replace(/\ba l activite\b/g, "\u00e0 l'activit\u00e9")
-    .replace(/\ba l autre\b/g, "\u00e0 l'autre")
-    .replace(/\brequ \u00e0 te\b/gi, "requ\u00eate")
-    .replace(/\bdiff \u00e0 rent\b/gi, "diff\u00e9rent")
-    .replace(/\bdiff \u00e0 rents\b/gi, "diff\u00e9rents")
-    .replace(/le loyer est bien renseign(?:\s|\&#224;|à)+hors charges/gi, "le loyer est bien renseign\u00e9 hors charges")
-    .replace(/verifier que le loyer est bien renseigne(?:\s|\&#224;|à)+hors charges/gi, "v\u00e9rifier que le loyer est bien renseign\u00e9 hors charges")
-    .replace(/\ba revenu\b/g, "\u00e0 revenu")
-    .replace(/\ba ([0-9])/g, "\u00e0 $1")
-    .replace(/\bA ([0-9])/g, "\u00c0 $1")
-    .replace(/\bcomplete\b/g, "compl\u00e8te")
-    .replace(/\bComplete\b/g, "Compl\u00e8te")
-        .replace(/\bmodifi?r\b/g, "modifier")
-        .replace(/\brecalcul?r\b/g, "recalculer")
-        .replace(/\bdes son\b/g, "d\u00e8s son")
-        .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
-        .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres"),
+  return fixResidualFrenchGlitches(
+    normalizeFrenchCopy(
+      repairMojibakeText(
+        repairCorruptedFrench(value)
+          .replace(/\bScenario\b/g, "Sc\u00e9nario")
+          .replace(/\bscenario\b/g, "sc\u00e9nario")
+          .replace(/\bScenarios\b/g, "Sc\u00e9narios")
+          .replace(/\bscenarios\b/g, "sc\u00e9narios")
+          .replace(/\bcelibataire\b/g, "c\u00e9libataire")
+          .replace(/\bCelibataire\b/g, "C\u00e9libataire")
+          .replace(/\betudiant\b/g, "\u00e9tudiant")
+          .replace(/\bEtudiant\b/g, "\u00c9tudiant")
+          .replace(/\betudiants\b/g, "\u00e9tudiants")
+          .replace(/\bEtudiants\b/g, "\u00c9tudiants")
+          .replace(/\bparent isole\b/g, "parent isol\u00e9")
+          .replace(/\bParent isole\b/g, "Parent isol\u00e9")
+          .replace(/\bmodifiee\b/g, "modifi\u00e9e")
+          .replace(/\bmodifie\b/g, "modifi\u00e9")
+          .replace(/\bparametres\b/g, "param\u00e8tres")
+          .replace(/\bParametres\b/g, "Param\u00e8tres")
+          .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
+          .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres")
+          .replace(/\bVerification\b/g, "V\u00e9rification")
+          .replace(/\bverification\b/g, "v\u00e9rification")
+          .replace(/\bResultat\b/g, "R\u00e9sultat")
+          .replace(/\bresultat\b/g, "r\u00e9sultat")
+          .replace(/\breelle\b/g, "r\u00e9elle")
+          .replace(/\bReelle\b/g, "R\u00e9elle")
+          .replace(/\breel\b/g, "r\u00e9el")
+          .replace(/\bReel\b/g, "R\u00e9el")
+          .replace(/\breellement\b/g, "r\u00e9ellement")
+          .replace(/\baffiche\b/g, "affich\u00e9")
+          .replace(/\bAffiche\b/g, "Affich\u00e9")
+          .replace(/\bgeographique\b/g, "g\u00e9ographique")
+          .replace(/\bGeographique\b/g, "G\u00e9ographique")
+          .replace(/\bgeographiques\b/g, "g\u00e9ographiques")
+          .replace(/\bspecifique\b/g, "sp\u00e9cifique")
+          .replace(/\bSpecifique\b/g, "Sp\u00e9cifique")
+          .replace(/\bspecifiques\b/g, "sp\u00e9cifiques")
+          .replace(/\bdifferemment\b/g, "diff\u00e9remment")
+          .replace(/\bdifferents\b/g, "diff\u00e9rents")
+          .replace(/\bdifferentes\b/g, "diff\u00e9rentes")
+          .replace(/\bdetail\b/g, "d\u00e9tail")
+          .replace(/\bDetail\b/g, "D\u00e9tail")
+          .replace(/\bregles\b/g, "r\u00e8gles")
+          .replace(/\bRegles\b/g, "R\u00e8gles")
+          .replace(/\bperiode\b/g, "p\u00e9riode")
+          .replace(/\bPeriode\b/g, "P\u00e9riode")
+          .replace(/\bactivite\b/g, "activit\u00e9")
+          .replace(/\bActivite\b/g, "Activit\u00e9")
+          .replace(/\bactivites\b/g, "activit\u00e9s")
+          .replace(/\bfrequentes\b/g, "fr\u00e9quentes")
+          .replace(/\bfrequentes\b/g, "fr\u00e9quentes")
+          .replace(/\bfrequente\b/g, "fr\u00e9quente")
+          .replace(/\bfrancilienne\b/g, "francilienne")
+          .replace(/\beleve\b/g, "\u00e9lev\u00e9")
+          .replace(/\bEleve\b/g, "\u00c9lev\u00e9")
+          .replace(/\belevee\b/g, "\u00e9lev\u00e9e")
+          .replace(/\bElevee\b/g, "\u00c9lev\u00e9e")
+          .replace(/\beleves\b/g, "\u00e9lev\u00e9s")
+          .replace(/\belevee\b/g, "\u00e9lev\u00e9e")
+          .replace(/\bestimee\b/g, "estim\u00e9e")
+          .replace(/\bEstimee\b/g, "Estim\u00e9e")
+          .replace(/\bestime\b/g, "estim\u00e9")
+          .replace(/\bEstime\b/g, "Estim\u00e9")
+          .replace(/\bcalcule\b/g, "calcul\u00e9")
+          .replace(/\bCalcule\b/g, "Calcul\u00e9")
+          .replace(/\bestimation a\b/g, "estimation \u00e0")
+          .replace(/\butilisee\b/g, "utilis\u00e9e")
+          .replace(/\bUtilisee\b/g, "Utilis\u00e9e")
+          .replace(/\butilise\b/g, "utilis\u00e9")
+          .replace(/\bUtilise\b/g, "Utilis\u00e9")
+          .replace(/\bconsidere\b/g, "consid\u00e9r\u00e9")
+          .replace(/\bconsideree\b/g, "consid\u00e9r\u00e9e")
+          .replace(/\bdeclare\b/g, "d\u00e9clar\u00e9")
+          .replace(/\bdeclaree\b/g, "d\u00e9clar\u00e9e")
+          .replace(/\bdeclarees\b/g, "d\u00e9clar\u00e9es")
+          .replace(/\bdemarche\b/g, "d\u00e9marche")
+          .replace(/\bDemarche\b/g, "D\u00e9marche")
+          .replace(/\bdemarches\b/g, "d\u00e9marches")
+          .replace(/\bconseille\b/g, "conseill\u00e9")
+          .replace(/\bConseille\b/g, "Conseill\u00e9")
+          .replace(/\bDerniere\b/g, "Derni\u00e8re")
+          .replace(/\bderniere\b/g, "derni\u00e8re")
+          .replace(/\bmodification\b/g, "modification")
+          .replace(/\bfrequentes\b/g, "fr\u00e9quentes")
+          .replace(/\bfrequents\b/g, "fr\u00e9quents")
+          .replace(/\bconcrete\b/g, "concr\u00e8te")
+          .replace(/\bConcrete\b/g, "Concr\u00e8te")
+          .replace(/\bconcretes\b/g, "concr\u00e8tes")
+          .replace(/\brequete\b/g, "requ\u00eate")
+          .replace(/\bRequete\b/g, "Requ\u00eate")
+          .replace(/\btres\b/g, "tr\u00e8s")
+          .replace(/\bTres\b/g, "Tr\u00e8s")
+          .replace(/\blaisse\b/g, "laisse")
+          .replace(/\bparallele\b/g, "parall\u00e8le")
+          .replace(/\bParallele\b/g, "Parall\u00e8le")
+          .replace(/\bhesitez\b/g, "h\u00e9sitez")
+          .replace(/\bHesitez\b/g, "H\u00e9sitez")
+          .replace(/\bserre\b/g, "serr\u00e9")
+          .replace(/\bSerre\b/g, "Serr\u00e9")
+          .replace(/\bmoderee\b/g, "mod\u00e9r\u00e9e")
+          .replace(/\bModeree\b/g, "Mod\u00e9r\u00e9e")
+          .replace(/\bintegralement\b/g, "int\u00e9gralement")
+          .replace(/\bIntegrablement\b/g, "Int\u00e9gralement")
+          .replace(/\bdetaille\b/g, "d\u00e9taill\u00e9")
+          .replace(/\bDetaille\b/g, "D\u00e9taill\u00e9")
+          .replace(/\brepond\b/g, "r\u00e9pond")
+          .replace(/\bRepond\b/g, "R\u00e9pond")
+          .replace(/\bhypotheses\b/g, "hypoth\u00e8ses")
+          .replace(/\bHypotheses\b/g, "Hypoth\u00e8ses")
+          .replace(/\bgeneree\b/g, "g\u00e9n\u00e9r\u00e9e")
+          .replace(/\bgenerees\b/g, "g\u00e9n\u00e9r\u00e9es")
+          .replace(/\bgeneration\b/g, "g\u00e9n\u00e9ration")
+          .replace(/\bgeneralement\b/g, "g\u00e9n\u00e9ralement")
+          .replace(/\bbeneficier\b/g, "b\u00e9n\u00e9ficier")
+          .replace(/\bbeneficie\b/g, "b\u00e9n\u00e9ficie")
+          .replace(/\bbeneficient\b/g, "b\u00e9n\u00e9ficient")
+          .replace(/\bpret\b/g, "pr\u00eat")
+          .replace(/\bPret\b/g, "Pr\u00eat")
+          .replace(/\bmethodologie\b/g, "m\u00e9thodologie")
+          .replace(/\bMethodologie\b/g, "M\u00e9thodologie")
+          .replace(/\bmethode\b/g, "m\u00e9thode")
+          .replace(/\bMethode\b/g, "M\u00e9thode")
+          .replace(/\bbasee\b/g, "bas\u00e9e")
+          .replace(/\bBasee\b/g, "Bas\u00e9e")
+          .replace(/\bpre-rempli\b/g, "pr\u00e9-rempli")
+          .replace(/\bPre-rempli\b/g, "Pr\u00e9-rempli")
+          .replace(/\bpre-remplie\b/g, "pr\u00e9-remplie")
+          .replace(/\bPre-remplie\b/g, "Pr\u00e9-remplie")
+          .replace(/\bcout\b/g, "co\u00fbt")
+          .replace(/\bCout\b/g, "Co\u00fbt")
+          .replace(/\bevolue\b/g, "\u00e9volue")
+          .replace(/\bEvolue\b/g, "\u00c9volue")
+          .replace(/\bnecessaire\b/g, "n\u00e9cessaire")
+          .replace(/\bNecessaire\b/g, "N\u00e9cessaire")
+          .replace(/\bL intention\b/g, "L'intention")
+          .replace(/\bl intention\b/g, "l'intention")
+          .replace(/\bL objectif\b/g, "L'objectif")
+          .replace(/\bl objectif\b/g, "l'objectif")
+          .replace(/\bL APL\b/g, "L'APL")
+          .replace(/\bl APL\b/g, "l'APL")
+          .replace(/\bd un\b/g, "d'un")
+          .replace(/\bd une\b/g, "d'une")
+          .replace(/\bd autres\b/g, "d'autres")
+          .replace(/ d activite\b/g, " d'activit\u00e9")
+          .replace(/ d activites\b/g, " d'activit\u00e9s")
+          .replace(/\bd abord\b/g, "d'abord")
+          .replace(/\bc est\b/g, "c'est")
+          .replace(/\bC est\b/g, "C'est")
+          .replace(/\bqu un\b/g, "qu'un")
+          .replace(/\bqu une\b/g, "qu'une")
+          .replace(/\blorsqu on\b/g, "lorsqu'on")
+          .replace(/\bLorsqu on\b/g, "Lorsqu'on")
+          .replace(/\bj ai\b/g, "j'ai")
+          .replace(/\bJ ai\b/g, "J'ai")
+          .replace(/\bVerifier\b/g, "V\u00e9rifier")
+          .replace(/\bVerifiez\b/g, "V\u00e9rifiez")
+          .replace(/\bverifiez\b/g, "v\u00e9rifiez")
+          .replace(/\bIle-de-France\b/g, "\u00cele-de-France")
+          .replace(/\ba Paris\b/g, "\u00e0 Paris")
+          .replace(/\ba Lyon\b/g, "\u00e0 Lyon")
+          .replace(/\ba Marseille\b/g, "\u00e0 Marseille")
+          .replace(/\ba Toulouse\b/g, "\u00e0 Toulouse")
+          .replace(/\ba Lille\b/g, "\u00e0 Lille")
+          .replace(/\ba Nantes\b/g, "\u00e0 Nantes")
+          .replace(/\ba Bordeaux\b/g, "\u00e0 Bordeaux")
+          .replace(/\ba Nice\b/g, "\u00e0 Nice")
+          .replace(/\ba Rennes\b/g, "\u00e0 Rennes")
+          .replace(/\ba Strasbourg\b/g, "\u00e0 Strasbourg")
+          .replace(/\ba Montpellier\b/g, "\u00e0 Montpellier")
+          .replace(/\ba partir\b/g, "\u00e0 partir")
+          .replace(/\ba la CAF\b/g, "\u00e0 la CAF")
+          .replace(/\ba votre situation\b/g, "\u00e0 votre situation")
+          .replace(/\ba l intention\b/g, "\u00e0 l'intention")
+          .replace(/\ba l estimation\b/g, "\u00e0 l'estimation")
+          .replace(/\ba l aide\b/g, "\u00e0 l'aide")
+          .replace(/\ba l activite\b/g, "\u00e0 l'activit\u00e9")
+          .replace(/\ba l autre\b/g, "\u00e0 l'autre")
+          .replace(/\brequ \u00e0 te\b/gi, "requ\u00eate")
+          .replace(/\bdiff \u00e0 rent\b/gi, "diff\u00e9rent")
+          .replace(/\bdiff \u00e0 rents\b/gi, "diff\u00e9rents")
+          .replace(
+            /le loyer est bien renseign(?:\s|\&#224;|à)+hors charges/gi,
+            "le loyer est bien renseign\u00e9 hors charges",
+          )
+          .replace(
+            /verifier que le loyer est bien renseigne(?:\s|\&#224;|à)+hors charges/gi,
+            "v\u00e9rifier que le loyer est bien renseign\u00e9 hors charges",
+          )
+          .replace(/\ba revenu\b/g, "\u00e0 revenu")
+          .replace(/\ba ([0-9])/g, "\u00e0 $1")
+          .replace(/\bA ([0-9])/g, "\u00c0 $1")
+          .replace(/\bcomplete\b/g, "compl\u00e8te")
+          .replace(/\bComplete\b/g, "Compl\u00e8te")
+          .replace(/\bmodifi?r\b/g, "modifier")
+          .replace(/\brecalcul?r\b/g, "recalculer")
+          .replace(/\bdes son\b/g, "d\u00e8s son")
+          .replace(/param\u00e8tr\u00e8s/g, "param\u00e8tres")
+          .replace(/Param\u00e8tr\u00e8s/g, "Param\u00e8tres"),
       ),
-  ));
+    ),
+  );
 }
 
 function fixResidualFrenchGlitches(value) {
@@ -711,21 +715,26 @@ function toPublicFaqQuestion(value) {
 }
 
 function normalizeInlineApproxEuro(value) {
-  return String(value).replace(/(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g, (_match, prefix, amount) => {
-    const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
-    if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
-    return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
-  });
+  return String(value).replace(
+    /(^|[^\w~])(\d{1,3}(?:[\s\u202f]?\d{3})*|\d+)\s*EUR\b/g,
+    (_match, prefix, amount) => {
+      const numeric = Number(String(amount).replace(/[\s\u202f]/g, ""));
+      if (!Number.isFinite(numeric)) return `${prefix}${amount} EUR`;
+      return `${prefix}~${numeric.toLocaleString("fr-FR")} EUR`;
+    },
+  );
 }
 
 function renderText(value) {
   return encodeHtmlEntities(escapeHtml(normalizeInlineApproxEuro(toFrenchDisplayText(value))));
 }
 
+function renderAmount(value) {
+  return encodeHtmlEntities(escapeHtml(String(value ?? "")));
+}
+
 function renderJsonLd(data) {
-  return `<script type="application/ld+json">${escapeJsonUnicode(
-    JSON.stringify(data),
-  )}</script>`;
+  return `<script type="application/ld+json">${escapeJsonUnicode(JSON.stringify(data))}</script>`;
 }
 
 function buildAplBriefConfig(scenario, estimate, simulatorUrl) {
@@ -750,8 +759,7 @@ function buildAplBriefConfig(scenario, estimate, simulatorUrl) {
     directAnswerDetails:
       customConfig.directAnswerDetails ||
       "Le montant final dépend du loyer retenu, de la zone, des ressources réellement prises en compte par la CAF et de votre situation administrative.",
-    primaryCtaLabel:
-      customConfig.primaryCtaLabel || "Ouvrir le simulateur APL complet",
+    primaryCtaLabel: customConfig.primaryCtaLabel || "Ouvrir le simulateur APL complet",
     primaryCtaHref: customConfig.primaryCtaHref || simulatorUrl,
     secondaryCtaLabel: customConfig.secondaryCtaLabel || "Vérifier sur caf.fr",
     secondaryCtaHref:
@@ -804,9 +812,7 @@ function renderLotOneBridge(scenario, relatedPages) {
         </p>
         <div class="mt-5 grid gap-3 sm:grid-cols-2">
           <a href="${APL_SITUATION_HUB_PATH}" class="rounded-xl border border-blue-200 bg-white px-4 py-4 text-slate-900 transition-colors hover:border-blue-400 hover:bg-blue-100">
-            <span class="font-semibold">${renderText(
-              "APL selon votre situation en 2026",
-            )}</span>
+            <span class="font-semibold">${renderText("APL selon votre situation en 2026")}</span>
           </a>
           <a href="${PILLAR_PATH}" class="rounded-xl border border-blue-200 bg-white px-4 py-4 text-slate-900 transition-colors hover:border-blue-400 hover:bg-blue-100">
             <span class="font-semibold">${renderText("Simulateur APL complet")}</span>
@@ -1000,18 +1006,52 @@ function renderScenarioComparisonTable(scenario, estimate, relatedPages) {
               </a>
               <p class="mt-1 text-xs text-slate-500">${renderText(page.intent)}</p>
             </td>
-            <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderText(
+            <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderAmount(
               page.estimate.formattedApl.startsWith("~")
                 ? page.estimate.formattedApl
                 : `~${page.estimate.formattedApl}`,
             )}</td>
-            <td class="px-4 py-3 text-right text-slate-700">${renderText(
+            <td class="px-4 py-3 text-right text-slate-700">${renderAmount(
               page.estimate.formattedRevenue,
             )}</td>
-            <td class="px-4 py-3 text-right text-slate-700">${renderText(
+            <td class="px-4 py-3 text-right text-slate-700">${renderAmount(
               page.estimate.formattedRent,
             )}</td>
           </tr>`,
+    )
+    .join("");
+
+  const mobileCards = comparablePages
+    .map(
+      (page) => `
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <a href="/pages/apl/${escapeAttribute(page.slug)}" class="font-semibold text-slate-900 hover:text-blue-700">
+                  ${renderText(page.audience || page.title)}
+                </a>
+                <p class="mt-1 text-xs text-slate-500">${renderText(page.intent)}</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">APL</p>
+                <p class="text-base font-black leading-tight text-slate-900 sm:text-lg">${renderAmount(
+                  page.estimate.formattedApl.startsWith("~")
+                    ? page.estimate.formattedApl
+                    : `~${page.estimate.formattedApl}`,
+                )}</p>
+              </div>
+            </div>
+            <dl class="mt-4 grid grid-cols-2 gap-3 text-sm text-slate-700">
+              <div class="rounded-xl bg-white px-3 py-2">
+                <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Revenus</dt>
+                <dd class="mt-1 font-semibold text-slate-900">${renderAmount(page.estimate.formattedRevenue)}</dd>
+              </div>
+              <div class="rounded-xl bg-white px-3 py-2">
+                <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Loyer</dt>
+                <dd class="mt-1 font-semibold text-slate-900">${renderAmount(page.estimate.formattedRent)}</dd>
+              </div>
+            </dl>
+          </article>`,
     )
     .join("");
 
@@ -1023,8 +1063,11 @@ function renderScenarioComparisonTable(scenario, estimate, relatedPages) {
             "Ce tableau permet de voir rapidement comment l'estimation evolue selon des profils et contextes proches.",
           )}
         </p>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-          <table class="min-w-full border-collapse text-sm">
+        <div class="mt-6 space-y-4 md:hidden">
+          ${mobileCards}
+        </div>
+        <div class="mt-6 hidden overflow-x-auto rounded-2xl border border-slate-200 md:block">
+          <table class="min-w-[44rem] border-collapse text-sm">
             <thead class="bg-slate-50">
               <tr>
                 <th class="px-4 py-3 text-left font-semibold text-slate-700">Sc&eacute;nario</th>
@@ -1104,9 +1147,7 @@ export function renderAPLScenarioPage({
   };
 
   const checklistItems = scenario.checklist
-    .map(
-      (item) => `<li class="text-slate-700 leading-relaxed">${renderText(item)}</li>`,
-    )
+    .map((item) => `<li class="text-slate-700 leading-relaxed">${renderText(item)}</li>`)
     .join("");
 
   const faqHtml = faqItems
@@ -1129,16 +1170,9 @@ export function renderAPLScenarioPage({
     : `~${estimate.formattedApl}`;
   const pilotVariantsHtml = renderPilotVariants(scenario.pilotProduct);
   const pilotDriversHtml = renderPilotDrivers(scenario.pilotProduct);
-  const pilotComparisonHtml = renderPilotComparison(
-    scenario.pilotProduct,
-    simulatorUrl,
-  );
+  const pilotComparisonHtml = renderPilotComparison(scenario.pilotProduct, simulatorUrl);
   const pilotJourneyHtml = renderPilotJourney(scenario.pilotProduct);
-  const scenarioComparisonHtml = renderScenarioComparisonTable(
-    scenario,
-    estimate,
-    relatedPages,
-  );
+  const scenarioComparisonHtml = renderScenarioComparisonTable(scenario, estimate, relatedPages);
 
   const displayDescription = toPublicDescription(briefConfig.metaDescription);
 
@@ -1149,12 +1183,20 @@ export function renderAPLScenarioPage({
       );
 
   const tableRows = [
-    ["Situation familiale", toFrenchDisplayText(SITUATION_LABELS[scenario.input.situation] || scenario.input.situation)],
+    [
+      "Situation familiale",
+      toFrenchDisplayText(SITUATION_LABELS[scenario.input.situation] || scenario.input.situation),
+    ],
     ["Nombre d'enfants", String(scenario.input.enfants)],
     ["Revenus mensuels", estimate.formattedRevenue],
     ["Loyer mensuel", estimate.formattedRent],
     ["Zone", toFrenchDisplayText(REGION_LABELS[scenario.input.region] || scenario.input.region)],
-    ["Type de logement", toFrenchDisplayText(LOGEMENT_LABELS[scenario.input.type_logement] || scenario.input.type_logement)],
+    [
+      "Type de logement",
+      toFrenchDisplayText(
+        LOGEMENT_LABELS[scenario.input.type_logement] || scenario.input.type_logement,
+      ),
+    ],
   ]
     .map(
       ([label, value]) => `
@@ -1385,4 +1427,3 @@ export function renderAPLScenarioPage({
   </body>
 </html>`;
 }
-

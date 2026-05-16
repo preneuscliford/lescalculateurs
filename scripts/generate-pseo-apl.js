@@ -371,7 +371,14 @@ function formatEuroAscii(value) {
 }
 
 function formatApproxEuroAscii(value) {
-  return `~${(Number(value) || 0).toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`;
+  const numeric = Number(value) || 0;
+  const sign = numeric < 0 ? "-" : "";
+  const absolute = Math.abs(numeric);
+  const whole = Math.floor(absolute);
+  const cents = Math.round((absolute - whole) * 100)
+    .toString()
+    .padStart(2, "0");
+  return `~${sign}${whole.toLocaleString("fr-FR")},${cents} €`;
 }
 
 function formatDisplayDate(date) {

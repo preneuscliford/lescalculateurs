@@ -180,11 +180,20 @@ const WHOLE_TEXT_REPLACEMENTS = [
     /Cette page cible les situations les plus sensibles de rupture de revenu avec enfant à charge et besoin d'aide rapide\./gi,
     "Cette page traite les situations de rupture de revenu avec enfant à charge, pour donner un repère rapide et utile.",
   ],
-  [/Cette page cible une intention forte/gi, "Cette page répond à une intention de recherche forte"],
-  [/Cette page cible une intention précise/gi, "Cette page répond à une intention de recherche précise"],
+  [
+    /Cette page cible une intention forte/gi,
+    "Cette page répond à une intention de recherche forte",
+  ],
+  [
+    /Cette page cible une intention précise/gi,
+    "Cette page répond à une intention de recherche précise",
+  ],
   [/Cette page cible une requête/gi, "Cette page répond à une requête"],
   [/Cette page cible les requetes/gi, "Cette page répond aux requêtes"],
-  [/Ce scénario capte l'intention de recherche sur la décote avec un exemple concret et actionnable\./gi, "Ce scénario aide à vérifier rapidement si la décote peut réduire votre impôt dans un cas concret."],
+  [
+    /Ce scénario capte l'intention de recherche sur la décote avec un exemple concret et actionnable\./gi,
+    "Ce scénario aide à vérifier rapidement si la décote peut réduire votre impôt dans un cas concret.",
+  ],
   [
     /Cette page vise une intention foyer distincte pour eviter la cannibalisation avec les pages personne seule\./gi,
     "Cette page propose un cas couple sans enfant, complémentaire des cas personne seule.",
@@ -202,8 +211,14 @@ const WHOLE_TEXT_REPLACEMENTS = [
   [/Ce cas sert l'intention/gi, "Ce cas répond à une question"],
   [/intention de cumul/gi, "besoin de cumul"],
   [/une intention de cumul/gi, "un besoin de cumul"],
-  [/Cette page sert les intentions de transition/gi, "Cette page traite les situations de transition"],
-  [/Cette page couvre une intention fréquente de foyer familial/gi, "Cette page traite un cas fréquent de foyer familial"],
+  [
+    /Cette page sert les intentions de transition/gi,
+    "Cette page traite les situations de transition",
+  ],
+  [
+    /Cette page couvre une intention fréquente de foyer familial/gi,
+    "Cette page traite un cas fréquent de foyer familial",
+  ],
   [/intention parentale forte/gi, "situation parentale fréquente"],
   [/des scénarios couple et personne seule/gi, "des cas couple et personne seule"],
   [/pattern gagnant/gi, "motif déjà performant"],
@@ -282,15 +297,24 @@ function applyCaseAwareAccentWordReplacements(input) {
   let output = input;
 
   for (const [plainWord, accentedWord] of CASE_AWARE_ACCENT_WORDS) {
-    const pattern = new RegExp(`(^|[^\\p{L}\\p{N}])(${escapeRegex(plainWord)})(?=$|[^\\p{L}\\p{N}])`, "giu");
-    output = output.replace(pattern, (match, prefix, word) => `${prefix}${preserveLeadingCase(word, accentedWord)}`);
+    const pattern = new RegExp(
+      `(^|[^\\p{L}\\p{N}])(${escapeRegex(plainWord)})(?=$|[^\\p{L}\\p{N}])`,
+      "giu",
+    );
+    output = output.replace(
+      pattern,
+      (match, prefix, word) => `${prefix}${preserveLeadingCase(word, accentedWord)}`,
+    );
   }
 
   return output;
 }
 
 function normalizeLeadingImperatives(input) {
-  return String(input).replace(/(^|[.!?]\s+)(v\u00e9rifier)\b/gu, (match, prefix) => `${prefix}V\u00e9rifiez`);
+  return String(input).replace(
+    /(^|[.!?]\s+)(v\u00e9rifier)\b/gu,
+    (match, prefix) => `${prefix}V\u00e9rifiez`,
+  );
 }
 
 const APOSTROPHE_PATTERNS = [
@@ -525,6 +549,7 @@ const ARTIFACT_REPLACEMENTS = [
   [/\betre\b/gi, "\u00eatre"],
   [/\baout\b/gi, "ao\u00fbt"],
   [/\bfevrier\b/gi, "f\u00e9vrier"],
+  [/([0-9])\s*,\s+([0-9]{2})\b/g, "$1,$2"],
   [/\b5,\s+09\b/g, "5,09"],
   [/\b6,\s+32\b/g, "6,32"],
   [/📚 Méthodo\b/g, "📚 Méthodologie"],
