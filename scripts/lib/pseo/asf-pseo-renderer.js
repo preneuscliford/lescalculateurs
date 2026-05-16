@@ -129,7 +129,7 @@ export function renderASFScenarioPage({
       ],
     })}
     ${renderJsonLd({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqEntities })}
-    ${renderJsonLd({ "@context": "https://schema.org", "@type": "WebPage", "name": normalizeFrenchText(scenario.title), "description": normalizeFrenchText(scenario.description), "url": canonicalUrl, "isPartOf": `${DOMAIN}${PILLAR_PATH}`, "author": { "@type": "Organization", "name": "LesCalculateurs.fr", "url": DOMAIN }, "publisher": { "@type": "Organization", "name": "LesCalculateurs.fr", "url": DOMAIN, "logo": { "@type": "ImageObject", "url": FAVICON_OG_IMAGE } } })}
+    ${renderJsonLd({ "@context": "https://schema.org", "@type": "WebPage", name: normalizeFrenchText(scenario.title), description: normalizeFrenchText(scenario.description), url: canonicalUrl, isPartOf: `${DOMAIN}${PILLAR_PATH}`, author: { "@type": "Organization", name: "LesCalculateurs.fr", url: DOMAIN }, publisher: { "@type": "Organization", name: "LesCalculateurs.fr", url: DOMAIN, logo: { "@type": "ImageObject", url: FAVICON_OG_IMAGE } } })}
   </head>
   <body class="bg-slate-50 text-slate-900" data-lc-page-type="pseo" data-lc-page-cluster="asf" data-lc-page-slug="${escapeHtml(scenario.slug)}" data-lc-page-template="scenario" data-lc-page-intent="${escapeHtml(scenario.title)}" data-lc-page-audience="${escapeHtml(scenario.audience)}" data-lc-page-variant="asf-2026">
     ${GENERATED_MARKER}
@@ -187,7 +187,8 @@ export function renderASFScenarioPage({
         <div class="mt-6 space-y-4">
           ${scenario.faq
             .map(
-              (item) => `<article class="rounded-xl border border-slate-200 p-4"><h3 class="font-semibold text-slate-900">${renderText(item.question)}</h3><p class="mt-2 text-slate-700">${renderText(item.answer)}</p></article>`,
+              (item) =>
+                `<article class="rounded-xl border border-slate-200 p-4"><h3 class="font-semibold text-slate-900">${renderText(item.question)}</h3><p class="mt-2 text-slate-700">${renderText(item.answer)}</p></article>`,
             )
             .join("")}
         </div>
@@ -215,4 +216,3 @@ export function renderASFScenarioPage({
   </body>
 </html>`;
 }
-

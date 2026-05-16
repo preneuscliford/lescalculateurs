@@ -2322,6 +2322,48 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/niveau-de-vie-par-ville</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-paris</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-lyon</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-marseille</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-paris</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-lyon</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-marseille</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-ancien-simulation</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>

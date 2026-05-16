@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Niveau de vie par ville : vivre avec 1 800 € net ou un loyer de 700 €</title>
+    <meta name="description" content="Une page pilier pour comparer le reste à vivre, les aides et la capacité de prêt selon la ville, le revenu et le loyer." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/revenus/niveau-de-vie-par-ville" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Niveau de vie par ville : vivre avec 1 800 € net ou un loyer de 700 €" />
+    <meta property="og:description" content="Une page pilier pour comparer le reste à vivre, les aides et la capacité de prêt selon la ville, le revenu et le loyer." />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/revenus/niveau-de-vie-par-ville" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Niveau de vie par ville : vivre avec 1 800 € net ou un loyer de 700 €" />
+    <meta name="twitter:description" content="Une page pilier pour comparer le reste à vivre, les aides et la capacité de prêt selon la ville, le revenu et le loyer." />
+    <meta property="og:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
+    <meta name="twitter:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/tailwind.css" />
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body
+    class="bg-slate-100 text-slate-900"
+    data-lc-page-type="pseo"
+    data-lc-page-cluster="niveau-de-vie"
+    data-lc-page-template="vdf-combined"
+    data-lc-page-slug="niveau-de-vie-par-ville"
+  >
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <a href="/" class="text-lg font-bold text-slate-900">Les Calculateurs</a>
+        <button id="menu-toggle" class="md:hidden inline-flex h-10 w-10 items-center justify-center text-slate-600 hover:text-slate-900">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <nav id="nav-menu" class="hidden gap-4 text-sm text-slate-600 md:flex">
+          <a href="/">Accueil</a>
+          <a href="/pages/simulateurs">Simulateurs</a>
+          <a href="/pages/revenu-median-commune">Revenus par commune</a>
+        </nav>
+      </div>
+      <nav id="mobile-nav" class="hidden border-t border-slate-100 bg-white px-4 py-3 text-sm text-slate-600 md:hidden">
+        <a href="/" class="block py-2 hover:text-slate-900">Accueil</a>
+        <a href="/pages/simulateurs" class="block py-2 hover:text-slate-900">Simulateurs</a>
+        <a href="/pages/revenu-median-commune" class="block py-2 hover:text-slate-900">Revenus par commune</a>
+      </nav>
+    </header>
+    <script>
+      document.getElementById('menu-toggle')?.addEventListener('click', function() {
+        const mobileNav = document.getElementById('mobile-nav');
+        mobileNav.classList.toggle('hidden');
+      });
+    </script>
+    
+    <main class="mx-auto max-w-6xl px-4 py-10">
+      <section class="overflow-hidden rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.16),_transparent_30%),linear-gradient(135deg,_#0f172a_0%,_#111827_55%,_#020617_100%)] px-6 py-10 text-white shadow-2xl md:px-10">
+        <div class="max-w-4xl">
+          <p class="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-emerald-100">Cluster de simulation</p>
+          <h1 class="mt-5 max-w-4xl text-4xl font-black leading-tight md:text-5xl">Niveau de vie par ville : revenus, loyer, aides et reste à vivre</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-100">Cette série de pages combine les revenus VDF des communes avec des scénarios concrets de budget. Chaque page croise un lieu, un revenu ou un loyer, puis calcule les aides, l'épargne et la capacité de prêt.</p>
+        </div>
+      </section>
+
+      <section class="mt-8 grid gap-6 lg:grid-cols-2">
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-2xl font-bold text-slate-950">Scénarios revenus</h2>
+          <div class="mt-5 grid gap-4 md:grid-cols-2">
+            <a href="/pages/revenus/vivre-avec-1800-net-a-paris" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-emerald-400 hover:bg-emerald-50">
+                  <span class="text-lg font-bold text-slate-950">Vivre avec 1 800 € net à Paris</span>
+                  <span class="mt-2 block text-sm text-slate-600">Comparer revenu, loyer guide, aides et reste à vivre.</span>
+                </a><a href="/pages/revenus/vivre-avec-1800-net-a-lyon" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-emerald-400 hover:bg-emerald-50">
+                  <span class="text-lg font-bold text-slate-950">Vivre avec 1 800 € net à Lyon</span>
+                  <span class="mt-2 block text-sm text-slate-600">Comparer revenu, loyer guide, aides et reste à vivre.</span>
+                </a><a href="/pages/revenus/vivre-avec-1800-net-a-marseille" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-emerald-400 hover:bg-emerald-50">
+                  <span class="text-lg font-bold text-slate-950">Vivre avec 1 800 € net à Marseille</span>
+                  <span class="mt-2 block text-sm text-slate-600">Comparer revenu, loyer guide, aides et reste à vivre.</span>
+                </a>
+          </div>
+        </article>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-2xl font-bold text-slate-950">Scénarios loyer</h2>
+          <div class="mt-5 grid gap-4 md:grid-cols-2">
+            <a href="/pages/revenus/reste-a-vivre-apres-loyer-700-a-paris" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-cyan-400 hover:bg-cyan-50">
+                  <span class="text-lg font-bold text-slate-950">Reste à vivre après un loyer de 700 € à Paris</span>
+                  <span class="mt-2 block text-sm text-slate-600">Base de revenu calée sur la médiane locale VDF.</span>
+                </a><a href="/pages/revenus/reste-a-vivre-apres-loyer-700-a-lyon" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-cyan-400 hover:bg-cyan-50">
+                  <span class="text-lg font-bold text-slate-950">Reste à vivre après un loyer de 700 € à Lyon</span>
+                  <span class="mt-2 block text-sm text-slate-600">Base de revenu calée sur la médiane locale VDF.</span>
+                </a><a href="/pages/revenus/reste-a-vivre-apres-loyer-700-a-marseille" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-cyan-400 hover:bg-cyan-50">
+                  <span class="text-lg font-bold text-slate-950">Reste à vivre après un loyer de 700 € à Marseille</span>
+                  <span class="mt-2 block text-sm text-slate-600">Base de revenu calée sur la médiane locale VDF.</span>
+                </a>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-950">Pourquoi ce format compte</h2>
+        <p class="mt-4 max-w-4xl leading-relaxed text-slate-700">Le simple revenu médian d'une ville n'explique pas le quotidien. Ce cluster relie la donnée VDF à des cas d'usage concrets : vivre avec 1 800 € net, tenir un loyer de 700 €, estimer les aides, puis évaluer ce qu'il reste réellement pour épargner ou emprunter.</p>
+        <div class="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
+          <span class="rounded-full bg-slate-100 px-4 py-2">Aides</span>
+          <span class="rounded-full bg-slate-100 px-4 py-2">Budget</span>
+          <span class="rounded-full bg-slate-100 px-4 py-2">Reste à vivre</span>
+          <span class="rounded-full bg-slate-100 px-4 py-2">Épargne</span>
+          <span class="rounded-full bg-slate-100 px-4 py-2">Capacité prêt</span>
+          <span class="rounded-full bg-slate-100 px-4 py-2">Niveau de vie</span>
+        </div>
+      </section>
+
+      <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-950">Méthode de comparaison</h2>
+        <p class="mt-4 text-sm leading-relaxed text-slate-700">Chaque page utilise le revenu médian local de la commune ou de l'agrégation VDF correspondante, puis applique les mêmes hypothèses de charges pour garder la comparaison lisible entre villes.</p>
+      </section>
+    </main>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

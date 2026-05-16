@@ -158,7 +158,7 @@ export function renderPrimeScenarioPage({
       ],
     })}
     ${renderJsonLd({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqEntities })}
-    ${renderJsonLd({ "@context": "https://schema.org", "@type": "WebPage", "name": normalizeFrenchText(scenario.title), "description": normalizeFrenchText(scenario.description), "url": canonicalUrl, "isPartOf": `${DOMAIN}${PILLAR_PATH}`, "author": { "@type": "Organization", "name": "LesCalculateurs.fr", "url": DOMAIN }, "publisher": { "@type": "Organization", "name": "LesCalculateurs.fr", "url": DOMAIN, "logo": { "@type": "ImageObject", "url": FAVICON_OG_IMAGE } } })}
+    ${renderJsonLd({ "@context": "https://schema.org", "@type": "WebPage", name: normalizeFrenchText(scenario.title), description: normalizeFrenchText(scenario.description), url: canonicalUrl, isPartOf: `${DOMAIN}${PILLAR_PATH}`, author: { "@type": "Organization", name: "LesCalculateurs.fr", url: DOMAIN }, publisher: { "@type": "Organization", name: "LesCalculateurs.fr", url: DOMAIN, logo: { "@type": "ImageObject", url: FAVICON_OG_IMAGE } } })}
   </head>
   <body class="bg-slate-50 text-slate-900" data-lc-page-type="pseo" data-lc-page-cluster="prime-activite" data-lc-page-slug="${escapeHtml(scenario.slug)}" data-lc-page-template="scenario" data-lc-page-intent="${escapeHtml(scenario.title)}" data-lc-page-audience="${escapeHtml(scenario.audience)}" data-lc-page-variant="prime-2026">
     <div class="sticky top-0 z-50 border-b border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
