@@ -20,6 +20,13 @@ export const simulateursAbsenceRevenuScenarios = [
       activite: "inactif",
       typeActivite: "salarie",
     },
+    areInput: {
+      situation: "seul",
+      ancienneteEmploi: 18,
+      salaireReferent: 1900,
+      personnesCharge: 0,
+      agePersonne: 34,
+    },
     checklist: [
       "Vérifier que le loyer est bien renseigné hors charges.",
       "Comparer ensuite les résultats aide par aide.",
@@ -58,6 +65,13 @@ export const simulateursAbsenceRevenuScenarios = [
       logement: "loue",
       activite: "chomage",
       typeActivite: "salarie",
+    },
+    areInput: {
+      situation: "seul",
+      ancienneteEmploi: 24,
+      salaireReferent: 2100,
+      personnesCharge: 0,
+      agePersonne: 38,
     },
     checklist: [
       "Vérifier si une allocation chômage résiduelle est encore perçue.",
@@ -98,6 +112,13 @@ export const simulateursAbsenceRevenuScenarios = [
       activite: "chomage",
       typeActivite: "salarie",
     },
+    areInput: {
+      situation: "seul",
+      ancienneteEmploi: 30,
+      salaireReferent: 2400,
+      personnesCharge: 0,
+      agePersonne: 45,
+    },
     checklist: [
       "Vérifier la date de fin de droits et les revenus encore perçus.",
       "Comparer avec un scénario sans revenu du tout si plus aucune allocation n'est versée.",
@@ -136,6 +157,13 @@ export const simulateursAbsenceRevenuScenarios = [
       logement: "loue",
       activite: "inactif",
       typeActivite: "salarie",
+    },
+    areInput: {
+      situation: "couple",
+      ancienneteEmploi: 28,
+      salaireReferent: 2600,
+      personnesCharge: 0,
+      agePersonne: 39,
     },
     checklist: [
       "Vérifier si les deux adultes sont bien sans revenu sur la période simulée.",

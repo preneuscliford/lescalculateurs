@@ -164,10 +164,11 @@ export function renderSimulateursScenarioPage({
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Estimation rapide</h2>
-        <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm text-slate-500">RSA</p><p class="mt-2 text-2xl font-bold text-slate-900">${renderText(estimates.rsa)}</p></div>
           <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm text-slate-500">APL</p><p class="mt-2 text-2xl font-bold text-slate-900">${renderText(estimates.apl)}</p></div>
           <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm text-slate-500">Prime d&#39;activit&eacute;</p><p class="mt-2 text-2xl font-bold text-slate-900">${renderText(estimates.prime)}</p></div>
+          <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm text-slate-500">ARE</p><p class="mt-2 text-2xl font-bold text-slate-900">${renderText(estimates.are)}</p><p class="mt-1 text-xs text-slate-500">${renderText(estimates.areDuration)}</p></div>
           <div class="rounded-2xl bg-sky-50 p-4"><p class="text-sm text-sky-700">Total indicatif</p><p class="mt-2 text-2xl font-black text-sky-950">${renderText(estimates.total)}</p></div>
         </div>
         <p class="mt-4 text-slate-600">Cette page donne un rep&egrave;re global. Le d&eacute;tail final d&eacute;pend du logement, du foyer, de l'activit&eacute; et des revenus encore per&ccedil;us.</p>
@@ -196,7 +197,7 @@ export function renderSimulateursScenarioPage({
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">M&eacute;thode et sources</h2>
-        <p class="mt-4 text-slate-700">Cette estimation repose sur les moteurs APL, RSA et Prime d'activit&eacute; du site et sur un sc&eacute;nario repr&eacute;sentatif. Elle reste indicative.</p>
+        <p class="mt-4 text-slate-700">Cette estimation repose sur les moteurs APL, RSA, Prime d'activit&eacute; et ARE du site, tous branch&eacute;s sur les bar&egrave;mes officiels de leurs pages piliers. Elle reste indicative.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/pages/methodologie" class="rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 hover:bg-slate-50">Consulter notre m&eacute;thodologie</a>
           <a href="https://www.caf.fr/" target="_blank" rel="noopener" class="rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 font-semibold text-sky-900 hover:bg-sky-100">Voir les sources officielles CAF</a>

@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { fileURLToPath, pathToFileURL } from "url";
+import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 import { simulateursAbsenceRevenuScenarios } from "../data/pseo/simulateurs-absence-revenu-scenarios.js";
 import {
@@ -12,6 +13,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
+const require = createRequire(import.meta.url);
 const outputDir = path.join(repoRoot, "src", "pages", "simulateurs");
 const generatedAt = formatDisplayDate(new Date());
 
@@ -19,6 +21,11 @@ async function loadEngine(relativePath, tempName) {
   const engineSrc = path.join(repoRoot, relativePath);
   const tempDir = path.join(repoRoot, "temp", tempName);
   fs.mkdirSync(tempDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(tempDir, "package.json"),
+    JSON.stringify({ type: "commonjs" }, null, 2),
+    "utf8",
+  );
   execFileSync(
     process.execPath,
     [
@@ -27,18 +34,26 @@ async function loadEngine(relativePath, tempName) {
       "--outDir",
       tempDir,
       "--module",
-      "ES2020",
+      "CommonJS",
       "--target",
       "ES2020",
       "--moduleResolution",
       "node",
+      "--resolveJsonModule",
+      "true",
+      "--esModuleInterop",
+      "true",
       "--skipLibCheck",
       "true",
     ],
     { cwd: repoRoot, stdio: "pipe" },
   );
-  const compiledPath = path.join(tempDir, path.basename(relativePath).replace(/\.ts$/, ".js"));
-  const engine = await import(`${pathToFileURL(compiledPath).href}?v=${Date.now()}`);
+  const compiledRelativePath = path
+    .relative(repoRoot, engineSrc)
+    .replace(/^src[\\/]/, "")
+    .replace(/\.ts$/, ".js");
+  const compiledPath = path.join(tempDir, compiledRelativePath);
+  const engine = require(compiledPath);
   fs.rmSync(tempDir, { recursive: true, force: true });
   return engine;
 }
@@ -70,15 +85,23 @@ async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedPages(outputDir, new Set(simulateursAbsenceRevenuScenarios.map((item) => item.slug)));
 
-  const [rsaEngine, aplEngine, primeEngine] = await Promise.all([
+  const [rsaEngine, aplEngine, primeEngine, areEngine] = await Promise.all([
     loadEngine("src/utils/rsaCalculEngine.ts", "pseo-sim-rsa"),
     loadEngine("src/utils/aplCalculEngine.ts", "pseo-sim-apl"),
     loadEngine("src/utils/primeActiviteCalculEngine.ts", "pseo-sim-prime"),
+    loadEngine("src/utils/areCalculEngine.ts", "pseo-sim-are"),
   ]);
 
   const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
 
   const enriched = simulateursAbsenceRevenuScenarios.map((scenario) => {
+    const areInput = scenario.areInput || {
+      situation: scenario.input.situation,
+      ancienneteEmploi: 0,
+      salaireReferent: 0,
+      personnesCharge: scenario.input.enfants,
+      agePersonne: 0,
+    };
     const rsa = rsaEngine.calculerRSA({
       situation: scenario.input.situation,
       enfants: scenario.input.enfants,
@@ -103,21 +126,25 @@ async function main() {
       logement: scenario.input.logement,
       typeActivite: scenario.input.typeActivite,
     });
+    const are = areEngine.calculerARE(areInput);
 
     const rsaAmount = rsa.success ? rsa.montantEstime : 0;
     const aplAmount = apl.success && apl.data ? apl.data.apl_estimee : 0;
     const primeAmount = prime.success ? prime.montantEstime : 0;
-    const total = rsaAmount + aplAmount + primeAmount;
+    const areAmount = are.eligible ? are.montantEstime : 0;
+    const total = rsaAmount + aplAmount + primeAmount + areAmount;
 
     return {
       ...scenario,
       estimates: {
-        rsa: formatApproxEuro(rsaAmount),
-        apl: formatApproxEuro(aplAmount),
-        prime: formatApproxEuro(primeAmount),
-        total: formatApproxEuro(total),
-        revenus: formatApproxEuro(scenario.input.revenus),
-        loyer: formatApproxEuro(scenario.input.loyer),
+        rsa: formatApproxEuroSafe(rsaAmount),
+        apl: formatApproxEuroSafe(aplAmount),
+        prime: formatApproxEuroSafe(primeAmount),
+        are: formatApproxEuroSafe(areAmount),
+        areDuration: are.eligible ? `Durée max : ${are.durationMax} mois` : "ARE non éligible",
+        total: formatApproxEuroSafe(total),
+        revenus: formatApproxEuroSafe(scenario.input.revenus),
+        loyer: formatApproxEuroSafe(scenario.input.loyer),
       },
     };
   });
@@ -152,4 +179,8 @@ function formatDisplayDate(date) {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = String(date.getFullYear());
   return `${day}-${month}-${year}`;
+}
+
+function formatApproxEuroSafe(value) {
+  return `~${Math.round(Number(value) || 0).toLocaleString("fr-FR")} EUR`;
 }
