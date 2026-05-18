@@ -301,31 +301,82 @@ export function renderNotaireScenarioPage({
     "\n" +
     '      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">\n' +
     '        <h2 class="text-2xl font-bold text-slate-900">Scénario utilisé pour cette estimation</h2>\n' +
-    '        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">\n' +
-    '          <table class="min-w-full border-collapse text-sm">\n' +
-    "            <tbody>\n" +
-    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-4 py-3 text-slate-800">' +
+    '        <div class="mt-6">\n' +
+    '          <div class="space-y-4 md:hidden">\n' +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Profil</div>\n' +
+    '              <div class="mt-2 text-slate-800 font-semibold">' +
+    renderText(scenario.audience) +
+    "</div>\n" +
+    "            </div>\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Prix du bien</div>\n' +
+    '              <div class="mt-2 text-slate-800">' +
+    renderText(estimate.formattedPrice) +
+    "</div>\n" +
+    "            </div>\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Type</div>\n' +
+    '              <div class="mt-2 text-slate-800">' +
+    renderText(TYPE_LABELS[scenario.input.type] || scenario.input.type) +
+    "</div>\n" +
+    "            </div>\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Département</div>\n' +
+    '              <div class="mt-2 text-slate-800">' +
+    renderText(scenario.input.departement) +
+    "</div>\n" +
+    "            </div>\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Droits de mutation</div>\n' +
+    '              <div class="mt-2 text-slate-800">' +
+    renderText(estimate.formattedDmto) +
+    "</div>\n" +
+    "            </div>\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Émoluments du notaire</div>\n' +
+    '              <div class="mt-2 text-slate-800">' +
+    renderText(estimate.formattedEmoluments) +
+    "</div>\n" +
+    "            </div>\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Frais divers (CSI, débours, formalités)</div>\n' +
+    '              <div class="mt-2 text-slate-800">' +
+    renderText(estimate.formattedFees) +
+    "</div>\n" +
+    "            </div>\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">Total frais de notaire</div>\n' +
+    '              <div class="mt-2 text-slate-900 font-semibold">' +
+    renderText(estimate.formattedTotal) +
+    "</div>\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    '          <div class="hidden md:block mt-4 overflow-x-auto -mx-4 sm:mx-0 rounded-2xl border border-slate-200">\n' +
+    '            <table class="w-full border-collapse text-xs sm:text-sm">\n' +
+    "              <tbody>\n" +
+    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">' +
     renderText(scenario.audience) +
     "</td></tr>\n" +
-    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Prix du bien</th><td class="px-4 py-3 text-slate-800">' +
+    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Prix du bien</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">' +
     renderText(estimate.formattedPrice) +
     "</td></tr>\n" +
-    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Type</th><td class="px-4 py-3 text-slate-800">' +
+    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Type</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">' +
     renderText(TYPE_LABELS[scenario.input.type] || scenario.input.type) +
     "</td></tr>\n" +
-    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Département</th><td class="px-4 py-3 text-slate-800">' +
+    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Département</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">' +
     renderText(scenario.input.departement) +
     "</td></tr>\n" +
-    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Droits de mutation</th><td class="px-4 py-3 text-slate-800">' +
+    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Droits de mutation</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">' +
     renderText(estimate.formattedDmto) +
     "</td></tr>\n" +
-    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Émoluments du notaire</th><td class="px-4 py-3 text-slate-800">' +
+    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Émoluments du notaire</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">' +
     renderText(estimate.formattedEmoluments) +
     "</td></tr>\n" +
-    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Frais divers (CSI, débours, formalités)</th><td class="px-4 py-3 text-slate-800">' +
+    '              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Frais divers (CSI, débours, formalités)</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">' +
     renderText(estimate.formattedFees) +
     "</td></tr>\n" +
-    '              <tr><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Total frais de notaire</th><td class="px-4 py-3 text-slate-900 font-semibold">' +
+    '              <tr><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Total frais de notaire</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-900 font-semibold">' +
     renderText(estimate.formattedTotal) +
     "</td></tr>\n" +
     "            </tbody>\n" +

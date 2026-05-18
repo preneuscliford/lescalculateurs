@@ -199,40 +199,66 @@ function renderComparisonTable(scenario, estimate, relatedPages) {
   return `
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Comparer plusieurs sc&eacute;narios</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-          <table class="min-w-full border-collapse text-sm">
-            <thead class="bg-slate-50">
-              <tr>
-                <th class="px-4 py-3 text-left font-semibold text-slate-700">Sc&eacute;nario</th>
-                <th class="px-4 py-3 text-right font-semibold text-slate-700">RSA estim&eacute;</th>
-                <th class="px-4 py-3 text-right font-semibold text-slate-700">Revenus</th>
-                <th class="px-4 py-3 text-right font-semibold text-slate-700">Activit&eacute;</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${comparable
-                .map(
-                  (page) => `
-              <tr class="border-b border-slate-100 last:border-0">
-                <td class="px-4 py-3">
-                  <a href="/pages/rsa/${escapeAttribute(page.slug)}" class="font-semibold text-slate-900 hover:text-purple-700">${renderText(
-                    page.audience || page.title,
-                  )}</a>
-                </td>
-                <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderText(
+        <div class="mt-6">
+          <div class="space-y-4 md:hidden">
+            ${comparable
+              .map(
+                (page) => `
+            <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <a href="/pages/rsa/${escapeAttribute(page.slug)}" class="font-semibold text-slate-900 hover:text-purple-700">${renderText(
+                page.audience || page.title,
+              )}</a>
+              <div class="mt-2 text-sm text-slate-700">
+                <div class="flex justify-between"><span>RSA estim&eacute;</span><span class="font-semibold text-slate-900">${renderText(
                   page.estimate.formattedAmount,
-                )}</td>
-                <td class="px-4 py-3 text-right text-slate-700">${renderText(
+                )}</span></div>
+                <div class="flex justify-between mt-1"><span>Revenus</span><span>${renderText(
                   page.estimate.formattedRevenue,
-                )}</td>
-                <td class="px-4 py-3 text-right text-slate-700">${renderText(
+                )}</span></div>
+                <div class="flex justify-between mt-1"><span>Activit&eacute;</span><span>${renderText(
                   ACTIVITE_LABELS[page.input.activite] || page.input.activite,
-                )}</td>
-              </tr>`,
-                )
-                .join("")}
-            </tbody>
-          </table>
+                )}</span></div>
+              </div>
+            </article>`,
+              )
+              .join("")}
+          </div>
+
+          <div class="hidden md:block mt-4 overflow-x-auto -mx-4 sm:mx-0 rounded-2xl border border-slate-200">
+            <table class="w-full border-collapse text-xs sm:text-sm">
+              <thead class="bg-slate-50">
+                <tr>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Sc&eacute;nario</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-700">RSA estim&eacute;</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-700">Revenus</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-700">Activit&eacute;</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${comparable
+                  .map(
+                    (page) => `
+                <tr class="border-b border-slate-100 last:border-0">
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">
+                    <a href="/pages/rsa/${escapeAttribute(page.slug)}" class="text-xs sm:text-sm font-semibold text-slate-900 hover:text-purple-700">${renderText(
+                      page.audience || page.title,
+                    )}</a>
+                  </td>
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-900">${renderText(
+                    page.estimate.formattedAmount,
+                  )}</td>
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right text-xs sm:text-sm text-slate-700">${renderText(
+                    page.estimate.formattedRevenue,
+                  )}</td>
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right text-xs sm:text-sm text-slate-700">${renderText(
+                    ACTIVITE_LABELS[page.input.activite] || page.input.activite,
+                  )}</td>
+                </tr>`,
+                  )
+                  .join("")}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>`;
 }
@@ -298,10 +324,10 @@ export function renderRSAScenarioPage({
   ]
     .map(
       ([label, value]) => `
-              <tr class="border-b border-slate-100 last:border-0">
-                <th class="px-4 py-3 text-left font-medium text-slate-600">${renderText(label)}</th>
-                <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderText(value)}</td>
-              </tr>`,
+                <tr class="border-b border-slate-100 last:border-0">
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-medium text-slate-600">${renderText(label)}</th>
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-900">${renderText(value)}</td>
+                </tr>`,
     )
     .join("");
 

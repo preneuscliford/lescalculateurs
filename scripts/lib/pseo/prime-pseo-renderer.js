@@ -198,18 +198,50 @@ export function renderPrimeScenarioPage({
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Sc&eacute;nario utilis&eacute; pour cette estimation</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-          <table class="min-w-full border-collapse text-sm">
-            <tbody>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-4 py-3 text-slate-800">${renderText(scenario.audience)}</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Situation</th><td class="px-4 py-3 text-slate-800">${renderText(SITUATION_LABELS[scenario.input.situation] || scenario.input.situation)}</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Revenus professionnels</th><td class="px-4 py-3 text-slate-800">${renderText(estimate.formattedIncome)}</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Autres revenus</th><td class="px-4 py-3 text-slate-800">${renderText(estimate.formattedOtherIncome)}</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Logement</th><td class="px-4 py-3 text-slate-800">${renderText(LOGEMENT_LABELS[scenario.input.logement] || scenario.input.logement)}</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Type d&#39;activit&eacute;</th><td class="px-4 py-3 text-slate-800">${renderText(ACTIVITE_LABELS[scenario.input.typeActivite] || scenario.input.typeActivite)}</td></tr>
-              <tr><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Prime estim&eacute;e</th><td class="px-4 py-3 text-slate-900 font-semibold">${renderText(estimate.formattedAmount)}</td></tr>
-            </tbody>
-          </table>
+        <div class="mt-6">
+          <div class="space-y-4 md:hidden">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Profil</div>
+              <div class="mt-2 text-slate-800 font-semibold">${renderText(scenario.audience)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Situation</div>
+              <div class="mt-2 text-slate-800">${renderText(SITUATION_LABELS[scenario.input.situation] || scenario.input.situation)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Revenus professionnels</div>
+              <div class="mt-2 text-slate-800">${renderText(estimate.formattedIncome)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Autres revenus</div>
+              <div class="mt-2 text-slate-800">${renderText(estimate.formattedOtherIncome)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Logement</div>
+              <div class="mt-2 text-slate-800">${renderText(LOGEMENT_LABELS[scenario.input.logement] || scenario.input.logement)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Type d'activité</div>
+              <div class="mt-2 text-slate-800">${renderText(ACTIVITE_LABELS[scenario.input.typeActivite] || scenario.input.typeActivite)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Prime estimée</div>
+              <div class="mt-2 text-slate-900 font-semibold">${renderText(estimate.formattedAmount)}</div>
+            </div>
+          </div>
+          <div class="hidden md:block mt-4 overflow-hidden rounded-2xl border border-slate-200">
+            <table class="min-w-full border-collapse text-sm">
+              <tbody>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(scenario.audience)}</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Situation</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(SITUATION_LABELS[scenario.input.situation] || scenario.input.situation)}</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Revenus professionnels</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(estimate.formattedIncome)}</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Autres revenus</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(estimate.formattedOtherIncome)}</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Logement</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(LOGEMENT_LABELS[scenario.input.logement] || scenario.input.logement)}</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Type d'activité</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(ACTIVITE_LABELS[scenario.input.typeActivite] || scenario.input.typeActivite)}</td></tr>
+              <tr><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Prime estimée</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-900 font-semibold">${renderText(estimate.formattedAmount)}</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

@@ -138,8 +138,18 @@ export function renderSimulateursScenarioPage({
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: `${DOMAIN}/` },
-        { "@type": "ListItem", position: 2, name: "Simulateurs", item: `${DOMAIN}/pages/simulateurs` },
-        { "@type": "ListItem", position: 3, name: normalizeFrenchText(scenario.title), item: canonicalUrl },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Simulateurs",
+          item: `${DOMAIN}/pages/simulateurs`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: normalizeFrenchText(scenario.title),
+          item: canonicalUrl,
+        },
       ],
     })}
     ${renderJsonLd({
@@ -176,15 +186,35 @@ export function renderSimulateursScenarioPage({
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Sc&eacute;nario utilis&eacute; pour cette estimation</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-          <table class="min-w-full border-collapse text-sm">
-            <tbody>
+        <div class="mt-6">
+          <div class="space-y-4 md:hidden">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Profil</div>
+              <div class="mt-2 text-slate-800 font-semibold">${renderText(scenario.audience)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Revenus du foyer</div>
+              <div class="mt-2 text-slate-800">${renderText(estimates.revenus)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Loyer</div>
+              <div class="mt-2 text-slate-800">${renderText(estimates.loyer)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Activit&eacute;</div>
+              <div class="mt-2 text-slate-800">${renderText(humanizeActivite(scenario.input.activite))}</div>
+            </div>
+          </div>
+          <div class="hidden md:block mt-4 overflow-hidden rounded-2xl border border-slate-200">
+            <table class="min-w-full border-collapse text-sm">
+              <tbody>
               <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-4 py-3 text-slate-800">${renderText(scenario.audience)}</td></tr>
               <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Revenus du foyer</th><td class="px-4 py-3 text-slate-800">${renderText(estimates.revenus)}</td></tr>
               <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Loyer</th><td class="px-4 py-3 text-slate-800">${renderText(estimates.loyer)}</td></tr>
               <tr><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Activit&eacute;</th><td class="px-4 py-3 text-slate-800">${renderText(humanizeActivite(scenario.input.activite))}</td></tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -209,7 +239,8 @@ export function renderSimulateursScenarioPage({
         <div class="mt-6 space-y-4">
           ${scenario.faq
             .map(
-              (item) => `<article class="rounded-xl border border-slate-200 p-4"><h3 class="font-semibold text-slate-900">${renderText(item.question)}</h3><p class="mt-2 text-slate-700">${renderText(item.answer)}</p></article>`,
+              (item) =>
+                `<article class="rounded-xl border border-slate-200 p-4"><h3 class="font-semibold text-slate-900">${renderText(item.question)}</h3><p class="mt-2 text-slate-700">${renderText(item.answer)}</p></article>`,
             )
             .join("")}
         </div>

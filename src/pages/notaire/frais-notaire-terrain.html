@@ -56,7 +56,7 @@
           <a href="/pages/notaire?notaire-prix=100000&notaire-type=ancien&notaire-departement=33&notaire-autosubmit=1#notaire-form" class="inline-flex items-center rounded-xl bg-white px-5 py-3 font-semibold text-slate-950 hover:bg-blue-50">Lancer le calcul frais de notaire</a>
           <a href="#hypotheses" class="inline-flex items-center rounded-xl border border-white/25 px-5 py-3 font-semibold text-white hover:bg-white/10">Voir les hypothèses</a>
         </div>
-        <p class="mt-4 text-sm text-blue-100">Dernière modification : 14-05-2026</p>
+        <p class="mt-4 text-sm text-blue-100">Dernière modification : 18-05-2026</p>
       </section>
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -67,17 +67,52 @@
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Scénario utilisé pour cette estimation</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-          <table class="min-w-full border-collapse text-sm">
-            <tbody>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-4 py-3 text-slate-800">Acheteur d&#39;un terrain &#224; b&#226;tir autour de 100 000 &#8364;</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Prix du bien</th><td class="px-4 py-3 text-slate-800">~100&#8239;000 EUR</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Type</th><td class="px-4 py-3 text-slate-800">Ancien</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Département</th><td class="px-4 py-3 text-slate-800">33</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Droits de mutation</th><td class="px-4 py-3 text-slate-800">~6&#8239;320 EUR</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Émoluments du notaire</th><td class="px-4 py-3 text-slate-800">~1&#8239;196 EUR</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Frais divers (CSI, débours, formalités)</th><td class="px-4 py-3 text-slate-800">~1&#8239;539 EUR</td></tr>
-              <tr><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Total frais de notaire</th><td class="px-4 py-3 text-slate-900 font-semibold">~9&#8239;056 EUR</td></tr>
+        <div class="mt-6">
+          <div class="space-y-4 md:hidden">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Profil</div>
+              <div class="mt-2 text-slate-800 font-semibold">Acheteur d&#39;un terrain &#224; b&#226;tir autour de 100 000 &#8364;</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Prix du bien</div>
+              <div class="mt-2 text-slate-800">~100&#8239;000 EUR</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Type</div>
+              <div class="mt-2 text-slate-800">Ancien</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Département</div>
+              <div class="mt-2 text-slate-800">33</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Droits de mutation</div>
+              <div class="mt-2 text-slate-800">~6&#8239;320 EUR</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Émoluments du notaire</div>
+              <div class="mt-2 text-slate-800">~1&#8239;196 EUR</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Frais divers (CSI, débours, formalités)</div>
+              <div class="mt-2 text-slate-800">~1&#8239;539 EUR</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Total frais de notaire</div>
+              <div class="mt-2 text-slate-900 font-semibold">~9&#8239;056 EUR</div>
+            </div>
+          </div>
+          <div class="hidden md:block mt-4 overflow-x-auto -mx-4 sm:mx-0 rounded-2xl border border-slate-200">
+            <table class="w-full border-collapse text-xs sm:text-sm">
+              <tbody>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">Acheteur d&#39;un terrain &#224; b&#226;tir autour de 100 000 &#8364;</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Prix du bien</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">~100&#8239;000 EUR</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Type</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">Ancien</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Département</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">33</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Droits de mutation</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">~6&#8239;320 EUR</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Émoluments du notaire</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">~1&#8239;196 EUR</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Frais divers (CSI, débours, formalités)</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">~1&#8239;539 EUR</td></tr>
+              <tr><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Total frais de notaire</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-900 font-semibold">~9&#8239;056 EUR</td></tr>
             </tbody>
           </table>
         </div>

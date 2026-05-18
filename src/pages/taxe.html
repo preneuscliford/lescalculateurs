@@ -1034,16 +1034,16 @@
 
             <div class="bg-white border border-gray-200 rounded-lg p-6">
               <h3 class="text-lg font-bold text-gray-900 mb-3">📊 Détail chiffré (étape par étape)</h3>
-              <div class="overflow-x-auto">
-                <table class="w-full text-sm border-collapse">
+              <div class="overflow-x-auto -mx-4 sm:mx-0">
+                <table class="w-full text-xs sm:text-sm border-collapse">
                   <tbody>
-                    <tr class="border-b"><td class="p-3 text-gray-600">Valeur locative cadastrale</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                    <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Valeur locative cadastrale</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${formatCurrency(
                       data.valeurLocative,
                     )}</td></tr>
-                    <tr class="border-b"><td class="p-3 text-gray-600">Taux global utilisé</td><td class="p-3 text-right font-semibold text-gray-900">${(
+                    <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Taux global utilisé</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${(
                       data.tauxUtilise * 100
                     ).toFixed(2)}%</td></tr>
-                    <tr class="border-b"><td class="p-3 text-gray-600">Taxe brute (avant dégrèvements)</td><td class="p-3 text-right font-semibold text-gray-900">${formatCurrency(
+                    <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Taxe brute (avant dégrèvements)</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${formatCurrency(
                       data.taxeBrute,
                     )}</td></tr>
                     ${
@@ -1051,14 +1051,14 @@
                         ? data.degrevements
                             .map(
                               (ab) =>
-                                `<tr class="border-b"><td class="p-3 text-gray-600">Dégrèvement — ${ab.nom}</td><td class="p-3 text-right font-semibold text-gray-900">-${formatCurrency(
+                                `<tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Dégrèvement — ${ab.nom}</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">-${formatCurrency(
                                   ab.montant,
                                 )}</td></tr>`,
                             )
                             .join("")
-                        : `<tr class="border-b"><td class="p-3 text-gray-600">Dégrèvements (si éligible)</td><td class="p-3 text-right font-semibold text-gray-900">—</td></tr>`
+                        : `<tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Dégrèvements (si éligible)</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">—</td></tr>`
                     }
-                    <tr class="bg-gray-50"><td class="p-3 font-bold text-gray-900">Taxe foncière estimée 2026</td><td class="p-3 text-right font-bold text-green-700">${formatCurrency(
+                    <tr class="bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-bold text-gray-900">Taxe foncière estimée 2026</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-bold text-green-700">${formatCurrency(
                       data.taxeFonciere,
                     )}</td></tr>
                   </tbody>

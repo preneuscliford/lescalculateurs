@@ -1000,21 +1000,21 @@ function renderScenarioComparisonTable(scenario, estimate, relatedPages) {
     .map(
       (page) => `
           <tr class="border-b border-slate-100 last:border-0">
-            <td class="px-4 py-3 align-top">
-              <a href="/pages/apl/${escapeAttribute(page.slug)}" class="font-semibold text-slate-900 hover:text-blue-700">
+            <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 align-top">
+              <a href="/pages/apl/${escapeAttribute(page.slug)}" class="text-xs sm:text-sm font-semibold text-slate-900 hover:text-blue-700">
                 ${renderText(page.audience || page.title)}
               </a>
               <p class="mt-1 text-xs text-slate-500">${renderText(page.intent)}</p>
             </td>
-            <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderAmount(
+            <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-900">${renderAmount(
               page.estimate.formattedApl.startsWith("~")
                 ? page.estimate.formattedApl
                 : `~${page.estimate.formattedApl}`,
             )}</td>
-            <td class="px-4 py-3 text-right text-slate-700">${renderAmount(
+            <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right text-xs sm:text-sm text-slate-700">${renderAmount(
               page.estimate.formattedRevenue,
             )}</td>
-            <td class="px-4 py-3 text-right text-slate-700">${renderAmount(
+            <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right text-xs sm:text-sm text-slate-700">${renderAmount(
               page.estimate.formattedRent,
             )}</td>
           </tr>`,
@@ -1027,21 +1027,21 @@ function renderScenarioComparisonTable(scenario, estimate, relatedPages) {
           <article class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <div class="flex items-start justify-between gap-4">
               <div>
-                <a href="/pages/apl/${escapeAttribute(page.slug)}" class="font-semibold text-slate-900 hover:text-blue-700">
+                <a href="/pages/apl/${escapeAttribute(page.slug)}" class="text-sm font-semibold text-slate-900 hover:text-blue-700">
                   ${renderText(page.audience || page.title)}
                 </a>
                 <p class="mt-1 text-xs text-slate-500">${renderText(page.intent)}</p>
               </div>
               <div class="text-right">
                 <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">APL</p>
-                <p class="text-base font-black leading-tight text-slate-900 sm:text-lg">${renderAmount(
+                <p class="text-lg font-black leading-tight text-slate-900 sm:text-xl">${renderAmount(
                   page.estimate.formattedApl.startsWith("~")
                     ? page.estimate.formattedApl
                     : `~${page.estimate.formattedApl}`,
                 )}</p>
               </div>
             </div>
-            <dl class="mt-4 grid grid-cols-2 gap-3 text-sm text-slate-700">
+            <dl class="mt-4 grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
               <div class="rounded-xl bg-white px-3 py-2">
                 <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Revenus</dt>
                 <dd class="mt-1 font-semibold text-slate-900">${renderAmount(page.estimate.formattedRevenue)}</dd>
@@ -1066,14 +1066,14 @@ function renderScenarioComparisonTable(scenario, estimate, relatedPages) {
         <div class="mt-6 space-y-4 md:hidden">
           ${mobileCards}
         </div>
-        <div class="mt-6 hidden overflow-x-auto rounded-2xl border border-slate-200 md:block">
-          <table class="min-w-[44rem] border-collapse text-sm">
+        <div class="mt-6 hidden overflow-x-auto -mx-4 sm:mx-0 rounded-2xl border border-slate-200 md:block">
+          <table class="w-full border-collapse text-xs sm:text-sm">
             <thead class="bg-slate-50">
               <tr>
-                <th class="px-4 py-3 text-left font-semibold text-slate-700">Sc&eacute;nario</th>
-                <th class="px-4 py-3 text-right font-semibold text-slate-700">APL estim&eacute;e</th>
-                <th class="px-4 py-3 text-right font-semibold text-slate-700">Revenus</th>
-                <th class="px-4 py-3 text-right font-semibold text-slate-700">Loyer</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Sc&eacute;nario</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-700">APL estim&eacute;e</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-700">Revenus</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-700">Loyer</th>
               </tr>
             </thead>
             <tbody>
@@ -1201,8 +1201,8 @@ export function renderAPLScenarioPage({
     .map(
       ([label, value]) => `
               <tr class="border-b border-slate-100 last:border-0">
-                <th class="px-4 py-3 text-left font-medium text-slate-600">${renderText(label)}</th>
-                <td class="px-4 py-3 text-right font-semibold text-slate-900">${renderText(value)}</td>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-medium text-slate-600">${renderText(label)}</th>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-slate-900">${renderText(value)}</td>
               </tr>`,
     )
     .join("");

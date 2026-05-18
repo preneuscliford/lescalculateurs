@@ -267,31 +267,42 @@ export function renderNotaireComparisonPage({
     '      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">\n' +
     '        <h2 class="text-2xl font-bold text-slate-900">Comparaison détaillée</h2>\n' +
     '        <p class="mt-2 text-slate-600">Découvrez les différences de coûts notariés entre les deux scénarios :</p>\n' +
-    '        <div class="mt-6 overflow-x-auto rounded-2xl border border-slate-200">\n' +
-    '          <table class="min-w-full border-collapse text-sm">\n' +
-    "            <thead>\n" +
-    '              <tr class="bg-slate-100"><th class="px-4 py-3 text-left font-semibold text-slate-700">Élément</th><th class="px-4 py-3 text-left font-semibold text-slate-700">' +
-    renderText(
-      scenario1.input.type === "ancien"
-        ? "Bien ancien"
-        : scenario1.input.type === "neuf"
-          ? "Bien neuf"
-          : "Terrain",
-    ) +
-    '</th><th class="px-4 py-3 text-left font-semibold text-slate-700">' +
-    renderText(
-      scenario2.input.type === "ancien"
-        ? "Bien ancien"
-        : scenario2.input.type === "neuf"
-          ? "Bien neuf"
-          : "Terrain",
-    ) +
-    "</th></tr>\n" +
-    "            </thead>\n" +
-    "            <tbody>\n" +
-    tableRowsHtml +
-    "            </tbody>\n" +
-    "          </table>\n" +
+    '        <div class="mt-6">\n' +
+    '          <div class="space-y-4 md:hidden">\n' +
+    "            ${tableRows\n" +
+    "              .map(\n" +
+    "                (row) => `\n" +
+    '            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">\n' +
+    '              <div class="text-sm text-slate-600">${renderText(row.label)}</div>\n' +
+    '              <div class="mt-2 flex justify-between">\n' +
+    '                <div class="font-semibold text-slate-900">${renderText(row.value1)}</div>\n' +
+    '                <div class="font-semibold text-slate-900">${renderText(row.value2)}</div>\n' +
+    "              </div>\n" +
+    "            </div>`,\n" +
+    "              )\n" +
+    '              .join("")}\n' +
+    "          </div>\n" +
+    '          <div class="hidden md:block mt-4 overflow-x-auto rounded-2xl border border-slate-200">\n' +
+    '            <table class="min-w-full border-collapse text-sm">\n' +
+    "              <thead>\n" +
+    '                <tr class="bg-slate-100"><th class="px-4 py-3 text-left font-semibold text-slate-700">Élément</th><th class="px-4 py-3 text-left font-semibold text-slate-700">${renderText(\n' +
+    '      scenario1.input.type === "ancien"\n' +
+    '        ? "Bien ancien"\n' +
+    '        : scenario1.input.type === "neuf"\n' +
+    '          ? "Bien neuf"\n' +
+    '          : "Terrain",\n' +
+    '    )}</th><th class="px-4 py-3 text-left font-semibold text-slate-700">${renderText(\n' +
+    '      scenario2.input.type === "ancien"\n' +
+    '        ? "Bien ancien"\n' +
+    '        : scenario2.input.type === "neuf"\n' +
+    '          ? "Bien neuf"\n' +
+    '          : "Terrain",\n' +
+    "    )}</th></tr>\n" +
+    "              </thead>\n" +
+    "              <tbody>\n" +
+    `${tableRowsHtml}              </tbody>\n` +
+    "            </table>\n" +
+    "          </div>\n" +
     "        </div>\n" +
     "      </section>\n" +
     "\n" +

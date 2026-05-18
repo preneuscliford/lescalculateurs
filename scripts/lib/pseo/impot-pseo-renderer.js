@@ -124,15 +124,35 @@ export function renderImpotScenarioPage({
 
       <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900">Sc&eacute;nario utilis&eacute;</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-          <table class="min-w-full border-collapse text-sm">
-            <tbody>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-4 py-3 text-slate-800">${renderText(scenario.audience)}</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Revenu imposable</th><td class="px-4 py-3 text-slate-800">${renderText(estimate.formattedRevenu)}</td></tr>
-              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Nombre de parts</th><td class="px-4 py-3 text-slate-800">${renderText(estimate.formattedParts)}</td></tr>
-              <tr><th class="bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">Imp&ocirc;t estim&eacute;</th><td class="px-4 py-3 text-slate-900 font-semibold">${renderText(estimate.formattedAmount)}</td></tr>
-            </tbody>
-          </table>
+        <div class="mt-6">
+          <div class="space-y-4 md:hidden">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Profil</div>
+              <div class="mt-2 text-slate-800 font-semibold">${renderText(scenario.audience)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Revenu imposable</div>
+              <div class="mt-2 text-slate-800">${renderText(estimate.formattedRevenu)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Nombre de parts</div>
+              <div class="mt-2 text-slate-800">${renderText(estimate.formattedParts)}</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm text-slate-600">Imp&ocirc;t estim&eacute;</div>
+              <div class="mt-2 text-slate-900 font-semibold">${renderText(estimate.formattedAmount)}</div>
+            </div>
+          </div>
+          <div class="hidden md:block mt-4 overflow-x-auto -mx-4 sm:mx-0 rounded-2xl border border-slate-200">
+            <table class="w-full border-collapse text-xs sm:text-sm">
+              <tbody>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Profil</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(scenario.audience)}</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Revenu imposable</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(estimate.formattedRevenu)}</td></tr>
+              <tr class="border-b border-slate-100"><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Nombre de parts</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-800">${renderText(estimate.formattedParts)}</td></tr>
+              <tr><th class="bg-slate-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold text-slate-700">Imp&ocirc;t estim&eacute;</th><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-slate-900 font-semibold">${renderText(estimate.formattedAmount)}</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
