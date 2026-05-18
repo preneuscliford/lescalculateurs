@@ -100,9 +100,9 @@ const impotConfig = {
         <div class="bg-green-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
           <h4 class="font-semibold text-gray-800">Quotient familial</h4>
           <p class="text-xl font-bold text-green-600">${formatCurrency(d.qf)}</p>
-          <p class="text-xs sm:text-sm text-gray-600">Taux marginal: ${(d.tauxMarginal * 100).toFixed(
-            0,
-          )}% • Taux moyen: ${(d.tauxMoyen * 100).toFixed(1)}%</p>
+          <p class="text-xs sm:text-sm text-gray-600">Taux marginal: ${(
+            d.tauxMarginal * 100
+          ).toFixed(0)}% • Taux moyen: ${(d.tauxMoyen * 100).toFixed(1)}%</p>
         </div>
       </div>
       <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3 mt-2">
@@ -200,25 +200,45 @@ function renderIR() {
           .join("")}</tr></thead>
         <tbody>
           <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Revenu imposable</td>${compIR
-            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.revenu)}</td>`)
+            .map(
+              (c) =>
+                `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.revenu)}</td>`,
+            )
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Nombre de parts</td>${compIR
-            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${c.parts}</td>`)
+            .map(
+              (c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${c.parts}</td>`,
+            )
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Quotient familial</td>${compIR
-            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.qf)}</td>`)
+            .map(
+              (c) =>
+                `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.qf)}</td>`,
+            )
             .join("")}</tr>
           <tr class="bg-green-50 font-semibold"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">IR brut estimé</td>${compIR
-            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.irBrut)}</td>`)
+            .map(
+              (c) =>
+                `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.irBrut)}</td>`,
+            )
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Mensualité moyenne</td>${compIR
-            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.mensualiteMoyenne)}</td>`)
+            .map(
+              (c) =>
+                `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.mensualiteMoyenne)}</td>`,
+            )
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Taux marginal</td>${compIR
-            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${(c.tauxMarginal * 100).toFixed(0)}%</td>`)
+            .map(
+              (c) =>
+                `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${(c.tauxMarginal * 100).toFixed(0)}%</td>`,
+            )
             .join("")}</tr>
           <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Taux moyen</td>${compIR
-            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${(c.tauxMoyen * 100).toFixed(1)}%</td>`)
+            .map(
+              (c) =>
+                `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${(c.tauxMoyen * 100).toFixed(1)}%</td>`,
+            )
             .join("")}</tr>
         </tbody>
       </table>

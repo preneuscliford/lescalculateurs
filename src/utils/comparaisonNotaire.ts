@@ -48,26 +48,20 @@ class ComparaisonNotaire {
    */
   ajouterCalcul(result: any, values: any, departementLabel: string): void {
     if (this.calculs.length >= this.maxComparaisons) {
-      alert(
-        `Vous ne pouvez comparer que ${this.maxComparaisons} villes maximum`
-      );
+      alert(`Vous ne pouvez comparer que ${this.maxComparaisons} villes maximum`);
       return;
     }
 
     // Vérifier si ce département existe déjà
-    const departementExiste = this.calculs.some(
-      (c) => c.departement === values.departement
-    );
+    const departementExiste = this.calculs.some((c) => c.departement === values.departement);
     if (departementExiste) {
       if (
         confirm(
-          `Le département "${departementLabel}" est déjà dans la comparaison.\n\nVoulez-vous le remplacer par ce nouveau calcul ?`
+          `Le département "${departementLabel}" est déjà dans la comparaison.\n\nVoulez-vous le remplacer par ce nouveau calcul ?`,
         )
       ) {
         // Supprimer l'ancien calcul de ce département
-        this.calculs = this.calculs.filter(
-          (c) => c.departement !== values.departement
-        );
+        this.calculs = this.calculs.filter((c) => c.departement !== values.departement);
       } else {
         return;
       }
@@ -194,9 +188,7 @@ class ComparaisonNotaire {
 
     // Trouver le canvas (généré dans le HTML avec un ID unique)
     const chartId = `chart-${this.currentChartId}`;
-    const canvas = document.querySelector(
-      `canvas[id^="chart-"]`
-    ) as HTMLCanvasElement;
+    const canvas = document.querySelector(`canvas[id^="chart-"]`) as HTMLCanvasElement;
 
     if (!canvas) {
       console.error("Canvas non trouvé pour le graphique");
@@ -241,27 +233,9 @@ class ComparaisonNotaire {
 
     // Charger Chart.js et créer le graphique à la demande (code-splitting)
     import("chart.js").then(
-      ({
-        Chart,
-        BarController,
-        BarElement,
-        CategoryScale,
-        LinearScale,
-        Tooltip,
-        Legend,
-      }) => {
-        Chart.register(
-          BarController,
-          BarElement,
-          CategoryScale,
-          LinearScale,
-          Tooltip,
-          Legend
-        );
-        Chart.defaults.devicePixelRatio = Math.max(
-          1,
-          Math.ceil(window.devicePixelRatio || 1)
-        );
+      ({ Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend }) => {
+        Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+        Chart.defaults.devicePixelRatio = Math.max(1, Math.ceil(window.devicePixelRatio || 1));
 
         this.currentChart = new Chart(ctx!, {
           type: "bar",
@@ -345,7 +319,7 @@ class ComparaisonNotaire {
             },
           },
         });
-      }
+      },
     );
     const btnPNG = document.getElementById("btn-download-chart-png");
     const btnPDF = document.getElementById("btn-download-chart-pdf");
@@ -369,8 +343,7 @@ class ComparaisonNotaire {
 
     // Ensure all required variables are defined
     const prixList = this.calculs.map((c) => c.prixAchat);
-    const allSamePrix =
-      prixList.length > 0 && prixList.every((v) => v === prixList[0]);
+    const allSamePrix = prixList.length > 0 && prixList.every((v) => v === prixList[0]);
     const prixRef = prixList[0] || 0;
     const minPrix = Math.min(...prixList);
     const maxPrix = Math.max(...prixList);
@@ -396,10 +369,10 @@ class ComparaisonNotaire {
       type === "ancien"
         ? "Bien ancien"
         : type === "neuf"
-        ? "Bien neuf"
-        : type === "terrain"
-        ? "Terrain"
-        : type;
+          ? "Bien neuf"
+          : type === "terrain"
+            ? "Terrain"
+            : type;
 
     this.currentChartId = Date.now().toString();
     const chartId = `chart-${this.currentChartId}`;
@@ -413,15 +386,13 @@ class ComparaisonNotaire {
               ${
                 allSamePrix
                   ? `Pour un prix d'acquisition de <span class="font-semibold">${formatCurrency2(
-                      prixRef
+                      prixRef,
                     )}</span>`
                   : prixList.length > 0
-                  ? `Pour des prix d'acquisition de <span class="font-semibold">${formatCurrency2(
-                      minPrix
-                    )}</span> à <span class="font-semibold">${formatCurrency2(
-                      maxPrix
-                    )}</span>`
-                  : ""
+                    ? `Pour des prix d'acquisition de <span class="font-semibold">${formatCurrency2(
+                        minPrix,
+                      )}</span> à <span class="font-semibold">${formatCurrency2(maxPrix)}</span>`
+                    : ""
               }
             </div>
           </div>
@@ -442,166 +413,156 @@ class ComparaisonNotaire {
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold cursor-pointer" title="Trier">${c.departementLabel}</th>`
+                      `<th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold cursor-pointer" title="Trier">${c.departementLabel}</th>`,
                   )
                   .join("")}
               </tr>
             </thead>
             <tbody>
               <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Type de bien (ancien, neuf, terrain)">Type de bien</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="Type de bien (ancien, neuf, terrain)">Type de bien</td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${getTypeBienLabel(
-                        c.typeBien
-                      )}</td>`
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center text-gray-900">${getTypeBienLabel(
+                        c.typeBien,
+                      )}</td>`,
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Prix d'acquisition du bien immobilier">Prix d'acquisition</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="Prix d'acquisition du bien immobilier">Prix d'acquisition</td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency2(
-                        c.prixAchat
-                      )}</td>`
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center text-gray-900">${formatCurrency2(
+                        c.prixAchat,
+                      )}</td>`,
                   )
-                  .join("")}
+                  .join("")}}
               </tr>
               <tr class="bg-gray-100">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-semibold" colspan="${
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-semibold text-gray-900" colspan="${
                   this.calculs.length + 1
                 }">Détail des frais</td>
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Émoluments du notaire selon le barème officiel">Émoluments du notaire <span class='cursor-help' title='Rémunération réglementée du notaire, calculée selon le barème officiel.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="Émoluments du notaire selon le barème officiel">Émoluments du notaire <span class='cursor-help' title='Rémunération réglementée du notaire, calculée selon le barème officiel.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
-                        c.emoluments
-                      )}</td>`
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center text-gray-900">${formatCurrency(
+                        c.emoluments,
+                      )}</td>`,
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Droits d'enregistrement (ou de mutation)">Droits d'enregistrement <span class='cursor-help' title='Taxes perçues par l'État et les collectivités locales lors de la vente.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="Droits d'enregistrement (ou de mutation)">Droits d'enregistrement <span class='cursor-help' title='Taxes perçues par l'État et les collectivités locales lors de la vente.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
                       `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center ${
                         c.droitsEnregistrement ===
-                        Math.min(
-                          ...this.calculs.map((x) => x.droitsEnregistrement)
-                        )
+                        Math.min(...this.calculs.map((x) => x.droitsEnregistrement))
                           ? "text-green-600 font-semibold"
-                          : ""
-                      }">${formatCurrency(c.droitsEnregistrement)}</td>`
+                          : "text-gray-900"
+                      }">${formatCurrency(c.droitsEnregistrement)}</td>`,
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Débours (frais avancés par le notaire pour le compte de l'acquéreur)">Débours <span class='cursor-help' title='Sommes avancées par le notaire pour le compte de l'acquéreur (cadastre, conservation, etc.).'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="Débours (frais avancés par le notaire pour le compte de l'acquéreur)">Débours <span class='cursor-help' title='Sommes avancées par le notaire pour le compte de l'acquéreur (cadastre, conservation, etc.).'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
-                        c.fraisDivers
-                      )}</td>`
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center text-gray-900">${formatCurrency(
+                        c.fraisDivers,
+                      )}</td>`,
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Formalités diverses">Formalités diverses <span class='cursor-help' title='Frais de formalités diverses.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="Formalités diverses">Formalités diverses <span class='cursor-help' title='Frais de formalités diverses.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
-                        c.fraisFormalites
-                      )}</td>`
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center text-gray-900">${formatCurrency(
+                        c.fraisFormalites,
+                      )}</td>`,
                   )
                   .join("")}
               </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Contribution de Sécurité Immobilière (CSI)">Contribution de Sécurité Immobilière (CSI) <span class='cursor-help' title='Contribution de sécurité immobilière.'>🛈</span></td>
+              <tr class="hover:bg-gray-50 text-gray-900">
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="Contribution de Sécurité Immobilière (CSI)">Contribution de Sécurité Immobilière (CSI) <span class='cursor-help' title='Contribution de sécurité immobilière.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
                       `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
-                        c.csi || 0
-                      )}</td>`
+                        c.csi || 0,
+                      )}</td>`,
                   )
                   .join("")}
               </tr>
               ${
                 this.calculs.some((c) => c.fraisHypotheque > 0)
-                  ? `<tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Frais d'hypothèque (si emprunt)">Frais d'hypothèque <span class='cursor-help' title='Frais liés à la prise d'une garantie hypothécaire.'>🛈</span></td>${this.calculs
+                  ? `<tr class="hover:bg-gray-50 text-gray-900"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Frais d'hypothèque (si emprunt)">Frais d'hypothèque <span class='cursor-help text-gray-900' title='Frais liés à la prise d'une garantie hypothécaire.'>🛈</span></td>${this.calculs
                       .map(
                         (c) =>
                           `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${
-                            c.fraisHypotheque > 0
-                              ? formatCurrency(c.fraisHypotheque)
-                              : "-"
-                          }</td>`
+                            c.fraisHypotheque > 0 ? formatCurrency(c.fraisHypotheque) : "-"
+                          }</td>`,
                       )
                       .join("")}</tr>`
                   : ""
               }
-              <tr class="hover:bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="TVA sur les émoluments et certains frais">TVA (20%) <span class='cursor-help' title='Taxe sur la valeur ajoutée appliquée sur les émoluments et certains frais.'>🛈</span></td>
+              <tr class="hover:bg-gray-50 text-gray-900">
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-900" title="TVA sur les émoluments et certains frais">TVA (20%) <span class='cursor-help text-gray-900' title='Taxe sur la valeur ajoutée appliquée sur les émoluments et certains frais.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
                       `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
-                        c.tva
-                      )}</td>`
+                        c.tva,
+                      )}</td>`,
                   )
                   .join("")}
               </tr>
-              <tr class="bg-green-50 font-bold">
+              <tr class="bg-green-50 font-bold text-gray-900">
                 <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Total des frais de notaire">TOTAL FRAIS DE NOTAIRE</td>
                 ${this.calculs
                   .map(
                     (c) =>
                       `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center ${
-                        c.total ===
-                        Math.min(...this.calculs.map((x) => x.total))
+                        c.total === Math.min(...this.calculs.map((x) => x.total))
                           ? "text-green-600 text-lg"
                           : "text-gray-900"
-                      }">${formatCurrency(c.total)}</td>`
+                      }">${formatCurrency(c.total)}</td>`,
                   )
                   .join("")}
               </tr>
-              <tr class="bg-green-50">
+              <tr class="bg-green-50 text-gray-900">
                 <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Pourcentage des frais par rapport au prix d'acquisition">% du prix d'acquisition</td>
                 ${this.calculs
-                  .map(
-                    (c) =>
-                      (() => {
-                        const base = c.prixAchat || 0;
-                        const pct = base > 0 ? (c.total / base) * 100 : 0;
-                        const str = base > 0 ? pct.toFixed(2).replace(".", ",") + "%" : "—";
-                        return `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold">${str}</td>`;
-                      })()
+                  .map((c) =>
+                    (() => {
+                      const base = c.prixAchat || 0;
+                      const pct = base > 0 ? (c.total / base) * 100 : 0;
+                      const str = base > 0 ? pct.toFixed(2).replace(".", ",") + "%" : "—";
+                      return `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold">${str}</td>`;
+                    })(),
                   )
                   .join("")}
               </tr>
               ${
                 this.calculs.length > 1
-                  ? `<tr class="bg-yellow-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-semibold">💰 Économie vs le moins cher</td>${this.calculs
+                  ? `<tr class="bg-yellow-50 text-gray-900"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-semibold">💰 Économie vs le moins cher</td>${this.calculs
                       .map((c) => {
-                        const minTotal = Math.min(
-                          ...this.calculs.map((x) => x.total)
-                        );
+                        const minTotal = Math.min(...this.calculs.map((x) => x.total));
                         const economie = c.total - minTotal;
                         return `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold ${
                           economie === 0 ? "text-green-600" : "text-orange-600"
                         }">${
-                          economie === 0
-                            ? "✓ Le moins cher !"
-                            : `+ ${formatCurrency(economie)}`
+                          economie === 0 ? "✓ Le moins cher !" : `+ ${formatCurrency(economie)}`
                         }</td>`;
                       })
                       .join("")}</tr>`
@@ -614,9 +575,7 @@ class ComparaisonNotaire {
           this.calculs.length < this.maxComparaisons
             ? `<div class="mt-6 flex flex-col items-center gap-3" data-export-exclude="true"><button onclick="window.ouvrirModaleComparaison?.()" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 md:px-8 text-xs sm:text-sm rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center gap-2"><span class="text-lg sm:text-xl">➕</span><span>Ajouter une autre ville</span></button><p class="text-xs sm:text-sm text-gray-600">💡 Vous pouvez ajouter jusqu'à ${
                 this.maxComparaisons - this.calculs.length
-              } ville${
-                this.maxComparaisons - this.calculs.length > 1 ? "s" : ""
-              } supplémentaire${
+              } ville${this.maxComparaisons - this.calculs.length > 1 ? "s" : ""} supplémentaire${
                 this.maxComparaisons - this.calculs.length > 1 ? "s" : ""
               }</p></div>`
             : `<div class="mt-4 text-center text-xs sm:text-sm text-gray-600" data-export-exclude="true">⚠️ Limite de ${this.maxComparaisons} comparaisons atteinte</div>`
@@ -634,7 +593,7 @@ class ComparaisonNotaire {
       if (!container) return;
       const { default: html2canvas } = await import("html2canvas");
       const excludeEls = Array.from(
-        document.querySelectorAll('[data-export-exclude="true"]')
+        document.querySelectorAll('[data-export-exclude="true"]'),
       ) as HTMLElement[];
       const prevDisplay = excludeEls.map((el) => el.style.display || "");
       excludeEls.forEach((el) => (el.style.display = "none"));
@@ -665,7 +624,7 @@ class ComparaisonNotaire {
       const { default: html2canvas } = await import("html2canvas");
       const { jsPDF } = await import("jspdf");
       const excludeEls = Array.from(
-        document.querySelectorAll('[data-export-exclude="true"]')
+        document.querySelectorAll('[data-export-exclude="true"]'),
       ) as HTMLElement[];
       const prevDisplay = excludeEls.map((el) => el.style.display || "");
       excludeEls.forEach((el) => (el.style.display = "none"));
@@ -687,10 +646,7 @@ class ComparaisonNotaire {
         let remainingHeight = imgHeight;
         let sourceY = 0;
         while (remainingHeight > 0) {
-          const sliceHeight = Math.min(
-            remainingHeight,
-            pdfHeight - yPosition - 10
-          );
+          const sliceHeight = Math.min(remainingHeight, pdfHeight - yPosition - 10);
           const sourceHeight = (sliceHeight * canvas.height) / imgHeight;
 
           const sliceCanvas = document.createElement("canvas");
@@ -707,7 +663,7 @@ class ComparaisonNotaire {
             0,
             0,
             canvas.width,
-            sourceHeight
+            sourceHeight,
           );
 
           const sliceData = sliceCanvas.toDataURL("image/png");
@@ -734,9 +690,7 @@ class ComparaisonNotaire {
    */
   private telechargerGraphiquePNG(): void {
     try {
-      const canvas = document.querySelector(
-        `canvas[id^="chart-"]`
-      ) as HTMLCanvasElement;
+      const canvas = document.querySelector(`canvas[id^="chart-"]`) as HTMLCanvasElement;
       if (!canvas) return;
       const dataURL = canvas.toDataURL("image/png");
       const a = document.createElement("a");
@@ -753,9 +707,7 @@ class ComparaisonNotaire {
    */
   private async telechargerGraphiquePDF(): Promise<void> {
     try {
-      const canvas = document.querySelector(
-        `canvas[id^="chart-"]`
-      ) as HTMLCanvasElement;
+      const canvas = document.querySelector(`canvas[id^="chart-"]`) as HTMLCanvasElement;
       if (!canvas) return;
       const imgData = canvas.toDataURL("image/png");
       const { jsPDF } = await import("jspdf");
@@ -770,14 +722,7 @@ class ComparaisonNotaire {
         const scale = (pdfHeight - margin * 2) / imgHeight;
         const scaledWidth = imgWidth * scale;
         const scaledHeight = imgHeight * scale;
-        pdf.addImage(
-          imgData,
-          "PNG",
-          (pdfWidth - scaledWidth) / 2,
-          y,
-          scaledWidth,
-          scaledHeight
-        );
+        pdf.addImage(imgData, "PNG", (pdfWidth - scaledWidth) / 2, y, scaledWidth, scaledHeight);
       } else {
         pdf.addImage(imgData, "PNG", margin, y, imgWidth, imgHeight);
       }
@@ -810,43 +755,28 @@ class ComparaisonNotaire {
       [
         "Type de bien",
         ...this.calculs.map((c) =>
-          c.typeBien === "ancien"
-            ? "Bien ancien"
-            : c.typeBien === "neuf"
-            ? "Bien neuf"
-            : "Terrain"
+          c.typeBien === "ancien" ? "Bien ancien" : c.typeBien === "neuf" ? "Bien neuf" : "Terrain",
         ),
       ],
       ["Prix d'acquisition", ...this.calculs.map((c) => fmt(c.prixAchat))],
       ["", ...this.calculs.map(() => "")],
       ["Émoluments du notaire", ...this.calculs.map((c) => fmt(c.emoluments))],
-      [
-        "Droits d'enregistrement",
-        ...this.calculs.map((c) => fmt(c.droitsEnregistrement)),
-      ],
+      ["Droits d'enregistrement", ...this.calculs.map((c) => fmt(c.droitsEnregistrement))],
       ["Débours", ...this.calculs.map((c) => fmt(c.fraisDivers))],
-      [
-        "Formalités diverses",
-        ...this.calculs.map((c) => fmt(c.fraisFormalites)),
-      ],
+      ["Formalités diverses", ...this.calculs.map((c) => fmt(c.fraisFormalites))],
       ["CSI", ...this.calculs.map((c) => fmt(c.csi || 0))],
       ...(this.calculs.some((c) => c.fraisHypotheque > 0)
         ? [
             [
               "Frais d'hypothèque",
-              ...this.calculs.map((c) =>
-                c.fraisHypotheque > 0 ? fmt(c.fraisHypotheque) : "-"
-              ),
+              ...this.calculs.map((c) => (c.fraisHypotheque > 0 ? fmt(c.fraisHypotheque) : "-")),
             ],
           ]
         : []),
       ["TVA (20%)", ...this.calculs.map((c) => fmt(c.tva))],
       ["", ...this.calculs.map(() => "")],
       ["TOTAL FRAIS DE NOTAIRE", ...this.calculs.map((c) => fmt(c.total))],
-      [
-        "% du prix",
-        ...this.calculs.map((c) => ` ${c.pourcentage.toFixed(2)}%`),
-      ],
+      ["% du prix", ...this.calculs.map((c) => ` ${c.pourcentage.toFixed(2)}%`)],
     ];
 
     return { headers, rows };
