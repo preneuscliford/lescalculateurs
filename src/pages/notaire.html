@@ -2179,29 +2179,29 @@
             return `
           <div class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="bg-blue-50 p-4 rounded-lg">
+              <div class="bg-blue-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
                 <h4 class="font-semibold text-gray-800">Prix d'acquisition</h4>
                 <p class="text-xl font-bold text-blue-600">${formatCurrency(data.prixAchat)}</p>
                 ${
                   data.montantMobilier > 0
-                    ? `<p class="text-sm text-gray-600">Dont mobilier : ${formatCurrency(
+                    ? `<p class="text-xs sm:text-sm text-gray-600">Dont mobilier : ${formatCurrency(
                         data.montantMobilier,
                       )}</p>`
                     : ""
                 }
               </div>
-              <div class="bg-green-50 p-4 rounded-lg">
+              <div class="bg-green-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
                 <h4 class="font-semibold text-gray-800">Frais de notaire totaux</h4>
                 <p class="text-xl font-bold text-green-600">${formatCurrency(data.total)}</p>
-                <p class="text-sm text-gray-600">${data.pourcentage.toFixed(
+                <p class="text-xs sm:text-sm text-gray-600">${data.pourcentage.toFixed(
                   2,
                 )}% du prix d'acquisition</p>
               </div>
             </div>
 
-            <div class="bg-gray-50 p-4 rounded-lg">
+            <div class="bg-gray-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
               <h4 class="font-semibold text-gray-800 mb-3">Informations de l'acquisition :</h4>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
                 <div><span class="font-medium">Type de bien :</span> ${
                   data.typeBien === "ancien"
                     ? "Bien ancien"
@@ -2237,7 +2237,7 @@
 
             <div class="border-t pt-4">
               <h4 class="font-semibold text-gray-800 mb-3">Détail des frais :</h4>
-              <div class="space-y-2 text-sm">
+              <div class="space-y-2 text-xs sm:text-sm">
                 <div class="flex justify-between"><span>Émoluments du notaire :</span><span class="font-medium">${formatCurrency(
                   data.émoluments,
                 )}</span></div>
@@ -2287,25 +2287,25 @@
 
             ${
               data.isVEFA
-                ? `<div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4"><p class="text-sm text-yellow-800"><strong>⚠ Dans le cas d’un bien neuf (VEFA), les droits de mutation sont réduits (0,715%).<br>Cette règle est déjà intégrée dans le calcul.</strong></p></div>`
+                ? `<div class="bg-yellow-50 border border-yellow-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3 mt-4"><p class="text-xs sm:text-sm text-yellow-800"><strong>⚠ Dans le cas d’un bien neuf (VEFA), les droits de mutation sont réduits (0,715%).<br>Cette règle est déjà intégrée dans le calcul.</strong></p></div>`
                 : ""
             }
 
-            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
-              <p class="text-sm text-yellow-800"><strong>Information :</strong> Cette simulation applique les barèmes réglementaires en vigueur (droits d'enregistrement, émoluments notariaux réglementés, TVA, CSI). Il s'agit d'une estimation indicative, le montant définitif étant établi par le notaire lors de la signature de l'acte, selon la nature du dossier et les formalités spécifiques.</p>
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3 mt-4">
+              <p class="text-xs sm:text-sm text-yellow-800"><strong>Information :</strong> Cette simulation applique les barèmes réglementaires en vigueur (droits d'enregistrement, émoluments notariaux réglementés, TVA, CSI). Il s'agit d'une estimation indicative, le montant définitif étant établi par le notaire lors de la signature de l'acte, selon la nature du dossier et les formalités spécifiques.</p>
             </div>
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-              <p class="text-sm text-blue-800"><strong>Bon à savoir :</strong> Les droits d'enregistrement peuvent varier selon votre localisation. Contactez votre notaire pour une estimation précise.</p>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3 mt-4">
+              <p class="text-xs sm:text-sm text-blue-800"><strong>Bon à savoir :</strong> Les droits d'enregistrement peuvent varier selon votre localisation. Contactez votre notaire pour une estimation précise.</p>
             </div>
 
             <!-- Bouton de partage du calcul -->
             <div class="mt-4 flex justify-center">
-              <button type="button" id="btn-share-calc" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600" title="Copier/partager le lien du calcul">🔗 Partager ce calcul</button>
+              <button type="button" id="btn-share-calc" class="bg-blue-600 text-white font-semibold px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-xs sm:text-sm rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600" title="Copier/partager le lien du calcul">🔗 Partager ce calcul</button>
             </div>
 
             <!-- Bouton Ajouter à la comparaison -->
             <div class="mt-6 flex justify-center">
-              <button onclick="window.ajouterCalculActuelEtOuvrirModale?.()" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center gap-2"><span class="text-xl">📊</span><span>Comparer avec une autre ville</span></button>
+              <button onclick="window.ajouterCalculActuelEtOuvrirModale?.()" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 md:px-8 text-xs sm:text-sm rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center gap-2"><span class="text-lg sm:text-xl">📊</span><span>Comparer avec une autre ville</span></button>
             </div>
           </div>
           `;

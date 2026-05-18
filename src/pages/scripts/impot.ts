@@ -90,23 +90,23 @@ const impotConfig = {
     return `
     <div class="space-y-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-blue-50 p-4 rounded-lg">
+        <div class="bg-blue-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
           <h4 class="font-semibold text-gray-800">IR brut estimé</h4>
           <p class="text-xl font-bold text-primary-600">${formatCurrency(d.irBrut)}</p>
-          <p class="text-sm text-gray-600">Mensualité moyenne: ${formatCurrency(
+          <p class="text-xs sm:text-sm text-gray-600">Mensualité moyenne: ${formatCurrency(
             d.mensualiteMoyenne,
           )}</p>
         </div>
-        <div class="bg-green-50 p-4 rounded-lg">
+        <div class="bg-green-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
           <h4 class="font-semibold text-gray-800">Quotient familial</h4>
           <p class="text-xl font-bold text-green-600">${formatCurrency(d.qf)}</p>
-          <p class="text-sm text-gray-600">Taux marginal: ${(d.tauxMarginal * 100).toFixed(
+          <p class="text-xs sm:text-sm text-gray-600">Taux marginal: ${(d.tauxMarginal * 100).toFixed(
             0,
           )}% • Taux moyen: ${(d.tauxMoyen * 100).toFixed(1)}%</p>
         </div>
       </div>
-      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-2">
-        <p class="text-sm text-yellow-800">Estimation indicative selon barème progressif. Décote, réductions et crédits d’impôt ne sont pas intégrés.</p>
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3 mt-2">
+        <p class="text-xs sm:text-sm text-yellow-800">Estimation indicative selon barème progressif. Décote, réductions et crédits d'impôt ne sont pas intégrés.</p>
       </div>
     </div>
     `;
@@ -183,42 +183,42 @@ function renderIR() {
   <div class="bg-white border-2 border-orange-500 rounded-lg p-6">
     <div class="flex justify-between items-center mb-4">
       <h3 class="text-lg font-bold">Comparaison des scénarios</h3>
-      <button id="impot-clear-all" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 text-sm font-semibold">
+      <button id="impot-clear-all" class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 text-xs sm:text-sm font-semibold">
         🔄 Réinitialiser tout
       </button>
     </div>
     <div class="max-w-md mx-auto mb-6">
       <div class="h-64"><canvas id="${chartId}" class="w-full h-full"></canvas></div>
     </div>
-    <div class="overflow-x-auto">
-      <table class="min-w-full border border-gray-200 rounded-lg text-sm">
-        <thead><tr class="bg-blue-50"><th class="p-3 text-left font-semibold">Critère</th>${headers
+    <div class="overflow-x-auto -mx-4 sm:mx-0">
+      <table class="w-full border border-gray-200 rounded-lg text-xs sm:text-sm">
+        <thead><tr class="bg-blue-50"><th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold">Critère</th>${headers
           .map(
             (h, idx) =>
-              `<th class=\"p-3 text-center font-semibold\">${h}<br><button class="text-xs text-red-600 hover:text-red-800 mt-1" onclick="deleteImpotScenario(${idx})">✕ Supprimer</button></th>`,
+              `<th class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold\">${h}<br><button class="text-xs text-red-600 hover:text-red-800 mt-1" onclick="deleteImpotScenario(${idx})">✕ Supprimer</button></th>`,
           )
           .join("")}</tr></thead>
         <tbody>
-          <tr class="hover:bg-gray-50"><td class="p-3">Revenu imposable</td>${compIR
-            .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.revenu)}</td>`)
+          <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Revenu imposable</td>${compIR
+            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.revenu)}</td>`)
             .join("")}</tr>
-          <tr class="hover:bg-gray-50"><td class="p-3">Nombre de parts</td>${compIR
-            .map((c) => `<td class=\"p-3 text-center\">${c.parts}</td>`)
+          <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Nombre de parts</td>${compIR
+            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${c.parts}</td>`)
             .join("")}</tr>
-          <tr class="hover:bg-gray-50"><td class="p-3">Quotient familial</td>${compIR
-            .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.qf)}</td>`)
+          <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Quotient familial</td>${compIR
+            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.qf)}</td>`)
             .join("")}</tr>
-          <tr class="bg-green-50 font-semibold"><td class="p-3">IR brut estimé</td>${compIR
-            .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.irBrut)}</td>`)
+          <tr class="bg-green-50 font-semibold"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">IR brut estimé</td>${compIR
+            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.irBrut)}</td>`)
             .join("")}</tr>
-          <tr class="hover:bg-gray-50"><td class="p-3">Mensualité moyenne</td>${compIR
-            .map((c) => `<td class=\"p-3 text-center\">${fmtEUR(c.mensualiteMoyenne)}</td>`)
+          <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Mensualité moyenne</td>${compIR
+            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${fmtEUR(c.mensualiteMoyenne)}</td>`)
             .join("")}</tr>
-          <tr class="hover:bg-gray-50"><td class="p-3">Taux marginal</td>${compIR
-            .map((c) => `<td class=\"p-3 text-center\">${(c.tauxMarginal * 100).toFixed(0)}%</td>`)
+          <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Taux marginal</td>${compIR
+            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${(c.tauxMarginal * 100).toFixed(0)}%</td>`)
             .join("")}</tr>
-          <tr class="hover:bg-gray-50"><td class="p-3">Taux moyen</td>${compIR
-            .map((c) => `<td class=\"p-3 text-center\">${(c.tauxMoyen * 100).toFixed(1)}%</td>`)
+          <tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3">Taux moyen</td>${compIR
+            .map((c) => `<td class=\"px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center\">${(c.tauxMoyen * 100).toFixed(1)}%</td>`)
             .join("")}</tr>
         </tbody>
       </table>

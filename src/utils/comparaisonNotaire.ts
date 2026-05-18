@@ -426,72 +426,72 @@ class ComparaisonNotaire {
             </div>
           </div>
           <div class="flex gap-2" data-export-exclude="true">
-            <button id="btn-download-chart-png" class="bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold px-3 py-2 rounded-lg text-sm shadow-sm" title="Télécharger le graphique et tableau en PNG">PNG</button>
-            <button id="btn-download-chart-pdf" class="bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold px-3 py-2 rounded-lg text-sm shadow-sm" title="Télécharger le graphique et tableau en PDF">PDF</button>
-            <button onclick="window.comparaisonNotaire?.reinitialiser()" class="bg-red-100 hover:bg-red-200 text-red-700 font-semibold px-3 py-2 rounded-lg text-sm shadow-sm" title="Réinitialiser la comparaison">Réinitialiser</button>
+            <button id="btn-download-chart-png" class="bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-xs sm:text-sm rounded-lg shadow-sm" title="Télécharger le graphique et tableau en PNG">PNG</button>
+            <button id="btn-download-chart-pdf" class="bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-xs sm:text-sm rounded-lg shadow-sm" title="Télécharger le graphique et tableau en PDF">PDF</button>
+            <button onclick="window.comparaisonNotaire?.reinitialiser()" class="bg-red-100 hover:bg-red-200 text-red-700 font-semibold px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-xs sm:text-sm rounded-lg shadow-sm" title="Réinitialiser la comparaison">Réinitialiser</button>
           </div>
         </div>
         <div class="w-full h-72 mb-6">
           <canvas id="${chartId}" class="w-full h-full"></canvas>
         </div>
-        <div class="overflow-x-auto">
-          <table class="min-w-full border border-gray-200 rounded-lg text-sm">
+        <div class="overflow-x-auto -mx-4 sm:mx-0">
+          <table class="w-full border border-gray-200 rounded-lg text-xs sm:text-sm">
             <thead>
               <tr class="bg-blue-50">
-                <th class="p-3 text-left font-semibold cursor-pointer" title="Trier">Critère</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left font-semibold cursor-pointer" title="Trier">Critère</th>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<th class="p-3 text-center font-semibold cursor-pointer" title="Trier">${c.departementLabel}</th>`
+                      `<th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold cursor-pointer" title="Trier">${c.departementLabel}</th>`
                   )
                   .join("")}
               </tr>
             </thead>
             <tbody>
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="Type de bien (ancien, neuf, terrain)">Type de bien</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Type de bien (ancien, neuf, terrain)">Type de bien</td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center">${getTypeBienLabel(
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${getTypeBienLabel(
                         c.typeBien
                       )}</td>`
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="Prix d'acquisition du bien immobilier">Prix d'acquisition</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Prix d'acquisition du bien immobilier">Prix d'acquisition</td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center">${formatCurrency2(
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency2(
                         c.prixAchat
                       )}</td>`
                   )
                   .join("")}
               </tr>
               <tr class="bg-gray-100">
-                <td class="p-3 font-semibold" colspan="${
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-semibold" colspan="${
                   this.calculs.length + 1
                 }">Détail des frais</td>
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="Émoluments du notaire selon le barème officiel">Émoluments du notaire <span class='cursor-help' title='Rémunération réglementée du notaire, calculée selon le barème officiel.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Émoluments du notaire selon le barème officiel">Émoluments du notaire <span class='cursor-help' title='Rémunération réglementée du notaire, calculée selon le barème officiel.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center">${formatCurrency(
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
                         c.emoluments
                       )}</td>`
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="Droits d'enregistrement (ou de mutation)">Droits d'enregistrement <span class='cursor-help' title='Taxes perçues par l'État et les collectivités locales lors de la vente.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Droits d'enregistrement (ou de mutation)">Droits d'enregistrement <span class='cursor-help' title='Taxes perçues par l'État et les collectivités locales lors de la vente.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center ${
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center ${
                         c.droitsEnregistrement ===
                         Math.min(
                           ...this.calculs.map((x) => x.droitsEnregistrement)
@@ -503,33 +503,33 @@ class ComparaisonNotaire {
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="Débours (frais avancés par le notaire pour le compte de l'acquéreur)">Débours <span class='cursor-help' title='Sommes avancées par le notaire pour le compte de l’acquéreur (cadastre, conservation, etc.).'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Débours (frais avancés par le notaire pour le compte de l'acquéreur)">Débours <span class='cursor-help' title='Sommes avancées par le notaire pour le compte de l'acquéreur (cadastre, conservation, etc.).'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center">${formatCurrency(
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
                         c.fraisDivers
                       )}</td>`
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="Formalités diverses">Formalités diverses <span class='cursor-help' title='Frais de formalités diverses.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Formalités diverses">Formalités diverses <span class='cursor-help' title='Frais de formalités diverses.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center">${formatCurrency(
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
                         c.fraisFormalites
                       )}</td>`
                   )
                   .join("")}
               </tr>
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="Contribution de Sécurité Immobilière (CSI)">Contribution de Sécurité Immobilière (CSI) <span class='cursor-help' title='Contribution de sécurité immobilière.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Contribution de Sécurité Immobilière (CSI)">Contribution de Sécurité Immobilière (CSI) <span class='cursor-help' title='Contribution de sécurité immobilière.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center">${formatCurrency(
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
                         c.csi || 0
                       )}</td>`
                   )
@@ -537,10 +537,10 @@ class ComparaisonNotaire {
               </tr>
               ${
                 this.calculs.some((c) => c.fraisHypotheque > 0)
-                  ? `<tr class="hover:bg-gray-50"><td class="p-3" title="Frais d'hypothèque (si emprunt)">Frais d'hypothèque <span class='cursor-help' title='Frais liés à la prise d’une garantie hypothécaire.'>🛈</span></td>${this.calculs
+                  ? `<tr class="hover:bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Frais d'hypothèque (si emprunt)">Frais d'hypothèque <span class='cursor-help' title='Frais liés à la prise d'une garantie hypothécaire.'>🛈</span></td>${this.calculs
                       .map(
                         (c) =>
-                          `<td class="p-3 text-center">${
+                          `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${
                             c.fraisHypotheque > 0
                               ? formatCurrency(c.fraisHypotheque)
                               : "-"
@@ -550,22 +550,22 @@ class ComparaisonNotaire {
                   : ""
               }
               <tr class="hover:bg-gray-50">
-                <td class="p-3" title="TVA sur les émoluments et certains frais">TVA (20%) <span class='cursor-help' title='Taxe sur la valeur ajoutée appliquée sur les émoluments et certains frais.'>🛈</span></td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="TVA sur les émoluments et certains frais">TVA (20%) <span class='cursor-help' title='Taxe sur la valeur ajoutée appliquée sur les émoluments et certains frais.'>🛈</span></td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center">${formatCurrency(
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center">${formatCurrency(
                         c.tva
                       )}</td>`
                   )
                   .join("")}
               </tr>
               <tr class="bg-green-50 font-bold">
-                <td class="p-3" title="Total des frais de notaire">TOTAL FRAIS DE NOTAIRE</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Total des frais de notaire">TOTAL FRAIS DE NOTAIRE</td>
                 ${this.calculs
                   .map(
                     (c) =>
-                      `<td class="p-3 text-center ${
+                      `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center ${
                         c.total ===
                         Math.min(...this.calculs.map((x) => x.total))
                           ? "text-green-600 text-lg"
@@ -575,7 +575,7 @@ class ComparaisonNotaire {
                   .join("")}
               </tr>
               <tr class="bg-green-50">
-                <td class="p-3" title="Pourcentage des frais par rapport au prix d'acquisition">% du prix d'acquisition</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3" title="Pourcentage des frais par rapport au prix d'acquisition">% du prix d'acquisition</td>
                 ${this.calculs
                   .map(
                     (c) =>
@@ -583,20 +583,20 @@ class ComparaisonNotaire {
                         const base = c.prixAchat || 0;
                         const pct = base > 0 ? (c.total / base) * 100 : 0;
                         const str = base > 0 ? pct.toFixed(2).replace(".", ",") + "%" : "—";
-                        return `<td class="p-3 text-center font-semibold">${str}</td>`;
+                        return `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold">${str}</td>`;
                       })()
                   )
                   .join("")}
               </tr>
               ${
                 this.calculs.length > 1
-                  ? `<tr class="bg-yellow-50"><td class="p-3 font-semibold">💰 Économie vs le moins cher</td>${this.calculs
+                  ? `<tr class="bg-yellow-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-semibold">💰 Économie vs le moins cher</td>${this.calculs
                       .map((c) => {
                         const minTotal = Math.min(
                           ...this.calculs.map((x) => x.total)
                         );
                         const economie = c.total - minTotal;
-                        return `<td class="p-3 text-center font-semibold ${
+                        return `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center font-semibold ${
                           economie === 0 ? "text-green-600" : "text-orange-600"
                         }">${
                           economie === 0
@@ -612,14 +612,14 @@ class ComparaisonNotaire {
         </div>
         ${
           this.calculs.length < this.maxComparaisons
-            ? `<div class="mt-6 flex flex-col items-center gap-3" data-export-exclude="true"><button onclick="window.ouvrirModaleComparaison?.()" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center gap-2"><span class="text-xl">➕</span><span>Ajouter une autre ville</span></button><p class="text-sm text-gray-600">💡 Vous pouvez ajouter jusqu'à ${
+            ? `<div class="mt-6 flex flex-col items-center gap-3" data-export-exclude="true"><button onclick="window.ouvrirModaleComparaison?.()" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 md:px-8 text-xs sm:text-sm rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center gap-2"><span class="text-lg sm:text-xl">➕</span><span>Ajouter une autre ville</span></button><p class="text-xs sm:text-sm text-gray-600">💡 Vous pouvez ajouter jusqu'à ${
                 this.maxComparaisons - this.calculs.length
               } ville${
                 this.maxComparaisons - this.calculs.length > 1 ? "s" : ""
               } supplémentaire${
                 this.maxComparaisons - this.calculs.length > 1 ? "s" : ""
               }</p></div>`
-            : `<div class="mt-4 text-center text-sm text-gray-600" data-export-exclude="true">⚠️ Limite de ${this.maxComparaisons} comparaisons atteinte</div>`
+            : `<div class="mt-4 text-center text-xs sm:text-sm text-gray-600" data-export-exclude="true">⚠️ Limite de ${this.maxComparaisons} comparaisons atteinte</div>`
         }
       </div>
     `;

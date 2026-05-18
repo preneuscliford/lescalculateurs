@@ -87,23 +87,23 @@ const salaireConfig = {
     return `
     <div class="space-y-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-blue-50 p-4 rounded-lg">
+        <div class="bg-blue-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
           <h4 class="font-semibold text-gray-800">Net mensuel avant impôt</h4>
           <p class="text-xl font-bold text-primary-600">${formatCurrency(d.netAvantImpot)}</p>
-          <p class="text-sm text-gray-600">Taux cotisations salariales ~ ${(
+          <p class="text-xs sm:text-sm text-gray-600">Taux cotisations salariales ~ ${(
             d.tauxSalarial * 100
           ).toFixed(1)}%</p>
         </div>
-        <div class="bg-green-50 p-4 rounded-lg">
+        <div class="bg-green-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg">
           <h4 class="font-semibold text-gray-800">Net mensuel après PAS</h4>
           <p class="text-xl font-bold text-green-600">${formatCurrency(d.netApresImpot)}</p>
-          <p class="text-sm text-gray-600">PAS mensuel: ${formatCurrency(
+          <p class="text-xs sm:text-sm text-gray-600">PAS mensuel: ${formatCurrency(
             d.pasMensuel,
           )} (${Number(d.tauxPAS || 0).toFixed(1)}% )</p>
         </div>
       </div>
       <div class="border-t pt-4">
-        <div class="space-y-2 text-sm">
+        <div class="space-y-2 text-xs sm:text-sm">
           <div class="flex justify-between"><span>Brut annuel :</span><span class="font-medium">${formatCurrency(
             d.brutAnnuel,
           )}</span></div>
@@ -118,8 +118,8 @@ const salaireConfig = {
           )}</span></div>
         </div>
       </div>
-      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-2">
-        <p class="text-sm text-yellow-800">Cette estimation repose sur des taux moyens de cotisations. Les montants réels varient selon convention, mutuelle et spécificités du contrat.</p>
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3 mt-2">
+        <p class="text-xs sm:text-sm text-yellow-800">Cette estimation repose sur des taux moyens de cotisations. Les montants réels varient selon convention, mutuelle et spécificités du contrat.</p>
       </div>
     </div>
     `;
