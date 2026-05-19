@@ -260,23 +260,23 @@ const impotConfig = {
     const comparisonTableHTML = `
       <div class="space-y-6 mt-6">
         <!-- Bloc de Comparaison -->
-        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 rounded-lg p-6">
-          <h3 class="text-lg font-bold text-teal-900 mb-2">🔍 Comparez votre impôt à d'autres situations</h3>
-          <p class="text-sm text-teal-700 mb-4">Découvrez comment votre impôt varie selon votre situation familiale ou vos revenus.</p>
+        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
+          <h3 class="text-base sm:text-lg font-bold text-teal-900 mb-2">🔍 Comparez votre impôt à d'autres situations</h3>
+          <p class="text-xs sm:text-sm text-teal-700 mb-4">Découvrez comment votre impôt varie selon votre situation familiale ou vos revenus.</p>
 
           <!-- Tableau de Comparaison -->
-          <div class="overflow-x-auto mb-6">
-            <table class="w-full text-sm border-collapse">
+          <div class="overflow-x-auto -mx-4 sm:mx-0 mb-6">
+            <table class="w-full text-xs sm:text-sm border-collapse">
               <thead>
                 <tr class="bg-teal-100">
-                  <th class="p-3 text-left border border-teal-200 font-semibold">Situation</th>
-                  <th class="p-3 text-center border border-teal-200 font-semibold">Parts</th>
-                  <th class="p-3 text-right border border-teal-200 font-semibold">IR à payer</th>
-                  <th class="p-3 text-center border border-teal-200 font-semibold">Taux moyen</th>
-                  <th class="p-3 text-center border border-teal-200 font-semibold">Taux marginal</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left border border-teal-200 font-semibold text-gray-900">Situation</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-teal-200 font-semibold text-gray-900">Parts</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right border border-teal-200 font-semibold text-gray-900">IR à payer</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-teal-200 font-semibold text-gray-900">Taux moyen</th>
+                  <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-teal-200 font-semibold text-gray-900">Taux marginal</th>
                   ${
                     customScenarios.length > 0
-                      ? '<th class="p-3 text-center border border-teal-200 font-semibold">Action</th>'
+                      ? '<th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-teal-200 font-semibold text-gray-900">Action</th>'
                       : ""
                   }
                 </tr>
@@ -290,7 +290,7 @@ const impotConfig = {
 
                     return `
                     <tr class="${rowBG} border-b border-teal-100 hover:bg-teal-50 transition">
-                      <td class="p-3 border border-teal-200 font-semibold">
+                      <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-teal-200 font-semibold text-gray-900">
                         <div class="flex items-center gap-2">
                           <span>${c.emoji || "📊"}</span>
                           <span>${c.name}</span>
@@ -301,19 +301,19 @@ const impotConfig = {
                             : ""
                         }
                       </td>
-                      <td class="p-3 border border-teal-200 text-center">${c.parts}</td>
-                      <td class="p-3 border border-teal-200 text-right font-bold text-gray-900">${formatCurrency(
+                      <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-teal-200 text-center text-gray-900">${c.parts}</td>
+                      <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-teal-200 text-right font-bold text-gray-900">${formatCurrency(
                         c.ir,
                       )}</td>
-                      <td class="p-3 border border-teal-200 text-center">${c.tauxMoyen.toFixed(
+                      <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-teal-200 text-center text-gray-900">${c.tauxMoyen.toFixed(
                         1,
                       )}%</td>
-                      <td class="p-3 border border-teal-200 text-center">${c.tauxMarginal.toFixed(
+                      <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-teal-200 text-center text-gray-900">${c.tauxMarginal.toFixed(
                         0,
                       )}%</td>
                       ${
                         c.custom
-                          ? `<td class="p-3 border border-teal-200 text-center">
+                          ? `<td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-teal-200 text-center">
                         <button class="btn-remove-scenario text-red-500 hover:text-red-700 font-bold" data-id="${c.id}">✕</button>
                       </td>`
                           : ""
@@ -326,7 +326,7 @@ const impotConfig = {
           </div>
 
           <!-- Graphique de Comparaison -->
-          <div class="bg-white rounded-lg p-4 border border-teal-100 mb-6">
+          <div class="bg-white rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-teal-100 mb-6">
             <p class="text-xs font-semibold text-gray-600 mb-4">📈 Impôt par situation</p>
             <div style="position: relative; height: 300px; width: 100%;">
               <canvas id="chart-comparison"></canvas>
@@ -334,7 +334,7 @@ const impotConfig = {
           </div>
 
           <!-- Bouton Ajouter Scénario -->
-          <button id="btn-add-scenario" class="px-4 py-2 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition">
+          <button id="btn-add-scenario" class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-xs sm:text-sm bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition">
             ➕ Ajouter un scénario
           </button>
         </div>
@@ -346,18 +346,18 @@ const impotConfig = {
     <div class="space-y-6">
       <!-- Résultat Principal -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+        <div class="bg-blue-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg border border-blue-200">
           <h4 class="font-semibold text-gray-800">💰 Impôt estimé (barème brut)</h4>
-          <p class="text-2xl font-bold text-blue-600">${formatCurrency(d.irBrut)}</p>
-          <p class="text-sm text-gray-600 mt-1">Mensualité: ${formatCurrency(
+          <p class="text-lg sm:text-2xl font-bold text-blue-600">${formatCurrency(d.irBrut)}</p>
+          <p class="text-xs sm:text-sm text-gray-600 mt-1">Mensualité: ${formatCurrency(
             d.mensualiteMoyenne,
           )}</p>
           <p class="text-xs text-gray-500 mt-2">Taux moyen: ${(d.tauxMoyen * 100).toFixed(1)}%</p>
         </div>
-        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+        <div class="bg-green-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg border border-green-200">
           <h4 class="font-semibold text-gray-800">📊 Quotient familial</h4>
-          <p class="text-2xl font-bold text-green-600">${formatCurrency(d.qf)}</p>
-          <p class="text-sm text-gray-600 mt-1">${partsExplication}</p>
+          <p class="text-lg sm:text-2xl font-bold text-green-600">${formatCurrency(d.qf)}</p>
+          <p class="text-xs sm:text-sm text-gray-600 mt-1">${partsExplication}</p>
           <p class="text-xs text-gray-500 mt-2">Taux marginal: ${(d.tauxMarginal * 100).toFixed(
             0,
           )}%</p>
@@ -367,9 +367,9 @@ const impotConfig = {
       ${
         isZeroIR
           ? `
-      <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+      <div class="bg-green-50 border border-green-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
         <h3 class="text-lg font-bold text-green-900 mb-2">✅ Pourquoi l'impôt est à 0 € ?</h3>
-        <ul class="text-sm text-green-900 list-disc list-inside space-y-1">
+        <ul class="text-xs sm:text-sm text-green-900 list-disc list-inside space-y-1">
           <li>Votre quotient familial (${formatCurrency(
             d.qf,
           )}) reste dans la tranche à 0 % (jusqu'à ${formatCurrency(
@@ -383,26 +383,26 @@ const impotConfig = {
           : ""
       }
 
-      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+      <div class="bg-blue-50 border-l-4 border-blue-500 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-r-lg">
         <h3 class="text-lg font-bold text-blue-900 mb-2">🧠 Logique de calcul (simplifiée)</h3>
-        <ul class="text-sm text-blue-900 list-disc list-inside space-y-1">
+        <ul class="text-xs sm:text-sm text-blue-900 list-disc list-inside space-y-1">
           <li>Quotient familial (QF) = Revenu imposable ÷ Nombre de parts</li>
           <li>Impôt par part = application du barème progressif sur le QF</li>
           <li>Impôt estimé = (Impôt par part) × Nombre de parts</li>
         </ul>
       </div>
 
-      <div class="bg-white border border-gray-200 rounded-lg p-6">
-        <h3 class="text-lg font-bold text-gray-900 mb-3">📊 Détail chiffré (étape par étape)</h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm border-collapse">
+      <div class="bg-white border border-gray-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3">📊 Détail chiffré (étape par étape)</h3>
+        <div class="overflow-x-auto -mx-4 sm:mx-0">
+          <table class="w-full text-xs sm:text-sm border-collapse">
             <thead>
               <tr class="bg-gray-50">
-                <th class="p-2 text-left border border-gray-200">Tranche</th>
-                <th class="p-2 text-center border border-gray-200">De - À (par part)</th>
-                <th class="p-2 text-center border border-gray-200">Taux</th>
-                <th class="p-2 text-right border border-gray-200">Base (par part)</th>
-                <th class="p-2 text-right border border-gray-200">Impôt (par part)</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left border border-gray-200 text-gray-900">Tranche</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-gray-200 text-gray-900">De - À (par part)</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-gray-200 text-gray-900">Taux</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right border border-gray-200 text-gray-900">Base (par part)</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right border border-gray-200 text-gray-900">Impôt (par part)</th>
               </tr>
             </thead>
             <tbody>
@@ -410,17 +410,17 @@ const impotConfig = {
                 .map(
                   (dist: any) => `
                 <tr class="border-b border-gray-100 hover:bg-gray-50">
-                  <td class="p-2 border border-gray-200">${dist.tranche}</td>
-                  <td class="p-2 text-center border border-gray-200">${formatCurrency(
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 text-gray-900">${dist.tranche}</td>
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-gray-200 text-gray-900">${formatCurrency(
                     dist.de,
                   )} à ${dist.a === Infinity ? "∞" : formatCurrency(dist.a)}</td>
-                  <td class="p-2 text-center border border-gray-200 font-semibold">${(
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-gray-200 font-semibold text-gray-900">${(
                     dist.taux * 100
                   ).toFixed(0)}%</td>
-                  <td class="p-2 text-right border border-gray-200">${formatCurrency(
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right border border-gray-200 text-gray-900">${formatCurrency(
                     dist.montant,
                   )}</td>
-                  <td class="p-2 text-right border border-gray-200 font-semibold">${formatCurrency(
+                  <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right border border-gray-200 font-semibold text-gray-900">${formatCurrency(
                     dist.impotParPart,
                   )}</td>
                 </tr>
@@ -430,14 +430,14 @@ const impotConfig = {
             </tbody>
             <tfoot>
               <tr class="bg-gray-50">
-                <td class="p-2 border border-gray-200 font-semibold" colspan="4">Impôt par part</td>
-                <td class="p-2 border border-gray-200 text-right font-bold">${formatCurrency(
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 font-semibold text-gray-900" colspan="4">Impôt par part</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 text-right font-bold text-gray-900">${formatCurrency(
                   impotParPart,
                 )}</td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="p-2 border border-gray-200 font-semibold" colspan="4">Impôt estimé (toutes parts)</td>
-                <td class="p-2 border border-gray-200 text-right font-bold text-blue-700">${formatCurrency(
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 font-semibold text-gray-900" colspan="4">Impôt estimé (toutes parts)</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 text-right font-bold text-blue-700">${formatCurrency(
                   d.irBrut,
                 )}</td>
               </tr>
@@ -447,21 +447,21 @@ const impotConfig = {
       </div>
 
       <!-- Explication du Barème Progressif -->
-      <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+      <div class="bg-amber-50 border border-amber-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
         <h3 class="text-lg font-bold text-amber-900 mb-3">📚 Comment fonctionne le barème progressif ?</h3>
-        <p class="text-sm text-amber-800 mb-4">
+        <p class="text-xs sm:text-sm text-amber-800 mb-4">
           Votre revenu n'est PAS taxé à un seul taux. Il est divisé en tranches, chaque tranche ayant son propre taux :
         </p>
         
         <!-- Tableau des tranches -->
-        <div class="overflow-x-auto mb-4">
-          <table class="w-full text-sm border-collapse">
+        <div class="overflow-x-auto -mx-4 sm:mx-0 mb-4">
+          <table class="w-full text-xs sm:text-sm border-collapse">
             <thead>
               <tr class="bg-amber-100">
-                <th class="p-2 text-left border border-amber-200">Tranche</th>
-                <th class="p-2 text-center border border-amber-200">De - À</th>
-                <th class="p-2 text-center border border-amber-200">Taux</th>
-                <th class="p-2 text-right border border-amber-200">Votre situation</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-left border border-amber-200 text-gray-900">Tranche</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-amber-200 text-gray-900">De - À</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-center border border-amber-200 text-gray-900">Taux</th>
+                <th class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right border border-amber-200 text-gray-900">Votre situation</th>
               </tr>
             </thead>
             <tbody>
@@ -471,15 +471,15 @@ const impotConfig = {
                   const plafond = b.plafond === Infinity ? "∞" : formatCurrency(b.plafond);
                   const start = formatCurrency(prev);
                   const isCurrent = d.qf > prev && d.qf <= b.plafond;
-                  const className = isCurrent ? "bg-blue-100 border-blue-300" : "border-amber-200";
+                  const rowClass = isCurrent ? "bg-blue-100" : "bg-white";
                   return `
-                  <tr class="border ${className}">
-                    <td class="p-2 border">${i + 1}</td>
-                    <td class="p-2 text-center border">${start} à ${plafond}</td>
-                    <td class="p-2 text-center border font-semibold">${(b.taux * 100).toFixed(
+                  <tr class="${rowClass} border-b border-amber-200">
+                    <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border-r border-amber-200 text-gray-900">${i + 1}</td>
+                    <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border-r border-amber-200 text-center text-gray-900">${start} à ${plafond}</td>
+                    <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border-r border-amber-200 text-center font-semibold text-gray-900">${(b.taux * 100).toFixed(
                       0,
                     )}%</td>
-                    <td class="p-2 text-right border">${isCurrent ? "✓ Votre tranche" : ""}</td>
+                    <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right text-gray-900">${isCurrent ? "✓ Votre tranche" : ""}</td>
                   </tr>`;
                 })
                 .join("")}
@@ -488,7 +488,7 @@ const impotConfig = {
         </div>
 
         <!-- Explication visuelle de la distribution -->
-        <div class="bg-white rounded p-4 border border-amber-100">
+        <div class="bg-white rounded px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-amber-100">
           <p class="text-xs font-semibold text-gray-600 mb-3">📊 Distribution de votre revenu par tranche :</p>
           <div class="space-y-2">
             ${distribution
@@ -510,11 +510,11 @@ const impotConfig = {
                       : "0.0";
                 return `
                 <div>
-                  <div class="flex justify-between text-xs mb-1">
-                    <span class="font-semibold">Tranche ${i + 1}: ${
+                  <div class="flex justify-between text-xs sm:text-sm mb-1 gap-2">
+                    <span class="font-semibold text-gray-900">Tranche ${i + 1}: ${
                       dist.montant > 0 ? formatCurrency(dist.montant) : "—"
                     }</span>
-                    <span class="text-gray-600">${pct}% (taxé à ${(dist.taux * 100).toFixed(
+                    <span class="text-gray-700">${pct}% (taxé à ${(dist.taux * 100).toFixed(
                       0,
                     )}%)</span>
                   </div>
@@ -525,7 +525,7 @@ const impotConfig = {
               })
               .join("")}
           </div>
-          <p class="text-xs text-gray-600 mt-3 bg-amber-100 p-2 rounded">
+          <p class="text-xs text-gray-600 mt-3 bg-amber-100 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded">
             💡 <strong>Au-dessus de ${formatCurrency(
               bareme[1].plafond,
             )} par part, la partie correspondante est taxée à 30 % :</strong> environ ${formatCurrency(
@@ -536,24 +536,24 @@ const impotConfig = {
       </div>
 
       <!-- Explication des Parts Fiscales -->
-      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
         <h3 class="text-lg font-bold text-indigo-900 mb-3">👥 Les parts fiscales expliquées</h3>
-        <p class="text-sm text-indigo-800 mb-4">
+        <p class="text-xs sm:text-sm text-indigo-800 mb-4">
           Le quotient familial divise votre revenu par le nombre de parts. Plus vous avez de parts, plus votre revenu est divisé, ce qui réduit l'impôt :
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="bg-white rounded p-3 border border-indigo-200">
+          <div class="bg-white rounded px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-indigo-200">
             <p class="text-xs font-semibold text-indigo-700 mb-2">📌 Votre situation</p>
-            <p class="text-sm"><strong>Revenu annuel :</strong> ${formatCurrency(d.revenu)}</p>
-            <p class="text-sm"><strong>Nombre de parts :</strong> ${d.parts}</p>
-            <p class="text-sm"><strong>Quotient familial :</strong> ${formatCurrency(d.qf)}</p>
+            <p class="text-xs sm:text-sm"><strong>Revenu annuel :</strong> ${formatCurrency(d.revenu)}</p>
+            <p class="text-xs sm:text-sm"><strong>Nombre de parts :</strong> ${d.parts}</p>
+            <p class="text-xs sm:text-sm"><strong>Quotient familial :</strong> ${formatCurrency(d.qf)}</p>
           </div>
-          <div class="bg-white rounded p-3 border border-indigo-200">
+          <div class="bg-white rounded px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-indigo-200">
             <p class="text-xs font-semibold text-indigo-700 mb-2">💡 Impact des parts</p>
-            <p class="text-sm text-indigo-600"><strong>Avec ${
+            <p class="text-xs sm:text-sm text-indigo-600"><strong>Avec ${
               d.parts
             } part(s) :</strong> ${formatCurrency(d.irBrut)}</p>
-            <p class="text-sm text-indigo-600"><strong>Avec 0.5 part seulement :</strong> ~${formatCurrency(
+            <p class="text-xs sm:text-sm text-indigo-600"><strong>Avec 0.5 part seulement :</strong> ~${formatCurrency(
               (d.irBrut * d.parts) / 0.5,
             )}</p>
             <p class="text-xs text-gray-600 mt-2">Les enfants ajoutent 0.5 part chacun</p>
@@ -565,20 +565,20 @@ const impotConfig = {
       </div>
 
       <!-- Explication de la Décote -->
-      <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+      <div class="bg-purple-50 border border-purple-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
         <h3 class="text-lg font-bold text-purple-900 mb-3">🎁 La décote (pourquoi certains ne paient pas d'impôt)</h3>
-        <p class="text-sm text-purple-800 mb-4">
+        <p class="text-xs sm:text-sm text-purple-800 mb-4">
           La décote peut réduire votre impôt si celui-ci est faible. Dans certains cas, elle peut même ramener l'impôt final à 0 €.
         </p>
-        <div class="bg-white rounded p-4 border border-purple-200">
-          <p class="text-xs text-gray-600 mt-3 bg-purple-100 p-2 rounded">
-            ℹ️ Ce simulateur n'applique pas la décote : il affiche une estimation “barème brut”. Pour un résultat exact, utilisez le simulateur officiel DGFIP.
+        <div class="bg-white rounded px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-purple-200">
+          <p class="text-xs text-gray-600 mt-3 bg-purple-100 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded">
+            ℹ️ Ce simulateur n'applique pas la décote : il affiche une estimation "barème brut". Pour un résultat exact, utilisez le simulateur officiel DGFIP.
           </p>
         </div>
       </div>
 
       <!-- Avertissement -->
-      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
         <p class="text-xs text-yellow-800">
           ⚠️ <strong>Estimation indicative :</strong> Cette simulation applique le barème progressif mais ne tient pas compte de la décote, des réductions d'impôt, des crédits d'impôt, ou des prélèvements à la source. Pour une évaluation précise, consultez un fiscaliste ou impots.gouv.fr.
         </p>

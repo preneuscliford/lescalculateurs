@@ -80,10 +80,10 @@ export class CalculatorFrame {
     const presetsHTML = this.config.presets ? this.renderPresets() : "";
 
     this.container.innerHTML = `
-      <div class="max-w-4xl mx-auto p-6">
-        <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">🧮 ${this.config.title}</h2>
-          <p class="text-gray-600 mb-6">${this.config.description}</p>
+      <div class="max-w-4xl mx-auto p-2 sm:p-6">
+        <div class="bg-white rounded-lg shadow-lg p-3 sm:p-6">
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">🧮 ${this.config.title}</h2>
+          <p class="text-xs sm:text-sm text-gray-600 mb-6">${this.config.description}</p>
           
           ${presetsHTML}
           
@@ -234,7 +234,7 @@ export class CalculatorFrame {
         return `
           <button 
             type="button" 
-            class="preset-button px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all shadow-sm hover:shadow-md font-semibold text-sm"
+            class="preset-button px-2 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all shadow-sm hover:shadow-md font-semibold text-xs sm:text-sm"
             data-preset-index="${index}"
             title="${preset.description || preset.label}"
           >
@@ -486,7 +486,7 @@ export class CalculatorFrame {
           const csvBtn = document.createElement("button");
           csvBtn.id = "export-csv-btn";
           csvBtn.className =
-            "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+            "inline-flex items-center px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
           csvBtn.textContent = "📄 Exporter en CSV";
           csvBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -498,7 +498,7 @@ export class CalculatorFrame {
           const xlsxBtn = document.createElement("button");
           xlsxBtn.id = "export-xlsx-btn";
           xlsxBtn.className =
-            "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+            "inline-flex items-center px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
           xlsxBtn.textContent = "📊 Exporter en XLSX";
           xlsxBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -517,7 +517,7 @@ export class CalculatorFrame {
             const csvBtn = document.createElement("button");
             csvBtn.id = "export-csv-btn";
             csvBtn.className =
-              "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+              "inline-flex items-center px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
             csvBtn.textContent = "📄 Exporter en CSV";
             csvBtn.addEventListener("click", (e) => {
               e.preventDefault();
@@ -529,7 +529,7 @@ export class CalculatorFrame {
             const xlsxBtn = document.createElement("button");
             xlsxBtn.id = "export-xlsx-btn";
             xlsxBtn.className =
-              "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
+              "inline-flex items-center px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50";
             xlsxBtn.textContent = "📊 Exporter en XLSX";
             xlsxBtn.addEventListener("click", (e) => {
               e.preventDefault();
@@ -542,7 +542,7 @@ export class CalculatorFrame {
         obs.observe(document.body, { childList: true, subtree: true });
       }
     } else {
-      resultDiv.className = "mt-6 p-4 bg-red-50 border border-red-200 rounded-lg";
+      resultDiv.className = "mt-6 p-2 sm:p-4 bg-red-50 border border-red-200 rounded-lg";
       resultDiv.innerHTML = `
         <div class="text-red-700">
           <strong>Erreur :</strong> ${result.error}
