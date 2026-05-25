@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Page d'accueil -->
@@ -294,7 +294,7 @@
     
   </url>
   
-  <!-- Page pivot départements (Hub SEO) -->
+  <!-- Page pivot d├®partements (Hub SEO) -->
   <url>
     <loc>https://www.lescalculateurs.fr/pages/blog/frais-notaire-departements</loc>
     <lastmod>2025-10-10</lastmod>
@@ -303,7 +303,7 @@
 
   </url>
   
-  <!-- Pages départementales (101 pages SEO) -->
+  <!-- Pages d├®partementales (101 pages SEO) -->
   <url>
     <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-01</loc>
     
@@ -2400,4 +2400,95 @@
     <priority>0.6</priority>
   </url>
 <!-- SATELLITES:END -->
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/are-apres-cdd/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/are-cumul-salaire-temps-partiel-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/are-duree-indemnisation-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/are-fin-de-droits-aides-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/are-fin-de-droits-rsa-ou-apl/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/are-reprise-emploi-temps-partiel/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/are-salaire-reference-calcul-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/are/montant-are-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/impot/impot-couple-deux-enfants-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/impot/impot-decote-2026-simulation/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/impot/impot-parent-isole-un-enfant-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/impot/impot-quotient-familial-2-parts-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/impot/impot-revenu-30000-celibataire-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/impot/impot-revenu-45000-couple-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/impot/impot-revenu-60000-couple-un-enfant-2026/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-ancien-simulation/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-neuf-reduction/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-residence-secondaire/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-terrain/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-couple-4-enfants/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-couple-sans-enfant-smic/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-couple-un-enfant/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-parent-isole-un-enfant/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-personne-seule/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-temps-partiel-smic/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/simulateurs/aides-apres-perte-emploi/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/simulateurs/quelles-aides-couple-sans-revenu/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/simulateurs/quelles-aides-fin-de-droits-chomage/</loc>
+  </url>
+  <url>
+    <loc>https://lescalculateurs.fr/pages/simulateurs/quelles-aides-sans-revenu/</loc>
+  </url>
 </urlset>
+
