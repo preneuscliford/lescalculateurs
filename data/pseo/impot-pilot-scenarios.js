@@ -93,6 +93,68 @@ export const impotPilotScenarios = [
     ],
   },
   {
+    slug: "impot-parent-isole-un-enfant-2026",
+    title: "Impôt 2026 : estimation pour un parent isolé avec un enfant",
+    description:
+      "Simulation indicative de l'impôt 2026 pour un parent isolé avec un enfant et un revenu imposable de 35 000 EUR.",
+    summary:
+      "Ce cas met en avant l'effet d'un foyer monoparental sur le calcul de l'impôt, avec un repère simple.",
+    audience: "Parent isolé avec un enfant qui veut un repère d'impôt",
+    tags: ["impot", "parent-isole", "enfant", "2026"],
+    input: {
+      revenu: 35000,
+      parts: 2,
+    },
+    checklist: [
+      "Vérifier la composition familiale réelle du foyer.",
+      "Comparer avec un scénario célibataire pour visualiser l'effet des parts.",
+      "Vérifier ensuite les réductions et crédits d'impôt éventuels.",
+    ],
+    faq: [
+      {
+        question: "Un parent isolé avec un enfant a-t-il toujours moins d'impôt ?",
+        answer:
+          "Souvent oui, car le quotient familial change, mais le résultat dépend du revenu imposable exact.",
+      },
+      {
+        question: "Pourquoi tester ce cas séparément ?",
+        answer:
+          "Parce qu'il correspond à une intention précise, différente du simple calcul célibataire ou couple.",
+      },
+    ],
+  },
+  {
+    slug: "impot-couple-deux-enfants-2026",
+    title: "Impôt 2026 : estimation pour un couple avec deux enfants",
+    description:
+      "Simulation indicative de l'impôt 2026 pour un couple avec deux enfants et un revenu imposable de 70 000 EUR.",
+    summary:
+      "Ce scénario couvre un foyer familial plus large pour mesurer l'effet des parts supplémentaires.",
+    audience: "Couple avec deux enfants qui veut un repère d'impôt",
+    tags: ["impot", "couple", "deux-enfants", "2026"],
+    input: {
+      revenu: 70000,
+      parts: 3,
+    },
+    checklist: [
+      "Vérifier le nombre de parts retenu pour le foyer.",
+      "Comparer avec un scénario couple avec un seul enfant.",
+      "Contrôler le résultat final sur la déclaration officielle.",
+    ],
+    faq: [
+      {
+        question: "Deux enfants changent-ils beaucoup le calcul ?",
+        answer:
+          "Oui, chaque enfant modifie le quotient familial et peut réduire sensiblement l'impôt.",
+      },
+      {
+        question: "Ce scénario remplace-t-il la simulation officielle ?",
+        answer:
+          "Non. Il s'agit d'un repère rapide avant vérification détaillée.",
+      },
+    ],
+  },
+  {
     slug: "impot-quotient-familial-2-parts-2026",
     title: "Quotient familial 2026 : impact de 2 parts sur l'impôt",
     description:

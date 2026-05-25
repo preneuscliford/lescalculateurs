@@ -130,6 +130,40 @@ export const primeAbsenceRevenuScenarios = [
     ],
   },
   {
+    slug: "prime-activite-couple-un-enfant",
+    title: "Prime d'activite couple avec un enfant : estimation 2026",
+    description:
+      "Estimation indicative de la Prime d'activite 2026 pour un couple avec un enfant et revenus modestes.",
+    summary:
+      "Cette page couvre une situation familiale très lisible, distincte des cas couple sans enfant et parent isolé.",
+    audience: "Couple avec un enfant et revenus modestes",
+    tags: ["prime-activite", "couple", "enfant", "simulation"],
+    input: {
+      situation: "couple",
+      enfants: 1,
+      revenusProf: 1720,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Verifier les revenus d'activite du foyer entier.",
+      "Comparer avec un scenario couple sans enfant pour mesurer l'ecart.",
+      "Tester aussi l'APL si le loyer pèse sur le budget mensuel.",
+    ],
+    faq: [
+      {
+        question: "Un couple avec un enfant peut-il toucher la Prime d'activite ?",
+        answer: "Oui, selon les revenus du foyer et la composition familiale.",
+      },
+      {
+        question: "Pourquoi ce cas est-il différent du couple sans enfant ?",
+        answer:
+          "Parce que le nombre d'enfants modifie le montant forfaitaire et donc le niveau de la Prime.",
+      },
+    ],
+  },
+  {
     slug: "prime-activite-parent-isole-un-enfant",
     title: "Prime d'activite parent isole avec un enfant : simulation 2026",
     description:

@@ -100,6 +100,7 @@
     "apl-smic-seul"
   ],
   "are": [
+    "are-apres-cdd",
     "are-cumul-salaire-temps-partiel-2026",
     "are-duree-indemnisation-2026",
     "are-fin-de-droits-aides",
@@ -119,8 +120,10 @@
     "charges-deductibles-des-impots",
     "heures-supplementaires-comment-les-calculer",
     "impot-auto-entrepreneur",
+    "impot-couple-deux-enfants-2026",
     "impot-couple-ou-separe",
     "impot-decote-2026-simulation",
+    "impot-parent-isole-un-enfant-2026",
     "impot-quotient-familial-2-parts-2026",
     "impot-revenu-30000-celibataire-2026",
     "impot-revenu-45000-couple-2026",
@@ -168,6 +171,7 @@
     "montant-prime-activite-2026",
     "plafond-prime-activite-2026",
     "prime-activite-couple-sans-enfant-smic",
+    "prime-activite-couple-un-enfant",
     "prime-activite-parent-isole-un-enfant",
     "prime-activite-reprise-emploi-apres-chomage",
     "prime-activite-reprise-emploi-personne-seule",
@@ -214,6 +218,9 @@
     "quelles-aides-couple-sans-revenu",
     "quelles-aides-fin-de-droits-chomage",
     "quelles-aides-sans-revenu"
+  ],
+  "notaire": [
+    "frais-notaire-residence-secondaire"
   ],
   "taxe-fonciere": []
 }

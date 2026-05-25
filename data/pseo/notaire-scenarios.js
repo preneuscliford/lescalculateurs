@@ -144,4 +144,37 @@ export const notaireScenarios = [
       },
     ],
   },
+  {
+    slug: "frais-notaire-residence-secondaire",
+    title: "Frais de notaire résidence secondaire 2026 : calcul",
+    description:
+      "Estimation indicative des frais de notaire 2026 pour l'achat d'une résidence secondaire dans l'ancien.",
+    summary:
+      "Cette page cible un achat patrimonial fréquent, différent d'une résidence principale ou d'un terrain.",
+    audience: "Acheteur d'une résidence secondaire dans l'ancien",
+    tags: ["frais-notaire", "residence-secondaire", "ancien", "2026"],
+    input: {
+      prix: 280000,
+      type: "ancien",
+      departement: "33",
+    },
+    checklist: [
+      "Vérifier le département où se situe le bien pour le taux DMTO.",
+      "Comparer avec un achat dans le neuf pour mesurer l'écart de frais.",
+      "Prévoir les frais annexes liés au financement si un emprunt est utilisé.",
+    ],
+    comparisons: [],
+    faq: [
+      {
+        question: "Les frais de notaire changent-ils pour une résidence secondaire ?",
+        answer:
+          "Le calcul reste le même pour la nature du bien, mais l'intention d'achat et le budget global sont différents.",
+      },
+      {
+        question: "Pourquoi cette page est-elle utile ?",
+        answer:
+          "Parce qu'elle donne un repère concret pour un achat de loisir ou patrimonial, pas seulement pour une résidence principale.",
+      },
+    ],
+  },
 ];

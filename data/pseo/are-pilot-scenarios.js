@@ -169,4 +169,38 @@ export const arePilotScenarios = [
       },
     ],
   },
+  {
+    slug: "are-apres-cdd",
+    title: "ARE après CDD : estimation 2026",
+    description:
+      "Repère 2026 pour une personne en fin de CDD qui veut estimer rapidement son ARE.",
+    summary:
+      "Cette page cible une situation de transition très claire après la fin d'un contrat à durée déterminée.",
+    audience: "Personne en fin de CDD qui veut un repère ARE",
+    tags: ["are", "cdd", "transition", "2026"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 11,
+      salaireReferent: 2050,
+      personnesCharge: 0,
+      agePersonne: 34,
+    },
+    checklist: [
+      "Vérifier la fin exacte du CDD et les périodes travaillées retenues.",
+      "Comparer avec un scénario de reprise partielle si un nouveau contrat débute.",
+      "Vérifier ensuite les aides logement ou ressources restantes du foyer.",
+    ],
+    faq: [
+      {
+        question: "Un CDD donne-t-il droit à l'ARE ?",
+        answer:
+          "Oui, si les conditions d'ouverture de droits sont remplies après la fin du contrat.",
+      },
+      {
+        question: "Pourquoi créer une page spécifique après CDD ?",
+        answer:
+          "Parce que cette intention est différente d'une simple reprise d'emploi à temps partiel.",
+      },
+    ],
+  },
 ];
