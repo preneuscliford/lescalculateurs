@@ -219,8 +219,6 @@
     "quelles-aides-fin-de-droits-chomage",
     "quelles-aides-sans-revenu"
   ],
-  "notaire": [
-    "frais-notaire-residence-secondaire"
-  ],
+  "notaire": ["frais-notaire-residence-secondaire"],
   "taxe-fonciere": []
 }

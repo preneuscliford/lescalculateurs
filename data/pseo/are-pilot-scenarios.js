@@ -28,8 +28,7 @@ export const arePilotScenarios = [
       },
       {
         question: "Le montant est-il definitif ?",
-        answer:
-          "Non. Le montant final depend toujours de l'instruction par l'organisme officiel.",
+        answer: "Non. Le montant final depend toujours de l'instruction par l'organisme officiel.",
       },
     ],
   },
@@ -91,13 +90,11 @@ export const arePilotScenarios = [
     faq: [
       {
         question: "Pourquoi le salaire de reference est-il important ?",
-        answer:
-          "Parce qu'il influence directement la base de calcul de l'allocation ARE.",
+        answer: "Parce qu'il influence directement la base de calcul de l'allocation ARE.",
       },
       {
         question: "Faut-il aussi tester un cas de reprise ?",
-        answer:
-          "Oui, pour mesurer la difference entre un calcul ARE standard et un cas de cumul.",
+        answer: "Oui, pour mesurer la difference entre un calcul ARE standard et un cas de cumul.",
       },
     ],
   },
@@ -130,8 +127,7 @@ export const arePilotScenarios = [
       },
       {
         question: "Cette page remplace-t-elle un calcul France Travail ?",
-        answer:
-          "Non. Elle donne un ordre de grandeur avant une vérification officielle.",
+        answer: "Non. Elle donne un ordre de grandeur avant une vérification officielle.",
       },
     ],
   },
@@ -164,16 +160,14 @@ export const arePilotScenarios = [
       },
       {
         question: "Cette page remplace-t-elle le calcul officiel ?",
-        answer:
-          "Non. Elle donne un ordre de grandeur avant une vérification officielle.",
+        answer: "Non. Elle donne un ordre de grandeur avant une vérification officielle.",
       },
     ],
   },
   {
     slug: "are-apres-cdd",
     title: "ARE après CDD : estimation 2026",
-    description:
-      "Repère 2026 pour une personne en fin de CDD qui veut estimer rapidement son ARE.",
+    description: "Repère 2026 pour une personne en fin de CDD qui veut estimer rapidement son ARE.",
     summary:
       "Cette page cible une situation de transition très claire après la fin d'un contrat à durée déterminée.",
     audience: "Personne en fin de CDD qui veut un repère ARE",

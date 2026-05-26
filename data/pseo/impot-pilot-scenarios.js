@@ -25,8 +25,7 @@ export const impotPilotScenarios = [
       },
       {
         question: "Pourquoi partir d'un revenu annuel ?",
-        answer:
-          "Parce que le barème de l'impôt sur le revenu est appliqué sur une base annuelle.",
+        answer: "Parce que le barème de l'impôt sur le revenu est appliqué sur une base annuelle.",
       },
     ],
   },
@@ -51,8 +50,7 @@ export const impotPilotScenarios = [
     faq: [
       {
         question: "Le statut couple change-t-il beaucoup l'impôt ?",
-        answer:
-          "Oui, le nombre de parts peut modifier significativement le résultat estimé.",
+        answer: "Oui, le nombre de parts peut modifier significativement le résultat estimé.",
       },
       {
         question: "Cette page intègre-t-elle les crédits d'impôt ?",
@@ -149,8 +147,7 @@ export const impotPilotScenarios = [
       },
       {
         question: "Ce scénario remplace-t-il la simulation officielle ?",
-        answer:
-          "Non. Il s'agit d'un repère rapide avant vérification détaillée.",
+        answer: "Non. Il s'agit d'un repère rapide avant vérification détaillée.",
       },
     ],
   },
@@ -175,8 +172,7 @@ export const impotPilotScenarios = [
     faq: [
       {
         question: "À quoi sert le quotient familial ?",
-        answer:
-          "Il ajuste le calcul de l'impôt en fonction de la composition du foyer fiscal.",
+        answer: "Il ajuste le calcul de l'impôt en fonction de la composition du foyer fiscal.",
       },
       {
         question: "2 parts signifient-elles toujours moins d'impôt ?",
@@ -211,8 +207,7 @@ export const impotPilotScenarios = [
       },
       {
         question: "Cette page remplace-t-elle impots.gouv.fr ?",
-        answer:
-          "Non, elle sert de repère rapide avant vérification officielle.",
+        answer: "Non, elle sert de repère rapide avant vérification officielle.",
       },
     ],
   },

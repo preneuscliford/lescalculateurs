@@ -338,6 +338,54 @@ function collectNotaireComparisonInputs() {
   return inputs;
 }
 
+function collectNotaireDepartmentInputs() {
+  const departementsDir = resolve(__dirname, "src/pages/blog/departements");
+  if (!fs.existsSync(departementsDir)) return {};
+
+  const inputs: Record<string, string> = {};
+  const entries = fs.readdirSync(departementsDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+    const slug = entry.name.replace(/\.html$/i, "");
+    inputs[`pages/blog/departements/${slug}`] = path.join(departementsDir, entry.name);
+  }
+
+  return inputs;
+}
+
+function collectAideInputs() {
+  const aideDir = resolve(__dirname, "src/pages/aide");
+  if (!fs.existsSync(aideDir)) return {};
+
+  const inputs: Record<string, string> = {};
+  const entries = fs.readdirSync(aideDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+    const slug = entry.name.replace(/\.html$/i, "");
+    inputs[`pages/aide/${slug}`] = path.join(aideDir, entry.name);
+  }
+
+  return inputs;
+}
+
+function collectTaxeFonciereInputs() {
+  const taxeFonciereDir = resolve(__dirname, "src/pages/taxe-fonciere");
+  if (!fs.existsSync(taxeFonciereDir)) return {};
+
+  const inputs: Record<string, string> = {};
+  const entries = fs.readdirSync(taxeFonciereDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+    const slug = entry.name.replace(/\.html$/i, "");
+    inputs[`pages/taxe-fonciere/${slug}`] = path.join(taxeFonciereDir, entry.name);
+  }
+
+  return inputs;
+}
+
 function collectSimulateursPilotInputs() {
   const inputs: Record<string, string> = {};
 
@@ -459,6 +507,9 @@ export default defineConfig(() => {
   const vdfIncomeInputs = collectVdfIncomeInputs();
   const notairePilotInputs = collectNotairePilotInputs();
   const notaireComparisonInputs = collectNotaireComparisonInputs();
+  const notaireDepartmentInputs = collectNotaireDepartmentInputs();
+  const aideInputs = collectAideInputs();
+  const taxeFonciereInputs = collectTaxeFonciereInputs();
 
   return {
     root: "src",
@@ -544,6 +595,15 @@ export default defineConfig(() => {
 
           // Pages pSEO Notaire de comparaison declarees explicitement pour la prod
           ...notaireComparisonInputs,
+
+          // Pages departementales notaire presentes sous src/pages/blog/departements/*.html
+          ...notaireDepartmentInputs,
+
+          // Pages aide presentes sous src/pages/aide/*.html
+          ...aideInputs,
+
+          // Pages taxe fonciere presentes sous src/pages/taxe-fonciere/*.html
+          ...taxeFonciereInputs,
 
           // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
           ...legacySeoAliasInputs,
