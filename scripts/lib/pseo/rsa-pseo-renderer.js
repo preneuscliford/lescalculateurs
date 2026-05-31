@@ -348,19 +348,19 @@ export function renderRSAScenarioPage({
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${renderText(scenario.title)}</title>
-    <meta name="description" content="${renderText(scenario.description)}" />
+    <title>${renderText(scenario.title)} – Simulation RSA 2026 | Les Calculateurs</title>
+    <meta name="description" content="${renderText(scenario.description)} Estimez votre RSA 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
     <meta name="robots" content="index, follow" />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
     <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="${renderText(scenario.title)}" />
-    <meta property="og:description" content="${renderText(scenario.description)}" />
+    <meta property="og:title" content="${renderText(scenario.title)} – Simulation RSA 2026 | Les Calculateurs" />
+    <meta property="og:description" content="${renderText(scenario.description)} Estimez votre RSA 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
     <meta property="og:image" content="${FAVICON_OG_IMAGE}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${renderText(scenario.title)}" />
-    <meta name="twitter:description" content="${renderText(scenario.description)}" />
+    <meta name="twitter:title" content="${renderText(scenario.title)} – Simulation RSA 2026 | Les Calculateurs" />
+    <meta name="twitter:description" content="${renderText(scenario.description)} Estimez votre RSA 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
     <meta name="twitter:image" content="${FAVICON_OG_IMAGE}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />

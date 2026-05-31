@@ -97,19 +97,19 @@ export function renderASFScenarioPage({
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${renderText(scenario.title)}</title>
-    <meta name="description" content="${renderAttributeText(scenario.description)}" />
+    <title>${renderText(scenario.title)} – Simulation ASF 2026 | Les Calculateurs</title>
+    <meta name="description" content="${renderAttributeText(scenario.description)} Estimez votre ASF 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
     <meta name="robots" content="index,follow" />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
     <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="${renderAttributeText(scenario.title)}" />
-    <meta property="og:description" content="${renderAttributeText(scenario.description)}" />
+    <meta property="og:title" content="${renderAttributeText(scenario.title)} – Simulation ASF 2026 | Les Calculateurs" />
+    <meta property="og:description" content="${renderAttributeText(scenario.description)} Estimez votre ASF 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:image" content="${FAVICON_OG_IMAGE}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${renderAttributeText(scenario.title)}" />
-    <meta name="twitter:description" content="${renderAttributeText(scenario.description)}" />
+    <meta name="twitter:title" content="${renderAttributeText(scenario.title)} – Simulation ASF 2026 | Les Calculateurs" />
+    <meta name="twitter:description" content="${renderAttributeText(scenario.description)} Estimez votre ASF 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
     <meta name="twitter:image" content="${FAVICON_OG_IMAGE}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
