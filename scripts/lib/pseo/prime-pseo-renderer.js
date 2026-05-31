@@ -92,6 +92,26 @@ function buildPrimeSimulatorUrl(input) {
   return `${PILLAR_PATH}?${params.toString()}#prime-form`;
 }
 
+function detectPageType(title) {
+  const faqPattern =
+    /^(Qui|Quel|Quelle|Quels|Quelles|Comment|Combien|Pourquoi|Quand|Où|Peut-on|Faut-il|Est-ce|Doit-on|À qui|À quel|À quelle)/i;
+  return faqPattern.test(String(title).trim()) ? "guide" : "simulation";
+}
+
+function buildTitleSuffix(title, clusterLabel) {
+  const type = detectPageType(title);
+  return type === "guide"
+    ? `– Guide ${clusterLabel} 2026 | Les Calculateurs`
+    : `– Simulation ${clusterLabel} 2026 | Les Calculateurs`;
+}
+
+function buildMetaSuffix(title, clusterLabel) {
+  const type = detectPageType(title);
+  return type === "guide"
+    ? `Découvrez les règles de la ${clusterLabel} 2026 avec notre guide basé sur les sources officielles.`
+    : `Estimez votre ${clusterLabel} 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels.`;
+}
+
 export function isGeneratedPseoPrimePage(content) {
   return String(content).includes(GENERATED_MARKER);
 }
@@ -116,19 +136,19 @@ export function renderPrimeScenarioPage({
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${renderText(scenario.title)} – Simulation Prime d'Activité 2026 | Les Calculateurs</title>
-    <meta name="description" content="${renderAttributeText(scenario.description)} Estimez votre Prime d'activité 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
+    <title>${renderText(scenario.title)} ${buildTitleSuffix(scenario.title, "Prime d'Activité")}</title>
+    <meta name="description" content="${renderAttributeText(scenario.description)} ${buildMetaSuffix(scenario.title, "Prime d'Activité")}" />
     <meta name="robots" content="index,follow" />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
     <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="${renderAttributeText(scenario.title)} – Simulation Prime d'Activité 2026 | Les Calculateurs" />
-    <meta property="og:description" content="${renderAttributeText(scenario.description)} Estimez votre Prime d'activité 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
+    <meta property="og:title" content="${renderAttributeText(scenario.title)} ${buildTitleSuffix(scenario.title, "Prime d'Activité")}" />
+    <meta property="og:description" content="${renderAttributeText(scenario.description)} ${buildMetaSuffix(scenario.title, "Prime d'Activité")}" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:image" content="${FAVICON_OG_IMAGE}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${renderAttributeText(scenario.title)} – Simulation Prime d'Activité 2026 | Les Calculateurs" />
-    <meta name="twitter:description" content="${renderAttributeText(scenario.description)} Estimez votre Prime d'activité 2026 gratuitement avec notre simulateur basé sur les barèmes CAF officiels." />
+    <meta name="twitter:title" content="${renderAttributeText(scenario.title)} ${buildTitleSuffix(scenario.title, "Prime d'Activité")}" />
+    <meta name="twitter:description" content="${renderAttributeText(scenario.description)} ${buildMetaSuffix(scenario.title, "Prime d'Activité")}" />
     <meta name="twitter:image" content="${FAVICON_OG_IMAGE}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
