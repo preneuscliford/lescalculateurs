@@ -1,2494 +1,2217 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Page d'accueil -->
   <url>
     <loc>https://www.lescalculateurs.fr/</loc>
-    <lastmod>2025-10-07</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Calculateurs principaux -->
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa-vs-smic</loc>
-    <lastmod>2026-02-23</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/a-propos.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.lescalculateurs.fr/assets/apple-touch-icon.png</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret</loc>
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/aah.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue</loc>
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl-dom-tom.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/financement</loc>
-    <lastmod>2025-10-07</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl-etudiant.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/charges</loc>
-    <lastmod>2025-10-07</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl-zones.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/crypto-bourse</loc>
-    <lastmod>2025-10-07</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs</loc>
-    <lastmod>2025-12-11</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <!-- Pages de contenu E-E-A-T & Guides -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/methodologie</loc>
-    <lastmod>2025-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/a-propos</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/asf.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/sources</loc>
-    <lastmod>2025-12-19</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/mentions-legales</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.lescalculateurs.fr/pages/charges.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/comment-calculer-frais-notaire.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/comment-calculer-plus-value.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/contact.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/cout-reel-voiture.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/crypto-bourse.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/financement.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/guide-complet-impot-revenu-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/historique-mises-a-jour.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/ik.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/mentions-legales.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/methodologie.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/politique-confidentialite.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/politique-cookies.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/ponts.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/pret.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/reste-a-vivre.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenu-median-commune.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/rsa-vs-smic.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/rsa.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/salaire-brut-net-calcul-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/salaire-net-apres-impot.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/salaire.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/sources.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/travail.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/aide-financiere-famille.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/aide-logement-proprietaire.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/aide-sociale-simulation-globale.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/aides-etudiants.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/aides-jeunes-actifs.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/aides-retraites.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/allocation-logement-simulation.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/cumul-aides-sociales.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/quelles-aides-ai-je-droit.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aide/simulation-aides-caf.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aides/cumul-aides-rsa-apl-prime-activite.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-alternant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/politique-confidentialite</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-alternant-paris/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/politique-cookies</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/contact</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti-loyer-500/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/historique-mises-a-jour</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/comment-calculer-frais-notaire</loc>
-    <lastmod>2025-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/comment-calculer-plus-value</loc>
-    <lastmod>2025-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Autres pages de contenu -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl</loc>
-    <lastmod>2025-12-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl-zones</loc>
-    <lastmod>2025-12-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl-dom-tom</loc>
-    <lastmod>2025-12-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aah</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl-etudiant</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/asf</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/ik</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/ponts</loc>
-    <lastmod>2025-10-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxe</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/travail</loc>
-    <lastmod>2025-10-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/salaire</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/salaire-brut-net-calcul-2026</loc>
-    <lastmod>2026-02-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <!-- Simulateurs principaux 2026 -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/salaire-net-apres-impot</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/reste-a-vivre</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/cout-reel-voiture</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/guide-complet-impot-revenu-2026</loc>
-    <lastmod>2026-02-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog</loc>
-    <lastmod>2025-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Articles de blog -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/frais-notaire-ancien-neuf-2026</loc>
-    <lastmod>2026-01-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/export-pdf-calculateurs</loc>
-    <lastmod>2025-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.lescalculateurs.fr/assets/android-chrome-512x512.png</image:loc>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/revalorisation-smic-2026</loc>
-    <lastmod>2026-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/inflation-cout-vie-2026</loc>
-    <lastmod>2026-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/salarie-ou-auto-entrepreneur-2026</loc>
-    <lastmod>2026-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <!-- Page pivot d├®partements (Hub SEO) -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/frais-notaire-departements</loc>
-    <lastmod>2025-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-
-  </url>
-  
-  <!-- Pages d├®partementales (101 pages SEO) -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-01</loc>
-    
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-02</loc>
-    
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-03</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-cdd-loyer-600/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-04</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-cdi-loyer-700/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-05</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-loyer-eleve/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-06</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-lyon/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-07</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-marseille/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-08</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-paris-petit-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-09</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-petit-salaire/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-10</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-smic/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-11</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-toulouse/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-12</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-avec-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-13</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-couple-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-14</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-couple-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-15</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-700-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-16</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-moyen/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-17</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-parent-isole-deux-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-18</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-parent-isole-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-19</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-21</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-22</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-colocation/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-23</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-colocation-jeune-actif/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-24</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-loyer-eleve/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-25</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-lyon/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-26</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-paris/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-27</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-petit-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-28</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-29</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-2A</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant-loyer-moyen/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-2B</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-colocation/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-30</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-lyon/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-31</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-paris/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-32</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-petit-loyer/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-33</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-studio/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-34</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-toulouse/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-35</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-logement-social/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-36</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-paris/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-37</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-province/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-38</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-idf/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-39</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-40</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants-paris/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-41</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-un-enfant-province/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-42</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-chomage/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-43</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-44</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-hlm-petit-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-45</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-jeune-actif-premier-logement/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-46</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-1000-couple-deux-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-47</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-500-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-48</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-500-revenu-900/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-49</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-600-smic/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-50</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-650-couple-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-51</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-700-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-52</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-750-parent-isole-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-53</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-800-revenu-1300/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-54</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-couple-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-55</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-deux-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-56</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-logement-social/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-57</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-paris/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-58</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-trois-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-59</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-60</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-personne-seule-smic/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-61</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-petite-surface-paris/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-62</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-proprietaire-ai-je-droit/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-63</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-refusee-que-faire/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-64</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-65</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-couple-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-66</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-couple-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-67</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-loyer-eleve/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-68</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-loyer-moyen/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-69</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-parent-isole-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-70</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-71</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule-loyer-700/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-72</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-avec-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-73</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-couple-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-74</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-parent-isole/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-75</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-76</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-selon-situation-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-77</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-colocation/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-78</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-deux-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-79</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-logement-social/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-80</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-81</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-82</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-logement-social/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-83</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-deux-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-84</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-trois-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-85</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-86</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-seul/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-87</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/comment-savoir-si-un-logement-est-eligible-aux-apl/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-88</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/apl/quelles-ressources-pour-l-apl/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-89</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-apres-cdd/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-90</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-cumul-salaire-temps-partiel-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-91</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-duree-indemnisation-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-92</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-aides-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-93</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-rsa-ou-apl/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-94</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-reprise-emploi-temps-partiel/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-95</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/are-salaire-reference-calcul-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-971</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/are/montant-are-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-972</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-deux-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-973</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-sans-pension/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-974</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-sans-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-976</loc>
-    
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/asf/asf-sans-pension-et-apl/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  
+    <priority>0.5</priority>
   </url>
-  <!-- Ajouts SEO indexables (mars 2026) -->
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/aides/cumul-aides-rsa-apl-prime-activite</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog/export-pdf-calculateurs.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-ancien-2026</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog/frais-notaire-ancien-neuf-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-neuf-2026</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog/frais-notaire-departements.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- SATELLITES:START -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/aide-financiere-famille</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/aide-logement-proprietaire</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/aide-sociale-simulation-globale</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/aides-etudiants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/aides-jeunes-actifs</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/aides-retraites</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/allocation-logement-simulation</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/cumul-aides-sociales</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/quelles-aides-ai-je-droit</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/aide/simulation-aides-caf</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-alternant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-alternant-paris</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti-loyer-500</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-cdd-loyer-600</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-cdi-loyer-700</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-loyer-eleve</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-lyon</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-marseille</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-paris-petit-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-petit-salaire</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-smic</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-toulouse</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-avec-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-couple-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-couple-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-700-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-loyer-moyen</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-parent-isole-deux-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-parent-isole-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-colocation-jeune-actif</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-loyer-eleve</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-lyon</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-paris</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-petit-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant-loyer-moyen</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-colocation</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-lyon</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-paris</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-petit-loyer</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-studio</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-toulouse</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-logement-social</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-paris</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-province</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-idf</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants-paris</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-un-enfant-province</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-chomage</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-hlm-petit-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-jeune-actif-premier-logement</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-1000-couple-deux-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-500-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-500-revenu-900</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-600-smic</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-650-couple-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-700-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-750-parent-isole-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-800-revenu-1300</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-couple-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-deux-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-logement-social</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-paris</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-trois-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-personne-seule-smic</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-petite-surface-paris</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-couple-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-couple-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-loyer-eleve</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-loyer-moyen</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-parent-isole-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule-loyer-700</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-avec-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-couple-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-parent-isole</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-selon-situation-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-colocation</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-deux-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-logement-social</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-logement-social</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-deux-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-trois-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-seul</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-cumul-salaire-temps-partiel-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-duree-indemnisation-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-aides-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-rsa-ou-apl</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-reprise-emploi-temps-partiel</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-salaire-reference-calcul-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/montant-are-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-deux-enfants</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-sans-pension</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-sans-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/asf/asf-sans-pension-et-apl</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/calcul-impot-sur-le-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/charges-deductibles-des-impots</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/heures-supplementaires-comment-les-calculer</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-auto-entrepreneur</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-couple-ou-separe</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-decote-2026-simulation</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-quotient-familial-2-parts-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-30000-celibataire-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-45000-couple-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-60000-couple-un-enfant-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/indemnites-kilometriques-calcul</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/revenu-fiscal-de-reference-definition</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/simulateur-impots-gratuit-a-quoi-sert-il</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/tranches-d-impot-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/abattement-pour-duree-de-detention</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/calcul-plus-value-immobiliere</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/comment-reduire-la-plus-value-immobiliere</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/exoneration-plus-value-residence-principale</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/notaire-et-plus-value-immobiliere</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-et-donation</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-et-succession</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-residence-secondaire</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-sur-terrain</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/simulateur-plus-value-immobiliere</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/assurance-emprunteur-comment-estimer-son-cout</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/calcul-du-taux-d-endettement</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/capacite-d-emprunt-comment-la-calculer</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/cout-total-d-un-pret-immobilier</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/credit-immobilier-refuse-que-faire</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/duree-ideale-d-un-pret-immobilier</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/mensualite-de-pret-immobilier-comment-l-estimer</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/pret-immobilier-sans-apport-est-ce-possible</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/pret-immobilier-seul-ou-a-deux-quelle-difference</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/pret-primo-accedant-specificites</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/ptz-conditions-principales</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/quel-salaire-pour-emprunter-200-000</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/quel-salaire-pour-emprunter-300-000</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/simulateur-de-pret-immobilier-gratuit-pourquoi-l-utiliser</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/pret/taux-immobilier-2026-a-quoi-s-attendre</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/montant-prime-activite-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/plafond-prime-activite-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-couple-sans-enfant-smic</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-parent-isole-un-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-temps-partiel-smic</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-couple-4-enfants</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/combien-touche-t-on-au-rsa</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/qui-a-droit-au-rsa</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-auto-entrepreneur</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-chomage-fin-de-droits</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-conditions-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-avec-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-enfant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-et-apl-cumul</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-hebergement-gratuit</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-interim</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-jeune-moins-de-25-ans</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-logement-social</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-parent-isole-sans-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-personne-seule-logement-social</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-personne-seule-montant</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-sans-logement</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-sans-revenu-personne-seule</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-travail-a-temps-partiel</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/salaire/calcul-salaire-brut-net</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/aide-financiere-famille</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/aide-sociale-simulation-globale</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/aides-apres-perte-emploi</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/aides-jeunes-actifs</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/aides-retraites</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/cumul-aides-sociales</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelle-aide-selon-mon-profil-2026</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-ai-je-droit</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-couple-sans-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-fin-de-droits-chomage</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-sans-revenu</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Revenus par commune -->
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenu-median-commune</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/paris</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog/inflation-cout-vie-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/lyon</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog/revalorisation-smic-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/marseille</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog/salarie-ou-auto-entrepreneur-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/toulouse</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-01.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-02.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-03.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-04.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-05.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-06.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-07.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-08.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-09.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-10.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-11.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-12.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-13.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-14.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-15.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-16.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-17.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-18.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-19.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-21.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-22.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-23.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-24.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-25.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-26.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-27.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-28.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-29.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-2A.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-2B.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-30.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-31.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-32.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-33.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-34.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-35.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-36.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-37.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-38.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-39.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-40.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-41.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-42.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-43.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-44.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-45.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-46.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-47.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-48.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-49.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-50.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-51.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-52.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-53.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-54.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-55.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-56.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-57.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-58.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-59.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-60.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-61.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-62.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-63.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-64.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-65.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-66.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-67.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-68.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-69.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-70.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-71.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-72.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-73.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-74.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-75.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-76.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-77.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-78.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-79.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-80.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-81.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-82.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-83.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-84.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-85.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-86.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-87.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-88.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-89.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-90.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-91.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-92.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-93.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-94.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-95.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-971.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-972.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-973.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-974.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-975.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/blog/departements/frais-notaire-976.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-couple-ou-separe.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/nice</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/impot/calcul-impot-sur-le-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/charges-deductibles-des-impots/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/heures-supplementaires-comment-les-calculer/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-auto-entrepreneur/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-couple-deux-enfants-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-couple-ou-separe/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-decote-2026-simulation/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-parent-isole-un-enfant-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-quotient-familial-2-parts-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-30000-celibataire-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-45000-couple-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/impot-revenu-60000-couple-un-enfant-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/indemnites-kilometriques-calcul/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/revenu-fiscal-de-reference-definition/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/simulateur-impots-gratuit-a-quoi-sert-il/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/impot/tranches-d-impot-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-ancien-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/nantes</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-neuf-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/montpellier</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/comparaison-ancien-neuf-250k/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/comparaison-neuf-ancien-200k/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/comparaison-terrain-ancien-100k/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-ancien-simulation/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-neuf-reduction/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-residence-secondaire/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-terrain/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/abattement-pour-duree-de-detention/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/calcul-plus-value-immobiliere/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/comment-reduire-la-plus-value-immobiliere/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/exoneration-plus-value-residence-principale/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/notaire-et-plus-value-immobiliere/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-et-donation/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-et-succession/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-residence-secondaire/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-sur-terrain/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/plusvalue/simulateur-plus-value-immobiliere/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/montant-prime-activite-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/strasbourg</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-couple-4-enfants/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-couple-sans-enfant-smic/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-couple-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-parent-isole-un-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/prime-activite/prime-activite-temps-partiel-smic/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/bordeaux.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/bordeaux</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/lille.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/lille</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/lyon.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/niveau-de-vie-par-ville</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-paris</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/marseille.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-lyon</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/montpellier.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-marseille</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/nantes.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-paris</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/nice.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-lyon</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/niveau-de-vie-par-ville.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-marseille</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/paris.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-ancien-simulation</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-lyon.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-neuf-reduction</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-marseille.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-terrain</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/reste-a-vivre-apres-loyer-700-a-paris.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/comparaison-ancien-neuf-250k</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/strasbourg.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/comparaison-neuf-ancien-200k</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/toulouse.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/comparaison-terrain-ancien-100k</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-lyon.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<!-- SATELLITES:END -->
-  <url>
-    <loc>https://lescalculateurs.fr/pages/are/are-apres-cdd/</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/are/are-cumul-salaire-temps-partiel-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-marseille.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/are/are-duree-indemnisation-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/revenus/vivre-avec-1800-net-a-paris.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/are/are-fin-de-droits-aides-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-chomage-fin-de-droits.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/are/are-fin-de-droits-rsa-ou-apl/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/combien-touche-t-on-au-rsa/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/are/are-reprise-emploi-temps-partiel/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/qui-a-droit-au-rsa/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/are/are-salaire-reference-calcul-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-auto-entrepreneur/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/are/montant-are-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-chomage-fin-de-droits/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/impot/impot-couple-deux-enfants-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-conditions-2026/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/impot/impot-decote-2026-simulation/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-avec-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/impot/impot-parent-isole-un-enfant-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/impot/impot-quotient-familial-2-parts-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/impot/impot-revenu-30000-celibataire-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-revenu-avec-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/impot/impot-revenu-45000-couple-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-et-apl-cumul/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/impot/impot-revenu-60000-couple-un-enfant-2026/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-fin-de-droits-chomage-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-ancien-simulation/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-hebergement-gratuit/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-neuf-reduction/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-interim/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-residence-secondaire/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-jeune-moins-de-25-ans/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/notaire/frais-notaire-terrain/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-logement-social/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-couple-4-enfants/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-parent-isole-sans-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-couple-sans-enfant-smic/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-personne-seule-logement-social/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-couple-un-enfant/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-personne-seule-montant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-parent-isole-un-enfant/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-sans-logement/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-apres-chomage/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-sans-revenu-avec-enfant/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-reprise-emploi-personne-seule/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-sans-revenu-personne-seule/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/prime-activite/prime-activite-temps-partiel-smic/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-travail-a-temps-partiel/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/simulateurs/aides-apres-perte-emploi/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelle-aide-selon-mon-profil-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/simulateurs/quelles-aides-couple-sans-revenu/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs/aides-apres-perte-emploi/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/simulateurs/quelles-aides-fin-de-droits-chomage/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-couple-sans-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lescalculateurs.fr/pages/simulateurs/quelles-aides-sans-revenu/</loc>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-fin-de-droits-chomage/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/simulateurs/quelles-aides-sans-revenu/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/comment-connaitre-la-valeur-locative-cadastrale.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/comment-contester-sa-taxe-fonciere.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/comment-est-calculee-la-taxe-fonciere.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/estimation-taxe-fonciere-comment-faire.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/exoneration-taxe-fonciere-handicap.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/exoneration-taxe-fonciere-pour-retraite.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/pourquoi-la-taxe-fonciere-augmente.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/quelle-surface-est-prise-en-compte-pour-la-taxe-fonciere.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/qui-paie-la-taxe-fonciere.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/taxe-fonciere-et-achat-en-cours-d-annee.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/taxe-fonciere-locataire-ou-proprietaire.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/taxe-fonciere-logement-neuf.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/taxe-fonciere-par-ville-est-ce-fiable.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/taxe-fonciere-residence-secondaire.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/valeur-locative-cadastrale-definition-simple.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
-
