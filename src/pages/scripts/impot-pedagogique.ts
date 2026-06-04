@@ -476,9 +476,9 @@ const impotConfig = {
                   <tr class="${rowClass} border-b border-amber-200">
                     <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border-r border-amber-200 text-gray-900">${i + 1}</td>
                     <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border-r border-amber-200 text-center text-gray-900">${start} à ${plafond}</td>
-                    <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border-r border-amber-200 text-center font-semibold text-gray-900">${(b.taux * 100).toFixed(
-                      0,
-                    )}%</td>
+                    <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border-r border-amber-200 text-center font-semibold text-gray-900">${(
+                      b.taux * 100
+                    ).toFixed(0)}%</td>
                     <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right text-gray-900">${isCurrent ? "✓ Votre tranche" : ""}</td>
                   </tr>`;
                 })

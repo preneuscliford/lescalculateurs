@@ -1,0 +1,111 @@
+{
+  "periode": "21-27 mai 2026",
+  "stats_globales": {
+    "periode": "21-27 mai 2026 (7 jours)",
+    "total_clics": 694,
+    "total_impressions": 56437,
+    "ctr_moyen": 0.0123,
+    "position_moyenne": 8.5,
+    "evolution": {
+      "clics_j1": 94,
+      "clics_j7": 142,
+      "impressions_j1": 8151,
+      "impressions_j7": 10857,
+      "ctr_j1": 0.0115,
+      "ctr_j7": 0.0131,
+      "position_j1": 8.5,
+      "position_j7": 8.5
+    }
+  },
+  "nouvelles_pages": {
+    "total": 5,
+    "trouvees_dans_sc": 0,
+    "absentes": 5,
+    "clics_cumules": 0,
+    "impressions_cumulees": 0
+  },
+  "satellites": {
+    "total": 30,
+    "trouvees_dans_sc": 1,
+    "absentes": 29,
+    "clics_cumules": 0,
+    "impressions_cumulees": 8,
+    "par_famille": {
+      "ARE": {
+        "clics": 0,
+        "impressions": 0,
+        "trouvees": 0
+      },
+      "IMPÔT": {
+        "clics": 0,
+        "impressions": 0,
+        "trouvees": 0
+      },
+      "NOTAIRE": {
+        "clics": 0,
+        "impressions": 8,
+        "trouvees": 1
+      },
+      "PRIME ACTIVITÉ": {
+        "clics": 0,
+        "impressions": 0,
+        "trouvees": 0
+      },
+      "SIMULATEURS": {
+        "clics": 0,
+        "impressions": 0,
+        "trouvees": 0
+      }
+    }
+  },
+  "pivots": {
+    "are": {
+      "clics": 158,
+      "impressions": 11685,
+      "ctr": 0.0135,
+      "position": 8.58
+    },
+    "apl": {
+      "clics": 146,
+      "impressions": 13047,
+      "ctr": 0.0112,
+      "position": 8.02
+    },
+    "prime-activite": {
+      "clics": 91,
+      "impressions": 8666,
+      "ctr": 0.0105,
+      "position": 8.8
+    },
+    "notaire": {
+      "clics": 15,
+      "impressions": 1070,
+      "ctr": 0.014,
+      "position": 7.75
+    },
+    "impot": {
+      "clics": 7,
+      "impressions": 247,
+      "ctr": 0.0283,
+      "position": 22.17
+    },
+    "rsa": {
+      "clics": 18,
+      "impressions": 4630,
+      "ctr": 0.0039,
+      "position": 9.21
+    },
+    "apl-zones": {
+      "clics": 16,
+      "impressions": 5678,
+      "ctr": 0.0028,
+      "position": 6.44
+    },
+    "asf": {
+      "clics": 10,
+      "impressions": 1041,
+      "ctr": 0.0096,
+      "position": 8.92
+    }
+  }
+}

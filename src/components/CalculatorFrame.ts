@@ -114,16 +114,15 @@ export class CalculatorFrame {
             <div class="mb-3 flex flex-wrap gap-2">
               ${field.quickValues
                 .map((item) => {
-                  const value =
-                    typeof item === "object" && item !== null ? item.value : item;
+                  const value = typeof item === "object" && item !== null ? item.value : item;
                   const customLabel =
                     typeof item === "object" && item !== null ? item.label : undefined;
                   const option = field.options?.find((opt) => opt.value === value);
                   const label = customLabel || option?.label || String(value);
                   return `
                 <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="${field.id}" data-value="${String(
-                      value,
-                    )}">
+                  value,
+                )}">
                   ${label}
                 </button>
               `;
@@ -167,8 +166,7 @@ export class CalculatorFrame {
             <div class="mb-3 flex flex-wrap gap-2">
               ${field.quickValues
                 .map((item) => {
-                  const value =
-                    typeof item === "object" && item !== null ? item.value : item;
+                  const value = typeof item === "object" && item !== null ? item.value : item;
                   const customLabel =
                     typeof item === "object" && item !== null ? item.label : undefined;
                   const autoLabel =
@@ -178,8 +176,8 @@ export class CalculatorFrame {
                   const label = customLabel || autoLabel;
                   return `
                 <button type="button" class="quick-value-btn px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded hover:bg-blue-200 transition font-medium" data-field-id="${field.id}" data-value="${String(
-                      value,
-                    )}">
+                  value,
+                )}">
                   ${label}
                 </button>
               `;
