@@ -358,6 +358,11 @@ const MOJIBAKE_REPLACEMENTS = [
   ["\u00c3\u00bb", "\u00fb"],
   ["\u00c3\u00ae", "\u00ee"],
   ["\u00c3\u00af", "\u00ef"],
+  ["\u00c3\u017d", "\u00ce"], // ÃŽ → Î (ex: ÃŽle-de-France → Île-de-France)
+  ["\u00c3\u2030", "\u00c9"], // Ã‰ → É (ex: Ã‰tudiant → Étudiant)
+  ["\u00c3\u2019", "\u00c8"], // Ã' → È
+  ["\u00c3\u00bc", "\u00fc"], // Ã¼ → ü
+  ["\u00c3\u201c", "\u00d4"], // Ã" → Ô
   ["\u00e2\u20ac\u2122", "'"],
   ["\u00e2\u20ac\u0153", '"'],
   ["\u00e2\u20ac\u009d", '"'],

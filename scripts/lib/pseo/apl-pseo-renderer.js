@@ -464,6 +464,8 @@ function toFrenchDisplayText(value) {
     normalizeFrenchCopy(
       repairMojibakeText(
         repairCorruptedFrench(value)
+          .replace(/ÃŽ/g, "\u00ce") // ÃŽ → Î (ex: ÃŽle-de-France → Île-de-France)
+          .replace(/Ã‰/g, "\u00c9") // Ã‰ → É
           .replace(/\bScenario\b/g, "Sc\u00e9nario")
           .replace(/\bscenario\b/g, "sc\u00e9nario")
           .replace(/\bScenarios\b/g, "Sc\u00e9narios")
