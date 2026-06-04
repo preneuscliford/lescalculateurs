@@ -459,11 +459,76 @@ function repairCorruptedFrench(value) {
     .replace(/\s{2,}/g, " ");
 }
 
+function repairAllMojibake(value) {
+  // Comprehensive mojibake repair: any Ã (U+00C3) followed by a non-ASCII byte
+  // is likely a UTF-8 byte pair misinterpreted as Latin-1
+  let output = String(value);
+  // Standard mojibake patterns from UTF-8 double-encoding
+  const mojibakeMap = [
+    ["\u00c3\u00a0", "\u00e0"], // Ã  → à
+    ["\u00c3\u00a2", "\u00e2"], // Ã¢ → â
+    ["\u00c3\u00a4", "\u00e4"], // Ã¤ → ä
+    ["\u00c3\u00a7", "\u00e7"], // Ã§ → ç
+    ["\u00c3\u00a8", "\u00e8"], // Ã¨ → è
+    ["\u00c3\u00a9", "\u00e9"], // Ã© → é
+    ["\u00c3\u00aa", "\u00ea"], // Ãª → ê
+    ["\u00c3\u00ab", "\u00eb"], // Ã« → ë
+    ["\u00c3\u00ac", "\u00ec"], // Ã¬ → ì
+    ["\u00c3\u00ad", "\u00ed"], // Ã­ → í
+    ["\u00c3\u00ae", "\u00ee"], // Ã® → î
+    ["\u00c3\u00af", "\u00ef"], // Ã¯ → ï
+    ["\u00c3\u00b0", "\u00f0"], // Ã° → ð
+    ["\u00c3\u00b1", "\u00f1"], // Ã± → ñ
+    ["\u00c3\u00b2", "\u00f2"], // Ã² → ò
+    ["\u00c3\u00b3", "\u00f3"], // Ã³ → ó
+    ["\u00c3\u00b4", "\u00f4"], // Ã´ → ô
+    ["\u00c3\u00b5", "\u00f5"], // Ãµ → õ
+    ["\u00c3\u00b6", "\u00f6"], // Ã¶ → ö
+    ["\u00c3\u00b8", "\u00f8"], // Ã¸ → ø
+    ["\u00c3\u00b9", "\u00f9"], // Ã¹ → ù
+    ["\u00c3\u00ba", "\u00fa"], // Ãº → ú
+    ["\u00c3\u00bb", "\u00fb"], // Ã» → û
+    ["\u00c3\u00bc", "\u00fc"], // Ã¼ → ü
+    ["\u00c3\u00bd", "\u00fd"], // Ã½ → ý
+    ["\u00c3\u00be", "\u00fe"], // Ã¾ → þ
+    ["\u00c3\u017d", "\u00ce"], // ÃŽ → Î
+    ["\u00c3\u2030", "\u00c9"], // Ã‰ → É
+    ["\u00c3\u2019", "\u00c8"], // Ã' → È
+    ["\u00c3\u201c", "\u00d4"], // Ã" → Ô
+    ["\u00c3\u2020", "\u00c9"], // Ã€ → É (variant)
+    ["\u00c3\u2026", "\u00c9"], // Ã† → É (variant)
+    ["\u00e2\u20ac\u2122", "'"], // â€™ → '
+    ["\u00e2\u20ac\u0153", '"'], // â€œ → "
+    ["\u00e2\u20ac\u009d", '"'], // â€ → "
+    ["\u00e2\u20ac\u201c", "-"], // â€" → -
+    ["\u00e2\u20ac\u201d", "-"], // â€" → -
+    ["\u00e2\u201a\u00ac", "\u20ac"], // â‚¬ → €
+    ["\u00c2\u00a0", " "], // Â  → non-breaking space
+    ["\u00ef\u00bb\u00bf", ""], // BOM
+  ];
+  for (const [search, replacement] of mojibakeMap) {
+    output = output.split(search).join(replacement);
+  }
+  // Generic: any remaining Ã + byte > 127 likely needs repair
+  // Try to decode as Latin-1 misinterpretation of UTF-8
+  output = output.replace(/\u00c3([\u0080-\u00bf])/g, (_m, second) => {
+    // Recombine as UTF-8: U+00C3 = 0xC3, second byte is the continuation
+    const byte2 = second.charCodeAt(0);
+    const utf8Bytes = Buffer.from([0xc3, byte2]);
+    try {
+      return utf8Bytes.toString("utf8");
+    } catch (e) {
+      return _m;
+    }
+  });
+  return output;
+}
+
 function toFrenchDisplayText(value) {
   return fixResidualFrenchGlitches(
     normalizeFrenchCopy(
       repairMojibakeText(
-        repairCorruptedFrench(value)
+        repairCorruptedFrench(repairAllMojibake(value))
           .replace(/ÃŽ/g, "\u00ce") // ÃŽ → Î (ex: ÃŽle-de-France → Île-de-France)
           .replace(/Ã‰/g, "\u00c9") // Ã‰ → É
           .replace(/\bScenario\b/g, "Sc\u00e9nario")
