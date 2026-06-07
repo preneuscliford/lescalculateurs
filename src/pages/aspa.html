@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASPA 2026 : Calculez votre Allocation de Solidarité aux Personnes Âgées</title>
+    <meta
+      name="description"
+      content="Simulez votre ASPA (minimum vieillesse) 2026 selon vos revenus et votre situation familiale. Calcul gratuit basé sur les barèmes officiels 2026."
+    />
+    <meta
+      name="keywords"
+      content="ASPA, allocation solidarité personne âgée, minimum vieillesse 2026, simulation ASPA, montant ASPA 2026, plafond ASPA, conditions ASPA, demande ASPA"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/aspa" />
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <div
+      class="sticky-ymyl"
+      role="alert"
+      style="
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 13px;
+        color: #1f2937;
+      "
+    >
+      <strong>⚠️ Estimation indicative.</strong> Montant définitif sur
+      <a
+        href="https://www.service-public.fr"
+        target="_blank"
+        rel="noopener"
+        style="color: #b45309; text-decoration: underline; font-weight: bold"
+        >service-public.fr</a
+      >
+    </div>
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <a href="/" class="flex items-center space-x-2"
+            ><img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs"
+              class="h-8 w-auto"
+            /><span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span></a
+          >
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a
+            ><a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <section
+        class="bg-gradient-to-r from-amber-600 to-orange-600 text-white py-12 rounded-lg mb-8"
+      >
+        <div class="text-center">
+          <h1 class="text-4xl font-bold mb-4">
+            ASPA 2026 : Allocation de Solidarité aux Personnes Âgées
+          </h1>
+          <p class="text-xl text-amber-100 mb-6">
+            Calculez votre minimum vieillesse (ASPA) selon vos revenus et votre situation.
+            Simulation gratuite basée sur les barèmes officiels 2026.
+          </p>
+          <a
+            href="#simulateur"
+            class="bg-white text-amber-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100"
+            >🧮 Simuler mon ASPA</a
+          >
+        </div>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Qu'est-ce que l'ASPA ?</h2>
+        <p class="text-gray-700 mb-4">
+          L'<strong>ASPA</strong> (Allocation de Solidarité aux Personnes Âgées), anciennement «
+          minimum vieillesse », est une allocation destinée aux personnes âgées de
+          <strong>65 ans et plus</strong> (ou 62 ans en cas d'inaptitude au travail) disposant de
+          faibles revenus. Elle garantit un revenu minimum aux retraités.
+        </p>
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Montants ASPA 2026</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-amber-100">
+                <th class="p-3 text-left">Situation</th>
+                <th class="p-3 text-center">Plafond mensuel</th>
+                <th class="p-3 text-center">Montant max ASPA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="p-3">Personne seule</td>
+                <td class="p-3 text-center font-bold text-amber-700">1 012,02 €</td>
+                <td class="p-3 text-center">~1 012 €</td>
+              </tr>
+              <tr class="border-b">
+                <td class="p-3">Couple</td>
+                <td class="p-3 text-center font-bold text-amber-700">1 571,16 €</td>
+                <td class="p-3 text-center">~1 571 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-500 mt-4">
+          Montants au 1er janvier 2026. Source :
+          <a
+            href="https://www.service-public.fr/particuliers/vosdroits/F16871"
+            target="_blank"
+            rel="noopener"
+            class="text-amber-600 underline"
+            >service-public.fr</a
+          >
+        </p>
+      </section>
+
+      <section
+        id="simulateur"
+        class="bg-amber-50 rounded-lg shadow-lg p-8 mb-8 border-2 border-amber-200"
+      >
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🧮 Simulateur ASPA 2026</h2>
+        <form id="aspa-form" class="space-y-6">
+          <div>
+            <label for="aspa-situation" class="block text-gray-700 font-semibold mb-2"
+              >Situation familiale *</label
+            ><select
+              id="aspa-situation"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+            >
+              <option value="seul">Personne seule</option>
+              <option value="couple">En couple</option>
+            </select>
+          </div>
+          <div>
+            <label for="aspa-revenus" class="block text-gray-700 font-semibold mb-2"
+              >Revenus mensuels actuels (retraite, etc.) €</label
+            ><input
+              type="number"
+              id="aspa-revenus"
+              value="800"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+              min="0"
+              step="50"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+          >
+            🟢 Calculer mon ASPA
+          </button>
+        </form>
+        <div
+          id="aspa-resultat"
+          class="hidden mt-8 p-6 bg-white border-2 border-amber-500 rounded-lg"
+        >
+          <h3 class="text-xl font-bold text-amber-700 mb-3">📊 Résultat</h3>
+          <p class="text-4xl font-bold text-amber-600" id="aspa-montant">---</p>
+          <p class="text-sm text-gray-600 mt-2" id="aspa-detail"></p>
+        </div>
+      </section>
+      <script>
+        document.getElementById("aspa-form").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const sit = document.getElementById("aspa-situation").value;
+          const rev = parseInt(document.getElementById("aspa-revenus").value) || 0;
+          const plafond = sit === "seul" ? 1012.02 : 1571.16;
+          const aspa = Math.max(0, Math.round(plafond - rev));
+          document.getElementById("aspa-montant").textContent = aspa + " €/mois";
+          document.getElementById("aspa-detail").textContent =
+            "Plafond " + sit === "seul"
+              ? "1012,02 €"
+              : "1571,16 €" + " - vos revenus " + rev + " € = ASPA estimée.";
+          document.getElementById("aspa-resultat").classList.remove("hidden");
+          document.getElementById("aspa-resultat").scrollIntoView({ behavior: "smooth" });
+        });
+      </script>
+
+      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Conditions d'éligibilité</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li>Âge minimum : <strong>65 ans</strong> (62 ans en cas d'inaptitude)</li>
+          <li>Résider en France de façon stable (+6 mois/an)</li>
+          <li>Plafond de ressources mensuelles : 1 012,02 € (seul) / 1 571,16 € (couple)</li>
+          <li>L'ASPA est récupérable sur la succession si le patrimoine dépasse 39 000 €</li>
+        </ul>
+      </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm"><p>© 2026 Les Calculateurs</p></div>
+    </footer>
+  </body>
+</html>
