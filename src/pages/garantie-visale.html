@@ -16,6 +16,38 @@
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/garantie-visale" />
     <link rel="stylesheet" href="../tailwind.css" />
     <script defer src="/third-party-loader.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que la garantie Visale ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La garantie Visale est une caution locative 100% gratuite proposée par Action Logement. Elle couvre les loyers impayés et les dégradations locatives, facilitant l'accès au logement pour les jeunes (18-30 ans), les salariés et les personnes en mobilité professionnelle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qui peut bénéficier de la garantie Visale ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tous les jeunes de 18 à 30 ans (sans condition de ressources), les salariés de plus de 30 ans (CDI, CDD, intérim), et les personnes en mobilité professionnelle. Le logement doit être la résidence principale avec un loyer maximum de 1 500€ (2 400€ en IDF)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment faire une demande Visale ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La demande se fait gratuitement en ligne sur visale.fr. Il faut créer un compte, remplir le formulaire et fournir les justificatifs. La réponse est généralement donnée sous 48h."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-gray-50">
     <div
@@ -60,75 +92,234 @@
       </div>
     </header>
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <section class="bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-12 rounded-lg mb-8">
-        <div class="text-center">
+      <section class="bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-12 rounded-xl mb-8">
+        <div class="text-center px-4">
           <h1 class="text-4xl font-bold mb-4">
-            Garantie Visale 2026 : la caution locative gratuite
+            Garantie Visale 2026 : la caution locative 100% gratuite
           </h1>
           <p class="text-xl text-teal-100 mb-6">
-            La garantie Visale est une caution locative 100% gratuite proposée par Action Logement.
+            La garantie Visale est une caution locative gratuite proposée par Action Logement.
             Découvrez les conditions, plafonds et démarches pour en bénéficier.
           </p>
+          <a
+            href="#conditions"
+            class="bg-white text-teal-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100"
+            >📋 Voir les conditions</a
+          >
         </div>
       </section>
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Qu'est-ce que la garantie Visale ?</h2>
+
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8" id="conditions">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🔍 Qu'est-ce que la garantie Visale ?</h2>
         <p class="text-gray-700 mb-4">
           La <strong>garantie Visale</strong> (Visa pour le Logement et l'Emploi) est une
-          <strong>caution locative gratuite</strong> accordée par Action Logement. Elle couvre les
-          loyers impayés et les dégradations locatives, facilitant l'accès au logement pour les
-          jeunes, les salariés et les personnes en mobilité professionnelle.
+          <strong>caution locative 100% gratuite</strong> accordée par Action Logement. Elle couvre
+          les loyers impayés et les dégradations locatives, facilitant l'accès au logement.
         </p>
         <div class="grid md:grid-cols-2 gap-4 mt-6">
-          <div class="bg-teal-50 p-4 rounded-lg">
-            <span class="font-bold text-teal-700">👨‍🎓 Étudiants</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Tous les étudiants de 18 à 30 ans, sans condition de ressources.
+          <div class="bg-teal-50 rounded-lg p-4 border border-teal-200">
+            <span class="font-bold text-teal-700 text-lg">👨‍🎓 Étudiants</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Tous les étudiants de 18 à 30 ans, sans condition de ressources. Exemple : un étudiant
+              avec 600€ de revenus peut louer un studio jusqu'à 800€/mois avec Visale.
             </p>
           </div>
-          <div class="bg-cyan-50 p-4 rounded-lg">
-            <span class="font-bold text-cyan-700">💼 Salariés</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Salariés de +30 ans en CDI, CDD, intérim, ou en mobilité professionnelle.
+          <div class="bg-cyan-50 rounded-lg p-4 border border-cyan-200">
+            <span class="font-bold text-cyan-700 text-lg">💼 Salariés</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Salariés de +30 ans en CDI, CDD, intérim, ou en mobilité professionnelle. Exemple : un
+              CDI avec 2 000€ net peut garantir un loyer jusqu'à 1 500€.
             </p>
           </div>
-          <div class="bg-green-50 p-4 rounded-lg">
-            <span class="font-bold text-green-700">🏠 Locataires</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Loyer max : 1 500 € (2 400 € en Île-de-France). Logement décent, résidence principale.
+          <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+            <span class="font-bold text-green-700 text-lg">🏠 Plafonds de loyer</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Loyer max : <strong>1 500€</strong> (province) /
+              <strong>2 400€</strong> (Île-de-France). Logement décent, résidence principale
+              obligatoire.
             </p>
           </div>
-          <div class="bg-amber-50 p-4 rounded-lg">
-            <span class="font-bold text-amber-700">🔒 Couverture</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Jusqu'à 36 mois de loyers impayés + dégradations jusqu'à 2 mois de loyer.
+          <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
+            <span class="font-bold text-amber-700 text-lg">🔒 Couverture complète</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Jusqu'à <strong>36 mois</strong> de loyers impayés + dégradations locatives (jusqu'à 2
+              mois de loyer). Aucun reste à charge pour le propriétaire.
             </p>
           </div>
         </div>
       </section>
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Conditions d'éligibilité</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-          <li>Être majeur (18 ans minimum)</li>
-          <li>Logement en France métropolitaine ou DROM</li>
-          <li>Loyer mensuel charges comprises ≤ 1 500 € (2 400 € en IDF)</li>
-          <li>Logement décent et résidence principale</li>
-          <li>
-            Demande gratuite sur
-            <a
-              href="https://www.visale.fr"
-              target="_blank"
-              rel="noopener"
-              class="text-teal-600 underline font-semibold"
-              >visale.fr</a
-            >
-          </li>
-        </ul>
+
+      <!-- Exemples chiffrés -->
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          💶 Exemples concrets d'utilisation de Visale
+        </h2>
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="bg-teal-50 rounded-lg p-4 border border-teal-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 1 - Étudiant</p>
+            <p class="text-2xl font-bold text-teal-700">Loyer couvert : 650€</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Étudiant de 22 ans<br />Studio à Lille (650€/mois)<br />Visale acceptée en 48h
+            </p>
+          </div>
+          <div class="bg-cyan-50 rounded-lg p-4 border border-cyan-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 2 - Jeune actif</p>
+            <p class="text-2xl font-bold text-cyan-700">Loyer couvert : 950€</p>
+            <p class="text-sm text-gray-600 mt-1">
+              CDI 2 100€ net à Lyon<br />Appartement T2 (950€/mois)<br />Visale = pas de garant
+              physique
+            </p>
+          </div>
+          <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 3 - Mobilité pro</p>
+            <p class="text-2xl font-bold text-green-700">Loyer couvert : 1 200€</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Mutation à Paris<br />Loyer 1 200€ (sous le plafond IDF)<br />Visale = caution
+              immédiate
+            </p>
+          </div>
+        </div>
       </section>
+
+      <!-- Tableau des plafonds -->
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">📊 Plafonds et conditions Visale 2026</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-teal-100">
+                <th class="border border-gray-300 p-3 text-left font-semibold text-gray-800">
+                  Critère
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  Condition
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  Détail
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 p-3 font-semibold">Âge</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-teal-700 bg-teal-50"
+                >
+                  18-30 ans
+                </td>
+                <td class="border border-gray-300 p-3 text-center">
+                  Tous profils, sans condition de ressources
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-white">
+                <td class="border border-gray-300 p-3 font-semibold">Salariés +30 ans</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-teal-700 bg-teal-50"
+                >
+                  CDI, CDD, intérim
+                </td>
+                <td class="border border-gray-300 p-3 text-center">
+                  Emploi en cours ou mobilité pro
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 p-3 font-semibold">Loyer max province</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-teal-700 bg-teal-50"
+                >
+                  1 500€/mois
+                </td>
+                <td class="border border-gray-300 p-3 text-center">Charges comprises</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-white">
+                <td class="border border-gray-300 p-3 font-semibold">Loyer max IDF</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-teal-700 bg-teal-50"
+                >
+                  2 400€/mois
+                </td>
+                <td class="border border-gray-300 p-3 text-center">Charges comprises</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 p-3 font-semibold">Couverture</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-teal-700 bg-teal-50"
+                >
+                  36 mois max
+                </td>
+                <td class="border border-gray-300 p-3 text-center">
+                  Loyers impayés + dégradations
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-500 mt-4">
+          Source :
+          <a
+            href="https://www.visale.fr"
+            target="_blank"
+            rel="noopener"
+            class="text-teal-600 underline"
+            >visale.fr</a
+          >
+          — Action Logement. Conditions au 1er janvier 2026.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">❓ FAQ - Garantie Visale</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Qui peut bénéficier de la garantie Visale ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              Tous les jeunes de <strong>18 à 30 ans</strong> sans condition de ressources, les
+              salariés de plus de 30 ans en activité, et les personnes en mobilité professionnelle.
+              Le logement doit être la résidence principale.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Quel est le délai pour obtenir Visale ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              La réponse est généralement donnée sous <strong>48h</strong> après le dépôt du dossier
+              complet sur visale.fr. Le visa est valable 3 mois pour trouver un logement, puis se
+              transforme en contrat de cautionnement.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Visale est-elle cumulable avec l'APL ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              Oui, la garantie Visale est totalement <strong>cumulable avec l'APL</strong>. Visale
+              couvre la caution tandis que l'APL réduit le montant du loyer à payer. C'est une
+              combinaison idéale pour les étudiants et jeunes actifs.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Visale est-elle vraiment gratuite ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              Oui, la garantie Visale est <strong>100% gratuite</strong> pour le locataire. Il n'y a
+              aucun frais de dossier, aucune cotisation. En cas d'impayé, c'est Action Logement qui
+              avance les loyers au propriétaire, et le locataire devra rembourser Action Logement
+              selon un échéancier.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Liens simulateurs -->
       <section
-        class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-6 mb-8 border border-teal-200"
+        class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 mb-8 border border-teal-200"
       >
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Simulateurs liés</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🔗 Simulateurs liés au logement</h2>
         <div class="grid md:grid-cols-3 gap-4">
           <a
             href="/pages/apl"
@@ -150,7 +341,9 @@
       </section>
     </main>
     <footer class="bg-gray-800 text-white py-8 mt-12">
-      <div class="max-w-4xl mx-auto px-4 text-center text-sm"><p>© 2026 Les Calculateurs</p></div>
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs</p>
+      </div>
     </footer>
   </body>
 </html>

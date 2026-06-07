@@ -16,6 +16,38 @@
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/aspa" />
     <link rel="stylesheet" href="../tailwind.css" />
     <script defer src="/third-party-loader.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel est le montant de l'ASPA en 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En 2026, le plafond de l'ASPA est de 1 012,02€/mois pour une personne seule et 1 571,16€/mois pour un couple. L'ASPA complète vos revenus jusqu'à atteindre ce plafond."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qui a droit à l'ASPA ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'ASPA est accessible aux personnes de 65 ans et plus (62 ans en cas d'inaptitude au travail) résidant en France et disposant de faibles ressources. Le plafond de ressources est de 1 012,02€/mois pour une personne seule."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'ASPA est-elle récupérable sur la succession ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, l'ASPA est une avance récupérable sur la succession si l'actif net successoral dépasse 39 000€ (Outre-mer : 100 000€). Les sommes versées sont alors remboursées à l'État."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-gray-50">
     <div
@@ -61,9 +93,9 @@
     </header>
     <main class="max-w-4xl mx-auto px-4 py-12">
       <section
-        class="bg-gradient-to-r from-amber-600 to-orange-600 text-white py-12 rounded-lg mb-8"
+        class="bg-gradient-to-r from-amber-600 to-orange-600 text-white py-12 rounded-xl mb-8"
       >
-        <div class="text-center">
+        <div class="text-center px-4">
           <h1 class="text-4xl font-bold mb-4">
             ASPA 2026 : Allocation de Solidarité aux Personnes Âgées
           </h1>
@@ -79,62 +111,126 @@
         </div>
       </section>
 
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Qu'est-ce que l'ASPA ?</h2>
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          💶 Combien pouvez-vous toucher avec l'ASPA ?
+        </h2>
         <p class="text-gray-700 mb-4">
-          L'<strong>ASPA</strong> (Allocation de Solidarité aux Personnes Âgées), anciennement «
-          minimum vieillesse », est une allocation destinée aux personnes âgées de
-          <strong>65 ans et plus</strong> (ou 62 ans en cas d'inaptitude au travail) disposant de
-          faibles revenus. Elle garantit un revenu minimum aux retraités.
+          L'ASPA (Allocation de Solidarité aux Personnes Âgées) garantit un
+          <strong>revenu minimum</strong> aux retraités. Son montant est calculé comme la
+          <strong>différence entre le plafond et vos revenus actuels</strong>.
         </p>
-        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Montants ASPA 2026</h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-amber-100">
-                <th class="p-3 text-left">Situation</th>
-                <th class="p-3 text-center">Plafond mensuel</th>
-                <th class="p-3 text-center">Montant max ASPA</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b">
-                <td class="p-3">Personne seule</td>
-                <td class="p-3 text-center font-bold text-amber-700">1 012,02 €</td>
-                <td class="p-3 text-center">~1 012 €</td>
-              </tr>
-              <tr class="border-b">
-                <td class="p-3">Couple</td>
-                <td class="p-3 text-center font-bold text-amber-700">1 571,16 €</td>
-                <td class="p-3 text-center">~1 571 €</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 1</p>
+            <p class="text-2xl font-bold text-amber-700">312,02 €/mois</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Personne seule<br />Retraite de 700€/mois<br />ASPA = 1 012,02€ - 700€
+            </p>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4 border border-orange-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 2</p>
+            <p class="text-2xl font-bold text-orange-700">571,16 €/mois</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Couple<br />Retraites cumulées de 1 000€/mois<br />ASPA = 1 571,16€ - 1 000€
+            </p>
+          </div>
+          <div class="bg-yellow-50 rounded-lg p-4 border border-yellow-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 3</p>
+            <p class="text-2xl font-bold text-yellow-700">0 €/mois</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Personne seule<br />Retraite de 1 200€/mois<br />Dépasse le plafond de 1 012,02€
+            </p>
+          </div>
+          <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">PLAFOND MAX</p>
+            <p class="text-2xl font-bold text-amber-700">1 012,02 €</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Personne seule avec 0€ de revenu<br />ASPA = montant maximum
+            </p>
+          </div>
         </div>
-        <p class="text-xs text-gray-500 mt-4">
-          Montants au 1er janvier 2026. Source :
+      </section>
+
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">📊 Barème ASPA 2026</h2>
+        <p class="text-gray-700 mb-4">
+          Montants en vigueur au <strong>1er janvier 2026</strong>. Source :
           <a
             href="https://www.service-public.fr/particuliers/vosdroits/F16871"
             target="_blank"
             rel="noopener"
             class="text-amber-600 underline"
             >service-public.fr</a
-          >
+          >.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-amber-100">
+                <th class="border border-gray-300 p-3 text-left font-semibold text-gray-800">
+                  Situation
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  Plafond mensuel
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  ASPA max (si 0€ de revenu)
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  Plafond annuel
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 p-3 font-semibold">Personne seule</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-amber-700 bg-amber-50"
+                >
+                  1 012,02 €
+                </td>
+                <td class="border border-gray-300 p-3 text-center font-bold text-amber-700">
+                  1 012,02 €
+                </td>
+                <td class="border border-gray-300 p-3 text-center">12 144,24 €</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-white">
+                <td class="border border-gray-300 p-3 font-semibold">Couple</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-amber-700 bg-amber-50"
+                >
+                  1 571,16 €
+                </td>
+                <td class="border border-gray-300 p-3 text-center font-bold text-amber-700">
+                  1 571,16 €
+                </td>
+                <td class="border border-gray-300 p-3 text-center">18 853,92 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-500 mt-4">
+          * L'ASPA est récupérable sur la succession si l'actif net successoral dépasse
+          <strong>39 000€</strong> en métropole (100 000€ en Outre-mer).
         </p>
       </section>
 
       <section
         id="simulateur"
-        class="bg-amber-50 rounded-lg shadow-lg p-8 mb-8 border-2 border-amber-200"
+        class="bg-amber-50 rounded-xl shadow-lg p-8 mb-8 border-2 border-amber-200"
       >
         <h2 class="text-2xl font-bold text-gray-900 mb-4">🧮 Simulateur ASPA 2026</h2>
+        <p class="text-gray-700 mb-6">
+          Indiquez votre situation et vos revenus pour estimer votre ASPA.
+        </p>
         <form id="aspa-form" class="space-y-6">
           <div>
             <label for="aspa-situation" class="block text-gray-700 font-semibold mb-2"
               >Situation familiale *</label
             ><select
               id="aspa-situation"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white"
             >
               <option value="seul">Personne seule</option>
               <option value="couple">En couple</option>
@@ -146,8 +242,8 @@
             ><input
               type="number"
               id="aspa-revenus"
-              value="800"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+              value="700"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white"
               min="0"
               step="50"
             />
@@ -161,11 +257,23 @@
         </form>
         <div
           id="aspa-resultat"
-          class="hidden mt-8 p-6 bg-white border-2 border-amber-500 rounded-lg"
+          class="hidden mt-8 p-6 bg-white border-2 border-amber-500 rounded-xl"
         >
           <h3 class="text-xl font-bold text-amber-700 mb-3">📊 Résultat</h3>
-          <p class="text-4xl font-bold text-amber-600" id="aspa-montant">---</p>
-          <p class="text-sm text-gray-600 mt-2" id="aspa-detail"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="bg-amber-50 p-4 rounded-lg text-center">
+              <p class="text-sm text-gray-600">ASPA mensuelle estimée</p>
+              <p class="text-4xl font-bold text-amber-600" id="aspa-montant">---</p>
+            </div>
+            <div class="bg-amber-50 p-4 rounded-lg text-center">
+              <p class="text-sm text-gray-600">Revenu total avec ASPA</p>
+              <p class="text-4xl font-bold text-amber-600" id="aspa-total">---</p>
+            </div>
+          </div>
+          <div id="aspa-exemple" class="bg-green-50 rounded-lg p-4 text-sm text-green-800"></div>
+          <p class="text-xs text-gray-500 italic mt-4">
+            💡 Estimation indicative. Demande à effectuer auprès de votre caisse de retraite.
+          </p>
         </div>
       </section>
       <script>
@@ -176,27 +284,87 @@
           const plafond = sit === "seul" ? 1012.02 : 1571.16;
           const aspa = Math.max(0, Math.round(plafond - rev));
           document.getElementById("aspa-montant").textContent = aspa + " €/mois";
-          document.getElementById("aspa-detail").textContent =
-            "Plafond " + sit === "seul"
-              ? "1012,02 €"
-              : "1571,16 €" + " - vos revenus " + rev + " € = ASPA estimée.";
+          document.getElementById("aspa-total").textContent = rev + aspa + " €/mois";
+          document.getElementById("aspa-exemple").textContent =
+            "💡 Exemple concret : avec " +
+            rev +
+            "€/mois de retraite, l'ASPA complète jusqu'à " +
+            plafond.toLocaleString("fr-FR") +
+            "€/mois. Votre complément ASPA est de " +
+            aspa +
+            "€/mois, pour un revenu total de " +
+            (rev + aspa) +
+            "€/mois.";
           document.getElementById("aspa-resultat").classList.remove("hidden");
           document.getElementById("aspa-resultat").scrollIntoView({ behavior: "smooth" });
         });
       </script>
 
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Conditions d'éligibilité</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-          <li>Âge minimum : <strong>65 ans</strong> (62 ans en cas d'inaptitude)</li>
-          <li>Résider en France de façon stable (+6 mois/an)</li>
-          <li>Plafond de ressources mensuelles : 1 012,02 € (seul) / 1 571,16 € (couple)</li>
-          <li>L'ASPA est récupérable sur la succession si le patrimoine dépasse 39 000 €</li>
-        </ul>
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">❓ FAQ - ASPA 2026</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Quel est le montant de l'ASPA en 2026 ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              Le plafond ASPA 2026 est de <strong>1 012,02€/mois pour une personne seule</strong> et
+              <strong>1 571,16€/mois pour un couple</strong>. L'ASPA complète vos revenus existants
+              jusqu'à atteindre ce plafond. Exemple : si vous touchez 600€ de retraite, l'ASPA sera
+              de 412,02€.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Qui a droit à l'ASPA ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              L'ASPA est accessible aux personnes de <strong>65 ans et plus</strong> (62 ans en cas
+              d'inaptitude au travail). Il faut résider en France de façon stable (+6 mois/an),
+              avoir des ressources inférieures aux plafonds et ne pas dépasser le plafond de
+              revenus.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              L'ASPA est-elle récupérable sur la succession ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              Oui, l'ASPA est une <strong>avance récupérable sur succession</strong>. Si l'actif net
+              successoral dépasse <strong>39 000€</strong> (métropole) ou
+              <strong>100 000€</strong> (Outre-mer), les sommes versées devront être remboursées à
+              l'État. Ce remboursement est plafonné au montant de l'actif net.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Comment faire une demande d'ASPA ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              La demande se fait auprès de votre <strong>caisse de retraite</strong> (Carsat, MSA,
+              CNRACL). Vous pouvez déposer votre dossier en ligne sur
+              <a
+                href="https://www.service-public.fr"
+                target="_blank"
+                rel="noopener"
+                class="text-amber-600 underline"
+                >service-public.fr</a
+              >
+              ou directement auprès de votre caisse.
+            </p>
+          </details>
+        </div>
       </section>
     </main>
     <footer class="bg-gray-800 text-white py-8 mt-12">
-      <div class="max-w-4xl mx-auto px-4 text-center text-sm"><p>© 2026 Les Calculateurs</p></div>
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs</p>
+        <div class="flex gap-4 text-sm flex-wrap justify-center">
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white">📘 Méthodologie</a
+          ><span class="text-gray-500">|</span
+          ><a href="/pages/sources" class="text-gray-300 hover:text-white">📚 Sources</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

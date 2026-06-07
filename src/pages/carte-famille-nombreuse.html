@@ -16,6 +16,38 @@
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/carte-famille-nombreuse" />
     <link rel="stylesheet" href="../tailwind.css" />
     <script defer src="/third-party-loader.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quels sont les avantages de la carte famille nombreuse ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La carte famille nombreuse offre des réductions SNCF de 30% à 75%, la gratuité ou tarif réduit dans les musées nationaux, des tarifs dégressifs dans les cantines scolaires et des réductions dans les campings et centres de vacances."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien d'enfants faut-il pour obtenir la carte famille nombreuse ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Il faut avoir au moins 3 enfants de moins de 18 ans à charge (ou 2 enfants en cas de famille recomposée). La carte est valable 3 ans et coûte 18€ de frais de dossier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment faire une demande de carte famille nombreuse ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La demande se fait en ligne sur service-public.fr ou par courrier. Les pièces à fournir incluent : justificatif de domicile, livret de famille, photo d'identité. La carte est délivrée sous 1 à 2 mois."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-gray-50">
     <div
@@ -61,9 +93,9 @@
     </header>
     <main class="max-w-4xl mx-auto px-4 py-12">
       <section
-        class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-12 rounded-lg mb-8"
+        class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-12 rounded-xl mb-8"
       >
-        <div class="text-center">
+        <div class="text-center px-4">
           <h1 class="text-4xl font-bold mb-4">
             Carte Famille Nombreuse 2026 : avantages, réductions et conditions
           </h1>
@@ -71,72 +103,198 @@
             La carte famille nombreuse offre des réductions sur les transports, les musées, les
             cantines et bien plus. Découvrez tous les avantages et conditions d'obtention.
           </p>
+          <a
+            href="#avantages"
+            class="bg-white text-blue-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100"
+            >📋 Voir les avantages</a
+          >
         </div>
       </section>
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8" id="avantages">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">
-          Qu'est-ce que la carte famille nombreuse ?
+          🎫 Quels avantages offre la carte famille nombreuse ?
         </h2>
         <p class="text-gray-700 mb-4">
           La <strong>carte famille nombreuse</strong> est un titre officiel délivré par la SNCF et
-          l'État aux familles ayant <strong>3 enfants ou plus</strong> (ou 2 enfants en cas de
-          famille recomposée). Elle donne droit à des <strong>réductions tarifaires</strong> dans de
-          nombreux domaines.
+          l'État aux familles ayant <strong>3 enfants ou plus</strong> (ou 2 en recomposée). Voici
+          les principaux avantages chiffrés :
         </p>
-        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Avantages principaux</h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-blue-50 p-4 rounded-lg">
-            <span class="font-bold text-blue-700">🚄 SNCF : -30% à -75%</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Réduction sur tous les trains (TGV, Intercités, TER). 30% pour 3 enfants, 40% pour 4,
-              50% pour 5, 75% pour 6 et plus.
+        <div class="grid md:grid-cols-2 gap-4 mt-6">
+          <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+            <span class="font-bold text-blue-700 text-lg">🚄 SNCF : -30% à -75%</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Réduction sur tous les trains (TGV, Intercités, TER). Exemple : un Paris-Lyon à 85€
+              revient à <strong>59,50€</strong> avec 3 enfants (-30%) ou
+              <strong>21,25€</strong> avec 6 enfants (-75%).
             </p>
           </div>
-          <div class="bg-green-50 p-4 rounded-lg">
-            <span class="font-bold text-green-700">🏛️ Musées et monuments</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Gratuité ou tarif réduit dans de nombreux musées nationaux et monuments historiques.
+          <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+            <span class="font-bold text-green-700 text-lg">🏛️ Musées et monuments</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Gratuité ou tarif réduit dans les musées nationaux. Exemple : entrée au Louvre
+              gratuite au lieu de 22€ par adulte.
             </p>
           </div>
-          <div class="bg-amber-50 p-4 rounded-lg">
-            <span class="font-bold text-amber-700">🍽️ Cantines scolaires</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Tarifs dégressifs selon le nombre d'enfants dans certaines communes.
+          <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
+            <span class="font-bold text-amber-700 text-lg">🍽️ Cantines scolaires</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Tarifs dégressifs. Exemple : un repas à 4,50€ peut descendre à
+              <strong>2,80€</strong> pour le 3e enfant.
             </p>
           </div>
-          <div class="bg-purple-50 p-4 rounded-lg">
-            <span class="font-bold text-purple-700">🏕️ Campings et loisirs</span>
-            <p class="text-sm text-gray-600 mt-1">
-              Réductions dans de nombreux campings, parcs d'attractions et centres de vacances.
+          <div class="bg-purple-50 rounded-lg p-4 border border-purple-200">
+            <span class="font-bold text-purple-700 text-lg">🏕️ Campings et loisirs</span>
+            <p class="text-sm text-gray-600 mt-2">
+              Jusqu'à <strong>-50%</strong> dans les campings partenaires et parcs d'attractions
+              (Puy du Fou, Futuroscope...).
             </p>
           </div>
         </div>
       </section>
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Conditions d'obtention</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-          <li>
-            Avoir <strong>3 enfants ou plus</strong> de moins de 18 ans (ou 2 enfants en famille
-            recomposée)
-          </li>
-          <li>Les enfants doivent être fiscalement à charge</li>
-          <li>La carte est valable 3 ans (renouvelable)</li>
-          <li>Coût : 18 € (frais de dossier)</li>
-          <li>
-            Demande en ligne sur
-            <a
-              href="https://www.service-public.fr/particuliers/vosdroits/F1529"
-              target="_blank"
-              rel="noopener"
-              class="text-blue-600 underline"
-              >service-public.fr</a
-            >
-          </li>
-        </ul>
+
+      <!-- Exemples chiffrés -->
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">💶 Exemples concrets d'économies</h2>
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 1 - Train</p>
+            <p class="text-2xl font-bold text-blue-700">42,50 € économisés</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Aller-retour Paris-Marseille (170€)<br />avec 50% de réduction pour 5 enfants
+            </p>
+          </div>
+          <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 2 - Musée</p>
+            <p class="text-2xl font-bold text-green-700">66 € économisés</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Visite famille au Louvre (3 adultes)<br />gratuité au lieu de 22€/pers.
+            </p>
+          </div>
+          <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
+            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 3 - Cantine</p>
+            <p class="text-2xl font-bold text-amber-700">~200 €/an économisés</p>
+            <p class="text-sm text-gray-600 mt-1">
+              3 enfants à la cantine scolaire<br />tarifs dégressifs sur l'année
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tableau des réductions SNCF -->
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">📊 Barème des réductions SNCF</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-blue-100">
+                <th class="border border-gray-300 p-3 text-left font-semibold text-gray-800">
+                  Nombre d'enfants
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  Réduction SNCF
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  Exemple billet 100€
+                </th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                  Valable pour
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 p-3 font-semibold">3 enfants</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-blue-700 bg-blue-50"
+                >
+                  30%
+                </td>
+                <td class="border border-gray-300 p-3 text-center">70€</td>
+                <td class="border border-gray-300 p-3 text-center">Tous les trains</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-white">
+                <td class="border border-gray-300 p-3 font-semibold">4 enfants</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-blue-700 bg-blue-50"
+                >
+                  40%
+                </td>
+                <td class="border border-gray-300 p-3 text-center">60€</td>
+                <td class="border border-gray-300 p-3 text-center">Tous les trains</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 p-3 font-semibold">5 enfants</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-blue-700 bg-blue-50"
+                >
+                  50%
+                </td>
+                <td class="border border-gray-300 p-3 text-center">50€</td>
+                <td class="border border-gray-300 p-3 text-center">Tous les trains</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-white">
+                <td class="border border-gray-300 p-3 font-semibold">6 enfants et +</td>
+                <td
+                  class="border border-gray-300 p-3 text-center font-bold text-blue-700 bg-blue-50"
+                >
+                  75%
+                </td>
+                <td class="border border-gray-300 p-3 text-center">25€</td>
+                <td class="border border-gray-300 p-3 text-center">Tous les trains</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">❓ FAQ - Carte Famille Nombreuse</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Comment obtenir la carte famille nombreuse ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              La demande se fait en ligne sur
+              <a
+                href="https://www.service-public.fr/particuliers/vosdroits/F1529"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 underline font-semibold"
+                >service-public.fr</a
+              >. Coût : 18€ de frais de dossier. Pièces nécessaires : justificatif de domicile,
+              livret de famille, photo d'identité. Délai : 1 à 2 mois.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              La carte famille nombreuse donne-t-elle droit à la carte Avantage SNCF ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              Non, ce sont deux dispositifs distincts. La carte famille nombreuse est gratuite (hors
+              frais de dossier) et permanente, tandis que la carte Avantage SNCF coûte 49€/an. Les
+              réductions peuvent parfois se cumuler selon les offres SNCF en cours.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Les enfants majeurs comptent-ils pour la carte famille nombreuse ?
+            </summary>
+            <p class="mt-3 text-gray-700 text-sm">
+              Les enfants de moins de 18 ans comptent automatiquement. Les enfants de 18 à 21 ans
+              peuvent être pris en compte s'ils sont scolarisés ou à charge fiscale. Au-delà de 21
+              ans, ils ne sont plus comptabilisés.
+            </p>
+          </details>
+        </div>
       </section>
     </main>
     <footer class="bg-gray-800 text-white py-8 mt-12">
-      <div class="max-w-4xl mx-auto px-4 text-center text-sm"><p>© 2026 Les Calculateurs</p></div>
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs</p>
+      </div>
     </footer>
   </body>
 </html>
