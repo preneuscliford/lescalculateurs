@@ -153,6 +153,11 @@ function collectStaticPageInputs() {
     "pages/salaire-net-apres-impot": resolve(__dirname, "src/pages/salaire-net-apres-impot.html"),
     "pages/reste-a-vivre": resolve(__dirname, "src/pages/reste-a-vivre.html"),
     "pages/cout-reel-voiture": resolve(__dirname, "src/pages/cout-reel-voiture.html"),
+    // Nouvelles pages SEMrush (juin 2026)
+    "allocation-familiale": resolve(__dirname, "src/pages/allocation-familiale.html"),
+    aspa: resolve(__dirname, "src/pages/aspa.html"),
+    "carte-famille-nombreuse": resolve(__dirname, "src/pages/carte-famille-nombreuse.html"),
+    "garantie-visale": resolve(__dirname, "src/pages/garantie-visale.html"),
   };
 }
 
