@@ -10,7 +10,7 @@
     />
     <meta
       name="keywords"
-      content="allocation familiale, allocations familiales 2026, simulation allocation familiale, calcul allocation familiale, CAF allocation familiale, montant allocation familiale 2026, plafond allocation familiale, barème allocation familiale"
+      content="allocation familiale, allocations familiales 2026, simulation, calcul, CAF, montant, plafond, barème"
     />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/allocation-familiale" />
@@ -20,7 +20,7 @@
     />
     <meta
       property="og:description"
-      content="Simulez vos allocations familiales 2026 selon votre nombre d'enfants et vos revenus. Calcul gratuit basé sur les barèmes CAF 2026. Résultat immédiat !"
+      content="Simulez vos allocations familiales 2026 selon votre nombre d'enfants et vos revenus. Calcul gratuit basé sur les barèmes CAF 2026."
     />
     <link rel="stylesheet" href="../tailwind.css" />
     <script defer src="/third-party-loader.js"></script>
@@ -34,15 +34,15 @@
             "name": "Quel est le montant des allocations familiales en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "En 2026, les allocations familiales sont de 141,99€/mois pour 2 enfants, 323,91€/mois pour 3 enfants, 505,83€/mois pour 4 enfants, puis +181,92€ par enfant supplémentaire. Une modulation selon les revenus s'applique à partir d'un certain plafond de ressources."
+              "text": "En 2026, les allocations familiales sont de 141,99€/mois pour 2 enfants, 323,91€/mois pour 3 enfants, 505,83€/mois pour 4 enfants, puis +181,92€ par enfant supplémentaire."
             }
           },
           {
             "@type": "Question",
-            "name": "À partir de combien d'enfants a-t-on droit aux allocations familiales ?",
+            "name": "À partir de combien d'enfants a-t-on droit ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Les allocations familiales sont versées à partir du 2e enfant à charge. Il faut avoir au moins 2 enfants de moins de 20 ans pour y avoir droit. Le versement est automatique si vous êtes déjà allocataire CAF, sans démarche particulière."
+              "text": "Les allocations familiales sont versées à partir du 2e enfant à charge de moins de 20 ans."
             }
           },
           {
@@ -50,15 +50,7 @@
             "name": "Les allocations familiales sont-elles imposables ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non, les allocations familiales ne sont pas imposables. Elles ne sont pas soumises à l'impôt sur le revenu ni à la CSG/CRDS. Elles sont exonérées de prélèvements sociaux."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Quel est le plafond de ressources pour toucher les allocations familiales ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Le plafond de ressources dépend du nombre d'enfants. Pour 2 enfants, le plafond est d'environ 74 000€ de revenu net imposable annuel. Pour 3 enfants : 80 000€, pour 4 enfants : 86 000€. Au-delà, le montant est réduit de 25% ou 50% selon les revenus."
+              "text": "Non, les allocations familiales ne sont pas imposables et exonérées de CSG/CRDS."
             }
           }
         ]
@@ -93,28 +85,21 @@
     <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-14">
-          <a href="/" class="flex items-center space-x-2">
-            <img
+          <a href="/" class="flex items-center space-x-2"
+            ><img
               src="/assets/lescalculateurs-new-logo.png"
               alt="LesCalculateurs"
               class="h-8 w-auto"
-            />
-            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
-          </a>
+            /><span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span></a
+          >
           <nav class="hidden md:flex items-center space-x-4 text-sm">
-            <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
-            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
-            <a
-              href="/pages/aide/simulation-aides-caf.html"
-              class="text-gray-600 hover:text-blue-600"
-              >Aides CAF</a
-            >
+            <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a
+            ><a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
           </nav>
         </div>
       </div>
     </header>
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <!-- Hero -->
       <section
         class="bg-gradient-to-r from-green-600 to-green-700 text-white py-12 rounded-xl mb-8"
       >
@@ -124,71 +109,193 @@
           </h1>
           <p class="text-xl text-green-100 mb-6">
             Calculez le montant de vos allocations familiales selon votre nombre d'enfants à charge
-            et vos revenus. Simulation gratuite basée sur les barèmes CAF 2026.
+            et vos revenus.
           </p>
           <a
             href="#simulateur"
-            class="bg-white text-green-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-colors"
+            class="bg-white text-green-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100"
             >🧮 Estimer mes allocations</a
           >
         </div>
       </section>
 
-      <!-- Combien pouvez-vous toucher -->
+      <!-- EXEMPLES -->
       <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">
-          💶 Combien pouvez-vous toucher selon votre situation ?
-        </h2>
-        <p class="text-gray-700 mb-6">
-          Les allocations familiales varient selon le <strong>nombre d'enfants à charge</strong> et
-          les <strong>revenus du foyer</strong>. Voici des exemples concrets pour vous aider à vous
-          situer.
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">💶 Combien pouvez-vous toucher ?</h2>
+        <p class="text-gray-800 mb-6">
+          Les allocations familiales varient selon le <strong>nombre d'enfants</strong> et les
+          <strong>revenus</strong>. Voici des exemples concrets :
         </p>
-
         <div class="grid md:grid-cols-3 gap-4 mb-6">
           <div class="bg-green-50 rounded-lg p-4 border border-green-200">
-            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 1</p>
+            <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 1</p>
             <p class="text-2xl font-bold text-green-700">141,99 €/mois</p>
-            <p class="text-sm text-gray-600 mt-1">
-              Famille avec <strong>2 enfants</strong><br />Revenus inférieurs à 74 000€/an<br />Montant
-              de base, sans modulation
+            <p class="text-sm text-gray-800 mt-1">
+              Famille avec <strong>2 enfants</strong><br />Revenus < 74 000€/an<br />Montant de base
             </p>
           </div>
           <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 2</p>
+            <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 2</p>
             <p class="text-2xl font-bold text-emerald-700">323,91 €/mois</p>
-            <p class="text-sm text-gray-600 mt-1">
-              Famille avec <strong>3 enfants</strong><br />Revenus inférieurs à 80 000€/an<br />+
-              prime de naissance éventuelle
+            <p class="text-sm text-gray-800 mt-1">
+              Famille avec <strong>3 enfants</strong><br />Revenus < 80 000€/an<br />+ prime de
+              naissance
             </p>
           </div>
           <div class="bg-teal-50 rounded-lg p-4 border border-teal-200">
-            <p class="text-xs text-gray-600 font-medium mb-1">EXEMPLE 3</p>
+            <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 3</p>
             <p class="text-2xl font-bold text-teal-700">505,83 €/mois</p>
-            <p class="text-sm text-gray-600 mt-1">
-              Famille avec <strong>4 enfants</strong><br />Revenus inférieurs à 86 000€/an<br />+
-              majoration dès 14 ans
+            <p class="text-sm text-gray-800 mt-1">
+              Famille avec <strong>4 enfants</strong><br />Revenus < 86 000€/an<br />+ majoration
+              dès 14 ans
             </p>
           </div>
         </div>
-
         <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
-          <p class="text-sm text-amber-800">
-            <strong>⚠️ Modulation des revenus :</strong> Si vos revenus dépassent le plafond, le
-            montant est réduit de <strong>25%</strong> (tranche 1) puis de
-            <strong>50%</strong> (tranche 2). Par exemple, une famille avec 3 enfants et 90 000€ de
-            revenus annuels recevra environ <strong>242,93 €/mois</strong> au lieu de 323,91 €.
+          <p class="text-sm text-amber-900">
+            <strong>⚠️ Modulation :</strong> Si vos revenus dépassent le plafond, le montant est
+            réduit de 25% puis 50%. Exemple : 3 enfants avec 90 000€/an → ~242,93 €/mois au lieu de
+            323,91 €.
           </p>
         </div>
       </section>
 
-      <!-- Tableau des montants -->
+      <!-- SIMULATEUR (AU-DESSUS DU TABLEAU) -->
+      <section
+        id="simulateur"
+        class="bg-green-50 rounded-xl shadow-lg p-8 mb-8 border-2 border-green-200"
+      >
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          🧮 Simulateur d'allocations familiales 2026
+        </h2>
+        <p class="text-gray-800 mb-6">
+          Indiquez votre nombre d'enfants et vos revenus pour estimer le montant.
+        </p>
+        <form id="alloc-form" class="space-y-6">
+          <div>
+            <label for="nb-enfants" class="block text-gray-800 font-semibold mb-2"
+              >Nombre d'enfants à charge *</label
+            ><select
+              id="nb-enfants"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 bg-white"
+            >
+              <option value="2">2 enfants</option>
+              <option value="3">3 enfants</option>
+              <option value="4">4 enfants</option>
+              <option value="5">5 enfants</option>
+              <option value="6">6 enfants ou plus</option>
+            </select>
+          </div>
+          <div>
+            <label for="revenus" class="block text-gray-800 font-semibold mb-2"
+              >Revenu net imposable annuel du foyer (€)</label
+            ><input
+              type="number"
+              id="revenus"
+              value="50000"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 bg-white"
+              min="0"
+              step="1000"
+            />
+            <p class="text-xs text-gray-700 mt-1">Base N-2 figurant sur votre avis d'imposition</p>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+          >
+            🟢 Calculer mes allocations
+          </button>
+        </form>
+        <div id="resultat" class="hidden mt-8 p-6 bg-white border-2 border-green-500 rounded-xl">
+          <h3 class="text-xl font-bold text-green-700 mb-3">📊 Résultat</h3>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="bg-green-50 p-4 rounded-lg text-center">
+              <p class="text-sm text-gray-800">Mensuel</p>
+              <p class="text-4xl font-bold text-green-600" id="montant-estime">---</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg text-center">
+              <p class="text-sm text-gray-800">Annuel</p>
+              <p class="text-4xl font-bold text-green-600" id="montant-annuel">---</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-800 mb-2" id="detail-montant"></p>
+          <div id="exemple-concret" class="bg-amber-50 rounded-lg p-4 text-sm text-amber-900"></div>
+          <p class="text-xs text-gray-700 italic mt-4">
+            💡 Estimation indicative. La CAF détermine le montant exact.
+          </p>
+        </div>
+      </section>
+      <script>
+        document.getElementById("alloc-form").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nb = parseInt(document.getElementById("nb-enfants").value);
+          const revenus = parseInt(document.getElementById("revenus").value) || 0;
+          const base = { 2: 141.99, 3: 323.91, 4: 505.83, 5: 687.75, 6: 869.67 };
+          const plafonds = { 2: 74000, 3: 80000, 4: 86000, 5: 92000, 6: 98000 };
+          let mb = base[nb] || 869.67 + (nb - 6) * 181.92;
+          let pf = plafonds[nb] || 98000 + (nb - 6) * 6000;
+          let mf = mb;
+          let detail = "Montant de base sans modulation.";
+          let exemple = "";
+          if (revenus > pf) {
+            let r = (revenus - pf) / (pf * 0.6);
+            if (r <= 1) {
+              mf = Math.round(mb * 0.75);
+              detail = "Revenus > plafond " + pf.toLocaleString("fr-FR") + "€. Réduction 25%.";
+              exemple =
+                "Famille " +
+                nb +
+                " enfants, " +
+                revenus.toLocaleString("fr-FR") +
+                "€/an → " +
+                Math.round(mf) +
+                "€/mois au lieu de " +
+                Math.round(mb) +
+                "€/mois.";
+            } else {
+              mf = Math.round(mb * 0.5);
+              detail = "Revenus >> plafond. Réduction 50%.";
+              exemple =
+                "Famille " +
+                nb +
+                " enfants, " +
+                revenus.toLocaleString("fr-FR") +
+                "€/an → " +
+                Math.round(mf) +
+                "€/mois.";
+            }
+          } else {
+            exemple =
+              "Famille " +
+              nb +
+              " enfants, " +
+              revenus.toLocaleString("fr-FR") +
+              "€/an (sous le plafond " +
+              pf.toLocaleString("fr-FR") +
+              "€) → " +
+              Math.round(mb) +
+              "€/mois, soit " +
+              Math.round(mb * 12) +
+              "€/an.";
+          }
+          document.getElementById("montant-estime").textContent =
+            Math.max(0, Math.round(mf)) + " €/mois";
+          document.getElementById("montant-annuel").textContent =
+            Math.max(0, Math.round(mf * 12)) + " €/an";
+          document.getElementById("detail-montant").textContent = detail;
+          document.getElementById("exemple-concret").textContent = "💡 " + exemple;
+          document.getElementById("resultat").classList.remove("hidden");
+          document.getElementById("resultat").scrollIntoView({ behavior: "smooth" });
+        });
+      </script>
+
+      <!-- TABLEAU (APRÈS SIMULATEUR) -->
       <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">
           📊 Barème complet des allocations familiales 2026
         </h2>
-        <p class="text-gray-700 mb-4">
-          Montants en vigueur au <strong>1er mai 2026</strong>. Source :
+        <p class="text-gray-800 mb-4">
+          Montants au <strong>1er mai 2026</strong>. Source :
           <a
             href="https://www.caf.fr"
             target="_blank"
@@ -206,300 +313,142 @@
           >.
         </p>
         <div class="overflow-x-auto">
-          <table class="w-full text-sm border-collapse border border-gray-200">
+          <table class="w-full text-sm border-collapse border border-gray-300">
             <thead>
               <tr class="bg-green-100">
-                <th class="border border-gray-300 p-3 text-left font-semibold text-gray-800">
-                  Nombre d'enfants
+                <th class="border border-gray-300 p-3 text-left font-semibold text-gray-900">
+                  Enfants
                 </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
-                  Montant de base (plein taux)
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
+                  Plein taux
                 </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
-                  Montant réduit (tranche 1)
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
+                  Réduit 25%
                 </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
-                  Plafond de ressources annuel
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
+                  Plafond
                 </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-800">
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
                   Majoration +14 ans
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr class="hover:bg-gray-50">
-                <td class="border border-gray-300 p-3 font-semibold">2 enfants</td>
+              <tr class="hover:bg-gray-100">
+                <td class="border border-gray-300 p-3 font-semibold text-gray-900">2 enfants</td>
                 <td
                   class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
                 >
                   141,99 €/mois
                 </td>
-                <td class="border border-gray-300 p-3 text-center">~106,49 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center">~74 000 €</td>
-                <td class="border border-gray-300 p-3 text-center">+35,50 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~106,49 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~74 000 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+35,50 €/mois</td>
               </tr>
-              <tr class="hover:bg-gray-50 bg-white">
-                <td class="border border-gray-300 p-3 font-semibold">3 enfants</td>
+              <tr class="hover:bg-gray-100 bg-white">
+                <td class="border border-gray-300 p-3 font-semibold text-gray-900">3 enfants</td>
                 <td
                   class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
                 >
                   323,91 €/mois
                 </td>
-                <td class="border border-gray-300 p-3 text-center">~242,93 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center">~80 000 €</td>
-                <td class="border border-gray-300 p-3 text-center">+70,99 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~242,93 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~80 000 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+70,99 €/mois</td>
               </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="border border-gray-300 p-3 font-semibold">4 enfants</td>
+              <tr class="hover:bg-gray-100">
+                <td class="border border-gray-300 p-3 font-semibold text-gray-900">4 enfants</td>
                 <td
                   class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
                 >
                   505,83 €/mois
                 </td>
-                <td class="border border-gray-300 p-3 text-center">~379,37 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center">~86 000 €</td>
-                <td class="border border-gray-300 p-3 text-center">+106,49 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~379,37 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~86 000 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+106,49 €/mois</td>
               </tr>
-              <tr class="hover:bg-gray-50 bg-white">
-                <td class="border border-gray-300 p-3 font-semibold">5 enfants</td>
+              <tr class="hover:bg-gray-100 bg-white">
+                <td class="border border-gray-300 p-3 font-semibold text-gray-900">5 enfants</td>
                 <td
                   class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
                 >
                   687,75 €/mois
                 </td>
-                <td class="border border-gray-300 p-3 text-center">~515,81 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center">~92 000 €</td>
-                <td class="border border-gray-300 p-3 text-center">+142,00 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~515,81 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">~92 000 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+142,00 €/mois</td>
               </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="border border-gray-300 p-3 font-semibold">Par enfant suppl.</td>
+              <tr class="hover:bg-gray-100">
+                <td class="border border-gray-300 p-3 font-semibold text-gray-900">
+                  Par enfant suppl.
+                </td>
                 <td
                   class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
                 >
                   +181,92 €/mois
                 </td>
-                <td class="border border-gray-300 p-3 text-center">+136,44 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center">+6 000 €</td>
-                <td class="border border-gray-300 p-3 text-center">—</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+136,44 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+6 000 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">—</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="text-xs text-gray-500 mt-4">
-          * La majoration s'applique pour chaque enfant de <strong>14 ans et plus</strong> (sauf
-          l'aîné pour 2 enfants). Les plafonds de ressources sont ceux de l'année N-2 (avis
-          d'imposition 2024 pour 2026).
+        <p class="text-xs text-gray-700 mt-4">
+          * Majoration pour enfant de 14 ans et plus (sauf aîné pour 2 enfants). Plafonds N-2 (avis
+          d'imposition 2024).
         </p>
       </section>
-
-      <!-- Simulateur -->
-      <section
-        id="simulateur"
-        class="bg-green-50 rounded-xl shadow-lg p-8 mb-8 border-2 border-green-200"
-      >
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">
-          🧮 Simulateur d'allocations familiales 2026
-        </h2>
-        <p class="text-gray-700 mb-6">
-          Indiquez votre nombre d'enfants à charge et vos revenus pour estimer le montant de vos
-          allocations.
-        </p>
-
-        <form id="alloc-form" class="space-y-6">
-          <div>
-            <label for="nb-enfants" class="block text-gray-700 font-semibold mb-2"
-              >Nombre d'enfants à charge *</label
-            >
-            <select
-              id="nb-enfants"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 bg-white"
-            >
-              <option value="2">2 enfants</option>
-              <option value="3">3 enfants</option>
-              <option value="4">4 enfants</option>
-              <option value="5">5 enfants</option>
-              <option value="6">6 enfants ou plus</option>
-            </select>
-          </div>
-          <div>
-            <label for="revenus" class="block text-gray-700 font-semibold mb-2"
-              >Revenu net imposable annuel du foyer (€)</label
-            >
-            <input
-              type="number"
-              id="revenus"
-              value="50000"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 bg-white"
-              min="0"
-              step="1000"
-            />
-            <p class="text-xs text-gray-500 mt-1">Base N-2 figurant sur votre avis d'imposition</p>
-          </div>
-          <button
-            type="submit"
-            class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
-          >
-            🟢 Calculer mes allocations
-          </button>
-        </form>
-
-        <div id="resultat" class="hidden mt-8 p-6 bg-white border-2 border-green-500 rounded-xl">
-          <h3 class="text-xl font-bold text-green-700 mb-3">📊 Résultat de votre simulation</h3>
-          <div class="grid md:grid-cols-2 gap-4 mb-4">
-            <div class="bg-green-50 p-4 rounded-lg text-center">
-              <p class="text-sm text-gray-600">Montant mensuel estimé</p>
-              <p class="text-4xl font-bold text-green-600" id="montant-estime">---</p>
-            </div>
-            <div class="bg-green-50 p-4 rounded-lg text-center">
-              <p class="text-sm text-gray-600">Montant annuel estimé</p>
-              <p class="text-4xl font-bold text-green-600" id="montant-annuel">---</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 mb-2" id="detail-montant"></p>
-          <div id="exemple-concret" class="bg-amber-50 rounded-lg p-4 text-sm text-amber-800"></div>
-          <p class="text-xs text-gray-500 italic mt-4">
-            💡 Estimation indicative. La CAF détermine le montant exact selon votre dossier complet.
-          </p>
-        </div>
-      </section>
-
-      <script>
-        document.getElementById("alloc-form").addEventListener("submit", function (e) {
-          e.preventDefault();
-          const nb = parseInt(document.getElementById("nb-enfants").value);
-          const revenus = parseInt(document.getElementById("revenus").value) || 0;
-          const base = { 2: 141.99, 3: 323.91, 4: 505.83, 5: 687.75, 6: 869.67 };
-          const plafonds = { 2: 74000, 3: 80000, 4: 86000, 5: 92000, 6: 98000 };
-          let montantBase = base[nb] || 869.67 + (nb - 6) * 181.92;
-          let plafond = plafonds[nb] || 98000 + (nb - 6) * 6000;
-          let montantFinal = montantBase;
-          let detail = "Montant de base sans modulation de ressources.";
-          let exemple = "";
-          if (revenus > plafond) {
-            let ratio = (revenus - plafond) / (plafond * 0.6);
-            if (ratio <= 1) {
-              montantFinal = Math.round(montantBase * 0.75);
-              detail =
-                "Vos revenus dépassent le plafond de " +
-                plafond.toLocaleString("fr-FR") +
-                " €. Le montant est réduit de 25% (tranche 1).";
-              exemple =
-                "Exemple concret : une famille similaire avec " +
-                nb +
-                " enfants et " +
-                revenus.toLocaleString("fr-FR") +
-                "€ de revenus annuels touche environ " +
-                Math.round(montantFinal) +
-                "€/mois au lieu de " +
-                Math.round(montantBase) +
-                "€/mois.";
-            } else {
-              montantFinal = Math.round(montantBase * 0.5);
-              detail =
-                "Vos revenus dépassent largement le plafond de " +
-                plafond.toLocaleString("fr-FR") +
-                " €. Le montant est réduit de 50% (tranche 2).";
-              exemple =
-                "Exemple concret : une famille avec " +
-                nb +
-                " enfants et " +
-                revenus.toLocaleString("fr-FR") +
-                "€ de revenus annuels touche environ " +
-                Math.round(montantFinal) +
-                "€/mois.";
-            }
-          } else {
-            exemple =
-              "Exemple concret : une famille avec " +
-              nb +
-              " enfants et des revenus de " +
-              revenus.toLocaleString("fr-FR") +
-              " €/an (sous le plafond de " +
-              plafond.toLocaleString("fr-FR") +
-              " €) touche le montant plein de " +
-              Math.round(montantBase) +
-              " €/mois, soit " +
-              Math.round(montantBase * 12) +
-              " €/an.";
-          }
-          document.getElementById("montant-estime").textContent =
-            Math.max(0, Math.round(montantFinal)) + " €/mois";
-          document.getElementById("montant-annuel").textContent =
-            Math.max(0, Math.round(montantFinal * 12)) + " €/an";
-          document.getElementById("detail-montant").textContent = detail;
-          document.getElementById("exemple-concret").textContent = "💡 " + exemple;
-          document.getElementById("resultat").classList.remove("hidden");
-          document.getElementById("resultat").scrollIntoView({ behavior: "smooth" });
-        });
-      </script>
 
       <!-- FAQ -->
       <section class="bg-white rounded-xl shadow-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          ❓ Questions fréquentes sur les allocations familiales
-        </h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">❓ FAQ</h2>
         <div class="space-y-4">
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
             <summary class="cursor-pointer font-semibold text-gray-900">
               Quel est le montant des allocations familiales en 2026 ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
-              En 2026, les allocations familiales sont de
-              <strong>141,99€/mois pour 2 enfants</strong>,
-              <strong>323,91€/mois pour 3 enfants</strong>,
-              <strong>505,83€/mois pour 4 enfants</strong>, puis
-              <strong>+181,92€ par enfant supplémentaire</strong>. Ces montants sont ceux à "taux
-              plein", avant modulation éventuelle selon les revenus du foyer. Une majoration de
-              <strong>35,50€ à 142€</strong> s'ajoute pour chaque enfant de 14 ans et plus.
+            <p class="mt-3 text-gray-800 text-sm">
+              141,99€/mois pour 2 enfants, 323,91€ pour 3, 505,83€ pour 4, +181,92€ par enfant
+              suppl. Majoration de 35,50€ à 142€ pour les +14 ans.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
             <summary class="cursor-pointer font-semibold text-gray-900">
-              À partir de combien d'enfants a-t-on droit aux allocations familiales ?
+              À partir de combien d'enfants ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
-              Les allocations familiales sont versées à partir du
-              <strong>2e enfant à charge</strong>. Une famille avec un seul enfant n'y a pas droit.
-              Le versement est automatique dès la naissance ou l'arrivée du 2e enfant si vous êtes
-              déjà allocataire CAF. Aucune démarche particulière n'est nécessaire dans ce cas.
+            <p class="mt-3 text-gray-800 text-sm">
+              À partir du 2e enfant à charge de moins de 20 ans. Versement automatique si déjà
+              allocataire CAF.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
             <summary class="cursor-pointer font-semibold text-gray-900">
-              Les allocations familiales sont-elles imposables ?
+              Les allocations sont-elles imposables ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
-              Non, les allocations familiales ne sont <strong>pas imposables</strong>. Elles sont
-              totalement exonérées d'impôt sur le revenu, de CSG et de CRDS. Vous ne devez pas les
-              déclarer dans votre déclaration de revenus.
+            <p class="mt-3 text-gray-800 text-sm">
+              Non, totalement exonérées d'impôt, de CSG et de CRDS.
+            </p>
+          </details>
+          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
+            <summary class="cursor-pointer font-semibold text-gray-900">Jusqu'à quel âge ?</summary>
+            <p class="mt-3 text-gray-800 text-sm">
+              Jusqu'à 20 ans. Entre 16 et 20 ans, l'enfant doit être scolarisé ou en insertion
+              (rémunération < 1 082,87€ net/mois).
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
             <summary class="cursor-pointer font-semibold text-gray-900">
-              Jusqu'à quel âge un enfant donne-t-il droit aux allocations familiales ?
+              Quand sont-elles versées ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
-              Un enfant ouvre droit aux allocations familiales jusqu'à ses <strong>20 ans</strong>.
-              Entre 16 et 20 ans, il doit être scolarisé, en apprentissage, en stage ou en insertion
-              professionnelle (et ne pas percevoir une rémunération supérieure à 1 082,87€ net/mois,
-              soit 55% du SMIC).
-            </p>
-          </details>
-          <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <summary class="cursor-pointer font-semibold text-gray-900">
-              Quand sont versées les allocations familiales ?
-            </summary>
-            <p class="mt-3 text-gray-700 text-sm">
-              Les allocations familiales sont versées <strong>tous les mois</strong> par la CAF,
-              généralement le 5 du mois suivant. Par exemple, les allocations de janvier sont
-              versées le 5 février. Le premier versement intervient le mois qui suit la naissance ou
-              l'arrivée du 2e enfant.
+            <p class="mt-3 text-gray-800 text-sm">
+              Tous les mois par la CAF, généralement le 5 du mois suivant.
             </p>
           </details>
         </div>
       </section>
 
-      <!-- Liens -->
+      <!-- LIENS -->
       <section
         class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 mb-8 border border-green-200"
       >
@@ -508,41 +457,26 @@
           <a
             href="/pages/asf"
             class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border border-green-200"
+            ><span class="font-semibold text-green-700">ASF</span>
+            <p class="text-xs text-gray-800 mt-1">Allocation Soutien Familial</p></a
           >
-            <span class="font-semibold text-green-700">ASF (Allocation Soutien Familial)</span>
-            <p class="text-xs text-gray-600 mt-1">
-              Pour les parents isolés élevant seuls leurs enfants
-            </p>
-          </a>
           <a
             href="/pages/aide/aide-financiere-famille"
             class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border border-green-200"
+            ><span class="font-semibold text-green-700">Aides famille</span>
+            <p class="text-xs text-gray-800 mt-1">Toutes les aides CAF</p></a
           >
-            <span class="font-semibold text-green-700">Aides financières famille</span>
-            <p class="text-xs text-gray-600 mt-1">Toutes les aides CAF pour les familles</p>
-          </a>
           <a
             href="/pages/rsa"
             class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border border-purple-200"
+            ><span class="font-semibold text-purple-700">RSA</span>
+            <p class="text-xs text-gray-800 mt-1">Revenu de solidarité active</p></a
           >
-            <span class="font-semibold text-purple-700">RSA</span>
-            <p class="text-xs text-gray-600 mt-1">
-              Revenu de solidarité active pour les foyers modestes
-            </p>
-          </a>
         </div>
       </section>
     </main>
-
     <footer class="bg-gray-800 text-white py-8 mt-12">
-      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
-        <p class="mb-4">© 2026 Les Calculateurs — Simulateurs gratuits français</p>
-        <div class="flex gap-4 text-sm flex-wrap justify-center">
-          <a href="/pages/methodologie" class="text-gray-300 hover:text-white">📘 Méthodologie</a>
-          <span class="text-gray-500">|</span>
-          <a href="/pages/sources" class="text-gray-300 hover:text-white">📚 Sources</a>
-        </div>
-      </div>
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm"><p>© 2026 Les Calculateurs</p></div>
     </footer>
   </body>
 </html>
