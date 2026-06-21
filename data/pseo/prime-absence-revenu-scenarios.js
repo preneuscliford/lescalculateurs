@@ -197,6 +197,145 @@ export const primeAbsenceRevenuScenarios = [
     ],
   },
   {
+    slug: "prime-activite-1500-euros",
+    title: "Prime d'activité avec 1500 € net : estimation 2026",
+    description:
+      "Estimez votre Prime d'activité 2026 avec un salaire de 1500 € net par mois. Cas concret célibataire sans enfant.",
+    summary:
+      "Cette page répond à la recherche « prime activité 1500 € » avec un cas de revenu précis.",
+    audience: "Salarié célibataire avec 1500 € net mensuel",
+    tags: ["prime-activite", "1500-euros", "celibataire", "simulation"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenusProf: 1500,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Vérifier le montant net mensuel exact.",
+      "Comparer avec un scénario à 1800 € pour mesurer l'écart.",
+      "Tester aussi l'APL si vous êtes locataire.",
+    ],
+    faq: [
+      {
+        question: "Peut-on toucher la Prime d'activité avec 1500 € net ?",
+        answer:
+          "Oui, selon votre situation familiale et vos autres ressources. Le montant dépend de la composition du foyer.",
+      },
+      {
+        question: "Le montant baisse-t-il quand le salaire augmente ?",
+        answer:
+          "Oui, la Prime d'activité diminue progressivement à mesure que les revenus augmentent.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-1800-euros",
+    title: "Prime d'activité avec 1800 € net : simulation 2026",
+    description:
+      "Calculez votre Prime d'activité 2026 avec 1800 € net mensuel. Estimation gratuite pour célibataire sans enfant.",
+    summary:
+      "Cette page répond à la recherche « prime activité 1800 € » avec un cas de revenu intermédiaire.",
+    audience: "Salarié célibataire avec 1800 € net mensuel",
+    tags: ["prime-activite", "1800-euros", "celibataire", "simulation"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenusProf: 1800,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Vérifier le montant net mensuel exact.",
+      "Comparer avec un scénario à 1500 € pour mesurer l'écart.",
+      "Tester aussi l'APL si vous êtes locataire.",
+    ],
+    faq: [
+      {
+        question: "La Prime d'activité est-elle encore accessible avec 1800 € net ?",
+        answer:
+          "L'éligibilité devient plus limitée à ce niveau de revenu. Une simulation reste recommandée.",
+      },
+      {
+        question: "Un célibataire à 1800 € peut-il encore percevoir une aide ?",
+        answer:
+          "Cela dépend des barèmes en vigueur. Notre simulateur vous donne une estimation personnalisée.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-2000-euros",
+    title: "Prime d'activité avec 2000 € net : estimation 2026",
+    description:
+      "Simulez votre Prime d'activité 2026 avec 2000 € net par mois. Cas concret pour célibataire sans enfant.",
+    summary:
+      "Cette page répond à la recherche « prime activité 2000 € » avec un cas de revenu plus élevé.",
+    audience: "Salarié célibataire avec 2000 € net mensuel",
+    tags: ["prime-activite", "2000-euros", "celibataire", "simulation"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenusProf: 2000,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Vérifier le montant net mensuel exact.",
+      "Comparer avec un scénario à 1800 € pour mesurer l'écart.",
+      "Tester aussi le RSA si vos revenus baissent.",
+    ],
+    faq: [
+      {
+        question: "A-t-on encore droit à la Prime d'activité avec 2000 € net ?",
+        answer:
+          "L'éligibilité est très limitée à ce niveau, mais peut rester possible selon la composition du foyer.",
+      },
+      {
+        question: "Pourquoi le montant estimé peut-il être nul ?",
+        answer:
+          "Le dépassement des plafonds de ressources peut entraîner une éligibilité nulle. Une simulation permet de vérifier.",
+      },
+    ],
+  },
+  {
+    slug: "prime-activite-couple-deux-enfants",
+    title: "Prime d'activité couple avec 2 enfants : simulation 2026",
+    description:
+      "Estimation Prime d'activité 2026 pour un couple avec 2 enfants et revenus modestes. Cas concret avec deux salaires.",
+    summary:
+      "Cette page couvre une situation familiale fréquente, distincte du cas couple avec 4 enfants.",
+    audience: "Couple avec 2 enfants et revenus modestes",
+    tags: ["prime-activite", "couple", "2-enfants", "famille", "simulation"],
+    input: {
+      situation: "couple",
+      enfants: 2,
+      revenusProf: 2400,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    },
+    checklist: [
+      "Vérifier les revenus d'activité du foyer entier.",
+      "Comparer avec un scénario couple sans enfant pour mesurer l'écart.",
+      "Croiser avec APL et allocations familiales selon le budget logement.",
+    ],
+    faq: [
+      {
+        question: "Un couple avec 2 enfants peut-il toucher la Prime d'activité ?",
+        answer: "Oui, les majorations familiales augmentent le montant potentiel de la Prime.",
+      },
+      {
+        question: "Le nombre d'enfants change-t-il beaucoup le montant ?",
+        answer:
+          "Oui. Chaque enfant supplémentaire augmente le montant forfaitaire et donc la Prime potentielle.",
+      },
+    ],
+  },
+  {
     slug: "prime-activite-couple-4-enfants",
     title: "Prime d'activite couple avec 4 enfants : calcul 2026",
     description:

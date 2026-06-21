@@ -2,8 +2,10 @@ export const rsaPilotScenarios = [
   {
     slug: "combien-touche-t-on-au-rsa",
     title: "Combien touche-t-on au RSA ? (2026)",
-    description: "Ordre de grandeur du RSA 2026 pour un foyer sans revenus ou avec des ressources très faibles.",
-    summary: "Cette page donne un premier repère sur le montant du RSA et oriente ensuite vers des cas plus précis.",
+    description:
+      "Ordre de grandeur du RSA 2026 pour un foyer sans revenus ou avec des ressources très faibles.",
+    summary:
+      "Cette page donne un premier repère sur le montant du RSA et oriente ensuite vers des cas plus précis.",
     audience: "Foyer cherchant un ordre de grandeur du RSA",
     tags: ["rsa", "montant", "general"],
     input: {
@@ -32,8 +34,10 @@ export const rsaPilotScenarios = [
   {
     slug: "qui-a-droit-au-rsa",
     title: "Qui a droit au RSA ? (2026)",
-    description: "Conditions principales d'accès au RSA en 2026 avec un scénario type de ressources faibles.",
-    summary: "Cette page aide à comprendre l'éligibilité au RSA avant de passer au simulateur complet.",
+    description:
+      "Conditions principales d'accès au RSA en 2026 avec un scénario type de ressources faibles.",
+    summary:
+      "Cette page aide à comprendre l'éligibilité au RSA avant de passer au simulateur complet.",
     audience: "Personne qui vérifie son éligibilité au RSA",
     tags: ["rsa", "conditions", "eligibilite"],
     input: {
@@ -51,7 +55,8 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Peut-on avoir le RSA avec un petit revenu ?",
-        answer: "Oui, dans certains cas. Le RSA complète des ressources faibles selon la situation du foyer.",
+        answer:
+          "Oui, dans certains cas. Le RSA complète des ressources faibles selon la situation du foyer.",
       },
       {
         question: "Faut-il être sans emploi pour toucher le RSA ?",
@@ -62,8 +67,10 @@ export const rsaPilotScenarios = [
   {
     slug: "rsa-auto-entrepreneur",
     title: "RSA auto-entrepreneur (2026)",
-    description: "Estimation indicative du RSA pour un auto-entrepreneur avec des revenus modestes.",
-    summary: "Cette page répond à une situation fréquente de revenus variables et de besoin de complément.",
+    description:
+      "Estimation indicative du RSA pour un auto-entrepreneur avec des revenus modestes.",
+    summary:
+      "Cette page répond à une situation fréquente de revenus variables et de besoin de complément.",
     audience: "Auto-entrepreneur avec faibles revenus",
     tags: ["rsa", "activite", "independant"],
     input: {
@@ -92,8 +99,10 @@ export const rsaPilotScenarios = [
   {
     slug: "rsa-chomage-fin-de-droits",
     title: "RSA chômage après fin de droits (2026)",
-    description: "Estimation indicative du RSA après une fin de droits chômage si les ressources deviennent faibles.",
-    summary: "Cette page relie la fin de droits ARE à un scénario RSA très proche de la recherche réelle.",
+    description:
+      "Estimation indicative du RSA après une fin de droits chômage si les ressources deviennent faibles.",
+    summary:
+      "Cette page relie la fin de droits ARE à un scénario RSA très proche de la recherche réelle.",
     audience: "Personne en fin de droits chômage",
     tags: ["rsa", "chomage", "fin-droits"],
     input: {
@@ -111,7 +120,8 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Le RSA peut-il prendre le relais après l'ARE ?",
-        answer: "Oui, si les ressources deviennent suffisamment faibles et si les autres conditions sont remplies.",
+        answer:
+          "Oui, si les ressources deviennent suffisamment faibles et si les autres conditions sont remplies.",
       },
       {
         question: "Faut-il refaire une simulation après la fin de droits ?",
@@ -120,9 +130,144 @@ export const rsaPilotScenarios = [
     ],
   },
   {
+    slug: "rsa-salaire-1200",
+    title: "RSA avec 1200 € de salaire : estimation 2026",
+    description:
+      "Estimez votre RSA 2026 avec un salaire de 1200 € net par mois. Cas concret personne seule avec activité.",
+    summary:
+      "Cette page répond à la recherche « rsa salaire 1200 € » avec un cas de revenu précis.",
+    audience: "Personne seule avec 1200 € de salaire mensuel",
+    tags: ["rsa", "salaire", "1200-euros", "personne-seule"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenus: 1200,
+      logement: "loue",
+      activite: "salarie",
+    },
+    checklist: [
+      "Vérifier le montant net mensuel exact.",
+      "Comparer avec un scénario à 1500 € pour mesurer l'écart.",
+      "Tester aussi la Prime d'activité en complément.",
+    ],
+    faq: [
+      {
+        question: "Peut-on toucher le RSA avec 1200 € de salaire ?",
+        answer:
+          "L'éligibilité dépend de votre situation familiale et de vos autres ressources. Une simulation est recommandée.",
+      },
+      {
+        question: "Le RSA est-il cumulable avec un salaire ?",
+        answer:
+          "Oui, le RSA peut compléter un revenu d'activité modeste sous conditions de ressources.",
+      },
+    ],
+  },
+  {
+    slug: "rsa-salaire-1500",
+    title: "RSA avec 1500 € de salaire : simulation 2026",
+    description:
+      "Simulez votre RSA 2026 avec 1500 € net mensuel. Estimation gratuite pour personne seule en activité.",
+    summary:
+      "Cette page répond à la recherche « rsa salaire 1500 € » avec un cas de revenu intermédiaire.",
+    audience: "Personne seule avec 1500 € de salaire mensuel",
+    tags: ["rsa", "salaire", "1500-euros", "personne-seule"],
+    input: {
+      situation: "seul",
+      enfants: 0,
+      revenus: 1500,
+      logement: "loue",
+      activite: "salarie",
+    },
+    checklist: [
+      "Vérifier le montant net mensuel exact.",
+      "Comparer avec un scénario à 1200 € pour mesurer l'écart.",
+      "Tester aussi la Prime d'activité qui peut être plus avantageuse.",
+    ],
+    faq: [
+      {
+        question: "Le RSA est-il encore accessible avec 1500 € net ?",
+        answer:
+          "À ce niveau de revenu, le RSA est souvent dégressif. Une simulation permet de vérifier le montant exact.",
+      },
+      {
+        question: "Vaut-il mieux demander le RSA ou la Prime d'activité ?",
+        answer:
+          "Les deux aides répondent à des logiques différentes. Notre simulateur vous aide à comparer.",
+      },
+    ],
+  },
+  {
+    slug: "rsa-2-enfants",
+    title: "RSA avec 2 enfants : estimation 2026",
+    description:
+      "Calculez votre RSA 2026 pour un foyer avec 2 enfants à charge. Cas concret couple avec enfants.",
+    summary: "Cette page répond aux recherches sur le RSA familial avec 2 enfants.",
+    audience: "Couple avec 2 enfants et revenus modestes",
+    tags: ["rsa", "2-enfants", "couple", "famille"],
+    input: {
+      situation: "couple",
+      enfants: 2,
+      revenus: 0,
+      logement: "loue",
+      activite: "inactif",
+    },
+    checklist: [
+      "Vérifier le nombre exact d'enfants à charge.",
+      "Comparer avec un scénario avec 1 enfant pour mesurer l'écart.",
+      "Tester aussi les allocations familiales et l'APL.",
+    ],
+    faq: [
+      {
+        question: "Le RSA augmente-t-il avec 2 enfants ?",
+        answer: "Oui, le montant forfaitaire augmente avec le nombre d'enfants à charge.",
+      },
+      {
+        question: "Un couple avec 2 enfants sans revenu a-t-il droit au RSA ?",
+        answer:
+          "Oui, sous réserve des conditions de ressources et de situation déclarées à la CAF.",
+      },
+    ],
+  },
+  {
+    slug: "rsa-3-enfants",
+    title: "RSA avec 3 enfants : simulation 2026",
+    description:
+      "Estimez votre RSA 2026 pour une famille avec 3 enfants. Cas concret couple sans revenu.",
+    summary:
+      "Cette page répond aux recherches sur le RSA pour les familles nombreuses avec 3 enfants.",
+    audience: "Couple avec 3 enfants et revenus modestes",
+    tags: ["rsa", "3-enfants", "couple", "famille-nombreuse"],
+    input: {
+      situation: "couple",
+      enfants: 3,
+      revenus: 0,
+      logement: "loue",
+      activite: "inactif",
+    },
+    checklist: [
+      "Vérifier le nombre exact d'enfants à charge.",
+      "Comparer avec un scénario avec 2 enfants pour mesurer l'écart.",
+      "Croiser avec les allocations familiales et l'APL.",
+    ],
+    faq: [
+      {
+        question: "Quel RSA pour une famille de 3 enfants ?",
+        answer:
+          "Le montant forfaitaire est majoré pour chaque enfant supplémentaire. Le résultat dépend des ressources du foyer.",
+      },
+      {
+        question: "Les allocations familiales sont-elles cumulables avec le RSA ?",
+        answer:
+          "Oui, les allocations familiales sont versées en complément du RSA sous conditions.",
+      },
+    ],
+  },
+  {
     slug: "rsa-conditions-2026",
     title: "RSA conditions 2026",
-    description: "Principales conditions du RSA en 2026 avec un cas type de foyer à faibles ressources.",
+    description:
+      "Principales conditions du RSA en 2026 avec un cas type de foyer à faibles ressources.",
     summary: "Cette page sert de porte d'entrée vers les conditions d'éligibilité au RSA.",
     audience: "Foyer qui vérifie les conditions du RSA",
     tags: ["rsa", "conditions", "2026"],
@@ -141,7 +286,8 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Les conditions RSA changent-elles selon le foyer ?",
-        answer: "Oui, la situation familiale et les revenus retenus modifient fortement l'estimation.",
+        answer:
+          "Oui, la situation familiale et les revenus retenus modifient fortement l'estimation.",
       },
       {
         question: "Le logement compte-t-il dans le RSA ?",
@@ -182,8 +328,10 @@ export const rsaPilotScenarios = [
   {
     slug: "rsa-couple-sans-enfant",
     title: "RSA couple sans enfant (2026)",
-    description: "Estimation indicative du RSA pour un couple sans enfant avec peu ou pas de revenus.",
-    summary: "Cette page sert une recherche simple sur le RSA couple et permet ensuite de comparer plusieurs variantes.",
+    description:
+      "Estimation indicative du RSA pour un couple sans enfant avec peu ou pas de revenus.",
+    summary:
+      "Cette page sert une recherche simple sur le RSA couple et permet ensuite de comparer plusieurs variantes.",
     audience: "Couple sans enfant",
     tags: ["rsa", "couple", "sans-enfant"],
     input: {
@@ -205,7 +353,8 @@ export const rsaPilotScenarios = [
       },
       {
         question: "Un petit revenu annule-t-il le RSA ?",
-        answer: "Pas toujours. Il peut réduire le montant sans faire disparaître totalement l'aide.",
+        answer:
+          "Pas toujours. Il peut réduire le montant sans faire disparaître totalement l'aide.",
       },
     ],
   },
@@ -243,7 +392,8 @@ export const rsaPilotScenarios = [
     slug: "rsa-hebergement-gratuit",
     title: "RSA avec hébergement gratuit (2026)",
     description: "Estimation indicative du RSA pour une personne hébergée gratuitement.",
-    summary: "Cette page couvre un cas souvent mal compris, avec un impact possible du logement sur le montant final.",
+    summary:
+      "Cette page couvre un cas souvent mal compris, avec un impact possible du logement sur le montant final.",
     audience: "Personne hébergée gratuitement",
     tags: ["rsa", "hebergement", "logement"],
     input: {
@@ -272,8 +422,10 @@ export const rsaPilotScenarios = [
   {
     slug: "rsa-interim",
     title: "RSA intérim (2026)",
-    description: "Estimation indicative du RSA pour une personne en intérim avec des revenus irréguliers.",
-    summary: "Cette page répond à une situation de revenus instables très fréquente dans les recherches RSA.",
+    description:
+      "Estimation indicative du RSA pour une personne en intérim avec des revenus irréguliers.",
+    summary:
+      "Cette page répond à une situation de revenus instables très fréquente dans les recherches RSA.",
     audience: "Personne en intérim",
     tags: ["rsa", "interim", "activite"],
     input: {
@@ -302,8 +454,10 @@ export const rsaPilotScenarios = [
   {
     slug: "rsa-jeune-moins-de-25-ans",
     title: "RSA jeune de moins de 25 ans (2026)",
-    description: "Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
-    summary: "Cette page couvre un cas sensible où les conditions doivent être vérifiées avec attention.",
+    description:
+      "Repère indicatif sur le RSA pour un jeune de moins de 25 ans avec faibles ressources.",
+    summary:
+      "Cette page couvre un cas sensible où les conditions doivent être vérifiées avec attention.",
     audience: "Jeune de moins de 25 ans",
     tags: ["rsa", "jeune", "conditions"],
     input: {
@@ -321,7 +475,8 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Peut-on avoir le RSA avant 25 ans ?",
-        answer: "Le cas existe mais dépend de conditions spécifiques à vérifier avec les références officielles.",
+        answer:
+          "Le cas existe mais dépend de conditions spécifiques à vérifier avec les références officielles.",
       },
       {
         question: "Cette page suffit-elle pour savoir si j'y ai droit ?",
@@ -333,7 +488,8 @@ export const rsaPilotScenarios = [
     slug: "rsa-logement-social",
     title: "RSA logement social (2026)",
     description: "Estimation indicative du RSA pour un foyer en logement social.",
-    summary: "Cette page relie situation de logement et estimation RSA, avec un besoin fréquent de comparaison avec l'APL.",
+    summary:
+      "Cette page relie situation de logement et estimation RSA, avec un besoin fréquent de comparaison avec l'APL.",
     audience: "Foyer en logement social",
     tags: ["rsa", "logement", "social"],
     input: {
@@ -351,7 +507,8 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Le logement social change-t-il le RSA ?",
-        answer: "Le logement peut influencer le montant final selon les aides déjà perçues et la situation déclarée.",
+        answer:
+          "Le logement peut influencer le montant final selon les aides déjà perçues et la situation déclarée.",
       },
       {
         question: "Faut-il tester l'APL en plus ?",
@@ -363,7 +520,8 @@ export const rsaPilotScenarios = [
     slug: "rsa-personne-seule-montant",
     title: "RSA personne seule : montant (2026)",
     description: "Ordre de grandeur du RSA 2026 pour une personne seule avec ressources faibles.",
-    summary: "Cette page traite une recherche centrale sur le RSA et aide à comparer plusieurs cas proches.",
+    summary:
+      "Cette page traite une recherche centrale sur le RSA et aide à comparer plusieurs cas proches.",
     audience: "Personne seule",
     tags: ["rsa", "personne-seule", "montant"],
     input: {
@@ -381,7 +539,8 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Combien touche une personne seule au RSA ?",
-        answer: "Le montant dépend surtout des ressources, du logement et de la situation déclarée.",
+        answer:
+          "Le montant dépend surtout des ressources, du logement et de la situation déclarée.",
       },
       {
         question: "Le RSA peut-il tomber à zéro ?",
@@ -392,8 +551,10 @@ export const rsaPilotScenarios = [
   {
     slug: "rsa-sans-logement",
     title: "RSA sans logement stable (2026)",
-    description: "Estimation indicative du RSA pour une personne sans logement stable ou en situation très précaire.",
-    summary: "Cette page couvre un cas sensible qui demande un cadre prudent et un renvoi clair vers les sources officielles.",
+    description:
+      "Estimation indicative du RSA pour une personne sans logement stable ou en situation très précaire.",
+    summary:
+      "Cette page couvre un cas sensible qui demande un cadre prudent et un renvoi clair vers les sources officielles.",
     audience: "Personne sans logement stable",
     tags: ["rsa", "sans-logement", "precarite"],
     input: {
@@ -411,11 +572,13 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Peut-on toucher le RSA sans logement stable ?",
-        answer: "La situation doit être vérifiée avec attention. Cette page donne seulement un repère indicatif.",
+        answer:
+          "La situation doit être vérifiée avec attention. Cette page donne seulement un repère indicatif.",
       },
       {
         question: "Pourquoi faut-il vérifier avec la CAF ?",
-        answer: "Parce que ce type de situation peut impliquer des règles spécifiques ou des ajustements de dossier.",
+        answer:
+          "Parce que ce type de situation peut impliquer des règles spécifiques ou des ajustements de dossier.",
       },
     ],
   },
@@ -423,7 +586,8 @@ export const rsaPilotScenarios = [
     slug: "rsa-travail-a-temps-partiel",
     title: "RSA travail à temps partiel (2026)",
     description: "Estimation indicative du RSA pour une personne qui travaille à temps partiel.",
-    summary: "Cette page couvre une recherche utile sur le complément RSA en cas de faibles revenus d'activité.",
+    summary:
+      "Cette page couvre une recherche utile sur le complément RSA en cas de faibles revenus d'activité.",
     audience: "Personne à temps partiel",
     tags: ["rsa", "temps-partiel", "activite"],
     input: {
@@ -452,8 +616,10 @@ export const rsaPilotScenarios = [
   {
     slug: "rsa-personne-seule-logement-social",
     title: "RSA personne seule en logement social (2026)",
-    description: "Estimation indicative du RSA pour une personne seule en logement social avec faibles ressources.",
-    summary: "Cette page traite le cas d'une personne seule en logement social, avec un cadre clair et concret.",
+    description:
+      "Estimation indicative du RSA pour une personne seule en logement social avec faibles ressources.",
+    summary:
+      "Cette page traite le cas d'une personne seule en logement social, avec un cadre clair et concret.",
     audience: "Personne seule en logement social",
     tags: ["rsa", "personne-seule", "logement-social"],
     input: {
@@ -471,11 +637,13 @@ export const rsaPilotScenarios = [
     faq: [
       {
         question: "Le logement social change-t-il le RSA d'une personne seule ?",
-        answer: "Le logement peut influencer l'estimation, surtout selon les aides logement deja percues et la situation declaree.",
+        answer:
+          "Le logement peut influencer l'estimation, surtout selon les aides logement deja percues et la situation declaree.",
       },
       {
         question: "Faut-il verifier aussi l'APL ?",
-        answer: "Oui, car RSA et aide au logement peuvent se lire ensemble pour comprendre votre budget reel.",
+        answer:
+          "Oui, car RSA et aide au logement peuvent se lire ensemble pour comprendre votre budget reel.",
       },
     ],
   },
