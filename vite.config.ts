@@ -231,6 +231,10 @@ function collectStaticPageInputs() {
       __dirname,
       "src/pages/actualites/prime-activite-nouvelles-regles-2026.html",
     ),
+    "actualites-prime-activite-2000-euros": resolve(
+      __dirname,
+      "src/pages/actualites/prime-activite-2000-euros-net-droit.html",
+    ),
   };
 }
 
