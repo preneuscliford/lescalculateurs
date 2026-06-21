@@ -143,8 +143,8 @@
         font-size: 13px;
       "
     >
-      <strong>⚠️ Estimation indicative.</strong>
-      <span class="hidden sm:inline">Montant définitif sur</span>
+      <strong class="text-gray-900">⚠️ Estimation indicative.</strong>
+      <span class="hidden sm:inline text-gray-900">Montant définitif sur</span>
       <a
         href="https://www.caf.fr"
         target="_blank"
@@ -685,7 +685,7 @@
           var type = detectType();
           document
             .querySelectorAll(
-              '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span',
+              '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result',
             )
             .forEach(function (el) {
               if (el.textContent.match(/\d{3,6}\s*€/)) processElement(el, type);

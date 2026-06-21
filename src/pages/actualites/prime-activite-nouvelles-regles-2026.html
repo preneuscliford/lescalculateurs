@@ -691,7 +691,7 @@
           var type = detectType();
           document
             .querySelectorAll(
-              '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result, strong, span',
+              '.result, .montant, [class*="result"], [class*="montant"], output, .calculator-result, #calculator-result',
             )
             .forEach(function (el) {
               if (el.textContent.match(/\d{3,6}\s*€/)) {
