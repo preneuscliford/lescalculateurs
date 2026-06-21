@@ -201,14 +201,15 @@ export const rsaPilotScenarios = [
     slug: "rsa-2-enfants",
     title: "RSA avec 2 enfants : estimation 2026",
     description:
-      "Calculez votre RSA 2026 pour un foyer avec 2 enfants à charge. Cas concret couple avec enfants.",
-    summary: "Cette page répond aux recherches sur le RSA familial avec 2 enfants.",
-    audience: "Couple avec 2 enfants et revenus modestes",
-    tags: ["rsa", "2-enfants", "couple", "famille"],
+      "Calculez votre RSA 2026 pour un foyer avec 2 enfants à charge et un petit salaire. Cas concret couple avec enfants.",
+    summary:
+      "Cette page répond aux recherches sur le RSA familial avec 2 enfants et un revenu d'activité.",
+    audience: "Couple avec 2 enfants et un petit salaire",
+    tags: ["rsa", "2-enfants", "couple", "famille", "petit-salaire"],
     input: {
       situation: "couple",
       enfants: 2,
-      revenus: 0,
+      revenus: 900,
       logement: "loue",
       activite: "inactif",
     },
@@ -233,15 +234,15 @@ export const rsaPilotScenarios = [
     slug: "rsa-3-enfants",
     title: "RSA avec 3 enfants : simulation 2026",
     description:
-      "Estimez votre RSA 2026 pour une famille avec 3 enfants. Cas concret couple sans revenu.",
+      "Estimez votre RSA 2026 pour une famille avec 3 enfants et un revenu modeste. Cas concret couple avec enfants.",
     summary:
-      "Cette page répond aux recherches sur le RSA pour les familles nombreuses avec 3 enfants.",
-    audience: "Couple avec 3 enfants et revenus modestes",
-    tags: ["rsa", "3-enfants", "couple", "famille-nombreuse"],
+      "Cette page répond aux recherches sur le RSA pour les familles nombreuses avec 3 enfants et un salaire.",
+    audience: "Couple avec 3 enfants et un petit salaire",
+    tags: ["rsa", "3-enfants", "couple", "famille-nombreuse", "petit-salaire"],
     input: {
       situation: "couple",
       enfants: 3,
-      revenus: 0,
+      revenus: 1000,
       logement: "loue",
       activite: "inactif",
     },
