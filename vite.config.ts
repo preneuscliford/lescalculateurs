@@ -56,6 +56,74 @@ function collectAplPilotInputs() {
   return inputs;
 }
 
+function collectContentPageInputs() {
+  const inputs: Record<string, string> = {};
+  const contentPagesDir = resolve(__dirname, "src/pages");
+
+  // Actualites
+  const actualitesDir = path.join(contentPagesDir, "actualites");
+  if (fs.existsSync(actualitesDir)) {
+    const entries = fs.readdirSync(actualitesDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        const indexPath = path.join(actualitesDir, entry.name, "index.html");
+        if (fs.existsSync(indexPath)) {
+          inputs[`pages/actualites/${entry.name}`] = indexPath;
+        }
+      } else if (entry.name.endsWith(".html") && entry.name !== "index.html") {
+        const slug = entry.name.replace(/\.html$/, "");
+        inputs[`pages/actualites/${slug}`] = path.join(actualitesDir, entry.name);
+      }
+    }
+  }
+  // Actualites listing
+  const actualitesListingIndex = path.join(actualitesDir, "index.html");
+  if (fs.existsSync(actualitesListingIndex)) {
+    inputs["pages/actualites"] = actualitesListingIndex;
+  }
+
+  // Guides
+  const guidesDir = path.join(contentPagesDir, "guides");
+  if (fs.existsSync(guidesDir)) {
+    const entries = fs.readdirSync(guidesDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        const indexPath = path.join(guidesDir, entry.name, "index.html");
+        if (fs.existsSync(indexPath)) {
+          inputs[`pages/guides/${entry.name}`] = indexPath;
+        }
+      } else if (entry.name.endsWith(".html") && entry.name !== "index.html") {
+        const slug = entry.name.replace(/\.html$/, "");
+        inputs[`pages/guides/${slug}`] = path.join(guidesDir, entry.name);
+      }
+    }
+  }
+  // Guides listing
+  const guidesListingIndex = path.join(guidesDir, "index.html");
+  if (fs.existsSync(guidesListingIndex)) {
+    inputs["pages/guides"] = guidesListingIndex;
+  }
+
+  // Categories
+  const categoriesDir = path.join(contentPagesDir, "categorie");
+  if (fs.existsSync(categoriesDir)) {
+    const entries = fs.readdirSync(categoriesDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        const indexPath = path.join(categoriesDir, entry.name, "index.html");
+        if (fs.existsSync(indexPath)) {
+          inputs[`pages/categorie/${entry.name}`] = indexPath;
+        }
+      } else if (entry.name.endsWith(".html") && entry.name !== "index.html") {
+        const slug = entry.name.replace(/\.html$/, "");
+        inputs[`pages/categorie/${slug}`] = path.join(categoriesDir, entry.name);
+      }
+    }
+  }
+
+  return inputs;
+}
+
 function collectStaticPageInputs() {
   return {
     main: resolve(__dirname, "src/index.html"),
@@ -158,6 +226,11 @@ function collectStaticPageInputs() {
     aspa: resolve(__dirname, "src/pages/aspa.html"),
     "carte-famille-nombreuse": resolve(__dirname, "src/pages/carte-famille-nombreuse.html"),
     "garantie-visale": resolve(__dirname, "src/pages/garantie-visale.html"),
+    // Actualités
+    "actualites-prime-activite-2026": resolve(
+      __dirname,
+      "src/pages/actualites/prime-activite-nouvelles-regles-2026.html",
+    ),
   };
 }
 
@@ -612,6 +685,9 @@ export default defineConfig(() => {
 
           // Alias SEO historiques pour eviter les 404 sur des URLs encore explorees
           ...legacySeoAliasInputs,
+
+          // Pages de contenu editoriaux (actualites, guides, categories)
+          ...collectContentPageInputs(),
         },
         output: {
           manualChunks: {
