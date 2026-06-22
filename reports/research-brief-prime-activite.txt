@@ -1,0 +1,68 @@
+======================================================================
+  RECHERCHE : PRIME D'ACTIVITÉ
+======================================================================
+
+Thème : Prime d'activité
+Mots-clés : Prime d'activité, complément de revenus, CAF, travailleurs modestes
+
+📄 Aucun contenu existant pour ce thème.
+
+💡 Angles de contenu possibles :
+  1. Prime d'activité 2026 : nouveaux montants
+  2. Comment calculer sa prime d'activité
+  3. Prime d'activité et temps partiel
+  4. Prime d'activité et auto-entrepreneur
+  5. Différence RSA et Prime d'activité
+  6. Prime d'activité majorée : qui y a droit ?
+  7. Prime d'activité et alternance
+  8. Simulation prime d'activité pour un couple
+
+🔍 Requêtes Google / Actualités suggérées :
+  → "Prime d'activité 2026 2027 montants site:caf.fr"
+  → "prime activité revalorisation after:2026-01-01"
+  → "prime activité calcul site:service-public.fr"
+  → "bonification prime activité 2026"
+
+📊 Barèmes disponibles dans le projet :
+  - src/data/social-baremes.ts → prime-activite.montantForfaitaire
+  - src/data/social-baremes.ts → prime-activite.bonification
+  - src/data/social-baremes.ts → prime-activite.forfaitLogement
+  → Ces données peuvent être utilisées pour générer des valeurs chiffrées dans les articles.
+
+🏛️ Sources officielles à vérifier :
+  - service-public.fr
+  - caf.fr
+  - legifrance.gouv.fr
+
+----------------------------------------------------------------------
+  TEMPLATE FRONTMATTER (à copier dans content/)
+----------------------------------------------------------------------
+---
+title: "Prime d'activité 2026 : à compléter"
+slug: "prime-activite-2026-actualite"
+category: "Prime d'activité"
+type: "actualite"
+publishedAt: "2026-06-15"
+updatedAt: "2026-06-15"
+description: "Découvrez les dernières actualités sur prime d'activité en 2026. Montants, conditions et changements."
+tags:
+  - prime-d'activité
+  - complément-de-revenus
+  - caf
+  - travailleurs-modestes
+calculateurs:
+  - prime-activite
+guides:
+  - guide-prime-activite-complet
+actualites:
+  - 
+---
+
+# Prime d'activité 2026 : [Titre à compléter]
+
+Contenu de l'article à rédiger...
+
+## Sources
+
+- [Service Public](https://www.service-public.fr)
+- [CAF](https://www.caf.fr)

@@ -197,4 +197,235 @@ export const arePilotScenarios = [
       },
     ],
   },
+  {
+    slug: "are-salaire-1500",
+    intent: "are salaire 1500",
+    title: "ARE avec salaire de 1500 EUR : estimation 2026",
+    description: "Estimation ARE 2026 pour un salaire de reference de 1500 EUR.",
+    summary:
+      "Cette page repond a la recherche d'une estimation ARE pour un salaire modeste proche du SMIC.",
+    audience: "Demandeur d'emploi avec salaire de 1500 EUR",
+    tags: ["are", "salaire", "1500", "2026"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 18,
+      salaireReferent: 1500,
+      personnesCharge: 0,
+      agePersonne: 35,
+    },
+    checklist: [
+      "Verifier le salaire de reference utilise.",
+      "Comparer avec un salaire plus eleve.",
+      "Verifier ensuite les regles officielles France Travail.",
+    ],
+    faq: [
+      {
+        question: "Quelle ARE avec un salaire de 1500 EUR ?",
+        answer:
+          "L'estimation indicative donne un ordre de grandeur. Le montant exact depend de l'anciennete et du salaire de reference retenu.",
+      },
+      {
+        question: "Ce montant est-il garanti ?",
+        answer:
+          "Non, cette page donne une estimation indicative. Le montant final depend de l'instruction par France Travail.",
+      },
+    ],
+  },
+  {
+    slug: "are-salaire-1800",
+    intent: "are salaire 1800",
+    title: "ARE avec salaire de 1800 EUR : estimation 2026",
+    description: "Estimation ARE 2026 pour un salaire de reference de 1800 EUR.",
+    summary:
+      "Cette page cible une recherche frequente sur le montant ARE pour un salaire intermediaire.",
+    audience: "Demandeur d'emploi avec salaire de 1800 EUR",
+    tags: ["are", "salaire", "1800", "2026"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 18,
+      salaireReferent: 1800,
+      personnesCharge: 0,
+      agePersonne: 35,
+    },
+    checklist: [
+      "Verifier le salaire de reference.",
+      "Comparer avec un salaire de 1500 EUR et 2000 EUR.",
+      "Croiser avec la page montant ARE.",
+    ],
+    faq: [
+      {
+        question: "Quelle ARE avec un salaire de 1800 EUR en 2026 ?",
+        answer: "L'estimation indicative donne un ordre de grandeur base sur un profil type.",
+      },
+      {
+        question: "L'anciennete change-t-elle le resultat ?",
+        answer: "Oui, la duree d'affiliation influence le calcul final de l'ARE.",
+      },
+    ],
+  },
+  {
+    slug: "are-salaire-2000",
+    intent: "are salaire 2000",
+    title: "ARE avec salaire de 2000 EUR : estimation 2026",
+    description: "Estimation ARE 2026 pour un salaire de reference de 2000 EUR.",
+    summary: "Cette page repond a une recherche courante sur l'ARE pour un salaire de 2000 EUR.",
+    audience: "Demandeur d'emploi avec salaire de 2000 EUR",
+    tags: ["are", "salaire", "2000", "2026"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 18,
+      salaireReferent: 2000,
+      personnesCharge: 0,
+      agePersonne: 35,
+    },
+    checklist: [
+      "Verifier le salaire de reference retenu.",
+      "Comparer avec un salaire plus haut et plus bas.",
+      "Verifier sur le simulateur officiel.",
+    ],
+    faq: [
+      {
+        question: "Quel montant ARE pour 2000 EUR de salaire ?",
+        answer: "Cette page donne un ordre de grandeur indicatif avant un calcul detaille.",
+      },
+      {
+        question: "Le montant est-il definitif ?",
+        answer: "Non, le montant final depend toujours de l'instruction par l'organisme officiel.",
+      },
+    ],
+  },
+  {
+    slug: "are-salaire-2500",
+    intent: "are salaire 2500",
+    title: "ARE avec salaire de 2500 EUR : estimation 2026",
+    description: "Estimation ARE 2026 pour un salaire de reference de 2500 EUR.",
+    summary:
+      "Cette page cible les profils avec un salaire plus eleve cherchant une estimation ARE.",
+    audience: "Demandeur d'emploi avec salaire de 2500 EUR",
+    tags: ["are", "salaire", "2500", "2026"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 24,
+      salaireReferent: 2500,
+      personnesCharge: 0,
+      agePersonne: 35,
+    },
+    checklist: [
+      "Verifier le salaire de reference.",
+      "Comparer avec un salaire plus bas.",
+      "Croiser avec France Travail.",
+    ],
+    faq: [
+      {
+        question: "Quelle ARE pour un salaire de 2500 EUR ?",
+        answer:
+          "L'estimation donne un ordre de grandeur. Le plafond de l'ARE peut limiter le montant final.",
+      },
+      {
+        question: "Le plafond ARE s'applique-t-il ?",
+        answer:
+          "Oui, l'ARE est plafonnee. Au-dela d'un certain salaire, le montant journalier n'augmente plus.",
+      },
+    ],
+  },
+  {
+    slug: "are-couple",
+    intent: "are couple",
+    title: "ARE pour un couple : estimation 2026",
+    description: "Estimation ARE 2026 pour un couple avec un seul demandeur d'emploi.",
+    summary: "Cette page cible la situation d'un couple ou un seul conjoint est au chomage.",
+    audience: "Couple avec un demandeur d'emploi",
+    tags: ["are", "couple", "2026"],
+    input: {
+      situation: "couple",
+      ancienneteEmploi: 18,
+      salaireReferent: 2100,
+      personnesCharge: 0,
+      agePersonne: 38,
+    },
+    checklist: [
+      "Verifier la situation familiale declaree.",
+      "Comparer avec le cas personne seule.",
+      "Verifier les aides complementaires possibles.",
+    ],
+    faq: [
+      {
+        question: "L'ARE est-elle differente pour un couple ?",
+        answer:
+          "Le calcul de base est le meme, mais la situation familiale peut influencer certaines majorations ou la duree.",
+      },
+      {
+        question: "Les revenus du conjoint sont-ils pris en compte ?",
+        answer:
+          "Non, l'ARE est calculee sur le salaire de reference individuel, pas sur les revenus du foyer.",
+      },
+    ],
+  },
+  {
+    slug: "are-avec-enfant",
+    intent: "are avec enfant",
+    title: "ARE avec enfant a charge : estimation 2026",
+    description: "Estimation ARE 2026 pour une personne avec un enfant a charge.",
+    summary:
+      "Cette page cible les demandeurs d'emploi avec enfant a charge cherchant a estimer leur ARE.",
+    audience: "Demandeur d'emploi avec enfant a charge",
+    tags: ["are", "enfant", "2026"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 18,
+      salaireReferent: 2000,
+      personnesCharge: 1,
+      agePersonne: 38,
+    },
+    checklist: [
+      "Verifier le nombre d'enfants a charge.",
+      "Comparer avec le cas sans enfant.",
+      "Verifier les aides familiales complementaires.",
+    ],
+    faq: [
+      {
+        question: "Avoir un enfant change-t-il le montant de l'ARE ?",
+        answer:
+          "L'ARE de base est la meme, mais la presence d'enfants peut donner droit a des majorations ou a un allongement de la duree.",
+      },
+      {
+        question: "Faut-il declarer les enfants a France Travail ?",
+        answer:
+          "Oui, la situation familiale doit etre declaree car elle peut influencer certains droits.",
+      },
+    ],
+  },
+  {
+    slug: "are-interim",
+    intent: "are interim",
+    title: "ARE apres interim : estimation 2026",
+    description: "Estimation ARE 2026 pour une personne en fin de mission d'interim.",
+    summary: "Cette page repond a la recherche d'estimation ARE specifique aux interimaires.",
+    audience: "Interimaire en fin de mission",
+    tags: ["are", "interim", "2026"],
+    input: {
+      situation: "seul",
+      ancienneteEmploi: 10,
+      salaireReferent: 1800,
+      personnesCharge: 0,
+      agePersonne: 38,
+    },
+    checklist: [
+      "Verifier les periodes travaillees en interim.",
+      "Comparer avec un cas CDD.",
+      "Verifier les regles specifiques interim.",
+    ],
+    faq: [
+      {
+        question: "L'ARE apres interim est-elle differente ?",
+        answer:
+          "Le calcul de base est le meme, mais les specificites des contrats interim peuvent influencer l'anciennete retenue.",
+      },
+      {
+        question: "Comment sont comptees les missions d'interim ?",
+        answer:
+          "Les periodes travaillees sont additionnees pour determiner l'ouverture des droits et l'anciennete.",
+      },
+    ],
+  },
 ];

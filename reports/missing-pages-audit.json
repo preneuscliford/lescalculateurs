@@ -1,0 +1,489 @@
+{
+  "apl": [
+    {
+      "slug": "apl-loyer-350-personne-seule",
+      "intent": "apl loyer 350 personne seule",
+      "title": "APL avec loyer de 350 € pour une personne seule : estimation 2026",
+      "description": "Estimation APL 2026 pour personne seule avec un loyer de 350 €.",
+      "input": {
+        "situation": "seul",
+        "enfants": 0,
+        "revenus_mensuels": 950,
+        "loyer_mensuel": 350,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-350",
+        "celibataire",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-350-couple-sans-enfant",
+      "intent": "apl loyer 350 couple sans enfant",
+      "title": "APL avec loyer de 350 € pour un couple sans enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour couple sans enfant avec un loyer de 350 €.",
+      "input": {
+        "situation": "couple",
+        "enfants": 0,
+        "revenus_mensuels": 950,
+        "loyer_mensuel": 350,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-350",
+        "couple",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-350-parent-isole-un-enfant",
+      "intent": "apl loyer 350 parent isole un enfant",
+      "title": "APL avec loyer de 350 € pour un parent isolé avec 1 enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour parent isole un enfant avec un loyer de 350 €.",
+      "input": {
+        "situation": "parent_isole",
+        "enfants": 1,
+        "revenus_mensuels": 950,
+        "loyer_mensuel": 350,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-350",
+        "parent-isole",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-550-personne-seule",
+      "intent": "apl loyer 550 personne seule",
+      "title": "APL avec loyer de 550 € pour une personne seule : estimation 2026",
+      "description": "Estimation APL 2026 pour personne seule avec un loyer de 550 €.",
+      "input": {
+        "situation": "seul",
+        "enfants": 0,
+        "revenus_mensuels": 950,
+        "loyer_mensuel": 550,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-550",
+        "celibataire",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-550-couple-sans-enfant",
+      "intent": "apl loyer 550 couple sans enfant",
+      "title": "APL avec loyer de 550 € pour un couple sans enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour couple sans enfant avec un loyer de 550 €.",
+      "input": {
+        "situation": "couple",
+        "enfants": 0,
+        "revenus_mensuels": 950,
+        "loyer_mensuel": 550,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-550",
+        "couple",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-550-parent-isole-un-enfant",
+      "intent": "apl loyer 550 parent isole un enfant",
+      "title": "APL avec loyer de 550 € pour un parent isolé avec 1 enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour parent isole un enfant avec un loyer de 550 €.",
+      "input": {
+        "situation": "parent_isole",
+        "enfants": 1,
+        "revenus_mensuels": 950,
+        "loyer_mensuel": 550,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-550",
+        "parent-isole",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-850-personne-seule",
+      "intent": "apl loyer 850 personne seule",
+      "title": "APL avec loyer de 850 € pour une personne seule : estimation 2026",
+      "description": "Estimation APL 2026 pour personne seule avec un loyer de 850 €.",
+      "input": {
+        "situation": "seul",
+        "enfants": 0,
+        "revenus_mensuels": 1200,
+        "loyer_mensuel": 850,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-850",
+        "celibataire",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-850-couple-sans-enfant",
+      "intent": "apl loyer 850 couple sans enfant",
+      "title": "APL avec loyer de 850 € pour un couple sans enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour couple sans enfant avec un loyer de 850 €.",
+      "input": {
+        "situation": "couple",
+        "enfants": 0,
+        "revenus_mensuels": 1200,
+        "loyer_mensuel": 850,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-850",
+        "couple",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-850-parent-isole-un-enfant",
+      "intent": "apl loyer 850 parent isole un enfant",
+      "title": "APL avec loyer de 850 € pour un parent isolé avec 1 enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour parent isole un enfant avec un loyer de 850 €.",
+      "input": {
+        "situation": "parent_isole",
+        "enfants": 1,
+        "revenus_mensuels": 1200,
+        "loyer_mensuel": 850,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-850",
+        "parent-isole",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-900-personne-seule",
+      "intent": "apl loyer 900 personne seule",
+      "title": "APL avec loyer de 900 € pour une personne seule : estimation 2026",
+      "description": "Estimation APL 2026 pour personne seule avec un loyer de 900 €.",
+      "input": {
+        "situation": "seul",
+        "enfants": 0,
+        "revenus_mensuels": 1350,
+        "loyer_mensuel": 900,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-900",
+        "celibataire",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-900-couple-sans-enfant",
+      "intent": "apl loyer 900 couple sans enfant",
+      "title": "APL avec loyer de 900 € pour un couple sans enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour couple sans enfant avec un loyer de 900 €.",
+      "input": {
+        "situation": "couple",
+        "enfants": 0,
+        "revenus_mensuels": 1350,
+        "loyer_mensuel": 900,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-900",
+        "couple",
+        "province"
+      ]
+    },
+    {
+      "slug": "apl-loyer-900-parent-isole-un-enfant",
+      "intent": "apl loyer 900 parent isole un enfant",
+      "title": "APL avec loyer de 900 € pour un parent isolé avec 1 enfant : estimation 2026",
+      "description": "Estimation APL 2026 pour parent isole un enfant avec un loyer de 900 €.",
+      "input": {
+        "situation": "parent_isole",
+        "enfants": 1,
+        "revenus_mensuels": 1350,
+        "loyer_mensuel": 900,
+        "region": "province",
+        "type_logement": "location",
+        "economie": 0
+      },
+      "tags": [
+        "loyer-900",
+        "parent-isole",
+        "province"
+      ]
+    }
+  ],
+  "are": [
+    {
+      "slug": "are-salaire-1500",
+      "intent": "are salaire 1500",
+      "title": "ARE avec salaire de 1500 € : estimation 2026",
+      "description": "Estimation ARE 2026 pour un salaire de référence de 1500 €.",
+      "input": {
+        "situation": "seul",
+        "ancienneteEmploi": 18,
+        "salaireReferent": 1500,
+        "personnesCharge": 0,
+        "agePersonne": 35
+      }
+    },
+    {
+      "slug": "are-salaire-1800",
+      "intent": "are salaire 1800",
+      "title": "ARE avec salaire de 1800 € : estimation 2026",
+      "description": "Estimation ARE 2026 pour un salaire de référence de 1800 €.",
+      "input": {
+        "situation": "seul",
+        "ancienneteEmploi": 18,
+        "salaireReferent": 1800,
+        "personnesCharge": 0,
+        "agePersonne": 35
+      }
+    },
+    {
+      "slug": "are-salaire-2000",
+      "intent": "are salaire 2000",
+      "title": "ARE avec salaire de 2000 € : estimation 2026",
+      "description": "Estimation ARE 2026 pour un salaire de référence de 2000 €.",
+      "input": {
+        "situation": "seul",
+        "ancienneteEmploi": 18,
+        "salaireReferent": 2000,
+        "personnesCharge": 0,
+        "agePersonne": 35
+      }
+    },
+    {
+      "slug": "are-salaire-2500",
+      "intent": "are salaire 2500",
+      "title": "ARE avec salaire de 2500 € : estimation 2026",
+      "description": "Estimation ARE 2026 pour un salaire de référence de 2500 €.",
+      "input": {
+        "situation": "seul",
+        "ancienneteEmploi": 24,
+        "salaireReferent": 2500,
+        "personnesCharge": 0,
+        "agePersonne": 35
+      }
+    },
+    {
+      "slug": "are-couple",
+      "intent": "are couple",
+      "title": "ARE pour un couple : estimation 2026",
+      "description": "Estimation ARE 2026 pour couple.",
+      "input": {
+        "situation": "couple",
+        "ancienneteEmploi": 18,
+        "salaireReferent": 2100,
+        "personnesCharge": 0,
+        "agePersonne": 38
+      }
+    },
+    {
+      "slug": "are-avec-enfant",
+      "intent": "are avec enfant",
+      "title": "ARE avec enfant à charge : estimation 2026",
+      "description": "Estimation ARE 2026 pour avec enfant.",
+      "input": {
+        "situation": "seul",
+        "ancienneteEmploi": 18,
+        "salaireReferent": 2000,
+        "personnesCharge": 1,
+        "agePersonne": 38
+      }
+    },
+    {
+      "slug": "are-interim",
+      "intent": "are interim",
+      "title": "ARE après intérim : estimation 2026",
+      "description": "Estimation ARE 2026 pour interim.",
+      "input": {
+        "situation": "seul",
+        "ancienneteEmploi": 10,
+        "salaireReferent": 1800,
+        "personnesCharge": 0,
+        "agePersonne": 38
+      }
+    }
+  ],
+  "salaire": [
+    {
+      "slug": "salaire-brut-net-1500",
+      "montant": 1500,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-1500-cadre",
+      "montant": 1500,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-1500-temps-partiel-80",
+      "montant": 1500,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-1800",
+      "montant": 1800,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-1800-cadre",
+      "montant": 1800,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-1800-temps-partiel-80",
+      "montant": 1800,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-2000",
+      "montant": 2000,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-2000-cadre",
+      "montant": 2000,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-2000-temps-partiel-80",
+      "montant": 2000,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-2200",
+      "montant": 2200,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-2200-cadre",
+      "montant": 2200,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-2200-temps-partiel-80",
+      "montant": 2200,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-2500",
+      "montant": 2500,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-2500-cadre",
+      "montant": 2500,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-2500-temps-partiel-80",
+      "montant": 2500,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-2800",
+      "montant": 2800,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-2800-cadre",
+      "montant": 2800,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-2800-temps-partiel-80",
+      "montant": 2800,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-3000",
+      "montant": 3000,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-3000-cadre",
+      "montant": 3000,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-3000-temps-partiel-80",
+      "montant": 3000,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-3500",
+      "montant": 3500,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-3500-cadre",
+      "montant": 3500,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-3500-temps-partiel-80",
+      "montant": 3500,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-4000",
+      "montant": 4000,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-4000-cadre",
+      "montant": 4000,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-4000-temps-partiel-80",
+      "montant": 4000,
+      "variante": "temps partiel 80%"
+    },
+    {
+      "slug": "salaire-brut-net-5000",
+      "montant": 5000,
+      "variante": "standard"
+    },
+    {
+      "slug": "salaire-brut-net-5000-cadre",
+      "montant": 5000,
+      "variante": "cadre"
+    },
+    {
+      "slug": "salaire-brut-net-5000-temps-partiel-80",
+      "montant": 5000,
+      "variante": "temps partiel 80%"
+    }
+  ]
+}

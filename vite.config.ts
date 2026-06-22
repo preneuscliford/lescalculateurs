@@ -13,6 +13,7 @@ import { primeAbsenceRevenuScenarios } from "./data/pseo/prime-absence-revenu-sc
 import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absence-revenu-scenarios.js";
 import { impotPilotScenarios } from "./data/pseo/impot-pilot-scenarios.js";
 import { notaireScenarios } from "./data/pseo/notaire-scenarios.js";
+import { salairePilotScenarios } from "./data/pseo/salaire-pilot-scenarios.js";
 
 const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
 const allRsaPilotScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
@@ -512,6 +513,29 @@ function collectNestedImpotInputs() {
   return inputs;
 }
 
+function collectSalairePilotInputs() {
+  const inputs: Record<string, string> = {};
+
+  for (const scenario of salairePilotScenarios) {
+    const slug = String(scenario.slug || "").trim();
+    if (!slug) continue;
+
+    const indexPath = resolve(__dirname, "src/pages/salaire", slug, "index.html");
+    const htmlPath = resolve(__dirname, "src/pages/salaire", `${slug}.html`);
+
+    if (fs.existsSync(indexPath)) {
+      inputs[`pages/salaire/${slug}`] = indexPath;
+      continue;
+    }
+
+    if (fs.existsSync(htmlPath)) {
+      inputs[`pages/salaire/${slug}`] = htmlPath;
+    }
+  }
+
+  return inputs;
+}
+
 function collectNestedPlusvalueInputs() {
   const plusvalueDir = resolve(__dirname, "src/pages/plusvalue");
   if (!fs.existsSync(plusvalueDir)) return {};
@@ -590,6 +614,7 @@ export default defineConfig(() => {
   const notairePilotInputs = collectNotairePilotInputs();
   const notaireComparisonInputs = collectNotaireComparisonInputs();
   const notaireDepartmentInputs = collectNotaireDepartmentInputs();
+  const salairePilotInputsResult = collectSalairePilotInputs();
   const aideInputs = collectAideInputs();
   const taxeFonciereInputs = collectTaxeFonciereInputs();
 
@@ -683,6 +708,9 @@ export default defineConfig(() => {
 
           // Pages aide presentes sous src/pages/aide/*.html
           ...aideInputs,
+
+          // Pages pSEO Salaire du pilote declarees explicitement pour la prod
+          ...salairePilotInputsResult,
 
           // Pages taxe fonciere presentes sous src/pages/taxe-fonciere/*.html
           ...taxeFonciereInputs,

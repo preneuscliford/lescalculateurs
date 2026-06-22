@@ -1,0 +1,140 @@
+{
+  "categories": {
+    "rsa": {
+      "name": "RSA",
+      "description": "Toute l'actualité et les guides sur le Revenu de Solidarité Active. Montants, conditions, calcul et simulateur.",
+      "calculateurs": [
+        {
+          "slug": "rsa",
+          "name": "Simulateur RSA",
+          "url": "/pages/rsa",
+          "description": "Estimez le montant de votre RSA en quelques clics"
+        },
+        {
+          "slug": "prime-activite",
+          "name": "Simulateur Prime d'activité",
+          "url": "/pages/prime-activite",
+          "description": "Calculez votre Prime d'activité"
+        },
+        {
+          "slug": "apl",
+          "name": "Simulateur APL",
+          "url": "/pages/apl",
+          "description": "Estimez vos aides au logement"
+        }
+      ]
+    },
+    "prime-activite": {
+      "name": "Prime d'activité",
+      "description": "Actualités et guides sur la Prime d'activité. Montants, conditions d'éligibilité et calcul.",
+      "calculateurs": [
+        {
+          "slug": "prime-activite",
+          "name": "Simulateur Prime d'activité",
+          "url": "/pages/prime-activite",
+          "description": "Calculez votre Prime d'activité"
+        },
+        {
+          "slug": "rsa",
+          "name": "Simulateur RSA",
+          "url": "/pages/rsa",
+          "description": "Estimez le montant de votre RSA"
+        },
+        {
+          "slug": "apl",
+          "name": "Simulateur APL",
+          "url": "/pages/apl",
+          "description": "Estimez vos aides au logement"
+        }
+      ]
+    },
+    "salaires": {
+      "name": "Salaires",
+      "description": "Actualités et guides sur les salaires. SMIC, brut/net, salaire après impôt et pouvoir d'achat.",
+      "calculateurs": [
+        {
+          "slug": "salaire",
+          "name": "Simulateur Salaire brut/net",
+          "url": "/pages/salaire",
+          "description": "Convertissez votre salaire brut en net"
+        },
+        {
+          "slug": "salaire-net-apres-impot",
+          "name": "Salaire net après impôt",
+          "url": "/pages/salaire-net-apres-impot",
+          "description": "Calculez votre salaire après impôt à la source"
+        }
+      ]
+    },
+    "impots": {
+      "name": "Impôts",
+      "description": "Actualités et guides sur les impôts. Impôt sur le revenu, taxe foncière, fiscalité.",
+      "calculateurs": [
+        {
+          "slug": "impot",
+          "name": "Simulateur Impôt",
+          "url": "/pages/impot",
+          "description": "Estimez votre impôt sur le revenu"
+        },
+        {
+          "slug": "taxe",
+          "name": "Simulateur Taxe foncière",
+          "url": "/pages/taxe",
+          "description": "Calculez le montant de votre taxe foncière"
+        }
+      ]
+    },
+    "logement": {
+      "name": "Logement",
+      "description": "Actualités et guides sur le logement. APL, aides au logement, prêt immobilier.",
+      "calculateurs": [
+        {
+          "slug": "apl",
+          "name": "Simulateur APL",
+          "url": "/pages/apl",
+          "description": "Estimez vos aides au logement"
+        },
+        {
+          "slug": "pret",
+          "name": "Simulateur Prêt immobilier",
+          "url": "/pages/pret",
+          "description": "Calculez votre capacité d'emprunt"
+        }
+      ]
+    },
+    "alternance": {
+      "name": "Alternance",
+      "description": "Actualités et guides sur l'alternance. Contrat d'apprentissage, rémunération et aides.",
+      "calculateurs": [
+        {
+          "slug": "salaire",
+          "name": "Simulateur Salaire brut/net",
+          "url": "/pages/salaire",
+          "description": "Convertissez votre salaire brut en net"
+        },
+        {
+          "slug": "travail",
+          "name": "Simulateur Temps de travail",
+          "url": "/pages/travail",
+          "description": "Calculez votre durée de travail"
+        }
+      ]
+    }
+  },
+  "calculateurSlugMap": {
+    "rsa": { "name": "Simulateur RSA", "url": "/pages/rsa" },
+    "prime-activite": { "name": "Simulateur Prime d'activité", "url": "/pages/prime-activite" },
+    "apl": { "name": "Simulateur APL", "url": "/pages/apl" },
+    "salaire": { "name": "Simulateur Salaire brut/net", "url": "/pages/salaire" },
+    "impot": { "name": "Simulateur Impôt", "url": "/pages/impot" },
+    "taxe": { "name": "Simulateur Taxe foncière", "url": "/pages/taxe" },
+    "pret": { "name": "Simulateur Prêt immobilier", "url": "/pages/pret" },
+    "travail": { "name": "Simulateur Temps de travail", "url": "/pages/travail" },
+    "are": { "name": "Simulateur ARE", "url": "/pages/are" },
+    "aah": { "name": "Simulateur AAH", "url": "/pages/aah" },
+    "asf": { "name": "Simulateur ASF", "url": "/pages/asf" },
+    "plusvalue": { "name": "Simulateur Plus-value", "url": "/pages/plusvalue" },
+    "notaire": { "name": "Simulateur Frais de notaire", "url": "/pages/notaire" },
+    "ik": { "name": "Simulateur IK", "url": "/pages/ik" }
+  }
+}
