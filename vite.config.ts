@@ -218,6 +218,19 @@ function collectStaticPageInputs() {
       "src/pages/salaire-brut-net-calcul-2026.html",
     ),
     "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
+    // Pages HUB VDF (classements comparatifs)
+    "top-25-revenu-median-france-2026": resolve(
+      __dirname,
+      "src/pages/top-25-revenu-median-france-2026.html",
+    ),
+    "inegalites-revenu-ville-france-2026": resolve(
+      __dirname,
+      "src/pages/inegalites-revenu-ville-france-2026.html",
+    ),
+    "top-40-villes-revenu-complet-2026": resolve(
+      __dirname,
+      "src/pages/top-40-villes-revenu-complet-2026.html",
+    ),
     // Money pages (simulateurs principaux)
     "pages/salaire-net-apres-impot": resolve(__dirname, "src/pages/salaire-net-apres-impot.html"),
     "pages/reste-a-vivre": resolve(__dirname, "src/pages/reste-a-vivre.html"),
