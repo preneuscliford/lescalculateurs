@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulation Chômage 2026 : calcul allocation ARE | LesCalculateurs</title>
+    <meta
+      name="description"
+      content="Simulation chômage 2026 gratuite. Calculez votre allocation chômage ARE selon les barèmes France Travail. Estimez votre indemnité mensuelle en 2 minutes."
+    />
+    <meta
+      name="keywords"
+      content="simulation chomage 2026, simulateur chomage 2026, calcul chomage 2026, allocation chomage 2026, montant chomage 2026, estimation chomage ARE"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/are/are-chomage-2026" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/are/are-chomage-2026" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Simulation Chômage 2026 | Calcul Gratuit ARE" />
+    <meta
+      property="og:description"
+      content="Simulation chômage 2026 : calculez votre allocation ARE en ligne. Résultat immédiat selon les barèmes France Travail."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Chômage 2026",
+        "description": "Simulation allocation chômage ARE 2026 selon les barèmes France Travail",
+        "url": "https://www.lescalculateurs.fr/pages/are/are-chomage-2026",
+        "applicationCategory": "FinanceApplication"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment faire une simulation chômage 2026 gratuite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Utilisez notre simulateur chômage 2026 : renseignez votre salaire brut mensuel moyen, votre ancienneté et votre âge. Le simulateur calcule instantanément votre allocation ARE mensuelle selon les barèmes officiels France Travail 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est le montant du chômage en 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le montant du chômage ARE en 2026 dépend de votre salaire journalier de référence (SJR). Le minimum est de 31,59 € brut/jour (~945 €/mois) et le maximum est de 91,82 € brut/jour (~2 755 €/mois). Utilisez notre simulateur pour votre estimation personnalisée."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La simulation chômage est-elle fiable ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Notre simulation chômage fournit une estimation indicative basée sur les barèmes officiels France Travail 2026. Pour le montant définitif, France Travail étudiera votre dossier complet lors de votre inscription comme demandeur d'emploi."
+            }
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../../tailwind.css" />
+    <script type="module" src="../scripts/are-script.ts"></script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <div
+      class="sticky-ymyl"
+      role="alert"
+      style="
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 13px;
+      "
+    >
+      <strong>⚠️ Estimation indicative.</strong> Montant définitif sur
+      <a
+        href="https://www.france-travail.fr"
+        target="_blank"
+        rel="noopener"
+        style="color: #856404; text-decoration: underline; font-weight: bold"
+        >France Travail</a
+      >
+    </div>
+
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <a href="/pages/are" class="text-orange-600 hover:text-orange-700 font-medium"
+          >← Retour au simulateur ARE</a
+        >
+        <div class="text-center mt-2">
+          <h1>Simulation Chômage 2026 : calculez votre allocation ARE</h1>
+          <p class="text-sm text-gray-600 mt-1">
+            Estimez votre indemnité chômage selon les barèmes France Travail en vigueur au 1er
+            janvier 2026.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+        <p class="text-sm text-gray-800 m-0">
+          Les calculs reposent sur les barèmes France Travail en vigueur. Ils constituent une
+          estimation indicative et non contractuelle.
+        </p>
+      </div>
+
+      <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
+          📌 Simulation chômage 2026 : résumé rapide
+        </h2>
+        <div class="space-y-2 text-gray-700 text-sm">
+          <p>🏛️ <strong>Source</strong> : France Travail, service-public.fr</p>
+          <p>
+            📐 <strong>Calcul</strong> : basé sur le salaire journalier de référence (SJR) × 57,43%
+          </p>
+          <p>📅 <strong>Barème</strong> : applicable au 1er janvier 2026</p>
+          <p>
+            💰 <strong>Minimum</strong> : 31,59 € brut/jour | <strong>Maximum</strong> : 91,82 €
+            brut/jour
+          </p>
+          <p>
+            ⚠️ <strong>Important</strong> : résultat indicatif, France Travail décide du montant
+            définitif
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-8">
+        <div
+          id="are-calculator"
+          class="bg-white p-8 rounded-lg shadow-lg border-2 border-green-400"
+        >
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">🧮 Calculez votre chômage ARE</h2>
+          <form id="are-form" class="space-y-6">
+            <div>
+              <label for="are-situation" class="block text-gray-700 font-semibold mb-2"
+                >Situation familiale *</label
+              >
+              <select
+                id="are-situation"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              >
+                <option value="">-- Sélectionnez --</option>
+                <option value="seul">Célibataire / Seul</option>
+                <option value="couple">En couple</option>
+                <option value="parent">Parent monoparental</option>
+              </select>
+            </div>
+            <div>
+              <label for="are-age" class="block text-gray-700 font-semibold mb-2"
+                >Votre âge *</label
+              >
+              <input
+                type="number"
+                id="are-age"
+                min="18"
+                max="75"
+                value="35"
+                placeholder="Votre âge"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+            <div>
+              <label for="are-anciennete" class="block text-gray-700 font-semibold mb-2"
+                >Ancienneté (mois travaillés dans les 28 derniers mois) *</label
+              >
+              <input
+                type="number"
+                id="are-anciennete"
+                min="0"
+                max="28"
+                placeholder="Nombre de mois travaillés"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+            <div>
+              <label for="are-salaire" class="block text-gray-700 font-semibold mb-2"
+                >Salaire mensuel brut moyen (€) *</label
+              >
+              <input
+                type="number"
+                id="are-salaire"
+                min="0"
+                placeholder="Votre salaire brut moyen"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+            <div>
+              <label for="are-enfants" class="block text-gray-700 font-semibold mb-2"
+                >Enfants à charge</label
+              >
+              <input
+                type="number"
+                id="are-enfants"
+                min="0"
+                max="5"
+                value="0"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer mon chômage
+            </button>
+          </form>
+          <div
+            id="are-result"
+            class="invisible mt-8 min-h-[220px] p-6 bg-orange-50 border-2 border-orange-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-orange-700 mb-4">
+              📊 Résultat de votre simulation chômage
+            </h3>
+            <div id="are-result-content" class="space-y-4">
+              <div class="text-center bg-white p-4 rounded">
+                <p class="text-gray-600 mb-2">Allocation mensuelle estimée :</p>
+                <p class="text-3xl font-bold text-orange-600" id="are-montant">---</p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-orange-500">
+                <p id="are-explication" class="text-gray-700"></p>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 Résultat indicatif. France Travail confirmera le montant exact lors de l'étude de
+                votre dossier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-8 bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Comment fonctionne la simulation chômage ?
+        </h2>
+        <p class="text-gray-700 mb-4">
+          La simulation chômage ARE utilise le
+          <strong>salaire journalier de référence (SJR)</strong> comme base de calcul. Cette
+          méthode, identique à celle utilisée par France Travail, garantit une estimation fiable de
+          votre future allocation.
+        </p>
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-4">
+          <h3 class="font-semibold text-gray-900 mb-2">Formule de calcul simplifiée</h3>
+          <p class="text-gray-700">ARE mensuelle ≈ SJR × 57,43% × 30 jours</p>
+          <p class="text-sm text-gray-500 mt-1">Minimum : 31,59 €/jour | Maximum : 91,82 €/jour</p>
+        </div>
+        <p class="text-gray-600">
+          Le résultat de la simulation chômage tient compte de votre âge, de votre ancienneté et de
+          votre situation familiale pour estimer la durée d'indemnisation et le montant.
+        </p>
+      </section>
+
+      <section class="mb-8 bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Barèmes chômage 2026 : les chiffres officiels
+        </h2>
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-orange-100">
+              <th class="p-3 text-left border border-gray-300">Paramètre</th>
+              <th class="p-3 text-left border border-gray-300">Valeur 2026</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 border border-gray-300">Taux de remplacement</td>
+              <td class="p-3 border border-gray-300 font-semibold">57,43% du SJR</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-300">Allocation minimale journalière</td>
+              <td class="p-3 border border-gray-300 font-semibold">31,59 € brut</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-300">Allocation maximale journalière</td>
+              <td class="p-3 border border-gray-300 font-semibold">91,82 € brut</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-300">Condition d'ouverture de droits</td>
+              <td class="p-3 border border-gray-300">
+                6 mois sur 24 mois (ou 36 mois si ≥ 55 ans)
+              </td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-300">Durée maximale (< 53 ans)</td>
+              <td class="p-3 border border-gray-300">548 jours</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-300">Durée maximale (≥ 53 ans)</td>
+              <td class="p-3 border border-gray-300">685 jours</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-xs text-gray-500 mt-4">
+          Sources : France Travail, service-public.fr — Barèmes vérifiés au 1er janvier 2026.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">❓ FAQ simulation chômage</h2>
+        <div class="space-y-3">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold cursor-pointer">
+              La simulation chômage prend-elle en compte le brut ou le net ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Le simulateur calcule votre allocation en <strong>brut</strong> (comme France
+              Travail). Pour obtenir le net, retranchez environ 3% de CSG/CRDS (sauf exonération).
+              Utilisez notre
+              <a href="/pages/are/are-indemnite-net-brut.html" class="text-blue-600 hover:underline"
+                >calculateur brut/net ARE</a
+              >
+              pour la conversion précise.
+            </p>
+          </details>
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold cursor-pointer">
+              Puis-je toucher le chômage après une démission ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              En principe, une démission simple n'ouvre pas droit au chômage. Cependant, certaines
+              démissions considérées comme <strong>légitimes</strong> (suivi de conjoint, création
+              d'entreprise, etc.) peuvent donner droit à l'ARE après un délai de 121 jours.
+            </p>
+          </details>
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold cursor-pointer">
+              Quand vais-je recevoir mon premier paiement chômage ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Après votre inscription à France Travail, un délai de carence de 7 jours s'applique,
+              suivi d'un différé d'indemnisation (basé sur vos indemnités de congés payés). Le
+              premier versement intervient généralement <strong>15 à 30 jours</strong> après
+              l'inscription.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="mb-12 bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">🔗 Simulateurs complémentaires</h3>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/pages/are"
+            class="inline-block bg-white border border-orange-300 rounded px-4 py-2 text-sm text-orange-700 hover:bg-orange-50"
+            >Simulateur ARE complet</a
+          >
+          <a
+            href="/pages/are/are-cumul-salaire-temps-partiel-2026.html"
+            class="inline-block bg-white border border-gray-300 rounded px-4 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Cumul ARE + salaire</a
+          >
+          <a
+            href="/pages/are/are-duree-indemnisation-2026.html"
+            class="inline-block bg-white border border-gray-300 rounded px-4 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Durée d'indemnisation</a
+          >
+          <a
+            href="/pages/rsa"
+            class="inline-block bg-white border border-gray-300 rounded px-4 py-2 text-sm text-purple-700 hover:bg-purple-50"
+            >Simulateur RSA</a
+          >
+          <a
+            href="/pages/apl"
+            class="inline-block bg-white border border-gray-300 rounded px-4 py-2 text-sm text-blue-700 hover:bg-blue-50"
+            >Simulateur APL</a
+          >
+        </div>
+      </section>
+
+      <p class="text-sm text-gray-600">
+        Sources :
+        <a
+          href="https://www.france-travail.fr"
+          target="_blank"
+          rel="noopener"
+          class="text-blue-600 hover:underline"
+          >France Travail</a
+        >
+        ·
+        <a
+          href="https://www.service-public.fr/particuliers/vosdroits/N549"
+          target="_blank"
+          rel="noopener"
+          class="text-blue-600 hover:underline"
+          >service-public.fr</a
+        >
+        — Barèmes 2026.
+      </p>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p>© 2026 Les Calculateurs — Simulation chômage ARE 2026</p>
+        <div class="flex gap-4 text-sm flex-wrap justify-center mt-4">
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white">📘 Méthodologie</a>
+          <a href="/pages/sources" class="text-gray-300 hover:text-white">📚 Sources</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
