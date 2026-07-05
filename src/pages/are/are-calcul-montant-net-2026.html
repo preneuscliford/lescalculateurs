@@ -6,7 +6,7 @@
     <title>Calcul allocation chômage net 2026 : ARE brut en net | LesCalculateurs</title>
     <meta
       name="description"
-      content="Convertissez votre ARE brute en net 2026. Calculez votre allocation chômage nette après CSG/CRDS. Différence brut/net ARE expliquée simplement."
+      content="Convertissez votre ARE brute en net 2026. Calculez votre allocation chômage nette après CSG/CRDS."
     />
     <meta
       name="keywords"
@@ -29,7 +29,7 @@
             "name": "Quelle est la différence entre ARE brute et ARE nette ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "L'ARE brute correspond au montant avant prélèvements. L'ARE nette est le montant reçu après CSG (6,2%) et CRDS (0,5%), soit 6,7% de prélèvements. Certains allocataires sont exonérés selon leurs revenus."
+              "text": "ARE brute = avant CSG/CRDS. ARE nette = après 6,7% de prélèvements (CSG 6,2% + CRDS 0,5%)."
             }
           },
           {
@@ -37,7 +37,7 @@
             "name": "Combien vais-je toucher net avec l'ARE en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Retirez 6,7% du brut. Exemple : ARE brute 1200 € → ARE nette ~1119,60 €. Si vos revenus sont modestes, vous pouvez être exonéré de CSG/CRDS."
+              "text": "Retirez 6,7% du brut. Exemple : ARE brute 1200€ → ARE nette ~1119,60€."
             }
           }
         ]
@@ -45,7 +45,7 @@
     </script>
     <script defer src="/third-party-loader.js"></script>
   </head>
-  <body class="bg-gray-50">
+  <body class="bg-gray-50 text-gray-900">
     <div
       class="sticky-ymyl"
       role="alert"
@@ -58,35 +58,34 @@
         padding: 8px 12px;
         text-align: center;
         font-size: 13px;
+        color: #92400e;
       "
     >
       <strong>⚠️ Estimation indicative.</strong> Montant net exact confirmé par France Travail.
     </div>
-    <header class="bg-white shadow-sm border-b border-gray-200">
+    <header class="bg-white shadow-sm border-b border-gray-200 text-gray-900">
       <div class="max-w-7xl mx-auto px-4 py-4">
         <a href="/pages/are" class="text-orange-600 hover:text-orange-700 font-medium"
           >← Retour au simulateur ARE</a
         >
         <div class="text-center mt-2">
-          <h1>ARE net 2026 : convertissez votre allocation brute en net</h1>
+          <h1 class="text-gray-900">ARE net 2026 : convertissez votre allocation brute en net</h1>
         </div>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 text-gray-900">
+    <main class="max-w-4xl mx-auto px-4 py-8">
       <section class="mb-8 bg-white border border-gray-200 rounded-xl p-6">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">📌 ARE brute vs ARE nette</h2>
+        <h2 class="text-2xl font-bold mb-4">📌 ARE brute vs ARE nette</h2>
         <p>
           💰 <strong>ARE brute</strong> : avant prélèvements | 🏦 <strong>ARE nette</strong> :
           montant reçu | 📐 <strong>Prélèvements 2026</strong> : CSG 6,2% + CRDS 0,5% = 6,7%
         </p>
       </section>
       <section class="mb-8 bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
-          🧮 Convertissez votre ARE brute en net
-        </h2>
+        <h2 class="text-3xl font-bold mb-4">🧮 Convertissez votre ARE brute en net</h2>
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
-          <p class="text-xl font-bold text-gray-800">ARE nette 2026 = ARE brute × 0,933</p>
+          <p class="text-xl font-bold">ARE nette 2026 = ARE brute × 0,933</p>
         </div>
         <table class="w-full text-sm border-collapse">
           <thead>
@@ -121,14 +120,14 @@
         </table>
         <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
           <p class="text-sm">
-            <strong>💡 Exonération possible</strong> si ARE nette est inférieur au SMIC net (~1 400
+            <strong>💡 Exonération possible</strong> si ARE nette est inférieure au SMIC net (~1 400
             €/mois).
           </p>
         </div>
       </section>
       <section class="mb-8 bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">❓ Pourquoi brut &ne; net ?</h2>
-        <p class="text-gray-700">
+        <h2 class="text-2xl font-bold mb-4">❓ Pourquoi brut ≠ net ?</h2>
+        <p>
           L'ARE est soumise à la CSG (6,2%) et CRDS (0,5%), soit 6,7% de prélèvements. Taux plus
           faible que le salaire car pas de cotisations retraite/sécu.
         </p>
@@ -140,7 +139,7 @@
           >🟢 Simuler mon ARE brute → estimer mon net</a
         >
       </section>
-      <p class="text-sm text-gray-600">
+      <p class="text-sm">
         Sources :
         <a href="https://www.france-travail.fr" class="text-blue-600 hover:underline"
           >France Travail</a
