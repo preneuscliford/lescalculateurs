@@ -73,8 +73,12 @@
           <h2 class="text-2xl font-bold mb-6">🧮 Calculez votre chômage ARE</h2>
           <form id="are-form" class="space-y-6">
             <div>
-              <label>Situation familiale *</label
-              ><select id="are-situation" class="w-full p-3 border rounded-lg" required>
+              <label class="text-gray-900">Situation familiale *</label
+              ><select
+                id="are-situation"
+                class="w-full p-3 border rounded-lg text-gray-900"
+                required
+              >
                 <option value="">-- Sélectionnez --</option>
                 <option value="seul">Célibataire / Seul</option>
                 <option value="couple">En couple</option>
@@ -82,47 +86,47 @@
               </select>
             </div>
             <div>
-              <label>Votre âge *</label
+              <label class="text-gray-900">Votre âge *</label
               ><input
                 type="number"
                 id="are-age"
                 min="18"
                 max="75"
                 value="35"
-                class="w-full p-3 border rounded-lg"
+                class="w-full p-3 border rounded-lg text-gray-900"
                 required
               />
             </div>
             <div>
-              <label>Ancienneté (mois) *</label
+              <label class="text-gray-900">Ancienneté (mois) *</label
               ><input
                 type="number"
                 id="are-anciennete"
                 min="0"
                 max="28"
-                class="w-full p-3 border rounded-lg"
+                class="w-full p-3 border rounded-lg text-gray-900"
                 required
               />
             </div>
             <div>
-              <label>Salaire mensuel brut moyen (€) *</label
+              <label class="text-gray-900">Salaire mensuel brut moyen (€) *</label
               ><input
                 type="number"
                 id="are-salaire"
                 min="0"
-                class="w-full p-3 border rounded-lg"
+                class="w-full p-3 border rounded-lg text-gray-900"
                 required
               />
             </div>
             <div>
-              <label>Enfants à charge</label
+              <label class="text-gray-900">Enfants à charge</label
               ><input
                 type="number"
                 id="are-enfants"
                 min="0"
                 max="5"
                 value="0"
-                class="w-full p-3 border rounded-lg"
+                class="w-full p-3 border rounded-lg text-gray-900"
               />
             </div>
             <button
