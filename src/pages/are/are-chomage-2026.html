@@ -73,60 +73,101 @@
           <h2 class="text-2xl font-bold mb-6">🧮 Calculez votre chômage ARE</h2>
           <form id="are-form" class="space-y-6">
             <div>
-              <label class="text-gray-900">Situation familiale *</label
-              ><select
+              <label class="text-gray-900">Situation familiale *</label>
+              <select
                 id="are-situation"
-                class="w-full p-3 border rounded-lg text-gray-900"
+                style="
+                  width: 100%;
+                  padding: 0.75rem;
+                  border: 1px solid #d1d5db;
+                  border-radius: 0.5rem;
+                  color: #fff;
+                  background: #1f2937;
+                "
                 required
               >
-                <option value="">-- Sélectionnez --</option>
-                <option value="seul">Célibataire / Seul</option>
-                <option value="couple">En couple</option>
-                <option value="parent">Parent monoparental</option>
+                <option value="" style="color: #fff; background: #1f2937">
+                  -- Sélectionnez --
+                </option>
+                <option value="seul" style="color: #fff; background: #1f2937">
+                  Célibataire / Seul
+                </option>
+                <option value="couple" style="color: #fff; background: #1f2937">En couple</option>
+                <option value="parent" style="color: #fff; background: #1f2937">
+                  Parent monoparental
+                </option>
               </select>
             </div>
             <div>
-              <label class="text-gray-900">Votre âge *</label
-              ><input
+              <label class="text-gray-900">Votre âge *</label>
+              <input
                 type="number"
                 id="are-age"
                 min="18"
                 max="75"
                 value="35"
-                class="w-full p-3 border rounded-lg text-gray-900"
+                style="
+                  width: 100%;
+                  padding: 0.75rem;
+                  border: 1px solid #d1d5db;
+                  border-radius: 0.5rem;
+                  color: #fff;
+                  background: #1f2937;
+                "
                 required
               />
             </div>
             <div>
-              <label class="text-gray-900">Ancienneté (mois) *</label
-              ><input
+              <label class="text-gray-900">Ancienneté (mois) *</label>
+              <input
                 type="number"
                 id="are-anciennete"
                 min="0"
                 max="28"
-                class="w-full p-3 border rounded-lg text-gray-900"
+                style="
+                  width: 100%;
+                  padding: 0.75rem;
+                  border: 1px solid #d1d5db;
+                  border-radius: 0.5rem;
+                  color: #fff;
+                  background: #1f2937;
+                "
                 required
               />
             </div>
             <div>
-              <label class="text-gray-900">Salaire mensuel brut moyen (€) *</label
-              ><input
+              <label class="text-gray-900">Salaire mensuel brut moyen (€) *</label>
+              <input
                 type="number"
                 id="are-salaire"
                 min="0"
-                class="w-full p-3 border rounded-lg text-gray-900"
+                style="
+                  width: 100%;
+                  padding: 0.75rem;
+                  border: 1px solid #d1d5db;
+                  border-radius: 0.5rem;
+                  color: #fff;
+                  background: #1f2937;
+                "
                 required
               />
             </div>
             <div>
-              <label class="text-gray-900">Enfants à charge</label
-              ><input
+              <label class="text-gray-900">Enfants à charge</label>
+              <input
                 type="number"
                 id="are-enfants"
                 min="0"
                 max="5"
                 value="0"
-                class="w-full p-3 border rounded-lg text-gray-900"
+                style="
+                  width: 100%;
+                  padding: 0.75rem;
+                  border: 1px solid #d1d5db;
+                  border-radius: 0.5rem;
+                  color: #fff;
+                  background: #1f2937;
+                "
               />
             </div>
             <button
