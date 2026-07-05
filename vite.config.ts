@@ -249,6 +249,13 @@ function collectStaticPageInputs() {
       __dirname,
       "src/pages/actualites/prime-activite-2000-euros-net-droit.html",
     ),
+    // Nouvelles pages satellites ARE (juillet 2026 - basées sur les données de performance)
+    "pages/are/are-chomage-2026": resolve(__dirname, "src/pages/are/are-chomage-2026.html"),
+    "pages/are/are-apres-demission": resolve(__dirname, "src/pages/are/are-apres-demission.html"),
+    "pages/are/are-calcul-montant-net-2026": resolve(
+      __dirname,
+      "src/pages/are/are-calcul-montant-net-2026.html",
+    ),
   };
 }
 
