@@ -36,7 +36,7 @@
       ad_storage: "denied",
       ad_user_data: "denied",
       ad_personalization: "denied",
-      wait_for_update: 2000
+      wait_for_update: 2000,
     });
   }
 
@@ -114,7 +114,7 @@
       if (adsDecisionResolved) return;
       resolveAdsDecision(
         { essential: true, analytics: false, ads: false, source: "timeout" },
-        { immediate: true, skipPersist: true }
+        { immediate: true, skipPersist: true },
       );
     }, ADS_DECISION_TIMEOUT_MS);
   }
@@ -138,7 +138,7 @@
           values.adStoragePurposeConsentStatus === granted &&
           values.adUserDataPurposeConsentStatus === granted &&
           values.adPersonalizationPurposeConsentStatus === granted,
-        source: "googlefc"
+        source: "googlefc",
       };
     } catch (_e) {}
     return null;
@@ -150,7 +150,7 @@
     googlefc.callbackQueue.push({
       CONSENT_API_READY: function () {
         hasGoogleCmpApiReady = true;
-      }
+      },
     });
 
     googlefc.callbackQueue.push({
@@ -162,7 +162,7 @@
         hideBanner();
         hideModal();
         resolveAdsDecision(state, { immediate: true, skipPersist: true });
-      }
+      },
     });
   }
 
@@ -177,7 +177,7 @@
       function () {
         window.setTimeout(callback, 0);
       },
-      { once: true }
+      { once: true },
     );
   }
 
@@ -208,7 +208,7 @@
     window.gtag("config", GA4_ID, {
       anonymize_ip: true,
       allow_google_signals: false,
-      allow_ad_personalization_signals: false
+      allow_ad_personalization_signals: false,
     });
 
     addScript("https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA4_ID));
@@ -243,8 +243,9 @@
     addLink("dns-prefetch", "https://pagead2.googlesyndication.com");
     addLink("preconnect", "https://pagead2.googlesyndication.com", "anonymous");
     addScript(
-      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(ADSENSE_CLIENT_ID),
-      { crossorigin: "anonymous" }
+      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
+        encodeURIComponent(ADSENSE_CLIENT_ID),
+      { crossorigin: "anonymous" },
     );
   }
 
@@ -271,7 +272,7 @@
         page_intent: intent || "",
         page_audience: audience || "",
         page_variant: variant || "",
-        page_path: window.location.pathname || "/"
+        page_path: window.location.pathname || "/",
       };
     } catch (_e) {
       return null;
@@ -296,7 +297,7 @@
       lc_page_intent: context.page_intent,
       lc_page_audience: context.page_audience,
       lc_page_variant: context.page_variant,
-      page_path: context.page_path
+      page_path: context.page_path,
     });
 
     window.gtag("event", "lc_page_view", context);
@@ -308,7 +309,8 @@
       var raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
       if (!raw) return null;
 
-      if (raw === "accepted") return { essential: true, analytics: true, ads: true, source: "legacy" };
+      if (raw === "accepted")
+        return { essential: true, analytics: true, ads: true, source: "legacy" };
       if (raw === "rejected" || raw === "essential") {
         return { essential: true, analytics: false, ads: false, source: "legacy" };
       }
@@ -327,7 +329,7 @@
           essential: true,
           analytics: parsed.analytics === true,
           ads: parsed.ads === true,
-          source: parsed.source || "stored"
+          source: parsed.source || "stored",
         };
       }
     } catch (_e) {}
@@ -342,7 +344,7 @@
       analytics: !!state.analytics,
       ads: !!state.ads,
       source: source || "banner",
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toISOString(),
     };
 
     if (state.analytics && state.ads) payload.status = "accepted";
@@ -361,7 +363,7 @@
       analytics_storage: state.analytics ? "granted" : "denied",
       ad_storage: state.ads ? "granted" : "denied",
       ad_user_data: state.ads ? "granted" : "denied",
-      ad_personalization: state.ads ? "granted" : "denied"
+      ad_personalization: state.ads ? "granted" : "denied",
     });
     window.gtag("set", "allow_google_signals", !!state.analytics && !!state.ads);
     window.gtag("set", "allow_ad_personalization_signals", !!state.ads);
@@ -403,31 +405,81 @@
     var style = document.createElement("style");
     style.id = STYLE_ID;
     style.textContent =
-      "#" + BANNER_ID + "{position:fixed;left:16px;right:16px;bottom:16px;z-index:99999;background:#111827;color:#fff;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.35);padding:16px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}" +
-      "#" + BANNER_ID + " .lc-title{font-size:16px;font-weight:700;margin:0 0 8px}" +
-      "#" + BANNER_ID + " .lc-copy{font-size:14px;line-height:1.45;color:#e5e7eb;margin:0 0 14px}" +
-      "#" + BANNER_ID + " .lc-actions{display:flex;gap:8px;flex-wrap:wrap}" +
-      "#" + BANNER_ID + " button{border:0;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;cursor:pointer}" +
-      "#" + BANNER_ID + " .lc-accept{background:#059669;color:#fff;flex:1}" +
-      "#" + BANNER_ID + " .lc-reject{background:#374151;color:#fff;flex:1}" +
-      "#" + BANNER_ID + " .lc-custom{background:transparent;color:#9ca3af;border:1px solid #4b5563}" +
-      "#" + MODAL_ID + "{position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}" +
-      "#" + MODAL_ID + " .lc-content{background:#111827;color:#fff;border-radius:16px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 50px -12px rgba(0,0,0,.5)}" +
-      "#" + MODAL_ID + " .lc-header{padding:24px 24px 0}" +
-      "#" + MODAL_ID + " .lc-body{padding:16px 24px}" +
-      "#" + MODAL_ID + " .lc-row{padding:12px 0;border-bottom:1px solid #374151}" +
-      "#" + MODAL_ID + " .lc-row:last-child{border-bottom:none}" +
-      "#" + MODAL_ID + " .lc-option{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;width:100%;cursor:pointer}" +
-      "#" + MODAL_ID + " .lc-option.is-disabled{cursor:not-allowed}" +
-      "#" + MODAL_ID + " .lc-copy-group{flex:1}" +
-      "#" + MODAL_ID + " .lc-desc{font-size:12px;color:#9ca3af;margin-top:4px;line-height:1.4}" +
-      "#" + MODAL_ID + " input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 auto;accent-color:#10b981;cursor:pointer}" +
-      "#" + MODAL_ID + " .lc-option.is-disabled input[type=checkbox]{cursor:not-allowed;pointer-events:none}" +
-      "#" + MODAL_ID + " .lc-footer{padding:16px 24px 24px;display:flex;gap:10px;justify-content:flex-end;border-top:1px solid #374151}" +
-      "#" + MODAL_ID + " .lc-primary{background:#059669;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer}" +
-      "#" + MODAL_ID + " .lc-secondary{background:#374151;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer}" +
-      "#" + MODAL_ID + " .lc-link{background:transparent;color:#9ca3af;border:0;padding:10px 14px;font-size:14px;cursor:pointer;text-decoration:underline}" +
-      "@media (min-width:768px){#" + BANNER_ID + "{max-width:760px;right:auto}}";
+      "#" +
+      BANNER_ID +
+      "{position:fixed;left:16px;right:16px;bottom:16px;z-index:99999;background:#111827;color:#fff;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.35);padding:16px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}" +
+      "#" +
+      BANNER_ID +
+      " .lc-title{font-size:16px;font-weight:700;margin:0 0 8px}" +
+      "#" +
+      BANNER_ID +
+      " .lc-copy{font-size:14px;line-height:1.45;color:#e5e7eb;margin:0 0 14px}" +
+      "#" +
+      BANNER_ID +
+      " .lc-actions{display:flex;gap:8px;flex-wrap:wrap}" +
+      "#" +
+      BANNER_ID +
+      " button{border:0;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;cursor:pointer}" +
+      "#" +
+      BANNER_ID +
+      " .lc-accept{background:#059669;color:#fff;flex:1}" +
+      "#" +
+      BANNER_ID +
+      " .lc-reject{background:#374151;color:#fff;flex:1}" +
+      "#" +
+      BANNER_ID +
+      " .lc-custom{background:transparent;color:#9ca3af;border:1px solid #4b5563}" +
+      "#" +
+      MODAL_ID +
+      "{position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}" +
+      "#" +
+      MODAL_ID +
+      " .lc-content{background:#111827;color:#fff;border-radius:16px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 50px -12px rgba(0,0,0,.5)}" +
+      "#" +
+      MODAL_ID +
+      " .lc-header{padding:24px 24px 0}" +
+      "#" +
+      MODAL_ID +
+      " .lc-body{padding:16px 24px}" +
+      "#" +
+      MODAL_ID +
+      " .lc-row{padding:12px 0;border-bottom:1px solid #374151}" +
+      "#" +
+      MODAL_ID +
+      " .lc-row:last-child{border-bottom:none}" +
+      "#" +
+      MODAL_ID +
+      " .lc-option{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;width:100%;cursor:pointer}" +
+      "#" +
+      MODAL_ID +
+      " .lc-option.is-disabled{cursor:not-allowed}" +
+      "#" +
+      MODAL_ID +
+      " .lc-copy-group{flex:1}" +
+      "#" +
+      MODAL_ID +
+      " .lc-desc{font-size:12px;color:#9ca3af;margin-top:4px;line-height:1.4}" +
+      "#" +
+      MODAL_ID +
+      " input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 auto;accent-color:#10b981;cursor:pointer}" +
+      "#" +
+      MODAL_ID +
+      " .lc-option.is-disabled input[type=checkbox]{cursor:not-allowed;pointer-events:none}" +
+      "#" +
+      MODAL_ID +
+      " .lc-footer{padding:16px 24px 24px;display:flex;gap:10px;justify-content:flex-end;border-top:1px solid #374151}" +
+      "#" +
+      MODAL_ID +
+      " .lc-primary{background:#059669;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer}" +
+      "#" +
+      MODAL_ID +
+      " .lc-secondary{background:#374151;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer}" +
+      "#" +
+      MODAL_ID +
+      " .lc-link{background:transparent;color:#9ca3af;border:0;padding:10px 14px;font-size:14px;cursor:pointer;text-decoration:underline}" +
+      "@media (min-width:768px){#" +
+      BANNER_ID +
+      "{max-width:760px;right:auto}}";
 
     document.head.appendChild(style);
   }
@@ -450,16 +502,20 @@
       '<div class="lc-header"><h2 id="lc-consent-modal-title">Personnaliser les cookies</h2></div>' +
       '<div class="lc-body">' +
       '<div class="lc-row"><label class="lc-option is-disabled"><div class="lc-copy-group"><strong>Cookies essentiels 🔒</strong><div class="lc-desc">Nécessaires au fonctionnement du site. Ils ne peuvent pas être désactivés.</div></div><input type="checkbox" checked aria-disabled="true" tabindex="-1"></label></div>' +
-      '<div class="lc-row"><label class="lc-option" for="lc-modal-analytics"><div class="lc-copy-group"><strong>Mesure d\'audience 📊</strong><div class="lc-desc">Nous aide à comprendre comment le site est utilisé pour l\'améliorer. Vos données restent anonymisées si vous refusez.</div></div><input id="lc-modal-analytics" type="checkbox" ' + (current.analytics ? "checked" : "") + '></label></div>' +
-      '<div class="lc-row"><label class="lc-option" for="lc-modal-ads"><div class="lc-copy-group"><strong>Publicité 📢</strong><div class="lc-desc">Permet d\'afficher des annonces personnalisées en fonction de votre navigation. Vous pouvez refuser : des annonces non personnalisées seront alors affichées.</div></div><input id="lc-modal-ads" type="checkbox" ' + (current.ads ? "checked" : "") + '></label></div>' +
-      '</div>' +
+      '<div class="lc-row"><label class="lc-option" for="lc-modal-analytics"><div class="lc-copy-group"><strong>Mesure d\'audience 📊</strong><div class="lc-desc">Nous aide à comprendre comment le site est utilisé pour l\'améliorer. Vos données restent anonymisées si vous refusez.</div></div><input id="lc-modal-analytics" type="checkbox" ' +
+      (current.analytics ? "checked" : "") +
+      "></label></div>" +
+      '<div class="lc-row"><label class="lc-option" for="lc-modal-ads"><div class="lc-copy-group"><strong>Publicité 📢</strong><div class="lc-desc">Permet d\'afficher des annonces personnalisées en fonction de votre navigation. Vous pouvez refuser : des annonces non personnalisées seront alors affichées.</div></div><input id="lc-modal-ads" type="checkbox" ' +
+      (current.ads ? "checked" : "") +
+      "></label></div>" +
+      "</div>" +
       '<div class="lc-footer">' +
       '<button class="lc-link" data-action="close" type="button">Fermer</button>' +
       '<button class="lc-secondary" data-action="reject" type="button">Essentiel uniquement</button>' +
       '<button class="lc-secondary" data-action="save" type="button">Enregistrer</button>' +
       '<button class="lc-primary" data-action="accept" type="button">Tout accepter</button>' +
-      '</div>' +
-      '</div>';
+      "</div>" +
+      "</div>";
     modal.setAttribute("aria-labelledby", "lc-consent-modal-title");
 
     modal.addEventListener("click", function (event) {
@@ -468,7 +524,10 @@
         return;
       }
 
-      var lockedOption = event.target && event.target.closest ? event.target.closest(".lc-option.is-disabled") : null;
+      var lockedOption =
+        event.target && event.target.closest
+          ? event.target.closest(".lc-option.is-disabled")
+          : null;
       if (lockedOption) {
         event.preventDefault();
         return;
@@ -536,11 +595,12 @@
       '<button type="button" class="lc-accept" data-consent="accept">Accepter tout</button>' +
       '<button type="button" class="lc-reject" data-consent="reject">Refuser</button>' +
       '<button type="button" class="lc-custom" data-consent="custom">Personnaliser</button>' +
-      '</div>';
+      "</div>";
     banner.setAttribute("aria-labelledby", "lc-consent-banner-title");
 
     banner.addEventListener("click", function (event) {
-      var btn = event.target && event.target.closest ? event.target.closest("button[data-consent]") : null;
+      var btn =
+        event.target && event.target.closest ? event.target.closest("button[data-consent]") : null;
       if (!btn) return;
 
       var action = btn.getAttribute("data-consent");
@@ -590,7 +650,7 @@
         { rel: "icon", href: "/assets/favicon-32x32.png", sizes: "32x32", type: "image/png" },
         { rel: "icon", href: "/assets/favicon-16x16.png", sizes: "16x16", type: "image/png" },
         { rel: "manifest", href: "/assets/site.webmanifest" },
-        { rel: "shortcut icon", href: "/assets/favicon.ico" }
+        { rel: "shortcut icon", href: "/assets/favicon.ico" },
       ];
 
       for (var i = 0; i < icons.length; i++) {
@@ -600,6 +660,88 @@
         if (icons[i].sizes) link.sizes = icons[i].sizes;
         if (icons[i].type) link.type = icons[i].type;
         document.head.appendChild(link);
+      }
+    } catch (_e) {}
+  }
+
+  function ensureAccessibilityHelpers() {
+    if (window.__lcAccessibilityHelpersInitialized) return;
+    window.__lcAccessibilityHelpersInitialized = true;
+
+    try {
+      var main = document.querySelector("main");
+      if (main) {
+        var mainId = main.getAttribute("id") || "main-content";
+        if (!main.getAttribute("id")) {
+          main.id = mainId;
+        }
+
+        if (!document.getElementById("lc-skip-link")) {
+          var skipLink = document.createElement("a");
+          skipLink.id = "lc-skip-link";
+          skipLink.href = "#" + mainId;
+          skipLink.textContent = "Aller au contenu principal";
+          skipLink.className = "lc-skip-link";
+          document.body.insertBefore(skipLink, document.body.firstChild);
+        }
+      }
+
+      if (!document.getElementById("lc-a11y-style")) {
+        var style = document.createElement("style");
+        style.id = "lc-a11y-style";
+        style.textContent =
+          ".lc-skip-link{position:absolute;left:16px;top:16px;z-index:100001;transform:translateY(-200%);background:#111827;color:#fff;padding:10px 14px;border-radius:10px;font:700 14px/1.2 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.25)}" +
+          ".lc-skip-link:focus{transform:translateY(0)}";
+        document.head.appendChild(style);
+      }
+
+      var buttons = document.querySelectorAll(
+        'button[id="mobile-menu-btn"], button[id="mobile-menu-button"]',
+      );
+      for (var i = 0; i < buttons.length; i++) {
+        var button = buttons[i];
+        if (!(button instanceof HTMLButtonElement)) continue;
+
+        if (!button.hasAttribute("type")) {
+          button.type = "button";
+        }
+
+        var menuId = button.getAttribute("aria-controls") || "mobile-menu";
+        var menu = document.getElementById(menuId);
+
+        if (menuId && !button.getAttribute("aria-controls")) {
+          button.setAttribute("aria-controls", menuId);
+        }
+
+        if (!button.getAttribute("aria-label")) {
+          button.setAttribute("aria-label", "Menu principal");
+        }
+
+        var updateExpandedState = function (menuNode, buttonNode) {
+          return function () {
+            var isExpanded =
+              !!menuNode &&
+              !menuNode.classList.contains("hidden") &&
+              menuNode.offsetParent !== null;
+            buttonNode.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+          };
+        };
+
+        let syncState = updateExpandedState(menu, button);
+        syncState();
+
+        button.addEventListener("click", function () {
+          window.requestAnimationFrame(syncState);
+        });
+
+        if (menu && !menu.__lcA11yObserved) {
+          menu.__lcA11yObserved = true;
+          var observer = new MutationObserver(syncState);
+          observer.observe(menu, {
+            attributes: true,
+            attributeFilter: ["class", "hidden", "style", "aria-hidden"],
+          });
+        }
       }
     } catch (_e) {}
   }
@@ -621,7 +763,7 @@
     adsDecisionResolved = false;
     resolveAdsDecision(
       { essential: true, analytics: false, ads: false, source: "reset" },
-      { immediate: true, skipPersist: true }
+      { immediate: true, skipPersist: true },
     );
     hideModal();
     hideBanner();
@@ -659,11 +801,15 @@
   if (!hasStoredConsent) {
     setAdsPersonalization(false);
     loadFundingChoices();
-    loadAdsense();
-    scheduleInitialConsentModal();
-    scheduleAdsDecisionFallback();
+    if (USE_CUSTOM_CONSENT_UI) {
+      scheduleInitialConsentModal();
+      scheduleAdsDecisionFallback();
+    } else {
+      scheduleNonCritical(loadAdsense, 2500);
+    }
   }
 
+  ensureAccessibilityHelpers();
   trackPageContext();
 
   if (document.readyState === "loading") {
@@ -673,7 +819,7 @@
         trackPageContext();
         scheduleFallbackConsentBanner();
       },
-      { once: true }
+      { once: true },
     );
   } else {
     scheduleFallbackConsentBanner();
