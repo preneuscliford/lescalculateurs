@@ -801,11 +801,10 @@
   if (!hasStoredConsent) {
     setAdsPersonalization(false);
     loadFundingChoices();
+    loadAdsense();
     if (USE_CUSTOM_CONSENT_UI) {
       scheduleInitialConsentModal();
       scheduleAdsDecisionFallback();
-    } else {
-      scheduleNonCritical(loadAdsense, 2500);
     }
   }
 
