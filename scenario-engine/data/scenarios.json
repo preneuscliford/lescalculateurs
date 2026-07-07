@@ -1,0 +1,555 @@
+{
+  "prime-activite": {
+    "label": "Prime d'activité",
+    "emoji": "🧮",
+    "sourceUrl": "https://www.caf.fr/allocataires/aides-et-demarches/mes-demarches",
+    "baremeNote": "Barèmes en vigueur au 1er mai 2026",
+    "unit": "/ mois",
+    "revenuLevels": [
+      800,
+      1000,
+      1200,
+      1400,
+      1600,
+      1800,
+      2000,
+      2200
+    ],
+    "fields": [
+      {
+        "id": "situation",
+        "label": "Situation familiale",
+        "type": "select",
+        "options": [
+          "seul",
+          "couple",
+          "monoparental"
+        ],
+        "default": "seul"
+      },
+      {
+        "id": "enfants",
+        "label": "Enfants à charge",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "max": 10
+      },
+      {
+        "id": "revenusProf",
+        "label": "Revenus professionnels nets mensuels (€)",
+        "type": "number",
+        "default": 1500,
+        "min": 0,
+        "step": 50
+      },
+      {
+        "id": "autresRevenus",
+        "label": "Autres revenus mensuels (€)",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "step": 10
+      },
+      {
+        "id": "logement",
+        "label": "Type de logement",
+        "type": "select",
+        "options": [
+          "loue",
+          "gratuit"
+        ],
+        "default": "loue"
+      },
+      {
+        "id": "typeActivite",
+        "label": "Type d'activité",
+        "type": "select",
+        "options": [
+          "salarie",
+          "independant"
+        ],
+        "default": "salarie"
+      }
+    ],
+    "barèmes": {
+      "montantForfaitaire": {
+        "nonMajoree": {
+          "unePersonne": 638.28,
+          "coupleOuIsole1Enfant": 957.42,
+          "couple1EnfantOuIsole2Enfants": 1148.9,
+          "couple2Enfants": 1340.38,
+          "isole3Enfants": 1404.21,
+          "couple3Enfants": 1595.69,
+          "personneSupplementaire": 255.32
+        },
+        "majoree": {
+          "grossesse": 819.63,
+          "isole1Enfant": 1092.84,
+          "isole2Enfants": 1366.05,
+          "isole3Enfants": 1639.26,
+          "isole4Enfants": 1912.47,
+          "personneSupplementaire": 271.04
+        }
+      },
+      "forfaitLogement": {
+        "unePersonne": 76.59,
+        "deuxPersonnes": 153.19,
+        "troisPersonnesOuPlus": 189.57
+      },
+      "bonification": {
+        "montantMaximum": 240.63,
+        "seuilDebut": 709.18,
+        "seuilMaximum": 1658.76
+      },
+      "revenusProfessionnelsPrisEnCompte": 0.61,
+      "montantMinimumVerse": 15
+    },
+    "seoTitleVariants": [
+      "Prime d'activité si {label} ({revenu}) — Simulation 2026",
+      "Ma Prime d'activité baisse-t-elle si {label} ? ({revenu})",
+      "Simulation Prime d'activité : {label} ({revenu})",
+      "{label} : quel impact sur votre Prime d'activité ? ({revenu})",
+      "Prime d'activité après {label} ({revenu}) — estimation 2026"
+    ],
+    "seoDescVariants": [
+      "Simulez l'impact sur votre Prime d'activité 2026 si {label}. Salaire de référence : {revenu}. Estimation barèmes CAF en vigueur. Résultat indicatif.",
+      "{label} : visualisez immédiatement l'effet sur votre Prime d'activité recalculée. Simulation {revenu}. Barèmes CAF mai 2026.",
+      "Prime d'activité 2026 : testez l'impact si {label} avec un salaire de {revenu} nets mensuels. Comparaison avant/après et explication détaillée."
+    ],
+    "scenarios": [
+      {
+        "id": "salaire-augmente-100-euros",
+        "slug": "salaire-augmente-100-euros",
+        "label": "votre salaire augmente de 100 €",
+        "emoji": "💰",
+        "badge": "simulation",
+        "question": "Quel est l'impact sur ma Prime d'activité si mon salaire augmente de 100 € ?",
+        "explanation": "Lorsque votre salaire augmente, 61 % de vos revenus supplémentaires sont déduits du montant de la Prime d'activité. Sur 100 €, la CAF déduit donc 61 €, mais vous conservez un gain net d'environ 39 €. C'est toujours positif pour votre budget global.",
+        "faq": [
+          {
+            "q": "Est-ce que ça vaut le coup d'accepter une petite augmentation de 100 € ?",
+            "a": "Oui. Même si la Prime d'activité baisse légèrement, votre revenu total (salaire + prime) augmente car seuls 61 % de vos revenus sont pris en compte dans le calcul de la CAF."
+          },
+          {
+            "q": "Quand déclarer ce changement à la CAF ?",
+            "a": "Lors de votre prochaine déclaration trimestrielle de ressources (DTR). La CAF recalculera automatiquement vos droits sur la base des 3 derniers mois."
+          }
+        ],
+        "overrides": {
+          "revenusProf": "+100"
+        },
+        "crosslinks": [
+          {
+            "label": "APL après une augmentation",
+            "href": "https://www.lescalculateurs.fr/pages/apl"
+          },
+          {
+            "label": "Impôt après une augmentation",
+            "href": "https://www.lescalculateurs.fr/pages/impot"
+          },
+          {
+            "label": "Reste à vivre après +100 €",
+            "href": "https://www.lescalculateurs.fr/pages/reste-a-vivre"
+          }
+        ]
+      },
+      {
+        "id": "salaire-augmente-200-euros",
+        "slug": "salaire-augmente-200-euros",
+        "label": "votre salaire augmente de 200 €",
+        "emoji": "💵",
+        "badge": "simulation",
+        "question": "Quel est l'impact sur ma Prime d'activité avec 200 € de salaire en plus ?",
+        "explanation": "Avec +200 €, la Prime d'activité baisse de 122 € environ (61 % × 200 €). Votre revenu total progresse tout de même, car vous conservez 39 % du gain brut. Si vos revenus sont entre 709 € et 1 659 €, la bonification individuelle peut atténuer cette baisse.",
+        "faq": [
+          {
+            "q": "Quel est le gain net après une augmentation de 200 € ?",
+            "a": "Environ +78 € nets par mois après recalcul de la Prime. Les 61 % prélevés par la CAF laissent un gain net de 39 % du montant brut de l'augmentation."
+          },
+          {
+            "q": "La bonification individuelle compense-t-elle la baisse de la Prime ?",
+            "a": "Partiellement, si vos revenus sont dans la tranche 709 € – 1 659 €. Au-delà, la bonification est déjà à son maximum et ne compense plus."
+          }
+        ],
+        "overrides": {
+          "revenusProf": "+200"
+        },
+        "crosslinks": [
+          {
+            "label": "Salaire net après revalorisation",
+            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+          },
+          {
+            "label": "Impôt après +200 €",
+            "href": "https://www.lescalculateurs.fr/pages/impot"
+          },
+          {
+            "label": "Reste à vivre après augmentation",
+            "href": "https://www.lescalculateurs.fr/pages/reste-a-vivre"
+          }
+        ]
+      },
+      {
+        "id": "salaire-augmente-300-euros",
+        "slug": "salaire-augmente-300-euros",
+        "label": "votre salaire augmente de 300 €",
+        "emoji": "📊",
+        "badge": "simulation",
+        "question": "Quel est l'impact sur ma Prime d'activité si je gagne 300 € de plus ?",
+        "explanation": "Avec +300 €, la baisse de Prime est plus marquée (≈183 €). La bonification individuelle (entre 709 € et 1 659 €) compense partiellement. Au total, votre revenu progresse d'environ 117 € nets par mois.",
+        "faq": [
+          {
+            "q": "À partir de quel salaire la Prime d'activité devient-elle nulle ?",
+            "a": "Pour une personne seule locataire, la Prime s'annule généralement autour de 1 800 € à 2 000 € nets mensuels. Au-delà, vous n'êtes plus éligible."
+          },
+          {
+            "q": "Prime d'activité et RSA sont-ils cumulables ?",
+            "a": "Non, la Prime d'activité et le RSA ne sont pas cumulables. Si vous travaillez, c'est la Prime d'activité qui s'applique en remplacement du RSA."
+          }
+        ],
+        "overrides": {
+          "revenusProf": "+300"
+        },
+        "crosslinks": [
+          {
+            "label": "Salaire net après une promotion",
+            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+          },
+          {
+            "label": "RSA après une augmentation",
+            "href": "https://www.lescalculateurs.fr/pages/rsa"
+          },
+          {
+            "label": "Impôt après +300 €",
+            "href": "https://www.lescalculateurs.fr/pages/impot"
+          }
+        ]
+      },
+      {
+        "id": "salaire-augmente-400-euros",
+        "slug": "salaire-augmente-400-euros",
+        "label": "votre salaire augmente de 400 €",
+        "emoji": "🚀",
+        "badge": "simulation",
+        "question": "Ma Prime d'activité diminue-t-elle fortement si mon salaire augmente de 400 € ?",
+        "explanation": "Avec +400 €, la baisse de la Prime atteint environ 244 €. Pour un salaire initial autour de 1 200 €, la Prime baisse mais reste présente. Pour un salaire initial à 1 800 €, elle peut devenir nulle ou quasi nulle.",
+        "faq": [
+          {
+            "q": "À partir de combien ma Prime disparaît-elle complètement ?",
+            "a": "Tout dépend de votre situation. Une personne seule locataire perd la Prime vers 1 800-2 000 € nets/mois. En couple ou avec enfants, le plafond est plus élevé."
+          },
+          {
+            "q": "Vaut-il mieux refuser une grosse augmentation pour garder la Prime ?",
+            "a": "Non. Même si la Prime baisse ou disparaît, votre salaire net progresse toujours plus que la perte de la Prime. Vous êtes toujours gagnant financièrement."
+          }
+        ],
+        "overrides": {
+          "revenusProf": "+400"
+        },
+        "crosslinks": [
+          {
+            "label": "Salaire après grosse augmentation",
+            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+          },
+          {
+            "label": "Perte d'éligibilité Prime",
+            "href": "https://www.lescalculateurs.fr/pages/prime-activite"
+          },
+          {
+            "label": "Impôt après +400 €",
+            "href": "https://www.lescalculateurs.fr/pages/impot"
+          }
+        ]
+      },
+      {
+        "id": "salaire-augmente-500-euros",
+        "slug": "salaire-augmente-500-euros",
+        "label": "votre salaire augmente de 500 €",
+        "emoji": "💎",
+        "badge": "simulation",
+        "question": "Ma Prime d'activité est-elle supprimée si mon salaire augmente de 500 € ?",
+        "explanation": "Avec +500 €, la Prime baisse de 305 € environ (61 %). Pour beaucoup de bénéficiaires, cela signifie la fin de la Prime, surtout si le salaire initial dépasse 1 400 €. Le gain net reste d'environ +195 € par mois.",
+        "faq": [
+          {
+            "q": "Puis-je perdre tous mes droits avec une augmentation de 500 € ?",
+            "a": "C'est possible si votre salaire dépasse le plafond d'éligibilité. Pour une personne seule, autour de 1 800-2 000 €. Vérifiez aussi l'impact sur vos autres aides."
+          },
+          {
+            "q": "Comment savoir si je perds d'autres aides en plus de la Prime ?",
+            "a": "L'APL et le RSA ont leurs propres plafonds. Utilisez nos simulateurs pour vérifier chaque aide séparément en fonction de votre nouveau salaire."
+          }
+        ],
+        "overrides": {
+          "revenusProf": "+500"
+        },
+        "crosslinks": [
+          {
+            "label": "APL après grosse augmentation",
+            "href": "https://www.lescalculateurs.fr/pages/apl"
+          },
+          {
+            "label": "RSA et plafonds de revenus",
+            "href": "https://www.lescalculateurs.fr/pages/rsa"
+          },
+          {
+            "label": "Toutes les aides à vérifier",
+            "href": "https://www.lescalculateurs.fr/pages/simulateurs/aides-apres-perte-emploi"
+          }
+        ]
+      },
+      {
+        "id": "passage-temps-partiel",
+        "slug": "passage-temps-partiel",
+        "label": "vous passez à temps partiel (−20 %)",
+        "emoji": "⏱️",
+        "badge": "simulation",
+        "question": "Que devient ma Prime d'activité si je réduis mon temps de travail de 20 % ?",
+        "explanation": "Réduire son temps de travail de 20 % diminue le salaire. La Prime d'activité augmente mécaniquement car 61 % des revenus sont déduits du calcul. Mais le revenu total (salaire réduit + prime augmentée) est généralement plus faible qu'à temps plein.",
+        "faq": [
+          {
+            "q": "La CAF verse-t-elle plus si je travaille moins ?",
+            "a": "Le montant de la Prime augmente quand les revenus baissent, mais le revenu total disponible (salaire + prime) diminue malgré tout par rapport à un temps plein."
+          },
+          {
+            "q": "Suis-je éligible au RSA en complément ?",
+            "a": "Non, la Prime d'activité remplace le RSA pour les personnes qui travaillent. Si vos revenus deviennent très faibles, le RSA peut redevenir plus pertinent, mais il n'est pas cumulable."
+          }
+        ],
+        "overrides": {
+          "revenusProf": "*0.8"
+        },
+        "crosslinks": [
+          {
+            "label": "APL si temps partiel",
+            "href": "https://www.lescalculateurs.fr/pages/apl"
+          },
+          {
+            "label": "RSA si baisse de revenus",
+            "href": "https://www.lescalculateurs.fr/pages/rsa"
+          },
+          {
+            "label": "Reste à vivre à temps partiel",
+            "href": "https://www.lescalculateurs.fr/pages/reste-a-vivre"
+          }
+        ]
+      },
+      {
+        "id": "vie-en-couple",
+        "slug": "vie-en-couple",
+        "label": "vous vivez en couple",
+        "emoji": "👫",
+        "badge": "simulation",
+        "question": "Comment évolue ma Prime d'activité si je me mets en couple ?",
+        "explanation": "Le montant forfaitaire passe de 638,28 € (personne seule) à 957,42 € (couple). Mais les deux revenus du foyer sont additionnés. Si votre conjoint a des revenus élevés, la Prime peut fortement diminuer ou disparaître.",
+        "faq": [
+          {
+            "q": "Doit-on déclarer les deux salaires à la CAF ?",
+            "a": "Oui, la Prime d'activité est calculée sur les ressources de l'ensemble du foyer. Les revenus du conjoint sont intégralement pris en compte."
+          },
+          {
+            "q": "Le concubinage est-il pris en compte par la CAF ?",
+            "a": "Oui, la CAF considère la vie maritale (concubinage) pour le calcul des droits, même sans mariage ni PACS."
+          }
+        ],
+        "overrides": {
+          "situation": "couple"
+        },
+        "crosslinks": [
+          {
+            "label": "APL en couple",
+            "href": "https://www.lescalculateurs.fr/pages/apl"
+          },
+          {
+            "label": "Impôt en couple",
+            "href": "https://www.lescalculateurs.fr/pages/impot"
+          },
+          {
+            "label": "RSA couple",
+            "href": "https://www.lescalculateurs.fr/pages/rsa"
+          }
+        ]
+      },
+      {
+        "id": "avec-un-enfant",
+        "slug": "avec-un-enfant",
+        "label": "vous avez un enfant",
+        "emoji": "👶",
+        "badge": "simulation",
+        "question": "Quel impact si j'ai un enfant sur ma Prime d'activité ?",
+        "explanation": "Avec un enfant, le montant forfaitaire de la Prime augmente significativement : de 638,28 € (seul) à 957,42 € avec 1 enfant, et jusqu'à 1 092,84 € pour un parent isolé (taux majoré). La Prime progresse donc nettement.",
+        "faq": [
+          {
+            "q": "Quand déclarer l'arrivée d'un enfant à la CAF ?",
+            "a": "Dès la naissance ou l'arrivée de l'enfant au foyer. La CAF recalcule vos droits à partir du mois suivant la déclaration."
+          },
+          {
+            "q": "La Prime d'activité se cumule-t-elle avec les allocations familiales ?",
+            "a": "Oui, ces deux prestations sont distinctes et cumulables. Vous pouvez percevoir la Prime ET les allocations familiales simultanément."
+          }
+        ],
+        "overrides": {
+          "enfants": "+1"
+        },
+        "crosslinks": [
+          {
+            "label": "Allocations familiales 2026",
+            "href": "https://www.lescalculateurs.fr/pages/allocation-familiale"
+          },
+          {
+            "label": "APL avec un enfant",
+            "href": "https://www.lescalculateurs.fr/pages/apl"
+          },
+          {
+            "label": "ASF parent isolé",
+            "href": "https://www.lescalculateurs.fr/pages/asf"
+          }
+        ]
+      },
+      {
+        "id": "heberge-gratuitement",
+        "slug": "heberge-gratuitement",
+        "label": "vous êtes hébergé à titre gratuit",
+        "emoji": "🏠",
+        "badge": "simulation",
+        "question": "Comment ma Prime d'activité évolue-t-elle si je suis logé gratuitement ?",
+        "explanation": "La CAF applique un forfait logement déduit de la Prime : 76,59 € pour une personne seule, 153,19 € pour deux. Ce forfait considère l'absence de loyer comme une économie de ressources.",
+        "faq": [
+          {
+            "q": "Pourquoi ma Prime baisse-t-elle si je suis hébergé gratuitement ?",
+            "a": "La CAF estime que l'absence de loyer constitue une ressource indirecte. Un forfait logement est donc soustrait du calcul de vos droits."
+          },
+          {
+            "q": "Suis-je éligible à l'APL si je suis hébergé gratuitement ?",
+            "a": "Non, l'APL est réservée aux locataires ou accédants à la propriété avec un emprunt. Sans loyer ni crédit, vous n'êtes pas éligible à l'APL."
+          }
+        ],
+        "overrides": {
+          "logement": "gratuit"
+        },
+        "crosslinks": [
+          {
+            "label": "APL : qui peut en bénéficier ?",
+            "href": "https://www.lescalculateurs.fr/pages/apl-zones"
+          },
+          {
+            "label": "RSA et logement gratuit",
+            "href": "https://www.lescalculateurs.fr/pages/rsa"
+          },
+          {
+            "label": "Aides au logement 2026",
+            "href": "https://www.lescalculateurs.fr/pages/apl-zones"
+          }
+        ]
+      },
+      {
+        "id": "reforme-smic-plus-2",
+        "slug": "reforme-smic-plus-2",
+        "label": "le SMIC augmente de 2 % (réforme)",
+        "emoji": "📜",
+        "badge": "reforme",
+        "question": "Quel serait l'impact d'une revalorisation du SMIC de 2 % sur ma Prime d'activité ?",
+        "explanation": "Une hausse du SMIC de 2 % augmente mécaniquement le salaire net. Pour un SMIC à temps plein (≈1 426 € net), cela représente environ +28 € nets/mois. La Prime est recalculée avec 61 % de cette hausse déduite.",
+        "faq": [
+          {
+            "q": "Quand cette réforme entrerait-elle en vigueur ?",
+            "a": "Les revalorisations du SMIC ont généralement lieu au 1er janvier. Une hausse exceptionnelle peut intervenir en cours d'année sur décision gouvernementale."
+          },
+          {
+            "q": "Mon employeur est-il obligé de suivre le SMIC ?",
+            "a": "Oui, absolument. Le SMIC est le salaire minimum légal. Tout employeur doit impérativement respecter ce plancher pour l'ensemble de ses salariés."
+          }
+        ],
+        "overrides": {
+          "revenusProf": "*1.02"
+        },
+        "crosslinks": [
+          {
+            "label": "Salaire net au SMIC 2026",
+            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+          },
+          {
+            "label": "RSA et SMIC : quel écart ?",
+            "href": "https://www.lescalculateurs.fr/pages/rsa-vs-smic"
+          },
+          {
+            "label": "APL après revalorisation",
+            "href": "https://www.lescalculateurs.fr/pages/apl"
+          }
+        ]
+      },
+      {
+        "id": "reforme-bareme-caf-5",
+        "slug": "reforme-bareme-caf-5",
+        "label": "le barème CAF est réduit de 5 % (réforme)",
+        "emoji": "⚠️",
+        "badge": "reforme",
+        "question": "Quel serait l'impact d'une réduction de 5 % des barèmes de la Prime d'activité ?",
+        "explanation": "Une réduction de 5 % du barème abaisserait le forfait de base de 638,28 € à environ 606 € pour une personne seule. Tous les bénéficiaires seraient concernés, quel que soit leur niveau de revenus.",
+        "faq": [
+          {
+            "q": "Cette réforme est-elle confirmée ?",
+            "a": "Non, il s'agit d'une simulation hypothétique basée sur des scénarios de restriction budgétaire évoqués dans le débat public. Aucune annonce officielle n'a été faite à ce jour."
+          },
+          {
+            "q": "Qui serait le plus impacté par une baisse du barème CAF ?",
+            "a": "Les foyers modestes pour qui la Prime constitue une part importante des revenus. L'impact serait proportionnellement plus fort pour les petits montants de Prime."
+          }
+        ],
+        "overrides": {
+          "_reformeBaremeReduction": 0.05
+        },
+        "crosslinks": [
+          {
+            "label": "RSA : réforme en discussion",
+            "href": "https://www.lescalculateurs.fr/pages/rsa"
+          },
+          {
+            "label": "APL : coupes budgétaires",
+            "href": "https://www.lescalculateurs.fr/pages/apl"
+          },
+          {
+            "label": "Actualité des aides sociales",
+            "href": "https://www.lescalculateurs.fr/pages/simulateurs/aides-apres-perte-emploi"
+          }
+        ]
+      },
+      {
+        "id": "reforme-bonification-renforcee",
+        "slug": "reforme-bonification-renforcee",
+        "label": "la bonification individuelle est renforcée (réforme)",
+        "emoji": "🚀",
+        "badge": "reforme",
+        "question": "Et si la bonification individuelle de la Prime d'activité était portée à 300 € ?",
+        "explanation": "La bonification passerait de 240,63 € à 300 € maximum. Les travailleurs gagnant entre 709 € et 1 659 € par mois verraient leur Prime augmenter, avec un gain pouvant atteindre +59 € pour les revenus autour de 1 200 €.",
+        "faq": [
+          {
+            "q": "Qui bénéficierait de cette bonification renforcée ?",
+            "a": "Les salariés dont les revenus sont compris entre 709 € et 1 659 € nets par mois. Le gain maximum concerne les revenus proches de 1 659 €."
+          },
+          {
+            "q": "Cette mesure est-elle à l'étude ?",
+            "a": "Il s'agit d'une simulation hypothétique. Cette proposition a été évoquée lors des débats sur le pouvoir d'achat, mais aucune décision n'a été prise officiellement."
+          }
+        ],
+        "overrides": {
+          "_reformeBonificationMax": 300
+        },
+        "crosslinks": [
+          {
+            "label": "Prime d'activité 2026 : guide complet",
+            "href": "https://www.lescalculateurs.fr/pages/prime-activite"
+          },
+          {
+            "label": "RSA : montants et plafonds",
+            "href": "https://www.lescalculateurs.fr/pages/rsa"
+          },
+          {
+            "label": "Toutes les aides pour les bas revenus",
+            "href": "https://www.lescalculateurs.fr/pages/simulateurs/aides-apres-perte-emploi"
+          }
+        ]
+      }
+    ]
+  }
+}

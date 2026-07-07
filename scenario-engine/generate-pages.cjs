@@ -282,7 +282,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
   <section class="mb-8">
     <div class="flex items-center gap-3 mb-3"><span class="text-2xl">${scenario.emoji}</span>${badgeHTML(scenario.badge)}</div>
     <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">${e(scenario.question)}</h1>
-    <p class="text-lg text-gray-600 max-w-3xl">${e(scenario.description)}</p>
+    ${scenario.description ? `<p class="text-lg text-gray-600 max-w-3xl">${e(scenario.description)}</p>` : ""}
     <p class="text-sm text-gray-500 mt-2"><strong>Salaire de référence :</strong> ${revenuLabel} nets / mois</p>
     <div class="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg text-sm text-yellow-800">${badgeBandeau(scenario.badge)}</div>
   </section>
@@ -362,6 +362,25 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
   ${scenario.faq && scenario.faq.length ? `<section class="mb-8 max-w-3xl mx-auto"><h2 class="text-2xl font-bold text-gray-900 mb-4">❓ Questions fréquentes</h2><div class="space-y-3">${scenario.faq.map((f) => `<details class="rounded-lg border border-gray-200 p-4 group"><summary class="cursor-pointer font-semibold text-gray-900 text-sm group-open:text-blue-700">${e(f.q)}</summary><p class="mt-2 text-sm text-gray-700 leading-relaxed">${e(f.a)}</p></details>`).join("\n")}</div></section>` : ""}
 
   ${scenario.crosslinks && scenario.crosslinks.length ? `<section class="mb-8 max-w-3xl mx-auto"><h2 class="text-2xl font-bold text-gray-900 mb-4">🔗 À explorer aussi</h2><div class="grid gap-3 md:grid-cols-2">${scenario.crosslinks.map((l) => `<a href="${l.href}" class="rounded-lg border border-white bg-white p-3 shadow-sm hover:border-green-200 hover:shadow-md transition-all"><span class="text-sm font-medium text-gray-800">${e(l.label)}</span><span class="block text-xs text-gray-500 mt-0.5">${aide.label}</span></a>`).join("\n")}</div></section>` : ""}
+
+  <!-- Autres scénarios -->
+  <section class="mb-8 max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">📋 Autres scénarios Prime d'activité</h2>
+    <div class="grid gap-2 sm:grid-cols-2">
+      ${(aide.scenarios || [])
+        .filter((s) => s.id !== scenario.id)
+        .slice(0, 6)
+        .map((s) => {
+          const linkSlug = `/scenarios/prime-activite/${s.slug}-${revenuLevel}-euros.html`;
+          return `<a href="${linkSlug}" class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-100 hover:border-blue-200 hover:shadow-sm transition-all text-sm">
+          <span>${s.emoji}</span>
+          <span class="text-gray-700">${s.label}</span>
+          <span class="ml-auto text-xs text-gray-400">${revenuLabel}</span>
+        </a>`;
+        })
+        .join("\n")}
+    </div>
+  </section>
 
   <div class="text-center mt-12"><a href="${BASE_URL}/scenarios/prime-activite" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-colors">← Retour à tous les scénarios Prime d'activité</a></div>
 

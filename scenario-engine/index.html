@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Calculateurs — Anticiper (Scénarios)</title>
+    <meta
+      name="description"
+      content="Simulez l'impact d'un changement sur votre Prime d'activité : salaire, situation familiale, réformes."
+    />
+
+    <!-- Tailwind CDN (standalone, pas de build) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes flash-green {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      @keyframes flash-red {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      .flash-green {
+        animation: flash-green 0.6s ease-in-out 3;
+      }
+      .flash-red {
+        animation: flash-red 0.6s ease-in-out 3;
+      }
+      .flash-neutral {
+        animation: flash-green 0.6s ease-in-out 2;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "fade-in": "fadeIn 0.3s ease-out",
+              "slide-up": "slideUp 0.3s ease-out",
+            },
+            keyframes: {
+              fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 min-h-screen font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🧮</span>
+          <span class="text-xl font-bold text-gray-900">Les Calculateurs</span>
+        </div>
+        <span class="text-sm text-gray-500">Anticiper</span>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8">
+      <!-- Hero -->
+      <section class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+          🔮 Anticipez l'impact d'un changement
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Inspiré des marchés prédictifs, ce simulateur vous montre
+          <strong>ce qui se passe si...</strong>
+          votre salaire change, votre situation évolue, ou une réforme est adoptée.
+        </p>
+      </section>
+
+      <!-- Grid : Calculateur à gauche + Scénarios à droite -->
+      <div class="grid gap-8 lg:grid-cols-2">
+        <!-- Colonne gauche : Calculateur -->
+        <div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+            <h2 class="text-xl font-bold text-gray-800 mb-1 flex items-center gap-2">
+              <span>🧮</span> Prime d'activité 2026
+            </h2>
+            <p class="text-sm text-gray-500 mb-6">
+              Estimation basée sur les barèmes en vigueur au 1er mai 2026.
+            </p>
+
+            <form id="calc-form" class="space-y-4">
+              <!-- Situation -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Situation familiale *</label
+                >
+                <select
+                  id="field-situation"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  required
+                >
+                  <option value="seul">Seul(e)</option>
+                  <option value="couple">En couple</option>
+                  <option value="monoparental">Parent isolé</option>
+                </select>
+              </div>
+
+              <!-- Enfants -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nombre d'enfants à charge</label
+                >
+                <input
+                  type="number"
+                  id="field-enfants"
+                  value="0"
+                  min="0"
+                  max="10"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                />
+                <div class="flex gap-2 mt-2">
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-enfants"
+                    data-value="0"
+                  >
+                    0
+                  </button>
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-enfants"
+                    data-value="1"
+                  >
+                    1
+                  </button>
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-enfants"
+                    data-value="2"
+                  >
+                    2
+                  </button>
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-enfants"
+                    data-value="3"
+                  >
+                    3
+                  </button>
+                </div>
+              </div>
+
+              <!-- Revenus pro -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Revenus professionnels nets mensuels (€) *</label
+                >
+                <input
+                  type="number"
+                  id="field-revenus-pro"
+                  value="1500"
+                  min="0"
+                  step="50"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  required
+                />
+                <div class="flex gap-2 mt-2 flex-wrap">
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-revenus-pro"
+                    data-value="800"
+                  >
+                    800 €
+                  </button>
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-revenus-pro"
+                    data-value="1200"
+                  >
+                    1200 €
+                  </button>
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-revenus-pro"
+                    data-value="1500"
+                  >
+                    1500 €
+                  </button>
+                  <button
+                    type="button"
+                    class="quick-btn px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100"
+                    data-field="field-revenus-pro"
+                    data-value="2000"
+                  >
+                    2000 €
+                  </button>
+                </div>
+              </div>
+
+              <!-- Autres revenus -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Autres revenus mensuels (€)</label
+                >
+                <input
+                  type="number"
+                  id="field-autres-revenus"
+                  value="0"
+                  min="0"
+                  step="10"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                />
+              </div>
+
+              <!-- Logement -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Type de logement *</label
+                >
+                <select
+                  id="field-logement"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  required
+                >
+                  <option value="loue">Locataire</option>
+                  <option value="gratuit">
+                    Hébergé à titre gratuit / Propriétaire sans emprunt
+                  </option>
+                </select>
+              </div>
+
+              <!-- Type d'activité -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Type d'activité *</label
+                >
+                <select
+                  id="field-type-activite"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  required
+                >
+                  <option value="salarie">Salarié</option>
+                  <option value="independant">Indépendant</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm"
+              >
+                ▶️ Calculer ma Prime d'activité
+              </button>
+            </form>
+
+            <!-- Résultat -->
+            <div id="calc-result" class="mt-6 invisible min-h-[100px]">
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <p class="text-xs font-semibold text-green-700 uppercase mb-1">
+                  🟢 Situation actuelle (officielle)
+                </p>
+                <p id="calc-montant" class="text-3xl font-bold text-gray-900">—</p>
+                <p id="calc-explication" class="text-sm text-gray-600 mt-2"></p>
+                <button
+                  id="calc-toggle-details"
+                  class="text-xs text-blue-600 hover:underline mt-2 inline-block"
+                >
+                  Voir le détail du calcul ▾
+                </button>
+                <div
+                  id="calc-details"
+                  class="hidden mt-3 text-sm text-gray-700 space-y-1 border-t border-green-200 pt-3"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonne droite : Scénarios "Et si..." -->
+        <div>
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+            <!-- En-tête -->
+            <div class="bg-gradient-to-r from-indigo-600 to-blue-700 px-6 py-5">
+              <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                <span>🔮</span> Et si...
+              </h2>
+              <p class="text-indigo-100 text-sm mt-1">Explorez les conséquences d'un changement</p>
+            </div>
+
+            <!-- Situation actuelle condensée -->
+            <div class="px-6 py-4 border-b border-gray-100 bg-green-50/60">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-green-700">🟢 Actuellement</span>
+                <span class="text-2xl font-bold text-gray-900" id="scenario-current">—</span>
+              </div>
+            </div>
+
+            <!-- Cartes de scénarios -->
+            <div class="px-6 py-5 space-y-3" id="scenario-cards">
+              <p class="text-xs text-gray-400 text-center py-8">
+                Remplissez le calculateur puis cliquez sur <strong>Calculer</strong> pour voir les
+                scénarios.
+              </p>
+            </div>
+
+            <!-- Légende -->
+            <div class="px-6 py-3 bg-gray-50 border-t border-gray-100">
+              <p class="text-xs text-gray-500 flex items-center gap-2 flex-wrap">
+                <span>🟢</span> Officiel &nbsp;|&nbsp; <span>🟠</span> Simulation &nbsp;|&nbsp;
+                <span>🔵</span> Réforme hypothétique
+              </p>
+              <p class="text-xs text-gray-400 mt-1">
+                Les simulations sont indicatives. Seul l'organisme officiel confirme le montant.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section explication -->
+      <section class="mt-12 max-w-3xl mx-auto text-center">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">
+          Des simulateurs qui racontent une histoire
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          LesCalculateurs.fr est un projet indépendant né d'un constat simple&nbsp;:
+          <strong
+            >les données publiques existent, mais leur exploitation n'est pas toujours
+            évidente</strong
+          >. Notre objectif est de transformer des règles administratives, fiscales et sociales
+          souvent complexes en <strong>simulateurs simples et pédagogiques</strong>.
+        </p>
+        <p class="text-gray-600 text-sm leading-relaxed mt-3">
+          Avec ce module <em>"Et si..."</em>, nous allons plus loin&nbsp;: au lieu de simplement
+          répondre <em>"Voici le montant"</em>, nous vous aidons à explorer
+          <em>"Voici ce qui se passe si votre situation change"</em>. Parce qu'au fond, comprendre
+          les conséquences d'un changement, c'est reprendre le pouvoir sur ses décisions.
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">
+      Les Calculateurs — Simulation indépendante. Barèmes Prime d'activité 2026 issus de la CAF et
+      Service-Public.fr.
+    </footer>
+
+    <script>
+      // ═══════════════════════════════════════════════════════
+      //  MOTEUR DE CALCUL PRIME D'ACTIVITÉ (standalone)
+      // ═══════════════════════════════════════════════════════
+
+      const BAREmes = {
+        montantForfaitaire: {
+          nonMajoree: {
+            unePersonne: 638.28,
+            coupleOuIsole1Enfant: 957.42,
+            couple1EnfantOuIsole2Enfants: 1148.9,
+            couple2Enfants: 1340.38,
+            isole3Enfants: 1404.21,
+            couple3Enfants: 1595.69,
+            personneSupplementaire: 255.32,
+          },
+          majoree: {
+            grossesse: 819.63,
+            isole1Enfant: 1092.84,
+            isole2Enfants: 1366.05,
+            isole3Enfants: 1639.26,
+            isole4Enfants: 1912.47,
+            personneSupplementaire: 271.04,
+          },
+        },
+        forfaitLogement: {
+          unePersonne: 76.59,
+          deuxPersonnes: 153.19,
+          troisPersonnesOuPlus: 189.57,
+        },
+        bonification: {
+          montantMaximum: 240.63,
+          seuilDebut: 709.18,
+          seuilMaximum: 1658.76,
+        },
+        revenusProfessionnelsPrisEnCompte: 0.61,
+        montantMinimumVerse: 15,
+      };
+
+      function getPrimeForfait(situation, enfants) {
+        const n = Math.max(0, Math.floor(enfants || 0));
+        const NF = BAREmes.montantForfaitaire.nonMajoree;
+        const MF = BAREmes.montantForfaitaire.majoree;
+
+        if (situation === "monoparental") {
+          if (n <= 0) return NF.unePersonne;
+          if (n === 1) return MF.isole1Enfant;
+          if (n === 2) return MF.isole2Enfants;
+          if (n === 3) return MF.isole3Enfants;
+          return MF.isole4Enfants + (n - 4) * MF.personneSupplementaire;
+        }
+        if (situation === "couple") {
+          if (n <= 0) return NF.coupleOuIsole1Enfant;
+          if (n === 1) return NF.couple1EnfantOuIsole2Enfants;
+          if (n === 2) return NF.couple2Enfants;
+          if (n === 3) return NF.couple3Enfants;
+          return NF.couple3Enfants + (n - 3) * NF.personneSupplementaire;
+        }
+        // seul
+        if (n <= 0) return NF.unePersonne;
+        if (n === 1) return NF.coupleOuIsole1Enfant;
+        if (n === 2) return NF.couple1EnfantOuIsole2Enfants;
+        if (n === 3) return NF.isole3Enfants;
+        return NF.isole3Enfants + (n - 3) * NF.personneSupplementaire;
+      }
+
+      function getHousingForfait(logement, situation, enfants) {
+        if (logement === "loue") return 0;
+        const foyerSize = (situation === "couple" ? 2 : 1) + Math.max(0, Math.floor(enfants || 0));
+        if (foyerSize <= 1) return BAREmes.forfaitLogement.unePersonne;
+        if (foyerSize === 2) return BAREmes.forfaitLogement.deuxPersonnes;
+        return BAREmes.forfaitLogement.troisPersonnesOuPlus;
+      }
+
+      function getBonification(revenusProf) {
+        const r = Math.max(0, revenusProf || 0);
+        const { seuilDebut, seuilMaximum, montantMaximum } = BAREmes.bonification;
+        if (r < seuilDebut) return 0;
+        if (r >= seuilMaximum) return montantMaximum;
+        const ratio = (r - seuilDebut) / (seuilMaximum - seuilDebut);
+        return Math.round(montantMaximum * ratio * 100) / 100;
+      }
+
+      function calculer(data) {
+        const { situation, enfants, revenusProf, autresRevenus, logement } = data;
+
+        if (!situation || !logement || revenusProf <= 0) {
+          return {
+            success: true,
+            montantEstime: 0,
+            eligibilite: "Non éligible",
+            explication: "Revenus professionnels insuffisants.",
+          };
+        }
+
+        const montantBase = getPrimeForfait(situation, enfants);
+        const bonification = getBonification(revenusProf);
+        const forfaitLogement = getHousingForfait(logement, situation, enfants);
+        const revenusProfsComptabilises = revenusProf * BAREmes.revenusProfessionnelsPrisEnCompte;
+        const autresRevenusComptabilises = Math.max(0, autresRevenus || 0);
+        const totalRevenusComptabilises =
+          revenusProf + autresRevenusComptabilises + forfaitLogement;
+
+        let montantFinal =
+          montantBase + bonification + revenusProfsComptabilises - totalRevenusComptabilises;
+        montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
+
+        const details = {
+          montantBase: Math.round(montantBase * 100) / 100,
+          bonification,
+          forfaitLogement: Math.round(forfaitLogement * 100) / 100,
+          revenusProfsComptabilises: Math.round(revenusProfsComptabilises * 100) / 100,
+          autresRevenusComptabilises: Math.round(autresRevenusComptabilises * 100) / 100,
+          totalRevenusComptabilises: Math.round(totalRevenusComptabilises * 100) / 100,
+          montantFinal,
+        };
+
+        let eligibilite = "Probablement éligible";
+        if (montantFinal === 0) eligibilite = "Non éligible";
+        else if (montantFinal < BAREmes.montantMinimumVerse) {
+          eligibilite = "Montant trop faible (< 15 €)";
+          montantFinal = 0;
+        }
+
+        return {
+          success: true,
+          montantEstime: montantFinal,
+          eligibilite,
+          explication: "Estimation basée sur les barèmes 2026.",
+          details,
+        };
+      }
+
+      function formatResult(result) {
+        if (!result.success || result.montantEstime === 0) return "Non éligible";
+        return (
+          result.montantEstime.toLocaleString("fr-FR", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+          }) + " € / mois"
+        );
+      }
+
+      function formatDetails(details) {
+        const f = (v) =>
+          v.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+        return [
+          "• Montant forfaitaire : " + f(details.montantBase),
+          details.bonification > 0 ? "• Bonification : +" + f(details.bonification) : "",
+          details.forfaitLogement > 0 ? "• Forfait logement : −" + f(details.forfaitLogement) : "",
+          "• Revenus pros (61%) : −" + f(details.revenusProfsComptabilises),
+          "• = " +
+            (details.montantFinal > 0 ? f(details.montantFinal) + " / mois" : "Non éligible"),
+        ]
+          .filter(Boolean)
+          .join("<br>");
+      }
+
+      // ═══════════════════════════════════════════════════════
+      //  SCÉNARIOS "ET SI..."
+      // ═══════════════════════════════════════════════════════
+
+      const SCENARIOS = [
+        // 🟠 Simulations personnalisées
+        {
+          id: "salaire-plus-100",
+          label: "Votre salaire augmente de 100 €",
+          emoji: "💰",
+          badge: "simulation",
+          description: "Une petite augmentation : est-ce que ça vaut le coup ?",
+          getOverrides: function (base) {
+            return { revenusProf: base.revenusProf + 100 };
+          },
+          transformLabel: function (base) {
+            return (
+              "Salaire : " +
+              (base.revenusProf + 100).toLocaleString("fr-FR") +
+              " € au lieu de " +
+              base.revenusProf.toLocaleString("fr-FR") +
+              " €"
+            );
+          },
+        },
+        {
+          id: "salaire-plus-300",
+          label: "Votre salaire augmente de 300 €",
+          emoji: "📊",
+          badge: "simulation",
+          description: "Une promotion ou un changement d'emploi",
+          getOverrides: function (base) {
+            return { revenusProf: base.revenusProf + 300 };
+          },
+          transformLabel: function (base) {
+            return (
+              "Salaire : " +
+              (base.revenusProf + 300).toLocaleString("fr-FR") +
+              " € au lieu de " +
+              base.revenusProf.toLocaleString("fr-FR") +
+              " €"
+            );
+          },
+        },
+        {
+          id: "temps-partiel",
+          label: "Vous passez à temps partiel (−20 %)",
+          emoji: "⏱️",
+          badge: "simulation",
+          description: "Impact d'une réduction du temps de travail",
+          getOverrides: function (base) {
+            return { revenusProf: Math.round(base.revenusProf * 0.8) };
+          },
+          transformLabel: function (base) {
+            return (
+              "Salaire : " +
+              Math.round(base.revenusProf * 0.8).toLocaleString("fr-FR") +
+              " € au lieu de " +
+              base.revenusProf.toLocaleString("fr-FR") +
+              " €"
+            );
+          },
+        },
+        {
+          id: "vie-en-couple",
+          label: "Vous vivez en couple",
+          emoji: "👫",
+          badge: "simulation",
+          description: "Mise en commun des ressources du foyer",
+          getOverrides: function (base) {
+            return { situation: "couple" };
+          },
+        },
+        {
+          id: "avec-un-enfant",
+          label: "Vous avez un enfant",
+          emoji: "👶",
+          badge: "simulation",
+          description: "Ajout d'un enfant dans le foyer",
+          getOverrides: function (base) {
+            return { enfants: base.enfants + 1 };
+          },
+          transformLabel: function (base) {
+            return base.enfants + 1 + " enfant(s) au lieu de " + base.enfants;
+          },
+        },
+        {
+          id: "demenagement",
+          label: "Vous êtes hébergé à titre gratuit",
+          emoji: "🏠",
+          badge: "simulation",
+          description: "Logement gratuit (hébergé, propriétaire sans emprunt)",
+          getOverrides: function (base) {
+            return { logement: "gratuit" };
+          },
+        },
+        // 🔵 Scénarios de réforme (hypothétiques)
+        {
+          id: "reforme-smic",
+          label: "Le SMIC augmente de 2 % (réforme)",
+          emoji: "📜",
+          badge: "reforme",
+          description: "Simulation si le gouvernement revalorise le SMIC de 2 %",
+          getOverrides: function (base) {
+            return { revenusProf: Math.round(base.revenusProf * 1.02) };
+          },
+          transformLabel: function (base) {
+            return (
+              "Salaire projeté : " +
+              Math.round(base.revenusProf * 1.02).toLocaleString("fr-FR") +
+              " €"
+            );
+          },
+        },
+        {
+          id: "reforme-bareme",
+          label: "Le barème CAF est réduit de 5 % (réforme)",
+          emoji: "⚠️",
+          badge: "reforme",
+          description: "Impact d'une réduction budgétaire des prestations CAF",
+          getOverrides: function (base) {
+            return { _reformeBaremeReduction: 0.05 };
+          },
+        },
+        {
+          id: "reforme-bonification",
+          label: "Bonification individuelle renforcée (réforme)",
+          emoji: "🚀",
+          badge: "reforme",
+          description: "Projet : bonification max portée à 300 € (au lieu de 240,63 €)",
+          getOverrides: function (base) {
+            return { _reformeBonificationMax: 300 };
+          },
+        },
+      ];
+
+      // Version "reforme-aware" du calculateur
+      function calculerAvecReformes(data) {
+        const reduc = data._reformeBaremeReduction || 0;
+        const bonifMaxOverride = data._reformeBonificationMax || 0;
+
+        // Si pas de réforme, utiliser le calcul standard
+        if (reduc === 0 && bonifMaxOverride === 0) return calculer(data);
+
+        // Clone et applique les réformes
+        const originalBonifMax = BAREmes.bonification.montantMaximum;
+        const originalForfaitFn = getPrimeForfait;
+        const originalBonifFn = getBonification;
+
+        // Override temporaire
+        if (reduc > 0) {
+          // On va modifier les barèmes temporairement
+          // Stratégie simple : on réduit le montant de base après coup
+          const result = calculer(data);
+          if (result.success && result.montantEstime > 0) {
+            const impactBase = result.details.montantBase * reduc;
+            result.montantEstime = Math.max(
+              0,
+              Math.round((result.montantEstime - impactBase) * 100) / 100,
+            );
+            result.details.montantBase =
+              Math.round(result.details.montantBase * (1 - reduc) * 100) / 100;
+            result.details.montantFinal = result.montantEstime;
+          }
+          return result;
+        }
+
+        if (bonifMaxOverride > 0) {
+          const result = calculer(data);
+          if (result.success) {
+            const ratio = bonifMaxOverride / originalBonifMax;
+            const boost = result.details.bonification * (ratio - 1);
+            result.montantEstime = Math.max(
+              0,
+              Math.round((result.montantEstime + boost) * 100) / 100,
+            );
+            result.details.bonification =
+              Math.round(result.details.bonification * ratio * 100) / 100;
+            result.details.montantFinal = result.montantEstime;
+          }
+          return result;
+        }
+
+        return calculer(data);
+      }
+
+      // ═══════════════════════════════════════════════════════
+      //  UI LOGIC
+      // ═══════════════════════════════════════════════════════
+
+      const form = document.getElementById("calc-form");
+      const resultDiv = document.getElementById("calc-result");
+      const montantEl = document.getElementById("calc-montant");
+      const explicationEl = document.getElementById("calc-explication");
+      const detailsEl = document.getElementById("calc-details");
+      const toggleDetailsBtn = document.getElementById("calc-toggle-details");
+      const scenarioCurrentEl = document.getElementById("scenario-current");
+      const scenarioCardsEl = document.getElementById("scenario-cards");
+
+      let lastResult = null;
+      let lastValues = null;
+
+      function getFormValues() {
+        return {
+          situation: document.getElementById("field-situation").value,
+          enfants: parseInt(document.getElementById("field-enfants").value) || 0,
+          revenusProf: parseInt(document.getElementById("field-revenus-pro").value) || 0,
+          autresRevenus: parseInt(document.getElementById("field-autres-revenus").value) || 0,
+          logement: document.getElementById("field-logement").value,
+          typeActivite: document.getElementById("field-type-activite").value,
+        };
+      }
+
+      // Quick value buttons
+      document.querySelectorAll(".quick-btn").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          var fieldId = this.getAttribute("data-field");
+          var value = this.getAttribute("data-value");
+          var input = document.getElementById(fieldId);
+          if (input) {
+            input.value = value;
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        });
+      });
+
+      // Submit form
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        lastValues = getFormValues();
+        lastResult = calculer(lastValues);
+
+        // Afficher résultat
+        montantEl.textContent = formatResult(lastResult);
+        explicationEl.textContent = lastResult.explication || "";
+        detailsEl.innerHTML = lastResult.details ? formatDetails(lastResult.details) : "";
+        resultDiv.classList.remove("invisible");
+        resultDiv.scrollIntoView({ behavior: "smooth" });
+
+        // Mettre à jour les scénarios
+        renderScenarios();
+      });
+
+      // Toggle détails
+      toggleDetailsBtn.addEventListener("click", function () {
+        var isHidden = detailsEl.classList.contains("hidden");
+        if (isHidden) {
+          detailsEl.classList.remove("hidden");
+          toggleDetailsBtn.textContent = "Masquer le détail ▴";
+        } else {
+          detailsEl.classList.add("hidden");
+          toggleDetailsBtn.textContent = "Voir le détail du calcul ▾";
+        }
+      });
+
+      // Masquer résultat quand on modifie
+      form.querySelectorAll("input, select").forEach(function (el) {
+        el.addEventListener("change", function () {
+          resultDiv.classList.add("invisible");
+        });
+      });
+
+      // ═══════════════════════════════════════════════════════
+      //  RENDU DES SCÉNARIOS
+      // ═══════════════════════════════════════════════════════
+
+      function renderScenarios() {
+        if (!lastValues || !lastResult) {
+          scenarioCardsEl.innerHTML =
+            '<p class="text-xs text-gray-400 text-center py-8">Remplissez le calculateur puis cliquez sur <strong>Calculer</strong> pour voir les scénarios.</p>';
+          scenarioCurrentEl.textContent = "—";
+          return;
+        }
+
+        // Afficher montant actuel dans la colonne scénarios
+        scenarioCurrentEl.textContent = formatResult(lastResult).replace(" / mois", "");
+
+        // Construire les cartes
+        var cardsHTML =
+          '<h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Et si...</h3>';
+
+        SCENARIOS.forEach(function (scenario) {
+          var overrides = scenario.getOverrides ? scenario.getOverrides(lastValues) : {};
+          var merged = Object.assign({}, lastValues, overrides);
+          var result = calculerAvecReformes(merged);
+          var scenarioAmount = result.montantEstime || 0;
+          var diff = Math.round((scenarioAmount - (lastResult.montantEstime || 0)) * 100) / 100;
+
+          var diffFormatted =
+            diff > 0
+              ? "+" + diff.toLocaleString("fr-FR") + " €"
+              : diff < 0
+                ? diff.toLocaleString("fr-FR") + " €"
+                : "0 €";
+          var diffColor = diff > 0 ? "text-green-600" : diff < 0 ? "text-red-600" : "text-gray-400";
+          var diffIcon = diff > 0 ? "📈" : diff < 0 ? "📉" : "➡️";
+          var diffBg =
+            diff > 0
+              ? "bg-green-50 border-green-200"
+              : diff < 0
+                ? "bg-red-50 border-red-200"
+                : "bg-gray-50 border-gray-200";
+
+          var badgeColors = {
+            simulation: "bg-orange-100 text-orange-800 border-orange-200",
+            reforme: "bg-blue-100 text-blue-800 border-blue-200",
+          };
+          var badgeLabels = {
+            simulation: "🟠 Simulation",
+            reforme: "🔵 Réforme",
+          };
+
+          var scenarioFormatted = formatResult(result).replace(" / mois", "");
+          var transformLabel = scenario.transformLabel ? scenario.transformLabel(lastValues) : null;
+
+          cardsHTML +=
+            "" +
+            '<div class="scenario-card group relative rounded-lg border-2 border-gray-100 bg-white p-4 cursor-pointer transition-all duration-200 hover:border-blue-300 hover:shadow-md hover:bg-blue-50/30 active:scale-[0.98]" data-scenario-id="' +
+            scenario.id +
+            '" role="button" tabindex="0">' +
+            '<div class="flex items-start justify-between gap-3">' +
+            '<div class="flex-1 min-w-0">' +
+            '<div class="flex items-center gap-2 flex-wrap">' +
+            '<span class="text-lg">' +
+            scenario.emoji +
+            "</span>" +
+            '<span class="font-semibold text-gray-900 text-sm">' +
+            scenario.label +
+            "</span>" +
+            '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ' +
+            (badgeColors[scenario.badge] || "") +
+            ' border">' +
+            (badgeLabels[scenario.badge] || "") +
+            "</span>" +
+            "</div>" +
+            (scenario.description
+              ? '<p class="text-xs text-gray-500 mt-1">' + scenario.description + "</p>"
+              : "") +
+            (transformLabel
+              ? '<p class="text-xs text-gray-500 mt-1 italic">' + transformLabel + "</p>"
+              : "") +
+            "</div>" +
+            '<div class="text-right flex-shrink-0">' +
+            '<div class="text-lg font-bold text-gray-900 whitespace-nowrap">' +
+            scenarioFormatted +
+            "</div>" +
+            '<div class="flex items-center justify-end gap-1 mt-0.5">' +
+            '<span class="text-xs ' +
+            diffColor +
+            ' font-semibold">' +
+            diffIcon +
+            " " +
+            diffFormatted +
+            "</span>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            '<div class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">' +
+            '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>' +
+            "</div>" +
+            "</div>";
+        });
+
+        scenarioCardsEl.innerHTML = cardsHTML;
+
+        // Attacher les listeners
+        document.querySelectorAll(".scenario-card").forEach(function (card) {
+          card.addEventListener("click", function () {
+            var scenarioId = this.getAttribute("data-scenario-id");
+            var scenario = SCENARIOS.find(function (s) {
+              return s.id === scenarioId;
+            });
+            if (!scenario) return;
+
+            var overrides = scenario.getOverrides ? scenario.getOverrides(lastValues) : {};
+            var merged = Object.assign({}, lastValues, overrides);
+            var result = calculerAvecReformes(merged);
+            var scenarioAmount = result.montantEstime || 0;
+            var diff = Math.round((scenarioAmount - (lastResult.montantEstime || 0)) * 100) / 100;
+            var scenarioFormatted = formatResult(result).replace(" / mois", "");
+            var currentFormatted = formatResult(lastResult).replace(" / mois", "");
+            var diffFormatted =
+              diff > 0
+                ? "+" + diff.toLocaleString("fr-FR") + " €"
+                : diff < 0
+                  ? diff.toLocaleString("fr-FR") + " €"
+                  : "0 €";
+            var diffColor =
+              diff > 0 ? "text-green-600" : diff < 0 ? "text-red-600" : "text-gray-500";
+            var diffBg =
+              diff > 0
+                ? "bg-green-50 border-green-200"
+                : diff < 0
+                  ? "bg-red-50 border-red-200"
+                  : "bg-gray-50 border-gray-200";
+
+            // Animation feedback
+            this.classList.add("ring-2", "ring-blue-500", "bg-blue-50");
+            var self = this;
+            setTimeout(function () {
+              self.classList.remove("ring-2", "ring-blue-500", "bg-blue-50");
+            }, 800);
+
+            // Modale comparative
+            showComparisonModal(
+              scenario,
+              currentFormatted,
+              scenarioFormatted,
+              diffFormatted,
+              diffColor,
+              diffBg,
+            );
+          });
+        });
+      }
+
+      function showComparisonModal(
+        scenario,
+        currentFormatted,
+        scenarioFormatted,
+        diffFormatted,
+        diffColor,
+        diffBg,
+      ) {
+        var existing = document.getElementById("comparison-popup");
+        if (existing) existing.remove();
+
+        var modal = document.createElement("div");
+        modal.id = "comparison-popup";
+        modal.className = "fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4";
+        modal.style.animation = "fadeIn 0.2s ease-out";
+        modal.innerHTML =
+          "" +
+          '<div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6" style="animation: slideUp 0.3s ease-out">' +
+          '<div class="flex items-center justify-between mb-4">' +
+          '<h3 class="text-lg font-bold text-gray-900">Comparaison</h3>' +
+          '<button class="text-gray-400 hover:text-gray-600 text-xl leading-none" id="close-popup">&times;</button>' +
+          "</div>" +
+          '<div class="space-y-4">' +
+          '<div class="bg-green-50 rounded-lg p-4 border border-green-200">' +
+          '<div class="text-xs font-semibold text-green-700 uppercase mb-1">🟢 Situation actuelle</div>' +
+          '<div class="text-2xl font-bold text-gray-900">' +
+          currentFormatted +
+          ' <span class="text-sm font-normal text-gray-500">/ mois</span></div>' +
+          "</div>" +
+          '<div class="flex justify-center">' +
+          '<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>' +
+          "</div>" +
+          '<div class="' +
+          diffBg +
+          ' rounded-lg p-4 border">' +
+          '<div class="text-xs font-semibold text-gray-600 uppercase mb-1">' +
+          scenario.emoji +
+          " " +
+          scenario.label +
+          "</div>" +
+          '<div class="text-2xl font-bold text-gray-900">' +
+          scenarioFormatted +
+          ' <span class="text-sm font-normal text-gray-500">/ mois</span></div>' +
+          '<div class="mt-2 inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-bold ' +
+          diffColor +
+          ' bg-white/70">' +
+          (parseFloat(diffFormatted) > 0 ? "📈 " : parseFloat(diffFormatted) < 0 ? "📉 " : "➡️ ") +
+          diffFormatted +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          '<p class="text-xs text-gray-400 mt-4 text-center">' +
+          (scenario.badge === "reforme"
+            ? "🔵 Simulation basée sur un projet de réforme. Cette mesure n'est pas en vigueur."
+            : "🟠 Simulation personnalisée à titre indicatif. Seul l'organisme officiel peut confirmer le montant.") +
+          "</p>" +
+          "</div>";
+
+        document.body.appendChild(modal);
+
+        var closeBtn = modal.querySelector("#close-popup");
+        closeBtn.addEventListener("click", function () {
+          modal.remove();
+        });
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) modal.remove();
+        });
+        setTimeout(function () {
+          if (document.body.contains(modal)) modal.remove();
+        }, 10000);
+      }
+
+      // ═══════════════════════════════════════════════════════
+      //  INIT : pré-remplir et calculer automatiquement
+      // ═══════════════════════════════════════════════════════
+      setTimeout(function () {
+        form.requestSubmit();
+      }, 300);
+    </script>
+  </body>
+</html>
