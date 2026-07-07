@@ -804,8 +804,8 @@
     loadAdsense();
     if (USE_CUSTOM_CONSENT_UI) {
       scheduleInitialConsentModal();
-      scheduleAdsDecisionFallback();
     }
+    scheduleAdsDecisionFallback();
   }
 
   ensureAccessibilityHelpers();
