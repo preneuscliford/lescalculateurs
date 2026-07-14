@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "account": "accounts/pub-2209781252231399",
+    "site": "lescalculateurs.fr",
+    "generatedAt": "2026-07-01T20:24:24.966Z",
+    "note": "API Reporting (reports:generate) non disponible pour compte éditeur individuel. Les revenus quotidiens ne sont pas accessibles via API."
+  },
+  "account": {
+    "name": "accounts/pub-2209781252231399",
+    "displayName": "CLIFORD PRENEUS",
+    "timeZone": {
+      "id": "Europe/Paris"
+    },
+    "createTime": "2025-10-03T13:57:37.018Z",
+    "state": "READY"
+  },
+  "payments": [
+    {
+      "name": "accounts/pub-2209781252231399/payments/unpaid",
+      "amount": "€107.13"
+    }
+  ],
+  "adClients": [
+    {
+      "name": "accounts/pub-2209781252231399/adclients/ca-pub-2209781252231399",
+      "reportingDimensionId": "ca-pub-2209781252231399",
+      "productCode": "AFC",
+      "state": "READY"
+    }
+  ],
+  "urlChannels": [
+    {
+      "name": "accounts/pub-2209781252231399/adclients/ca-pub-2209781252231399/urlchannels/lescalculateurs.fr",
+      "reportingDimensionId": "ca-pub-2209781252231399:lescalculateurs.fr",
+      "uriPattern": "lescalculateurs.fr"
+    }
+  ]
+}

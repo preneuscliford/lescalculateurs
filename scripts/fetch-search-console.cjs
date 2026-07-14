@@ -26,8 +26,8 @@ const CREDS_PATH = path.resolve(__dirname, "..", "mes-sass-a09ffa66ca74.json");
 const BING_API_KEY = process.env.BING_API_KEY || "";
 const BING_API_BASE = "https://ssl.bing.com/webmaster/api.svc/json";
 
-const END_DATE = "2026-06-28";
-const START_DATE = "2026-06-01";
+const END_DATE = "2026-07-13";
+const START_DATE = "2026-06-13";
 
 // ============================================================
 // GOOGLE SEARCH CONSOLE

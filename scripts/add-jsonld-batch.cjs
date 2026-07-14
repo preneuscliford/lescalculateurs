@@ -25,6 +25,11 @@ const PAGES = [
   "src/pages/blog/departements/frais-notaire-13.html",
   "src/pages/blog/departements/frais-notaire-11.html",
   "src/pages/blog/departements/frais-notaire-26.html",
+  // Pages revenus/villes sans JSON-LD (audit du 14/07/2026)
+  "src/pages/top-40-villes-revenu-complet-2026.html",
+  "src/pages/top-25-revenu-median-france-2026.html",
+  "src/pages/revenu-median-commune.html",
+  "src/pages/inegalites-revenu-ville-france-2026.html",
 ];
 
 const BASE = path.resolve(__dirname, "..");

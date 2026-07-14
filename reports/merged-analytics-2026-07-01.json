@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "site": "lescalculateurs.fr",
+    "generatedAt": "2026-07-01T20:25:17.503Z",
+    "sources": {
+      "searchConsole": {
+        "site": "lescalculateurs.fr",
+        "period": {
+          "start": "2026-06-01",
+          "end": "2026-06-30",
+          "days": 28
+        },
+        "generatedAt": "2026-07-01T18:53:49.991Z",
+        "engines": [
+          "google",
+          "bing"
+        ]
+      },
+      "adsense": {
+        "account": "accounts/pub-2209781252231399",
+        "site": "lescalculateurs.fr",
+        "generatedAt": "2026-07-01T20:24:24.966Z",
+        "note": "API Reporting (reports:generate) non disponible pour compte éditeur individuel. Les revenus quotidiens ne sont pas accessibles via API."
+      }
+    }
+  },
+  "searchTraffic": {
+    "google": {
+      "clicks": 3501,
+      "impressions": 253442,
+      "ctr": "1.38%",
+      "avgPosition": "8.3"
+    },
+    "bing": {
+      "clicks": 3502,
+      "impressions": 280311,
+      "ctr": "1.25%",
+      "avgPosition": "5.4",
+      "distinctQueries": 858
+    },
+    "totalClicks": 7003,
+    "totalImpressions": 533753,
+    "comparison": {
+      "note": "Période identique 28j pour les deux moteurs.",
+      "google": {
+        "clicks": 3501,
+        "impressions": 253442,
+        "ctr": "1.38%"
+      },
+      "bing": {
+        "clicks": 3502,
+        "impressions": 280311,
+        "ctr": "1.25%"
+      },
+      "ratioBingVsGoogle": "100.0%"
+    }
+  },
+  "adRevenue": {
+    "daily": [],
+    "topPages": [],
+    "topDomains": []
+  },
+  "crossReference": [],
+  "kpi": null
+}

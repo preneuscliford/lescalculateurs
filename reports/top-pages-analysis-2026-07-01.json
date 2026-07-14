@@ -1,0 +1,1500 @@
+{
+  "meta": {
+    "site": "lescalculateurs.fr",
+    "period": {
+      "start": "2026-06-01",
+      "end": "2026-06-30",
+      "days": 28
+    },
+    "generatedAt": "2026-07-01T20:27:37.816Z",
+    "methodology": {
+      "score": "Clicks * 1.0 + Impressions * CTR * 0.05, weighted by CTR bonus factor",
+      "revenueEstimation": "Solde AdSense (107.13 €) réparti au prorata des clics search organiques",
+      "note": "Les revenus AdSense par page ne sont pas disponibles via API pour les comptes éditeurs individuels"
+    }
+  },
+  "topPages": [
+    {
+      "page": "/pages/are",
+      "category": "are",
+      "subCategory": "are",
+      "googleClicks": 670,
+      "bingClicks": 1643,
+      "totalClicks": 2313,
+      "totalImpr": 69434,
+      "avgCTR": "3.33",
+      "googlePos": "8.5",
+      "score": 3642.98
+    },
+    {
+      "page": "/pages/apl",
+      "category": "apl",
+      "subCategory": "apl",
+      "googleClicks": 753,
+      "bingClicks": 2267,
+      "totalClicks": 3020,
+      "totalImpr": 243511,
+      "avgCTR": "1.24",
+      "googlePos": "8.3",
+      "score": 3171
+    },
+    {
+      "page": "/pages/prime-activite",
+      "category": "prime-activite",
+      "subCategory": "prime-activite",
+      "googleClicks": 282,
+      "bingClicks": 796,
+      "totalClicks": 1078,
+      "totalImpr": 81434,
+      "avgCTR": "1.32",
+      "googlePos": "9.1",
+      "score": 1131.9
+    },
+    {
+      "page": "/pages/apl-etudiant",
+      "category": "apl-etudiant",
+      "subCategory": "apl-etudiant",
+      "googleClicks": 37,
+      "bingClicks": 561,
+      "totalClicks": 598,
+      "totalImpr": 17345,
+      "avgCTR": "3.45",
+      "googlePos": "11.2",
+      "score": 941.85
+    },
+    {
+      "page": "/pages/guide-complet-impot-revenu-2026",
+      "category": "guide-complet-impot-revenu-2026",
+      "subCategory": "guide-complet-impot-revenu-2026",
+      "googleClicks": 2,
+      "bingClicks": 869,
+      "totalClicks": 871,
+      "totalImpr": 77055,
+      "avgCTR": "1.13",
+      "googlePos": "13.7",
+      "score": 914.55
+    },
+    {
+      "page": "/pages/impot",
+      "category": "impot",
+      "subCategory": "impot",
+      "googleClicks": 4,
+      "bingClicks": 789,
+      "totalClicks": 793,
+      "totalImpr": 87144,
+      "avgCTR": "0.91",
+      "googlePos": "22.5",
+      "score": 832.65
+    },
+    {
+      "page": "/pages/taxe",
+      "category": "taxe",
+      "subCategory": "taxe",
+      "googleClicks": 76,
+      "bingClicks": 324,
+      "totalClicks": 400,
+      "totalImpr": 8268,
+      "avgCTR": "4.84",
+      "googlePos": "17.0",
+      "score": 630
+    },
+    {
+      "page": "/pages/notaire",
+      "category": "notaire",
+      "subCategory": "notaire",
+      "googleClicks": 44,
+      "bingClicks": 399,
+      "totalClicks": 443,
+      "totalImpr": 23426,
+      "avgCTR": "1.89",
+      "googlePos": "12.2",
+      "score": 558.18
+    },
+    {
+      "page": "/pages/apl/apl-smic-seul",
+      "category": "apl",
+      "subCategory": "apl/apl-smic-seul",
+      "googleClicks": 255,
+      "bingClicks": 0,
+      "totalClicks": 255,
+      "totalImpr": 8097,
+      "avgCTR": "3.15",
+      "googlePos": "3.2",
+      "score": 401.63
+    },
+    {
+      "page": "/pages/apl-zones",
+      "category": "apl-zones",
+      "subCategory": "apl-zones",
+      "googleClicks": 213,
+      "bingClicks": 119,
+      "totalClicks": 332,
+      "totalImpr": 32609,
+      "avgCTR": "1.02",
+      "googlePos": "5.9",
+      "score": 348.6
+    },
+    {
+      "page": "/pages/impot/impot-couple-ou-separe",
+      "category": "impot",
+      "subCategory": "impot/impot-couple-ou-separe",
+      "googleClicks": 17,
+      "bingClicks": 166,
+      "totalClicks": 183,
+      "totalImpr": 2621,
+      "avgCTR": "6.98",
+      "googlePos": "9.0",
+      "score": 288.23
+    },
+    {
+      "page": "/pages/plusvalue",
+      "category": "plusvalue",
+      "subCategory": "plusvalue",
+      "googleClicks": 12,
+      "bingClicks": 198,
+      "totalClicks": 210,
+      "totalImpr": 9085,
+      "avgCTR": "2.31",
+      "googlePos": "10.9",
+      "score": 264.6
+    },
+    {
+      "page": "/pages/salaire-brut-net-calcul-2026",
+      "category": "salaire-brut-net-calcul-2026",
+      "subCategory": "salaire-brut-net-calcul-2026",
+      "googleClicks": 0,
+      "bingClicks": 182,
+      "totalClicks": 182,
+      "totalImpr": 12317,
+      "avgCTR": "1.48",
+      "googlePos": "0.0",
+      "score": 191.1
+    },
+    {
+      "page": "/pages/rsa",
+      "category": "rsa",
+      "subCategory": "rsa",
+      "googleClicks": 88,
+      "bingClicks": 81,
+      "totalClicks": 169,
+      "totalImpr": 24650,
+      "avgCTR": "0.69",
+      "googlePos": "9.3",
+      "score": 177.45
+    },
+    {
+      "page": "/pages/apl/apl-chomage-loyer-moyen",
+      "category": "apl",
+      "subCategory": "apl/apl-chomage-loyer-moyen",
+      "googleClicks": 90,
+      "bingClicks": 0,
+      "totalClicks": 90,
+      "totalImpr": 2200,
+      "avgCTR": "4.09",
+      "googlePos": "7.4",
+      "score": 141.75
+    },
+    {
+      "page": "/pages/charges",
+      "category": "charges",
+      "subCategory": "charges",
+      "googleClicks": 48,
+      "bingClicks": 18,
+      "totalClicks": 66,
+      "totalImpr": 1243,
+      "avgCTR": "5.31",
+      "googlePos": "7.7",
+      "score": 103.95
+    },
+    {
+      "page": "/pages/apl/apl-loyer-700-personne-seule",
+      "category": "apl",
+      "subCategory": "apl/apl-loyer-700-personne-seule",
+      "googleClicks": 61,
+      "bingClicks": 0,
+      "totalClicks": 61,
+      "totalImpr": 1298,
+      "avgCTR": "4.70",
+      "googlePos": "5.8",
+      "score": 96.07
+    },
+    {
+      "page": "/pages/aah",
+      "category": "aah",
+      "subCategory": "aah",
+      "googleClicks": 31,
+      "bingClicks": 45,
+      "totalClicks": 76,
+      "totalImpr": 3401,
+      "avgCTR": "2.23",
+      "googlePos": "11.4",
+      "score": 95.76
+    },
+    {
+      "page": "/pages/revenu-median-commune",
+      "category": "revenu-median-commune",
+      "subCategory": "revenu-median-commune",
+      "googleClicks": 55,
+      "bingClicks": 1,
+      "totalClicks": 56,
+      "totalImpr": 1684,
+      "avgCTR": "3.33",
+      "googlePos": "7.8",
+      "score": 88.2
+    },
+    {
+      "page": "/pages/asf",
+      "category": "asf",
+      "subCategory": "asf",
+      "googleClicks": 48,
+      "bingClicks": 23,
+      "totalClicks": 71,
+      "totalImpr": 5375,
+      "avgCTR": "1.32",
+      "googlePos": "8.8",
+      "score": 74.55
+    },
+    {
+      "page": "/pages/apl/apl-parent-isole-trois-enfants",
+      "category": "apl",
+      "subCategory": "apl/apl-parent-isole-trois-enfants",
+      "googleClicks": 47,
+      "bingClicks": 0,
+      "totalClicks": 47,
+      "totalImpr": 1390,
+      "avgCTR": "3.38",
+      "googlePos": "7.1",
+      "score": 74.03
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-06",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 42,
+      "bingClicks": 3,
+      "totalClicks": 45,
+      "totalImpr": 1187,
+      "avgCTR": "3.79",
+      "googlePos": "5.7",
+      "score": 70.88
+    },
+    {
+      "page": "/pages/taxe-fonciere",
+      "category": "taxe-fonciere",
+      "subCategory": "taxe-fonciere",
+      "googleClicks": 0,
+      "bingClicks": 43,
+      "totalClicks": 43,
+      "totalImpr": 609,
+      "avgCTR": "7.06",
+      "googlePos": "0.0",
+      "score": 67.72
+    },
+    {
+      "page": "/pages/apl/apl-famille-trois-enfants",
+      "category": "apl",
+      "subCategory": "apl/apl-famille-trois-enfants",
+      "googleClicks": 42,
+      "bingClicks": 0,
+      "totalClicks": 42,
+      "totalImpr": 1189,
+      "avgCTR": "3.53",
+      "googlePos": "6.0",
+      "score": 66.15
+    },
+    {
+      "page": "/pages/blog/frais-notaire-ancien-neuf-2026",
+      "category": "blog",
+      "subCategory": "blog/frais-notaire-ancien-neuf-2026",
+      "googleClicks": 59,
+      "bingClicks": 0,
+      "totalClicks": 59,
+      "totalImpr": 7695,
+      "avgCTR": "0.77",
+      "googlePos": "7.4",
+      "score": 61.95
+    },
+    {
+      "page": "/pages/blog/frais-notaire-ancien-neuf-2025",
+      "category": "blog",
+      "subCategory": "blog/frais-notaire-ancien-neuf-2025",
+      "googleClicks": 0,
+      "bingClicks": 39,
+      "totalClicks": 39,
+      "totalImpr": 466,
+      "avgCTR": "8.37",
+      "googlePos": "0.0",
+      "score": 61.43
+    },
+    {
+      "page": "/pages/travail",
+      "category": "travail",
+      "subCategory": "travail",
+      "googleClicks": 0,
+      "bingClicks": 38,
+      "totalClicks": 38,
+      "totalImpr": 1546,
+      "avgCTR": "2.46",
+      "googlePos": "0.0",
+      "score": 47.88
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-34",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 29,
+      "bingClicks": 0,
+      "totalClicks": 29,
+      "totalImpr": 714,
+      "avgCTR": "4.06",
+      "googlePos": "6.0",
+      "score": 45.68
+    },
+    {
+      "page": "/pages/apl/apl-chomage-avec-enfant",
+      "category": "apl",
+      "subCategory": "apl/apl-chomage-avec-enfant",
+      "googleClicks": 28,
+      "bingClicks": 0,
+      "totalClicks": 28,
+      "totalImpr": 696,
+      "avgCTR": "4.02",
+      "googlePos": "6.1",
+      "score": 44.1
+    },
+    {
+      "page": "/pages/apl/apl-chomage-personne-seule",
+      "category": "apl",
+      "subCategory": "apl/apl-chomage-personne-seule",
+      "googleClicks": 28,
+      "bingClicks": 0,
+      "totalClicks": 28,
+      "totalImpr": 274,
+      "avgCTR": "10.22",
+      "googlePos": "6.3",
+      "score": 44.1
+    },
+    {
+      "page": "/pages/apl/apl-celibataire-smic",
+      "category": "apl",
+      "subCategory": "apl/apl-celibataire-smic",
+      "googleClicks": 34,
+      "bingClicks": 0,
+      "totalClicks": 34,
+      "totalImpr": 1468,
+      "avgCTR": "2.32",
+      "googlePos": "7.5",
+      "score": 42.84
+    },
+    {
+      "page": "/pages/apl/apl-parent-isole-deux-enfants",
+      "category": "apl",
+      "subCategory": "apl/apl-parent-isole-deux-enfants",
+      "googleClicks": 34,
+      "bingClicks": 0,
+      "totalClicks": 34,
+      "totalImpr": 1218,
+      "avgCTR": "2.79",
+      "googlePos": "7.2",
+      "score": 42.84
+    },
+    {
+      "page": "/pages/salaire-net-apres-impot",
+      "category": "salaire-net-apres-impot",
+      "subCategory": "salaire-net-apres-impot",
+      "googleClicks": 0,
+      "bingClicks": 25,
+      "totalClicks": 25,
+      "totalImpr": 782,
+      "avgCTR": "3.20",
+      "googlePos": "0.0",
+      "score": 39.38
+    },
+    {
+      "page": "/pages/apl/apl-alternant",
+      "category": "apl",
+      "subCategory": "apl/apl-alternant",
+      "googleClicks": 29,
+      "bingClicks": 0,
+      "totalClicks": 29,
+      "totalImpr": 1687,
+      "avgCTR": "1.72",
+      "googlePos": "7.4",
+      "score": 36.54
+    },
+    {
+      "page": "/pages/revenus/paris",
+      "category": "revenus",
+      "subCategory": "revenus/paris",
+      "googleClicks": 28,
+      "bingClicks": 1,
+      "totalClicks": 29,
+      "totalImpr": 1383,
+      "avgCTR": "2.10",
+      "googlePos": "8.7",
+      "score": 36.54
+    },
+    {
+      "page": "/pages/ik",
+      "category": "ik",
+      "subCategory": "ik",
+      "googleClicks": 0,
+      "bingClicks": 34,
+      "totalClicks": 34,
+      "totalImpr": 5825,
+      "avgCTR": "0.58",
+      "googlePos": "0.0",
+      "score": 35.7
+    },
+    {
+      "page": "/pages/crypto-bourse",
+      "category": "crypto-bourse",
+      "subCategory": "crypto-bourse",
+      "googleClicks": 5,
+      "bingClicks": 15,
+      "totalClicks": 20,
+      "totalImpr": 525,
+      "avgCTR": "3.81",
+      "googlePos": "15.1",
+      "score": 31.5
+    },
+    {
+      "page": "/pages/aspa",
+      "category": "aspa",
+      "subCategory": "aspa",
+      "googleClicks": 0,
+      "bingClicks": 23,
+      "totalClicks": 23,
+      "totalImpr": 975,
+      "avgCTR": "2.36",
+      "googlePos": "0.0",
+      "score": 28.98
+    },
+    {
+      "page": "/pages/ponts",
+      "category": "ponts",
+      "subCategory": "ponts",
+      "googleClicks": 0,
+      "bingClicks": 26,
+      "totalClicks": 26,
+      "totalImpr": 2368,
+      "avgCTR": "1.10",
+      "googlePos": "0.0",
+      "score": 27.3
+    },
+    {
+      "page": "/pages/apl/apl-apprenti",
+      "category": "apl",
+      "subCategory": "apl/apl-apprenti",
+      "googleClicks": 22,
+      "bingClicks": 1,
+      "totalClicks": 23,
+      "totalImpr": 1984,
+      "avgCTR": "1.16",
+      "googlePos": "7.5",
+      "score": 24.15
+    },
+    {
+      "page": "/pages/pret",
+      "category": "pret",
+      "subCategory": "pret",
+      "googleClicks": 14,
+      "bingClicks": 9,
+      "totalClicks": 23,
+      "totalImpr": 3710,
+      "avgCTR": "0.62",
+      "googlePos": "10.1",
+      "score": 24.15
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-11",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 14,
+      "bingClicks": 1,
+      "totalClicks": 15,
+      "totalImpr": 239,
+      "avgCTR": "6.28",
+      "googlePos": "6.0",
+      "score": 23.63
+    },
+    {
+      "page": "/pages/rsa/rsa-hebergement-gratuit",
+      "category": "rsa",
+      "subCategory": "rsa/rsa-hebergement-gratuit",
+      "googleClicks": 18,
+      "bingClicks": 0,
+      "totalClicks": 18,
+      "totalImpr": 1073,
+      "avgCTR": "1.68",
+      "googlePos": "7.9",
+      "score": 22.68
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-26",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 14,
+      "bingClicks": 0,
+      "totalClicks": 14,
+      "totalImpr": 201,
+      "avgCTR": "6.97",
+      "googlePos": "5.2",
+      "score": 22.05
+    },
+    {
+      "page": "/pages/apl/apl-smic-parent-isole-deux-enfants",
+      "category": "apl",
+      "subCategory": "apl/apl-smic-parent-isole-deux-enfants",
+      "googleClicks": 13,
+      "bingClicks": 0,
+      "totalClicks": 13,
+      "totalImpr": 158,
+      "avgCTR": "8.23",
+      "googlePos": "6.8",
+      "score": 20.48
+    },
+    {
+      "page": "/pages/salaire",
+      "category": "salaire",
+      "subCategory": "salaire",
+      "googleClicks": 0,
+      "bingClicks": 19,
+      "totalClicks": 19,
+      "totalImpr": 2327,
+      "avgCTR": "0.82",
+      "googlePos": "0.0",
+      "score": 19.95
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-28",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 12,
+      "bingClicks": 0,
+      "totalClicks": 12,
+      "totalImpr": 180,
+      "avgCTR": "6.67",
+      "googlePos": "6.3",
+      "score": 18.9
+    },
+    {
+      "page": "/pages/blog/frais-notaire-departements",
+      "category": "blog",
+      "subCategory": "blog/frais-notaire-departements",
+      "googleClicks": 0,
+      "bingClicks": 12,
+      "totalClicks": 12,
+      "totalImpr": 235,
+      "avgCTR": "5.11",
+      "googlePos": "0.0",
+      "score": 18.9
+    },
+    {
+      "page": "/pages/blog/inflation-cout-vie-2026",
+      "category": "blog",
+      "subCategory": "blog/inflation-cout-vie-2026",
+      "googleClicks": 6,
+      "bingClicks": 11,
+      "totalClicks": 17,
+      "totalImpr": 1143,
+      "avgCTR": "1.49",
+      "googlePos": "9.8",
+      "score": 17.85
+    },
+    {
+      "page": "/pages/apl/apl-loyer-800-revenu-1300",
+      "category": "apl",
+      "subCategory": "apl/apl-loyer-800-revenu-1300",
+      "googleClicks": 13,
+      "bingClicks": 0,
+      "totalClicks": 13,
+      "totalImpr": 449,
+      "avgCTR": "2.90",
+      "googlePos": "7.3",
+      "score": 16.38
+    }
+  ],
+  "byCategory": [
+    {
+      "category": "apl",
+      "totalClicks": 3781,
+      "totalImpr": 268712,
+      "pageCount": 45,
+      "totalScore": 4307.249999999999,
+      "pctClicks": "30.6%",
+      "estimatedRevenue": "32.75 €"
+    },
+    {
+      "category": "are",
+      "totalClicks": 2313,
+      "totalImpr": 69434,
+      "pageCount": 1,
+      "totalScore": 3642.98,
+      "pctClicks": "18.7%",
+      "estimatedRevenue": "20.04 €"
+    },
+    {
+      "category": "impot",
+      "totalClicks": 991,
+      "totalImpr": 91178,
+      "pageCount": 7,
+      "totalScore": 1137.16,
+      "pctClicks": "8.0%",
+      "estimatedRevenue": "8.58 €"
+    },
+    {
+      "category": "prime-activite",
+      "totalClicks": 1079,
+      "totalImpr": 81482,
+      "pageCount": 2,
+      "totalScore": 1133.16,
+      "pctClicks": "8.7%",
+      "estimatedRevenue": "9.35 €"
+    },
+    {
+      "category": "apl-etudiant",
+      "totalClicks": 598,
+      "totalImpr": 17345,
+      "pageCount": 1,
+      "totalScore": 941.85,
+      "pctClicks": "4.8%",
+      "estimatedRevenue": "5.18 €"
+    },
+    {
+      "category": "guide-complet-impot-revenu-2026",
+      "totalClicks": 871,
+      "totalImpr": 77055,
+      "pageCount": 1,
+      "totalScore": 914.55,
+      "pctClicks": "7.0%",
+      "estimatedRevenue": "7.55 €"
+    },
+    {
+      "category": "taxe",
+      "totalClicks": 400,
+      "totalImpr": 8268,
+      "pageCount": 1,
+      "totalScore": 630,
+      "pctClicks": "3.2%",
+      "estimatedRevenue": "3.47 €"
+    },
+    {
+      "category": "notaire",
+      "totalClicks": 443,
+      "totalImpr": 23426,
+      "pageCount": 1,
+      "totalScore": 558.18,
+      "pctClicks": "3.6%",
+      "estimatedRevenue": "3.84 €"
+    },
+    {
+      "category": "blog",
+      "totalClicks": 359,
+      "totalImpr": 15207,
+      "pageCount": 53,
+      "totalScore": 508.59999999999974,
+      "pctClicks": "2.9%",
+      "estimatedRevenue": "3.11 €"
+    },
+    {
+      "category": "apl-zones",
+      "totalClicks": 332,
+      "totalImpr": 32609,
+      "pageCount": 1,
+      "totalScore": 348.6,
+      "pctClicks": "2.7%",
+      "estimatedRevenue": "2.88 €"
+    },
+    {
+      "category": "plusvalue",
+      "totalClicks": 210,
+      "totalImpr": 9085,
+      "pageCount": 1,
+      "totalScore": 264.6,
+      "pctClicks": "1.7%",
+      "estimatedRevenue": "1.82 €"
+    },
+    {
+      "category": "rsa",
+      "totalClicks": 193,
+      "totalImpr": 26213,
+      "pageCount": 10,
+      "totalScore": 208.01000000000005,
+      "pctClicks": "1.6%",
+      "estimatedRevenue": "1.67 €"
+    },
+    {
+      "category": "salaire-brut-net-calcul-2026",
+      "totalClicks": 182,
+      "totalImpr": 12317,
+      "pageCount": 1,
+      "totalScore": 191.1,
+      "pctClicks": "1.5%",
+      "estimatedRevenue": "1.58 €"
+    },
+    {
+      "category": "charges",
+      "totalClicks": 66,
+      "totalImpr": 1243,
+      "pageCount": 1,
+      "totalScore": 103.95,
+      "pctClicks": "0.5%",
+      "estimatedRevenue": "0.57 €"
+    },
+    {
+      "category": "aah",
+      "totalClicks": 76,
+      "totalImpr": 3401,
+      "pageCount": 1,
+      "totalScore": 95.76,
+      "pctClicks": "0.6%",
+      "estimatedRevenue": "0.66 €"
+    },
+    {
+      "category": "revenu-median-commune",
+      "totalClicks": 56,
+      "totalImpr": 1684,
+      "pageCount": 1,
+      "totalScore": 88.2,
+      "pctClicks": "0.5%",
+      "estimatedRevenue": "0.49 €"
+    },
+    {
+      "category": "asf",
+      "totalClicks": 71,
+      "totalImpr": 5375,
+      "pageCount": 1,
+      "totalScore": 74.55,
+      "pctClicks": "0.6%",
+      "estimatedRevenue": "0.62 €"
+    },
+    {
+      "category": "taxe-fonciere",
+      "totalClicks": 44,
+      "totalImpr": 611,
+      "pageCount": 2,
+      "totalScore": 69.3,
+      "pctClicks": "0.4%",
+      "estimatedRevenue": "0.38 €"
+    },
+    {
+      "category": "revenus",
+      "totalClicks": 43,
+      "totalImpr": 1668,
+      "pageCount": 7,
+      "totalScore": 57.32999999999999,
+      "pctClicks": "0.3%",
+      "estimatedRevenue": "0.37 €"
+    },
+    {
+      "category": "travail",
+      "totalClicks": 38,
+      "totalImpr": 1546,
+      "pageCount": 1,
+      "totalScore": 47.88,
+      "pctClicks": "0.3%",
+      "estimatedRevenue": "0.33 €"
+    },
+    {
+      "category": "salaire-net-apres-impot",
+      "totalClicks": 25,
+      "totalImpr": 782,
+      "pageCount": 1,
+      "totalScore": 39.38,
+      "pctClicks": "0.2%",
+      "estimatedRevenue": "0.22 €"
+    },
+    {
+      "category": "ik",
+      "totalClicks": 34,
+      "totalImpr": 5825,
+      "pageCount": 1,
+      "totalScore": 35.7,
+      "pctClicks": "0.3%",
+      "estimatedRevenue": "0.29 €"
+    },
+    {
+      "category": "crypto-bourse",
+      "totalClicks": 20,
+      "totalImpr": 525,
+      "pageCount": 1,
+      "totalScore": 31.5,
+      "pctClicks": "0.2%",
+      "estimatedRevenue": "0.17 €"
+    },
+    {
+      "category": "aspa",
+      "totalClicks": 23,
+      "totalImpr": 975,
+      "pageCount": 1,
+      "totalScore": 28.98,
+      "pctClicks": "0.2%",
+      "estimatedRevenue": "0.20 €"
+    },
+    {
+      "category": "ponts",
+      "totalClicks": 26,
+      "totalImpr": 2368,
+      "pageCount": 1,
+      "totalScore": 27.3,
+      "pctClicks": "0.2%",
+      "estimatedRevenue": "0.23 €"
+    },
+    {
+      "category": "pret",
+      "totalClicks": 23,
+      "totalImpr": 3710,
+      "pageCount": 1,
+      "totalScore": 24.15,
+      "pctClicks": "0.2%",
+      "estimatedRevenue": "0.20 €"
+    },
+    {
+      "category": "salaire",
+      "totalClicks": 19,
+      "totalImpr": 2327,
+      "pageCount": 1,
+      "totalScore": 19.95,
+      "pctClicks": "0.2%",
+      "estimatedRevenue": "0.16 €"
+    },
+    {
+      "category": "allocation-familiale",
+      "totalClicks": 14,
+      "totalImpr": 2260,
+      "pageCount": 1,
+      "totalScore": 14.7,
+      "pctClicks": "0.1%",
+      "estimatedRevenue": "0.12 €"
+    },
+    {
+      "category": "apl-dom-tom",
+      "totalClicks": 8,
+      "totalImpr": 139,
+      "pageCount": 1,
+      "totalScore": 12.6,
+      "pctClicks": "0.1%",
+      "estimatedRevenue": "0.07 €"
+    },
+    {
+      "category": "rsa-vs-smic",
+      "totalClicks": 9,
+      "totalImpr": 781,
+      "pageCount": 1,
+      "totalScore": 9.45,
+      "pctClicks": "0.1%",
+      "estimatedRevenue": "0.08 €"
+    },
+    {
+      "category": "racine",
+      "totalClicks": 5,
+      "totalImpr": 137,
+      "pageCount": 1,
+      "totalScore": 7.88,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.04 €"
+    },
+    {
+      "category": "simulateurs",
+      "totalClicks": 5,
+      "totalImpr": 241,
+      "pageCount": 3,
+      "totalScore": 6.3,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.04 €"
+    },
+    {
+      "category": "reste-a-vivre",
+      "totalClicks": 4,
+      "totalImpr": 293,
+      "pageCount": 1,
+      "totalScore": 4.2,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.03 €"
+    },
+    {
+      "category": "carte-famille-nombreuse",
+      "totalClicks": 2,
+      "totalImpr": 411,
+      "pageCount": 1,
+      "totalScore": 2.1,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.02 €"
+    },
+    {
+      "category": "comment-calculer-frais-notaire",
+      "totalClicks": 2,
+      "totalImpr": 184,
+      "pageCount": 1,
+      "totalScore": 2.1,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.02 €"
+    },
+    {
+      "category": "comment-calculer-plus-value",
+      "totalClicks": 1,
+      "totalImpr": 47,
+      "pageCount": 1,
+      "totalScore": 1.26,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.01 €"
+    },
+    {
+      "category": "lescalculateurs.fr",
+      "totalClicks": 1,
+      "totalImpr": 224,
+      "pageCount": 2,
+      "totalScore": 1.05,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.01 €"
+    },
+    {
+      "category": "a-propos",
+      "totalClicks": 0,
+      "totalImpr": 3,
+      "pageCount": 1,
+      "totalScore": 0,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.00 €"
+    },
+    {
+      "category": "sources",
+      "totalClicks": 0,
+      "totalImpr": 1,
+      "pageCount": 1,
+      "totalScore": 0,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.00 €"
+    },
+    {
+      "category": "garantie-visale",
+      "totalClicks": 0,
+      "totalImpr": 309,
+      "pageCount": 1,
+      "totalScore": 0,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.00 €"
+    },
+    {
+      "category": "aide",
+      "totalClicks": 0,
+      "totalImpr": 1,
+      "pageCount": 1,
+      "totalScore": 0,
+      "pctClicks": "0.0%",
+      "estimatedRevenue": "0.00 €"
+    }
+  ],
+  "bySubCategory": [
+    {
+      "subCategory": "are",
+      "totalClicks": 2313,
+      "totalImpr": 69434,
+      "pageCount": 1,
+      "totalScore": 3642.98
+    },
+    {
+      "subCategory": "apl",
+      "totalClicks": 3020,
+      "totalImpr": 243511,
+      "pageCount": 1,
+      "totalScore": 3171
+    },
+    {
+      "subCategory": "prime-activite",
+      "totalClicks": 1078,
+      "totalImpr": 81434,
+      "pageCount": 1,
+      "totalScore": 1131.9
+    },
+    {
+      "subCategory": "apl-etudiant",
+      "totalClicks": 598,
+      "totalImpr": 17345,
+      "pageCount": 1,
+      "totalScore": 941.85
+    },
+    {
+      "subCategory": "guide-complet-impot-revenu-2026",
+      "totalClicks": 871,
+      "totalImpr": 77055,
+      "pageCount": 1,
+      "totalScore": 914.55
+    },
+    {
+      "subCategory": "impot",
+      "totalClicks": 793,
+      "totalImpr": 87144,
+      "pageCount": 1,
+      "totalScore": 832.65
+    },
+    {
+      "subCategory": "taxe",
+      "totalClicks": 400,
+      "totalImpr": 8268,
+      "pageCount": 1,
+      "totalScore": 630
+    },
+    {
+      "subCategory": "notaire",
+      "totalClicks": 443,
+      "totalImpr": 23426,
+      "pageCount": 1,
+      "totalScore": 558.18
+    },
+    {
+      "subCategory": "apl/apl-smic-seul",
+      "totalClicks": 255,
+      "totalImpr": 8097,
+      "pageCount": 1,
+      "totalScore": 401.63
+    },
+    {
+      "subCategory": "apl-zones",
+      "totalClicks": 332,
+      "totalImpr": 32609,
+      "pageCount": 1,
+      "totalScore": 348.6
+    },
+    {
+      "subCategory": "blog/departements",
+      "totalClicks": 226,
+      "totalImpr": 5433,
+      "pageCount": 48,
+      "totalScore": 340.90999999999985
+    },
+    {
+      "subCategory": "impot/impot-couple-ou-separe",
+      "totalClicks": 183,
+      "totalImpr": 2621,
+      "pageCount": 1,
+      "totalScore": 288.23
+    },
+    {
+      "subCategory": "plusvalue",
+      "totalClicks": 210,
+      "totalImpr": 9085,
+      "pageCount": 1,
+      "totalScore": 264.6
+    },
+    {
+      "subCategory": "salaire-brut-net-calcul-2026",
+      "totalClicks": 182,
+      "totalImpr": 12317,
+      "pageCount": 1,
+      "totalScore": 191.1
+    },
+    {
+      "subCategory": "rsa",
+      "totalClicks": 169,
+      "totalImpr": 24650,
+      "pageCount": 1,
+      "totalScore": 177.45
+    },
+    {
+      "subCategory": "apl/apl-chomage-loyer-moyen",
+      "totalClicks": 90,
+      "totalImpr": 2200,
+      "pageCount": 1,
+      "totalScore": 141.75
+    },
+    {
+      "subCategory": "charges",
+      "totalClicks": 66,
+      "totalImpr": 1243,
+      "pageCount": 1,
+      "totalScore": 103.95
+    },
+    {
+      "subCategory": "apl/apl-loyer-700-personne-seule",
+      "totalClicks": 61,
+      "totalImpr": 1298,
+      "pageCount": 1,
+      "totalScore": 96.07
+    },
+    {
+      "subCategory": "aah",
+      "totalClicks": 76,
+      "totalImpr": 3401,
+      "pageCount": 1,
+      "totalScore": 95.76
+    },
+    {
+      "subCategory": "revenu-median-commune",
+      "totalClicks": 56,
+      "totalImpr": 1684,
+      "pageCount": 1,
+      "totalScore": 88.2
+    }
+  ],
+  "highCTRPages": [
+    {
+      "page": "/pages/blog/departements/frais-notaire-17",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 0,
+      "bingClicks": 7,
+      "totalClicks": 7,
+      "totalImpr": 7,
+      "avgCTR": "100.00",
+      "googlePos": "0.0",
+      "score": 11.02
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-29",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 0,
+      "bingClicks": 5,
+      "totalClicks": 5,
+      "totalImpr": 10,
+      "avgCTR": "50.00",
+      "googlePos": "0.0",
+      "score": 7.88
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-55",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 7,
+      "bingClicks": 0,
+      "totalClicks": 7,
+      "totalImpr": 26,
+      "avgCTR": "26.92",
+      "googlePos": "5.9",
+      "score": 11.02
+    },
+    {
+      "page": "/pages/apl/apl-chomage-personne-seule",
+      "category": "apl",
+      "subCategory": "apl/apl-chomage-personne-seule",
+      "googleClicks": 28,
+      "bingClicks": 0,
+      "totalClicks": 28,
+      "totalImpr": 274,
+      "avgCTR": "10.22",
+      "googlePos": "6.3",
+      "score": 44.1
+    },
+    {
+      "page": "/pages/blog/frais-notaire-ancien-neuf-2025",
+      "category": "blog",
+      "subCategory": "blog/frais-notaire-ancien-neuf-2025",
+      "googleClicks": 0,
+      "bingClicks": 39,
+      "totalClicks": 39,
+      "totalImpr": 466,
+      "avgCTR": "8.37",
+      "googlePos": "0.0",
+      "score": 61.43
+    },
+    {
+      "page": "/pages/apl/apl-smic-parent-isole-deux-enfants",
+      "category": "apl",
+      "subCategory": "apl/apl-smic-parent-isole-deux-enfants",
+      "googleClicks": 13,
+      "bingClicks": 0,
+      "totalClicks": 13,
+      "totalImpr": 158,
+      "avgCTR": "8.23",
+      "googlePos": "6.8",
+      "score": 20.48
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-02",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 9,
+      "bingClicks": 0,
+      "totalClicks": 9,
+      "totalImpr": 116,
+      "avgCTR": "7.76",
+      "googlePos": "4.9",
+      "score": 14.18
+    },
+    {
+      "page": "/pages/taxe-fonciere",
+      "category": "taxe-fonciere",
+      "subCategory": "taxe-fonciere",
+      "googleClicks": 0,
+      "bingClicks": 43,
+      "totalClicks": 43,
+      "totalImpr": 609,
+      "avgCTR": "7.06",
+      "googlePos": "0.0",
+      "score": 67.72
+    },
+    {
+      "page": "/pages/impot/impot-couple-ou-separe",
+      "category": "impot",
+      "subCategory": "impot/impot-couple-ou-separe",
+      "googleClicks": 17,
+      "bingClicks": 166,
+      "totalClicks": 183,
+      "totalImpr": 2621,
+      "avgCTR": "6.98",
+      "googlePos": "9.0",
+      "score": 288.23
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-26",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 14,
+      "bingClicks": 0,
+      "totalClicks": 14,
+      "totalImpr": 201,
+      "avgCTR": "6.97",
+      "googlePos": "5.2",
+      "score": 22.05
+    },
+    {
+      "page": "/pages/apl/apl-etudiant-lyon",
+      "category": "apl",
+      "subCategory": "apl/apl-etudiant-lyon",
+      "googleClicks": 5,
+      "bingClicks": 0,
+      "totalClicks": 5,
+      "totalImpr": 73,
+      "avgCTR": "6.85",
+      "googlePos": "7.2",
+      "score": 7.88
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-28",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 12,
+      "bingClicks": 0,
+      "totalClicks": 12,
+      "totalImpr": 180,
+      "avgCTR": "6.67",
+      "googlePos": "6.3",
+      "score": 18.9
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-11",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 14,
+      "bingClicks": 1,
+      "totalClicks": 15,
+      "totalImpr": 239,
+      "avgCTR": "6.28",
+      "googlePos": "6.0",
+      "score": 23.63
+    },
+    {
+      "page": "/pages/apl-dom-tom",
+      "category": "apl-dom-tom",
+      "subCategory": "apl-dom-tom",
+      "googleClicks": 7,
+      "bingClicks": 1,
+      "totalClicks": 8,
+      "totalImpr": 139,
+      "avgCTR": "5.76",
+      "googlePos": "5.3",
+      "score": 12.6
+    },
+    {
+      "page": "/pages/charges",
+      "category": "charges",
+      "subCategory": "charges",
+      "googleClicks": 48,
+      "bingClicks": 18,
+      "totalClicks": 66,
+      "totalImpr": 1243,
+      "avgCTR": "5.31",
+      "googlePos": "7.7",
+      "score": 103.95
+    },
+    {
+      "page": "/pages/blog/frais-notaire-departements",
+      "category": "blog",
+      "subCategory": "blog/frais-notaire-departements",
+      "googleClicks": 0,
+      "bingClicks": 12,
+      "totalClicks": 12,
+      "totalImpr": 235,
+      "avgCTR": "5.11",
+      "googlePos": "0.0",
+      "score": 18.9
+    },
+    {
+      "page": "/pages/taxe",
+      "category": "taxe",
+      "subCategory": "taxe",
+      "googleClicks": 76,
+      "bingClicks": 324,
+      "totalClicks": 400,
+      "totalImpr": 8268,
+      "avgCTR": "4.84",
+      "googlePos": "17.0",
+      "score": 630
+    },
+    {
+      "page": "/pages/apl/apl-loyer-700-personne-seule",
+      "category": "apl",
+      "subCategory": "apl/apl-loyer-700-personne-seule",
+      "googleClicks": 61,
+      "bingClicks": 0,
+      "totalClicks": 61,
+      "totalImpr": 1298,
+      "avgCTR": "4.70",
+      "googlePos": "5.8",
+      "score": 96.07
+    },
+    {
+      "page": "/pages/apl/apl-chomage-loyer-moyen",
+      "category": "apl",
+      "subCategory": "apl/apl-chomage-loyer-moyen",
+      "googleClicks": 90,
+      "bingClicks": 0,
+      "totalClicks": 90,
+      "totalImpr": 2200,
+      "avgCTR": "4.09",
+      "googlePos": "7.4",
+      "score": 141.75
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-34",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 29,
+      "bingClicks": 0,
+      "totalClicks": 29,
+      "totalImpr": 714,
+      "avgCTR": "4.06",
+      "googlePos": "6.0",
+      "score": 45.68
+    },
+    {
+      "page": "/pages/apl/apl-chomage-avec-enfant",
+      "category": "apl",
+      "subCategory": "apl/apl-chomage-avec-enfant",
+      "googleClicks": 28,
+      "bingClicks": 0,
+      "totalClicks": 28,
+      "totalImpr": 696,
+      "avgCTR": "4.02",
+      "googlePos": "6.1",
+      "score": 44.1
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-89",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 5,
+      "bingClicks": 0,
+      "totalClicks": 5,
+      "totalImpr": 131,
+      "avgCTR": "3.82",
+      "googlePos": "4.9",
+      "score": 7.88
+    },
+    {
+      "page": "/pages/crypto-bourse",
+      "category": "crypto-bourse",
+      "subCategory": "crypto-bourse",
+      "googleClicks": 5,
+      "bingClicks": 15,
+      "totalClicks": 20,
+      "totalImpr": 525,
+      "avgCTR": "3.81",
+      "googlePos": "15.1",
+      "score": 31.5
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-06",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 42,
+      "bingClicks": 3,
+      "totalClicks": 45,
+      "totalImpr": 1187,
+      "avgCTR": "3.79",
+      "googlePos": "5.7",
+      "score": 70.88
+    },
+    {
+      "page": "/pages/blog/departements/frais-notaire-47",
+      "category": "blog",
+      "subCategory": "blog/departements",
+      "googleClicks": 7,
+      "bingClicks": 0,
+      "totalClicks": 7,
+      "totalImpr": 192,
+      "avgCTR": "3.65",
+      "googlePos": "3.9",
+      "score": 11.02
+    },
+    {
+      "page": "/",
+      "category": "racine",
+      "subCategory": "home",
+      "googleClicks": 5,
+      "bingClicks": 0,
+      "totalClicks": 5,
+      "totalImpr": 137,
+      "avgCTR": "3.65",
+      "googlePos": "4.8",
+      "score": 7.88
+    },
+    {
+      "page": "/pages/apl/apl-famille-trois-enfants",
+      "category": "apl",
+      "subCategory": "apl/apl-famille-trois-enfants",
+      "googleClicks": 42,
+      "bingClicks": 0,
+      "totalClicks": 42,
+      "totalImpr": 1189,
+      "avgCTR": "3.53",
+      "googlePos": "6.0",
+      "score": 66.15
+    },
+    {
+      "page": "/pages/apl-etudiant",
+      "category": "apl-etudiant",
+      "subCategory": "apl-etudiant",
+      "googleClicks": 37,
+      "bingClicks": 561,
+      "totalClicks": 598,
+      "totalImpr": 17345,
+      "avgCTR": "3.45",
+      "googlePos": "11.2",
+      "score": 941.85
+    },
+    {
+      "page": "/pages/apl/apl-parent-isole-trois-enfants",
+      "category": "apl",
+      "subCategory": "apl/apl-parent-isole-trois-enfants",
+      "googleClicks": 47,
+      "bingClicks": 0,
+      "totalClicks": 47,
+      "totalImpr": 1390,
+      "avgCTR": "3.38",
+      "googlePos": "7.1",
+      "score": 74.03
+    },
+    {
+      "page": "/pages/are",
+      "category": "are",
+      "subCategory": "are",
+      "googleClicks": 670,
+      "bingClicks": 1643,
+      "totalClicks": 2313,
+      "totalImpr": 69434,
+      "avgCTR": "3.33",
+      "googlePos": "8.5",
+      "score": 3642.98
+    }
+  ],
+  "totals": {
+    "totalPages": 163,
+    "totalClicks": 12367,
+    "totalImpressions": 769402,
+    "averageCTR": "1.61%",
+    "knownAdSensePayout": "107.13 €"
+  }
+}

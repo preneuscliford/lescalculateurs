@@ -482,6 +482,7 @@ function collectTaxeFonciereInputs() {
 
   for (const entry of entries) {
     if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+    if (entry.name === "index.html") continue;
     const slug = entry.name.replace(/\.html$/i, "");
     inputs[`pages/taxe-fonciere/${slug}`] = path.join(taxeFonciereDir, entry.name);
   }

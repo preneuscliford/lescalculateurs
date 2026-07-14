@@ -1,0 +1,2842 @@
+{
+  "meta": {
+    "site": "lescalculateurs.fr",
+    "period": {
+      "start": "2026-06-01",
+      "end": "2026-06-30",
+      "days": 28
+    },
+    "generatedAt": "2026-07-01T18:53:49.991Z",
+    "engines": [
+      "google",
+      "bing"
+    ]
+  },
+  "google": {
+    "auth": "service_account: indexing-bot@mes-sass.iam.gserviceaccount.com",
+    "globalStats": {
+      "clicks": 3501,
+      "impressions": 253442,
+      "ctr": "1.38%",
+      "avgPosition": "8.3"
+    },
+    "topQueries": [
+      {
+        "query": "combien d'apl pour un loyer de 700 euros avec 2 enfants",
+        "clicks": 40,
+        "impressions": 333,
+        "ctr": "12.01%",
+        "position": "1.9"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 700 euros personne seule",
+        "clicks": 33,
+        "impressions": 392,
+        "ctr": "8.42%",
+        "position": "4.3"
+      },
+      {
+        "query": "simulation apl",
+        "clicks": 32,
+        "impressions": 2160,
+        "ctr": "1.48%",
+        "position": "9.8"
+      },
+      {
+        "query": "calcul are",
+        "clicks": 27,
+        "impressions": 880,
+        "ctr": "3.07%",
+        "position": "9.9"
+      },
+      {
+        "query": "calcul chômage 2026",
+        "clicks": 23,
+        "impressions": 123,
+        "ctr": "18.70%",
+        "position": "3.6"
+      },
+      {
+        "query": "calcul chomage 2026",
+        "clicks": 22,
+        "impressions": 224,
+        "ctr": "9.82%",
+        "position": "5.0"
+      },
+      {
+        "query": "montant apl chômage",
+        "clicks": 22,
+        "impressions": 107,
+        "ctr": "20.56%",
+        "position": "2.0"
+      },
+      {
+        "query": "estimation are",
+        "clicks": 20,
+        "impressions": 399,
+        "ctr": "5.01%",
+        "position": "7.1"
+      },
+      {
+        "query": "montant are 2026",
+        "clicks": 20,
+        "impressions": 192,
+        "ctr": "10.42%",
+        "position": "4.5"
+      },
+      {
+        "query": "simulateur reprise emploi",
+        "clicks": 20,
+        "impressions": 303,
+        "ctr": "6.60%",
+        "position": "4.5"
+      },
+      {
+        "query": "calcul de l'are 2026",
+        "clicks": 15,
+        "impressions": 57,
+        "ctr": "26.32%",
+        "position": "3.3"
+      },
+      {
+        "query": "simulation are",
+        "clicks": 15,
+        "impressions": 716,
+        "ctr": "2.09%",
+        "position": "10.0"
+      },
+      {
+        "query": "calcul apl",
+        "clicks": 13,
+        "impressions": 1916,
+        "ctr": "0.68%",
+        "position": "9.8"
+      },
+      {
+        "query": "calcul are 2026",
+        "clicks": 13,
+        "impressions": 49,
+        "ctr": "26.53%",
+        "position": "3.2"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 600 euros",
+        "clicks": 12,
+        "impressions": 1862,
+        "ctr": "0.64%",
+        "position": "7.5"
+      },
+      {
+        "query": "simulateur apl",
+        "clicks": 12,
+        "impressions": 1003,
+        "ctr": "1.20%",
+        "position": "10.2"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 800 euros personne seule",
+        "clicks": 10,
+        "impressions": 531,
+        "ctr": "1.88%",
+        "position": "5.8"
+      },
+      {
+        "query": "cumul are et temps partiel simulateur",
+        "clicks": 10,
+        "impressions": 88,
+        "ctr": "11.36%",
+        "position": "3.4"
+      },
+      {
+        "query": "montant de l'are 2026",
+        "clicks": 10,
+        "impressions": 64,
+        "ctr": "15.63%",
+        "position": "5.1"
+      },
+      {
+        "query": "quel est le plafond de revenu pour toucher les apl en 2026",
+        "clicks": 10,
+        "impressions": 293,
+        "ctr": "3.41%",
+        "position": "9.9"
+      },
+      {
+        "query": "simulation rsa",
+        "clicks": 10,
+        "impressions": 1184,
+        "ctr": "0.84%",
+        "position": "10.3"
+      },
+      {
+        "query": "simulation reprise emploi temps partiel",
+        "clicks": 9,
+        "impressions": 106,
+        "ctr": "8.49%",
+        "position": "6.5"
+      },
+      {
+        "query": "apl simulation",
+        "clicks": 8,
+        "impressions": 3033,
+        "ctr": "0.26%",
+        "position": "9.9"
+      },
+      {
+        "query": "simulateur charges copropriété",
+        "clicks": 8,
+        "impressions": 36,
+        "ctr": "22.22%",
+        "position": "1.9"
+      },
+      {
+        "query": "simulateur chomage 2026",
+        "clicks": 8,
+        "impressions": 34,
+        "ctr": "23.53%",
+        "position": "3.0"
+      },
+      {
+        "query": "simulation asf",
+        "clicks": 8,
+        "impressions": 217,
+        "ctr": "3.69%",
+        "position": "5.5"
+      },
+      {
+        "query": "simulation chomage 2026",
+        "clicks": 8,
+        "impressions": 57,
+        "ctr": "14.04%",
+        "position": "3.6"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 600 euros seule",
+        "clicks": 7,
+        "impressions": 283,
+        "ctr": "2.47%",
+        "position": "6.4"
+      },
+      {
+        "query": "montant apl personne seule",
+        "clicks": 7,
+        "impressions": 550,
+        "ctr": "1.27%",
+        "position": "7.9"
+      },
+      {
+        "query": "simulateur are",
+        "clicks": 7,
+        "impressions": 217,
+        "ctr": "3.23%",
+        "position": "10.3"
+      },
+      {
+        "query": "simulateur prime d'activité",
+        "clicks": 7,
+        "impressions": 2207,
+        "ctr": "0.32%",
+        "position": "9.7"
+      },
+      {
+        "query": "simulation prime d'activité",
+        "clicks": 7,
+        "impressions": 525,
+        "ctr": "1.33%",
+        "position": "11.0"
+      },
+      {
+        "query": "calcul apl 2026",
+        "clicks": 6,
+        "impressions": 556,
+        "ctr": "1.08%",
+        "position": "6.6"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 450 euros",
+        "clicks": 6,
+        "impressions": 163,
+        "ctr": "3.68%",
+        "position": "7.7"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 500 euros",
+        "clicks": 6,
+        "impressions": 408,
+        "ctr": "1.47%",
+        "position": "9.1"
+      },
+      {
+        "query": "cumul are et salaire simulation",
+        "clicks": 6,
+        "impressions": 247,
+        "ctr": "2.43%",
+        "position": "5.1"
+      },
+      {
+        "query": "estimation apl",
+        "clicks": 6,
+        "impressions": 2677,
+        "ctr": "0.22%",
+        "position": "9.4"
+      },
+      {
+        "query": "apl smic seul",
+        "clicks": 5,
+        "impressions": 29,
+        "ctr": "17.24%",
+        "position": "1.2"
+      },
+      {
+        "query": "frais de notaire vefa 2026",
+        "clicks": 5,
+        "impressions": 27,
+        "ctr": "18.52%",
+        "position": "1.7"
+      },
+      {
+        "query": "montant apl",
+        "clicks": 5,
+        "impressions": 612,
+        "ctr": "0.82%",
+        "position": "9.6"
+      },
+      {
+        "query": "montant apl personne seule smic",
+        "clicks": 5,
+        "impressions": 37,
+        "ctr": "13.51%",
+        "position": "1.6"
+      },
+      {
+        "query": "montant chomage 2026",
+        "clicks": 5,
+        "impressions": 221,
+        "ctr": "2.26%",
+        "position": "8.3"
+      },
+      {
+        "query": "simulateur reprise d'activité france travail",
+        "clicks": 5,
+        "impressions": 169,
+        "ctr": "2.96%",
+        "position": "10.0"
+      },
+      {
+        "query": "simulation allocation logement",
+        "clicks": 5,
+        "impressions": 1902,
+        "ctr": "0.26%",
+        "position": "9.0"
+      },
+      {
+        "query": "simulation apl 2026",
+        "clicks": 5,
+        "impressions": 343,
+        "ctr": "1.46%",
+        "position": "6.9"
+      },
+      {
+        "query": "simulation apl caf 2026",
+        "clicks": 5,
+        "impressions": 174,
+        "ctr": "2.87%",
+        "position": "5.6"
+      },
+      {
+        "query": "smic et apl",
+        "clicks": 5,
+        "impressions": 35,
+        "ctr": "14.29%",
+        "position": "2.7"
+      },
+      {
+        "query": "apl au smic",
+        "clicks": 4,
+        "impressions": 45,
+        "ctr": "8.89%",
+        "position": "2.3"
+      },
+      {
+        "query": "apl avec 3 enfants",
+        "clicks": 4,
+        "impressions": 55,
+        "ctr": "7.27%",
+        "position": "5.0"
+      },
+      {
+        "query": "apl smic",
+        "clicks": 4,
+        "impressions": 77,
+        "ctr": "5.19%",
+        "position": "2.3"
+      },
+      {
+        "query": "apl smic personne seule",
+        "clicks": 4,
+        "impressions": 13,
+        "ctr": "30.77%",
+        "position": "3.1"
+      },
+      {
+        "query": "calcul du chomage 2026",
+        "clicks": 4,
+        "impressions": 98,
+        "ctr": "4.08%",
+        "position": "5.5"
+      },
+      {
+        "query": "calcul indemnité chomage 2026",
+        "clicks": 4,
+        "impressions": 20,
+        "ctr": "20.00%",
+        "position": "5.0"
+      },
+      {
+        "query": "calcule chomage 2026",
+        "clicks": 4,
+        "impressions": 33,
+        "ctr": "12.12%",
+        "position": "5.4"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 650 euros",
+        "clicks": 4,
+        "impressions": 107,
+        "ctr": "3.74%",
+        "position": "5.6"
+      },
+      {
+        "query": "montant apl zone 2",
+        "clicks": 4,
+        "impressions": 243,
+        "ctr": "1.65%",
+        "position": "9.8"
+      },
+      {
+        "query": "rsa montant 2026",
+        "clicks": 4,
+        "impressions": 35,
+        "ctr": "11.43%",
+        "position": "17.7"
+      },
+      {
+        "query": "simulateur apl caf",
+        "clicks": 4,
+        "impressions": 597,
+        "ctr": "0.67%",
+        "position": "10.0"
+      },
+      {
+        "query": "simulateur plus-value immobilière 2026",
+        "clicks": 4,
+        "impressions": 221,
+        "ctr": "1.81%",
+        "position": "9.8"
+      },
+      {
+        "query": "simulation asf caf",
+        "clicks": 4,
+        "impressions": 143,
+        "ctr": "2.80%",
+        "position": "6.7"
+      },
+      {
+        "query": "simulation france travail",
+        "clicks": 4,
+        "impressions": 527,
+        "ctr": "0.76%",
+        "position": "9.8"
+      },
+      {
+        "query": "simulation prime activité",
+        "clicks": 4,
+        "impressions": 815,
+        "ctr": "0.49%",
+        "position": "8.9"
+      },
+      {
+        "query": "simulation prime d'activité couple",
+        "clicks": 4,
+        "impressions": 142,
+        "ctr": "2.82%",
+        "position": "7.1"
+      },
+      {
+        "query": "simulation prime d'activité temps partiel",
+        "clicks": 4,
+        "impressions": 48,
+        "ctr": "8.33%",
+        "position": "3.3"
+      },
+      {
+        "query": "simulation rsa couple",
+        "clicks": 4,
+        "impressions": 463,
+        "ctr": "0.86%",
+        "position": "9.5"
+      },
+      {
+        "query": "apl 2026",
+        "clicks": 3,
+        "impressions": 137,
+        "ctr": "2.19%",
+        "position": "6.9"
+      },
+      {
+        "query": "apl avec un smic",
+        "clicks": 3,
+        "impressions": 20,
+        "ctr": "15.00%",
+        "position": "1.8"
+      },
+      {
+        "query": "apl femme seule avec 2 enfants",
+        "clicks": 3,
+        "impressions": 49,
+        "ctr": "6.12%",
+        "position": "7.4"
+      },
+      {
+        "query": "apl personne seule",
+        "clicks": 3,
+        "impressions": 83,
+        "ctr": "3.61%",
+        "position": "2.8"
+      },
+      {
+        "query": "apl personne seule smic",
+        "clicks": 3,
+        "impressions": 22,
+        "ctr": "13.64%",
+        "position": "2.0"
+      },
+      {
+        "query": "apl simulateur",
+        "clicks": 3,
+        "impressions": 136,
+        "ctr": "2.21%",
+        "position": "10.6"
+      },
+      {
+        "query": "apl zone 3",
+        "clicks": 3,
+        "impressions": 41,
+        "ctr": "7.32%",
+        "position": "6.0"
+      },
+      {
+        "query": "are montant 2026",
+        "clicks": 3,
+        "impressions": 23,
+        "ctr": "13.04%",
+        "position": "4.3"
+      },
+      {
+        "query": "calcul apl simulation",
+        "clicks": 3,
+        "impressions": 88,
+        "ctr": "3.41%",
+        "position": "9.8"
+      },
+      {
+        "query": "calcul chomage simulateur",
+        "clicks": 3,
+        "impressions": 9,
+        "ctr": "33.33%",
+        "position": "13.8"
+      },
+      {
+        "query": "calcul droit chomage 2026",
+        "clicks": 3,
+        "impressions": 54,
+        "ctr": "5.56%",
+        "position": "5.8"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 400 euros",
+        "clicks": 3,
+        "impressions": 84,
+        "ctr": "3.57%",
+        "position": "9.4"
+      },
+      {
+        "query": "combien d'apl pour un loyer de 700 euros avec 3 enfants",
+        "clicks": 3,
+        "impressions": 96,
+        "ctr": "3.13%",
+        "position": "5.6"
+      },
+      {
+        "query": "frais de notaire drome",
+        "clicks": 3,
+        "impressions": 23,
+        "ctr": "13.04%",
+        "position": "2.1"
+      },
+      {
+        "query": "frais de notaire maison ancienne 2026",
+        "clicks": 3,
+        "impressions": 38,
+        "ctr": "7.89%",
+        "position": "4.0"
+      },
+      {
+        "query": "loyer 700 euros salaire",
+        "clicks": 3,
+        "impressions": 43,
+        "ctr": "6.98%",
+        "position": "5.1"
+      },
+      {
+        "query": "montant apl zone 3",
+        "clicks": 3,
+        "impressions": 184,
+        "ctr": "1.63%",
+        "position": "9.4"
+      },
+      {
+        "query": "montant assedic 2026",
+        "clicks": 3,
+        "impressions": 21,
+        "ctr": "14.29%",
+        "position": "7.0"
+      },
+      {
+        "query": "montant de l are 2026",
+        "clicks": 3,
+        "impressions": 37,
+        "ctr": "8.11%",
+        "position": "4.4"
+      },
+      {
+        "query": "montant maximum chomage 2026",
+        "clicks": 3,
+        "impressions": 21,
+        "ctr": "14.29%",
+        "position": "7.4"
+      },
+      {
+        "query": "rsa montant 2026 simulation",
+        "clicks": 3,
+        "impressions": 67,
+        "ctr": "4.48%",
+        "position": "8.4"
+      },
+      {
+        "query": "rsa simulation",
+        "clicks": 3,
+        "impressions": 362,
+        "ctr": "0.83%",
+        "position": "11.3"
+      },
+      {
+        "query": "simulateur aah 2026",
+        "clicks": 3,
+        "impressions": 116,
+        "ctr": "2.59%",
+        "position": "10.0"
+      },
+      {
+        "query": "simulateur apl 2026",
+        "clicks": 3,
+        "impressions": 159,
+        "ctr": "1.89%",
+        "position": "7.5"
+      },
+      {
+        "query": "simulateur apl étudiant",
+        "clicks": 3,
+        "impressions": 355,
+        "ctr": "0.85%",
+        "position": "10.6"
+      },
+      {
+        "query": "simulateur chomage",
+        "clicks": 3,
+        "impressions": 31,
+        "ctr": "9.68%",
+        "position": "13.8"
+      },
+      {
+        "query": "simulateur indemnité chômage",
+        "clicks": 3,
+        "impressions": 232,
+        "ctr": "1.29%",
+        "position": "11.3"
+      },
+      {
+        "query": "simulateur prime d'activité 2026",
+        "clicks": 3,
+        "impressions": 309,
+        "ctr": "0.97%",
+        "position": "8.7"
+      },
+      {
+        "query": "simulation apl alternance",
+        "clicks": 3,
+        "impressions": 40,
+        "ctr": "7.50%",
+        "position": "7.1"
+      },
+      {
+        "query": "simulation apl apprenti",
+        "clicks": 3,
+        "impressions": 128,
+        "ctr": "2.34%",
+        "position": "8.3"
+      },
+      {
+        "query": "simulation apl chômage",
+        "clicks": 3,
+        "impressions": 79,
+        "ctr": "3.80%",
+        "position": "7.1"
+      },
+      {
+        "query": "simulation apl etudiant",
+        "clicks": 3,
+        "impressions": 245,
+        "ctr": "1.22%",
+        "position": "10.5"
+      },
+      {
+        "query": "simulation asf en ligne",
+        "clicks": 3,
+        "impressions": 23,
+        "ctr": "13.04%",
+        "position": "5.0"
+      },
+      {
+        "query": "simulation caf apl",
+        "clicks": 3,
+        "impressions": 1352,
+        "ctr": "0.22%",
+        "position": "9.8"
+      },
+      {
+        "query": "simulation prime d'activité 2026",
+        "clicks": 3,
+        "impressions": 182,
+        "ctr": "1.65%",
+        "position": "9.9"
+      }
+    ],
+    "topPages": [
+      {
+        "page": "/pages/apl",
+        "clicks": 753,
+        "impressions": 75320,
+        "ctr": "1.00%",
+        "position": "8.3"
+      },
+      {
+        "page": "/pages/are",
+        "clicks": 670,
+        "impressions": 36132,
+        "ctr": "1.85%",
+        "position": "8.5"
+      },
+      {
+        "page": "/pages/prime-activite",
+        "clicks": 282,
+        "impressions": 25653,
+        "ctr": "1.10%",
+        "position": "9.1"
+      },
+      {
+        "page": "/pages/apl/apl-smic-seul",
+        "clicks": 255,
+        "impressions": 8097,
+        "ctr": "3.15%",
+        "position": "3.2"
+      },
+      {
+        "page": "/pages/apl-zones",
+        "clicks": 213,
+        "impressions": 30135,
+        "ctr": "0.71%",
+        "position": "5.9"
+      },
+      {
+        "page": "/pages/apl/apl-chomage-loyer-moyen",
+        "clicks": 90,
+        "impressions": 2200,
+        "ctr": "4.09%",
+        "position": "7.4"
+      },
+      {
+        "page": "/pages/rsa",
+        "clicks": 88,
+        "impressions": 12408,
+        "ctr": "0.71%",
+        "position": "9.3"
+      },
+      {
+        "page": "/pages/taxe",
+        "clicks": 76,
+        "impressions": 1820,
+        "ctr": "4.18%",
+        "position": "17.0"
+      },
+      {
+        "page": "/pages/apl/apl-loyer-700-personne-seule",
+        "clicks": 61,
+        "impressions": 1298,
+        "ctr": "4.70%",
+        "position": "5.8"
+      },
+      {
+        "page": "/pages/blog/frais-notaire-ancien-neuf-2026",
+        "clicks": 59,
+        "impressions": 7642,
+        "ctr": "0.77%",
+        "position": "7.4"
+      },
+      {
+        "page": "/pages/revenu-median-commune",
+        "clicks": 55,
+        "impressions": 1669,
+        "ctr": "3.30%",
+        "position": "7.8"
+      },
+      {
+        "page": "/pages/asf",
+        "clicks": 48,
+        "impressions": 3651,
+        "ctr": "1.31%",
+        "position": "8.8"
+      },
+      {
+        "page": "/pages/charges",
+        "clicks": 48,
+        "impressions": 980,
+        "ctr": "4.90%",
+        "position": "7.7"
+      },
+      {
+        "page": "/pages/apl/apl-parent-isole-trois-enfants",
+        "clicks": 47,
+        "impressions": 1390,
+        "ctr": "3.38%",
+        "position": "7.1"
+      },
+      {
+        "page": "/pages/notaire",
+        "clicks": 44,
+        "impressions": 6047,
+        "ctr": "0.73%",
+        "position": "12.2"
+      },
+      {
+        "page": "/pages/apl/apl-famille-trois-enfants",
+        "clicks": 42,
+        "impressions": 1189,
+        "ctr": "3.53%",
+        "position": "6.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-06",
+        "clicks": 42,
+        "impressions": 1175,
+        "ctr": "3.57%",
+        "position": "5.7"
+      },
+      {
+        "page": "/pages/apl-etudiant",
+        "clicks": 37,
+        "impressions": 8054,
+        "ctr": "0.46%",
+        "position": "11.2"
+      },
+      {
+        "page": "/pages/apl/apl-celibataire-smic",
+        "clicks": 34,
+        "impressions": 1468,
+        "ctr": "2.32%",
+        "position": "7.5"
+      },
+      {
+        "page": "/pages/apl/apl-parent-isole-deux-enfants",
+        "clicks": 34,
+        "impressions": 1218,
+        "ctr": "2.79%",
+        "position": "7.2"
+      },
+      {
+        "page": "/pages/aah",
+        "clicks": 31,
+        "impressions": 1386,
+        "ctr": "2.24%",
+        "position": "11.4"
+      },
+      {
+        "page": "/pages/apl/apl-alternant",
+        "clicks": 29,
+        "impressions": 1687,
+        "ctr": "1.72%",
+        "position": "7.4"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-34",
+        "clicks": 29,
+        "impressions": 712,
+        "ctr": "4.07%",
+        "position": "6.0"
+      },
+      {
+        "page": "/pages/apl/apl-chomage-avec-enfant",
+        "clicks": 28,
+        "impressions": 696,
+        "ctr": "4.02%",
+        "position": "6.1"
+      },
+      {
+        "page": "/pages/apl/apl-chomage-personne-seule",
+        "clicks": 28,
+        "impressions": 274,
+        "ctr": "10.22%",
+        "position": "6.3"
+      },
+      {
+        "page": "/pages/revenus/paris",
+        "clicks": 28,
+        "impressions": 1377,
+        "ctr": "2.03%",
+        "position": "8.7"
+      },
+      {
+        "page": "/pages/apl/apl-apprenti",
+        "clicks": 22,
+        "impressions": 1951,
+        "ctr": "1.13%",
+        "position": "7.5"
+      },
+      {
+        "page": "/pages/rsa/rsa-hebergement-gratuit",
+        "clicks": 18,
+        "impressions": 1059,
+        "ctr": "1.70%",
+        "position": "7.9"
+      },
+      {
+        "page": "/pages/impot/impot-couple-ou-separe",
+        "clicks": 17,
+        "impressions": 276,
+        "ctr": "6.16%",
+        "position": "9.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-11",
+        "clicks": 14,
+        "impressions": 238,
+        "ctr": "5.88%",
+        "position": "6.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-26",
+        "clicks": 14,
+        "impressions": 201,
+        "ctr": "6.97%",
+        "position": "5.2"
+      },
+      {
+        "page": "/pages/pret",
+        "clicks": 14,
+        "impressions": 3659,
+        "ctr": "0.38%",
+        "position": "10.1"
+      },
+      {
+        "page": "/pages/apl/apl-loyer-800-revenu-1300",
+        "clicks": 13,
+        "impressions": 449,
+        "ctr": "2.90%",
+        "position": "7.3"
+      },
+      {
+        "page": "/pages/apl/apl-smic-parent-isole-deux-enfants",
+        "clicks": 13,
+        "impressions": 158,
+        "ctr": "8.23%",
+        "position": "6.8"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-13",
+        "clicks": 13,
+        "impressions": 922,
+        "ctr": "1.41%",
+        "position": "7.3"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-28",
+        "clicks": 12,
+        "impressions": 180,
+        "ctr": "6.67%",
+        "position": "6.3"
+      },
+      {
+        "page": "/pages/plusvalue",
+        "clicks": 12,
+        "impressions": 1019,
+        "ctr": "1.18%",
+        "position": "10.9"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-35",
+        "clicks": 11,
+        "impressions": 408,
+        "ctr": "2.70%",
+        "position": "5.4"
+      },
+      {
+        "page": "/pages/apl/apl-couple-sans-enfant",
+        "clicks": 10,
+        "impressions": 858,
+        "ctr": "1.17%",
+        "position": "7.9"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-02",
+        "clicks": 9,
+        "impressions": 116,
+        "ctr": "7.76%",
+        "position": "4.9"
+      },
+      {
+        "page": "/pages/rsa-vs-smic",
+        "clicks": 9,
+        "impressions": 781,
+        "ctr": "1.15%",
+        "position": "7.3"
+      },
+      {
+        "page": "/pages/apl-dom-tom",
+        "clicks": 7,
+        "impressions": 122,
+        "ctr": "5.74%",
+        "position": "5.3"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-31",
+        "clicks": 7,
+        "impressions": 431,
+        "ctr": "1.62%",
+        "position": "7.1"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-47",
+        "clicks": 7,
+        "impressions": 192,
+        "ctr": "3.65%",
+        "position": "3.9"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-55",
+        "clicks": 7,
+        "impressions": 26,
+        "ctr": "26.92%",
+        "position": "5.9"
+      },
+      {
+        "page": "/pages/blog/inflation-cout-vie-2026",
+        "clicks": 6,
+        "impressions": 883,
+        "ctr": "0.68%",
+        "position": "9.8"
+      },
+      {
+        "page": "/pages/blog/salarie-ou-auto-entrepreneur-2026",
+        "clicks": 6,
+        "impressions": 235,
+        "ctr": "2.55%",
+        "position": "9.2"
+      },
+      {
+        "page": "/",
+        "clicks": 5,
+        "impressions": 108,
+        "ctr": "4.63%",
+        "position": "4.8"
+      },
+      {
+        "page": "/pages/allocation-familiale",
+        "clicks": 5,
+        "impressions": 1364,
+        "ctr": "0.37%",
+        "position": "11.5"
+      },
+      {
+        "page": "/pages/apl/apl-etudiant-lyon",
+        "clicks": 5,
+        "impressions": 70,
+        "ctr": "7.14%",
+        "position": "7.2"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-89",
+        "clicks": 5,
+        "impressions": 131,
+        "ctr": "3.82%",
+        "position": "4.9"
+      },
+      {
+        "page": "/pages/crypto-bourse",
+        "clicks": 5,
+        "impressions": 259,
+        "ctr": "1.93%",
+        "position": "15.1"
+      },
+      {
+        "page": "/pages/apl/apl-cdi-loyer-700",
+        "clicks": 4,
+        "impressions": 266,
+        "ctr": "1.50%",
+        "position": "7.5"
+      },
+      {
+        "page": "/pages/apl/apl-chomage-couple-un-enfant",
+        "clicks": 4,
+        "impressions": 167,
+        "ctr": "2.40%",
+        "position": "6.6"
+      },
+      {
+        "page": "/pages/apl/apl-etudiant-colocation",
+        "clicks": 4,
+        "impressions": 169,
+        "ctr": "2.37%",
+        "position": "7.6"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-18",
+        "clicks": 4,
+        "impressions": 129,
+        "ctr": "3.10%",
+        "position": "12.8"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-69",
+        "clicks": 4,
+        "impressions": 299,
+        "ctr": "1.34%",
+        "position": "11.8"
+      },
+      {
+        "page": "/pages/impot",
+        "clicks": 4,
+        "impressions": 629,
+        "ctr": "0.64%",
+        "position": "22.5"
+      },
+      {
+        "page": "/pages/reste-a-vivre",
+        "clicks": 4,
+        "impressions": 187,
+        "ctr": "2.14%",
+        "position": "7.4"
+      },
+      {
+        "page": "/pages/revenus/montpellier",
+        "clicks": 4,
+        "impressions": 65,
+        "ctr": "6.15%",
+        "position": "5.0"
+      },
+      {
+        "page": "/pages/revenus/nice",
+        "clicks": 4,
+        "impressions": 40,
+        "ctr": "10.00%",
+        "position": "4.4"
+      },
+      {
+        "page": "/pages/apl/apl-alternant-paris",
+        "clicks": 3,
+        "impressions": 119,
+        "ctr": "2.52%",
+        "position": "5.1"
+      },
+      {
+        "page": "/pages/apl/apl-smic-couple-deux-enfants",
+        "clicks": 3,
+        "impressions": 183,
+        "ctr": "1.64%",
+        "position": "6.2"
+      },
+      {
+        "page": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+        "clicks": 3,
+        "impressions": 227,
+        "ctr": "1.32%",
+        "position": "14.1"
+      },
+      {
+        "page": "/pages/apl/apl-celibataire-toulouse",
+        "clicks": 2,
+        "impressions": 50,
+        "ctr": "4.00%",
+        "position": "7.4"
+      },
+      {
+        "page": "/pages/apl/apl-chomage-parent-isole-deux-enfants",
+        "clicks": 2,
+        "impressions": 60,
+        "ctr": "3.33%",
+        "position": "5.7"
+      },
+      {
+        "page": "/pages/apl/apl-couple-un-enfant-loyer-moyen",
+        "clicks": 2,
+        "impressions": 356,
+        "ctr": "0.56%",
+        "position": "8.1"
+      },
+      {
+        "page": "/pages/apl/apl-etudiant-toulouse",
+        "clicks": 2,
+        "impressions": 122,
+        "ctr": "1.64%",
+        "position": "6.5"
+      },
+      {
+        "page": "/pages/apl/apl-famille-deux-enfants-paris",
+        "clicks": 2,
+        "impressions": 11,
+        "ctr": "18.18%",
+        "position": "6.3"
+      },
+      {
+        "page": "/pages/apl/apl-loyer-600-smic",
+        "clicks": 2,
+        "impressions": 37,
+        "ctr": "5.41%",
+        "position": "7.2"
+      },
+      {
+        "page": "/pages/apl/apl-parent-isole-un-enfant",
+        "clicks": 2,
+        "impressions": 94,
+        "ctr": "2.13%",
+        "position": "8.4"
+      },
+      {
+        "page": "/pages/apl/apl-petite-surface-paris",
+        "clicks": 2,
+        "impressions": 23,
+        "ctr": "8.70%",
+        "position": "4.7"
+      },
+      {
+        "page": "/pages/apl/apl-refusee-que-faire",
+        "clicks": 2,
+        "impressions": 48,
+        "ctr": "4.17%",
+        "position": "8.7"
+      },
+      {
+        "page": "/pages/apl/apl-smic-parent-isole-un-enfant",
+        "clicks": 2,
+        "impressions": 125,
+        "ctr": "1.60%",
+        "position": "6.4"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-48",
+        "clicks": 2,
+        "impressions": 27,
+        "ctr": "7.41%",
+        "position": "4.4"
+      },
+      {
+        "page": "/pages/carte-famille-nombreuse",
+        "clicks": 2,
+        "impressions": 408,
+        "ctr": "0.49%",
+        "position": "14.4"
+      },
+      {
+        "page": "/pages/guide-complet-impot-revenu-2026",
+        "clicks": 2,
+        "impressions": 1013,
+        "ctr": "0.20%",
+        "position": "13.7"
+      },
+      {
+        "page": "/pages/revenus/bordeaux",
+        "clicks": 2,
+        "impressions": 74,
+        "ctr": "2.70%",
+        "position": "6.9"
+      },
+      {
+        "page": "/pages/revenus/nantes",
+        "clicks": 2,
+        "impressions": 23,
+        "ctr": "8.70%",
+        "position": "5.6"
+      },
+      {
+        "page": "/pages/rsa/rsa-travail-a-temps-partiel/",
+        "clicks": 2,
+        "impressions": 34,
+        "ctr": "5.88%",
+        "position": "11.3"
+      },
+      {
+        "page": "/pages/apl/apl-apprenti-loyer-500",
+        "clicks": 1,
+        "impressions": 72,
+        "ctr": "1.39%",
+        "position": "8.4"
+      },
+      {
+        "page": "/pages/apl/apl-chomage-loyer-700-personne-seule",
+        "clicks": 1,
+        "impressions": 34,
+        "ctr": "2.94%",
+        "position": "6.8"
+      },
+      {
+        "page": "/pages/apl/apl-chomage-parent-isole-un-enfant",
+        "clicks": 1,
+        "impressions": 20,
+        "ctr": "5.00%",
+        "position": "6.5"
+      },
+      {
+        "page": "/pages/apl/apl-etudiant-paris",
+        "clicks": 1,
+        "impressions": 25,
+        "ctr": "4.00%",
+        "position": "7.5"
+      },
+      {
+        "page": "/pages/apl/apl-loyer-1000-couple-deux-enfants",
+        "clicks": 1,
+        "impressions": 36,
+        "ctr": "2.78%",
+        "position": "6.9"
+      },
+      {
+        "page": "/pages/apl/apl-loyer-500-personne-seule",
+        "clicks": 1,
+        "impressions": 38,
+        "ctr": "2.63%",
+        "position": "8.2"
+      },
+      {
+        "page": "/pages/apl/apl-reprise-emploi-loyer-eleve",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": "50.00%",
+        "position": "6.0"
+      },
+      {
+        "page": "/pages/apl/apl-reprise-emploi-loyer-moyen",
+        "clicks": 1,
+        "impressions": 7,
+        "ctr": "14.29%",
+        "position": "4.6"
+      },
+      {
+        "page": "/pages/apl/apl-smic-couple-un-enfant",
+        "clicks": 1,
+        "impressions": 52,
+        "ctr": "1.92%",
+        "position": "5.1"
+      },
+      {
+        "page": "/pages/apl/apl-smic-logement-social",
+        "clicks": 1,
+        "impressions": 13,
+        "ctr": "7.69%",
+        "position": "9.8"
+      },
+      {
+        "page": "/pages/apl/apl-smic-parent-isole-trois-enfants",
+        "clicks": 1,
+        "impressions": 13,
+        "ctr": "7.69%",
+        "position": "5.2"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-09",
+        "clicks": 1,
+        "impressions": 115,
+        "ctr": "0.87%",
+        "position": "8.2"
+      },
+      {
+        "page": "/pages/impot/impot-revenu-60000-couple-un-enfant-2026",
+        "clicks": 1,
+        "impressions": 21,
+        "ctr": "4.76%",
+        "position": "6.6"
+      },
+      {
+        "page": "/pages/prime-activite/prime-activite-parent-isole-un-enfant",
+        "clicks": 1,
+        "impressions": 48,
+        "ctr": "2.08%",
+        "position": "7.7"
+      },
+      {
+        "page": "/pages/revenus/marseille",
+        "clicks": 1,
+        "impressions": 36,
+        "ctr": "2.78%",
+        "position": "4.1"
+      },
+      {
+        "page": "/pages/revenus/toulouse",
+        "clicks": 1,
+        "impressions": 47,
+        "ctr": "2.13%",
+        "position": "6.2"
+      },
+      {
+        "page": "/pages/rsa/rsa-chomage-fin-de-droits",
+        "clicks": 1,
+        "impressions": 93,
+        "ctr": "1.08%",
+        "position": "9.3"
+      },
+      {
+        "page": "/pages/rsa/rsa-personne-seule-logement-social",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": "33.33%",
+        "position": "3.0"
+      },
+      {
+        "page": "https://lescalculateurs.fr/pages/notaire/frais-notaire-ancien-simulation/",
+        "clicks": 0,
+        "impressions": 87,
+        "ctr": "0.00%",
+        "position": "28.9"
+      },
+      {
+        "page": "/pages/a-propos",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": "0.00%",
+        "position": "3.3"
+      }
+    ]
+  },
+  "bing": {
+    "auth": "api_key: BING_API_KEY",
+    "globalStats": {
+      "clicks": 3502,
+      "impressions": 280311,
+      "ctr": "1.25%",
+      "avgPosition": "5.4",
+      "distinctQueries": 858
+    },
+    "topQueries": [
+      {
+        "query": "simulation apl",
+        "clicks": 407,
+        "impressions": 46081,
+        "ctr": "0.88%",
+        "position": "4.0"
+      },
+      {
+        "query": "apl simulation",
+        "clicks": 181,
+        "impressions": 13818,
+        "ctr": "1.31%",
+        "position": "4.0"
+      },
+      {
+        "query": "simulateur apl",
+        "clicks": 180,
+        "impressions": 6899,
+        "ctr": "2.61%",
+        "position": "4.0"
+      },
+      {
+        "query": "simulateur impôts 2026",
+        "clicks": 164,
+        "impressions": 26386,
+        "ctr": "0.62%",
+        "position": "7.4"
+      },
+      {
+        "query": "simulation apl caf 2026",
+        "clicks": 157,
+        "impressions": 3816,
+        "ctr": "4.11%",
+        "position": "3.2"
+      },
+      {
+        "query": "simulation prime activité",
+        "clicks": 149,
+        "impressions": 10672,
+        "ctr": "1.40%",
+        "position": "4.2"
+      },
+      {
+        "query": "caf simulation apl",
+        "clicks": 109,
+        "impressions": 15189,
+        "ctr": "0.72%",
+        "position": "4.1"
+      },
+      {
+        "query": "simulateur are",
+        "clicks": 103,
+        "impressions": 454,
+        "ctr": "22.69%",
+        "position": "2.2"
+      },
+      {
+        "query": "simulation impôts 2026",
+        "clicks": 93,
+        "impressions": 20400,
+        "ctr": "0.46%",
+        "position": "7.1"
+      },
+      {
+        "query": "simulation are",
+        "clicks": 87,
+        "impressions": 1287,
+        "ctr": "6.76%",
+        "position": "2.8"
+      },
+      {
+        "query": "frais de notaire 2026",
+        "clicks": 80,
+        "impressions": 1401,
+        "ctr": "5.71%",
+        "position": "4.0"
+      },
+      {
+        "query": "simulation caf apl",
+        "clicks": 73,
+        "impressions": 3030,
+        "ctr": "2.41%",
+        "position": "3.6"
+      },
+      {
+        "query": "estimation apl",
+        "clicks": 71,
+        "impressions": 5081,
+        "ctr": "1.40%",
+        "position": "3.6"
+      },
+      {
+        "query": "prime d'activité simulation",
+        "clicks": 71,
+        "impressions": 5209,
+        "ctr": "1.36%",
+        "position": "4.9"
+      },
+      {
+        "query": "simulation prime d'activité",
+        "clicks": 69,
+        "impressions": 4845,
+        "ctr": "1.42%",
+        "position": "4.9"
+      },
+      {
+        "query": "calcul impôts 2026",
+        "clicks": 62,
+        "impressions": 3656,
+        "ctr": "1.70%",
+        "position": "6.1"
+      },
+      {
+        "query": "calcul are",
+        "clicks": 61,
+        "impressions": 293,
+        "ctr": "20.82%",
+        "position": "2.3"
+      },
+      {
+        "query": "simulateur prime d'activité",
+        "clicks": 53,
+        "impressions": 2726,
+        "ctr": "1.94%",
+        "position": "4.7"
+      },
+      {
+        "query": "simulateur caf",
+        "clicks": 38,
+        "impressions": 2980,
+        "ctr": "1.28%",
+        "position": "5.2"
+      },
+      {
+        "query": "simulateur are 2026",
+        "clicks": 36,
+        "impressions": 60,
+        "ctr": "60.00%",
+        "position": "1.9"
+      },
+      {
+        "query": "simulation caf",
+        "clicks": 36,
+        "impressions": 9642,
+        "ctr": "0.37%",
+        "position": "5.7"
+      },
+      {
+        "query": "caf apl simulation",
+        "clicks": 35,
+        "impressions": 3194,
+        "ctr": "1.10%",
+        "position": "3.7"
+      },
+      {
+        "query": "simulation chomage",
+        "clicks": 32,
+        "impressions": 2945,
+        "ctr": "1.09%",
+        "position": "6.0"
+      },
+      {
+        "query": "simulation apl caf",
+        "clicks": 30,
+        "impressions": 2865,
+        "ctr": "1.05%",
+        "position": "4.2"
+      },
+      {
+        "query": "simulateur chomage",
+        "clicks": 29,
+        "impressions": 1152,
+        "ctr": "2.52%",
+        "position": "5.6"
+      },
+      {
+        "query": "prime activité simulation",
+        "clicks": 27,
+        "impressions": 997,
+        "ctr": "2.71%",
+        "position": "4.0"
+      },
+      {
+        "query": "simulateur apl 2026",
+        "clicks": 24,
+        "impressions": 72,
+        "ctr": "33.33%",
+        "position": "3.2"
+      },
+      {
+        "query": "brut en net 2026",
+        "clicks": 22,
+        "impressions": 3377,
+        "ctr": "0.65%",
+        "position": "5.4"
+      },
+      {
+        "query": "simulateur impots 2026",
+        "clicks": 21,
+        "impressions": 1341,
+        "ctr": "1.57%",
+        "position": "6.2"
+      },
+      {
+        "query": "simulateur impots",
+        "clicks": 21,
+        "impressions": 5714,
+        "ctr": "0.37%",
+        "position": "6.5"
+      },
+      {
+        "query": "simulateur impôt 2026",
+        "clicks": 18,
+        "impressions": 1812,
+        "ctr": "0.99%",
+        "position": "7.3"
+      },
+      {
+        "query": "simulation apl etudiant",
+        "clicks": 17,
+        "impressions": 84,
+        "ctr": "20.24%",
+        "position": "2.7"
+      },
+      {
+        "query": "caf simulation prime activité",
+        "clicks": 16,
+        "impressions": 2245,
+        "ctr": "0.71%",
+        "position": "3.8"
+      },
+      {
+        "query": "simulation impôt 2026",
+        "clicks": 16,
+        "impressions": 2640,
+        "ctr": "0.61%",
+        "position": "7.0"
+      },
+      {
+        "query": "simulateur impot",
+        "clicks": 16,
+        "impressions": 2152,
+        "ctr": "0.74%",
+        "position": "6.8"
+      },
+      {
+        "query": "salaire brut en net 2026",
+        "clicks": 16,
+        "impressions": 1059,
+        "ctr": "1.51%",
+        "position": "5.8"
+      },
+      {
+        "query": "apl étudiant",
+        "clicks": 16,
+        "impressions": 482,
+        "ctr": "3.32%",
+        "position": "4.4"
+      },
+      {
+        "query": "simulation allocation logement",
+        "clicks": 15,
+        "impressions": 913,
+        "ctr": "1.64%",
+        "position": "4.4"
+      },
+      {
+        "query": "simulateur caf apl",
+        "clicks": 14,
+        "impressions": 444,
+        "ctr": "3.15%",
+        "position": "4.2"
+      },
+      {
+        "query": "simulateur prime activité",
+        "clicks": 13,
+        "impressions": 669,
+        "ctr": "1.94%",
+        "position": "4.9"
+      },
+      {
+        "query": "impôts sur le revenu 2026",
+        "clicks": 13,
+        "impressions": 2965,
+        "ctr": "0.44%",
+        "position": "6.7"
+      },
+      {
+        "query": "apl étudiant simulation",
+        "clicks": 13,
+        "impressions": 34,
+        "ctr": "38.24%",
+        "position": "2.0"
+      },
+      {
+        "query": "calcul frais de notaire 2026",
+        "clicks": 12,
+        "impressions": 427,
+        "ctr": "2.81%",
+        "position": "5.6"
+      },
+      {
+        "query": "simulation rsa",
+        "clicks": 12,
+        "impressions": 2554,
+        "ctr": "0.47%",
+        "position": "6.5"
+      },
+      {
+        "query": "aspa 2026",
+        "clicks": 11,
+        "impressions": 422,
+        "ctr": "2.61%",
+        "position": "5.0"
+      },
+      {
+        "query": "calcul apl",
+        "clicks": 10,
+        "impressions": 437,
+        "ctr": "2.29%",
+        "position": "4.4"
+      },
+      {
+        "query": "simulateur apl caf",
+        "clicks": 10,
+        "impressions": 640,
+        "ctr": "1.56%",
+        "position": "4.0"
+      },
+      {
+        "query": "simulation prime d'activité caf",
+        "clicks": 10,
+        "impressions": 858,
+        "ctr": "1.17%",
+        "position": "4.3"
+      },
+      {
+        "query": "barème impôt 2026",
+        "clicks": 10,
+        "impressions": 2764,
+        "ctr": "0.36%",
+        "position": "8.3"
+      },
+      {
+        "query": "impôt sur le revenu 2026",
+        "clicks": 10,
+        "impressions": 2341,
+        "ctr": "0.43%",
+        "position": "6.8"
+      },
+      {
+        "query": "calcul chomage",
+        "clicks": 10,
+        "impressions": 316,
+        "ctr": "3.16%",
+        "position": "5.3"
+      },
+      {
+        "query": "simulateur impot sur le revenu",
+        "clicks": 9,
+        "impressions": 491,
+        "ctr": "1.83%",
+        "position": "6.6"
+      },
+      {
+        "query": "simulation impôts",
+        "clicks": 9,
+        "impressions": 759,
+        "ctr": "1.19%",
+        "position": "6.2"
+      },
+      {
+        "query": "apl",
+        "clicks": 9,
+        "impressions": 2811,
+        "ctr": "0.32%",
+        "position": "7.5"
+      },
+      {
+        "query": "frais de notaire",
+        "clicks": 8,
+        "impressions": 883,
+        "ctr": "0.91%",
+        "position": "7.4"
+      },
+      {
+        "query": "calcul frais de notaire",
+        "clicks": 8,
+        "impressions": 1749,
+        "ctr": "0.46%",
+        "position": "7.5"
+      },
+      {
+        "query": "calcul salaire brut en net 2026",
+        "clicks": 7,
+        "impressions": 299,
+        "ctr": "2.34%",
+        "position": "5.9"
+      },
+      {
+        "query": "simulation prime activite",
+        "clicks": 7,
+        "impressions": 258,
+        "ctr": "2.71%",
+        "position": "4.2"
+      },
+      {
+        "query": "calcul plus value immobilière simulateur",
+        "clicks": 7,
+        "impressions": 509,
+        "ctr": "1.38%",
+        "position": "6.5"
+      },
+      {
+        "query": "calcul brut en net 2026",
+        "clicks": 7,
+        "impressions": 354,
+        "ctr": "1.98%",
+        "position": "4.9"
+      },
+      {
+        "query": "simulation impôt",
+        "clicks": 7,
+        "impressions": 3044,
+        "ctr": "0.23%",
+        "position": "7.7"
+      },
+      {
+        "query": "caf simulation apl 2026",
+        "clicks": 7,
+        "impressions": 22,
+        "ctr": "31.82%",
+        "position": "4.6"
+      },
+      {
+        "query": "impôts 2026 simplifié",
+        "clicks": 7,
+        "impressions": 353,
+        "ctr": "1.98%",
+        "position": "3.6"
+      },
+      {
+        "query": "calcul frais de notaire 2025",
+        "clicks": 6,
+        "impressions": 172,
+        "ctr": "3.49%",
+        "position": "5.1"
+      },
+      {
+        "query": "estimation taxe foncière",
+        "clicks": 6,
+        "impressions": 54,
+        "ctr": "11.11%",
+        "position": "5.4"
+      },
+      {
+        "query": "simulation impôt sur le revenu 2026",
+        "clicks": 6,
+        "impressions": 879,
+        "ctr": "0.68%",
+        "position": "6.2"
+      },
+      {
+        "query": "simulateur impot 2026",
+        "clicks": 6,
+        "impressions": 624,
+        "ctr": "0.96%",
+        "position": "7.0"
+      },
+      {
+        "query": "impots 2026",
+        "clicks": 6,
+        "impressions": 831,
+        "ctr": "0.72%",
+        "position": "7.8"
+      },
+      {
+        "query": "impôt revenu 2026",
+        "clicks": 6,
+        "impressions": 507,
+        "ctr": "1.18%",
+        "position": "5.7"
+      },
+      {
+        "query": "calculer l'impot 2026",
+        "clicks": 6,
+        "impressions": 224,
+        "ctr": "2.68%",
+        "position": "6.6"
+      },
+      {
+        "query": "simulateur prime d'activite",
+        "clicks": 5,
+        "impressions": 9,
+        "ctr": "55.56%",
+        "position": "2.0"
+      },
+      {
+        "query": "simulation impot 2026",
+        "clicks": 5,
+        "impressions": 963,
+        "ctr": "0.52%",
+        "position": "6.7"
+      },
+      {
+        "query": "simulation impot sur le revenu",
+        "clicks": 5,
+        "impressions": 117,
+        "ctr": "4.27%",
+        "position": "6.2"
+      },
+      {
+        "query": "simulateur plus value immobilière 2026",
+        "clicks": 5,
+        "impressions": 11,
+        "ctr": "45.45%",
+        "position": "1.3"
+      },
+      {
+        "query": "salaire brut net 2026",
+        "clicks": 5,
+        "impressions": 596,
+        "ctr": "0.84%",
+        "position": "5.6"
+      },
+      {
+        "query": "simulation impots",
+        "clicks": 5,
+        "impressions": 1572,
+        "ctr": "0.32%",
+        "position": "6.6"
+      },
+      {
+        "query": "calcul de l'impot 2026",
+        "clicks": 5,
+        "impressions": 106,
+        "ctr": "4.72%",
+        "position": "5.7"
+      },
+      {
+        "query": "simulateur are france travail",
+        "clicks": 5,
+        "impressions": 3,
+        "ctr": "166.67%",
+        "position": "2.0"
+      },
+      {
+        "query": "simulateur impôts après le salaire",
+        "clicks": 5,
+        "impressions": 1,
+        "ctr": "500.00%",
+        "position": "2.0"
+      },
+      {
+        "query": "frais de notaire ancien 2025",
+        "clicks": 4,
+        "impressions": 20,
+        "ctr": "20.00%",
+        "position": "4.0"
+      },
+      {
+        "query": "grille des frais de notaire 2025 indre",
+        "clicks": 4,
+        "impressions": 4,
+        "ctr": "100.00%",
+        "position": "1.0"
+      },
+      {
+        "query": "grille des frais de notaire 2025 charente maritime",
+        "clicks": 4,
+        "impressions": 3,
+        "ctr": "133.33%",
+        "position": "1.0"
+      },
+      {
+        "query": "notafrais frais notaire",
+        "clicks": 4,
+        "impressions": 1109,
+        "ctr": "0.36%",
+        "position": "5.1"
+      },
+      {
+        "query": "simulateur de plus value immobilière 2026",
+        "clicks": 4,
+        "impressions": 3,
+        "ctr": "133.33%",
+        "position": "2.3"
+      },
+      {
+        "query": "simulation prime d activité",
+        "clicks": 4,
+        "impressions": 71,
+        "ctr": "5.63%",
+        "position": "2.5"
+      },
+      {
+        "query": "simulateur prime d'activité caf",
+        "clicks": 4,
+        "impressions": 219,
+        "ctr": "1.83%",
+        "position": "4.3"
+      },
+      {
+        "query": "plus value immobilière simulateur",
+        "clicks": 4,
+        "impressions": 287,
+        "ctr": "1.39%",
+        "position": "6.2"
+      },
+      {
+        "query": "salaire cadre et non cadre net et brut simulator",
+        "clicks": 4,
+        "impressions": 1,
+        "ctr": "400.00%",
+        "position": "4.0"
+      },
+      {
+        "query": "caf simulation prime d'activité",
+        "clicks": 4,
+        "impressions": 145,
+        "ctr": "2.76%",
+        "position": "3.5"
+      },
+      {
+        "query": "simulation aide au logement",
+        "clicks": 4,
+        "impressions": 1067,
+        "ctr": "0.37%",
+        "position": "5.4"
+      },
+      {
+        "query": "impots simulateur",
+        "clicks": 4,
+        "impressions": 416,
+        "ctr": "0.96%",
+        "position": "6.1"
+      },
+      {
+        "query": "calcul impôt 2026 simulateur",
+        "clicks": 4,
+        "impressions": 610,
+        "ctr": "0.66%",
+        "position": "7.7"
+      },
+      {
+        "query": "simulateur france travail",
+        "clicks": 4,
+        "impressions": 474,
+        "ctr": "0.84%",
+        "position": "6.1"
+      },
+      {
+        "query": "grilles des impo 2026",
+        "clicks": 4,
+        "impressions": 4,
+        "ctr": "100.00%",
+        "position": "13.0"
+      },
+      {
+        "query": "apl simulation caf",
+        "clicks": 4,
+        "impressions": 124,
+        "ctr": "3.23%",
+        "position": "4.4"
+      },
+      {
+        "query": "taxe foncière 2026",
+        "clicks": 4,
+        "impressions": 267,
+        "ctr": "1.50%",
+        "position": "8.8"
+      },
+      {
+        "query": "guide impot 2026",
+        "clicks": 4,
+        "impressions": 5,
+        "ctr": "80.00%",
+        "position": "5.0"
+      },
+      {
+        "query": "simulateur imposition sur le revenu en france 2026",
+        "clicks": 4,
+        "impressions": 1,
+        "ctr": "400.00%",
+        "position": "5.0"
+      },
+      {
+        "query": "are calcul",
+        "clicks": 4,
+        "impressions": 2,
+        "ctr": "200.00%",
+        "position": "2.0"
+      },
+      {
+        "query": "apl avec faible revenu",
+        "clicks": 4,
+        "impressions": 2,
+        "ctr": "200.00%",
+        "position": "10.0"
+      }
+    ],
+    "topPages": [
+      {
+        "page": "/pages/apl",
+        "clicks": 2267,
+        "impressions": 168191,
+        "ctr": "1.35%",
+        "position": "4.3"
+      },
+      {
+        "page": "/pages/are",
+        "clicks": 1643,
+        "impressions": 33302,
+        "ctr": "4.93%",
+        "position": "5.0"
+      },
+      {
+        "page": "/pages/guide-complet-impot-revenu-2026",
+        "clicks": 869,
+        "impressions": 76042,
+        "ctr": "1.14%",
+        "position": "7.4"
+      },
+      {
+        "page": "/pages/prime-activite",
+        "clicks": 796,
+        "impressions": 55781,
+        "ctr": "1.43%",
+        "position": "4.9"
+      },
+      {
+        "page": "/pages/impot",
+        "clicks": 789,
+        "impressions": 86515,
+        "ctr": "0.91%",
+        "position": "6.8"
+      },
+      {
+        "page": "/pages/apl-etudiant",
+        "clicks": 561,
+        "impressions": 9291,
+        "ctr": "6.04%",
+        "position": "4.8"
+      },
+      {
+        "page": "/pages/notaire",
+        "clicks": 399,
+        "impressions": 17379,
+        "ctr": "2.30%",
+        "position": "6.2"
+      },
+      {
+        "page": "/pages/taxe",
+        "clicks": 324,
+        "impressions": 6448,
+        "ctr": "5.02%",
+        "position": "6.3"
+      },
+      {
+        "page": "/pages/plusvalue",
+        "clicks": 198,
+        "impressions": 8066,
+        "ctr": "2.45%",
+        "position": "6.6"
+      },
+      {
+        "page": "/pages/salaire-brut-net-calcul-2026",
+        "clicks": 182,
+        "impressions": 12317,
+        "ctr": "1.48%",
+        "position": "5.7"
+      },
+      {
+        "page": "/pages/impot/impot-couple-ou-separe",
+        "clicks": 166,
+        "impressions": 2345,
+        "ctr": "7.08%",
+        "position": "4.7"
+      },
+      {
+        "page": "/pages/apl-zones",
+        "clicks": 119,
+        "impressions": 2474,
+        "ctr": "4.81%",
+        "position": "4.5"
+      },
+      {
+        "page": "/pages/rsa",
+        "clicks": 81,
+        "impressions": 12242,
+        "ctr": "0.66%",
+        "position": "6.5"
+      },
+      {
+        "page": "/pages/aah",
+        "clicks": 45,
+        "impressions": 2015,
+        "ctr": "2.23%",
+        "position": "6.3"
+      },
+      {
+        "page": "/pages/taxe-fonciere",
+        "clicks": 43,
+        "impressions": 609,
+        "ctr": "7.06%",
+        "position": "5.9"
+      },
+      {
+        "page": "/pages/blog/frais-notaire-ancien-neuf-2025",
+        "clicks": 39,
+        "impressions": 466,
+        "ctr": "8.37%",
+        "position": "4.7"
+      },
+      {
+        "page": "/pages/travail",
+        "clicks": 38,
+        "impressions": 1546,
+        "ctr": "2.46%",
+        "position": "6.9"
+      },
+      {
+        "page": "/pages/ik",
+        "clicks": 34,
+        "impressions": 5825,
+        "ctr": "0.58%",
+        "position": "7.8"
+      },
+      {
+        "page": "/pages/ponts",
+        "clicks": 26,
+        "impressions": 2368,
+        "ctr": "1.10%",
+        "position": "6.6"
+      },
+      {
+        "page": "/pages/salaire-net-apres-impot",
+        "clicks": 25,
+        "impressions": 782,
+        "ctr": "3.20%",
+        "position": "6.9"
+      },
+      {
+        "page": "/pages/asf",
+        "clicks": 23,
+        "impressions": 1724,
+        "ctr": "1.33%",
+        "position": "7.1"
+      },
+      {
+        "page": "/pages/aspa",
+        "clicks": 23,
+        "impressions": 975,
+        "ctr": "2.36%",
+        "position": "6.0"
+      },
+      {
+        "page": "/pages/salaire",
+        "clicks": 19,
+        "impressions": 2327,
+        "ctr": "0.82%",
+        "position": "8.1"
+      },
+      {
+        "page": "/pages/charges",
+        "clicks": 18,
+        "impressions": 263,
+        "ctr": "6.84%",
+        "position": "4.7"
+      },
+      {
+        "page": "/pages/crypto-bourse",
+        "clicks": 15,
+        "impressions": 266,
+        "ctr": "5.64%",
+        "position": "4.6"
+      },
+      {
+        "page": "/pages/impot/impot-decote-2026-simulation",
+        "clicks": 14,
+        "impressions": 1347,
+        "ctr": "1.04%",
+        "position": "7.1"
+      },
+      {
+        "page": "/pages/blog/frais-notaire-departements",
+        "clicks": 12,
+        "impressions": 235,
+        "ctr": "5.11%",
+        "position": "6.6"
+      },
+      {
+        "page": "/pages/blog/inflation-cout-vie-2026",
+        "clicks": 11,
+        "impressions": 260,
+        "ctr": "4.23%",
+        "position": "4.9"
+      },
+      {
+        "page": "/pages/pret",
+        "clicks": 9,
+        "impressions": 51,
+        "ctr": "17.65%",
+        "position": "4.3"
+      },
+      {
+        "page": "/pages/allocation-familiale",
+        "clicks": 9,
+        "impressions": 896,
+        "ctr": "1.00%",
+        "position": "7.6"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-17",
+        "clicks": 7,
+        "impressions": 7,
+        "ctr": "100.00%",
+        "position": "1.6"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-29",
+        "clicks": 5,
+        "impressions": 10,
+        "ctr": "50.00%",
+        "position": "1.3"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-56",
+        "clicks": 4,
+        "impressions": 24,
+        "ctr": "16.67%",
+        "position": "4.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-36.html",
+        "clicks": 4,
+        "impressions": 4,
+        "ctr": "100.00%",
+        "position": "1.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-34.html",
+        "clicks": 3,
+        "impressions": 11,
+        "ctr": "27.27%",
+        "position": "3.4"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-06",
+        "clicks": 3,
+        "impressions": 12,
+        "ctr": "25.00%",
+        "position": "3.4"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-83",
+        "clicks": 3,
+        "impressions": 4,
+        "ctr": "75.00%",
+        "position": "1.5"
+      },
+      {
+        "page": "/pages/comment-calculer-frais-notaire",
+        "clicks": 2,
+        "impressions": 184,
+        "ctr": "1.09%",
+        "position": "7.5"
+      },
+      {
+        "page": "/pages/simulateurs/quelle-aide-selon-mon-profil-2026",
+        "clicks": 2,
+        "impressions": 11,
+        "ctr": "18.18%",
+        "position": "7.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-60.html",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": "50.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-2B.html",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-37",
+        "clicks": 1,
+        "impressions": 4,
+        "ctr": "25.00%",
+        "position": "2.5"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-974",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": "33.33%",
+        "position": "4.7"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-87.html",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": "50.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-53.html",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-19",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "1.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-60",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "4.0"
+      },
+      {
+        "page": "/pages/apl-dom-tom",
+        "clicks": 1,
+        "impressions": 17,
+        "ctr": "5.88%",
+        "position": "5.6"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-42",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": "50.00%",
+        "position": "1.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-08",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "1.0"
+      },
+      {
+        "page": "https://lescalculateurs.fr/pages/blog/frais-notaire-75",
+        "clicks": 1,
+        "impressions": 137,
+        "ctr": "0.73%",
+        "position": "3.8"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-38",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": "50.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-57",
+        "clicks": 1,
+        "impressions": 7,
+        "ctr": "14.29%",
+        "position": "3.7"
+      },
+      {
+        "page": "/pages/comment-calculer-plus-value",
+        "clicks": 1,
+        "impressions": 47,
+        "ctr": "2.13%",
+        "position": "7.4"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-74",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": "50.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/rsa/rsa-personne-seule-montant",
+        "clicks": 1,
+        "impressions": 222,
+        "ctr": "0.45%",
+        "position": "7.1"
+      },
+      {
+        "page": "/pages/rsa/rsa-conditions-2026",
+        "clicks": 1,
+        "impressions": 132,
+        "ctr": "0.76%",
+        "position": "7.2"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-78",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-11",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "1.0"
+      },
+      {
+        "page": "/pages/taxe-fonciere/taxe-fonciere-residence-secondaire",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": "50.00%",
+        "position": "4.0"
+      },
+      {
+        "page": "/pages/revenus/paris",
+        "clicks": 1,
+        "impressions": 6,
+        "ctr": "16.67%",
+        "position": "5.5"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-24",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": "100.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/apl/apl-apprenti",
+        "clicks": 1,
+        "impressions": 33,
+        "ctr": "3.03%",
+        "position": "5.3"
+      },
+      {
+        "page": "/pages/revenu-median-commune",
+        "clicks": 1,
+        "impressions": 15,
+        "ctr": "6.67%",
+        "position": "5.4"
+      },
+      {
+        "page": "/",
+        "clicks": 0,
+        "impressions": 29,
+        "ctr": "0.00%",
+        "position": "8.6"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-75",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": "0.00%",
+        "position": "5.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-30",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "5.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-972",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-13",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": "0.00%",
+        "position": "4.9"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-72",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-77",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-52",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "1.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-34",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": "0.00%",
+        "position": "6.0"
+      },
+      {
+        "page": "/pages/simulateurs",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": "0.00%",
+        "position": "4.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-40",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "4.0"
+      },
+      {
+        "page": "/pages/impot/tranches-d-impot-2026",
+        "clicks": 0,
+        "impressions": 27,
+        "ctr": "0.00%",
+        "position": "8.1"
+      },
+      {
+        "page": "/pages/blog/frais-notaire-ancien-neuf-2026",
+        "clicks": 0,
+        "impressions": 53,
+        "ctr": "0.00%",
+        "position": "5.1"
+      },
+      {
+        "page": "/pages/rsa/rsa-couple-sans-enfant",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": "0.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-23",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/impot/indemnites-kilometriques-calcul",
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": "0.00%",
+        "position": "9.0"
+      },
+      {
+        "page": "/pages/rsa/rsa-travail-a-temps-partiel",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": "0.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-21",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": "0.00%",
+        "position": "4.0"
+      },
+      {
+        "page": "/pages/sources",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "5.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-01",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/impot/revenu-fiscal-de-reference-definition",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": "0.00%",
+        "position": "7.0"
+      },
+      {
+        "page": "/pages/rsa/rsa-et-apl-cumul",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/blog/departements/frais-notaire-86",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "2.0"
+      },
+      {
+        "page": "/pages/apl/apl-smic-couple-un-enfant",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "7.0"
+      },
+      {
+        "page": "/pages/apl/apl-colocation",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "8.0"
+      },
+      {
+        "page": "/pages/apl/apl-colocation-jeune-actif",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "9.0"
+      },
+      {
+        "page": "/pages/rsa/rsa-hebergement-gratuit",
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": "0.00%",
+        "position": "8.0"
+      },
+      {
+        "page": "/pages/apl/apl-personne-seule-smic",
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": "0.00%",
+        "position": "5.9"
+      },
+      {
+        "page": "/pages/reste-a-vivre",
+        "clicks": 0,
+        "impressions": 106,
+        "ctr": "0.00%",
+        "position": "6.9"
+      },
+      {
+        "page": "/pages/simulateurs/quelles-aides-fin-de-droits-chomage",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "4.0"
+      },
+      {
+        "page": "/pages/garantie-visale",
+        "clicks": 0,
+        "impressions": 309,
+        "ctr": "0.00%",
+        "position": "8.8"
+      },
+      {
+        "page": "/pages/apl/apl-etudiant-lyon",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": "0.00%",
+        "position": "3.0"
+      },
+      {
+        "page": "/pages/carte-famille-nombreuse",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": "0.00%",
+        "position": "8.7"
+      },
+      {
+        "page": "/pages/aide/cumul-aides-sociales",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": "0.00%",
+        "position": "3.0"
+      }
+    ]
+  },
+  "comparison": {
+    "note": "Période identique 28j pour les deux moteurs.",
+    "google": {
+      "clicks": 3501,
+      "impressions": 253442,
+      "ctr": "1.38%"
+    },
+    "bing": {
+      "clicks": 3502,
+      "impressions": 280311,
+      "ctr": "1.25%"
+    },
+    "ratioBingVsGoogle": "100.0%"
+  }
+}
