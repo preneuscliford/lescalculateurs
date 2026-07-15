@@ -1184,6 +1184,7 @@
       </div>
     </footer>
 
+
     <script type="module">
       import { CalculatorFrame } from "../components/CalculatorFrame.ts";
       import {
@@ -1578,25 +1579,5 @@
         ">👉 Simulateur officiel CAF</a>
       <p style="font-size: 12px; color: #666; margin-top: 8px">Pour un calcul définitif conforme aux barèmes officiels</p>
     </div>
-
-    <script>
-      // Verbalisation YMYL - masquer montant exact, afficher fourchette
-      document.addEventListener("DOMContentLoaded", function () {
-        const exactSpans = document.querySelectorAll(".result-exact");
-        exactSpans.forEach(function (span) {
-          const exactVal = parseInt(span.textContent);
-          const verbalSpan = span.previousElementSibling;
-          if (verbalSpan && verbalSpan.classList.contains("result-verbal")) {
-            const rounded = Math.round(exactVal / 10) * 10;
-            verbalSpan.textContent =
-              "environ " +
-              rounded +
-              " € – simulateur officiel pour valeur exacte";
-          }
-        });
-      });
-    </script>
-  
-
-
-
+  </body>
+</html>
