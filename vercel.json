@@ -2,6 +2,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/pages/taxe-fonciere",
+      "destination": "/pages/taxe",
+      "permanent": true
+    },
+    {
       "source": "/pages/taxe-fonciere/:path*",
       "destination": "/pages/taxe",
       "permanent": true
