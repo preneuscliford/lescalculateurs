@@ -315,6 +315,195 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Résumé IA - injected by add-resume-ia-button.cjs -->
+<div
+  id="resume-ia-box"
+  style="max-width: 896px; margin: 0 auto 24px auto; text-align: center; display: none"
+>
+  <button
+    id="resume-ia-btn"
+    onclick="resumeIAClick()"
+    style="
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    "
+  >
+    <span style="font-size: 20px">🤖</span> Résumé IA
+  </button>
+  <div id="resume-ia-output" style="display: none; margin-top: 12px"></div>
+</div>
+<script>
+  function showLoader(o) {
+    o.style.display = "block";
+    o.innerHTML =
+      '<div style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;padding:1px;"><div style="background:#fff;border-radius:11px;padding:20px 24px;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;border-bottom:1px solid #f3f4f6;padding-bottom:8px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:20px;">🤖</span><span style="font-weight:700;font-size:15px;color:#1f2937;">Résumé IA</span><span style="font-size:10px;color:#9ca3af;">DeepSeek - analyse en cours...</span></div></div><div style="text-align:center;padding:16px 0;"><span style="display:inline-block;width:22px;height:22px;border:3px solid #e5e7eb;border-top-color:#7c3aed;border-radius:50%;animation:ri-spin .6s linear infinite;"></span><span style="display:block;font-size:13px;color:#9ca3af;margin-top:8px;">DeepSeek analyse le contenu...</span></div></div></div>';
+  }
+  function showResult(o, text, source) {
+    var bg = source === "deepseek" ? "#ede9fe" : "#fef3c7";
+    var c = source === "deepseek" ? "#7c3aed" : "#d97706";
+    var label = source === "deepseek" ? "DeepSeek" : "Local";
+    o.innerHTML =
+      '<div style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;padding:1px;"><div style="background:#fff;border-radius:11px;padding:20px 24px;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;border-bottom:1px solid #f3f4f6;padding-bottom:8px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:20px;">🤖</span><span style="font-weight:700;font-size:15px;color:#1f2937;">Résumé IA</span><span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:9999px;background:' +
+      bg +
+      ";color:" +
+      c +
+      ';">' +
+      label +
+      '</span></div><div style="display:flex;gap:4px;"><button onclick="resumeIAClick()" style="background:transparent;border:none;color:#9ca3af;font-size:13px;cursor:pointer;padding:2px 6px;" title="Régénérer">🔄</button><button onclick="hideResume()" style="background:transparent;border:none;color:#9ca3af;font-size:16px;cursor:pointer;padding:2px 6px;" title="Fermer">✕</button></div></div><div style="font-size:14px;color:#374151;line-height:1.7;">' +
+      text +
+      "</div></div></div>";
+  }
+  function hideResume() {
+    document.getElementById("resume-ia-output").style.display = "none";
+    var b = document.getElementById("resume-ia-btn");
+    b.disabled = false;
+    b.innerHTML = '<span style="font-size:20px;">🤖</span> Résumé IA';
+  }
+  function getPageText() {
+    var ids = [
+      "prime-result",
+      "are-result",
+      "rsa-result",
+      "notaire-result",
+      "impot-result",
+      "taxe-result",
+      "salaire-result",
+      "plusvalue-result",
+      "charges-result",
+      "pret-result",
+    ];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el && !el.classList.contains("invisible") && !el.classList.contains("hidden")) {
+        var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+        if (t.length > 20) return t;
+      }
+    }
+    var m = document.querySelector("main");
+    if (!m) return document.title;
+    var h1 = m.querySelector("h1");
+    var h2s = m.querySelectorAll("h2");
+    var ps = m.querySelectorAll("p");
+    var parts = [];
+    if (h1) parts.push(h1.textContent.trim());
+    for (var j = 0; j < Math.min(h2s.length, 4); j++) {
+      parts.push(h2s[j].textContent.trim());
+    }
+    for (var k = 0; k < Math.min(ps.length, 3); k++) {
+      var pt = ps[k].textContent.trim();
+      if (pt.length > 40 && !/^(Lancer|Simuler|Calculer|Voir|Cliquez)/i.test(pt))
+        parts.push(pt.slice(0, 200));
+    }
+    return parts.join(". ").slice(0, 800);
+  }
+  function buildLocalSummary(raw) {
+    var t = raw;
+    var montantMatch = t.match(/(\d[\d\s,.]*)\s*€/);
+    var hasMontant = !!montantMatch;
+    var phrases = [];
+    if (hasMontant) {
+      phrases.push("Le résultat estimé est de " + montantMatch[0].replace(/\s+/g, " ") + ".");
+    }
+    var h2s = document.querySelectorAll("main h2");
+    var points = [];
+    for (var i = 0; i < Math.min(h2s.length, 4); i++) {
+      var h = h2s[i].textContent.trim();
+      if (h.length > 5 && !/sources|références|notes|liens|voir aussi/i.test(h)) {
+        points.push(h);
+      }
+    }
+    if (points.length > 0) {
+      phrases.push("Les points clés : " + points.slice(0, 3).join(" ; ") + ".");
+    }
+    var h1 = document.querySelector("main h1");
+    var h1t = h1 ? h1.textContent.trim() : "";
+    if (h1t && !hasMontant) {
+      phrases.push("Cette page vous permet de comprendre " + h1t.toLowerCase() + ".");
+    }
+    phrases.push("Ce résultat est indicatif et peut varier selon votre situation personnelle.");
+    return '<p style="margin:0;">' + phrases.join(" ") + "</p>";
+  }
+  function resumeIAClick() {
+    var b = document.getElementById("resume-ia-btn");
+    var o = document.getElementById("resume-ia-output");
+    b.disabled = true;
+    b.innerHTML = '<span style="font-size:20px;">🤖</span> Analyse...';
+    showLoader(o);
+    var t = getPageText();
+    var ctrl = new AbortController();
+    var tid = setTimeout(function () {
+      ctrl.abort();
+    }, 12000);
+    fetch("/api/resume-ia", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        calculator: document.title,
+        resultText: t,
+        pageUrl: window.location.href,
+      }),
+      signal: ctrl.signal,
+    })
+      .then(function (r) {
+        clearTimeout(tid);
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (d) {
+        if (d.summary) {
+          showResult(
+            o,
+            '<p style="margin:0;">' + d.summary.replace(/\n/g, "<br>") + "</p>",
+            d.source === "deepseek" ? "deepseek" : "local",
+          );
+        } else {
+          throw new Error("No summary");
+        }
+        b.disabled = false;
+        b.innerHTML = '<span style="font-size:20px;">🤖</span> Actualiser';
+      })
+      .catch(function () {
+        var html = buildLocalSummary(t);
+        showResult(o, html, "local");
+        b.disabled = false;
+        b.innerHTML = '<span style="font-size:20px;">🤖</span> Actualiser';
+      });
+  }
+  var s = document.createElement("style");
+  s.textContent = "@keyframes ri-spin{to{transform:rotate(360deg)}}";
+  document.head.appendChild(s);
+</script>
+
+<!-- /Résumé IA -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- H1 + H2 SEO + CTA -->
       <section class="mb-8 text-center">
         <h1

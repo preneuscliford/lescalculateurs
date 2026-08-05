@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-08-05T19:24:07.910Z",
+  "topN": 20,
+  "mode": "apply",
+  "force": true,
+  "summary": {
+    "added": 20,
+    "skipped": 0,
+    "notFound": 0
+  },
+  "pages": [
+    {
+      "page": "/pages/are",
+      "status": "added",
+      "file": "src\\pages\\are.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/apl",
+      "status": "added",
+      "file": "src\\pages\\apl.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/prime-activite",
+      "status": "added",
+      "file": "src\\pages\\prime-activite.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/apl-etudiant",
+      "status": "added",
+      "file": "src\\pages\\apl-etudiant.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/guide-complet-impot-revenu-2026",
+      "status": "added",
+      "file": "src\\pages\\guide-complet-impot-revenu-2026.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/impot",
+      "status": "added",
+      "file": "src\\pages\\impot.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/taxe",
+      "status": "added",
+      "file": "src\\pages\\taxe.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/notaire",
+      "status": "added",
+      "file": "src\\pages\\notaire.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/apl-zones",
+      "status": "added",
+      "file": "src\\pages\\apl-zones.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/apl/apl-smic-seul",
+      "status": "added",
+      "file": "src\\pages\\apl\\apl-smic-seul.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/impot/impot-couple-ou-separe",
+      "status": "added",
+      "file": "src\\pages\\impot\\impot-couple-ou-separe.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/plusvalue",
+      "status": "added",
+      "file": "src\\pages\\plusvalue.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/salaire-brut-net-calcul-2026",
+      "status": "added",
+      "file": "src\\pages\\salaire-brut-net-calcul-2026.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/apl/apl-chomage-loyer-moyen",
+      "status": "added",
+      "file": "src\\pages\\apl\\apl-chomage-loyer-moyen.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/rsa",
+      "status": "added",
+      "file": "src\\pages\\rsa.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/apl/apl-alternant",
+      "status": "added",
+      "file": "src\\pages\\apl\\apl-alternant.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/charges",
+      "status": "added",
+      "file": "src\\pages\\charges.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/apl/apl-parent-isole-trois-enfants",
+      "status": "added",
+      "file": "src\\pages\\apl\\apl-parent-isole-trois-enfants.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/asf",
+      "status": "added",
+      "file": "src\\pages\\asf.html",
+      "issues": []
+    },
+    {
+      "page": "/pages/revenu-median-commune",
+      "status": "added",
+      "file": "src\\pages\\revenu-median-commune.html",
+      "issues": []
+    }
+  ]
+}
