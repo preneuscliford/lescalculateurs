@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Simulateur Âge de Départ Retraite 2026 – Âge légal et trimestres | Les Calculateurs
+    </title>
+    <meta
+      name="description"
+      content="Calculez votre âge légal de départ à la retraite et le nombre de trimestres requis pour le taux plein selon votre année de naissance, avec la suspension 2026 de la réforme. Résultat immédiat et gratuit."
+    />
+    <meta
+      name="keywords"
+      content="simulateur retraite 2026, âge légal retraite 2026, âge départ retraite par année de naissance, calcul trimestres retraite, réforme retraite 2026, taux plein retraite, suspension réforme retraite, trimestres requis retraite"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/retraite" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/retraite" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Simulateur Âge de Départ Retraite 2026 – Âge légal et trimestres | Les Calculateurs"
+    />
+    <meta
+      property="og:description"
+      content="Calculez votre âge légal de départ à la retraite et le nombre de trimestres requis pour le taux plein selon votre année de naissance, avec la suspension 2026 de la réforme."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Simulateur Âge de Départ Retraite 2026 – Âge légal et trimestres | Les Calculateurs"
+    />
+    <meta
+      name="twitter:description"
+      content="Calculez votre âge légal de départ à la retraite et le nombre de trimestres requis pour le taux plein selon votre année de naissance, avec la suspension 2026 de la réforme."
+    />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/site.webmanifest" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/retraite-script.ts"></script>
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur âge de départ à la retraite 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Simulateur de l'âge légal de départ à la retraite et du nombre de trimestres requis pour le taux plein, selon l'année de naissance.",
+        "url": "https://www.lescalculateurs.fr/pages/retraite",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "citation": [
+          {
+            "@type": "Organization",
+            "name": "info-retraite.fr",
+            "url": "https://www.info-retraite.fr"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Service-public.fr — Âge de départ à la retraite",
+            "url": "https://www.service-public.fr/particuliers/vosdroits/F31852"
+          }
+        ]
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel est l'âge légal de départ à la retraite en 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'âge légal dépend de votre année et mois de naissance : il va de 62 ans pour les générations nées avant septembre 1961 à 64 ans pour celles nées à partir de 1969. La loi de financement de la Sécurité sociale 2026 a suspendu une partie du calendrier pour les générations 1964 à 1968, avec un recul de 3 mois de l'âge légal, applicable au 1er septembre 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de trimestres faut-il pour le taux plein ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De 166 trimestres pour les générations nées en 1955-1957 à 172 trimestres pour celles nées à partir de 1966. Le nombre exact dépend de votre année de naissance : notre simulateur l'affiche automatiquement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que se passe-t-il si je n'ai pas tous mes trimestres à l'âge légal ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous pouvez partir avec une décote (pension réduite), continuer à travailler pour valider les trimestres manquants, ou attendre l'âge du taux plein automatique fixé à 67 ans, auquel la décote disparaît quel que soit le nombre de trimestres validés."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La suspension de la réforme des retraites en 2026 me concerne-t-elle ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Seulement si vous êtes né entre 1964 et 1968 (ou au premier trimestre 1965). Ces générations bénéficient d'un recul de 3 mois de leur âge légal, et parfois d'une réduction du nombre de trimestres requis, à compter des départs pris à partir du 1er septembre 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ce simulateur remplace-t-il un relevé de carrière officiel ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Ce simulateur donne un repère simplifié basé sur le régime général. Pour connaître vos trimestres réellement validés et le montant précis de votre future pension, consultez votre compte sur info-retraite.fr."
+            }
+          }
+        ]
+      }
+    </script>
+    <meta name="source" content="info-retraite.fr, service-public.fr, legifrance.gouv.fr" />
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <div
+      class="sticky-ymyl"
+      role="alert"
+      style="
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 13px;
+        color: #1f2937;
+      "
+    >
+      <strong>⚠️ Estimation indicative.</strong>
+      <span class="hidden sm:inline"
+        >barème 2026 avec suspension partielle de la réforme — vérifiez votre situation exacte
+        sur</span
+      >
+      <a
+        href="https://www.info-retraite.fr"
+        target="_blank"
+        rel="noopener"
+        style="color: #b45309; text-decoration: underline; font-weight: bold"
+        >info-retraite.fr</a
+      >
+      <span class="hidden md:inline"
+        >|<a
+          href="/pages/historique-mises-a-jour"
+          style="color: #b45309; text-decoration: underline"
+          >🔄 Historique</a
+        ></span
+      >
+    </div>
+
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Logo -->
+          <a href="/" class="flex items-center space-x-2">
+            <img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs"
+              class="h-8 w-auto"
+            />
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
+          </a>
+
+          <!-- Nav Desktop -->
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
+            <a
+              href="/pages/methodologie.html"
+              class="hidden lg:block text-gray-600 hover:text-blue-600"
+              >📚 Méthodologie</a
+            >
+            <a
+              href="/pages/historique-mises-a-jour"
+              class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded"
+              >🔄 Mise à jour</a
+            >
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
+          <nav class="flex flex-col space-y-2 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >🎯 Simulateurs</a
+            >
+            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >📚 Méthodologie</a
+            >
+            <a
+              href="/pages/historique-mises-a-jour"
+              class="text-blue-600 hover:text-blue-800 font-medium py-1 bg-blue-50 rounded px-2"
+              >🔄 Mises à jour</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-700 to-blue-800 text-white py-12">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">
+          Retraite 2026 : à quel âge pouvez-vous partir, et avec combien de trimestres ?
+        </h1>
+        <div
+          class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded-lg inline-block max-w-3xl text-left"
+        >
+          <p class="font-semibold text-blue-900 text-lg">
+            En bref — Votre âge légal de départ et le nombre de trimestres requis pour le taux
+            plein dépendent uniquement de votre année (et parfois mois) de naissance. La LFSS 2026
+            a suspendu une partie de la réforme pour les générations 1964-1968.
+          </p>
+        </div>
+        <p class="text-xl text-blue-100 mb-6">
+          Entrez votre date de naissance pour connaître votre âge légal de départ, le nombre de
+          trimestres requis pour le taux plein, et la date du taux plein automatique à 67 ans.
+        </p>
+        <button
+          id="retraite-scroll-to-form"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+        >
+          🟢 Calculer mon âge de départ
+        </button>
+        <div class="mt-6 bg-blue-900 bg-opacity-50 p-4 rounded-lg inline-block">
+          <p class="text-sm">
+            ⚠️ Simulation indicative, régime général uniquement. info-retraite.fr reste la
+            référence officielle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <!-- H2 SEO (complémentaire au H1) -->
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">
+        Simulateur âge légal de départ à la retraite 2026 — barème par année de naissance
+      </h2>
+
+      <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
+        <p class="text-gray-900 font-semibold">
+          <strong>En bref —</strong> âge légal et trimestres requis calculés selon votre date de
+          naissance, avec la suspension 2026 de la réforme pour les générations 1964-1968.
+        </p>
+      </div>
+
+      <!-- Qu'est-ce que l'âge légal -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📘 Âge légal, trimestres et taux plein : les 3 notions à distinguer
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+          <li>
+            <strong>L'âge légal</strong> est l'âge minimum auquel vous pouvez demander votre
+            retraite (hors carrière longue). Il dépend de votre année et mois de naissance.
+          </li>
+          <li>
+            <strong>Les trimestres requis</strong> déterminent si vous touchez une pension à
+            <strong>taux plein</strong> (sans réduction) dès l'âge légal.
+          </li>
+          <li>
+            <strong>Le taux plein automatique</strong> est accordé à 67 ans, même sans avoir tous
+            vos trimestres.
+          </li>
+        </ul>
+        <p class="text-gray-600 mb-4">
+          Depuis la réforme de 2023, l'âge légal augmente progressivement de 62 à 64 ans pour les
+          générations nées à partir de septembre 1961. La loi de financement de la Sécurité
+          sociale pour 2026 a toutefois <strong>suspendu une partie de ce calendrier</strong> pour
+          les générations 1964 à 1968 (jusqu'au premier trimestre 1965 inclus pour la réduction de
+          trimestres) : recul de 3 mois de l'âge légal, applicable aux départs pris à compter du
+          1ᵉʳ septembre 2026.
+        </p>
+        <p class="text-indigo-700 font-semibold">
+          👉 Entrez votre date de naissance ci-dessous pour votre repère personnalisé.
+        </p>
+      </section>
+
+      <!-- Calculateur Retraite -->
+      <section class="mb-12">
+        <div id="retraite-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">🧮 Calculer mon âge de départ</h2>
+
+          <form id="retraite-form" class="space-y-6">
+            <!-- Date de naissance -->
+            <div>
+              <label for="retraite-naissance" class="block text-gray-700 font-semibold mb-2"
+                >Date de naissance *</label
+              >
+              <input
+                type="date"
+                id="retraite-naissance"
+                min="1945-01-01"
+                max="2010-12-31"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                required
+              />
+            </div>
+
+            <!-- Trimestres déjà validés -->
+            <div>
+              <label for="retraite-trimestres" class="block text-gray-700 font-semibold mb-2"
+                >Trimestres déjà validés (optionnel)</label
+              >
+              <input
+                type="number"
+                id="retraite-trimestres"
+                min="0"
+                max="220"
+                placeholder="Ex : 140 — laissez vide si vous ne savez pas"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+              <p class="text-xs text-gray-500 mt-2">
+                💡 Retrouvez ce chiffre sur votre relevé de carrière, disponible sur
+                <a
+                  href="https://www.info-retraite.fr"
+                  target="_blank"
+                  rel="noopener"
+                  class="underline"
+                  >info-retraite.fr</a
+                >.
+              </p>
+            </div>
+
+            <!-- Bouton Calculer -->
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer mon âge de départ
+            </button>
+          </form>
+
+          <!-- Résultat -->
+          <div
+            id="retraite-result"
+            class="invisible mt-8 min-h-[220px] p-6 bg-indigo-50 border-2 border-indigo-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-indigo-700 mb-4">📊 Votre estimation retraite</h3>
+            <div id="retraite-result-content" class="space-y-4">
+              <div class="text-center">
+                <p class="text-gray-600 mb-2">Âge légal de départ :</p>
+                <p class="text-4xl font-bold text-indigo-600" id="retraite-age">---</p>
+                <p class="text-sm text-gray-600 mt-1" id="retraite-date-age">---</p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-indigo-500">
+                <p id="retraite-explication" class="text-gray-700"></p>
+              </div>
+              <div
+                id="retraite-details"
+                class="hidden bg-blue-50 p-4 rounded border-l-4 border-blue-500"
+              >
+                <p class="text-sm font-semibold text-gray-700 mb-2">💡 Détail :</p>
+                <div class="text-sm text-gray-700 space-y-1" id="retraite-details-content">
+                  <!-- Détails insérés par JS -->
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 résultat pédagogique, régime général simplifié. info-retraite.fr reste la
+                référence pour votre relevé de carrière et votre pension exacte.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exemple pédagogique -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">📝 Exemple indicatif</h2>
+        <blockquote class="border-l-4 border-indigo-500 pl-6 py-4 bg-gray-50 rounded">
+          <p class="text-gray-700 mb-2">
+            <strong>Née en juin 1964.</strong>
+          </p>
+          <p class="text-gray-700">
+            Avec la suspension 2026 de la réforme, l'âge légal reste à 62 ans et 9 mois (au lieu
+            de 63 ans initialement prévu), avec 170 trimestres requis pour le taux plein.
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">❓ Questions fréquentes sur la retraite 2026</h2>
+        <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Quel est l'âge légal de départ à la retraite en 2026 ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              De 62 ans (générations nées avant septembre 1961) à 64 ans (générations nées à
+              partir de 1969), avec un palier à 62 ans et 9 mois pour les générations 1964 à
+              1965 (T1) grâce à la suspension 2026 de la réforme.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Combien de trimestres faut-il pour le taux plein ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              De 166 trimestres (générations 1955-1957) à 172 trimestres (générations nées à
+              partir de 1966). Le nombre exact dépend de votre année de naissance.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Que se passe-t-il si je n'ai pas tous mes trimestres ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Vous pouvez partir avec une décote, continuer à travailler, ou attendre 67 ans où le
+              taux plein est accordé automatiquement, quel que soit le nombre de trimestres.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              La suspension de la réforme 2026 me concerne-t-elle ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Seulement si vous êtes né entre 1964 et 1968 (ou au premier trimestre 1965) : recul
+              de 3 mois de l'âge légal pour les départs à compter du 1ᵉʳ septembre 2026.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Ce simulateur remplace-t-il un relevé de carrière officiel ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Non, c'est un repère simplifié sur le régime général. Pour vos trimestres réellement
+              validés et votre pension précise, consultez votre compte sur info-retraite.fr.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Simulations associées -->
+      <section class="mb-12 bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">🔗 Autres simulateurs utiles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a
+            href="/pages/salaire-brut-net-calcul-2026"
+            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-blue-600">💶 Salaire net</p>
+            <p class="text-sm text-gray-600 mt-1">Convertir brut en net</p>
+          </a>
+          <a
+            href="/pages/impot"
+            class="bg-white p-4 rounded-lg border-2 border-emerald-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-emerald-600">🧾 Impôt sur le revenu</p>
+            <p class="text-sm text-gray-600 mt-1">Estimer votre impôt 2026</p>
+          </a>
+          <a
+            href="/pages/are"
+            class="bg-white p-4 rounded-lg border-2 border-purple-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-purple-600">💼 Allocation chômage (ARE)</p>
+            <p class="text-sm text-gray-600 mt-1">Simuler vos droits chômage</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs — Simulateurs gratuits français</p>
+        <div class="flex gap-4 text-sm flex-wrap justify-center mb-4">
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors"
+            >📘 Méthodologie</a
+          >
+          <span class="text-gray-500">|</span>
+          <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors"
+            >📚 Sources</a
+          >
+          <span class="text-gray-500">|</span>
+          <a
+            href="/pages/historique-mises-a-jour"
+            class="text-gray-300 hover:text-white transition-colors"
+            >🔄 Mises à jour</a
+          >
+        </div>
+        <p class="text-gray-400">
+          Tous les calculs sont indicatifs. Consultez info-retraite.fr pour votre relevé de
+          carrière et votre pension exacte.
+        </p>
+      </div>
+    </footer>
+    <div class="ymyl-officiel-btn" style="text-align: center; margin: 20px 0">
+      <a
+        class="btn-officiel"
+        href="https://www.info-retraite.fr"
+        target="_blank"
+        rel="noopener"
+        style="
+          display: inline-block;
+          background: #007bff;
+          color: #fff;
+          padding: 12px 24px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: bold;
+        "
+        >👉 Mon compte retraite officiel</a
+      >
+      <p style="font-size: 12px; color: #666; margin-top: 8px">
+        Pour votre relevé de carrière et le calcul officiel de votre pension
+      </p>
+    </div>
+  </body>
+</html>
