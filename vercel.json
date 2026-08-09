@@ -7,8 +7,8 @@
       "permanent": true
     },
     {
-      "source": "/pages/taxe-fonciere/:path*",
-      "destination": "/pages/taxe",
+      "source": "/pages/top-25-revenu-median-france-2026",
+      "destination": "/pages/revenu-median-commune",
       "permanent": true
     },
     {
@@ -55,6 +55,91 @@
     {
       "source": "/index.html",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-350-couple-sans-enfant",
+      "destination": "/pages/apl/apl-couple-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-550-couple-sans-enfant",
+      "destination": "/pages/apl/apl-couple-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-650-couple-sans-enfant",
+      "destination": "/pages/apl/apl-couple-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-850-couple-sans-enfant",
+      "destination": "/pages/apl/apl-couple-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-900-couple-sans-enfant",
+      "destination": "/pages/apl/apl-couple-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-350-parent-isole-un-enfant",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-550-parent-isole-un-enfant",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-750-parent-isole-un-enfant",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-850-parent-isole-un-enfant",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-900-parent-isole-un-enfant",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-350-personne-seule",
+      "destination": "/pages/apl/apl-loyer-700-personne-seule",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-500-personne-seule",
+      "destination": "/pages/apl/apl-loyer-700-personne-seule",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-850-personne-seule",
+      "destination": "/pages/apl/apl-loyer-700-personne-seule",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-loyer-900-personne-seule",
+      "destination": "/pages/apl/apl-loyer-700-personne-seule",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-celibataire-lyon",
+      "destination": "/pages/apl",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-celibataire-marseille",
+      "destination": "/pages/apl",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-celibataire-toulouse",
+      "destination": "/pages/apl",
       "permanent": true
     }
   ]
