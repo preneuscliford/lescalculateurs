@@ -192,6 +192,9 @@ function collectStaticPageInputs() {
     retraite: resolve(__dirname, "src/pages/retraite.html"),
     "indemnite-licenciement": resolve(__dirname, "src/pages/indemnite-licenciement.html"),
     ptz: resolve(__dirname, "src/pages/ptz.html"),
+    "rupture-conventionnelle": resolve(__dirname, "src/pages/rupture-conventionnelle.html"),
+    "perte-emploi-are-rsa": resolve(__dirname, "src/pages/perte-emploi-are-rsa.html"),
+    "rsa-apl-combines": resolve(__dirname, "src/pages/rsa-apl-combines.html"),
     "pages/notaire/frais-notaire-ancien-2026/index": resolve(
       __dirname,
       "src/pages/notaire/frais-notaire-ancien-2026.html",
