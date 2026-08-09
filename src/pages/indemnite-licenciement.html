@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Simulateur Indemnité de Licenciement 2026 – Calcul gratuit | Les Calculateurs
+    </title>
+    <meta
+      name="description"
+      content="Calculez votre indemnité légale de licenciement 2026 selon votre ancienneté et votre salaire : formule officielle 1/4 puis 1/3 de mois par année. Résultat immédiat et gratuit."
+    />
+    <meta
+      name="keywords"
+      content="calcul indemnité de licenciement 2026, simulateur indemnité licenciement, indemnité légale licenciement, indemnité rupture conventionnelle, calcul ancienneté licenciement, montant indemnité licenciement"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/indemnite-licenciement" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/indemnite-licenciement" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Simulateur Indemnité de Licenciement 2026 – Calcul gratuit | Les Calculateurs"
+    />
+    <meta
+      property="og:description"
+      content="Calculez votre indemnité légale de licenciement 2026 selon votre ancienneté et votre salaire : formule officielle 1/4 puis 1/3 de mois par année."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Simulateur Indemnité de Licenciement 2026 – Calcul gratuit | Les Calculateurs"
+    />
+    <meta
+      name="twitter:description"
+      content="Calculez votre indemnité légale de licenciement 2026 selon votre ancienneté et votre salaire : formule officielle 1/4 puis 1/3 de mois par année."
+    />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/site.webmanifest" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/indemnite-licenciement-script.ts"></script>
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simulateur indemnité de licenciement 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Simulateur de l'indemnité légale de licenciement selon l'ancienneté et le salaire de référence.",
+        "url": "https://www.lescalculateurs.fr/pages/indemnite-licenciement",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Code du travail - Article L1234-9",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038609090"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Code du travail numérique - Simulateur indemnité de licenciement",
+            "url": "https://code.travail.gouv.fr/outils/indemnite-licenciement"
+          }
+        ]
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment calculer l'indemnité légale de licenciement 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'indemnité légale se calcule ainsi : 1/4 de mois de salaire par année d'ancienneté jusqu'à 10 ans, puis 1/3 de mois par année au-delà de 10 ans. Les années incomplètes comptent au prorata des mois."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle ancienneté minimale pour toucher une indemnité de licenciement ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Il faut au moins 8 mois d'ancienneté continue chez le même employeur à la date d'envoi de la lettre de licenciement (article L1234-9 du Code du travail)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel salaire de référence utiliser pour le calcul ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le plus favorable entre la moyenne mensuelle des 12 derniers mois précédant le licenciement et le tiers des 3 derniers mois (primes annuelles ou exceptionnelles comptées au prorata dans ce second cas)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Une convention collective peut-elle prévoir un montant supérieur ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Si votre convention collective, un accord d'entreprise ou votre contrat prévoit une indemnité plus favorable, c'est ce montant qui s'applique. Ce simulateur ne calcule que le minimum légal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'indemnité de licenciement est-elle due en cas de faute grave ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, en cas de faute grave ou lourde, l'indemnité légale de licenciement n'est pas due. Ce simulateur concerne les licenciements hors faute grave/lourde (économique, personnel non fautif, insuffisance professionnelle...)."
+            }
+          }
+        ]
+      }
+    </script>
+    <meta name="source" content="legifrance.gouv.fr, code.travail.gouv.fr" />
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <div
+      class="sticky-ymyl"
+      role="alert"
+      style="
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 13px;
+        color: #1f2937;
+      "
+    >
+      <strong>⚠️ Estimation indicative.</strong>
+      <span class="hidden sm:inline">minimum légal uniquement — votre convention collective peut prévoir mieux, vérifiez sur</span>
+      <a
+        href="https://code.travail.gouv.fr/outils/indemnite-licenciement"
+        target="_blank"
+        rel="noopener"
+        style="color: #b45309; text-decoration: underline; font-weight: bold"
+        >code.travail.gouv.fr</a
+      >
+    </div>
+
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Logo -->
+          <a href="/" class="flex items-center space-x-2">
+            <img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs"
+              class="h-8 w-auto"
+            />
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
+          </a>
+
+          <!-- Nav Desktop -->
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
+            <a
+              href="/pages/methodologie.html"
+              class="hidden lg:block text-gray-600 hover:text-blue-600"
+              >📚 Méthodologie</a
+            >
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
+          <nav class="flex flex-col space-y-2 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >🎯 Simulateurs</a
+            >
+            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >📚 Méthodologie</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-slate-700 to-slate-900 text-white py-12">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">
+          Indemnité de licenciement 2026 : combien allez-vous toucher ?
+        </h1>
+        <div
+          class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded-lg inline-block max-w-3xl text-left"
+        >
+          <p class="font-semibold text-blue-900 text-lg">
+            En bref — L'indemnité légale minimale dépend uniquement de votre ancienneté et de
+            votre salaire de référence : 1/4 de mois par année jusqu'à 10 ans, 1/3 de mois par
+            année au-delà.
+          </p>
+        </div>
+        <p class="text-xl text-slate-200 mb-6">
+          Entrez vos dates d'entrée/sortie et votre salaire mensuel brut moyen pour estimer votre
+          indemnité légale de licenciement (hors faute grave/lourde).
+        </p>
+        <button
+          id="indemnite-scroll-to-form"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+        >
+          🟢 Calculer mon indemnité
+        </button>
+        <div class="mt-6 bg-slate-900 bg-opacity-50 p-4 rounded-lg inline-block">
+          <p class="text-sm">
+            ⚠️ Minimum légal uniquement — votre convention collective peut prévoir un montant
+            supérieur.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <!-- H2 SEO (complémentaire au H1) -->
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">
+        Simulateur indemnité légale de licenciement 2026 — formule officielle
+      </h2>
+
+      <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
+        <p class="text-gray-900 font-semibold">
+          <strong>En bref —</strong> indemnité légale minimale calculée selon l'ancienneté et le
+          salaire de référence. Une convention collective peut prévoir mieux.
+        </p>
+      </div>
+
+      <!-- Qu'est-ce que l'indemnité de licenciement -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          📘 Comment est calculée l'indemnité de licenciement ?
+        </h2>
+        <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+          <li>
+            <strong>1/4 de mois de salaire</strong> par année d'ancienneté, pour les 10 premières
+            années.
+          </li>
+          <li>
+            <strong>1/3 de mois de salaire</strong> par année au-delà de 10 ans d'ancienneté.
+          </li>
+          <li>
+            <strong>Ancienneté minimale</strong> : 8 mois continus chez le même employeur.
+          </li>
+          <li>
+            Les <strong>années incomplètes</strong> comptent au prorata des mois.
+          </li>
+        </ul>
+        <p class="text-gray-600 mb-4">
+          Le salaire de référence retenu est le plus favorable entre la moyenne des 12 derniers
+          mois et le tiers des 3 derniers mois (primes exceptionnelles proratisées dans ce
+          second cas). Ce simulateur calcule le <strong>minimum légal</strong> : si votre
+          convention collective, un accord d'entreprise ou votre contrat prévoit un montant
+          supérieur, c'est celui-ci qui s'applique.
+        </p>
+        <p class="text-slate-700 font-semibold">
+          👉 Renseignez vos dates et votre salaire ci-dessous pour votre estimation.
+        </p>
+      </section>
+
+      <!-- Calculateur -->
+      <section class="mb-12">
+        <div id="indemnite-calculator" class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">🧮 Calculer mon indemnité</h2>
+
+          <form id="indemnite-form" class="space-y-6">
+            <div>
+              <label for="indemnite-entree" class="block text-gray-700 font-semibold mb-2"
+                >Date d'entrée dans l'entreprise *</label
+              >
+              <input
+                type="date"
+                id="indemnite-entree"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="indemnite-sortie" class="block text-gray-700 font-semibold mb-2"
+                >Date de fin de contrat (ou date prévue) *</label
+              >
+              <input
+                type="date"
+                id="indemnite-sortie"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="indemnite-salaire" class="block text-gray-700 font-semibold mb-2"
+                >Salaire mensuel brut moyen (€) *</label
+              >
+              <input
+                type="number"
+                id="indemnite-salaire"
+                min="0"
+                step="1"
+                placeholder="Ex : 2500"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                required
+              />
+              <p class="text-xs text-gray-500 mt-2">
+                💡 Idéalement la moyenne de vos 12 derniers mois de salaire brut.
+              </p>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg"
+            >
+              🟢 Calculer mon indemnité
+            </button>
+          </form>
+
+          <!-- Résultat -->
+          <div
+            id="indemnite-result"
+            class="invisible mt-8 min-h-[220px] p-6 bg-slate-50 border-2 border-slate-500 rounded-lg"
+          >
+            <h3 class="text-2xl font-bold text-slate-700 mb-4">📊 Votre estimation</h3>
+            <div id="indemnite-result-content" class="space-y-4">
+              <div class="text-center">
+                <p class="text-gray-600 mb-2">Indemnité légale minimale estimée :</p>
+                <p class="text-4xl font-bold text-slate-700" id="indemnite-montant">---</p>
+              </div>
+              <div class="bg-white p-4 rounded border-l-4 border-slate-500">
+                <p id="indemnite-explication" class="text-gray-700"></p>
+              </div>
+              <div
+                id="indemnite-details"
+                class="hidden bg-blue-50 p-4 rounded border-l-4 border-blue-500"
+              >
+                <p class="text-sm font-semibold text-gray-700 mb-2">💡 Détail du calcul :</p>
+                <div class="text-sm text-gray-700 space-y-1" id="indemnite-details-content">
+                  <!-- Détails insérés par JS -->
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 italic">
+                💡 Résultat pédagogique, minimum légal uniquement. Vérifiez votre convention
+                collective pour un montant potentiellement plus favorable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exemple pédagogique -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">📝 Exemple indicatif</h2>
+        <blockquote class="border-l-4 border-slate-500 pl-6 py-4 bg-gray-50 rounded">
+          <p class="text-gray-700 mb-2">
+            <strong>8 ans d'ancienneté, salaire mensuel brut moyen de 2 500 €.</strong>
+          </p>
+          <p class="text-gray-700">
+            Indemnité légale minimale estimée : 8 × 1/4 × 2 500 € = <strong>5 000 €</strong>.
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">❓ Questions fréquentes</h2>
+        <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Comment est calculée l'indemnité légale ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              1/4 de mois de salaire par année d'ancienneté jusqu'à 10 ans, puis 1/3 de mois par
+              année au-delà. Les années incomplètes comptent au prorata des mois.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Quelle ancienneté minimale pour y avoir droit ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              8 mois d'ancienneté continue chez le même employeur (article L1234-9 du Code du
+              travail).
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Une convention collective peut-elle prévoir mieux ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, et c'est alors le montant le plus favorable au salarié qui s'applique. Ce
+              simulateur ne calcule que le minimum légal.
+            </p>
+          </details>
+
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              L'indemnité est-elle due en cas de faute grave ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Non, l'indemnité légale n'est pas due en cas de faute grave ou lourde.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Simulations associées -->
+      <section class="mb-12 bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">🔗 Après un licenciement, pensez aussi à</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a
+            href="/pages/are"
+            class="bg-white p-4 rounded-lg border-2 border-purple-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-purple-600">💼 Allocation chômage (ARE)</p>
+            <p class="text-sm text-gray-600 mt-1">Vos droits chômage après le départ</p>
+          </a>
+          <a
+            href="/pages/rsa"
+            class="bg-white p-4 rounded-lg border-2 border-rose-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-rose-600">💜 RSA</p>
+            <p class="text-sm text-gray-600 mt-1">En attendant vos droits chômage</p>
+          </a>
+          <a
+            href="/pages/salaire-brut-net-calcul-2026"
+            class="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow"
+          >
+            <p class="font-semibold text-blue-600">💶 Salaire net</p>
+            <p class="text-sm text-gray-600 mt-1">Vérifier votre dernier bulletin</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs — Simulateurs gratuits français</p>
+        <div class="flex gap-4 text-sm flex-wrap justify-center mb-4">
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors"
+            >📘 Méthodologie</a
+          >
+          <span class="text-gray-500">|</span>
+          <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors"
+            >📚 Sources</a
+          >
+        </div>
+        <p class="text-gray-400">
+          Tous les calculs sont indicatifs. Consultez code.travail.gouv.fr ou votre convention
+          collective pour un calcul définitif.
+        </p>
+      </div>
+    </footer>
+    <div class="ymyl-officiel-btn" style="text-align: center; margin: 20px 0">
+      <a
+        class="btn-officiel"
+        href="https://code.travail.gouv.fr/outils/indemnite-licenciement"
+        target="_blank"
+        rel="noopener"
+        style="
+          display: inline-block;
+          background: #007bff;
+          color: #fff;
+          padding: 12px 24px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: bold;
+        "
+        >👉 Simulateur officiel Code du travail numérique</a
+      >
+      <p style="font-size: 12px; color: #666; margin-top: 8px">
+        Pour un calcul définitif conforme au Code du travail
+      </p>
+    </div>
+  </body>
+</html>

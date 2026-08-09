@@ -190,6 +190,8 @@ function collectStaticPageInputs() {
     are: resolve(__dirname, "src/pages/are.html"),
     asf: resolve(__dirname, "src/pages/asf.html"),
     retraite: resolve(__dirname, "src/pages/retraite.html"),
+    "indemnite-licenciement": resolve(__dirname, "src/pages/indemnite-licenciement.html"),
+    ptz: resolve(__dirname, "src/pages/ptz.html"),
     "pages/notaire/frais-notaire-ancien-2026/index": resolve(
       __dirname,
       "src/pages/notaire/frais-notaire-ancien-2026.html",

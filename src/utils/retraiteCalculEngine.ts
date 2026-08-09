@@ -113,8 +113,9 @@ export function calculerAgeLegalRetraite(data: RetraiteData): RetraiteResult {
 }
 
 export function formatAge(years: number, months: number): string {
-  if (months === 0) return `${years} ans`;
-  return `${years} ans et ${months} mois`;
+  const anLabel = years === 1 ? "an" : "ans";
+  if (months === 0) return `${years} ${anLabel}`;
+  return `${years} ${anLabel} et ${months} mois`;
 }
 
 export function formatDateFr(date: Date): string {
