@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API LesCalculateurs — Intégrez nos calculateurs officiels (RSA, APL, retraite...)</title>
+    <meta
+      name="description"
+      content="API REST pour intégrer les calculateurs LesCalculateurs (RSA, APL, ARE, retraite, indemnité de licenciement, salaire net) à votre produit. Plan gratuit disponible, tarifs Starter et Pro."
+    />
+    <meta
+      name="keywords"
+      content="api simulateur social, api rsa, api apl, api retraite france, api calcul salaire net, api aides sociales, api indemnité licenciement"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+
+    <!-- SEO & Social -->
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/api" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/api" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="API LesCalculateurs — Intégrez nos calculateurs officiels à votre produit"
+    />
+    <meta
+      property="og:description"
+      content="API REST pour RSA, APL, ARE, retraite, indemnité de licenciement et salaire net. Plan gratuit, Starter et Pro."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="API LesCalculateurs — Intégrez nos calculateurs officiels à votre produit"
+    />
+    <meta
+      name="twitter:description"
+      content="API REST pour RSA, APL, ARE, retraite, indemnité de licenciement et salaire net. Plan gratuit, Starter et Pro."
+    />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/api-script.ts"></script>
+    <script defer src="/third-party-loader.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "API LesCalculateurs",
+        "description": "API REST pour intégrer les calculateurs sociaux et fiscaux français (RSA, APL, ARE, retraite, indemnité de licenciement, salaire net) à un produit tiers.",
+        "brand": { "@type": "Organization", "name": "Les Calculateurs" },
+        "offers": {
+          "@type": "Offer",
+          "name": "Accès gratuit",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment obtenir une clé API ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cliquez sur « Générer ma clé API » dans la section Accès de cette page : une clé est générée instantanément, valable 3 mois, sans inscription ni carte bancaire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que se passe-t-il quand ma clé expire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elle cesse simplement de fonctionner après 3 mois. Il suffit de revenir sur la page pour en générer une nouvelle en un clic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les calculs de l'API sont-ils les mêmes que sur le site ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. L'API appelle exactement les mêmes moteurs de calcul que les simulateurs du site, basés sur les barèmes officiels 2026. Aucune IA n'intervient dans les calculs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que se passe-t-il si je dépasse mon quota ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le quota est volontairement très large. Si vous prévoyez un usage à fort volume, contactez-nous pour qu'on l'ajuste à votre besoin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'API est-elle vraiment gratuite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, l'accès actuel ne nécessite aucun paiement : demandez une clé et utilisez l'API librement."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <a href="/" class="flex items-center space-x-2">
+            <img
+              src="/assets/lescalculateurs-new-logo.png"
+              alt="LesCalculateurs"
+              class="h-8 w-auto"
+            />
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
+          </a>
+
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
+            <a
+              href="/pages/methodologie.html"
+              class="hidden lg:block text-gray-600 hover:text-blue-600"
+              >📚 Méthodologie</a
+            >
+            <a
+              href="/pages/api"
+              class="text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded"
+              >⚡ API</a
+            >
+          </nav>
+
+          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
+          <nav class="flex flex-col space-y-2 text-sm">
+            <a href="/" class="text-gray-600 hover:text-blue-600 py-1">🏠 Accueil</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >🎯 Simulateurs</a
+            >
+            <a href="/pages/methodologie.html" class="text-gray-600 hover:text-blue-600 py-1"
+              >📚 Méthodologie</a
+            >
+            <a href="/pages/api" class="text-blue-600 hover:text-blue-800 font-medium py-1 bg-blue-50 rounded px-2"
+              >⚡ API</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-slate-900 to-indigo-900 text-white py-16">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <p class="inline-block bg-indigo-500/30 border border-indigo-400/50 text-indigo-100 text-xs font-semibold tracking-wide uppercase px-3 py-1 rounded-full mb-4">Nouveau</p>
+        <h1 class="text-4xl font-bold mb-4">
+          L'API LesCalculateurs : nos moteurs de calcul, dans votre produit
+        </h1>
+        <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+          RSA, APL, ARE, retraite, indemnité de licenciement, salaire net — les mêmes calculs que
+          sur le site, exposés en API REST, avec un plan gratuit pour tester.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="#acces"
+            class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+            >🟢 Accès gratuit</a
+          >
+          <a
+            href="#docs"
+            class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors"
+            >📄 Voir la documentation</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <!-- Pourquoi -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Pourquoi une API LesCalculateurs ?</h2>
+        <p class="text-gray-600 mb-4">
+          Depuis plusieurs années, nous maintenons des moteurs de calcul basés sur les barèmes
+          officiels français (Code du travail, CAF, France Travail, service-public.fr), mis à
+          jour à chaque réforme. Plutôt que de laisser ces moteurs uniquement accessibles via nos
+          formulaires web, nous les exposons désormais en API REST pour les développeurs,
+          fintechs, cabinets RH et outils internes qui ont besoin de ces calculs sans les
+          réimplémenter.
+        </p>
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+          <p class="text-gray-900 font-semibold">
+            Aucune IA n'intervient dans les calculs : uniquement des règles officielles
+            codifiées et testées.
+          </p>
+        </div>
+      </section>
+
+      <!-- Endpoints -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Endpoints disponibles</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+            <thead class="bg-gray-100 text-gray-700">
+              <tr>
+                <th class="text-left p-3 font-semibold">Endpoint</th>
+                <th class="text-left p-3 font-semibold">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+              <tr>
+                <td class="p-3 font-mono text-emerald-700">POST /api/v1/keys</td>
+                <td class="p-3 text-gray-600">Génère une clé API gratuite (aucune clé requise)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/rsa</td>
+                <td class="p-3 text-gray-600">Simulation du montant de RSA</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/apl</td>
+                <td class="p-3 text-gray-600">Simulation de l'aide au logement (APL)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/are</td>
+                <td class="p-3 text-gray-600">Simulation de l'allocation chômage (ARE)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/retraite</td>
+                <td class="p-3 text-gray-600">Âge légal de départ et trimestres requis</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/indemnite-licenciement</td>
+                <td class="p-3 text-gray-600">Indemnité légale de licenciement</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/salaire-net</td>
+                <td class="p-3 text-gray-600">Conversion salaire brut → net</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">
+          Liste toujours à jour :
+          <a href="/api/v1" class="text-indigo-600 underline" target="_blank" rel="noopener"
+            >GET /api/v1</a
+          >
+          (public, sans clé).
+        </p>
+      </section>
+
+      <!-- Accès -->
+      <section id="acces" class="mb-12 scroll-mt-20">
+        <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-500 rounded-xl p-8 text-center">
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">API gratuite</h2>
+          <p class="text-gray-700 max-w-xl mx-auto mb-6">
+            Générez votre clé directement ci-dessous, sans inscription ni carte bancaire. Valable
+            3 mois, renouvelable gratuitement à tout moment depuis cette page.
+          </p>
+          <button
+            id="generate-key-btn"
+            type="button"
+            class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors disabled:opacity-60"
+          >
+            Générer ma clé API
+          </button>
+          <div id="generate-key-result" class="hidden mt-6 max-w-lg mx-auto text-left"></div>
+          <p class="text-xs text-gray-500 mt-4">
+            Besoin d'un usage à fort volume ?
+            <a
+              href="mailto:contact@lescalculateurs.fr?subject=API%20LesCalculateurs%20-%20usage%20important"
+              class="underline"
+              >Contactez-nous</a
+            >.
+          </p>
+        </div>
+      </section>
+
+      <!-- Authentification -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Authentification</h2>
+        <p class="text-gray-600">
+          Générez une clé (section « Accès » ci-dessus) et envoyez-la dans l'en-tête
+          <code class="bg-gray-100 px-1 rounded">X-API-Key</code> de chaque requête, en
+          <code class="bg-gray-100 px-1 rounded">POST</code> JSON. La clé est valable 3 mois ;
+          revenez sur cette page pour en générer une nouvelle quand elle expire. Les en-têtes de
+          réponse <code class="bg-gray-100 px-1 rounded">X-RateLimit-Limit</code> et
+          <code class="bg-gray-100 px-1 rounded">X-RateLimit-Remaining</code> indiquent votre
+          quota.
+        </p>
+      </section>
+
+      <!-- Documentation interactive -->
+      <section id="docs" class="mb-12 scroll-mt-20">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Documentation par endpoint</h2>
+        <p class="text-gray-600 mb-6">
+          Choisissez un simulateur pour voir ses paramètres, un exemple de requête et un exemple
+          de réponse réels.
+        </p>
+
+        <div id="api-doc-tabs" class="flex flex-wrap gap-2 mb-6" role="tablist"></div>
+        <div id="api-doc-panel" class="bg-white rounded-lg border border-gray-200 p-6"></div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Questions fréquentes</h2>
+        <div class="space-y-4">
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Comment obtenir une clé API ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Cliquez sur « Générer ma clé API » dans la section Accès ci-dessus : une clé est
+              générée instantanément, valable 3 mois, sans inscription ni carte bancaire.
+            </p>
+          </details>
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Que se passe-t-il quand ma clé expire ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Elle cesse simplement de fonctionner après 3 mois. Revenez sur cette page et
+              générez-en une nouvelle en un clic, autant de fois que nécessaire.
+            </p>
+          </details>
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              L'API est-elle vraiment gratuite ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, l'accès actuel ne nécessite aucun paiement : générez une clé et utilisez l'API
+              librement.
+            </p>
+          </details>
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Les calculs de l'API sont-ils les mêmes que sur le site ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Oui, exactement les mêmes moteurs, basés sur les barèmes officiels 2026. Aucune IA
+              n'intervient dans les calculs.
+            </p>
+          </details>
+          <details class="bg-white p-4 rounded-lg border border-gray-200">
+            <summary class="font-semibold text-gray-800 cursor-pointer">
+              Que se passe-t-il si je dépasse mon quota ?
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm">
+              Le quota est volontairement très large. Si vous prévoyez un usage à fort volume,
+              contactez-nous pour qu'on l'ajuste à votre besoin.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs — Simulateurs gratuits français</p>
+        <div class="flex gap-4 text-sm flex-wrap justify-center mb-4">
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors"
+            >📘 Méthodologie</a
+          >
+          <span class="text-gray-500">|</span>
+          <a href="/pages/contact" class="text-gray-300 hover:text-white transition-colors"
+            >✉️ Contact</a
+          >
+          <span class="text-gray-500">|</span>
+          <a href="/pages/api" class="text-gray-300 hover:text-white transition-colors">⚡ API</a>
+        </div>
+        <p class="text-gray-400">
+          L'API LesCalculateurs expose les mêmes moteurs de calcul que le site, sans IA dans les
+          calculs.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
