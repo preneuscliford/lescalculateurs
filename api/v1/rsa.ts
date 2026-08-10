@@ -3,10 +3,10 @@
  * Body: { situation: "seul"|"couple"|"monoparental", enfants, revenus, logement, activite }
  */
 
-import { withCors, authenticate } from "../_lib/auth.js";
+import { withCors, authenticate } from "../_lib/auth";
 import { calculerRSA } from "../../src/utils/rsaCalculEngine";
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   withCors(res);
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") {
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     });
 
     return res.status(200).json(result);
-  } catch (err) {
+  } catch (err: any) {
     console.error("API /v1/rsa error:", err.message);
     return res.status(500).json({ error: "Erreur interne du serveur." });
   }

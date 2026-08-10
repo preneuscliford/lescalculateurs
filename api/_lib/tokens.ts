@@ -19,7 +19,7 @@ import crypto from "node:crypto";
 const TOKEN_PREFIX = "lc_free_";
 const VALIDITY_MS = 90 * 24 * 60 * 60 * 1000; // ~3 mois
 
-function getSecret() {
+function getSecret(): string {
   const secret = process.env.API_KEY_SECRET;
   if (!secret) {
     throw new Error("API_KEY_SECRET non configuré");
@@ -27,11 +27,11 @@ function getSecret() {
   return secret;
 }
 
-function sign(payload) {
+function sign(payload: string): string {
   return crypto.createHmac("sha256", getSecret()).update(payload).digest("base64url");
 }
 
-export function generateToken() {
+export function generateToken(): { key: string; issuedAt: string; expiresAt: string } {
   const now = Date.now();
   const payload = Buffer.from(JSON.stringify({ iat: now, exp: now + VALIDITY_MS })).toString(
     "base64url",
@@ -45,7 +45,7 @@ export function generateToken() {
   };
 }
 
-export function verifyToken(key) {
+export function verifyToken(key: string | undefined | null): { issuedAt: number; expiresAt: number } | null {
   if (typeof key !== "string" || !key.startsWith(TOKEN_PREFIX)) return null;
 
   const rest = key.slice(TOKEN_PREFIX.length);
@@ -56,7 +56,7 @@ export function verifyToken(key) {
   const signature = rest.slice(separatorIndex + 1);
   if (!payload || !signature) return null;
 
-  let expectedSignature;
+  let expectedSignature: string;
   try {
     expectedSignature = sign(payload);
   } catch {
@@ -69,7 +69,7 @@ export function verifyToken(key) {
     return null;
   }
 
-  let data;
+  let data: { iat?: number; exp?: number };
   try {
     data = JSON.parse(Buffer.from(payload, "base64url").toString("utf8"));
   } catch {
@@ -78,5 +78,5 @@ export function verifyToken(key) {
 
   if (typeof data.exp !== "number" || Date.now() > data.exp) return null;
 
-  return { issuedAt: data.iat, expiresAt: data.exp };
+  return { issuedAt: data.iat as number, expiresAt: data.exp };
 }

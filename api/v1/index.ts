@@ -3,7 +3,7 @@
  * Liste des endpoints disponibles. Ne nécessite pas de clé API (découverte publique).
  */
 
-import { withCors } from "../_lib/auth.js";
+import { withCors } from "../_lib/auth";
 
 const ENDPOINTS = [
   {
@@ -23,7 +23,7 @@ const ENDPOINTS = [
   { path: "/api/v1/salaire-net", method: "POST", description: "Conversion salaire brut → net" },
 ];
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   withCors(res);
   if (req.method === "OPTIONS") return res.status(200).end();
 

@@ -3,7 +3,7 @@
  *
  * Deux façons d'obtenir une clé valide :
  * 1. Auto-générée sur /pages/api (POST /api/v1/keys) : un jeton signé,
- *    valable 3 mois, vérifié à la volée sans stockage (voir _lib/tokens.js).
+ *    valable 3 mois, vérifié à la volée sans stockage (voir _lib/tokens.ts).
  * 2. Émise à la main pour un client identifié et stockée dans la variable
  *    d'environnement Vercel API_KEYS, au format JSON :
  *    [{"key":"lc_live_xxx","plan":"starter","owner":"Nom du client"}, ...]
@@ -15,9 +15,19 @@
  * volume augmente.
  */
 
-import { verifyToken } from "./tokens.js";
+import { verifyToken } from "./tokens";
 
-export const PLAN_LIMITS = {
+interface ApiRequest {
+  headers: Record<string, string | string[] | undefined>;
+}
+
+interface ApiResponse {
+  status(code: number): ApiResponse;
+  setHeader(name: string, value: string): void;
+  json(body: unknown): void;
+}
+
+export const PLAN_LIMITS: Record<string, number> = {
   free: 100,
   starter: 5000,
   pro: 50000,
@@ -29,18 +39,24 @@ export const PLAN_LIMITS = {
 const PROMO_END = new Date("2026-11-10T00:00:00Z");
 const PROMO_LIMIT = 20000;
 
-function isPromoActive() {
+function isPromoActive(): boolean {
   return Date.now() < PROMO_END.getTime();
 }
 
-function effectiveLimit(plan) {
+function effectiveLimit(plan: string): number {
   if (isPromoActive()) return PROMO_LIMIT;
   return PLAN_LIMITS[plan] ?? PLAN_LIMITS.free;
 }
 
-const usage = new Map();
+const usage = new Map<string, { count: number }>();
 
-function loadKeys() {
+interface StaticKey {
+  key: string;
+  plan?: string;
+  owner?: string;
+}
+
+function loadKeys(): StaticKey[] {
   try {
     return JSON.parse(process.env.API_KEYS || "[]");
   } catch {
@@ -48,12 +64,12 @@ function loadKeys() {
   }
 }
 
-function currentMonthKey() {
+function currentMonthKey(): string {
   const d = new Date();
   return `${d.getUTCFullYear()}-${d.getUTCMonth()}`;
 }
 
-export function withCors(res) {
+export function withCors(res: ApiResponse): void {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-API-Key");
@@ -64,8 +80,12 @@ export function withCors(res) {
  * Envoie elle-même la réponse d'erreur (401/429) et renvoie null si le
  * traitement doit s'arrêter ; renvoie { plan, owner } si tout va bien.
  */
-export function authenticate(req, res) {
-  const apiKey = req.headers["x-api-key"];
+export function authenticate(
+  req: ApiRequest,
+  res: ApiResponse,
+): { plan: string; owner: string | null } | null {
+  const apiKeyHeader = req.headers["x-api-key"];
+  const apiKey = Array.isArray(apiKeyHeader) ? apiKeyHeader[0] : apiKeyHeader;
   if (!apiKey) {
     res.status(401).json({
       error: "Clé API manquante. Ajoutez l'en-tête X-API-Key.",
@@ -75,8 +95,8 @@ export function authenticate(req, res) {
   }
 
   const staticMatch = loadKeys().find((k) => k.key === apiKey);
-  let plan = null;
-  let owner = null;
+  let plan: string | null = null;
+  let owner: string | null = null;
 
   if (staticMatch) {
     plan = staticMatch.plan || "free";

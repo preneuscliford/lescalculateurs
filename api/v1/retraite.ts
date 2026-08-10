@@ -3,10 +3,10 @@
  * Body: { dateNaissance: "YYYY-MM-DD", trimestresValides?: number }
  */
 
-import { withCors, authenticate } from "../_lib/auth.js";
+import { withCors, authenticate } from "../_lib/auth";
 import { calculerAgeLegalRetraite } from "../../src/utils/retraiteCalculEngine";
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   withCors(res);
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") {
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     });
 
     return res.status(200).json(result);
-  } catch (err) {
+  } catch (err: any) {
     console.error("API /v1/retraite error:", err.message);
     return res.status(500).json({ error: "Erreur interne du serveur." });
   }
