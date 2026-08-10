@@ -112,6 +112,7 @@
   "blog:update:2026": "node scripts/update-blog-pages.cjs",
   "blog:revert": "node scripts/revert-blog-pages.cjs",
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "chart.js": "^4.5.1",

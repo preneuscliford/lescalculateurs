@@ -3,6 +3,7 @@ import { initializeScrollButtons } from "./utils/scrollButtons";
 import { initializeVercelAnalytics } from "./utils/vercelAnalytics";
 import { initializeVercelSpeedInsights } from "./utils/vercelSpeedInsights";
 import { initializeVdfIncomeCharts } from "./utils/vdfIncomeCharts";
+import { initializeClarity } from "./utils/clarityAnalytics";
 
 declare global {
   interface Window {
@@ -197,6 +198,7 @@ export function initializeApp() {
   // Add any global initialization logic here
   initializeVercelAnalytics();
   initializeVercelSpeedInsights();
+  initializeClarity();
   ensureGlobalFavicons();
   normalizeBrandLockups();
   initializeJourneyTracking();
