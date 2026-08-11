@@ -132,7 +132,7 @@ var CALCULATOR_META = {
     version: "1.0.0",
     rulesVersion: "2025.10",
     effectiveDate: "2025-10-01",
-    source: "https://www.service-public.fr/particuliers/actualites/A16807"
+    source: "https://www.service-public.gouv.fr/particuliers/actualites/A16807"
   },
   are: {
     version: "1.0.0",
@@ -156,32 +156,32 @@ var CALCULATOR_META = {
     version: "1.0.0",
     rulesVersion: "2026.05",
     effectiveDate: "2026-05-01",
-    source: "D\xE9cret du 29 mars 2025 (revalorisation AAH +0,9%, applicable au 1er mai 2026)"
+    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356"
   },
   retraite: {
     version: "1.0.0",
     rulesVersion: "reforme-2023 + suspension-LFSS-2026",
-    source: "https://www.info-retraite.fr"
+    source: "https://www.info-retraite.fr/portail-info/sites/PortailInformationnel/home/reforme-des-retraites/reforme-des-retraites---age-le-1.html"
   },
   "indemnite-licenciement": {
     version: "1.0.0",
     rulesVersion: "en vigueur (quotes-parts l\xE9gales inchang\xE9es)",
-    source: "Code du travail, article L1234-9"
+    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035644154"
   },
   ptz: {
     version: "1.0.0",
     rulesVersion: "2026 (inchang\xE9 vs 2025)",
-    source: "Bar\xE8me PTZ 2026 \u2014 service-public.fr (F19941)"
+    source: "https://www.service-public.gouv.fr/particuliers/vosdroits/F10871"
   },
   "impot-revenu": {
     version: "1.0.0",
     rulesVersion: "2026 (imposition des revenus 2025)",
-    source: "Article 197 du CGI \u2014 service-public.fr"
+    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954"
   },
   notaire: {
     version: "1.0.0",
     rulesVersion: "2026",
-    source: "Bar\xE8mes notari\xE9s 2026 \u2014 Conseil sup\xE9rieur du notariat"
+    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053593921"
   },
   "apl-etudiant": {
     version: "1.0.0",

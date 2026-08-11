@@ -16,6 +16,17 @@
  * calculator_version suit le contrat de l'endpoint (forme des paramètres et
  * de la réponse), pas le barème lui-même — à incrémenter uniquement si la
  * forme de la requête/réponse change de façon incompatible.
+ *
+ * Vérification manuelle du 11/08/2026 : chaque `source` ci-dessous a été
+ * ouverte et son contenu confronté aux montants codés en dur dans le moteur
+ * correspondant (voir le rapport donné au client pour le détail). Deux
+ * points restent ouverts, volontairement non corrigés ici sans validation :
+ * - are.ts (`plafondPourcentageSjr` = 0.7) : francetravail.fr évoque une
+ *   limite de 75 % du salaire journalier de référence, pas 70 %.
+ * - irCalculEngine.ts (baremeIR2026) : les seuils codés (11497/29315/83823/
+ *   180000) ne correspondent ni à salaireNetCalculEngine.ts (11294/28797/
+ *   82341/177106) ni aux seuils trouvés en recherche (11600/29579/84577/
+ *   181917) — trois versions différentes du même barème 2026 à réconcilier.
  */
 
 export interface CalculatorMeta {
@@ -37,7 +48,7 @@ export const CALCULATOR_META: Record<string, CalculatorMeta> = {
     version: "1.0.0",
     rulesVersion: "2025.10",
     effectiveDate: "2025-10-01",
-    source: "https://www.service-public.fr/particuliers/actualites/A16807",
+    source: "https://www.service-public.gouv.fr/particuliers/actualites/A16807",
   },
   are: {
     version: "1.0.0",
@@ -64,32 +75,33 @@ export const CALCULATOR_META: Record<string, CalculatorMeta> = {
     version: "1.0.0",
     rulesVersion: "2026.05",
     effectiveDate: "2026-05-01",
-    source: "Décret du 29 mars 2025 (revalorisation AAH +0,9%, applicable au 1er mai 2026)",
+    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356",
   },
   retraite: {
     version: "1.0.0",
     rulesVersion: "reforme-2023 + suspension-LFSS-2026",
-    source: "https://www.info-retraite.fr",
+    source:
+      "https://www.info-retraite.fr/portail-info/sites/PortailInformationnel/home/reforme-des-retraites/reforme-des-retraites---age-le-1.html",
   },
   "indemnite-licenciement": {
     version: "1.0.0",
     rulesVersion: "en vigueur (quotes-parts légales inchangées)",
-    source: "Code du travail, article L1234-9",
+    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035644154",
   },
   ptz: {
     version: "1.0.0",
     rulesVersion: "2026 (inchangé vs 2025)",
-    source: "Barème PTZ 2026 — service-public.fr (F19941)",
+    source: "https://www.service-public.gouv.fr/particuliers/vosdroits/F10871",
   },
   "impot-revenu": {
     version: "1.0.0",
     rulesVersion: "2026 (imposition des revenus 2025)",
-    source: "Article 197 du CGI — service-public.fr",
+    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954",
   },
   notaire: {
     version: "1.0.0",
     rulesVersion: "2026",
-    source: "Barèmes notariés 2026 — Conseil supérieur du notariat",
+    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053593921",
   },
   "apl-etudiant": {
     version: "1.0.0",
