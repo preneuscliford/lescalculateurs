@@ -4,7 +4,8 @@
  */
 
 // PLAFOND STRICT AAH 2026 - Ne jamais dépasser
-// Source : Décret du 29 mars 2025 - applicable au 1er mai 2026 (revalorisation +0,9%)
+// Source : Décret n° 2026-229 du 30 mars 2026, applicable aux allocations
+// dues au titre du mois d'avril 2026 (verifie sur Legifrance le 11/08/2026)
 const AAH_PLAFOND_2026 = 1041.59; // Montant maximum AAH versé (taux plein)
 
 // Montants de référence CAF

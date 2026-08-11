@@ -2,11 +2,14 @@ import { CalculatorFrame } from "../../components/CalculatorFrame.ts";
 import { ComparisonModal } from "../../components/ComparisonModal.ts";
 import { formatCurrency } from "../../main.ts";
 
+// Barème IR 2026 (revenus 2025) - Article 197 du CGI, identique à
+// src/utils/irCalculEngine.ts. Vérifié sur Légifrance (LEGIARTI000051212954)
+// le 11/08/2026.
 const bareme = [
-  { plafond: 11497, taux: 0 },
-  { plafond: 29315, taux: 0.11 },
-  { plafond: 83823, taux: 0.3 },
-  { plafond: 180294, taux: 0.41 },
+  { plafond: 11600, taux: 0 },
+  { plafond: 29579, taux: 0.11 },
+  { plafond: 84577, taux: 0.3 },
+  { plafond: 181917, taux: 0.41 },
   { plafond: Infinity, taux: 0.45 },
 ];
 

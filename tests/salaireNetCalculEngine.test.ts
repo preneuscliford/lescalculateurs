@@ -13,7 +13,7 @@ describe("salaireNetCalculEngine", () => {
       mariageOrPacs: false,
     });
     expect(r.success).toBe(true);
-    expect(r.salaireNetMensuel).toBeCloseTo(2153.1, 1);
+    expect(r.salaireNetMensuel).toBeCloseTo(2156.6, 1);
     expect(r.salaireGrossMensuel).toBe(2800);
   });
 

@@ -35,12 +35,14 @@ export interface SalaireNetResult {
 
 // Barèmes 2026 (impôt sur le revenu)
 const BAREMES_2026 = {
-  // Tranches d'imposition 2026 (non-résident)
+  // Tranches d'imposition 2026 (revenus 2025) - Article 197 du CGI, loi
+  // n°2026-103 du 19/02/2026, identiques à src/utils/irCalculEngine.ts.
+  // Verifie sur Legifrance (LEGIARTI000051212954) le 11/08/2026.
   tranches: [
-    { limite: 11294, taux: 0 },
-    { limite: 28797, taux: 0.11 },
-    { limite: 82341, taux: 0.3 },
-    { limite: 177106, taux: 0.41 },
+    { limite: 11600, taux: 0 },
+    { limite: 29579, taux: 0.11 },
+    { limite: 84577, taux: 0.3 },
+    { limite: 181917, taux: 0.41 },
     { limite: Infinity, taux: 0.45 },
   ],
   // Quotient familial (parts)

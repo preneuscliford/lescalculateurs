@@ -125,7 +125,7 @@ var CALCULATOR_META = {
   rsa: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
   },
   apl: {
@@ -143,19 +143,19 @@ var CALCULATOR_META = {
   "prime-activite": {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite"
   },
   asf: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf"
   },
   aah: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356"
   },
   retraite: {
@@ -1203,7 +1203,7 @@ function revalorise(value) {
 var socialBaremes = {
   rsa: {
     version: "2026.05",
-    dateEffet: "2026-05-01",
+    dateEffet: "2026-04-01",
     sourceUrl: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026",
     sourceUrls: [
       "https://www.service-public.fr/particuliers/vosdroits/N19775",
@@ -1227,7 +1227,7 @@ var socialBaremes = {
   },
   primeActivite: {
     version: "2026.05",
-    dateEffet: "2026-05-01",
+    dateEffet: "2026-04-01",
     sourceUrl: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite",
     sourceUrls: [
       "https://www.caf.fr/allocataires/actualites/actualites-nationales/la-prime-d-activite-augmente-en-2026",
@@ -1267,7 +1267,7 @@ var socialBaremes = {
   },
   asf: {
     version: "2026.05",
-    dateEffet: "2026-05-01",
+    dateEffet: "2026-04-01",
     sourceUrl: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf",
     sourceUrls: [
       "https://www.service-public.fr/particuliers/vosdroits/F33647",
@@ -1295,7 +1295,7 @@ var socialBaremes = {
       partFixe: 13.18,
       tauxOption2: 0.57,
       minimumJournalier: 32.13,
-      plafondPourcentageSjr: 0.7,
+      plafondPourcentageSjr: 0.75,
       coefficientMensuel: 30.42
     },
     dureeMaximaleJours: {

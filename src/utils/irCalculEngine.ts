@@ -18,12 +18,14 @@ export interface IRResult {
   mensualiteMoyenne: number;
 }
 
-// Barème IR 2026 (revenus 2025) - Source : Article 197 du CGI - service-public.fr
+// Barème IR 2026 (revenus 2025) - Article 197 du CGI, loi n°2026-103 du
+// 19/02/2026. Verifie sur Legifrance (LEGIARTI000051212954) le 11/08/2026 :
+// https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954
 export const baremeIR2026: BaremeTranche[] = [
-  { plafond: 11497, taux: 0 },      // 0%
-  { plafond: 29315, taux: 0.11 },   // 11% (corrigé : 28 797 → 29 315)
-  { plafond: 83823, taux: 0.3 },    // 30% (corrigé : 82 341 → 83 823)
-  { plafond: 180000, taux: 0.41 },  // 41% (corrigé : 177 106 → 180 000)
+  { plafond: 11600, taux: 0 }, // 0%
+  { plafond: 29579, taux: 0.11 }, // 11%
+  { plafond: 84577, taux: 0.3 }, // 30%
+  { plafond: 181917, taux: 0.41 }, // 41%
   { plafond: Number.POSITIVE_INFINITY, taux: 0.45 }, // 45%
 ];
 

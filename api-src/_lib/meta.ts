@@ -19,14 +19,15 @@
  *
  * Vérification manuelle du 11/08/2026 : chaque `source` ci-dessous a été
  * ouverte et son contenu confronté aux montants codés en dur dans le moteur
- * correspondant (voir le rapport donné au client pour le détail). Deux
- * points restent ouverts, volontairement non corrigés ici sans validation :
- * - are.ts (`plafondPourcentageSjr` = 0.7) : francetravail.fr évoque une
- *   limite de 75 % du salaire journalier de référence, pas 70 %.
- * - irCalculEngine.ts (baremeIR2026) : les seuils codés (11497/29315/83823/
- *   180000) ne correspondent ni à salaireNetCalculEngine.ts (11294/28797/
- *   82341/177106) ni aux seuils trouvés en recherche (11600/29579/84577/
- *   181917) — trois versions différentes du même barème 2026 à réconcilier.
+ * correspondant. Trois écarts ont été trouvés et corrigés dans les moteurs
+ * concernés (pas seulement ici) :
+ * - are.ts : plafond corrigé de 70 % à 75 % du salaire journalier de
+ *   référence (source : francetravail.fr).
+ * - irCalculEngine.ts et salaireNetCalculEngine.ts : barème IR 2026
+ *   unifié sur 11600/29579/84577/181917 EUR (Légifrance, article 197 CGI) ;
+ *   les deux fichiers utilisaient chacun des seuils différents et erronés.
+ * - rsa/asf/prime-activite/aah : date d'effet corrigée du 1er mai au
+ *   1er avril 2026 (source : solidarites.gouv.fr).
  */
 
 export interface CalculatorMeta {
@@ -40,7 +41,7 @@ export const CALCULATOR_META: Record<string, CalculatorMeta> = {
   rsa: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source:
       "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026",
   },
@@ -60,21 +61,21 @@ export const CALCULATOR_META: Record<string, CalculatorMeta> = {
   "prime-activite": {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source:
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite",
   },
   asf: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source:
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf",
   },
   aah: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356",
   },
   retraite: {

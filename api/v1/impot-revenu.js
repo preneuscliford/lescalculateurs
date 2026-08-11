@@ -125,7 +125,7 @@ var CALCULATOR_META = {
   rsa: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
   },
   apl: {
@@ -143,19 +143,19 @@ var CALCULATOR_META = {
   "prime-activite": {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite"
   },
   asf: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf"
   },
   aah: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356"
   },
   retraite: {
@@ -213,14 +213,14 @@ function withMeta(calculatorId, result) {
 
 // src/utils/irCalculEngine.ts
 var baremeIR2026 = [
-  { plafond: 11497, taux: 0 },
+  { plafond: 11600, taux: 0 },
   // 0%
-  { plafond: 29315, taux: 0.11 },
-  // 11% (corrigé : 28 797 → 29 315)
-  { plafond: 83823, taux: 0.3 },
-  // 30% (corrigé : 82 341 → 83 823)
-  { plafond: 18e4, taux: 0.41 },
-  // 41% (corrigé : 177 106 → 180 000)
+  { plafond: 29579, taux: 0.11 },
+  // 11%
+  { plafond: 84577, taux: 0.3 },
+  // 30%
+  { plafond: 181917, taux: 0.41 },
+  // 41%
   { plafond: Number.POSITIVE_INFINITY, taux: 0.45 }
   // 45%
 ];

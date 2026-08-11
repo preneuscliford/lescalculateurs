@@ -40,6 +40,20 @@ describe("areCalculEngine", () => {
     expect(r.montantEstime).toBeCloseTo(977.39, 1);
   });
 
+  test("plafond de l'allocation à 75% du SJR (pas 70%)", () => {
+    const r = calculerARE({
+      situation: "seul",
+      ancienneteEmploi: 24,
+      salaireReferent: 800,
+      personnesCharge: 0,
+      agePersonne: 30,
+    });
+    // SJR = 800*12/365 = 26.30 EUR ; 75% du SJR = 19.73 EUR/jour (plafond actif)
+    // Avec un plafond à 70% (bug corrigé), le montant aurait été plus bas.
+    expect(r.eligible).toBe(true);
+    expect(r.montantEstime).toBeCloseTo(600.06, 0);
+  });
+
   test("plafond de durée relevé à partir de 57 ans", () => {
     const r = calculerARE({
       situation: "seul",

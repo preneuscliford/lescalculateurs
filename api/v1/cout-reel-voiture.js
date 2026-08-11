@@ -125,7 +125,7 @@ var CALCULATOR_META = {
   rsa: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
   },
   apl: {
@@ -143,19 +143,19 @@ var CALCULATOR_META = {
   "prime-activite": {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite"
   },
   asf: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf"
   },
   aah: {
     version: "1.0.0",
     rulesVersion: "2026.05",
-    effectiveDate: "2026-05-01",
+    effectiveDate: "2026-04-01",
     source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356"
   },
   retraite: {
