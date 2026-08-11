@@ -6,6 +6,7 @@
  */
 
 import { withCors, authenticate } from "../_lib/auth";
+import { withMeta } from "../_lib/meta";
 import { calculerCoutReelVoiture } from "../../src/utils/coutReelVoitureCalculEngine";
 
 export default async function handler(req: any, res: any) {
@@ -66,7 +67,7 @@ export default async function handler(req: any, res: any) {
       creditMensuel: Number(creditMensuel) || 0,
     });
 
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("cout-reel-voiture", result));
   } catch (err: any) {
     console.error("API /v1/cout-reel-voiture error:", err.message);
     return res.status(500).json({ error: "Erreur interne du serveur." });

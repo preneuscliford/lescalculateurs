@@ -7,6 +7,7 @@
  */
 
 import { withCors, authenticate } from "../_lib/auth";
+import { withMeta } from "../_lib/meta";
 import { calculerSalaire } from "../../src/utils/salaireCalculEngine";
 
 export default async function handler(req: any, res: any) {
@@ -35,7 +36,7 @@ export default async function handler(req: any, res: any) {
       tauxPAS: Number(tauxPAS) || 0,
     });
 
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("salaire", result));
   } catch (err: any) {
     if (err.message === "Brut invalide" || err.message === "Statut invalide" || err.message === "Taux PAS invalide") {
       return res.status(400).json({ error: err.message });

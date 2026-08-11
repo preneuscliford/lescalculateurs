@@ -5,6 +5,7 @@
  */
 
 import { withCors, authenticate } from "../_lib/auth";
+import { withMeta } from "../_lib/meta";
 import { calculerResteAVivre } from "../../src/utils/resteAVivreCalculEngine";
 
 const NUMERIC_FIELDS = [
@@ -87,7 +88,7 @@ export default async function handler(req: any, res: any) {
 
     const result = calculerResteAVivre(data as any);
 
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("reste-a-vivre", result));
   } catch (err: any) {
     console.error("API /v1/reste-a-vivre error:", err.message);
     return res.status(500).json({ error: "Erreur interne du serveur." });

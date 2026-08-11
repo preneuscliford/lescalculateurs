@@ -5,6 +5,7 @@
  */
 
 import { withCors, authenticate } from "../_lib/auth";
+import { withMeta } from "../_lib/meta";
 import { verifierEligibilitePTZ } from "../../src/utils/ptzEligibiliteCalculEngine";
 
 export default async function handler(req: any, res: any) {
@@ -33,7 +34,7 @@ export default async function handler(req: any, res: any) {
       revenuFiscalReference: Number(revenuFiscalReference) || 0,
     });
 
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("ptz", result));
   } catch (err: any) {
     console.error("API /v1/ptz error:", err.message);
     return res.status(500).json({ error: "Erreur interne du serveur." });

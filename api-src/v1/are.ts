@@ -5,6 +5,7 @@
  */
 
 import { withCors, authenticate } from "../_lib/auth";
+import { withMeta } from "../_lib/meta";
 import { calculerARE } from "../../src/utils/areCalculEngine";
 
 export default async function handler(req: any, res: any) {
@@ -47,7 +48,7 @@ export default async function handler(req: any, res: any) {
       agePersonne: Number(agePersonne) || 0,
     });
 
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("are", result));
   } catch (err: any) {
     console.error("API /v1/are error:", err.message);
     return res.status(500).json({ error: "Erreur interne du serveur." });

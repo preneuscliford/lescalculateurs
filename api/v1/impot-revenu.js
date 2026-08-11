@@ -120,6 +120,97 @@ function authenticate(req, res) {
   return { plan, owner };
 }
 
+// api-src/_lib/meta.ts
+var CALCULATOR_META = {
+  rsa: {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-05-01",
+    source: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
+  },
+  apl: {
+    version: "1.0.0",
+    rulesVersion: "2025.10",
+    effectiveDate: "2025-10-01",
+    source: "https://www.service-public.fr/particuliers/actualites/A16807"
+  },
+  are: {
+    version: "1.0.0",
+    rulesVersion: "2025.07",
+    effectiveDate: "2025-07-01",
+    source: "https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/montant-allocation-france-travai.html"
+  },
+  "prime-activite": {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-05-01",
+    source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite"
+  },
+  asf: {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-05-01",
+    source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf"
+  },
+  aah: {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-05-01",
+    source: "D\xE9cret du 29 mars 2025 (revalorisation AAH +0,9%, applicable au 1er mai 2026)"
+  },
+  retraite: {
+    version: "1.0.0",
+    rulesVersion: "reforme-2023 + suspension-LFSS-2026",
+    source: "https://www.info-retraite.fr"
+  },
+  "indemnite-licenciement": {
+    version: "1.0.0",
+    rulesVersion: "en vigueur (quotes-parts l\xE9gales inchang\xE9es)",
+    source: "Code du travail, article L1234-9"
+  },
+  ptz: {
+    version: "1.0.0",
+    rulesVersion: "2026 (inchang\xE9 vs 2025)",
+    source: "Bar\xE8me PTZ 2026 \u2014 service-public.fr (F19941)"
+  },
+  "impot-revenu": {
+    version: "1.0.0",
+    rulesVersion: "2026 (imposition des revenus 2025)",
+    source: "Article 197 du CGI \u2014 service-public.fr"
+  },
+  notaire: {
+    version: "1.0.0",
+    rulesVersion: "2026",
+    source: "Bar\xE8mes notari\xE9s 2026 \u2014 Conseil sup\xE9rieur du notariat"
+  },
+  "apl-etudiant": {
+    version: "1.0.0",
+    rulesVersion: "2026 (mod\xE8le simplifi\xE9)",
+    source: "Bar\xE8mes CROUS/CNOUS 2026, simplifi\xE9s"
+  },
+  "salaire-net": {
+    version: "1.0.0",
+    rulesVersion: "2026 (cotisations moyennes approximatives)",
+    source: "Bar\xE8mes DGFIP 2026 \u2014 approximation, hors cas particuliers"
+  },
+  salaire: {
+    version: "1.0.0",
+    rulesVersion: "estimation forfaitaire (non r\xE9glementaire)"
+  },
+  "reste-a-vivre": {
+    version: "1.0.0",
+    rulesVersion: "agr\xE9gation arithm\xE9tique (non r\xE9glementaire)"
+  },
+  "cout-reel-voiture": {
+    version: "1.0.0",
+    rulesVersion: "agr\xE9gation arithm\xE9tique (non r\xE9glementaire)"
+  }
+};
+function withMeta(calculatorId, result) {
+  const entry = CALCULATOR_META[calculatorId] || { version: "1.0.0" };
+  return { ...result, meta: { calculator: calculatorId, ...entry } };
+}
+
 // src/utils/irCalculEngine.ts
 var baremeIR2026 = [
   { plafond: 11497, taux: 0 },
@@ -183,7 +274,7 @@ async function handler(req, res) {
       });
     }
     const result = calculerIR({ revenu: Number(revenu) || 0, parts: Number(parts) || 1 });
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("impot-revenu", result));
   } catch (err) {
     if (err.message === "Entr\xE9es invalides") {
       return res.status(400).json({ error: "revenu ou parts invalide(s)." });

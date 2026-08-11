@@ -4,6 +4,7 @@
  */
 
 import { withCors, authenticate } from "../_lib/auth";
+import { withMeta } from "../_lib/meta";
 import { calculerPrimeActivite } from "../../src/utils/primeActiviteCalculEngine";
 
 export default async function handler(req: any, res: any) {
@@ -42,7 +43,7 @@ export default async function handler(req: any, res: any) {
       typeActivite,
     });
 
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("prime-activite", result));
   } catch (err: any) {
     console.error("API /v1/prime-activite error:", err.message);
     return res.status(500).json({ error: "Erreur interne du serveur." });

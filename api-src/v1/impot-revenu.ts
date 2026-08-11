@@ -4,6 +4,7 @@
  */
 
 import { withCors, authenticate } from "../_lib/auth";
+import { withMeta } from "../_lib/meta";
 import { calculerIR } from "../../src/utils/irCalculEngine";
 
 export default async function handler(req: any, res: any) {
@@ -28,7 +29,7 @@ export default async function handler(req: any, res: any) {
 
     const result = calculerIR({ revenu: Number(revenu) || 0, parts: Number(parts) || 1 });
 
-    return res.status(200).json(result);
+    return res.status(200).json(withMeta("impot-revenu", result));
   } catch (err: any) {
     if (err.message === "Entrées invalides") {
       return res.status(400).json({ error: "revenu ou parts invalide(s)." });
