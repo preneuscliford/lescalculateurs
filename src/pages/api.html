@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API LesCalculateurs — Intégrez nos calculateurs officiels (RSA, APL, retraite...)</title>
+    <title>API LesCalculateurs — Intégrez nos calculateurs officiels (RSA, APL, notaire, retraite...)</title>
     <meta
       name="description"
-      content="API REST pour intégrer les calculateurs LesCalculateurs (RSA, APL, ARE, retraite, indemnité de licenciement, salaire net) à votre produit. Plan gratuit disponible, tarifs Starter et Pro."
+      content="API REST gratuite pour intégrer les calculateurs LesCalculateurs (RSA, APL, ARE, retraite, notaire, AAH, prime d'activité, impôt et plus) à votre produit."
     />
     <meta
       name="keywords"
-      content="api simulateur social, api rsa, api apl, api retraite france, api calcul salaire net, api aides sociales, api indemnité licenciement"
+      content="api simulateur social, api rsa, api apl, api retraite france, api frais de notaire, api calcul salaire net, api aides sociales, api indemnité licenciement, api impot revenu"
     />
     <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
 
@@ -24,7 +24,7 @@
     />
     <meta
       property="og:description"
-      content="API REST pour RSA, APL, ARE, retraite, indemnité de licenciement et salaire net. Plan gratuit, Starter et Pro."
+      content="API REST gratuite : RSA, APL, ARE, retraite, notaire, AAH, prime d'activité, impôt sur le revenu et plus."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -33,7 +33,7 @@
     />
     <meta
       name="twitter:description"
-      content="API REST pour RSA, APL, ARE, retraite, indemnité de licenciement et salaire net. Plan gratuit, Starter et Pro."
+      content="API REST gratuite : RSA, APL, ARE, retraite, notaire, AAH, prime d'activité, impôt sur le revenu et plus."
     />
 
     <!-- Favicon -->
@@ -51,7 +51,7 @@
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "API LesCalculateurs",
-        "description": "API REST pour intégrer les calculateurs sociaux et fiscaux français (RSA, APL, ARE, retraite, indemnité de licenciement, salaire net) à un produit tiers.",
+        "description": "API REST pour intégrer les calculateurs sociaux, fiscaux et immobiliers français (RSA, APL, ARE, retraite, notaire, AAH, ASF, prime d'activité, PTZ, impôt sur le revenu, reste à vivre et plus) à un produit tiers.",
         "brand": { "@type": "Organization", "name": "Les Calculateurs" },
         "offers": {
           "@type": "Offer",
@@ -176,8 +176,8 @@
           L'API LesCalculateurs : nos moteurs de calcul, dans votre produit
         </h1>
         <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
-          RSA, APL, ARE, retraite, indemnité de licenciement, salaire net — les mêmes calculs que
-          sur le site, exposés en API REST, avec un plan gratuit pour tester.
+          RSA, APL, ARE, retraite, frais de notaire, AAH, prime d'activité, impôt sur le revenu et
+          bien plus — les mêmes calculs que sur le site, exposés en API REST, gratuite.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a
@@ -252,7 +252,47 @@
               </tr>
               <tr>
                 <td class="p-3 font-mono text-indigo-700">POST /api/v1/salaire-net</td>
-                <td class="p-3 text-gray-600">Conversion salaire brut → net</td>
+                <td class="p-3 text-gray-600">Conversion salaire brut → net détaillée</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/salaire</td>
+                <td class="p-3 text-gray-600">Conversion salaire brut → net simplifiée</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/notaire</td>
+                <td class="p-3 text-gray-600">Frais de notaire (achat immobilier)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/aah</td>
+                <td class="p-3 text-gray-600">Allocation adulte handicapé (AAH)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/apl-etudiant</td>
+                <td class="p-3 text-gray-600">Simulation APL étudiant / jeune actif</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/asf</td>
+                <td class="p-3 text-gray-600">Allocation de soutien familial (ASF)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/prime-activite</td>
+                <td class="p-3 text-gray-600">Prime d'activité</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/ptz</td>
+                <td class="p-3 text-gray-600">Éligibilité au prêt à taux zéro</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/impot-revenu</td>
+                <td class="p-3 text-gray-600">Impôt sur le revenu (barème par tranches)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/reste-a-vivre</td>
+                <td class="p-3 text-gray-600">Reste à vivre et taux d'endettement</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-indigo-700">POST /api/v1/cout-reel-voiture</td>
+                <td class="p-3 text-gray-600">Coût réel mensuel d'une voiture</td>
               </tr>
             </tbody>
           </table>
