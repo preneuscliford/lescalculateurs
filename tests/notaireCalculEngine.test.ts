@@ -1,46 +1,89 @@
-import { baremes } from "../src/data/baremes";
-import { calculerFraisNotaire, getTauxDroitsMutation } from "../src/utils/calculNotaire";
+import { calculerNotaire } from "../src/utils/notaireCalculEngine";
 
-describe("calculNotaire", () => {
-  test("getTauxDroitsMutation: neuf utilise le taux neuf", () => {
-    expect(getTauxDroitsMutation("75", "neuf")).toBe(baremes.notaire.droitsMutation.neuf);
+describe("notaireCalculEngine", () => {
+  test("cas standard vérifié : ancien, Paris (75), 250 000 EUR", () => {
+    const r = calculerNotaire({
+      prixAchat: 250000,
+      typeBien: "ancien",
+      departement: "75",
+    });
+    expect(r.success).toBe(true);
+    expect(r.droitsEnregistrement).toBeCloseTo(15800, 0);
+    expect(r.csi).toBeCloseTo(250, 0);
+    expect(r.total).toBeCloseTo(19517.7, 0);
+    expect(r.pourcentage).toBeCloseTo(7.81, 1);
   });
 
-  test("getTauxDroitsMutation: département réduit applique le taux réduit", () => {
-    expect(getTauxDroitsMutation("36", "ancien")).toBe(baremes.notaire.droitsMutation.reduit);
-    expect(getTauxDroitsMutation("976", "terrain")).toBe(baremes.notaire.droitsMutation.reduit);
+  test("bien neuf : taux de droits d'enregistrement réduit (0,715%)", () => {
+    const r = calculerNotaire({
+      prixAchat: 250000,
+      typeBien: "neuf",
+      departement: "75",
+    });
+    expect(r.tauxDroits).toBeCloseTo(0.00715, 5);
+    expect(r.droitsEnregistrement).toBeCloseTo(1787.5, 1);
   });
 
-  test("getTauxDroitsMutation: standard sinon", () => {
-    expect(getTauxDroitsMutation("75", "ancien")).toBe(baremes.notaire.droitsMutation.standard);
+  test("remise notariale variable de 10% appliquée sur les émoluments", () => {
+    const sansRemise = calculerNotaire({
+      prixAchat: 250000,
+      typeBien: "ancien",
+      departement: "75",
+    });
+    const avecRemise = calculerNotaire({
+      prixAchat: 250000,
+      typeBien: "ancien",
+      departement: "75",
+      remiseNotarialeVariable: true,
+    });
+    expect(avecRemise.emoluments).toBeCloseTo(sansRemise.emoluments * 0.9, 1);
+    expect(avecRemise.remiseMontant).toBeCloseTo(sansRemise.emolumentsSansRemise * 0.1, 1);
   });
 
-  test("calculerFraisNotaire: CSI respecte le minimum", () => {
-    const r = calculerFraisNotaire({
+  test("frais d'hypothèque appliqués selon le type d'emprunt", () => {
+    const sansEmprunt = calculerNotaire({
+      prixAchat: 250000,
+      typeBien: "ancien",
+      departement: "75",
+      typeEmprunt: "sans",
+    });
+    const avecGarantie = calculerNotaire({
+      prixAchat: 250000,
+      typeBien: "ancien",
+      departement: "75",
+      typeEmprunt: "avec_garantie",
+      autresPrets: 200000,
+    });
+    expect(sansEmprunt.fraisHypotheque).toBe(0);
+    expect(avecGarantie.fraisHypotheque).toBeCloseTo(3000, 0); // 1.5% de 200 000
+  });
+
+  test("frais supplémentaires de 100 EUR pour un terrain", () => {
+    const r = calculerNotaire({
+      prixAchat: 100000,
+      typeBien: "terrain",
+      departement: "75",
+    });
+    expect(r.fraisTerrain).toBe(100);
+  });
+
+  test("CSI respecte le minimum réglementaire sur un petit montant", () => {
+    const r = calculerNotaire({
       prixAchat: 1000,
       typeBien: "ancien",
       departement: "75",
-      emoluments: 0,
-      fraisDivers: 0,
     });
-    expect(r.csi).toBe(baremes.notaire.csi.minimum);
+    expect(r.csi).toBe(15);
   });
 
-  test("calculerFraisNotaire: total inclut tous les postes", () => {
-    const r = calculerFraisNotaire({
-      prixAchat: 200000,
+  test("le mobilier déduit est exclu du prix net immobilier", () => {
+    const r = calculerNotaire({
+      prixAchat: 250000,
       typeBien: "ancien",
       departement: "75",
-      emoluments: 1000,
-      fraisDivers: 500,
-      fraisHypotheque: 200,
-      fraisTerrain: 0,
-      tva: 123,
+      montantMobilier: 10000,
     });
-    const droits = Math.round(200000 * baremes.notaire.droitsMutation.standard);
-    const csi = Math.max(Math.round(200000 * baremes.notaire.csi.taux), baremes.notaire.csi.minimum);
-    const totalAttendu = 1000 + droits + (500 + csi) + 200 + 0 + 123;
-    expect(r.total).toBe(totalAttendu);
+    expect(r.prixNetImmobilier).toBe(240000);
+    expect(r.montantMobilier).toBe(10000);
   });
 });
-
