@@ -40,7 +40,7 @@
             "name": "Quel est le montant de l'ASPA en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le plafond ASPA est de 1 012,02€/mois pour une personne seule et 1 571,16€/mois pour un couple. L'ASPA complète vos revenus jusqu'à ce plafond."
+              "text": "Le plafond ASPA est de 1 043,59€/mois pour une personne seule et 1 620,18€/mois pour un couple. L'ASPA complète vos revenus jusqu'à ce plafond."
             }
           },
           {
@@ -136,16 +136,16 @@
         <div class="grid md:grid-cols-2 gap-4 mb-6">
           <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
             <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 1</p>
-            <p class="text-2xl font-bold text-amber-700">312,02 €/mois</p>
+            <p class="text-2xl font-bold text-amber-700">343,59 €/mois</p>
             <p class="text-sm text-gray-800 mt-1">
-              Personne seule<br />Retraite de 700€/mois<br />ASPA = 1 012,02€ - 700€
+              Personne seule<br />Retraite de 700€/mois<br />ASPA = 1 043,59€ - 700€
             </p>
           </div>
           <div class="bg-orange-50 rounded-lg p-4 border border-orange-200">
             <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 2</p>
-            <p class="text-2xl font-bold text-orange-700">571,16 €/mois</p>
+            <p class="text-2xl font-bold text-orange-700">620,18 €/mois</p>
             <p class="text-sm text-gray-800 mt-1">
-              Couple<br />Retraites cumulées 1 000€/mois<br />ASPA = 1 571,16€ - 1 000€
+              Couple<br />Retraites cumulées 1 000€/mois<br />ASPA = 1 620,18€ - 1 000€
             </p>
           </div>
           <div class="bg-yellow-50 rounded-lg p-4 border border-yellow-200">
@@ -157,7 +157,7 @@
           </div>
           <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
             <p class="text-xs text-gray-700 font-medium mb-1">MAXIMUM</p>
-            <p class="text-2xl font-bold text-amber-700">1 012,02 €/mois</p>
+            <p class="text-2xl font-bold text-amber-700">1 043,59 €/mois</p>
             <p class="text-sm text-gray-800 mt-1">Personne seule avec 0€ de revenu</p>
           </div>
         </div>
@@ -229,7 +229,7 @@
           e.preventDefault();
           const sit = document.getElementById("aspa-situation").value;
           const rev = parseInt(document.getElementById("aspa-revenus").value) || 0;
-          const plafond = sit === "seul" ? 1012.02 : 1571.16;
+          const plafond = sit === "seul" ? 1043.59 : 1620.18;
           const aspa = Math.max(0, Math.round(plafond - rev));
           document.getElementById("aspa-montant").textContent = aspa + " €/mois";
           document.getElementById("aspa-total").textContent = rev + aspa + " €/mois";
@@ -287,9 +287,9 @@
                 <td
                   class="border border-gray-300 p-3 text-center font-bold text-amber-700 bg-amber-50"
                 >
-                  1 012,02 €
+                  1 043,59 €
                 </td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">1 012,02 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">1 043,59 €</td>
                 <td class="border border-gray-300 p-3 text-center text-gray-900">12 144,24 €</td>
               </tr>
               <tr class="hover:bg-gray-100 bg-gray-50">
@@ -297,9 +297,9 @@
                 <td
                   class="border border-gray-300 p-3 text-center font-bold text-amber-700 bg-amber-50"
                 >
-                  1 571,16 €
+                  1 620,18 €
                 </td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">1 571,16 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">1 620,18 €</td>
                 <td class="border border-gray-300 p-3 text-center text-gray-900">18 853,92 €</td>
               </tr>
             </tbody>
@@ -319,8 +319,8 @@
               Quel est le montant de l'ASPA en 2026 ?
             </summary>
             <p class="mt-3 text-gray-800 text-sm">
-              Plafond : <strong>1 012,02€/mois</strong> (seul),
-              <strong>1 571,16€/mois</strong> (couple). Exemple : retraite 600€ → ASPA ≈ 412€.
+              Plafond : <strong>1 043,59€/mois</strong> (seul),
+              <strong>1 620,18€/mois</strong> (couple). Exemple : retraite 600€ → ASPA ≈ 412€.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">

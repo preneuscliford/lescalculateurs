@@ -60,21 +60,43 @@ const BAREMES_2026 = {
   abattementBase: 0.1,
 };
 
-// Cotisations sociales salarié 2026 (environ)
+// Cotisations sociales salarié 2026 - régime général, non-cadre, tranche 1
+// (sous le plafond mensuel de la Sécurité sociale). Vérifié le 11/08/2026 :
+// - Depuis la réforme de 2018, le salarié ne paie plus de cotisation
+//   maladie ni chômage (transférées côté employeur et compensées par une
+//   hausse de la CSG) - un ancien modèle de ce fichier calculait encore
+//   8,2% de "maladie" et 4,05% de "chômage", ce qui est obsolète depuis 2018.
+// - "Versement transport" est une taxe patronale, jamais déduite du
+//   salarié : retiré du calcul.
+// Sources : legisocial.fr (Agirc-Arrco 2026, CSG/CRDS 2026).
 const COTISATIONS_2026 = {
-  secu: 0.082, // 8.2% maladie
-  retraite: 0.062, // 6.2% retraite complémentaire
-  chômage: 0.0405, // 4.05% chômage
-  versementTransport: 0.005, // 0.5% (variable selon région)
+  retraiteBase: 0.073, // Assurance vieillesse plafonnée (6,90%) + déplafonnée (0,40%)
+  retraiteComplementaire: 0.0401, // Agirc-Arrco T1 (3,15%) + CEG T1 (0,86%)
+  // CSG/CRDS : assises sur 98,25% du brut (abattement forfaitaire de 1,75%
+  // pour frais professionnels, dans la limite de 4 PASS)
+  assietteCsgCrds: 0.9825,
+  csgDeductible: 0.068, // déductible du revenu imposable
+  csgNonDeductible: 0.024, // non déductible
+  crds: 0.005, // non déductible
 };
 
-function calculateCotisations(brutSalaire: number): number {
-  const totalCotisations =
-    COTISATIONS_2026.secu +
-    COTISATIONS_2026.retraite +
-    COTISATIONS_2026.chômage +
-    COTISATIONS_2026.versementTransport;
-  return brutSalaire * totalCotisations;
+interface Cotisations {
+  /** Réduit le salaire net versé (retraite + CSG déductible et non déductible + CRDS). */
+  totalNetPay: number;
+  /** Réduit uniquement le revenu imposable (retraite + CSG déductible, pas la CRDS ni la CSG non déductible). */
+  deductibleImpot: number;
+}
+
+function calculateCotisations(brutSalaire: number): Cotisations {
+  const assiette = brutSalaire * COTISATIONS_2026.assietteCsgCrds;
+  const retraite = brutSalaire * (COTISATIONS_2026.retraiteBase + COTISATIONS_2026.retraiteComplementaire);
+  const csgDeductible = assiette * COTISATIONS_2026.csgDeductible;
+  const csgNonDeductibleEtCrds = assiette * (COTISATIONS_2026.csgNonDeductible + COTISATIONS_2026.crds);
+
+  return {
+    totalNetPay: retraite + csgDeductible + csgNonDeductibleEtCrds,
+    deductibleImpot: retraite + csgDeductible,
+  };
 }
 
 function calculateImportFoncier(revenusImposables: number, quotientFamilial: number): number {
@@ -122,11 +144,11 @@ export function calculerSalaireNet(data: SalaireNetCalculData): SalaireNetResult
   // Calcul du salaire brut total
   const brutTotal = data.salaireBrut + data.primes + data.heuresSup;
 
-  // Cotisations sociales salarié
+  // Cotisations sociales salarié (retraite + CSG/CRDS, voir calculateCotisations)
   const cotisations = calculateCotisations(brutTotal);
 
-  // Revenu imposable (brut - cotisations - abattement)
-  const revenusImposables = brutTotal - cotisations;
+  // Revenu imposable (brut - part des cotisations déductible de l'impôt - abattement)
+  const revenusImposables = brutTotal - cotisations.deductibleImpot;
   const revenusImposablesAbattement = Math.max(
     0,
     revenusImposables * (1 - BAREMES_2026.abattementBase),
@@ -146,17 +168,17 @@ export function calculerSalaireNet(data: SalaireNetCalculData): SalaireNetResult
   const avantageNetFiscal = data.ticketsResto + data.mutuelle;
 
   // Salaire net
-  const salaireNetMensuel = brutTotal - cotisations - prelevementSource;
+  const salaireNetMensuel = brutTotal - cotisations.totalNetPay - prelevementSource;
   const salaireNetAvecAvantages = salaireNetMensuel + avantageNetFiscal;
 
-  const tauxEffectif = brutTotal > 0 ? (prelevementSource + cotisations) / brutTotal : 0;
+  const tauxEffectif = brutTotal > 0 ? (prelevementSource + cotisations.totalNetPay) / brutTotal : 0;
 
   return {
     success: true,
     salaireNetMensuel: salaireNetAvecAvantages,
     salaireNetAnnuel: salaireNetAvecAvantages * 12,
     impotPasTotal: prelevementSource * 12,
-    cotisationsSociales: cotisations * 12,
+    cotisationsSociales: cotisations.totalNetPay * 12,
     salaireGrossMensuel: brutTotal,
     tauxEffectif,
     explications: `Avec un salaire brut de ${brutTotal.toFixed(2)}€ et ${data.enfants} enfant(s), votre salaire net estimé est ${salaireNetAvecAvantages.toFixed(2)}€ par mois.`,
@@ -165,7 +187,7 @@ export function calculerSalaireNet(data: SalaireNetCalculData): SalaireNetResult
       primes: data.primes,
       heuresSup: data.heuresSup,
       brutTotal,
-      cotisationsEmploye: cotisations,
+      cotisationsEmploye: cotisations.totalNetPay,
       prelevementSource,
       ticketsResto: data.ticketsResto,
       mutuelle: data.mutuelle,

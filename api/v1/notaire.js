@@ -190,8 +190,8 @@ var CALCULATOR_META = {
   },
   "salaire-net": {
     version: "1.0.0",
-    rulesVersion: "2026 (cotisations moyennes approximatives)",
-    source: "Bar\xE8mes DGFIP 2026 \u2014 approximation, hors cas particuliers"
+    rulesVersion: "2026 (non-cadre, tranche 1, r\xE9gime g\xE9n\xE9ral)",
+    source: "https://www.legisocial.fr/reperes-sociaux/cotisations-agirc-arrco-2026.html"
   },
   salaire: {
     version: "1.0.0",
@@ -1132,19 +1132,19 @@ var baremes_default = {
     annee: 2026,
     tranches: [
       {
-        plafond: 11497,
+        plafond: 11600,
         taux: 0
       },
       {
-        plafond: 28797,
+        plafond: 29579,
         taux: 0.11
       },
       {
-        plafond: 82341,
+        plafond: 84577,
         taux: 0.3
       },
       {
-        plafond: 177106,
+        plafond: 181917,
         taux: 0.41
       },
       {
@@ -1152,14 +1152,15 @@ var baremes_default = {
         taux: 0.45
       }
     ],
-    source: "Article 197 CGI - Bar\xE8me officiel 2026",
-    checked_at: "2026-02-09T22:00:00.000Z"
+    source: "Article 197 CGI, loi n\xB02026-103 du 19/02/2026 - https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954",
+    checked_at: "2026-08-11T00:00:00.000Z"
   },
   smic: {
-    annee: 2025,
-    horaire_brut: 11.88,
-    mensuel_brut_35h: 1801.8,
-    note: "Montants 2025 en attendant publication officielle 2026"
+    annee: 2026,
+    horaire_brut: 12.31,
+    mensuel_brut_35h: 1867.02,
+    note: "Deuxi\xE8me revalorisation 2026 au 1er juin (+2,41%, apr\xE8s +1,18% au 1er janvier)",
+    checked_at: "2026-08-11T00:00:00.000Z"
   },
   apl: {
     version: "2026",

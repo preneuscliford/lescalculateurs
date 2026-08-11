@@ -52,7 +52,7 @@
           {
             "@type": "Thing",
             "name": "SMIC 2026",
-            "description": "12,02 €/heure - Revalorisation au 1er janvier 2026"
+            "description": "12,31 €/heure - 2e revalorisation de l'année au 1er juin 2026 (après 12,02 € au 1er janvier)"
           },
           {
             "@type": "Thing", 
@@ -223,6 +223,25 @@
  eux-mêmes étaient déjà corrects.
                 </div>
               </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 font-bold">→</span>
+                <div>
+                  <strong>SMIC mis à jour</strong> : le site affichait encore le montant du 1er
+ janvier 2026 (12,02 €/h) alors qu'une <strong>deuxième revalorisation a eu lieu le 1er juin
+ 2026</strong> (+2,41 %). Montant corrigé sur toutes les pages concernées :
+                  <strong>12,31 €/h</strong>, soit environ 1 867,02 € brut mensuel (35h).
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 font-bold">→</span>
+                <div>
+                  <strong>Copie inutilisée mais erronée nettoyée</strong> dans
+                  <code>src/data/baremes.json</code> (champs <code>impot</code> et
+                  <code>smic</code>) : ces valeurs ne sont lues par aucune page actuellement,
+                  mais elles étaient fausses et auraient pu être recopiées par erreur dans un futur
+ développement. Alignées sur les valeurs vérifiées ci-dessus.
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -230,6 +249,7 @@
             <h3 class="font-semibold text-blue-900 mb-2">📚 Sources officielles vérifiées :</h3>
             <ul class="space-y-1 text-sm text-blue-800">
               <li>•<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954" target="_blank" rel="noopener" class="underline hover:text-blue-900">Légifrance – Article 197 du CGI (barème IR)</a></li>
+              <li>•<a href="https://www.legisocial.fr/reperes-sociaux/montant-smic-2026-taux-horaire-net-brut.html" target="_blank" rel="noopener" class="underline hover:text-blue-900">Légisocial – Montant du SMIC 2026 (2 revalorisations)</a></li>
               <li>•<a href="https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/montant-allocation-france-travai.html" target="_blank" rel="noopener" class="underline hover:text-blue-900">France Travail – Montant de l'allocation chômage (plafond 75%)</a></li>
               <li>•<a href="https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026" target="_blank" rel="noopener" class="underline hover:text-blue-900">Ministère des Solidarités – Revalorisation au 1er avril 2026</a></li>
               <li>•<a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356" target="_blank" rel="noopener" class="underline hover:text-blue-900">Légifrance – Décret n°2026-229 (AAH)</a></li>

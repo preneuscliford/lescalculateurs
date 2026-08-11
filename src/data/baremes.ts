@@ -180,6 +180,20 @@ export const baremes = {
       corse: 0.28,
     },
   },
+  // SMIC : deux revalorisations en 2026 - 1,18% au 1er janvier, +2,41%
+  // supplementaire au 1er juin (revalorisation automatique liee a
+  // l'inflation). Verifie le 11/08/2026 (legisocial.fr, info.gouv.fr).
+  smic: {
+    annee: 2026,
+    horaire_brut: 12.31,
+    mensuel_brut_35h: 1867.02,
+    mensuel_net_35h_estimation: 1477.93,
+    dateEffet: "2026-06-01",
+    historique: [
+      { dateEffet: "2026-01-01", horaire_brut: 12.02, mensuel_brut_35h: 1823.03 },
+      { dateEffet: "2026-06-01", horaire_brut: 12.31, mensuel_brut_35h: 1867.02 },
+    ],
+  },
   duree_travail: {
     duree_legale_hebdomadaire: 35,
     duree_legale_annuelle: 1607,

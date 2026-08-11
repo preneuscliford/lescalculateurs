@@ -190,8 +190,8 @@ var CALCULATOR_META = {
   },
   "salaire-net": {
     version: "1.0.0",
-    rulesVersion: "2026 (cotisations moyennes approximatives)",
-    source: "Bar\xE8mes DGFIP 2026 \u2014 approximation, hors cas particuliers"
+    rulesVersion: "2026 (non-cadre, tranche 1, r\xE9gime g\xE9n\xE9ral)",
+    source: "https://www.legisocial.fr/reperes-sociaux/cotisations-agirc-arrco-2026.html"
   },
   salaire: {
     version: "1.0.0",

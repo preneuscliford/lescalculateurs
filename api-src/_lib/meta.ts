@@ -111,8 +111,8 @@ export const CALCULATOR_META: Record<string, CalculatorMeta> = {
   },
   "salaire-net": {
     version: "1.0.0",
-    rulesVersion: "2026 (cotisations moyennes approximatives)",
-    source: "Barèmes DGFIP 2026 — approximation, hors cas particuliers",
+    rulesVersion: "2026 (non-cadre, tranche 1, régime général)",
+    source: "https://www.legisocial.fr/reperes-sociaux/cotisations-agirc-arrco-2026.html",
   },
   salaire: {
     version: "1.0.0",

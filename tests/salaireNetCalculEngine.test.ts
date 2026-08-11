@@ -13,7 +13,7 @@ describe("salaireNetCalculEngine", () => {
       mariageOrPacs: false,
     });
     expect(r.success).toBe(true);
-    expect(r.salaireNetMensuel).toBeCloseTo(2156.6, 1);
+    expect(r.salaireNetMensuel).toBeCloseTo(2100.35, 1);
     expect(r.salaireGrossMensuel).toBe(2800);
   });
 
@@ -87,5 +87,24 @@ describe("salaireNetCalculEngine", () => {
       mariageOrPacs: true,
     });
     expect(famille.impotPasTotal).toBeLessThan(seul.impotPasTotal);
+  });
+
+  test("les cotisations sociales représentent ~20,84% du brut (pas d'ancien modèle pré-2018)", () => {
+    // Depuis 2018, le salarié ne paie plus de cotisation maladie ni chômage
+    // (transférées côté employeur, compensées par la CSG). Un ancien modèle
+    // de ce moteur comptait encore 8,2% de "maladie" et 4,05% de "chômage",
+    // ce qui gonflait artificiellement les cotisations affichées.
+    const r = calculerSalaireNet({
+      salaireBrut: 2000,
+      statut: "salarie",
+      primes: 0,
+      heuresSup: 0,
+      ticketsResto: 0,
+      mutuelle: 0,
+      enfants: 0,
+      mariageOrPacs: false,
+    });
+    const tauxCotisations = r.details.cotisationsEmploye / r.details.brutTotal;
+    expect(tauxCotisations).toBeCloseTo(0.2084, 3);
   });
 });

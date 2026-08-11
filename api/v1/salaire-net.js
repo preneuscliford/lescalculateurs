@@ -190,8 +190,8 @@ var CALCULATOR_META = {
   },
   "salaire-net": {
     version: "1.0.0",
-    rulesVersion: "2026 (cotisations moyennes approximatives)",
-    source: "Bar\xE8mes DGFIP 2026 \u2014 approximation, hors cas particuliers"
+    rulesVersion: "2026 (non-cadre, tranche 1, r\xE9gime g\xE9n\xE9ral)",
+    source: "https://www.legisocial.fr/reperes-sociaux/cotisations-agirc-arrco-2026.html"
   },
   salaire: {
     version: "1.0.0",
@@ -239,18 +239,29 @@ var BAREMES_2026 = {
   abattementBase: 0.1
 };
 var COTISATIONS_2026 = {
-  secu: 0.082,
-  // 8.2% maladie
-  retraite: 0.062,
-  // 6.2% retraite complémentaire
-  ch\u00F4mage: 0.0405,
-  // 4.05% chômage
-  versementTransport: 5e-3
-  // 0.5% (variable selon région)
+  retraiteBase: 0.073,
+  // Assurance vieillesse plafonnée (6,90%) + déplafonnée (0,40%)
+  retraiteComplementaire: 0.0401,
+  // Agirc-Arrco T1 (3,15%) + CEG T1 (0,86%)
+  // CSG/CRDS : assises sur 98,25% du brut (abattement forfaitaire de 1,75%
+  // pour frais professionnels, dans la limite de 4 PASS)
+  assietteCsgCrds: 0.9825,
+  csgDeductible: 0.068,
+  // déductible du revenu imposable
+  csgNonDeductible: 0.024,
+  // non déductible
+  crds: 5e-3
+  // non déductible
 };
 function calculateCotisations(brutSalaire) {
-  const totalCotisations = COTISATIONS_2026.secu + COTISATIONS_2026.retraite + COTISATIONS_2026.ch\u00F4mage + COTISATIONS_2026.versementTransport;
-  return brutSalaire * totalCotisations;
+  const assiette = brutSalaire * COTISATIONS_2026.assietteCsgCrds;
+  const retraite = brutSalaire * (COTISATIONS_2026.retraiteBase + COTISATIONS_2026.retraiteComplementaire);
+  const csgDeductible = assiette * COTISATIONS_2026.csgDeductible;
+  const csgNonDeductibleEtCrds = assiette * (COTISATIONS_2026.csgNonDeductible + COTISATIONS_2026.crds);
+  return {
+    totalNetPay: retraite + csgDeductible + csgNonDeductibleEtCrds,
+    deductibleImpot: retraite + csgDeductible
+  };
 }
 function calculateImportFoncier(revenusImposables, quotientFamilial) {
   if (revenusImposables <= 0) return 0;
@@ -284,7 +295,7 @@ function getQuotientFamilial(enfants, mariageOrPacs) {
 function calculerSalaireNet(data) {
   const brutTotal = data.salaireBrut + data.primes + data.heuresSup;
   const cotisations = calculateCotisations(brutTotal);
-  const revenusImposables = brutTotal - cotisations;
+  const revenusImposables = brutTotal - cotisations.deductibleImpot;
   const revenusImposablesAbattement = Math.max(
     0,
     revenusImposables * (1 - BAREMES_2026.abattementBase)
@@ -294,15 +305,15 @@ function calculerSalaireNet(data) {
   const impotMensuel = impotAnnuel / 12;
   const prelevementSource = Math.max(0, impotMensuel);
   const avantageNetFiscal = data.ticketsResto + data.mutuelle;
-  const salaireNetMensuel = brutTotal - cotisations - prelevementSource;
+  const salaireNetMensuel = brutTotal - cotisations.totalNetPay - prelevementSource;
   const salaireNetAvecAvantages = salaireNetMensuel + avantageNetFiscal;
-  const tauxEffectif = brutTotal > 0 ? (prelevementSource + cotisations) / brutTotal : 0;
+  const tauxEffectif = brutTotal > 0 ? (prelevementSource + cotisations.totalNetPay) / brutTotal : 0;
   return {
     success: true,
     salaireNetMensuel: salaireNetAvecAvantages,
     salaireNetAnnuel: salaireNetAvecAvantages * 12,
     impotPasTotal: prelevementSource * 12,
-    cotisationsSociales: cotisations * 12,
+    cotisationsSociales: cotisations.totalNetPay * 12,
     salaireGrossMensuel: brutTotal,
     tauxEffectif,
     explications: `Avec un salaire brut de ${brutTotal.toFixed(2)}\u20AC et ${data.enfants} enfant(s), votre salaire net estim\xE9 est ${salaireNetAvecAvantages.toFixed(2)}\u20AC par mois.`,
@@ -311,7 +322,7 @@ function calculerSalaireNet(data) {
       primes: data.primes,
       heuresSup: data.heuresSup,
       brutTotal,
-      cotisationsEmploye: cotisations,
+      cotisationsEmploye: cotisations.totalNetPay,
       prelevementSource,
       ticketsResto: data.ticketsResto,
       mutuelle: data.mutuelle,
