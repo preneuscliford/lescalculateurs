@@ -1,0 +1,66 @@
+name: Sync taux crédit immobilier (Banque de France)
+
+# Recupere le taux de credit immobilier officiel (API Webstat, Banque de
+# France) et le propage dans src/pages/pret.html. La Banque de France
+# publie ses statistiques mensuelles avec quelques jours de decalage
+# (donnees du mois M publiees debut M+1), donc ce job tourne le 10 de
+# chaque mois pour laisser le temps a la publication d'arriver, et peut
+# aussi etre declenche manuellement.
+#
+# Ne pousse jamais directement sur main : ouvre une Pull Request pour
+# revue humaine avant merge.
+
+on:
+  schedule:
+    - cron: "0 8 10 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Synchronise le taux depuis l'API Banque de France
+        env:
+          BANQUE_DE_FRANCE_API_KEY: ${{ secrets.BANQUE_DE_FRANCE_API_KEY }}
+        run: node scripts/sync-taux-credit-bdf.cjs
+
+      - name: Applique le taux dans pret.html
+        run: node scripts/apply-taux-credit-bdf.cjs
+
+      - name: Verification TypeScript
+        run: npx tsc --noEmit
+
+      - name: Ouvre une Pull Request si le taux a change
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "fix: actualise le taux credit immobilier (Banque de France)"
+          title: "Sync mensuelle : taux crédit immobilier (Banque de France)"
+          body: |
+            Mise à jour automatique générée par `.github/workflows/sync-taux-credit.yml`.
+
+            - Source : API Webstat, Banque de France (série `MIR.M.FR.B.A2C.P.R.A.2250.EUR.N`)
+            - Scripts : `scripts/sync-taux-credit-bdf.cjs` + `scripts/apply-taux-credit-bdf.cjs`
+
+            À vérifier avant merge : la valeur affichée dans `data/taux-credit-bdf.json` et le rendu de `src/pages/pret.html`.
+          branch: sync/taux-credit-bdf
+          delete-branch: true
+          labels: automated,data-sync
+          add-paths: |
+            data/taux-credit-bdf.json
+            src/pages/pret.html
