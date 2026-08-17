@@ -37,8 +37,14 @@ function roundTo(value, step) {
   return Math.round(value / step) * step;
 }
 
+/**
+ * Formate un nombre avec des milliers separes par une espace normale
+ * (U+0020), conforme au reste de pret.html. `toLocaleString("fr-FR")`
+ * insere une espace fine insecable (U+202F) qui casse le pattern
+ * `[\d ]+` des remplacements suivants et rend le script non idempotent.
+ */
 function fr(n) {
-  return n.toLocaleString("fr-FR");
+  return n.toLocaleString("fr-FR").replace(/[  ]/g, " ");
 }
 
 function computeScenario(capital, annees, tauxAnnuel, charges = 0) {
