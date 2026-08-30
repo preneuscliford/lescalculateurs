@@ -168,13 +168,67 @@
           </div>
         </div>
         <p class="text-gray-700 mb-4">
-          <strong>Audit de traçabilité des sources API et correction du barème IR</strong> :
- chaque source citée a été ouverte et confrontée aux montants codés dans les moteurs de calcul.</p>
-        <a href="#audit-2026-08-11" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Voir le détail de l'audit</a>
+          <strong>Taxe foncière communale (données officielles DGFiP) et audit complet des barèmes</strong> :
+ nouvelle recherche de commune avec taux réel par commune (34 874 communes), et vérification de
+ sept domaines (retraite, indemnité de licenciement, ARE, APL, PTZ, SMIC, RSA/AAH) — aucune
+ correction nécessaire, tous confirmés à jour.</p>
+        <a href="#audit-2026-08-30" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Voir le détail de l'audit</a>
       </section>
 
       <!-- Timeline des mises à jour -->
       <section class="space-y-8">
+        <!-- Entrée -1 : Audit et taxe fonciere DGFiP - 30 aout 2026 -->
+        <article id="audit-2026-08-30" class="bg-white rounded-lg shadow-sm border-l-4 border-blue-500 p-6">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="text-2xl">🗓️</span>
+            <h2 class="text-xl font-bold text-gray-900">30 août 2026 – Taxe foncière communale (DGFiP) et audit complet des barèmes</h2>
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Audit complet</span>
+          </div>
+
+          <p class="text-gray-700 mb-4">Deux volets : (1) une nouvelle source de données officielle
+ branchée sur le simulateur de taxe foncière, et (2) une revérification complète de sept domaines
+ de barèmes non couverts par l'audit du 11 août, chacun confronté à une source officielle primaire
+ avant conclusion.</p>
+
+          <div class="bg-gray-50 rounded-lg p-4 mb-4">
+            <h3 class="font-semibold text-gray-900 mb-3">✅ Nouveauté : taux de taxe foncière par commune</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 font-bold">→</span>
+                <div>
+                  Le simulateur de taxe foncière n'utilisait qu'une <strong>moyenne régionale
+ indicative</strong>. Il propose désormais une recherche de commune (API Géo officielle de l'État)
+ qui va chercher le <strong>taux réel voté par la commune</strong> dans le dataset officiel
+                  <strong>DGFiP "Fiscalité locale des particuliers"</strong> (data.gouv.fr,
+ 34 874 communes, exercice 2025), synchronisé mensuellement. La moyenne régionale reste utilisée en
+ repli si la commune n'est pas reconnue.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-4 mb-4">
+            <h3 class="font-semibold text-gray-900 mb-3">🔍 Audit — domaines vérifiés, aucune correction requise :</h3>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• <strong>Retraite</strong> : le gel de l'âge légal par la LFSS 2026 (générations 1964 et T1 1965 maintenues à 62 ans 9 mois jusqu'en janvier 2028) était déjà correctement implémenté.</li>
+              <li>• <strong>Indemnité de licenciement</strong> : formule légale (1/4 de mois/an jusqu'à 10 ans, 1/3 au-delà) toujours inchangée.</li>
+              <li>• <strong>ARE</strong> : aucune revalorisation au 1er juillet 2026 (une première depuis 2016) — les montants gelés (32,13 €/j minimum, 13,18 €/j part fixe) correspondent déjà à nos données.</li>
+              <li>• <strong>APL</strong> : barème du 1er octobre 2025 toujours en vigueur ; prochaine revalorisation (+1,15 %) au 1er octobre 2026, pas encore due.</li>
+              <li>• <strong>PTZ</strong> : plafonds de ressources confirmés inchangés pour 2026.</li>
+              <li>• <strong>SMIC</strong> : toujours 12,31 €/h, aucune 3ᵉ revalorisation depuis le 1er juin 2026.</li>
+              <li>• <strong>RSA / AAH</strong> : une source secondaire indiquait des montants différents (652,34 € / 1 042,62 €, +0,9 %) ; vérification directe sur solidarites.gouv.fr confirme nos montants (651,69 € / 1 041,59 €, +0,8 %) — la source secondaire était erronée.</li>
+            </ul>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <h3 class="font-semibold text-amber-900 mb-2">⏳ Corrections à venir (à surveiller) :</h3>
+            <ul class="space-y-1 text-amber-900 text-sm">
+              <li>• <strong>APL</strong> : revalorisation de +1,15 % au 1er octobre 2026 (déjà connue, pas encore appliquée).</li>
+              <li>• <strong>Barème IR 2027</strong> : non encore légiféré. Une revalorisation d'environ +2 % est pressentie (indexation sur l'inflation), mais seulement officialisée dans le projet de loi de finances fin septembre 2026 et votée en fin d'année.</li>
+            </ul>
+          </div>
+        </article>
+
         <!-- Entrée 0 : Audit aout 2026 -->
         <article id="audit-2026-08-11" class="bg-white rounded-lg shadow-sm border-l-4 border-blue-500 p-6">
           <div class="flex flex-wrap items-center gap-3 mb-4">
