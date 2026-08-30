@@ -92,6 +92,11 @@
       "permanent": true
     },
     {
+      "source": "/pages/prime-activite/(montant-prime-activite-2026|plafond-prime-activite-2026)",
+      "destination": "/pages/prime-activite",
+      "permanent": true
+    },
+    {
       "source": "/blog/departements/(.*)",
       "destination": "/pages/blog/departements/$1",
       "permanent": true

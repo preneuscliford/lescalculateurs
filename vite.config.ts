@@ -264,10 +264,6 @@ function collectStaticPageInputs() {
 function collectLegacySeoAliasInputs() {
   const aliasEntries: Array<[string, string]> = [
     [
-      "pages/prime-activite/montant-prime-activite-2026",
-      "src/pages/prime-activite/montant-prime-activite-2026.html",
-    ],
-    [
       "pages/blog/departements/frais-notaire-11",
       "src/pages/blog/departements/frais-notaire-11.html",
     ],
