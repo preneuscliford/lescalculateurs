@@ -82,6 +82,16 @@
       "permanent": true
     },
     {
+      "source": "/pages/asf/asf-parent-isole-sans-revenu",
+      "destination": "/pages/asf",
+      "permanent": true
+    },
+    {
+      "source": "/pages/salaire/calcul-salaire-brut-net",
+      "destination": "/pages/salaire-brut-net-calcul-2026",
+      "permanent": true
+    },
+    {
       "source": "/blog/departements/(.*)",
       "destination": "/pages/blog/departements/$1",
       "permanent": true

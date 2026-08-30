@@ -918,12 +918,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-sans-revenu/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/asf/asf-sans-pension-et-apl/</loc>
     <lastmod>2026-06-03</lastmod>
