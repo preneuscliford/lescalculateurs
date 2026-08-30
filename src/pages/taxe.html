@@ -1037,6 +1037,150 @@
         import { formatCurrency } from "../main.ts";
         import { baremes } from "../data/baremes.ts";
 
+        // --- Recherche commune (API Géo officielle) + taux DGFiP ---
+        // Résout un nom de commune saisi en code INSEE via l'API Géo
+        // (geo.api.gouv.fr, gratuite, sans clé, gérée par l'État), puis
+        // cherche le taux officiel de taxe foncière dans
+        // public/data/taxe-fonciere-communes.json (synchronisé depuis le
+        // dataset DGFiP par scripts/sync-taxe-fonciere-dgfip.cjs — voir
+        // .github/workflows/sync-taxe-fonciere.yml). Si l'API Géo est
+        // injoignable, ou si la commune n'a pas de taux dans le dataset,
+        // le calcul retombe silencieusement sur le taux moyen régional
+        // existant (aucune régression du comportement actuel).
+        let tauxFoncierData = null;
+        let tauxFoncierDataPromise = null;
+        function chargerTauxFoncierData() {
+          if (!tauxFoncierDataPromise) {
+            tauxFoncierDataPromise = fetch("/data/taxe-fonciere-communes.json")
+              .then((r) => (r.ok ? r.json() : null))
+              .then((json) => {
+                tauxFoncierData = json;
+                return json;
+              })
+              .catch(() => null);
+          }
+          return tauxFoncierDataPromise;
+        }
+
+        let communeResolue = null; // { code, nom, dep, taux?, exercice?, source? } | null
+
+        function debounce(fn, delay) {
+          let t;
+          return (...args) => {
+            clearTimeout(t);
+            t = setTimeout(() => fn(...args), delay);
+          };
+        }
+
+        async function rechercherCommunes(query) {
+          if (!query || query.trim().length < 2) return [];
+          try {
+            const res = await fetch(
+              `https://geo.api.gouv.fr/communes?nom=${encodeURIComponent(query.trim())}&fields=nom,code,codeDepartement&boost=population&limit=8`,
+            );
+            if (!res.ok) return [];
+            return await res.json();
+          } catch (_) {
+            return [];
+          }
+        }
+
+        function initCommuneSearch() {
+          const input = document.getElementById("commune");
+          if (!input) return;
+
+          const wrapper = input.parentElement;
+          wrapper.style.position = "relative";
+
+          const dropdown = document.createElement("div");
+          dropdown.id = "commune-suggestions";
+          dropdown.className =
+            "absolute z-20 left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-64 overflow-y-auto hidden";
+          wrapper.appendChild(dropdown);
+
+          const statusEl = document.createElement("p");
+          statusEl.id = "commune-status";
+          statusEl.className = "mt-2 text-xs text-gray-500";
+          wrapper.appendChild(statusEl);
+
+          function setStatus(text, ok) {
+            statusEl.textContent = text;
+            statusEl.className = `mt-2 text-xs ${ok ? "text-green-700 font-medium" : "text-gray-500"}`;
+          }
+
+          function hideDropdown() {
+            dropdown.classList.add("hidden");
+            dropdown.innerHTML = "";
+          }
+
+          async function selectCommune(c) {
+            communeResolue = { code: c.code, nom: c.nom, dep: c.codeDepartement };
+            input.value = `${c.nom} (${c.codeDepartement})`;
+            hideDropdown();
+            setStatus("Recherche du taux officiel DGFiP...", false);
+
+            const data = tauxFoncierData || (await chargerTauxFoncierData());
+            const entry = data?.communes?.[c.code];
+            if (entry && typeof entry.taux === "number") {
+              communeResolue.taux = entry.taux;
+              communeResolue.exercice = data.meta.exercice;
+              communeResolue.source = data.meta.source;
+              setStatus(
+                `✓ Taux officiel DGFiP ${data.meta.exercice} trouvé pour ${c.nom} : ${entry.taux.toFixed(2)}%`,
+                true,
+              );
+            } else {
+              communeResolue.taux = null;
+              setStatus(
+                `Taux non disponible pour ${c.nom} dans les données DGFiP — le taux moyen régional sera utilisé à la place.`,
+                false,
+              );
+            }
+          }
+
+          const onInput = debounce(async () => {
+            communeResolue = null;
+            const query = input.value;
+            if (query.trim().length < 2) {
+              hideDropdown();
+              setStatus("", false);
+              return;
+            }
+            const results = await rechercherCommunes(query);
+            if (results.length === 0) {
+              dropdown.innerHTML =
+                '<div class="px-3 py-2 text-sm text-gray-500">Aucune commune trouvée</div>';
+              dropdown.classList.remove("hidden");
+              return;
+            }
+            dropdown.innerHTML = results
+              .map(
+                (c) => `
+              <button type="button" class="commune-suggestion w-full text-left px-3 py-2 text-sm hover:bg-blue-50 border-b border-gray-100 last:border-0"
+                data-code="${c.code}" data-nom="${String(c.nom).replace(/"/g, "&quot;")}" data-dep="${c.codeDepartement}">
+                ${c.nom} <span class="text-gray-400">(${c.codeDepartement})</span>
+              </button>`,
+              )
+              .join("");
+            dropdown.classList.remove("hidden");
+            dropdown.querySelectorAll(".commune-suggestion").forEach((btn) => {
+              btn.addEventListener("click", () => {
+                selectCommune({
+                  code: btn.getAttribute("data-code"),
+                  nom: btn.getAttribute("data-nom"),
+                  codeDepartement: btn.getAttribute("data-dep"),
+                });
+              });
+            });
+          }, 300);
+
+          input.addEventListener("focus", () => chargerTauxFoncierData());
+          input.addEventListener("input", onInput);
+          document.addEventListener("click", (e) => {
+            if (!wrapper.contains(e.target)) hideDropdown();
+          });
+        }
+
         const taxeConfig = {
           title: "Simulateur de taxe foncière 2026",
           description: "Estimez votre taxe foncière selon la valeur locative et les taux locaux.",
@@ -1052,8 +1196,15 @@
               quickValues: [3000, 5000, 8000, 10000, 15000, 20000],
             },
             {
+              id: "commune",
+              label: "Commune (recherche officielle DGFiP)",
+              type: "text",
+              placeholder: "Tapez le nom de votre commune...",
+              help: "Si votre commune est reconnue, son taux officiel DGFiP remplace le taux moyen régional ci-dessous.",
+            },
+            {
               id: "region",
-              label: "Région",
+              label: "Région (utilisée si la commune n'est pas reconnue)",
               type: "select",
               required: true,
               defaultValue: "ile_de_france",
@@ -1117,8 +1268,22 @@
               const handicape = !!values.handicape;
 
               const tauxRegion = baremes.taxe_fonciere.taux_moyens_par_region[region] || 0;
-              const tauxUtilise = tauxGlobalPct > 0 ? tauxGlobalPct / 100 : tauxRegion;
-              const tauxSource = tauxGlobalPct > 0 ? "personnalisé" : "moyen";
+
+              let tauxUtilise;
+              let tauxSource; // "personnalisé" | "commune" | "moyen"
+              let tauxCommuneInfo = null;
+
+              if (tauxGlobalPct > 0) {
+                tauxUtilise = tauxGlobalPct / 100;
+                tauxSource = "personnalisé";
+              } else if (communeResolue && typeof communeResolue.taux === "number") {
+                tauxUtilise = communeResolue.taux / 100;
+                tauxSource = "commune";
+                tauxCommuneInfo = { ...communeResolue };
+              } else {
+                tauxUtilise = tauxRegion;
+                tauxSource = "moyen";
+              }
 
               const taxeBrute = valeurLocative * tauxUtilise;
 
@@ -1157,6 +1322,7 @@
                   tauxRegion,
                   tauxUtilise,
                   tauxSource,
+                  tauxCommuneInfo,
                   taxeFonciere,
                   region,
                 },
@@ -1187,8 +1353,39 @@
             }[data.region];
             const isZero = !data.taxeFonciere || data.taxeFonciere <= 0;
             const tauxLabel =
-              data.tauxSource === "personnalisé" ? "Taux global (saisi)" : "Taux global indicatif";
+              data.tauxSource === "personnalisé"
+                ? "Taux global (saisi)"
+                : data.tauxSource === "commune"
+                  ? `Taux officiel — ${data.tauxCommuneInfo?.nom || "commune"}`
+                  : "Taux global indicatif (moyenne régionale)";
             const isVeryLow = data.taxeFonciere > 0 && data.taxeFonciere < 50;
+
+            const tracabiliteHTML =
+              data.tauxSource === "commune" && data.tauxCommuneInfo
+                ? `
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+              <p class="text-sm text-green-900 m-0">
+                <strong>✓ Taux officiel DGFiP</strong> pour <strong>${
+                  data.tauxCommuneInfo.nom
+                }</strong> (${data.tauxCommuneInfo.dep}), exercice <strong>${
+                  data.tauxCommuneInfo.exercice
+                }</strong> — dataset
+                <a href="${
+                  data.tauxCommuneInfo.source
+                }" target="_blank" rel="noopener" class="underline">data.gouv.fr / DGFiP</a>.
+              </p>
+            </div>
+            `
+                : data.tauxSource === "moyen"
+                  ? `
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+              <p class="text-sm text-amber-900 m-0">
+                <strong>ℹ️ Taux moyen régional</strong> utilisé (aucune commune officielle reconnue pour ce calcul).
+                Recherchez votre commune ci-dessus pour un taux officiel DGFiP si disponible.
+              </p>
+            </div>
+            `
+                  : "";
 
             return `
           <div class="space-y-6">
@@ -1218,6 +1415,8 @@
                 )}</strong>
               </p>
             </div>
+
+            ${tracabiliteHTML}
 
             ${
               isZero
@@ -1327,6 +1526,7 @@
         };
 
         new CalculatorFrame("taxe-calculator", taxeConfig);
+        initCommuneSearch();
 
         import("../components/ComparisonModal.ts").then(({ ComparisonModal }) => {
           const addBtn = document.getElementById("taxe-add-to-compare");

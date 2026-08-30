@@ -1,0 +1,54 @@
+name: Sync taxe foncière communale (DGFiP)
+
+# Recupere les taux de taxe fonciere par commune (dataset officiel DGFiP,
+# data.gouv.fr) et regenere public/data/taxe-fonciere-communes.json. Le
+# dataset source n'est mis a jour qu'une fois par an, donc une verification
+# mensuelle suffit a detecter la publication du nouvel exercice des que
+# possible. Ouvre une Pull Request pour revue humaine, ne pousse jamais
+# directement sur main.
+
+on:
+  schedule:
+    - cron: "0 8 15 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Synchronise les taux depuis le dataset DGFiP
+        run: node scripts/sync-taxe-fonciere-dgfip.cjs
+
+      - name: Ouvre une Pull Request si les taux ont change
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "fix: actualise les taux de taxe foncière communale (DGFiP)"
+          title: "Sync mensuelle : taux de taxe foncière communale (DGFiP)"
+          body: |
+            Mise à jour automatique générée par `.github/workflows/sync-taxe-fonciere.yml`.
+
+            - Source : dataset DGFiP "Fiscalité locale des particuliers" (data.gouv.fr)
+            - Script : `scripts/sync-taxe-fonciere-dgfip.cjs`
+
+            À vérifier avant merge : `public/data/taxe-fonciere-communes.json` (champ `meta.exercice` et `meta.totalCommunes`).
+          branch: sync/taxe-fonciere-dgfip
+          delete-branch: true
+          labels: automated,data-sync
+          add-paths: |
+            public/data/taxe-fonciere-communes.json
