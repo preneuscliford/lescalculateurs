@@ -196,10 +196,6 @@ function collectStaticPageInputs() {
     "perte-emploi-are-rsa": resolve(__dirname, "src/pages/perte-emploi-are-rsa.html"),
     "rsa-apl-combines": resolve(__dirname, "src/pages/rsa-apl-combines.html"),
     api: resolve(__dirname, "src/pages/api.html"),
-    "pages/notaire/frais-notaire-ancien-2026/index": resolve(
-      __dirname,
-      "src/pages/notaire/frais-notaire-ancien-2026.html",
-    ),
     "pages/notaire/frais-notaire-neuf-2026/index": resolve(
       __dirname,
       "src/pages/notaire/frais-notaire-neuf-2026.html",

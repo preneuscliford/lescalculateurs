@@ -1203,30 +1203,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/calcul-impot-sur-le-revenu/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/impot/charges-deductibles-des-impots/</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/heures-supplementaires-comment-les-calculer/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/impot/impot-auto-entrepreneur/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/impot/impot-couple-deux-enfants-2026/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -1299,12 +1283,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-ancien-2026</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-neuf-2026</loc>
     <lastmod>2026-06-03</lastmod>
@@ -1335,24 +1314,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-neuf-reduction/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-residence-secondaire/</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/notaire/frais-notaire-terrain/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/plusvalue/abattement-pour-duree-de-detention/</loc>
     <lastmod>2026-06-03</lastmod>

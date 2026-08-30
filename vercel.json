@@ -67,6 +67,16 @@
       "permanent": true
     },
     {
+      "source": "/pages/impot/(calcul-impot-sur-le-revenu|heures-supplementaires-comment-les-calculer|impot-auto-entrepreneur)",
+      "destination": "/pages/impot",
+      "permanent": true
+    },
+    {
+      "source": "/pages/notaire/(frais-notaire-ancien-2026|frais-notaire-neuf-reduction|frais-notaire-terrain)",
+      "destination": "/pages/notaire",
+      "permanent": true
+    },
+    {
       "source": "/blog/departements/(.*)",
       "destination": "/pages/blog/departements/$1",
       "permanent": true
