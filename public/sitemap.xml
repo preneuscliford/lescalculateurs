@@ -408,12 +408,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-marseille/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-paris-petit-revenu/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -600,12 +595,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-idf/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -630,12 +620,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-personne-seule/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-hlm-petit-revenu/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -744,12 +729,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-proprietaire-ai-je-droit/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-refusee-que-faire/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -810,12 +790,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-couple-sans-enfant/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-parent-isole/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -1949,16 +1924,15 @@
   </url>
   <!-- Nouvelles pages pSEO generees le 2026-06-22 -->
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-350-personne-seule</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-350-couple-sans-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-350-parent-isole-un-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-550-personne-seule</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-550-couple-sans-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-550-parent-isole-un-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-850-personne-seule</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-850-couple-sans-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-850-parent-isole-un-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-personne-seule</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-couple-sans-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-parent-isole-un-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-1500</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-1800</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>

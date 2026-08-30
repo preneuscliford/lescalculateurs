@@ -32,6 +32,26 @@
       "permanent": true
     },
     {
+      "source": "/pages/simulateurs/(aide-financiere-famille|aide-sociale-simulation-globale|aides-jeunes-actifs|aides-retraites|cumul-aides-sociales|quelles-aides-ai-je-droit)",
+      "destination": "/pages/aide/$1",
+      "permanent": true
+    },
+    {
+      "source": "/pages/pret/(assurance-emprunteur-comment-estimer-son-cout|calcul-du-taux-d-endettement|capacite-d-emprunt-comment-la-calculer|cout-total-d-un-pret-immobilier|credit-immobilier-refuse-que-faire|duree-ideale-d-un-pret-immobilier|mensualite-de-pret-immobilier-comment-l-estimer|pret-immobilier-sans-apport-est-ce-possible|pret-immobilier-seul-ou-a-deux-quelle-difference|pret-primo-accedant-specificites|ptz-conditions-principales|quel-salaire-pour-emprunter-200-000|quel-salaire-pour-emprunter-300-000|simulateur-de-pret-immobilier-gratuit-pourquoi-l-utiliser|taux-immobilier-2026-a-quoi-s-attendre)",
+      "destination": "/pages/pret",
+      "permanent": true
+    },
+    {
+      "source": "/pages/taxe-fonciere/(comment-connaitre-la-valeur-locative-cadastrale|comment-contester-sa-taxe-fonciere|comment-est-calculee-la-taxe-fonciere|estimation-taxe-fonciere-comment-faire|exoneration-taxe-fonciere-pour-retraite|pourquoi-la-taxe-fonciere-augmente|quelle-surface-est-prise-en-compte-pour-la-taxe-fonciere|qui-paie-la-taxe-fonciere|taxe-fonciere-et-achat-en-cours-d-annee|taxe-fonciere-par-ville-est-ce-fiable|taxe-fonciere-residence-secondaire|valeur-locative-cadastrale-definition-simple)",
+      "destination": "/pages/taxe-fonciere",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/(apl-celibataire-marseille|apl-famille-idf|apl-fin-de-droits-personne-seule|apl-loyer-350-couple-sans-enfant|apl-loyer-350-parent-isole-un-enfant|apl-loyer-850-personne-seule|apl-loyer-900-couple-sans-enfant|apl-proprietaire-ai-je-droit|apl-sans-revenu-couple-sans-enfant)",
+      "destination": "/pages/apl",
+      "permanent": true
+    },
+    {
       "source": "/blog/departements/(.*)",
       "destination": "/pages/blog/departements/$1",
       "permanent": true
