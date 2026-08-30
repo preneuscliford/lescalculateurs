@@ -77,6 +77,11 @@
       "permanent": true
     },
     {
+      "source": "/scenarios/prime-activite/(avec-un-enfant-1500-euros|avec-un-enfant-2100-euros|heberge-gratuitement-1200-euros|heberge-gratuitement-1500-euros|heberge-gratuitement-2100-euros|passage-temps-partiel-1500-euros|passage-temps-partiel-2100-euros|reforme-bareme-caf-5-1500-euros|reforme-bareme-caf-5-1800-euros|reforme-bareme-caf-5-2100-euros|reforme-bareme-caf-5-800-euros|reforme-bonification-renforcee-1000-euros|reforme-bonification-renforcee-1500-euros|reforme-bonification-renforcee-2100-euros|reforme-bonification-renforcee-2200-euros|reforme-smic-plus-2-1200-euros|reforme-smic-plus-2-1400-euros|reforme-smic-plus-2-1500-euros|reforme-smic-plus-2-1800-euros|reforme-smic-plus-2-2100-euros|reforme-smic-plus-2-2200-euros|salaire-augmente-100-euros-1500-euros|salaire-augmente-100-euros-2100-euros|salaire-augmente-200-euros-800-euros|salaire-augmente-300-euros-1500-euros|salaire-augmente-300-euros-2000-euros|salaire-augmente-300-euros-2100-euros|salaire-augmente-400-euros-1600-euros|salaire-augmente-400-euros-800-euros|salaire-augmente-500-euros-2000-euros|vie-en-couple-1500-euros|vie-en-couple-2100-euros)",
+      "destination": "/scenarios/prime-activite",
+      "permanent": true
+    },
+    {
       "source": "/blog/departements/(.*)",
       "destination": "/pages/blog/departements/$1",
       "permanent": true

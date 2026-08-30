@@ -1932,12 +1932,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-200-euros-800-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-200-euros-1000-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2016,24 +2011,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-300-euros-2000-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-300-euros-2200-euros</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-400-euros-800-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-400-euros-1000-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2052,12 +2037,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-400-euros-1600-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-400-euros-1800-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2112,12 +2092,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-500-euros-2000-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/salaire-augmente-500-euros-2200-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2280,12 +2255,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/heberge-gratuitement-1200-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/heberge-gratuitement-1400-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2328,48 +2298,21 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-smic-plus-2-1200-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-smic-plus-2-1400-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-smic-plus-2-1600-euros</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-smic-plus-2-1800-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-smic-plus-2-2000-euros</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-smic-plus-2-2200-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-bareme-caf-5-800-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-bareme-caf-5-1000-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2394,12 +2337,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-bareme-caf-5-1800-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-bareme-caf-5-2000-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2418,12 +2356,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-bonification-renforcee-1000-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-bonification-renforcee-1200-euros</loc>
     <lastmod>2026-07-07</lastmod>
@@ -2454,10 +2387,5 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/scenarios/prime-activite/reforme-bonification-renforcee-2200-euros</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
 </urlset>
