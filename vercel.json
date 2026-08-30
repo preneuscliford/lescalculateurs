@@ -52,6 +52,21 @@
       "permanent": true
     },
     {
+      "source": "/pages/are/(are-chomage-2026|are-fin-de-droits-rsa-ou-apl|are-reprise-emploi-temps-partiel|are-salaire-1800|are-salaire-reference-calcul-2026|montant-are-2026)",
+      "destination": "/pages/are",
+      "permanent": true
+    },
+    {
+      "source": "/pages/plusvalue/(comment-reduire-la-plus-value-immobiliere|exoneration-plus-value-residence-principale|notaire-et-plus-value-immobiliere|plus-value-et-succession)",
+      "destination": "/pages/plusvalue",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/(combien-touche-t-on-au-rsa|rsa-personne-seule-montant|rsa-salaire-1200|rsa-sans-logement)",
+      "destination": "/pages/rsa",
+      "permanent": true
+    },
+    {
       "source": "/blog/departements/(.*)",
       "destination": "/pages/blog/departements/$1",
       "permanent": true

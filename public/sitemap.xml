@@ -905,30 +905,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-fin-de-droits-rsa-ou-apl/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-reprise-emploi-temps-partiel/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/are-salaire-reference-calcul-2026/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/are/montant-are-2026/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/asf/asf-parent-isole-deux-enfants/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -1388,36 +1365,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/comment-reduire-la-plus-value-immobiliere/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/exoneration-plus-value-residence-principale/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/notaire-et-plus-value-immobiliere/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-et-donation/</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-et-succession/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/plusvalue/plus-value-residence-secondaire/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -1616,12 +1571,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/combien-touche-t-on-au-rsa/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-2-enfants/</loc>
     <lastmod>2026-06-21</lastmod>
@@ -1634,12 +1584,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-salaire-1200/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-salaire-1500/</loc>
     <lastmod>2026-06-21</lastmod>
@@ -1742,18 +1687,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-personne-seule-montant/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-sans-logement/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-sans-revenu-avec-enfant/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -1935,7 +1869,7 @@
 
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-parent-isole-un-enfant</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-1500</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-1800</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-2000</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-2500</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-couple</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1976,7 +1910,7 @@
   <url><loc>https://www.lescalculateurs.fr/pages/inegalites-revenu-ville-france-2026</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/top-40-villes-revenu-complet-2026</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <!-- Nouvelles pages satellites ARE (juillet 2026) -->
-  <url><loc>https://www.lescalculateurs.fr/pages/are/are-chomage-2026</loc><lastmod>2026-07-05</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-apres-demission</loc><lastmod>2026-07-05</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-calcul-montant-net-2026</loc><lastmod>2026-07-05</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 
