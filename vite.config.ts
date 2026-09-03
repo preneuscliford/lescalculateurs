@@ -141,6 +141,10 @@ function collectStaticPageInputs() {
     travail: resolve(__dirname, "src/pages/travail.html"),
     financement: resolve(__dirname, "src/pages/financement.html"),
     "crypto-bourse": resolve(__dirname, "src/pages/crypto-bourse.html"),
+    "consommation-electrique-temps-reel": resolve(
+      __dirname,
+      "src/pages/consommation-electrique-temps-reel.html",
+    ),
     simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
     "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
       __dirname,

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>⚡ Consommation électrique France en temps réel - RTE éCO2mix</title>
+    <meta
+      name="description"
+      content="Consommation électrique de la France en direct : puissance appelée, mix de production (nucléaire, éolien, solaire, gaz...) et taux de CO2, actualisés toutes les 15 minutes depuis les données officielles RTE éCO2mix."
+    />
+    <meta
+      name="keywords"
+      content="consommation électrique France temps réel, consommation électricité en direct, mix énergétique France maintenant, éCO2mix RTE, production électricité France live, taux CO2 électricité France, part nucléaire électricité France, part renouvelable électricité France"
+    />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/consommation-electrique-temps-reel" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Consommation électrique de la France en temps réel",
+        "description": "Suivi en direct de la consommation électrique française, du mix de production et du taux de CO2, à partir des données RTE éCO2mix.",
+        "url": "https://www.lescalculateurs.fr/pages/consommation-electrique-temps-reel",
+        "isBasedOn": [
+          "https://www.lescalculateurs.fr/pages/methodologie",
+          "https://www.lescalculateurs.fr/pages/sources"
+        ],
+        "citation": [
+          {
+            "@type": "Dataset",
+            "name": "Données éCO2mix nationales temps réel",
+            "url": "https://www.data.gouv.fr/datasets/donnees-eco2mix-nationales-temps-reel-1/",
+            "creator": { "@type": "Organization", "name": "RTE - Réseau de Transport d'Électricité" }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Sources Meta Tag for AI -->
+    <meta name="source" content="rte-france.com, odre.opendatasoft.com, data.gouv.fr" />
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <a href="../index.html" class="text-primary-600 hover:text-primary-700 font-medium">← Retour</a>
+          <div class="text-center px-4">
+            <h1 class="text-2xl font-bold text-gray-900">
+              ⚡ Consommation électrique de la France en temps réel
+            </h1>
+            <p class="text-sm text-gray-600 mt-1">
+              Puissance appelée, mix de production et taux de CO2, actualisés toutes les 15 minutes
+              (données officielles RTE éCO2mix).
+            </p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <section class="mb-6 bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h3>
+            <div class="space-y-2 text-gray-700 text-sm">
+              <p>🏛️<strong>Source</strong>: <a href="https://www.rte-france.com" target="_blank" rel="noopener" class="text-blue-600 hover:underline">RTE</a> via <a href="https://odre.opendatasoft.com" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Open Data Réseaux Énergies (éCO2mix)</a></p>
+              <p>📐<strong>Fréquence</strong>: donnée publiée au pas de 15 minutes</p>
+              <p>⏱️<strong>Décalage</strong>: environ 1 à 2 heures entre la mesure réelle et sa publication</p>
+              <p>⚠️<strong>Important</strong>: données à titre informatif, non contractuelles</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Widget temps réel -->
+      <section class="max-w-5xl mx-auto mb-10" id="live-widget">
+        <div id="live-status" class="text-center text-sm text-gray-500 mb-4">Chargement des données en direct…</div>
+
+        <div id="live-error" class="hidden max-w-2xl mx-auto mb-6 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4 text-center">
+          Impossible de récupérer les données en direct pour le moment. Réessayez dans quelques instants.
+        </div>
+
+        <div id="live-content" class="hidden">
+          <!-- Stat cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white rounded-xl border border-gray-200 p-5 text-center">
+              <div class="text-xs uppercase tracking-wide text-gray-500 mb-1">Consommation actuelle</div>
+              <div id="stat-consommation" class="text-3xl font-bold text-gray-900">—</div>
+              <div class="text-xs text-gray-400 mt-1">mégawatts (MW)</div>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-5 text-center">
+              <div class="text-xs uppercase tracking-wide text-gray-500 mb-1">Vs prévision veille (J-1)</div>
+              <div id="stat-ecart" class="text-3xl font-bold text-gray-900">—</div>
+              <div class="text-xs text-gray-400 mt-1">écart en %</div>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-5 text-center">
+              <div class="text-xs uppercase tracking-wide text-gray-500 mb-1">Part renouvelable</div>
+              <div id="stat-renouvelable" class="text-3xl font-bold text-green-600">—</div>
+              <div class="text-xs text-gray-400 mt-1">éolien + solaire + hydraulique + bioénergies</div>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-5 text-center">
+              <div class="text-xs uppercase tracking-wide text-gray-500 mb-1">Intensité carbone</div>
+              <div id="stat-co2" class="text-3xl font-bold text-gray-900">—</div>
+              <div class="text-xs text-gray-400 mt-1">g de CO2 / kWh</div>
+            </div>
+          </div>
+
+          <!-- Mix de production -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">🔌 Mix de production électrique</h3>
+            <div id="mix-bars" class="space-y-3"></div>
+          </div>
+
+          <div class="text-center text-xs text-gray-400" id="live-timestamp"></div>
+          <div class="text-center text-xs text-gray-400 mt-1">
+            Prochaine actualisation dans <span id="refresh-countdown" class="font-medium text-gray-500">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-4xl mx-auto">
+        <section class="mb-6 bg-indigo-50 border border-indigo-100 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">🧾 À quoi sert cette page</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Suivre en direct la puissance électrique appelée en France</li>
+            <li>Comprendre la composition du mix électrique à l'instant présent</li>
+            <li>Visualiser l'intensité carbone de l'électricité consommée</li>
+            <li>Comparer la consommation réelle à la prévision établie la veille</li>
+          </ul>
+        </section>
+
+        <div class="prose prose-lg text-gray-600 mb-8">
+          <p>
+            Cette page affiche les données de consommation et de production électrique publiées par
+            RTE (Réseau de Transport d'Électricité) via son application éCO2mix, réactualisées au pas
+            de 15 minutes. La consommation « réalisée » correspond à la puissance électrique
+            effectivement appelée sur le réseau français à un instant donné, tous usages confondus
+            (résidentiel, tertiaire, industrie). Le mix de production détaille la part de chaque filière
+            (nucléaire, éolien, solaire, hydraulique, gaz, charbon, fioul, bioénergies) dans
+            l'électricité produite au même instant, et le taux de CO2 estime l'intensité carbone
+            moyenne du kWh consommé en France à ce moment précis.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sources vérifiables -->
+      <section class="max-w-4xl mx-auto mb-8 mt-12">
+        <div class="ai-sources">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">📚 Sources vérifiables</h3>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li>
+              <a
+                href="https://www.data.gouv.fr/datasets/donnees-eco2mix-nationales-temps-reel-1/"
+                target="_blank"
+                rel="nofollow noopener"
+                class="text-blue-700 underline"
+                >data.gouv.fr</a
+              >
+              — Données éCO2mix nationales temps réel
+            </li>
+            <li>
+              <a
+                href="https://www.rte-france.com/eco2mix"
+                target="_blank"
+                rel="nofollow noopener"
+                class="text-blue-700 underline"
+                >RTE éCO2mix</a
+              >
+              — Application officielle de suivi de la consommation et production électrique
+            </li>
+          </ul>
+          <p class="text-sm text-gray-600">Actualisation automatique : toutes les 15 minutes côté RTE, données rechargées toutes les 5 minutes sur cette page.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/content.ts"></script>
+    <script type="module">
+      const API_URL =
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-tr/records" +
+        "?where=" +
+        encodeURIComponent("consommation is not null") +
+        "&order_by=" +
+        encodeURIComponent("date_heure desc") +
+        "&limit=2";
+
+      const REFRESH_MS = 5 * 60 * 1000;
+
+      const numberFr = (value) => (typeof value === "number" ? value.toLocaleString("fr-FR") : "—");
+
+      const filieres = [
+        { key: "nucleaire", label: "Nucléaire", color: "bg-amber-500" },
+        { key: "gaz", label: "Gaz", color: "bg-orange-500" },
+        { key: "hydraulique", label: "Hydraulique", color: "bg-blue-500" },
+        { key: "eolien", label: "Éolien", color: "bg-teal-500" },
+        { key: "solaire", label: "Solaire", color: "bg-yellow-400" },
+        { key: "bioenergies", label: "Bioénergies", color: "bg-lime-600" },
+        { key: "charbon", label: "Charbon", color: "bg-gray-700" },
+        { key: "fioul", label: "Fioul", color: "bg-red-600" },
+      ];
+
+      function renderMix(record) {
+        const total = filieres.reduce((sum, f) => sum + Math.max(0, record[f.key] || 0), 0);
+        const container = document.getElementById("mix-bars");
+        if (!total) {
+          container.innerHTML = '<p class="text-sm text-gray-500">Détail du mix indisponible pour cet horodatage.</p>';
+          return;
+        }
+
+        container.innerHTML = filieres
+          .filter((f) => (record[f.key] || 0) > 0)
+          .sort((a, b) => (record[b.key] || 0) - (record[a.key] || 0))
+          .map((f) => {
+            const value = record[f.key] || 0;
+            const pct = (value / total) * 100;
+            return `
+              <div>
+                <div class="flex justify-between text-sm text-gray-700 mb-1">
+                  <span>${f.label}</span>
+                  <span>${numberFr(Math.round(value))} MW · ${pct.toFixed(1)}%</span>
+                </div>
+                <div class="w-full bg-gray-100 rounded-full h-2.5">
+                  <div class="${f.color} h-2.5 rounded-full" style="width:${pct.toFixed(1)}%"></div>
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+      function renderStats(record) {
+        document.getElementById("stat-consommation").textContent = numberFr(record.consommation);
+
+        if (record.prevision_j1) {
+          const ecart = ((record.consommation - record.prevision_j1) / record.prevision_j1) * 100;
+          const el = document.getElementById("stat-ecart");
+          el.textContent = (ecart >= 0 ? "+" : "") + ecart.toFixed(1) + "%";
+          el.className = "text-3xl font-bold " + (ecart >= 0 ? "text-orange-600" : "text-blue-600");
+        }
+
+        const renewable =
+          Math.max(0, record.eolien || 0) +
+          Math.max(0, record.solaire || 0) +
+          Math.max(0, record.hydraulique || 0) +
+          Math.max(0, record.bioenergies || 0);
+        const totalProd = filieres.reduce((sum, f) => sum + Math.max(0, record[f.key] || 0), 0);
+        document.getElementById("stat-renouvelable").textContent = totalProd
+          ? ((renewable / totalProd) * 100).toFixed(0) + "%"
+          : "—";
+
+        document.getElementById("stat-co2").textContent =
+          typeof record.taux_co2 === "number" ? numberFr(record.taux_co2) : "—";
+      }
+
+      let nextRefreshAt = Date.now() + REFRESH_MS;
+
+      function tickCountdown() {
+        const el = document.getElementById("refresh-countdown");
+        if (!el) return;
+        const remaining = Math.max(0, Math.round((nextRefreshAt - Date.now()) / 1000));
+        const minutes = Math.floor(remaining / 60);
+        const seconds = remaining % 60;
+        el.textContent = minutes + ":" + String(seconds).padStart(2, "0");
+      }
+
+      async function loadLiveData() {
+        const statusEl = document.getElementById("live-status");
+        const errorEl = document.getElementById("live-error");
+        const contentEl = document.getElementById("live-content");
+
+        try {
+          const res = await fetch(API_URL);
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const json = await res.json();
+          const record = json.results && json.results[0];
+          if (!record) throw new Error("Aucune donnée");
+
+          renderStats(record);
+          renderMix(record);
+
+          const dh = new Date(record.date_heure);
+          const heureFr = dh.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Paris" });
+          const dateFr = dh.toLocaleDateString("fr-FR", { day: "numeric", month: "long", timeZone: "Europe/Paris" });
+          document.getElementById("live-timestamp").textContent =
+            "Donnée mesurée à " + heureFr + " le " + dateFr + " · source RTE éCO2mix";
+
+          statusEl.classList.add("hidden");
+          errorEl.classList.add("hidden");
+          contentEl.classList.remove("hidden");
+        } catch (err) {
+          console.error("éCO2mix fetch error:", err);
+          statusEl.classList.add("hidden");
+          if (contentEl.classList.contains("hidden")) {
+            errorEl.classList.remove("hidden");
+          }
+        } finally {
+          nextRefreshAt = Date.now() + REFRESH_MS;
+          tickCountdown();
+        }
+      }
+
+      loadLiveData();
+      setInterval(loadLiveData, REFRESH_MS);
+      setInterval(tickCountdown, 1000);
+    </script>
+
+    <!-- Auto-initialisation des exports PDF/CSV -->
+    <script type="module">
+  const __lcLoadAutoExport = () => import("../utils/autoExportInit.js");
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(__lcLoadAutoExport, { timeout: 4000 });
+  } else {
+    window.setTimeout(__lcLoadAutoExport, 2000);
+  }
+</script>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center space-y-4">
+          <p class="text-gray-300">© 2026 Les Calculateurs - Consommation électrique temps réel</p>
+          <div class="flex gap-4 text-sm">
+            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📚 Notre Méthodo</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">🏛️ Sources Officielles</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/historique-mises-a-jour" class="text-gray-300 hover:text-white transition-colors">🔄 Mises à jour</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
