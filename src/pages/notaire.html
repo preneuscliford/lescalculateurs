@@ -509,6 +509,13 @@
       <!-- Tableau de comparaison (masqué par défaut) -->
       <div id="comparaison-container" class="hidden"></div>
 
+      <!-- Comparables DVF (prix réels au m²) -->
+      <div id="notaire-dvf-comparables"></div>
+      <script type="module">
+        import { mountDvfComparables } from "../components/DvfComparablesWidget.ts";
+        mountDvfComparables("notaire-dvf-comparables");
+      </script>
+
       <!-- Section Fonctionnalité Comparaison - SEO -->
       <section
         class="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-2 border-blue-200"

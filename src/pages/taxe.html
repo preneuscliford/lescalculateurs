@@ -416,6 +416,13 @@
 
       <div id="taxe-calculator"></div>
 
+      <!-- Comparables DVF (prix réels au m²) -->
+      <div id="taxe-dvf-comparables"></div>
+      <script type="module">
+        import { mountDvfComparables } from "../components/DvfComparablesWidget.ts";
+        mountDvfComparables("taxe-dvf-comparables");
+      </script>
+
       <div class="mt-8 flex justify-center gap-3">
         <button
           id="taxe-add-to-compare"
