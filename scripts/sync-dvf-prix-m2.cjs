@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 /**
- * Synchronise le prix moyen au m2 (DVF, DGFiP/Etalab) par commune.
+ * Synchronise le prix median au m2 (DVF, DGFiP/Etalab) par commune.
  *
  * Telecharge le fichier national geo-dvf de l'annee la plus recente
- * (https://files.data.gouv.fr/geo-dvf/latest/csv/{annee}/full.csv.gz),
- * le decompresse en flux (sans le charger entierement en memoire) et
- * calcule, par commune (code INSEE) et par type de bien (Appartement /
- * Maison), le prix median au m2 sur les ventes "pures" (nature_mutation
- * = Vente) avec une surface batie renseignee et un prix/m2 plausible
- * (entre 300 et 25000 EUR/m2, pour ecarter les erreurs de saisie).
+ * (https://files.data.gouv.fr/geo-dvf/latest/csv/{annee}/full.csv.gz) vers
+ * un fichier local, puis fait deux passes dessus :
+ *   1) compte, par id_mutation, le nombre de lots Appartement / Maison
+ *      (une mutation peut regrouper plusieurs biens sous UNE seule
+ *      valeur_fonciere totale : diviser cette valeur par la surface d'un
+ *      seul lot fausserait totalement le prix/m2 si on ne filtre pas) ;
+ *   2) ne retient que les mutations "1 seul bien" (1 Appartement OU 1
+ *      Maison, pas les deux, pas de doublon) pour calculer un prix/m2
+ *      median fiable par commune et par type de bien.
  *
  * Ecrit data/dvf-prix-m2.json (source) + public/data/dvf-prix-m2.json
  * (charge a la demande cote client, meme pattern que resume-ia-summaries).
@@ -19,6 +22,7 @@ const fs = require("fs");
 const path = require("path");
 const zlib = require("zlib");
 const readline = require("readline");
+const os = require("os");
 
 const MIN_PRIX_M2 = 300;
 const MAX_PRIX_M2 = 25000;
@@ -45,28 +49,37 @@ function median(values) {
   return sorted.length % 2 === 0 ? Math.round((sorted[mid - 1] + sorted[mid]) / 2) : sorted[mid];
 }
 
-async function fetchGunzippedLines(url, onLine) {
+async function downloadTo(url, destPath) {
   const res = await fetch(url);
   if (!res.ok || !res.body) {
     throw new Error(`HTTP ${res.status} sur ${url}`);
   }
+  await require("stream/promises").pipeline(require("stream").Readable.fromWeb(res.body), fs.createWriteStream(destPath));
+}
+
+function readIndex(header) {
+  return {
+    idMutation: header.indexOf("id_mutation"),
+    nature: header.indexOf("nature_mutation"),
+    valeur: header.indexOf("valeur_fonciere"),
+    codeCommune: header.indexOf("code_commune"),
+    nomCommune: header.indexOf("nom_commune"),
+    codeDept: header.indexOf("code_departement"),
+    typeLocal: header.indexOf("type_local"),
+    surface: header.indexOf("surface_reelle_bati"),
+  };
+}
+
+async function forEachLine(localGzPath, onLine) {
   const gunzip = zlib.createGunzip();
-  const nodeStream = require("stream").Readable.fromWeb(res.body);
-  const rl = readline.createInterface({ input: nodeStream.pipe(gunzip), crlfDelay: Infinity });
-  let header = null;
+  const rl = readline.createInterface({
+    input: fs.createReadStream(localGzPath).pipe(gunzip),
+    crlfDelay: Infinity,
+  });
   let idx = null;
   for await (const line of rl) {
-    if (!header) {
-      header = line.split(",");
-      idx = {
-        nature: header.indexOf("nature_mutation"),
-        valeur: header.indexOf("valeur_fonciere"),
-        codeCommune: header.indexOf("code_commune"),
-        nomCommune: header.indexOf("nom_commune"),
-        codeDept: header.indexOf("code_departement"),
-        typeLocal: header.indexOf("type_local"),
-        surface: header.indexOf("surface_reelle_bati"),
-      };
+    if (!idx) {
+      idx = readIndex(line.split(","));
       continue;
     }
     onLine(line, idx);
@@ -80,12 +93,35 @@ async function main() {
   const annee = anneeArg ? anneeArg.split("=")[1] : "2024";
 
   const url = `https://files.data.gouv.fr/geo-dvf/latest/csv/${annee}/full.csv.gz`;
-  console.log(`Telechargement et analyse: ${url}`);
+  const localGz = path.join(os.tmpdir(), `dvf-full-${annee}.csv.gz`);
 
+  console.log(`Telechargement: ${url}`);
+  await downloadTo(url, localGz);
+  console.log(`Telecharge vers ${localGz}`);
+
+  // Passe 1 : compte les lots Appartement/Maison par mutation.
+  console.log("Passe 1/2 : comptage des lots par mutation…");
+  const mutationCounts = new Map();
+  let totalLines = 0;
+  await forEachLine(localGz, (line, idx) => {
+    totalLines++;
+    const cols = line.split(",");
+    if (cols.length < 30) return;
+    const type = cols[idx.typeLocal];
+    if (type !== "Appartement" && type !== "Maison") return;
+    if (cols[idx.nature] !== "Vente") return;
+
+    const id = cols[idx.idMutation];
+    if (!mutationCounts.has(id)) mutationCounts.set(id, { Appartement: 0, Maison: 0 });
+    mutationCounts.get(id)[type]++;
+  });
+  console.log(`Lignes lues: ${totalLines}, mutations avec Appartement/Maison: ${mutationCounts.size}`);
+
+  // Passe 2 : ne garde que les mutations "1 seul bien" pour le calcul du prix/m2.
+  console.log("Passe 2/2 : calcul des prix/m2 sur les ventes a lot unique…");
   const communeData = new Map();
   const deptData = new Map();
   const communeNames = new Map();
-  let totalLines = 0;
   let kept = 0;
 
   const getBucket = (map, key, type) => {
@@ -93,14 +129,20 @@ async function main() {
     return map.get(key)[type];
   };
 
-  await fetchGunzippedLines(url, (line, idx) => {
-    totalLines++;
+  await forEachLine(localGz, (line, idx) => {
     const cols = line.split(",");
     if (cols.length < 30) return;
 
     const type = cols[idx.typeLocal];
     if (type !== "Appartement" && type !== "Maison") return;
     if (cols[idx.nature] !== "Vente") return;
+
+    const id = cols[idx.idMutation];
+    const counts = mutationCounts.get(id);
+    if (!counts) return;
+    // Mutation "1 seul bien" : exactement 1 lot du type concerne, et aucun lot de l'autre type residentiel.
+    if (type === "Appartement" && !(counts.Appartement === 1 && counts.Maison === 0)) return;
+    if (type === "Maison" && !(counts.Maison === 1 && counts.Appartement === 0)) return;
 
     const surface = parseFloat(cols[idx.surface]);
     const valeur = parseFloat(cols[idx.valeur]);
@@ -129,7 +171,13 @@ async function main() {
     kept++;
   });
 
-  console.log(`Lignes lues: ${totalLines}, ventes retenues: ${kept}`);
+  try {
+    fs.unlinkSync(localGz);
+  } catch (_) {
+    /* fichier temporaire, tant pis si le nettoyage echoue */
+  }
+
+  console.log(`Ventes a lot unique retenues: ${kept}`);
   console.log(`Communes distinctes: ${communeData.size}`);
 
   const communes = {};

@@ -146,6 +146,7 @@ function collectStaticPageInputs() {
       "src/pages/consommation-electrique-temps-reel.html",
     ),
     "prix-carburant-temps-reel": resolve(__dirname, "src/pages/prix-carburant-temps-reel.html"),
+    "prix-immobilier-m2-commune": resolve(__dirname, "src/pages/prix-immobilier-m2-commune.html"),
     simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
     "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
       __dirname,
