@@ -145,6 +145,7 @@ function collectStaticPageInputs() {
       __dirname,
       "src/pages/consommation-electrique-temps-reel.html",
     ),
+    "prix-carburant-temps-reel": resolve(__dirname, "src/pages/prix-carburant-temps-reel.html"),
     simulateurs: resolve(__dirname, "src/pages/simulateurs.html"),
     "simulateurs-quelle-aide-selon-mon-profil-2026": resolve(
       __dirname,

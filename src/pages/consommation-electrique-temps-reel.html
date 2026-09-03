@@ -125,6 +125,26 @@
           <div class="text-center text-xs text-gray-400 mt-1">
             Prochaine actualisation dans <span id="refresh-countdown" class="font-medium text-gray-500">—</span>
           </div>
+
+          <!-- Ecowatt -->
+          <div class="bg-white rounded-xl border border-gray-200 p-6 mt-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">🚦 Signal Ecowatt (tension sur le réseau)</h3>
+            <div id="ecowatt-status" class="text-sm text-gray-500 text-center py-2">Chargement du signal Ecowatt…</div>
+            <div id="ecowatt-content" class="hidden">
+              <div class="flex items-center gap-4 mb-4">
+                <span id="ecowatt-badge" class="inline-flex items-center justify-center w-14 h-14 rounded-full text-white text-2xl font-bold">—</span>
+                <div>
+                  <div id="ecowatt-label" class="text-base font-semibold text-gray-900">—</div>
+                  <div id="ecowatt-message" class="text-sm text-gray-600"></div>
+                </div>
+              </div>
+              <div id="ecowatt-hours" class="flex gap-0.5 mb-2"></div>
+              <p class="text-xs text-gray-400">
+                Dernier bilan Ecowatt disponible (publié à J+1 par RTE) — pas une alerte en temps réel pour
+                aujourd'hui. 🟢 vert : situation normale · 🟠 orange : réseau tendu · 🔴 rouge : coupures possibles.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -312,6 +332,56 @@
       loadLiveData();
       setInterval(loadLiveData, REFRESH_MS);
       setInterval(tickCountdown, 1000);
+
+      const ECOWATT_COLORS = {
+        1: { badge: "bg-green-500", label: "Vert — situation normale" },
+        2: { badge: "bg-orange-500", label: "Orange — réseau tendu" },
+        3: { badge: "bg-red-600", label: "Rouge — coupures possibles" },
+      };
+
+      async function loadEcowatt() {
+        const statusEl = document.getElementById("ecowatt-status");
+        const contentEl = document.getElementById("ecowatt-content");
+        try {
+          const url =
+            "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/nouveau_signal_ecowatt/records" +
+            "?order_by=" +
+            encodeURIComponent("date desc") +
+            "&limit=1";
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const json = await res.json();
+          const record = json.results && json.results[0];
+          if (!record) throw new Error("Aucune donnée Ecowatt");
+
+          const info = ECOWATT_COLORS[record.couleur_du_jour] || { badge: "bg-gray-400", label: "Statut inconnu" };
+          const badge = document.getElementById("ecowatt-badge");
+          badge.className = "inline-flex items-center justify-center w-14 h-14 rounded-full text-white text-2xl font-bold " + info.badge;
+          badge.textContent = String(record.couleur_du_jour ?? "?");
+
+          const dateFr = new Date(record.date + "T00:00:00").toLocaleDateString("fr-FR", {
+            day: "numeric",
+            month: "long",
+          });
+          document.getElementById("ecowatt-label").textContent = info.label + " · " + dateFr;
+          document.getElementById("ecowatt-message").textContent = record.message || "";
+
+          const hoursEl = document.getElementById("ecowatt-hours");
+          hoursEl.innerHTML = Array.from({ length: 24 }, (_, h) => {
+            const colorCode = record["h" + h];
+            const hourInfo = ECOWATT_COLORS[colorCode] || { badge: "bg-green-500" };
+            return `<div class="flex-1 h-3 rounded-sm ${hourInfo.badge}" title="${h}h"></div>`;
+          }).join("");
+
+          statusEl.classList.add("hidden");
+          contentEl.classList.remove("hidden");
+        } catch (err) {
+          console.error("Ecowatt fetch error:", err);
+          statusEl.textContent = "Signal Ecowatt indisponible pour le moment.";
+        }
+      }
+
+      loadEcowatt();
     </script>
 
     <!-- Auto-initialisation des exports PDF/CSV -->

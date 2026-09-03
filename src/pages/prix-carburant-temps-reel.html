@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>⛽ Prix carburant en temps réel - Station la moins chère près de vous</title>
+    <meta
+      name="description"
+      content="Prix du carburant en direct en France : moyenne nationale par type de carburant (gazole, SP95, SP98, E10, E85, GPLc) et stations les moins chères près de chez vous, à partir des données officielles du Ministère de l'Économie."
+    />
+    <meta
+      name="keywords"
+      content="prix carburant temps réel, prix essence en direct, prix gazole aujourd'hui, station essence pas cher près de moi, prix carburant par ville, comparateur prix essence France, prix SP95 SP98 E10 E85"
+    />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/prix-carburant-temps-reel" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Prix du carburant en France en temps réel",
+        "description": "Moyenne nationale des prix carburant et recherche des stations les moins chères à proximité, à partir des données officielles du Ministère de l'Économie.",
+        "url": "https://www.lescalculateurs.fr/pages/prix-carburant-temps-reel",
+        "isBasedOn": [
+          "https://www.lescalculateurs.fr/pages/methodologie",
+          "https://www.lescalculateurs.fr/pages/sources"
+        ],
+        "citation": [
+          {
+            "@type": "Dataset",
+            "name": "Prix des carburants en France (quotidien)",
+            "url": "https://data.economie.gouv.fr/explore/dataset/prix-carburants-quotidien/",
+            "creator": { "@type": "Organization", "name": "Ministère de l'Économie, des Finances et de la Souveraineté industrielle et numérique" }
+          }
+        ]
+      }
+    </script>
+
+    <meta name="source" content="data.economie.gouv.fr, prix-carburants.gouv.fr" />
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <a href="../index.html" class="text-primary-600 hover:text-primary-700 font-medium">← Retour</a>
+          <div class="text-center px-4">
+            <h1 class="text-2xl font-bold text-gray-900">⛽ Prix du carburant en temps réel</h1>
+            <p class="text-sm text-gray-600 mt-1">
+              Moyenne nationale et stations les moins chères près de chez vous (données officielles).
+            </p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-8">
+        <div class="max-w-4xl mx-auto">
+          <section class="mb-6 bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">📌 Résumé rapide</h3>
+            <div class="space-y-2 text-gray-700 text-sm">
+              <p>🏛️<strong>Source</strong>: <a href="https://www.prix-carburants.gouv.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Ministère de l'Économie</a> via <a href="https://data.economie.gouv.fr" target="_blank" rel="noopener" class="text-blue-600 hover:underline">data.economie.gouv.fr</a></p>
+              <p>⛽<strong>Couverture</strong>: plus de 10 000 stations-service en France</p>
+              <p>⏱️<strong>Fréquence</strong>: prix déclarés par les stations, mis à jour en continu</p>
+              <p>⚠️<strong>Important</strong>: prix indicatifs, vérifiez à la pompe avant votre plein</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Moyennes nationales -->
+      <section class="max-w-5xl mx-auto mb-10">
+        <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">📊 Moyenne nationale par carburant</h3>
+        <div id="national-status" class="text-center text-sm text-gray-500 mb-4">Chargement des moyennes…</div>
+        <div id="national-averages" class="hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3"></div>
+      </section>
+
+      <!-- Recherche de stations -->
+      <section class="max-w-5xl mx-auto mb-10">
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">📍 Stations les moins chères près de vous</h3>
+
+          <div class="flex flex-col sm:flex-row gap-3 mb-4">
+            <button
+              id="geoloc-btn"
+              class="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded transition whitespace-nowrap"
+            >
+              📍 Utiliser ma position
+            </button>
+            <input
+              id="cp-input"
+              type="text"
+              inputmode="numeric"
+              maxlength="5"
+              placeholder="ou saisissez un code postal (ex. 69001)"
+              class="flex-1 border border-gray-300 rounded px-3 py-2 text-sm"
+            />
+            <select id="carburant-select" class="border border-gray-300 rounded px-3 py-2 text-sm">
+              <option value="Gazole">Gazole</option>
+              <option value="SP95">SP95</option>
+              <option value="SP98">SP98</option>
+              <option value="E10">E10</option>
+              <option value="E85">E85</option>
+              <option value="GPLc">GPLc</option>
+            </select>
+            <button
+              id="search-btn"
+              class="bg-gray-800 hover:bg-gray-900 text-white font-medium py-2 px-4 rounded transition whitespace-nowrap"
+            >
+              Rechercher
+            </button>
+          </div>
+
+          <div id="stations-status" class="text-sm text-gray-500 text-center py-4">
+            Autorisez la géolocalisation ou saisissez un code postal pour voir les stations les moins chères autour de vous.
+          </div>
+          <div id="stations-error" class="hidden text-sm text-red-600 text-center py-4"></div>
+
+          <div id="stations-results" class="hidden overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left text-gray-500 border-b border-gray-200">
+                  <th class="py-2 pr-2">Station</th>
+                  <th class="py-2 pr-2">Ville</th>
+                  <th class="py-2 pr-2 text-right">Distance</th>
+                  <th class="py-2 pr-2 text-right">Prix</th>
+                  <th class="py-2 pr-2 text-right">Maj</th>
+                </tr>
+              </thead>
+              <tbody id="stations-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-4xl mx-auto">
+        <section class="mb-6 bg-indigo-50 border border-indigo-100 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">🧾 À quoi sert cette page</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Suivre la moyenne nationale des prix carburant par type</li>
+            <li>Trouver la station la moins chère près de chez vous, en un clic</li>
+            <li>Comparer gazole, sans-plomb, E10, E85 et GPLc</li>
+          </ul>
+        </section>
+
+        <div class="prose prose-lg text-gray-600 mb-8">
+          <p>
+            Cette page s'appuie sur les prix carburant déclarés par les stations-service françaises et
+            publiés par le Ministère de l'Économie sur data.economie.gouv.fr. La moyenne nationale est
+            recalculée sur l'ensemble des stations ayant un prix renseigné pour chaque type de
+            carburant. La recherche de stations utilise votre position (via géolocalisation ou code
+            postal) pour classer les stations les plus proches par prix croissant, dans un rayon de 15
+            km. Les prix affichés sont ceux déclarés par les exploitants et peuvent différer légèrement
+            du prix affiché à la pompe au moment de votre passage.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sources vérifiables -->
+      <section class="max-w-4xl mx-auto mb-8 mt-12">
+        <div class="ai-sources">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">📚 Sources vérifiables</h3>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li>
+              <a
+                href="https://data.economie.gouv.fr/explore/dataset/prix-carburants-quotidien/"
+                target="_blank"
+                rel="nofollow noopener"
+                class="text-blue-700 underline"
+                >data.economie.gouv.fr</a
+              >
+              — Prix des carburants en France (quotidien)
+            </li>
+            <li>
+              <a
+                href="https://www.prix-carburants.gouv.fr"
+                target="_blank"
+                rel="nofollow noopener"
+                class="text-blue-700 underline"
+                >prix-carburants.gouv.fr</a
+              >
+              — Site officiel de référence
+            </li>
+          </ul>
+          <p class="text-sm text-gray-600">Moyennes nationales rechargées toutes les 10 minutes. Recherche de stations effectuée à la demande.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/content.ts"></script>
+    <script type="module">
+      const BASE_URL = "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-carburants-quotidien/records";
+      const FUEL_LABELS = ["Gazole", "SP95", "SP98", "E10", "E85", "GPLc"];
+      const REFRESH_MS = 10 * 60 * 1000;
+
+      const numberFr = (value, digits) =>
+        typeof value === "number" ? value.toLocaleString("fr-FR", { minimumFractionDigits: digits, maximumFractionDigits: digits }) : "—";
+
+      function toRad(deg) {
+        return (deg * Math.PI) / 180;
+      }
+
+      function haversineKm(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const dLat = toRad(lat2 - lat1);
+        const dLon = toRad(lon2 - lon1);
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      }
+
+      async function loadNationalAverages() {
+        const statusEl = document.getElementById("national-status");
+        const gridEl = document.getElementById("national-averages");
+        try {
+          const url =
+            BASE_URL +
+            "?select=" +
+            encodeURIComponent("prix_nom,avg(prix_valeur) as moyenne") +
+            "&where=" +
+            encodeURIComponent("prix_valeur is not null") +
+            "&group_by=prix_nom";
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const json = await res.json();
+          const byFuel = {};
+          (json.results || []).forEach((r) => {
+            byFuel[r.prix_nom] = r.moyenne;
+          });
+
+          gridEl.innerHTML = FUEL_LABELS.map((label) => {
+            const value = byFuel[label];
+            return `
+              <div class="bg-white rounded-xl border border-gray-200 p-4 text-center">
+                <div class="text-xs uppercase tracking-wide text-gray-500 mb-1">${label}</div>
+                <div class="text-xl font-bold text-gray-900">${numberFr(value, 3)}</div>
+                <div class="text-xs text-gray-400">€ / litre</div>
+              </div>
+            `;
+          }).join("");
+
+          statusEl.classList.add("hidden");
+          gridEl.classList.remove("hidden");
+        } catch (err) {
+          console.error("Prix carburant (moyennes) fetch error:", err);
+          statusEl.textContent = "Impossible de récupérer les moyennes nationales pour le moment.";
+        }
+      }
+
+      function renderStations(records, refLat, refLon) {
+        const tbody = document.getElementById("stations-tbody");
+        const statusEl = document.getElementById("stations-status");
+        const errorEl = document.getElementById("stations-error");
+        const resultsEl = document.getElementById("stations-results");
+
+        const seen = new Set();
+        const rows = [];
+        for (const r of records) {
+          if (seen.has(r.id)) continue;
+          seen.add(r.id);
+          const lat = r.geom && r.geom.lat;
+          const lon = r.geom && r.geom.lon;
+          const distanceKm = typeof lat === "number" && typeof lon === "number" ? haversineKm(refLat, refLon, lat, lon) : null;
+          rows.push({ ...r, distanceKm });
+        }
+
+        if (!rows.length) {
+          statusEl.textContent = "Aucune station trouvée avec ce carburant dans un rayon de 15 km.";
+          statusEl.classList.remove("hidden");
+          errorEl.classList.add("hidden");
+          resultsEl.classList.add("hidden");
+          return;
+        }
+
+        rows.sort((a, b) => a.prix_valeur - b.prix_valeur);
+
+        tbody.innerHTML = rows
+          .slice(0, 15)
+          .map((r) => {
+            const maj = r.prix_maj ? new Date(r.prix_maj).toLocaleDateString("fr-FR", { day: "numeric", month: "short" }) : "—";
+            return `
+              <tr class="border-b border-gray-100">
+                <td class="py-2 pr-2 text-gray-900">${r.adresse || "—"}</td>
+                <td class="py-2 pr-2 text-gray-600">${r.ville || "—"}</td>
+                <td class="py-2 pr-2 text-right text-gray-600">${r.distanceKm !== null ? r.distanceKm.toFixed(1) + " km" : "—"}</td>
+                <td class="py-2 pr-2 text-right font-semibold text-gray-900">${numberFr(r.prix_valeur, 3)} €</td>
+                <td class="py-2 pr-2 text-right text-gray-400">${maj}</td>
+              </tr>
+            `;
+          })
+          .join("");
+
+        statusEl.classList.add("hidden");
+        errorEl.classList.add("hidden");
+        resultsEl.classList.remove("hidden");
+      }
+
+      async function searchStationsNear(lat, lon) {
+        const statusEl = document.getElementById("stations-status");
+        const errorEl = document.getElementById("stations-error");
+        const resultsEl = document.getElementById("stations-results");
+        const fuel = document.getElementById("carburant-select").value;
+
+        statusEl.textContent = "Recherche des stations les plus proches…";
+        statusEl.classList.remove("hidden");
+        errorEl.classList.add("hidden");
+        resultsEl.classList.add("hidden");
+
+        try {
+          const point = "geom'POINT(" + lon + " " + lat + ")'";
+          const where = "within_distance(geom, " + point + ", 15km) and prix_nom=\"" + fuel + "\"";
+          const url =
+            BASE_URL +
+            "?where=" +
+            encodeURIComponent(where) +
+            "&order_by=" +
+            encodeURIComponent("distance(geom, " + point + ") asc") +
+            "&limit=30";
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const json = await res.json();
+          renderStations(json.results || [], lat, lon);
+        } catch (err) {
+          console.error("Prix carburant (stations) fetch error:", err);
+          statusEl.classList.add("hidden");
+          errorEl.textContent = "Impossible de récupérer les stations pour le moment. Réessayez dans un instant.";
+          errorEl.classList.remove("hidden");
+        }
+      }
+
+      async function searchByPostalCode(cp) {
+        const statusEl = document.getElementById("stations-status");
+        const errorEl = document.getElementById("stations-error");
+
+        statusEl.textContent = "Recherche du code postal…";
+        statusEl.classList.remove("hidden");
+        errorEl.classList.add("hidden");
+
+        try {
+          const url = BASE_URL + "?where=" + encodeURIComponent('cp="' + cp + '"') + "&limit=1";
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const json = await res.json();
+          const record = json.results && json.results[0];
+          if (!record || !record.geom) throw new Error("Code postal introuvable");
+          await searchStationsNear(record.geom.lat, record.geom.lon);
+        } catch (err) {
+          console.error("Prix carburant (code postal) fetch error:", err);
+          statusEl.classList.add("hidden");
+          errorEl.textContent = "Code postal introuvable. Vérifiez la saisie ou utilisez la géolocalisation.";
+          errorEl.classList.remove("hidden");
+        }
+      }
+
+      document.getElementById("geoloc-btn").addEventListener("click", () => {
+        const statusEl = document.getElementById("stations-status");
+        const errorEl = document.getElementById("stations-error");
+        if (!navigator.geolocation) {
+          errorEl.textContent = "La géolocalisation n'est pas disponible sur ce navigateur.";
+          errorEl.classList.remove("hidden");
+          return;
+        }
+        statusEl.textContent = "Localisation en cours…";
+        statusEl.classList.remove("hidden");
+        errorEl.classList.add("hidden");
+        navigator.geolocation.getCurrentPosition(
+          (pos) => searchStationsNear(pos.coords.latitude, pos.coords.longitude),
+          () => {
+            statusEl.classList.add("hidden");
+            errorEl.textContent = "Géolocalisation refusée ou indisponible. Saisissez un code postal.";
+            errorEl.classList.remove("hidden");
+          },
+          { timeout: 10000 },
+        );
+      });
+
+      document.getElementById("search-btn").addEventListener("click", () => {
+        const cp = document.getElementById("cp-input").value.trim();
+        if (!/^\d{5}$/.test(cp)) {
+          const errorEl = document.getElementById("stations-error");
+          errorEl.textContent = "Merci de saisir un code postal à 5 chiffres.";
+          errorEl.classList.remove("hidden");
+          return;
+        }
+        searchByPostalCode(cp);
+      });
+
+      document.getElementById("carburant-select").addEventListener("change", () => {
+        const resultsVisible = !document.getElementById("stations-results").classList.contains("hidden");
+        if (resultsVisible) document.getElementById("search-btn").click();
+      });
+
+      loadNationalAverages();
+      setInterval(loadNationalAverages, REFRESH_MS);
+    </script>
+
+    <!-- Auto-initialisation des exports PDF/CSV -->
+    <script type="module">
+  const __lcLoadAutoExport = () => import("../utils/autoExportInit.js");
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(__lcLoadAutoExport, { timeout: 4000 });
+  } else {
+    window.setTimeout(__lcLoadAutoExport, 2000);
+  }
+</script>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center space-y-4">
+          <p class="text-gray-300">© 2026 Les Calculateurs - Prix carburant temps réel</p>
+          <div class="flex gap-4 text-sm">
+            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📚 Notre Méthodo</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">🏛️ Sources Officielles</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/historique-mises-a-jour" class="text-gray-300 hover:text-white transition-colors">🔄 Mises à jour</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

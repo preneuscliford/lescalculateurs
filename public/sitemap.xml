@@ -145,6 +145,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.lescalculateurs.fr/pages/prix-carburant-temps-reel</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.lescalculateurs.fr/pages/financement</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
