@@ -120,6 +120,8 @@
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
     "marked": "^18.0.5",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.3.289",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
