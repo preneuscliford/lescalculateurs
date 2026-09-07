@@ -24,7 +24,7 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
+        "@type": "CollectionPage",
         "name": "Outils PDF gratuits",
         "description": "Fusionner, compresser et créer des PDF directement dans le navigateur, sans envoi de fichier à un serveur.",
         "url": "https://www.lescalculateurs.fr/pages/outils"
@@ -48,241 +48,56 @@
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <section class="mb-8 bg-teal-50 border border-teal-100 rounded-xl p-6">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-10 bg-teal-50 border border-teal-100 rounded-xl p-6 text-center">
         <h3 class="text-lg font-bold text-gray-900 mb-2">🔒 Vos fichiers restent chez vous</h3>
-        <p class="text-sm text-gray-700">
+        <p class="text-sm text-gray-700 max-w-2xl mx-auto">
           Ces outils traitent vos fichiers <strong>entièrement dans votre navigateur</strong> : aucun
           document n'est envoyé à un serveur, ni stocké nulle part. Pratique pour des justificatifs
           personnels (avis d'imposition, RIB, pièce d'identité...).
         </p>
       </section>
 
-      <nav class="flex flex-wrap gap-3 mb-10 justify-center">
-        <a href="#fusionner" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-teal-400 hover:text-teal-700">📎 Fusionner des PDF</a>
-        <a href="#compresser" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-teal-400 hover:text-teal-700">🗜️ Compresser un PDF</a>
-        <a href="#scanner" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-teal-400 hover:text-teal-700">📷 Photo → PDF</a>
-      </nav>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <a href="outils/fusionner-pdf.html" class="block bg-white rounded-xl shadow p-6 hover:shadow-lg transition-shadow border-l-4 border-teal-500">
+          <div class="text-3xl mb-3">📎</div>
+          <h2 class="text-lg font-semibold text-gray-900 mb-2">Fusionner des PDF</h2>
+          <p class="text-sm text-gray-600 mb-3">
+            Regroupez plusieurs PDF en un seul fichier, avec aperçu et réordonnancement.
+          </p>
+          <span class="text-teal-700 font-medium text-sm">Ouvrir l'outil →</span>
+        </a>
 
-      <!-- ===================== FUSIONNER ===================== -->
-      <section id="fusionner" class="mb-12 bg-white border border-gray-200 rounded-xl p-6 scroll-mt-20">
-        <h2 class="text-xl font-bold text-gray-900 mb-2">📎 Fusionner plusieurs PDF en un seul</h2>
-        <p class="text-sm text-gray-600 mb-4">
-          Utile pour regrouper vos justificatifs (dossier CAF, dossier de prêt, dossier de location) en un
-          seul fichier avant de l'envoyer.
-        </p>
+        <a href="outils/compresser-pdf.html" class="block bg-white rounded-xl shadow p-6 hover:shadow-lg transition-shadow border-l-4 border-teal-500">
+          <div class="text-3xl mb-3">🗜️</div>
+          <h2 class="text-lg font-semibold text-gray-900 mb-2">Compresser un PDF</h2>
+          <p class="text-sm text-gray-600 mb-3">
+            Réduisez la taille d'un PDF pour l'envoyer à la CAF, aux impôts ou à votre banque.
+          </p>
+          <span class="text-teal-700 font-medium text-sm">Ouvrir l'outil →</span>
+        </a>
 
-        <input
-          id="merge-input"
-          type="file"
-          accept="application/pdf"
-          multiple
-          class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-teal-600 file:text-white file:font-medium hover:file:bg-teal-700 mb-4"
-        />
+        <a href="outils/photo-vers-pdf.html" class="block bg-white rounded-xl shadow p-6 hover:shadow-lg transition-shadow border-l-4 border-teal-500">
+          <div class="text-3xl mb-3">📷</div>
+          <h2 class="text-lg font-semibold text-gray-900 mb-2">Photo → PDF</h2>
+          <p class="text-sm text-gray-600 mb-3">
+            Photographiez un document et obtenez un PDF prêt à envoyer, page par page.
+          </p>
+          <span class="text-teal-700 font-medium text-sm">Ouvrir l'outil →</span>
+        </a>
+      </div>
 
-        <ul id="merge-list" class="mb-4 space-y-1 text-sm text-gray-700"></ul>
-
-        <button
-          id="merge-btn"
-          class="bg-teal-600 hover:bg-teal-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-medium py-2 px-5 rounded transition"
-          disabled
-        >
-          Fusionner et télécharger
-        </button>
-        <p id="merge-status" class="mt-3 text-sm text-gray-500"></p>
-      </section>
-
-      <!-- ===================== COMPRESSER ===================== -->
-      <section id="compresser" class="mb-12 bg-white border border-gray-200 rounded-xl p-6 scroll-mt-20">
-        <h2 class="text-xl font-bold text-gray-900 mb-2">🗜️ Compresser un PDF</h2>
-        <p class="text-sm text-gray-600 mb-1">
-          Réduit la taille d'un PDF pour l'envoyer sur un site qui limite la taille des fichiers (impôts,
-          CAF, banque...). Fonctionne surtout bien sur les PDF scannés ou issus de photos.
-        </p>
-        <p class="text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded p-2 mb-4">
-          ⚠️ Le PDF compressé est reconstruit à partir d'images : le texte n'est plus sélectionnable ni
-          copiable après compression.
-        </p>
-
-        <input
-          id="compress-input"
-          type="file"
-          accept="application/pdf"
-          class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-teal-600 file:text-white file:font-medium hover:file:bg-teal-700 mb-4"
-        />
-
-        <div class="flex gap-4 mb-4 text-sm text-gray-700">
-          <label class="flex items-center gap-1"><input type="radio" name="compress-level" value="leger" /> Léger</label>
-          <label class="flex items-center gap-1"><input type="radio" name="compress-level" value="moyen" checked /> Moyen</label>
-          <label class="flex items-center gap-1"><input type="radio" name="compress-level" value="fort" /> Fort</label>
-        </div>
-
-        <button
-          id="compress-btn"
-          class="bg-teal-600 hover:bg-teal-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-medium py-2 px-5 rounded transition"
-          disabled
-        >
-          Compresser et télécharger
-        </button>
-        <p id="compress-status" class="mt-3 text-sm text-gray-500"></p>
-      </section>
-
-      <!-- ===================== SCANNER ===================== -->
-      <section id="scanner" class="mb-12 bg-white border border-gray-200 rounded-xl p-6 scroll-mt-20">
-        <h2 class="text-xl font-bold text-gray-900 mb-2">📷 Transformer une photo en PDF</h2>
-        <p class="text-sm text-gray-600 mb-4">
-          Photographiez un document (justificatif, courrier, facture) avec votre téléphone et obtenez un
-          PDF prêt à envoyer. Plusieurs photos = plusieurs pages, dans l'ordre choisi.
-        </p>
-
-        <input
-          id="scan-input"
-          type="file"
-          accept="image/*"
-          multiple
-          capture="environment"
-          class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-teal-600 file:text-white file:font-medium hover:file:bg-teal-700 mb-4"
-        />
-
-        <div id="scan-thumbs" class="flex flex-wrap gap-2 mb-4"></div>
-
-        <label class="flex items-center gap-2 text-sm text-gray-700 mb-4">
-          <input type="checkbox" id="scan-enhance" checked />
-          Améliorer le contraste (rendu "scanné")
-        </label>
-
-        <button
-          id="scan-btn"
-          class="bg-teal-600 hover:bg-teal-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-medium py-2 px-5 rounded transition"
-          disabled
-        >
-          Créer le PDF et télécharger
-        </button>
-        <p id="scan-status" class="mt-3 text-sm text-gray-500"></p>
-      </section>
-
-      <section class="max-w-3xl mx-auto mt-4">
+      <section class="max-w-3xl mx-auto">
         <div class="prose text-gray-600 text-sm">
           <p>
-            Ces trois outils sont un premier lot : d'autres suivront (signature de document, OCR pour
-            rendre un scan cherchable, génération d'attestations et de quittances). Une remarque, un bug ?
-            Le site est encore en train d'ajouter cette section.
+            Ce sont les trois premiers outils : d'autres suivront (signature de document, OCR pour rendre
+            un scan cherchable, génération d'attestations et de quittances).
           </p>
         </div>
       </section>
     </main>
 
     <script type="module" src="/content.ts"></script>
-    <script type="module">
-      import { mergePdfs, compressPdf, imagesToPdf, formatFileSize, downloadBlob } from "../utils/pdfTools.ts";
-
-      // ---------- Fusionner ----------
-      const mergeInput = document.getElementById("merge-input");
-      const mergeList = document.getElementById("merge-list");
-      const mergeBtn = document.getElementById("merge-btn");
-      const mergeStatus = document.getElementById("merge-status");
-      let mergeFiles = [];
-
-      mergeInput.addEventListener("change", () => {
-        mergeFiles = Array.from(mergeInput.files || []);
-        mergeList.innerHTML = mergeFiles
-          .map((f, i) => `<li>${i + 1}. ${f.name} <span class="text-gray-400">(${formatFileSize(f.size)})</span></li>`)
-          .join("");
-        mergeBtn.disabled = mergeFiles.length < 2;
-        mergeStatus.textContent = mergeFiles.length === 1 ? "Ajoutez au moins 2 fichiers PDF." : "";
-      });
-
-      mergeBtn.addEventListener("click", async () => {
-        mergeBtn.disabled = true;
-        mergeStatus.textContent = "Fusion en cours…";
-        try {
-          const blob = await mergePdfs(mergeFiles);
-          downloadBlob(blob, "fusion.pdf");
-          mergeStatus.textContent = `PDF fusionné (${formatFileSize(blob.size)}) téléchargé.`;
-        } catch (err) {
-          console.error(err);
-          mergeStatus.textContent = "Erreur : un des fichiers n'a pas pu être lu. Vérifiez qu'il s'agit bien de PDF valides.";
-        } finally {
-          mergeBtn.disabled = false;
-        }
-      });
-
-      // ---------- Compresser ----------
-      const compressInput = document.getElementById("compress-input");
-      const compressBtn = document.getElementById("compress-btn");
-      const compressStatus = document.getElementById("compress-status");
-      let compressFile = null;
-
-      compressInput.addEventListener("change", () => {
-        compressFile = compressInput.files && compressInput.files[0];
-        compressBtn.disabled = !compressFile;
-        compressStatus.textContent = compressFile ? `${compressFile.name} (${formatFileSize(compressFile.size)})` : "";
-      });
-
-      compressBtn.addEventListener("click", async () => {
-        if (!compressFile) return;
-        const level = document.querySelector('input[name="compress-level"]:checked').value;
-        compressBtn.disabled = true;
-        compressStatus.textContent = "Compression en cours… (peut prendre quelques secondes selon la taille)";
-        try {
-          const { blob, originalSize, newSize } = await compressPdf(compressFile, level);
-          downloadBlob(blob, "compresse.pdf");
-          const pct = Math.round((1 - newSize / originalSize) * 100);
-          compressStatus.textContent =
-            `Taille : ${formatFileSize(originalSize)} → ${formatFileSize(newSize)}` +
-            (pct > 0 ? ` (-${pct}%)` : "") +
-            ". Fichier téléchargé.";
-        } catch (err) {
-          console.error(err);
-          compressStatus.textContent = "Erreur lors de la compression. Le fichier est peut-être corrompu ou protégé.";
-        } finally {
-          compressBtn.disabled = false;
-        }
-      });
-
-      // ---------- Scanner (photo -> PDF) ----------
-      const scanInput = document.getElementById("scan-input");
-      const scanThumbs = document.getElementById("scan-thumbs");
-      const scanBtn = document.getElementById("scan-btn");
-      const scanStatus = document.getElementById("scan-status");
-      const scanEnhance = document.getElementById("scan-enhance");
-      let scanFiles = [];
-
-      scanInput.addEventListener("change", () => {
-        scanFiles = Array.from(scanInput.files || []);
-        scanThumbs.innerHTML = scanFiles
-          .map((f) => `<img src="${URL.createObjectURL(f)}" class="w-16 h-16 object-cover rounded border border-gray-200" />`)
-          .join("");
-        scanBtn.disabled = scanFiles.length === 0;
-        scanStatus.textContent = "";
-      });
-
-      scanBtn.addEventListener("click", async () => {
-        if (!scanFiles.length) return;
-        scanBtn.disabled = true;
-        scanStatus.textContent = "Création du PDF en cours…";
-        try {
-          const blob = await imagesToPdf(scanFiles, scanEnhance.checked);
-          downloadBlob(blob, "document-scanne.pdf");
-          scanStatus.textContent = `PDF créé (${scanFiles.length} page${scanFiles.length > 1 ? "s" : ""}, ${formatFileSize(blob.size)}) et téléchargé.`;
-        } catch (err) {
-          console.error(err);
-          scanStatus.textContent = "Erreur : une des images n'a pas pu être lue.";
-        } finally {
-          scanBtn.disabled = false;
-        }
-      });
-    </script>
-
-    <!-- Auto-initialisation des exports PDF/CSV -->
-    <script type="module">
-  const __lcLoadAutoExport = () => import("../utils/autoExportInit.js");
-  if ("requestIdleCallback" in window) {
-    window.requestIdleCallback(__lcLoadAutoExport, { timeout: 4000 });
-  } else {
-    window.setTimeout(__lcLoadAutoExport, 2000);
-  }
-</script>
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -21,6 +21,34 @@ async function loadPdfLib() {
   return import("pdf-lib");
 }
 
+/**
+ * Génère une vignette (page 1) et le nombre de pages d'un fichier PDF, pour
+ * prévisualisation avant fusion/compression.
+ */
+export async function getPdfInfo(
+  file: File,
+  maxWidth = 160,
+): Promise<{ thumbnailDataUrl: string; pageCount: number }> {
+  const pdfjsLib = await loadPdfjs();
+  const bytes = await file.arrayBuffer();
+  const doc = await pdfjsLib.getDocument({ data: bytes }).promise;
+
+  const page = await doc.getPage(1);
+  const baseViewport = page.getViewport({ scale: 1 });
+  const scale = maxWidth / baseViewport.width;
+  const viewport = page.getViewport({ scale });
+
+  const canvas = document.createElement("canvas");
+  canvas.width = viewport.width;
+  canvas.height = viewport.height;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw new Error("Contexte canvas indisponible");
+
+  await page.render({ canvasContext: ctx, viewport, canvas }).promise;
+
+  return { thumbnailDataUrl: canvas.toDataURL("image/jpeg", 0.72), pageCount: doc.numPages };
+}
+
 /** Fusionne plusieurs fichiers PDF (dans l'ordre donné) en un seul PDF. */
 export async function mergePdfs(files: File[]): Promise<Blob> {
   const { PDFDocument } = await loadPdfLib();
@@ -28,7 +56,13 @@ export async function mergePdfs(files: File[]): Promise<Blob> {
 
   for (const file of files) {
     const bytes = await file.arrayBuffer();
-    const source = await PDFDocument.load(bytes);
+    let source;
+    try {
+      source = await PDFDocument.load(bytes, { ignoreEncryption: true });
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : String(err);
+      throw new Error(`« ${file.name} » n'a pas pu être lu (${reason}).`);
+    }
     const pages = await merged.copyPages(source, source.getPageIndices());
     pages.forEach((page) => merged.addPage(page));
   }

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📷 Transformer une photo en PDF (scanner de document gratuit)</title>
+    <meta
+      name="description"
+      content="Transformez une ou plusieurs photos de documents en PDF, gratuitement et sans inscription. Réordonnez vos pages, activez le rendu 'scanné', tout se passe dans votre navigateur."
+    />
+    <meta name="keywords" content="photo en pdf, scanner document gratuit, convertir image en pdf, scanner avec le téléphone" />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/outils/photo-vers-pdf" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Photo vers PDF",
+        "description": "Convertir une ou plusieurs photos en PDF, entièrement dans le navigateur.",
+        "url": "https://www.lescalculateurs.fr/pages/outils/photo-vers-pdf"
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <a href="../outils.html" class="text-primary-600 hover:text-primary-700 font-medium">← Tous les outils</a>
+          <div class="text-center px-4">
+            <h1 class="text-2xl font-bold text-gray-900">📷 Photo → PDF</h1>
+            <p class="text-sm text-gray-600 mt-1">Une ou plusieurs photos deviennent un PDF, page par page.</p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-6 bg-teal-50 border border-teal-100 rounded-xl p-4 text-sm text-gray-700">
+        🔒 Vos photos restent sur votre appareil : rien n'est envoyé à un serveur.
+      </section>
+
+      <section
+        id="dropzone"
+        class="mb-6 border-2 border-dashed border-gray-300 rounded-xl p-10 text-center cursor-pointer hover:border-teal-400 hover:bg-teal-50/40 transition-colors"
+      >
+        <p class="text-gray-600 mb-3">Glissez vos photos ici, ou</p>
+        <button type="button" id="browse-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-5 rounded transition">
+          Choisir ou prendre des photos
+        </button>
+        <input id="file-input" type="file" accept="image/*" multiple capture="environment" class="hidden" />
+        <p class="text-xs text-gray-400 mt-3">Vous pouvez ajouter des photos en plusieurs fois.</p>
+      </section>
+
+      <section id="files-section" class="hidden mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-bold text-gray-900"><span id="files-count">0</span> photo(s) — ordre des pages</h2>
+          <button id="clear-btn" class="text-sm text-gray-500 hover:text-red-600">Tout retirer</button>
+        </div>
+        <div id="files-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+      </section>
+
+      <section id="options-section" class="hidden mb-6">
+        <label class="flex items-center gap-2 text-sm text-gray-700">
+          <input type="checkbox" id="enhance-toggle" checked />
+          Améliorer le contraste (rendu "scanné")
+        </label>
+      </section>
+
+      <div id="error-box" class="hidden mb-6 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4"></div>
+
+      <div class="text-center mb-10">
+        <button
+          id="create-btn"
+          class="bg-teal-600 hover:bg-teal-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3 px-8 rounded-lg transition text-base"
+          disabled
+        >
+          Créer le PDF et télécharger
+        </button>
+        <p id="status" class="mt-3 text-sm text-gray-500"></p>
+      </div>
+    </main>
+
+    <script type="module" src="/content.ts"></script>
+    <script type="module">
+      import { imagesToPdf, formatFileSize, downloadBlob } from "../../utils/pdfTools.ts";
+
+      const dropzone = document.getElementById("dropzone");
+      const browseBtn = document.getElementById("browse-btn");
+      const fileInput = document.getElementById("file-input");
+      const filesSection = document.getElementById("files-section");
+      const filesGrid = document.getElementById("files-grid");
+      const filesCount = document.getElementById("files-count");
+      const clearBtn = document.getElementById("clear-btn");
+      const optionsSection = document.getElementById("options-section");
+      const enhanceToggle = document.getElementById("enhance-toggle");
+      const createBtn = document.getElementById("create-btn");
+      const status = document.getElementById("status");
+      const errorBox = document.getElementById("error-box");
+
+      let items = []; // { file, id, previewUrl }
+      let nextId = 0;
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.classList.remove("hidden");
+      }
+      function clearError() {
+        errorBox.classList.add("hidden");
+        errorBox.textContent = "";
+      }
+
+      function render() {
+        filesCount.textContent = items.length;
+        const hasFiles = items.length > 0;
+        filesSection.classList.toggle("hidden", !hasFiles);
+        optionsSection.classList.toggle("hidden", !hasFiles);
+        createBtn.disabled = !hasFiles;
+
+        filesGrid.innerHTML = items
+          .map(
+            (item, index) => `
+              <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <img src="${item.previewUrl}" class="w-full h-32 object-cover" />
+                <div class="p-2">
+                  <p class="text-xs font-medium text-gray-800 truncate" title="${item.file.name}">${item.file.name}</p>
+                  <p class="text-xs text-gray-400">${formatFileSize(item.file.size)}</p>
+                  <div class="flex justify-between items-center mt-2">
+                    <div class="flex gap-1">
+                      <button data-action="up" data-id="${item.id}" ${index === 0 ? "disabled" : ""} class="text-xs px-1.5 py-0.5 border border-gray-200 rounded disabled:opacity-30">↑</button>
+                      <button data-action="down" data-id="${item.id}" ${index === items.length - 1 ? "disabled" : ""} class="text-xs px-1.5 py-0.5 border border-gray-200 rounded disabled:opacity-30">↓</button>
+                    </div>
+                    <button data-action="remove" data-id="${item.id}" class="text-xs text-red-500 hover:text-red-700">Retirer</button>
+                  </div>
+                </div>
+              </div>
+            `,
+          )
+          .join("");
+      }
+
+      function addFiles(fileList) {
+        clearError();
+        const newFiles = Array.from(fileList).filter((f) => f.type.startsWith("image/"));
+        if (!newFiles.length) return;
+        const newItems = newFiles.map((file) => ({ file, id: nextId++, previewUrl: URL.createObjectURL(file) }));
+        items = items.concat(newItems);
+        render();
+      }
+
+      browseBtn.addEventListener("click", () => fileInput.click());
+      dropzone.addEventListener("click", (e) => {
+        if (e.target === browseBtn) return;
+        fileInput.click();
+      });
+      fileInput.addEventListener("change", () => {
+        addFiles(fileInput.files);
+        fileInput.value = "";
+      });
+
+      ["dragover", "dragenter"].forEach((evt) =>
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.add("border-teal-400", "bg-teal-50/40");
+        }),
+      );
+      ["dragleave", "drop"].forEach((evt) =>
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove("border-teal-400", "bg-teal-50/40");
+        }),
+      );
+      dropzone.addEventListener("drop", (e) => {
+        if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+      });
+
+      filesGrid.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-action]");
+        if (!btn) return;
+        const id = Number(btn.dataset.id);
+        const index = items.findIndex((it) => it.id === id);
+        if (index === -1) return;
+
+        if (btn.dataset.action === "remove") {
+          URL.revokeObjectURL(items[index].previewUrl);
+          items.splice(index, 1);
+        } else if (btn.dataset.action === "up" && index > 0) {
+          [items[index - 1], items[index]] = [items[index], items[index - 1]];
+        } else if (btn.dataset.action === "down" && index < items.length - 1) {
+          [items[index + 1], items[index]] = [items[index], items[index + 1]];
+        }
+        render();
+      });
+
+      clearBtn.addEventListener("click", () => {
+        items.forEach((it) => URL.revokeObjectURL(it.previewUrl));
+        items = [];
+        render();
+      });
+
+      createBtn.addEventListener("click", async () => {
+        if (!items.length) return;
+        clearError();
+        createBtn.disabled = true;
+        status.textContent = "Création du PDF en cours…";
+        try {
+          const blob = await imagesToPdf(items.map((it) => it.file), enhanceToggle.checked);
+          downloadBlob(blob, "document-scanne.pdf");
+          status.textContent = `PDF créé (${items.length} page${items.length > 1 ? "s" : ""}, ${formatFileSize(blob.size)}) et téléchargé.`;
+        } catch (err) {
+          console.error("Erreur création PDF:", err);
+          status.textContent = "";
+          showError(err && err.message ? err.message : "Erreur inattendue pendant la création du PDF.");
+        } finally {
+          createBtn.disabled = false;
+        }
+      });
+
+      render();
+    </script>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center space-y-4">
+          <p class="text-gray-300">© 2026 Les Calculateurs - Photo vers PDF</p>
+          <div class="flex gap-4 text-sm">
+            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📚 Notre Méthodo</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">🏛️ Sources Officielles</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

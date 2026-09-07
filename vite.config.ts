@@ -462,6 +462,22 @@ function collectNotaireDepartmentInputs() {
   return inputs;
 }
 
+function collectOutilsInputs() {
+  const outilsDir = resolve(__dirname, "src/pages/outils");
+  if (!fs.existsSync(outilsDir)) return {};
+
+  const inputs: Record<string, string> = {};
+  const entries = fs.readdirSync(outilsDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+    const slug = entry.name.replace(/\.html$/i, "");
+    inputs[`pages/outils/${slug}`] = path.join(outilsDir, entry.name);
+  }
+
+  return inputs;
+}
+
 function collectAideInputs() {
   const aideDir = resolve(__dirname, "src/pages/aide");
   if (!fs.existsSync(aideDir)) return {};
@@ -642,6 +658,7 @@ export default defineConfig(() => {
   const notaireDepartmentInputs = collectNotaireDepartmentInputs();
   const salairePilotInputsResult = collectSalairePilotInputs();
   const aideInputs = collectAideInputs();
+  const outilsInputs = collectOutilsInputs();
   const taxeFonciereInputs = collectTaxeFonciereInputs();
 
   return {
@@ -734,6 +751,9 @@ export default defineConfig(() => {
 
           // Pages aide presentes sous src/pages/aide/*.html
           ...aideInputs,
+
+          // Pages outils presentes sous src/pages/outils/*.html
+          ...outilsInputs,
 
           // Pages pSEO Salaire du pilote declarees explicitement pour la prod
           ...salairePilotInputsResult,

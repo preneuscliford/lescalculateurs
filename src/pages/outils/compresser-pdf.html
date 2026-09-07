@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🗜️ Compresser un PDF gratuitement (pour CAF, impôts, banque)</title>
+    <meta
+      name="description"
+      content="Réduisez la taille d'un PDF pour l'envoyer sur un site qui limite le poids des fichiers (CAF, impôts, banque). Gratuit, sans inscription, traitement entièrement dans le navigateur."
+    />
+    <meta name="keywords" content="compresser pdf gratuit, réduire taille pdf, compresser pdf pour caf, compresser pdf pour impots" />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/outils/compresser-pdf" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Compresser un PDF",
+        "description": "Réduire la taille d'un PDF entièrement dans le navigateur.",
+        "url": "https://www.lescalculateurs.fr/pages/outils/compresser-pdf"
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <a href="../outils.html" class="text-primary-600 hover:text-primary-700 font-medium">← Tous les outils</a>
+          <div class="text-center px-4">
+            <h1 class="text-2xl font-bold text-gray-900">🗜️ Compresser un PDF</h1>
+            <p class="text-sm text-gray-600 mt-1">Pour l'envoyer à la CAF, aux impôts, à votre banque…</p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-6 bg-teal-50 border border-teal-100 rounded-xl p-4 text-sm text-gray-700">
+        🔒 Votre fichier reste sur votre appareil : rien n'est envoyé à un serveur.
+      </section>
+      <section class="mb-6 bg-amber-50 border border-amber-100 rounded-xl p-4 text-sm text-amber-800">
+        ⚠️ Le PDF est reconstruit à partir d'images de chaque page : le texte n'est plus sélectionnable ni
+        copiable après compression. Idéal pour un PDF scanné ou issu de photos.
+      </section>
+
+      <section
+        id="dropzone"
+        class="mb-6 border-2 border-dashed border-gray-300 rounded-xl p-10 text-center cursor-pointer hover:border-teal-400 hover:bg-teal-50/40 transition-colors"
+      >
+        <p class="text-gray-600 mb-3">Glissez votre PDF ici, ou</p>
+        <button type="button" id="browse-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-5 rounded transition">
+          Choisir un fichier PDF
+        </button>
+        <input id="file-input" type="file" accept="application/pdf" class="hidden" />
+      </section>
+
+      <section id="preview-section" class="hidden mb-6 bg-white border border-gray-200 rounded-xl p-4 flex gap-4 items-start">
+        <img id="preview-thumb" class="w-24 h-32 object-contain bg-gray-100 rounded border border-gray-200 flex-shrink-0" />
+        <div class="min-w-0">
+          <p id="preview-name" class="font-medium text-gray-900 truncate"></p>
+          <p id="preview-meta" class="text-sm text-gray-500"></p>
+          <button id="change-file-btn" class="text-sm text-teal-700 hover:underline mt-2">Changer de fichier</button>
+        </div>
+      </section>
+
+      <section id="options-section" class="hidden mb-6">
+        <p class="text-sm font-medium text-gray-700 mb-2">Niveau de compression</p>
+        <div class="flex gap-4 text-sm text-gray-700">
+          <label class="flex items-center gap-1"><input type="radio" name="level" value="leger" /> Léger (meilleure qualité)</label>
+          <label class="flex items-center gap-1"><input type="radio" name="level" value="moyen" checked /> Moyen</label>
+          <label class="flex items-center gap-1"><input type="radio" name="level" value="fort" /> Fort (fichier le plus léger)</label>
+        </div>
+      </section>
+
+      <div id="error-box" class="hidden mb-6 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4"></div>
+
+      <div class="text-center mb-10">
+        <button
+          id="compress-btn"
+          class="bg-teal-600 hover:bg-teal-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3 px-8 rounded-lg transition text-base"
+          disabled
+        >
+          Compresser et télécharger
+        </button>
+        <p id="status" class="mt-3 text-sm text-gray-500"></p>
+      </div>
+    </main>
+
+    <script type="module" src="/content.ts"></script>
+    <script type="module">
+      import { compressPdf, getPdfInfo, formatFileSize, downloadBlob } from "../../utils/pdfTools.ts";
+
+      const dropzone = document.getElementById("dropzone");
+      const browseBtn = document.getElementById("browse-btn");
+      const fileInput = document.getElementById("file-input");
+      const previewSection = document.getElementById("preview-section");
+      const previewThumb = document.getElementById("preview-thumb");
+      const previewName = document.getElementById("preview-name");
+      const previewMeta = document.getElementById("preview-meta");
+      const changeFileBtn = document.getElementById("change-file-btn");
+      const optionsSection = document.getElementById("options-section");
+      const compressBtn = document.getElementById("compress-btn");
+      const status = document.getElementById("status");
+      const errorBox = document.getElementById("error-box");
+
+      let currentFile = null;
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.classList.remove("hidden");
+      }
+      function clearError() {
+        errorBox.classList.add("hidden");
+        errorBox.textContent = "";
+      }
+
+      async function setFile(file) {
+        clearError();
+        status.textContent = "";
+        currentFile = file;
+        dropzone.classList.add("hidden");
+        previewSection.classList.remove("hidden");
+        optionsSection.classList.remove("hidden");
+        previewName.textContent = file.name;
+        previewMeta.textContent = `Chargement de l'aperçu… (${formatFileSize(file.size)})`;
+        compressBtn.disabled = true;
+
+        try {
+          const { thumbnailDataUrl, pageCount } = await getPdfInfo(file);
+          previewThumb.src = thumbnailDataUrl;
+          previewMeta.textContent = `${pageCount} page(s) · ${formatFileSize(file.size)}`;
+          compressBtn.disabled = false;
+        } catch (err) {
+          console.error("Aperçu PDF impossible:", err);
+          previewMeta.textContent = formatFileSize(file.size);
+          showError("Impossible de lire ce PDF pour l'aperçu. Vérifiez qu'il s'agit bien d'un PDF valide et non protégé par un mot de passe fort.");
+        }
+      }
+
+      function resetFile() {
+        currentFile = null;
+        dropzone.classList.remove("hidden");
+        previewSection.classList.add("hidden");
+        optionsSection.classList.add("hidden");
+        compressBtn.disabled = true;
+        fileInput.value = "";
+        status.textContent = "";
+      }
+
+      browseBtn.addEventListener("click", () => fileInput.click());
+      dropzone.addEventListener("click", (e) => {
+        if (e.target === browseBtn) return;
+        fileInput.click();
+      });
+      fileInput.addEventListener("change", () => {
+        if (fileInput.files && fileInput.files[0]) setFile(fileInput.files[0]);
+      });
+      changeFileBtn.addEventListener("click", resetFile);
+
+      ["dragover", "dragenter"].forEach((evt) =>
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.add("border-teal-400", "bg-teal-50/40");
+        }),
+      );
+      ["dragleave", "drop"].forEach((evt) =>
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove("border-teal-400", "bg-teal-50/40");
+        }),
+      );
+      dropzone.addEventListener("drop", (e) => {
+        const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        if (file && (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf"))) setFile(file);
+      });
+
+      compressBtn.addEventListener("click", async () => {
+        if (!currentFile) return;
+        clearError();
+        const level = document.querySelector('input[name="level"]:checked').value;
+        compressBtn.disabled = true;
+        status.textContent = "Compression en cours… (peut prendre quelques secondes)";
+        try {
+          const { blob, originalSize, newSize } = await compressPdf(currentFile, level);
+          downloadBlob(blob, "compresse.pdf");
+          const pct = Math.round((1 - newSize / originalSize) * 100);
+          status.textContent =
+            `Taille : ${formatFileSize(originalSize)} → ${formatFileSize(newSize)}` + (pct > 0 ? ` (-${pct}%)` : "") + ". Fichier téléchargé.";
+        } catch (err) {
+          console.error("Erreur compression PDF:", err);
+          status.textContent = "";
+          showError(err && err.message ? err.message : "Erreur inattendue pendant la compression.");
+        } finally {
+          compressBtn.disabled = false;
+        }
+      });
+    </script>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center space-y-4">
+          <p class="text-gray-300">© 2026 Les Calculateurs - Compresser un PDF</p>
+          <div class="flex gap-4 text-sm">
+            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📚 Notre Méthodo</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">🏛️ Sources Officielles</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
