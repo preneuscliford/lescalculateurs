@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signer un PDF gratuitement — sans inscription, sur mobile aussi</title>
+    <meta
+      name="description"
+      content="Signez un PDF gratuitement : dessinez votre signature au doigt ou à la souris, placez-la où vous voulez sur le document, puis téléchargez le PDF signé. Sans compte, sans limite, traitement 100% local dans votre navigateur."
+    />
+    <meta
+      name="keywords"
+      content="signer pdf gratuit, signature electronique pdf gratuite, signer un document pdf en ligne, signature pdf sans inscription, ajouter signature sur pdf, signer pdf sur telephone, signature manuscrite pdf"
+    />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/outils/signer-pdf" />
+
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/outils/signer-pdf" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Signer un PDF gratuitement — sans inscription, sur mobile aussi" />
+    <meta
+      property="og:description"
+      content="Dessinez votre signature et placez-la sur un PDF, gratuitement et sans compte. Traitement 100% local, fonctionne au doigt sur mobile."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Signer un PDF gratuitement — sans inscription, sur mobile aussi" />
+    <meta
+      name="twitter:description"
+      content="Dessinez votre signature et placez-la sur un PDF, gratuitement et sans compte. Traitement 100% local, fonctionne au doigt sur mobile."
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Signer un PDF",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "description": "Dessiner une signature manuscrite et la placer sur un PDF, entièrement dans le navigateur, sans inscription ni compte.",
+        "url": "https://www.lescalculateurs.fr/pages/outils/signer-pdf"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.lescalculateurs.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Outils PDF", "item": "https://www.lescalculateurs.fr/pages/outils" },
+          { "@type": "ListItem", "position": 3, "name": "Signer un PDF", "item": "https://www.lescalculateurs.fr/pages/outils/signer-pdf" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Signer un PDF gratuitement",
+        "description": "Procédure pas à pas pour ajouter une signature manuscrite sur un PDF, directement dans le navigateur.",
+        "step": [
+          { "@type": "HowToStep", "name": "Ouvrir le PDF", "text": "Choisissez le fichier PDF à signer." },
+          { "@type": "HowToStep", "name": "Dessiner la signature", "text": "Cliquez sur « Signature », dessinez votre signature au doigt ou à la souris, puis validez." },
+          { "@type": "HowToStep", "name": "Placer la signature", "text": "Cliquez à l'endroit voulu sur la page pour poser la signature, puis ajustez sa position et sa taille si besoin." },
+          { "@type": "HowToStep", "name": "Télécharger", "text": "Cliquez sur « Télécharger le PDF modifié » pour obtenir le document signé." }
+        ]
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+    <style>
+      #page-stage { position: relative; display: inline-block; user-select: none; touch-action: none; }
+      #page-canvas { display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+      #overlay-layer { position: absolute; inset: 0; z-index: 2; touch-action: none; }
+      .edit-el { position: absolute; touch-action: none; }
+      .edit-text {
+        min-width: 20px; padding: 1px 3px; white-space: pre-wrap; cursor: move;
+        border: 1px dashed transparent;
+      }
+      .edit-text:hover { border-color: #14b8a6; }
+      .edit-rect { background: #ffffff; border: 1px dashed #9ca3af; cursor: move; }
+      .edit-del {
+        position: absolute; top: -10px; right: -10px; width: 18px; height: 18px; border-radius: 9999px;
+        background: #dc2626; color: white; font-size: 11px; line-height: 18px; text-align: center;
+        cursor: pointer; z-index: 5; touch-action: none;
+      }
+      .edit-resize-handle {
+        position: absolute; bottom: -6px; right: -6px; width: 14px; height: 14px; border-radius: 3px;
+        background: #14b8a6; border: 2px solid white; cursor: nwse-resize; z-index: 5; touch-action: none;
+      }
+      textarea.edit-input {
+        position: absolute; border: 1px solid #14b8a6; background: white; resize: none; padding: 1px 3px;
+        font-family: inherit; outline: none; z-index: 10; min-width: 40px; min-height: 20px;
+      }
+      #text-editor-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+      #text-editor-layer span {
+        pointer-events: auto; cursor: text; color: transparent; border-radius: 2px;
+        font-family: Helvetica, Arial, sans-serif; overflow: hidden;
+      }
+      #text-editor-layer span:hover { outline: 1px dashed rgba(20, 184, 166, 0.6); }
+      #text-editor-layer span.detected-editing,
+      #text-editor-layer span.detected-edited {
+        color: #111827 !important; background: #ffffff; outline: 1px solid #14b8a6;
+      }
+      #signature-modal {
+        position: fixed; inset: 0; z-index: 50; background: rgba(17, 24, 39, 0.6);
+        display: flex; align-items: center; justify-content: center; padding: 16px;
+      }
+      #signature-canvas {
+        touch-action: none; border: 1px dashed #9ca3af; border-radius: 8px; background: white;
+        width: 100%; max-width: 420px; height: 160px; cursor: crosshair;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <a href="../outils.html" class="text-primary-600 hover:text-primary-700 font-medium">← Tous les outils</a>
+          <div class="text-center px-4">
+            <h1 class="text-2xl font-bold text-gray-900">✍️ Signer un PDF</h1>
+            <p class="text-sm text-gray-600 mt-1">Dessinez votre signature et posez-la sur le document — sans compte.</p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-6 bg-teal-50 border border-teal-100 rounded-xl p-4 text-sm text-gray-700">
+        🔒 Votre fichier reste sur votre appareil : rien n'est envoyé à un serveur, aucun compte requis.
+      </section>
+
+      <section id="dropzone" class="mb-6 border-2 border-dashed border-gray-300 rounded-xl p-10 text-center cursor-pointer hover:border-teal-400 hover:bg-teal-50/40 transition-colors">
+        <p class="text-gray-600 mb-3">Glissez le PDF à signer ici, ou</p>
+        <button type="button" id="browse-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-5 rounded transition">
+          Choisir un fichier PDF
+        </button>
+        <input id="file-input" type="file" accept="application/pdf" class="hidden" />
+      </section>
+
+      <div id="error-box" class="hidden mb-6 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4"></div>
+
+      <section id="editor-section" class="hidden">
+        <!-- Toolbar -->
+        <div class="flex flex-wrap items-center gap-3 mb-4 bg-white border border-gray-200 rounded-lg p-3">
+          <div class="flex gap-2">
+            <button id="tool-signature" class="tool-btn px-3 py-1.5 rounded text-sm font-medium border border-teal-600 bg-teal-600 text-white">✍️ Signature</button>
+            <button id="tool-text" class="tool-btn px-3 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-700">🔤 Texte</button>
+            <button id="tool-rect" class="tool-btn px-3 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-700">⬜ Zone blanche</button>
+          </div>
+          <div class="h-5 w-px bg-gray-200"></div>
+          <label class="flex items-center gap-1 text-sm text-gray-600">
+            Taille
+            <select id="font-size" class="border border-gray-300 rounded text-sm py-1">
+              <option value="10">10</option>
+              <option value="12" selected>12</option>
+              <option value="14">14</option>
+              <option value="18">18</option>
+              <option value="24">24</option>
+            </select>
+          </label>
+          <label class="flex items-center gap-1 text-sm text-gray-600">
+            Couleur
+            <select id="font-color" class="border border-gray-300 rounded text-sm py-1">
+              <option value="0,0,0" selected>Noir</option>
+              <option value="0.75,0.1,0.1">Rouge</option>
+              <option value="0.1,0.2,0.75">Bleu</option>
+              <option value="1,1,1">Blanc</option>
+            </select>
+          </label>
+          <button id="undo-btn" title="Annuler (Ctrl+Z)" class="px-3 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-700 disabled:opacity-30">↩️ Annuler</button>
+          <div class="flex-1"></div>
+          <button id="change-file-btn" class="text-sm text-gray-500 hover:text-red-600">Changer de fichier</button>
+        </div>
+
+        <!-- Page nav -->
+        <div class="flex items-center justify-center gap-4 mb-4">
+          <button id="prev-page" class="px-3 py-1.5 border border-gray-300 rounded text-sm disabled:opacity-30">← Page précédente</button>
+          <span class="text-sm text-gray-700">Page <span id="page-num">1</span> / <span id="page-count">1</span></span>
+          <button id="next-page" class="px-3 py-1.5 border border-gray-300 rounded text-sm disabled:opacity-30">Page suivante →</button>
+        </div>
+
+        <div class="flex justify-center overflow-x-auto mb-6">
+          <div id="page-stage">
+            <canvas id="page-canvas"></canvas>
+            <div id="overlay-layer"></div>
+            <div id="text-editor-layer"></div>
+          </div>
+        </div>
+        <p class="text-center text-xs text-gray-400 mt-2">
+          💡 Une fois la signature dessinée, cliquez sur la page à l'endroit où la poser. Vous pourrez ensuite la déplacer ou la redimensionner.
+        </p>
+
+        <div class="text-center mb-10">
+          <button id="export-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-lg transition text-base">
+            Télécharger le PDF signé
+          </button>
+          <p id="status" class="mt-3 text-sm text-gray-500"></p>
+        </div>
+      </section>
+
+      <section class="max-w-2xl mx-auto mb-12">
+        <h2 class="text-xl font-bold text-gray-900 mb-3">Signer un PDF sans imprimer ni scanner</h2>
+        <div class="prose text-gray-600 text-sm space-y-3">
+          <p>
+            Signer un document papier, le scanner, puis le renvoyer prend du temps — et la plupart des
+            services de signature électronique en ligne demandent une inscription, limitent le nombre de
+            documents ou ajoutent un filigrane sur la version gratuite. Cet outil dessine votre signature
+            directement dans le navigateur (au doigt sur mobile, à la souris sur ordinateur) et la pose
+            sur le PDF, sans compte et sans limite.
+          </p>
+          <p>
+            Utile pour signer un <a href="/pages/pret" class="text-teal-700 underline">dossier de prêt</a>,
+            un contrat de <a href="/pages/notaire" class="text-teal-700 underline">notaire</a>, un état des
+            lieux ou une attestation. Vous pouvez aussi ajouter du texte ou masquer une information avant
+            l'envoi — ces outils complémentaires sont regroupés sur la page
+            <a href="modifier-pdf.html" class="text-teal-700 underline">modifier un PDF</a>.
+          </p>
+          <p>
+            Important : cette signature dessinée est une signature manuscrite numérisée, pas une signature
+            électronique qualifiée au sens juridique (eIDAS). Pour la plupart des usages courants
+            (formulaires, attestations, accords entre particuliers), c'est suffisant ; pour un contrat à
+            forte valeur juridique, vérifiez les exigences propres à votre situation.
+          </p>
+        </div>
+      </section>
+
+      <section class="max-w-2xl mx-auto mb-12">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">❓ Questions fréquentes</h2>
+        <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="bg-white rounded-lg p-5 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="text-base font-semibold text-gray-800 mb-2" itemprop="name">Dois-je créer un compte pour signer un PDF ?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-gray-600" itemprop="text">
+                Non. Aucune inscription, aucune adresse e-mail, aucune limite de nombre de documents signés.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="text-base font-semibold text-gray-800 mb-2" itemprop="name">Puis-je signer depuis mon téléphone ?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-gray-600" itemprop="text">
+                Oui, la signature se dessine au doigt directement sur l'écran, comme à la souris sur
+                ordinateur.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="text-base font-semibold text-gray-800 mb-2" itemprop="name">Puis-je déplacer ou redimensionner ma signature après l'avoir posée ?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-gray-600" itemprop="text">
+                Oui, glissez-la pour la déplacer, ou utilisez la petite poignée en bas à droite pour
+                ajuster sa taille avant de télécharger le PDF.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="text-base font-semibold text-gray-800 mb-2" itemprop="name">Est-ce une signature électronique valide juridiquement ?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-gray-600" itemprop="text">
+                C'est une signature manuscrite numérisée, adaptée aux usages courants. Ce n'est pas une
+                signature électronique qualifiée eIDAS avec certificat d'identité — pour un acte à forte
+                valeur juridique, renseignez-vous sur les exigences applicables à votre cas.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="text-base font-semibold text-gray-800 mb-2" itemprop="name">Mon PDF est-il envoyé à un serveur ?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-gray-600" itemprop="text">
+                Non, la signature et l'export se font entièrement dans votre navigateur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-2xl mx-auto">
+        <h2 class="text-lg font-bold text-gray-900 mb-3">Autres outils PDF</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a href="modifier-pdf.html" class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-teal-400">
+            <p class="font-medium text-gray-900">✏️ Modifier un PDF</p>
+          </a>
+          <a href="fusionner-pdf.html" class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-teal-400">
+            <p class="font-medium text-gray-900">📎 Fusionner des PDF</p>
+          </a>
+          <a href="compresser-pdf.html" class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-teal-400">
+            <p class="font-medium text-gray-900">🗜️ Compresser un PDF</p>
+          </a>
+          <a href="photo-vers-pdf.html" class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-teal-400">
+            <p class="font-medium text-gray-900">📷 Photo → PDF</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pad de signature -->
+    <div id="signature-modal" class="hidden">
+      <div class="bg-white rounded-xl p-5 max-w-md w-full">
+        <h3 class="text-base font-semibold text-gray-900 mb-3">✍️ Dessinez votre signature</h3>
+        <canvas id="signature-canvas" width="420" height="160"></canvas>
+        <div class="flex justify-between gap-2 mt-4">
+          <button id="signature-clear" class="px-3 py-1.5 text-sm border border-gray-300 rounded text-gray-700">Effacer</button>
+          <div class="flex gap-2">
+            <button id="signature-cancel" class="px-3 py-1.5 text-sm border border-gray-300 rounded text-gray-700">Annuler</button>
+            <button id="signature-confirm" class="px-3 py-1.5 text-sm bg-teal-600 hover:bg-teal-700 text-white rounded font-medium">Utiliser cette signature</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/content.ts"></script>
+    <script type="module">
+      import { mountPdfEditor } from "../../components/PdfEditorApp.ts";
+      mountPdfEditor();
+    </script>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center space-y-4">
+          <p class="text-gray-300">© 2026 Les Calculateurs - Signer un PDF</p>
+          <div class="flex gap-4 text-sm">
+            <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📚 Notre Méthodo</a>
+            <span class="text-gray-500">|</span>
+            <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">🏛️ Sources Officielles</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

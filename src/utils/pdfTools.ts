@@ -243,6 +243,16 @@ export interface RectEdit {
   hFrac: number;
 }
 
+export interface ImageEdit {
+  type: "image";
+  xFrac: number;
+  yFrac: number;
+  wFrac: number;
+  hFrac: number;
+  /** Data URL PNG (ex. signature dessinée à la main), fond transparent. */
+  dataUrl: string;
+}
+
 /**
  * Remplacement d'un morceau de texte déjà présent dans le PDF : coordonnées
  * absolues en points PDF (pas des fractions), extraites directement de
@@ -261,9 +271,13 @@ export interface TextReplaceEdit {
   fontSize: number;
 }
 
-export type PageEdit = TextEdit | RectEdit | TextReplaceEdit;
+/** Édits "ajoutés" par l'utilisateur (positionnés en fractions de page, déplaçables/redimensionnables). */
+export type AddedPageEdit = TextEdit | RectEdit | ImageEdit;
+
+export type PageEdit = AddedPageEdit | TextReplaceEdit;
 
 export interface DetectedTextItem {
+  /** Index dans le tableau retourné (pas l'index brut pdf.js : un item peut regrouper plusieurs fragments). */
   index: number;
   str: string;
   /** Coin bas-gauche approx. en points PDF (repère bas-gauche, comme pdf-lib). */
@@ -274,14 +288,70 @@ export interface DetectedTextItem {
   fontSize: number;
 }
 
+interface RawTextFragment {
+  str: string;
+  xPt: number;
+  yBaselinePt: number;
+  widthPt: number;
+  heightPt: number;
+  fontSize: number;
+}
+
+/**
+ * Regroupe les fragments de texte bruts de pdf.js en "lignes" éditables :
+ * pdf.js segmente souvent une phrase en plusieurs items (par mot, ou selon
+ * les changements de police), ce qui rendrait l'édition fastidieuse si
+ * chaque fragment restait un élément séparé. On fusionne les fragments qui
+ * partagent à peu près la même ligne de base (yBaselinePt proche, tolérance
+ * relative à la taille de police) et qui se suivent horizontalement sans
+ * trou important.
+ */
+function groupFragmentsIntoLines(fragments: RawTextFragment[]): DetectedTextItem[] {
+  const sorted = [...fragments].sort((a, b) => b.yBaselinePt - a.yBaselinePt || a.xPt - b.xPt);
+  const groups: RawTextFragment[][] = [];
+
+  for (const frag of sorted) {
+    const last = groups.at(-1);
+    const prevFrag = last?.at(-1);
+    const sameLine = prevFrag && Math.abs(prevFrag.yBaselinePt - frag.yBaselinePt) < Math.max(frag.fontSize, prevFrag.fontSize) * 0.35;
+    const closeEnough = prevFrag && frag.xPt - (prevFrag.xPt + prevFrag.widthPt) < Math.max(frag.fontSize, prevFrag.fontSize) * 1.2;
+
+    if (last && sameLine && closeEnough) {
+      last.push(frag);
+    } else {
+      groups.push([frag]);
+    }
+  }
+
+  return groups.map((group, index) => {
+    const first = group[0];
+    const last = group.at(-1)!;
+    const needsSpace = (a: RawTextFragment, b: RawTextFragment) => b.xPt - (a.xPt + a.widthPt) > a.fontSize * 0.15;
+    let str = first.str;
+    for (let i = 1; i < group.length; i++) {
+      str += (needsSpace(group[i - 1], group[i]) ? " " : "") + group[i].str;
+    }
+    return {
+      index,
+      str,
+      xPt: first.xPt,
+      yBaselinePt: first.yBaselinePt,
+      widthPt: last.xPt + last.widthPt - first.xPt,
+      heightPt: Math.max(...group.map((f) => f.heightPt)),
+      fontSize: Math.max(...group.map((f) => f.fontSize)),
+    };
+  });
+}
+
 /**
  * Construit la couche de texte interactive d'une page : un <span> positionné
- * en absolu par-dessus chaque morceau de texte détecté par pdf.js
- * (getTextContent), à la même échelle que le rendu canvas. Positionnement
- * calculé directement (pas de dépendance à pdfjs-dist TextLayer, qui suppose
- * des variables CSS internes non documentées propres au lecteur officiel de
- * pdf.js et non fournies par le paquet npm). Ne gère correctement que le
- * texte non pivoté (cas très largement majoritaire en pratique).
+ * en absolu par-dessus chaque ligne de texte détectée (fragments pdf.js
+ * regroupés par ligne, cf. groupFragmentsIntoLines), à la même échelle que
+ * le rendu canvas. Positionnement calculé directement (pas de dépendance à
+ * pdfjs-dist TextLayer, qui suppose des variables CSS internes non
+ * documentées propres au lecteur officiel de pdf.js et non fournies par le
+ * paquet npm). Ne gère correctement que le texte non pivoté (cas très
+ * largement majoritaire en pratique).
  */
 export async function buildTextLayer(
   doc: PdfForEditing,
@@ -296,40 +366,43 @@ export async function buildTextLayer(
 
   const textContent = await page.getTextContent();
 
-  container.innerHTML = "";
-  const items: DetectedTextItem[] = [];
-  const textDivs: HTMLElement[] = [];
-
-  (textContent.items as any[]).forEach((raw, index) => {
+  const fragments: RawTextFragment[] = [];
+  (textContent.items as any[]).forEach((raw) => {
     if (typeof raw.str !== "string" || !raw.str.trim()) return;
     const transform = raw.transform as number[];
-    const xPt = transform[4];
-    const yBaselinePt = transform[5];
-    const widthPt = raw.width;
-    const heightPt = raw.height;
-    const fontSize = Math.abs(transform[3]) || heightPt;
+    fragments.push({
+      str: raw.str,
+      xPt: transform[4],
+      yBaselinePt: transform[5],
+      widthPt: raw.width,
+      heightPt: raw.height,
+      fontSize: Math.abs(transform[3]) || raw.height,
+    });
+  });
 
-    items.push({ index, str: raw.str, xPt, yBaselinePt, widthPt, heightPt, fontSize });
+  const items = groupFragmentsIntoLines(fragments);
 
+  container.innerHTML = "";
+  const textDivs: HTMLElement[] = items.map((item) => {
     // Conversion points PDF (repère bas-gauche) -> pixels canvas (repère haut-gauche)
-    const left = xPt * scale;
-    const baselineFromTop = (pageHeightPt - yBaselinePt) * scale;
-    const boxHeight = heightPt * scale;
+    const left = item.xPt * scale;
+    const baselineFromTop = (pageHeightPt - item.yBaselinePt) * scale;
+    const boxHeight = item.heightPt * scale;
     const top = baselineFromTop - boxHeight * 0.8; // approx. ascendant au-dessus de la ligne de base
 
     const span = document.createElement("span");
-    span.textContent = raw.str;
+    span.textContent = item.str;
     span.style.position = "absolute";
     span.style.left = `${left}px`;
     span.style.top = `${top}px`;
-    span.style.width = `${Math.max(widthPt * scale, 4)}px`;
+    span.style.width = `${Math.max(item.widthPt * scale, 4)}px`;
     span.style.height = `${Math.max(boxHeight, 4)}px`;
-    span.style.fontSize = `${fontSize * scale}px`;
+    span.style.fontSize = `${item.fontSize * scale}px`;
     span.style.lineHeight = `${boxHeight}px`;
     span.style.whiteSpace = "pre";
 
     container.appendChild(span);
-    textDivs[index] = span;
+    return span;
   });
 
   return { textDivs, items };
@@ -368,10 +441,10 @@ export async function applyEditsToPdf(file: File, editsByPage: Map<number, PageE
           font,
           color: rgb(edit.color[0], edit.color[1], edit.color[2]),
         });
-      } else {
-        // textReplace : masque l'ancien texte (déjà présent dans le flux du
-        // PDF, non retirable simplement) avec une zone blanche généreuse,
-        // puis écrit le nouveau texte à la même position de base.
+      } else if (edit.type === "textReplace") {
+        // masque l'ancien texte (déjà présent dans le flux du PDF, non
+        // retirable simplement) avec une zone blanche généreuse, puis écrit
+        // le nouveau texte à la même position de base.
         const padTop = edit.heightPt * 0.25;
         const padBottom = edit.heightPt * 0.3;
         page.drawRectangle({
@@ -388,6 +461,13 @@ export async function applyEditsToPdf(file: File, editsByPage: Map<number, PageE
           font,
           color: rgb(0, 0, 0),
         });
+      } else if (edit.type === "image") {
+        const png = await pdfDoc.embedPng(edit.dataUrl);
+        const w = edit.wFrac * pw;
+        const h = edit.hFrac * ph;
+        const x = edit.xFrac * pw;
+        const y = ph - edit.yFrac * ph - h;
+        page.drawImage(png, { x, y, width: w, height: h });
       }
     }
   }

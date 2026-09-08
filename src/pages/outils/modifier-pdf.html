@@ -7,11 +7,11 @@
     <title>Modifier un PDF gratuitement — ajouter du texte, sans inscription</title>
     <meta
       name="description"
-      content="Ajoutez du texte ou masquez une information sur un PDF, gratuitement, sans limite et sans créer de compte. Traitement 100% local dans votre navigateur, le texte d'origine reste intact."
+      content="Ajoutez du texte, une signature ou masquez une information sur un PDF, gratuitement, sans limite et sans créer de compte. Fonctionne sur mobile et ordinateur, traitement 100% local dans votre navigateur."
     />
     <meta
       name="keywords"
-      content="modifier pdf gratuit, éditer pdf sans inscription, ajouter texte pdf gratuit, remplir pdf en ligne, masquer information pdf, éditeur pdf gratuit sans compte"
+      content="modifier pdf gratuit, éditer pdf sans inscription, ajouter texte pdf gratuit, remplir pdf en ligne, masquer information pdf, éditeur pdf gratuit sans compte, modifier pdf sur telephone"
     />
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/outils/modifier-pdf" />
 
@@ -20,13 +20,13 @@
     <meta property="og:title" content="Modifier un PDF gratuitement — ajouter du texte, sans inscription" />
     <meta
       property="og:description"
-      content="Ajoutez du texte ou masquez une information sur un PDF, sans limite, sans compte, sans filigrane. Traitement 100% local."
+      content="Ajoutez du texte, une signature ou masquez une information sur un PDF, sans limite, sans compte, sans filigrane. Traitement 100% local."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Modifier un PDF gratuitement — ajouter du texte, sans inscription" />
     <meta
       name="twitter:description"
-      content="Ajoutez du texte ou masquez une information sur un PDF, sans limite, sans compte, sans filigrane. Traitement 100% local."
+      content="Ajoutez du texte, une signature ou masquez une information sur un PDF, sans limite, sans compte, sans filigrane. Traitement 100% local."
     />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
@@ -43,7 +43,7 @@
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Web",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-        "description": "Ajouter du texte ou masquer une information sur un PDF, entièrement dans le navigateur, sans inscription ni compte.",
+        "description": "Ajouter du texte, une signature ou masquer une information sur un PDF, entièrement dans le navigateur, sans inscription ni compte.",
         "url": "https://www.lescalculateurs.fr/pages/outils/modifier-pdf"
       }
     </script>
@@ -63,11 +63,12 @@
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "Ajouter du texte ou masquer une information sur un PDF",
-        "description": "Procédure pas à pas pour modifier un PDF directement dans le navigateur.",
+        "description": "Procédure pas à pas pour modifier un PDF directement dans le navigateur, sur ordinateur ou mobile.",
         "step": [
           { "@type": "HowToStep", "name": "Ouvrir le PDF", "text": "Choisissez le fichier PDF à modifier." },
-          { "@type": "HowToStep", "name": "Ajouter du texte ou une zone blanche", "text": "Choisissez l'outil texte ou zone blanche, puis cliquez (ou cliquez-glissez pour une zone) à l'endroit voulu sur la page." },
-          { "@type": "HowToStep", "name": "Naviguer entre les pages", "text": "Utilisez les boutons page précédente/suivante pour modifier plusieurs pages." },
+          { "@type": "HowToStep", "name": "Modifier le texte existant", "text": "Cliquez (ou touchez) directement un texte déjà présent sur la page pour le modifier." },
+          { "@type": "HowToStep", "name": "Ajouter du contenu", "text": "Choisissez l'outil texte, zone blanche ou signature, puis cliquez à l'endroit voulu sur la page." },
+          { "@type": "HowToStep", "name": "Annuler si besoin", "text": "Ctrl+Z (ou le bouton Annuler) revient sur la dernière modification." },
           { "@type": "HowToStep", "name": "Télécharger", "text": "Cliquez sur « Télécharger le PDF modifié » pour obtenir le résultat." }
         ]
       }
@@ -76,18 +77,22 @@
     <style>
       #page-stage { position: relative; display: inline-block; user-select: none; touch-action: none; }
       #page-canvas { display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
-      #overlay-layer { position: absolute; inset: 0; z-index: 2; }
-      .edit-el { position: absolute; }
+      #overlay-layer { position: absolute; inset: 0; z-index: 2; touch-action: none; }
+      .edit-el { position: absolute; touch-action: none; }
       .edit-text {
-        min-width: 20px; padding: 1px 3px; white-space: pre-wrap; cursor: text;
+        min-width: 20px; padding: 1px 3px; white-space: pre-wrap; cursor: move;
         border: 1px dashed transparent;
       }
       .edit-text:hover { border-color: #14b8a6; }
-      .edit-rect { background: #ffffff; border: 1px dashed #9ca3af; }
+      .edit-rect { background: #ffffff; border: 1px dashed #9ca3af; cursor: move; }
       .edit-del {
         position: absolute; top: -10px; right: -10px; width: 18px; height: 18px; border-radius: 9999px;
         background: #dc2626; color: white; font-size: 11px; line-height: 18px; text-align: center;
-        cursor: pointer; z-index: 5;
+        cursor: pointer; z-index: 5; touch-action: none;
+      }
+      .edit-resize-handle {
+        position: absolute; bottom: -6px; right: -6px; width: 14px; height: 14px; border-radius: 3px;
+        background: #14b8a6; border: 2px solid white; cursor: nwse-resize; z-index: 5; touch-action: none;
       }
       textarea.edit-input {
         position: absolute; border: 1px solid #14b8a6; background: white; resize: none; padding: 1px 3px;
@@ -103,6 +108,14 @@
       #text-editor-layer span.detected-edited {
         color: #111827 !important; background: #ffffff; outline: 1px solid #14b8a6;
       }
+      #signature-modal {
+        position: fixed; inset: 0; z-index: 50; background: rgba(17, 24, 39, 0.6);
+        display: flex; align-items: center; justify-content: center; padding: 16px;
+      }
+      #signature-canvas {
+        touch-action: none; border: 1px dashed #9ca3af; border-radius: 8px; background: white;
+        width: 100%; max-width: 420px; height: 160px; cursor: crosshair;
+      }
     </style>
   </head>
   <body class="bg-gray-50">
@@ -112,7 +125,7 @@
           <a href="../outils.html" class="text-primary-600 hover:text-primary-700 font-medium">← Tous les outils</a>
           <div class="text-center px-4">
             <h1 class="text-2xl font-bold text-gray-900">✏️ Modifier un PDF</h1>
-            <p class="text-sm text-gray-600 mt-1">Ajouter du texte ou masquer une information — sans compte, sans limite.</p>
+            <p class="text-sm text-gray-600 mt-1">Texte, signature ou masquage — sans compte, sans limite, sur mobile aussi.</p>
           </div>
           <div></div>
         </div>
@@ -140,6 +153,7 @@
           <div class="flex gap-2">
             <button id="tool-text" class="tool-btn px-3 py-1.5 rounded text-sm font-medium border border-teal-600 bg-teal-600 text-white">🔤 Texte</button>
             <button id="tool-rect" class="tool-btn px-3 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-700">⬜ Zone blanche</button>
+            <button id="tool-signature" class="tool-btn px-3 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-700">✍️ Signature</button>
           </div>
           <div class="h-5 w-px bg-gray-200"></div>
           <label class="flex items-center gap-1 text-sm text-gray-600">
@@ -158,8 +172,10 @@
               <option value="0,0,0" selected>Noir</option>
               <option value="0.75,0.1,0.1">Rouge</option>
               <option value="0.1,0.2,0.75">Bleu</option>
+              <option value="1,1,1">Blanc</option>
             </select>
           </label>
+          <button id="undo-btn" title="Annuler (Ctrl+Z)" class="px-3 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-700 disabled:opacity-30">↩️ Annuler</button>
           <div class="flex-1"></div>
           <button id="change-file-btn" class="text-sm text-gray-500 hover:text-red-600">Changer de fichier</button>
         </div>
@@ -179,7 +195,7 @@
           </div>
         </div>
         <p class="text-center text-xs text-gray-400 mt-2">
-          💡 Le texte déjà présent dans le PDF est directement cliquable pour le modifier.
+          💡 Le texte déjà présent dans le PDF est directement cliquable (ou touchable) pour le modifier.
         </p>
 
         <div class="text-center mb-10">
@@ -195,18 +211,21 @@
         <div class="prose text-gray-600 text-sm space-y-3">
           <p>
             La plupart des éditeurs de PDF « gratuits » demandent en réalité une inscription par e-mail,
-            limitent le nombre de pages ou d'exports, ou ajoutent un filigrane. Cet outil ajoute du texte
-            ou une zone blanche directement dans votre navigateur, sans compte, sans limite de fichiers et
-            sans filigrane — pratique pour compléter une
+            limitent le nombre de pages ou d'exports, ou ajoutent un filigrane. Cet outil ajoute du texte,
+            une signature ou une zone blanche directement dans votre navigateur, sans compte, sans limite
+            de fichiers et sans filigrane — pratique pour compléter une
             <a href="/pages/notaire" class="text-teal-700 underline">attestation</a>, annoter un document
             avant de l'envoyer, ou masquer une information sensible (numéro de compte, date de naissance)
-            avant de partager un PDF.
+            avant de partager un PDF. Il fonctionne aussi bien sur ordinateur que sur mobile.
           </p>
           <p>
-            Le texte d'origine du PDF reste intact et sélectionnable : seuls les éléments que vous ajoutez
-            sont dessinés par-dessus, sans reconstruire le document (contrairement à l'outil
+            Le texte d'origine du PDF reste intact et sélectionnable tant que vous ne le modifiez pas :
+            seuls les éléments que vous ajoutez ou éditez sont dessinés par-dessus, sans reconstruire tout
+            le document (contrairement à l'outil
             <a href="compresser-pdf.html" class="text-teal-700 underline">compresser un PDF</a>, qui
-            re-fabrique chaque page en image).
+            re-fabrique chaque page en image). Besoin de signer un document ? La page
+            <a href="signer-pdf.html" class="text-teal-700 underline">signer un PDF</a> propose la même
+            fonctionnalité, présentée pour cet usage précis.
           </p>
         </div>
       </section>
@@ -219,6 +238,24 @@
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <p class="text-sm text-gray-600" itemprop="text">
                 Non. Aucune inscription, aucune adresse e-mail, aucune limite de nombre d'utilisations.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="text-base font-semibold text-gray-800 mb-2" itemprop="name">Ça fonctionne sur téléphone ?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-gray-600" itemprop="text">
+                Oui, l'ensemble des outils (texte, zone blanche, signature au doigt) fonctionne au tactile
+                comme à la souris.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="text-base font-semibold text-gray-800 mb-2" itemprop="name">Puis-je annuler une modification ?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="text-sm text-gray-600" itemprop="text">
+                Oui, avec Ctrl+Z (ou le bouton « Annuler ») pour chaque ajout, déplacement, redimensionnement
+                ou modification de texte.
               </p>
             </div>
           </div>
@@ -255,7 +292,7 @@
 
       <section class="max-w-2xl mx-auto">
         <h2 class="text-lg font-bold text-gray-900 mb-3">Autres outils PDF</h2>
-        <div class="grid sm:grid-cols-3 gap-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <a href="fusionner-pdf.html" class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-teal-400">
             <p class="font-medium text-gray-900">📎 Fusionner des PDF</p>
           </a>
@@ -265,494 +302,32 @@
           <a href="photo-vers-pdf.html" class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-teal-400">
             <p class="font-medium text-gray-900">📷 Photo → PDF</p>
           </a>
+          <a href="signer-pdf.html" class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-teal-400">
+            <p class="font-medium text-gray-900">✍️ Signer un PDF</p>
+          </a>
         </div>
       </section>
     </main>
 
+    <!-- Pad de signature -->
+    <div id="signature-modal" class="hidden">
+      <div class="bg-white rounded-xl p-5 max-w-md w-full">
+        <h3 class="text-base font-semibold text-gray-900 mb-3">✍️ Dessinez votre signature</h3>
+        <canvas id="signature-canvas" width="420" height="160"></canvas>
+        <div class="flex justify-between gap-2 mt-4">
+          <button id="signature-clear" class="px-3 py-1.5 text-sm border border-gray-300 rounded text-gray-700">Effacer</button>
+          <div class="flex gap-2">
+            <button id="signature-cancel" class="px-3 py-1.5 text-sm border border-gray-300 rounded text-gray-700">Annuler</button>
+            <button id="signature-confirm" class="px-3 py-1.5 text-sm bg-teal-600 hover:bg-teal-700 text-white rounded font-medium">Utiliser cette signature</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/content.ts"></script>
     <script type="module">
-      import {
-        loadPdfForEditing,
-        renderPageToCanvas,
-        buildTextLayer,
-        applyEditsToPdf,
-        downloadBlob,
-      } from "../../utils/pdfTools.ts";
-
-      const dropzone = document.getElementById("dropzone");
-      const browseBtn = document.getElementById("browse-btn");
-      const fileInput = document.getElementById("file-input");
-      const errorBox = document.getElementById("error-box");
-      const editorSection = document.getElementById("editor-section");
-      const changeFileBtn = document.getElementById("change-file-btn");
-
-      const toolTextBtn = document.getElementById("tool-text");
-      const toolRectBtn = document.getElementById("tool-rect");
-      const fontSizeSelect = document.getElementById("font-size");
-      const fontColorSelect = document.getElementById("font-color");
-
-      const prevPageBtn = document.getElementById("prev-page");
-      const nextPageBtn = document.getElementById("next-page");
-      const pageNumEl = document.getElementById("page-num");
-      const pageCountEl = document.getElementById("page-count");
-
-      const stage = document.getElementById("page-stage");
-      const canvas = document.getElementById("page-canvas");
-      const overlay = document.getElementById("overlay-layer");
-      const textEditorLayer = document.getElementById("text-editor-layer");
-      const exportBtn = document.getElementById("export-btn");
-      const status = document.getElementById("status");
-
-      const TARGET_WIDTH = 700;
-
-      let currentFile = null;
-      let pdfDoc = null;
-      let numPages = 1;
-      let currentPage = 1;
-      let activeTool = "text";
-      /** Map<pageNumber(1-based), Array<edit>> ; chaque edit garde aussi un id + son élément DOM pour re-render */
-      let editsByPage = new Map();
-      let nextEditId = 0;
-
-      /** Map<pageNumber(1-based), DetectedTextItem[]> — géométrie brute (points PDF) du texte détecté */
-      let detectedTextByPage = new Map();
-      /** Map<pageNumber(1-based), Map<itemIndex, newText>> — modifications du texte déjà présent */
-      let textEditsByPage = new Map();
-
-      function showError(message) {
-        errorBox.textContent = message;
-        errorBox.classList.remove("hidden");
-      }
-      function clearError() {
-        errorBox.classList.add("hidden");
-        errorBox.textContent = "";
-      }
-
-      function pageEdits(pageNumber) {
-        if (!editsByPage.has(pageNumber)) editsByPage.set(pageNumber, []);
-        return editsByPage.get(pageNumber);
-      }
-
-      // ---------- Chargement du fichier ----------
-      async function setFile(file) {
-        clearError();
-        currentFile = file;
-        dropzone.classList.add("hidden");
-        editorSection.classList.remove("hidden");
-        status.textContent = "Chargement du PDF…";
-
-        try {
-          pdfDoc = await loadPdfForEditing(file);
-          numPages = pdfDoc.numPages;
-          currentPage = 1;
-          editsByPage = new Map();
-          detectedTextByPage = new Map();
-          textEditsByPage = new Map();
-          pageCountEl.textContent = numPages;
-          await renderCurrentPage();
-          status.textContent = "";
-        } catch (err) {
-          console.error("Erreur ouverture PDF:", err);
-          editorSection.classList.add("hidden");
-          dropzone.classList.remove("hidden");
-          showError("Impossible d'ouvrir ce PDF. Vérifiez qu'il s'agit bien d'un PDF valide et non protégé par un mot de passe fort.");
-        }
-      }
-
-      function resetFile() {
-        currentFile = null;
-        pdfDoc = null;
-        editsByPage = new Map();
-        detectedTextByPage = new Map();
-        textEditsByPage = new Map();
-        dropzone.classList.remove("hidden");
-        editorSection.classList.add("hidden");
-        fileInput.value = "";
-        status.textContent = "";
-        overlay.innerHTML = "";
-        textEditorLayer.innerHTML = "";
-      }
-
-      browseBtn.addEventListener("click", () => fileInput.click());
-      dropzone.addEventListener("click", (e) => {
-        if (e.target === browseBtn) return;
-        fileInput.click();
-      });
-      fileInput.addEventListener("change", () => {
-        if (fileInput.files && fileInput.files[0]) setFile(fileInput.files[0]);
-      });
-      changeFileBtn.addEventListener("click", resetFile);
-
-      ["dragover", "dragenter"].forEach((evt) =>
-        dropzone.addEventListener(evt, (e) => {
-          e.preventDefault();
-          dropzone.classList.add("border-teal-400", "bg-teal-50/40");
-        }),
-      );
-      ["dragleave", "drop"].forEach((evt) =>
-        dropzone.addEventListener(evt, (e) => {
-          e.preventDefault();
-          dropzone.classList.remove("border-teal-400", "bg-teal-50/40");
-        }),
-      );
-      dropzone.addEventListener("drop", (e) => {
-        const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
-        if (file && (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf"))) setFile(file);
-      });
-
-      // ---------- Rendu de page + reconstruction de l'overlay ----------
-      let currentPageWidthPt = 0;
-
-      async function renderCurrentPage() {
-        const info = await renderPageToCanvas(pdfDoc, currentPage, canvas, TARGET_WIDTH);
-        currentPageWidthPt = info.widthPt;
-        overlay.style.width = canvas.width + "px";
-        overlay.style.height = canvas.height + "px";
-        pageNumEl.textContent = currentPage;
-        prevPageBtn.disabled = currentPage <= 1;
-        nextPageBtn.disabled = currentPage >= numPages;
-        rebuildOverlay();
-        await setupTextLayerForCurrentPage();
-      }
-
-      // ---------- Texte déjà présent dans le PDF (édition en place) ----------
-      async function setupTextLayerForCurrentPage() {
-        textEditorLayer.style.width = canvas.width + "px";
-        textEditorLayer.style.height = canvas.height + "px";
-
-        let items = detectedTextByPage.get(currentPage);
-        let textDivs;
-        try {
-          const built = await buildTextLayer(pdfDoc, currentPage, textEditorLayer, TARGET_WIDTH);
-          textDivs = built.textDivs;
-          items = built.items;
-          detectedTextByPage.set(currentPage, items);
-        } catch (err) {
-          console.error("Détection du texte impossible sur cette page:", err);
-          return;
-        }
-
-        const pageTextEdits = textEditsByPage.get(currentPage);
-
-        for (const item of items) {
-          const span = textDivs[item.index];
-          if (!span) continue;
-          span.dataset.itemIndex = item.index;
-
-          const savedText = pageTextEdits && pageTextEdits.get(item.index);
-          if (savedText !== undefined) {
-            span.textContent = savedText;
-            span.classList.add("detected-edited");
-          }
-
-          span.addEventListener("click", (e) => {
-            e.stopPropagation();
-            startEditingDetectedText(span, item);
-          });
-        }
-      }
-
-      function startEditingDetectedText(span, item) {
-        if (span.classList.contains("detected-editing")) return;
-        span.classList.add("detected-editing");
-        span.contentEditable = "true";
-        span.focus();
-
-        const range = document.createRange();
-        range.selectNodeContents(span);
-        const sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
-
-        function commit() {
-          span.removeEventListener("blur", commit);
-          span.contentEditable = "false";
-          span.classList.remove("detected-editing");
-
-          const newText = span.textContent;
-          let pageMap = textEditsByPage.get(currentPage);
-          if (newText === item.str) {
-            // Retour au texte d'origine : annule la modification
-            if (pageMap) pageMap.delete(item.index);
-            span.classList.remove("detected-edited");
-          } else {
-            if (!pageMap) {
-              pageMap = new Map();
-              textEditsByPage.set(currentPage, pageMap);
-            }
-            pageMap.set(item.index, newText);
-            span.classList.add("detected-edited");
-          }
-        }
-
-        span.addEventListener("blur", commit);
-        span.addEventListener("keydown", (e) => {
-          if (e.key === "Enter") {
-            e.preventDefault();
-            span.blur();
-          }
-          if (e.key === "Escape") {
-            span.textContent = item.str;
-            span.blur();
-          }
-        });
-      }
-
-      function rebuildOverlay() {
-        overlay.innerHTML = "";
-        for (const edit of pageEdits(currentPage)) {
-          overlay.appendChild(buildEditElement(edit));
-        }
-      }
-
-      function colorToCss(color) {
-        const [r, g, b] = color;
-        return `rgb(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)})`;
-      }
-
-      function buildEditElement(edit) {
-        const el = document.createElement("div");
-        el.className = "edit-el";
-        el.dataset.id = edit.id;
-        el.style.left = edit.xFrac * canvas.width + "px";
-        el.style.top = edit.yFrac * canvas.height + "px";
-
-        if (edit.type === "text") {
-          const textEl = document.createElement("div");
-          textEl.className = "edit-text";
-          textEl.textContent = edit.text;
-          textEl.style.color = colorToCss(edit.color);
-          textEl.style.fontSize = (edit.fontSize * (canvas.width / edit.pageWidthPt)) + "px";
-          textEl.addEventListener("click", (e) => {
-            e.stopPropagation();
-            openTextInput(edit);
-          });
-          el.appendChild(textEl);
-        } else {
-          el.classList.add("edit-rect");
-          el.style.width = edit.wFrac * canvas.width + "px";
-          el.style.height = edit.hFrac * canvas.height + "px";
-        }
-
-        const del = document.createElement("div");
-        del.className = "edit-del";
-        del.textContent = "×";
-        del.title = "Supprimer";
-        del.addEventListener("click", (e) => {
-          e.stopPropagation();
-          const arr = pageEdits(currentPage);
-          const idx = arr.findIndex((it) => it.id === edit.id);
-          if (idx !== -1) arr.splice(idx, 1);
-          rebuildOverlay();
-        });
-        el.appendChild(del);
-
-        return el;
-      }
-
-      // ---------- Outils ----------
-      function setActiveTool(tool) {
-        activeTool = tool;
-        toolTextBtn.classList.toggle("bg-teal-600", tool === "text");
-        toolTextBtn.classList.toggle("text-white", tool === "text");
-        toolTextBtn.classList.toggle("border-teal-600", tool === "text");
-        toolTextBtn.classList.toggle("border-gray-300", tool !== "text");
-        toolTextBtn.classList.toggle("text-gray-700", tool !== "text");
-
-        toolRectBtn.classList.toggle("bg-teal-600", tool === "rect");
-        toolRectBtn.classList.toggle("text-white", tool === "rect");
-        toolRectBtn.classList.toggle("border-teal-600", tool === "rect");
-        toolRectBtn.classList.toggle("border-gray-300", tool !== "rect");
-        toolRectBtn.classList.toggle("text-gray-700", tool !== "rect");
-      }
-      toolTextBtn.addEventListener("click", () => setActiveTool("text"));
-      toolRectBtn.addEventListener("click", () => setActiveTool("rect"));
-
-      // ---------- Placement : texte ----------
-      function openTextInput(existingEdit) {
-        const input = document.createElement("textarea");
-        input.className = "edit-input";
-        const xFrac = existingEdit ? existingEdit.xFrac : openTextInput._pendingXFrac;
-        const yFrac = existingEdit ? existingEdit.yFrac : openTextInput._pendingYFrac;
-        input.style.left = xFrac * canvas.width + "px";
-        input.style.top = yFrac * canvas.height + "px";
-        input.value = existingEdit ? existingEdit.text : "";
-        overlay.appendChild(input);
-        input.focus();
-
-        function commit() {
-          input.remove();
-          const value = input.value.trim();
-          if (!value) {
-            if (existingEdit) {
-              const arr = pageEdits(currentPage);
-              const idx = arr.findIndex((it) => it.id === existingEdit.id);
-              if (idx !== -1) arr.splice(idx, 1);
-            }
-            rebuildOverlay();
-            return;
-          }
-          if (existingEdit) {
-            existingEdit.text = value;
-          } else {
-            pageEdits(currentPage).push({
-              id: nextEditId++,
-              type: "text",
-              xFrac,
-              yFrac,
-              text: value,
-              fontSize: Number(fontSizeSelect.value),
-              color: fontColorSelect.value.split(",").map(Number),
-              pageWidthPt: currentPageWidthPt,
-            });
-          }
-          rebuildOverlay();
-        }
-
-        input.addEventListener("blur", commit);
-        input.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            input.blur();
-          }
-          if (e.key === "Escape") {
-            input.value = existingEdit ? existingEdit.text : "";
-            input.blur();
-          }
-        });
-      }
-
-      // ---------- Interaction sur le stage (placement) ----------
-      let dragStart = null;
-      let dragPreview = null;
-
-      overlay.addEventListener("mousedown", (e) => {
-        if (e.target !== overlay) return; // clic sur un élément existant : ignoré ici
-        const rect = overlay.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        if (activeTool === "text") {
-          openTextInput._pendingXFrac = x / canvas.width;
-          openTextInput._pendingYFrac = y / canvas.height;
-          openTextInput(null);
-          return;
-        }
-
-        // outil rectangle : début de glisser
-        dragStart = { x, y };
-        dragPreview = document.createElement("div");
-        dragPreview.className = "edit-el edit-rect";
-        dragPreview.style.left = x + "px";
-        dragPreview.style.top = y + "px";
-        dragPreview.style.width = "0px";
-        dragPreview.style.height = "0px";
-        overlay.appendChild(dragPreview);
-      });
-
-      overlay.addEventListener("mousemove", (e) => {
-        if (!dragStart || !dragPreview) return;
-        const rect = overlay.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const left = Math.min(x, dragStart.x);
-        const top = Math.min(y, dragStart.y);
-        const w = Math.abs(x - dragStart.x);
-        const h = Math.abs(y - dragStart.y);
-        dragPreview.style.left = left + "px";
-        dragPreview.style.top = top + "px";
-        dragPreview.style.width = w + "px";
-        dragPreview.style.height = h + "px";
-      });
-
-      window.addEventListener("mouseup", (e) => {
-        if (!dragStart || !dragPreview) return;
-        const rect = overlay.getBoundingClientRect();
-        const x = Math.max(0, Math.min(e.clientX - rect.left, canvas.width));
-        const y = Math.max(0, Math.min(e.clientY - rect.top, canvas.height));
-        const left = Math.min(x, dragStart.x);
-        const top = Math.min(y, dragStart.y);
-        const w = Math.abs(x - dragStart.x);
-        const h = Math.abs(y - dragStart.y);
-
-        dragPreview.remove();
-        dragPreview = null;
-        dragStart = null;
-
-        if (w < 8 || h < 8) return; // trop petit, ignoré
-
-        pageEdits(currentPage).push({
-          id: nextEditId++,
-          type: "rect",
-          xFrac: left / canvas.width,
-          yFrac: top / canvas.height,
-          wFrac: w / canvas.width,
-          hFrac: h / canvas.height,
-        });
-        rebuildOverlay();
-      });
-
-      // ---------- Navigation ----------
-      prevPageBtn.addEventListener("click", async () => {
-        if (currentPage > 1) {
-          currentPage--;
-          await renderCurrentPage();
-        }
-      });
-      nextPageBtn.addEventListener("click", async () => {
-        if (currentPage < numPages) {
-          currentPage++;
-          await renderCurrentPage();
-        }
-      });
-
-      // ---------- Export ----------
-      exportBtn.addEventListener("click", async () => {
-        if (!currentFile) return;
-        clearError();
-        exportBtn.disabled = true;
-        status.textContent = "Génération du PDF modifié…";
-        try {
-          const byPageIndex = new Map();
-
-          function pushEdit(pageNumber, edit) {
-            const idx = pageNumber - 1;
-            if (!byPageIndex.has(idx)) byPageIndex.set(idx, []);
-            byPageIndex.get(idx).push(edit);
-          }
-
-          for (const [pageNumber, edits] of editsByPage) {
-            for (const edit of edits) pushEdit(pageNumber, edit);
-          }
-
-          for (const [pageNumber, pageMap] of textEditsByPage) {
-            const items = detectedTextByPage.get(pageNumber) || [];
-            for (const [itemIndex, newText] of pageMap) {
-              const item = items.find((it) => it.index === itemIndex);
-              if (!item) continue;
-              pushEdit(pageNumber, {
-                type: "textReplace",
-                xPt: item.xPt,
-                yBaselinePt: item.yBaselinePt,
-                widthPt: item.widthPt,
-                heightPt: item.heightPt,
-                fontSize: item.fontSize,
-                text: newText,
-              });
-            }
-          }
-
-          const blob = await applyEditsToPdf(currentFile, byPageIndex);
-          downloadBlob(blob, "pdf-modifie.pdf");
-          status.textContent = "PDF modifié téléchargé.";
-        } catch (err) {
-          console.error("Erreur export PDF:", err);
-          status.textContent = "";
-          showError(err && err.message ? err.message : "Erreur inattendue pendant la génération du PDF.");
-        } finally {
-          exportBtn.disabled = false;
-        }
-      });
+      import { mountPdfEditor } from "../../components/PdfEditorApp.ts";
+      mountPdfEditor();
     </script>
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
