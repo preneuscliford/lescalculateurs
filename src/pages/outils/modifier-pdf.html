@@ -76,7 +76,7 @@
     <style>
       #page-stage { position: relative; display: inline-block; user-select: none; touch-action: none; }
       #page-canvas { display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
-      #overlay-layer { position: absolute; inset: 0; }
+      #overlay-layer { position: absolute; inset: 0; z-index: 2; }
       .edit-el { position: absolute; }
       .edit-text {
         min-width: 20px; padding: 1px 3px; white-space: pre-wrap; cursor: text;
@@ -92,6 +92,16 @@
       textarea.edit-input {
         position: absolute; border: 1px solid #14b8a6; background: white; resize: none; padding: 1px 3px;
         font-family: inherit; outline: none; z-index: 10; min-width: 40px; min-height: 20px;
+      }
+      #text-editor-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+      #text-editor-layer span {
+        pointer-events: auto; cursor: text; color: transparent; border-radius: 2px;
+        font-family: Helvetica, Arial, sans-serif; overflow: hidden;
+      }
+      #text-editor-layer span:hover { outline: 1px dashed rgba(20, 184, 166, 0.6); }
+      #text-editor-layer span.detected-editing,
+      #text-editor-layer span.detected-edited {
+        color: #111827 !important; background: #ffffff; outline: 1px solid #14b8a6;
       }
     </style>
   </head>
@@ -165,8 +175,12 @@
           <div id="page-stage">
             <canvas id="page-canvas"></canvas>
             <div id="overlay-layer"></div>
+            <div id="text-editor-layer"></div>
           </div>
         </div>
+        <p class="text-center text-xs text-gray-400 mt-2">
+          💡 Le texte déjà présent dans le PDF est directement cliquable pour le modifier.
+        </p>
 
         <div class="text-center mb-10">
           <button id="export-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-lg transition text-base">
@@ -257,7 +271,13 @@
 
     <script type="module" src="/content.ts"></script>
     <script type="module">
-      import { loadPdfForEditing, renderPageToCanvas, applyEditsToPdf, downloadBlob } from "../../utils/pdfTools.ts";
+      import {
+        loadPdfForEditing,
+        renderPageToCanvas,
+        buildTextLayer,
+        applyEditsToPdf,
+        downloadBlob,
+      } from "../../utils/pdfTools.ts";
 
       const dropzone = document.getElementById("dropzone");
       const browseBtn = document.getElementById("browse-btn");
@@ -279,6 +299,7 @@
       const stage = document.getElementById("page-stage");
       const canvas = document.getElementById("page-canvas");
       const overlay = document.getElementById("overlay-layer");
+      const textEditorLayer = document.getElementById("text-editor-layer");
       const exportBtn = document.getElementById("export-btn");
       const status = document.getElementById("status");
 
@@ -292,6 +313,11 @@
       /** Map<pageNumber(1-based), Array<edit>> ; chaque edit garde aussi un id + son élément DOM pour re-render */
       let editsByPage = new Map();
       let nextEditId = 0;
+
+      /** Map<pageNumber(1-based), DetectedTextItem[]> — géométrie brute (points PDF) du texte détecté */
+      let detectedTextByPage = new Map();
+      /** Map<pageNumber(1-based), Map<itemIndex, newText>> — modifications du texte déjà présent */
+      let textEditsByPage = new Map();
 
       function showError(message) {
         errorBox.textContent = message;
@@ -320,6 +346,8 @@
           numPages = pdfDoc.numPages;
           currentPage = 1;
           editsByPage = new Map();
+          detectedTextByPage = new Map();
+          textEditsByPage = new Map();
           pageCountEl.textContent = numPages;
           await renderCurrentPage();
           status.textContent = "";
@@ -335,11 +363,14 @@
         currentFile = null;
         pdfDoc = null;
         editsByPage = new Map();
+        detectedTextByPage = new Map();
+        textEditsByPage = new Map();
         dropzone.classList.remove("hidden");
         editorSection.classList.add("hidden");
         fileInput.value = "";
         status.textContent = "";
         overlay.innerHTML = "";
+        textEditorLayer.innerHTML = "";
       }
 
       browseBtn.addEventListener("click", () => fileInput.click());
@@ -381,6 +412,90 @@
         prevPageBtn.disabled = currentPage <= 1;
         nextPageBtn.disabled = currentPage >= numPages;
         rebuildOverlay();
+        await setupTextLayerForCurrentPage();
+      }
+
+      // ---------- Texte déjà présent dans le PDF (édition en place) ----------
+      async function setupTextLayerForCurrentPage() {
+        textEditorLayer.style.width = canvas.width + "px";
+        textEditorLayer.style.height = canvas.height + "px";
+
+        let items = detectedTextByPage.get(currentPage);
+        let textDivs;
+        try {
+          const built = await buildTextLayer(pdfDoc, currentPage, textEditorLayer, TARGET_WIDTH);
+          textDivs = built.textDivs;
+          items = built.items;
+          detectedTextByPage.set(currentPage, items);
+        } catch (err) {
+          console.error("Détection du texte impossible sur cette page:", err);
+          return;
+        }
+
+        const pageTextEdits = textEditsByPage.get(currentPage);
+
+        for (const item of items) {
+          const span = textDivs[item.index];
+          if (!span) continue;
+          span.dataset.itemIndex = item.index;
+
+          const savedText = pageTextEdits && pageTextEdits.get(item.index);
+          if (savedText !== undefined) {
+            span.textContent = savedText;
+            span.classList.add("detected-edited");
+          }
+
+          span.addEventListener("click", (e) => {
+            e.stopPropagation();
+            startEditingDetectedText(span, item);
+          });
+        }
+      }
+
+      function startEditingDetectedText(span, item) {
+        if (span.classList.contains("detected-editing")) return;
+        span.classList.add("detected-editing");
+        span.contentEditable = "true";
+        span.focus();
+
+        const range = document.createRange();
+        range.selectNodeContents(span);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+
+        function commit() {
+          span.removeEventListener("blur", commit);
+          span.contentEditable = "false";
+          span.classList.remove("detected-editing");
+
+          const newText = span.textContent;
+          let pageMap = textEditsByPage.get(currentPage);
+          if (newText === item.str) {
+            // Retour au texte d'origine : annule la modification
+            if (pageMap) pageMap.delete(item.index);
+            span.classList.remove("detected-edited");
+          } else {
+            if (!pageMap) {
+              pageMap = new Map();
+              textEditsByPage.set(currentPage, pageMap);
+            }
+            pageMap.set(item.index, newText);
+            span.classList.add("detected-edited");
+          }
+        }
+
+        span.addEventListener("blur", commit);
+        span.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            span.blur();
+          }
+          if (e.key === "Escape") {
+            span.textContent = item.str;
+            span.blur();
+          }
+        });
       }
 
       function rebuildOverlay() {
@@ -599,10 +714,34 @@
         status.textContent = "Génération du PDF modifié…";
         try {
           const byPageIndex = new Map();
-          for (const [pageNumber, edits] of editsByPage) {
-            if (!edits.length) continue;
-            byPageIndex.set(pageNumber - 1, edits);
+
+          function pushEdit(pageNumber, edit) {
+            const idx = pageNumber - 1;
+            if (!byPageIndex.has(idx)) byPageIndex.set(idx, []);
+            byPageIndex.get(idx).push(edit);
           }
+
+          for (const [pageNumber, edits] of editsByPage) {
+            for (const edit of edits) pushEdit(pageNumber, edit);
+          }
+
+          for (const [pageNumber, pageMap] of textEditsByPage) {
+            const items = detectedTextByPage.get(pageNumber) || [];
+            for (const [itemIndex, newText] of pageMap) {
+              const item = items.find((it) => it.index === itemIndex);
+              if (!item) continue;
+              pushEdit(pageNumber, {
+                type: "textReplace",
+                xPt: item.xPt,
+                yBaselinePt: item.yBaselinePt,
+                widthPt: item.widthPt,
+                heightPt: item.heightPt,
+                fontSize: item.fontSize,
+                text: newText,
+              });
+            }
+          }
+
           const blob = await applyEditsToPdf(currentFile, byPageIndex);
           downloadBlob(blob, "pdf-modifie.pdf");
           status.textContent = "PDF modifié téléchargé.";

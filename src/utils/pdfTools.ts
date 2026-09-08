@@ -243,7 +243,97 @@ export interface RectEdit {
   hFrac: number;
 }
 
-export type PageEdit = TextEdit | RectEdit;
+/**
+ * Remplacement d'un morceau de texte déjà présent dans le PDF : coordonnées
+ * absolues en points PDF (pas des fractions), extraites directement de
+ * pdf.js (item.transform / item.width / item.height), indépendantes de
+ * l'échelle d'affichage. Le rendu original n'est pas retiré du flux du PDF
+ * (ce n'est pas possible simplement avec pdf-lib) : une zone blanche est
+ * dessinée par-dessus avant d'écrire le nouveau texte, à la même position.
+ */
+export interface TextReplaceEdit {
+  type: "textReplace";
+  xPt: number;
+  yBaselinePt: number;
+  widthPt: number;
+  heightPt: number;
+  text: string;
+  fontSize: number;
+}
+
+export type PageEdit = TextEdit | RectEdit | TextReplaceEdit;
+
+export interface DetectedTextItem {
+  index: number;
+  str: string;
+  /** Coin bas-gauche approx. en points PDF (repère bas-gauche, comme pdf-lib). */
+  xPt: number;
+  yBaselinePt: number;
+  widthPt: number;
+  heightPt: number;
+  fontSize: number;
+}
+
+/**
+ * Construit la couche de texte interactive d'une page : un <span> positionné
+ * en absolu par-dessus chaque morceau de texte détecté par pdf.js
+ * (getTextContent), à la même échelle que le rendu canvas. Positionnement
+ * calculé directement (pas de dépendance à pdfjs-dist TextLayer, qui suppose
+ * des variables CSS internes non documentées propres au lecteur officiel de
+ * pdf.js et non fournies par le paquet npm). Ne gère correctement que le
+ * texte non pivoté (cas très largement majoritaire en pratique).
+ */
+export async function buildTextLayer(
+  doc: PdfForEditing,
+  pageNumber: number,
+  container: HTMLElement,
+  targetWidth: number,
+): Promise<{ textDivs: HTMLElement[]; items: DetectedTextItem[] }> {
+  const page = await doc.getPage(pageNumber);
+  const baseViewport = page.getViewport({ scale: 1 });
+  const scale = targetWidth / baseViewport.width;
+  const pageHeightPt = baseViewport.height;
+
+  const textContent = await page.getTextContent();
+
+  container.innerHTML = "";
+  const items: DetectedTextItem[] = [];
+  const textDivs: HTMLElement[] = [];
+
+  (textContent.items as any[]).forEach((raw, index) => {
+    if (typeof raw.str !== "string" || !raw.str.trim()) return;
+    const transform = raw.transform as number[];
+    const xPt = transform[4];
+    const yBaselinePt = transform[5];
+    const widthPt = raw.width;
+    const heightPt = raw.height;
+    const fontSize = Math.abs(transform[3]) || heightPt;
+
+    items.push({ index, str: raw.str, xPt, yBaselinePt, widthPt, heightPt, fontSize });
+
+    // Conversion points PDF (repère bas-gauche) -> pixels canvas (repère haut-gauche)
+    const left = xPt * scale;
+    const baselineFromTop = (pageHeightPt - yBaselinePt) * scale;
+    const boxHeight = heightPt * scale;
+    const top = baselineFromTop - boxHeight * 0.8; // approx. ascendant au-dessus de la ligne de base
+
+    const span = document.createElement("span");
+    span.textContent = raw.str;
+    span.style.position = "absolute";
+    span.style.left = `${left}px`;
+    span.style.top = `${top}px`;
+    span.style.width = `${Math.max(widthPt * scale, 4)}px`;
+    span.style.height = `${Math.max(boxHeight, 4)}px`;
+    span.style.fontSize = `${fontSize * scale}px`;
+    span.style.lineHeight = `${boxHeight}px`;
+    span.style.whiteSpace = "pre";
+
+    container.appendChild(span);
+    textDivs[index] = span;
+  });
+
+  return { textDivs, items };
+}
 
 /**
  * Applique des ajouts (texte, zones blanches) sur un PDF existant, page par
@@ -268,7 +358,7 @@ export async function applyEditsToPdf(file: File, editsByPage: Map<number, PageE
         const x = edit.xFrac * pw;
         const y = ph - edit.yFrac * ph - h;
         page.drawRectangle({ x, y, width: w, height: h, color: rgb(1, 1, 1) });
-      } else {
+      } else if (edit.type === "text") {
         const x = edit.xFrac * pw;
         const y = ph - edit.yFrac * ph - edit.fontSize;
         page.drawText(edit.text, {
@@ -277,6 +367,26 @@ export async function applyEditsToPdf(file: File, editsByPage: Map<number, PageE
           size: edit.fontSize,
           font,
           color: rgb(edit.color[0], edit.color[1], edit.color[2]),
+        });
+      } else {
+        // textReplace : masque l'ancien texte (déjà présent dans le flux du
+        // PDF, non retirable simplement) avec une zone blanche généreuse,
+        // puis écrit le nouveau texte à la même position de base.
+        const padTop = edit.heightPt * 0.25;
+        const padBottom = edit.heightPt * 0.3;
+        page.drawRectangle({
+          x: edit.xPt - 1,
+          y: edit.yBaselinePt - padBottom,
+          width: edit.widthPt + 2,
+          height: edit.heightPt + padTop + padBottom,
+          color: rgb(1, 1, 1),
+        });
+        page.drawText(edit.text, {
+          x: edit.xPt,
+          y: edit.yBaselinePt,
+          size: edit.fontSize,
+          font,
+          color: rgb(0, 0, 0),
         });
       }
     }
