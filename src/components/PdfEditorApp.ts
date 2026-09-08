@@ -59,6 +59,7 @@ export function mountPdfEditor(): void {
 
   const sigModal = document.getElementById("signature-modal") as HTMLElement | null;
   const sigCanvas = document.getElementById("signature-canvas") as HTMLCanvasElement | null;
+  const sigColorSelect = document.getElementById("signature-color") as HTMLSelectElement | null;
   const sigClearBtn = document.getElementById("signature-clear") as HTMLButtonElement | null;
   const sigCancelBtn = document.getElementById("signature-cancel") as HTMLButtonElement | null;
   const sigConfirmBtn = document.getElementById("signature-confirm") as HTMLButtonElement | null;
@@ -723,7 +724,7 @@ export function mountPdfEditor(): void {
     function onMove(e: PointerEvent) {
       if (!drawing || !ctx) return;
       const p = pos(e);
-      ctx.strokeStyle = "#111827";
+      ctx.strokeStyle = sigColorSelect?.value || "#111827";
       ctx.lineWidth = 3;
       ctx.lineCap = "round";
       ctx.beginPath();

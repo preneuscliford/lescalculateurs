@@ -109,8 +109,10 @@
       }
       #signature-modal {
         position: fixed; inset: 0; z-index: 50; background: rgba(17, 24, 39, 0.6);
-        display: flex; align-items: center; justify-content: center; padding: 16px;
+        align-items: center; justify-content: center; padding: 16px;
       }
+      #signature-modal.hidden { display: none; }
+      #signature-modal:not(.hidden) { display: flex; }
       #signature-canvas {
         touch-action: none; border: 1px dashed #9ca3af; border-radius: 8px; background: white;
         width: 100%; max-width: 420px; height: 160px; cursor: crosshair;
@@ -303,7 +305,17 @@
     <!-- Pad de signature -->
     <div id="signature-modal" class="hidden">
       <div class="bg-white rounded-xl p-5 max-w-md w-full">
-        <h3 class="text-base font-semibold text-gray-900 mb-3">✍️ Dessinez votre signature</h3>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-base font-semibold text-gray-900">✍️ Dessinez votre signature</h3>
+          <label class="flex items-center gap-1 text-sm text-gray-600">
+            Couleur
+            <select id="signature-color" class="border border-gray-300 rounded text-sm py-1">
+              <option value="#111827" selected>Noir</option>
+              <option value="#1d4ed8">Bleu</option>
+              <option value="#b91c1c">Rouge</option>
+            </select>
+          </label>
+        </div>
         <canvas id="signature-canvas" width="420" height="160"></canvas>
         <div class="flex justify-between gap-2 mt-4">
           <button id="signature-clear" class="px-3 py-1.5 text-sm border border-gray-300 rounded text-gray-700">Effacer</button>
