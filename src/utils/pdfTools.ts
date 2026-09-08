@@ -195,6 +195,97 @@ export async function imagesToPdf(files: File[], enhance: boolean): Promise<Blob
   return outputPdf.output("blob");
 }
 
+/** Représentation d'un document PDF chargé pour édition page par page (pdf.js). */
+export type PdfForEditing = import("pdfjs-dist").PDFDocumentProxy;
+
+/** Charge un PDF pour un rendu page par page (édition), sans le convertir. */
+export async function loadPdfForEditing(file: File): Promise<PdfForEditing> {
+  const pdfjsLib = await loadPdfjs();
+  const bytes = await file.arrayBuffer();
+  return pdfjsLib.getDocument({ data: bytes }).promise;
+}
+
+/** Rend une page du document dans le canvas fourni, à la largeur cible demandée (px). */
+export async function renderPageToCanvas(
+  doc: PdfForEditing,
+  pageNumber: number,
+  canvas: HTMLCanvasElement,
+  targetWidth: number,
+): Promise<{ widthPt: number; heightPt: number }> {
+  const page = await doc.getPage(pageNumber);
+  const baseViewport = page.getViewport({ scale: 1 });
+  const scale = targetWidth / baseViewport.width;
+  const viewport = page.getViewport({ scale });
+
+  canvas.width = viewport.width;
+  canvas.height = viewport.height;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw new Error("Contexte canvas indisponible");
+
+  await page.render({ canvasContext: ctx, viewport, canvas }).promise;
+  return { widthPt: baseViewport.width, heightPt: baseViewport.height };
+}
+
+export interface TextEdit {
+  type: "text";
+  xFrac: number;
+  yFrac: number;
+  text: string;
+  fontSize: number;
+  color: [number, number, number];
+}
+
+export interface RectEdit {
+  type: "rect";
+  xFrac: number;
+  yFrac: number;
+  wFrac: number;
+  hFrac: number;
+}
+
+export type PageEdit = TextEdit | RectEdit;
+
+/**
+ * Applique des ajouts (texte, zones blanches) sur un PDF existant, page par
+ * page, sans re-rasteriser le document (le contenu d'origine reste net et
+ * le texte d'origine reste sélectionnable).
+ * pageIndex dans editsByPage est 0-based.
+ */
+export async function applyEditsToPdf(file: File, editsByPage: Map<number, PageEdit[]>): Promise<Blob> {
+  const { PDFDocument, StandardFonts, rgb } = await loadPdfLib();
+  const bytes = await file.arrayBuffer();
+  const pdfDoc = await PDFDocument.load(bytes, { ignoreEncryption: true });
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+  for (const [pageIndex, edits] of editsByPage) {
+    const page = pdfDoc.getPage(pageIndex);
+    const { width: pw, height: ph } = page.getSize();
+
+    for (const edit of edits) {
+      if (edit.type === "rect") {
+        const w = edit.wFrac * pw;
+        const h = edit.hFrac * ph;
+        const x = edit.xFrac * pw;
+        const y = ph - edit.yFrac * ph - h;
+        page.drawRectangle({ x, y, width: w, height: h, color: rgb(1, 1, 1) });
+      } else {
+        const x = edit.xFrac * pw;
+        const y = ph - edit.yFrac * ph - edit.fontSize;
+        page.drawText(edit.text, {
+          x,
+          y,
+          size: edit.fontSize,
+          font,
+          color: rgb(edit.color[0], edit.color[1], edit.color[2]),
+        });
+      }
+    }
+  }
+
+  const outBytes = await pdfDoc.save();
+  return new Blob([outBytes as BlobPart], { type: "application/pdf" });
+}
+
 export function formatFileSize(bytes: number): string {
   if (bytes < 1024) return `${bytes} o`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} Ko`;
