@@ -1,9 +1,9 @@
 {
   "seriesKey": "MIR.M.FR.B.A2C.P.R.A.2250.EUR.N",
   "titleFr": "Taux d'intérêt sur contrats nouveaux, Crédits à l'habitat, Ménages, PFIT supérieure à 10 ans",
-  "timePeriod": "2026-06",
-  "value": 3.1639,
-  "fetchedAt": "2026-08-17T16:43:14.595Z",
+  "timePeriod": "2026-08",
+  "value": 3.2059,
+  "fetchedAt": "2026-10-10T14:02:02.438Z",
   "rateFr": "3,2",
   "source": "https://webstat.banque-france.fr/fr/"
 }
