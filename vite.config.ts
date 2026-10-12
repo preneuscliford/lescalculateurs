@@ -43,6 +43,16 @@ function addLastUpdated(html: string, filename: string): string {
       /(<meta\s+property="article:modified_time"\s+content=")[^"]*(")/g,
       `$1${siteUpdate.lastVerified}$2`,
     );
+  // Page avec le bandeau "Estimation indicative" : la date y est intégrée pour
+  // n'avoir qu'une seule barre en haut de page.
+  const stickyBanner = /<div[^>]*class="sticky-ymyl"[^>]*>/;
+  if (stickyBanner.test(out)) {
+    return out.replace(
+      stickyBanner,
+      (open) =>
+        `${open}\n      <span data-lc-maj style="white-space:nowrap">📅 Mis à jour le <time datetime="${siteUpdate.lastVerified}">${siteUpdate.label}</time> ·</span>`,
+    );
+  }
   return out.replace(/<body[^>]*>/i, (body) => `${body}\n    ${lastUpdatedBanner()}`);
 }
 
