@@ -63,7 +63,10 @@ if (form) {
       salaireReferent: salaireMensuelBrutMoyen,
       personnesCharge: 0,
       agePersonne: age,
+      ruptureConventionnelle: true,
+      dateFinContrat: dateSortie,
     });
+    const dureeMois = areResult.durationMax.toLocaleString("fr-FR");
 
     const indemniteDisplay = document.getElementById("combo-indemnite") as HTMLElement;
     const areDisplay = document.getElementById("combo-are") as HTMLElement;
@@ -89,7 +92,7 @@ if (form) {
     if (totalDisplay) totalDisplay.textContent = formatEuroIndemnite(totalCombine);
     if (dureeDisplay) {
       dureeDisplay.textContent = areResult.eligible
-        ? `Indemnité versée une fois + ${areResult.durationMax} mois d'allocation chômage estimée`
+        ? `Indemnité versée une fois + ${dureeMois} mois d'allocation chômage estimée`
         : "Indemnité seule (droits chômage non ouverts avec ces informations)";
     }
 
@@ -104,7 +107,7 @@ if (form) {
       const lines = [
         `• Indemnité de départ : ${indemniteResult.eligible ? formatEuroIndemnite(indemniteResult.montantTotal) : "non éligible (< 8 mois d'ancienneté)"}`,
         `• Allocation chômage mensuelle : ${areResult.eligible ? formatEuroIndemnite(areResult.montantEstime) : "non éligible"}`,
-        areResult.eligible ? `• Durée maximale estimée des droits : ${areResult.durationMax} mois` : null,
+        areResult.eligible ? `• Durée maximale estimée des droits : ${dureeMois} mois` : null,
         `• = Total combiné estimé : ${formatEuroIndemnite(totalCombine)}`,
       ].filter((l): l is string => l !== null);
       detailsContent.innerHTML = lines.map((line) => `<div>${line}</div>`).join("");

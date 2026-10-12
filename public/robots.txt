@@ -75,6 +75,9 @@ Allow: /
 
 # Sitemap
 Sitemap: https://www.lescalculateurs.fr/sitemap.xml
+Sitemap: https://www.lescalculateurs.fr/sitemap-guides.xml
+Sitemap: https://www.lescalculateurs.fr/sitemap-actualites.xml
+Sitemap: https://www.lescalculateurs.fr/sitemap-categories.xml
 
 # Fichier ads.txt pour Google AdSense
 Allow: /ads.txt

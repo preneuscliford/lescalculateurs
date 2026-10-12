@@ -10,7 +10,11 @@ Points clés des barèmes utilisés :
 - Plafond mensuel de la Sécurité sociale 2026 : 4 005 €.
 - Flat tax (PFU) 2026 sur placements financiers et crypto : 31,4 % (12,8 % d'impôt + 18,6 % de prélèvements sociaux, LFSS 2026).
 - ARE : montants du 1er juillet 2025 toujours en vigueur (pas de revalorisation au 1er juillet 2026).
-- RSA, prime d'activité, ASF : revalorisation du 1er avril 2026.
+- RSA (651,69 € pour une personne seule), prime d'activité, AAH (1 041,59 €), ASF : revalorisation du 1er avril 2026.
+- Allocations familiales au 1er avril 2026 : 152,25 € pour 2 enfants, 347,32 € pour 3 enfants, divisées par 2 puis par 4 au-delà des plafonds de ressources 2026.
+- Chômage après rupture conventionnelle (fin de contrat depuis le 1er septembre 2026) : 15 mois maximum avant 55 ans, 20,5 mois à partir de 55 ans.
+- Frais de notaire : droits de mutation selon le barème DGFiP au 1er juin 2026 (6,32 % dans 89 départements, 5,80 % dans 11 dont Mayotte, 5,09 % dans l'Indre).
+- Taxe foncière : taux communaux 2025, derniers publiés par la DGFiP.
 - Barème kilométrique : inchangé pour les revenus 2025.
 
 ## Simulateurs principaux

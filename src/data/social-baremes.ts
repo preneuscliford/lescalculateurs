@@ -148,6 +148,19 @@ export const socialBaremes = {
       de55a56Ans: 685,
       aPartirDe57Ans: 822,
     },
+    // Rupture conventionnelle : durees reduites pour les contrats rompus a
+    // compter du 1er septembre 2026 (loi n° 2026-470 du 11 juin 2026) :
+    // 15 mois avant 55 ans, 20,5 mois a partir de 55 ans.
+    ruptureConventionnelle: {
+      dateEffet: "2026-09-01",
+      sourceUrl:
+        "https://normandie.dreets.gouv.fr/Rupture-conventionnelle-et-chomage-ce-qui-change-au-1er-septembre-2026-%F0%9F%93%84",
+      dureeMaximaleJours: {
+        moinsDe55Ans: 456,
+        de55a56Ans: 624,
+        aPartirDe57Ans: 624,
+      },
+    },
   },
   apl: {
     version: "2026.10",

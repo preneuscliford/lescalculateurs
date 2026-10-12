@@ -37,7 +37,7 @@ export const notaireScenarios = [
       {
         question: "Le taux DMTO change-t-il selon le département ?",
         answer:
-          "Oui. Dans la plupart des départements le taux est majoré à 6,32 %. Dans 12 départements il est à 5,80 %, et dans l'Indre et Mayotte à 5,09 %.",
+          "Oui. Dans la plupart des départements le taux est majoré à 6,32 %. Dans 11 départements (dont Mayotte depuis le 1er juin 2026) il est à 5,80 %, et dans l'Indre à 5,09 %.",
       },
       {
         question: "Les frais de notaire sont-ils les mêmes partout en France ?",

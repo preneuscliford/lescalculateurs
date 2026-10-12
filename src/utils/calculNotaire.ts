@@ -1,4 +1,8 @@
 import { baremes } from "../data/baremes";
+import baremesJson from "../data/baremes.json";
+
+// Taux DMTO globaux par département (barème DGFiP), même source que la page notaire
+const dmtoParDepartement = (baremesJson as { dmto?: Record<string, number> }).dmto ?? {};
 
 export interface CalculNotaireParams {
   prixAchat: number;
@@ -25,6 +29,8 @@ export function getTauxDroitsMutation(
 ): number {
   const { droitsMutation } = baremes.notaire;
   if (typeBien === "neuf") return droitsMutation.neuf;
+  const tauxDepartement = dmtoParDepartement[departement];
+  if (tauxDepartement != null) return tauxDepartement / 100;
   if (droitsMutation.departementsReduits.includes(departement))
     return droitsMutation.reduit;
   return droitsMutation.standard;

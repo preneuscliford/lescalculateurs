@@ -8,7 +8,10 @@ describe("calculNotaire", () => {
 
   test("getTauxDroitsMutation: département réduit applique le taux réduit", () => {
     expect(getTauxDroitsMutation("36", "ancien")).toBe(baremes.notaire.droitsMutation.reduit);
-    expect(getTauxDroitsMutation("976", "terrain")).toBe(baremes.notaire.droitsMutation.reduit);
+  });
+
+  test("getTauxDroitsMutation: Mayotte à 4,50 % (5,80 % global) depuis le 1er juin 2026", () => {
+    expect(getTauxDroitsMutation("976", "terrain")).toBeCloseTo(0.058, 6);
   });
 
   test("getTauxDroitsMutation: standard sinon", () => {

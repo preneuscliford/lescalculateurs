@@ -48,7 +48,7 @@
             "name": "Quel est le montant des allocations familiales en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "En 2026, les allocations familiales sont de 141,99€/mois pour 2 enfants, 323,91€/mois pour 3 enfants, 505,83€/mois pour 4 enfants, puis +181,92€ par enfant supplémentaire."
+              "text": "Depuis le 1er avril 2026, les allocations familiales à taux plein sont de 152,25 €/mois pour 2 enfants, 347,32 €/mois pour 3 enfants, 542,39 €/mois pour 4 enfants, puis +195,07 € par enfant supplémentaire. Ces montants sont divisés par 2 puis par 4 au-delà des plafonds de ressources (79 980 € de revenus 2024 pour 2 enfants)."
             }
           },
           {
@@ -64,7 +64,7 @@
             "name": "Les allocations familiales sont-elles imposables ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non, les allocations familiales ne sont pas imposables et exonérées de CSG/CRDS."
+              "text": "Non, les allocations familiales ne sont pas imposables et ne supportent pas la CSG. Seule la CRDS de 0,5 % est prélevée sur les montants versés."
             }
           }
         ]
@@ -143,34 +143,35 @@
         <div class="grid md:grid-cols-3 gap-4 mb-6">
           <div class="bg-green-50 rounded-lg p-4 border border-green-200">
             <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 1</p>
-            <p class="text-2xl font-bold text-green-700">141,99 €/mois</p>
+            <p class="text-2xl font-bold text-green-700">152,25 €/mois</p>
             <p class="text-sm text-gray-800 mt-1">
-              Famille avec <strong>2 enfants</strong><br />Revenus &lt; 74 000€/an<br />Montant de
-              base
+              Famille avec <strong>2 enfants</strong><br />Revenus 2024 ≤ 79 980 €/an<br />Montant à
+              taux plein
             </p>
           </div>
           <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
             <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 2</p>
-            <p class="text-2xl font-bold text-emerald-700">323,91 €/mois</p>
+            <p class="text-2xl font-bold text-emerald-700">347,32 €/mois</p>
             <p class="text-sm text-gray-800 mt-1">
-              Famille avec <strong>3 enfants</strong><br />Revenus &lt; 80 000€/an<br />+ prime de
-              naissance
+              Famille avec <strong>3 enfants</strong><br />Revenus 2024 ≤ 86 644 €/an<br />Montant à
+              taux plein
             </p>
           </div>
           <div class="bg-teal-50 rounded-lg p-4 border border-teal-200">
             <p class="text-xs text-gray-700 font-medium mb-1">EXEMPLE 3</p>
-            <p class="text-2xl font-bold text-teal-700">505,83 €/mois</p>
+            <p class="text-2xl font-bold text-teal-700">542,39 €/mois</p>
             <p class="text-sm text-gray-800 mt-1">
-              Famille avec <strong>4 enfants</strong><br />Revenus &lt; 86 000€/an<br />+ majoration
-              dès 14 ans
+              Famille avec <strong>4 enfants</strong><br />Revenus 2024 ≤ 93 308 €/an<br />+ majoration
+              pour âge éventuelle
             </p>
           </div>
         </div>
         <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
           <p class="text-sm text-amber-900">
-            <strong>⚠️ Modulation :</strong> Si vos revenus dépassent le plafond, le montant est
-            réduit de 25% puis 50%. Exemple : 3 enfants avec 90 000€/an → ~242,93 €/mois au lieu de
-            323,91 €.
+            <strong>⚠️ Modulation :</strong> Si vos revenus dépassent le premier plafond, le montant
+            est <strong>divisé par 2</strong>, puis <strong>divisé par 4</strong> au-delà du second
+            plafond. Exemple : 3 enfants avec 90 000 € de revenus 2024 → 173,67 €/mois au lieu de
+            347,32 €.
           </p>
         </div>
       </section>
@@ -241,62 +242,59 @@
         </div>
       </section>
       <script>
+        // Barème officiel : montants au 1er avril 2026 (nets de CRDS), plafonds 2026
+        // sur les revenus 2024 (service-public.fr F13213, vérifié le 12/10/2026).
+        const AF_MONTANTS = {
+          plein: { 2: 152.25, 3: 347.32, sup: 195.07 },
+          moitie: { 2: 76.13, 3: 173.67, sup: 97.53 },
+          quart: { 2: 38.07, 3: 86.83, sup: 48.77 },
+        };
+        const AF_PLAFONDS = { tranche1: 79980, tranche2: 106604, parEnfant: 6664 };
+        const formatEur = (v) =>
+          v.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+        function montantAF(bareme, nb) {
+          return nb === 2 ? bareme[2] : bareme[3] + (nb - 3) * bareme.sup;
+        }
         document.getElementById("alloc-form").addEventListener("submit", function (e) {
           e.preventDefault();
           const nb = parseInt(document.getElementById("nb-enfants").value);
           const revenus = parseInt(document.getElementById("revenus").value) || 0;
-          const base = { 2: 141.99, 3: 323.91, 4: 505.83, 5: 687.75, 6: 869.67 };
-          const plafonds = { 2: 74000, 3: 80000, 4: 86000, 5: 92000, 6: 98000 };
-          let mb = base[nb] || 869.67 + (nb - 6) * 181.92;
-          let pf = plafonds[nb] || 98000 + (nb - 6) * 6000;
-          let mf = mb;
-          let detail = "Montant de base sans modulation.";
-          let exemple = "";
-          if (revenus > pf) {
-            let r = (revenus - pf) / (pf * 0.6);
-            if (r <= 1) {
-              mf = Math.round(mb * 0.75);
-              detail = "Revenus > plafond " + pf.toLocaleString("fr-FR") + "€. Réduction 25%.";
-              exemple =
-                "Famille " +
-                nb +
-                " enfants, " +
-                revenus.toLocaleString("fr-FR") +
-                "€/an → " +
-                Math.round(mf) +
-                "€/mois au lieu de " +
-                Math.round(mb) +
-                "€/mois.";
-            } else {
-              mf = Math.round(mb * 0.5);
-              detail = "Revenus >> plafond. Réduction 50%.";
-              exemple =
-                "Famille " +
-                nb +
-                " enfants, " +
-                revenus.toLocaleString("fr-FR") +
-                "€/an → " +
-                Math.round(mf) +
-                "€/mois.";
-            }
+          const majoration = (nb - 2) * AF_PLAFONDS.parEnfant;
+          const plafond1 = AF_PLAFONDS.tranche1 + majoration;
+          const plafond2 = AF_PLAFONDS.tranche2 + majoration;
+          const plein = montantAF(AF_MONTANTS.plein, nb);
+          let mf = plein;
+          let detail;
+          if (revenus <= plafond1) {
+            detail =
+              "Revenus inférieurs au plafond de " +
+              plafond1.toLocaleString("fr-FR") +
+              " € : montant à taux plein.";
+          } else if (revenus <= plafond2) {
+            mf = montantAF(AF_MONTANTS.moitie, nb);
+            detail =
+              "Revenus entre " +
+              plafond1.toLocaleString("fr-FR") +
+              " € et " +
+              plafond2.toLocaleString("fr-FR") +
+              " € : montant divisé par 2.";
           } else {
-            exemple =
-              "Famille " +
-              nb +
-              " enfants, " +
-              revenus.toLocaleString("fr-FR") +
-              "€/an (sous le plafond " +
-              pf.toLocaleString("fr-FR") +
-              "€) → " +
-              Math.round(mb) +
-              "€/mois, soit " +
-              Math.round(mb * 12) +
-              "€/an.";
+            mf = montantAF(AF_MONTANTS.quart, nb);
+            detail =
+              "Revenus supérieurs à " + plafond2.toLocaleString("fr-FR") + " € : montant divisé par 4.";
           }
-          document.getElementById("montant-estime").textContent =
-            Math.max(0, Math.round(mf)) + " €/mois";
-          document.getElementById("montant-annuel").textContent =
-            Math.max(0, Math.round(mf * 12)) + " €/an";
+          const exemple =
+            "Famille de " +
+            nb +
+            " enfants, " +
+            revenus.toLocaleString("fr-FR") +
+            " € de revenus 2024 → " +
+            formatEur(mf) +
+            " par mois" +
+            (mf < plein ? " au lieu de " + formatEur(plein) : "") +
+            ", hors majoration pour âge et complément dégressif éventuel.";
+          document.getElementById("montant-estime").textContent = formatEur(mf) + "/mois";
+          document.getElementById("montant-annuel").textContent = formatEur(mf * 12) + "/an";
           document.getElementById("detail-montant").textContent = detail;
           document.getElementById("exemple-concret").textContent = "💡 " + exemple;
           document.getElementById("resultat").classList.remove("hidden");
@@ -331,87 +329,57 @@
           <table class="w-full text-sm border-collapse border border-gray-300">
             <thead>
               <tr class="bg-green-100">
-                <th class="border border-gray-300 p-3 text-left font-semibold text-gray-900">
-                  Enfants
-                </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
-                  Plein taux
-                </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
-                  Réduit 25%
-                </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
-                  Plafond
-                </th>
-                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">
-                  Majoration +14 ans
-                </th>
+                <th class="border border-gray-300 p-3 text-left font-semibold text-gray-900">Enfants</th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">Taux plein</th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">Divisé par 2</th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">Divisé par 4</th>
+                <th class="border border-gray-300 p-3 text-center font-semibold text-gray-900">Plafonds (revenus 2024)</th>
               </tr>
             </thead>
             <tbody>
               <tr class="hover:bg-gray-100">
                 <td class="border border-gray-300 p-3 font-semibold text-gray-900">2 enfants</td>
-                <td
-                  class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
-                >
-                  141,99 €/mois
-                </td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~106,49 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~74 000 €</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">+35,50 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50">152,25 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">76,13 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">38,07 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">79 980 € / 106 604 €</td>
               </tr>
               <tr class="hover:bg-gray-100 bg-white">
                 <td class="border border-gray-300 p-3 font-semibold text-gray-900">3 enfants</td>
-                <td
-                  class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
-                >
-                  323,91 €/mois
-                </td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~242,93 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~80 000 €</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">+70,99 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50">347,32 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">173,67 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">86,83 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">86 644 € / 113 268 €</td>
               </tr>
               <tr class="hover:bg-gray-100">
                 <td class="border border-gray-300 p-3 font-semibold text-gray-900">4 enfants</td>
-                <td
-                  class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
-                >
-                  505,83 €/mois
-                </td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~379,37 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~86 000 €</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">+106,49 €/mois</td>
+                <td class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50">542,39 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">271,20 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">135,60 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">93 308 € / 119 932 €</td>
               </tr>
               <tr class="hover:bg-gray-100 bg-white">
-                <td class="border border-gray-300 p-3 font-semibold text-gray-900">5 enfants</td>
-                <td
-                  class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
-                >
-                  687,75 €/mois
-                </td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~515,81 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">~92 000 €</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">+142,00 €/mois</td>
+                <td class="border border-gray-300 p-3 font-semibold text-gray-900">Par enfant en plus</td>
+                <td class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50">+195,07 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+97,53 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+48,77 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+6 664 €</td>
               </tr>
               <tr class="hover:bg-gray-100">
-                <td class="border border-gray-300 p-3 font-semibold text-gray-900">
-                  Par enfant suppl.
-                </td>
-                <td
-                  class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50"
-                >
-                  +181,92 €/mois
-                </td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">+136,44 €/mois</td>
-                <td class="border border-gray-300 p-3 text-center text-gray-900">+6 000 €</td>
+                <td class="border border-gray-300 p-3 font-semibold text-gray-900">Majoration pour âge (par enfant)</td>
+                <td class="border border-gray-300 p-3 text-center font-bold text-green-700 bg-green-50">+76,13 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+38,07 €</td>
+                <td class="border border-gray-300 p-3 text-center text-gray-900">+19,03 €</td>
                 <td class="border border-gray-300 p-3 text-center text-gray-900">—</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p class="text-xs text-gray-700 mt-4">
-          * Majoration pour enfant de 14 ans et plus (sauf aîné pour 2 enfants). Plafonds N-2 (avis
-          d'imposition 2024).
+          * Montants mensuels nets au 1er avril 2026. Plafonds 2026 appliqués aux revenus 2024 :
+          taux plein jusqu'au premier plafond, montant divisé par 2 jusqu'au second, divisé par 4
+          au-delà. Majoration pour âge : à 14 ans pour un enfant né avant le 1er mars 2012, à 18 ans
+          pour un enfant né après (pas de majoration pour l'aîné d'une famille de 2 enfants).
         </p>
       </section>
 
@@ -424,8 +392,9 @@
               Quel est le montant des allocations familiales en 2026 ?
             </summary>
             <p class="mt-3 text-gray-800 text-sm">
-              141,99€/mois pour 2 enfants, 323,91€ pour 3, 505,83€ pour 4, +181,92€ par enfant
-              suppl. Majoration de 35,50€ à 142€ pour les +14 ans.
+              Depuis le 1er avril 2026, à taux plein : 152,25 €/mois pour 2 enfants, 347,32 € pour 3,
+              542,39 € pour 4, +195,07 € par enfant en plus. Majoration pour âge : 76,13 € par enfant
+              (divisée par 2 ou 4 selon les revenus).
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
@@ -442,14 +411,15 @@
               Les allocations sont-elles imposables ?
             </summary>
             <p class="mt-3 text-gray-800 text-sm">
-              Non, totalement exonérées d'impôt, de CSG et de CRDS.
+              Non, elles ne sont pas imposables et ne supportent pas la CSG. Seule la CRDS de 0,5 % est
+              prélevée : les montants affichés sur cette page sont déjà nets de CRDS.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
             <summary class="cursor-pointer font-semibold text-gray-900">Jusqu'à quel âge ?</summary>
             <p class="mt-3 text-gray-800 text-sm">
               Jusqu'à 20 ans. Entre 16 et 20 ans, l'enfant doit être scolarisé ou en insertion
-              (rémunération inférieure à 1 082,87€ net/mois).
+              (rémunération inférieure à 55 % du SMIC, soit 1 026,86 € brut par mois depuis le 1er juin 2026).
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">

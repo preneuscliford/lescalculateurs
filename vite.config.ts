@@ -15,6 +15,68 @@ import { impotPilotScenarios } from "./data/pseo/impot-pilot-scenarios.js";
 import { notaireScenarios } from "./data/pseo/notaire-scenarios.js";
 import { salairePilotScenarios } from "./data/pseo/salaire-pilot-scenarios.js";
 
+// Date du dernier audit des barèmes, affichée en haut de chaque page au build.
+const siteUpdate = JSON.parse(
+  fs.readFileSync(resolve(__dirname, "src/data/site-update.json"), "utf8"),
+) as { lastVerified: string; label: string };
+
+// Pages juridiques : elles gardent leur propre date de révision, pas de bandeau.
+const PAGES_SANS_BANDEAU = /(mentions-legales|politique-|contact|404)/;
+
+function lastUpdatedBanner(): string {
+  const historique =
+    '<a href="/pages/historique-mises-a-jour" style="color:#1d4ed8;text-decoration:underline">Historique</a>';
+  return `<div class="lc-maj" data-lc-maj style="background:#eef6ff;border-bottom:1px solid #cfe3ff;color:#1e3a5f;font-size:13px;line-height:1.4;padding:6px 16px;text-align:center">📅 Mis à jour le <time datetime="${siteUpdate.lastVerified}">${siteUpdate.label}</time> · Barèmes et chiffres vérifiés sur les sources officielles · ${historique}</div>`;
+}
+
+function addLastUpdated(html: string, filename: string): string {
+  if (html.includes("data-lc-maj") || PAGES_SANS_BANDEAU.test(filename)) return html;
+  const out = html
+    // Ancienne date figée dans le bandeau "Estimation indicative"
+    .replace(
+      /barèmes [^<—]*applicables\s*—\s*Mise à jour le\s*<time[^>]*>[^<]*<\/time>\s*—?\s*/g,
+      "",
+    )
+    // Données structurées : date de modification = date du dernier audit
+    .replace(/("dateModified"\s*:\s*")[^"]*(")/g, `$1${siteUpdate.lastVerified}$2`)
+    .replace(
+      /(<meta\s+property="article:modified_time"\s+content=")[^"]*(")/g,
+      `$1${siteUpdate.lastVerified}$2`,
+    );
+  return out.replace(/<body[^>]*>/i, (body) => `${body}\n    ${lastUpdatedBanner()}`);
+}
+
+function lastUpdatedPlugin() {
+  let outDir = "";
+  return {
+    name: "lc-last-updated",
+    configResolved(config: { root: string; build: { outDir: string } }) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
+    transformIndexHtml(html: string, ctx: { filename: string }) {
+      return addLastUpdated(html, ctx.filename);
+    },
+    // Les pages HTML copiées telles quelles depuis public/ (ex. /scenarios) ne passent
+    // pas par transformIndexHtml : on leur ajoute la date une fois le build écrit.
+    closeBundle() {
+      const scenariosDir = path.join(outDir, "scenarios");
+      if (!outDir || !fs.existsSync(scenariosDir)) return;
+      const walk = (dir: string) => {
+        for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+          const full = path.join(dir, entry.name);
+          if (entry.isDirectory()) walk(full);
+          else if (entry.name.endsWith(".html")) {
+            const html = fs.readFileSync(full, "utf8");
+            const updated = addLastUpdated(html, full);
+            if (updated !== html) fs.writeFileSync(full, updated, "utf8");
+          }
+        }
+      };
+      walk(scenariosDir);
+    },
+  };
+}
+
 const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
 const allRsaPilotScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
 const allArePilotScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
@@ -666,6 +728,7 @@ export default defineConfig(() => {
     publicDir: "../public",
     base: "/",
     plugins: [
+      lastUpdatedPlugin(),
       {
         name: "clean-urls-html",
         apply: "serve",

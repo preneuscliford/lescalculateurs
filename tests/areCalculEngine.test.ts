@@ -66,4 +66,20 @@ describe("areCalculEngine", () => {
     // durée maximale à 57 ans et plus = 822 jours ≈ 27 mois
     expect(r.durationMax).toBe(27);
   });
+
+  test("rupture conventionnelle après le 01/09/2026 : 15 mois avant 55 ans, 20,5 mois ensuite", () => {
+    const base = {
+      situation: "seul" as const,
+      ancienneteEmploi: 36,
+      salaireReferent: 2200,
+      personnesCharge: 0,
+      ruptureConventionnelle: true,
+    };
+    const apres = new Date("2026-10-01T00:00:00Z");
+    expect(calculerARE({ ...base, agePersonne: 40, dateFinContrat: apres }).durationMax).toBe(15);
+    expect(calculerARE({ ...base, agePersonne: 58, dateFinContrat: apres }).durationMax).toBe(20.5);
+    // Contrat rompu avant la réforme : anciennes durées
+    const avant = new Date("2026-08-31T00:00:00Z");
+    expect(calculerARE({ ...base, agePersonne: 40, dateFinContrat: avant }).durationMax).toBe(18);
+  });
 });

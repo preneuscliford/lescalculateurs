@@ -6,6 +6,10 @@ export interface AREData {
   salaireReferent: number;
   personnesCharge: number;
   agePersonne: number;
+  /** Fin de contrat par rupture conventionnelle (durées réduites depuis le 01/09/2026) */
+  ruptureConventionnelle?: boolean;
+  /** Date de fin du contrat : détermine le régime applicable à la rupture conventionnelle */
+  dateFinContrat?: Date;
 }
 
 export interface AREResult {
@@ -28,10 +32,19 @@ function getReferenceWindow(agePersonne: number): number {
     : areBaremes.reglesEligibilite.fenetreReferenceMoins55AnsMois;
 }
 
-function getDurationCapDays(agePersonne: number): number {
-  if (agePersonne >= 57) return areBaremes.dureeMaximaleJours.aPartirDe57Ans;
-  if (agePersonne >= 55) return areBaremes.dureeMaximaleJours.de55a56Ans;
-  return areBaremes.dureeMaximaleJours.moinsDe55Ans;
+function isRuptureConventionnelleReduite(data: AREData): boolean {
+  if (!data.ruptureConventionnelle) return false;
+  const dateEffet = new Date(`${areBaremes.ruptureConventionnelle.dateEffet}T00:00:00Z`);
+  return !data.dateFinContrat || data.dateFinContrat >= dateEffet;
+}
+
+function getDurationCapDays(data: AREData): number {
+  const durees = isRuptureConventionnelleReduite(data)
+    ? areBaremes.ruptureConventionnelle.dureeMaximaleJours
+    : areBaremes.dureeMaximaleJours;
+  if (data.agePersonne >= 57) return durees.aPartirDe57Ans;
+  if (data.agePersonne >= 55) return durees.de55a56Ans;
+  return durees.moinsDe55Ans;
 }
 
 export function calculerARE(data: AREData): AREResult {
@@ -70,10 +83,11 @@ export function calculerARE(data: AREData): AREResult {
   const montantMensuelBrut =
     Math.round(allocationJournaliere * areBaremes.calculJournalier.coefficientMensuel * 100) / 100;
 
-  const durationCapDays = getDurationCapDays(data.agePersonne);
+  const durationCapDays = getDurationCapDays(data);
   const durationTheoriqueDays = Math.round(Math.max(0, data.ancienneteEmploi) * 30.42);
   const durationRetenueDays = Math.min(durationTheoriqueDays, durationCapDays);
-  const durationMax = Math.max(1, Math.round(durationRetenueDays / 30.42));
+  // Arrondi au demi-mois (ex. 685 jours = 22,5 mois, 624 jours = 20,5 mois)
+  const durationMax = Math.max(1, Math.round((durationRetenueDays / 30.42) * 2) / 2);
 
   return {
     eligible: true,

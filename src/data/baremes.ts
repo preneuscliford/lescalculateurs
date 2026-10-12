@@ -21,7 +21,7 @@ export const baremes = {
       standard: 0.0632, // taux majoré 2026 (5% voté = 6.32% total)
       neuf: 0.00715, // taux réduit pour le neuf (≈ 0,71498%)
       reduit: 0.0509, // taux réduit 2026 (3.80% voté = 5.09% total)
-      departementsReduits: ["36", "976"], // Indre et Mayotte uniquement en 2026
+      departementsReduits: ["36"], // Indre uniquement (barème DGFiP au 1er juin 2026 ; Mayotte à 4,50 % depuis le 1er juin 2026)
     },
   },
   indemnites_kilometriques: {
