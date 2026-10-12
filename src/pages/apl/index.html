@@ -313,9 +313,9 @@
           <span class="mr-2">📌</span>Résumé rapide</h3>
         <ul class="space-y-2 text-gray-700">
           <li><strong>Source :</strong> <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-demarches" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Simulateurs CAF (APL, RSA, Prime d'activité...)</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Fiche APL (service-public)</a>, <a href="https://www.anil.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">ANIL (Agence Nationale pour l'Information sur le Logement)</a></li>
-          <li><strong>Calcul :</strong> APL = Loyer plafonné − Participation personnelle</li>
+          <li><strong>Calcul :</strong> APL = Loyer plafonné + forfait charges − participation personnelle</li>
           <li><strong>Particularité :</strong> Cumulable avec le RSA, non cumulable avec ALS/ALF</li>
-          <li><strong>Nouveauté 2026 :</strong> Plafonds APL conservés sur la dernière revalorisation annuelle d'octobre 2025</li>
+          <li><strong>Nouveauté 2026 :</strong> plafonds de loyer, forfait charges et participation minimale revalorisés de 1,15&nbsp;% au 1er octobre 2026</li>
           <li><strong>Outil :</strong> 100% gratuit, sans création de compte</li>
         </ul>
       </section>
@@ -329,49 +329,47 @@
  des utilisateurs, ce simulateur est aussi utilisé comme calculateur APL.</p>
       </section>
 
-      <!-- Barèmes officiels APL 2026 -->
+      <!-- Barèmes officiels APL au 1er octobre 2026 -->
       <section class="mb-8 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-6 border-2 border-blue-200">
         <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-          <span class="mr-2">📊</span>Barèmes officiels APL 2026 : plafonds et montants maximum</h2>
+          <span class="mr-2">📊</span>Barème officiel APL 2026 : plafonds de loyer au 1er octobre 2026</h2>
         <div class="overflow-x-auto">
           <table class="w-full text-sm">
             <thead>
-              <tr class="bg-blue-100">
-                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Zone géographique</th>
-                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Personne seule</th>
-                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Couple</th>
-                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Couple + 1 enfant</th>
-                <th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Couple + 2 enfants</th>
-              </tr>
+              <tr class="bg-blue-100"><th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Zone</th><th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Personne seule</th><th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Couple sans personne à charge</th><th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Seul ou couple + 1 personne à charge</th><th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Seul ou couple + 2 personnes à charge</th><th class="p-3 text-left font-semibold text-gray-800 border-b-2 border-blue-200">Par personne à charge en plus</th></tr>
             </thead>
             <tbody>
               <tr class="border-b border-blue-100">
-                <td class="p-3 text-gray-700"><strong>Zone 1 (IDF)</strong><br><span class="text-xs text-gray-500">Paris et proche banlieue</span></td>
-                <td class="p-3 text-gray-700">610€<br><span class="text-green-600">→ ~280€</span></td>
-                <td class="p-3 text-gray-700">670€<br><span class="text-green-600">→ ~350€</span></td>
-                <td class="p-3 text-gray-700">730€<br><span class="text-green-600">→ ~400€</span></td>
-                <td class="p-3 text-gray-700">790€<br><span class="text-green-600">→ ~450€</span></td>
+                <td class="p-3 text-gray-700"><strong>Zone 1</strong><br><span class="text-xs text-gray-500">Paris, petite couronne et agglomérations tendues</span></td>
+                <td class="p-3 text-gray-700">336,97 €</td>
+                <td class="p-3 text-gray-700">406,40 €</td>
+                <td class="p-3 text-gray-700">459,32 €</td>
+                <td class="p-3 text-gray-700">525,97 €</td>
+                <td class="p-3 text-gray-700">+ 66,65 €</td>
               </tr>
               <tr class="border-b border-blue-100 bg-white">
-                <td class="p-3 text-gray-700"><strong>Zone 2</strong><br><span class="text-xs text-gray-500">Grandes villes + 100 000 hab</span></td>
-                <td class="p-3 text-gray-700">510€<br><span class="text-green-600">→ ~220€</span></td>
-                <td class="p-3 text-gray-700">560€<br><span class="text-green-600">→ ~280€</span></td>
-                <td class="p-3 text-gray-700">610€<br><span class="text-green-600">→ ~320€</span></td>
-                <td class="p-3 text-gray-700">660€<br><span class="text-green-600">→ ~380€</span></td>
+                <td class="p-3 text-gray-700"><strong>Zone 2</strong><br><span class="text-xs text-gray-500">Agglomérations de plus de 100 000 habitants</span></td>
+                <td class="p-3 text-gray-700">293,68 €</td>
+                <td class="p-3 text-gray-700">359,47 €</td>
+                <td class="p-3 text-gray-700">404,49 €</td>
+                <td class="p-3 text-gray-700">463,37 €</td>
+                <td class="p-3 text-gray-700">+ 58,88 €</td>
               </tr>
-              <tr class="bg-white">
-                <td class="p-3 text-gray-700"><strong>Zone 3</strong><br><span class="text-xs text-gray-500">Communes rurales</span></td>
-                <td class="p-3 text-gray-700">430€<br><span class="text-green-600">→ ~190€</span></td>
-                <td class="p-3 text-gray-700">480€<br><span class="text-green-600">→ ~240€</span></td>
-                <td class="p-3 text-gray-700">530€<br><span class="text-green-600">→ ~300€</span></td>
-                <td class="p-3 text-gray-700">580€<br><span class="text-green-600">→ ~350€</span></td>
+              <tr class="border-b border-blue-100 bg-white">
+                <td class="p-3 text-gray-700"><strong>Zone 3</strong><br><span class="text-xs text-gray-500">Reste du territoire</span></td>
+                <td class="p-3 text-gray-700">275,25 €</td>
+                <td class="p-3 text-gray-700">333,67 €</td>
+                <td class="p-3 text-gray-700">374,13 €</td>
+                <td class="p-3 text-gray-700">427,75 €</td>
+                <td class="p-3 text-gray-700">+ 53,62 €</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="text-xs text-gray-600 mt-4">
+        <p class="text-sm text-gray-700 mt-4">Montants mensuels pour un locataire (hors colocation), revalorisés de 1,15&nbsp;% au 1er octobre 2026. S'y ajoute un forfait charges de 61,29&nbsp;€ (+ 13,90&nbsp;€ par personne à charge). La participation minimale est de 40,01&nbsp;€.</p>
+        <p class="text-xs text-gray-600 mt-2">
           <strong>Sources :</strong> 
-          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/aides-au-logement" target="_blank" rel="noopener" class="text-blue-600 hover:underline">CAF.fr</a>, <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="text-blue-600 hover:underline">service-public.fr</a>|<em>Données vérifiées au 5 mai 2026 (dernière revalorisation connue : 1er octobre 2025)</em>
+          <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913928" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Arrêté du 28 septembre 2026 (Légifrance)</a>, <a href="https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-aides-au-logement" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Barème CAF des aides au logement</a>|<em>Données en vigueur au 1er octobre 2026, vérifiées le 12 octobre 2026</em>
         </p>
       </section>
 
@@ -727,124 +725,116 @@
         </div>
       </section>
 
-      <!-- Plafonds CAF 2025 -->
+      <!-- Plafonds CAF au 1er octobre 2026 -->
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8">📊 Plafonds CAF 2026 par Zone</h2>
-        <p class="text-gray-600 mb-6">Les plafonds de loyer pris en compte par la CAF varient selon votre
- zone géographique et votre composition familiale. Voici les principaux
- seuils 2026.</p>
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">📊 Plafonds de loyer APL par zone (au 1er octobre 2026)</h2>
+        <p class="text-gray-600 mb-6">La CAF ne prend en compte votre loyer que dans la limite d'un plafond qui dépend de votre zone et de votre composition familiale. Ces plafonds ont été revalorisés de 1,15&nbsp;% au 1er octobre 2026 (indice de référence des loyers du 2e trimestre 2026, arrêté du 28 septembre 2026). Montants mensuels pour un locataire (hors colocation).</p>
 
-        <!-- Tableau Zone 1 (IDF) -->
         <div class="mb-8">
           <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">1</span> Zone 1 : Île-de-France</h3>
+            <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">1</span> Zone 1 : Paris, petite couronne et grandes agglomérations tendues</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead class="bg-blue-50">
                 <tr>
                   <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Situation familiale</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Loyer plafonné (€)</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">APL max. approx. (€)</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Plafond de loyer mensuel</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="hover:bg-gray-50">
                   <td class="border border-gray-300 px-4 py-2">Personne seule</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">610 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">200–280 €</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">336,97 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">670 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">250–350 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Couple sans personne à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">406,40 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple + 1 enfant</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">730 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">300–400 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Seul ou couple + 1 personne à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">459,32 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple + 2 enfants</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">790 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">350–450 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Seul ou couple + 2 personnes à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">525,97 €</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-2">Par personne à charge supplémentaire</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">+ 66,65 €</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Tableau Zone 2 (Province) -->
         <div class="mb-8">
           <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <span class="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">2</span> Zone 2 : Province Agglomérations</h3>
+            <span class="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">2</span> Zone 2 : agglomérations de plus de 100 000 habitants</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead class="bg-green-50">
                 <tr>
                   <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Situation familiale</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Loyer plafonné (€)</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">APL max. approx. (€)</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Plafond de loyer mensuel</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="hover:bg-gray-50">
                   <td class="border border-gray-300 px-4 py-2">Personne seule</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">510 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">160–220 €</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">293,68 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">560 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">200–280 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Couple sans personne à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">359,47 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple + 1 enfant</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">610 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">250–320 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Seul ou couple + 1 personne à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">404,49 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple + 2 enfants</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">660 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">300–380 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Seul ou couple + 2 personnes à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">463,37 €</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-2">Par personne à charge supplémentaire</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">+ 58,88 €</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Tableau Zone 3 (Rurale) -->
         <div class="mb-8">
           <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <span class="bg-yellow-100 text-yellow-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">3</span> Zone 3 : Communes Rurales</h3>
+            <span class="bg-yellow-100 text-yellow-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">3</span> Zone 3 : reste du territoire</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead class="bg-yellow-50">
                 <tr>
                   <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Situation familiale</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Loyer plafonné (€)</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">APL max. approx. (€)</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900">Plafond de loyer mensuel</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="hover:bg-gray-50">
                   <td class="border border-gray-300 px-4 py-2">Personne seule</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">430 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">140–190 €</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">275,25 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">480 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">180–240 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Couple sans personne à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">333,67 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple + 1 enfant</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">530 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">220–300 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Seul ou couple + 1 personne à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">374,13 €</td>
                 </tr>
                 <tr class="hover:bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2">Couple + 2 enfants</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">580 €</td>
-                  <td class="border border-gray-300 px-4 py-2 font-medium text-green-600">270–350 €</td>
+                  <td class="border border-gray-300 px-4 py-2">Seul ou couple + 2 personnes à charge</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">427,75 €</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-2">Par personne à charge supplémentaire</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">+ 53,62 €</td>
                 </tr>
               </tbody>
             </table>
@@ -854,9 +844,8 @@
         <div class="mt-8 bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
           <p class="text-orange-800 text-sm">
             <strong>📌 Remarques importantes :</strong> Ces plafonds sont
- actualisés régulièrement par la CAF. Les montants d'APL affichés
- sont des estimations basées sur une participation personnelle
- moyenne. Votre APL réelle dépend de votre contribution exacte,
+ revalorisés chaque 1er octobre selon l'IRL (source : barème CAF des aides au logement).
+ Un loyer inférieur au plafond est retenu tel quel : la revalorisation du plafond ne change alors pas votre aide. Votre APL réelle dépend de votre contribution exacte,
  elle-même calculée à partir de vos revenus N-2 et de votre
  patrimoine.</p>
         </div>

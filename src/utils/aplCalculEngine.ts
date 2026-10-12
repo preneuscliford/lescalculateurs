@@ -6,11 +6,12 @@
  *
  * Règles intégrées:
  * 1. Loyer plafonné selon zone + situation familiale + nombre d'enfants
- * 2. Participation personnelle = 30% revenus - forfait logement
+ * 2. Participation personnelle = 30% revenus - forfait logement (minimum P0 officiel)
+ * 2bis. Forfait charges officiel ajouté au loyer plafonné
  * 3. Règle sécurité: Si participation ≥ loyer plafonné → APL = 0€
  * 4. Plafonds APL réalistes (anti-bullshit) par profil
  *
- * @version 2026-01
+ * @version 2026-10 (plafonds de loyer au 1er octobre 2026)
  */
 
 import { socialBaremes } from "../data/social-baremes";
@@ -46,6 +47,7 @@ export interface APLData {
   loyer_pris_compte: number;
   participation: number;
   forfait_logement: number;
+  forfait_charges: number;
   reste_charge: number;
   situation: SituationFamiliale;
   enfants: number;
@@ -58,16 +60,27 @@ export interface APLData {
 }
 
 const aplBaremes = socialBaremes.apl;
-const PLAFONDS_LOYER_BASE: Record<Zone, number> = {
-  idf: aplBaremes.plafondsLoyer.zone1.seul,
-  province: aplBaremes.plafondsLoyer.zone2.seul,
-  dom: aplBaremes.plafondsLoyer.zone3.seul,
-};
-const BONUS_LOYER_PAR_ENFANT = aplBaremes.moteur.bonusLoyerParEnfant;
-const BONUS_LOYER_COUPLE = aplBaremes.moteur.bonusLoyerCouple;
+// Plafonds de loyer officiels (locataires) par zone CAF
+const PLAFONDS_LOYER_ZONE = {
+  idf: aplBaremes.plafondsLoyer.zone1,
+  province: aplBaremes.plafondsLoyer.zone2,
+  dom: aplBaremes.plafondsLoyer.zone3,
+} as const;
+
+/**
+ * Plafond de loyer officiel selon la zone, la situation et les personnes à charge
+ */
+function getPlafondLoyer(region: Zone, situation: SituationFamiliale, enfants: number): number {
+  const plafonds = PLAFONDS_LOYER_ZONE[region] || PLAFONDS_LOYER_ZONE.province;
+  if (enfants <= 0) {
+    return situation === "couple" ? plafonds.couple : plafonds.seul;
+  }
+  return plafonds.une_personne_a_charge + (enfants - 1) * plafonds.par_personne_supplementaire;
+}
 const FORFAIT_LOGEMENT: Record<SituationFamiliale, number> = {
   ...aplBaremes.moteur.forfaitLogement,
 };
+const FORFAIT_CHARGES = aplBaremes.moteur.forfaitCharges;
 const TAUX_PARTICIPATION = aplBaremes.moteur.tauxParticipation;
 const PARTICIPATION_MINIMUM = aplBaremes.moteur.participationMinimum;
 
@@ -117,15 +130,7 @@ export function calculerAPL(input: APLInput): APLResult {
     // ─────────────────────────────────────────
     // 1️⃣ PLAFOND LOYER (zone + situation + enfants)
     // ─────────────────────────────────────────
-    let plafond_loyer = PLAFONDS_LOYER_BASE[region] || PLAFONDS_LOYER_BASE.province;
-
-    // Bonus couple
-    if (situation === "couple") {
-      plafond_loyer += BONUS_LOYER_COUPLE;
-    }
-
-    // Bonus enfants
-    plafond_loyer += nb_enfants * BONUS_LOYER_PAR_ENFANT;
+    const plafond_loyer = Math.round(getPlafondLoyer(region, situation, nb_enfants) * 100) / 100;
 
     const loyer_pris_compte = Math.min(loyer, plafond_loyer);
 
@@ -143,9 +148,11 @@ export function calculerAPL(input: APLInput): APLResult {
     participation = Math.max(PARTICIPATION_MINIMUM, participation);
 
     // ─────────────────────────────────────────
-    // 4️⃣ CALCUL APL BRUTE
+    // 4️⃣ CALCUL APL BRUTE (loyer plafonné + forfait charges - participation)
     // ─────────────────────────────────────────
-    let apl_brute = loyer_pris_compte - participation;
+    const forfait_charges =
+      Math.round((FORFAIT_CHARGES.base + nb_enfants * FORFAIT_CHARGES.parPersonneACharge) * 100) / 100;
+    let apl_brute = loyer_pris_compte + forfait_charges - participation;
 
     // ─────────────────────────────────────────
     // 5️⃣ RÈGLE DE SÉCURITÉ ABSOLUE
@@ -153,7 +160,7 @@ export function calculerAPL(input: APLInput): APLResult {
     // Si participation >= loyer plafonné → APL = 0€
     let raison_zero: string | undefined;
 
-    if (participation >= loyer_pris_compte) {
+    if (participation >= loyer_pris_compte + forfait_charges) {
       apl_brute = 0;
       raison_zero =
         "Avec vos revenus actuels et le plafond de loyer applicable, l'APL est généralement nulle selon les règles CAF.";
@@ -185,6 +192,7 @@ export function calculerAPL(input: APLInput): APLResult {
         loyer_pris_compte,
         participation: Math.round(participation),
         forfait_logement,
+        forfait_charges,
         reste_charge,
         situation,
         enfants: nb_enfants,
@@ -327,6 +335,7 @@ export function formatAPLResult(result: APLResult): {
   const detailsDisplay = `
     • Loyer mensuel : ${formatMonnaie(result.data.loyer_mensuel)}
     • Loyer pris en compte (plafonné) : ${formatMonnaie(result.data.loyer_pris_compte)}
+    • Forfait charges : ${formatMonnaie(result.data.forfait_charges)}
     • Participation personnelle : ${formatMonnaie(result.data.participation)}
     • Forfait logement : ${formatMonnaie(result.data.forfait_logement)}
     • = APL estimée : ${formatMonnaie(result.data.apl_estimee)}

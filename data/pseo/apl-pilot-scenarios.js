@@ -501,7 +501,7 @@ export const aplPilotScenarios = [
     intent: "apl chomage loyer moyen",
     title: "APL au chômage : estimation indicative avec loyer moyen en 2026",
     description:
-      "Estimation indicative APL 2026 pour une personne seule au chômage avec loyer moyen : ~312 EUR par mois dans ce scénario type.",
+      "Estimation indicative APL 2026 pour une personne seule au chômage avec loyer moyen : ~156 EUR par mois dans ce scénario type.",
     summary:
       "Cette page traite une intention sensible li?e ? la baisse de revenus et ? la gestion du reste ? charge.",
     audience: "Personne au chômage",
@@ -548,11 +548,11 @@ export const aplPilotScenarios = [
       },
     ],
     briefEnhancements: {
-      metaTitle: "Estimation APL 2026 : chômage et loyer moyen (~312 EUR)",
+      metaTitle: "Estimation APL 2026 : chômage et loyer moyen (~156 EUR)",
       metaDescription:
-        "Estimation indicative APL 2026 pour une personne au chômage avec loyer moyen : ~312 EUR par mois. Utilisez notre simulateur complet et vérifiez sur caf.fr.",
+        "Estimation indicative APL 2026 pour une personne au chômage avec loyer moyen : ~156 EUR par mois. Utilisez notre simulateur complet et vérifiez sur caf.fr.",
       directAnswer:
-        "Estimation indicative : ~312 EUR par mois pour une personne seule au chômage avec loyer moyen en 2026.",
+        "Estimation indicative : ~156 EUR par mois pour une personne seule au chômage avec loyer moyen en 2026.",
       directAnswerDetails:
         "Le montant final dépend du loyer retenu, de la zone, des indemnités chômage réellement prises en compte et de votre situation administrative. Vérifiez toujours le résultat sur caf.fr.",
       methodSteps: [
@@ -1228,7 +1228,7 @@ export const aplPilotScenarios = [
     intent: "apl smic seul",
     title: "APL au SMIC pour une personne seule : estimation indicative 2026",
     description:
-      "Estimation indicative APL 2026 pour une personne seule au SMIC avec loyer moyen : ~144 EUR par mois dans ce scénario type.",
+      "Estimation indicative APL 2026 pour une personne seule au SMIC avec loyer moyen : aide nulle ou très faible dans ce scénario type.",
     summary:
       "Cette page vise une variante de requête très proche du pattern gagnant d?j? test? par Google.",
     audience: "Personne seule avec salaire au SMIC",
@@ -1275,11 +1275,11 @@ export const aplPilotScenarios = [
       },
     ],
     briefEnhancements: {
-      metaTitle: "APL au SMIC seul : estimation indicative 2026 (~144 EUR)",
+      metaTitle: "APL au SMIC seul : estimation indicative 2026 (souvent nulle)",
       metaDescription:
-        "Estimation indicative APL 2026 pour une personne seule au SMIC : ~144 EUR par mois dans ce scénario type. Ouvrez le simulateur complet et vérifiez sur caf.fr.",
+        "Estimation indicative APL 2026 pour une personne seule au SMIC : aide nulle ou très faible dans ce scénario type (barème au 1er octobre 2026). Ouvrez le simulateur complet et vérifiez sur caf.fr.",
       directAnswer:
-        "Estimation indicative : ~144 EUR par mois pour une personne seule au SMIC avec loyer moyen en 2026.",
+        "Estimation indicative : aide nulle ou très faible pour une personne seule au SMIC avec loyer moyen en 2026.",
       directAnswerDetails:
         "Le montant final dépend du loyer retenu, de la zone, des ressources réellement prises en compte et de votre situation administrative. Vérifiez toujours sur caf.fr.",
       methodSteps: [
@@ -1524,7 +1524,7 @@ export const aplPilotScenarios = [
     intent: "apl 3 enfants",
     title: "APL famille avec 3 enfants : estimation indicative 2026",
     description:
-      "Estimation indicative APL 2026 pour une famille avec 3 enfants : ~87 EUR par mois dans ce scénario type.",
+      "Estimation indicative APL 2026 pour une famille avec 3 enfants dans ce scénario type (barème au 1er octobre 2026).",
     summary:
       "Cette page prolonge naturellement les signaux d?j? vus sur les familles avec enfants et la requête g?nérique autour de l'APL avec enfants.",
     audience: "Famille avec trois enfants",
@@ -1571,11 +1571,11 @@ export const aplPilotScenarios = [
       },
     ],
     briefEnhancements: {
-      metaTitle: "APL famille 3 enfants : estimation indicative 2026 (~87 EUR)",
+      metaTitle: "APL famille 3 enfants : estimation indicative 2026",
       metaDescription:
-        "Estimation indicative APL 2026 pour une famille avec 3 enfants : ~87 EUR par mois. Ouvrez le simulateur complet et vérifiez le montant final sur caf.fr.",
+        "Estimation indicative APL 2026 pour une famille avec 3 enfants selon le barème au 1er octobre 2026. Ouvrez le simulateur complet et vérifiez le montant final sur caf.fr.",
       directAnswer:
-        "Estimation indicative : ~87 EUR par mois pour une famille avec 3 enfants en 2026, dans ce scénario type.",
+        "Estimation indicative pour une famille avec 3 enfants en 2026, dans ce scénario type : le montant dépend fortement des ressources du foyer.",
       directAnswerDetails:
         "Le montant final dépend du loyer retenu, de la zone, des ressources du foyer et de la composition familiale exacte. Vérifiez toujours sur caf.fr.",
       methodSteps: [

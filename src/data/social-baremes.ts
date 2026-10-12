@@ -8,12 +8,21 @@ type SourceMeta = {
   note?: string;
 };
 
+type PlafondsLoyerZone = {
+  seul: number;
+  couple: number;
+  une_personne_a_charge: number;
+  par_personne_supplementaire: number;
+};
+
 type AplJson = {
   version: string;
   plafonds_loyer: {
-    zone1: Record<string, number>;
-    zone2: Record<string, number>;
-    zone3: Record<string, number>;
+    date_effet: string;
+    source: string;
+    zone1: PlafondsLoyerZone;
+    zone2: PlafondsLoyerZone;
+    zone3: PlafondsLoyerZone;
   };
   multiplicateurs_region: Record<string, number>;
 };
@@ -111,7 +120,9 @@ export const socialBaremes = {
     montantParEnfantPriveDeuxParents: 267.63,
   },
   are: {
-    version: "2025.07",
+    // Pas de revalorisation au 1er juillet 2026 (CA Unedic du 30/06/2026) :
+    // les montants du 1er juillet 2025 restent en vigueur.
+    version: "2026.07",
     dateEffet: "2025-07-01",
     sourceUrl:
       "https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/montant-allocation-france-travai.html",
@@ -139,9 +150,9 @@ export const socialBaremes = {
     },
   },
   apl: {
-    version: "2025.10",
-    dateEffet: "2025-10-01",
-    sourceUrl: "https://www.service-public.fr/particuliers/actualites/A16807",
+    version: "2026.10",
+    dateEffet: "2026-10-01",
+    sourceUrl: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913928",
     sourceUrls: [
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-aides-au-logement",
       "https://www.service-public.fr/particuliers/vosdroits/F12006",
@@ -149,16 +160,20 @@ export const socialBaremes = {
     plafondsLoyer: baremesData.apl.plafonds_loyer,
     multiplicateursRegion: baremesData.apl.multiplicateurs_region,
     moteur: {
-      bonusLoyerParEnfant: 60,
-      bonusLoyerCouple: 60,
       forfaitLogement: {
         seul: 72,
         couple: 102,
         monoparental: 87,
         autre: 72,
       },
+      // Forfait charges officiel (art. 9 arrete du 27/09/2019, valeurs au 01/10/2026)
+      forfaitCharges: {
+        base: 61.29,
+        parPersonneACharge: 13.9,
+      },
       tauxParticipation: 0.3,
-      participationMinimum: 35,
+      // Participation minimale P0 officielle au 01/10/2026 (art. 13)
+      participationMinimum: 40.01,
       plafondAplBase: {
         seul: 320,
         couple: 420,

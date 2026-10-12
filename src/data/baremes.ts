@@ -158,6 +158,19 @@ export const baremes = {
       { date: "2026-11-11", nom: "Armistice", fixe: true },
       { date: "2026-12-25", nom: "Noël", fixe: true },
     ],
+    "2027": [
+      { date: "2027-01-01", nom: "Jour de l'An", fixe: true },
+      { date: "2027-03-29", nom: "Lundi de Pâques", fixe: false },
+      { date: "2027-05-01", nom: "Fête du Travail", fixe: true },
+      { date: "2027-05-06", nom: "Ascension", fixe: false },
+      { date: "2027-05-08", nom: "Fête de la Victoire", fixe: true },
+      { date: "2027-05-17", nom: "Lundi de Pentecôte", fixe: false },
+      { date: "2027-07-14", nom: "Fête Nationale", fixe: true },
+      { date: "2027-08-15", nom: "Assomption", fixe: true },
+      { date: "2027-11-01", nom: "Toussaint", fixe: true },
+      { date: "2027-11-11", nom: "Armistice", fixe: true },
+      { date: "2027-12-25", nom: "Noël", fixe: true },
+    ],
   },
   taxe_fonciere: {
     degrevements_indicatifs: {

@@ -308,10 +308,12 @@ function calculateAplEstimate({ city, income, rent }) {
     zone === "idf" ? APL_BAREMES.plafonds_loyer.zone1.seul : APL_BAREMES.plafonds_loyer.zone2.seul;
   const loyerPrisCompte = Math.min(rent, singlePlafond);
   const forfaitLogement = PRIME_BAREMES.forfaitLogement.unePersonne;
+  // Forfait charges et participation minimale officiels au 1er octobre 2026
+  const forfaitCharges = 61.29;
   let participation = income * 0.3 - forfaitLogement;
-  participation = Math.max(35, participation);
-  let aplBrute = loyerPrisCompte - participation;
-  if (participation >= loyerPrisCompte) {
+  participation = Math.max(40.01, participation);
+  let aplBrute = loyerPrisCompte + forfaitCharges - participation;
+  if (participation >= loyerPrisCompte + forfaitCharges) {
     aplBrute = 0;
   }
   aplBrute = Math.max(0, aplBrute);

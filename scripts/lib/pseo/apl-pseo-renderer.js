@@ -34,14 +34,14 @@ const LOGEMENT_LABELS = {
 const APL_SITUATION_HUB_PATH = "/pages/apl/apl-selon-situation-2026";
 const APL_BRIEF_OVERRIDES = {
   "apl-smic-seul": {
-    metaTitle: "APL au SMIC seul : estimation indicative 2026 (~144 EUR)",
+    metaTitle: "APL au SMIC seul : estimation indicative 2026 (souvent nulle)",
     metaDescription:
-      "Estimation indicative APL 2026 pour une personne seule au SMIC : ~144 EUR par mois dans ce scénario type. Ouvrez le simulateur complet et consultez caf.fr.",
+      "Estimation indicative APL 2026 pour une personne seule au SMIC : aide nulle ou très faible dans ce scénario type (barème au 1er octobre 2026). Ouvrez le simulateur complet et consultez caf.fr.",
     heroTitle: "APL au SMIC pour une personne seule : estimation indicative 2026",
     introText:
       "Estimation indicative APL 2026 pour une personne seule au SMIC avec loyer moyen. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
     directAnswer:
-      "Estimation indicative : ~144 EUR par mois pour une personne seule au SMIC avec loyer moyen en 2026.",
+      "Estimation indicative : aide nulle ou très faible pour une personne seule au SMIC avec loyer moyen en 2026.",
     directAnswerDetails:
       "Le montant final dépend du loyer retenu, de la zone, des ressources réellement prises en compte et de votre situation administrative. Consultez toujours caf.fr.",
     secondaryCtaLabel: "Consulter caf.fr",
@@ -91,14 +91,14 @@ const APL_BRIEF_OVERRIDES = {
     ],
   },
   "apl-chomage-loyer-moyen": {
-    metaTitle: "Estimation APL 2026 : chômage et loyer moyen (~312 EUR)",
+    metaTitle: "Estimation APL 2026 : chômage et loyer moyen (~156 EUR)",
     metaDescription:
-      "Estimation indicative APL 2026 pour une personne au chômage avec loyer moyen : ~312 EUR par mois. Utilisez notre simulateur complet et consultez caf.fr.",
+      "Estimation indicative APL 2026 pour une personne au chômage avec loyer moyen : ~156 EUR par mois. Utilisez notre simulateur complet et consultez caf.fr.",
     heroTitle: "APL au chômage : estimation indicative avec loyer moyen en 2026",
     introText:
       "Estimation indicative APL 2026 pour une personne seule au chômage avec loyer moyen. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
     directAnswer:
-      "Estimation indicative : ~312 EUR par mois pour une personne seule au chômage avec loyer moyen en 2026.",
+      "Estimation indicative : ~156 EUR par mois pour une personne seule au chômage avec loyer moyen en 2026.",
     directAnswerDetails:
       "Le montant final dépend du loyer retenu, de la zone, des indemnités chômage réellement prises en compte et de votre situation administrative. Consultez toujours le résultat sur caf.fr.",
     secondaryCtaLabel: "Consulter caf.fr",
@@ -148,14 +148,14 @@ const APL_BRIEF_OVERRIDES = {
     ],
   },
   "apl-famille-trois-enfants": {
-    metaTitle: "APL famille 3 enfants : estimation indicative 2026 (~87 EUR)",
+    metaTitle: "APL famille 3 enfants : estimation indicative 2026",
     metaDescription:
-      "Estimation indicative APL 2026 pour une famille avec 3 enfants : ~87 EUR par mois. Ouvrez le simulateur complet et consultez le montant final sur caf.fr.",
+      "Estimation indicative APL 2026 pour une famille avec 3 enfants selon le barème au 1er octobre 2026. Ouvrez le simulateur complet et consultez le montant final sur caf.fr.",
     heroTitle: "APL famille avec 3 enfants : estimation indicative 2026",
     introText:
       "Estimation indicative APL 2026 pour une famille avec 3 enfants. Cette page donne un premier ordre de grandeur avant d'utiliser le simulateur complet.",
     directAnswer:
-      "Estimation indicative : ~87 EUR par mois pour une famille avec 3 enfants en 2026, dans ce scénario type.",
+      "Estimation indicative pour une famille avec 3 enfants en 2026, dans ce scénario type : le montant dépend fortement des ressources du foyer.",
     directAnswerDetails:
       "Le montant final dépend du loyer retenu, de la zone, des ressources du foyer et de la composition familiale exacte. Consultez toujours caf.fr.",
     secondaryCtaLabel: "Consulter caf.fr",

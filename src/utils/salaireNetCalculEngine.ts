@@ -52,9 +52,12 @@ const BAREMES_2026 = {
     enfant: 0.5,
     troisEntantsOuPlus: 1, // à partir du 3e enfant
   },
-  // Décote 2026
+  // Décote 2026 (revenus 2025) : forfait - 45,25 % de l'impôt brut,
+  // applicable si l'impôt brut est inférieur à 1 982 € (seul) / 3 277 € (couple)
   decote: {
-    limite: 1686,
+    forfaitSeul: 897,
+    forfaitCouple: 1483,
+    taux: 0.4525,
   },
   // Abattement de base (10% du revenu imposable)
   abattementBase: 0.1,
@@ -99,7 +102,11 @@ function calculateCotisations(brutSalaire: number): Cotisations {
   };
 }
 
-function calculateImportFoncier(revenusImposables: number, quotientFamilial: number): number {
+function calculateImportFoncier(
+  revenusImposables: number,
+  quotientFamilial: number,
+  imposeEnCouple = false,
+): number {
   if (revenusImposables <= 0) return 0;
 
   const quotient = revenusImposables / quotientFamilial;
@@ -121,8 +128,11 @@ function calculateImportFoncier(revenusImposables: number, quotientFamilial: num
   impot *= quotientFamilial;
 
   // Application décote
-  if (impot > 0 && impot < BAREMES_2026.decote.limite) {
-    impot = Math.max(0, impot - (BAREMES_2026.decote.limite - impot) * 0.25);
+  const { forfaitSeul, forfaitCouple, taux } = BAREMES_2026.decote;
+  const forfaitDecote = imposeEnCouple ? forfaitCouple : forfaitSeul;
+  const decote = forfaitDecote - impot * taux;
+  if (impot > 0 && decote > 0) {
+    impot = Math.max(0, impot - decote);
   }
 
   return Math.max(0, impot);
@@ -158,7 +168,11 @@ export function calculerSalaireNet(data: SalaireNetCalculData): SalaireNetResult
   const quotientFamilial = getQuotientFamilial(data.enfants, data.mariageOrPacs);
 
   // Impôt sur le revenu
-  const impotAnnuel = calculateImportFoncier(revenusImposablesAbattement * 12, quotientFamilial);
+  const impotAnnuel = calculateImportFoncier(
+    revenusImposablesAbattement * 12,
+    quotientFamilial,
+    data.mariageOrPacs,
+  );
   const impotMensuel = impotAnnuel / 12;
 
   // Prélèvement à la source mensuel

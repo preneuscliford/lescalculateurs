@@ -13,7 +13,8 @@ describe("salaireNetCalculEngine", () => {
       mariageOrPacs: false,
     });
     expect(r.success).toBe(true);
-    expect(r.salaireNetMensuel).toBeCloseTo(2100.35, 1);
+    // Décote 2026 : 897 € - 45,25 % de l'impôt brut (revenus 2025)
+    expect(r.salaireNetMensuel).toBeCloseTo(2115.48, 1);
     expect(r.salaireGrossMensuel).toBe(2800);
   });
 

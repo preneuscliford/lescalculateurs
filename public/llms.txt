@@ -1,41 +1,61 @@
-# LLMs.txt - Information for AI Search Engines
-# Last updated: 2025-12-27
+# Les Calculateurs
 
-## Site Purpose
-Les Calculateurs is a comprehensive French platform providing free financial calculators and tools for:
-- Property transaction costs (notaire)
-- Mortgage/loan calculations
-- Capital gains calculation
-- Salary calculations
-- Tax calculations
-- Various financial simulations
+> Simulateurs et calculateurs gratuits pour la France (frais de notaire, impôt sur le revenu, salaire brut/net, APL, RSA, prime d'activité, chômage ARE, crédit immobilier, plus-value, crypto) et outils PDF gratuits. Sans inscription, calculs faits dans le navigateur, barèmes officiels 2026 avec sources citées (Légifrance, CAF, impots.gouv, service-public.fr, France Travail).
 
-## Content Guidelines
-- All content is in French
-- Calculators are free and accessible to all users
-- Content is regularly updated with latest regulations and rates
-- All calculations are based on official French regulatory sources
+Dernière mise à jour des barèmes : 12 octobre 2026.
 
-## Key Pages
-- Homepage: https://www.lescalculateurs.fr/
-- Main Calculators: /pages/notaire, /pages/pret, /pages/plusvalue
-- Blog and Guides: /pages/blog, /pages/methodologie
-- Documentation: /pages/sources, /pages/comment-calculer-*
+Points clés des barèmes utilisés :
+- APL : plafonds de loyer, forfait charges et participation minimale au 1er octobre 2026 (revalorisation de 1,15 %, arrêté du 28 septembre 2026).
+- Impôt sur le revenu 2026 (revenus 2025) : barème revalorisé de 0,9 %, tranche à 0 % jusqu'à 11 600 € ; décote de 897 € (1 483 € pour un couple) − 45,25 % de l'impôt brut.
+- Plafond mensuel de la Sécurité sociale 2026 : 4 005 €.
+- Flat tax (PFU) 2026 sur placements financiers et crypto : 31,4 % (12,8 % d'impôt + 18,6 % de prélèvements sociaux, LFSS 2026).
+- ARE : montants du 1er juillet 2025 toujours en vigueur (pas de revalorisation au 1er juillet 2026).
+- RSA, prime d'activité, ASF : revalorisation du 1er avril 2026.
+- Barème kilométrique : inchangé pour les revenus 2025.
 
-## Data and Privacy
-- No personal user data is collected or stored
-- All calculations are performed locally in the browser
-- No third-party tracking (except essential analytics)
+## Simulateurs principaux
 
-## Canonical Information
-- All pages have proper canonical tags
-- No duplicate content issues
-- Each page has unique, original content
+- [Frais de notaire](https://www.lescalculateurs.fr/pages/notaire): frais d'acquisition ancien/neuf par département, droits de mutation 2026
+- [Impôt sur le revenu](https://www.lescalculateurs.fr/pages/impot): impôt 2026 sur les revenus 2025, quotient familial, décote
+- [Salaire brut en net](https://www.lescalculateurs.fr/pages/salaire): net avant et après impôt, cotisations 2026
+- [Crédit immobilier](https://www.lescalculateurs.fr/pages/pret): mensualités, coût total, capacité d'emprunt
+- [Plus-value immobilière](https://www.lescalculateurs.fr/pages/plusvalue): abattements pour durée de détention, impôt et prélèvements sociaux
+- [Crypto et bourse](https://www.lescalculateurs.fr/pages/crypto-bourse): impôt sur les plus-values, flat tax 31,4 %
+- [PTZ](https://www.lescalculateurs.fr/pages/ptz): éligibilité au prêt à taux zéro 2026
+- [Taxe foncière](https://www.lescalculateurs.fr/pages/taxe): estimation par commune
+- [Indemnités kilométriques](https://www.lescalculateurs.fr/pages/ik): barème fiscal pour les frais réels
 
-## Structured Data
-- JSON-LD schema.org markup on all pages
-- Proper breadcrumb navigation
-- Organization and FAQPage schemas
+## Aides sociales
 
-## Updates
-Site is updated regularly with new calculators, guides, and improved functionality.
+- [APL](https://www.lescalculateurs.fr/pages/apl): aide au logement, barème au 1er octobre 2026
+- [Zones APL](https://www.lescalculateurs.fr/pages/apl-zones): plafonds de loyer par zone
+- [RSA](https://www.lescalculateurs.fr/pages/rsa): montant selon la composition du foyer
+- [Prime d'activité](https://www.lescalculateurs.fr/pages/prime-activite): estimation 2026
+- [Chômage ARE](https://www.lescalculateurs.fr/pages/are): allocation journalière et durée
+- [AAH](https://www.lescalculateurs.fr/pages/aah): allocation aux adultes handicapés
+- [ASF](https://www.lescalculateurs.fr/pages/asf): allocation de soutien familial
+- [ASPA](https://www.lescalculateurs.fr/pages/aspa): minimum vieillesse
+
+## Travail et budget
+
+- [Indemnité de licenciement](https://www.lescalculateurs.fr/pages/indemnite-licenciement)
+- [Rupture conventionnelle](https://www.lescalculateurs.fr/pages/rupture-conventionnelle)
+- [Retraite](https://www.lescalculateurs.fr/pages/retraite)
+- [Reste à vivre](https://www.lescalculateurs.fr/pages/reste-a-vivre)
+- [Coût réel d'une voiture](https://www.lescalculateurs.fr/pages/cout-reel-voiture)
+
+## Outils PDF gratuits
+
+- [Outils PDF](https://www.lescalculateurs.fr/pages/outils): fusionner, compresser, modifier, signer un PDF, photo vers PDF, sans compte et sans envoi de fichier sur un serveur
+
+## Méthode et sources
+
+- [Méthodologie](https://www.lescalculateurs.fr/pages/methodologie): hypothèses et limites des simulateurs
+- [Sources officielles](https://www.lescalculateurs.fr/pages/sources): textes et barèmes utilisés
+- [Historique des mises à jour](https://www.lescalculateurs.fr/pages/historique-mises-a-jour)
+
+## Optional
+
+- [Blog et guides](https://www.lescalculateurs.fr/pages/blog)
+- [Guide complet de l'impôt 2026](https://www.lescalculateurs.fr/pages/guide-complet-impot-revenu-2026)
+- [Sitemap](https://www.lescalculateurs.fr/sitemap.xml)

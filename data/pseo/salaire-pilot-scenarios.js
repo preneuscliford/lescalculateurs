@@ -376,7 +376,7 @@ export const salairePilotScenarios = [
       {
         question: "Le plafond de la S\u00e9curit\u00e9 sociale impacte-t-il le calcul ?",
         answer:
-          "Pour 2500\u00A0\u20AC, le salaire reste sous le plafond mensuel (~3666\u00A0\u20AC en 2025), donc le taux standard s'applique.",
+          "Pour 2500\u00A0\u20AC, le salaire reste sous le plafond mensuel (4005\u00A0\u20AC en 2026), donc le taux standard s'applique.",
       },
     ],
   },
@@ -631,7 +631,7 @@ export const salairePilotScenarios = [
       {
         question: "\u00c0 partir de quel brut le plafond S\u00e9cu est-il atteint ?",
         answer:
-          "Le plafond mensuel de la S\u00e9curit\u00e9 sociale est d'environ 3666\u00A0\u20AC en 2025. Au-del\u00e0, certaines cotisations ne s'appliquent plus.",
+          "Le plafond mensuel de la S\u00e9curit\u00e9 sociale est de 4005\u00A0\u20AC en 2026. Au-del\u00e0, certaines cotisations ne s'appliquent plus.",
       },
     ],
   },
@@ -801,7 +801,7 @@ export const salairePilotScenarios = [
       {
         question: "\u00c0 5000\u00A0\u20AC, le taux de cotisation est-il diff\u00e9rent ?",
         answer:
-          "Notre moteur simplifi\u00e9 applique un taux fixe. En pratique, la partie au-dessus du plafond (~3666\u00A0\u20AC) peut avoir un taux r\u00e9duit.",
+          "Notre moteur simplifi\u00e9 applique un taux fixe. En pratique, la partie au-dessus du plafond (4005\u00A0\u20AC en 2026) peut avoir un taux r\u00e9duit.",
       },
     ],
   },

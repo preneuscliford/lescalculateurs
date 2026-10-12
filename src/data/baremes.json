@@ -874,6 +874,63 @@
         "nom": "Lundi de Pentecôte",
         "fixe": false
       }
+    ],
+    "2027": [
+      {
+        "date": "2027-01-01",
+        "nom": "Jour de l'An",
+        "fixe": true
+      },
+      {
+        "date": "2027-03-29",
+        "nom": "Lundi de Pâques",
+        "fixe": false
+      },
+      {
+        "date": "2027-05-01",
+        "nom": "Fête du Travail",
+        "fixe": true
+      },
+      {
+        "date": "2027-05-06",
+        "nom": "Ascension",
+        "fixe": false
+      },
+      {
+        "date": "2027-05-08",
+        "nom": "Fête de la Victoire",
+        "fixe": true
+      },
+      {
+        "date": "2027-05-17",
+        "nom": "Lundi de Pentecôte",
+        "fixe": false
+      },
+      {
+        "date": "2027-07-14",
+        "nom": "Fête Nationale",
+        "fixe": true
+      },
+      {
+        "date": "2027-08-15",
+        "nom": "Assomption",
+        "fixe": true
+      },
+      {
+        "date": "2027-11-01",
+        "nom": "Toussaint",
+        "fixe": true
+      },
+      {
+        "date": "2027-11-11",
+        "nom": "Armistice",
+        "fixe": true
+      },
+      {
+        "date": "2027-12-25",
+        "nom": "Noël",
+        "fixe": true
+      }
     ]
   },
   "taxe_fonciere": {
@@ -949,25 +1006,27 @@
     "checked_at": "2026-08-11T00:00:00.000Z"
   },
   "apl": {
-    "version": "2026",
+    "version": "2026.10",
     "plafonds_loyer": {
+      "date_effet": "2026-10-01",
+      "source": "Arrêté du 28 septembre 2026 (JORF du 30/09/2026) - barème CAF locataires",
       "zone1": {
-        "seul": 610,
-        "couple": 670,
-        "couple_1_enfant": 730,
-        "couple_2_enfants": 790
+        "seul": 336.97,
+        "couple": 406.4,
+        "une_personne_a_charge": 459.32,
+        "par_personne_supplementaire": 66.65
       },
       "zone2": {
-        "seul": 510,
-        "couple": 560,
-        "couple_1_enfant": 610,
-        "couple_2_enfants": 660
+        "seul": 293.68,
+        "couple": 359.47,
+        "une_personne_a_charge": 404.49,
+        "par_personne_supplementaire": 58.88
       },
       "zone3": {
-        "seul": 430,
-        "couple": 480,
-        "couple_1_enfant": 530,
-        "couple_2_enfants": 580
+        "seul": 275.25,
+        "couple": 333.67,
+        "une_personne_a_charge": 374.13,
+        "par_personne_supplementaire": 53.62
       }
     },
     "multiplicateurs_region": {

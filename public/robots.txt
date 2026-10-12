@@ -11,6 +11,68 @@ Allow: /
 User-agent: AdsBot-Google-Mobile
 Allow: /
 
+# ------------------------------------------------------------------
+# Assistants et moteurs de recherche IA
+# Autorises a lire le site pour le citer et le recommander.
+# ------------------------------------------------------------------
+
+# ChatGPT (recherche + navigation a la demande de l'utilisateur)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI - entrainement des modeles.
+# Remplacer "Allow: /" par "Disallow: /" pour refuser l'entrainement
+# (sans effet sur la visibilite dans la recherche ChatGPT).
+User-agent: GPTBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Claude (Anthropic)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Gemini / Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot (via Bing)
+User-agent: Bingbot
+Allow: /
+
+# Mistral (Le Chat)
+User-agent: MistralAI-User
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# DuckDuckGo Assist
+User-agent: DuckAssistBot
+Allow: /
+
 # Sitemap
 Sitemap: https://www.lescalculateurs.fr/sitemap.xml
 
