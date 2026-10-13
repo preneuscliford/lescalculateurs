@@ -45,5 +45,9 @@ describe("calculNotaire", () => {
     const totalAttendu = 1000 + droits + (500 + csi) + 200 + 0 + 123;
     expect(r.total).toBe(totalAttendu);
   });
-});
 
+  test("getTauxDroitsMutation: primo-accédant plafonné à 5,80 %", () => {
+    expect(getTauxDroitsMutation("75", "ancien", true)).toBeCloseTo(0.058, 6);
+    expect(getTauxDroitsMutation("36", "ancien", true)).toBeCloseTo(0.0509, 6);
+  });
+});

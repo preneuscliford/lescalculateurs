@@ -60,4 +60,17 @@ describe("rsaCalculEngine", () => {
     // 651,69 - 78,20 = 573,49
     expect(r.montantEstime).toBeCloseTo(573.49, 1);
   });
+
+  test("montant inférieur au seuil de versement de 6 EUR => non versé", () => {
+    const r = calculerRSA({
+      situation: "seul",
+      enfants: 0,
+      revenus: 650,
+      logement: "loue",
+      activite: "actif",
+    });
+    // 651,69 - 650 = 1,69 EUR < 6 EUR
+    expect(r.montantEstime).toBe(0);
+    expect(r.eligibilite).toMatch(/trop faible/i);
+  });
 });

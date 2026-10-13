@@ -1,14 +1,41 @@
 /**
- * APL Étudiant / Jeune Actif 2026 - Calculation Engine
- * Allocation Personnalisée au Logement (simplified for students)
+ * APL Étudiant 2026 - moteur de calcul
+ *
+ * 1. Éligibilité : depuis le 1er juillet 2026, un étudiant de nationalité
+ *    extra-européenne (hors UE, EEE et Suisse) doit être boursier sur critères
+ *    sociaux, sauf activité professionnelle, apprentissage / contrat de
+ *    professionnalisation, statut de réfugié ou d'apatride, ou conjoint
+ *    (caf.fr, actualité du 3 juillet 2026).
+ * 2. Ressources : la CAF retient au moins un montant forfaitaire annuel pour les
+ *    étudiants (8 600 EUR non boursier / 6 900 EUR boursier en logement classique,
+ *    6 600 / 5 400 EUR en logement-foyer), gelé en 2026 (arrêté du 30/12/2024,
+ *    non revalorisé en 2026 - MoneyVox, quelles-aides.fr ; texte non relu sur
+ *    Légifrance). Les bourses d'études ne sont pas comptées dans les ressources.
+ * 3. Montant : moteur APL général (plafonds de loyer officiels au 01/10/2026,
+ *    forfait charges, participation minimale).
  */
+
+import { calculerAPL, type SituationFamiliale, type Zone } from "./aplCalculEngine";
+
+export type ZoneAPL = "1" | "2" | "3";
+export type LogementEtudiant = "classique" | "foyer";
+export type ExceptionEtudiantEtranger = "aucune" | "activite" | "apprenti" | "refugie" | "conjoint";
 
 export interface APLEtudiantData {
   situation: "seul" | "couple" | "parent";
-  age: number;
-  revenus: number; // monthly
-  chargesLocatives: number; // monthly rent
-  personnesCharge: number; // number of dependents
+  /** Conservé pour compatibilité avec l'API, non utilisé dans le calcul */
+  age?: number;
+  /** Revenus mensuels du foyer hors bourse d'études */
+  revenus: number;
+  /** Loyer mensuel (hors charges) */
+  chargesLocatives: number;
+  personnesCharge: number;
+  zone?: ZoneAPL;
+  logement?: LogementEtudiant;
+  boursier?: boolean;
+  /** Nationalité hors UE, EEE et Suisse */
+  horsUE?: boolean;
+  exception?: ExceptionEtudiantEtranger;
 }
 
 export interface APLEtudiantResult {
@@ -16,95 +43,109 @@ export interface APLEtudiantResult {
   montantEstime: number;
   explication: string;
   details: {
+    /** Montant forfaitaire mensuel de ressources retenu au minimum */
     ressourcesMaxi: number;
+    ressourcesRetenues: number;
+    loyerRetenu: number;
+    plafondLoyer: number;
+    /** Part du loyer couverte par l'aide estimée */
     pourcentageLoyer: number;
   };
 }
 
-/**
- * Calculate APL for students/young workers
- * 2026 rates based on CNRH
- */
+/** Montants forfaitaires annuels de ressources des étudiants (gelés en 2026) */
+export const FORFAIT_RESSOURCES_ETUDIANT = {
+  classique: { boursier: 6900, nonBoursier: 8600 },
+  foyer: { boursier: 5400, nonBoursier: 6600 },
+} as const;
+
+const ZONE_MOTEUR: Record<ZoneAPL, Zone> = { "1": "idf", "2": "province", "3": "dom" };
+const SITUATION_MOTEUR: Record<APLEtudiantData["situation"], SituationFamiliale> = {
+  seul: "seul",
+  couple: "couple",
+  parent: "monoparental",
+};
+
+const round2 = (v: number) => Math.round(v * 100) / 100;
+
 export function calculerAPLEtudiant(data: APLEtudiantData): APLEtudiantResult {
-  // APL student rules (simplified)
-  // Base: cover ~50-65% of rent up to ceiling
+  const boursier = data.boursier === true;
+  const logement: LogementEtudiant = data.logement === "foyer" ? "foyer" : "classique";
+  const zone: ZoneAPL = data.zone ?? "2";
+  const forfaitAnnuel = boursier
+    ? FORFAIT_RESSOURCES_ETUDIANT[logement].boursier
+    : FORFAIT_RESSOURCES_ETUDIANT[logement].nonBoursier;
+  const forfaitMensuel = round2(forfaitAnnuel / 12);
 
-  const { situation, age, revenus, chargesLocatives, personnesCharge } = data;
+  const detailsVides = {
+    ressourcesMaxi: forfaitMensuel,
+    ressourcesRetenues: 0,
+    loyerRetenu: 0,
+    plafondLoyer: 0,
+    pourcentageLoyer: 0,
+  };
 
-  // Resources ceiling 2026 (updated)
-  let ressourcesMaxiBase = 0;
-  switch (situation) {
-    case "seul":
-      ressourcesMaxiBase = 1500;
-      break;
-    case "couple":
-      ressourcesMaxiBase = 2200;
-      break;
-    case "parent":
-      ressourcesMaxiBase = 1800 + personnesCharge * 600;
-      break;
-  }
-
-  // Check eligibility
-  const eligible = revenus <= ressourcesMaxiBase;
-
-  if (!eligible) {
+  // 1. Réforme du 1er juillet 2026 : étudiants extra-européens
+  if (data.horsUE === true && !boursier && (data.exception ?? "aucune") === "aucune") {
     return {
       eligible: false,
       montantEstime: 0,
-      explication: `Vos revenus (${revenus}€) dépassent le plafond autorisé (${ressourcesMaxiBase}€). Vous ne pouvez pas bénéficier de l'APL étudiant.`,
-      details: {
-        ressourcesMaxi: ressourcesMaxiBase,
-        pourcentageLoyer: 0,
-      },
+      explication:
+        "Depuis le 1er juillet 2026, un étudiant de nationalité extra-européenne doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il exerce une activité professionnelle, est apprenti ou en contrat de professionnalisation, réfugié ou apatride, ou conjoint d'un bénéficiaire.",
+      details: detailsVides,
     };
   }
 
-  // Calculate APL (simplified model)
-  // APL typically covers 50-60% of rent for students
-  const pourcentageLoyer = 0.55;
-  let montantEstime = chargesLocatives * pourcentageLoyer;
+  // 2. Ressources retenues : au moins le montant forfaitaire étudiant
+  const revenus = Math.max(0, Number(data.revenus) || 0);
+  const ressourcesRetenues = Math.max(revenus, forfaitMensuel);
 
-  // Minimum rent threshold
-  const loyerMinimum = 150;
-  if (chargesLocatives < loyerMinimum) {
+  // 3. Calcul avec le moteur APL général
+  const result = calculerAPL({
+    situation: SITUATION_MOTEUR[data.situation] ?? "seul",
+    enfants: Math.max(0, Math.floor(Number(data.personnesCharge) || 0)),
+    revenus_mensuels: ressourcesRetenues,
+    loyer_mensuel: Math.max(0, Number(data.chargesLocatives) || 0),
+    region: ZONE_MOTEUR[zone],
+  });
+
+  if (!result.success || !result.data) {
     return {
       eligible: false,
       montantEstime: 0,
-      explication: `Le loyer (${chargesLocatives}€) est inférieur au minimum requis (${loyerMinimum}€).`,
-      details: {
-        ressourcesMaxi: ressourcesMaxiBase,
-        pourcentageLoyer: 0,
-      },
+      explication: result.error || "Données incomplètes.",
+      details: detailsVides,
     };
   }
 
-  // Ceiling by situation
-  let plafondMonthly = 0;
-  switch (situation) {
-    case "seul":
-      plafondMonthly = 350;
-      break;
-    case "couple":
-      plafondMonthly = 420;
-      break;
-    case "parent":
-      plafondMonthly = 380 + personnesCharge * 50;
-      break;
+  const montantEstime = result.data.apl_estimee;
+  const loyer = Math.max(0, Number(data.chargesLocatives) || 0);
+  const details = {
+    ressourcesMaxi: forfaitMensuel,
+    ressourcesRetenues: round2(ressourcesRetenues),
+    loyerRetenu: result.data.loyer_pris_compte,
+    plafondLoyer: result.data.plafond_loyer,
+    pourcentageLoyer: loyer > 0 ? round2(montantEstime / loyer) : 0,
+  };
+
+  const baseRessources =
+    revenus < forfaitMensuel
+      ? `la CAF retient au minimum ${forfaitAnnuel.toLocaleString("fr-FR")} € de ressources par an pour un étudiant ${boursier ? "boursier" : "non boursier"} (${forfaitMensuel.toLocaleString("fr-FR")} € par mois)`
+      : `vos ressources de ${round2(revenus).toLocaleString("fr-FR")} € par mois sont retenues`;
+
+  if (montantEstime <= 0) {
+    return {
+      eligible: false,
+      montantEstime: 0,
+      explication: `Avec ces informations, l'APL estimée est nulle : ${baseRessources}, et votre loyer est retenu dans la limite de ${details.plafondLoyer.toLocaleString("fr-FR")} € en zone ${zone}.`,
+      details,
+    };
   }
-
-  montantEstime = Math.min(montantEstime, plafondMonthly);
-
-  // Rounding
-  montantEstime = Math.round(montantEstime * 100) / 100;
 
   return {
     eligible: true,
     montantEstime,
-    explication: `En fonction de votre situation, vous pourriez percevoir environ ${montantEstime.toFixed(2)}€ par mois. Ce montant dépend notamment de la zone géographique du logement, du loyer retenu par la CAF et de votre situation personnelle. Consultez la CAF pour confirmer.`,
-    details: {
-      ressourcesMaxi: ressourcesMaxiBase,
-      pourcentageLoyer,
-    },
+    explication: `Estimation : environ ${montantEstime.toLocaleString("fr-FR")} € par mois. Votre loyer est retenu dans la limite de ${details.plafondLoyer.toLocaleString("fr-FR")} € (zone ${zone}, barème au 1er octobre 2026) et ${baseRessources}. Estimation indicative : la CAF calcule le montant définitif.`,
+    details,
   };
 }

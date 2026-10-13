@@ -86,4 +86,19 @@ describe("notaireCalculEngine", () => {
     expect(r.prixNetImmobilier).toBe(240000);
     expect(r.montantMobilier).toBe(10000);
   });
+
+  test("primo-accédant : pas de hausse des DMTO (6,32 % -> 5,80 %), sans effet ailleurs", () => {
+    const paris = calculerNotaire({ prixAchat: 250000, typeBien: "ancien", departement: "75", primoAccedant: true });
+    expect(paris.tauxDroits).toBeCloseTo(0.058, 6);
+    expect(paris.droitsEnregistrement).toBeCloseTo(14500, 0);
+    // Département resté à 4,50 % (Drôme) : taux inchangé
+    const drome = calculerNotaire({ prixAchat: 250000, typeBien: "ancien", departement: "26", primoAccedant: true });
+    expect(drome.tauxDroits).toBeCloseTo(0.058, 6);
+    // Indre (3,80 %) : taux inchangé
+    const indre = calculerNotaire({ prixAchat: 250000, typeBien: "ancien", departement: "36", primoAccedant: true });
+    expect(indre.tauxDroits).toBeCloseTo(0.0509, 6);
+    // Neuf : toujours 0,715 %
+    const neuf = calculerNotaire({ prixAchat: 250000, typeBien: "neuf", departement: "75", primoAccedant: true });
+    expect(neuf.tauxDroits).toBeCloseTo(0.00715, 6);
+  });
 });

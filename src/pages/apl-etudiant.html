@@ -505,8 +505,8 @@
           éligible, l'aide est calculée comme pour une personne seule.
         </p>
         <p class="text-xs text-gray-600">
-          Notre simulateur ne vérifie pas cette condition de nationalité : le montant affiché
-          suppose que vous êtes éligible. Source :
+          Le simulateur ci-dessous tient compte de cette condition (champs « Nationalité » et
+          « Boursier »). Source :
           <a href="https://www.caf.fr/allocataires/actualites/actualites-nationales/apl-ce-qui-change-pour-certains-etudiants-partir-du-1er-juillet-2026" target="_blank" rel="noopener" class="text-blue-600 hover:underline">caf.fr, actualité du 3 juillet 2026</a>.
         </p>
       </section>
@@ -545,6 +545,48 @@
               </select>
             </div>
 
+            <div>
+              <label for="apl-etudiant-zone" class="block text-gray-700 font-semibold mb-2">Zone du logement *</label>
+              <select id="apl-etudiant-zone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="1">Zone 1 : Paris et agglomérations tendues</option>
+                <option value="2">Zone 2 : agglomérations de plus de 100 000 habitants</option>
+                <option value="3">Zone 3 : reste du territoire</option>
+              </select>
+              <p class="text-xs text-gray-500 mt-1">Vous ne connaissez pas votre zone ? <a href="/pages/apl-zones" class="text-blue-600 hover:underline">Trouvez-la ici</a>.</p>
+            </div>
+            <div>
+              <label for="apl-etudiant-logement" class="block text-gray-700 font-semibold mb-2">Type de logement *</label>
+              <select id="apl-etudiant-logement" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="classique">Logement classique (studio, appartement, colocation)</option>
+                <option value="foyer">Résidence universitaire CROUS ou foyer</option>
+              </select>
+            </div>
+            <div>
+              <label for="apl-etudiant-boursier" class="block text-gray-700 font-semibold mb-2">Êtes-vous boursier sur critères sociaux ? *</label>
+              <select id="apl-etudiant-boursier" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="non">Non</option>
+                <option value="oui">Oui (bourse CROUS ou bourse régionale)</option>
+              </select>
+            </div>
+            <div>
+              <label for="apl-etudiant-nationalite" class="block text-gray-700 font-semibold mb-2">Nationalité *</label>
+              <select id="apl-etudiant-nationalite" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="ue">Française, UE, EEE ou Suisse</option>
+                <option value="horsue">Hors Union européenne (visa ou titre de séjour « étudiant »)</option>
+              </select>
+            </div>
+            <div>
+              <label for="apl-etudiant-exception" class="block text-gray-700 font-semibold mb-2">Si vous êtes hors UE et non boursier : votre situation</label>
+              <select id="apl-etudiant-exception" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="aucune">Aucune des situations ci-dessous</option>
+                <option value="activite">Je travaille (salarié ou indépendant)</option>
+                <option value="apprenti">Apprenti ou contrat de professionnalisation</option>
+                <option value="refugie">Réfugié ou apatride</option>
+                <option value="conjoint">Conjoint d'un étudiant extra-européen</option>
+              </select>
+              <p class="text-xs text-gray-500 mt-1">Depuis le 1er juillet 2026, ces situations permettent de garder l'APL sans bourse.</p>
+            </div>
+
             <!-- Loyer -->
             <div>
               <label for="apl-etudiant-charges" class="block text-gray-700 font-semibold mb-2"
@@ -563,13 +605,13 @@
             <!-- Revenus -->
             <div>
               <label for="apl-etudiant-revenus" class="block text-gray-700 font-semibold mb-2"
-                >Revenus mensuels du foyer (€) *</label
+                >Revenus mensuels du foyer, hors bourse (€) *</label
               >
               <input
                 type="number"
                 id="apl-etudiant-revenus"
                 min="0"
-                placeholder="Salaires, bourses, allocations..."
+                placeholder="Salaires, stages, allocations (la bourse n'est pas comptée)"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />

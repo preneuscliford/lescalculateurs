@@ -45,6 +45,8 @@ export interface NotaireCalculData {
   pretsAides?: number;
   autresPrets?: number;
   remiseNotarialeVariable?: boolean;
+  /** Premier achat de la résidence principale : pas de hausse des DMTO (art. 116 LF 2025) */
+  primoAccedant?: boolean;
 }
 
 export interface NotaireCalculResult {
@@ -67,6 +69,9 @@ export interface NotaireCalculResult {
   montantMobilier: number;
   montantTotalPrets: number;
 }
+
+// Taux global DMTO sans la hausse de l'article 116 (taux de base 4,50 %), barème DGFiP 01/06/2026
+const PRIMO_ACCEDANT_TAUX_MAX = 0.058;
 
 function getDmtoTaux(departement: string): number {
   const c = String(departement);
@@ -156,6 +161,11 @@ export function calculerNotaire(data: NotaireCalculData): NotaireCalculResult {
   const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
 
   let tauxDroits = getDmtoTaux(departement);
+  // Primo-accédant : la hausse à 5 % (art. 116 LF 2025) ne s'applique pas ; les
+  // départements à 6,32 % avaient tous un taux de base de 4,50 % (5,80 % au total).
+  if (data.primoAccedant === true && typeBien !== "neuf" && tauxDroits > PRIMO_ACCEDANT_TAUX_MAX) {
+    tauxDroits = PRIMO_ACCEDANT_TAUX_MAX;
+  }
   let droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
   if (typeBien === "neuf") {
     tauxDroits = 0.00715;

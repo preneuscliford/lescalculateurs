@@ -551,8 +551,8 @@
                 <strong>Primo-accédant :</strong> si vous achetez votre résidence principale sans
                 avoir été propriétaire de votre résidence principale au cours des 2 dernières années,
                 la hausse à 6,32 % ne s'applique pas : vous payez 5,80 % (5,09 % dans l'Indre), soit
-                environ 1 300 € d'économie sur 250 000 €. Le simulateur ci-dessus applique le taux du
-                département : retirez environ 0,5 % du prix au résultat si vous êtes primo-accédant. Source :
+                environ 1 300 € d'économie sur 250 000 €. Cochez la case « Primo-accédant » dans le
+                simulateur pour appliquer ce taux. Source :
                 <a href="https://www.notaires.fr/fr/actualites/vente-immobiliere-et-augmentation-des-droits-de-mutation-titre-onereux" target="_blank" rel="noopener" class="text-blue-600 hover:underline">notaires.fr</a>.
               </p>
               <p class="mt-2 text-sm">
@@ -2132,6 +2132,12 @@
               ],
             },
             {
+              id: "primo_accedant",
+              label:
+                "Primo-accédant : premier achat de ma résidence principale (pas propriétaire de ma résidence principale depuis 2 ans)",
+              type: "checkbox",
+            },
+            {
               id: "prix_achat",
               label: "Prix d'acquisition *",
               type: "number",
@@ -2204,6 +2210,7 @@
               const pretsAides = values.prets_aides || 0;
               const autresPrets = values.autres_prets || 0;
               const remiseVar = values.remise_notaire_var === true;
+              const primoAccedant = values.primo_accedant === true;
 
               // Prix net à considérer (hors mobilier)
               const prixNetImmobilier = prixAchat - montantMobilier;
@@ -2268,8 +2275,15 @@
 
               // Droits d'enregistrement (ancien depuis JSON structuré, neuf 0,715%)
               let tauxDroits = getDmtoTaux(departement);
+              // Primo-accédant (résidence principale) : la hausse à 5 % de l'article 116
+              // de la loi de finances 2025 ne s'applique pas. Les départements à 6,32 %
+              // avaient tous un taux de base de 4,50 %, soit 5,80 % au total (DGFiP 01/06/2026).
+              const primoApplique = primoAccedant && typeBien !== "neuf" && tauxDroits > 0.058;
+              if (primoApplique) tauxDroits = 0.058;
               let droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
-              let droitsLabel = `Droits d'enregistrement (${pct(tauxDroits)})`;
+              let droitsLabel = primoApplique
+                ? `Droits d'enregistrement primo-accédant (${pct(tauxDroits)}, hausse non appliquée)`
+                : `Droits d'enregistrement (${pct(tauxDroits)})`;
               if (typeBien === "neuf") {
                 tauxDroits = 0.00715;
                 droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;

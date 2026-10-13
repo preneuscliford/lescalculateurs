@@ -13,6 +13,7 @@ export interface CalculNotaireParams {
   fraisHypotheque?: number;
   fraisTerrain?: number;
   tva?: number;
+  primoAccedant?: boolean; // premier achat de la résidence principale
 }
 
 export interface CalculNotaireResult {
@@ -25,12 +26,16 @@ export interface CalculNotaireResult {
 
 export function getTauxDroitsMutation(
   departement: string,
-  typeBien: string
+  typeBien: string,
+  primoAccedant = false
 ): number {
   const { droitsMutation } = baremes.notaire;
   if (typeBien === "neuf") return droitsMutation.neuf;
   const tauxDepartement = dmtoParDepartement[departement];
-  if (tauxDepartement != null) return tauxDepartement / 100;
+  if (tauxDepartement != null) {
+    // Primo-accédant : pas de hausse à 5 % (art. 116 LF 2025), soit 5,80 % au plus
+    return primoAccedant ? Math.min(tauxDepartement, 5.8) / 100 : tauxDepartement / 100;
+  }
   if (droitsMutation.departementsReduits.includes(departement))
     return droitsMutation.reduit;
   return droitsMutation.standard;
@@ -49,7 +54,7 @@ export function calculerFraisNotaire(
     fraisTerrain = 0,
     tva = 0,
   } = params;
-  const tauxMutation = getTauxDroitsMutation(departement, typeBien);
+  const tauxMutation = getTauxDroitsMutation(departement, typeBien, params.primoAccedant === true);
   const droitsEnregistrement = Math.round(prixAchat * tauxMutation);
   const csiTaux = baremes.notaire.csi.taux;
   const csiMin = baremes.notaire.csi.minimum;

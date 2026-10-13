@@ -59,6 +59,8 @@ export const socialBaremes = {
     // d'activite sont retenus en totalite dans les ressources du RSA (DREES,
     // fiche "La prime d'activite").
     revenusActivitePrisEnCompte: 1,
+    // Le RSA n'est pas verse si le montant du est inferieur a 6 EUR (CAF, via MoneyVox 2026)
+    montantMinimumVerse: 6,
   },
   primeActivite: {
     version: "2026.05",

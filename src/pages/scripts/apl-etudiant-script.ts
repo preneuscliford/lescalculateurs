@@ -5,6 +5,8 @@
 import {
   calculerAPLEtudiant,
   type APLEtudiantData,
+  type ExceptionEtudiantEtranger,
+  type ZoneAPL,
 } from "../../utils/aplEtudiantCalculEngine";
 
 const form = document.getElementById("apl-etudiant-form") as HTMLFormElement;
@@ -43,12 +45,19 @@ if (form) {
       return;
     }
 
+    const valeur = (id: string) =>
+      (document.getElementById(id) as HTMLSelectElement | null)?.value || "";
+
     const data: APLEtudiantData = {
       situation: situation as "seul" | "couple" | "parent",
-      age: 22, // typical student age
       revenus,
       chargesLocatives,
       personnesCharge,
+      zone: (valeur("apl-etudiant-zone") || "2") as ZoneAPL,
+      logement: valeur("apl-etudiant-logement") === "foyer" ? "foyer" : "classique",
+      boursier: valeur("apl-etudiant-boursier") === "oui",
+      horsUE: valeur("apl-etudiant-nationalite") === "horsue",
+      exception: (valeur("apl-etudiant-exception") || "aucune") as ExceptionEtudiantEtranger,
     };
 
     const result = calculerAPLEtudiant(data);
@@ -63,8 +72,8 @@ if (form) {
 
     if (montantDisplay) {
       montantDisplay.textContent = result.eligible
-        ? `${result.montantEstime.toFixed(2)}€/mois`
-        : "---";
+        ? `${result.montantEstime.toLocaleString("fr-FR")} €/mois`
+        : "Non éligible ou aide nulle";
     }
     if (explicationDisplay) {
       explicationDisplay.textContent = result.explication;

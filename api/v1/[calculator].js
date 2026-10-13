@@ -1399,7 +1399,9 @@ var socialBaremes = {
     // "RSA activite", 62 %) est remplace par la prime d'activite : les revenus
     // d'activite sont retenus en totalite dans les ressources du RSA (DREES,
     // fiche "La prime d'activite").
-    revenusActivitePrisEnCompte: 1
+    revenusActivitePrisEnCompte: 1,
+    // Le RSA n'est pas verse si le montant du est inferieur a 6 EUR (CAF, via MoneyVox 2026)
+    montantMinimumVerse: 6
   },
   primeActivite: {
     version: "2026.05",
@@ -1689,68 +1691,78 @@ async function handler2(req, res) {
 }
 
 // src/utils/aplEtudiantCalculEngine.ts
+var FORFAIT_RESSOURCES_ETUDIANT = {
+  classique: { boursier: 6900, nonBoursier: 8600 },
+  foyer: { boursier: 5400, nonBoursier: 6600 }
+};
+var ZONE_MOTEUR = { "1": "idf", "2": "province", "3": "dom" };
+var SITUATION_MOTEUR = {
+  seul: "seul",
+  couple: "couple",
+  parent: "monoparental"
+};
+var round2 = (v) => Math.round(v * 100) / 100;
 function calculerAPLEtudiant(data) {
-  const { situation, age, revenus, chargesLocatives, personnesCharge } = data;
-  let ressourcesMaxiBase = 0;
-  switch (situation) {
-    case "seul":
-      ressourcesMaxiBase = 1500;
-      break;
-    case "couple":
-      ressourcesMaxiBase = 2200;
-      break;
-    case "parent":
-      ressourcesMaxiBase = 1800 + personnesCharge * 600;
-      break;
-  }
-  const eligible = revenus <= ressourcesMaxiBase;
-  if (!eligible) {
+  const boursier = data.boursier === true;
+  const logement = data.logement === "foyer" ? "foyer" : "classique";
+  const zone = data.zone ?? "2";
+  const forfaitAnnuel = boursier ? FORFAIT_RESSOURCES_ETUDIANT[logement].boursier : FORFAIT_RESSOURCES_ETUDIANT[logement].nonBoursier;
+  const forfaitMensuel = round2(forfaitAnnuel / 12);
+  const detailsVides = {
+    ressourcesMaxi: forfaitMensuel,
+    ressourcesRetenues: 0,
+    loyerRetenu: 0,
+    plafondLoyer: 0,
+    pourcentageLoyer: 0
+  };
+  if (data.horsUE === true && !boursier && (data.exception ?? "aucune") === "aucune") {
     return {
       eligible: false,
       montantEstime: 0,
-      explication: `Vos revenus (${revenus}\u20AC) d\xE9passent le plafond autoris\xE9 (${ressourcesMaxiBase}\u20AC). Vous ne pouvez pas b\xE9n\xE9ficier de l'APL \xE9tudiant.`,
-      details: {
-        ressourcesMaxi: ressourcesMaxiBase,
-        pourcentageLoyer: 0
-      }
+      explication: "Depuis le 1er juillet 2026, un \xE9tudiant de nationalit\xE9 extra-europ\xE9enne doit \xEAtre boursier sur crit\xE8res sociaux pour toucher l'APL, sauf s'il exerce une activit\xE9 professionnelle, est apprenti ou en contrat de professionnalisation, r\xE9fugi\xE9 ou apatride, ou conjoint d'un b\xE9n\xE9ficiaire.",
+      details: detailsVides
     };
   }
-  const pourcentageLoyer = 0.55;
-  let montantEstime = chargesLocatives * pourcentageLoyer;
-  const loyerMinimum = 150;
-  if (chargesLocatives < loyerMinimum) {
+  const revenus = Math.max(0, Number(data.revenus) || 0);
+  const ressourcesRetenues = Math.max(revenus, forfaitMensuel);
+  const result = calculerAPL({
+    situation: SITUATION_MOTEUR[data.situation] ?? "seul",
+    enfants: Math.max(0, Math.floor(Number(data.personnesCharge) || 0)),
+    revenus_mensuels: ressourcesRetenues,
+    loyer_mensuel: Math.max(0, Number(data.chargesLocatives) || 0),
+    region: ZONE_MOTEUR[zone]
+  });
+  if (!result.success || !result.data) {
     return {
       eligible: false,
       montantEstime: 0,
-      explication: `Le loyer (${chargesLocatives}\u20AC) est inf\xE9rieur au minimum requis (${loyerMinimum}\u20AC).`,
-      details: {
-        ressourcesMaxi: ressourcesMaxiBase,
-        pourcentageLoyer: 0
-      }
+      explication: result.error || "Donn\xE9es incompl\xE8tes.",
+      details: detailsVides
     };
   }
-  let plafondMonthly = 0;
-  switch (situation) {
-    case "seul":
-      plafondMonthly = 350;
-      break;
-    case "couple":
-      plafondMonthly = 420;
-      break;
-    case "parent":
-      plafondMonthly = 380 + personnesCharge * 50;
-      break;
+  const montantEstime = result.data.apl_estimee;
+  const loyer = Math.max(0, Number(data.chargesLocatives) || 0);
+  const details = {
+    ressourcesMaxi: forfaitMensuel,
+    ressourcesRetenues: round2(ressourcesRetenues),
+    loyerRetenu: result.data.loyer_pris_compte,
+    plafondLoyer: result.data.plafond_loyer,
+    pourcentageLoyer: loyer > 0 ? round2(montantEstime / loyer) : 0
+  };
+  const baseRessources = revenus < forfaitMensuel ? `la CAF retient au minimum ${forfaitAnnuel.toLocaleString("fr-FR")} \u20AC de ressources par an pour un \xE9tudiant ${boursier ? "boursier" : "non boursier"} (${forfaitMensuel.toLocaleString("fr-FR")} \u20AC par mois)` : `vos ressources de ${round2(revenus).toLocaleString("fr-FR")} \u20AC par mois sont retenues`;
+  if (montantEstime <= 0) {
+    return {
+      eligible: false,
+      montantEstime: 0,
+      explication: `Avec ces informations, l'APL estim\xE9e est nulle : ${baseRessources}, et votre loyer est retenu dans la limite de ${details.plafondLoyer.toLocaleString("fr-FR")} \u20AC en zone ${zone}.`,
+      details
+    };
   }
-  montantEstime = Math.min(montantEstime, plafondMonthly);
-  montantEstime = Math.round(montantEstime * 100) / 100;
   return {
     eligible: true,
     montantEstime,
-    explication: `En fonction de votre situation, vous pourriez percevoir environ ${montantEstime.toFixed(2)}\u20AC par mois. Ce montant d\xE9pend notamment de la zone g\xE9ographique du logement, du loyer retenu par la CAF et de votre situation personnelle. Consultez la CAF pour confirmer.`,
-    details: {
-      ressourcesMaxi: ressourcesMaxiBase,
-      pourcentageLoyer
-    }
+    explication: `Estimation : environ ${montantEstime.toLocaleString("fr-FR")} \u20AC par mois. Votre loyer est retenu dans la limite de ${details.plafondLoyer.toLocaleString("fr-FR")} \u20AC (zone ${zone}, bar\xE8me au 1er octobre 2026) et ${baseRessources}. Estimation indicative : la CAF calcule le montant d\xE9finitif.`,
+    details
   };
 }
 
@@ -1764,19 +1776,45 @@ async function handler3(req, res) {
   const auth = authenticate(req, res);
   if (!auth) return;
   try {
-    const { situation, age, revenus, chargesLocatives, personnesCharge } = req.body || {};
-    if (!situation || age === void 0 || revenus === void 0 || chargesLocatives === void 0) {
+    const {
+      situation,
+      age,
+      revenus,
+      chargesLocatives,
+      personnesCharge,
+      zone,
+      logement,
+      boursier,
+      horsUE,
+      exception
+    } = req.body || {};
+    if (!situation || revenus === void 0 || chargesLocatives === void 0) {
       return res.status(400).json({
-        error: "Champs requis : situation, age, revenus, chargesLocatives.",
-        exemple: { situation: "seul", age: 21, revenus: 400, chargesLocatives: 450, personnesCharge: 0 }
+        error: "Champs requis : situation, revenus, chargesLocatives.",
+        exemple: {
+          situation: "seul",
+          revenus: 400,
+          chargesLocatives: 450,
+          personnesCharge: 0,
+          zone: "2",
+          logement: "classique",
+          boursier: false,
+          horsUE: false,
+          exception: "aucune"
+        }
       });
     }
     const result = calculerAPLEtudiant({
       situation,
-      age: Number(age) || 0,
+      age: Number(age) || void 0,
       revenus: Number(revenus) || 0,
       chargesLocatives: Number(chargesLocatives) || 0,
-      personnesCharge: Number(personnesCharge) || 0
+      personnesCharge: Number(personnesCharge) || 0,
+      zone: ["1", "2", "3"].includes(String(zone)) ? String(zone) : "2",
+      logement: logement === "foyer" ? "foyer" : "classique",
+      boursier: boursier === true || boursier === "true",
+      horsUE: horsUE === true || horsUE === "true",
+      exception: ["activite", "apprenti", "refugie", "conjoint"].includes(exception) ? exception : "aucune"
     });
     return res.status(200).json(withMeta("apl-etudiant", result));
   } catch (err) {
@@ -2192,6 +2230,7 @@ async function handler8(req, res) {
 
 // src/utils/notaireCalculEngine.ts
 var bjson = baremes_default;
+var PRIMO_ACCEDANT_TAUX_MAX = 0.058;
 function getDmtoTaux(departement) {
   const c = String(departement);
   if (bjson.dmto && bjson.dmto[c] != null) {
@@ -2265,6 +2304,9 @@ function calculerNotaire(data) {
   const fraisTerrain = typeBien === "terrain" ? 100 : 0;
   const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
   let tauxDroits = getDmtoTaux(departement);
+  if (data.primoAccedant === true && typeBien !== "neuf" && tauxDroits > PRIMO_ACCEDANT_TAUX_MAX) {
+    tauxDroits = PRIMO_ACCEDANT_TAUX_MAX;
+  }
   let droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
   if (typeBien === "neuf") {
     tauxDroits = 715e-5;
@@ -2314,7 +2356,8 @@ async function handler9(req, res) {
       typeEmprunt,
       pretsAides,
       autresPrets,
-      remiseNotarialeVariable
+      remiseNotarialeVariable,
+      primoAccedant
     } = req.body || {};
     if (prixAchat === void 0 || !typeBien || !departement) {
       return res.status(400).json({
@@ -2330,7 +2373,8 @@ async function handler9(req, res) {
       typeEmprunt,
       pretsAides: Number(pretsAides) || 0,
       autresPrets: Number(autresPrets) || 0,
-      remiseNotarialeVariable: Boolean(remiseNotarialeVariable)
+      remiseNotarialeVariable: Boolean(remiseNotarialeVariable),
+      primoAccedant: primoAccedant === true || primoAccedant === "true"
     });
     return res.status(200).json(withMeta("notaire", result));
   } catch (err) {
@@ -2817,9 +2861,14 @@ function calculerRSA(data) {
   const abattement = Math.max(0, Math.round(((data.revenus || 0) - revenusPris) * 100) / 100);
   let montantFinal = montantBase - revenusPris - forfaitLogement;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
+  const sousSeuilVersement = montantFinal > 0 && montantFinal < rsaBaremes.montantMinimumVerse;
+  if (sousSeuilVersement) montantFinal = 0;
   let eligibilite = "Probablement eligible";
   let explication = "Cette estimation utilise le bareme RSA en vigueur, vos ressources mensuelles et, si besoin, le forfait logement applique par la CAF.";
-  if (montantFinal === 0) {
+  if (sousSeuilVersement) {
+    eligibilite = "Montant trop faible";
+    explication = `Le RSA calcule est inferieur a ${rsaBaremes.montantMinimumVerse} EUR par mois : la CAF ne le verse pas.`;
+  } else if (montantFinal === 0) {
     eligibilite = "Non eligible";
     explication = "Avec les ressources et le logement renseignes, le RSA estime est nul. Le resultat peut changer si vos revenus baissent, si votre foyer evolue ou si votre situation de logement change.";
   } else if (data.situation === "monoparental" && data.enfants > 0) {

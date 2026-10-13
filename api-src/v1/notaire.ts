@@ -2,7 +2,7 @@
  * API LesCalculateurs — POST /api/v1/notaire
  * Body: { prixAchat, typeBien: "ancien"|"neuf"|"terrain", departement,
  *         montantMobilier?, typeEmprunt?, pretsAides?, autresPrets?,
- *         remiseNotarialeVariable? }
+ *         remiseNotarialeVariable?, primoAccedant? }
  */
 
 import { withCors, authenticate } from "../_lib/auth";
@@ -29,6 +29,7 @@ export default async function handler(req: any, res: any) {
       pretsAides,
       autresPrets,
       remiseNotarialeVariable,
+      primoAccedant,
     } = req.body || {};
 
     if (prixAchat === undefined || !typeBien || !departement) {
@@ -47,6 +48,7 @@ export default async function handler(req: any, res: any) {
       pretsAides: Number(pretsAides) || 0,
       autresPrets: Number(autresPrets) || 0,
       remiseNotarialeVariable: Boolean(remiseNotarialeVariable),
+      primoAccedant: primoAccedant === true || primoAccedant === "true",
     });
 
     return res.status(200).json(withMeta("notaire", result));

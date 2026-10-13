@@ -83,12 +83,17 @@ export function calculerRSA(data: RSACalculData): RSAResult {
 
   let montantFinal = montantBase - revenusPris - forfaitLogement;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
+  const sousSeuilVersement = montantFinal > 0 && montantFinal < rsaBaremes.montantMinimumVerse;
+  if (sousSeuilVersement) montantFinal = 0;
 
   let eligibilite = "Probablement eligible";
   let explication =
     "Cette estimation utilise le bareme RSA en vigueur, vos ressources mensuelles et, si besoin, le forfait logement applique par la CAF.";
 
-  if (montantFinal === 0) {
+  if (sousSeuilVersement) {
+    eligibilite = "Montant trop faible";
+    explication = `Le RSA calcule est inferieur a ${rsaBaremes.montantMinimumVerse} EUR par mois : la CAF ne le verse pas.`;
+  } else if (montantFinal === 0) {
     eligibilite = "Non eligible";
     explication =
       "Avec les ressources et le logement renseignes, le RSA estime est nul. Le resultat peut changer si vos revenus baissent, si votre foyer evolue ou si votre situation de logement change.";
