@@ -75,11 +75,88 @@ const MOIS_FR =
   "janvier|f(?:é|&eacute;|&#233;)vrier|mars|avril|mai|juin|juillet|ao(?:û|&ucirc;|&#251;)t|septembre|octobre|novembre|d(?:é|&eacute;|&#233;)cembre";
 const DATE_FR = `\\d{1,2}(?:er)?\\s+(?:${MOIS_FR})\\s+20\\d{2}`;
 
+// Types schema.org dont la date de modification doit suivre le dernier audit.
+const TYPES_DATE_MODIFIEE = new Set([
+  "Article",
+  "BlogPosting",
+  "NewsArticle",
+  "WebPage",
+  "FAQPage",
+  "AboutPage",
+  "CollectionPage",
+  "ItemPage",
+  "HowTo",
+  "SoftwareApplication",
+  "WebApplication",
+]);
+
+function majDatesJsonLd(node: unknown): void {
+  if (Array.isArray(node)) {
+    node.forEach(majDatesJsonLd);
+    return;
+  }
+  if (!node || typeof node !== "object") return;
+  const obj = node as Record<string, unknown>;
+  const types = ([] as unknown[]).concat(obj["@type"] ?? []);
+  if (types.some((t) => TYPES_DATE_MODIFIEE.has(String(t))) || "dateModified" in obj) {
+    obj.dateModified = siteUpdate.lastVerified;
+  }
+  Object.values(obj).forEach(majDatesJsonLd);
+}
+
+/**
+ * Dates SEO alignées sur site-update.json : JSON-LD (dateModified ajouté ou remplacé),
+ * balises meta de modification, et dates <time> affichées dans les pages.
+ * La date de publication (datePublished, article:published_time) est conservée.
+ */
+function alignSeoDates(html: string): string {
+  let out = html.replace(
+    /(<script[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/gi,
+    (bloc, open: string, json: string, close: string) => {
+      try {
+        const data = JSON.parse(json);
+        majDatesJsonLd(data);
+        return `${open}${JSON.stringify(data)}${close}`;
+      } catch {
+        return bloc;
+      }
+    },
+  );
+  // Dates <time> visibles : une date précédée d'un libellé (« Dernière mise à jour… »)
+  // est alignée sur le dernier audit ; une date seule (ligne d'auteur d'article) est
+  // retirée, le bandeau du haut de page étant la seule date affichée.
+  out = out.replace(
+    /(<time\b[^>]*datetime=")[^"]*("[^>]*>)[^<]*(<\/time>)(\s*<span>\s*•\s*<\/span>)?/gi,
+    (_m, a: string, b: string, c: string, sep: string | undefined, offset: number, str: string) => {
+      const avant = str
+        .slice(Math.max(0, offset - 120), offset)
+        .replace(/<[^>]*>/g, " ")
+        .trim();
+      if (/(jour|revue|effectu\S*|v(?:é|&eacute;)rifi\S*|le)\s*:?$/i.test(avant)) {
+        return `${a}${siteUpdate.lastVerified}${b}${siteUpdate.label}${c}${sep ?? ""}`;
+      }
+      return "";
+    },
+  );
+  const meta = (prop: string) =>
+    `<meta property="${prop}" content="${siteUpdate.lastVerified}" />`;
+  for (const prop of ["article:modified_time", "og:updated_time"]) {
+    if (!new RegExp(`property="${prop}"`).test(out)) {
+      out = out.replace(/<\/head>/i, `  ${meta(prop)}\n  </head>`);
+    }
+  }
+  out = out.replace(
+    /(<meta\s+property="og:updated_time"\s+content=")[^"]*(")/g,
+    `$1${siteUpdate.lastVerified}$2`,
+  );
+  return out;
+}
+
 function addLastUpdated(html: string, filename: string): string {
   // La page d'historique garde ses dates réelles (journal des mises à jour).
   if (/historique-mises-a-jour/.test(filename)) return html;
   if (html.includes("data-lc-maj") || PAGES_SANS_BANDEAU.test(filename)) return html;
-  const out = html
+  let out = html
     // Ancienne date figée dans le bandeau "Estimation indicative"
     .replace(
       /barèmes [^<—]*applicables\s*—\s*Mise à jour le\s*<time[^>]*>[^<]*<\/time>\s*—?\s*/g,
@@ -111,6 +188,7 @@ function addLastUpdated(html: string, filename: string): string {
       /(<meta\s+property="article:modified_time"\s+content=")[^"]*(")/g,
       `$1${siteUpdate.lastVerified}$2`,
     );
+  out = alignSeoDates(out);
   // Page avec le bandeau "Estimation indicative" : la date y est intégrée pour
   // n'avoir qu'une seule barre en haut de page.
   const stickyBanner = /<div[^>]*class="sticky-ymyl"[^>]*>/;
