@@ -400,7 +400,7 @@
         </p>
         <p class="text-blue-800 text-sm m-0">
           résultat affiché : taxe foncière annuelle estimée à partir d'une valeur locative
-          cadastrale et d'un taux global indicatif (ou saisi).
+          cadastrale et du taux global de votre commune (taux officiel DGFiP ou taux de votre avis).
         </p>
       </div>
 
@@ -447,23 +447,22 @@
         <p class="text-gray-700 mb-4">
           La taxe foncière 2026 repose sur la <strong>valeur locative cadastrale</strong> multipliée
           par les <strong>taux votés par votre commune</strong>. La revalorisation forfaitaire
-          nationale est de <strong>+3,9% en 2026</strong> (loi de finances).
+          nationale des valeurs locatives est de <strong>+0,8 % en 2026</strong> (coefficient 1,008 fixé d'après l'indice des prix de novembre 2025, impots.gouv.fr).
         </p>
         <div class="grid md:grid-cols-3 gap-4 mb-4">
           <div class="bg-slate-50 rounded-lg p-4 border">
             <p class="font-semibold text-gray-900">Revalorisation 2026</p>
-            <p class="text-2xl font-bold text-amber-700 mt-1">+3,9%</p>
-            <p class="text-xs text-gray-500 mt-1">Revalorisation forfaitaire nationale</p>
+            <p class="text-2xl font-bold text-amber-700 mt-1">+0,8 %</p>
+            <p class="text-xs text-gray-500 mt-1">Revalorisation forfaitaire nationale des valeurs locatives en 2026 (coefficient 1,008, impots.gouv.fr)</p>
           </div>
           <div class="bg-slate-50 rounded-lg p-4 border">
-            <p class="font-semibold text-gray-900">Taux moyen national</p>
-            <p class="text-2xl font-bold text-amber-700 mt-1">~38%</p>
-            <p class="text-xs text-gray-500 mt-1">Varie de 15% à 70% selon commune</p>
+            <p class="font-semibold text-gray-900">Taux global</p>
+            <p class="text-sm text-gray-700 mt-1">Voté chaque année par la commune et l'intercommunalité : il varie fortement d'une commune à l'autre (voir votre avis)</p>
           </div>
           <div class="bg-slate-50 rounded-lg p-4 border">
             <p class="font-semibold text-gray-900">Exonérations possibles</p>
             <p class="text-sm text-gray-700 mt-1">
-              +75 ans sous conditions, logement neuf 2 ans, RFR modeste
+              Plus de 75 ans, AAH, ASPA ou ASI (sous conditions), 100 € de dégrèvement de 65 à 75 ans (sous condition de revenus), logement neuf 2 ans
             </p>
           </div>
         </div>
@@ -642,7 +641,7 @@
           <p class="ai-response text-gray-700">
             Taxe foncière = Valeur locative cadastrale × Taux global. Des exonérations ou
             dégrèvements peuvent s'appliquer selon votre situation. Les taux réels varient selon les
-            communes ; ce simulateur fournit une estimation à partir d'un taux indicatif (ou saisi).
+            communes ; ce simulateur utilise le taux officiel DGFiP de votre commune ou le taux de votre avis.
           </p>
         </section>
 
@@ -681,8 +680,8 @@
         <p class="text-lg text-gray-600 leading-relaxed mb-4">
           La taxe foncière est calculée sur la valeur locative cadastrale de votre propriété,
           multipliée par les taux votés par votre commune et les collectivités territoriales (taux
-          global). Notre simulateur 2026 propose un taux indicatif par région, que vous pouvez
-          remplacer par le taux exact de votre avis.
+          global). Notre simulateur 2026 utilise le taux officiel DGFiP de votre commune, ou le taux
+          exact de votre avis si vous le saisissez.
         </p>
         <p class="text-lg text-gray-600 leading-relaxed">
           La valeur locative cadastrale correspond au loyer théorique que pourrait produire votre
@@ -765,8 +764,8 @@
           <li>La TEOM (ordures ménagères) si elle apparaît séparément</li>
         </ul>
         <p class="text-sm text-gray-600 mt-4">
-          Pour une estimation indicative, utilisez le simulateur en haut de page et remplacez le
-          taux indicatif par celui de votre avis si vous le connaissez.
+          Pour une estimation indicative, utilisez le simulateur en haut de page avec le taux de
+          votre commune ou celui de votre avis.
         </p>
       </section>
 
@@ -777,7 +776,7 @@
           "@context": "https://schema.org",
           "@type": "Calculator",
           "name": "Calculateur Taxe Foncière 2026",
-          "description": "Simulez votre taxe foncière 2026 - valeur locative cadastrale, taux global indicatif (ou saisi), dégrèvements éventuels",
+          "description": "Simulez votre taxe foncière 2026 - valeur locative cadastrale et taux officiel de la commune (DGFiP) ou taux de votre avis",
           "url": "https://www.lescalculateurs.fr/pages/taxe",
           "applicationCategory": "FinanceApplication",
           "screenshot": "https://www.lescalculateurs.fr/pages/taxe",
@@ -822,7 +821,7 @@
               <div class="text-3xl mb-2">📍</div>
               <h3 class="font-bold text-gray-900 mb-1">Taux global</h3>
               <p class="text-sm text-gray-600">
-                Estimation à partir d'un taux indicatif, ou saisie de votre taux exact (avis
+                Taux officiel DGFiP de votre commune, ou saisie de votre taux exact (avis
                 d'impôt)
               </p>
             </div>
@@ -1041,7 +1040,7 @@
       <script type="module">
         import { CalculatorFrame } from "../components/CalculatorFrame.ts";
         import { formatCurrency } from "../main.ts";
-        import { baremes } from "../data/baremes.ts";
+        import { calculerTaxeFonciere } from "../utils/taxeFonciereCalculEngine.ts";
 
         // --- Recherche commune (API Géo officielle) + taux DGFiP ---
         // Résout un nom de commune saisi en code INSEE via l'API Géo
@@ -1051,8 +1050,8 @@
         // dataset DGFiP par scripts/sync-taxe-fonciere-dgfip.cjs — voir
         // .github/workflows/sync-taxe-fonciere.yml). Si l'API Géo est
         // injoignable, ou si la commune n'a pas de taux dans le dataset,
-        // le calcul retombe silencieusement sur le taux moyen régional
-        // existant (aucune régression du comportement actuel).
+        // l'utilisateur saisit le taux global de son avis (aucun taux
+        // « moyen » de repli : il ne correspond à aucune commune réelle).
         let tauxFoncierData = null;
         let tauxFoncierDataPromise = null;
         function chargerTauxFoncierData() {
@@ -1138,7 +1137,7 @@
             } else {
               communeResolue.taux = null;
               setStatus(
-                `Taux non disponible pour ${c.nom} dans les données DGFiP — le taux moyen régional sera utilisé à la place.`,
+                `Taux non disponible pour ${c.nom} dans les données DGFiP : saisissez le taux global indiqué sur votre avis de taxe foncière.`,
                 false,
               );
             }
@@ -1193,7 +1192,7 @@
           fields: [
             {
               id: "valeur_locative",
-              label: "Valeur locative cadastrale annuelle (€)",
+              label: "Base d'imposition annuelle (€) : valeur locative cadastrale figurant sur votre avis",
               type: "number",
               required: true,
               placeholder: "8000",
@@ -1206,53 +1205,20 @@
               label: "Commune (recherche officielle DGFiP)",
               type: "text",
               placeholder: "Tapez le nom de votre commune...",
-              help: "Si votre commune est reconnue, son taux officiel DGFiP remplace le taux moyen régional ci-dessous.",
-            },
-            {
-              id: "region",
-              label: "Région (utilisée si la commune n'est pas reconnue)",
-              type: "select",
-              required: true,
-              defaultValue: "ile_de_france",
-              quickValues: ["ile_de_france", "provence_alpes_cote_azur", "auvergne_rhone_alpes"],
-              options: [
-                { value: "ile_de_france", label: "Île-de-France" },
-                {
-                  value: "provence_alpes_cote_azur",
-                  label: "Provence-Alpes-Côte d'Azur",
-                },
-                {
-                  value: "auvergne_rhone_alpes",
-                  label: "Auvergne-Rhône-Alpes",
-                },
-                { value: "occitanie", label: "Occitanie" },
-                { value: "nouvelle_aquitaine", label: "Nouvelle-Aquitaine" },
-                { value: "grand_est", label: "Grand Est" },
-                { value: "hauts_de_france", label: "Hauts-de-France" },
-                { value: "normandie", label: "Normandie" },
-                { value: "centre_val_de_loire", label: "Centre-Val de Loire" },
-                {
-                  value: "bourgogne_franche_comte",
-                  label: "Bourgogne-Franche-Comté",
-                },
-                { value: "pays_de_la_loire", label: "Pays de la Loire" },
-                { value: "bretagne", label: "Bretagne" },
-                { value: "corse", label: "Corse" },
-              ],
+              help: "Si votre commune est reconnue, son taux officiel DGFiP est utilisé. Sinon, saisissez le taux global de votre avis.",
             },
             {
               id: "taux_global",
-              label: "Taux global (%) (optionnel)",
+              label: "Taux global (%) de votre avis (si la commune n'est pas trouvée)",
               type: "number",
               placeholder: "33",
               min: 0,
-              max: 60,
-              step: 0.1,
-              quickValues: [25, 30, 33, 35, 40],
+              max: 100,
+              step: 0.01,
             },
             {
               id: "age_proprietaire",
-              label: "Âge du propriétaire (optionnel)",
+              label: "Âge du propriétaire au 1er janvier (optionnel)",
               type: "number",
               placeholder: "45",
               min: 18,
@@ -1260,77 +1226,49 @@
               quickValues: [65, 70, 75, 80, 85],
             },
             {
-              id: "handicape",
-              label: "Propriétaire en situation de handicap",
+              id: "allocataire",
+              label: "Titulaire de l'AAH, de l'ASPA ou de l'ASI",
               type: "checkbox",
             },
           ],
           calculate: (values) => {
             try {
-              const valeurLocative = Number(values.valeur_locative) || 0;
-              const region = values.region;
               const tauxGlobalPct = Number(values.taux_global) || 0;
-              const age = Number(values.age_proprietaire) || 0;
-              const handicape = !!values.handicape;
-
-              const tauxRegion = baremes.taxe_fonciere.taux_moyens_par_region[region] || 0;
-
-              let tauxUtilise;
-              let tauxSource; // "personnalisé" | "commune" | "moyen"
+              let tauxPct;
+              let tauxSource; // "personnalisé" | "commune"
               let tauxCommuneInfo = null;
 
               if (tauxGlobalPct > 0) {
-                tauxUtilise = tauxGlobalPct / 100;
+                tauxPct = tauxGlobalPct;
                 tauxSource = "personnalisé";
               } else if (communeResolue && typeof communeResolue.taux === "number") {
-                tauxUtilise = communeResolue.taux / 100;
+                tauxPct = communeResolue.taux;
                 tauxSource = "commune";
                 tauxCommuneInfo = { ...communeResolue };
               } else {
-                tauxUtilise = tauxRegion;
-                tauxSource = "moyen";
+                return {
+                  success: false,
+                  error:
+                    "Recherchez votre commune pour utiliser son taux officiel DGFiP, ou saisissez le taux global indiqué sur votre avis de taxe foncière.",
+                };
               }
 
-              const taxeBrute = valeurLocative * tauxUtilise;
-
-              let degrevementTotal = 0;
-              const degrevements = [];
-
-              if (age >= baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.seuil_age) {
-                const degAge =
-                  taxeBrute * baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.taux;
-                degrevementTotal += degAge;
-                degrevements.push({
-                  nom: "Personne âgée (sous conditions)",
-                  montant: degAge,
-                });
-              }
-
-              if (handicape) {
-                const degHandicap =
-                  taxeBrute * baremes.taxe_fonciere.degrevements_indicatifs.personne_handicapee;
-                degrevementTotal += degHandicap;
-                degrevements.push({
-                  nom: "Handicap (sous conditions)",
-                  montant: degHandicap,
-                });
-              }
-
-              const taxeFonciere = Math.max(0, taxeBrute - degrevementTotal);
+              const r = calculerTaxeFonciere({
+                valeurLocative: Number(values.valeur_locative) || 0,
+                tauxPct,
+                age: Number(values.age_proprietaire) || 0,
+                allocataire: !!values.allocataire,
+              });
 
               return {
                 success: true,
                 data: {
-                  valeurLocative,
-                  taxeBrute,
-                  degrevements,
-                  degrevementTotal,
-                  tauxRegion,
-                  tauxUtilise,
+                  valeurLocative: r.valeurLocative,
+                  tauxUtilise: r.taux,
                   tauxSource,
                   tauxCommuneInfo,
-                  taxeFonciere,
-                  region,
+                  taxeFonciere: r.taxeFonciere,
+                  allegementsPossibles: r.allegementsPossibles,
                 },
               };
             } catch (error) {
@@ -1342,29 +1280,10 @@
           },
           formatResult: (result) => {
             const data = result.data;
-            const regionLabel = {
-              ile_de_france: "Île-de-France",
-              provence_alpes_cote_azur: "Provence-Alpes-Côte d'Azur",
-              auvergne_rhone_alpes: "Auvergne-Rhône-Alpes",
-              occitanie: "Occitanie",
-              nouvelle_aquitaine: "Nouvelle-Aquitaine",
-              grand_est: "Grand Est",
-              hauts_de_france: "Hauts-de-France",
-              normandie: "Normandie",
-              centre_val_de_loire: "Centre-Val de Loire",
-              bourgogne_franche_comte: "Bourgogne-Franche-Comté",
-              pays_de_la_loire: "Pays de la Loire",
-              bretagne: "Bretagne",
-              corse: "Corse",
-            }[data.region];
-            const isZero = !data.taxeFonciere || data.taxeFonciere <= 0;
             const tauxLabel =
-              data.tauxSource === "personnalisé"
-                ? "Taux global (saisi)"
-                : data.tauxSource === "commune"
-                  ? `Taux officiel — ${data.tauxCommuneInfo?.nom || "commune"}`
-                  : "Taux global indicatif (moyenne régionale)";
-            const isVeryLow = data.taxeFonciere > 0 && data.taxeFonciere < 50;
+              data.tauxSource === "commune"
+                ? `Taux officiel DGFiP — ${data.tauxCommuneInfo?.nom || "commune"}`
+                : "Taux global (saisi depuis votre avis)";
 
             const tracabiliteHTML =
               data.tauxSource === "commune" && data.tauxCommuneInfo
@@ -1382,31 +1301,33 @@
               </p>
             </div>
             `
-                : data.tauxSource === "moyen"
-                  ? `
-            <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
-              <p class="text-sm text-amber-900 m-0">
-                <strong>ℹ️ Taux moyen régional</strong> utilisé (aucune commune officielle reconnue pour ce calcul).
-                Recherchez votre commune ci-dessus pour un taux officiel DGFiP si disponible.
+                : "";
+
+            const allegementsHTML =
+              data.allegementsPossibles.length > 0
+                ? `
+            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+              <h3 class="text-lg font-bold text-green-900 mb-2">✅ Exonération ou dégrèvement possible</h3>
+              <ul class="text-sm text-green-900 list-disc list-inside space-y-1">
+                ${data.allegementsPossibles.map((t) => `<li>${t}</li>`).join("")}
+              </ul>
+              <p class="text-xs text-green-800 mt-2 m-0">
+                Non déduit de l'estimation : il dépend de votre revenu fiscal de référence. L'administration l'applique directement sur l'avis.
               </p>
             </div>
             `
-                  : "";
+                : "";
 
             return `
           <div class="space-y-6">
             <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
               <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Résultat principal</h3>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <p class="text-sm text-gray-600">Taxe foncière estimée (annuelle)</p>
+                  <p class="text-sm text-gray-600">Taxe foncière estimée (annuelle, avant exonération ou dégrèvement)</p>
                   <p class="text-2xl font-bold text-green-700">${formatCurrency(
                     data.taxeFonciere,
                   )}</p>
-                </div>
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <p class="text-sm text-gray-600">Taxe brute (avant dégrèvements)</p>
-                  <p class="text-2xl font-bold text-blue-700">${formatCurrency(data.taxeBrute)}</p>
                 </div>
                 <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
                   <p class="text-sm text-gray-600">${tauxLabel}</p>
@@ -1416,48 +1337,20 @@
                 </div>
               </div>
               <p class="text-sm text-gray-600 mt-3 m-0">
-                Région : <strong>${regionLabel}</strong> • Valeur locative cadastrale : <strong>${formatCurrency(
-                  data.valeurLocative,
-                )}</strong>
+                Valeur locative cadastrale : <strong>${formatCurrency(data.valeurLocative)}</strong>
               </p>
             </div>
 
             ${tracabiliteHTML}
 
-            ${
-              isZero
-                ? `
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-              <h3 class="text-lg font-bold text-green-900 mb-2">✅ Pourquoi la taxe est à 0 € ?</h3>
-              <ul class="text-sm text-green-900 list-disc list-inside space-y-1">
-                <li>Des exonérations ou dégrèvements peuvent ramener le montant à 0 € (sous conditions).</li>
-                <li>La valeur locative cadastrale est faible et le taux utilisé est une estimation.</li>
-                <li>Vérifiez votre avis : la TEOM (ordures ménagères) peut apparaître séparément.</li>
-              </ul>
-            </div>
-            `
-                : ""
-            }
-
-            ${
-              isVeryLow
-                ? `
-            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-              <h3 class="text-lg font-bold text-yellow-900 mb-2">⚠️ Montant très faible : comment l'interpréter ?</h3>
-              <p class="text-sm text-yellow-900 m-0">
-                Exemple volontairement simplifié : pour une valeur locative cadastrale très faible et/ou si des dégrèvements s'appliquent, la taxe peut être proche de 0 €. Dans la majorité des cas, la taxe foncière annuelle se situe entre quelques centaines et plusieurs milliers d'euros.
-              </p>
-            </div>
-            `
-                : ""
-            }
+            ${allegementsHTML}
 
             <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
               <h3 class="text-lg font-bold text-blue-900 mb-2">🧠 Logique de calcul (simplifiée)</h3>
               <ul class="text-sm text-blue-900 list-disc list-inside space-y-1">
                 <li>Base = valeur locative cadastrale</li>
-                <li>Taxe brute = base × taux global utilisé (indicatif ou saisi)</li>
-                <li>Taxe estimée = taxe brute − dégrèvements éventuels (sous conditions)</li>
+                <li>Taxe estimée = base × taux global (taux officiel de la commune ou taux de votre avis)</li>
+                <li>Exonérations et dégrèvements : appliqués par l'administration selon votre situation et votre revenu fiscal de référence</li>
               </ul>
             </div>
 
@@ -1472,22 +1365,7 @@
                     <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Taux global utilisé</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${(
                       data.tauxUtilise * 100
                     ).toFixed(2)}%</td></tr>
-                    <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Taxe brute (avant dégrèvements)</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${formatCurrency(
-                      data.taxeBrute,
-                    )}</td></tr>
-                    ${
-                      data.degrevements.length > 0
-                        ? data.degrevements
-                            .map(
-                              (ab) =>
-                                `<tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Dégrèvement — ${ab.nom}</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">-${formatCurrency(
-                                  ab.montant,
-                                )}</td></tr>`,
-                            )
-                            .join("")
-                        : `<tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Dégrèvements (si éligible)</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">—</td></tr>`
-                    }
-                    <tr class="bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-bold text-gray-900">Taxe foncière estimée 2026</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-bold text-green-700">${formatCurrency(
+                    <tr class="bg-gray-50"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 font-bold text-gray-900">Taxe foncière estimée</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-bold text-green-700">${formatCurrency(
                       data.taxeFonciere,
                     )}</td></tr>
                   </tbody>
@@ -1497,15 +1375,9 @@
 
             <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
               <p class="text-sm text-red-800">
-                <strong>⚠️ Important :</strong> Cette estimation utilise un taux global indicatif. 
-                <strong>Les taux réels (commune + intercommunalité + département) varient énormément</strong> (souvent 25% à 45%).
-                Consultez votre avis de taxe foncière pour le taux exact.
-              </p>
-            </div>
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-              <p class="text-sm text-blue-800">
-                <strong>💡 Conseil :</strong> Pour connaître le taux exact de votre commune, 
-                consultez le site de votre mairie ou votre dernier avis d'impôt.
+                <strong>⚠️ Important :</strong> estimation indicative. Le montant de votre avis peut
+                différer (taxe d'enlèvement des ordures ménagères, taxes spéciales, exonérations).
+                Seul l'avis de taxe foncière fait foi.
               </p>
             </div>
           </div>
@@ -1521,10 +1393,7 @@
                 rows: [
                   ["Valeur locative cadastrale (€)", data.valeurLocative],
                   ["Taux global utilisé (%)", (data.tauxUtilise * 100).toFixed(2)],
-                  ["Taxe brute (€)", data.taxeBrute],
-                  ["Dégrèvements (€)", data.degrevementTotal],
-                  ["Taxe foncière 2026 (€)", data.taxeFonciere],
-                  ["Région", data.region],
+                  ["Taxe foncière estimée (€)", data.taxeFonciere],
                 ],
               };
             },
@@ -1545,64 +1414,20 @@
 
           if (addBtn && resetBtn) {
             addBtn.addEventListener("click", () => {
-              const regionLabels = {
-                ile_de_france: "Île-de-France",
-                provence_alpes_cote_azur: "Provence-Alpes-Côte d'Azur",
-                auvergne_rhone_alpes: "Auvergne-Rhône-Alpes",
-                occitanie: "Occitanie",
-                nouvelle_aquitaine: "Nouvelle-Aquitaine",
-                grand_est: "Grand Est",
-                hauts_de_france: "Hauts-de-France",
-                normandie: "Normandie",
-                centre_val_de_loire: "Centre-Val de Loire",
-                bourgogne_franche_comte: "Bourgogne-Franche-Comté",
-                pays_de_la_loire: "Pays de la Loire",
-                bretagne: "Bretagne",
-                corse: "Corse",
-              };
-
               function computeScenario(values) {
-                const valeurLocative = Number(values.valeur_locative) || 0;
-                const region = String(values.region || "");
-                const tauxGlobalPct = Number(values.taux_global) || 0;
-                const age = Number(values.age_proprietaire) || 0;
-                const handicape = !!values.handicape;
-
-                const tauxRegion = baremes.taxe_fonciere.taux_moyens_par_region[region] || 0;
-                const tauxUtilise = tauxGlobalPct > 0 ? tauxGlobalPct / 100 : tauxRegion;
-                const taxeBrute = valeurLocative * tauxUtilise;
-                let degrevementTotal = 0;
-
-                if (age >= baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.seuil_age) {
-                  const degAge =
-                    taxeBrute * baremes.taxe_fonciere.degrevements_indicatifs.personne_agee.taux;
-                  degrevementTotal += degAge;
-                }
-
-                if (handicape) {
-                  const degHandicap =
-                    taxeBrute * baremes.taxe_fonciere.degrevements_indicatifs.personne_handicapee;
-                  degrevementTotal += degHandicap;
-                }
-
-                const taxeFonciere = Math.max(0, taxeBrute - degrevementTotal);
-
-                return {
-                  valeurLocative,
-                  region,
-                  tauxGlobalPct,
-                  age,
-                  handicape,
-                  tauxRegion,
-                  tauxUtilise,
-                  taxeBrute,
-                  degrevementTotal,
-                  taxeFonciere,
-                };
+                return calculerTaxeFonciere({
+                  valeurLocative: values.valeur_locative,
+                  tauxPct: values.taux_global,
+                  age: values.age_proprietaire,
+                  allocataire: values.allocataire,
+                });
               }
 
               const last = window["dernierCalcul_taxe-calculator"];
               const lastValues = last?.values || {};
+              const tauxParDefaut =
+                Number(lastValues.taux_global) ||
+                (communeResolue && typeof communeResolue.taux === "number" ? communeResolue.taux : "");
 
               const modal = new ComparisonModal({
                 title: "Ajouter un scénario à la comparaison",
@@ -1611,7 +1436,7 @@
                     id: "ville",
                     label: "Ville (optionnel)",
                     type: "text",
-                    value: lastValues.ville || "",
+                    value: lastValues.ville || communeResolue?.nom || "",
                     placeholder: "Caen",
                   },
                   {
@@ -1624,58 +1449,19 @@
                     step: 100,
                   },
                   {
-                    id: "region",
-                    label: "Région",
-                    type: "select",
-                    value: lastValues.region || "normandie",
-                    required: true,
-                    options: [
-                      { value: "ile_de_france", label: "Île-de-France" },
-                      {
-                        value: "provence_alpes_cote_azur",
-                        label: "Provence-Alpes-Côte d'Azur",
-                      },
-                      {
-                        value: "auvergne_rhone_alpes",
-                        label: "Auvergne-Rhône-Alpes",
-                      },
-                      { value: "occitanie", label: "Occitanie" },
-                      {
-                        value: "nouvelle_aquitaine",
-                        label: "Nouvelle-Aquitaine",
-                      },
-                      { value: "grand_est", label: "Grand Est" },
-                      { value: "hauts_de_france", label: "Hauts-de-France" },
-                      { value: "normandie", label: "Normandie" },
-                      {
-                        value: "centre_val_de_loire",
-                        label: "Centre-Val de Loire",
-                      },
-                      {
-                        value: "bourgogne_franche_comte",
-                        label: "Bourgogne-Franche-Comté",
-                      },
-                      {
-                        value: "pays_de_la_loire",
-                        label: "Pays de la Loire",
-                      },
-                      { value: "bretagne", label: "Bretagne" },
-                      { value: "corse", label: "Corse" },
-                    ],
-                  },
-                  {
                     id: "taux_global",
-                    label: "Taux global (%) (optionnel)",
+                    label: "Taux global (%) de la commune ou de votre avis",
                     type: "number",
-                    value: lastValues.taux_global ?? "",
+                    value: tauxParDefaut,
                     placeholder: "33",
+                    required: true,
                     min: 0,
-                    max: 60,
-                    step: 0.1,
+                    max: 100,
+                    step: 0.01,
                   },
                   {
                     id: "age_proprietaire",
-                    label: "Âge du propriétaire (optionnel)",
+                    label: "Âge du propriétaire au 1er janvier (optionnel)",
                     type: "number",
                     value: lastValues.age_proprietaire ?? "",
                     min: 0,
@@ -1683,10 +1469,10 @@
                     step: 1,
                   },
                   {
-                    id: "handicape",
-                    label: "Propriétaire en situation de handicap",
+                    id: "allocataire",
+                    label: "Titulaire de l'AAH, de l'ASPA ou de l'ASI",
                     type: "select",
-                    value: String(!!lastValues.handicape),
+                    value: String(!!lastValues.allocataire),
                     required: true,
                     options: [
                       { value: "true", label: "Oui" },
@@ -1698,32 +1484,27 @@
                   const normalized = {
                     ville: String(values.ville || "").trim(),
                     valeur_locative: Number(values.valeur_locative) || 0,
-                    region: String(values.region || ""),
                     taux_global: Number(values.taux_global) || 0,
                     age_proprietaire: Number(values.age_proprietaire) || 0,
-                    handicape: String(values.handicape) === "true",
+                    allocataire: String(values.allocataire) === "true",
                   };
 
                   const computed = computeScenario(normalized);
-                  const regionLabel = regionLabels[computed.region] || computed.region;
 
                   const labelParts = [
                     normalized.ville ? normalized.ville : null,
-                    regionLabel,
                     `VLC ${formatCurrency(computed.valeurLocative)}`,
                   ].filter(Boolean);
 
                   ComparisonModal.addComparison("taxe", {
                     label: labelParts.join(" • "),
                     ville: normalized.ville || "—",
-                    region: regionLabel,
                     valeur_locative: formatCurrency(computed.valeurLocative),
                     age: normalized.age_proprietaire ? `${normalized.age_proprietaire} ans` : "—",
-                    handicap: normalized.handicape,
-                    taux_utilise: `${(computed.tauxUtilise * 100).toFixed(2)}%`,
-                    taxe_brute: formatCurrency(computed.taxeBrute),
-                    degrevements: formatCurrency(computed.degrevementTotal),
+                    allocataire: normalized.allocataire,
+                    taux_utilise: `${(computed.taux * 100).toFixed(2)}%`,
                     taxe_fonciere: formatCurrency(computed.taxeFonciere),
+                    allegement_possible: computed.allegementsPossibles.length > 0 ? "Oui (sous conditions)" : "—",
                   });
 
                   resetBtn.classList.remove("hidden");

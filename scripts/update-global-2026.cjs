@@ -16,7 +16,6 @@ const filesToUpdate = [
   // Pages principales
   "src/pages/plusvalue.html",
   "src/pages/taxe.html",
-  "src/pages/taxe-fonciere/index.html",
   "src/pages/simulateurs.html",
   "src/pages/salaire.html",
   "src/pages/pret.html",

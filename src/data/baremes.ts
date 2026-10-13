@@ -172,27 +172,6 @@ export const baremes = {
       { date: "2027-12-25", nom: "Noël", fixe: true },
     ],
   },
-  taxe_fonciere: {
-    degrevements_indicatifs: {
-      personne_agee: { seuil_age: 75, taux: 0.1 },
-      personne_handicapee: 0.1,
-    },
-    taux_moyens_par_region: {
-      ile_de_france: 0.29,
-      provence_alpes_cote_azur: 0.33,
-      auvergne_rhone_alpes: 0.31,
-      occitanie: 0.35,
-      nouvelle_aquitaine: 0.34,
-      grand_est: 0.32,
-      hauts_de_france: 0.34,
-      normandie: 0.33,
-      centre_val_de_loire: 0.34,
-      bourgogne_franche_comte: 0.33,
-      pays_de_la_loire: 0.32,
-      bretagne: 0.33,
-      corse: 0.28,
-    },
-  },
   // SMIC : deux revalorisations en 2026 - 1,18% au 1er janvier, +2,41%
   // supplementaire au 1er juin (revalorisation automatique liee a
   // l'inflation). Verifie le 11/08/2026 (legisocial.fr, info.gouv.fr).

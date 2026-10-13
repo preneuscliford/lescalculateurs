@@ -498,37 +498,8 @@ function ensurePillarCleanUrls({ cssFile, jsFile, satellitesTargetDir }) {
     fs.copyFileSync(htmlPath, indexPath);
   });
 
-  try {
-    const taxeFonciereSrc = path.resolve(
-      __dirname,
-      "../src/pages/taxe-fonciere/index.html",
-    );
-    if (!fs.existsSync(taxeFonciereSrc)) return;
-
-    let html = readTextFile(taxeFonciereSrc);
-    html = html.replace(
-      /<script[^>]*type="module"[^>]*src="\.\.\/\.\.\/\.\.\/main\.ts"[^>]*><\/script>/g,
-      `<script type="module" crossorigin src="../../assets/${jsFile}"></script>`,
-    );
-    html = html.replace(
-      /<script[^>]*type="module"[^>]*src="[^"]*main\.ts"[^>]*><\/script>/g,
-      `<script type="module" crossorigin src="../../assets/${jsFile}"></script>`,
-    );
-    if (
-      !new RegExp(`href="\\.{2}\\/\\.{2}\\/assets\\/${cssFile}"`).test(html)
-    ) {
-      html = html.replace(
-        /<\/head>/,
-        `    <link rel="stylesheet" crossorigin href="../../assets/${cssFile}">\n  </head>`,
-      );
-    }
-
-    const taxeDir = path.join(pagesDir, "taxe-fonciere");
-    if (!fs.existsSync(taxeDir)) fs.mkdirSync(taxeDir, { recursive: true });
-    fs.writeFileSync(path.join(taxeDir, "index.html"), html, "utf-8");
-  } catch (e) {
-    console.warn("⚠️ Copie taxe-fonciere/index.html echouee:", e.message);
-  }
+  // /pages/taxe-fonciere est redirigée en 301 vers /pages/taxe (vercel.json) :
+  // l'ancienne copie taxe-fonciere/index.html n'est plus publiée.
 
   try {
     const simulateursHtml = path.join(pagesDir, "simulateurs.html");
