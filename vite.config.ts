@@ -37,6 +37,12 @@ function addLastUpdated(html: string, filename: string): string {
       /barèmes [^<—]*applicables\s*—\s*Mise à jour le\s*<time[^>]*>[^<]*<\/time>\s*—?\s*/g,
       "",
     )
+    // Dates « Vérifié le … » écrites à la main dans les pages : la seule date affichée
+    // est celle du bandeau global (site-update.json), pour éviter les doublons.
+    .replace(
+      /(?:[✓✅]\s*)?V(?:é|&eacute;|&#233;)rifi(?:é|&eacute;|&#233;)e?\s+le\s+\d{1,2}(?:er)?\s+[A-Za-zÀ-ÿ]+\s+\d{4}\s*(?:[—–-]|&mdash;|&ndash;|\.)?\s*/gu,
+      "",
+    )
     // Données structurées : date de modification = date du dernier audit
     .replace(/("dateModified"\s*:\s*")[^"]*(")/g, `$1${siteUpdate.lastVerified}$2`)
     .replace(
