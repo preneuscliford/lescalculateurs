@@ -46,7 +46,7 @@ export const socialBaremes = {
     sourceUrl:
       "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026",
     sourceUrls: [
-      "https://www.service-public.fr/particuliers/vosdroits/N19775",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/N19775",
       "https://www.caf.fr/allocataires/caf-des-bouches-du-rhone/offre-de-service/vie-professionnelle/le-revenu-de-solidarite-active-rsa",
     ],
     note: "Montants 2026 derives de la revalorisation officielle de 0,8 % appliquee au bareme RSA du 1er avril 2025.",
@@ -72,7 +72,7 @@ export const socialBaremes = {
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite",
     sourceUrls: [
       "https://www.caf.fr/allocataires/actualites/actualites-nationales/la-prime-d-activite-augmente-en-2026",
-      "https://www.service-public.fr/particuliers/vosdroits/F2882",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F2882",
     ],
     montantForfaitaire: {
       nonMajoree: {
@@ -112,7 +112,7 @@ export const socialBaremes = {
     sourceUrl:
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf",
     sourceUrls: [
-      "https://www.service-public.fr/particuliers/vosdroits/F33647",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F33647",
       "https://pension-alimentaire.caf.fr/web/guest/l-allocation-de-soutien-familial-asf",
     ],
     sansConditionRessources: true,
@@ -127,8 +127,8 @@ export const socialBaremes = {
     sourceUrl:
       "https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/montant-allocation-france-travai.html",
     sourceUrls: [
-      "https://www.service-public.fr/particuliers/vosdroits/F38881",
-      "https://www.service-public.fr/particuliers/actualites/A15787",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F38881",
+      "https://www.service-public.gouv.fr/particuliers/actualites/A15787",
     ],
     reglesEligibilite: {
       dureeAffiliationMois: 6,
@@ -168,7 +168,7 @@ export const socialBaremes = {
     sourceUrl: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913928",
     sourceUrls: [
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-aides-au-logement",
-      "https://www.service-public.fr/particuliers/vosdroits/F12006",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
     ],
     plafondsLoyer: baremesData.apl.plafonds_loyer,
     multiplicateursRegion: baremesData.apl.multiplicateurs_region,

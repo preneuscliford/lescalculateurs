@@ -1,0 +1,180 @@
+{
+  "_note": "Source unique des liens officiels affichés en bas des pages (composant injecté au build par vite.config.ts). N'ajouter que des liens vérifiés (page de contenu réelle, pas de redirection vers l'accueil). Dernière vérification des liens : 12 octobre 2026.",
+  "families": {
+    "apl": {
+      "prefixes": [
+        "apl",
+        "rsa-apl"
+      ],
+      "sources": [
+        {
+          "label": "CAF : les aides personnelles au logement",
+          "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/logement/les-aides-personnelles-au-logement"
+        },
+        {
+          "label": "CAF : barème des aides au logement (au 1er octobre 2026)",
+          "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-aides-au-logement"
+        },
+        {
+          "label": "Service-public.gouv.fr : Aide personnalisée au logement (APL)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006"
+        },
+        {
+          "label": "CAF : faire une simulation (Mes démarches)",
+          "url": "https://www.caf.fr/allocataires/aides-et-demarches/mes-demarches"
+        }
+      ]
+    },
+    "rsa": {
+      "prefixes": [
+        "rsa",
+        "perte-emploi-are-rsa"
+      ],
+      "sources": [
+        {
+          "label": "CAF : le revenu de solidarité active (RSA)",
+          "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-professionnelle/le-revenu-de-solidarite-active-rsa"
+        },
+        {
+          "label": "CAF : barème du revenu de solidarité active (au 1er avril 2026)",
+          "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-revenu-de-solidarite-active"
+        },
+        {
+          "label": "Service-public.gouv.fr : Revenu de solidarité active (RSA)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/N19775"
+        },
+        {
+          "label": "Ministère des Solidarités : revalorisation des prestations au 1er avril 2026",
+          "url": "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
+        }
+      ]
+    },
+    "prime-activite": {
+      "prefixes": [
+        "prime-activite"
+      ],
+      "sources": [
+        {
+          "label": "CAF : la prime d'activité",
+          "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-professionnelle/la-prime-d-activite"
+        },
+        {
+          "label": "Service-public.gouv.fr : Prime d'activité",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2882"
+        },
+        {
+          "label": "Ministère des Solidarités : revalorisation des prestations au 1er avril 2026",
+          "url": "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
+        }
+      ]
+    },
+    "aah": {
+      "prefixes": [
+        "aah"
+      ],
+      "sources": [
+        {
+          "label": "CAF : l'allocation aux adultes handicapés (AAH)",
+          "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/handicap/l-allocation-aux-adultes-handicapes-aah"
+        },
+        {
+          "label": "Service-public.gouv.fr : Allocation aux adultes handicapés (AAH)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12242"
+        }
+      ]
+    },
+    "asf": {
+      "prefixes": [
+        "asf"
+      ],
+      "sources": [
+        {
+          "label": "Service-public.gouv.fr : Allocation de soutien familial (ASF)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33647"
+        }
+      ]
+    },
+    "are": {
+      "prefixes": [
+        "are",
+        "rupture-conventionnelle",
+        "indemnite-licenciement"
+      ],
+      "sources": [
+        {
+          "label": "Service-public.gouv.fr : Allocation chômage d'aide au retour à l'emploi (ARE)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38881"
+        },
+        {
+          "label": "Unédic : pas de revalorisation des allocations au 1er juillet 2026",
+          "url": "https://www.unedic.org/actualites/allocations-dassurance-chomage-pas-de-revalorisation-au-1er-juillet-2026"
+        }
+      ]
+    },
+    "salaire": {
+      "prefixes": [
+        "salaire",
+        "charges",
+        "travail"
+      ],
+      "sources": [
+        {
+          "label": "Urssaf Mon-entreprise : convertisseur salaire brut / net",
+          "url": "https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net"
+        },
+        {
+          "label": "Service-public.gouv.fr : Fiche de paie",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F559"
+        },
+        {
+          "label": "info.gouv.fr : le SMIC revalorisé au 1er juin 2026",
+          "url": "https://www.info.gouv.fr/actualite/le-smic-revalorise-le-1er-juin-2026"
+        }
+      ]
+    },
+    "notaire": {
+      "prefixes": [
+        "notaire",
+        "comment-calculer-frais-notaire",
+        "blog/departements",
+        "blog/frais-notaire"
+      ],
+      "sources": [
+        {
+          "label": "Service-public.gouv.fr : Frais de notaire",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F17701"
+        },
+        {
+          "label": "Notaires de France : estimation des frais d'achat immobilier",
+          "url": "https://www.immobilier.notaires.fr/fr/frais-de-notaire"
+        }
+      ]
+    },
+    "plusvalue": {
+      "prefixes": [
+        "plusvalue",
+        "comment-calculer-plus-value"
+      ],
+      "sources": [
+        {
+          "label": "Service-public.gouv.fr : Impôt sur le revenu, plus-value immobilière",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10864"
+        }
+      ]
+    },
+    "impot": {
+      "prefixes": [
+        "impot",
+        "guide-complet-impot-revenu-2026",
+        "salaire-net-apres-impot",
+        "ik"
+      ],
+      "sources": [
+        {
+          "label": "impots.gouv.fr : je calcule mes impôts",
+          "url": "https://www.impots.gouv.fr/particulier/je-calcule-mes-impots"
+        }
+      ]
+    }
+  }
+}
