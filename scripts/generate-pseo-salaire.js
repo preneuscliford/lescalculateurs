@@ -1,4 +1,5 @@
 import fs from "fs";
+import { siteUpdateDate } from "./lib/pseo/site-date.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -25,7 +26,7 @@ const args = new Map(
 );
 
 const target = args.get("target") || "src";
-const generatedAt = formatDisplayDate(new Date());
+const generatedAt = formatDisplayDate(siteUpdateDate());
 
 function formatEuro(value) {
   return `${Math.round(Number(value) || 0).toLocaleString("fr-FR")} €`;

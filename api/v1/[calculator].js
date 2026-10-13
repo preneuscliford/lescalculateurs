@@ -1360,11 +1360,6 @@ var baremes_default = {
         une_personne_a_charge: 374.13,
         par_personne_supplementaire: 53.62
       }
-    },
-    multiplicateurs_region: {
-      idf: 1.15,
-      province: 1,
-      dom: 0.95
     }
   }
 };
@@ -1435,15 +1430,30 @@ var socialBaremes = {
       deuxPersonnes: 153.19,
       troisPersonnesOuPlus: 189.57
     },
+    // Bonification individuelle, calculée pour chaque membre du foyer qui travaille
+    // (service-public.gouv.fr F2882, vérifié le 1er juin 2026)
     bonification: {
       montantMaximum: 240.63,
-      seuilDebut: 709.18,
-      seuilMaximum: 1658.76
+      seuilDebut: 726.29,
+      seuilMaximum: 1698.78
     },
     // 59,85 % depuis le 1er avril 2025 (61 % auparavant) - DREES, Minima
     // sociaux et prestations sociales, edition 2025, fiche 30.
     revenusProfessionnelsPrisEnCompte: 0.5985,
     montantMinimumVerse: 15
+  },
+  // Allocations familiales au 1er avril 2026 (montants nets de CRDS, taux plein) et
+  // plafonds 2026 sur les revenus 2024 (service-public.gouv.fr F13213). Comptées
+  // dans les ressources de la prime d'activité (F39753, vérifié le 1er juillet 2026).
+  allocationsFamiliales: {
+    version: "2026.04",
+    dateEffet: "2026-04-01",
+    sourceUrl: "https://www.service-public.gouv.fr/particuliers/vosdroits/F13213",
+    tauxPlein: { deuxEnfants: 152.25, troisEnfants: 347.32, parEnfantSupplementaire: 195.07 },
+    moitie: { deuxEnfants: 76.13, troisEnfants: 173.67, parEnfantSupplementaire: 97.53 },
+    quart: { deuxEnfants: 38.07, troisEnfants: 86.83, parEnfantSupplementaire: 48.77 },
+    majorationAge: { tauxPlein: 76.13, moitie: 38.07, quart: 19.03 },
+    plafondsRessources: { tranche1DeuxEnfants: 79980, tranche2DeuxEnfants: 106604, parEnfantSupplementaire: 6664 }
   },
   asf: {
     version: "2026.05",
@@ -1507,7 +1517,6 @@ var socialBaremes = {
       "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006"
     ],
     plafondsLoyer: baremesData.apl.plafonds_loyer,
-    multiplicateursRegion: baremesData.apl.multiplicateurs_region,
     moteur: {
       forfaitLogement: {
         seul: 72,
@@ -2385,9 +2394,9 @@ async function handler9(req, res) {
 
 // src/utils/primeActiviteCalculEngine.ts
 var primeBaremes = socialBaremes.primeActivite;
-function getPrimeForfait(situation, enfants) {
+function getPrimeForfait(situation, enfants, majorationIsolement) {
   const nbEnfants = Math.max(0, Math.floor(enfants || 0));
-  if (situation === "monoparental") {
+  if (situation === "monoparental" && majorationIsolement) {
     if (nbEnfants <= 0) return primeBaremes.montantForfaitaire.nonMajoree.unePersonne;
     if (nbEnfants === 1) return primeBaremes.montantForfaitaire.majoree.isole1Enfant;
     if (nbEnfants === 2) return primeBaremes.montantForfaitaire.majoree.isole2Enfants;
@@ -2416,6 +2425,13 @@ function getHousingForfait(logement, situation, enfants) {
   if (foyerSize === 2) return primeBaremes.forfaitLogement.deuxPersonnes;
   return primeBaremes.forfaitLogement.troisPersonnesOuPlus;
 }
+function getAllocationsFamiliales(enfants) {
+  const n = Math.max(0, Math.floor(enfants || 0));
+  const af = socialBaremes.allocationsFamiliales.tauxPlein;
+  if (n < 2) return 0;
+  if (n === 2) return af.deuxEnfants;
+  return Math.round((af.troisEnfants + (n - 3) * af.parEnfantSupplementaire) * 100) / 100;
+}
 function getBonification(revenusProf) {
   const revenus = Math.max(0, revenusProf || 0);
   const { seuilDebut, seuilMaximum, montantMaximum } = primeBaremes.bonification;
@@ -2436,6 +2452,7 @@ function calculerPrimeActivite(data) {
         bonification: 0,
         majorations: 0,
         forfaitLogement: 0,
+        allocationsFamiliales: 0,
         revenusProfsComptabilises: 0,
         autresRevenusComptabilises: 0,
         totalRevenusComptabilises: 0,
@@ -2443,7 +2460,7 @@ function calculerPrimeActivite(data) {
       }
     };
   }
-  if (data.revenusProf <= 0) {
+  if ((data.revenusProf || 0) + (data.situation === "couple" ? data.revenusProfConjoint || 0 : 0) <= 0) {
     return {
       success: true,
       montantEstime: 0,
@@ -2454,6 +2471,7 @@ function calculerPrimeActivite(data) {
         bonification: 0,
         majorations: 0,
         forfaitLogement: 0,
+        allocationsFamiliales: 0,
         revenusProfsComptabilises: 0,
         autresRevenusComptabilises: Math.round(data.autresRevenus * 100) / 100,
         totalRevenusComptabilises: Math.round(data.autresRevenus * 100) / 100,
@@ -2461,12 +2479,20 @@ function calculerPrimeActivite(data) {
       }
     };
   }
-  const montantBase = getPrimeForfait(data.situation, data.enfants);
-  const bonification = getBonification(data.revenusProf);
+  const montantBase = getPrimeForfait(
+    data.situation,
+    data.enfants,
+    data.majorationIsolement === true
+  );
+  const revenusDemandeur = Math.max(0, data.revenusProf || 0);
+  const revenusConjoint = data.situation === "couple" ? Math.max(0, data.revenusProfConjoint || 0) : 0;
+  const revenusProfFoyer = revenusDemandeur + revenusConjoint;
+  const bonification = Math.round((getBonification(revenusDemandeur) + getBonification(revenusConjoint)) * 100) / 100;
   const forfaitLogement = getHousingForfait(data.logement, data.situation, data.enfants);
-  const revenusProfsComptabilises = data.revenusProf * primeBaremes.revenusProfessionnelsPrisEnCompte;
+  const allocationsFamiliales = data.inclureAllocationsFamiliales === false ? 0 : getAllocationsFamiliales(data.enfants);
+  const revenusProfsComptabilises = revenusProfFoyer * primeBaremes.revenusProfessionnelsPrisEnCompte;
   const autresRevenusComptabilises = Math.max(0, data.autresRevenus || 0);
-  const totalRevenusComptabilises = Math.max(0, data.revenusProf || 0) + autresRevenusComptabilises + forfaitLogement;
+  const totalRevenusComptabilises = revenusProfFoyer + autresRevenusComptabilises + allocationsFamiliales + forfaitLogement;
   const ressourcesRetenues = Math.max(montantBase, totalRevenusComptabilises);
   let montantFinal = montantBase + bonification + revenusProfsComptabilises - ressourcesRetenues;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
@@ -2493,6 +2519,7 @@ function calculerPrimeActivite(data) {
         Math.round((montantBase - primeBaremes.montantForfaitaire.nonMajoree.unePersonne) * 100) / 100
       ),
       forfaitLogement: Math.round(forfaitLogement * 100) / 100,
+      allocationsFamiliales,
       revenusProfsComptabilises: Math.round(revenusProfsComptabilises * 100) / 100,
       autresRevenusComptabilises: Math.round(autresRevenusComptabilises * 100) / 100,
       totalRevenusComptabilises: Math.round(totalRevenusComptabilises * 100) / 100,
@@ -2511,7 +2538,17 @@ async function handler10(req, res) {
   const auth = authenticate(req, res);
   if (!auth) return;
   try {
-    const { situation, enfants, revenusProf, autresRevenus, logement, typeActivite } = req.body || {};
+    const {
+      situation,
+      enfants,
+      revenusProf,
+      revenusProfConjoint,
+      autresRevenus,
+      logement,
+      typeActivite,
+      majorationIsolement,
+      inclureAllocationsFamiliales
+    } = req.body || {};
     if (!situation || !logement || !typeActivite) {
       return res.status(400).json({
         error: "Champs requis : situation, logement, typeActivite.",
@@ -2529,9 +2566,12 @@ async function handler10(req, res) {
       situation,
       enfants: Number(enfants) || 0,
       revenusProf: Number(revenusProf) || 0,
+      revenusProfConjoint: Number(revenusProfConjoint) || 0,
       autresRevenus: Number(autresRevenus) || 0,
       logement,
-      typeActivite
+      typeActivite,
+      majorationIsolement: majorationIsolement === true || majorationIsolement === "true",
+      inclureAllocationsFamiliales: !(inclureAllocationsFamiliales === false || inclureAllocationsFamiliales === "false")
     });
     return res.status(200).json(withMeta("prime-activite", result));
   } catch (err) {
@@ -2935,7 +2975,7 @@ function calculerSalaire(input) {
   if (!isFinite(brut) || brut <= 0) throw new Error("Brut invalide");
   if (statut !== "cadre" && statut !== "non_cadre") throw new Error("Statut invalide");
   if (!isFinite(tauxPAS) || tauxPAS < 0 || tauxPAS > 100) throw new Error("Taux PAS invalide");
-  const tauxSalarial = statut === "cadre" ? 0.25 : 0.23;
+  const tauxSalarial = statut === "cadre" ? 0.2101 : 0.2084;
   const netAvantImpot = brut * (1 - tauxSalarial);
   const pasMensuel = netAvantImpot * (tauxPAS / 100);
   const netApresImpot = netAvantImpot - pasMensuel;

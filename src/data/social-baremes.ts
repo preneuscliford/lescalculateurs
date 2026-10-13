@@ -24,7 +24,6 @@ type AplJson = {
     zone2: PlafondsLoyerZone;
     zone3: PlafondsLoyerZone;
   };
-  multiplicateurs_region: Record<string, number>;
 };
 
 const baremesData = baremesJson as { apl: AplJson };
@@ -95,15 +94,30 @@ export const socialBaremes = {
       deuxPersonnes: 153.19,
       troisPersonnesOuPlus: 189.57,
     },
+    // Bonification individuelle, calculée pour chaque membre du foyer qui travaille
+    // (service-public.gouv.fr F2882, vérifié le 1er juin 2026)
     bonification: {
       montantMaximum: 240.63,
-      seuilDebut: 709.18,
-      seuilMaximum: 1658.76,
+      seuilDebut: 726.29,
+      seuilMaximum: 1698.78,
     },
     // 59,85 % depuis le 1er avril 2025 (61 % auparavant) - DREES, Minima
     // sociaux et prestations sociales, edition 2025, fiche 30.
     revenusProfessionnelsPrisEnCompte: 0.5985,
     montantMinimumVerse: 15,
+  },
+  // Allocations familiales au 1er avril 2026 (montants nets de CRDS, taux plein) et
+  // plafonds 2026 sur les revenus 2024 (service-public.gouv.fr F13213). Comptées
+  // dans les ressources de la prime d'activité (F39753, vérifié le 1er juillet 2026).
+  allocationsFamiliales: {
+    version: "2026.04",
+    dateEffet: "2026-04-01",
+    sourceUrl: "https://www.service-public.gouv.fr/particuliers/vosdroits/F13213",
+    tauxPlein: { deuxEnfants: 152.25, troisEnfants: 347.32, parEnfantSupplementaire: 195.07 },
+    moitie: { deuxEnfants: 76.13, troisEnfants: 173.67, parEnfantSupplementaire: 97.53 },
+    quart: { deuxEnfants: 38.07, troisEnfants: 86.83, parEnfantSupplementaire: 48.77 },
+    majorationAge: { tauxPlein: 76.13, moitie: 38.07, quart: 19.03 },
+    plafondsRessources: { tranche1DeuxEnfants: 79980, tranche2DeuxEnfants: 106604, parEnfantSupplementaire: 6664 },
   },
   asf: {
     version: "2026.05",
@@ -170,7 +184,6 @@ export const socialBaremes = {
       "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
     ],
     plafondsLoyer: baremesData.apl.plafonds_loyer,
-    multiplicateursRegion: baremesData.apl.multiplicateurs_region,
     moteur: {
       forfaitLogement: {
         seul: 72,

@@ -72,39 +72,6 @@
         "default": "salarie"
       }
     ],
-    "barèmes": {
-      "montantForfaitaire": {
-        "nonMajoree": {
-          "unePersonne": 638.28,
-          "coupleOuIsole1Enfant": 957.42,
-          "couple1EnfantOuIsole2Enfants": 1148.9,
-          "couple2Enfants": 1340.38,
-          "isole3Enfants": 1404.21,
-          "couple3Enfants": 1595.69,
-          "personneSupplementaire": 255.32
-        },
-        "majoree": {
-          "grossesse": 819.63,
-          "isole1Enfant": 1092.84,
-          "isole2Enfants": 1366.05,
-          "isole3Enfants": 1639.26,
-          "isole4Enfants": 1912.47,
-          "personneSupplementaire": 271.04
-        }
-      },
-      "forfaitLogement": {
-        "unePersonne": 76.59,
-        "deuxPersonnes": 153.19,
-        "troisPersonnesOuPlus": 189.57
-      },
-      "bonification": {
-        "montantMaximum": 240.63,
-        "seuilDebut": 709.18,
-        "seuilMaximum": 1658.76
-      },
-      "revenusProfessionnelsPrisEnCompte": 0.5985,
-      "montantMinimumVerse": 15
-    },
     "seoTitleVariants": [
       "Prime d'activité si {label} ({revenu}) — Simulation 2026",
       "Ma Prime d'activité baisse-t-elle si {label} ? ({revenu})",
@@ -161,7 +128,7 @@
         "emoji": "💵",
         "badge": "simulation",
         "question": "Quel est l'impact sur ma Prime d'activité avec 200 € de salaire en plus ?",
-        "explanation": "Avec +200 €, la Prime d'activité baisse d'environ 80 € (environ 40 % × 200 €). Votre revenu total progresse d'environ 120 €. Si vos revenus sont entre 709 € et 1 659 €, la bonification individuelle peut encore atténuer cette baisse.",
+        "explanation": "Avec +200 €, la Prime d'activité baisse d'environ 80 € (environ 40 % × 200 €). Votre revenu total progresse d'environ 120 €. Si vos revenus sont entre 726 € et 1 699 €, la bonification individuelle peut encore atténuer cette baisse.",
         "faq": [
           {
             "q": "Quel est le gain net après une augmentation de 200 € ?",
@@ -197,7 +164,7 @@
         "emoji": "📊",
         "badge": "simulation",
         "question": "Quel est l'impact sur ma Prime d'activité si je gagne 300 € de plus ?",
-        "explanation": "Avec +300 €, la baisse de Prime est plus marquée (≈183 €). La bonification individuelle (entre 709 € et 1 659 €) compense partiellement. Au total, votre revenu progresse d'environ 117 € nets par mois.",
+        "explanation": "Avec +300 €, la baisse de Prime est plus marquée (≈183 €). La bonification individuelle (entre 726 € et 1 699 €) compense partiellement. Au total, votre revenu progresse d'environ 117 € nets par mois.",
         "faq": [
           {
             "q": "À partir de quel salaire la Prime d'activité devient-elle nulle ?",
@@ -521,11 +488,11 @@
         "emoji": "🚀",
         "badge": "reforme",
         "question": "Et si la bonification individuelle de la Prime d'activité était portée à 300 € ?",
-        "explanation": "La bonification passerait de 240,63 € à 300 € maximum. Les travailleurs gagnant entre 709 € et 1 659 € par mois verraient leur Prime augmenter, avec un gain pouvant atteindre +59 € pour les revenus autour de 1 200 €.",
+        "explanation": "La bonification passerait de 240,63 € à 300 € maximum. Les travailleurs gagnant entre 726 € et 1 699 € par mois verraient leur Prime augmenter, avec un gain pouvant atteindre +59 € pour les revenus autour de 1 200 €.",
         "faq": [
           {
             "q": "Qui bénéficierait de cette bonification renforcée ?",
-            "a": "Les salariés dont les revenus sont compris entre 709 € et 1 659 € nets par mois. Le gain maximum concerne les revenus proches de 1 659 €."
+            "a": "Les salariés dont les revenus sont compris entre 726 € et 1 699 € nets par mois. Le gain maximum concerne les revenus proches de 1 659 €."
           },
           {
             "q": "Cette mesure est-elle à l'étude ?",
@@ -550,6 +517,7 @@
           }
         ]
       }
-    ]
+    ],
+    "_barèmes": "Lus dans src/data/social-baremes.ts au moment de la génération (source unique)."
   }
 }

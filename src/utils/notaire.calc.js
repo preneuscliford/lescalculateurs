@@ -1,6 +1,8 @@
 /**
- * CALCUL FRAIS DE NOTAIRE - CENTRALISÉ
- * Toutes les pages doivent utiliser ce module
+ * OBSOLÈTE : ne plus utiliser. Les générateurs passent par scripts/lib/pseo/notaire-engine.js,
+ * qui compile src/utils/notaireCalculEngine.ts (même moteur que le simulateur et l'API).
+ * Ce module gardait des débours forfaitaires (800 € + 400 €) différents du simulateur.
+ *
  */
 
 import { NOTAIRE_2026, getDmtoTaux } from "../data/notaire.baremes.2026.js";
