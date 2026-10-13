@@ -1,6 +1,6 @@
-import { createRequire } from "module";
+// Jest exécute les tests en CommonJS (ts-jest) : require natif de Node.
+export {};
 
-const require = createRequire(import.meta.url);
 const cheerio = require("cheerio");
 const {
   applyCorrectionsSafe,
@@ -32,6 +32,19 @@ describe("html-safe-french-corrections", () => {
   });
 
   test("applyCorrectionsSafe remplace seulement le mot complet", () => {
+    const result = applyCorrectionsSafe("un calcul general pour generalement tout", [
+      {
+        error: "general",
+        suggestions: ["général"],
+        context: "un calcul general pour",
+      },
+    ]);
+
+    expect(result.updated).toBe("un calcul général pour generalement tout");
+    expect(result.applied).toHaveLength(1);
+  });
+
+  test("applyCorrectionsSafe refuse les paires d'accents ambiguës (a / à)", () => {
     const result = applyCorrectionsSafe("calculateurs a Paris", [
       {
         error: "a",
@@ -40,8 +53,8 @@ describe("html-safe-french-corrections", () => {
       },
     ]);
 
-    expect(result.updated).toBe("calculateurs à Paris");
-    expect(result.applied).toHaveLength(1);
+    expect(result.updated).toBe("calculateurs a Paris");
+    expect(result.applied).toHaveLength(0);
   });
 
   test("applyCorrectionsToHtml ne touche pas les attributs ni le JavaScript", () => {
