@@ -127,7 +127,7 @@ function initAutoExport() {
       name: "Frais de Notaire",
       resultsId: "calculator-result",
       formId: "calculator-form",
-      notes: ["Calcul basé sur les données officielles (CGI, Loi de finances 2026)."],
+      notes: ["Émoluments réglementés, droits de mutation selon le barème DGFiP au 1er juin 2026, débours et formalités estimés."],
       type: "CalculatorFrame",
     },
     pret: {
@@ -147,21 +147,21 @@ function initAutoExport() {
       name: "Indemnités Kilométriques",
       resultsId: "calculator-result",
       formId: "calculator-form",
-      notes: ["Dernier barème fiscal connu (administration)."],
+      notes: ["Barème kilométrique fiscal applicable aux revenus 2025 (inchangé par rapport à l'année précédente)."],
       type: "CalculatorFrame",
     },
     ponts: {
       name: "Calcul des Ponts",
       resultsId: "ponts-calendar",
       formId: "calculator-form",
-      notes: ["Calendrier officiel des jours fériés 2025-2026."],
+      notes: ["Jours fériés 2026-2027 (Code du travail, article L3133-1). Ponts indicatifs selon votre convention collective."],
       type: "CalculatorFrame",
     },
     taxe: {
       name: "Taxe Foncière",
       resultsId: "calculator-result",
       formId: "calculator-form",
-      notes: ["Estimation basée sur les taux moyens nationaux."],
+      notes: ["Estimation à partir du taux communal 2025 publié par la DGFiP (dernier exercice disponible)."],
       type: "CalculatorFrame",
     },
     travail: {
@@ -187,7 +187,7 @@ function initAutoExport() {
       name: "Salaire brut/net 2026",
       resultsId: "calculator-result",
       formId: "calculator-form",
-      notes: ["Estimation basée sur les taux de cotisations salariales 2026."],
+      notes: ["Estimation avec des taux de cotisations simplifiés : le net exact dépend de votre convention collective et de votre fiche de paie."],
       type: "CalculatorFrame",
     },
     impot: {
