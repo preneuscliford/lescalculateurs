@@ -73,7 +73,8 @@ function calculerPrime(b, d) {
   const rpc = d.revenusProf * b.revenusProfessionnelsPrisEnCompte;
   const arc = Math.max(0, d.autresRevenus || 0);
   const total = d.revenusProf + arc + fl;
-  let mf = mb + bonif + rpc - total;
+  // Ressources reputees au moins egales au montant forfaitaire (DREES)
+  let mf = mb + bonif + rpc - Math.max(mb, total);
   return {
     success: true,
     montantEstime: Math.max(0, Math.round(mf * 100) / 100),
@@ -393,7 +394,7 @@ const BAREmes = ${JSON.stringify(b)};
 function getPrimeForfait(situation,enfants){const n=Math.max(0,Math.floor(enfants||0));const NF=BAREmes.montantForfaitaire.nonMajoree;const MF=BAREmes.montantForfaitaire.majoree;if(situation==="monoparental"){if(n<=0)return NF.unePersonne;if(n===1)return MF.isole1Enfant;if(n===2)return MF.isole2Enfants;if(n===3)return MF.isole3Enfants;return MF.isole4Enfants+(n-4)*MF.personneSupplementaire}if(situation==="couple"){if(n<=0)return NF.coupleOuIsole1Enfant;if(n===1)return NF.couple1EnfantOuIsole2Enfants;if(n===2)return NF.couple2Enfants;if(n===3)return NF.couple3Enfants;return NF.couple3Enfants+(n-3)*NF.personneSupplementaire}if(n<=0)return NF.unePersonne;if(n===1)return NF.coupleOuIsole1Enfant;if(n===2)return NF.couple1EnfantOuIsole2Enfants;if(n===3)return NF.isole3Enfants;return NF.isole3Enfants+(n-3)*NF.personneSupplementaire}
 function getHousingForfait(logement,situation,enfants){if(logement==="loue")return 0;const s=(situation==="couple"?2:1)+Math.max(0,Math.floor(enfants||0));if(s<=1)return BAREmes.forfaitLogement.unePersonne;if(s===2)return BAREmes.forfaitLogement.deuxPersonnes;return BAREmes.forfaitLogement.troisPersonnesOuPlus}
 function getBonification(revenusProf){const r=Math.max(0,revenusProf||0);if(r<BAREmes.bonification.seuilDebut)return 0;if(r>=BAREmes.bonification.seuilMaximum)return BAREmes.bonification.montantMaximum;return Math.round(BAREmes.bonification.montantMaximum*((r-BAREmes.bonification.seuilDebut)/(BAREmes.bonification.seuilMaximum-BAREmes.bonification.seuilDebut))*100)/100}
-function calculer(d){if(!d.situation||!d.logement||d.revenusProf<=0)return{success:true,montantEstime:0};const mb=getPrimeForfait(d.situation,d.enfants);const bonif=getBonification(d.revenusProf);const fl=getHousingForfait(d.logement,d.situation,d.enfants);const rpc=d.revenusProf*BAREmes.revenusProfessionnelsPrisEnCompte;const arc=Math.max(0,d.autresRevenus||0);const total=d.revenusProf+arc+fl;let mf=mb+bonif+rpc-total;return{success:true,montantEstime:Math.max(0,Math.round(mf*100)/100),details:{montantBase:mb,bonification:bonif}}}
+function calculer(d){if(!d.situation||!d.logement||d.revenusProf<=0)return{success:true,montantEstime:0};const mb=getPrimeForfait(d.situation,d.enfants);const bonif=getBonification(d.revenusProf);const fl=getHousingForfait(d.logement,d.situation,d.enfants);const rpc=d.revenusProf*BAREmes.revenusProfessionnelsPrisEnCompte;const arc=Math.max(0,d.autresRevenus||0);const total=d.revenusProf+arc+fl;let mf=mb+bonif+rpc-Math.max(mb,total);return{success:true,montantEstime:Math.max(0,Math.round(mf*100)/100),details:{montantBase:mb,bonification:bonif}}}
 function f€(m){return m.toLocaleString("fr-FR")+" €"}
 function fmt(m){return m===0?"Non éligible":m.toLocaleString("fr-FR")+" € / mois"}
 

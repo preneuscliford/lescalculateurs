@@ -879,7 +879,9 @@ var baremes_default = {
       standard: 0.0632,
       neuf: 715e-5,
       reduit: 0.0509,
-      departementsReduits: ["36", "976"]
+      departementsReduits: [
+        "36"
+      ]
     }
   },
   dmto: {
@@ -899,7 +901,7 @@ var baremes_default = {
     "24": 6.32,
     "25": 6.32,
     "26": 5.8,
-    "27": 5.8,
+    "27": 6.32,
     "28": 6.32,
     "29": 6.32,
     "30": 6.32,
@@ -969,10 +971,10 @@ var baremes_default = {
     "94": 6.32,
     "95": 6.32,
     "971": 5.8,
-    "972": 5.8,
+    "972": 6.32,
     "973": 6.32,
     "974": 6.32,
-    "976": 5.09,
+    "976": 5.8,
     "01": 6.32,
     "02": 6.32,
     "03": 6.32,
@@ -990,97 +992,97 @@ var baremes_default = {
       "2024": [
         {
           puissance: "3CV et moins",
-          jusqu_5000: 0.502,
-          de_5001_20000: 0.3,
-          au_dela_20000: 0.36
+          jusqu_5000: 0.529,
+          de_5001_20000: 0.316,
+          au_dela_20000: 0.37
         },
         {
           puissance: "4CV",
-          jusqu_5000: 0.575,
-          de_5001_20000: 0.323,
-          au_dela_20000: 0.387
-        },
-        {
-          puissance: "5CV",
-          jusqu_5000: 0.603,
-          de_5001_20000: 0.339,
+          jusqu_5000: 0.606,
+          de_5001_20000: 0.34,
           au_dela_20000: 0.407
         },
         {
-          puissance: "6CV",
-          jusqu_5000: 0.631,
-          de_5001_20000: 0.355,
+          puissance: "5CV",
+          jusqu_5000: 0.636,
+          de_5001_20000: 0.357,
           au_dela_20000: 0.427
         },
         {
-          puissance: "7CV et plus",
-          jusqu_5000: 0.659,
-          de_5001_20000: 0.371,
+          puissance: "6CV",
+          jusqu_5000: 0.665,
+          de_5001_20000: 0.374,
           au_dela_20000: 0.447
+        },
+        {
+          puissance: "7CV et plus",
+          jusqu_5000: 0.697,
+          de_5001_20000: 0.394,
+          au_dela_20000: 0.47
         }
       ],
       "2025": [
         {
           puissance: "3CV et moins",
-          jusqu_5000: 0.502,
-          de_5001_20000: 0.3,
-          au_dela_20000: 0.36
+          jusqu_5000: 0.529,
+          de_5001_20000: 0.316,
+          au_dela_20000: 0.37
         },
         {
           puissance: "4CV",
-          jusqu_5000: 0.575,
-          de_5001_20000: 0.323,
-          au_dela_20000: 0.387
-        },
-        {
-          puissance: "5CV",
-          jusqu_5000: 0.603,
-          de_5001_20000: 0.339,
+          jusqu_5000: 0.606,
+          de_5001_20000: 0.34,
           au_dela_20000: 0.407
         },
         {
-          puissance: "6CV",
-          jusqu_5000: 0.631,
-          de_5001_20000: 0.355,
+          puissance: "5CV",
+          jusqu_5000: 0.636,
+          de_5001_20000: 0.357,
           au_dela_20000: 0.427
         },
         {
-          puissance: "7CV et plus",
-          jusqu_5000: 0.659,
-          de_5001_20000: 0.371,
+          puissance: "6CV",
+          jusqu_5000: 0.665,
+          de_5001_20000: 0.374,
           au_dela_20000: 0.447
+        },
+        {
+          puissance: "7CV et plus",
+          jusqu_5000: 0.697,
+          de_5001_20000: 0.394,
+          au_dela_20000: 0.47
         }
       ],
       "2026": [
         {
           puissance: "3CV et moins",
-          jusqu_5000: 0.502,
-          de_5001_20000: 0.3,
-          au_dela_20000: 0.36
+          jusqu_5000: 0.529,
+          de_5001_20000: 0.316,
+          au_dela_20000: 0.37
         },
         {
           puissance: "4CV",
-          jusqu_5000: 0.575,
-          de_5001_20000: 0.323,
-          au_dela_20000: 0.387
-        },
-        {
-          puissance: "5CV",
-          jusqu_5000: 0.603,
-          de_5001_20000: 0.339,
+          jusqu_5000: 0.606,
+          de_5001_20000: 0.34,
           au_dela_20000: 0.407
         },
         {
-          puissance: "6CV",
-          jusqu_5000: 0.631,
-          de_5001_20000: 0.355,
+          puissance: "5CV",
+          jusqu_5000: 0.636,
+          de_5001_20000: 0.357,
           au_dela_20000: 0.427
         },
         {
-          puissance: "7CV et plus",
-          jusqu_5000: 0.659,
-          de_5001_20000: 0.371,
+          puissance: "6CV",
+          jusqu_5000: 0.665,
+          de_5001_20000: 0.374,
           au_dela_20000: 0.447
+        },
+        {
+          puissance: "7CV et plus",
+          jusqu_5000: 0.697,
+          de_5001_20000: 0.394,
+          au_dela_20000: 0.47
         }
       ]
     },
@@ -1204,6 +1206,63 @@ var baremes_default = {
         nom: "Lundi de Pentec\xF4te",
         fixe: false
       }
+    ],
+    "2027": [
+      {
+        date: "2027-01-01",
+        nom: "Jour de l'An",
+        fixe: true
+      },
+      {
+        date: "2027-03-29",
+        nom: "Lundi de P\xE2ques",
+        fixe: false
+      },
+      {
+        date: "2027-05-01",
+        nom: "F\xEAte du Travail",
+        fixe: true
+      },
+      {
+        date: "2027-05-06",
+        nom: "Ascension",
+        fixe: false
+      },
+      {
+        date: "2027-05-08",
+        nom: "F\xEAte de la Victoire",
+        fixe: true
+      },
+      {
+        date: "2027-05-17",
+        nom: "Lundi de Pentec\xF4te",
+        fixe: false
+      },
+      {
+        date: "2027-07-14",
+        nom: "F\xEAte Nationale",
+        fixe: true
+      },
+      {
+        date: "2027-08-15",
+        nom: "Assomption",
+        fixe: true
+      },
+      {
+        date: "2027-11-01",
+        nom: "Toussaint",
+        fixe: true
+      },
+      {
+        date: "2027-11-11",
+        nom: "Armistice",
+        fixe: true
+      },
+      {
+        date: "2027-12-25",
+        nom: "No\xEBl",
+        fixe: true
+      }
     ]
   },
   taxe_fonciere: {
@@ -1279,25 +1338,27 @@ var baremes_default = {
     checked_at: "2026-08-11T00:00:00.000Z"
   },
   apl: {
-    version: "2026",
+    version: "2026.10",
     plafonds_loyer: {
+      date_effet: "2026-10-01",
+      source: "Arr\xEAt\xE9 du 28 septembre 2026 (JORF du 30/09/2026) - bar\xE8me CAF locataires",
       zone1: {
-        seul: 610,
-        couple: 670,
-        couple_1_enfant: 730,
-        couple_2_enfants: 790
+        seul: 336.97,
+        couple: 406.4,
+        une_personne_a_charge: 459.32,
+        par_personne_supplementaire: 66.65
       },
       zone2: {
-        seul: 510,
-        couple: 560,
-        couple_1_enfant: 610,
-        couple_2_enfants: 660
+        seul: 293.68,
+        couple: 359.47,
+        une_personne_a_charge: 404.49,
+        par_personne_supplementaire: 58.88
       },
       zone3: {
-        seul: 430,
-        couple: 480,
-        couple_1_enfant: 530,
-        couple_2_enfants: 580
+        seul: 275.25,
+        couple: 333.67,
+        une_personne_a_charge: 374.13,
+        par_personne_supplementaire: 53.62
       }
     },
     multiplicateurs_region: {
@@ -1310,20 +1371,13 @@ var baremes_default = {
 
 // src/data/social-baremes.ts
 var baremesData = baremes_default;
-var APRIL_2026_UPLIFT = 1.008;
-function round2(value) {
-  return Math.round(value * 100) / 100;
-}
-function revalorise(value) {
-  return round2(value * APRIL_2026_UPLIFT);
-}
 var socialBaremes = {
   rsa: {
     version: "2026.05",
     dateEffet: "2026-04-01",
     sourceUrl: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026",
     sourceUrls: [
-      "https://www.service-public.fr/particuliers/vosdroits/N19775",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/N19775",
       "https://www.caf.fr/allocataires/caf-des-bouches-du-rhone/offre-de-service/vie-professionnelle/le-revenu-de-solidarite-active-rsa"
     ],
     note: "Montants 2026 derives de la revalorisation officielle de 0,8 % appliquee au bareme RSA du 1er avril 2025.",
@@ -1335,12 +1389,17 @@ var socialBaremes = {
       coupleAvec2Enfants: 2.1,
       personneSupplementaire: 0.4
     },
+    // Montants officiels au 1er avril 2026 (service-public.gouv.fr F19778)
     forfaitLogement: {
-      unePersonne: revalorise(77.58),
-      deuxPersonnes: revalorise(155.16),
-      troisPersonnesOuPlus: revalorise(192.01)
+      unePersonne: 78.2,
+      deuxPersonnes: 156.41,
+      troisPersonnesOuPlus: 193.55
     },
-    revenusActivitePrisEnCompte: 0.62
+    // Depuis le 1er janvier 2016, le complement de revenus d'activite (ancien
+    // "RSA activite", 62 %) est remplace par la prime d'activite : les revenus
+    // d'activite sont retenus en totalite dans les ressources du RSA (DREES,
+    // fiche "La prime d'activite").
+    revenusActivitePrisEnCompte: 1
   },
   primeActivite: {
     version: "2026.05",
@@ -1348,7 +1407,7 @@ var socialBaremes = {
     sourceUrl: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite",
     sourceUrls: [
       "https://www.caf.fr/allocataires/actualites/actualites-nationales/la-prime-d-activite-augmente-en-2026",
-      "https://www.service-public.fr/particuliers/vosdroits/F2882"
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F2882"
     ],
     montantForfaitaire: {
       nonMajoree: {
@@ -1379,7 +1438,9 @@ var socialBaremes = {
       seuilDebut: 709.18,
       seuilMaximum: 1658.76
     },
-    revenusProfessionnelsPrisEnCompte: 0.61,
+    // 59,85 % depuis le 1er avril 2025 (61 % auparavant) - DREES, Minima
+    // sociaux et prestations sociales, edition 2025, fiche 30.
+    revenusProfessionnelsPrisEnCompte: 0.5985,
     montantMinimumVerse: 15
   },
   asf: {
@@ -1387,7 +1448,7 @@ var socialBaremes = {
     dateEffet: "2026-04-01",
     sourceUrl: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf",
     sourceUrls: [
-      "https://www.service-public.fr/particuliers/vosdroits/F33647",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F33647",
       "https://pension-alimentaire.caf.fr/web/guest/l-allocation-de-soutien-familial-asf"
     ],
     sansConditionRessources: true,
@@ -1395,12 +1456,14 @@ var socialBaremes = {
     montantParEnfantPriveDeuxParents: 267.63
   },
   are: {
-    version: "2025.07",
+    // Pas de revalorisation au 1er juillet 2026 (CA Unedic du 30/06/2026) :
+    // les montants du 1er juillet 2025 restent en vigueur.
+    version: "2026.07",
     dateEffet: "2025-07-01",
     sourceUrl: "https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/montant-allocation-france-travai.html",
     sourceUrls: [
-      "https://www.service-public.fr/particuliers/vosdroits/F38881",
-      "https://www.service-public.fr/particuliers/actualites/A15787"
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F38881",
+      "https://www.service-public.gouv.fr/particuliers/actualites/A15787"
     ],
     reglesEligibilite: {
       dureeAffiliationMois: 6,
@@ -1419,29 +1482,45 @@ var socialBaremes = {
       moinsDe55Ans: 548,
       de55a56Ans: 685,
       aPartirDe57Ans: 822
+    },
+    // Rupture conventionnelle : durees reduites pour les contrats rompus a
+    // compter du 1er septembre 2026 (loi n° 2026-470 du 11 juin 2026) :
+    // 15 mois avant 55 ans, 20,5 mois a partir de 55 ans.
+    ruptureConventionnelle: {
+      dateEffet: "2026-09-01",
+      sourceUrl: "https://normandie.dreets.gouv.fr/Rupture-conventionnelle-et-chomage-ce-qui-change-au-1er-septembre-2026-%F0%9F%93%84",
+      dureeMaximaleJours: {
+        moinsDe55Ans: 456,
+        de55a56Ans: 624,
+        aPartirDe57Ans: 624
+      }
     }
   },
   apl: {
-    version: "2025.10",
-    dateEffet: "2025-10-01",
-    sourceUrl: "https://www.service-public.fr/particuliers/actualites/A16807",
+    version: "2026.10",
+    dateEffet: "2026-10-01",
+    sourceUrl: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913928",
     sourceUrls: [
       "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-aides-au-logement",
-      "https://www.service-public.fr/particuliers/vosdroits/F12006"
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006"
     ],
     plafondsLoyer: baremesData.apl.plafonds_loyer,
     multiplicateursRegion: baremesData.apl.multiplicateurs_region,
     moteur: {
-      bonusLoyerParEnfant: 60,
-      bonusLoyerCouple: 60,
       forfaitLogement: {
         seul: 72,
         couple: 102,
         monoparental: 87,
         autre: 72
       },
+      // Forfait charges officiel (art. 9 arrete du 27/09/2019, valeurs au 01/10/2026)
+      forfaitCharges: {
+        base: 61.29,
+        parPersonneACharge: 13.9
+      },
       tauxParticipation: 0.3,
-      participationMinimum: 35,
+      // Participation minimale P0 officielle au 01/10/2026 (art. 13)
+      participationMinimum: 40.01,
       plafondAplBase: {
         seul: 320,
         couple: 420,
@@ -1456,16 +1535,22 @@ var socialBaremes = {
 
 // src/utils/aplCalculEngine.ts
 var aplBaremes = socialBaremes.apl;
-var PLAFONDS_LOYER_BASE = {
-  idf: aplBaremes.plafondsLoyer.zone1.seul,
-  province: aplBaremes.plafondsLoyer.zone2.seul,
-  dom: aplBaremes.plafondsLoyer.zone3.seul
+var PLAFONDS_LOYER_ZONE = {
+  idf: aplBaremes.plafondsLoyer.zone1,
+  province: aplBaremes.plafondsLoyer.zone2,
+  dom: aplBaremes.plafondsLoyer.zone3
 };
-var BONUS_LOYER_PAR_ENFANT = aplBaremes.moteur.bonusLoyerParEnfant;
-var BONUS_LOYER_COUPLE = aplBaremes.moteur.bonusLoyerCouple;
+function getPlafondLoyer(region, situation, enfants) {
+  const plafonds = PLAFONDS_LOYER_ZONE[region] || PLAFONDS_LOYER_ZONE.province;
+  if (enfants <= 0) {
+    return situation === "couple" ? plafonds.couple : plafonds.seul;
+  }
+  return plafonds.une_personne_a_charge + (enfants - 1) * plafonds.par_personne_supplementaire;
+}
 var FORFAIT_LOGEMENT = {
   ...aplBaremes.moteur.forfaitLogement
 };
+var FORFAIT_CHARGES = aplBaremes.moteur.forfaitCharges;
 var TAUX_PARTICIPATION = aplBaremes.moteur.tauxParticipation;
 var PARTICIPATION_MINIMUM = aplBaremes.moteur.participationMinimum;
 function getPlafondAPLRealiste(situation, enfants) {
@@ -1487,18 +1572,15 @@ function calculerAPL(input) {
     const revenus = Number(revenus_mensuels);
     const loyer = Number(loyer_mensuel);
     const nb_enfants = Math.max(0, Math.floor(Number(enfants) || 0));
-    let plafond_loyer = PLAFONDS_LOYER_BASE[region] || PLAFONDS_LOYER_BASE.province;
-    if (situation === "couple") {
-      plafond_loyer += BONUS_LOYER_COUPLE;
-    }
-    plafond_loyer += nb_enfants * BONUS_LOYER_PAR_ENFANT;
+    const plafond_loyer = Math.round(getPlafondLoyer(region, situation, nb_enfants) * 100) / 100;
     const loyer_pris_compte = Math.min(loyer, plafond_loyer);
     const forfait_logement = FORFAIT_LOGEMENT[situation] || FORFAIT_LOGEMENT.seul;
     let participation = revenus * TAUX_PARTICIPATION - forfait_logement;
     participation = Math.max(PARTICIPATION_MINIMUM, participation);
-    let apl_brute = loyer_pris_compte - participation;
+    const forfait_charges = Math.round((FORFAIT_CHARGES.base + nb_enfants * FORFAIT_CHARGES.parPersonneACharge) * 100) / 100;
+    let apl_brute = loyer_pris_compte + forfait_charges - participation;
     let raison_zero;
-    if (participation >= loyer_pris_compte) {
+    if (participation >= loyer_pris_compte + forfait_charges) {
       apl_brute = 0;
       raison_zero = "Avec vos revenus actuels et le plafond de loyer applicable, l'APL est g\xE9n\xE9ralement nulle selon les r\xE8gles CAF.";
     }
@@ -1518,6 +1600,7 @@ function calculerAPL(input) {
         loyer_pris_compte,
         participation: Math.round(participation),
         forfait_logement,
+        forfait_charges,
         reste_charge,
         situation,
         enfants: nb_enfants,
@@ -1707,10 +1790,16 @@ var areBaremes = socialBaremes.are;
 function getReferenceWindow(agePersonne) {
   return agePersonne >= 55 ? areBaremes.reglesEligibilite.fenetreReference55AnsEtPlusMois : areBaremes.reglesEligibilite.fenetreReferenceMoins55AnsMois;
 }
-function getDurationCapDays(agePersonne) {
-  if (agePersonne >= 57) return areBaremes.dureeMaximaleJours.aPartirDe57Ans;
-  if (agePersonne >= 55) return areBaremes.dureeMaximaleJours.de55a56Ans;
-  return areBaremes.dureeMaximaleJours.moinsDe55Ans;
+function isRuptureConventionnelleReduite(data) {
+  if (!data.ruptureConventionnelle) return false;
+  const dateEffet = /* @__PURE__ */ new Date(`${areBaremes.ruptureConventionnelle.dateEffet}T00:00:00Z`);
+  return !data.dateFinContrat || data.dateFinContrat >= dateEffet;
+}
+function getDurationCapDays(data) {
+  const durees = isRuptureConventionnelleReduite(data) ? areBaremes.ruptureConventionnelle.dureeMaximaleJours : areBaremes.dureeMaximaleJours;
+  if (data.agePersonne >= 57) return durees.aPartirDe57Ans;
+  if (data.agePersonne >= 55) return durees.de55a56Ans;
+  return durees.moinsDe55Ans;
 }
 function calculerARE(data) {
   const minAnciennete = areBaremes.reglesEligibilite.dureeAffiliationMois;
@@ -1742,10 +1831,10 @@ function calculerARE(data) {
     sjr * areBaremes.calculJournalier.plafondPourcentageSjr
   );
   const montantMensuelBrut = Math.round(allocationJournaliere * areBaremes.calculJournalier.coefficientMensuel * 100) / 100;
-  const durationCapDays = getDurationCapDays(data.agePersonne);
+  const durationCapDays = getDurationCapDays(data);
   const durationTheoriqueDays = Math.round(Math.max(0, data.ancienneteEmploi) * 30.42);
   const durationRetenueDays = Math.min(durationTheoriqueDays, durationCapDays);
-  const durationMax = Math.max(1, Math.round(durationRetenueDays / 30.42));
+  const durationMax = Math.max(1, Math.round(durationRetenueDays / 30.42 * 2) / 2);
   return {
     eligible: true,
     montantEstime: montantMensuelBrut,
@@ -2334,7 +2423,8 @@ function calculerPrimeActivite(data) {
   const revenusProfsComptabilises = data.revenusProf * primeBaremes.revenusProfessionnelsPrisEnCompte;
   const autresRevenusComptabilises = Math.max(0, data.autresRevenus || 0);
   const totalRevenusComptabilises = Math.max(0, data.revenusProf || 0) + autresRevenusComptabilises + forfaitLogement;
-  let montantFinal = montantBase + bonification + revenusProfsComptabilises - totalRevenusComptabilises;
+  const ressourcesRetenues = Math.max(montantBase, totalRevenusComptabilises);
+  let montantFinal = montantBase + bonification + revenusProfsComptabilises - ressourcesRetenues;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
   let eligibilite = "Probablement eligible";
   let explication = "Cette estimation repose sur le forfait foyer 2026, la bonification individuelle et les revenus declares. La CAF confirmera le montant final a partir de votre declaration trimestrielle.";
@@ -2867,9 +2957,12 @@ var BAREMES_2026 = {
     troisEntantsOuPlus: 1
     // à partir du 3e enfant
   },
-  // Décote 2026
+  // Décote 2026 (revenus 2025) : forfait - 45,25 % de l'impôt brut,
+  // applicable si l'impôt brut est inférieur à 1 982 € (seul) / 3 277 € (couple)
   decote: {
-    limite: 1686
+    forfaitSeul: 897,
+    forfaitCouple: 1483,
+    taux: 0.4525
   },
   // Abattement de base (10% du revenu imposable)
   abattementBase: 0.1
@@ -2899,7 +2992,7 @@ function calculateCotisations(brutSalaire) {
     deductibleImpot: retraite + csgDeductible
   };
 }
-function calculateImportFoncier(revenusImposables, quotientFamilial) {
+function calculateImportFoncier(revenusImposables, quotientFamilial, imposeEnCouple = false) {
   if (revenusImposables <= 0) return 0;
   const quotient = revenusImposables / quotientFamilial;
   let impot = 0;
@@ -2912,8 +3005,11 @@ function calculateImportFoncier(revenusImposables, quotientFamilial) {
     impot += (tranche.limite - precLimite) * tranche.taux;
   }
   impot *= quotientFamilial;
-  if (impot > 0 && impot < BAREMES_2026.decote.limite) {
-    impot = Math.max(0, impot - (BAREMES_2026.decote.limite - impot) * 0.25);
+  const { forfaitSeul, forfaitCouple, taux } = BAREMES_2026.decote;
+  const forfaitDecote = imposeEnCouple ? forfaitCouple : forfaitSeul;
+  const decote = forfaitDecote - impot * taux;
+  if (impot > 0 && decote > 0) {
+    impot = Math.max(0, impot - decote);
   }
   return Math.max(0, impot);
 }
@@ -2937,7 +3033,11 @@ function calculerSalaireNet(data) {
     revenusImposables * (1 - BAREMES_2026.abattementBase)
   );
   const quotientFamilial = getQuotientFamilial(data.enfants, data.mariageOrPacs);
-  const impotAnnuel = calculateImportFoncier(revenusImposablesAbattement * 12, quotientFamilial);
+  const impotAnnuel = calculateImportFoncier(
+    revenusImposablesAbattement * 12,
+    quotientFamilial,
+    data.mariageOrPacs
+  );
   const impotMensuel = impotAnnuel / 12;
   const prelevementSource = Math.max(0, impotMensuel);
   const avantageNetFiscal = data.ticketsResto + data.mutuelle;

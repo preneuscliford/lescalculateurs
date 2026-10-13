@@ -29,16 +29,6 @@ type AplJson = {
 
 const baremesData = baremesJson as { apl: AplJson };
 
-const APRIL_2026_UPLIFT = 1.008;
-
-function round2(value: number): number {
-  return Math.round(value * 100) / 100;
-}
-
-function revalorise(value: number): number {
-  return round2(value * APRIL_2026_UPLIFT);
-}
-
 export const socialBaremes = {
   rsa: {
     version: "2026.05",
@@ -58,12 +48,17 @@ export const socialBaremes = {
       coupleAvec2Enfants: 2.1,
       personneSupplementaire: 0.4,
     },
+    // Montants officiels au 1er avril 2026 (service-public.gouv.fr F19778)
     forfaitLogement: {
-      unePersonne: revalorise(77.58),
-      deuxPersonnes: revalorise(155.16),
-      troisPersonnesOuPlus: revalorise(192.01),
+      unePersonne: 78.2,
+      deuxPersonnes: 156.41,
+      troisPersonnesOuPlus: 193.55,
     },
-    revenusActivitePrisEnCompte: 0.62,
+    // Depuis le 1er janvier 2016, le complement de revenus d'activite (ancien
+    // "RSA activite", 62 %) est remplace par la prime d'activite : les revenus
+    // d'activite sont retenus en totalite dans les ressources du RSA (DREES,
+    // fiche "La prime d'activite").
+    revenusActivitePrisEnCompte: 1,
   },
   primeActivite: {
     version: "2026.05",
@@ -103,7 +98,9 @@ export const socialBaremes = {
       seuilDebut: 709.18,
       seuilMaximum: 1658.76,
     },
-    revenusProfessionnelsPrisEnCompte: 0.61,
+    // 59,85 % depuis le 1er avril 2025 (61 % auparavant) - DREES, Minima
+    // sociaux et prestations sociales, edition 2025, fiche 30.
+    revenusProfessionnelsPrisEnCompte: 0.5985,
     montantMinimumVerse: 15,
   },
   asf: {

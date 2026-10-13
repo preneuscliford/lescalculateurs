@@ -102,7 +102,7 @@
         "seuilDebut": 709.18,
         "seuilMaximum": 1658.76
       },
-      "revenusProfessionnelsPrisEnCompte": 0.61,
+      "revenusProfessionnelsPrisEnCompte": 0.5985,
       "montantMinimumVerse": 15
     },
     "seoTitleVariants": [
@@ -125,11 +125,11 @@
         "emoji": "💰",
         "badge": "simulation",
         "question": "Quel est l'impact sur ma Prime d'activité si mon salaire augmente de 100 € ?",
-        "explanation": "Lorsque votre salaire augmente, 61 % de vos revenus supplémentaires sont déduits du montant de la Prime d'activité. Sur 100 €, la CAF déduit donc 61 €, mais vous conservez un gain net d'environ 39 €. C'est toujours positif pour votre budget global.",
+        "explanation": "Lorsque votre salaire augmente, la Prime d'activité baisse d'environ 40 % de la hausse (la CAF retient 59,85 % de vos revenus d'activité en bonus, mais compte 100 % dans vos ressources). Sur 100 € de plus, la prime baisse donc d'environ 40 € et vous gardez un gain net d'environ 60 €, hors effet de la bonification individuelle.",
         "faq": [
           {
             "q": "Est-ce que ça vaut le coup d'accepter une petite augmentation de 100 € ?",
-            "a": "Oui. Même si la Prime d'activité baisse légèrement, votre revenu total (salaire + prime) augmente car seuls 61 % de vos revenus sont pris en compte dans le calcul de la CAF."
+            "a": "Oui. Même si la Prime d'activité baisse, votre revenu total (salaire + prime) augmente : la prime ne diminue que d'environ 40 centimes par euro de salaire supplémentaire."
           },
           {
             "q": "Quand déclarer ce changement à la CAF ?",
@@ -161,11 +161,11 @@
         "emoji": "💵",
         "badge": "simulation",
         "question": "Quel est l'impact sur ma Prime d'activité avec 200 € de salaire en plus ?",
-        "explanation": "Avec +200 €, la Prime d'activité baisse de 122 € environ (61 % × 200 €). Votre revenu total progresse tout de même, car vous conservez 39 % du gain brut. Si vos revenus sont entre 709 € et 1 659 €, la bonification individuelle peut atténuer cette baisse.",
+        "explanation": "Avec +200 €, la Prime d'activité baisse d'environ 80 € (environ 40 % × 200 €). Votre revenu total progresse d'environ 120 €. Si vos revenus sont entre 709 € et 1 659 €, la bonification individuelle peut encore atténuer cette baisse.",
         "faq": [
           {
             "q": "Quel est le gain net après une augmentation de 200 € ?",
-            "a": "Environ +78 € nets par mois après recalcul de la Prime. Les 61 % prélevés par la CAF laissent un gain net de 39 % du montant brut de l'augmentation."
+            "a": "Environ +120 € par mois après recalcul de la Prime : la prime baisse d'environ 40 % de l'augmentation, vous gardez environ 60 %."
           },
           {
             "q": "La bonification individuelle compense-t-elle la baisse de la Prime ?",
@@ -269,7 +269,7 @@
         "emoji": "💎",
         "badge": "simulation",
         "question": "Ma Prime d'activité est-elle supprimée si mon salaire augmente de 500 € ?",
-        "explanation": "Avec +500 €, la Prime baisse de 305 € environ (61 %). Pour beaucoup de bénéficiaires, cela signifie la fin de la Prime, surtout si le salaire initial dépasse 1 400 €. Le gain net reste d'environ +195 € par mois.",
+        "explanation": "Avec +500 €, la Prime baisse d'environ 200 € (environ 40 % de la hausse). Pour beaucoup de bénéficiaires, cela peut signifier la fin de la Prime, surtout si le salaire initial dépasse 1 400 €. Le gain net reste d'environ +300 € par mois.",
         "faq": [
           {
             "q": "Puis-je perdre tous mes droits avec une augmentation de 500 € ?",
@@ -305,7 +305,7 @@
         "emoji": "⏱️",
         "badge": "simulation",
         "question": "Que devient ma Prime d'activité si je réduis mon temps de travail de 20 % ?",
-        "explanation": "Réduire son temps de travail de 20 % diminue le salaire. La Prime d'activité augmente mécaniquement car 61 % des revenus sont déduits du calcul. Mais le revenu total (salaire réduit + prime augmentée) est généralement plus faible qu'à temps plein.",
+        "explanation": "Réduire son temps de travail de 20 % diminue le salaire. La Prime d'activité augmente mécaniquement, d'environ 40 % de la baisse de salaire. Mais le revenu total (salaire réduit + prime augmentée) reste plus faible qu'à temps plein.",
         "faq": [
           {
             "q": "La CAF verse-t-elle plus si je travaille moins ?",
@@ -449,7 +449,7 @@
         "emoji": "📜",
         "badge": "reforme",
         "question": "Quel serait l'impact d'une revalorisation du SMIC de 2 % sur ma Prime d'activité ?",
-        "explanation": "Une hausse du SMIC de 2 % augmente mécaniquement le salaire net. Pour un SMIC à temps plein (≈1 426 € net), cela représente environ +28 € nets/mois. La Prime est recalculée avec 61 % de cette hausse déduite.",
+        "explanation": "Une hausse du SMIC de 2 % augmente mécaniquement le salaire net. Pour un SMIC à temps plein (≈1 478 € net depuis le 1er juin 2026), cela représente environ +30 € nets/mois. La Prime baisse alors d'environ 40 % de cette hausse.",
         "faq": [
           {
             "q": "Quand cette réforme entrerait-elle en vigueur ?",

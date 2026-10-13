@@ -67,7 +67,7 @@ const PRIME_BAREMES = {
     seuilDebut: 709.18,
     seuilMaximum: 1658.76,
   },
-  revenusProfessionnelsPrisEnCompte: 0.61,
+  revenusProfessionnelsPrisEnCompte: 0.5985, // 59,85 % depuis le 01/04/2025 (DREES)
   montantMinimumVerse: 15,
 };
 
@@ -383,8 +383,9 @@ function calculatePrimeEstimate({ income }) {
   const forfaitLogement = logement === "loue" ? 0 : PRIME_BAREMES.forfaitLogement.unePersonne;
   const revenusProfsComptabilises = income * PRIME_BAREMES.revenusProfessionnelsPrisEnCompte;
   const totalRevenusComptabilises = Math.max(0, income) + forfaitLogement;
-  let montantFinal =
-    montantBase + bonification + revenusProfsComptabilises - totalRevenusComptabilises;
+  // Ressources reputees au moins egales au montant forfaitaire (DREES)
+  const ressourcesRetenues = Math.max(montantBase, totalRevenusComptabilises);
+  let montantFinal = montantBase + bonification + revenusProfsComptabilises - ressourcesRetenues;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
   if (montantFinal > 0 && montantFinal < PRIME_BAREMES.montantMinimumVerse) {
     montantFinal = 0;

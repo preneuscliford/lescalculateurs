@@ -395,7 +395,7 @@
           seuilDebut: 709.18,
           seuilMaximum: 1658.76,
         },
-        revenusProfessionnelsPrisEnCompte: 0.61,
+        revenusProfessionnelsPrisEnCompte: 0.5985,
         montantMinimumVerse: 15,
       };
 
@@ -464,7 +464,10 @@
           revenusProf + autresRevenusComptabilises + forfaitLogement;
 
         let montantFinal =
-          montantBase + bonification + revenusProfsComptabilises - totalRevenusComptabilises;
+          montantBase +
+          bonification +
+          revenusProfsComptabilises -
+          Math.max(montantBase, totalRevenusComptabilises);
         montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
 
         const details = {

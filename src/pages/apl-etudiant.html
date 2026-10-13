@@ -116,7 +116,7 @@
             "name": "Qui peut toucher l'APL étudiant ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "L'APL étudiant s'adresse aux étudiants de plus de 18 ans qui occupent un logement de manière effective (résidence principale). Vous devez être locataire d'un logement conventionné (résidence CROUS, logement privé avec convention APL) ou propriétaire d'un logement neuf. Les revenus de l'étudiant et de ses parents (si vous êtes rattaché au foyer fiscal) sont pris en compte dans le calcul. Les étudiants boursiers ont souvent droit à une APL plus élevée."
+              "text": "L'APL étudiant s'adresse aux étudiants de plus de 18 ans qui occupent un logement de manière effective (résidence principale). Vous devez être locataire d'un logement conventionné (résidence CROUS, logement privé avec convention APL) ou propriétaire d'un logement neuf. Ce sont vos propres ressources qui sont prises en compte, avec un montant minimal forfaitaire plus faible pour les boursiers : les étudiants boursiers ont donc souvent droit à une APL plus élevée. Depuis le 1er juillet 2026, un étudiant de nationalité extra-européenne (hors UE, EEE et Suisse) doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il travaille, est apprenti, réfugié ou conjoint d'un bénéficiaire."
             }
           },
           {
@@ -132,7 +132,7 @@
             "name": "Comment faire la demande d'APL étudiant ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pour demander l'APL étudiant, créez un compte sur caf.fr et complétez le formulaire de demande d'aide au logement. Vous devrez fournir : une pièce d'identité, votre attestation de scolarité, le bail ou contrat de location, vos revenus et ceux de vos parents si vous êtes rattaché à leur foyer fiscal. Pour les logements CROUS, la demande est souvent faite directement auprès de la résidence. Le premier versement intervient généralement 2 à 3 mois après la demande avec rétroactivité."
+              "text": "Pour demander l'APL étudiant, créez un compte sur caf.fr et complétez le formulaire de demande d'aide au logement. Vous devrez fournir : une pièce d'identité, votre attestation de scolarité, le bail ou contrat de location, vos justificatifs de ressources. Un étudiant extra-européen doit aussi justifier d'une bourse sur critères sociaux, ou d'une exception (activité professionnelle, apprentissage, statut de réfugié). Pour les logements CROUS, la demande est souvent faite directement auprès de la résidence. Le premier versement intervient généralement 2 à 3 mois après la demande avec rétroactivité."
             }
           },
           {
@@ -140,7 +140,15 @@
             "name": "L'APL étudiant est-elle cumulable avec une bourse ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, l'APL étudiant est parfaitement cumulable avec la bourse sur critères sociaux. Percevoir une bourse du CROUS n'affecte pas votre droit à l'APL. En fait, être boursier peut même augmenter le montant de votre APL car le barème prend en compte votre niveau de ressources. Vous pouvez aussi cumuler APL + bourse + travail à temps partiel dans certaines limites. Utilisez notre simulateur pour estimer le cumul optimal selon votre situation."
+              "text": "Oui, l'APL étudiant est cumulable avec la bourse sur critères sociaux, et être boursier peut même augmenter son montant. Depuis le 1er juillet 2026, la bourse est même une condition pour les étudiants extra-européens (hors UE, EEE et Suisse) : sans bourse, ils n'ont plus droit à l'APL, sauf activité professionnelle, apprentissage, statut de réfugié ou d'apatride, ou s'ils sont conjoints d'un bénéficiaire. Vous pouvez aussi cumuler APL + bourse + travail à temps partiel dans certaines limites. Utilisez notre simulateur pour estimer le cumul optimal selon votre situation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les étudiants étrangers ont-ils encore droit à l'APL en 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depuis le 1er juillet 2026, un étudiant de nationalité extra-européenne (hors UE, EEE et Suisse) titulaire d'un visa ou d'un titre de séjour « étudiant » n'a droit à l'APL, l'ALS ou l'ALF que s'il perçoit une bourse sur critères sociaux. Restent éligibles sans bourse : les étudiants qui exercent une activité professionnelle salariée ou indépendante, les apprentis et contrats de professionnalisation, les réfugiés et apatrides, et les conjoints d'étudiants. Les étudiants européens ne sont pas concernés. Source : caf.fr."
             }
           }
         ]
@@ -473,6 +481,36 @@
         <p class="text-blue-600 font-semibold">👉 Estimez votre montant d'APL ci-dessous.</p>
       </section>
 
+      <!-- Réforme du 1er juillet 2026 : étudiants extra-européens -->
+      <section class="mb-12 bg-amber-50 border-l-4 border-amber-500 p-6 rounded-lg">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          Étudiant étranger : ce qui change depuis le 1er juillet 2026
+        </h2>
+        <p class="text-gray-700 mb-3">
+          Si vous êtes de nationalité <strong>extra-européenne</strong> (hors Union européenne,
+          Espace économique européen et Suisse) et titulaire d'un visa long séjour ou d'un titre de
+          séjour « étudiant », vous n'avez droit à l'APL, l'ALS ou l'ALF que si vous percevez une
+          <strong>bourse sur critères sociaux</strong> (CROUS ou certaines bourses régionales).
+          Les droits en cours sans bourse ont pris fin en juillet 2026.
+        </p>
+        <p class="text-gray-700 mb-2">Vous restez éligible sans bourse si vous êtes :</p>
+        <ul class="list-disc list-inside space-y-1 text-gray-700 mb-3">
+          <li>salarié ou travailleur indépendant (auto-entrepreneur compris) ;</li>
+          <li>apprenti ou en contrat de professionnalisation ;</li>
+          <li>réfugié ou apatride ;</li>
+          <li>conjoint d'un étudiant extra-européen.</li>
+        </ul>
+        <p class="text-gray-700 mb-3">
+          Les étudiants européens ne sont pas concernés. Si vous vivez avec une personne non
+          éligible, l'aide est calculée comme pour une personne seule.
+        </p>
+        <p class="text-xs text-gray-600">
+          Notre simulateur ne vérifie pas cette condition de nationalité : le montant affiché
+          suppose que vous êtes éligible. Source :
+          <a href="https://www.caf.fr/allocataires/actualites/actualites-nationales/apl-ce-qui-change-pour-certains-etudiants-partir-du-1er-juillet-2026" target="_blank" rel="noopener" class="text-blue-600 hover:underline">caf.fr, actualité du 3 juillet 2026</a>.
+        </p>
+      </section>
+
       <!-- Ce que calcule le simulateur -->
       <section class="mb-12 bg-blue-50 p-6 rounded-lg">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">🧾 Que permet cette simulation ?</h2>
@@ -606,8 +644,9 @@
               APL étudiant et bourses : cumul possible ?
             </summary>
             <p class="mt-3 text-gray-600 text-sm">
-              Oui, les bourses d'études ne sont généralement pas déduites du calcul de l'APL.
-              Consultez la CAF pour confirmation.
+              Oui, et être boursier peut même augmenter l'APL. Depuis le 1er juillet 2026, la
+              bourse sur critères sociaux est aussi une condition pour les étudiants
+              extra-européens (sauf exceptions détaillées plus haut).
             </p>
           </details>
 
@@ -749,7 +788,8 @@
           </a>
         </div>
         <p class="text-sm text-gray-600 mt-4">
-          💡<strong>Conseil étudiant :</strong> L'APL est cumulable avec votre bourse du CROUS !
+          💡<strong>Conseil étudiant :</strong> L'APL est cumulable avec votre bourse du CROUS
+          (et, pour un étudiant extra-européen, la bourse conditionne l'APL depuis juillet 2026).
           Faites les deux simulations pour connaître le total de vos aides.
         </p>
       </section>

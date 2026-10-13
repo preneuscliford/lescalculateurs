@@ -24,6 +24,11 @@ export const aplPilotScenarios = [
     ],
     faq: [
       {
+        question: "Un étudiant étranger a-t-il encore droit à l'APL en 2026 ?",
+        answer:
+          "Depuis le 1er juillet 2026, un étudiant extra-européen (hors UE, EEE et Suisse) doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il travaille, est apprenti, réfugié ou conjoint d'un bénéficiaire (source : caf.fr). Les étudiants européens ne sont pas concernés.",
+      },
+      {
         question: "Un étudiant à  Paris peut-il toucher l'APL ?",
         answer:
           "Oui, sous conditions de logement et de ressources. Le niveau de loyer reste important, mais le plafond de zone limite le montant retenu.",
@@ -60,6 +65,11 @@ export const aplPilotScenarios = [
     ],
     faq: [
       {
+        question: "Un étudiant étranger a-t-il encore droit à l'APL en 2026 ?",
+        answer:
+          "Depuis le 1er juillet 2026, un étudiant extra-européen (hors UE, EEE et Suisse) doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il travaille, est apprenti, réfugié ou conjoint d'un bénéficiaire (source : caf.fr). Les étudiants européens ne sont pas concernés.",
+      },
+      {
         question: "L'APL etudiante est-elle différente à  Lyon et à  Paris ?",
         answer:
           "La logique de calcul reste la même, mais le plafond de loyer dépend de la zone. Le montant retenu n'est donc pas identique.",
@@ -95,6 +105,11 @@ export const aplPilotScenarios = [
       "Comparer avec une location classique pour mesurer l ecart.",
     ],
     faq: [
+      {
+        question: "Un étudiant étranger a-t-il encore droit à l'APL en 2026 ?",
+        answer:
+          "Depuis le 1er juillet 2026, un étudiant extra-européen (hors UE, EEE et Suisse) doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il travaille, est apprenti, réfugié ou conjoint d'un bénéficiaire (source : caf.fr). Les étudiants européens ne sont pas concernés.",
+      },
       {
         question: "L'APL en colocation est-elle calculée par personne ?",
         answer:
@@ -1622,6 +1637,11 @@ export const aplPilotScenarios = [
     ],
     faq: [
       {
+        question: "Un étudiant étranger a-t-il encore droit à l'APL en 2026 ?",
+        answer:
+          "Depuis le 1er juillet 2026, un étudiant extra-européen (hors UE, EEE et Suisse) doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il travaille, est apprenti, réfugié ou conjoint d'un bénéficiaire (source : caf.fr). Les étudiants européens ne sont pas concernés.",
+      },
+      {
         question: "Un studio étudiant ouvre-t-il souvent droit à  l'APL ?",
         answer:
           "Oui, c'est un cas fréquent, surtout avec peu de revenus et un loyer adapté à  la zone.",
@@ -1657,6 +1677,11 @@ export const aplPilotScenarios = [
       "Tester aussi un scénario étudiant en grande ville.",
     ],
     faq: [
+      {
+        question: "Un étudiant étranger a-t-il encore droit à l'APL en 2026 ?",
+        answer:
+          "Depuis le 1er juillet 2026, un étudiant extra-européen (hors UE, EEE et Suisse) doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il travaille, est apprenti, réfugié ou conjoint d'un bénéficiaire (source : caf.fr). Les étudiants européens ne sont pas concernés.",
+      },
       {
         question: "Un petit loyer réduit-il forcément l'APL d'un étudiant ?",
         answer:
@@ -1802,6 +1827,11 @@ export const aplPilotScenarios = [
       "Tester aussi une version étudiant à  Lyon pour situer l'écart.",
     ],
     faq: [
+      {
+        question: "Un étudiant étranger a-t-il encore droit à l'APL en 2026 ?",
+        answer:
+          "Depuis le 1er juillet 2026, un étudiant extra-européen (hors UE, EEE et Suisse) doit être boursier sur critères sociaux pour toucher l'APL, sauf s'il travaille, est apprenti, réfugié ou conjoint d'un bénéficiaire (source : caf.fr). Les étudiants européens ne sont pas concernés.",
+      },
       {
         question: "Un étudiant à  Toulouse peut-il toucher une APL utile ?",
         answer:

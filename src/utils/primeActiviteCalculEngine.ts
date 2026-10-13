@@ -133,9 +133,12 @@ export function calculerPrimeActivite(data: PrimeActiviteCalculData): PrimeActiv
   const autresRevenusComptabilises = Math.max(0, data.autresRevenus || 0);
   const totalRevenusComptabilises =
     Math.max(0, data.revenusProf || 0) + autresRevenusComptabilises + forfaitLogement;
+  // Les ressources du foyer sont reputees au moins egales au montant forfaitaire
+  // (DREES, fiche "La prime d'activite").
+  const ressourcesRetenues = Math.max(montantBase, totalRevenusComptabilises);
 
   let montantFinal =
-    montantBase + bonification + revenusProfsComptabilises - totalRevenusComptabilises;
+    montantBase + bonification + revenusProfsComptabilises - ressourcesRetenues;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
 
   let eligibilite = "Probablement eligible";

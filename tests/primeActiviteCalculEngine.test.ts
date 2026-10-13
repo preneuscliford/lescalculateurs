@@ -39,14 +39,28 @@ describe("primeActiviteCalculEngine", () => {
     expect(r.success).toBe(true);
     expect(r.details.montantBase).toBeCloseTo(638.28, 1);
     expect(r.details.bonification).toBeCloseTo(175.06, 1);
-    expect(r.montantEstime).toBeCloseTo(267.34, 1);
+    // 638,28 + 175,06 + 59,85 % x 1 400 - 1 400 (taux de 59,85 % depuis le 01/04/2025)
+    expect(r.montantEstime).toBeCloseTo(251.24, 1);
+  });
+
+  test("ressources réputées au moins égales au montant forfaitaire (petit salaire)", () => {
+    const r = calculerPrimeActivite({
+      situation: "seul",
+      enfants: 0,
+      revenusProf: 300,
+      autresRevenus: 0,
+      logement: "loue",
+      typeActivite: "salarie",
+    });
+    // 638,28 + 0 + 59,85 % x 300 - max(638,28 ; 300) = 179,55
+    expect(r.montantEstime).toBeCloseTo(179.55, 1);
   });
 
   test("montant théorique sous le seuil de versement (15 EUR) => forcé à 0", () => {
     const r = calculerPrimeActivite({
       situation: "seul",
       enfants: 0,
-      revenusProf: 2240,
+      revenusProf: 2165,
       autresRevenus: 0,
       logement: "loue",
       typeActivite: "salarie",
