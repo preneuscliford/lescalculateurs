@@ -1,4 +1,5 @@
 import fs from "fs";
+import { siteUpdateDate } from "./lib/pseo/site-date.js";
 import path from "path";
 import { loadNotaireEngine } from "./lib/pseo/notaire-engine.js";
 import { fileURLToPath } from "url";
@@ -15,7 +16,7 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const require = createRequire(import.meta.url);
 const outputDir = path.join(repoRoot, "src", "pages", "notaire");
-const generatedAt = formatDisplayDate(new Date());
+const generatedAt = formatDisplayDate(siteUpdateDate());
 
 
 function cleanupGeneratedPages(outputRoot, allowedSlugs) {
