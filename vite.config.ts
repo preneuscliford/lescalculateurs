@@ -29,7 +29,13 @@ function lastUpdatedBanner(): string {
   return `<div class="lc-maj" data-lc-maj style="background:#eef6ff;border-bottom:1px solid #cfe3ff;color:#1e3a5f;font-size:13px;line-height:1.4;padding:6px 16px;text-align:center">📅 Mis à jour le <time datetime="${siteUpdate.lastVerified}">${siteUpdate.label}</time> · Barèmes et chiffres vérifiés sur les sources officielles · ${historique}</div>`;
 }
 
+const MOIS_FR =
+  "janvier|f(?:é|&eacute;|&#233;)vrier|mars|avril|mai|juin|juillet|ao(?:û|&ucirc;|&#251;)t|septembre|octobre|novembre|d(?:é|&eacute;|&#233;)cembre";
+const DATE_FR = `\\d{1,2}(?:er)?\\s+(?:${MOIS_FR})\\s+20\\d{2}`;
+
 function addLastUpdated(html: string, filename: string): string {
+  // La page d'historique garde ses dates réelles (journal des mises à jour).
+  if (/historique-mises-a-jour/.test(filename)) return html;
   if (html.includes("data-lc-maj") || PAGES_SANS_BANDEAU.test(filename)) return html;
   const out = html
     // Ancienne date figée dans le bandeau "Estimation indicative"
@@ -42,6 +48,20 @@ function addLastUpdated(html: string, filename: string): string {
     .replace(
       /(?:[✓✅]\s*)?V(?:é|&eacute;|&#233;)rifi(?:é|&eacute;|&#233;)e?\s+le\s+\d{1,2}(?:er)?\s+[A-Za-zÀ-ÿ]+\s+\d{4}\s*(?:[—–-]|&mdash;|&ndash;|\.)?\s*/gu,
       "",
+    )
+    // Toute autre date de mise à jour / vérification écrite à la main est alignée sur
+    // la date unique de site-update.json (aucune date en dur à maintenir dans les pages).
+    .replace(
+      new RegExp(
+        `((?:mis(?:e)?\\s+(?:à|&agrave;|&#224;)\\s+jour|v(?:é|&eacute;|&#233;)rifi(?:é|&eacute;|&#233;)e?s?|actualis(?:é|&eacute;|&#233;)e?s?)(?:\\s+(?:le|au))?\\s*:?\\s*)${DATE_FR}`,
+        "giu",
+      ),
+      `$1${siteUpdate.label}`,
+    )
+    // Libellé court de la navigation (« 🔄 Mise à jour 12/10 »)
+    .replace(
+      /(Mise (?:à|&agrave;) jour\s+)\d{2}\/\d{2}(?!\/)/g,
+      `$1${siteUpdate.lastVerified.slice(8, 10)}/${siteUpdate.lastVerified.slice(5, 7)}`,
     )
     // Données structurées : date de modification = date du dernier audit
     .replace(/("dateModified"\s*:\s*")[^"]*(")/g, `$1${siteUpdate.lastVerified}$2`)
