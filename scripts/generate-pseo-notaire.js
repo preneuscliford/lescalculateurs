@@ -1,6 +1,8 @@
 import fs from "fs";
+import { siteUpdateDate } from "./lib/pseo/site-date.js";
 import path from "path";
-import { fileURLToPath, pathToFileURL } from "url";
+import { loadNotaireEngine } from "./lib/pseo/notaire-engine.js";
+import { fileURLToPath } from "url";
 import { createRequire } from "module";
 
 import { notaireScenarios } from "../data/pseo/notaire-scenarios.js";
@@ -14,17 +16,8 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const require = createRequire(import.meta.url);
 const outputDir = path.join(repoRoot, "src", "pages", "notaire");
-const generatedAt = formatDisplayDate(new Date());
+const generatedAt = formatDisplayDate(siteUpdateDate());
 
-// notaire.calc.js is ESM, we need to convert it to CJS via a temp compilation
-// But since it's pure JS with no TS, we use a different approach:
-// We'll import it dynamically since it's ESM
-async function loadNotaireEngine() {
-  const engineSrc = path.join(repoRoot, "src", "utils", "notaire.calc.js");
-  // Dynamic import works for ESM - convert Windows path to file:// URL
-  const engine = await import(pathToFileURL(engineSrc).href);
-  return engine;
-}
 
 function cleanupGeneratedPages(outputRoot, allowedSlugs) {
   if (!fs.existsSync(outputRoot)) return;
@@ -53,7 +46,7 @@ async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedPages(outputDir, new Set(notaireScenarios.map((item) => item.slug)));
 
-  const engine = await loadNotaireEngine();
+  const engine = loadNotaireEngine(repoRoot);
 
   const targetConfig = {
     stylesHref: "/tailwind.css",

@@ -2319,6 +2319,7 @@
                   remiseVar,
                   tauxDroits,
                   isVEFA: typeBien === "neuf",
+                  primoApplique,
                 },
               };
             } catch (error) {
@@ -2404,7 +2405,7 @@
                 }
                 <div class="flex justify-between"><span>Droits d'enregistrement (${(
                   data.tauxDroits * 100
-                ).toFixed(2)}%) :</span><span class="font-medium">${formatCurrency(
+                ).toFixed(2)}%${data.primoApplique ? ", primo-accédant : hausse non appliquée" : ""}) :</span><span class="font-medium">${formatCurrency(
                   data.droitsEnregistrement,
                 )}</span></div>
                 <div class="flex justify-between"><span>Débours estimés (~250–400 €) :</span><span class="font-medium">${formatCurrency(

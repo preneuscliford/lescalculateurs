@@ -1,6 +1,8 @@
 import fs from "fs";
+import { siteUpdateDate } from "./lib/pseo/site-date.js";
 import path from "path";
-import { fileURLToPath, pathToFileURL } from "url";
+import { loadNotaireEngine } from "./lib/pseo/notaire-engine.js";
+import { fileURLToPath } from "url";
 
 import { notaireScenarios } from "../data/pseo/notaire-scenarios.js";
 import { notaireComparisons } from "../data/pseo/notaire-comparisons.js";
@@ -13,13 +15,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const outputDir = path.join(repoRoot, "src", "pages", "notaire");
-const generatedAt = formatDisplayDate(new Date());
+const generatedAt = formatDisplayDate(siteUpdateDate());
 
-async function loadNotaireEngine() {
-  const engineSrc = path.join(repoRoot, "src", "utils", "notaire.calc.js");
-  const engine = await import(pathToFileURL(engineSrc).href);
-  return engine;
-}
 
 function cleanupGeneratedComparisons(outputRoot, allowedSlugs) {
   if (!fs.existsSync(outputRoot)) return;
@@ -58,7 +55,7 @@ async function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   cleanupGeneratedComparisons(outputDir, new Set(notaireComparisons.map((item) => item.slug)));
 
-  const engine = await loadNotaireEngine();
+  const engine = loadNotaireEngine(repoRoot);
   const scenarioMap = {};
   notaireScenarios.forEach((s) => {
     scenarioMap[s.slug] = s;

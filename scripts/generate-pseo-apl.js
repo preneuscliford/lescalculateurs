@@ -1,4 +1,5 @@
 import fs from "fs";
+import { siteUpdateDate } from "./lib/pseo/site-date.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -23,7 +24,7 @@ const args = new Map(
 );
 
 const target = args.get("target") || "src";
-const generatedAt = formatDisplayDate(new Date());
+const generatedAt = formatDisplayDate(siteUpdateDate());
 const aplScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
 const APL_TEXT_FIXES = [
   [/\brépond a\b/gi, "répond à"],

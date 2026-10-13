@@ -2,6 +2,17 @@
  * Module PDF Export - Version statique avec imports npm
  * Fonctionne en dev ET en prod (Vercel)
  */
+import siteUpdate from "../data/site-update.json";
+
+/** Mention ajoutée en bas de chaque PDF : estimation, date des barèmes, sources. */
+function mentionLegale() {
+  const page = window.location.origin + window.location.pathname.replace(/\.html$/, "");
+  return [
+    "Estimation indicative et non contractuelle : seul l'organisme compétent (CAF, impots.gouv.fr, notaire, employeur…) fixe le montant définitif.",
+    `Barèmes vérifiés le ${siteUpdate.label} sur les sources officielles.`,
+    `Détail du calcul et sources officielles : ${page}`,
+  ];
+}
 /**
  * Exporte les résultats du calculateur en PDF
  */
@@ -144,7 +155,6 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
           /📊|📈|📉|💰|💵|💶|💷|🏦|🏠|🏡|📋|✅|❌|⚠️|ℹ️|📄|🔍|📌/g,
           ""
         );
-        text = text.replace(/\s*\/\s*/g, " "); // Nettoyer les espaces avec slash
         text = text.replace(/\u00A0/g, " "); // Non-breaking space → espace normal
         text = text.replace(/\u202F/g, " "); // Narrow no-break space
         text = text.replace(/\u2009/g, " "); // Thin space
@@ -177,8 +187,9 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
     console.log("✅ Canvas créé:", canvas.width, "x", canvas.height);
 
     // Créer le PDF
-    const pdf = new jsPDF("p", "mm", "a4");
-    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4", compress: true });
+    // JPEG compressé : en PNG, une capture pleine page pesait plusieurs dizaines de Mo
+    const imgData = canvas.toDataURL("image/jpeg", 0.85);
 
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
@@ -235,8 +246,8 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
           sourceHeight
         );
 
-        const sliceData = sliceCanvas.toDataURL("image/png");
-        pdf.addImage(sliceData, "PNG", 10, yPosition, imgWidth, sliceHeight);
+        const sliceData = sliceCanvas.toDataURL("image/jpeg", 0.85);
+        pdf.addImage(sliceData, "JPEG", 10, yPosition, imgWidth, sliceHeight);
 
         remainingHeight -= sliceHeight;
         sourceY += sourceHeight;
@@ -247,25 +258,30 @@ async function exportCalculatorToPDF(calculatorName, data, notes = []) {
         }
       }
     } else {
-      pdf.addImage(imgData, "PNG", 10, yPosition, imgWidth, imgHeight);
+      pdf.addImage(imgData, "JPEG", 10, yPosition, imgWidth, imgHeight);
     }
 
-    // Notes en bas de page si présentes
-    if (notes && notes.length > 0) {
-      pdf.addPage();
-      pdf.setFontSize(12);
-      pdf.setFont("helvetica", "bold");
-      pdf.text("Notes", 10, 20);
+    // Notes du calculateur + mention obligatoire (estimation, date, sources)
+    pdf.addPage();
+    pdf.setFontSize(12);
+    pdf.setFont("helvetica", "bold");
+    pdf.setTextColor(17, 24, 39);
+    pdf.text("Notes", 10, 20);
 
-      pdf.setFontSize(9);
-      pdf.setFont("helvetica", "normal");
-      let noteY = 30;
-      notes.forEach((note) => {
-        const lines = pdf.splitTextToSize(note, pdfWidth - 20);
-        pdf.text(lines, 10, noteY);
-        noteY += lines.length * 5;
-      });
-    }
+    pdf.setFontSize(9);
+    pdf.setFont("helvetica", "normal");
+    let noteY = 30;
+    // Les notes arrivent soit en tableau, soit dans un objet { notes: [...] }
+    const notesCalculateur = Array.isArray(notes)
+      ? notes
+      : Array.isArray(notes?.notes)
+        ? notes.notes
+        : [];
+    [...notesCalculateur, ...mentionLegale()].forEach((note) => {
+      const lines = pdf.splitTextToSize(note, pdfWidth - 20);
+      pdf.text(lines, 10, noteY);
+      noteY += lines.length * 5 + 2;
+    });
 
     // Télécharger
     const filename = `${calculatorName

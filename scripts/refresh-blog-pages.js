@@ -25,7 +25,7 @@ function loadBaremesGen() {
     process.cwd(),
     "src",
     "data",
-    "baremes.generated.json",
+    "baremes.json",
   );
   if (!fs.existsSync(p)) return null;
   try {

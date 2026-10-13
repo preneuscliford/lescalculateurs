@@ -1,4 +1,5 @@
 import fs from "fs";
+import { siteUpdateDate } from "./lib/pseo/site-date.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -12,7 +13,7 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const require = createRequire(import.meta.url);
 const outputDir = path.join(repoRoot, "src", "pages", "asf");
-const generatedAt = formatDisplayDate(new Date());
+const generatedAt = formatDisplayDate(siteUpdateDate());
 
 async function loadAsfEngine() {
   const engineSrc = path.join(repoRoot, "src", "utils", "asfCalculEngine.ts");

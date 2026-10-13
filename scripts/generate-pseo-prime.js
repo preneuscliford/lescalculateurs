@@ -1,4 +1,5 @@
 import fs from "fs";
+import { siteUpdateDate } from "./lib/pseo/site-date.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -16,7 +17,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const require = createRequire(import.meta.url);
 const { normalizeFrenchText } = require("./lib/french-normalization.cjs");
 const outputDir = path.join(repoRoot, "src", "pages", "prime-activite");
-const generatedAt = formatDisplayDate(new Date());
+const generatedAt = formatDisplayDate(siteUpdateDate());
 
 async function loadPrimeEngine() {
   const engineSrc = path.join(repoRoot, "src", "utils", "primeActiviteCalculEngine.ts");

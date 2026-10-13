@@ -182,6 +182,11 @@ function addLastUpdated(html: string, filename: string): string {
       /(Mise (?:à|&agrave;) jour\s+)\d{2}\/\d{2}(?!\/)/g,
       `$1${siteUpdate.lastVerified.slice(8, 10)}/${siteUpdate.lastVerified.slice(5, 7)}`,
     )
+    // « Dernière modification : JJ-MM-AAAA » des pages pSEO générées
+    .replace(
+      /(Derni(?:è|&egrave;|&#232;)re modification\s*(?::|<\/p>\s*<p[^>]*>)\s*)\d{2}-\d{2}-\d{4}/g,
+      `$1${siteUpdate.label}`,
+    )
     // Données structurées : date de modification = date du dernier audit
     .replace(/("dateModified"\s*:\s*")[^"]*(")/g, `$1${siteUpdate.lastVerified}$2`)
     .replace(
@@ -879,6 +884,13 @@ export default defineConfig(() => {
     root: "src",
     publicDir: "../public",
     base: "/",
+    resolve: {
+      alias: {
+        // html2canvas 1.x ne sait pas lire les couleurs oklch (Tailwind v4) et fait
+        // échouer tous les exports PDF/PNG : on le remplace par son fork maintenu.
+        html2canvas: "html2canvas-pro",
+      },
+    },
     plugins: [
       lastUpdatedPlugin(),
       {

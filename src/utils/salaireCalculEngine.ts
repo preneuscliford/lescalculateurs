@@ -29,7 +29,11 @@ export function calculerSalaire(input: SalaireInput): SalaireResult {
   if (statut !== "cadre" && statut !== "non_cadre") throw new Error("Statut invalide");
   if (!isFinite(tauxPAS) || tauxPAS < 0 || tauxPAS > 100) throw new Error("Taux PAS invalide");
 
-  const tauxSalarial = statut === "cadre" ? 0.25 : 0.23;
+  // Cotisations salariales 2026 sous le plafond de la Sécurité sociale : vieillesse 7,30 %,
+  // Agirc-Arrco T1 4,01 %, CSG-CRDS 9,70 % sur 98,25 % du brut = 20,84 % (identique à
+  // salaireNetCalculEngine) ; cadre : + APEC et écart mesuré sur le simulateur Urssaf.
+  // Les anciens taux fixes (23 % / 25 %) sous-estimaient le net de 10 à 184 € par mois.
+  const tauxSalarial = statut === "cadre" ? 0.2101 : 0.2084;
   const netAvantImpot = brut * (1 - tauxSalarial);
   const pasMensuel = netAvantImpot * (tauxPAS / 100);
   const netApresImpot = netAvantImpot - pasMensuel;

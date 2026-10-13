@@ -22,8 +22,6 @@ const filesToUpdate = [
   "src/pages/travail.html",
   // Utils
   "src/utils/autoExportInit.js",
-  "src/utils/autoExportInit_new.js",
-  "src/utils/autoExportInit_broken.js",
   // Scripts
   "src/pages/scripts/salaire.ts",
 ];

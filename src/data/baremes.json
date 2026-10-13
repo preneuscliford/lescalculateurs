@@ -1005,11 +1005,6 @@
         "une_personne_a_charge": 374.13,
         "par_personne_supplementaire": 53.62
       }
-    },
-    "multiplicateurs_region": {
-      "idf": 1.15,
-      "province": 1,
-      "dom": 0.95
     }
   }
 }

@@ -58,6 +58,20 @@ function initFromURL(): void {
 }
 
 /**
+ * Champs propres au couple (revenus du conjoint) et au parent isolé (majoration)
+ */
+function majChampsSituation() {
+  document
+    .getElementById("prime-conjoint-bloc")
+    ?.classList.toggle("hidden", situationSelect.value !== "couple");
+  document
+    .getElementById("prime-isolement-bloc")
+    ?.classList.toggle("hidden", situationSelect.value !== "monoparental");
+}
+situationSelect?.addEventListener("change", majChampsSituation);
+majChampsSituation();
+
+/**
  * Gestion du formulaire
  */
 form.addEventListener("submit", (e) => {
@@ -67,6 +81,13 @@ form.addEventListener("submit", (e) => {
     situation: situationSelect.value,
     enfants: parseInt(enfantsInput.value) || 0,
     revenusProf: parseInt(revenosProfInput.value) || 0,
+    revenusProfConjoint:
+      parseInt(
+        (document.getElementById("prime-revenus-conjoint") as HTMLInputElement | null)?.value || "0",
+      ) || 0,
+    majorationIsolement:
+      (document.getElementById("prime-majoration-isolement") as HTMLInputElement | null)?.checked ===
+      true,
     autresRevenus: parseInt(autresRevenusInput.value) || 0,
     logement: logementSelect.value,
     typeActivite: typeActiviteSelect.value,
