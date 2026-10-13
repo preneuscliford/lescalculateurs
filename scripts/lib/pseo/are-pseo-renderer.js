@@ -136,7 +136,7 @@ function renderMethodologySources() {
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/pages/methodologie" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">Consulter notre m&eacute;thodologie</a>
-          <a href="https://www.francetravail.fr/candidat/vos-services-en-ligne/estimer-vos-allocations-et-aid.html" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 font-semibold text-orange-900 transition-colors hover:bg-orange-100">Voir la source officielle France Travail</a>
+          <a href="https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/estimer-droits-allocations.html" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 font-semibold text-orange-900 transition-colors hover:bg-orange-100">Voir la source officielle France Travail</a>
           <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/N549" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">Voir la fiche service-public.fr</a>
         </div>
       </section>`;

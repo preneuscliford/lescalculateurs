@@ -30,7 +30,7 @@ changes++;
 
 content = content.replace(
   /<a\s+href="https:\/\/bofip\.impots\.gouv\.fr\/bofip\/4739-PGP\.html"\s+target="_blank"\s+rel="nofollow noopener"\s+class="text-blue-700 underline"\s*>BOFiP - Taux DMTO departementaux<\/a/g,
-  `<a href="https://www.impots.gouv.fr/droits-denregistrement" target="_blank" rel="nofollow noopener" class="text-blue-600 underline">impots.gouv.fr</a> &amp; <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf" target="_blank" rel="nofollow noopener" class="text-blue-600 underline">PDF DMTO 2026</a`,
+  `<a href="https://www.impots.gouv.fr/droits-denregistrement" target="_blank" rel="nofollow noopener" class="text-blue-600 underline">impots.gouv.fr</a> &amp; <a href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/dmto/dmto_2026-06.pdf" target="_blank" rel="nofollow noopener" class="text-blue-600 underline">PDF DMTO 2026</a`,
 );
 changes++;
 
