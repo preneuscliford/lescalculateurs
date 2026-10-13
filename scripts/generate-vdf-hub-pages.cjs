@@ -171,15 +171,30 @@ function renderChartJson(cities, type, title, label, unit, color) {
   return `<script type="application/json" data-vdf-chart-data>${JSON.stringify(data)}</script>`;
 }
 
+function citySlug(nom) {
+  return nom
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 function renderCityCards(cities) {
   return cities
     .map((c) => {
       const m = monthly(c.dispMed);
-      return `          <a href="/pages/revenus/${c.nom.toLowerCase().replace(/[^a-z]/g, "-")}" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50">
+      const inner = `
             <span class="text-lg font-bold text-slate-950">${escapeHtml(c.nom)}</span>
             <span class="mt-2 block text-sm text-slate-600">Revenu disponible médian : <strong>${formatEuroBreak(c.dispMed)}\u00A0\u20AC</strong></span>
             <span class="mt-1 block text-sm text-slate-600">\u00C9quivalent mensuel : ${formatNum(m)}\u00A0\u20AC</span>
-          </a>`;
+          `;
+      // Lien uniquement si la page de la ville existe (sinon carte simple, pas de lien en 404)
+      const slug = citySlug(c.nom);
+      if (fs.existsSync(path.join("src", "pages", "revenus", `${slug}.html`))) {
+        return `          <a href="/pages/revenus/${slug}" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50">${inner}</a>`;
+      }
+      return `          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">${inner}</div>`;
     })
     .join("");
 }
@@ -404,29 +419,8 @@ function main() {
   fs.writeFileSync(path.join(pagesDir, "revenu-median-commune.html"), page1, "utf8");
   console.log("✓ revenu-median-commune.html (25 villes)");
 
-  // === PAGE 2: Top 25 revenu disponible médian ===
-  const page2 = buildHTML(
-    "Classement des 25 plus grandes villes par revenu disponible",
-    "Top 25 des villes françaises où le revenu disponible médian est le plus élevé en 2026. Classement complet avec données détaillées par ville.",
-    "Top 25 des villes où le revenu disponible est le plus élevé en France",
-    "Versailles arrive en tête avec 33\u202F780\u00A0\u20AC de revenu disponible médian, suivi d\u2019Aix-en-Provence (25\u202F810\u00A0\u20AC) et Bordeaux (24\u202F870\u00A0\u20AC). Découvrez le classement complet.",
-    "Classement revenu · 25 villes",
-    "from-slate-950 via-slate-900 to-emerald-900",
-    cities,
-    25,
-    ["Rang", "Ville", "Revenu annuel", "Mensuel", "D1", "D9", "D9/D1", "% Imposés", "% Actifs"],
-    true,
-    "Top 25 : revenu disponible médian par ville",
-    "euro",
-    "emerald",
-    "% Ménages imposés par ville",
-    "percent",
-    "emerald",
-    "Top 25 des villes au revenu disponible le plus élevé en France (2026) | Les Calculateurs",
-    "top-25-revenu-median-france-2026",
-  );
-  fs.writeFileSync(path.join(pagesDir, "top-25-revenu-median-france-2026.html"), page2, "utf8");
-  console.log("✓ top-25-revenu-median-france-2026.html");
+  // Page 2 (top-25-revenu-median-france-2026) supprimée : redirigée en 301 vers
+  // /pages/revenu-median-commune (vercel.json), même contenu que la page 1.
 
   // === PAGE 3: Inégalités D9/D1 ===
   const top20D9D1 = byD9D1.slice(0, 20);

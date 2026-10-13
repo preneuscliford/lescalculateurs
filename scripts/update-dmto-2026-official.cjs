@@ -148,8 +148,8 @@ function updatefrais2026Json() {
 
   data.sources = [
     "https://www.service-public.fr/particuliers/vosdroits/F2167",
-    "https://www.notariat.fr/frais-de-notaire",
-    "https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf",
+    "https://www.immobilier.notaires.fr/fr/frais-de-notaire",
+    "https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/dmto/dmto_2026-06.pdf",
     "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433",
   ];
 
