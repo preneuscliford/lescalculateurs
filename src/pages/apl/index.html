@@ -139,7 +139,7 @@
             "name": "Quel est le montant maximum de l'APL en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "En 2026, le montant maximum de l'APL (Aide Personnalisée au Logement) varie selon votre zone géographique et votre situation familiale. Pour une personne seule en zone 2 (la plus courante), le plafond est d'environ 300-350€. Pour un couple avec deux enfants, cela peut atteindre 500-600€. Utilisez notre simulateur pour connaître le montant exact selon votre code postal."
+              "text": "En 2026, le montant maximum de l'APL (Aide Personnalisée au Logement) varie selon votre zone géographique et votre situation familiale. Le loyer est pris en compte dans la limite d'un plafond : au 1er octobre 2026, 293,68 € pour une personne seule en zone 2 et 463,37 € pour un couple avec deux enfants en zone 2, auxquels s'ajoute un forfait charges (61,29 € + 13,90 € par personne à charge). Utilisez notre simulateur pour connaître le montant exact selon votre code postal."
             }
           },
           {
@@ -187,7 +187,7 @@
             "name": "Comment faire une simulation des allocations logement CAF ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pour faire une simulation des allocations logement CAF (APL, ALS, ALF), utilisez notre calculateur gratuit : 1) Indiquez votre code postal pour déterminer votre zone géographique 2) Précisez le type de logement (HLM, location privée, accession à la propriété) 3) Renseignez votre loyer ou mensualité d'emprunt 4) Saisissez vos revenus et composition familiale. Notre simulateur détermine automatiquement quelle allocation vous correspond et calcule le montant estimé selon les barèmes CAF 2026."
+              "text": "Pour faire une simulation des allocations logement CAF (APL, ALS, ALF), utilisez notre calculateur gratuit : 1) Indiquez votre code postal pour déterminer votre zone géographique 2) Précisez le type de logement (HLM, location privée, colocation) 3) Renseignez votre loyer 4) Saisissez vos revenus et composition familiale. Notre simulateur détermine automatiquement quelle allocation vous correspond et calcule le montant estimé selon les barèmes CAF 2026."
             }
           },
           {
@@ -568,8 +568,7 @@
  compte pour le calcul de l'APL. Si votre loyer dépasse le plafond
  CAF de votre zone, la partie excédentaire n'est pas retenue dans
  le calcul.</p>
-            <p class="text-gray-600 text-sm">Exemple : Si le plafond est 600 € et votre loyer est 700 €, seuls
- 600 € sont considérés pour l'APL.</p>
+            <p class="text-gray-600 text-sm">Exemple : pour une personne seule en zone 2, le plafond est de 293,68 € (au 1er octobre 2026) : avec un loyer de 700 €, seuls 293,68 € sont pris en compte pour l'APL.</p>
           </div>
 
           <div>
@@ -1024,7 +1023,7 @@
               { value: "location", label: "Location (logement principal)" },
               {
                 value: "accession",
-                label: "Accession à la propriété (crédit immobilier)",
+                label: "Accession à la propriété (dossier antérieur à 2018)",
               },
               { value: "hlm", label: "Logement HLM" },
               { value: "colocation", label: "Colocation / Chambre meublée" },
