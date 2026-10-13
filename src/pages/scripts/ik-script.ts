@@ -47,11 +47,9 @@ function computeIK(values: any) {
         (kilometres - 5000) * baremePuissance.de_5001_20000;
       indemniteParKm = total / kilometres;
     } else {
-      total =
-        5000 * baremePuissance.jusqu_5000 +
-        15000 * baremePuissance.de_5001_20000 +
-        (kilometres - 20000) * baremePuissance.au_dela_20000;
-      indemniteParKm = total / kilometres;
+      // Barème fiscal officiel : au-delà de 20 000 km, d × taux (sans cumul des tranches)
+      total = kilometres * baremePuissance.au_dela_20000;
+      indemniteParKm = baremePuissance.au_dela_20000;
     }
   } else {
     const cylindree = values.cylindree_moto;
