@@ -13,19 +13,35 @@ function nowStamp() {
 const args = process.argv.slice(2);
 const FIX = args.includes("--fix");
 
-const BASE = path.resolve(
-  process.cwd(),
-  "src",
-  "pages",
-  "blog",
-  "departements"
-);
+// --dir=<dossier> : dossier analysé récursivement. Par défaut dist/ (pages construites,
+// toutes les pages du site) s'il existe, sinon src/pages.
+const dirArg = args.find((a) => a.startsWith("--dir="));
+const defaultDir = fs.existsSync(path.resolve(process.cwd(), "dist")) ? "dist" : path.join("src", "pages");
+const BASE = path.resolve(process.cwd(), dirArg ? dirArg.slice("--dir=".length) : defaultDir);
 if (!fs.existsSync(BASE)) {
   console.error("Directory not found:", BASE);
   process.exit(2);
 }
+if (FIX && path.relative(process.cwd(), BASE).split(path.sep)[0] === "dist") {
+  console.error("--fix ne s'applique pas à dist/ (fichiers générés) : corriger la source dans src/.");
+  process.exit(2);
+}
 
-const files = fs.readdirSync(BASE).filter((f) => f.endsWith(".html"));
+const IGNORED_DIRS = new Set(["node_modules", ".git"]);
+function listHtml(dir) {
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      if (IGNORED_DIRS.has(entry.name) || /^pages_(INDEPENDANT|backup|YMYL|SCHEMA)/.test(entry.name)) continue;
+      out.push(...listHtml(path.join(dir, entry.name)));
+    } else if (entry.name.endsWith(".html")) {
+      out.push(path.relative(BASE, path.join(dir, entry.name)));
+    }
+  }
+  return out;
+}
+
+const files = listHtml(BASE);
 let totalBlocks = 0;
 let invalidBlocks = 0;
 const errors = [];
@@ -123,6 +139,7 @@ for (const name of files) {
 
   if (newHtml !== html) {
     const backupPath = path.join(backupDir, name);
+    fs.mkdirSync(path.dirname(backupPath), { recursive: true });
     fs.writeFileSync(backupPath, html, "utf8");
     fs.writeFileSync(p, newHtml, "utf8");
     console.log("Fixed and backed up:", name);
