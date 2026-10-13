@@ -6,7 +6,7 @@ function loadCfg() {
     process.cwd(),
     "src",
     "data",
-    "baremes.generated.json",
+    "baremes.json",
   );
   const jsonP = path.resolve(process.cwd(), "src", "data", "frais2026.json");
   let cfg = null;
@@ -16,7 +16,7 @@ function loadCfg() {
       cfg = JSON.parse(raw);
     } catch {}
   }
-  // Optionnel: fusion partielle avec baremes.generated.json (priorite overrides)
+  // Optionnel: fusion partielle avec baremes.json (priorite overrides)
   if (fs.existsSync(genP)) {
     try {
       const raw2 = fs.readFileSync(genP, "utf8");

@@ -18,7 +18,17 @@ export default async function handler(req: any, res: any) {
   if (!auth) return;
 
   try {
-    const { situation, enfants, revenusProf, autresRevenus, logement, typeActivite } = req.body || {};
+    const {
+      situation,
+      enfants,
+      revenusProf,
+      revenusProfConjoint,
+      autresRevenus,
+      logement,
+      typeActivite,
+      majorationIsolement,
+      inclureAllocationsFamiliales,
+    } = req.body || {};
 
     if (!situation || !logement || !typeActivite) {
       return res.status(400).json({
@@ -38,9 +48,12 @@ export default async function handler(req: any, res: any) {
       situation,
       enfants: Number(enfants) || 0,
       revenusProf: Number(revenusProf) || 0,
+      revenusProfConjoint: Number(revenusProfConjoint) || 0,
       autresRevenus: Number(autresRevenus) || 0,
       logement,
       typeActivite,
+      majorationIsolement: majorationIsolement === true || majorationIsolement === "true",
+      inclureAllocationsFamiliales: !(inclureAllocationsFamiliales === false || inclureAllocationsFamiliales === "false"),
     });
 
     return res.status(200).json(withMeta("prime-activite", result));

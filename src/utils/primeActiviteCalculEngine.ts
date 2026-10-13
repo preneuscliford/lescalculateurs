@@ -3,10 +3,20 @@ import { socialBaremes } from "../data/social-baremes";
 export interface PrimeActiviteCalculData {
   situation: string;
   enfants: number;
+  /** Revenus professionnels mensuels du demandeur */
   revenusProf: number;
+  /** Revenus professionnels mensuels du conjoint (bonification calculée séparément) */
+  revenusProfConjoint?: number;
   autresRevenus: number;
   logement: string;
   typeActivite: string;
+  /**
+   * Majoration pour isolement : 12 mois sur les 18 mois suivant la séparation, la
+   * naissance ou la grossesse, ou jusqu'aux 3 ans du plus jeune enfant (F2882).
+   */
+  majorationIsolement?: boolean;
+  /** Ajoute les allocations familiales (taux plein) aux ressources, par défaut oui */
+  inclureAllocationsFamiliales?: boolean;
 }
 
 export interface PrimeActiviteResult {
@@ -19,6 +29,7 @@ export interface PrimeActiviteResult {
     bonification: number;
     majorations: number;
     forfaitLogement: number;
+    allocationsFamiliales: number;
     revenusProfsComptabilises: number;
     autresRevenusComptabilises: number;
     totalRevenusComptabilises: number;
@@ -28,10 +39,10 @@ export interface PrimeActiviteResult {
 
 const primeBaremes = socialBaremes.primeActivite;
 
-function getPrimeForfait(situation: string, enfants: number): number {
+function getPrimeForfait(situation: string, enfants: number, majorationIsolement: boolean): number {
   const nbEnfants = Math.max(0, Math.floor(enfants || 0));
 
-  if (situation === "monoparental") {
+  if (situation === "monoparental" && majorationIsolement) {
     if (nbEnfants <= 0) return primeBaremes.montantForfaitaire.nonMajoree.unePersonne;
     if (nbEnfants === 1) return primeBaremes.montantForfaitaire.majoree.isole1Enfant;
     if (nbEnfants === 2) return primeBaremes.montantForfaitaire.majoree.isole2Enfants;
@@ -74,6 +85,15 @@ function getHousingForfait(logement: string, situation: string, enfants: number)
   return primeBaremes.forfaitLogement.troisPersonnesOuPlus;
 }
 
+/** Allocations familiales au taux plein selon le nombre d'enfants (0 avant 2 enfants) */
+function getAllocationsFamiliales(enfants: number): number {
+  const n = Math.max(0, Math.floor(enfants || 0));
+  const af = socialBaremes.allocationsFamiliales.tauxPlein;
+  if (n < 2) return 0;
+  if (n === 2) return af.deuxEnfants;
+  return Math.round((af.troisEnfants + (n - 3) * af.parEnfantSupplementaire) * 100) / 100;
+}
+
 function getBonification(revenusProf: number): number {
   const revenus = Math.max(0, revenusProf || 0);
   const { seuilDebut, seuilMaximum, montantMaximum } = primeBaremes.bonification;
@@ -97,6 +117,7 @@ export function calculerPrimeActivite(data: PrimeActiviteCalculData): PrimeActiv
         bonification: 0,
         majorations: 0,
         forfaitLogement: 0,
+        allocationsFamiliales: 0,
         revenusProfsComptabilises: 0,
         autresRevenusComptabilises: 0,
         totalRevenusComptabilises: 0,
@@ -105,7 +126,7 @@ export function calculerPrimeActivite(data: PrimeActiviteCalculData): PrimeActiv
     };
   }
 
-  if (data.revenusProf <= 0) {
+  if ((data.revenusProf || 0) + (data.situation === "couple" ? data.revenusProfConjoint || 0 : 0) <= 0) {
     return {
       success: true,
       montantEstime: 0,
@@ -117,6 +138,7 @@ export function calculerPrimeActivite(data: PrimeActiviteCalculData): PrimeActiv
         bonification: 0,
         majorations: 0,
         forfaitLogement: 0,
+        allocationsFamiliales: 0,
         revenusProfsComptabilises: 0,
         autresRevenusComptabilises: Math.round(data.autresRevenus * 100) / 100,
         totalRevenusComptabilises: Math.round(data.autresRevenus * 100) / 100,
@@ -125,14 +147,24 @@ export function calculerPrimeActivite(data: PrimeActiviteCalculData): PrimeActiv
     };
   }
 
-  const montantBase = getPrimeForfait(data.situation, data.enfants);
-  const bonification = getBonification(data.revenusProf);
+  const montantBase = getPrimeForfait(
+    data.situation,
+    data.enfants,
+    data.majorationIsolement === true,
+  );
+  const revenusDemandeur = Math.max(0, data.revenusProf || 0);
+  const revenusConjoint = data.situation === "couple" ? Math.max(0, data.revenusProfConjoint || 0) : 0;
+  const revenusProfFoyer = revenusDemandeur + revenusConjoint;
+  // Bonification individuelle : une par membre du foyer qui travaille (F2882)
+  const bonification =
+    Math.round((getBonification(revenusDemandeur) + getBonification(revenusConjoint)) * 100) / 100;
   const forfaitLogement = getHousingForfait(data.logement, data.situation, data.enfants);
-  const revenusProfsComptabilises =
-    data.revenusProf * primeBaremes.revenusProfessionnelsPrisEnCompte;
+  const allocationsFamiliales =
+    data.inclureAllocationsFamiliales === false ? 0 : getAllocationsFamiliales(data.enfants);
+  const revenusProfsComptabilises = revenusProfFoyer * primeBaremes.revenusProfessionnelsPrisEnCompte;
   const autresRevenusComptabilises = Math.max(0, data.autresRevenus || 0);
   const totalRevenusComptabilises =
-    Math.max(0, data.revenusProf || 0) + autresRevenusComptabilises + forfaitLogement;
+    revenusProfFoyer + autresRevenusComptabilises + allocationsFamiliales + forfaitLogement;
   // Les ressources du foyer sont reputees au moins egales au montant forfaitaire
   // (DREES, fiche "La prime d'activite").
   const ressourcesRetenues = Math.max(montantBase, totalRevenusComptabilises);
@@ -169,6 +201,7 @@ export function calculerPrimeActivite(data: PrimeActiviteCalculData): PrimeActiv
           100,
       ),
       forfaitLogement: Math.round(forfaitLogement * 100) / 100,
+      allocationsFamiliales,
       revenusProfsComptabilises: Math.round(revenusProfsComptabilises * 100) / 100,
       autresRevenusComptabilises: Math.round(autresRevenusComptabilises * 100) / 100,
       totalRevenusComptabilises: Math.round(totalRevenusComptabilises * 100) / 100,
@@ -195,8 +228,10 @@ export function formatPrimeActiviteResult(result: PrimeActiviteResult): {
   const detailsDisplay = `
     • Montant forfaitaire : ${formatMonnaie(result.details.montantBase)}
     ${result.details.bonification > 0 ? `• Bonification : +${formatMonnaie(result.details.bonification)}` : ""}
-    ${result.details.revenusProfsComptabilises > 0 ? `• Revenus (61%) : -${formatMonnaie(result.details.revenusProfsComptabilises)}` : ""}
-    ${result.details.forfaitLogement > 0 ? `• Forfait logement : -${formatMonnaie(result.details.forfaitLogement)}` : ""}
+    ${result.details.revenusProfsComptabilises > 0 ? `• 59,85 % des revenus d'activité : +${formatMonnaie(result.details.revenusProfsComptabilises)}` : ""}
+    • Ressources du foyer retenues : -${formatMonnaie(Math.max(result.details.montantBase, result.details.totalRevenusComptabilises))}
+    ${result.details.allocationsFamiliales > 0 ? `  dont allocations familiales (taux plein) : ${formatMonnaie(result.details.allocationsFamiliales)}` : ""}
+    ${result.details.forfaitLogement > 0 ? `  dont forfait logement : ${formatMonnaie(result.details.forfaitLogement)}` : ""}
     • = Montant estimé : ${formatMonnaie(result.details.montantFinal)}
   `
     .trim()

@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 function loadBaremes() {
-  const p = path.resolve(process.cwd(), 'src', 'data', 'baremes.generated.json')
+  const p = path.resolve(process.cwd(), 'src', 'data', 'baremes.json')
   if (!fs.existsSync(p)) return null
   try {
     return JSON.parse(fs.readFileSync(p, 'utf8'))

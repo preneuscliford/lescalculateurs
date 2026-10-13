@@ -35,41 +35,29 @@ const CITY_LOCAL_HOOKS = {
     "Marseille peut laisser davantage d'air au budget, à condition de garder le loyer sous contrôle.",
 };
 
-const APL_BAREMES = require(path.join(ROOT, "src", "data", "baremes.json")).apl;
-const APL_PLAFOND_REALISTE_SINGLE = 320;
-const PRIME_BAREMES = {
-  montantForfaitaire: {
-    nonMajoree: {
-      unePersonne: 638.28,
-      coupleOuIsole1Enfant: 957.42,
-      couple1EnfantOuIsole2Enfants: 1148.9,
-      couple2Enfants: 1340.38,
-      isole3Enfants: 1404.21,
-      couple3Enfants: 1595.69,
-      personneSupplementaire: 255.32,
-    },
-    majoree: {
-      grossesse: 819.63,
-      isole1Enfant: 1092.84,
-      isole2Enfants: 1366.05,
-      isole3Enfants: 1639.26,
-      isole4Enfants: 1912.47,
-      personneSupplementaire: 271.04,
-    },
-  },
-  forfaitLogement: {
-    unePersonne: 76.59,
-    deuxPersonnes: 153.19,
-    troisPersonnesOuPlus: 189.57,
-  },
-  bonification: {
-    montantMaximum: 240.63,
-    seuilDebut: 709.18,
-    seuilMaximum: 1658.76,
-  },
-  revenusProfessionnelsPrisEnCompte: 0.5985, // 59,85 % depuis le 01/04/2025 (DREES)
-  montantMinimumVerse: 15,
-};
+// Moteurs officiels du site (source unique des barèmes : src/data/social-baremes.ts)
+function loadEngines() {
+  const os = require("os");
+  const { execFileSync } = require("child_process");
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), "lc-vdf-engines-"));
+  fs.writeFileSync(path.join(outDir, "package.json"), JSON.stringify({ type: "commonjs" }));
+  execFileSync(
+    process.execPath,
+    [
+      path.join(ROOT, "node_modules", "typescript", "bin", "tsc"),
+      path.join(ROOT, "src", "utils", "aplCalculEngine.ts"),
+      path.join(ROOT, "src", "utils", "primeActiviteCalculEngine.ts"),
+      "--outDir", outDir, "--module", "commonjs", "--target", "es2020",
+      "--moduleResolution", "node", "--resolveJsonModule", "--esModuleInterop", "--skipLibCheck",
+    ],
+    { stdio: "pipe" },
+  );
+  return {
+    apl: require(path.join(outDir, "utils", "aplCalculEngine.js")),
+    prime: require(path.join(outDir, "utils", "primeActiviteCalculEngine.js")),
+  };
+}
+const ENGINES = loadEngines();
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -304,98 +292,40 @@ function getHousingZone(city) {
 
 function calculateAplEstimate({ city, income, rent }) {
   const zone = getHousingZone(city);
-  const singlePlafond =
-    zone === "idf" ? APL_BAREMES.plafonds_loyer.zone1.seul : APL_BAREMES.plafonds_loyer.zone2.seul;
-  const loyerPrisCompte = Math.min(rent, singlePlafond);
-  const forfaitLogement = PRIME_BAREMES.forfaitLogement.unePersonne;
-  // Forfait charges et participation minimale officiels au 1er octobre 2026
-  const forfaitCharges = 61.29;
-  let participation = income * 0.3 - forfaitLogement;
-  participation = Math.max(40.01, participation);
-  let aplBrute = loyerPrisCompte + forfaitCharges - participation;
-  if (participation >= loyerPrisCompte + forfaitCharges) {
-    aplBrute = 0;
-  }
-  aplBrute = Math.max(0, aplBrute);
-  const plafondApl = APL_PLAFOND_REALISTE_SINGLE;
-  const aplEstimee = Math.floor(Math.min(aplBrute, plafondApl));
+  const r = ENGINES.apl.calculerAPL({
+    situation: "seul",
+    enfants: 0,
+    revenus_mensuels: income,
+    loyer_mensuel: rent,
+    region: zone,
+  });
   return {
     zone,
-    loyerPrisCompte,
-    participation: Math.round(participation),
-    aplEstimee,
-    plafondApl,
-    forfaitLogement,
+    loyerPrisCompte: r.data.loyer_pris_compte,
+    participation: r.data.participation,
+    aplEstimee: r.data.apl_estimee,
+    plafondApl: r.data.plafond_apl,
+    forfaitLogement: r.data.forfait_logement,
   };
 }
 
-function getPrimeForfait(situation, enfants) {
-  const nbEnfants = Math.max(0, Math.floor(enfants || 0));
-  if (situation === "monoparental") {
-    if (nbEnfants <= 0) return PRIME_BAREMES.montantForfaitaire.nonMajoree.unePersonne;
-    if (nbEnfants === 1) return PRIME_BAREMES.montantForfaitaire.majoree.isole1Enfant;
-    if (nbEnfants === 2) return PRIME_BAREMES.montantForfaitaire.majoree.isole2Enfants;
-    if (nbEnfants === 3) return PRIME_BAREMES.montantForfaitaire.majoree.isole3Enfants;
-    return (
-      PRIME_BAREMES.montantForfaitaire.majoree.isole4Enfants +
-      (nbEnfants - 4) * PRIME_BAREMES.montantForfaitaire.majoree.personneSupplementaire
-    );
-  }
 
-  if (situation === "couple") {
-    if (nbEnfants <= 0) return PRIME_BAREMES.montantForfaitaire.nonMajoree.coupleOuIsole1Enfant;
-    if (nbEnfants === 1)
-      return PRIME_BAREMES.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
-    if (nbEnfants === 2) return PRIME_BAREMES.montantForfaitaire.nonMajoree.couple2Enfants;
-    if (nbEnfants === 3) return PRIME_BAREMES.montantForfaitaire.nonMajoree.couple3Enfants;
-    return (
-      PRIME_BAREMES.montantForfaitaire.nonMajoree.couple3Enfants +
-      (nbEnfants - 3) * PRIME_BAREMES.montantForfaitaire.nonMajoree.personneSupplementaire
-    );
-  }
-
-  if (nbEnfants <= 0) return PRIME_BAREMES.montantForfaitaire.nonMajoree.unePersonne;
-  if (nbEnfants === 1) return PRIME_BAREMES.montantForfaitaire.nonMajoree.coupleOuIsole1Enfant;
-  if (nbEnfants === 2)
-    return PRIME_BAREMES.montantForfaitaire.nonMajoree.couple1EnfantOuIsole2Enfants;
-  if (nbEnfants === 3) return PRIME_BAREMES.montantForfaitaire.nonMajoree.isole3Enfants;
-  return (
-    PRIME_BAREMES.montantForfaitaire.nonMajoree.isole3Enfants +
-    (nbEnfants - 3) * PRIME_BAREMES.montantForfaitaire.nonMajoree.personneSupplementaire
-  );
-}
-
-function getPrimeBonification(revenusProf) {
-  const revenus = Math.max(0, revenusProf || 0);
-  const { seuilDebut, seuilMaximum, montantMaximum } = PRIME_BAREMES.bonification;
-  if (revenus < seuilDebut) return 0;
-  if (revenus >= seuilMaximum) return montantMaximum;
-  const ratio = (revenus - seuilDebut) / (seuilMaximum - seuilDebut);
-  return Math.round(montantMaximum * ratio * 100) / 100;
-}
 
 function calculatePrimeEstimate({ income }) {
-  const situation = "seul";
-  const enfants = 0;
-  const logement = "loue";
-  const montantBase = getPrimeForfait(situation, enfants);
-  const bonification = getPrimeBonification(income);
-  const forfaitLogement = logement === "loue" ? 0 : PRIME_BAREMES.forfaitLogement.unePersonne;
-  const revenusProfsComptabilises = income * PRIME_BAREMES.revenusProfessionnelsPrisEnCompte;
-  const totalRevenusComptabilises = Math.max(0, income) + forfaitLogement;
-  // Ressources reputees au moins egales au montant forfaitaire (DREES)
-  const ressourcesRetenues = Math.max(montantBase, totalRevenusComptabilises);
-  let montantFinal = montantBase + bonification + revenusProfsComptabilises - ressourcesRetenues;
-  montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
-  if (montantFinal > 0 && montantFinal < PRIME_BAREMES.montantMinimumVerse) {
-    montantFinal = 0;
-  }
+  const r = ENGINES.prime.calculerPrimeActivite({
+    situation: "seul",
+    enfants: 0,
+    revenusProf: income,
+    autresRevenus: 0,
+    logement: "loue",
+    typeActivite: "salarie",
+  });
   return {
-    montantBase,
-    bonification,
-    forfaitLogement,
-    revenusProfsComptabilises,
-    montantFinal,
+    montantBase: r.details.montantBase,
+    bonification: r.details.bonification,
+    forfaitLogement: r.details.forfaitLogement,
+    revenusProfsComptabilises: r.details.revenusProfsComptabilises,
+    montantFinal: r.montantEstime,
   };
 }
 

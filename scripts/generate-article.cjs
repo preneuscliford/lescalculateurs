@@ -13,7 +13,7 @@ function loadBaremes() {
   const sources = [
     path.join(repoRoot, "src", "data", "baremes.json"),
     path.join(DATA_DIR, "baremes.json"),
-    path.join(repoRoot, "src", "data", "baremes.generated.json"),
+    path.join(repoRoot, "src", "data", "baremes.json"),
   ];
   for (const src of sources) {
     if (fs.existsSync(src)) {

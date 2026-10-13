@@ -14,9 +14,34 @@
 
 const fs = require("fs");
 const path = require("path");
+const os = require("os");
+const { execFileSync } = require("child_process");
 
 const dataPath = path.join(__dirname, "data", "scenarios.json");
 const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+
+// Barème unique : src/data/social-baremes.ts (compilé à la volée), et non une copie
+function loadSocialBaremes() {
+  const repoRoot = path.join(__dirname, "..");
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), "lc-baremes-"));
+  fs.writeFileSync(path.join(outDir, "package.json"), JSON.stringify({ type: "commonjs" }));
+  execFileSync(
+    process.execPath,
+    [
+      path.join(repoRoot, "node_modules", "typescript", "bin", "tsc"),
+      path.join(repoRoot, "src", "data", "social-baremes.ts"),
+      "--outDir", outDir, "--module", "commonjs", "--target", "es2020",
+      "--moduleResolution", "node", "--resolveJsonModule", "--esModuleInterop", "--skipLibCheck",
+    ],
+    { stdio: "pipe" },
+  );
+  const { socialBaremes } = require(path.join(outDir, "social-baremes.js"));
+  return {
+    ...socialBaremes.primeActivite,
+    allocationsFamiliales: socialBaremes.allocationsFamiliales.tauxPlein,
+  };
+}
+const BAREME_PRIME = loadSocialBaremes();
 
 const BASE_URL = "https://www.lescalculateurs.fr";
 
@@ -24,14 +49,8 @@ const BASE_URL = "https://www.lescalculateurs.fr";
 function getPrimeForfait(b, situation, enfants) {
   const n = Math.max(0, Math.floor(enfants || 0));
   const NF = b.montantForfaitaire.nonMajoree;
-  const MF = b.montantForfaitaire.majoree;
-  if (situation === "monoparental") {
-    if (n <= 0) return NF.unePersonne;
-    if (n === 1) return MF.isole1Enfant;
-    if (n === 2) return MF.isole2Enfants;
-    if (n === 3) return MF.isole3Enfants;
-    return MF.isole4Enfants + (n - 4) * MF.personneSupplementaire;
-  }
+  // Parent isolé : montant non majoré (la majoration dépend d'une séparation récente
+  // ou d'un enfant de moins de 3 ans, inconnus dans un scénario type)
   if (situation === "couple") {
     if (n <= 0) return NF.coupleOuIsole1Enfant;
     if (n === 1) return NF.couple1EnfantOuIsole2Enfants;
@@ -72,7 +91,10 @@ function calculerPrime(b, d) {
   const fl = getHousingForfait(b, d.logement, d.situation, d.enfants);
   const rpc = d.revenusProf * b.revenusProfessionnelsPrisEnCompte;
   const arc = Math.max(0, d.autresRevenus || 0);
-  const total = d.revenusProf + arc + fl;
+  const n = Math.max(0, Math.floor(d.enfants || 0));
+  const afB = b.allocationsFamiliales;
+  const af = n < 2 ? 0 : n === 2 ? afB.deuxEnfants : afB.troisEnfants + (n - 3) * afB.parEnfantSupplementaire;
+  const total = d.revenusProf + arc + af + fl;
   // Ressources reputees au moins egales au montant forfaitaire (DREES)
   let mf = mb + bonif + rpc - Math.max(mb, total);
   return {
@@ -132,7 +154,7 @@ function selectOptions(list, selected, labels) {
 
 // ─── Génération d'une page ─────────────────────────────────
 function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
-  const b = aide["barèmes"];
+  const b = BAREME_PRIME;
   const baseDefaults = {};
   aide.fields.forEach((f) => {
     baseDefaults[f.id] = f.default;
@@ -391,10 +413,10 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
 
 <script>
 const BAREmes = ${JSON.stringify(b)};
-function getPrimeForfait(situation,enfants){const n=Math.max(0,Math.floor(enfants||0));const NF=BAREmes.montantForfaitaire.nonMajoree;const MF=BAREmes.montantForfaitaire.majoree;if(situation==="monoparental"){if(n<=0)return NF.unePersonne;if(n===1)return MF.isole1Enfant;if(n===2)return MF.isole2Enfants;if(n===3)return MF.isole3Enfants;return MF.isole4Enfants+(n-4)*MF.personneSupplementaire}if(situation==="couple"){if(n<=0)return NF.coupleOuIsole1Enfant;if(n===1)return NF.couple1EnfantOuIsole2Enfants;if(n===2)return NF.couple2Enfants;if(n===3)return NF.couple3Enfants;return NF.couple3Enfants+(n-3)*NF.personneSupplementaire}if(n<=0)return NF.unePersonne;if(n===1)return NF.coupleOuIsole1Enfant;if(n===2)return NF.couple1EnfantOuIsole2Enfants;if(n===3)return NF.isole3Enfants;return NF.isole3Enfants+(n-3)*NF.personneSupplementaire}
+function getPrimeForfait(situation,enfants){const n=Math.max(0,Math.floor(enfants||0));const NF=BAREmes.montantForfaitaire.nonMajoree;const MF=BAREmes.montantForfaitaire.majoree;if(situation==="couple"){if(n<=0)return NF.coupleOuIsole1Enfant;if(n===1)return NF.couple1EnfantOuIsole2Enfants;if(n===2)return NF.couple2Enfants;if(n===3)return NF.couple3Enfants;return NF.couple3Enfants+(n-3)*NF.personneSupplementaire}if(n<=0)return NF.unePersonne;if(n===1)return NF.coupleOuIsole1Enfant;if(n===2)return NF.couple1EnfantOuIsole2Enfants;if(n===3)return NF.isole3Enfants;return NF.isole3Enfants+(n-3)*NF.personneSupplementaire}
 function getHousingForfait(logement,situation,enfants){if(logement==="loue")return 0;const s=(situation==="couple"?2:1)+Math.max(0,Math.floor(enfants||0));if(s<=1)return BAREmes.forfaitLogement.unePersonne;if(s===2)return BAREmes.forfaitLogement.deuxPersonnes;return BAREmes.forfaitLogement.troisPersonnesOuPlus}
 function getBonification(revenusProf){const r=Math.max(0,revenusProf||0);if(r<BAREmes.bonification.seuilDebut)return 0;if(r>=BAREmes.bonification.seuilMaximum)return BAREmes.bonification.montantMaximum;return Math.round(BAREmes.bonification.montantMaximum*((r-BAREmes.bonification.seuilDebut)/(BAREmes.bonification.seuilMaximum-BAREmes.bonification.seuilDebut))*100)/100}
-function calculer(d){if(!d.situation||!d.logement||d.revenusProf<=0)return{success:true,montantEstime:0};const mb=getPrimeForfait(d.situation,d.enfants);const bonif=getBonification(d.revenusProf);const fl=getHousingForfait(d.logement,d.situation,d.enfants);const rpc=d.revenusProf*BAREmes.revenusProfessionnelsPrisEnCompte;const arc=Math.max(0,d.autresRevenus||0);const total=d.revenusProf+arc+fl;let mf=mb+bonif+rpc-Math.max(mb,total);return{success:true,montantEstime:Math.max(0,Math.round(mf*100)/100),details:{montantBase:mb,bonification:bonif}}}
+function calculer(d){if(!d.situation||!d.logement||d.revenusProf<=0)return{success:true,montantEstime:0};const mb=getPrimeForfait(d.situation,d.enfants);const bonif=getBonification(d.revenusProf);const fl=getHousingForfait(d.logement,d.situation,d.enfants);const rpc=d.revenusProf*BAREmes.revenusProfessionnelsPrisEnCompte;const arc=Math.max(0,d.autresRevenus||0);const ne=Math.max(0,Math.floor(d.enfants||0));const A=BAREmes.allocationsFamiliales;const af=ne<2?0:ne===2?A.deuxEnfants:A.troisEnfants+(ne-3)*A.parEnfantSupplementaire;const total=d.revenusProf+arc+af+fl;let mf=mb+bonif+rpc-Math.max(mb,total);return{success:true,montantEstime:Math.max(0,Math.round(mf*100)/100),details:{montantBase:mb,bonification:bonif}}}
 function f€(m){return m.toLocaleString("fr-FR")+" €"}
 function fmt(m){return m===0?"Non éligible":m.toLocaleString("fr-FR")+" € / mois"}
 
