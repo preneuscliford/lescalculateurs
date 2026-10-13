@@ -456,12 +456,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-lyon/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-paris-petit-revenu/</loc>
@@ -477,12 +471,6 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-smic/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-toulouse/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -694,12 +682,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-500-personne-seule/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-500-revenu-900/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -712,19 +694,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-650-couple-sans-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-700-personne-seule/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-750-parent-isole-un-enfant/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1750,97 +1720,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxecomment-connaitre-la-valeur-locative-cadastrale</loc>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/exoneration-taxe-fonciere-handicap</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxecomment-contester-sa-taxe-fonciere</loc>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/taxe-fonciere-locataire-ou-proprietaire</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxecomment-est-calculee-la-taxe-fonciere</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxeestimation-taxe-fonciere-comment-faire</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxeexoneration-taxe-fonciere-handicap</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxeexoneration-taxe-fonciere-pour-retraite</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxe</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxepourquoi-la-taxe-fonciere-augmente</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxequelle-surface-est-prise-en-compte-pour-la-taxe-fonciere</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxequi-paie-la-taxe-fonciere</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxetaxe-fonciere-et-achat-en-cours-d-annee</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxetaxe-fonciere-locataire-ou-proprietaire</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxetaxe-fonciere-logement-neuf</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxetaxe-fonciere-par-ville-est-ce-fiable</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxetaxe-fonciere-residence-secondaire</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/taxevaleur-locative-cadastrale-definition-simple</loc>
+    <loc>https://www.lescalculateurs.fr/pages/taxe-fonciere/taxe-fonciere-logement-neuf</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1870,17 +1762,10 @@
     <priority>0.8</priority>
   </url>
   <!-- Nouvelles pages pSEO generees le 2026-06-22 -->
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-350-personne-seule</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 
   <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-550-personne-seule</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-550-couple-sans-enfant</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-550-parent-isole-un-enfant</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-850-couple-sans-enfant</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-850-parent-isole-un-enfant</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-personne-seule</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 
-  <url><loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-900-parent-isole-un-enfant</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-1500</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 
   <url><loc>https://www.lescalculateurs.fr/pages/are/are-salaire-2000</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1919,7 +1804,6 @@
   <url><loc>https://www.lescalculateurs.fr/pages/salaire/salaire-brut-net-5000-cadre</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/salaire/salaire-brut-net-5000-temps-partiel-80</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <!-- Nouvelles pages HUB VDF generees le 2026-06-28 -->
-  <url><loc>https://www.lescalculateurs.fr/pages/top-25-revenu-median-france-2026</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/inegalites-revenu-ville-france-2026</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.lescalculateurs.fr/pages/top-40-villes-revenu-complet-2026</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <!-- Nouvelles pages satellites ARE (juillet 2026) -->

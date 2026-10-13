@@ -447,10 +447,6 @@ function collectStaticPageInputs() {
     ),
     "historique-mises-a-jour": resolve(__dirname, "src/pages/historique-mises-a-jour.html"),
     // Pages HUB VDF (classements comparatifs)
-    "top-25-revenu-median-france-2026": resolve(
-      __dirname,
-      "src/pages/top-25-revenu-median-france-2026.html",
-    ),
     "inegalites-revenu-ville-france-2026": resolve(
       __dirname,
       "src/pages/inegalites-revenu-ville-france-2026.html",

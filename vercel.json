@@ -43,7 +43,7 @@
     },
     {
       "source": "/pages/taxe-fonciere/(comment-connaitre-la-valeur-locative-cadastrale|comment-contester-sa-taxe-fonciere|comment-est-calculee-la-taxe-fonciere|estimation-taxe-fonciere-comment-faire|exoneration-taxe-fonciere-pour-retraite|pourquoi-la-taxe-fonciere-augmente|quelle-surface-est-prise-en-compte-pour-la-taxe-fonciere|qui-paie-la-taxe-fonciere|taxe-fonciere-et-achat-en-cours-d-annee|taxe-fonciere-par-ville-est-ce-fiable|taxe-fonciere-residence-secondaire|valeur-locative-cadastrale-definition-simple)",
-      "destination": "/pages/taxe-fonciere",
+      "destination": "/pages/taxe",
       "permanent": true
     },
     {

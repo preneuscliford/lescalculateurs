@@ -1,6 +1,6 @@
 /**
  * Script de mise a jour des taux DMTO 2026 - Version UTF-8 safe
- * Source: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf
+ * Source: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/dmto/dmto_2026-06.pdf
  */
 
 const fs = require("fs");
@@ -16,8 +16,8 @@ function updatefrais2026Json() {
   // Nouveaux taux DMTO 2026
   data.sources = [
     "https://www.service-public.fr/particuliers/vosdroits/F2167",
-    "https://www.notariat.fr/frais-de-notaire",
-    "https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf",
+    "https://www.immobilier.notaires.fr/fr/frais-de-notaire",
+    "https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/dmto/dmto_2026-06.pdf",
     "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044989433",
   ];
 

@@ -68,12 +68,12 @@ const SERVICE_CONFIG = {
     linkText: "baremes officiels",
   },
   taxe: {
-    url: "https://www.impots.gouv.fr/particulier/taxe-fonciere",
+    url: "https://www.impots.gouv.fr/particulier/gerer-mon-patrimoinemon-logement",
     label: "impots.gouv.fr",
     linkText: "infos officielles",
   },
   "taxe-fonciere": {
-    url: "https://www.impots.gouv.fr/particulier/taxe-fonciere",
+    url: "https://www.impots.gouv.fr/particulier/gerer-mon-patrimoinemon-logement",
     label: "impots.gouv.fr",
     linkText: "infos officielles",
   },
