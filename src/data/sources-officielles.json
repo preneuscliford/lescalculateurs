@@ -175,6 +175,25 @@
           "url": "https://www.impots.gouv.fr/particulier/je-calcule-mes-impots"
         }
       ]
+    },
+    "taxe": {
+      "prefixes": [
+        "taxe"
+      ],
+      "sources": [
+        {
+          "label": "impots.gouv.fr : comment est calculée ma taxe foncière (revalorisation 2026)",
+          "url": "https://www.impots.gouv.fr/particulier/questions/comment-est-calculee-ma-taxe-fonciere-pourquoi-t-elle-augmente-en-2025"
+        },
+        {
+          "label": "impots.gouv.fr : exonérations et dégrèvements de taxe foncière",
+          "url": "https://www.impots.gouv.fr/particulier/exonerations-et-degrevements"
+        },
+        {
+          "label": "Service-public.gouv.fr : taxe foncière sur les propriétés bâties",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F59"
+        }
+      ]
     }
   }
 }

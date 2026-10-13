@@ -935,31 +935,6 @@
       }
     ]
   },
-  "taxe_fonciere": {
-    "abattements": {
-      "residence_principale": 0.15,
-      "personne_agee": {
-        "seuil_age": 65,
-        "taux": 0.1
-      },
-      "personne_handicapee": 0.1
-    },
-    "taux_moyens_par_region": {
-      "ile_de_france": 0.0135,
-      "provence_alpes_cote_azur": 0.0142,
-      "auvergne_rhone_alpes": 0.0128,
-      "occitanie": 0.0155,
-      "nouvelle_aquitaine": 0.0148,
-      "grand_est": 0.0132,
-      "hauts_de_france": 0.0145,
-      "normandie": 0.0138,
-      "centre_val_de_loire": 0.0151,
-      "bourgogne_franche_comte": 0.0144,
-      "pays_de_la_loire": 0.014,
-      "bretagne": 0.0147,
-      "corse": 0.0125
-    }
-  },
   "duree_travail": {
     "duree_legale_hebdomadaire": 35,
     "duree_legale_annuelle": 1607,
