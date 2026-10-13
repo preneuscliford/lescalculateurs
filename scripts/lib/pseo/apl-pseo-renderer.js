@@ -831,7 +831,7 @@ function buildAplBriefConfig(scenario, estimate, simulatorUrl) {
     secondaryCtaLabel: customConfig.secondaryCtaLabel || "Vérifier sur caf.fr",
     secondaryCtaHref:
       customConfig.secondaryCtaHref ||
-      "https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/aides-au-logement",
+      "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/logement/les-aides-personnelles-au-logement",
     methodSteps: Array.isArray(customConfig.methodSteps)
       ? customConfig.methodSteps.slice(0, 3)
       : [],
@@ -1045,10 +1045,10 @@ function renderMethodologySources(briefConfig = {}) {
           <a href="/pages/methodologie" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
             Consulter notre m&eacute;thodologie
           </a>
-          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/aides-au-logement" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 font-semibold text-blue-900 transition-colors hover:bg-blue-100">
+          <a href="https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/logement/les-aides-personnelles-au-logement" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 font-semibold text-blue-900 transition-colors hover:bg-blue-100">
             Voir la source officielle CAF
           </a>
-          <a href="https://www.service-public.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
+          <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F12006" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">
             Voir la fiche service-public.fr
           </a>
         </div>

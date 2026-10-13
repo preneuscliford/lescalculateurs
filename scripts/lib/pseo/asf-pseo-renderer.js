@@ -217,8 +217,8 @@ export function renderASFScenarioPage({
         <p class="mt-4 text-slate-700">Cette estimation repose sur le moteur ASF du site et sur un sc&eacute;nario repr&eacute;sentatif. Elle doit &ecirc;tre confirm&eacute;e avec votre situation exacte.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/pages/methodologie" class="rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 hover:bg-slate-50">Consulter notre m&eacute;thodologie</a>
-          <a href="https://www.service-public.fr/particuliers/vosdroits/F815" target="_blank" rel="noopener" class="rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 font-semibold text-sky-900 hover:bg-sky-100">Voir la source officielle</a>
-          <a href="https://www.caf.fr/allocataires/aides-et-demarches/mes-aides/fiches-aides/allocation-de-soutien-familial-asf" target="_blank" rel="noopener" class="rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 hover:bg-slate-50">Voir la fiche CAF</a>
+          <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F815" target="_blank" rel="noopener" class="rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 font-semibold text-sky-900 hover:bg-sky-100">Voir la source officielle</a>
+          <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F33647" target="_blank" rel="noopener" class="rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 hover:bg-slate-50">Voir la fiche CAF</a>
         </div>
       </section>
 

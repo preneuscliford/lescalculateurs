@@ -20,6 +20,48 @@ const siteUpdate = JSON.parse(
   fs.readFileSync(resolve(__dirname, "src/data/site-update.json"), "utf8"),
 ) as { lastVerified: string; label: string };
 
+// Liens officiels par famille de pages : source unique, injectée au build en bas de page.
+type SourceOfficielle = { label: string; url: string };
+const sourcesOfficielles = JSON.parse(
+  fs.readFileSync(resolve(__dirname, "src/data/sources-officielles.json"), "utf8"),
+) as { families: Record<string, { prefixes: string[]; sources: SourceOfficielle[] }> };
+
+function sourcesPourPage(filename: string): SourceOfficielle[] {
+  const rel = filename.replace(/\\/g, "/").split("/src/pages/")[1] || "";
+  if (!rel) return [];
+  for (const famille of Object.values(sourcesOfficielles.families)) {
+    for (const prefix of famille.prefixes) {
+      if (rel === prefix || new RegExp(`^${prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:[./-]|$)`).test(rel)) {
+        return famille.sources;
+      }
+    }
+  }
+  return [];
+}
+
+function escapeHtml(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function sourcesBlock(sources: SourceOfficielle[]): string {
+  const items = sources
+    .map(
+      (s) =>
+        `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener" style="color:#1d4ed8;text-decoration:underline">${escapeHtml(s.label)}</a></li>`,
+    )
+    .join("");
+  return `<section data-lc-sources aria-labelledby="lc-sources-titre" style="max-width:56rem;margin:2.5rem auto;padding:1rem 1.25rem;border:1px solid #cfe3ff;border-radius:.5rem;background:#f5f9ff;color:#1e3a5f;font-size:14px;line-height:1.6"><h2 id="lc-sources-titre" style="font-size:16px;font-weight:700;margin:0 0 .5rem">📚 Sources officielles</h2><ul style="margin:0;padding-left:1.1rem;list-style:disc">${items}</ul><p style="margin:.5rem 0 0;font-size:12px;color:#475569">Liens vérifiés le <time datetime="${siteUpdate.lastVerified}">${siteUpdate.label}</time>. Estimation indicative : seul l'organisme concerné fixe le montant définitif. Contenu rédigé et maintenu par LesCalculateurs.fr, outil indépendant non affilié aux organismes cités.</p></section>`;
+}
+
+function addSources(html: string, filename: string): string {
+  if (html.includes("data-lc-sources")) return html;
+  const sources = sourcesPourPage(filename);
+  if (!sources.length) return html;
+  const block = sourcesBlock(sources);
+  if (/<footer[\s>]/i.test(html)) return html.replace(/<footer[\s>]/i, (m) => `${block}\n    ${m}`);
+  return html.replace(/<\/body>/i, `${block}\n  </body>`);
+}
+
 // Pages juridiques : elles gardent leur propre date de révision, pas de bandeau.
 const PAGES_SANS_BANDEAU = /(mentions-legales|politique-|contact|404)/;
 
@@ -29,13 +71,39 @@ function lastUpdatedBanner(): string {
   return `<div class="lc-maj" data-lc-maj style="background:#eef6ff;border-bottom:1px solid #cfe3ff;color:#1e3a5f;font-size:13px;line-height:1.4;padding:6px 16px;text-align:center">📅 Mis à jour le <time datetime="${siteUpdate.lastVerified}">${siteUpdate.label}</time> · Barèmes et chiffres vérifiés sur les sources officielles · ${historique}</div>`;
 }
 
+const MOIS_FR =
+  "janvier|f(?:é|&eacute;|&#233;)vrier|mars|avril|mai|juin|juillet|ao(?:û|&ucirc;|&#251;)t|septembre|octobre|novembre|d(?:é|&eacute;|&#233;)cembre";
+const DATE_FR = `\\d{1,2}(?:er)?\\s+(?:${MOIS_FR})\\s+20\\d{2}`;
+
 function addLastUpdated(html: string, filename: string): string {
+  // La page d'historique garde ses dates réelles (journal des mises à jour).
+  if (/historique-mises-a-jour/.test(filename)) return html;
   if (html.includes("data-lc-maj") || PAGES_SANS_BANDEAU.test(filename)) return html;
   const out = html
     // Ancienne date figée dans le bandeau "Estimation indicative"
     .replace(
       /barèmes [^<—]*applicables\s*—\s*Mise à jour le\s*<time[^>]*>[^<]*<\/time>\s*—?\s*/g,
       "",
+    )
+    // Dates « Vérifié le … » écrites à la main dans les pages : la seule date affichée
+    // est celle du bandeau global (site-update.json), pour éviter les doublons.
+    .replace(
+      /(?:[✓✅]\s*)?V(?:é|&eacute;|&#233;)rifi(?:é|&eacute;|&#233;)e?\s+le\s+\d{1,2}(?:er)?\s+[A-Za-zÀ-ÿ]+\s+\d{4}\s*(?:[—–-]|&mdash;|&ndash;|\.)?\s*/gu,
+      "",
+    )
+    // Toute autre date de mise à jour / vérification écrite à la main est alignée sur
+    // la date unique de site-update.json (aucune date en dur à maintenir dans les pages).
+    .replace(
+      new RegExp(
+        `((?:mis(?:e)?\\s+(?:à|&agrave;|&#224;)\\s+jour|v(?:é|&eacute;|&#233;)rifi(?:é|&eacute;|&#233;)e?s?|actualis(?:é|&eacute;|&#233;)e?s?)(?:\\s+(?:le|au))?\\s*:?\\s*)${DATE_FR}`,
+        "giu",
+      ),
+      `$1${siteUpdate.label}`,
+    )
+    // Libellé court de la navigation (« 🔄 Mise à jour 12/10 »)
+    .replace(
+      /(Mise (?:à|&agrave;) jour\s+)\d{2}\/\d{2}(?!\/)/g,
+      `$1${siteUpdate.lastVerified.slice(8, 10)}/${siteUpdate.lastVerified.slice(5, 7)}`,
     )
     // Données structurées : date de modification = date du dernier audit
     .replace(/("dateModified"\s*:\s*")[^"]*(")/g, `$1${siteUpdate.lastVerified}$2`)
@@ -64,7 +132,7 @@ function lastUpdatedPlugin() {
       outDir = path.resolve(config.root, config.build.outDir);
     },
     transformIndexHtml(html: string, ctx: { filename: string }) {
-      return addLastUpdated(html, ctx.filename);
+      return addSources(addLastUpdated(html, ctx.filename), ctx.filename);
     },
     // Les pages HTML copiées telles quelles depuis public/ (ex. /scenarios) ne passent
     // pas par transformIndexHtml : on leur ajoute la date une fois le build écrit.
@@ -77,7 +145,7 @@ function lastUpdatedPlugin() {
           if (entry.isDirectory()) walk(full);
           else if (entry.name.endsWith(".html")) {
             const html = fs.readFileSync(full, "utf8");
-            const updated = addLastUpdated(html, full);
+            const updated = addSources(addLastUpdated(html, full), full);
             if (updated !== html) fs.writeFileSync(full, updated, "utf8");
           }
         }
