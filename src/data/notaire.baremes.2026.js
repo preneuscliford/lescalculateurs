@@ -2,16 +2,16 @@
  * NOTAIRE BARÈMES 2026 - SOURCE UNIQUE DE VÉRITÉ
  * ⚠️ INTERDICTION ABSOLUE d'écrire ces chiffres ailleurs !
  *
- * Mise à jour : 16 janvier 2026
+ * Mise à jour : 1er juin 2026 (relèvement DMTO, applicable jusqu'au 31 mars 2028)
  * Source : https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/notaires/nid_11316_dmto_2026-01-01.pdf
  */
 
 export const NOTAIRE_2026 = {
   // Droits de Mutation à Titre Onéreux (DMTO)
   dmto: {
-    reduit: 0.0509, // 5,09 % - Indre (36), Mayotte (976)
-    standard: 0.058, // 5,80 % - 12 départements
-    majore: 0.0632, // 6,32 % - 87 départements (défaut)
+    reduit: 0.0509, // 5,09 % - Indre (36)
+    standard: 0.058, // 5,80 % - 11 départements
+    majore: 0.0632, // 6,32 % - 89 départements (défaut)
   },
 
   // Droits pour le neuf
@@ -52,20 +52,19 @@ export const NOTAIRE_2026 = {
 
   // Départements par catégorie de taux
   departements: {
-    reduit: ["36", "976"],
+    reduit: ["36"],
     standard: [
       "05",
       "06",
       "07",
       "16",
       "26",
-      "27",
       "48",
       "60",
       "65",
       "71",
       "971",
-      "972",
+      "976",
     ],
     // Tous les autres = majoré (défaut)
   },

@@ -147,7 +147,7 @@
             "name": "Qui a droit à l'APL ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "L'APL s'adresse aux locataires et aux propriétaires occupants (sous conditions) qui ont des ressources modestes. Il faut : occuper le logement de façon effective, avoir des revenus inférieurs à un plafond, et pour les locataires, le logement doit respecter des conditions de décence. Les étudiants, les salariés, les demandeurs d'emploi et les retraités peuvent tous y avoir droit."
+              "text": "L'APL s'adresse aux locataires (et, pour d'anciens dossiers d'accession antérieurs à 2018, à certains propriétaires occupants) qui ont des ressources modestes. Il faut : occuper le logement de façon effective, avoir des revenus inférieurs à un plafond, et pour les locataires, le logement doit respecter des conditions de décence. Les étudiants, les salariés, les demandeurs d'emploi et les retraités peuvent tous y avoir droit."
             }
           },
           {
@@ -273,7 +273,7 @@
             <a href="/" class="text-gray-600 hover:text-blue-600">Accueil</a>
             <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
             <a href="/pages/methodologie.html" class="hidden lg:block text-gray-600 hover:text-blue-600">📚 Méthodologie</a>
-            <a href="/pages/historique-mises-a-jour" class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded">🔄 Mise à jour 12/02</a>
+            <a href="/pages/historique-mises-a-jour" class="hidden xl:block text-blue-600 hover:text-blue-800 font-medium bg-blue-50 px-2 py-1 rounded">🔄 Mise à jour 12/10</a>
           </nav>
 
           <!-- Mobile menu button -->
@@ -500,25 +500,25 @@
         <h2 class="text-2xl font-bold text-gray-900">Combien pouvez-vous toucher ?</h2>
         <p class="mt-3 text-gray-700">
           Le montant APL dépend de votre loyer, de vos revenus, de votre zone et de votre foyer.
-          À titre indicatif, pour une personne seule avec un loyer moyen, l&rsquo;APL se situe souvent entre 90&nbsp;&euro; et 280&nbsp;&euro; par mois selon la ville.
+          À titre indicatif, pour une personne seule avec un loyer moyen, l&rsquo;APL va de quelques euros (revenus proches du SMIC) à plus de 200&nbsp;&euro; (revenus faibles) par mois, selon la zone et le loyer.
         </p>
         
         <!-- Exemples rapides -->
         <div class="mt-5 grid gap-3 sm:grid-cols-3">
           <div class="rounded-lg bg-white p-4 border border-emerald-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 1</p>
-            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 140 €/mois</p>
-            <p class="text-xs text-gray-700 mt-2">Personne seule<br>SMIC<br>Loyer 600€</p>
+            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 110 €/mois</p>
+            <p class="text-xs text-gray-700 mt-2">Personne seule<br>1 050 €/mois<br>Loyer 520€ (province)</p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-emerald-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 2</p>
-            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 220 €/mois</p>
-            <p class="text-xs text-gray-700 mt-2">Couple + 1 enfant<br>Revenus modérés<br>Loyer 700€</p>
+            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 130 €/mois</p>
+            <p class="text-xs text-gray-700 mt-2">Couple + 1 enfant<br>1 500 €/mois<br>Loyer 650€ (province)</p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-emerald-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 3</p>
-            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 310 €/mois</p>
-            <p class="text-xs text-gray-700 mt-2">Au chômage<br>Revenu baissé<br>Loyer 650€</p>
+            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 155 €/mois</p>
+            <p class="text-xs text-gray-700 mt-2">Au chômage<br>900 €/mois<br>Loyer 650€ (province)</p>
           </div>
         </div>
 
@@ -615,7 +615,7 @@
         <div class="mt-4 space-y-3">
           <details class="rounded-lg border border-gray-200 p-4">
             <summary class="cursor-pointer font-semibold text-gray-800">Quel revenu est pris en compte pour l'APL ?</summary>
-            <p class="mt-2 text-sm text-gray-600">Le calcul regarde surtout vos ressources récentes, mais aussi votre foyer, votre zone et votre loyer retenu. Le bon réflexe est de simuler avec votre situation réelle plutôt qu'avec une moyenne abstraite.</p>
+            <p class="mt-2 text-sm text-gray-600">Le calcul s’appuie sur vos revenus de l’année N-2 (réactualisés selon votre situation actuelle en cas de baisse de ressources), mais aussi votre foyer, votre zone et votre loyer retenu. Le bon réflexe est de simuler avec votre situation réelle plutôt qu'avec une moyenne abstraite.</p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4">
             <summary class="cursor-pointer font-semibold text-gray-800">Peut-on toucher l'APL au chômage ?</summary>
@@ -787,9 +787,7 @@
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">APL pour propriétaire : ce qu’il faut savoir</h3>
             <p class="text-gray-600">Les <strong>propriétaires occupants</strong> ne sont généralement
- pas éligibles à l’APL. Il existe toutefois des exceptions et
- d’autres aides possibles selon votre situation : la référence
- reste la CAF et les textes en vigueur.</p>
+ pas éligibles à l’APL. L’<strong>APL accession</strong> (prêt immobilier) a été supprimée pour les nouvelles demandes depuis le 1er janvier 2018 : seuls certains dossiers anciens continuent d’être servis. Selon votre situation, d’autres aides existent (par exemple MaPrimeRénov’ ou le prêt à taux zéro) : la référence reste la CAF et les textes en vigueur.</p>
           </div>
         </div>
       </section>
@@ -928,7 +926,7 @@
       <section class="mt-16 bg-white rounded-lg shadow-lg p-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-8">💡 Exemples de calcul APL 2026</h2>
         <p class="text-gray-600 mb-8">Voici quelques cas concrets pour comprendre comment l'APL est
- calculée. Les montants sont estimés et peuvent varier selon votre
+ calculée. Les montants sont calculés avec le simulateur de cette page (barèmes revalorisés au 1er octobre 2026) et peuvent varier selon votre
  région et votre situation exacte.</p>
 
         <div class="space-y-8">
@@ -956,8 +954,8 @@
             <div class="bg-blue-50 p-4 rounded-lg">
               <p class="text-blue-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-blue-600">180 € à 220 €</span> par mois</p>
-              <p class="text-sm text-blue-800 mt-2">Charge à payer : environ 480 € à 520 €</p>
+                <span class="text-2xl font-bold text-blue-600">≈ 20 €</span> par mois</p>
+              <p class="text-sm text-blue-800 mt-2">Reste à charge : environ 680 €. Le loyer pris en compte est plafonné à 336,97 € en zone 1 pour une personne seule : au-delà, le surplus n'est pas aidé.</p>
             </div>
           </div>
 
@@ -971,7 +969,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Revenus nets mensuels :</span>
-                <span class="font-medium text-gray-900">3 200 €</span>
+                <span class="font-medium text-gray-900">1 800 €</span>
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
@@ -985,14 +983,14 @@
             <div class="bg-green-50 p-4 rounded-lg">
               <p class="text-green-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-green-600">250 € à 320 €</span> par mois</p>
-              <p class="text-sm text-green-800 mt-2">Charge à payer : environ 530 € à 600 €</p>
+                <span class="text-2xl font-bold text-green-600">≈ 115 €</span> par mois</p>
+              <p class="text-sm text-green-800 mt-2">Reste à charge : environ 735 €. Avec 3 200 € de revenus pour le même foyer, l'aide tombe à 0 €.</p>
             </div>
           </div>
 
           <!-- Exemple 3 -->
           <div class="border-l-4 border-purple-500 pl-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">🎓 Exemple 3 : étudiant, Location en Zone Urbaine</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">🎓 Exemple 3 : Étudiant, Location en Île-de-France</h3>
             <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-3">
               <div>
                 <span class="text-gray-700">Situation :</span>
@@ -1008,45 +1006,46 @@
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
-                <span class="font-medium text-gray-900">Université (Zone 1)</span>
+                <span class="font-medium text-gray-900">Île-de-France (Zone 1)</span>
               </div>
             </div>
             <div class="bg-purple-50 p-4 rounded-lg">
               <p class="text-purple-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-purple-600">300 € à 350 €</span> par mois</p>
-              <p class="text-sm text-purple-800 mt-2">Charge à payer : environ 200 € à 250 €</p>
+                <span class="text-2xl font-bold text-purple-600">≈ 230 €</span> par mois</p>
+              <p class="text-sm text-purple-800 mt-2">Reste à charge : environ 320 €.</p>
             </div>
           </div>
 
           <!-- Exemple 4 -->
           <div class="border-l-4 border-yellow-500 pl-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">🏠 Exemple 4 : Accession à la propriété (Crédit immobilier)</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">👨‍👩‍👦 Exemple 4 : Couple, 1 enfant, Location en Province</h3>
             <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-3">
               <div>
                 <span class="text-gray-700">Situation :</span>
-                <span class="font-medium text-gray-900">Couple, 1 enfant, primo-accédant</span>
+                <span class="font-medium text-gray-900">Couple, 1 enfant</span>
               </div>
               <div>
                 <span class="text-gray-700">Revenus nets mensuels :</span>
-                <span class="font-medium text-gray-900">2 800 €</span>
+                <span class="font-medium text-gray-900">1 500 €</span>
               </div>
               <div>
-                <span class="text-gray-700">Mensualité crédit :</span>
-                <span class="font-medium text-gray-900"><span class="result-verbal">environ 950 €</span><span class="result-exact" style="display: none"> 950 €</span>€</span>
+                <span class="text-gray-700">Loyer :</span>
+                <span class="font-medium text-gray-900">650 €</span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
-                <span class="font-medium">Province (Zone 2)</span>
+                <span class="font-medium text-gray-900">Province (Zone 2 ou 3)</span>
               </div>
             </div>
             <div class="bg-yellow-50 p-4 rounded-lg">
               <p class="text-yellow-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-yellow-600">150 € à 200 €</span> par mois</p>
-              <p class="text-sm text-yellow-800 mt-2">Charge mensuelle après aide : environ 750 € à 800 €</p>
+                <span class="text-2xl font-bold text-yellow-600">≈ 130 €</span> par mois</p>
+              <p class="text-sm text-yellow-800 mt-2">Reste à charge : environ 520 €.</p>
             </div>
           </div>
+        </div>
         </div>
 
         <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
@@ -1407,7 +1406,7 @@
               { value: "location", label: "Location (logement principal)" },
               {
                 value: "accession",
-                label: "Accession à la propriété (crédit immobilier)",
+                label: "Accession à la propriété (dossier antérieur à 2018)",
               },
               { value: "hlm", label: "Logement HLM" },
               { value: "colocation", label: "Colocation / Chambre meublée" },

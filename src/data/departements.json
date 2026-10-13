@@ -586,7 +586,7 @@
   },
   "75": {
     "nom": "Paris",
-    "tauxDroits": 0.059,
+    "tauxDroits": 0.0632,
     "fraisDivers": {
       "cadastre": 150,
       "conservation": 180,

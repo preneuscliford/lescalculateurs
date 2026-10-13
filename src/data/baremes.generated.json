@@ -99,22 +99,21 @@
       "standard": 0.058,
       "neuf": 0.00715,
       "reduit": 0.0509,
-      "departementsReduits": ["36", "976"],
+      "departementsReduits": ["36"],
       "departementsStandard": [
         "05",
         "06",
         "07",
         "16",
         "26",
-        "27",
         "48",
         "60",
         "65",
         "71",
         "971",
-        "972"
+        "976"
       ],
-      "commentaire": "Taux majoré 6,32% (art. 116 LF 2025) pour 87 départements, standard 5,80% pour 12 départements, réduit 5,09% pour 2 départements"
+      "commentaire": "Taux majoré 6,32% pour 89 départements, standard 5,80% pour 11 départements, réduit 5,09% pour l'Indre (36) - applicable depuis le 1er juin 2026"
     },
     "droits_mutation": {
       "nature": "réglementaire",
