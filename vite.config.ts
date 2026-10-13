@@ -883,6 +883,13 @@ export default defineConfig(() => {
     root: "src",
     publicDir: "../public",
     base: "/",
+    resolve: {
+      alias: {
+        // html2canvas 1.x ne sait pas lire les couleurs oklch (Tailwind v4) et fait
+        // échouer tous les exports PDF/PNG : on le remplace par son fork maintenu.
+        html2canvas: "html2canvas-pro",
+      },
+    },
     plugins: [
       lastUpdatedPlugin(),
       {
