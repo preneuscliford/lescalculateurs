@@ -48,7 +48,7 @@ const BAREME_PRIME = loadSocialBaremes();
 // la valeur vient du barème ci-dessus, pour ne jamais diverger du calcul.
 function euros(v, dec = 0) {
   return (
-    v.toLocaleString("fr-FR", { minimumFractionDigits: dec, maximumFractionDigits: dec }).replace(/[  ]/g, " ") + " €"
+    v.toLocaleString("fr-FR", { minimumFractionDigits: dec, maximumFractionDigits: dec }).replace(/[\u202f\u00a0]/g, " ") + " €"
   );
 }
 function valeursTexte(b) {
