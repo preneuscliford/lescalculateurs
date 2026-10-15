@@ -13,14 +13,15 @@ describe("aplEtudiantCalculEngine", () => {
     const r = calculerAPLEtudiant(base);
     expect(r.eligible).toBe(true);
     expect(r.details.ressourcesRetenues).toBeCloseTo(716.67, 1);
-    // loyer plafonné 293,68 + charges 61,29 - participation (30 % x 716,67 - 72) = 211,97 -> 211
-    expect(r.montantEstime).toBe(211);
+    // L 293,68 + C 61,29 - Pp [40,01 + 3,135 % x (8 600 - 5 235) = 145,50] - 5 = 204,47 ; CRDS -> 203
+    expect(r.montantEstime).toBe(203);
   });
 
   test("boursier : forfait plus bas (6 900 EUR/an), donc APL plus élevée", () => {
     const r = calculerAPLEtudiant({ ...base, boursier: true });
     expect(r.details.ressourcesRetenues).toBeCloseTo(575, 1);
-    expect(r.montantEstime).toBe(254);
+    // Pp = 40,01 + 3,135 % x (6 900 - 5 235) = 92,21 ; 354,97 - 92,21 - 5 = 257,76 ; CRDS -> 256
+    expect(r.montantEstime).toBe(256);
   });
 
   test("étudiant hors UE non boursier sans exception => non éligible (réforme du 01/07/2026)", () => {

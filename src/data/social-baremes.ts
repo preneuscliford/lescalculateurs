@@ -184,29 +184,57 @@ export const socialBaremes = {
       "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
     ],
     plafondsLoyer: baremesData.apl.plafonds_loyer,
-    moteur: {
-      forfaitLogement: {
-        seul: 72,
-        couple: 102,
-        monoparental: 87,
-        autre: 72,
+    // Formule officielle du secteur locatif (articles D. 823-16 et D. 823-17 du CCH),
+    // paramètres de l'arrêté du 27 septembre 2019 en vigueur au 1er octobre 2026
+    // (version consolidée Légifrance relue le 15/10/2026).
+    formule: {
+      // Art. 9 : forfait charges ; art. 16 : colocation
+      forfaitCharges: { base: 61.29, parPersonneACharge: 13.9 },
+      forfaitChargesColocation: { seul: 30.64, couple: 61.29, parPersonneACharge: 13.9 },
+      coefficientPlafondColocation: 0.75,
+      // Art. 10 : dégressivité puis suppression au-delà de ces multiples du plafond de loyer
+      coefficientsDegressivite: {
+        zone1: { degressivite: 3.4, suppression: 4 },
+        zone2: { degressivite: 2.5, suppression: 3.1 },
+        zone3: { degressivite: 2.5, suppression: 3.1 },
       },
-      // Forfait charges officiel (art. 9 arrete du 27/09/2019, valeurs au 01/10/2026)
-      forfaitCharges: {
-        base: 61.29,
-        parPersonneACharge: 13.9,
+      // Art. 11 : minoration forfaitaire ; art. 12 : seuil de versement (avant CRDS)
+      minorationForfaitaire: 5,
+      seuilVersement: { apl: 0, allocationLogement: 10 },
+      // Art. 13 : participation minimale P0 = max(8,5 % de (L + C) ; 40,01 €)
+      participationMinimale: { taux: 0.085, forfait: 40.01 },
+      // Art. 14 : TF selon le nombre de personnes à charge (0 = isolé / couple)
+      tauxFamille: {
+        isole: 0.0283,
+        couple: 0.0315,
+        parPersonnesACharge: [0.027, 0.0238, 0.0201, 0.0185, 0.0179, 0.0173],
+        majorationParPersonneSupplementaire: -0.0006,
       },
-      tauxParticipation: 0.3,
-      // Participation minimale P0 officielle au 01/10/2026 (art. 13)
-      participationMinimum: 40.01,
-      plafondAplBase: {
-        seul: 320,
-        couple: 420,
-        monoparental: 500,
-        autre: 350,
+      // Art. 14 : TL par tranches du rapport RL = L / LR
+      tauxLoyer: { seuils: [0.45, 0.75], taux: [0.0045, 0.0068] },
+      loyerReference: { isole: 293.68, couple: 359.47, unePersonneACharge: 404.49, parPersonneSupplementaire: 58.88 },
+      // Art. 15 : forfait R0 (annuel)
+      r0: {
+        isole: 5235,
+        couple: 7501,
+        parPersonnesACharge: [8947, 9148, 9498, 9851, 10202, 10554],
+        parPersonneSupplementaire: 346,
       },
-      bonusPlafondAplParEnfant: 150,
-      plafondAplAbsolu: 900,
+      // Ressources : revenus nets catégoriels (abattement 10 % pour frais professionnels),
+      // arrondis à la centaine d'euros supérieure
+      abattementFraisProfessionnels: 0.1,
+      tauxCrds: 0.005,
+      // Art. 46 : outre-mer (Guadeloupe, Guyane, Martinique, La Réunion, Mayotte…)
+      outreMer: {
+        r0UnePersonneACharge: 8656,
+        forfaitCharges: { base: 41.15, parPersonneACharge: 10.59 },
+        tauxFamille: {
+          isole: 0.0281,
+          couple: 0.0299,
+          parPersonnesACharge: [0.0238, 0.0217, 0.0194, 0.018, 0.0169, 0.0162, 0.0167],
+          majorationParPersonneSupplementaire: -0.0006,
+        },
+      },
     },
   },
 } as const;

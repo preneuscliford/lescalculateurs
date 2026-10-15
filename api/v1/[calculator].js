@@ -120,213 +120,6 @@ function authenticate(req, res) {
   return { plan, owner };
 }
 
-// api-src/_lib/meta.ts
-var CALCULATOR_META = {
-  rsa: {
-    version: "1.0.0",
-    rulesVersion: "2026.05",
-    effectiveDate: "2026-04-01",
-    source: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
-  },
-  apl: {
-    version: "1.0.0",
-    rulesVersion: "2025.10",
-    effectiveDate: "2025-10-01",
-    source: "https://www.service-public.gouv.fr/particuliers/actualites/A16807"
-  },
-  are: {
-    version: "1.0.0",
-    rulesVersion: "2025.07",
-    effectiveDate: "2025-07-01",
-    source: "https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/montant-allocation-france-travai.html"
-  },
-  "prime-activite": {
-    version: "1.0.0",
-    rulesVersion: "2026.05",
-    effectiveDate: "2026-04-01",
-    source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite"
-  },
-  asf: {
-    version: "1.0.0",
-    rulesVersion: "2026.05",
-    effectiveDate: "2026-04-01",
-    source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf"
-  },
-  aah: {
-    version: "1.0.0",
-    rulesVersion: "2026.05",
-    effectiveDate: "2026-04-01",
-    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356"
-  },
-  retraite: {
-    version: "1.0.0",
-    rulesVersion: "reforme-2023 + suspension-LFSS-2026",
-    source: "https://www.info-retraite.fr/portail-info/sites/PortailInformationnel/home/reforme-des-retraites/reforme-des-retraites---age-le-1.html"
-  },
-  "indemnite-licenciement": {
-    version: "1.0.0",
-    rulesVersion: "en vigueur (quotes-parts l\xE9gales inchang\xE9es)",
-    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035644154"
-  },
-  ptz: {
-    version: "1.0.0",
-    rulesVersion: "2026 (inchang\xE9 vs 2025)",
-    source: "https://www.service-public.gouv.fr/particuliers/vosdroits/F10871"
-  },
-  "impot-revenu": {
-    version: "1.0.0",
-    rulesVersion: "2026 (imposition des revenus 2025)",
-    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954"
-  },
-  notaire: {
-    version: "1.0.0",
-    rulesVersion: "2026",
-    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053593921"
-  },
-  "apl-etudiant": {
-    version: "1.0.0",
-    rulesVersion: "2026 (mod\xE8le simplifi\xE9)",
-    source: "Bar\xE8mes CROUS/CNOUS 2026, simplifi\xE9s"
-  },
-  "salaire-net": {
-    version: "1.0.0",
-    rulesVersion: "2026 (non-cadre, tranche 1, r\xE9gime g\xE9n\xE9ral)",
-    source: "https://www.legisocial.fr/reperes-sociaux/cotisations-agirc-arrco-2026.html"
-  },
-  salaire: {
-    version: "1.0.0",
-    rulesVersion: "estimation forfaitaire (non r\xE9glementaire)"
-  },
-  "reste-a-vivre": {
-    version: "1.0.0",
-    rulesVersion: "agr\xE9gation arithm\xE9tique (non r\xE9glementaire)"
-  },
-  "cout-reel-voiture": {
-    version: "1.0.0",
-    rulesVersion: "agr\xE9gation arithm\xE9tique (non r\xE9glementaire)"
-  }
-};
-function withMeta(calculatorId, result) {
-  const entry = CALCULATOR_META[calculatorId] || { version: "1.0.0" };
-  return { ...result, meta: { calculator: calculatorId, ...entry } };
-}
-
-// src/utils/aahCalculEngine.ts
-var AAH_PLAFOND_2026 = 1041.59;
-var AAH_MONTANTS_2026 = {
-  seul: 1041.59,
-  // Taux plein (sans revenus) - Revalorisation +0,9% appliquée
-  couple: 1041.59
-  // Identique depuis déconjugalisation
-};
-var AAH_SEUIL_MIN_INCAPACITE = 50;
-var AAH_SEUIL_MAX_REVENUS = 1500;
-function calculerAAH(data) {
-  if (!data.situation || !data.logement || data.tauxIncapacite < AAH_SEUIL_MIN_INCAPACITE) {
-    return {
-      success: false,
-      montantEstime: 0,
-      eligibilite: "Donn\xE9es incompl\xE8tes",
-      explication: "Le taux d'incapacit\xE9 doit \xEAtre d'au minimum 50%. Veuillez remplir tous les champs.",
-      details: {
-        montantBase: 0,
-        majorations: 0,
-        revenusComptabilises: 0,
-        abattement: 0,
-        montantFinal: 0
-      }
-    };
-  }
-  let montantBase = 0;
-  if (data.situation === "seul") {
-    montantBase = AAH_MONTANTS_2026.seul;
-  } else if (data.situation === "couple") {
-    montantBase = AAH_MONTANTS_2026.couple;
-  } else {
-    montantBase = AAH_MONTANTS_2026.seul;
-  }
-  const majorations = 0;
-  const montantBaseTotal = montantBase;
-  const tauxAbattement = 0.1;
-  const revenusComptabilises = Math.max(0, data.revenus * (1 - tauxAbattement));
-  const abattement = data.revenus - revenusComptabilises;
-  let montantFinal = montantBaseTotal - revenusComptabilises;
-  if (montantFinal < 0) {
-    montantFinal = 0;
-  }
-  montantFinal = Math.min(montantFinal, AAH_PLAFOND_2026);
-  let eligibilite = "";
-  let explication = "";
-  if (data.tauxIncapacite < AAH_SEUIL_MIN_INCAPACITE) {
-    eligibilite = "Non \xE9ligible";
-    explication = "L'AAH n\xE9cessite un taux d'incapacit\xE9 d'au minimum 50% reconnu par la MDPH. Votre situation ne semble pas correspondre.";
-    montantFinal = 0;
-  } else if (data.revenus > AAH_SEUIL_MAX_REVENUS) {
-    eligibilite = "Probablement non \xE9ligible";
-    explication = "Vos revenus totaux semblent d\xE9passer les plafonds d'\xE9ligibilit\xE9 \xE0 l'AAH selon les r\xE8gles CAF.";
-    montantFinal = 0;
-  } else if (montantFinal <= 0) {
-    eligibilite = "Non \xE9ligible";
-    explication = "Vos ressources d\xE9passent le montant de base de l'AAH. Vous ne semblez pas pouvoir en b\xE9n\xE9ficier selon les informations renseign\xE9es.";
-  } else if (montantFinal < 50) {
-    eligibilite = "\xC9ligible (montant tr\xE8s r\xE9duit)";
-    explication = `Vous pourriez percevoir environ ${montantFinal.toFixed(2)}\u20AC par mois. Ce montant est plafonn\xE9 au plafond r\xE9glementaire de l'AAH (\u2248 ${AAH_PLAFOND_2026}\u20AC). La CAF \xE9valuera votre dossier compl\xE8tement en prenant en compte votre taux d'incapacit\xE9 reconnu par la MDPH, vos ressources exactes et votre composition familiale.`;
-  } else {
-    eligibilite = "Probablement \xE9ligible";
-    explication = `Vous pourriez percevoir environ ${montantFinal.toFixed(2)}\u20AC par mois. Ce montant est plafonn\xE9 au plafond r\xE9glementaire de l'AAH. L'estimation d\xE9pend de votre situation exacte et de la d\xE9cision finale de la CAF, qui prendra en compte votre taux d'incapacit\xE9 reconnu par la MDPH, vos ressources et votre situation familiale.`;
-  }
-  return {
-    success: true,
-    montantEstime: Math.max(0, montantFinal),
-    eligibilite,
-    explication,
-    details: {
-      montantBase,
-      majorations,
-      revenusComptabilises: Math.round(revenusComptabilises * 100) / 100,
-      abattement: Math.round(abattement * 100) / 100,
-      montantFinal: Math.max(0, Math.round(montantFinal * 100) / 100)
-    }
-  };
-}
-
-// api-src/v1/aah.ts
-async function handler(req, res) {
-  withCors(res);
-  if (req.method === "OPTIONS") return res.status(200).end();
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "M\xE9thode non autoris\xE9e. Utilisez POST." });
-  }
-  const auth = authenticate(req, res);
-  if (!auth) return;
-  try {
-    const { situation, enfants, tauxIncapacite, revenus, logement } = req.body || {};
-    if (!situation || !logement || tauxIncapacite === void 0) {
-      return res.status(400).json({
-        error: "Champs requis : situation, logement, tauxIncapacite.",
-        exemple: {
-          situation: "seul",
-          enfants: 0,
-          tauxIncapacite: 80,
-          revenus: 300,
-          logement: "locataire"
-        }
-      });
-    }
-    const result = calculerAAH({
-      situation,
-      enfants: Number(enfants) || 0,
-      tauxIncapacite: Number(tauxIncapacite) || 0,
-      revenus: Number(revenus) || 0,
-      logement
-    });
-    return res.status(200).json(withMeta("aah", result));
-  } catch (err) {
-    console.error("API /v1/aah error:", err.message);
-    return res.status(500).json({ error: "Erreur interne du serveur." });
-  }
-}
-
 // src/data/baremes.json
 var baremes_default = {
   notaire: {
@@ -1265,31 +1058,6 @@ var baremes_default = {
       }
     ]
   },
-  taxe_fonciere: {
-    abattements: {
-      residence_principale: 0.15,
-      personne_agee: {
-        seuil_age: 65,
-        taux: 0.1
-      },
-      personne_handicapee: 0.1
-    },
-    taux_moyens_par_region: {
-      ile_de_france: 0.0135,
-      provence_alpes_cote_azur: 0.0142,
-      auvergne_rhone_alpes: 0.0128,
-      occitanie: 0.0155,
-      nouvelle_aquitaine: 0.0148,
-      grand_est: 0.0132,
-      hauts_de_france: 0.0145,
-      normandie: 0.0138,
-      centre_val_de_loire: 0.0151,
-      bourgogne_franche_comte: 0.0144,
-      pays_de_la_loire: 0.014,
-      bretagne: 0.0147,
-      corse: 0.0125
-    }
-  },
   duree_travail: {
     duree_legale_hebdomadaire: 35,
     duree_legale_annuelle: 1607,
@@ -1517,61 +1285,323 @@ var socialBaremes = {
       "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006"
     ],
     plafondsLoyer: baremesData.apl.plafonds_loyer,
-    moteur: {
-      forfaitLogement: {
-        seul: 72,
-        couple: 102,
-        monoparental: 87,
-        autre: 72
+    // Formule officielle du secteur locatif (articles D. 823-16 et D. 823-17 du CCH),
+    // paramètres de l'arrêté du 27 septembre 2019 en vigueur au 1er octobre 2026
+    // (version consolidée Légifrance relue le 15/10/2026).
+    formule: {
+      // Art. 9 : forfait charges ; art. 16 : colocation
+      forfaitCharges: { base: 61.29, parPersonneACharge: 13.9 },
+      forfaitChargesColocation: { seul: 30.64, couple: 61.29, parPersonneACharge: 13.9 },
+      coefficientPlafondColocation: 0.75,
+      // Art. 10 : dégressivité puis suppression au-delà de ces multiples du plafond de loyer
+      coefficientsDegressivite: {
+        zone1: { degressivite: 3.4, suppression: 4 },
+        zone2: { degressivite: 2.5, suppression: 3.1 },
+        zone3: { degressivite: 2.5, suppression: 3.1 }
       },
-      // Forfait charges officiel (art. 9 arrete du 27/09/2019, valeurs au 01/10/2026)
-      forfaitCharges: {
-        base: 61.29,
-        parPersonneACharge: 13.9
+      // Art. 11 : minoration forfaitaire ; art. 12 : seuil de versement (avant CRDS)
+      minorationForfaitaire: 5,
+      seuilVersement: { apl: 0, allocationLogement: 10 },
+      // Art. 13 : participation minimale P0 = max(8,5 % de (L + C) ; 40,01 €)
+      participationMinimale: { taux: 0.085, forfait: 40.01 },
+      // Art. 14 : TF selon le nombre de personnes à charge (0 = isolé / couple)
+      tauxFamille: {
+        isole: 0.0283,
+        couple: 0.0315,
+        parPersonnesACharge: [0.027, 0.0238, 0.0201, 0.0185, 0.0179, 0.0173],
+        majorationParPersonneSupplementaire: -6e-4
       },
-      tauxParticipation: 0.3,
-      // Participation minimale P0 officielle au 01/10/2026 (art. 13)
-      participationMinimum: 40.01,
-      plafondAplBase: {
-        seul: 320,
-        couple: 420,
-        monoparental: 500,
-        autre: 350
+      // Art. 14 : TL par tranches du rapport RL = L / LR
+      tauxLoyer: { seuils: [0.45, 0.75], taux: [45e-4, 68e-4] },
+      loyerReference: { isole: 293.68, couple: 359.47, unePersonneACharge: 404.49, parPersonneSupplementaire: 58.88 },
+      // Art. 15 : forfait R0 (annuel)
+      r0: {
+        isole: 5235,
+        couple: 7501,
+        parPersonnesACharge: [8947, 9148, 9498, 9851, 10202, 10554],
+        parPersonneSupplementaire: 346
       },
-      bonusPlafondAplParEnfant: 150,
-      plafondAplAbsolu: 900
+      // Ressources : revenus nets catégoriels (abattement 10 % pour frais professionnels),
+      // arrondis à la centaine d'euros supérieure
+      abattementFraisProfessionnels: 0.1,
+      tauxCrds: 5e-3,
+      // Art. 46 : outre-mer (Guadeloupe, Guyane, Martinique, La Réunion, Mayotte…)
+      outreMer: {
+        r0UnePersonneACharge: 8656,
+        forfaitCharges: { base: 41.15, parPersonneACharge: 10.59 },
+        tauxFamille: {
+          isole: 0.0281,
+          couple: 0.0299,
+          parPersonnesACharge: [0.0238, 0.0217, 0.0194, 0.018, 0.0169, 0.0162, 0.0167],
+          majorationParPersonneSupplementaire: -6e-4
+        }
+      }
     }
   }
 };
 
+// api-src/_lib/meta.ts
+var CALCULATOR_META = {
+  rsa: {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-04-01",
+    source: "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026"
+  },
+  // Version des règles lue dans le barème (source unique) ; 2.0.0 = formule officielle
+  apl: {
+    version: "2.0.0",
+    rulesVersion: socialBaremes.apl.version,
+    effectiveDate: socialBaremes.apl.dateEffet,
+    source: socialBaremes.apl.sourceUrl
+  },
+  are: {
+    version: "1.0.0",
+    rulesVersion: "2025.07",
+    effectiveDate: "2025-07-01",
+    source: "https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/lallocation-chomage-lessentiel-a/montant-allocation-france-travai.html"
+  },
+  "prime-activite": {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-04-01",
+    source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-d-activite"
+  },
+  asf: {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-04-01",
+    source: "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/l-allocation-de-soutien-familial-asf"
+  },
+  aah: {
+    version: "1.0.0",
+    rulesVersion: "2026.05",
+    effectiveDate: "2026-04-01",
+    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053734356"
+  },
+  retraite: {
+    version: "1.0.0",
+    rulesVersion: "reforme-2023 + suspension-LFSS-2026",
+    source: "https://www.info-retraite.fr/portail-info/sites/PortailInformationnel/home/reforme-des-retraites/reforme-des-retraites---age-le-1.html"
+  },
+  "indemnite-licenciement": {
+    version: "1.0.0",
+    rulesVersion: "en vigueur (quotes-parts l\xE9gales inchang\xE9es)",
+    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035644154"
+  },
+  ptz: {
+    version: "1.0.0",
+    rulesVersion: "2026 (inchang\xE9 vs 2025)",
+    source: "https://www.service-public.gouv.fr/particuliers/vosdroits/F10871"
+  },
+  "impot-revenu": {
+    version: "1.0.0",
+    rulesVersion: "2026 (imposition des revenus 2025)",
+    source: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954"
+  },
+  notaire: {
+    version: "1.0.0",
+    rulesVersion: "2026",
+    source: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053593921"
+  },
+  "apl-etudiant": {
+    version: "1.0.0",
+    rulesVersion: "2026 (mod\xE8le simplifi\xE9)",
+    source: "Bar\xE8mes CROUS/CNOUS 2026, simplifi\xE9s"
+  },
+  "salaire-net": {
+    version: "1.0.0",
+    rulesVersion: "2026 (non-cadre, tranche 1, r\xE9gime g\xE9n\xE9ral)",
+    source: "https://www.legisocial.fr/reperes-sociaux/cotisations-agirc-arrco-2026.html"
+  },
+  salaire: {
+    version: "1.0.0",
+    rulesVersion: "estimation forfaitaire (non r\xE9glementaire)"
+  },
+  "reste-a-vivre": {
+    version: "1.0.0",
+    rulesVersion: "agr\xE9gation arithm\xE9tique (non r\xE9glementaire)"
+  },
+  "cout-reel-voiture": {
+    version: "1.0.0",
+    rulesVersion: "agr\xE9gation arithm\xE9tique (non r\xE9glementaire)"
+  }
+};
+function withMeta(calculatorId, result) {
+  const entry = CALCULATOR_META[calculatorId] || { version: "1.0.0" };
+  return { ...result, meta: { calculator: calculatorId, ...entry } };
+}
+
+// src/utils/aahCalculEngine.ts
+var AAH_PLAFOND_2026 = 1041.59;
+var AAH_MONTANTS_2026 = {
+  seul: 1041.59,
+  // Taux plein (sans revenus) - Revalorisation +0,9% appliquée
+  couple: 1041.59
+  // Identique depuis déconjugalisation
+};
+var AAH_SEUIL_MIN_INCAPACITE = 50;
+var AAH_SEUIL_MAX_REVENUS = 1500;
+function calculerAAH(data) {
+  if (!data.situation || !data.logement || data.tauxIncapacite < AAH_SEUIL_MIN_INCAPACITE) {
+    return {
+      success: false,
+      montantEstime: 0,
+      eligibilite: "Donn\xE9es incompl\xE8tes",
+      explication: "Le taux d'incapacit\xE9 doit \xEAtre d'au minimum 50%. Veuillez remplir tous les champs.",
+      details: {
+        montantBase: 0,
+        majorations: 0,
+        revenusComptabilises: 0,
+        abattement: 0,
+        montantFinal: 0
+      }
+    };
+  }
+  let montantBase = 0;
+  if (data.situation === "seul") {
+    montantBase = AAH_MONTANTS_2026.seul;
+  } else if (data.situation === "couple") {
+    montantBase = AAH_MONTANTS_2026.couple;
+  } else {
+    montantBase = AAH_MONTANTS_2026.seul;
+  }
+  const majorations = 0;
+  const montantBaseTotal = montantBase;
+  const tauxAbattement = 0.1;
+  const revenusComptabilises = Math.max(0, data.revenus * (1 - tauxAbattement));
+  const abattement = data.revenus - revenusComptabilises;
+  let montantFinal = montantBaseTotal - revenusComptabilises;
+  if (montantFinal < 0) {
+    montantFinal = 0;
+  }
+  montantFinal = Math.min(montantFinal, AAH_PLAFOND_2026);
+  let eligibilite = "";
+  let explication = "";
+  if (data.tauxIncapacite < AAH_SEUIL_MIN_INCAPACITE) {
+    eligibilite = "Non \xE9ligible";
+    explication = "L'AAH n\xE9cessite un taux d'incapacit\xE9 d'au minimum 50% reconnu par la MDPH. Votre situation ne semble pas correspondre.";
+    montantFinal = 0;
+  } else if (data.revenus > AAH_SEUIL_MAX_REVENUS) {
+    eligibilite = "Probablement non \xE9ligible";
+    explication = "Vos revenus totaux semblent d\xE9passer les plafonds d'\xE9ligibilit\xE9 \xE0 l'AAH selon les r\xE8gles CAF.";
+    montantFinal = 0;
+  } else if (montantFinal <= 0) {
+    eligibilite = "Non \xE9ligible";
+    explication = "Vos ressources d\xE9passent le montant de base de l'AAH. Vous ne semblez pas pouvoir en b\xE9n\xE9ficier selon les informations renseign\xE9es.";
+  } else if (montantFinal < 50) {
+    eligibilite = "\xC9ligible (montant tr\xE8s r\xE9duit)";
+    explication = `Vous pourriez percevoir environ ${montantFinal.toFixed(2)}\u20AC par mois. Ce montant est plafonn\xE9 au plafond r\xE9glementaire de l'AAH (\u2248 ${AAH_PLAFOND_2026}\u20AC). La CAF \xE9valuera votre dossier compl\xE8tement en prenant en compte votre taux d'incapacit\xE9 reconnu par la MDPH, vos ressources exactes et votre composition familiale.`;
+  } else {
+    eligibilite = "Probablement \xE9ligible";
+    explication = `Vous pourriez percevoir environ ${montantFinal.toFixed(2)}\u20AC par mois. Ce montant est plafonn\xE9 au plafond r\xE9glementaire de l'AAH. L'estimation d\xE9pend de votre situation exacte et de la d\xE9cision finale de la CAF, qui prendra en compte votre taux d'incapacit\xE9 reconnu par la MDPH, vos ressources et votre situation familiale.`;
+  }
+  return {
+    success: true,
+    montantEstime: Math.max(0, montantFinal),
+    eligibilite,
+    explication,
+    details: {
+      montantBase,
+      majorations,
+      revenusComptabilises: Math.round(revenusComptabilises * 100) / 100,
+      abattement: Math.round(abattement * 100) / 100,
+      montantFinal: Math.max(0, Math.round(montantFinal * 100) / 100)
+    }
+  };
+}
+
+// api-src/v1/aah.ts
+async function handler(req, res) {
+  withCors(res);
+  if (req.method === "OPTIONS") return res.status(200).end();
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "M\xE9thode non autoris\xE9e. Utilisez POST." });
+  }
+  const auth = authenticate(req, res);
+  if (!auth) return;
+  try {
+    const { situation, enfants, tauxIncapacite, revenus, logement } = req.body || {};
+    if (!situation || !logement || tauxIncapacite === void 0) {
+      return res.status(400).json({
+        error: "Champs requis : situation, logement, tauxIncapacite.",
+        exemple: {
+          situation: "seul",
+          enfants: 0,
+          tauxIncapacite: 80,
+          revenus: 300,
+          logement: "locataire"
+        }
+      });
+    }
+    const result = calculerAAH({
+      situation,
+      enfants: Number(enfants) || 0,
+      tauxIncapacite: Number(tauxIncapacite) || 0,
+      revenus: Number(revenus) || 0,
+      logement
+    });
+    return res.status(200).json(withMeta("aah", result));
+  } catch (err) {
+    console.error("API /v1/aah error:", err.message);
+    return res.status(500).json({ error: "Erreur interne du serveur." });
+  }
+}
+
 // src/utils/aplCalculEngine.ts
 var aplBaremes = socialBaremes.apl;
+var F = aplBaremes.formule;
 var PLAFONDS_LOYER_ZONE = {
   idf: aplBaremes.plafondsLoyer.zone1,
   province: aplBaremes.plafondsLoyer.zone2,
   dom: aplBaremes.plafondsLoyer.zone3
 };
-function getPlafondLoyer(region, situation, enfants) {
-  const plafonds = PLAFONDS_LOYER_ZONE[region] || PLAFONDS_LOYER_ZONE.province;
-  if (enfants <= 0) {
-    return situation === "couple" ? plafonds.couple : plafonds.seul;
-  }
-  return plafonds.une_personne_a_charge + (enfants - 1) * plafonds.par_personne_supplementaire;
-}
-var FORFAIT_LOGEMENT = {
-  ...aplBaremes.moteur.forfaitLogement
+var DEGRESSIVITE_ZONE = {
+  idf: F.coefficientsDegressivite.zone1,
+  province: F.coefficientsDegressivite.zone2,
+  dom: F.coefficientsDegressivite.zone3
 };
-var FORFAIT_CHARGES = aplBaremes.moteur.forfaitCharges;
-var TAUX_PARTICIPATION = aplBaremes.moteur.tauxParticipation;
-var PARTICIPATION_MINIMUM = aplBaremes.moteur.participationMinimum;
-function getPlafondAPLRealiste(situation, enfants) {
-  const base = {
-    ...aplBaremes.moteur.plafondAplBase
-  };
-  const bonusParEnfant = aplBaremes.moteur.bonusPlafondAplParEnfant;
-  const enfantsComptabilises = Math.min(enfants, 3);
-  let plafond = base[situation] + enfantsComptabilises * bonusParEnfant;
-  return Math.min(plafond, aplBaremes.moteur.plafondAplAbsolu);
+var arrondi = (v, dec = 2) => Math.round(v * 10 ** dec) / 10 ** dec;
+var estCouple = (situation) => situation === "couple";
+function getPlafondLoyer(region, situation, enfants, colocation) {
+  const p = PLAFONDS_LOYER_ZONE[region] || PLAFONDS_LOYER_ZONE.province;
+  const plafond = enfants <= 0 ? estCouple(situation) ? p.couple : p.seul : p.une_personne_a_charge + (enfants - 1) * p.par_personne_supplementaire;
+  return arrondi(colocation ? plafond * F.coefficientPlafondColocation : plafond);
+}
+function getForfaitCharges(region, situation, enfants, colocation) {
+  if (region === "dom") return arrondi(F.outreMer.forfaitCharges.base + enfants * F.outreMer.forfaitCharges.parPersonneACharge);
+  if (colocation) {
+    const base = estCouple(situation) || enfants > 0 ? F.forfaitChargesColocation.couple : F.forfaitChargesColocation.seul;
+    return arrondi(base + enfants * F.forfaitChargesColocation.parPersonneACharge);
+  }
+  return arrondi(F.forfaitCharges.base + enfants * F.forfaitCharges.parPersonneACharge);
+}
+function getTauxFamille(region, situation, enfants) {
+  const t = region === "dom" ? F.outreMer.tauxFamille : F.tauxFamille;
+  if (enfants <= 0) return estCouple(situation) ? t.couple : t.isole;
+  const table = t.parPersonnesACharge;
+  if (enfants <= table.length) return table[enfants - 1];
+  return table[table.length - 1] + (enfants - table.length) * t.majorationParPersonneSupplementaire;
+}
+function getTauxLoyer(loyerRetenu, situation, enfants) {
+  const LR = F.loyerReference;
+  const ref = enfants <= 0 ? estCouple(situation) ? LR.couple : LR.isole : LR.unePersonneACharge + (enfants - 1) * LR.parPersonneSupplementaire;
+  const RL = arrondi(loyerRetenu / ref * 100, 2) / 100;
+  const [s1, s2] = F.tauxLoyer.seuils;
+  const [t2, t3] = F.tauxLoyer.taux;
+  const TL = RL < s1 ? 0 : RL <= s2 ? t2 * (RL - s1) : t2 * (s2 - s1) + t3 * (RL - s2);
+  return arrondi(TL * 100, 3) / 100;
+}
+function getR0(region, situation, enfants) {
+  const r = F.r0;
+  if (enfants <= 0) return estCouple(situation) ? r.couple : r.isole;
+  if (enfants === 1 && region === "dom") return F.outreMer.r0UnePersonneACharge;
+  if (enfants <= r.parPersonnesACharge.length) return r.parPersonnesACharge[enfants - 1];
+  return r.parPersonnesACharge[r.parPersonnesACharge.length - 1] + (enfants - r.parPersonnesACharge.length) * r.parPersonneSupplementaire;
+}
+function getRessourcesAnnuelles(revenusMensuels) {
+  const annuel = arrondi(revenusMensuels * 12 * (1 - F.abattementFraisProfessionnels));
+  return Math.ceil(annuel / 100) * 100;
 }
 function calculerAPL(input) {
   try {
@@ -1579,48 +1609,64 @@ function calculerAPL(input) {
     if (!validation.valid) {
       return { success: false, error: validation.error };
     }
-    const { situation, enfants, revenus_mensuels, loyer_mensuel, region } = input;
+    const { situation, revenus_mensuels, loyer_mensuel, region } = input;
+    const typeLogement = input.type_logement || "location";
     const revenus = Number(revenus_mensuels);
     const loyer = Number(loyer_mensuel);
-    const nb_enfants = Math.max(0, Math.floor(Number(enfants) || 0));
-    const plafond_loyer = Math.round(getPlafondLoyer(region, situation, nb_enfants) * 100) / 100;
+    const nb_enfants = Math.max(0, Math.floor(Number(input.enfants) || 0));
+    const colocation = typeLogement === "colocation";
+    const plafond_loyer = getPlafondLoyer(region, situation, nb_enfants, colocation);
     const loyer_pris_compte = Math.min(loyer, plafond_loyer);
-    const forfait_logement = FORFAIT_LOGEMENT[situation] || FORFAIT_LOGEMENT.seul;
-    let participation = revenus * TAUX_PARTICIPATION - forfait_logement;
-    participation = Math.max(PARTICIPATION_MINIMUM, participation);
-    const forfait_charges = Math.round((FORFAIT_CHARGES.base + nb_enfants * FORFAIT_CHARGES.parPersonneACharge) * 100) / 100;
-    let apl_brute = loyer_pris_compte + forfait_charges - participation;
+    const forfait_charges = getForfaitCharges(region, situation, nb_enfants, colocation);
+    const participation_minimale = Math.max(
+      F.participationMinimale.taux * (loyer_pris_compte + forfait_charges),
+      F.participationMinimale.forfait
+    );
+    const taux_participation = getTauxFamille(region, situation, nb_enfants) + getTauxLoyer(loyer_pris_compte, situation, nb_enfants);
+    const ressources_annuelles = Math.max(getRessourcesAnnuelles(revenus), Number(input.ressources_annuelles_minimum) || 0);
+    const abattement_r0 = getR0(region, situation, nb_enfants);
+    const participation = participation_minimale + taux_participation * Math.max(0, ressources_annuelles - abattement_r0);
+    const apl_brute = Math.max(0, loyer_pris_compte + forfait_charges - participation);
+    const coefs = DEGRESSIVITE_ZONE[region] || DEGRESSIVITE_ZONE.province;
+    const loyerDegressivite = arrondi(plafond_loyer * coefs.degressivite);
+    const loyerSuppression = arrondi(plafond_loyer * coefs.suppression);
+    const coefficient_degressivite = loyer <= loyerDegressivite ? 1 : loyer > loyerSuppression ? 0 : 1 - (loyer - loyerDegressivite) / (loyerSuppression - loyerDegressivite);
+    let montant = Math.max(0, arrondi(apl_brute * coefficient_degressivite) - F.minorationForfaitaire);
+    const seuil = typeLogement === "hlm" ? F.seuilVersement.apl : F.seuilVersement.allocationLogement;
     let raison_zero;
-    if (participation >= loyer_pris_compte + forfait_charges) {
-      apl_brute = 0;
-      raison_zero = "Avec vos revenus actuels et le plafond de loyer applicable, l'APL est g\xE9n\xE9ralement nulle selon les r\xE8gles CAF.";
+    if (typeLogement === "accession") {
+      montant = 0;
+      raison_zero = "Depuis le 1er janvier 2018, aucune nouvelle aide au logement n'est ouverte pour l'accession \xE0 la propri\xE9t\xE9.";
+    } else if (apl_brute <= 0) {
+      raison_zero = "Avec ces revenus, votre participation personnelle d\xE9passe le loyer retenu et les charges : l'aide est nulle selon le bar\xE8me officiel.";
+    } else if (coefficient_degressivite === 0) {
+      raison_zero = "Le loyer d\xE9passe le seuil au-del\xE0 duquel l'aide est supprim\xE9e pour votre zone.";
+    } else if (montant < seuil) {
+      montant = 0;
+      raison_zero = `Le montant calcul\xE9 est inf\xE9rieur au seuil de versement (${seuil} \u20AC) : l'aide n'est pas vers\xE9e.`;
     }
-    apl_brute = Math.max(0, apl_brute);
-    const plafond_apl = getPlafondAPLRealiste(situation, nb_enfants);
-    let apl_estimee = Math.min(apl_brute, plafond_apl);
-    const is_plafonne = apl_brute > plafond_apl;
-    apl_estimee = Math.floor(apl_estimee);
-    apl_brute = Math.floor(apl_brute);
-    const reste_charge = Math.max(0, loyer - apl_estimee);
+    const apl_estimee = Math.floor(montant * (1 - F.tauxCrds));
     return {
       success: true,
       data: {
         apl_estimee,
-        apl_brute,
+        apl_brute: Math.floor(apl_brute),
         loyer_mensuel: loyer,
         loyer_pris_compte,
-        participation: Math.round(participation),
-        forfait_logement,
         forfait_charges,
-        reste_charge,
+        participation: Math.round(participation),
+        participation_minimale: arrondi(participation_minimale),
+        taux_participation,
+        ressources_annuelles,
+        abattement_r0,
+        coefficient_degressivite: arrondi(coefficient_degressivite, 4),
+        reste_charge: Math.max(0, loyer - apl_estimee),
         situation,
         enfants: nb_enfants,
         revenus_mensuels: revenus,
         zone: region,
         plafond_loyer,
-        plafond_apl,
-        is_plafonne,
-        raison_zero
+        raison_zero: apl_estimee === 0 ? raison_zero : void 0
       }
     };
   } catch (error) {
@@ -1733,13 +1779,13 @@ function calculerAPLEtudiant(data) {
     };
   }
   const revenus = Math.max(0, Number(data.revenus) || 0);
-  const ressourcesRetenues = Math.max(revenus, forfaitMensuel);
   const result = calculerAPL({
     situation: SITUATION_MOTEUR[data.situation] ?? "seul",
     enfants: Math.max(0, Math.floor(Number(data.personnesCharge) || 0)),
-    revenus_mensuels: ressourcesRetenues,
+    revenus_mensuels: revenus,
     loyer_mensuel: Math.max(0, Number(data.chargesLocatives) || 0),
-    region: ZONE_MOTEUR[zone]
+    region: ZONE_MOTEUR[zone],
+    ressources_annuelles_minimum: forfaitAnnuel
   });
   if (!result.success || !result.data) {
     return {
@@ -1753,7 +1799,7 @@ function calculerAPLEtudiant(data) {
   const loyer = Math.max(0, Number(data.chargesLocatives) || 0);
   const details = {
     ressourcesMaxi: forfaitMensuel,
-    ressourcesRetenues: round2(ressourcesRetenues),
+    ressourcesRetenues: round2(result.data.ressources_annuelles / 12),
     loyerRetenu: result.data.loyer_pris_compte,
     plafondLoyer: result.data.plafond_loyer,
     pourcentageLoyer: loyer > 0 ? round2(montantEstime / loyer) : 0
@@ -2968,6 +3014,7 @@ async function handler14(req, res) {
 }
 
 // src/utils/salaireCalculEngine.ts
+var TAUX_SALARIAL = { non_cadre: 0.2084, cadre: 0.2101 };
 function calculerSalaire(input) {
   const brut = Number(input.brutMensuel);
   const statut = input.statut;
@@ -2975,7 +3022,7 @@ function calculerSalaire(input) {
   if (!isFinite(brut) || brut <= 0) throw new Error("Brut invalide");
   if (statut !== "cadre" && statut !== "non_cadre") throw new Error("Statut invalide");
   if (!isFinite(tauxPAS) || tauxPAS < 0 || tauxPAS > 100) throw new Error("Taux PAS invalide");
-  const tauxSalarial = statut === "cadre" ? 0.2101 : 0.2084;
+  const tauxSalarial = TAUX_SALARIAL[statut];
   const netAvantImpot = brut * (1 - tauxSalarial);
   const pasMensuel = netAvantImpot * (tauxPAS / 100);
   const netApresImpot = netAvantImpot - pasMensuel;

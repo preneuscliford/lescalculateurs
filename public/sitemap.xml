@@ -415,31 +415,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-alternant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-alternant-paris/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-apprenti-loyer-500/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-cdd-loyer-600/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -457,24 +433,6 @@
     <priority>0.5</priority>
   </url>
 
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-paris-petit-revenu/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-petit-salaire/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-celibataire-smic/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-avec-enfant/</loc>
     <lastmod>2026-10-12</lastmod>
@@ -518,18 +476,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-chomage-personne-seule-sans-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-colocation/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -542,12 +488,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-loyer-eleve/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-lyon/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -555,12 +495,6 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-paris/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-petit-revenu/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -608,12 +542,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-studio/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-etudiant-toulouse/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -621,18 +549,6 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-logement-social/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-paris/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-deux-enfants-province/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -651,12 +567,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-un-enfant-province/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-fin-de-droits-chomage/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -670,25 +580,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-jeune-actif-premier-logement/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-1000-couple-deux-enfants/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-500-revenu-900/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-loyer-600-smic/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -742,12 +634,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-personne-seule-smic/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-petite-surface-paris/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -761,55 +647,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-couple-sans-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-couple-un-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-loyer-eleve/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-loyer-moyen/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-parent-isole-un-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-reprise-emploi-personne-seule-loyer-700/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-avec-enfant/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -817,12 +655,6 @@
 
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-parent-isole/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-personne-seule/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -858,18 +690,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-couple-un-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-logement-social/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-deux-enfants/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -877,12 +697,6 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-trois-enfants/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-smic-parent-isole-un-enfant/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

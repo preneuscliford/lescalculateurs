@@ -30,6 +30,8 @@
  *   1er avril 2026 (source : solidarites.gouv.fr).
  */
 
+import { socialBaremes } from "../../src/data/social-baremes";
+
 export interface CalculatorMeta {
   version: string;
   rulesVersion?: string;
@@ -45,11 +47,12 @@ export const CALCULATOR_META: Record<string, CalculatorMeta> = {
     source:
       "https://solidarites.gouv.fr/revalorisation-annuelle-des-prestations-sociales-au-1er-avril-2026",
   },
+  // Version des règles lue dans le barème (source unique) ; 2.0.0 = formule officielle
   apl: {
-    version: "1.0.0",
-    rulesVersion: "2025.10",
-    effectiveDate: "2025-10-01",
-    source: "https://www.service-public.gouv.fr/particuliers/actualites/A16807",
+    version: "2.0.0",
+    rulesVersion: socialBaremes.apl.version,
+    effectiveDate: socialBaremes.apl.dateEffet,
+    source: socialBaremes.apl.sourceUrl,
   },
   are: {
     version: "1.0.0",

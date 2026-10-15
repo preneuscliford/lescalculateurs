@@ -208,6 +208,91 @@
       "permanent": true
     },
     {
+      "source": "/pages/apl/(apl-alternant|apl-alternant-paris|apl-apprenti-loyer-500)",
+      "destination": "/pages/apl/apl-apprenti",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-reprise-emploi-loyer-eleve",
+      "destination": "/pages/apl/apl-celibataire-loyer-eleve",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/(apl-chomage-personne-seule|apl-chomage-personne-seule-sans-enfant|apl-loyer-500-revenu-900)",
+      "destination": "/pages/apl/apl-chomage-loyer-moyen",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-couple-loyer-eleve",
+      "destination": "/pages/apl/apl-couple-paris",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/(apl-couple-petit-revenu|apl-reprise-emploi-couple-sans-enfant)",
+      "destination": "/pages/apl/apl-couple-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/(apl-reprise-emploi-couple-un-enfant|apl-smic-couple-un-enfant)",
+      "destination": "/pages/apl/apl-couple-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-famille-un-enfant-province",
+      "destination": "/pages/apl/apl-couple-un-enfant-loyer-moyen",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-etudiant-studio",
+      "destination": "/pages/apl/apl-etudiant-toulouse",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-sans-revenu-personne-seule",
+      "destination": "/pages/apl/apl-fin-de-droits-chomage",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-famille-deux-enfants-paris",
+      "destination": "/pages/apl/apl-loyer-1000-couple-deux-enfants",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-reprise-emploi-personne-seule",
+      "destination": "/pages/apl/apl-loyer-700-personne-seule",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-celibataire-paris-petit-revenu",
+      "destination": "/pages/apl/apl-loyer-800-revenu-1300",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/(apl-reprise-emploi-parent-isole-un-enfant|apl-smic-parent-isole-un-enfant)",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/(apl-celibataire-petit-salaire|apl-reprise-emploi)",
+      "destination": "/pages/apl/apl-reprise-emploi-loyer-moyen",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-sans-revenu-avec-enfant",
+      "destination": "/pages/apl/apl-sans-revenu-parent-isole",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-famille-deux-enfants-province",
+      "destination": "/pages/apl/apl-smic-couple-deux-enfants",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/(apl-cdd-loyer-600|apl-celibataire-smic|apl-jeune-actif-premier-logement|apl-loyer-600-smic|apl-personne-seule-smic|apl-reprise-emploi-personne-seule-loyer-700|apl-smic-logement-social)",
+      "destination": "/pages/apl/apl-smic-seul",
+      "permanent": true
+    },
+    {
       "source": "/pages/apl/apl-celibataire-toulouse",
       "destination": "/pages/apl",
       "permanent": true
