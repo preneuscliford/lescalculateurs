@@ -623,7 +623,7 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
           <a href="https://www.service-public.fr/particuliers/vosdroits/F2167" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">service-public.fr</a> •
           <a href="https://www.immobilier.notaires.fr/fr/frais-de-notaire" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">notariat.fr</a> •
           <a href="https://www.impots.gouv.fr" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">impots.gouv.fr</a> •
-          <a href="https://www.legifrance.gouv.fr" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">legifrance.gouv.fr</a>
+          <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000030024636" class="text-blue-600 hover:underline" rel="nofollow noopener" target="_blank">Légifrance (CGI, art. 1594 D)</a>
         </p>
       </div>
 
@@ -760,7 +760,7 @@ function generateTemplate(code, nom, ville, region, imageUrl) {
             <a href="https://www.service-public.fr" class="text-blue-600 hover:underline">service-public.fr</a> •
             <a href="https://www.notariat.fr" class="text-blue-600 hover:underline">notariat.fr</a> •
             <a href="https://www.impots.gouv.fr" class="text-blue-600 hover:underline">impots.gouv.fr</a> •
-            <a href="https://www.legifrance.gouv.fr" class="text-blue-600 hover:underline">legifrance.gouv.fr</a> •
+            <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000030024636" class="text-blue-600 hover:underline">Légifrance (CGI, art. 1594 D)</a> •
             <a href="https://www.data.gouv.fr" class="text-blue-600 hover:underline">data.gouv.fr</a>
           </p>
           <p class="text-xs text-gray-500 mt-3">Contenu redige et maintenu par LesCalculateurs.fr - outil independant d'estimation base sur les baremes notariaux officiels.</p>
