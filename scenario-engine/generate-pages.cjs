@@ -43,6 +43,70 @@ function loadSocialBaremes() {
 }
 const BAREME_PRIME = loadSocialBaremes();
 
+// ─── Montants cités dans les textes ───────────────────────
+// Les textes de scenarios.json écrivent {{nom}} (ou {{baisse:300}}) au lieu d'un montant :
+// la valeur vient du barème ci-dessus, pour ne jamais diverger du calcul.
+function euros(v, dec = 0) {
+  return (
+    v.toLocaleString("fr-FR", { minimumFractionDigits: dec, maximumFractionDigits: dec }).replace(/[\u202f\u00a0]/g, " ") + " €"
+  );
+}
+function valeursTexte(b) {
+  const taux = b.revenusProfessionnelsPrisEnCompte;
+  const NF = b.montantForfaitaire.nonMajoree;
+  const MAJ = b.montantForfaitaire.majoree;
+  // Baisse de la prime pour une hausse de salaire hors bonification : 1 - taux, arrondie à 10 €
+  const baisse = (n) => Math.round((n * (1 - taux)) / 10) * 10;
+  return {
+    tauxActivite: (taux * 100).toLocaleString("fr-FR", { maximumFractionDigits: 2 }) + " %",
+    tauxBaisse: Math.round((1 - taux) * 100) + " %",
+    seuilDebut: euros(Math.round(b.bonification.seuilDebut)),
+    seuilMaximum: euros(Math.round(b.bonification.seuilMaximum)),
+    bonifMax: euros(b.bonification.montantMaximum, 2),
+    forfaitSeul: euros(NF.unePersonne, 2),
+    forfaitCouple: euros(NF.coupleOuIsole1Enfant, 2),
+    forfaitIsoleMajore1: euros(MAJ.isole1Enfant, 2),
+    forfaitSeulMoins5: euros(Math.round(NF.unePersonne * 0.95)),
+    gainReforme300: euros(Math.round(300 - b.bonification.montantMaximum)),
+    baisse: (n) => euros(baisse(n)),
+    gain: (n) => euros(n - baisse(n)),
+  };
+}
+function remplirTextes(node, V) {
+  if (typeof node === "string") {
+    return node.replace(/\{\{(\w+)(?::(\d+))?\}\}/g, (m, k, arg) => {
+      const v = V[k];
+      if (v === undefined) throw new Error(`Variable inconnue dans scenarios.json : ${m}`);
+      return typeof v === "function" ? v(Number(arg)) : v;
+    });
+  }
+  if (Array.isArray(node)) return node.map((x) => remplirTextes(x, V));
+  if (node && typeof node === "object") {
+    for (const k of Object.keys(node)) node[k] = remplirTextes(node[k], V);
+  }
+  return node;
+}
+remplirTextes(data, valeursTexte(BAREME_PRIME));
+
+// ─── Scénarios retirés ────────────────────────────────────
+// Pages redirigées en 301 dans vercel.json (source unique) : ni générées, ni liées.
+const retiresCache = {};
+function scenariosRetires(aideKey) {
+  if (retiresCache[aideKey]) return retiresCache[aideKey];
+  const vercel = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "vercel.json"), "utf-8"));
+  const prefix = `/scenarios/${aideKey}/`;
+  const out = new Set();
+  for (const r of vercel.redirects || []) {
+    if (!r.source.startsWith(prefix)) continue;
+    const rest = r.source.slice(prefix.length);
+    const alt = rest.match(/^\(([a-z0-9|-]+)\)$/);
+    if (alt) alt[1].split("|").forEach((slug) => out.add(slug));
+    else if (/^[a-z0-9-]+$/.test(rest)) out.add(rest);
+    else throw new Error(`Motif de redirection non pris en charge : ${r.source}`);
+  }
+  return (retiresCache[aideKey] = out);
+}
+
 const BASE_URL = "https://www.lescalculateurs.fr";
 
 // ─── Moteur de calcul ─────────────────────────────────────
@@ -289,7 +353,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
 <header class="bg-white shadow-sm border-b border-gray-200">
   <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
     <a href="${BASE_URL}" class="flex items-center gap-3 no-underline"><span class="text-2xl">🧮</span><span class="text-xl font-bold text-gray-900">Les Calculateurs</span></a>
-    <nav class="hidden md:flex items-center gap-4 text-sm"><a href="${BASE_URL}" class="text-gray-600 hover:text-blue-600 font-medium">Accueil</a><a href="${BASE_URL}/simulateurs" class="text-gray-600 hover:text-blue-600 font-medium">Outils</a><span class="text-blue-600 font-semibold">Anticiper</span></nav>
+    <nav class="hidden md:flex items-center gap-4 text-sm"><a href="${BASE_URL}" class="text-gray-600 hover:text-blue-600 font-medium">Accueil</a><a href="${BASE_URL}/pages/simulateurs" class="text-gray-600 hover:text-blue-600 font-medium">Outils</a><span class="text-blue-600 font-semibold">Anticiper</span></nav>
   </div>
 </header>
 
@@ -297,7 +361,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
 
   <nav class="text-xs text-gray-400 mb-6">
     <a href="${BASE_URL}" class="hover:text-blue-600">Accueil</a> &rsaquo;
-    <a href="${BASE_URL}/simulateurs" class="hover:text-blue-600">Simulateurs</a> &rsaquo;
+    <a href="${BASE_URL}/pages/simulateurs" class="hover:text-blue-600">Simulateurs</a> &rsaquo;
     <a href="${BASE_URL}/pages/prime-activite" class="hover:text-blue-600">Prime d'activité</a> &rsaquo;
     <span class="text-gray-600">${e(scenario.label)} — ${revenuLabel}</span>
   </nav>
@@ -391,10 +455,10 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
     <h2 class="text-2xl font-bold text-gray-900 mb-4">📋 Autres scénarios Prime d'activité</h2>
     <div class="grid gap-2 sm:grid-cols-2">
       ${(aide.scenarios || [])
-        .filter((s) => s.id !== scenario.id)
+        .filter((s) => s.id !== scenario.id && !scenariosRetires(aideKey).has(`${s.slug}-${revenuLevel}-euros`))
         .slice(0, 6)
         .map((s) => {
-          const linkSlug = `/scenarios/prime-activite/${s.slug}-${revenuLevel}-euros.html`;
+          const linkSlug = `/scenarios/${aideKey}/${s.slug}-${revenuLevel}-euros`;
           return `<a href="${linkSlug}" class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-100 hover:border-blue-200 hover:shadow-sm transition-all text-sm">
           <span>${s.emoji}</span>
           <span class="text-gray-700">${s.label}</span>
@@ -405,7 +469,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
     </div>
   </section>
 
-  <div class="text-center mt-12"><a href="${BASE_URL}/scenarios/prime-activite" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-colors">← Retour à tous les scénarios Prime d'activité</a></div>
+  <div class="text-center mt-12"><a href="${BASE_URL}/scenarios" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-colors">← Retour à tous les scénarios</a></div>
 
 </main>
 
@@ -483,6 +547,7 @@ document.getElementById("salaire-slider").addEventListener("input",function(){
 // ─── Génération de toutes les pages ──────────────────────────
 function generateAll() {
   let total = 0;
+  let rang = 0;
   for (const [aideKey, aide] of Object.entries(data)) {
     const outputDir = path.join(__dirname, "..", "public", "scenarios", aideKey);
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
@@ -495,7 +560,10 @@ function generateAll() {
 
     for (const scenario of scenarios) {
       for (const revenuLevel of revenuLevels) {
-        const seoVariantIdx = total; // rotation des variantes SEO
+        // Rotation des variantes SEO sur toutes les combinaisons, retirées comprises,
+        // pour que les pages publiées gardent leurs titres et descriptions.
+        const seoVariantIdx = rang++;
+        if (scenariosRetires(aideKey).has(`${scenario.slug}-${revenuLevel}-euros`)) continue;
         const html = generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx);
         const filename = `${scenario.slug}-${revenuLevel}-euros.html`;
         fs.writeFileSync(path.join(outputDir, filename), html, "utf-8");

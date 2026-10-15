@@ -92,7 +92,7 @@
         "emoji": "💰",
         "badge": "simulation",
         "question": "Quel est l'impact sur ma Prime d'activité si mon salaire augmente de 100 € ?",
-        "explanation": "Lorsque votre salaire augmente, la Prime d'activité baisse d'environ 40 % de la hausse (la CAF retient 59,85 % de vos revenus d'activité en bonus, mais compte 100 % dans vos ressources). Sur 100 € de plus, la prime baisse donc d'environ 40 € et vous gardez un gain net d'environ 60 €, hors effet de la bonification individuelle.",
+        "explanation": "Lorsque votre salaire augmente, la Prime d'activité baisse d'environ {{tauxBaisse}} de la hausse (la CAF retient {{tauxActivite}} de vos revenus d'activité en bonus, mais compte 100 % dans vos ressources). Sur 100 € de plus, la prime baisse donc d'environ {{baisse:100}} et vous gardez un gain net d'environ {{gain:100}}, hors effet de la bonification individuelle.",
         "faq": [
           {
             "q": "Est-ce que ça vaut le coup d'accepter une petite augmentation de 100 € ?",
@@ -128,7 +128,7 @@
         "emoji": "💵",
         "badge": "simulation",
         "question": "Quel est l'impact sur ma Prime d'activité avec 200 € de salaire en plus ?",
-        "explanation": "Avec +200 €, la Prime d'activité baisse d'environ 80 € (environ 40 % × 200 €). Votre revenu total progresse d'environ 120 €. Si vos revenus sont entre 726 € et 1 699 €, la bonification individuelle peut encore atténuer cette baisse.",
+        "explanation": "Avec +200 €, la Prime d'activité baisse d'environ {{baisse:200}} (environ {{tauxBaisse}} × 200 €). Votre revenu total progresse d'environ {{gain:200}}. Si vos revenus sont entre {{seuilDebut}} et {{seuilMaximum}}, la bonification individuelle peut encore atténuer cette baisse.",
         "faq": [
           {
             "q": "Quel est le gain net après une augmentation de 200 € ?",
@@ -136,7 +136,7 @@
           },
           {
             "q": "La bonification individuelle compense-t-elle la baisse de la Prime ?",
-            "a": "Partiellement, si vos revenus sont dans la tranche 709 € – 1 659 €. Au-delà, la bonification est déjà à son maximum et ne compense plus."
+            "a": "Partiellement, si vos revenus sont dans la tranche {{seuilDebut}} – {{seuilMaximum}}. Au-delà, la bonification est déjà à son maximum et ne compense plus."
           }
         ],
         "overrides": {
@@ -145,7 +145,7 @@
         "crosslinks": [
           {
             "label": "Salaire net après revalorisation",
-            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+            "href": "https://www.lescalculateurs.fr/pages/salaire"
           },
           {
             "label": "Impôt après +200 €",
@@ -164,7 +164,7 @@
         "emoji": "📊",
         "badge": "simulation",
         "question": "Quel est l'impact sur ma Prime d'activité si je gagne 300 € de plus ?",
-        "explanation": "Avec +300 €, la baisse de Prime est plus marquée (≈183 €). La bonification individuelle (entre 726 € et 1 699 €) compense partiellement. Au total, votre revenu progresse d'environ 117 € nets par mois.",
+        "explanation": "Avec +300 €, la Prime baisse d'environ {{baisse:300}} (environ {{tauxBaisse}} de la hausse) : votre revenu total progresse donc d'environ {{gain:300}} nets par mois. La bonification individuelle (entre {{seuilDebut}} et {{seuilMaximum}}) atténue encore la baisse.",
         "faq": [
           {
             "q": "À partir de quel salaire la Prime d'activité devient-elle nulle ?",
@@ -181,7 +181,7 @@
         "crosslinks": [
           {
             "label": "Salaire net après une promotion",
-            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+            "href": "https://www.lescalculateurs.fr/pages/salaire"
           },
           {
             "label": "RSA après une augmentation",
@@ -217,7 +217,7 @@
         "crosslinks": [
           {
             "label": "Salaire après grosse augmentation",
-            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+            "href": "https://www.lescalculateurs.fr/pages/salaire"
           },
           {
             "label": "Perte d'éligibilité Prime",
@@ -308,7 +308,7 @@
         "emoji": "👫",
         "badge": "simulation",
         "question": "Comment évolue ma Prime d'activité si je me mets en couple ?",
-        "explanation": "Le montant forfaitaire passe de 638,28 € (personne seule) à 957,42 € (couple). Mais les deux revenus du foyer sont additionnés. Si votre conjoint a des revenus élevés, la Prime peut fortement diminuer ou disparaître.",
+        "explanation": "Le montant forfaitaire passe de {{forfaitSeul}} (personne seule) à {{forfaitCouple}} (couple). Mais les deux revenus du foyer sont additionnés. Si votre conjoint a des revenus élevés, la Prime peut fortement diminuer ou disparaître.",
         "faq": [
           {
             "q": "Doit-on déclarer les deux salaires à la CAF ?",
@@ -344,7 +344,7 @@
         "emoji": "👶",
         "badge": "simulation",
         "question": "Quel impact si j'ai un enfant sur ma Prime d'activité ?",
-        "explanation": "Avec un enfant, le montant forfaitaire de la Prime augmente significativement : de 638,28 € (seul) à 957,42 € avec 1 enfant, et jusqu'à 1 092,84 € pour un parent isolé (taux majoré). La Prime progresse donc nettement.",
+        "explanation": "Avec un enfant, le montant forfaitaire de la Prime augmente significativement : de {{forfaitSeul}} (seul) à {{forfaitCouple}} avec 1 enfant, et jusqu'à {{forfaitIsoleMajore1}} pour un parent isolé ayant droit à la majoration (séparation récente ou enfant de moins de 3 ans). La Prime progresse donc nettement.",
         "faq": [
           {
             "q": "Quand déclarer l'arrivée d'un enfant à la CAF ?",
@@ -433,7 +433,7 @@
         "crosslinks": [
           {
             "label": "Salaire net au SMIC 2026",
-            "href": "https://www.lescalculateurs.fr/pages/salaire.html"
+            "href": "https://www.lescalculateurs.fr/pages/salaire"
           },
           {
             "label": "RSA et SMIC : quel écart ?",
@@ -452,7 +452,7 @@
         "emoji": "⚠️",
         "badge": "reforme",
         "question": "Quel serait l'impact d'une réduction de 5 % des barèmes de la Prime d'activité ?",
-        "explanation": "Une réduction de 5 % du barème abaisserait le forfait de base de 638,28 € à environ 606 € pour une personne seule. Tous les bénéficiaires seraient concernés, quel que soit leur niveau de revenus.",
+        "explanation": "Une réduction de 5 % du barème abaisserait le forfait de base de {{forfaitSeul}} à environ {{forfaitSeulMoins5}} pour une personne seule. Tous les bénéficiaires seraient concernés, quel que soit leur niveau de revenus.",
         "faq": [
           {
             "q": "Cette réforme est-elle confirmée ?",
@@ -488,11 +488,11 @@
         "emoji": "🚀",
         "badge": "reforme",
         "question": "Et si la bonification individuelle de la Prime d'activité était portée à 300 € ?",
-        "explanation": "La bonification passerait de 240,63 € à 300 € maximum. Les travailleurs gagnant entre 726 € et 1 699 € par mois verraient leur Prime augmenter, avec un gain pouvant atteindre +59 € pour les revenus autour de 1 200 €.",
+        "explanation": "La bonification passerait de {{bonifMax}} à 300 € maximum. Les travailleurs gagnant plus de {{seuilDebut}} par mois verraient leur Prime augmenter, avec un gain pouvant atteindre {{gainReforme300}} à partir de {{seuilMaximum}} de revenus.",
         "faq": [
           {
             "q": "Qui bénéficierait de cette bonification renforcée ?",
-            "a": "Les salariés dont les revenus sont compris entre 726 € et 1 699 € nets par mois. Le gain maximum concerne les revenus proches de 1 659 €."
+            "a": "Les salariés dont les revenus dépassent {{seuilDebut}} nets par mois. Le gain maximum (environ {{gainReforme300}}) concerne les revenus à partir de {{seuilMaximum}}."
           },
           {
             "q": "Cette mesure est-elle à l'étude ?",
