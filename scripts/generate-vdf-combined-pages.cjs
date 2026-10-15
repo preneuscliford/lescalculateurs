@@ -304,8 +304,6 @@ function calculateAplEstimate({ city, income, rent }) {
     loyerPrisCompte: r.data.loyer_pris_compte,
     participation: r.data.participation,
     aplEstimee: r.data.apl_estimee,
-    plafondApl: r.data.plafond_apl,
-    forfaitLogement: r.data.forfait_logement,
   };
 }
 

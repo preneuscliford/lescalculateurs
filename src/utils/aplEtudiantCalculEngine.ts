@@ -8,11 +8,11 @@
  *    (caf.fr, actualité du 3 juillet 2026).
  * 2. Ressources : la CAF retient au moins un montant forfaitaire annuel pour les
  *    étudiants (8 600 EUR non boursier / 6 900 EUR boursier en logement classique,
- *    6 600 / 5 400 EUR en logement-foyer), gelé en 2026 (arrêté du 30/12/2024,
- *    non revalorisé en 2026 - MoneyVox, quelles-aides.fr ; texte non relu sur
- *    Légifrance). Les bourses d'études ne sont pas comptées dans les ressources.
- * 3. Montant : moteur APL général (plafonds de loyer officiels au 01/10/2026,
- *    forfait charges, participation minimale).
+ *    6 600 / 5 400 EUR en logement-foyer) : article 6 de l'arrêté du 27/09/2019,
+ *    version du 30/12/2024 en vigueur (relue sur Légifrance le 15/10/2026). Les
+ *    bourses d'études ne sont pas comptées dans les ressources.
+ * 3. Montant : moteur APL général (formule officielle, barème au 01/10/2026) ; le
+ *    forfait est passé comme ressources annuelles minimales (sans abattement).
  */
 
 import { calculerAPL, type SituationFamiliale, type Zone } from "./aplCalculEngine";
@@ -98,15 +98,14 @@ export function calculerAPLEtudiant(data: APLEtudiantData): APLEtudiantResult {
 
   // 2. Ressources retenues : au moins le montant forfaitaire étudiant
   const revenus = Math.max(0, Number(data.revenus) || 0);
-  const ressourcesRetenues = Math.max(revenus, forfaitMensuel);
-
   // 3. Calcul avec le moteur APL général
   const result = calculerAPL({
     situation: SITUATION_MOTEUR[data.situation] ?? "seul",
     enfants: Math.max(0, Math.floor(Number(data.personnesCharge) || 0)),
-    revenus_mensuels: ressourcesRetenues,
+    revenus_mensuels: revenus,
     loyer_mensuel: Math.max(0, Number(data.chargesLocatives) || 0),
     region: ZONE_MOTEUR[zone],
+    ressources_annuelles_minimum: forfaitAnnuel,
   });
 
   if (!result.success || !result.data) {
@@ -122,7 +121,7 @@ export function calculerAPLEtudiant(data: APLEtudiantData): APLEtudiantResult {
   const loyer = Math.max(0, Number(data.chargesLocatives) || 0);
   const details = {
     ressourcesMaxi: forfaitMensuel,
-    ressourcesRetenues: round2(ressourcesRetenues),
+    ressourcesRetenues: round2(result.data.ressources_annuelles / 12),
     loyerRetenu: result.data.loyer_pris_compte,
     plafondLoyer: result.data.plafond_loyer,
     pourcentageLoyer: loyer > 0 ? round2(montantEstime / loyer) : 0,

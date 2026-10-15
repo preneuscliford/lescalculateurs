@@ -107,7 +107,7 @@
             "name": "Quel est le plafond de ressources APL 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le plafond de ressources APL 2026 dépend de votre zone géographique et de votre composition familiale. En zone 1 (IDF), le plafond est d'environ 25 000€ à 35 000€ de revenus annuels selon la situation. En zone 2, entre 22 000€ et 32 000€. En zone 3, entre 19 000€ et 28 000€. Ces montants sont indicatifs et évoluent chaque année. Au-delà de ces seuils, votre participation personnelle devient trop élevée et l'APL peut tomber à 0€."
+              "text": "Le plafond de ressources APL 2026 dépend de votre zone géographique et de votre composition familiale. Il n'y a pas de plafond unique : l'aide s'annule lorsque votre participation personnelle dépasse le loyer retenu et le forfait charges. Au 1er octobre 2026, pour un loyer égal au plafond, l'aide devient nulle au-delà d'environ 15 900 € de ressources annuelles pour une personne seule en zone 1, 14 900 € en zone 2, et 18 200 € pour un couple sans enfant en zone 2 (barème CAF). Le seuil est plus élevé avec des enfants à charge."
             }
           },
           {
@@ -211,7 +211,7 @@
             "name": "Comment faire une simulation APL montant ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pour faire une simulation APL montant précise, notre calculateur en ligne prend en compte : votre zone géographique (déterminée par le code postal), le montant de votre loyer (avec plafond selon la zone), vos revenus du foyer, et votre situation familiale (parts fiscales). Le simulateur apl montant applique la formule officielle CAF : APL = Loyer plafonné - Participation personnelle. Résultat immédiat en euros !"
+              "text": "Pour faire une simulation APL montant précise, notre calculateur en ligne prend en compte : votre zone géographique (déterminée par le code postal), le montant de votre loyer (avec plafond selon la zone), vos revenus du foyer, et votre situation familiale (parts fiscales). Le simulateur apl montant applique la formule officielle : APL = loyer plafonné + forfait charges - participation personnelle. Résultat immédiat en euros !"
             }
           },
           {
@@ -235,7 +235,7 @@
             "name": "Comment calculer les APL CAF ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pour calculer les APL CAF, utilisez notre estimateur en ligne gratuit : 1) Déterminez votre zone géographique (1, 2 ou 3) avec votre code postal 2) Indiquez le montant de votre loyer mensuel hors charges 3) Renseignez vos revenus nets mensuels et ceux de votre conjoint le cas échéant 4) Précisez votre situation familiale (nombre de parts fiscales). Le calcul des APL CAF applique la formule : loyer plafonné - participation personnelle. Le montant varie entre 100€ et 350€ en moyenne selon votre situation."
+              "text": "Pour calculer les APL CAF, utilisez notre estimateur en ligne gratuit : 1) Déterminez votre zone géographique (1, 2 ou 3) avec votre code postal 2) Indiquez le montant de votre loyer mensuel hors charges 3) Renseignez vos revenus nets mensuels et ceux de votre conjoint le cas échéant 4) Précisez votre situation familiale (nombre de parts fiscales). Le calcul des APL CAF applique la formule officielle : loyer plafonné + forfait charges - participation personnelle. Le montant dépend de vos ressources, de votre loyer, de votre zone et de la composition de votre foyer."
             }
           },
           {
@@ -615,7 +615,7 @@
         <div class="mt-4 space-y-3">
           <details class="rounded-lg border border-gray-200 p-4">
             <summary class="cursor-pointer font-semibold text-gray-800">Quel revenu est pris en compte pour l'APL ?</summary>
-            <p class="mt-2 text-sm text-gray-600">Le calcul s’appuie sur vos revenus de l’année N-2 (réactualisés selon votre situation actuelle en cas de baisse de ressources), mais aussi votre foyer, votre zone et votre loyer retenu. Le bon réflexe est de simuler avec votre situation réelle plutôt qu'avec une moyenne abstraite.</p>
+            <p class="mt-2 text-sm text-gray-600">Le calcul s’appuie sur les ressources de votre foyer des 12 derniers mois, actualisées automatiquement tous les 3 mois, mais aussi votre foyer, votre zone et votre loyer retenu. Le bon réflexe est de simuler avec votre situation réelle plutôt qu'avec une moyenne abstraite.</p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4">
             <summary class="cursor-pointer font-semibold text-gray-800">Peut-on toucher l'APL au chômage ?</summary>
@@ -779,7 +779,7 @@
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Comment est calculée l’APL ?</h3>
             <p class="text-gray-600">Le calcul exact dépend de la zone, du loyer retenu (plafonné), de
  la composition du foyer et des ressources. Une lecture simple est
- : <strong>APL ≈ loyer retenu − participation personnelle</strong>.
+ : <strong>APL = loyer retenu + forfait charges − participation personnelle</strong>.
  Pour un chiffre adapté à votre cas, utilisez le simulateur
  ci‑dessus.</p>
           </div>
@@ -867,31 +867,27 @@
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Comment calculer votre participation personnelle APL ?</h3>
             <p class="text-gray-600 mb-3">
-              <strong>Formule simplifiée : APL = Loyer pris en compte – Participation
- personnelle</strong>
+              <strong>Formule officielle : APL = loyer pris en compte + forfait charges − participation
+                personnelle</strong>
             </p>
             <p class="text-gray-600 mb-3">La participation personnelle dépend de :</p>
             <ul class="text-gray-600 text-sm space-y-1 ml-4 mb-3">
-              <li>• Vos revenus fiscaux (revenus N-2, transmis automatiquement par
- les impôts)</li>
+              <li>• Les ressources de votre foyer des 12 derniers mois (actualisées tous les 3 mois)</li>
               <li>• Votre composition familiale et nombre d'enfants</li>
               <li>• Votre zone géographique (Île-de-France, Province, DOM-TOM)</li>
               <li>• Le loyer pris en compte (plafonné par la CAF)</li>
             </ul>
-            <p class="text-gray-600">Plus vos revenus sont élevés, moins vous recevez d'APL. La CAF
- utilise votre revenu fiscal de référence (RFR) N-2, transmis
- automatiquement par les impôts grâce au système "RLS".</p>
+            <p class="text-gray-600">Plus vos revenus sont élevés, moins vous recevez d'APL. La CAF retient les ressources des 12 derniers mois, actualisées
+              automatiquement tous les 3 mois.</p>
           </div>
 
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Quels revenus sont pris en compte ?</h3>
             <p class="text-gray-600 mb-3">La CAF considère les revenus professionnels, allocations chômage,
- pensions, revenus du capital et allocations sociales. Votre avis
- d'imposition sur le revenu des 2 dernières années est analysé.</p>
-            <p class="text-sm italic text-orange-700 bg-orange-50 p-2 rounded">💡<strong>Important :</strong> La CAF utilise votre revenu fiscal
- de référence (RFR) N-2, transmis automatiquement par les impôts
- grâce au système de ressources "RLS". Vos ressources ne sont
- vérifiées qu'une fois par an.</p>
+ pensions, revenus du capital et allocations sociales. Ce sont les ressources des 12 derniers mois qui comptent.</p>
+            <p class="text-sm italic text-orange-700 bg-orange-50 p-2 rounded">💡<strong>Important :</strong> Depuis le 1er janvier 2021, la CAF retient
+              les ressources des 12 derniers mois, actualisées automatiquement tous
+              les 3 mois : vous n'avez aucune démarche à faire.</p>
           </div>
 
           <div>
@@ -1051,7 +1047,7 @@
           <p class="text-blue-800 text-sm">
             <strong>⚠️ Note :</strong> Ces exemples sont fournis à titre
  illustratif. Les montants réels d'APL dépendent de nombreux facteurs
- : revenus N-2 exacts, composition du foyer, loyer pris en compte par
+ : ressources exactes des 12 derniers mois, composition du foyer, loyer pris en compte par
  la CAF, situation patrimoniale, etc. Pour un calcul officiel,
  contactez la CAF de votre département.</p>
         </div>
@@ -1178,8 +1174,8 @@
             <strong>📌 Remarques importantes :</strong> Ces plafonds sont
  revalorisés chaque 1er octobre selon l'IRL (source : barème CAF des aides au logement).
  Un loyer inférieur au plafond est retenu tel quel : la revalorisation du plafond ne change alors pas votre aide. Votre APL réelle dépend de votre contribution exacte,
- elle-même calculée à partir de vos revenus N-2 et de votre
- patrimoine.</p>
+ elle-même calculée à partir de vos ressources des 12 derniers mois et de votre
+              patrimoine.</p>
         </div>
 
         <!-- Lien vers zones APL -->
@@ -1573,12 +1569,6 @@
               </div>`
               : "";
 
-          // 🧮 PROPOSITION 2: Message si montant plafonné (anti-bullshit)
-          const messagePlafonne = data.is_plafonne
-            ? `<div class="text-xs text-blue-600 mt-2 italic">
-                ℹ️ ${MESSAGES_PEDAGOGIQUES.apl_plafonne}
-              </div>`
-            : "";
 
           return `
             <div class="space-y-4">
@@ -1590,8 +1580,7 @@
                   data.apl_estimee,
                 )}</p>
                 <p class="text-sm text-green-700 mt-2">par mois</p>
-                ${messagePlafonne}
-                <p class="text-xs text-green-700 mt-3 italic border-t border-green-300 pt-3">📐 Logique de calcul (simplifiée) : APL ≈ Loyer retenu − Participation personnelle estimée selon les revenus et forfaits logement.</p>
+                <p class="text-xs text-green-700 mt-3 italic border-t border-green-300 pt-3">📐 Formule officielle : aide = loyer retenu + forfait charges − participation personnelle, puis minoration de 5 € et CRDS (barème au 1er octobre 2026).</p>
               </div>
 
               <div class="bg-blue-50 p-4 rounded-lg space-y-3 text-sm border-l-4 border-blue-400">
@@ -1605,7 +1594,7 @@
                 </div>
                 
                 <div class="flex justify-between bg-white p-2 rounded">
-                  <span class="text-gray-700">Loyer pris en compte (plafond CAF estimé : ${formatCurrency(
+                  <span class="text-gray-700">Loyer pris en compte (plafond officiel : ${formatCurrency(
                     data.plafond_loyer,
                   )}) :</span>
                   <span class="font-medium text-blue-600">${formatCurrency(
@@ -1615,17 +1604,17 @@
                 
                 <div class="border-t pt-3">
                   <div class="flex justify-between mb-1">
-                    <span class="text-gray-700">Votre participation (30% revenus − forfait ${formatCurrency(
-                      data.forfait_logement,
-                    )}) :</span>
+                    <span class="text-gray-700">Forfait charges :</span>
+                    <span class="font-medium">${formatCurrency(data.forfait_charges)}</span>
+                  </div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Votre participation personnelle :</span>
                     <span class="font-medium">${formatCurrency(
                       data.participation,
                     )}</span>
                   </div>
                   <div class="text-xs text-gray-600 ml-4">
-                    = (30% × ${formatCurrency(
-                      data.revenus_mensuels,
-                    )}) − ${formatCurrency(data.forfait_logement)}
+                    = P0 ${formatCurrency(data.participation_minimale)} + ${(data.taux_participation * 100).toLocaleString("fr-FR", { maximumFractionDigits: 3 })} % × (ressources ${data.ressources_annuelles.toLocaleString("fr-FR")} € − ${data.abattement_r0.toLocaleString("fr-FR")} €) par an
                   </div>
                 </div>
                 
@@ -1689,7 +1678,7 @@
                 <p><strong>📌 Simulation à titre indicatif :</strong> Cette estimation ne constitue pas une demande officielle. ${
                   MESSAGES_PEDAGOGIQUES.cta_caf
                 } <a href="https://www.caf.fr" target="_blank" class="underline hover:no-underline font-medium">caf.fr</a></p>
-                <p class="text-xs mt-2 text-orange-700 italic">📚 Sources & méthodologie : barèmes CAF, observatoires logement, pratiques constatées (simulation non contractuelle).</p>
+                <p class="text-xs mt-2 text-orange-700 italic">📚 Méthode : formule officielle des aides au logement (articles D. 823-16 et D. 823-17 du code de la construction et de l'habitation, barème au 1er octobre 2026) ; estimation non contractuelle.</p>
               </div>
             </div>
           `;
