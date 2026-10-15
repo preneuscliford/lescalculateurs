@@ -1,5 +1,6 @@
 import fs from "fs";
 import { siteUpdateDate } from "./lib/pseo/site-date.js";
+import { loadRetiredPaths } from "./lib/pseo/retired-pages.js";
 import path from "path";
 import { loadNotaireEngine } from "./lib/pseo/notaire-engine.js";
 import { fileURLToPath } from "url";
@@ -57,8 +58,10 @@ async function main() {
 
   const engine = loadNotaireEngine(repoRoot);
   const scenarioMap = {};
+  const retired = loadRetiredPaths(repoRoot);
   notaireScenarios.forEach((s) => {
-    scenarioMap[s.slug] = s;
+    // Scénario redirigé (vercel.json) : gardé pour le calcul, sans lien vers sa page
+    scenarioMap[s.slug] = { ...s, retired: retired.has(`/pages/notaire/${s.slug}`) };
   });
 
   const targetConfig = {

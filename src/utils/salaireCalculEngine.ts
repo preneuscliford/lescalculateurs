@@ -20,6 +20,9 @@ export interface SalaireResult {
   tauxPAS: number;
 }
 
+// Taux de cotisations salariales 2026 (sous le plafond de la Sécurité sociale) : voir calculerSalaire
+export const TAUX_SALARIAL: Record<StatutSalarie, number> = { non_cadre: 0.2084, cadre: 0.2101 };
+
 export function calculerSalaire(input: SalaireInput): SalaireResult {
   const brut = Number(input.brutMensuel);
   const statut = input.statut;
@@ -33,7 +36,7 @@ export function calculerSalaire(input: SalaireInput): SalaireResult {
   // Agirc-Arrco T1 4,01 %, CSG-CRDS 9,70 % sur 98,25 % du brut = 20,84 % (identique à
   // salaireNetCalculEngine) ; cadre : + APEC et écart mesuré sur le simulateur Urssaf.
   // Les anciens taux fixes (23 % / 25 %) sous-estimaient le net de 10 à 184 € par mois.
-  const tauxSalarial = statut === "cadre" ? 0.2101 : 0.2084;
+  const tauxSalarial = TAUX_SALARIAL[statut];
   const netAvantImpot = brut * (1 - tauxSalarial);
   const pasMensuel = netAvantImpot * (tauxPAS / 100);
   const netApresImpot = netAvantImpot - pasMensuel;

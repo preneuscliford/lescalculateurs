@@ -1,5 +1,6 @@
 import fs from "fs";
 import { siteUpdateDate } from "./lib/pseo/site-date.js";
+import { withoutRetired } from "./lib/pseo/retired-pages.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -95,7 +96,8 @@ async function main() {
 
   const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
 
-  const enriched = simulateursAbsenceRevenuScenarios.map((scenario) => {
+  // Scénarios redirigés (vercel.json) : ni générés, ni liés depuis les autres pages
+  const enriched = withoutRetired(simulateursAbsenceRevenuScenarios, "simulateurs", repoRoot).map((scenario) => {
     const areInput = scenario.areInput || {
       situation: scenario.input.situation,
       ancienneteEmploi: 0,

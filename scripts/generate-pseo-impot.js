@@ -1,5 +1,6 @@
 import fs from "fs";
 import { siteUpdateDate } from "./lib/pseo/site-date.js";
+import { withoutRetired } from "./lib/pseo/retired-pages.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -110,7 +111,8 @@ async function main() {
   const engine = await loadIrEngine();
   const targetConfig = { stylesHref: "/tailwind.css", mainScriptTag: '<script type="module" src="/content.ts"></script>' };
 
-  const enriched = sanitizedScenarios.map((scenario) => {
+  // Scénarios redirigés (vercel.json) : ni générés, ni liés depuis les autres pages
+  const enriched = withoutRetired(sanitizedScenarios, "impot", repoRoot).map((scenario) => {
     const result = engine.calculerIR({
       revenu: scenario.input.revenu,
       parts: scenario.input.parts,

@@ -122,7 +122,7 @@ function wrapInTemplate(content, depName, code) {
         <div class="flex justify-between items-center py-4">
           <div class="flex items-center space-x-4">
             <img src="/logo.svg" alt="LesCalculateurs.fr" class="w-8 h-8" />
-            <a href="/pages/taxe-fonciere" class="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-2">
+            <a href="/pages/taxe" class="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
               <span>← Taxe Fonciere</span>
             </a>

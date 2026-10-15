@@ -139,11 +139,19 @@ function pickIntroVariant(slug) {
   return INTRO_VARIANTS[Math.abs(hash) % INTRO_VARIANTS.length];
 }
 
-function renderMethodologySources() {
+function pct(taux) {
+  return (taux * 100).toLocaleString("fr-FR", { maximumFractionDigits: 2 }) + " %";
+}
+
+function renderMethodologySources(tauxSalarial) {
   return (
     '\n      <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">\n        <h2 class="text-2xl font-bold text-slate-900">M\u00e9thodologie et sources</h2>\n        <p class="mt-4 text-slate-700 leading-relaxed">\n          ' +
     renderText(
-      "Cette estimation repose sur le moteur de calcul brut/net du site et sur des taux de cotisations standards (23% non-cadre, 25% cadre). Elle donne un ordre de grandeur utile avant verification sur votre bulletin de paie.",
+      "Cette estimation repose sur le moteur de calcul brut/net du site et sur des taux de cotisations standards (" +
+        pct(tauxSalarial.non_cadre) +
+        " non-cadre, " +
+        pct(tauxSalarial.cadre) +
+        " cadre, sous le plafond de la Sécurité sociale). Elle donne un ordre de grandeur utile avant verification sur votre bulletin de paie.",
     ) +
     '\n        </p>\n        <div class="mt-6 flex flex-wrap gap-3">\n          <a href="/pages/methodologie" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">Consulter notre m\u00e9thodologie</a>\n          <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F559" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 font-semibold text-orange-900 transition-colors hover:bg-orange-100">Voir la fiche service-public.fr</a>\n          <a href="https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net" target="_blank" rel="noopener" class="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-900 transition-colors hover:bg-slate-50">Simulateur URSSAF</a>\n        </div>\n      </section>'
   );
@@ -365,7 +373,7 @@ export function renderSalaireScenarioPage(args) {
     '</tbody></table>\n        </div>\n      </section>\n\n      <section id="hypotheses" class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">\n        <h2 class="text-2xl font-bold text-slate-900">Hypoth\u00e8ses importantes</h2>\n        <ul class="mt-6 list-disc space-y-3 pl-5">\n          ' +
     checklistItems +
     "\n        </ul>\n      </section>\n\n      " +
-    renderMethodologySources() +
+    renderMethodologySources(args.tauxSalarial) +
     "\n      " +
     renderComparisonTable(scenario, estimate, relatedPages) +
     "\n      " +

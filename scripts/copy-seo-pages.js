@@ -329,7 +329,7 @@ function generateSatellitePages({
       pillarLabel: "Simulateur de pret immobilier",
     },
     "taxe-fonciere": {
-      pillarUrl: "/pages/taxe-fonciere",
+      pillarUrl: "/pages/taxe",
       pillarLabel: "Simulateur Taxe fonciere 2026",
     },
     plusvalue: {

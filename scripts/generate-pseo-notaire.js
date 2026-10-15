@@ -1,5 +1,6 @@
 import fs from "fs";
 import { siteUpdateDate } from "./lib/pseo/site-date.js";
+import { withoutRetired } from "./lib/pseo/retired-pages.js";
 import path from "path";
 import { loadNotaireEngine } from "./lib/pseo/notaire-engine.js";
 import { fileURLToPath } from "url";
@@ -53,7 +54,8 @@ async function main() {
     mainScriptTag: '<script type="module" src="/main.ts"></script>',
   };
 
-  const enriched = notaireScenarios.map((scenario) => {
+  // Scénarios redirigés (vercel.json) : ni générés, ni liés depuis les autres pages
+  const enriched = withoutRetired(notaireScenarios, "notaire", repoRoot).map((scenario) => {
     const result = engine.calculFraisNotaire(
       scenario.input.prix,
       scenario.input.type,

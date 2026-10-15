@@ -1,5 +1,6 @@
 import fs from "fs";
 import { siteUpdateDate } from "./lib/pseo/site-date.js";
+import { withoutRetired } from "./lib/pseo/retired-pages.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -177,7 +178,8 @@ async function main() {
 
   cleanupGeneratedPages(outputDir, new Set(scenarios.map((s) => normalizeSlug(s.slug))));
 
-  const enriched = scenarios.map((scenario) => {
+  // Scénarios redirigés (vercel.json) : ni générés, ni liés depuis les autres pages
+  const enriched = withoutRetired(scenarios, "salaire", repoRoot).map((scenario) => {
     const calc = engine.calculerSalaire(scenario.input);
     return {
       ...scenario,
@@ -204,6 +206,8 @@ async function main() {
       relatedPages,
       targetConfig,
       generatedAt,
+      // Taux du moteur salaire (source unique), cités dans la méthodologie
+      tauxSalarial: engine.TAUX_SALARIAL,
     });
 
     const flatPath = path.join(outputDir, `${scenario.slug}.html`);

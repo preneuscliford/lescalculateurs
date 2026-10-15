@@ -27,7 +27,7 @@ const pillarConfigs = {
     pillarLabel: "Simulateur de prêt immobilier",
   },
   "taxe-fonciere": {
-    pillarUrl: "/pages/taxe-fonciere",
+    pillarUrl: "/pages/taxe",
     pillarLabel: "Simulateur taxe foncière 2026",
   },
   plusvalue: {

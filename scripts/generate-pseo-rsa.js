@@ -1,5 +1,6 @@
 import fs from "fs";
 import { siteUpdateDate } from "./lib/pseo/site-date.js";
+import { withoutRetired } from "./lib/pseo/retired-pages.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -105,7 +106,8 @@ async function main() {
   cleanupGeneratedPages(outputDir, new Set(rsaScenarios.map((item) => item.slug)));
   const engine = await loadRsaEngine();
 
-  const enriched = rsaScenarios.map((scenario) => {
+  // Scénarios redirigés (vercel.json) : ni générés, ni liés depuis les autres pages
+  const enriched = withoutRetired(rsaScenarios, "rsa", repoRoot).map((scenario) => {
     const result = engine.calculerRSA(scenario.input);
     return {
       ...scenario,

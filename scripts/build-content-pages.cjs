@@ -131,7 +131,7 @@ function buildRelatedLinks(article, allItems, mapping) {
       const guide = (allItems.guidesBySlug || {})[slug] || (allItems.actualitesBySlug || {})[slug];
       if (guide) {
         html +=
-          '<a href="/guides/' +
+          '<a href="/pages/guides/' +
           esc(slug) +
           '" class="bg-white p-3 rounded-lg border border-gray-200 hover:shadow-md transition-shadow flex items-center gap-3">';
         html += '<span class="text-2xl">\u{1F4DA}</span>';
@@ -152,7 +152,7 @@ function buildRelatedLinks(article, allItems, mapping) {
       const actu = (allItems.actualitesBySlug || {})[slug] || (allItems.guidesBySlug || {})[slug];
       if (actu) {
         html +=
-          '<a href="/actualites/' +
+          '<a href="/pages/actualites/' +
           esc(slug) +
           '" class="bg-white p-3 rounded-lg border border-gray-200 hover:shadow-md transition-shadow flex items-center gap-3">';
         html += '<span class="text-2xl">\u{1F4F0}</span>';
@@ -179,9 +179,9 @@ function renderContentPage(article, allItems, mapping) {
   const isGuide = article.type === "guide";
   const typeLabel = isGuide ? "Guide" : "Actualit\u00e9";
   const breadcrumbLabel = isGuide ? "Guides" : "Actualit\u00e9s";
-  const parentUrl = isGuide ? "/guides" : "/actualites";
+  const parentUrl = isGuide ? "/pages/guides" : "/pages/actualites";
   const pageType = isGuide ? "guides" : "actualites";
-  const pageUrl = "https://www.lescalculateurs.fr/" + pageType + "/" + fm.slug;
+  const pageUrl = "https://www.lescalculateurs.fr/pages/" + pageType + "/" + fm.slug;
   const bodyContent = marked.parse(article.body);
   const relatedLinks = buildRelatedLinks(article, allItems, mapping);
 
@@ -228,7 +228,7 @@ function renderContentPage(article, allItems, mapping) {
           "@type": "ListItem",
           position: 3,
           name: categoryLabel,
-          item: "https://www.lescalculateurs.fr/categorie/" + categorySlug,
+          item: "https://www.lescalculateurs.fr/pages/categorie/" + categorySlug,
         },
         { "@type": "ListItem", position: 4, name: fm.title, item: pageUrl },
       ],
@@ -315,8 +315,8 @@ function renderContentPage(article, allItems, mapping) {
     "          </a>\n" +
     "        </div>\n" +
     '        <nav class="flex items-center space-x-4 text-sm">\n' +
-    '          <a href="/actualites" class="text-gray-600 hover:text-gray-900">Actualit\u00e9s</a>\n' +
-    '          <a href="/guides" class="text-gray-600 hover:text-gray-900">Guides</a>\n' +
+    '          <a href="/pages/actualites" class="text-gray-600 hover:text-gray-900">Actualit\u00e9s</a>\n' +
+    '          <a href="/pages/guides" class="text-gray-600 hover:text-gray-900">Guides</a>\n' +
     '          <a href="/pages/simulateurs" class="text-gray-600 hover:text-gray-900">Simulateurs</a>\n' +
     "        </nav>\n" +
     "      </div>\n" +
@@ -332,7 +332,7 @@ function renderContentPage(article, allItems, mapping) {
     breadcrumbLabel +
     "</a>\n" +
     "        <span>\u2022</span>\n" +
-    '        <a href="/categorie/' +
+    '        <a href="/pages/categorie/' +
     categorySlug +
     '" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">' +
     esc(categoryLabel) +
@@ -376,7 +376,7 @@ function renderContentPage(article, allItems, mapping) {
     '" class="text-blue-600 hover:text-blue-700 font-semibold">\u2190 Tous les ' +
     breadcrumbLabel.toLowerCase() +
     "</a>\n" +
-    '        <a href="/categorie/' +
+    '        <a href="/pages/categorie/' +
     categorySlug +
     '" class="text-blue-600 hover:text-blue-700">Plus sur ' +
     esc(categoryLabel) +
@@ -404,8 +404,8 @@ function renderContentPage(article, allItems, mapping) {
     "        <div>\n" +
     '          <h3 class="text-white font-bold mb-3">Contenus</h3>\n' +
     '          <ul class="space-y-2 text-sm">\n' +
-    '            <li><a href="/actualites" class="hover:text-white">Actualit\u00e9s</a></li>\n' +
-    '            <li><a href="/guides" class="hover:text-white">Guides</a></li>\n' +
+    '            <li><a href="/pages/actualites" class="hover:text-white">Actualit\u00e9s</a></li>\n' +
+    '            <li><a href="/pages/guides" class="hover:text-white">Guides</a></li>\n' +
     '            <li><a href="/pages/simulateurs" class="hover:text-white">Simulateurs</a></li>\n' +
     "          </ul>\n" +
     "        </div>\n" +
@@ -452,7 +452,7 @@ function renderListingPage(type, items, categories, mapping) {
     itemsHtml +=
       '<div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">\n' +
       '      <div class="flex items-center gap-2 text-sm text-gray-500 mb-2">\n' +
-      '        <a href="/categorie/' +
+      '        <a href="/pages/categorie/' +
       catSlug +
       '" class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs font-medium">' +
       esc(item.frontmatter.category || "G\u00e9n\u00e9ral") +
@@ -465,7 +465,7 @@ function renderListingPage(type, items, categories, mapping) {
       "</time>\n" +
       "      </div>\n" +
       '      <h3 class="text-xl font-bold text-gray-900 mb-2">\n' +
-      '        <a href="/' +
+      '        <a href="/pages/' +
       pathPrefix +
       "/" +
       esc(item.frontmatter.slug) +
@@ -476,7 +476,7 @@ function renderListingPage(type, items, categories, mapping) {
       '      <p class="text-gray-600 text-sm mb-3">' +
       esc(item.frontmatter.description || "") +
       "</p>\n" +
-      '      <a href="/' +
+      '      <a href="/pages/' +
       pathPrefix +
       "/" +
       esc(item.frontmatter.slug) +
@@ -490,7 +490,7 @@ function renderListingPage(type, items, categories, mapping) {
   for (const catSlug of Object.keys(categories || {})) {
     const cat = categories[catSlug];
     categoryLinks +=
-      '          <a href="/categorie/' +
+      '          <a href="/pages/categorie/' +
       catSlug +
       '" class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium">' +
       esc(cat.name) +
@@ -503,7 +503,7 @@ function renderListingPage(type, items, categories, mapping) {
       "@type": "CollectionPage",
       name: label,
       description: description,
-      url: "https://www.lescalculateurs.fr/" + pathPrefix,
+      url: "https://www.lescalculateurs.fr/pages/" + pathPrefix,
     },
     null,
     2,
@@ -522,7 +522,7 @@ function renderListingPage(type, items, categories, mapping) {
     esc(description) +
     '" />\n' +
     '  <meta name="google-adsense-account" content="ca-pub-2209781252231399" />\n' +
-    '  <link rel="canonical" href="https://www.lescalculateurs.fr/' +
+    '  <link rel="canonical" href="https://www.lescalculateurs.fr/pages/' +
     pathPrefix +
     '" />\n' +
     '  <meta property="og:type" content="website" />\n' +
@@ -552,10 +552,10 @@ function renderListingPage(type, items, categories, mapping) {
     "          </a>\n" +
     "        </div>\n" +
     '        <nav class="flex items-center space-x-4 text-sm">\n' +
-    '          <a href="/actualites" class="text-gray-600 hover:text-gray-900' +
+    '          <a href="/pages/actualites" class="text-gray-600 hover:text-gray-900' +
     (type === "actualite" ? " font-bold" : "") +
     '">Actualit\u00e9s</a>\n' +
-    '          <a href="/guides" class="text-gray-600 hover:text-gray-900' +
+    '          <a href="/pages/guides" class="text-gray-600 hover:text-gray-900' +
     (type === "guide" ? " font-bold" : "") +
     '">Guides</a>\n' +
     '          <a href="/pages/simulateurs" class="text-gray-600 hover:text-gray-900">Simulateurs</a>\n' +
@@ -602,8 +602,8 @@ function renderListingPage(type, items, categories, mapping) {
     "        <div>\n" +
     '          <h3 class="text-white font-bold mb-3">Contenus</h3>\n' +
     '          <ul class="space-y-2 text-sm">\n' +
-    '            <li><a href="/actualites" class="hover:text-white">Actualit\u00e9s</a></li>\n' +
-    '            <li><a href="/guides" class="hover:text-white">Guides</a></li>\n' +
+    '            <li><a href="/pages/actualites" class="hover:text-white">Actualit\u00e9s</a></li>\n' +
+    '            <li><a href="/pages/guides" class="hover:text-white">Guides</a></li>\n' +
     '            <li><a href="/pages/simulateurs" class="hover:text-white">Simulateurs</a></li>\n' +
     "          </ul>\n" +
     "        </div>\n" +
@@ -645,7 +645,7 @@ function renderCategoryPage(slug, catData, actualites, guides, mapping) {
     actualitesHtml +=
       '<div class="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">\n' +
       '      <h4 class="font-bold text-gray-900 mb-1">\n' +
-      '        <a href="/actualites/' +
+      '        <a href="/pages/actualites/' +
       esc(item.frontmatter.slug) +
       '" class="hover:text-blue-600">' +
       esc(item.frontmatter.title) +
@@ -668,7 +668,7 @@ function renderCategoryPage(slug, catData, actualites, guides, mapping) {
     guidesHtml +=
       '<div class="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">\n' +
       '      <h4 class="font-bold text-gray-900 mb-1">\n' +
-      '        <a href="/guides/' +
+      '        <a href="/pages/guides/' +
       esc(item.frontmatter.slug) +
       '" class="hover:text-blue-600">' +
       esc(item.frontmatter.title) +
@@ -708,7 +708,7 @@ function renderCategoryPage(slug, catData, actualites, guides, mapping) {
       "@type": "CollectionPage",
       name: categoryName,
       description: description,
-      url: "https://www.lescalculateurs.fr/categorie/" + slug,
+      url: "https://www.lescalculateurs.fr/pages/categorie/" + slug,
     },
     null,
     2,
@@ -742,7 +742,7 @@ function renderCategoryPage(slug, catData, actualites, guides, mapping) {
     esc(description) +
     '" />\n' +
     '  <meta name="google-adsense-account" content="ca-pub-2209781252231399" />\n' +
-    '  <link rel="canonical" href="https://www.lescalculateurs.fr/categorie/' +
+    '  <link rel="canonical" href="https://www.lescalculateurs.fr/pages/categorie/' +
     slug +
     '" />\n' +
     '  <meta property="og:type" content="website" />\n' +
@@ -772,8 +772,8 @@ function renderCategoryPage(slug, catData, actualites, guides, mapping) {
     "          </a>\n" +
     "        </div>\n" +
     '        <nav class="flex items-center space-x-4 text-sm">\n' +
-    '          <a href="/actualites" class="text-gray-600 hover:text-gray-900">Actualit\u00e9s</a>\n' +
-    '          <a href="/guides" class="text-gray-600 hover:text-gray-900">Guides</a>\n' +
+    '          <a href="/pages/actualites" class="text-gray-600 hover:text-gray-900">Actualit\u00e9s</a>\n' +
+    '          <a href="/pages/guides" class="text-gray-600 hover:text-gray-900">Guides</a>\n' +
     '          <a href="/pages/simulateurs" class="text-gray-600 hover:text-gray-900">Simulateurs</a>\n' +
     "        </nav>\n" +
     "      </div>\n" +
@@ -829,8 +829,8 @@ function renderCategoryPage(slug, catData, actualites, guides, mapping) {
     "        <div>\n" +
     '          <h3 class="text-white font-bold mb-3">Contenus</h3>\n' +
     '          <ul class="space-y-2 text-sm">\n' +
-    '            <li><a href="/actualites" class="hover:text-white">Actualit\u00e9s</a></li>\n' +
-    '            <li><a href="/guides" class="hover:text-white">Guides</a></li>\n' +
+    '            <li><a href="/pages/actualites" class="hover:text-white">Actualit\u00e9s</a></li>\n' +
+    '            <li><a href="/pages/guides" class="hover:text-white">Guides</a></li>\n' +
     '            <li><a href="/pages/simulateurs" class="hover:text-white">Simulateurs</a></li>\n' +
     "          </ul>\n" +
     "        </div>\n" +
@@ -904,6 +904,13 @@ function main() {
   guides.sort((a, b) =>
     (b.frontmatter.publishedAt || "").localeCompare(a.frontmatter.publishedAt || ""),
   );
+
+  // Sans sources Markdown (dossier content/ absent), le script réécrirait les listes et
+  // les catégories à vide : on s'arrête plutôt que d'écraser les pages publiées.
+  if (actualites.length === 0 && guides.length === 0) {
+    console.error(`Aucun article trouvé dans ${CONTENT_DIR} : génération annulée (pages existantes conservées).`);
+    process.exit(1);
+  }
 
   const outputActualitesDir = path.join(PAGES_DIR, "actualites");
   const outputGuidesDir = path.join(PAGES_DIR, "guides");

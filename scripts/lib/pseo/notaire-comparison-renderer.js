@@ -58,6 +58,11 @@ function formatDisplayDate(date) {
   return day + "-" + month + "-" + year;
 }
 
+// Page de détail d'un scénario, ou le simulateur si cette page est retirée (redirigée)
+function detailHref(scenario) {
+  return scenario.retired ? PILLAR_PATH : "/pages/notaire/" + scenario.slug;
+}
+
 export function renderNotaireComparisonPage({
   comparison,
   scenario1,
@@ -317,9 +322,11 @@ export function renderNotaireComparisonPage({
     '            <p class="mt-2 text-sm text-slate-600">Frais de notaire : ' +
     renderText(estimate1.formattedTotal) +
     "</p>\n" +
-    '            <a href="/pages/notaire/' +
-    scenario1.slug +
-    '" class="mt-3 inline-block text-blue-700 underline hover:text-blue-800">Voir le détail complet →</a>\n' +
+    '            <a href="' +
+    detailHref(scenario1) +
+    '" class="mt-3 inline-block text-blue-700 underline hover:text-blue-800">' +
+    (scenario1.retired ? "Faire le calcul complet →" : "Voir le détail complet →") +
+    "</a>\n" +
     "          </div>\n" +
     '          <div class="rounded-xl border border-slate-200 p-4">\n' +
     '            <h3 class="font-bold text-slate-900">' +
@@ -328,9 +335,11 @@ export function renderNotaireComparisonPage({
     '            <p class="mt-2 text-sm text-slate-600">Frais de notaire : ' +
     renderText(estimate2.formattedTotal) +
     "</p>\n" +
-    '            <a href="/pages/notaire/' +
-    scenario2.slug +
-    '" class="mt-3 inline-block text-blue-700 underline hover:text-blue-800">Voir le détail complet →</a>\n' +
+    '            <a href="' +
+    detailHref(scenario2) +
+    '" class="mt-3 inline-block text-blue-700 underline hover:text-blue-800">' +
+    (scenario2.retired ? "Faire le calcul complet →" : "Voir le détail complet →") +
+    "</a>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </section>\n" +

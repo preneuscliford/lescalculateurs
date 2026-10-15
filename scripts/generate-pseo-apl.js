@@ -1,5 +1,6 @@
 import fs from "fs";
 import { siteUpdateDate } from "./lib/pseo/site-date.js";
+import { withoutRetired } from "./lib/pseo/retired-pages.js";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
@@ -61,7 +62,8 @@ async function main() {
     new Set(sanitizedScenarios.map((item) => normalizeSlug(item.slug))),
   );
 
-  const enriched = sanitizedScenarios.map((scenario) => {
+  // Scénarios redirigés (vercel.json) : ni générés, ni liés depuis les autres pages
+  const enriched = withoutRetired(sanitizedScenarios, "apl", repoRoot).map((scenario) => {
     const calc = engine.calculerAPL(scenario.input);
     if (!calc.success || !calc.data) {
       throw new Error(
