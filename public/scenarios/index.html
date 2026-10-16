@@ -69,7 +69,7 @@
           <span class="text-2xl">🧮</span>
           <span class="text-xl font-bold text-gray-900">Les Calculateurs</span>
         </div>
-        <span class="text-sm text-gray-500">Anticiper</span>
+        <span class="text-sm text-gray-600">Anticiper</span>
       </div>
     </header>
 
@@ -94,7 +94,7 @@
             <h2 class="text-xl font-bold text-gray-800 mb-1 flex items-center gap-2">
               <span>🧮</span> Prime d'activité 2026
             </h2>
-            <p class="text-sm text-gray-500 mb-6">
+            <p class="text-sm text-gray-600 mb-6">
               Estimation basée sur les barèmes en vigueur au 1er mai 2026.
             </p>
 
@@ -313,7 +313,7 @@
 
             <!-- Cartes de scénarios -->
             <div class="px-6 py-5 space-y-3" id="scenario-cards">
-              <p class="text-xs text-gray-400 text-center py-8">
+              <p class="text-xs text-gray-600 text-center py-8">
                 Remplissez le calculateur puis cliquez sur <strong>Calculer</strong> pour voir les
                 scénarios.
               </p>
@@ -321,11 +321,11 @@
 
             <!-- Légende -->
             <div class="px-6 py-3 bg-gray-50 border-t border-gray-100">
-              <p class="text-xs text-gray-500 flex items-center gap-2 flex-wrap">
+              <p class="text-xs text-gray-600 flex items-center gap-2 flex-wrap">
                 <span>🟢</span> Officiel &nbsp;|&nbsp; <span>🟠</span> Simulation &nbsp;|&nbsp;
                 <span>🔵</span> Réforme hypothétique
               </p>
-              <p class="text-xs text-gray-400 mt-1">
+              <p class="text-xs text-gray-600 mt-1">
                 Les simulations sont indicatives. Seul l'organisme officiel confirme le montant.
               </p>
             </div>
@@ -356,7 +356,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-16 border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">
+    <footer class="mt-16 border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-600">
       Les Calculateurs — Simulation indépendante. Barèmes Prime d'activité 2026 issus de la CAF et
       Service-Public.fr.
     </footer>
@@ -789,7 +789,7 @@
       function renderScenarios() {
         if (!lastValues || !lastResult) {
           scenarioCardsEl.innerHTML =
-            '<p class="text-xs text-gray-400 text-center py-8">Remplissez le calculateur puis cliquez sur <strong>Calculer</strong> pour voir les scénarios.</p>';
+            '<p class="text-xs text-gray-600 text-center py-8">Remplissez le calculateur puis cliquez sur <strong>Calculer</strong> pour voir les scénarios.</p>';
           scenarioCurrentEl.textContent = "—";
           return;
         }
@@ -799,7 +799,7 @@
 
         // Construire les cartes
         var cardsHTML =
-          '<h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Et si...</h3>';
+          '<h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-3">Et si...</h3>';
 
         SCENARIOS.forEach(function (scenario) {
           var overrides = scenario.getOverrides ? scenario.getOverrides(lastValues) : {};
@@ -814,7 +814,7 @@
               : diff < 0
                 ? diff.toLocaleString("fr-FR") + " €"
                 : "0 €";
-          var diffColor = diff > 0 ? "text-green-600" : diff < 0 ? "text-red-600" : "text-gray-400";
+          var diffColor = diff > 0 ? "text-green-700" : diff < 0 ? "text-red-600" : "text-gray-600";
           var diffIcon = diff > 0 ? "📈" : diff < 0 ? "📉" : "➡️";
           var diffBg =
             diff > 0
@@ -856,10 +856,10 @@
             "</span>" +
             "</div>" +
             (scenario.description
-              ? '<p class="text-xs text-gray-500 mt-1">' + scenario.description + "</p>"
+              ? '<p class="text-xs text-gray-600 mt-1">' + scenario.description + "</p>"
               : "") +
             (transformLabel
-              ? '<p class="text-xs text-gray-500 mt-1 italic">' + transformLabel + "</p>"
+              ? '<p class="text-xs text-gray-600 mt-1 italic">' + transformLabel + "</p>"
               : "") +
             "</div>" +
             '<div class="text-right flex-shrink-0">' +
@@ -908,7 +908,7 @@
                   ? diff.toLocaleString("fr-FR") + " €"
                   : "0 €";
             var diffColor =
-              diff > 0 ? "text-green-600" : diff < 0 ? "text-red-600" : "text-gray-500";
+              diff > 0 ? "text-green-700" : diff < 0 ? "text-red-600" : "text-gray-600";
             var diffBg =
               diff > 0
                 ? "bg-green-50 border-green-200"
@@ -956,17 +956,17 @@
           '<div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6" style="animation: slideUp 0.3s ease-out">' +
           '<div class="flex items-center justify-between mb-4">' +
           '<h3 class="text-lg font-bold text-gray-900">Comparaison</h3>' +
-          '<button class="text-gray-400 hover:text-gray-600 text-xl leading-none" id="close-popup">&times;</button>' +
+          '<button class="text-gray-600 hover:text-gray-600 text-xl leading-none" id="close-popup">&times;</button>' +
           "</div>" +
           '<div class="space-y-4">' +
           '<div class="bg-green-50 rounded-lg p-4 border border-green-200">' +
           '<div class="text-xs font-semibold text-green-700 uppercase mb-1">🟢 Situation actuelle</div>' +
           '<div class="text-2xl font-bold text-gray-900">' +
           currentFormatted +
-          ' <span class="text-sm font-normal text-gray-500">/ mois</span></div>' +
+          ' <span class="text-sm font-normal text-gray-600">/ mois</span></div>' +
           "</div>" +
           '<div class="flex justify-center">' +
-          '<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>' +
+          '<svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>' +
           "</div>" +
           '<div class="' +
           diffBg +
@@ -978,7 +978,7 @@
           "</div>" +
           '<div class="text-2xl font-bold text-gray-900">' +
           scenarioFormatted +
-          ' <span class="text-sm font-normal text-gray-500">/ mois</span></div>' +
+          ' <span class="text-sm font-normal text-gray-600">/ mois</span></div>' +
           '<div class="mt-2 inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-bold ' +
           diffColor +
           ' bg-white/70">' +
@@ -987,7 +987,7 @@
           "</div>" +
           "</div>" +
           "</div>" +
-          '<p class="text-xs text-gray-400 mt-4 text-center">' +
+          '<p class="text-xs text-gray-600 mt-4 text-center">' +
           (scenario.badge === "reforme"
             ? "🔵 Simulation basée sur un projet de réforme. Cette mesure n'est pas en vigueur."
             : "🟠 Simulation personnalisée à titre indicatif. Seul l'organisme officiel peut confirmer le montant.") +

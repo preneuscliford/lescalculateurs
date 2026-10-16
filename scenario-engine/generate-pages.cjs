@@ -256,7 +256,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
       : diff < 0
         ? diff.toLocaleString("fr-FR") + " €"
         : "0 €";
-  const diffColor = diff > 0 ? "text-green-600" : diff < 0 ? "text-red-600" : "text-gray-500";
+  const diffColor = diff > 0 ? "text-green-700" : diff < 0 ? "text-red-600" : "text-gray-600";
   const diffBg =
     diff > 0
       ? "bg-green-50 border-green-200"
@@ -359,7 +359,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
 
 <main class="max-w-5xl mx-auto px-4 py-8">
 
-  <nav class="text-xs text-gray-400 mb-6">
+  <nav class="text-xs text-gray-600 mb-6">
     <a href="${BASE_URL}" class="hover:text-blue-600">Accueil</a> &rsaquo;
     <a href="${BASE_URL}/pages/simulateurs" class="hover:text-blue-600">Simulateurs</a> &rsaquo;
     <a href="${BASE_URL}/pages/prime-activite" class="hover:text-blue-600">Prime d'activité</a> &rsaquo;
@@ -370,7 +370,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
     <div class="flex items-center gap-3 mb-3"><span class="text-2xl">${scenario.emoji}</span>${badgeHTML(scenario.badge)}</div>
     <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">${e(scenario.question)}</h1>
     ${scenario.description ? `<p class="text-lg text-gray-600 max-w-3xl">${e(scenario.description)}</p>` : ""}
-    <p class="text-sm text-gray-500 mt-2"><strong>Salaire de référence :</strong> ${revenuLabel} nets / mois</p>
+    <p class="text-sm text-gray-600 mt-2"><strong>Salaire de référence :</strong> ${revenuLabel} nets / mois</p>
     <div class="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg text-sm text-yellow-800">${badgeBandeau(scenario.badge)}</div>
   </section>
 
@@ -380,13 +380,13 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
     <div>
       <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
         <h2 class="text-xl font-bold text-gray-800 mb-1 flex items-center gap-2"><span>🧮</span> Personnalisez la simulation</h2>
-        <p class="text-sm text-gray-500 mb-4">Salaire de référence : <strong>${revenuLabel}</strong></p>
+        <p class="text-sm text-gray-600 mb-4">Salaire de référence : <strong>${revenuLabel}</strong></p>
         
         <!-- Curseur -->
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-700 mb-1">Ajustez le salaire</label>
           <input type="range" id="salaire-slider" min="500" max="3000" value="${newRevenu}" step="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600" />
-          <div class="flex justify-between text-xs text-gray-400 mt-1"><span>500 €</span><span>3 000 €</span></div>
+          <div class="flex justify-between text-xs text-gray-600 mt-1"><span>500 €</span><span>3 000 €</span></div>
         </div>
 
         <form id="calc-form" class="space-y-4">
@@ -409,13 +409,13 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
           <div class="bg-green-50 rounded-lg p-4 border border-green-200">
             <div class="text-xs font-semibold text-green-700 uppercase mb-1">🟢 Situation actuelle</div>
             <div class="text-2xl font-bold text-gray-900" id="before-amount">${formatMontant(baseResult.montantEstime)}</div>
-            <div class="text-xs text-gray-500 mt-1">Salaire : ${formatEuro(revenuLevel)}</div>
+            <div class="text-xs text-gray-600 mt-1">Salaire : ${formatEuro(revenuLevel)}</div>
           </div>
-          <div class="flex justify-center"><svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
+          <div class="flex justify-center"><svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
           <div id="after-block" class="${diffBg} rounded-lg p-4 border">
             <div class="text-xs font-semibold text-gray-600 uppercase mb-1">${scenario.emoji} ${e(scenario.label)}</div>
             <div class="text-2xl font-bold text-gray-900" id="after-amount">${formatMontant(scenarioResult.montantEstime)}</div>
-            <div class="text-xs text-gray-500 mt-1">Salaire : ${formatEuro(newRevenu)}</div>
+            <div class="text-xs text-gray-600 mt-1">Salaire : ${formatEuro(newRevenu)}</div>
             <div class="mt-2 inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-bold ${diffColor} bg-white/70 market-badge ${diff > 0 ? "market-badge-up" : diff < 0 ? "market-badge-down" : "market-badge-flat"}" id="diff-badge">${diffIcon} ${diffFormatted}</div>
           </div>
         </div>
@@ -430,12 +430,12 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
       <div class="flex flex-col items-center">
         <span class="text-sm font-bold text-gray-900 mb-2" id="bar-before-val">${formatEuro(beforeH)}</span>
         <div id="bar-before" class="w-20 bg-green-400 rounded-t-lg transition-all duration-500" style="height:${beforePx}px"></div>
-        <span class="text-xs text-gray-500 mt-2">Avant</span>
+        <span class="text-xs text-gray-600 mt-2">Avant</span>
       </div>
       <div class="flex flex-col items-center">
         <span class="text-sm font-bold text-gray-900 mb-2" id="bar-after-val">${formatEuro(afterH)}</span>
         <div id="bar-after" class="w-20 ${diff > 0 ? "bg-green-600" : diff < 0 ? "bg-red-500" : "bg-gray-400"} rounded-t-lg transition-all duration-500" style="height:${afterPx}px"></div>
-        <span class="text-xs text-gray-500 mt-2">Après</span>
+        <span class="text-xs text-gray-600 mt-2">Après</span>
       </div>
     </div>
   </div>
@@ -448,7 +448,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
 
   ${scenario.faq && scenario.faq.length ? `<section class="mb-8 max-w-3xl mx-auto"><h2 class="text-2xl font-bold text-gray-900 mb-4">❓ Questions fréquentes</h2><div class="space-y-3">${scenario.faq.map((f) => `<details class="rounded-lg border border-gray-200 p-4 group"><summary class="cursor-pointer font-semibold text-gray-900 text-sm group-open:text-blue-700">${e(f.q)}</summary><p class="mt-2 text-sm text-gray-700 leading-relaxed">${e(f.a)}</p></details>`).join("\n")}</div></section>` : ""}
 
-  ${scenario.crosslinks && scenario.crosslinks.length ? `<section class="mb-8 max-w-3xl mx-auto"><h2 class="text-2xl font-bold text-gray-900 mb-4">🔗 À explorer aussi</h2><div class="grid gap-3 md:grid-cols-2">${scenario.crosslinks.map((l) => `<a href="${l.href}" class="rounded-lg border border-white bg-white p-3 shadow-sm hover:border-green-200 hover:shadow-md transition-all"><span class="text-sm font-medium text-gray-800">${e(l.label)}</span><span class="block text-xs text-gray-500 mt-0.5">${aide.label}</span></a>`).join("\n")}</div></section>` : ""}
+  ${scenario.crosslinks && scenario.crosslinks.length ? `<section class="mb-8 max-w-3xl mx-auto"><h2 class="text-2xl font-bold text-gray-900 mb-4">🔗 À explorer aussi</h2><div class="grid gap-3 md:grid-cols-2">${scenario.crosslinks.map((l) => `<a href="${l.href}" class="rounded-lg border border-white bg-white p-3 shadow-sm hover:border-green-200 hover:shadow-md transition-all"><span class="text-sm font-medium text-gray-800">${e(l.label)}</span><span class="block text-xs text-gray-600 mt-0.5">${aide.label}</span></a>`).join("\n")}</div></section>` : ""}
 
   <!-- Autres scénarios -->
   <section class="mb-8 max-w-3xl mx-auto">
@@ -462,7 +462,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
           return `<a href="${linkSlug}" class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-100 hover:border-blue-200 hover:shadow-sm transition-all text-sm">
           <span>${s.emoji}</span>
           <span class="text-gray-700">${s.label}</span>
-          <span class="ml-auto text-xs text-gray-400">${revenuLabel}</span>
+          <span class="ml-auto text-xs text-gray-600">${revenuLabel}</span>
         </a>`;
         })
         .join("\n")}
@@ -473,7 +473,7 @@ function generatePage(aideKey, aide, scenario, revenuLevel, seoVariantIdx) {
 
 </main>
 
-<footer class="mt-16 border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">Les Calculateurs — Simulation indépendante. Barèmes Prime d'activité 2026 issus de la CAF et Service-Public.fr.</footer>
+<footer class="mt-16 border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-600">Les Calculateurs — Simulation indépendante. Barèmes Prime d'activité 2026 issus de la CAF et Service-Public.fr.</footer>
 
 <script>
 const BAREmes = ${JSON.stringify(b)};
@@ -493,7 +493,7 @@ function updateUI(baseResult,scenarioResult){
   const diff=Math.round(((scenarioResult.montantEstime||0)-(baseResult.montantEstime||0))*100)/100;
   const diffStr=diff>0?"+"+diff.toLocaleString("fr-FR")+" €":diff<0?diff.toLocaleString("fr-FR")+" €":"0 €";
   const diffIcon=diff>0?"📈":diff<0?"📉":"➡️";
-  const diffColor=diff>0?"text-green-600":diff<0?"text-red-600":"text-gray-500";
+  const diffColor=diff>0?"text-green-700":diff<0?"text-red-600":"text-gray-600";
   const diffBg=diff>0?"bg-green-50 border-green-200":diff<0?"bg-red-50 border-red-200":"bg-gray-50 border-gray-200";
   const diffMotion=diff>0?"market-badge-up":diff<0?"market-badge-down":"market-badge-flat";
   const badge=document.getElementById("diff-badge");

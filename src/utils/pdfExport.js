@@ -412,7 +412,7 @@ function updateButtonState(button, calculatorName) {
     // Désactiver le bouton PDF
     button.disabled = true;
     button.className =
-      "bg-gray-400 text-gray-200 font-semibold py-3 px-6 rounded-lg shadow-md flex items-center gap-2 cursor-not-allowed opacity-60";
+      "bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg shadow-md flex items-center gap-2 cursor-not-allowed";
     button.querySelector("span").textContent =
       "Effectuez un calcul pour exporter";
     button.style.pointerEvents = "none"; // Empêcher les clics
@@ -422,7 +422,7 @@ function updateButtonState(button, calculatorName) {
     if (csvBtn) {
       csvBtn.disabled = true;
       csvBtn.className =
-        "bg-gray-400 text-gray-200 font-semibold py-3 px-6 rounded-lg shadow-md flex items-center gap-2 cursor-not-allowed opacity-60";
+        "bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg shadow-md flex items-center gap-2 cursor-not-allowed";
       csvBtn.style.pointerEvents = "none";
       console.log("⏸️ Bouton CSV désactivé");
     }
