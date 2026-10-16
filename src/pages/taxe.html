@@ -91,7 +91,7 @@
         "@context": "https://schema.org",
         "@type": "Calculator",
         "name": "Calculateur Taxe Foncière 2026",
-        "description": "Estimez votre taxe foncière 2026 par région et commune - valeur cadastrale et taux d'imposition officiels",
+        "description": "Estimez votre taxe foncière 2026 par commune - valeur locative cadastrale (abattement légal de 50 %) et taux d'imposition officiels",
         "url": "https://www.lescalculateurs.fr/pages/taxe",
         "applicationCategory": "FinanceApplication",
         "screenshot": "https://www.lescalculateurs.fr/pages/taxe"
@@ -494,8 +494,7 @@
             >
           </li>
           <li>
-            <strong>Calcul :</strong> Valeur locative cadastrale × Taux communal × Taux
-            départemental
+            <strong>Calcul :</strong> (valeur locative cadastrale − 50 %) × taux global (commune + intercommunalité)
           </li>
           <li>
             <strong>Exonérations :</strong> Personnes âgées (condition de revenus), logements neufs
@@ -639,7 +638,7 @@
             ❓ Comment est calculée la taxe foncière en France ?
           </h2>
           <p class="ai-response text-gray-700">
-            Taxe foncière = Valeur locative cadastrale × Taux global. Des exonérations ou
+            Taxe foncière = (valeur locative cadastrale − 50 % d'abattement légal) × taux global. Des exonérations ou
             dégrèvements peuvent s'appliquer selon votre situation. Les taux réels varient selon les
             communes ; ce simulateur utilise le taux officiel DGFiP de votre commune ou le taux de votre avis.
           </p>
@@ -666,20 +665,18 @@
               >
             </li>
             <li>
-              <strong>Calcul:</strong> Valeur locative × (Taux communal + intercommunalité +
-              département) = taux global
+              <strong>Calcul :</strong> (valeur locative − 50 %) × (taux communal + intercommunalité) = taux global
             </li>
             <li>
-              <strong>Particularité:</strong> Taux varie par région | très variable selon les
-              communes | Exonérations/dégrèvements possibles (sous conditions)
+              <strong>Particularité :</strong> taux très variable selon les communes | Exonérations/dégrèvements possibles (sous conditions)
             </li>
             <li><strong>Outil:</strong> Simulation gratuite, taux communaux 2025 (derniers publiés par la DGFiP, 34 874 communes)</li>
           </ul>
         </section>
 
         <p class="text-lg text-gray-600 leading-relaxed mb-4">
-          La taxe foncière est calculée sur la valeur locative cadastrale de votre propriété,
-          multipliée par les taux votés par votre commune et les collectivités territoriales (taux
+          La taxe foncière est calculée sur la valeur locative cadastrale de votre propriété, réduite
+          d'un abattement légal de 50 %, puis multipliée par les taux votés par votre commune et les collectivités territoriales (taux
           global). Notre simulateur 2026 utilise le taux officiel DGFiP de votre commune, ou le taux
           exact de votre avis si vous le saisissez.
         </p>
@@ -703,8 +700,8 @@
           Comment est calculée la taxe foncière ?
         </h2>
         <p class="text-gray-600 mb-4">
-          La taxe foncière (TFPB) est généralement calculée à partir d’une base cadastrale (valeur
-          locative cadastrale), puis multipliée par des taux votés localement. Des exonérations ou
+          La taxe foncière (TFPB) est généralement calculée à partir de la valeur locative cadastrale, réduite de 50 % (base
+          d'imposition), puis multipliée par des taux votés localement. Des exonérations ou
           dégrèvements peuvent s’appliquer selon votre situation.
         </p>
 
@@ -921,7 +918,7 @@
             </li>
             <li>
               <strong>Taux global:</strong> somme des taux votés (commune + intercommunalité +
-              département), très variable selon les collectivités (souvent 25% à 45%)
+              département), très variable selon les collectivités
             </li>
             <li>
               <strong>Dégrèvements/exonérations:</strong> possibles sous conditions (âge, handicap,
@@ -1192,13 +1189,24 @@
           fields: [
             {
               id: "valeur_locative",
-              label: "Base d'imposition annuelle (€) : valeur locative cadastrale figurant sur votre avis",
+              label: "Valeur locative cadastrale annuelle (€), ou base de votre avis",
               type: "number",
               required: true,
               placeholder: "8000",
               min: 100,
               step: 1,
               quickValues: [3000, 5000, 8000, 10000, 15000, 20000],
+            },
+            {
+              id: "montant_saisi",
+              label: "Ce montant est",
+              type: "select",
+              required: true,
+              defaultValue: "brute",
+              options: [
+                { value: "brute", label: "la valeur locative cadastrale brute (abattement légal de 50 % appliqué)" },
+                { value: "base", label: "la base d'imposition de mon avis (déjà réduite de 50 %)" },
+              ],
             },
             {
               id: "commune",
@@ -1255,6 +1263,7 @@
 
               const r = calculerTaxeFonciere({
                 valeurLocative: Number(values.valeur_locative) || 0,
+                montantSaisi: values.montant_saisi === "base" ? "base" : "brute",
                 tauxPct,
                 age: Number(values.age_proprietaire) || 0,
                 allocataire: !!values.allocataire,
@@ -1264,6 +1273,7 @@
                 success: true,
                 data: {
                   valeurLocative: r.valeurLocative,
+                  base: r.base,
                   tauxUtilise: r.taux,
                   tauxSource,
                   tauxCommuneInfo,
@@ -1337,7 +1347,7 @@
                 </div>
               </div>
               <p class="text-sm text-gray-600 mt-3 m-0">
-                Valeur locative cadastrale : <strong>${formatCurrency(data.valeurLocative)}</strong>
+                Valeur locative cadastrale : <strong>${formatCurrency(data.valeurLocative)}</strong> • Base d'imposition (après abattement légal de 50 %) : <strong>${formatCurrency(data.base)}</strong>
               </p>
             </div>
 
@@ -1348,7 +1358,7 @@
             <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
               <h3 class="text-lg font-bold text-blue-900 mb-2">🧠 Logique de calcul (simplifiée)</h3>
               <ul class="text-sm text-blue-900 list-disc list-inside space-y-1">
-                <li>Base = valeur locative cadastrale</li>
+                <li>Base = valeur locative cadastrale − 50 % (abattement légal, CGI art. 1388)</li>
                 <li>Taxe estimée = base × taux global (taux officiel de la commune ou taux de votre avis)</li>
                 <li>Exonérations et dégrèvements : appliqués par l'administration selon votre situation et votre revenu fiscal de référence</li>
               </ul>
@@ -1362,6 +1372,8 @@
                     <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Valeur locative cadastrale</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${formatCurrency(
                       data.valeurLocative,
                     )}</td></tr>
+                    <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Abattement légal de 50 % (CGI, art. 1388)</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">-${formatCurrency(data.valeurLocative - data.base)}</td></tr>
+                    <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Base d'imposition</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${formatCurrency(data.base)}</td></tr>
                     <tr class="border-b"><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-gray-600">Taux global utilisé</td><td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 text-right font-semibold text-gray-900">${(
                       data.tauxUtilise * 100
                     ).toFixed(2)}%</td></tr>
@@ -1392,6 +1404,7 @@
                 headers: ["Paramètre", "Valeur"],
                 rows: [
                   ["Valeur locative cadastrale (€)", data.valeurLocative],
+                  ["Base d'imposition après abattement de 50 % (€)", data.base],
                   ["Taux global utilisé (%)", (data.tauxUtilise * 100).toFixed(2)],
                   ["Taxe foncière estimée (€)", data.taxeFonciere],
                 ],
@@ -1441,7 +1454,7 @@
                   },
                   {
                     id: "valeur_locative",
-                    label: "Valeur locative cadastrale annuelle (€)",
+                    label: "Valeur locative cadastrale brute annuelle (€)",
                     type: "number",
                     value: lastValues.valeur_locative ?? 8000,
                     required: true,
@@ -1500,6 +1513,7 @@
                     label: labelParts.join(" • "),
                     ville: normalized.ville || "—",
                     valeur_locative: formatCurrency(computed.valeurLocative),
+                    base: formatCurrency(computed.base),
                     age: normalized.age_proprietaire ? `${normalized.age_proprietaire} ans` : "—",
                     allocataire: normalized.allocataire,
                     taux_utilise: `${(computed.taux * 100).toFixed(2)}%`,

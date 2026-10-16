@@ -192,6 +192,10 @@
         {
           "label": "Service-public.gouv.fr : taxe foncière sur les propriétés bâties",
           "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F59"
+        },
+        {
+          "label": "Légifrance : CGI, article 1388 (base d'imposition, abattement de 50 %)",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006311555"
         }
       ]
     }
