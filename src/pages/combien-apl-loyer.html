@@ -31,7 +31,7 @@
         ]
       }
     </script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -39,22 +39,34 @@
           {
             "@type": "Question",
             "name": "Combien d'APL pour un loyer de 600 euros ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Avec 1 000 € de revenus nets en zone 2 (barème au 1er octobre 2026) : environ 134 € pour une personne seule, 453 € pour une mère ou un père seul avec 2 enfants, 260 € pour un couple sans enfant. Au SMIC, une personne seule ne touche rien." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Avec 1 000 € de revenus nets en zone 2 (barème au 1er octobre 2026) : environ 134 € pour une personne seule, 453 € pour une mère ou un père seul avec 2 enfants, 260 € pour un couple sans enfant. Au SMIC, une personne seule ne touche rien (0 €)."
+            }
           },
           {
             "@type": "Question",
             "name": "Combien d'APL pour un loyer de 700 euros pour une personne seule ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Avec 1 000 € de revenus nets : environ 172 € en zone 1, 134 € en zone 2 et 109 € en zone 3. Le loyer n'est pris en compte que jusqu'à 336,97 € (zone 1), 293,68 € (zone 2) ou 275,25 € (zone 3) : passer de 600 à 700 € de loyer n'augmente pas l'aide. Au SMIC, l'aide est nulle." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Avec 1 000 € de revenus nets : environ 172 € en zone 1, 134 € en zone 2 et 109 € en zone 3. Le loyer n'est pris en compte que jusqu'à 336,97 € (zone 1), 293,68 € (zone 2) ou 275,25 € (zone 3) : passer de 600 à 700 € de loyer n'augmente pas l'aide. Au SMIC, l'aide est nulle."
+            }
           },
           {
             "@type": "Question",
             "name": "Combien d'APL pour un loyer de 1000 euros ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Pour une personne seule avec 1 000 € de revenus, environ 172 € en zone 1 et 0 € en zones 2 et 3 : au-delà de 3,1 fois le plafond de loyer, l'aide est supprimée. Pour une famille avec 2 enfants, environ 509 € en zone 1, 453 € en zone 2 et 422 € en zone 3." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour une personne seule avec 1 000 € de revenus : environ 172 € en zone 1, 0 € en zone 2 et 0 € en zone 3, car au-delà d'environ 3,1 fois le plafond de loyer l'aide est supprimée. Pour une famille avec 2 enfants : environ 509 €, 453 € et 422 €."
+            }
           },
           {
             "@type": "Question",
             "name": "Un loyer plus cher donne-t-il plus d'APL ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Non, au-delà du plafond de loyer de votre zone, l'aide ne monte plus. Pour un loyer très élevé (plus de 2,5 fois le plafond en zones 2 et 3, 3,4 fois en zone 1), elle diminue puis disparaît." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non : au-delà du plafond de loyer de votre zone, l'aide ne monte plus. Pour un loyer très élevé (plus de 2,5 fois le plafond en zones 2 et 3, 3,4 fois en zone 1), elle diminue puis disparaît."
+            }
           }
         ]
       }
@@ -244,6 +256,28 @@
           pour 700 € de loyer ; un couple sans enfant environ <span data-exemple="apl" data-params='{"situation":"couple","enfants":0,"revenus_mensuels":1480,"loyer_mensuel":700,"region":"zone2"}'>81</span> € en zone 2.
           Voir le détail sur la page <a href="/pages/apl/apl-smic-seul" class="text-blue-700 underline">APL au SMIC</a>.
         </p>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Questions fréquentes</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Combien d'APL pour un loyer de 600 euros ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Avec 1 000 € de revenus nets en zone 2 (barème au 1er octobre 2026) : environ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone2"}'>134</span> € pour une personne seule, <span data-exemple="apl" data-params='{"situation":"monoparental","enfants":2,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone2"}'>453</span> € pour une mère ou un père seul avec 2 enfants, <span data-exemple="apl" data-params='{"situation":"couple","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone2"}'>260</span> € pour un couple sans enfant. Au SMIC, une personne seule ne touche rien (<span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1480,"loyer_mensuel":600,"region":"zone2"}'>0</span> €).</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Combien d'APL pour un loyer de 700 euros pour une personne seule ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Avec 1 000 € de revenus nets : environ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":700,"region":"zone1"}'>172</span> € en zone 1, <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":700,"region":"zone2"}'>134</span> € en zone 2 et <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":700,"region":"zone3"}'>109</span> € en zone 3. Le loyer n'est pris en compte que jusqu'à <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone1"}' data-champ="plafond" data-decimales="2">336,97</span> € (zone 1), <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone2"}' data-champ="plafond" data-decimales="2">293,68</span> € (zone 2) ou <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone3"}' data-champ="plafond" data-decimales="2">275,25</span> € (zone 3) : passer de 600 à 700 € de loyer n'augmente pas l'aide. Au SMIC, l'aide est nulle.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Combien d'APL pour un loyer de 1000 euros ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Pour une personne seule avec 1 000 € de revenus : environ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":1000,"region":"zone1"}'>172</span> € en zone 1, <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":1000,"region":"zone2"}'>0</span> € en zone 2 et <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":1000,"region":"zone3"}'>0</span> € en zone 3, car au-delà d'environ 3,1 fois le plafond de loyer l'aide est supprimée. Pour une famille avec 2 enfants : environ <span data-exemple="apl" data-params='{"situation":"monoparental","enfants":2,"revenus_mensuels":1000,"loyer_mensuel":1000,"region":"zone1"}'>509</span> €, <span data-exemple="apl" data-params='{"situation":"monoparental","enfants":2,"revenus_mensuels":1000,"loyer_mensuel":1000,"region":"zone2"}'>453</span> € et <span data-exemple="apl" data-params='{"situation":"monoparental","enfants":2,"revenus_mensuels":1000,"loyer_mensuel":1000,"region":"zone3"}'>422</span> €.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Un loyer plus cher donne-t-il plus d'APL ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Non : au-delà du plafond de loyer de votre zone, l'aide ne monte plus. Pour un loyer très élevé (plus de 2,5 fois le plafond en zones 2 et 3, 3,4 fois en zone 1), elle diminue puis disparaît.</p>
+          </div>
+        </div>
       </section>
 
       <section class="bg-slate-50 border border-slate-200 rounded-lg p-6 sm:p-8">

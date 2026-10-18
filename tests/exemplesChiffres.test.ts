@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { formaterMontant, synchroniserExemples } from "../src/utils/exemplesChiffres";
+import { formaterMontant, synchroniserExemples, synchroniserFaqJsonLd } from "../src/utils/exemplesChiffres";
 
 function pages(dir: string): string[] {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
@@ -23,15 +23,28 @@ describe("exemples chiffrés (data-exemple)", () => {
     expect(out).toContain(">116</span>");
   });
 
+  test("génère la FAQ JSON-LD depuis la FAQ visible", () => {
+    const html = `<script type="application/ld+json" data-faq="f"></script>
+<h3 data-faq-q="f">Combien d&rsquo;APL ?</h3><p data-faq-a="f">Environ <strong>134&nbsp;€</strong> par mois.</p>`;
+    const { html: out, ecarts } = synchroniserFaqJsonLd(html);
+    expect(ecarts).toEqual(["f"]);
+    const json = JSON.parse(out.match(/data-faq="f">([\s\S]*?)<\/script>/)![1]);
+    expect(json.mainEntity[0].name).toBe("Combien d’APL ?");
+    expect(json.mainEntity[0].acceptedAnswer.text).toBe("Environ 134 € par mois.");
+    expect(synchroniserFaqJsonLd(out).ecarts).toEqual([]);
+  });
+
   test("les pages affichent les montants des moteurs (sinon : npm run exemples:sync)", () => {
     const racine = path.join(__dirname, "../src/pages");
     const ecarts = pages(racine)
-      .filter((p) => fs.readFileSync(p, "utf8").includes("data-exemple="))
-      .flatMap((p) =>
-        synchroniserExemples(fs.readFileSync(p, "utf8")).ecarts.map(
-          (e) => `${path.relative(racine, p)} : ${e.calcul} ${e.params} -> ${e.affiche} au lieu de ${e.attendu}`,
-        ),
-      );
+      .filter((p) => /data-exemple=|data-faq=/.test(fs.readFileSync(p, "utf8")))
+      .flatMap((p) => {
+        const { html, ecarts: exemples } = synchroniserExemples(fs.readFileSync(p, "utf8"));
+        return [
+          ...exemples.map((e) => `${path.relative(racine, p)} : ${e.calcul} ${e.params} -> ${e.affiche} au lieu de ${e.attendu}`),
+          ...synchroniserFaqJsonLd(html).ecarts.map((g) => `${path.relative(racine, p)} : FAQ JSON-LD "${g}" à régénérer`),
+        ];
+      });
     expect(ecarts).toEqual([]);
   });
 });
