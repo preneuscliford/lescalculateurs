@@ -1024,7 +1024,7 @@ export const aplPilotScenarios = [
   {
     slug: "apl-parent-isole-un-enfant",
     intent: "apl parent isole 1 enfant",
-    title: "APL parent isolé avec 1 enfant : estimation 2026",
+    title: "APL mère isolée avec 1 enfant (parent isolé) : montant 2026",
     description: "Cas pratique APL pour un parent isolé avec un enfant en location.",
     summary:
       "Cette page vise une intention très concrète avec un besoin fort de réponse rapide sur le niveau d'aide.",
@@ -1060,7 +1060,7 @@ export const aplPilotScenarios = [
   {
     slug: "apl-parent-isole-deux-enfants",
     intent: "apl parent isole 2 enfants",
-    title: "APL parent isolé avec 2 enfants : estimation 2026",
+    title: "APL femme seule avec 2 enfants (parent isolé) : montant 2026",
     description: "Scénario APL pour un parent solo avec deux enfants et loyer familial.",
     summary:
       "Cette page couvre une recherche a forte utilité pratique pour les foyers monoparentaux avec charges élevées.",
@@ -2284,7 +2284,7 @@ export const aplPilotScenarios = [
   {
     slug: "apl-parent-isole-trois-enfants",
     intent: "apl parent isole trois enfants",
-    title: "APL parent isole avec 3 enfants : estimation 2026",
+    title: "APL femme seule avec 3 enfants (parent isolé) : montant 2026",
     description: "Scenario APL pour un parent isole avec trois enfants et un logement familial.",
     summary:
       "Cette page consolide le sous-cluster parent isole avec un angle familial plus fort et distinct.",

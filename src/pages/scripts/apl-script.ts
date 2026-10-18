@@ -100,7 +100,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
         required: true,
         options: [
           { value: "zone1", label: "Zone 1 : Paris, petite couronne et communes proches" },
-          { value: "zone2", label: "Zone 2 : grandes agglomérations, reste de l'Île-de-France, Corse" },
+          { value: "zone2", label: "Zone 2 : reste de l'Île-de-France, agglomérations de plus de 100 000 habitants" },
           { value: "zone3", label: "Zone 3 : autres communes" },
           { value: "dom", label: "Outre-mer" },
         ],

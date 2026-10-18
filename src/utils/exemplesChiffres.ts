@@ -6,7 +6,8 @@
  * Le contenu du <span> est recalculé par le moteur correspondant :
  *   - `npm run exemples:sync` réécrit les pages (lancé aussi au build) ;
  *   - tests/exemplesChiffres.test.ts échoue si une page n'est plus à jour.
- * Options : data-arrondi="100" (arrondi à la centaine), data-champ (valeur secondaire du moteur).
+ * Options : data-arrondi="100" (arrondi à la centaine), data-decimales="2", data-champ (valeur
+ * secondaire du moteur).
  */
 
 import { calculerAPL, type APLInput } from "./aplCalculEngine";
@@ -16,10 +17,11 @@ import { calculerNotaire, type NotaireCalculData } from "./notaireCalculEngine";
 type Calcul = (params: any, champ?: string) => number;
 
 export const CALCULS_EXEMPLES: Record<string, Calcul> = {
-  /** APL mensuelle ; champ "reste" = loyer − APL */
+  /** APL mensuelle ; champ "reste" = loyer − APL, "plafond" = loyer plafond retenu */
   apl: (p: APLInput, champ) => {
     const d = calculerAPL(p).data;
     if (!d) throw new Error(`APL non calculable : ${JSON.stringify(p)}`);
+    if (champ === "plafond") return d.plafond_loyer;
     return champ === "reste" ? d.reste_charge : d.apl_estimee;
   },
   /** Prime d'activité mensuelle */
@@ -32,10 +34,12 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
   },
 };
 
-/** Format français : séparateur de milliers espace, pas de décimales */
-export function formaterMontant(valeur: number, arrondi = 1): string {
-  const v = Math.round(valeur / arrondi) * arrondi;
-  return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+/** Format français : séparateur de milliers espace, virgule décimale */
+export function formaterMontant(valeur: number, arrondi = 1, decimales = 0): string {
+  const v = decimales > 0 ? valeur : Math.round(valeur / arrondi) * arrondi;
+  const [entier, dec] = v.toFixed(decimales).split(".");
+  const milliers = entier.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  return dec ? `${milliers},${dec}` : milliers;
 }
 
 const MARQUEUR =
@@ -63,7 +67,8 @@ export function synchroniserExemples(html: string): { html: string; ecarts: Ecar
     if (!brut) throw new Error(`data-params manquant : ${ouverture}`);
     const params = JSON.parse(brut.replace(/&quot;/g, '"'));
     const arrondi = Number(attribut(ouverture, "data-arrondi") || 1);
-    const attendu = formaterMontant(fn(params, attribut(ouverture, "data-champ")), arrondi);
+    const decimales = Number(attribut(ouverture, "data-decimales") || 0);
+    const attendu = formaterMontant(fn(params, attribut(ouverture, "data-champ")), arrondi, decimales);
     if (contenu.trim() !== attendu) ecarts.push({ calcul, params: brut, affiche: contenu.trim(), attendu });
     return `${ouverture}${attendu}${fermeture}`;
   });

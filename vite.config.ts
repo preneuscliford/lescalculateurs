@@ -382,6 +382,7 @@ function collectStaticPageInputs() {
     ),
     apl: resolve(__dirname, "src/pages/apl.html"),
     "apl-zones": resolve(__dirname, "src/pages/apl-zones.html"),
+    "combien-apl-loyer": resolve(__dirname, "src/pages/combien-apl-loyer.html"),
     "apl-dom-tom": resolve(__dirname, "src/pages/apl-dom-tom.html"),
     blog: resolve(__dirname, "src/pages/blog.html"),
     "blog-export-pdf": resolve(__dirname, "src/pages/blog/export-pdf-calculateurs.html"),

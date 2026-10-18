@@ -527,6 +527,12 @@
           class="mt-5 inline-flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 transition-colors"
           >✓ Lancer la simulation — 2 min</a
         >
+        <p class="mt-4 text-sm text-gray-700">
+          Montants déjà calculés :
+          <a href="/pages/combien-apl-loyer" class="text-emerald-700 underline">APL selon le loyer (500 à 1 000 €)</a>
+          ·
+          <a href="/pages/apl-zones" class="text-emerald-700 underline">montant APL en zone 1, 2 et 3</a>
+        </p>
       </section>
 
       <!-- Résumé rapide -->
@@ -1415,7 +1421,7 @@
             quickValues: ["zone1", "zone2", "zone3", "dom"],
             options: [
               { value: "zone1", label: "Zone 1 : Paris, petite couronne et communes proches" },
-              { value: "zone2", label: "Zone 2 : grandes agglomérations, reste de l'Île-de-France, Corse" },
+              { value: "zone2", label: "Zone 2 : reste de l'Île-de-France, agglomérations de plus de 100 000 habitants" },
               { value: "zone3", label: "Zone 3 : autres communes" },
               { value: "dom", label: "Outre-mer (Guadeloupe, Martinique, Guyane, Réunion, Mayotte)" },
             ],
