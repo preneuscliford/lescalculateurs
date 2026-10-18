@@ -31,7 +31,7 @@
         ]
       }
     </script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -41,7 +41,7 @@
             "name": "Quel est le montant de l'APL en zone 3 pour une personne seule ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Avec le barème au 1er octobre 2026, une personne seule en zone 3 avec 1 000 € de revenus nets et un loyer de 600 € touche environ 118 € par mois (290 € sans revenus). Au SMIC, l'aide est nulle. Le loyer est pris en compte dans la limite de 275,25 € en zone 3."
+              "text": "Avec 1 000 € de revenus nets et 600 € de loyer, environ 118 € par mois (290 € sans revenus). Au SMIC, l'aide est nulle. Le loyer est retenu dans la limite de 275,25 €."
             }
           },
           {
@@ -49,15 +49,15 @@
             "name": "Quelle est la différence entre les zones APL 1, 2 et 3 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "La zone fixe le loyer maximal pris en compte. Pour une personne seule : 336,97 € en zone 1, 293,68 € en zone 2 et 275,25 € en zone 3. À revenus et loyer égaux, l'aide est donc plus élevée en zone 1 : environ 172 € contre 134 € en zone 2 et 118 € en zone 3 pour 1 000 € de revenus et 600 € de loyer."
+              "text": "La zone fixe le loyer maximal pris en compte : pour une personne seule, 336,97 € en zone 1, 293,68 € en zone 2 et 275,25 € en zone 3. À revenus et loyer égaux, l'aide est donc plus élevée en zone 1 : environ 172 € contre 134 € en zone 2 et 118 € en zone 3 pour 1 000 € de revenus et 600 € de loyer."
             }
           },
           {
             "@type": "Question",
-            "name": "Comment savoir dans quelle zone APL se trouve ma commune ?",
+            "name": "Ma zone APL change-t-elle si je déménage ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le classement se fait commune par commune (arrêté du 17 mars 1978). La zone 1 couvre Paris et une grande partie de l'agglomération parisienne, la zone 2 le reste de l'Île-de-France, les agglomérations de plus de 100 000 habitants et l'outre-mer, la zone 3 les autres communes. Le simulateur de la CAF retient automatiquement la zone de votre adresse."
+              "text": "Oui, si la nouvelle commune est classée dans une autre zone. Déclarez votre nouvelle adresse à la CAF : l'aide est recalculée avec les plafonds de la nouvelle zone."
             }
           },
           {
@@ -65,7 +65,15 @@
             "name": "Les départements d'outre-mer sont-ils en zone 2 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui : en Guadeloupe, Martinique, Guyane, à La Réunion et à Mayotte, l'aide au logement retient les plafonds de loyer de la zone 2 (293,68 € pour une personne seule), avec un forfait charges et des paramètres de calcul propres à l'outre-mer."
+              "text": "Oui. L'aide au logement y retient les plafonds de loyer de la zone 2, avec un forfait charges et des paramètres de calcul propres à l'outre-mer. Voir aussi notre page APL outre-mer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Toute l'Île-de-France est-elle en zone 1 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. La zone 1 couvre Paris et une grande partie de l'agglomération parisienne ; le reste de l'Île-de-France est en zone 2, et quelques communes rurales en zone 3."
             }
           }
         ]
@@ -398,20 +406,24 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-6">Questions fréquentes</h2>
         <div class="space-y-6">
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Quel est le montant de l'APL en zone 3 pour une personne seule ?</h3>
-            <p class="text-gray-700">Avec 1 000 € de revenus nets et 600 € de loyer, environ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone3"}'>118</span> € par mois (<span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":600,"region":"zone3"}'>290</span> € sans revenus). Au SMIC, l'aide est nulle. Le loyer est retenu dans la limite de <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone3"}' data-champ="plafond" data-decimales="2">275,25</span> €.</p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Quel est le montant de l'APL en zone 3 pour une personne seule ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Avec 1 000 € de revenus nets et 600 € de loyer, environ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone3"}'>118</span> € par mois (<span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":600,"region":"zone3"}'>290</span> € sans revenus). Au SMIC, l'aide est nulle. Le loyer est retenu dans la limite de <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone3"}' data-champ="plafond" data-decimales="2">275,25</span> €.</p>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Ma zone APL change-t-elle si je déménage ?</h3>
-            <p class="text-gray-700">Oui, si la nouvelle commune est classée dans une autre zone. Déclarez votre nouvelle adresse à la CAF : l'aide est recalculée avec les plafonds de la nouvelle zone.</p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Quelle est la différence entre les zones APL 1, 2 et 3 ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">La zone fixe le loyer maximal pris en compte : pour une personne seule, <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone1"}' data-champ="plafond" data-decimales="2">336,97</span> € en zone 1, <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone2"}' data-champ="plafond" data-decimales="2">293,68</span> € en zone 2 et <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":0,"loyer_mensuel":500,"region":"zone3"}' data-champ="plafond" data-decimales="2">275,25</span> € en zone 3. À revenus et loyer égaux, l'aide est donc plus élevée en zone 1 : environ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone1"}'>172</span> € contre <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone2"}'>134</span> € en zone 2 et <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1000,"loyer_mensuel":600,"region":"zone3"}'>118</span> € en zone 3 pour 1 000 € de revenus et 600 € de loyer.</p>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Les départements d'outre-mer sont-ils en zone 2 ?</h3>
-            <p class="text-gray-700">Oui. L'aide au logement y retient les plafonds de loyer de la zone 2, avec un forfait charges et des paramètres de calcul propres à l'outre-mer. Voir aussi notre page <a href="/pages/apl-dom-tom" class="text-blue-700 underline">APL outre-mer</a>.</p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Ma zone APL change-t-elle si je déménage ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Oui, si la nouvelle commune est classée dans une autre zone. Déclarez votre nouvelle adresse à la CAF : l'aide est recalculée avec les plafonds de la nouvelle zone.</p>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Toute l'Île-de-France est-elle en zone 1 ?</h3>
-            <p class="text-gray-700">Non. La zone 1 couvre Paris et une grande partie de l'agglomération parisienne ; le reste de l'Île-de-France est en zone 2, et quelques communes rurales en zone 3.</p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Les départements d'outre-mer sont-ils en zone 2 ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Oui. L'aide au logement y retient les plafonds de loyer de la zone 2, avec un forfait charges et des paramètres de calcul propres à l'outre-mer. Voir aussi notre page <a href="/pages/apl-dom-tom" class="text-blue-700 underline">APL outre-mer</a>.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Toute l'Île-de-France est-elle en zone 1 ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Non. La zone 1 couvre Paris et une grande partie de l'agglomération parisienne ; le reste de l'Île-de-France est en zone 2, et quelques communes rurales en zone 3.</p>
           </div>
         </div>
       </section>

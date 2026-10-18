@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Recalcule les exemples chiffrés des pages (marqueurs data-exemple) depuis les moteurs.
+ * Recalcule les exemples chiffrés des pages (marqueurs data-exemple) depuis les moteurs,
+ * puis régénère les FAQ JSON-LD (data-faq) à partir de la FAQ visible.
  *   node scripts/sync-exemples.cjs          -> réécrit les pages
  *   node scripts/sync-exemples.cjs --check  -> échoue si une page n'est pas à jour
  * Voir src/utils/exemplesChiffres.ts.
@@ -22,7 +23,7 @@ esbuild.buildSync({
   outfile: bundle,
   logLevel: "error",
 });
-const { synchroniserExemples } = require(bundle);
+const { synchroniserExemples, synchroniserFaqJsonLd } = require(bundle);
 fs.unlinkSync(bundle);
 
 function pages(dir) {
@@ -37,12 +38,14 @@ let ecartsTotal = 0;
 let modifiees = 0;
 for (const fichier of pages(path.join(root, "src/pages"))) {
   const html = fs.readFileSync(fichier, "utf8");
-  if (!html.includes("data-exemple=")) continue;
-  const { html: nouveau, ecarts } = synchroniserExemples(html);
+  if (!html.includes("data-exemple=") && !html.includes("data-faq=")) continue;
+  const { html: avecExemples, ecarts } = synchroniserExemples(html);
+  const { html: nouveau, ecarts: faqs } = synchroniserFaqJsonLd(avecExemples);
+  for (const g of faqs) console.log(`${path.relative(root, fichier)} : FAQ JSON-LD "${g}" à régénérer`);
   for (const e of ecarts) {
     console.log(`${path.relative(root, fichier)} : ${e.calcul} ${e.params} -> affiché ${e.affiche}, moteur ${e.attendu}`);
   }
-  ecartsTotal += ecarts.length;
+  ecartsTotal += ecarts.length + faqs.length;
   if (!check && nouveau !== html) {
     fs.writeFileSync(fichier, nouveau, "utf8");
     modifiees++;
