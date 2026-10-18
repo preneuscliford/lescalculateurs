@@ -1,17 +1,11 @@
 import { CalculatorFrame } from "../../components/CalculatorFrame.ts";
 import { ComparisonModal } from "../../components/ComparisonModal.ts";
 import { formatCurrency } from "../../main.ts";
+import { baremeIR2026, calculerIR } from "../../utils/irCalculEngine.ts";
 
-// Barème IR 2026 (revenus 2025) - Article 197 du CGI, identique à
-// src/utils/irCalculEngine.ts. Vérifié sur Légifrance (LEGIARTI000051212954)
-// le 11/08/2026.
-const bareme = [
-  { plafond: 11600, taux: 0 },
-  { plafond: 29579, taux: 0.11 },
-  { plafond: 84577, taux: 0.3 },
-  { plafond: 181917, taux: 0.41 },
-  { plafond: Infinity, taux: 0.45 },
-];
+// Barème IR 2026 (revenus 2025), plafonnement du quotient familial et décote :
+// moteur unique src/utils/irCalculEngine.ts.
+const bareme = baremeIR2026;
 
 let chartReadyPromise: Promise<void> | null = null;
 
@@ -58,22 +52,9 @@ function calculateDistribution(qf: number) {
   return distribution;
 }
 
-// Fonction pour calculer l'IR brut à partir d'un revenu et de parts
+// Impôt net (après plafonnement du quotient familial et décote) pour un revenu et des parts
 function calculateIR(revenu: number, parts: number): number {
-  const qf = revenu / parts;
-  let impotsParPart = 0;
-  let prev = 0;
-
-  for (let i = 0; i < bareme.length; i++) {
-    const tranchePlafond = bareme[i].plafond;
-    const taux = bareme[i].taux;
-    const base = Math.max(0, Math.min(qf, tranchePlafond) - prev);
-    impotsParPart += base * taux;
-    prev = tranchePlafond;
-    if (qf <= tranchePlafond) break;
-  }
-
-  return impotsParPart * parts;
+  return calculerIR({ revenu, parts }).impotNet;
 }
 
 // Interface pour les scénarios de comparaison
@@ -105,7 +86,7 @@ const comparisonStorage = {
 const impotConfig = {
   title: "Impôt sur le revenu 2026",
   description:
-    "Barème progressif et quotient familial (estimation indicative, hors décote/réductions/crédits).",
+    "Barème progressif, quotient familial plafonné et décote (estimation indicative, hors réductions et crédits d'impôt).",
   fields: [
     {
       id: "revenu",
@@ -116,6 +97,18 @@ const impotConfig = {
       min: 0,
       step: 1,
       quickValues: [15000, 25000, 35000, 50000, 75000, 100000],
+    },
+    {
+      id: "situation",
+      label: "Situation",
+      type: "select" as const,
+      required: true,
+      defaultValue: "seul",
+      options: [
+        { value: "seul", label: "Célibataire, divorcé(e) ou veuf(ve)" },
+        { value: "couple", label: "Couple marié ou pacsé" },
+        { value: "parent_isole", label: "Parent isolé (case T)" },
+      ],
     },
     {
       id: "parts",
@@ -133,31 +126,31 @@ const impotConfig = {
       emoji: "👤",
       label: "Célibataire modeste",
       description: "20 000 € / 1 part",
-      values: { revenu: 20000, parts: 1 },
+      values: { revenu: 20000, parts: 1, situation: "seul" },
     },
     {
       emoji: "👫",
       label: "Couple moyen",
       description: "40 000 € / 2 parts",
-      values: { revenu: 40000, parts: 2 },
+      values: { revenu: 40000, parts: 2, situation: "couple" },
     },
     {
       emoji: "💼",
       label: "Célibataire bien rémunéré",
       description: "60 000 € / 1 part",
-      values: { revenu: 60000, parts: 1 },
+      values: { revenu: 60000, parts: 1, situation: "seul" },
     },
     {
       emoji: "👨‍👩‍👧",
       label: "Couple + 1 enfant",
       description: "50 000 € / 2.5 parts",
-      values: { revenu: 50000, parts: 2.5 },
+      values: { revenu: 50000, parts: 2.5, situation: "couple" },
     },
     {
       emoji: "👨‍👧",
       label: "Parent isolé + 1 enfant",
-      description: "35 000 € / 1.5 parts",
-      values: { revenu: 35000, parts: 1.5 },
+      description: "35 000 € / 2 parts",
+      values: { revenu: 35000, parts: 2, situation: "parent_isole" },
     },
   ],
   calculate: (values: Record<string, any>) => {
@@ -170,31 +163,27 @@ const impotConfig = {
           error: "Veuillez saisir un revenu et un nombre de parts valides.",
         };
       }
-      const qf = revenu / parts;
-      let impotsParPart = 0;
-      let prev = 0;
-      for (let i = 0; i < bareme.length; i++) {
-        const tranchePlafond = bareme[i].plafond;
-        const taux = bareme[i].taux;
-        const base = Math.max(0, Math.min(qf, tranchePlafond) - prev);
-        impotsParPart += base * taux;
-        prev = tranchePlafond;
-        if (qf <= tranchePlafond) break;
-      }
-      const irBrut = impotsParPart * parts;
-      const tauxMoyen = revenu > 0 ? irBrut / revenu : 0;
-      const mensualiteMoyenne = irBrut / 12;
-      const tauxMarginal = bareme.find((b) => qf <= b.plafond)?.taux || 0;
+      const situation = String(values.situation || "");
+      const r = calculerIR({
+        revenu,
+        parts,
+        couple: situation ? situation === "couple" : undefined,
+        parentIsole: situation === "parent_isole",
+      });
       return {
         success: true,
         data: {
           revenu,
           parts,
-          qf,
-          irBrut,
-          tauxMoyen,
-          tauxMarginal,
-          mensualiteMoyenne,
+          qf: r.qf,
+          irBrut: r.irBrut,
+          irSansPlafonnement: r.irSansPlafonnement,
+          plafonnementQF: r.plafonnementQF,
+          decote: r.decote,
+          impotNet: r.impotNet,
+          tauxMoyen: r.tauxMoyen,
+          tauxMarginal: r.tauxMarginal,
+          mensualiteMoyenne: r.mensualiteMoyenne,
         },
       };
     } catch (e) {
@@ -207,8 +196,8 @@ const impotConfig = {
   formatResult: (result: any) => {
     const d = result.data;
     const distribution = calculateDistribution(d.qf);
-    const impotParPart = d.parts > 0 ? d.irBrut / d.parts : 0;
-    const isZeroIR = d.irBrut <= 0;
+    const impotParPart = d.parts > 0 ? d.irSansPlafonnement / d.parts : 0;
+    const isZeroIR = d.impotNet <= 0;
 
     // Déterminer l'explication des parts fiscales
     let partsExplication = "";
@@ -350,8 +339,13 @@ const impotConfig = {
       <!-- Résultat Principal -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-blue-50 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg border border-blue-200">
-          <h4 class="font-semibold text-gray-800">💰 Impôt estimé (barème brut)</h4>
-          <p class="text-lg sm:text-2xl font-bold text-blue-600">${formatCurrency(d.irBrut)}</p>
+          <h4 class="font-semibold text-gray-800">💰 Impôt net estimé</h4>
+          <p class="text-lg sm:text-2xl font-bold text-blue-600">${formatCurrency(d.impotNet)}</p>
+          <p class="text-xs text-gray-600 mt-1">Barème : ${formatCurrency(d.irBrut)}${
+            d.plafonnementQF > 0 ? ` (dont plafonnement du quotient familial : +${formatCurrency(d.plafonnementQF)})` : ""
+          }${d.decote > 0 ? ` • Décote : −${formatCurrency(d.decote)}` : ""}${
+            d.impotNet === 0 && d.irBrut - d.decote > 0 ? " • Impôt inférieur à 61 € : non recouvré" : ""
+          }</p>
           <p class="text-xs sm:text-sm text-gray-600 mt-1">Mensualité: ${formatCurrency(
             d.mensualiteMoyenne,
           )}</p>
@@ -373,13 +367,14 @@ const impotConfig = {
       <div class="bg-green-50 border border-green-200 rounded-lg px-2 sm:px-3 md:px-4 py-2 sm:py-3">
         <h3 class="text-lg font-bold text-green-900 mb-2">✅ Pourquoi l'impôt est à 0 € ?</h3>
         <ul class="text-xs sm:text-sm text-green-900 list-disc list-inside space-y-1">
-          <li>Votre quotient familial (${formatCurrency(
-            d.qf,
-          )}) reste dans la tranche à 0 % (jusqu'à ${formatCurrency(
-            bareme[0].plafond,
-          )} par part).</li>
-          <li>Ce résultat est une estimation “barème brut” (hors décote, réductions et crédits d'impôt).</li>
-          <li>En pratique, la décote et vos avantages fiscaux peuvent changer le montant final.</li>
+          ${
+            d.irBrut <= 0
+              ? `<li>Votre quotient familial (${formatCurrency(d.qf)}) reste dans la tranche à 0 % (jusqu'à ${formatCurrency(
+                  bareme[0].plafond,
+                )} par part).</li>`
+              : `<li>L'impôt du barème (${formatCurrency(d.irBrut)}) est annulé par la décote ou reste sous le seuil de recouvrement de 61 €.</li>`
+          }
+          <li>Réductions et crédits d'impôt non pris en compte.</li>
         </ul>
       </div>
       `
@@ -439,9 +434,9 @@ const impotConfig = {
                 )}</td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 font-semibold text-gray-900" colspan="4">Impôt estimé (toutes parts)</td>
+                <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 font-semibold text-gray-900" colspan="4">Impôt du barème (toutes parts, avant plafonnement et décote)</td>
                 <td class="px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-gray-200 text-right font-bold text-blue-700">${formatCurrency(
-                  d.irBrut,
+                  d.irSansPlafonnement,
                 )}</td>
               </tr>
             </tfoot>
@@ -555,9 +550,9 @@ const impotConfig = {
             <p class="text-xs font-semibold text-indigo-700 mb-2">💡 Impact des parts</p>
             <p class="text-xs sm:text-sm text-indigo-600"><strong>Avec ${
               d.parts
-            } part(s) :</strong> ${formatCurrency(d.irBrut)}</p>
-            <p class="text-xs sm:text-sm text-indigo-600"><strong>Avec 0.5 part seulement :</strong> ~${formatCurrency(
-              (d.irBrut * d.parts) / 0.5,
+            } part(s) :</strong> ${formatCurrency(d.impotNet)}</p>
+            <p class="text-xs sm:text-sm text-indigo-600"><strong>Avec 1 part (personne seule) :</strong> ${formatCurrency(
+              calculerIR({ revenu: d.revenu, parts: 1 }).impotNet,
             )}</p>
             <p class="text-xs text-gray-600 mt-2">Les enfants ajoutent 0.5 part chacun</p>
             <p class="text-xs text-gray-600 mt-2">
@@ -575,7 +570,7 @@ const impotConfig = {
         </p>
         <div class="bg-white rounded px-2 sm:px-3 md:px-4 py-2 sm:py-3 border border-purple-200">
           <p class="text-xs text-gray-600 mt-3 bg-purple-100 px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded">
-            ℹ️ Ce simulateur n'applique pas la décote : il affiche une estimation "barème brut". Pour un résultat exact, utilisez le simulateur officiel DGFIP.
+            ℹ️ Le simulateur applique la décote 2026 : 897 € (personne seule) ou 1 483 € (couple) − 45,25 % de l'impôt du barème, si celui-ci est inférieur à 1 982 € (seul) ou 3 277 € (couple). Pour un résultat exact, utilisez le simulateur officiel de la DGFiP.
           </p>
         </div>
       </div>

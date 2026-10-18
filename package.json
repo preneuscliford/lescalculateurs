@@ -10,7 +10,7 @@
     "utf8:diagnose": "node scripts/diagnose-encoding.cjs",
     "safe-run": "node scripts/safe-run.cjs",
     "dev": "vite",
-    "build": "node scripts/verify-utf8.cjs && node scripts/build-api.cjs && tsc && vite build && node scripts/verify-utf8.cjs",
+    "build": "node scripts/verify-utf8.cjs && node scripts/sync-exemples.cjs && node scripts/build-api.cjs && tsc && vite build && node scripts/verify-utf8.cjs",
     "build:api": "node scripts/build-api.cjs",
     "check:jsonld": "node scripts/check-jsonld.cjs",
     "check:sources": "node scripts/check-sources-officielles.cjs",
@@ -109,7 +109,9 @@
     "generate:pseo:are": "node scripts/generate-pseo-are.js",
     "generate:pseo:impot": "node scripts/generate-pseo-impot.js",
     "generate:vdf:income": "node scripts/generate-vdf-income-pages.cjs",
-    "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo"
+    "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo",
+    "exemples:sync": "node scripts/sync-exemples.cjs",
+    "exemples:check": "node scripts/sync-exemples.cjs --check"
   },
   "blog:update:2026": "node scripts/update-blog-pages.cjs",
   "blog:revert": "node scripts/revert-blog-pages.cjs",

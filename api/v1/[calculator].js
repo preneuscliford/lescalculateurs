@@ -1552,14 +1552,20 @@ async function handler(req, res) {
 var aplBaremes = socialBaremes.apl;
 var F = aplBaremes.formule;
 var PLAFONDS_LOYER_ZONE = {
+  zone1: aplBaremes.plafondsLoyer.zone1,
+  zone2: aplBaremes.plafondsLoyer.zone2,
+  zone3: aplBaremes.plafondsLoyer.zone3,
   idf: aplBaremes.plafondsLoyer.zone1,
   province: aplBaremes.plafondsLoyer.zone2,
-  dom: aplBaremes.plafondsLoyer.zone3
+  dom: aplBaremes.plafondsLoyer.zone2
 };
 var DEGRESSIVITE_ZONE = {
+  zone1: F.coefficientsDegressivite.zone1,
+  zone2: F.coefficientsDegressivite.zone2,
+  zone3: F.coefficientsDegressivite.zone3,
   idf: F.coefficientsDegressivite.zone1,
   province: F.coefficientsDegressivite.zone2,
-  dom: F.coefficientsDegressivite.zone3
+  dom: F.coefficientsDegressivite.zone2
 };
 var arrondi = (v, dec = 2) => Math.round(v * 10 ** dec) / 10 ** dec;
 var estCouple = (situation) => situation === "couple";
@@ -1750,7 +1756,7 @@ var FORFAIT_RESSOURCES_ETUDIANT = {
   classique: { boursier: 6900, nonBoursier: 8600 },
   foyer: { boursier: 5400, nonBoursier: 6600 }
 };
-var ZONE_MOTEUR = { "1": "idf", "2": "province", "3": "dom" };
+var ZONE_MOTEUR = { "1": "zone1", "2": "zone2", "3": "zone3" };
 var SITUATION_MOTEUR = {
   seul: "seul",
   couple: "couple",
@@ -2152,6 +2158,29 @@ var baremeIR2026 = [
   { plafond: Number.POSITIVE_INFINITY, taux: 0.45 }
   // 45%
 ];
+var PARAMETRES_IR_2026 = {
+  plafondDemiPart: 1807,
+  /** Parent isolé : plafond pour la part entière attribuée au premier enfant à charge */
+  plafondParentIsolePremierEnfant: 4262,
+  decote: {
+    seul: { forfait: 897, seuil: 1982 },
+    couple: { forfait: 1483, seuil: 3277 },
+    taux: 0.4525
+  },
+  seuilRecouvrement: 61
+};
+function impotBareme(revenu, parts, bareme) {
+  const qf = revenu / parts;
+  let impotsParPart = 0;
+  let prev = 0;
+  for (const tranche of bareme) {
+    const base = Math.max(0, Math.min(qf, tranche.plafond) - prev);
+    impotsParPart += base * tranche.taux;
+    prev = tranche.plafond;
+    if (qf <= tranche.plafond) break;
+  }
+  return impotsParPart * parts;
+}
 function calculerIR(input, bareme = baremeIR2026) {
   const revenu = Number(input.revenu);
   const parts = Number(input.parts);
@@ -2159,25 +2188,31 @@ function calculerIR(input, bareme = baremeIR2026) {
     throw new Error("Entr\xE9es invalides");
   }
   const qf = revenu / parts;
-  let impotsParPart = 0;
-  let prev = 0;
-  for (const tranche of bareme) {
-    const plafond = tranche.plafond;
-    const taux = tranche.taux;
-    const base = Math.max(0, Math.min(qf, plafond) - prev);
-    impotsParPart += base * taux;
-    prev = plafond;
-    if (qf <= plafond) break;
-  }
-  const irBrut = impotsParPart * parts;
-  const tauxMoyen = revenu > 0 ? irBrut / revenu : 0;
-  const mensualiteMoyenne = irBrut / 12;
+  const P = PARAMETRES_IR_2026;
+  const couple = input.couple ?? parts >= 2;
+  const partsBase = couple ? 2 : 1;
+  const irSansPlafonnement = impotBareme(revenu, parts, bareme);
+  const demiPartsSupp = Math.max(0, (parts - partsBase) * 2);
+  const irBase = impotBareme(revenu, Math.min(parts, partsBase), bareme);
+  const avantageMax = !couple && input.parentIsole === true && demiPartsSupp >= 2 ? P.plafondParentIsolePremierEnfant + (demiPartsSupp - 2) * P.plafondDemiPart : demiPartsSupp * P.plafondDemiPart;
+  const irBrut = Math.max(irSansPlafonnement, irBase - avantageMax);
+  const plafonnementQF = irBrut - irSansPlafonnement;
+  const d = couple ? P.decote.couple : P.decote.seul;
+  const decote = irBrut > 0 && irBrut < d.seuil ? Math.min(irBrut, Math.max(0, d.forfait - P.decote.taux * irBrut)) : 0;
+  const apresDecote = Math.round(irBrut - decote);
+  const impotNet = apresDecote < P.seuilRecouvrement ? 0 : apresDecote;
+  const tauxMoyen = revenu > 0 ? impotNet / revenu : 0;
+  const mensualiteMoyenne = impotNet / 12;
   const tauxMarginal = bareme.find((b) => qf <= b.plafond)?.taux ?? bareme[bareme.length - 1]?.taux ?? 0;
   return {
     revenu,
     parts,
     qf,
     irBrut,
+    irSansPlafonnement,
+    plafonnementQF,
+    decote,
+    impotNet,
     tauxMoyen,
     tauxMarginal,
     mensualiteMoyenne

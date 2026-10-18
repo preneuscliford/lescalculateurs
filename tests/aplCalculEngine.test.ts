@@ -70,5 +70,22 @@ describe("aplCalculEngine", () => {
     expect(r.data?.apl_estimee).toBe(0);
     expect(r.data?.raison_zero).toMatch(/2018/);
   });
-});
 
+  test("zones : zone 3 plafonnée plus bas que la zone 2, alias idf/province conservés", () => {
+    const base = { situation: "seul" as const, enfants: 0, revenus_mensuels: 900, loyer_mensuel: 600 };
+    const z1 = calculerAPL({ ...base, region: "zone1" }).data!;
+    const z2 = calculerAPL({ ...base, region: "zone2" }).data!;
+    const z3 = calculerAPL({ ...base, region: "zone3" }).data!;
+    expect(z1.plafond_loyer).toBe(336.97);
+    expect(z2.plafond_loyer).toBe(293.68);
+    expect(z3.plafond_loyer).toBe(275.25);
+    expect(z3.apl_estimee).toBeLessThan(z2.apl_estimee);
+    expect(calculerAPL({ ...base, region: "idf" }).data!.apl_estimee).toBe(z1.apl_estimee);
+    expect(calculerAPL({ ...base, region: "province" }).data!.apl_estimee).toBe(z2.apl_estimee);
+  });
+
+  test("outre-mer : plafonds de la zone II (Martinique, personne seule : 293,68 EUR)", () => {
+    const r = calculerAPL({ situation: "seul", enfants: 0, revenus_mensuels: 900, loyer_mensuel: 600, region: "dom" }).data!;
+    expect(r.plafond_loyer).toBe(293.68);
+  });
+});

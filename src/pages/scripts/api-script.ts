@@ -64,7 +64,7 @@ const ENDPOINTS: ApiEndpointDoc[] = [
       { name: "enfants", type: "number", required: false, description: "Nombre d'enfants à charge (défaut 0)" },
       { name: "revenus_mensuels", type: "number", required: true, description: "Revenus mensuels du foyer" },
       { name: "loyer_mensuel", type: "number", required: true, description: "Loyer mensuel hors charges" },
-      { name: "region", type: '"idf" | "province" | "dom"', required: true, description: "Zone géographique du logement" },
+      { name: "region", type: '"zone1" | "zone2" | "zone3" | "dom" (alias "idf", "province")', required: true, description: "Zone géographique du logement" },
       { name: "type_logement", type: '"location" | "accession" | "hlm" | "colocation"', required: false, description: "Type de logement" },
     ],
     body: { situation: "seul", enfants: 0, revenus_mensuels: 1200, loyer_mensuel: 600, region: "province" },

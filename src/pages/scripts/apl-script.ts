@@ -94,14 +94,15 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
       },
       {
         id: "region",
-        label: "Région",
+        label: "Zone APL de votre commune",
         type: "select",
         value: v.region,
         required: true,
         options: [
-          { value: "idf", label: "Île-de-France" },
-          { value: "province", label: "Province (hors IDF)" },
-          { value: "dom", label: "DOM-TOM" },
+          { value: "zone1", label: "Zone 1 : Paris, petite couronne et communes proches" },
+          { value: "zone2", label: "Zone 2 : grandes agglomérations, reste de l'Île-de-France, Corse" },
+          { value: "zone3", label: "Zone 3 : autres communes" },
+          { value: "dom", label: "Outre-mer" },
         ],
       },
       {
@@ -149,7 +150,7 @@ document.getElementById("apl-add-to-compare")?.addEventListener("click", () => {
         revenus: Number(revenus_mensuels),
         nombre_enfants: Number(enfants) || 0,
         type_logement,
-        zone: region === "idf" ? "zone_1" : region === "province" ? "zone_2" : "zone_3",
+        zone: region === "idf" || region === "zone1" ? "zone_1" : region === "zone3" ? "zone_3" : "zone_2",
       };
 
       const result = {

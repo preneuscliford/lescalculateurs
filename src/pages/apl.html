@@ -249,7 +249,7 @@
         ]
       }
     </script>
-      <meta name="source" content="caf.fr, service-public.fr, legifrance.gouv.fr">
+      <meta name="source" content="caf.fr, service-public.gouv.fr, legifrance.gouv.fr">
 </head>
   <body class="bg-gray-50">
     <div class="sticky-ymyl" role="alert" style="position:sticky;top:0;z-index:9999;background:#fff3cd;border:1px solid #ffc107;padding:8px 12px;text-align:center;font-size:13px;color:#1f2937;">
@@ -507,17 +507,17 @@
         <div class="mt-5 grid gap-3 sm:grid-cols-3">
           <div class="rounded-lg bg-white p-4 border border-emerald-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 1</p>
-            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 110 €/mois</p>
+            <p class="text-lg font-bold text-emerald-700 mt-1">≈ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1050,"loyer_mensuel":520,"region":"zone2"}'>116</span> €/mois</p>
             <p class="text-xs text-gray-700 mt-2">Personne seule<br>1 050 €/mois<br>Loyer 520€ (province)</p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-emerald-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 2</p>
-            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 130 €/mois</p>
+            <p class="text-lg font-bold text-emerald-700 mt-1">≈ <span data-exemple="apl" data-params='{"situation":"couple","enfants":1,"revenus_mensuels":1500,"loyer_mensuel":650,"region":"zone2"}'>214</span> €/mois</p>
             <p class="text-xs text-gray-700 mt-2">Couple + 1 enfant<br>1 500 €/mois<br>Loyer 650€ (province)</p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-emerald-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 3</p>
-            <p class="text-lg font-bold text-emerald-700 mt-1">≈ 155 €/mois</p>
+            <p class="text-lg font-bold text-emerald-700 mt-1">≈ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":900,"loyer_mensuel":650,"region":"zone2"}'>166</span> €/mois</p>
             <p class="text-xs text-gray-700 mt-2">Au chômage<br>900 €/mois<br>Loyer 650€ (province)</p>
           </div>
         </div>
@@ -841,10 +841,10 @@
 
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Qui peut recevoir l'APL ?</h3>
-            <p class="text-gray-600">Pour être éligible à l'APL, vous devez : résider en France
- métropolitaine, avoir un logement décent et conforme aux normes,
+            <p class="text-gray-600">Pour être éligible à l'APL, vous devez : résider en France (métropole ou départements
+ d'outre-mer), avoir un logement décent et conforme aux normes,
  respecter les plafonds de ressources (selon votre situation), et
- être français ou ressortissant d'un pays de l'UE/EEE.</p>
+ être français, ressortissant de l'UE, de l'EEE ou de la Suisse, ou titulaire d'un titre de séjour en cours de validité.</p>
           </div>
 
           <div>
@@ -902,8 +902,8 @@
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Quand demander l'APL ?</h3>
             <p class="text-gray-600">Vous pouvez demander l'APL dès que vous avez un logement conforme.
- Les allocations sont versées à partir du mois suivant votre
- demande (ou du mois de signature du bail/emprunt). Déposez votre
+ L’aide est due à partir du mois qui suit votre entrée dans le
+ logement, mais elle n’est pas rétroactive avant la date de la demande. Déposez votre
  demande rapidement pour ne pas perdre de mois d'aide.</p>
           </div>
 
@@ -939,7 +939,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium text-gray-900"><span class="result-verbal">environ 700 €</span><span class="result-exact" style="display: none"> 700 €</span>€</span>
+                <span class="font-medium text-gray-900"><span class="result-verbal">environ 700 €</span><span class="result-exact" style="display: none"> 700 €</span></span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -949,8 +949,8 @@
             <div class="bg-blue-50 p-4 rounded-lg">
               <p class="text-blue-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-blue-600">≈ 20 €</span> par mois</p>
-              <p class="text-sm text-blue-800 mt-2">Reste à charge : environ 680 €. Le loyer pris en compte est plafonné à 336,97 € en zone 1 pour une personne seule : au-delà, le surplus n'est pas aidé.</p>
+                <span class="text-2xl font-bold text-blue-600"><span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":1500,"loyer_mensuel":700,"region":"zone1"}'>0</span> €</span> par mois</p>
+              <p class="text-sm text-blue-800 mt-2">Reste à charge : 700 €. Avec 1 500 € de revenus, l’aide calculée (environ 3 €) est sous le seuil de versement de 10 € : elle n’est pas versée. Le loyer pris en compte est plafonné à 336,97 € en zone 1 pour une personne seule : au-delà, le surplus n'est pas aidé.</p>
             </div>
           </div>
 
@@ -968,7 +968,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium text-gray-900"><span class="result-verbal">environ 850 €</span><span class="result-exact" style="display: none"> 850 €</span>€</span>
+                <span class="font-medium text-gray-900"><span class="result-verbal">environ 850 €</span><span class="result-exact" style="display: none"> 850 €</span></span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -978,8 +978,8 @@
             <div class="bg-green-50 p-4 rounded-lg">
               <p class="text-green-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-green-600">≈ 115 €</span> par mois</p>
-              <p class="text-sm text-green-800 mt-2">Reste à charge : environ 735 €. Avec 3 200 € de revenus pour le même foyer, l'aide tombe à 0 €.</p>
+                <span class="text-2xl font-bold text-green-600">≈ <span data-exemple="apl" data-params='{"situation":"couple","enfants":2,"revenus_mensuels":1800,"loyer_mensuel":850,"region":"zone2"}'>221</span> €</span> par mois</p>
+              <p class="text-sm text-green-800 mt-2">Reste à charge : environ <span data-exemple="apl" data-params='{"situation":"couple","enfants":2,"revenus_mensuels":1800,"loyer_mensuel":850,"region":"zone2"}' data-champ="reste">629</span> €. À partir d’environ 2 550 € de revenus pour le même foyer, l'aide tombe à 0 €.</p>
             </div>
           </div>
 
@@ -997,7 +997,7 @@
               </div>
               <div>
                 <span class="text-gray-700">Loyer :</span>
-                <span class="font-medium text-gray-900"><span class="result-verbal">environ 550 €</span><span class="result-exact" style="display: none"> 550 €</span>€</span>
+                <span class="font-medium text-gray-900"><span class="result-verbal">environ 550 €</span><span class="result-exact" style="display: none"> 550 €</span></span>
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
@@ -1007,8 +1007,8 @@
             <div class="bg-purple-50 p-4 rounded-lg">
               <p class="text-purple-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-purple-600">≈ 230 €</span> par mois</p>
-              <p class="text-sm text-purple-800 mt-2">Reste à charge : environ 320 €.</p>
+                <span class="text-2xl font-bold text-purple-600">≈ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":800,"loyer_mensuel":550,"region":"zone1"}'>239</span> €</span> par mois</p>
+              <p class="text-sm text-purple-800 mt-2">Reste à charge : environ <span data-exemple="apl" data-params='{"situation":"seul","enfants":0,"revenus_mensuels":800,"loyer_mensuel":550,"region":"zone1"}' data-champ="reste">311</span> €.</p>
             </div>
           </div>
 
@@ -1030,14 +1030,14 @@
               </div>
               <div>
                 <span class="text-gray-700">Zone :</span>
-                <span class="font-medium text-gray-900">Province (Zone 2 ou 3)</span>
+                <span class="font-medium text-gray-900">Province, grande agglomération (zone 2)</span>
               </div>
             </div>
             <div class="bg-yellow-50 p-4 rounded-lg">
               <p class="text-yellow-900">
                 <strong>Estimation APL :</strong>
-                <span class="text-2xl font-bold text-yellow-600">≈ 130 €</span> par mois</p>
-              <p class="text-sm text-yellow-800 mt-2">Reste à charge : environ 520 €.</p>
+                <span class="text-2xl font-bold text-yellow-600">≈ <span data-exemple="apl" data-params='{"situation":"couple","enfants":1,"revenus_mensuels":1500,"loyer_mensuel":650,"region":"zone2"}'>214</span> €</span> par mois</p>
+              <p class="text-sm text-yellow-800 mt-2">Reste à charge : environ <span data-exemple="apl" data-params='{"situation":"couple","enfants":1,"revenus_mensuels":1500,"loyer_mensuel":650,"region":"zone2"}' data-champ="reste">436</span> €.</p>
             </div>
           </div>
         </div>
@@ -1209,17 +1209,17 @@
           </a>
           <a href="/pages/apl/apl-loyer-800-revenu-1300" class="rounded-lg border border-white bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
             <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Paris</p>
-            <h4 class="mt-2 font-semibold text-gray-900">APL célibataire àParis</h4>
+            <h4 class="mt-2 font-semibold text-gray-900">APL célibataire à Paris</h4>
             <p class="mt-1 text-sm text-gray-600">scénario urbain avec reste àcharge encore élevé.</p>
           </a>
           <a href="/pages/apl/apl-couple-paris" class="rounded-lg border border-white bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
             <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Couple</p>
-            <h4 class="mt-2 font-semibold text-gray-900">APL pour un couple àParis</h4>
+            <h4 class="mt-2 font-semibold text-gray-900">APL pour un couple à Paris</h4>
             <p class="mt-1 text-sm text-gray-600">Pour estimer l'effet du loyer francilien sur un foyer à deux.</p>
           </a>
           <a href="/pages/apl/apl-parent-isole-paris" class="rounded-lg border border-white bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
             <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Parent isolé</p>
-            <h4 class="mt-2 font-semibold text-gray-900">APL parent isolé àParis</h4>
+            <h4 class="mt-2 font-semibold text-gray-900">APL parent isolé à Paris</h4>
             <p class="mt-1 text-sm text-gray-600">Cas familial en zone tendue avec un enfant àcharge.</p>
           </a>
         </div>
@@ -1408,15 +1408,16 @@
           },
           {
             id: "region",
-            label: "Région *",
+            label: "Zone APL de votre commune *",
             type: "select",
             required: true,
-            defaultValue: "idf",
-            quickValues: ["idf", "province", "dom"],
+            defaultValue: "zone2",
+            quickValues: ["zone1", "zone2", "zone3", "dom"],
             options: [
-              { value: "idf", label: "Île-de-France" },
-              { value: "province", label: "Province (hors IDF)" },
-              { value: "dom", label: "DOM-TOM" },
+              { value: "zone1", label: "Zone 1 : Paris, petite couronne et communes proches" },
+              { value: "zone2", label: "Zone 2 : grandes agglomérations, reste de l'Île-de-France, Corse" },
+              { value: "zone3", label: "Zone 3 : autres communes" },
+              { value: "dom", label: "Outre-mer (Guadeloupe, Martinique, Guyane, Réunion, Mayotte)" },
             ],
           },
           {
@@ -1650,7 +1651,7 @@
                       remainingAfterHousing,
                     )}</li>
                     <li><strong>Profil retenu :</strong> ${familyLabel}${hasChildren ? ` avec ${data.enfants} enfant${data.enfants > 1 ? "s" : ""}` : ""}</li>
-                    <li><strong>Zone retenue :</strong> ${data.zone === "idf" ? "&Icirc;le-de-France" : data.zone === "dom" ? "DOM-TOM" : "Province"}</li>
+                    <li><strong>Zone retenue :</strong> ${data.zone === "dom" ? "Outre-mer (plafonds de la zone 2)" : data.zone === "zone1" || data.zone === "idf" ? "Zone 1" : data.zone === "zone3" ? "Zone 3" : "Zone 2"}</li>
                   </ul>
                 </article>
               </div>

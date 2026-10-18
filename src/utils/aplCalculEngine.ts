@@ -19,7 +19,8 @@
  *
  * Limites (estimation) : revenus mensuels saisis assimilés à des salaires nets sur 12 mois ;
  * pas d'abattements spécifiques (double activité, enfants), ni de réduction de loyer de
- * solidarité en HLM ; pour les DOM, plafonds de la zone III (classement des communes non vérifié).
+ * solidarité en HLM. Outre-mer : plafonds de la zone II (les départements d'outre-mer sont classés
+ * en zone II, brochure ministérielle « Les aides personnelles au logement ») et paramètres de l'art. 46.
  *
  * @version 2026-10 (barème au 1er octobre 2026)
  */
@@ -31,7 +32,11 @@ import { socialBaremes } from "../data/social-baremes";
 // ==========================================
 
 export type SituationFamiliale = "seul" | "couple" | "monoparental" | "autre";
-export type Zone = "idf" | "province" | "dom";
+/**
+ * Zone du logement : "zone1", "zone2", "zone3" (classement des communes, arrêté du 17 mars 1978) ou "dom".
+ * Alias historiques conservés : "idf" = zone 1, "province" = zone 2.
+ */
+export type Zone = "zone1" | "zone2" | "zone3" | "idf" | "province" | "dom";
 export type TypeLogement = "location" | "accession" | "hlm" | "colocation";
 
 export interface APLInput {
@@ -78,14 +83,20 @@ const F = aplBaremes.formule;
 
 // Plafonds de loyer officiels (art. 7) par zone CAF
 const PLAFONDS_LOYER_ZONE = {
+  zone1: aplBaremes.plafondsLoyer.zone1,
+  zone2: aplBaremes.plafondsLoyer.zone2,
+  zone3: aplBaremes.plafondsLoyer.zone3,
   idf: aplBaremes.plafondsLoyer.zone1,
   province: aplBaremes.plafondsLoyer.zone2,
-  dom: aplBaremes.plafondsLoyer.zone3,
+  dom: aplBaremes.plafondsLoyer.zone2,
 } as const;
 const DEGRESSIVITE_ZONE = {
+  zone1: F.coefficientsDegressivite.zone1,
+  zone2: F.coefficientsDegressivite.zone2,
+  zone3: F.coefficientsDegressivite.zone3,
   idf: F.coefficientsDegressivite.zone1,
   province: F.coefficientsDegressivite.zone2,
-  dom: F.coefficientsDegressivite.zone3,
+  dom: F.coefficientsDegressivite.zone2,
 } as const;
 
 const arrondi = (v: number, dec = 2) => Math.round(v * 10 ** dec) / 10 ** dec;
@@ -321,9 +332,12 @@ export const SITUATION_LABELS: Record<SituationFamiliale, string> = {
  * Labels lisibles pour les zones
  */
 export const ZONE_LABELS: Record<Zone, string> = {
-  idf: "Île-de-France",
-  province: "Province",
-  dom: "DOM-TOM",
+  zone1: "Zone 1",
+  zone2: "Zone 2",
+  zone3: "Zone 3",
+  idf: "Zone 1",
+  province: "Zone 2",
+  dom: "Outre-mer",
 };
 
 /**

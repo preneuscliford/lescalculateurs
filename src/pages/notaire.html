@@ -104,7 +104,7 @@
     <!-- Sources Meta Tag for AI -->
     <meta
       name="source"
-      content="service-public.fr, immobilier.notaires.fr, data.gouv.fr, impots.gouv.fr"
+      content="service-public.gouv.fr, immobilier.notaires.fr, data.gouv.fr, impots.gouv.fr"
     />
     <!-- Schema.org SoftwareApplication -->
     <script type="application/ld+json">
@@ -666,10 +666,10 @@
                   <div
                     id="bar-ancien"
                     class="bg-orange-500 h-4 rounded-full transition-all"
-                    style="width: 7%"
+                    style="width: 19.5%"
                   ></div>
                 </div>
-                <p class="text-sm text-orange-700">~7% du prix d'achat</p>
+                <p class="text-sm text-orange-700">~7,8 % du prix d'achat</p>
               </div>
 
               <!-- Neuf -->
@@ -685,10 +685,10 @@
                   <div
                     id="bar-neuf"
                     class="bg-green-500 h-4 rounded-full transition-all"
-                    style="width: 2.4%"
+                    style="width: 5.5%"
                   ></div>
                 </div>
-                <p class="text-sm text-green-700">~2, 4% du prix d'achat</p>
+                <p class="text-sm text-green-700">~2,2 % du prix d'achat</p>
               </div>
             </div>
 
@@ -748,8 +748,8 @@
         function updateQuickCalc() {
           const prix = parseInt(document.getElementById("quick-prix").value);
           document.getElementById("quick-prix-display").textContent = prix.toLocaleString("fr-FR");
-          const fraisAncien = prix * 0.07;
-          const fraisNeuf = prix * 0.024;
+          const fraisAncien = prix * 0.078;
+          const fraisNeuf = prix * 0.022;
           const economie = fraisAncien - fraisNeuf;
           document.getElementById("frais-ancien").textContent =
             "~" + Math.round(fraisAncien).toLocaleString("fr-FR") + " €";
@@ -757,8 +757,8 @@
             "~" + Math.round(fraisNeuf).toLocaleString("fr-FR") + " €";
           document.getElementById("eco-neuf").textContent =
             "~" + Math.round(economie).toLocaleString("fr-FR") + " €";
-          document.getElementById("bar-ancien").style.width = ((prix * 0.07) / 100000) * 100 + "%";
-          document.getElementById("bar-neuf").style.width = ((prix * 0.024) / 100000) * 100 + "%";
+          document.getElementById("bar-ancien").style.width = ((prix * 0.078) / 100000) * 100 + "%";
+          document.getElementById("bar-neuf").style.width = ((prix * 0.022) / 100000) * 100 + "%";
         }
       </script>
 
@@ -773,23 +773,23 @@
         <div class="mt-5 grid gap-3 sm:grid-cols-3">
           <div class="rounded-lg bg-white p-4 border border-indigo-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 1</p>
-            <p class="text-lg font-bold text-indigo-700 mt-1">≈ 19 500 €</p>
+            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">19 500</span> €</p>
             <p class="text-xs text-gray-700 mt-2">
               Bien ancien 250 000 € (≈ 7,8 % à Paris, droits à 6,32 %).
             </p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-indigo-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 2</p>
-            <p class="text-lg font-bold text-indigo-700 mt-1">≈ 23 200 €</p>
+            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":300000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">23 200</span> €</p>
             <p class="text-xs text-gray-700 mt-2">
               Bien ancien 300 000 € (≈ 7,7 % à Paris).
             </p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-indigo-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 3</p>
-            <p class="text-lg font-bold text-indigo-700 mt-1">≈ 6 000 €</p>
+            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"neuf","departement":"75"}' data-arrondi="100">5 500</span> €</p>
             <p class="text-xs text-gray-700 mt-2">
-              Neuf/VEFA 250k€ (2,4%). Économie importante vs ancien.
+              Neuf/VEFA 250 000 € (≈ 2,2 %). Économie importante par rapport à l’ancien.
             </p>
           </div>
         </div>
@@ -807,7 +807,7 @@
               ❓ Comment calculer les frais de notaire en France en 2026 ?
             </h2>
             <p class="ai-response text-gray-700">
-              Les frais de notaire = Droits d'enregistrement (5, 09% à 6, 32% selon département) +
+              Les frais de notaire = Droits d'enregistrement (5,09 % à 6,32 % selon département) +
               Émoluments réglementés + TVA + Contributions (CSI). Pour un bien ancien à 250 000€,
               comptez environ 7–8%. Pour du neuf : 2–3%.
             </p>
@@ -827,7 +827,7 @@
                 >
               </li>
               <li>
-                <strong>Calcul :</strong> Droits (5, 09% à 6, 32% selon département) + Émoluments
+                <strong>Calcul :</strong> Droits (5,09 % à 6,32 % selon département) + Émoluments
                 réglementés (variables par tranches de prix)
               </li>
               <li><strong>Particularité :</strong> Ancien ~7–8% | Neuf ~2–3% | Terrain ~5–6%</li>
@@ -849,8 +849,8 @@
             <p>
               Pour obtenir une estimation utile, indiquez votre prix d'achat, le type de bien
               (ancien, neuf, terrain) et votre département. Nous appliquons automatiquement la
-              grille officielle par tranches (3, 870% / 1, 596% / 1, 064% / 0, 799%), la TVA (20%),
-              la CSI (0, 10% min. 15€) et les droits selon votre département.
+              grille officielle par tranches (3,870 % / 1,596 % / 1,064 % / 0,799 %), la TVA (20%),
+              la CSI (0,10 % min. 15€) et les droits selon votre département.
             </p>
             <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
               <p class="m-0 text-sm mb-2">
@@ -1064,14 +1064,14 @@
                 "
               >
                 <p class="font-bold text-red-800">Île-de-France</p>
-                <p class="text-2xl font-bold text-red-600">6, 32%</p>
+                <p class="text-2xl font-bold text-red-600">6,32 %</p>
               </div>
               <div
                 class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center"
                 onclick="alert('Auvergne-Rhône-Alpes : 6,32%\nSauf Ardèche (07) et Drôme (26) à 5,80%')"
               >
                 <p class="font-bold text-red-800">Auvergne-Rhône-Alpes</p>
-                <p class="text-2xl font-bold text-red-600">6, 32%</p>
+                <p class="text-2xl font-bold text-red-600">6,32 %</p>
                 <p class="text-xs text-red-700">Sauf 07 et 26 (5,80%)</p>
               </div>
               <div
@@ -1110,14 +1110,14 @@
                 onclick="alert('Pays de la Loire : 6,32%')"
               >
                 <p class="font-bold text-red-800">Pays de la Loire</p>
-                <p class="text-2xl font-bold text-red-600">6, 32%</p>
+                <p class="text-2xl font-bold text-red-600">6,32 %</p>
               </div>
               <div
                 class="p-4 bg-red-100 rounded-lg border-2 border-red-300 hover:shadow-lg transition cursor-pointer text-center"
                 onclick="alert('Grand Est : 6,32%')"
               >
                 <p class="font-bold text-red-800">Grand Est</p>
-                <p class="text-2xl font-bold text-red-600">6, 32%</p>
+                <p class="text-2xl font-bold text-red-600">6,32 %</p>
               </div>
             </div>
 
@@ -1153,7 +1153,7 @@
                   fill="none"
                   stroke="#ef4444"
                   stroke-width="20"
-                  stroke-dasharray="201 251"
+                  stroke-dasharray="203 251"
                   stroke-linecap="round"
                 />
                 <circle
@@ -1163,8 +1163,8 @@
                   fill="none"
                   stroke="#dbeafe"
                   stroke-width="20"
-                  stroke-dasharray="35 251"
-                  stroke-dashoffset="-201"
+                  stroke-dasharray="38 251"
+                  stroke-dashoffset="-203"
                   stroke-linecap="round"
                 />
                 <circle
@@ -1174,8 +1174,8 @@
                   fill="none"
                   stroke="#3b82f6"
                   stroke-width="20"
-                  stroke-dasharray="15 251"
-                  stroke-dashoffset="-236"
+                  stroke-dasharray="10 251"
+                  stroke-dashoffset="-241"
                   stroke-linecap="round"
                 />
               </svg>
@@ -1194,27 +1194,27 @@
               >
                 <div class="flex items-center gap-2">
                   <span class="w-3 h-3 rounded-full bg-red-600"></span>
-                  <span class="font-semibold text-gray-900">Taxes (DMTO)</span>
+                  <span class="font-semibold text-gray-900">Droits de mutation (DMTO)</span>
                 </div>
-                <span class="font-bold text-red-900">~15 000 € (80%)</span>
+                <span class="font-bold text-red-900">~15 800 € (81 %)</span>
               </div>
               <div
                 class="flex items-center justify-between p-3 bg-blue-200 rounded-lg border border-blue-400"
               >
                 <div class="flex items-center gap-2">
                   <span class="w-3 h-3 rounded-full bg-blue-600"></span>
-                  <span class="font-semibold text-gray-900">Émoluments</span>
+                  <span class="font-semibold text-gray-900">Émoluments + TVA</span>
                 </div>
-                <span class="font-bold text-blue-900">~2 500 € (14%)</span>
+                <span class="font-bold text-blue-900">~2 900 € (15 %)</span>
               </div>
               <div
                 class="flex items-center justify-between p-3 bg-gray-300 rounded-lg border border-gray-500"
               >
                 <div class="flex items-center gap-2">
                   <span class="w-3 h-3 rounded-full bg-gray-600"></span>
-                  <span class="font-semibold text-gray-900">Débours</span>
+                  <span class="font-semibold text-gray-900">Débours, formalités et CSI</span>
                 </div>
-                <span class="font-bold text-gray-900">~1 000 € (6%)</span>
+                <span class="font-bold text-gray-900">~800 € (4 %)</span>
               </div>
             </div>
 
@@ -1245,8 +1245,8 @@
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <p class="text-gray-600" itemprop="text">
                 Pour l'ancien, les frais incluent les droits de mutation (taux départemental,
-                généralement 5, 09% à 6, 32%), les émoluments, la TVA et les formalités/débours.
-                Pour le neuf (VEFA), les droits sont réduits à 0, 715% (TFPB) et s'ajoutent aux
+                de 5,09 % à 6,32 %), les émoluments, la TVA et les formalités/débours.
+                Pour le neuf (VEFA), les droits de mutation sont réduits à 0,715 % et s'ajoutent aux
                 émoluments et à la TVA.
               </p>
             </div>
@@ -1336,7 +1336,7 @@
                 Notre calculateur permet de comparer jusqu'à 4 villes simultanément. Après votre
                 premier calcul, cliquez sur "Comparer avec une autre ville", sélectionnez un
                 département, et visualisez les différences sur un graphique interactif. Les frais
-                varient selon les taux départementaux (5, 09% à 6, 32%) et les formalités locales.
+                varient selon les taux départementaux (5,09 % à 6,32 %) et les formalités locales.
                 Les écarts peuvent représenter plusieurs centaines à quelques milliers d'euros selon
                 le prix et le département.
               </p>
@@ -1436,11 +1436,11 @@
                   Pour un bien de <strong>200 000 €</strong>, les frais se répartissent comme suit :
                 </p>
                 <ul class="list-disc list-inside space-y-1 mb-3">
-                  <li><strong>Ancien (droits à 6,32 %) :</strong> ≈ 15 800 € au total (≈ 7,9 %)</li>
-                  <li><strong>Neuf/VEFA :</strong> ≈ 4 600 € au total (≈ 2,3 %)</li>
+                  <li><strong>Ancien (droits à 6,32 %) :</strong> ≈ <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">15 800</span> € au total (≈ 7,9 %)</li>
+                  <li><strong>Neuf/VEFA :</strong> ≈ <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"neuf","departement":"75"}' data-arrondi="100">4 600</span> € au total (≈ 2,3 %)</li>
                 </ul>
                 <p class="text-sm text-gray-500">
-                  La différence s'explique par les droits de mutation (DMTO) : ~11 600 € pour
+                  La différence s'explique par les droits de mutation (DMTO) : ~<span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"75"}' data-champ="droitsEnregistrement">12 640</span> € pour
                   l'ancien contre ~1 500 € pour le neuf.
                 </p>
               </div>
@@ -1470,8 +1470,8 @@
                     du prix
                   </li>
                   <li>
-                    <strong>Choisir le département :</strong> Certains ont des taux réduits (5, 09%
-                    vs 6, 32%)
+                    <strong>Choisir le département :</strong> Certains ont des taux réduits (5,09 %
+                    vs 6,32 %)
                   </li>
                 </ol>
               </div>
@@ -1551,15 +1551,9 @@
             </h3>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div class="text-gray-600" itemprop="text">
-                <p class="mb-2">3 départements ont un taux réduit de <strong>5, 09%</strong>:</p>
-                <ul class="list-disc list-inside space-y-1 mb-3">
-                  <li><strong>Indre (36)</strong></li>
-                  <li><strong>Isère (38)</strong></li>
-                  <li><strong>Morbihan (56)</strong></li>
-                </ul>
+                <p class="mb-2">Selon le barème DGFiP au 1er juin 2026, seul l'<strong>Indre (36)</strong> applique un taux de <strong>5,09 %</strong>. Viennent ensuite <strong>11 départements à 5,80 %</strong>, dont les Hautes-Alpes (05), les Alpes-Maritimes (06), la Guadeloupe (971) et Mayotte (976). Les 89 autres départements appliquent 6,32 %.</p>
                 <p class="text-sm bg-green-50 p-2 rounded">
-                  <strong>Exemple :</strong> Pour 200 000 €, vous économisez ~2 460 € en achetant
-                  dans l'Isère plutôt qu'en région parisienne (6, 32%).
+                  <strong>Exemple :</strong> pour un bien ancien de 200 000 €, les droits de mutation sont de <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"36"}' data-champ="droitsEnregistrement">10 180</span> € dans l'Indre contre <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"75"}' data-champ="droitsEnregistrement">12 640</span> € à Paris (6,32 %), soit ~2 460 € d'économie.
                 </p>
               </div>
             </div>
@@ -1745,7 +1739,7 @@
               label: "Département du bien *",
               type: "select",
               required: true,
-              help: "ℹ️ En neuf, les droits sont toujours de 0,71 % (TFPB), quel que soit le département.",
+              help: "ℹ️ En neuf, les droits de mutation réduits sont de 0,715 %, quel que soit le département.",
               options: [
                 { value: "01", label: `01 - Ain (${pct(getDmtoTaux("01"))})` },
                 {
@@ -2852,34 +2846,34 @@
         const calculData = window.dernierCalculNotaire;
         if (calculData && calculData.result && calculData.values) {
           const deptMap = {
-            75: "75 - Paris (5.9%)",
-            92: "92 - Hauts-de-Seine (5.9%)",
-            93: "93 - Seine-Saint-Denis (5.9%)",
-            94: "94 - Val-de-Marne (5.9%)",
-            78: "78 - Yvelines (5.9%)",
-            91: "91 - Essonne (5.9%)",
-            95: "95 - Val-d'Oise (5.9%)",
-            77: "77 - Seine-et-Marne (5.8%)",
-            13: "13 - Bouches-du-Rhône (5.8%)",
-            69: "69 - Rhône (5.8%)",
-            59: "59 - Nord (5.8%)",
-            "06": "06 - Alpes-Maritimes (5.8%)",
-            31: "31 - Haute-Garonne (5.8%)",
-            33: "33 - Gironde (5.8%)",
-            44: "44 - Loire-Atlantique (5.8%)",
-            34: "34 - Hérault (5.8%)",
-            67: "67 - Bas-Rhin (5.8%)",
-            35: "35 - Ille-et-Vilaine (5.8%)",
-            38: "38 - Isère (5.8%)",
-            83: "83 - Var (5.8%)",
-            62: "62 - Pas-de-Calais (5.8%)",
-            76: "76 - Seine-Maritime (5.8%)",
-            84: "84 - Vaucluse (5.8%)",
-            30: "30 - Gard (5.8%)",
-            17: "17 - Charente-Maritime (5.8%)",
-            "2A": "2A - Corse-du-Sud (4.5%)",
-            "2B": "2B - Haute-Corse (4.5%)",
-            autre: "Autre département (5.8%)",
+            75: libelleDept("75", "Paris"),
+            92: libelleDept("92", "Hauts-de-Seine"),
+            93: libelleDept("93", "Seine-Saint-Denis"),
+            94: libelleDept("94", "Val-de-Marne"),
+            78: libelleDept("78", "Yvelines"),
+            91: libelleDept("91", "Essonne"),
+            95: libelleDept("95", "Val-d'Oise"),
+            77: libelleDept("77", "Seine-et-Marne"),
+            13: libelleDept("13", "Bouches-du-Rhône"),
+            69: libelleDept("69", "Rhône"),
+            59: libelleDept("59", "Nord"),
+            "06": libelleDept("06", "Alpes-Maritimes"),
+            31: libelleDept("31", "Haute-Garonne"),
+            33: libelleDept("33", "Gironde"),
+            44: libelleDept("44", "Loire-Atlantique"),
+            34: libelleDept("34", "Hérault"),
+            67: libelleDept("67", "Bas-Rhin"),
+            35: libelleDept("35", "Ille-et-Vilaine"),
+            38: libelleDept("38", "Isère"),
+            83: libelleDept("83", "Var"),
+            62: libelleDept("62", "Pas-de-Calais"),
+            76: libelleDept("76", "Seine-Maritime"),
+            84: libelleDept("84", "Vaucluse"),
+            30: libelleDept("30", "Gard"),
+            17: libelleDept("17", "Charente-Maritime"),
+            "2A": libelleDept("2A", "Corse-du-Sud"),
+            "2B": libelleDept("2B", "Haute-Corse"),
+            autre: "Autre département",
           };
 
           const departementLabel =

@@ -19,9 +19,12 @@ const SITUATION_LABELS = {
 };
 
 const REGION_LABELS = {
-  idf: "\u00cele-de-France",
-  province: "Province",
-  dom: "DOM-TOM",
+  zone1: "Zone 1 (Paris, petite couronne)",
+  zone2: "Zone 2 (grandes agglomérations)",
+  zone3: "Zone 3 (autres communes)",
+  idf: "Zone 1 (Paris, petite couronne)",
+  province: "Zone 2 (grandes agglomérations)",
+  dom: "Outre-mer",
 };
 
 const LOGEMENT_LABELS = {

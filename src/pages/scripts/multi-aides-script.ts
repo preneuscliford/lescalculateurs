@@ -3,7 +3,7 @@ import { calculerRSA } from "../../utils/rsaCalculEngine";
 import { calculerPrimeActivite } from "../../utils/primeActiviteCalculEngine";
 
 type Situation = "seul" | "couple" | "monoparental";
-type Region = "idf" | "province" | "dom";
+type Region = "zone1" | "zone2" | "zone3" | "dom";
 type Logement = "loue" | "proprio" | "gratuit";
 type Activite = "actif" | "chomage" | "inactif";
 type TypeActivite = "salarie" | "independant" | "apprenti";
@@ -76,7 +76,7 @@ if (form) {
     const enfants = Math.max(0, Math.floor(readNumber("ma-enfants")));
     const revenus = Math.max(0, readNumber("ma-revenus"));
     const loyer = Math.max(0, readNumber("ma-loyer"));
-    const region = readSelect<Region>("ma-region", "province");
+    const region = readSelect<Region>("ma-region", "zone2");
     const logement = readSelect<Logement>("ma-logement", "loue");
     const activite = readSelect<Activite>("ma-activite", "actif");
     const typeActivite = readSelect<TypeActivite>("ma-type-activite", "salarie");

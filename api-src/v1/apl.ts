@@ -1,7 +1,7 @@
 /**
  * API LesCalculateurs — POST /api/v1/apl
  * Body: { situation: "seul"|"couple"|"monoparental"|"autre", enfants, revenus_mensuels,
- *         loyer_mensuel, region: "idf"|"province"|"dom", type_logement? }
+ *         loyer_mensuel, region: "zone1"|"zone2"|"zone3"|"dom" (alias "idf"/"province"), type_logement? }
  */
 
 import { withCors, authenticate } from "../_lib/auth";

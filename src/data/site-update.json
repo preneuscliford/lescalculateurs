@@ -1,5 +1,5 @@
 {
-  "lastVerified": "2026-10-12",
-  "label": "12 octobre 2026",
-  "note": "Date du dernier audit des barèmes (APL 1er octobre 2026, RSA/prime/AAH/ASF/allocations familiales avril 2026, impôt 2026, DMTO DGFiP 1er juin 2026, chômage après rupture conventionnelle 1er septembre 2026). A modifier uniquement après une vérification réelle des chiffres : la date est injectée en haut de chaque page au build (plugin lc-last-updated de vite.config.ts)."
+  "lastVerified": "2026-10-18",
+  "label": "18 octobre 2026",
+  "note": "Date du dernier audit des barèmes et des exemples chiffrés (audit de contrôle du 18 octobre 2026 ; APL 1er octobre 2026, RSA/prime/AAH/ASF/allocations familiales avril 2026, impôt 2026, DMTO DGFiP 1er juin 2026, chômage après rupture conventionnelle 1er septembre 2026). A modifier uniquement après une vérification réelle des chiffres : la date est injectée en haut de chaque page au build (plugin lc-last-updated de vite.config.ts)."
 }

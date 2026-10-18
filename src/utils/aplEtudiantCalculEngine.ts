@@ -59,7 +59,7 @@ export const FORFAIT_RESSOURCES_ETUDIANT = {
   foyer: { boursier: 5400, nonBoursier: 6600 },
 } as const;
 
-const ZONE_MOTEUR: Record<ZoneAPL, Zone> = { "1": "idf", "2": "province", "3": "dom" };
+const ZONE_MOTEUR: Record<ZoneAPL, Zone> = { "1": "zone1", "2": "zone2", "3": "zone3" };
 const SITUATION_MOTEUR: Record<APLEtudiantData["situation"], SituationFamiliale> = {
   seul: "seul",
   couple: "couple",

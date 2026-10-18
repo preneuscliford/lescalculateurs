@@ -30,5 +30,27 @@ describe("irCalculEngine", () => {
     const tranche = baremeIR2026.find((t) => r.qf <= t.plafond);
     expect(r.tauxMarginal).toBe(tranche?.taux);
   });
-});
 
+  test("décote : personne seule, 20 000 EUR, impôt ramené d'environ 924 à 445 EUR", () => {
+    const r = calculerIR({ revenu: 20000, parts: 1 });
+    expect(Math.round(r.irBrut)).toBe(924);
+    expect(r.impotNet).toBe(445);
+  });
+
+  test("seuil de recouvrement : impôt net inférieur à 61 EUR non recouvré", () => {
+    expect(calculerIR({ revenu: 15000, parts: 1 }).impotNet).toBe(0);
+  });
+
+  test("plafonnement du quotient familial pour un couple aisé avec 2 enfants", () => {
+    const r = calculerIR({ revenu: 200000, parts: 3, couple: true });
+    const base = calculerIR({ revenu: 200000, parts: 2, couple: true });
+    expect(r.plafonnementQF).toBeGreaterThan(0);
+    expect(Math.round(base.irBrut - r.irBrut)).toBe(2 * 1807);
+  });
+
+  test("parent isolé : plafond spécifique de la part du premier enfant", () => {
+    const r = calculerIR({ revenu: 120000, parts: 2, couple: false, parentIsole: true });
+    const seul = calculerIR({ revenu: 120000, parts: 1 });
+    expect(Math.round(seul.irBrut - r.irBrut)).toBe(4262);
+  });
+});
