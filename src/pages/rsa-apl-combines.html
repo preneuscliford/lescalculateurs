@@ -6,7 +6,7 @@
     <title>RSA + APL combinés 2026 : votre revenu total avec le logement | Les Calculateurs</title>
     <meta
       name="description"
-      content="Le RSA compte comme ressource dans le calcul de l'APL. Calculez les deux ensemble pour connaître votre revenu mensuel réel une fois le logement pris en compte."
+      content="Le RSA n'entre pas dans les ressources de l'APL, mais l'APL réduit le RSA du forfait logement. Calculez les deux ensemble pour connaître votre revenu mensuel réel."
     />
     <meta
       name="keywords"
@@ -20,13 +20,13 @@
     <meta property="og:title" content="RSA + APL combinés 2026 : votre revenu total avec le logement | Les Calculateurs" />
     <meta
       property="og:description"
-      content="Le RSA compte comme ressource dans le calcul de l'APL. Calculez les deux ensemble pour un revenu mensuel réel."
+      content="Le RSA n'entre pas dans les ressources de l'APL, mais l'APL réduit le RSA du forfait logement. Calculez les deux ensemble."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="RSA + APL combinés 2026 : votre revenu total avec le logement | Les Calculateurs" />
     <meta
       name="twitter:description"
-      content="Le RSA compte comme ressource dans le calcul de l'APL. Calculez les deux ensemble pour un revenu mensuel réel."
+      content="Le RSA n'entre pas dans les ressources de l'APL, mais l'APL réduit le RSA du forfait logement. Calculez les deux ensemble."
     />
 
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
@@ -47,7 +47,7 @@
         "name": "Simulateur RSA + APL combinés 2026",
         "operatingSystem": "Web",
         "applicationCategory": "FinanceApplication",
-        "description": "Calcule le RSA puis l'APL en tenant compte du RSA comme ressource, pour un revenu mensuel réel une fois le logement pris en compte.",
+        "description": "Calcule l'APL puis le RSA diminué du forfait logement, pour un revenu mensuel réel une fois le logement pris en compte.",
         "url": "https://www.lescalculateurs.fr/pages/rsa-apl-combines",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
       }
@@ -63,7 +63,7 @@
             "name": "Le RSA compte-t-il pour l'APL ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, il fait partie des ressources prises en compte, au même titre qu'un salaire."
+              "text": "Non : le RSA n'est pas imposable et n'entre pas dans les ressources retenues pour l'APL. En sens inverse, toucher une aide au logement réduit le RSA d'un forfait logement (78,20 € pour une personne seule, 156,41 € pour deux personnes, 193,55 € à partir de trois)."
             }
           },
           {
@@ -90,7 +90,7 @@
       "
     >
       <strong>⚠️ Estimation combinée indicative.</strong>
-      <span class="hidden sm:inline">le RSA est injecté comme ressource dans le calcul APL — vérifiez sur</span>
+      <span class="hidden sm:inline">le RSA est diminué du forfait logement si vous touchez l'APL — vérifiez sur</span>
       <a href="https://www.caf.fr" target="_blank" rel="noopener" style="color: #b45309; text-decoration: underline; font-weight: bold">caf.fr</a>
     </div>
 
@@ -128,8 +128,8 @@
         <h1 class="text-4xl font-bold mb-4">RSA + APL : votre revenu réel une fois le logement compté</h1>
         <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded-lg inline-block max-w-3xl text-left">
           <p class="font-semibold text-blue-900 text-lg">
-            En bref — Le RSA compte comme ressource dans le calcul de l'APL. Ce simulateur
-            calcule le RSA, puis l'APL en tenant compte de ce RSA, pour une estimation
+            En bref — Le RSA n'entre pas dans les ressources de l'APL, mais l'APL réduit le RSA du
+            forfait logement. Ce simulateur calcule l'APL, puis le RSA, pour une estimation
             cohérente plutôt que deux chiffres qui s'ignorent.
           </p>
         </div>
@@ -149,8 +149,9 @@
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">📘 Pourquoi calculer les deux ensemble</h2>
         <p class="text-gray-600 mb-4">
-          Le RSA est d'abord calculé sur vos autres ressources. L'APL est ensuite calculée sur
-          vos ressources <strong>incluant le RSA déjà perçu</strong>. Faire les deux calculs
+          L'APL est d'abord calculée sur vos autres ressources : <strong>le RSA n'y est pas
+          compté</strong>. Le RSA est ensuite diminué du forfait logement (78,20 € pour une personne
+          seule) si vous touchez une aide au logement. Faire les deux calculs
           séparément sans les relier donne une image incomplète : ce simulateur enchaîne les
           deux dans le bon ordre.
         </p>
@@ -209,9 +210,10 @@
               <label for="combo-region" class="block text-gray-700 font-semibold mb-2">Zone géographique *</label>
               <select id="combo-region" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 <option value="">-- Sélectionnez --</option>
-                <option value="idf">Île-de-France</option>
-                <option value="province">Province</option>
-                <option value="dom">DOM</option>
+                <option value="zone1">Zone 1 (Paris, petite couronne)</option>
+                <option value="zone2">Zone 2 (grandes agglomérations)</option>
+                <option value="zone3">Zone 3 (autres communes)</option>
+                <option value="dom">Outre-mer</option>
               </select>
             </div>
 
@@ -258,7 +260,7 @@
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Le RSA compte-t-il pour l'APL ?</summary>
-            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Oui, il fait partie des ressources prises en compte, au même titre qu'un salaire.</p>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Non : le RSA n'est pas imposable et n'entre pas dans les ressources retenues pour l'APL. En sens inverse, toucher une aide au logement réduit le RSA d'un forfait logement (78,20 € pour une personne seule, 156,41 € pour deux personnes, 193,55 € à partir de trois).</p>
           </details>
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Peut-on cumuler RSA et APL ?</summary>
