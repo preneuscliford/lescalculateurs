@@ -103,10 +103,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Quel est le délai de carence ARE 2026 ?",
+            "name": "Quel est le délai d'attente avant l'ARE en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le délai de carence est une période sans indemnisation qui s'applique en début de chômage. Il correspond à 7 jours ouvrés (environ 1 semaine). Ce délai est reporté en cas de reprise d'emploi ou de formation. Certaines situations permettent de le réduire ou de l'annuler (licenciement économique, fin de CDD à terme fixe, etc.)."
+              "text": "Avant le premier versement s'appliquent un délai d'attente de 7 jours, qui concerne tous les demandeurs d'emploi (sauf s'il a déjà été appliqué dans les 12 derniers mois), puis d'éventuels différés : un différé « congés payés » si vous avez touché une indemnité compensatrice de congés, et un différé spécifique (jusqu'à 150 jours) si vous avez perçu des indemnités de rupture supérieures au minimum légal."
             }
           },
           {
@@ -114,7 +114,7 @@
             "name": "Peut-on cumuler ARE et auto-entreprise en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, vous pouvez cumuler ARE et auto-entreprise (micro-entrepreneur). Le calcul est le même que pour une activité salariée : votre ARE est réduite de 70% de vos revenus d'auto-entrepreneur déclarés. Attention : vous devez déclarer votre activité à France Travail dès le démarrage. Le cumul est limité dans le temps selon votre durée d'indemnisation restante."
+              "text": "Oui, si vous déclarez votre activité à France Travail. Comme pour un salaire, votre allocation du mois est réduite de 70 % des revenus de l'activité (pour une micro-entreprise, le chiffre d'affaires après l'abattement forfaitaire fiscal). Les jours non indemnisés ne sont pas perdus : ils reportent la fin de vos droits."
             }
           },
           {
@@ -122,7 +122,7 @@
             "name": "Comment déclarer un travail occasionnel pendant l'ARE ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Vous devez déclarer tout travail occasionnel (intérim, vacation, remplacement) sur votre espace personnel France Travail dans les 48 heures suivant le début de l'activité. Rends le montant de votre allocation ajusté automatiquement. Si vous ne déclarez pas, vous risquez une suspension ou une radiation de vos droits."
+              "text": "Déclarez chaque mois, lors de votre actualisation sur francetravail.fr, les heures travaillées et le salaire brut perçu (intérim, vacations, remplacements). France Travail retire alors de votre allocation 70 % de ce salaire brut. Une activité non déclarée peut entraîner un trop-perçu à rembourser, voire des sanctions."
             }
           },
           {
@@ -130,7 +130,7 @@
             "name": "L'ARE est-elle imposable sur le revenu 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, l'ARE est imposable sur le revenu. Elle doit être déclarée dans la catégorie \"traitements et salaires\" de votre déclaration d'impôts. Cependant, elle est exonérée de prélèvements sociaux (CSG/CRDS réduite). Pour estimer votre impôt avec l'ARE, utilisez notre simulateur d'impôt sur le revenu."
+              "text": "Oui, l'ARE est imposable : elle se déclare avec les salaires et pensions. Elle supporte aussi des prélèvements sociaux : CSG de 6,2 % et CRDS de 0,5 % sur 98,25 % de l'allocation (sauf pour les petites allocations), et une cotisation de retraite complémentaire de 3 % du salaire journalier de référence."
             }
           },
           {
@@ -146,7 +146,7 @@
             "name": "Qui peut bénéficier de l'ARE ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Toute personne involontairement privée d'emploi, ayant cotisé via une activité antérieure (minimum 6 mois en 24 mois), et qui cherche activement un emploi."
+              "text": "Les personnes inscrites à France Travail qui ont perdu leur emploi involontairement (licenciement, fin de CDD, rupture conventionnelle, démission considérée comme légitime) et qui ont travaillé au moins 6 mois au cours des 24 derniers mois (36 mois à partir de 55 ans)."
             }
           },
           {
@@ -162,7 +162,7 @@
             "name": "ARE et travail partagé : incompatible ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non, vous pouvez cumuler l'ARE avec une activité réduite (travail à temps partiel). La part de salaire est déduite de l'indemnité."
+              "text": "Non : vous pouvez cumuler l'ARE avec une activité réduite. Chaque mois, votre allocation est diminuée de 70 % du salaire brut de cette activité ; le cumul ne peut pas dépasser votre ancien salaire de référence."
             }
           },
           {
@@ -532,36 +532,31 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-6">Questions fréquentes ARE</h2>
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Quel est le délai de carence ARE 2026 ?</summary>
-            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Le délai de carence est une période sans indemnisation qui s'applique en début de
- chômage. Il correspond à 7 jours ouvrés (environ 1 semaine). Ce délai est reporté en
- cas de reprise d'emploi ou de formation. Certaines situations permettent de le réduire
- ou de l'annuler (licenciement économique, fin de CDD à terme fixe, etc.).</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Quel est le délai d'attente avant l'ARE en 2026 ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Avant le premier versement s'appliquent un délai d'attente de 7 jours, qui concerne tous les demandeurs d'emploi (sauf s'il a déjà été appliqué dans les 12 derniers mois), puis d'éventuels différés : un différé « congés payés » si vous avez touché une indemnité compensatrice de congés, et un différé spécifique (jusqu'à 150 jours) si vous avez perçu des indemnités de rupture supérieures au minimum légal.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Peut-on cumuler ARE et auto-entreprise en 2026 ?</summary>
-            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Oui, vous pouvez cumuler ARE et auto-entreprise (micro-entrepreneur). Le calcul est le
- même que pour une activité salariée : votre ARE est réduite de 70% de vos revenus
- d'auto-entrepreneur déclarés. Attention : vous devez déclarer votre activité à France
- Travail dès le démarrage. Le cumul est limité dans le temps selon votre durée
- d'indemnisation restante.</p>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Oui, si vous déclarez votre activité à France Travail. Comme pour un salaire, votre allocation du mois est réduite de 70 % des revenus de l'activité (pour une micro-entreprise, le chiffre d'affaires après l'abattement forfaitaire fiscal). Les jours non indemnisés ne sont pas perdus : ils reportent la fin de vos droits.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Comment déclarer un travail occasionnel pendant l'ARE ?</summary>
-            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Vous devez déclarer tout travail occasionnel (intérim, vacation, remplacement) sur
- votre espace personnel France Travail dans les 48 heures suivant le début de
- l'activité. Rends le montant de votre allocation ajusté automatiquement. Si vous ne
- déclarez pas, vous risquez une suspension ou une radiation de vos droits.</p>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Déclarez chaque mois, lors de votre actualisation sur francetravail.fr, les heures travaillées et le salaire brut perçu (intérim, vacations, remplacements). France Travail retire alors de votre allocation 70 % de ce salaire brut. Une activité non déclarée peut entraîner un trop-perçu à rembourser, voire des sanctions.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">L'ARE est-elle imposable sur le revenu 2026 ?</summary>
-            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Oui, l'ARE est imposable sur le revenu. Elle doit être déclarée dans la catégorie
- "traitements et salaires" de votre déclaration d'impôts. Cependant, elle est exonérée
- de prélèvements sociaux (CSG/CRDS réduite). Pour estimer votre impôt avec l'ARE,
- utilisez notre <a href="/pages/impot.html" class="text-blue-600 hover:underline">simulateur d'impôt sur le revenu</a>.</p>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Oui, l'ARE est imposable : elle se déclare avec les salaires et pensions. Elle supporte aussi des prélèvements sociaux : CSG de 6,2 % et CRDS de 0,5 % sur 98,25 % de l'allocation (sauf pour les petites allocations), et une cotisation de retraite complémentaire de 3 % du salaire journalier de référence.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
@@ -574,8 +569,9 @@
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Qui peut bénéficier de l'ARE ?</summary>
-            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Toute personne involontairement privée d'emploi, ayant cotisé via une activité
- antérieure (minimum 6 mois en 24 mois), et qui cherche activement un emploi.</p>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Les personnes inscrites à France Travail qui ont perdu leur emploi involontairement (licenciement, fin de CDD, rupture conventionnelle, démission considérée comme légitime) et qui ont travaillé au moins 6 mois au cours des 24 derniers mois (36 mois à partir de 55 ans).
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
@@ -588,8 +584,9 @@
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
             <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">ARE et travail partagé : incompatible ?</summary>
-            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Non, vous pouvez cumuler l'ARE avec une activité réduite (travail à temps partiel). La
- part de salaire est déduite de l'indemnité.</p>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Non : vous pouvez cumuler l'ARE avec une activité réduite. Chaque mois, votre allocation est diminuée de 70 % du salaire brut de cette activité ; le cumul ne peut pas dépasser votre ancien salaire de référence.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
