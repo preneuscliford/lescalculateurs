@@ -96,14 +96,6 @@ if (form) {
       errorBox.classList.add("hidden");
     }
 
-    const rsa = calculerRSA({
-      situation,
-      enfants,
-      revenus,
-      logement,
-      activite,
-    });
-
     const apl = calculerAPL({
       situation,
       enfants,
@@ -113,18 +105,29 @@ if (form) {
       type_logement: logement === "loue" ? "location" : logement === "proprio" ? "accession" : "colocation",
       economie: 0,
     });
+    const aplMontant = apl.success && apl.data ? apl.data.apl_estimee : 0;
+
+    // Avec une aide au logement, RSA et prime d'activité sont diminués du forfait logement
+    const logementForfait = aplMontant > 0 ? "aide-logement" : logement;
+
+    const rsa = calculerRSA({
+      situation,
+      enfants,
+      revenus,
+      logement: logementForfait,
+      activite,
+    });
 
     const prime = calculerPrimeActivite({
       situation,
       enfants,
       revenusProf: revenusPro,
       autresRevenus,
-      logement,
+      logement: logementForfait,
       typeActivite,
     });
 
     const rsaMontant = rsa.success ? rsa.montantEstime : 0;
-    const aplMontant = apl.success && apl.data ? apl.data.apl_estimee : 0;
     const primeMontant = prime.success ? prime.montantEstime : 0;
     const total = rsaMontant + aplMontant + primeMontant;
 

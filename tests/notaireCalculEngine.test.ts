@@ -24,7 +24,7 @@ describe("notaireCalculEngine", () => {
     expect(r.droitsEnregistrement).toBeCloseTo(1787.5, 1);
   });
 
-  test("remise notariale variable de 10% appliquée sur les émoluments", () => {
+  test("remise notariale : 20 % des émoluments sur la part du prix au-delà de 100 000 €", () => {
     const sansRemise = calculerNotaire({
       prixAchat: 250000,
       typeBien: "ancien",
@@ -36,8 +36,11 @@ describe("notaireCalculEngine", () => {
       departement: "75",
       remiseNotarialeVariable: true,
     });
-    expect(avecRemise.emoluments).toBeCloseTo(sansRemise.emoluments * 0.9, 1);
-    expect(avecRemise.remiseMontant).toBeCloseTo(sansRemise.emolumentsSansRemise * 0.1, 1);
+    // 150 000 € au-delà de 100 000 €, tranche à 0,799 % : 150 000 × 0,799 % × 20 % = 239,70 €
+    expect(avecRemise.remiseMontant).toBeCloseTo(239.7, 1);
+    expect(avecRemise.emoluments).toBeCloseTo(sansRemise.emoluments - 239.7, 1);
+    const petitPrix = calculerNotaire({ prixAchat: 90000, typeBien: "ancien", departement: "75", remiseNotarialeVariable: true });
+    expect(petitPrix.remiseMontant).toBe(0);
   });
 
   test("frais d'hypothèque appliqués selon le type d'emprunt", () => {

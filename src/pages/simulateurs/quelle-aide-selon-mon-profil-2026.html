@@ -82,33 +82,33 @@
         ]
       }
     </script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Cette simulation globale remplace-t-elle les organismes officiels ?",
+            "name": "Cette simulation est-elle officielle ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non. Les montants affichés sont indicatifs. Seule la CAF ou l'organisme officiel peut confirmer vos droits définitifs."
+              "text": "Non. C'est un estimateur pédagogique. Les droits définitifs sont vérifiés par les organismes officiels."
             }
           },
           {
             "@type": "Question",
-            "name": "Peut-on cumuler RSA, APL et prime d’activité ?",
+            "name": "Puis-je cumuler RSA, APL et prime d’activité ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le cumul dépend de votre situation exacte. Cette page donne une estimation pédagogique pour orienter vos démarches."
+              "text": "Oui, les trois peuvent se cumuler. Le RSA est toutefois réduit d'un forfait logement quand vous touchez une aide au logement, et la prime d'activité tient compte de vos autres aides : cette estimation permet de voir l'effet combiné."
             }
           },
           {
             "@type": "Question",
-            "name": "Quel revenu faut-il renseigner dans le comparateur ?",
+            "name": "Pourquoi l'APL peut-elle être à 0 € ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Renseignez vos revenus mensuels du foyer pour la vue globale, puis vos revenus professionnels pour la prime d’activité."
+              "text": "Le plafond de loyer, la zone géographique et le niveau de ressources peuvent annuler le droit estimé."
             }
           }
         ]
@@ -338,16 +338,18 @@
         <h2 class="mb-4 text-2xl font-bold text-slate-900">FAQ complète</h2>
         <div class="space-y-3">
           <details class="rounded-lg border border-slate-200 bg-white p-4">
-            <summary class="cursor-pointer font-semibold text-slate-800">Cette simulation est-elle officielle ?</summary>
-            <p class="mt-3 text-sm text-slate-700">Non. C'est un estimateur pédagogique. Les droits définitifs sont vérifiés par les organismes officiels.</p>
+            <summary class="cursor-pointer font-semibold text-slate-800" data-faq-q="faq">Cette simulation est-elle officielle ?</summary>
+            <p class="mt-3 text-sm text-slate-700" data-faq-a="faq">Non. C'est un estimateur pédagogique. Les droits définitifs sont vérifiés par les organismes officiels.</p>
           </details>
           <details class="rounded-lg border border-slate-200 bg-white p-4">
-            <summary class="cursor-pointer font-semibold text-slate-800">Puis-je cumuler RSA, APL et prime d’activité ?</summary>
-            <p class="mt-3 text-sm text-slate-700">Le cumul est possible selon certains profils, mais il dépend de règles détaillées. Utilisez cette estimation pour orienter vos démarches.</p>
+            <summary class="cursor-pointer font-semibold text-slate-800" data-faq-q="faq">Puis-je cumuler RSA, APL et prime d’activité ?</summary>
+            <p class="mt-3 text-sm text-slate-700" data-faq-a="faq">
+              Oui, les trois peuvent se cumuler. Le RSA est toutefois réduit d'un forfait logement quand vous touchez une aide au logement, et la prime d'activité tient compte de vos autres aides : cette estimation permet de voir l'effet combiné.
+            </p>
           </details>
           <details class="rounded-lg border border-slate-200 bg-white p-4">
-            <summary class="cursor-pointer font-semibold text-slate-800">Pourquoi l'APL peut-elle être à 0 EUR ?</summary>
-            <p class="mt-3 text-sm text-slate-700">Le plafond de loyer, la zone géographique et le niveau de ressources peuvent annuler le droit estimé.</p>
+            <summary class="cursor-pointer font-semibold text-slate-800" data-faq-q="faq">Pourquoi l'APL peut-elle être à 0 € ?</summary>
+            <p class="mt-3 text-sm text-slate-700" data-faq-a="faq">Le plafond de loyer, la zone géographique et le niveau de ressources peuvent annuler le droit estimé.</p>
           </details>
         </div>
       </section>

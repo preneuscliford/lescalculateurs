@@ -78,25 +78,25 @@
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Qui peut toucher l'ASF 2026 ?",
+            "name": "Qui peut toucher l'ASF ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "L'ASF concerne surtout les parents isolés qui n'ont pas de pension alimentaire effective, ainsi que certains cas d'enfants privés de soutien familial. Pas de condition de ressources — montant forfaitaire seul."
+              "text": "L'ASF concerne surtout les parents isolés qui n'ont pas de pension alimentaire effective, ainsi que certains cas d'enfants privés de soutien familial."
             }
           },
           {
             "@type": "Question",
-            "name": "Quel est le montant de l'ASF 2026 ?",
+            "name": "Le nombre d'enfants change-t-il beaucoup le montant ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le montant de l'ASF est un montant forfaitaire par enfant, sans condition de ressources. Il varie selon le nombre d'enfants à charge et évolue chaque année. Consultez la CAF pour le montant officiel exact 2026 (est. indicative)."
+              "text": "Oui. Le besoin de simulation augmente vite avec la composition du foyer et le nombre d'enfants à charge."
             }
           },
           {
@@ -104,31 +104,47 @@
             "name": "Peut-on cumuler ASF et APL ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dans beaucoup de cas, oui. L'ASF et l'APL (aide au logement) peuvent se cumuler si vous remplissez les conditions pour les deux. C'est une comparaison utile à faire quand le logement pèse dans le budget."
+              "text": "Dans beaucoup de cas, oui. C'est une comparaison utile à faire quand le logement pèse dans le budget."
             }
           },
           {
             "@type": "Question",
-            "name": "Comment obtenir le montant exact de mon ASF ?",
+            "name": "Que faire si le résultat paraît trop faible ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Utilisez le simulateur officiel de la CAF (caf.fr) ou notre outil pour connaître une estimation. Pour le montant définitif et la demande officielle, contactez votre CAF locale."
+              "text": "Vérifiez la situation déclarée (pension fixée ou non, montant réellement versé, nombre d'enfants de moins de 20 ans), puis comparez avec les aides voisines comme l'APL ou le RSA."
             }
           },
           {
             "@type": "Question",
-            "name": "L'absence de pension alimentaire change-t-elle le montant ?",
+            "name": "Qui peut bénéficier de l'ASF ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "L'ASF est une aide forfaitaire qui ne dépend pas de la présence ou absence de pension alimentaire. Cependant, si une pension est versée partiellement, cela peut affecter d'autres prestations CAF."
+              "text": "Le parent qui élève seul un enfant de moins de 20 ans privé de l'aide de l'autre parent (pension alimentaire non fixée, non versée ou inférieure à 200,78 €), ou la personne qui recueille un enfant orphelin ou non reconnu. L'ASF s'arrête en cas de mariage, de PACS ou de vie en couple."
             }
           },
           {
             "@type": "Question",
-            "name": "ASF et Prime d'activité : compatible ?",
+            "name": "ASF et RSA : peuvent-ils se cumuler ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, vous pouvez toucher ASF et Prime d'activité ensemble. L'ASF ne rentre pas dans le calcul de la Prime d'activité. Simulez les deux pour voir le budget global."
+              "text": "Oui, mais l'ASF compte dans les ressources prises en compte pour le RSA : elle réduit donc le montant du RSA. Si l'autre parent ne verse pas la pension, la CAF peut vous demander d'engager une action pour la fixer ou la récupérer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est le montant par enfant ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le montant dépend surtout de la situation familiale. Au 1er avril 2026, l'ASF est de 200,78€ par enfant et peut atteindre 267,63€ pour un enfant privé du soutien de ses deux parents."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment demander l'ASF ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contactez la CAF de votre département ou rendez-vous en ligne sur le site de la CAF pour demander l'Allocation de Soutien Familial. Des documents justificatifs seront requis."
             }
           }
         ]
@@ -624,39 +640,38 @@
         <h2 class="text-2xl font-bold text-gray-900">FAQ express ASF</h2>
         <div class="mt-4 space-y-3 text-sm text-gray-700">
           <details class="rounded-lg border border-gray-200 p-4">
-            <summary class="cursor-pointer font-semibold text-gray-900">
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
               Qui peut toucher l'ASF ?
             </summary>
-            <p class="mt-2">
+            <p class="mt-2" data-faq-a="faq">
               L'ASF concerne surtout les parents isolés qui n'ont pas de pension alimentaire
               effective, ainsi que certains cas d'enfants privés de soutien familial.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4">
-            <summary class="cursor-pointer font-semibold text-gray-900">
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
               Le nombre d'enfants change-t-il beaucoup le montant ?
             </summary>
-            <p class="mt-2">
+            <p class="mt-2" data-faq-a="faq">
               Oui. Le besoin de simulation augmente vite avec la composition du foyer et le nombre
               d'enfants à charge.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4">
-            <summary class="cursor-pointer font-semibold text-gray-900">
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
               Peut-on cumuler ASF et APL ?
             </summary>
-            <p class="mt-2">
+            <p class="mt-2" data-faq-a="faq">
               Dans beaucoup de cas, oui. C'est une comparaison utile à faire quand le logement pèse
               dans le budget.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4">
-            <summary class="cursor-pointer font-semibold text-gray-900">
-              Que faire si le resultat parait trop faible ?
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
+              Que faire si le résultat paraît trop faible ?
             </summary>
-            <p class="mt-2">
-              Il faut vérifier la situation parentale, le nombre d'enfants et comparer avec les
-              aides voisines comme l'APL ou le RSA selon votre dossier.
+            <p class="mt-2" data-faq-a="faq">
+              Vérifiez la situation déclarée (pension fixée ou non, montant réellement versé, nombre d'enfants de moins de 20 ans), puis comparez avec les aides voisines comme l'APL ou le RSA.
             </p>
           </details>
         </div>
@@ -995,30 +1010,28 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-6">❓ Questions fréquentes sur l'ASF</h2>
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">
               Qui peut bénéficier de l'ASF ?
             </summary>
-            <p class="mt-3 text-gray-600 text-sm">
-              Les parents isolés avec enfant(s) de moins de 21 ans à charge, les enfants orphelins
-              ou les enfants privés du soutien familial de leurs parents.
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Le parent qui élève seul un enfant de moins de 20 ans privé de l'aide de l'autre parent (pension alimentaire non fixée, non versée ou inférieure à 200,78 €), ou la personne qui recueille un enfant orphelin ou non reconnu. L'ASF s'arrête en cas de mariage, de PACS ou de vie en couple.
             </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">
               ASF et RSA : peuvent-ils se cumuler ?
             </summary>
-            <p class="mt-3 text-gray-600 text-sm">
-              Oui, l'ASF peut se cumuler avec le RSA. Il faut cependant que les conditions
-              d'éligibilité à chacun soient remplies. Consultez la CAF pour votre situation.
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Oui, mais l'ASF compte dans les ressources prises en compte pour le RSA : elle réduit donc le montant du RSA. Si l'autre parent ne verse pas la pension, la CAF peut vous demander d'engager une action pour la fixer ou la récupérer.
             </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">
               Quel est le montant par enfant ?
             </summary>
-            <p class="mt-3 text-gray-600 text-sm">
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
               Le montant dépend surtout de la situation familiale. Au 1er avril 2026, l'ASF est de
               200,78€ par enfant et peut atteindre 267,63€ pour un enfant privé du soutien de ses
               deux parents.
@@ -1026,10 +1039,10 @@
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">
               Comment demander l'ASF ?
             </summary>
-            <p class="mt-3 text-gray-600 text-sm">
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
               Contactez la CAF de votre département ou rendez-vous en ligne sur le site de la CAF
               pour demander l'Allocation de Soutien Familial. Des documents justificatifs seront
               requis.

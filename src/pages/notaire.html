@@ -1462,8 +1462,8 @@
                 <ol class="list-decimal list-inside space-y-1">
                   <li><strong>Acheter du neuf :</strong> Frais de ~2-3% au lieu de ~7-8%</li>
                   <li>
-                    <strong>Négocier la remise :</strong> Jusqu'à 10% sur les émoluments pour les
-                    biens &gt; 150 000 €
+                    <strong>Demander la remise :</strong> jusqu'à 20 % des émoluments sur la part du
+                    prix au-delà de 100 000 €
                   </li>
                   <li>
                     <strong>Déduire les meubles :</strong> Pour un bien meublé, déduire leur valeur
@@ -1526,15 +1526,15 @@
                 </p>
                 <ul class="list-disc list-inside space-y-1 mb-3">
                   <li>
-                    <strong>Émoluments :</strong> Remise possible jusqu'à <strong>10%</strong> pour
-                    les biens &gt; 150 000 € (à la discrétion du notaire)
+                    <strong>Émoluments :</strong> remise possible jusqu'à <strong>20 %</strong> sur la
+                    part du prix au-delà de 100 000 € (au choix du notaire)
                   </li>
                   <li><strong>Taxes et DMTO :</strong> Non négociables (fixés par l'État)</li>
                   <li><strong>Débours :</strong> Non négociables (coûts réels)</li>
                 </ul>
                 <p class="text-sm bg-yellow-50 p-2 rounded">
-                  <strong>Conseil :</strong> Sur 200 000 €, la remise max représente ~200-300 €. Le
-                  notaire doit appliquer la même remise à tous ses clients.
+                  <strong>Conseil :</strong> sur 200 000 €, la remise maximale représente environ
+                  <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"75","remiseNotarialeVariable":true}' data-champ="remiseMontant">160</span> €. Le notaire doit appliquer la même remise à tous ses clients et l'afficher.
                 </p>
               </div>
             </div>
@@ -2158,7 +2158,7 @@
             },
             {
               id: "remise_notaire_var",
-              label: "Appliquer remise notariale sur la partie variable (-10%)",
+              label: "Appliquer la remise maximale (20 % des émoluments sur la part du prix au-delà de 100 000 €)",
               type: "checkbox",
             },
             {
@@ -2224,10 +2224,15 @@
                 émolumentsSansRemise += montantTranche * tranche.taux;
                 reste -= montantTranche;
               }
+              // Remise : 20 % au plus, sur les émoluments de la part du prix ≥ 100 000 €
               let remiseMontant = 0;
               if (remiseVar) {
-                remiseMontant = émoluments * 0.1;
-                émoluments = émoluments * 0.9;
+                for (const tranche of tranches) {
+                  const bas = Math.max(tranche.min, 100000);
+                  const haut = Math.min(tranche.max, prixNetImmobilier);
+                  if (haut > bas) remiseMontant += (haut - bas) * tranche.taux * 0.2;
+                }
+                émoluments -= remiseMontant;
               }
 
               // Débours/Formalités par département
@@ -2378,7 +2383,7 @@
                 }
                 ${
                   data.remiseVar
-                    ? `<div><span class="font-medium">Remise notariale appliquée :</span> Oui (-10% sur la partie variable)</div>`
+                    ? `<div><span class="font-medium">Remise notariale appliquée :</span> Oui (20 % des émoluments sur la part du prix au-delà de 100 000 €)</div>`
                     : ""
                 }
               </div>
@@ -2392,7 +2397,7 @@
                 )}</span></div>
                 ${
                   data.remiseVar
-                    ? `<div class="flex justify-between"><span>Remise notariale (-10%) :</span><span class="font-medium">- ${formatCurrency(
+                    ? `<div class="flex justify-between"><span>Remise notariale :</span><span class="font-medium">- ${formatCurrency(
                         data.remiseMontant,
                       )}</span></div>`
                     : ""

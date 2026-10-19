@@ -64,33 +64,25 @@
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Quel est le plafond de ressources pour le PTZ 2026 ?",
+            "name": "Respecter le plafond de ressources garantit-il d'obtenir le PTZ ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le plafond dépend de la zone du logement (A, B1, B2, C) et du nombre de personnes du foyer. Il va d'environ 28 500 € (zone C, 1 personne) à 161 700 € (zone A, 8 personnes et plus)."
+              "text": "Non, c'est une première condition nécessaire mais pas suffisante. Le montant dépend ensuite de votre tranche de revenus, du type de logement et du coût de l'opération."
             }
           },
           {
             "@type": "Question",
-            "name": "Passer le plafond de ressources garantit-il d'obtenir le PTZ ?",
+            "name": "Comment connaître ma zone PTZ ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non. C'est une première condition nécessaire mais pas suffisante. Le montant réel du prêt dépend ensuite de votre tranche de revenus, du type de logement (collectif ou individuel) et du coût de l'opération : ces éléments ne sont pas couverts par cette vérification rapide."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Comment connaître le montant exact de mon PTZ ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Utilisez le simulateur officiel ou rapprochez-vous d'un courtier/banque, qui appliquera la quotité de financement exacte selon votre tranche de revenus et votre type de logement."
+              "text": "Le zonage est disponible sur service-public.fr et dépend de la commune du logement, pas de votre commune actuelle."
             }
           }
         ]
@@ -286,15 +278,15 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-6">❓ Questions fréquentes</h2>
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Passer le plafond garantit-il d'obtenir le PTZ ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Respecter le plafond de ressources garantit-il d'obtenir le PTZ ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
               Non, c'est une première condition nécessaire mais pas suffisante. Le montant dépend
               ensuite de votre tranche de revenus, du type de logement et du coût de l'opération.
             </p>
           </details>
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Comment connaître ma zone PTZ ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Comment connaître ma zone PTZ ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
               Le zonage est disponible sur service-public.fr et dépend de la commune du logement,
               pas de votre commune actuelle.
             </p>

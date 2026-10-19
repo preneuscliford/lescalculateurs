@@ -2343,6 +2343,8 @@ function getDeboursFormalites(departement) {
     formalites: Number(fd.formalites || 0)
   };
 }
+var REMISE_SEUIL = 1e5;
+var REMISE_TAUX_MAX = 0.2;
 function calculerNotaire(data) {
   const prixAchat = Math.max(0, data.prixAchat || 0);
   const montantMobilier = Math.max(0, data.montantMobilier || 0);
@@ -2377,8 +2379,12 @@ function calculerNotaire(data) {
   }
   let remiseMontant = 0;
   if (remiseVar) {
-    remiseMontant = emoluments * 0.1;
-    emoluments = emoluments * 0.9;
+    for (const tranche of trancheDefaut) {
+      const bas = Math.max(tranche.min, REMISE_SEUIL);
+      const haut = Math.min(tranche.max, prixNetImmobilier);
+      if (haut > bas) remiseMontant += (haut - bas) * tranche.taux * REMISE_TAUX_MAX;
+    }
+    emoluments -= remiseMontant;
   }
   const { debours, formalites } = getDeboursFormalites(departement);
   const csi = Math.max(
