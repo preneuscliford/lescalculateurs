@@ -80,15 +80,15 @@
             "name": "Pourquoi les frais de notaire sont-ils moins chers dans le neuf ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dans le neuf la TVA est déjà perçue par l'État ; seuls les droits d'enregistrement réduits (0,7 %) et les émoluments notariaux s'appliquent. L'État a déjà collecté sa part via la TVA à 20%."
+              "text": "Dans le neuf, le prix inclut déjà la TVA à 20 % : les droits de mutation sont réduits à 0,715 % au lieu de 5,09 % à 6,32 % dans l'ancien. Les émoluments du notaire, les débours et la contribution de sécurité immobilière restent dus dans les deux cas."
             }
           },
           {
             "@type": "Question",
-            "name": "À partir de quel prix l'ancien devient-il plus intéressant ?",
+            "name": "L'ancien peut-il revenir moins cher que le neuf malgré les frais ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Au-delà de 10 ans de détention, l'ancien bénéficie d'une décote de prix qui compense souvent les frais plus élevés (≈ 7%). De plus, les biens anciens nécessitent parfois moins de travaux de finition que le neuf."
+              "text": "Il n'y a pas de seuil de prix : les frais sont proportionnels au prix. Pour 250 000 €, ils représentent environ 19 500 € dans l'ancien contre 5 400 € dans le neuf. L'ancien reste gagnant s'il est moins cher à l'achat d'au moins 5 à 6 % qu'un logement neuf équivalent, travaux compris."
             }
           },
           {
@@ -96,7 +96,7 @@
             "name": "Les frais de notaire sont-ils négociables en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Les droits d'enregistrement sont fixes et reversés à l'État. En revanche, les émoluments notariaux sont plafonnés mais vous pouvez demander une remise sur les honoraires de procédure (jusqu'à 10%)."
+              "text": "Les droits de mutation (la plus grosse part) ne se négocient pas. Le notaire peut accorder une remise de 20 % au plus sur ses émoluments proportionnels, uniquement sur la part du prix au-delà de 100 000 €, au même taux pour tous ses clients et affichée dans l'étude."
             }
           },
           {
@@ -104,7 +104,7 @@
             "name": "Quand doit-on payer les frais de notaire ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "À la signature de l'acte authentique, soit le jour de la remise des clés pour l'ancien, ou à chaque échéance de livraison pour le neuf (VEFA). Prévoyez d'avoir ces fonds disponibles sur votre compte."
+              "text": "Ils sont versés au notaire au plus tard le jour de la signature de l'acte de vente, en général par virement quelques jours avant. En VEFA, c'est aussi à la signature de l'acte que les frais sont payés ; le prix, lui, est réglé par appels de fonds au fil du chantier."
             }
           },
           {
@@ -112,7 +112,7 @@
             "name": "Puis-je intégrer les frais de notaire dans mon prêt ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, si votre banque accepte un « prêt total » (110% du prix). Le montant financé inclut le prix du bien + les frais de notaire. Votre mensualité augmentera légèrement (environ +40€/mois pour 7 800€ sur 20 ans)."
+              "text": "Oui, si votre banque accepte de financer les frais (prêt dit « à 110 % »), ce qui est plus rare sans apport. Par exemple, 7 800 € de frais empruntés sur 20 ans à 3,3 % ajoutent environ 45 € à la mensualité, hors assurance."
             }
           }
         ]
@@ -668,9 +668,7 @@
               </svg>
             </summary>
             <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
-              Dans le neuf la <strong>TVA est déjà perçue par l'État</strong>; seuls les droits
-              d'enregistrement réduits (0,7 %) et les émoluments notariaux s'appliquent. L'État a
-              déjà collecté sa part via la TVA à 20%.
+              Dans le neuf, le prix inclut déjà la TVA à 20 % : les droits de mutation sont réduits à 0,715 % au lieu de 5,09 % à 6,32 % dans l'ancien. Les émoluments du notaire, les débours et la contribution de sécurité immobilière restent dus dans les deux cas.
             </p>
           </details>
 
@@ -680,7 +678,7 @@
             <summary
               class="font-bold text-gray-900 cursor-pointer flex items-center justify-between"
              data-faq-q="faq">
-              <span>À partir de quel prix l'ancien devient-il plus intéressant ?</span>
+              <span>L'ancien peut-il revenir moins cher que le neuf malgré les frais ?</span>
               <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fill-rule="evenodd"
@@ -690,9 +688,7 @@
               </svg>
             </summary>
             <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
-              Au-delà de <strong>10 ans de détention</strong>, l'ancien bénéficie d'une décote de
-              prix qui compense souvent les frais plus élevés (≈ 7%). De plus, les biens anciens
-              nécessitent parfois moins de travaux de finition que le neuf.
+              Il n'y a pas de seuil de prix : les frais sont proportionnels au prix. Pour 250 000 €, ils représentent environ <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"ancien","departement":"69"}' data-arrondi="100">19 500</span> € dans l'ancien contre <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"neuf","departement":"69"}' data-arrondi="100">5 400</span> € dans le neuf. L'ancien reste gagnant s'il est moins cher à l'achat d'au moins 5 à 6 % qu'un logement neuf équivalent, travaux compris.
             </p>
           </details>
 
@@ -712,9 +708,7 @@
               </svg>
             </summary>
             <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
-              Les <strong>droits d'enregistrement sont fixes</strong> et reversés à l'État. En
-              revanche, les <strong>émoluments notariaux sont plafonnés</strong> mais vous pouvez
-              demander une remise sur les honoraires de procédure (jusqu'à 10%).
+              Les droits de mutation (la plus grosse part) ne se négocient pas. Le notaire peut accorder une remise de 20 % au plus sur ses émoluments proportionnels, uniquement sur la part du prix au-delà de 100 000 €, au même taux pour tous ses clients et affichée dans l'étude.
             </p>
           </details>
 
@@ -734,9 +728,7 @@
               </svg>
             </summary>
             <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
-              <strong>À la signature de l'acte authentique</strong>, soit le jour de la remise des
-              clés pour l'ancien, ou à chaque échéance de livraison pour le neuf (VEFA). Prévoyez
-              d'avoir ces fonds disponibles sur votre compte.
+              Ils sont versés au notaire au plus tard le jour de la signature de l'acte de vente, en général par virement quelques jours avant. En VEFA, c'est aussi à la signature de l'acte que les frais sont payés ; le prix, lui, est réglé par appels de fonds au fil du chantier.
             </p>
           </details>
 
@@ -756,9 +748,7 @@
               </svg>
             </summary>
             <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
-              Oui, si votre banque accepte un <strong>« prêt total »</strong>(110% du prix). Le
-              montant financé inclut le prix du bien + les frais de notaire. Votre mensualité
-              augmentera légèrement (environ +40€/mois pour 7 800€ sur 20 ans).
+              Oui, si votre banque accepte de financer les frais (prêt dit « à 110 % »), ce qui est plus rare sans apport. Par exemple, 7 800 € de frais empruntés sur 20 ans à 3,3 % ajoutent environ 45 € à la mensualité, hors assurance.
             </p>
           </details>
         </div>

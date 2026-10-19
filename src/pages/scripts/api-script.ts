@@ -237,7 +237,7 @@ const ENDPOINTS: ApiEndpointDoc[] = [
       { name: "typeEmprunt", type: '"sans" | "sans_garantie" | "avec_garantie"', required: false, description: "Type d'emprunt (défaut \"sans\")" },
       { name: "pretsAides", type: "number", required: false, description: "Montant PTZ/PEL/CEL (défaut 0)" },
       { name: "autresPrets", type: "number", required: false, description: "Montant des autres prêts (défaut 0)" },
-      { name: "remiseNotarialeVariable", type: "boolean", required: false, description: "Applique une remise de 10% sur la part variable (défaut false)" },
+      { name: "remiseNotarialeVariable", type: "boolean", required: false, description: "Applique la remise maximale : 20 % des émoluments sur la part du prix au-delà de 100 000 € (défaut false)" },
     ],
     body: { prixAchat: 250000, typeBien: "ancien", departement: "75" },
     response: JSON.stringify(

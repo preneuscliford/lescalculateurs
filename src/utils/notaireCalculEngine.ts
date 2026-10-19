@@ -44,6 +44,7 @@ export interface NotaireCalculData {
   typeEmprunt?: TypeEmpruntNotaire;
   pretsAides?: number;
   autresPrets?: number;
+  /** Remise maximale autorisée : 20 % des émoluments proportionnels sur la part du prix ≥ 100 000 € */
   remiseNotarialeVariable?: boolean;
   /** Premier achat de la résidence principale : pas de hausse des DMTO (art. 116 LF 2025) */
   primoAccedant?: boolean;
@@ -97,6 +98,9 @@ function getDeboursFormalites(departement: string): { debours: number; formalite
   };
 }
 
+const REMISE_SEUIL = 100000;
+const REMISE_TAUX_MAX = 0.2;
+
 export function calculerNotaire(data: NotaireCalculData): NotaireCalculResult {
   const prixAchat = Math.max(0, data.prixAchat || 0);
   const montantMobilier = Math.max(0, data.montantMobilier || 0);
@@ -136,10 +140,16 @@ export function calculerNotaire(data: NotaireCalculData): NotaireCalculResult {
     reste -= montantTranche;
   }
 
+  // Remise (art. R444-10 du code de commerce, depuis le 1er janvier 2021) : 20 % au plus,
+  // uniquement sur les émoluments calculés sur la part du prix égale ou supérieure à 100 000 €
   let remiseMontant = 0;
   if (remiseVar) {
-    remiseMontant = emoluments * 0.1;
-    emoluments = emoluments * 0.9;
+    for (const tranche of trancheDefaut) {
+      const bas = Math.max(tranche.min, REMISE_SEUIL);
+      const haut = Math.min(tranche.max, prixNetImmobilier);
+      if (haut > bas) remiseMontant += (haut - bas) * tranche.taux * REMISE_TAUX_MAX;
+    }
+    emoluments -= remiseMontant;
   }
 
   const { debours, formalites } = getDeboursFormalites(departement);
