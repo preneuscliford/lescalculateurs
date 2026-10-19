@@ -70,33 +70,25 @@
       }
     </script>
 
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Quel est le pourcentage de frais de notaire en 2026 ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "En 2026, les frais de notaire sont ≈7–9% du prix d'achat pour un bien ancien et ≈2–3% pour un bien neuf (VEFA). Ces pourcentages incluent droits, émoluments et taxes réglementées. (Est. indicative)"
-            }
-          },
-          {
-            "@type": "Question",
             "name": "Pourquoi les frais de notaire sont-ils moins chers dans le neuf ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dans le neuf, la TVA est déjà perçue par l'État ; seuls les droits d'enregistrement réduits (0,7%) et les émoluments notariaux s'appliquent. Dans l'ancien, on ajoute les droits de mutation (≈5,8% selon région), ce qui explique la différence majeure."
+              "text": "Dans le neuf la TVA est déjà perçue par l'État ; seuls les droits d'enregistrement réduits (0,7 %) et les émoluments notariaux s'appliquent. L'État a déjà collecté sa part via la TVA à 20%."
             }
           },
           {
             "@type": "Question",
-            "name": "À partir de quel prix du bien les frais deviennent importants ?",
+            "name": "À partir de quel prix l'ancien devient-il plus intéressant ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Les frais augmentent proportionnellement au prix. Pour un bien à 300 000€ en ancien : ≈21–27k€ de frais (7–9%). Pour 500 000€ : ≈35–45k€. Plus le prix est élevé, plus l'impact financier est significatif."
+              "text": "Au-delà de 10 ans de détention, l'ancien bénéficie d'une décote de prix qui compense souvent les frais plus élevés (≈ 7%). De plus, les biens anciens nécessitent parfois moins de travaux de finition que le neuf."
             }
           },
           {
@@ -104,23 +96,23 @@
             "name": "Les frais de notaire sont-ils négociables en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Les droits d'enregistrement sont fixes et réglementés. Les émoluments notariaux sont plafonnés par loi. Vous pouvez demander une remise sur les honoraires de procédure ou certaines formalités (jusqu'à 10% possible selon barème). (Est. indicative)"
+              "text": "Les droits d'enregistrement sont fixes et reversés à l'État. En revanche, les émoluments notariaux sont plafonnés mais vous pouvez demander une remise sur les honoraires de procédure (jusqu'à 10%)."
             }
           },
           {
             "@type": "Question",
-            "name": "Comment calculer précisément les frais de notaire ?",
+            "name": "Quand doit-on payer les frais de notaire ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Utilisez notre calculateur en indiquant prix, région, type de bien (ancien/neuf). Les frais se décomposent en : droits (proportional), émoluments (barémé), débours (administratifs), TVA 20%. Pour un calcul officiel, consultez un notaire ou notaires.fr."
+              "text": "À la signature de l'acte authentique, soit le jour de la remise des clés pour l'ancien, ou à chaque échéance de livraison pour le neuf (VEFA). Prévoyez d'avoir ces fonds disponibles sur votre compte."
             }
           },
           {
             "@type": "Question",
-            "name": "Peut-on intégrer les frais de notaire dans le prêt ?",
+            "name": "Puis-je intégrer les frais de notaire dans mon prêt ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, si votre banque accepte un « prêt total » : le montant financé inclut le prix du bien + les frais. Votre mensualité augmente alors. Certaines banques proposent des conditions spéciales pour les frais de notaire."
+              "text": "Oui, si votre banque accepte un « prêt total » (110% du prix). Le montant financé inclut le prix du bien + les frais de notaire. Votre mensualité augmentera légèrement (environ +40€/mois pour 7 800€ sur 20 ans)."
             }
           }
         ]
@@ -665,7 +657,7 @@
           >
             <summary
               class="font-bold text-gray-900 cursor-pointer flex items-center justify-between"
-            >
+             data-faq-q="faq">
               <span>Pourquoi les frais de notaire sont-ils moins chers dans le neuf ?</span>
               <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -675,7 +667,7 @@
                 ></path>
               </svg>
             </summary>
-            <p class="mt-3 text-gray-700 leading-relaxed">
+            <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
               Dans le neuf la <strong>TVA est déjà perçue par l'État</strong>; seuls les droits
               d'enregistrement réduits (0,7 %) et les émoluments notariaux s'appliquent. L'État a
               déjà collecté sa part via la TVA à 20%.
@@ -687,7 +679,7 @@
           >
             <summary
               class="font-bold text-gray-900 cursor-pointer flex items-center justify-between"
-            >
+             data-faq-q="faq">
               <span>À partir de quel prix l'ancien devient-il plus intéressant ?</span>
               <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -697,7 +689,7 @@
                 ></path>
               </svg>
             </summary>
-            <p class="mt-3 text-gray-700 leading-relaxed">
+            <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
               Au-delà de <strong>10 ans de détention</strong>, l'ancien bénéficie d'une décote de
               prix qui compense souvent les frais plus élevés (≈ 7%). De plus, les biens anciens
               nécessitent parfois moins de travaux de finition que le neuf.
@@ -709,7 +701,7 @@
           >
             <summary
               class="font-bold text-gray-900 cursor-pointer flex items-center justify-between"
-            >
+             data-faq-q="faq">
               <span>Les frais de notaire sont-ils négociables en 2026 ?</span>
               <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -719,7 +711,7 @@
                 ></path>
               </svg>
             </summary>
-            <p class="mt-3 text-gray-700 leading-relaxed">
+            <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
               Les <strong>droits d'enregistrement sont fixes</strong> et reversés à l'État. En
               revanche, les <strong>émoluments notariaux sont plafonnés</strong> mais vous pouvez
               demander une remise sur les honoraires de procédure (jusqu'à 10%).
@@ -731,7 +723,7 @@
           >
             <summary
               class="font-bold text-gray-900 cursor-pointer flex items-center justify-between"
-            >
+             data-faq-q="faq">
               <span>Quand doit-on payer les frais de notaire ?</span>
               <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -741,7 +733,7 @@
                 ></path>
               </svg>
             </summary>
-            <p class="mt-3 text-gray-700 leading-relaxed">
+            <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
               <strong>À la signature de l'acte authentique</strong>, soit le jour de la remise des
               clés pour l'ancien, ou à chaque échéance de livraison pour le neuf (VEFA). Prévoyez
               d'avoir ces fonds disponibles sur votre compte.
@@ -753,7 +745,7 @@
           >
             <summary
               class="font-bold text-gray-900 cursor-pointer flex items-center justify-between"
-            >
+             data-faq-q="faq">
               <span>Puis-je intégrer les frais de notaire dans mon prêt ?</span>
               <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -763,7 +755,7 @@
                 ></path>
               </svg>
             </summary>
-            <p class="mt-3 text-gray-700 leading-relaxed">
+            <p class="mt-3 text-gray-700 leading-relaxed" data-faq-a="faq">
               Oui, si votre banque accepte un <strong>« prêt total »</strong>(110% du prix). Le
               montant financé inclut le prix du bien + les frais de notaire. Votre mensualité
               augmentera légèrement (environ +40€/mois pour 7 800€ sur 20 ans).

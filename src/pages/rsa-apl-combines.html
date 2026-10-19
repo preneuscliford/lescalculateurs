@@ -53,25 +53,25 @@
       }
     </script>
     <script defer src="/third-party-loader.js"></script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Le RSA compte-t-il comme ressource pour l'APL ?",
+            "name": "Le RSA compte-t-il pour l'APL ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, le RSA fait partie des ressources prises en compte par la CAF pour calculer l'APL, au même titre qu'un salaire ou une autre allocation."
+              "text": "Oui, il fait partie des ressources prises en compte, au même titre qu'un salaire."
             }
           },
           {
             "@type": "Question",
-            "name": "Peut-on toucher le RSA et l'APL en même temps ?",
+            "name": "Peut-on cumuler RSA et APL ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, ce sont deux aides distinctes et cumulables. Le montant de l'APL dépendra toutefois du RSA perçu, puisqu'il entre dans le calcul des ressources du foyer."
+              "text": "Oui, ce sont deux aides distinctes et cumulables."
             }
           }
         ]
@@ -257,12 +257,12 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-6">❓ Questions fréquentes</h2>
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Le RSA compte-t-il pour l'APL ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Oui, il fait partie des ressources prises en compte, au même titre qu'un salaire.</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Le RSA compte-t-il pour l'APL ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Oui, il fait partie des ressources prises en compte, au même titre qu'un salaire.</p>
           </details>
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Peut-on cumuler RSA et APL ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Oui, ce sont deux aides distinctes et cumulables.</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Peut-on cumuler RSA et APL ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Oui, ce sont deux aides distinctes et cumulables.</p>
           </details>
         </div>
       </section>

@@ -30,33 +30,41 @@
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/garantie-visale" />
     <link rel="stylesheet" href="../tailwind.css" />
     <script defer src="/third-party-loader.js"></script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-faq="faq">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Qu'est-ce que la garantie Visale ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La garantie Visale est une caution locative 100% gratuite proposée par Action Logement. Elle couvre les loyers impayés et les dégradations locatives, facilitant l'accès au logement pour les jeunes (18-30 ans), les salariés et les personnes en mobilité professionnelle."
-            }
-          },
-          {
-            "@type": "Question",
             "name": "Qui peut bénéficier de la garantie Visale ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tous les jeunes de 18 à 30 ans (sans condition de ressources), les salariés de plus de 30 ans (CDI, CDD, intérim), et les personnes en mobilité professionnelle. Le logement doit être la résidence principale avec un loyer maximum de 1 500€ (2 400€ en IDF)."
+              "text": "Tous les jeunes de 18 à 30 ans sans condition de ressources, les salariés de plus de 30 ans en activité, et les personnes en mobilité professionnelle. Le logement doit être la résidence principale."
             }
           },
           {
             "@type": "Question",
-            "name": "Comment faire une demande Visale ?",
+            "name": "Quel est le délai pour obtenir Visale ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "La demande se fait gratuitement en ligne sur visale.fr. Il faut créer un compte, remplir le formulaire et fournir les justificatifs. La réponse est généralement donnée sous 48h."
+              "text": "La réponse est généralement donnée sous 48h après le dépôt du dossier complet sur visale.fr. Le visa est valable 3 mois pour trouver un logement, puis se transforme en contrat de cautionnement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Visale est-elle cumulable avec l'APL ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, la garantie Visale est totalement cumulable avec l'APL. Visale couvre la caution tandis que l'APL réduit le montant du loyer à payer. C'est une combinaison idéale pour les étudiants et jeunes actifs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Visale est-elle vraiment gratuite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, la garantie Visale est 100% gratuite pour le locataire. Il n'y a aucun frais de dossier, aucune cotisation. En cas d'impayé, c'est Action Logement qui avance les loyers au propriétaire, et le locataire devra rembourser Action Logement selon un échéancier."
             }
           }
         ]
@@ -286,40 +294,40 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-6">❓ FAQ - Garantie Visale</h2>
         <div class="space-y-4">
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <summary class="cursor-pointer font-semibold text-gray-900">
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
               Qui peut bénéficier de la garantie Visale ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
+            <p class="mt-3 text-gray-700 text-sm" data-faq-a="faq">
               Tous les jeunes de <strong>18 à 30 ans</strong> sans condition de ressources, les
               salariés de plus de 30 ans en activité, et les personnes en mobilité professionnelle.
               Le logement doit être la résidence principale.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <summary class="cursor-pointer font-semibold text-gray-900">
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
               Quel est le délai pour obtenir Visale ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
+            <p class="mt-3 text-gray-700 text-sm" data-faq-a="faq">
               La réponse est généralement donnée sous <strong>48h</strong> après le dépôt du dossier
               complet sur visale.fr. Le visa est valable 3 mois pour trouver un logement, puis se
               transforme en contrat de cautionnement.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <summary class="cursor-pointer font-semibold text-gray-900">
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
               Visale est-elle cumulable avec l'APL ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
+            <p class="mt-3 text-gray-700 text-sm" data-faq-a="faq">
               Oui, la garantie Visale est totalement <strong>cumulable avec l'APL</strong>. Visale
               couvre la caution tandis que l'APL réduit le montant du loyer à payer. C'est une
               combinaison idéale pour les étudiants et jeunes actifs.
             </p>
           </details>
           <details class="rounded-lg border border-gray-200 p-4 bg-gray-50">
-            <summary class="cursor-pointer font-semibold text-gray-900">
+            <summary class="cursor-pointer font-semibold text-gray-900" data-faq-q="faq">
               Visale est-elle vraiment gratuite ?
             </summary>
-            <p class="mt-3 text-gray-700 text-sm">
+            <p class="mt-3 text-gray-700 text-sm" data-faq-a="faq">
               Oui, la garantie Visale est <strong>100% gratuite</strong> pour le locataire. Il n'y a
               aucun frais de dossier, aucune cotisation. En cas d'impayé, c'est Action Logement qui
               avance les loyers au propriétaire, et le locataire devra rembourser Action Logement
