@@ -111,7 +111,9 @@
     "generate:vdf:income": "node scripts/generate-vdf-income-pages.cjs",
     "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo",
     "exemples:sync": "node scripts/sync-exemples.cjs",
-    "exemples:check": "node scripts/sync-exemples.cjs --check"
+    "exemples:check": "node scripts/sync-exemples.cjs --check",
+    "keyword-scan": "node scripts/keyword-scan/scan.cjs",
+    "keyword-scan:dry": "node scripts/keyword-scan/scan.cjs --dry-run"
   },
   "blog:update:2026": "node scripts/update-blog-pages.cjs",
   "blog:revert": "node scripts/revert-blog-pages.cjs",

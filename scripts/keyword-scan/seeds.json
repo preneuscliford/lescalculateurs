@@ -1,0 +1,325 @@
+{
+  "_lisezmoi": "Amorces de recherche par thème. « amorces » : interrogées telles quelles ; « expansion » : interrogées aussi avec chaque lettre a…z ; « termes » : combinés avec les débuts de recherche communs (debutsCommuns) ; « filtre » : une suggestion n'est gardée que si elle contient l'un de ces mots (texte normalisé, sans accents). « calculateurs » : rattachement des formulations à un calculateur existant ou prévu. « exclure » : une suggestion contenant l'un de ces mots est écartée du thème.",
+  "debutsCommuns": [
+    "délai",
+    "date",
+    "quand demander",
+    "combien de temps",
+    "calcul"
+  ],
+  "suffixesCommuns": [
+    "dépassé"
+  ],
+  "themes": [
+    {
+      "id": "chomage",
+      "libelle": "Chômage (ARE, France Travail)",
+      "termes": [
+        "chômage",
+        "france travail",
+        "are"
+      ],
+      "filtre": [
+        "chomage",
+        "france travail",
+        "pole emploi",
+        "are",
+        "indemnisation",
+        "carence",
+        "differe",
+        "degressivite",
+        "fin de droits",
+        "inscription",
+        "allocation chomage",
+        "aide au retour a l emploi"
+      ],
+      "exclure": [
+        "caf",
+        "apl",
+        "rsa",
+        "prime d activite"
+      ],
+      "amorces": [
+        "fin de droits chômage",
+        "date fin de droits chômage",
+        "calcul fin de droits chômage",
+        "fin de droits chômage à",
+        "fin de droits chômage et",
+        "délai de carence chômage",
+        "carence chômage rupture conventionnelle",
+        "différé d'indemnisation chômage",
+        "différé spécifique chômage",
+        "dégressivité chômage",
+        "durée indemnisation chômage",
+        "combien de temps chômage après",
+        "chômage après démission",
+        "chômage après rupture conventionnelle",
+        "premier paiement chômage",
+        "date paiement chômage",
+        "quand s'inscrire à france travail"
+      ],
+      "expansion": [
+        "fin de droits chômage",
+        "délai de carence chômage",
+        "dégressivité chômage",
+        "durée indemnisation chômage",
+        "chômage après",
+        "premier paiement chômage"
+      ],
+      "calculateurParDefaut": "Calculateur date de fin de droits chômage (à créer)",
+      "calculateurs": [
+        {
+          "libelle": "Module délai de carence (à créer)",
+          "motifs": [
+            "carence",
+            "differe",
+            "delai d'attente",
+            "premier (paiement|versement)",
+            "quand (est|suis) (on|je) paye"
+          ]
+        },
+        {
+          "libelle": "Module dégressivité (à créer)",
+          "motifs": [
+            "degressiv",
+            "baisse (du )?chomage",
+            "30 ?%"
+          ]
+        },
+        {
+          "libelle": "Calculateur date de fin de droits chômage (à créer)",
+          "motifs": [
+            "fin de droits?",
+            "duree",
+            "combien de (mois|temps|jours)",
+            "jusqu ?'?a quand"
+          ]
+        },
+        {
+          "libelle": "Simulateur ARE (existant : /pages/are)",
+          "motifs": [
+            "montant",
+            "calcul",
+            "simulat",
+            "combien",
+            "taux"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caf",
+      "libelle": "CAF (APL, prime d'activité, RSA, ASF)",
+      "termes": [
+        "caf",
+        "apl",
+        "prime d'activité",
+        "rsa"
+      ],
+      "filtre": [
+        "caf",
+        "apl",
+        "aide au logement",
+        "prime d'activite",
+        "prime activite",
+        "rsa",
+        "asf",
+        "msa",
+        "allocations familiales",
+        "allocation de soutien familial",
+        "allocation logement"
+      ],
+      "exclure": [
+        "chomage",
+        "france travail",
+        "pole emploi"
+      ],
+      "amorces": [
+        "délai caf",
+        "délai traitement caf",
+        "délai traitement dossier caf",
+        "caf dossier en cours depuis",
+        "date paiement caf",
+        "date versement caf",
+        "quand demander apl",
+        "délai apl",
+        "apl rétroactive",
+        "délai prime d'activité",
+        "date versement prime d'activité",
+        "délai rsa",
+        "quand demander le rsa",
+        "délai asf",
+        "délai réponse caf",
+        "combien de temps caf"
+      ],
+      "expansion": [
+        "délai caf",
+        "date paiement caf",
+        "délai apl",
+        "délai prime d'activité",
+        "délai rsa",
+        "caf dossier en cours"
+      ],
+      "calculateurParDefaut": "Observatoire « délais CAF mesurés » (à créer)",
+      "calculateurs": [
+        {
+          "libelle": "Observatoire « délais CAF mesurés » (à créer)",
+          "motifs": [
+            "delai",
+            "en cours",
+            "traitement",
+            "combien de temps",
+            "reponse",
+            "attente",
+            "depasse"
+          ]
+        },
+        {
+          "libelle": "Calendrier des versements CAF (à étudier)",
+          "motifs": [
+            "date (de )?(paiement|versement)",
+            "quand (est )?(verse|paye)",
+            "jour de paiement"
+          ]
+        },
+        {
+          "libelle": "Simulateur APL (existant : /pages/apl)",
+          "motifs": [
+            "apl",
+            "aide au logement"
+          ]
+        },
+        {
+          "libelle": "Simulateur prime d'activité (existant : /pages/prime-activite)",
+          "motifs": [
+            "prime d'?activite"
+          ]
+        },
+        {
+          "libelle": "Simulateur RSA (existant : /pages/rsa)",
+          "motifs": [
+            "rsa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logement",
+      "libelle": "Logement (location, dépôt de garantie, DPE)",
+      "termes": [
+        "dépôt de garantie",
+        "préavis",
+        "loyer"
+      ],
+      "filtre": [
+        "depot de garantie",
+        "caution",
+        "preavis",
+        "loyer",
+        "location",
+        "locataire",
+        "bail",
+        "dpe",
+        "passoire",
+        "etat des lieux",
+        "charges",
+        "irl"
+      ],
+      "exclure": [
+        "apl",
+        "aide au logement",
+        "caf",
+        "allocation logement"
+      ],
+      "amorces": [
+        "délai restitution dépôt de garantie",
+        "dépôt de garantie délai",
+        "dépôt de garantie dépassé",
+        "pénalité dépôt de garantie",
+        "calcul pénalité dépôt de garantie",
+        "délai préavis location",
+        "préavis 1 mois",
+        "calcul préavis location",
+        "date interdiction location dpe",
+        "logement classé g interdiction",
+        "dpe f location",
+        "gel des loyers dpe",
+        "calcul augmentation loyer irl",
+        "régularisation des charges délai",
+        "délai état des lieux"
+      ],
+      "expansion": [
+        "dépôt de garantie",
+        "préavis location",
+        "dpe location",
+        "augmentation loyer"
+      ],
+      "calculateurParDefaut": "Calculateur logement (à définir)",
+      "calculateurs": [
+        {
+          "libelle": "Calculateur dépôt de garantie (date limite et pénalité de 10 %) (à créer)",
+          "motifs": [
+            "depot de garantie",
+            "caution"
+          ]
+        },
+        {
+          "libelle": "Calculateur préavis de départ (à étudier)",
+          "motifs": [
+            "preavis"
+          ]
+        },
+        {
+          "libelle": "Calculateur DPE : date d'interdiction de louer et gel du loyer (à créer)",
+          "motifs": [
+            "dpe",
+            "passoire",
+            "classe [efg]",
+            "logement [efg]\\b",
+            "interdiction"
+          ]
+        },
+        {
+          "libelle": "Calculateur révision de loyer IRL (à étudier)",
+          "motifs": [
+            "irl",
+            "augmentation (de )?loyer",
+            "revision (du )?loyer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conge-naissance",
+      "libelle": "Congé maternité et paternité",
+      "termes": [
+        "congé maternité",
+        "congé paternité"
+      ],
+      "filtre": [
+        "conge maternite",
+        "conge paternite",
+        "conge de naissance",
+        "maternite",
+        "paternite",
+        "indemnites journalieres",
+        "ij"
+      ],
+      "exclure": [],
+      "amorces": [
+        "date congé maternité",
+        "calcul congé maternité",
+        "congé maternité date de début",
+        "calcul indemnités journalières maternité",
+        "congé paternité délai",
+        "quand déclarer grossesse"
+      ],
+      "expansion": [
+        "calcul congé maternité",
+        "congé paternité"
+      ],
+      "calculateurParDefaut": "Calculateur dates de congé maternité et paternité (thème suivant)",
+      "calculateurs": []
+    }
+  ]
+}
