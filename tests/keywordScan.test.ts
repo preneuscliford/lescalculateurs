@@ -7,6 +7,7 @@ import { qualifierResultat, niveauConcurrence } from "../scripts/keyword-scan/li
 import { lireCsv, chargerEntrees } from "../scripts/keyword-scan/lib/entrees.cjs";
 import { creerCache } from "../scripts/keyword-scan/lib/cache.cjs";
 import { creerAutocompletion } from "../scripts/keyword-scan/lib/autocompletion.cjs";
+import { chargerEnv } from "../scripts/keyword-scan/lib/env.cjs";
 
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, "../scripts/keyword-scan/config.json"), "utf8"));
 const theme = JSON.parse(fs.readFileSync(path.join(__dirname, "../scripts/keyword-scan/seeds.json"), "utf8")).themes.find(
@@ -126,5 +127,18 @@ describe("keyword-scan : entrées et cache", () => {
     expect(await auto.suggestions("absente du cache")).toEqual([]);
     expect(appels).not.toHaveBeenCalled();
     expect(auto.stats).toMatchObject({ cache: 1, manquants: 1, reseau: 0 });
+  });
+
+  test(".env : charge seulement les variables demandées, sans écraser l'existant", () => {
+    const f = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "kws-env-")), ".env");
+    fs.writeFileSync(f, 'GOOGLE_CSE_KEY="cle-test"\nGOOGLE_CSE_CX=cx-test\nAUTRE_SECRET=x\n');
+    delete process.env.GOOGLE_CSE_KEY;
+    process.env.GOOGLE_CSE_CX = "deja-defini";
+    expect(chargerEnv(f, ["GOOGLE_CSE_KEY", "GOOGLE_CSE_CX"])).toEqual(["GOOGLE_CSE_KEY"]);
+    expect(process.env.GOOGLE_CSE_KEY).toBe("cle-test");
+    expect(process.env.GOOGLE_CSE_CX).toBe("deja-defini");
+    expect(process.env.AUTRE_SECRET).toBeUndefined();
+    delete process.env.GOOGLE_CSE_KEY;
+    delete process.env.GOOGLE_CSE_CX;
   });
 });

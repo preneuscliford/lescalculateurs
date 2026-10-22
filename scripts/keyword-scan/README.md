@@ -28,8 +28,10 @@ tableau principal).
 3. **Classement** (`lib/classement.cjs`) : calcul personnel (date, délai, durée, montant,
    droits) ou information générale (navigation, contact, formulaire, définition…), et
    paramètres personnels (âge, contrat, situation, montant, lieu).
-4. **Résultats Google** (`lib/serp.cjs`) : API Custom Search, seulement si `GOOGLE_CSE_KEY` et
-   `GOOGLE_CSE_CX` sont définies (variables d'environnement, jamais dans le code). Quota de
+4. **Résultats Google** (`lib/serp.cjs`) : API Custom Search, seulement si `GOOGLE_CSE_KEY` (clé
+   d'API Google Cloud, différente des identifiants OAuth) et `GOOGLE_CSE_CX` (identifiant du moteur
+   de recherche programmable) sont définies, en variables d'environnement ou dans `.env` (lu par
+   `lib/env.cjs`, jamais dans le code). Quota de
    100 requêtes par jour suivi dans le cache ; seuls les meilleurs candidats sont vérifiés.
    Domaines forts et faibles configurables dans `config.json`.
 5. **Croisement** (facultatif) : CSV déposés dans `reports/keyword-scan/input/` (non versionné) :

@@ -26,6 +26,7 @@ const { scorer, proposer } = require("./lib/score.cjs");
 const { ecrireRapportTheme } = require("./lib/rapport.cjs");
 
 const racine = path.resolve(__dirname, "../..");
+require("./lib/env.cjs").chargerEnv(path.join(racine, ".env"), ["GOOGLE_CSE_KEY", "GOOGLE_CSE_CX"]);
 const dossierRapports = path.join(racine, "reports/keyword-scan");
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
