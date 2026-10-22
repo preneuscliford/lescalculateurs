@@ -98,7 +98,8 @@
       "prefixes": [
         "are",
         "rupture-conventionnelle",
-        "indemnite-licenciement"
+        "indemnite-licenciement",
+        "fin-de-droits-chomage"
       ],
       "sources": [
         {
@@ -108,6 +109,26 @@
         {
           "label": "Unédic : pas de revalorisation des allocations au 1er juillet 2026",
           "url": "https://www.unedic.org/actualites/allocations-dassurance-chomage-pas-de-revalorisation-au-1er-juillet-2026"
+        },
+        {
+          "label": "Unédic : durée d'indemnisation",
+          "url": "https://www.unedic.org/la-reglementation/fiches-thematiques/duree-dindemnisation"
+        },
+        {
+          "label": "Unédic : différé d'indemnisation spécifique (indemnités supra-légales)",
+          "url": "https://www.unedic.org/la-reglementation/fiches-thematiques/differe-dindemnisation-specifique-en-cas-dindemnites-supra-legales"
+        },
+        {
+          "label": "Unédic : allocation d'aide au retour à l'emploi (délais, dégressivité)",
+          "url": "https://www.unedic.org/la-reglementation/fiches-thematiques/allocation-d-aide-au-retour-a-l-emploi-are"
+        },
+        {
+          "label": "France Travail : délai pour s'inscrire et être indemnisé",
+          "url": "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/allocations-et-aides--les-repons/allocations--attention-aux-idees/quel-est-le-delai-faut-il-sinscr.html"
+        },
+        {
+          "label": "France Travail : rupture conventionnelle, ce que change la réforme du 1er septembre 2026",
+          "url": "https://www.francetravail.fr/employeur/des-conseils-pour-gerer-vos-ress/decryptage-culture-gestion-rh/rupture-conventionnelle-ce-que-l.html"
         }
       ]
     },
