@@ -38,13 +38,67 @@ function isRuptureConventionnelleReduite(data: AREData): boolean {
   return !data.dateFinContrat || data.dateFinContrat >= dateEffet;
 }
 
-function getDurationCapDays(data: AREData): number {
-  const durees = isRuptureConventionnelleReduite(data)
+function getDurationCapDays(data: { agePersonne: number; ruptureConventionnelle?: boolean; dateFinContrat?: Date }): number {
+  const durees = isRuptureConventionnelleReduite(data as AREData)
     ? areBaremes.ruptureConventionnelle.dureeMaximaleJours
     : areBaremes.dureeMaximaleJours;
   if (data.agePersonne >= 57) return durees.aPartirDe57Ans;
   if (data.agePersonne >= 55) return durees.de55a56Ans;
   return durees.moinsDe55Ans;
+}
+
+export interface DureeIndemnisationData {
+  /** Jours calendaires du 1er jour du 1er contrat de la période de référence à la fin du contrat */
+  joursCalendaires: number;
+  /** Jours sans contrat compris dans cette période (retenus dans la limite de 70 % des jours travaillés) */
+  joursNonTravailles?: number;
+  agePersonne: number;
+  ruptureConventionnelle?: boolean;
+  dateFinContrat?: Date;
+}
+
+export interface DureeIndemnisationResult {
+  jours: number;
+  joursAvantCoefficient: number;
+  coefficientApplique: boolean;
+  plancherApplique: boolean;
+  plafondJours: number;
+  plafondApplique: boolean;
+}
+
+/**
+ * Durée d'indemnisation en jours (Unédic, fiche « Durée d'indemnisation ») : jours calendaires
+ * de la période de référence, jours non travaillés limités à 70 % des jours travaillés,
+ * coefficient 0,75 (fins de contrat depuis le 01/02/2023), minimum 182 jours, plafond selon
+ * l'âge à la fin du contrat (et rupture conventionnelle depuis le 01/09/2026). Métropole
+ * uniquement : le coefficient ne s'applique pas outre-mer.
+ */
+export function calculerDureeIndemnisation(data: DureeIndemnisationData): DureeIndemnisationResult {
+  const D = areBaremes.dureeIndemnisation;
+  const calendaires = Math.max(0, Math.floor(data.joursCalendaires || 0));
+  const nonTravailles = Math.min(calendaires, Math.max(0, Math.floor(data.joursNonTravailles || 0)));
+  const travailles = calendaires - nonTravailles;
+  // (arrondi préalable au millième : 330 × 0,7 vaut 230,999… en virgule flottante)
+  const maxNonTravailles = Math.floor(Math.round(travailles * D.ratioJoursNonTravaillesMax * 1000) / 1000);
+  const joursAvantCoefficient = travailles + Math.min(nonTravailles, maxNonTravailles);
+  const coefficientApplique =
+    !data.dateFinContrat || data.dateFinContrat >= new Date(`${D.dateEffetCoefficient}T00:00:00Z`);
+  const apresCoefficient = coefficientApplique ? Math.round(joursAvantCoefficient * D.coefficient) : joursAvantCoefficient;
+  const plafondJours = getDurationCapDays(data);
+  const plancherApplique = apresCoefficient < D.dureeMinimaleJours;
+  const plafondApplique = apresCoefficient > plafondJours;
+  const jours = Math.min(plafondJours, Math.max(D.dureeMinimaleJours, apresCoefficient));
+  return { jours, joursAvantCoefficient, coefficientApplique, plancherApplique, plafondJours, plafondApplique };
+}
+
+/** Allocation journalière brute (formule France Travail), avant dégressivité */
+export function calculerAllocationJournaliere(salaireMensuelBrut: number): { sjr: number; allocationJournaliere: number } {
+  const salaireMensuel = Math.max(0, salaireMensuelBrut || 0);
+  const sjr = (salaireMensuel * 12) / 365;
+  const C = areBaremes.calculJournalier;
+  const formule = Math.max(sjr * C.tauxOption1 + C.partFixe, sjr * C.tauxOption2);
+  const allocationJournaliere = Math.min(Math.max(formule, C.minimumJournalier), sjr * C.plafondPourcentageSjr);
+  return { sjr, allocationJournaliere };
 }
 
 export function calculerARE(data: AREData): AREResult {
@@ -65,29 +119,22 @@ export function calculerARE(data: AREData): AREResult {
     };
   }
 
-  const salaireMensuel = Math.max(0, data.salaireReferent || 0);
-  const sjr = (salaireMensuel * 12) / 365;
-  const option1 =
-    sjr * areBaremes.calculJournalier.tauxOption1 + areBaremes.calculJournalier.partFixe;
-  const option2 = sjr * areBaremes.calculJournalier.tauxOption2;
-  let allocationJournaliere = Math.max(option1, option2);
-  allocationJournaliere = Math.max(
-    allocationJournaliere,
-    areBaremes.calculJournalier.minimumJournalier,
-  );
-  allocationJournaliere = Math.min(
-    allocationJournaliere,
-    sjr * areBaremes.calculJournalier.plafondPourcentageSjr,
-  );
+  const { sjr, allocationJournaliere } = calculerAllocationJournaliere(data.salaireReferent);
 
   const montantMensuelBrut =
     Math.round(allocationJournaliere * areBaremes.calculJournalier.coefficientMensuel * 100) / 100;
 
-  const durationCapDays = getDurationCapDays(data);
-  const durationTheoriqueDays = Math.round(Math.max(0, data.ancienneteEmploi) * 30.42);
-  const durationRetenueDays = Math.min(durationTheoriqueDays, durationCapDays);
+  // Durée : ancienneté (en mois) limitée à la période de référence (24 mois, 36 mois à partir de
+  // 55 ans), convertie en jours calendaires, sans jour non travaillé
+  const moisRetenus = Math.min(Math.max(0, data.ancienneteEmploi), referenceWindow);
+  const duree = calculerDureeIndemnisation({
+    joursCalendaires: Math.round(moisRetenus * 30.42),
+    agePersonne: data.agePersonne,
+    ruptureConventionnelle: data.ruptureConventionnelle,
+    dateFinContrat: data.dateFinContrat,
+  });
   // Arrondi au demi-mois (ex. 685 jours = 22,5 mois, 624 jours = 20,5 mois)
-  const durationMax = Math.max(1, Math.round((durationRetenueDays / 30.42) * 2) / 2);
+  const durationMax = Math.max(1, Math.round((duree.jours / 30.42) * 2) / 2);
 
   return {
     eligible: true,
