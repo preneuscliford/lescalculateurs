@@ -1,0 +1,218 @@
+{
+  "source": "recherche web classique (outil WebSearch, ordre non identique à Google France)",
+  "date": "2026-10-22",
+  "requetes": {
+    "fin de droit chômage et invalidité": [
+      "https://www.arbeit.swiss/dam/secoalv/fr/dokumente/stellensuchende/arbeitslos-was-tun/Flyer%20Fin%20de%20droits_FR%202025.pdf",
+      "https://justice.ge.ch/apps/decis/de/atas/file//2023/0008/ATAS_000882_2023_A_3849_2022.pdf",
+      "https://forum-assures.ameli.fr/questions/3215857-fin-droit-securite-sociale",
+      "https://forum-assures.ameli.fr/questions/3421262-invalidite-fin-droit-chomage",
+      "https://app.omnilex.ai/fr/sources/court-decision/ch-bger--9c-794-2015/9c7942015",
+      "https://circulaires.ameli.fr/sites/default/files/directives/cir/1981/810722-C.PDF",
+      "https://entscheidsuche.ch/docs/GE_Gerichte/GE_CJ_014_A-1512-2015_2017-05-22.pdf",
+      "https://justice.ge.ch/apps/decis/fr/atas/file/2014/0011/ATAS_001142_2014_A_1538_2014.pdf",
+      "https://droit-finances.commentcamarche.com/forum/affich-8792297-fin-de-droit-et-retraite"
+    ],
+    "fin de droit chômage et arrêt maladie": [
+      "https://forum-assures.ameli.fr/questions/2858929-arret-travail-juste-fin-droit-chomage",
+      "https://forum-assures.ameli.fr/questions/2974265-fin-droit-chomage-indemnites-journalieres",
+      "https://arbeitskammer.de/fileadmin/user_upload/Publikationen/indemnites_de_maladie06_2024.pdf",
+      "https://forum-assures.ameli.fr/questions/3736995-prise-charge-arret-travail-fin-droit-chomage",
+      "https://quelles-aides.fr/chomage-france-travail/allocation-chomage/chomage-arret-maladie/",
+      "https://www.france-assos-sante.org/wp-content/uploads/2016/01/Arret-maladie-et-indemnisation-chomage.pdf",
+      "https://www.unedic.org/indemnisation/vos-questions-sur-indemnisation-assurance-chomage/que-deviennent-mes-allocations",
+      "https://www.aide-sociale.fr/arret-maladie-chomage/",
+      "https://www.unedic.org/l-assurance-chomage-et-vous/demandeur-d-emploi-ou-salarie/mes-droits-en-fonction-de-mon-parcours/je-suis-en-arret-maladie-que-deviennent-mes-allocations-chomage"
+    ],
+    "fin de droit chômage travailleur handicapé": [
+      "https://www.assemblee-nationale.fr/dyn/11/questions/QANR5L11QE14874.pdf",
+      "https://questions.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE3993.pdf",
+      "https://informations.handicap.fr/a-handicap-handicapes-th-rqth-6432.php",
+      "https://wdocs-pub.chd.lu/docs/exped/010/002/016291.pdf",
+      "https://www.assemblee-nationale.fr/dyn/13/questions/QANR5L13QE26415.pdf",
+      "https://www.force-ouvriere.fr/IMG/pdf/dossier_3308_de_l_infomilitante.pdf",
+      "https://questions.assemblee-nationale.fr/dyn/13/questions/QANR5L13QE27952.pdf",
+      "https://www.assemblee-nationale.fr/dyn/17/amendements/1827/AN/11.pdf"
+    ],
+    "délai de carence chômage licenciement pour inaptitude": [
+      "https://questions.assemblee-nationale.fr/dyn/11/questions/QANR5L11QE31986.pdf",
+      "https://questions.assemblee-nationale.fr/dyn/13/questions/QANR5L13QE59201.pdf",
+      "https://www.assemblee-nationale.fr/dyn/13/questions/QANR5L13QE103939.pdf",
+      "https://questions.assemblee-nationale.fr/dyn/13/questions/QANR5L13QE17949.pdf",
+      "https://questions.assemblee-nationale.fr/dyn/13/questions/QANR5L13QE102073.pdf",
+      "https://www.feedouest.fr/comment-eviter-le-delai-de-carence-pole-emploi-france-travail/",
+      "https://www.lemondedudroit.fr/social/276-protection-sociale-cotisations/48287-inaptitude-ordinaire-au-travail-repondre-au-vide-juridique.html"
+    ],
+    "délai de carence chômage et trimestre retraite": [
+      "https://www.la-retraite-en-clair.fr/print/pdf/node/2856",
+      "https://www.la-retraite-en-clair.fr/parcours-professionnel-regimes-retraite/periode-inactivite-retraite/periode-chomage-indemnise-retraite",
+      "https://alcuinfonds.be/blog/manque-trimestre-chomage/",
+      "https://www.familles-de-france.org/sites/default/files/PF_2016-01_chomageARE1.pdf",
+      "https://www.previssima.fr/forum/retraite/chomage-non-indemnise-et-retraite-anticipee.html",
+      "https://gambin.co/blog/trimestre-non-comptabilise/",
+      "https://gambin.co/blog/manque-trimestre-chomage/",
+      "https://www.juritravail.com/outils-de-calculs/calcul-date-indemnisation-chomage.html",
+      "https://www.previssima.fr/forum/retraite/effet-dune-periode-de-chomage-sur-la-decote-et-sur-le-pro-rata-de-la-duree-dassurance.html"
+    ],
+    "délai de carence chômage et arrêt maladie": [
+      "https://www.aide-sociale.fr/jours-carence-arret-maladie/",
+      "https://www.plus.transformation.gouv.fr/experiences/4096505_delai-de-carence-de-7-jours-pole-emploi-apres-arret-maladie-de-3-semaines",
+      "https://www.aide-sociale.fr/arret-maladie-chomage/",
+      "https://www.meilleurtaux.com/comparateur-assurance/mutuelle-sante/actualites/2026-aout/delai-de-carence-definition-et-exemples-concrets.html",
+      "https://www.moneyvox.fr/assurance/actualites/109946/delai-de-carence-une-periode-attente-avant-activation-une-garantie-ou-une-indemnisation",
+      "https://payfit.com/fr/fiches-pratiques/jour-de-carence-arret-maladie/",
+      "https://www.indy.fr/guide/creation-entreprise/gestion/droit-du-travail/delai-carence-3-ou-7-jours/",
+      "https://selectra.info/assurance/guides/mutuelle-sante/delai-carence"
+    ],
+    "fin de droit chômage senior": [
+      "https://questions.assemblee-nationale.fr/dyn/14/questions/QANR5L14QE30810.pdf",
+      "https://www.previssima.fr/actualite/reforme-des-retraites-2023-les-seniors-vont-ils-perdre-leurs-droits-aux-allocations-chomage.html",
+      "https://www.aide-sociale.fr/chomage-seniors/",
+      "https://droit-finances.commentcamarche.com/forum/affich-6323360-chomage-senior",
+      "https://www.sapiendo-retraite.fr/sapiendo-acteur-de-la-retraite/actualites-sapiendo-retraite/chomage-senior-regles-2025",
+      "https://fsu95.fsu.fr/wp-content/spip/95/IMG/pdf/2017-031.pdf",
+      "https://bourseinside.fr/?p=13550",
+      "https://www.unedic.org/publications/regles-et-dispositifs-dassurance-chomage-specifiques-aux-demandeurs-demploi-seniors-en"
+    ],
+    "fin de droit chômage à 62 ans": [
+      "https://www.previssima.fr/forum/retraite/fin-de-droit-au-chomage-car-droit-a-la-retraite-repousse.html",
+      "https://www.la-retraite-en-clair.fr/print/pdf/node/2600",
+      "https://www.la-retraite-en-clair.fr/organiser-depart-retraite/preparer-fin-carriere/chomage-fin-carriere-faut-savoir",
+      "https://www.previssima.fr/forum/retraite/comment-beneficier-du-maintien-des-droits.html",
+      "https://www.previssima.fr/actualite/reforme-des-retraites-2023-les-seniors-vont-ils-perdre-leurs-droits-aux-allocations-chomage.html",
+      "https://particuliers.sg.fr/nos-conseils/epargner/fin-de-carriere-et-chomage-comment-ca-marche",
+      "https://www.cor-retraites.fr/sites/default/files/2024-03/Unedic_Presentation_COR_Fins_de_carriere_et_assurance_chomage_2024.pdf",
+      "https://www.previssima.fr/forum/retraite/maintien-des-droits-62-ans-ou-age-legal.html"
+    ],
+    "délai de carence chômage et rupture conventionnelle": [
+      "https://www.shine.fr/blog/delai-carence-france-travail-rc/",
+      "https://www.legalplace.fr/guides/delai-carence-chomage/",
+      "https://www.editions-tissot.fr/droit-travail/rds_question.aspx?QUEID=1484",
+      "https://www.moneyvox.fr/votre-argent/actualites/104409/ce-critere-essentiel-pour-toucher-le-chomage-apres-une-rupture-conventionnelle-bientot-modifie",
+      "https://www.socic.fr/ressources-comptabilite/articles/chomage-et-rupture-conventionnelle-droits-demarches-et-indemnites",
+      "https://www.legalstart.fr/fiches-pratiques/rupture-contrat-travail/carence-chomage/",
+      "https://www.legisocial.fr/actualites-sociales/2212-la-convention-dassurance-chomage-du-14-avril-2017-modifie-le-differe-specifique-dindemnisation.html",
+      "https://droit-finances.commentcamarche.com/forum/affich-6464035-delais-de-carence-chomage-suite-a-une-rupture-conventionnelle"
+    ],
+    "durée indemnisation chomage rupture conventionnelle": [
+      "https://code.travail.gouv.fr/actualite/rupture-conventionnelle-et-chomage-les-nouvelles-durees-dindemnisation-a-partir-du-1er-septembre-2026",
+      "https://www.weblex.fr/weblex-actualite/rupture-conventionnelle-homologuee-la-baisse-de-la-duree-d-indemnisation-est-actee",
+      "https://www.maisondescommunes85.fr/print/7516",
+      "https://www.senat.fr/lessentiel/pjl25-470.pdf",
+      "https://www.lejournaldesentreprises.com/article/rupture-conventionnelle-la-duree-dindemnisation-par-lassurance-chomage-va-diminuer-la-rentree-2143955",
+      "https://www.legisocial.fr/actualites-sociales/8002-duree-indemnisation-chomage-va-baisser-ruptures-conventionnelles-conclues-partir-1er-septembre-2026.html",
+      "https://bourseinside.fr/?p=12194"
+    ],
+    "délai rsa après démission": [
+      "https://www.aide-sociale.fr/rsa-demission",
+      "https://droit-finances.commentcamarche.com/forum/affich-6577307-refus-du-rsa-pour-demission",
+      "https://aides-sociales.com/blog/article/rsa-apres-demission",
+      "https://droit-finances.commentcamarche.com/forum/affich-8755347-refus-rsa",
+      "https://bofip.impots.gouv.fr/export/pdf/9178",
+      "https://www.indy.fr/guide/creation-entreprise/chomage-et-creation-entreprise/demission-4-mois/",
+      "https://www.cig929394.fr/sites/default/files/commun/faq_demission_2023_11v3.pdf",
+      "https://droit-finances.commentcamarche.com/forum/affich-4641598-touche-t-on-le-rsa-apres-demission"
+    ],
+    "date fin de droits chômage": [
+      "https://www.onem.be/page/reforme-de-lassurance-chomage",
+      "https://www.onem.be/reforme-de-la-reglementation-du-chomage",
+      "https://www.onem.be/statistiques/methodologie/statistiques-concernant-la-sortie-fin-de-droit/sources",
+      "https://www.rtbf.be/article/limitation-dans-le-temps-des-allocations-de-chomage-qui-sera-exclu-et-quand-11623311",
+      "https://www.cftc.fr/wp-content/uploads/2023/09/plaquette-chomage-2023-septembre-1.pdf",
+      "https://www.unedic.org/storage/uploads/2023/07/19/Effets-de-ladaptation-des-regles-dassurance-chomage-la-conjoncture-synthese.pdf"
+    ],
+    "délai de carence chômage": [
+      "https://www.legalplace.fr/guides/delai-carence-chomage/",
+      "https://www.shine.fr/blog/delai-carence-france-travail-rc/",
+      "https://www.juritravail.com/Actualite/delai-de-carence-chomage-comment-bien-le-calculer/Id/142451",
+      "https://www.legalstart.fr/fiches-pratiques/rupture-contrat-travail/carence-chomage/",
+      "https://www.moneyvox.fr/votre-argent/actualites/97557/assurance-chomage-ce-que-changerait-allongement-du-delai-de-carence-sur-votre-indemnisation",
+      "https://www.canada.ca/fr/emploi-developpement-social/programmes/assurance-emploi/ae-liste/rapports/guide/ch-24/periode-de-reference.html",
+      "https://www.meilleurtaux.com/comparateur-assurance/mutuelle-sante/actualites/2026-aout/delai-de-carence-definition-et-exemples-concrets.html"
+    ],
+    "dégressivité chômage": [
+      "https://www.ofce.sciences-po.fr/pdf/pbrief/2016/pbrief04.pdf",
+      "https://www.lalibre.be/belgique/2012/04/23/vers-un-assouplissement-de-la-degressivite-des-allocations-de-chomage-O2A3PHHGNFBH3K3KXKBTFKMKAU/",
+      "https://www.ofce.sciences-po.fr/pdf/dtravail/OFCEWP2020-27.pdf",
+      "https://www.ifrap.org/emploi-et-politiques-sociales/reforme-de-lassurance-chomage-les-partenaires-sociaux-doivent-choisir-la-degressivite",
+      "https://www.slate.fr/story/168044/degressivite-allocations-chomage-mauvais-calcul-premier-ministre-edouard-philippe-solution-chomage",
+      "https://www.journaldeleconomie.fr/?p=40015",
+      "https://www.onem.be/page/dix-ans-de-degressivite-renforcee-des-allocations-de-chomage",
+      "https://www.aide-sociale.fr/chomage-cadre/"
+    ],
+    "dégressivité chômage après 57 ans": [
+      "https://www.previssima.fr/forum/remuneration/reforme-assurance-chomage-degressivite-are-3905.html",
+      "https://www.capretraite.fr/?p=168371",
+      "https://www.aide-sociale.fr/chomage-seniors/",
+      "https://www.ifrap.org/emploi-et-politiques-sociales/reforme-de-lassurance-chomage-les-partenaires-sociaux-doivent-choisir-la-degressivite",
+      "https://cms.law/en/fra/legal-updates/assurance-chomage-l-agrement-de-la-nouvelle-convention-devrait-etre-reporte",
+      "https://www2.assemblee-nationale.fr/questions/detail/15/qe/22232/(vue)/pdf",
+      "https://www.previssima.fr/actualite/coup-de-vis-pour-les-seniors-au-chomage-decouvrez-les-nouvelles-regles-applicables-au-1er-avril-2025.html",
+      "https://www.unedic.org/sites/default/files/2023-03/Articulation%20entre%20assurance%20chomage%20et%20retraites%20-%20synthese.pdf"
+    ],
+    "delai caf traitement dossier": [
+      "https://www.aide-sociale.fr/delais-traitement-caf/",
+      "https://www.plus.transformation.gouv.fr/experiences/7430387_delais-de-traitement-dossier",
+      "https://www.plus.transformation.gouv.fr/experiences/4440431_delai-de-traitement-caf",
+      "https://selectra.info/finance/guides/comprendre/virement-caf",
+      "https://www.plus.transformation.gouv.fr/experiences/3076319_delai-de-traitement-de-la-caf",
+      "https://alcuinfonds.be/blog/delai-traitement-declaration-grossesse-caf/",
+      "https://www.plus.transformation.gouv.fr/experiences/7239263_demande-dasf-a-la-caf",
+      "https://www.aide-sociale.fr/delai-traitement-declaration-trimestrielle-rsa/",
+      "https://www.plus.transformation.gouv.fr/experiences/774541_12-semaines-de-traitements-maj-dossier-apl"
+    ],
+    "date paiement caf": [
+      "https://www.caf.fr/sites/default/files/medias/974/Ma%20Caf%20-%20offre%20de%20service/Vie%20personnelle/Date%20de%20paiement/date%20paiement-2024.pdf",
+      "https://caf.fr/allocataires/caf-de-la-charente/actualites-departementales/calendrier-des-paiements-2026",
+      "https://www.toutsurmesfinances.com/argent/?p=1344",
+      "https://www.moneyvox.fr/votre-argent/actualites/106538/aah-rsa-ces-4-dates-ou-votre-virement-caf-est-decale-en-2026",
+      "https://bourseinside.fr/?p=12726",
+      "https://www.aide-sociale.fr/versement-paje/",
+      "https://bourseinside.fr/?p=6919",
+      "https://www.aide-sociale.fr/calendrier-caf/embed/"
+    ],
+    "délai restitution dépôt de garantie": [
+      "https://www.pap.fr/videos/quel-delai-pour-la-restitution-du-depot-de-garantie/a21037",
+      "https://www.actionlogement.fr/proprietaire-bailleur/actualites/delais-restitution-depot-garantie",
+      "https://legalplace.fr/guides/delai-restitution-caution",
+      "https://www.assemblee-nationale.fr/12/pdf/propositions/pion2855.pdf",
+      "https://www.assemblee-nationale.fr/12/pdf/propositions/pion3542.pdf",
+      "https://www.resilier.fr/depot-de-garantie-location.php",
+      "https://questions.assemblee-nationale.fr/dyn/11/questions/QANR5L11QE63821.pdf",
+      "https://www.assemblee-nationale.fr/12/pdf/propositions/pion2900.pdf",
+      "https://www.assemblee-nationale.fr/dyn/13/questions/QANR5L13QE72510.pdf"
+    ],
+    "délai préavis location": [
+      "https://www.bailfacile.fr/guides/gestion-courante/preavis-en-location",
+      "https://www.bailfacile.fr/guides/preavis-location",
+      "https://www.legalplace.fr/guides/delai-preavis-bail/",
+      "https://edito.seloger.com/calculez-la-date-laquelle-vous-pourrez-quitter-votre-logement-book-753.html",
+      "https://www.toutsurmesfinances.com/immobilier/?p=14129",
+      "https://www.toutsurmesfinances.com/immobilier/location-comment-reduire-le-delai-de-son-preavis.html",
+      "https://www.journaldunet.com/patrimoine/guide-de-l-immobilier/1202307-le-preavis-de-location/",
+      "https://blog.iadfrance.fr/?p=911",
+      "https://blog.iadfrance.fr/conseil-immobilier/location/location-comment-determiner-son-delai-de-preavis"
+    ],
+    "date interdiction location dpe": [
+      "https://www.effy.fr/renovation-energetique/quel-dpe-pour-louer/calendrier-interdiction",
+      "https://www.hellowatt.fr/renovation/diagnostic-performance-energetique/f-g-interdiction-location",
+      "https://www.laprimeenergie.fr/les-travaux/les-travaux-deconomies-denergie/le-diagnostic-de-performance-energetique/interdiction-location-dpe",
+      "https://www.slate.fr/story/255650/dpe-changements-regles-interdictions-location-calendrier-diagnostic-performance-energetique-logement-immobilier",
+      "https://www.izi-by-edf-renov.fr/blog/calendrier-interdiction-location-dpe",
+      "https://www.hellowatt.fr/renovation/diagnostic-performance-energetique/calendrier-interdiction-location",
+      "https://www.empruntis.com/financement/guide-immobilier/dpe/dpe-location/calendrier-interdiction-location-dpe/",
+      "https://particulier.hellio.com/blog/actualites/calendrier-interdiction-location-dpe",
+      "https://selectra.info/energie/renovation-energetique/dpe/loi"
+    ],
+    "calcul augmentation loyer irl": [
+      "https://www.manda.fr/ressources/articles/augmentation-de-loyer-condition-calcul-et-marche-a-suivre",
+      "https://www.bailfacile.fr/actualites/irl-t4-2025-publie-comment-augmenter-loyer-legalement-2026",
+      "https://forum.quechoisir.org/post909271.html",
+      "https://www.gererseul.com/pendant-ma-location/comment-faire-pour-calculer-augmentation-loyers-2022",
+      "https://www.moneyvox.fr/immobilier/indice-reference-loyers.php",
+      "https://www.bailfacile.fr/guides/irl-calcul-revision-loyer",
+      "https://copeps.fr/actualites/augmentation-loyer-insee-calcul/",
+      "https://www.gererseul.com/actualite-immobiliere/loi-du-pouvoir-d-achat-blocage-de-l-irl/"
+    ]
+  }
+}

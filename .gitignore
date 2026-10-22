@@ -35,5 +35,6 @@ semrush-keywords/
 
 # Scan de mots-clés : cache réseau et exports Search Console / Semrush (données brutes, non versionnées)
 reports/keyword-scan/cache/
-reports/keyword-scan/input/
+reports/keyword-scan/input/*
 !reports/keyword-scan/20*/*.csv
+!reports/keyword-scan/input/serp-*.json
