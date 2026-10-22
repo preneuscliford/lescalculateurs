@@ -18,7 +18,8 @@ loadEnvFile();
 const SEARCH_CONSOLE_SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
 const SEARCH_CONSOLE_API = "https://www.googleapis.com/webmasters/v3";
 const SITE_DOMAIN = "sc-domain:lescalculateurs.fr";
-const CREDS_PATH = path.resolve(__dirname, "..", "mes-sass-a09ffa66ca74.json");
+const { resolveGoogleCredentials } = require("./lib/google-credentials.cjs");
+const CREDS_PATH = resolveGoogleCredentials();
 
 function isoDateMinusDays(days) {
   const d = new Date();
