@@ -3,7 +3,7 @@ import os from "os";
 import path from "path";
 import { classer } from "../scripts/keyword-scan/lib/classement.cjs";
 import { scorer, proposer, signal } from "../scripts/keyword-scan/lib/score.cjs";
-import { qualifierResultat, niveauConcurrence } from "../scripts/keyword-scan/lib/serp.cjs";
+import { qualifierResultat, niveauConcurrence, chargerResultatsManuels, creerSerp } from "../scripts/keyword-scan/lib/serp.cjs";
 import { lireCsv, chargerEntrees } from "../scripts/keyword-scan/lib/entrees.cjs";
 import { creerCache } from "../scripts/keyword-scan/lib/cache.cjs";
 import { creerAutocompletion } from "../scripts/keyword-scan/lib/autocompletion.cjs";
@@ -140,5 +140,19 @@ describe("keyword-scan : entrées et cache", () => {
     expect(process.env.AUTRE_SECRET).toBeUndefined();
     delete process.env.GOOGLE_CSE_KEY;
     delete process.env.GOOGLE_CSE_CX;
+  });
+
+  test("relevés manuels (recherche web classique) : utilisés sans clé ni réseau, sites étrangers faibles", async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "kws-serp-"));
+    fs.writeFileSync(
+      path.join(dir, "serp-test.json"),
+      JSON.stringify({ source: "test", requetes: { "Délai de carence chômage": ["https://www.legalplace.fr/a", "https://www.onem.be/b", "https://x.fr/c.pdf"] } }),
+    );
+    const { resultats, fichiers } = chargerResultatsManuels(dir);
+    expect(fichiers).toHaveLength(1);
+    const serp = creerSerp({ cache: creerCache(dir, 30), config, manuels: resultats });
+    const r = await serp.top10("delai de carence chomage");
+    expect(r.map((x: { force: string }) => x.force)).toEqual(["forte", "faible", "faible"]);
+    expect(serp.stats.manuels).toBe(1);
   });
 });

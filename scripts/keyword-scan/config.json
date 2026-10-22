@@ -33,7 +33,19 @@
     "droit-finances.commentcamarche.com",
     "juritravail.com",
     "editions-tissot.fr",
-    "cadremploi.fr"
+    "cadremploi.fr",
+    "bailfacile.fr",
+    "legalplace.fr",
+    "legalstart.fr",
+    "hellowatt.fr",
+    "effy.fr",
+    "empruntis.com",
+    "gererseul.com",
+    "quelles-aides.fr",
+    "aides-sociales.com",
+    "previssima.fr",
+    "code.travail.gouv.fr",
+    "la-retraite-en-clair.fr"
   ],
   "domainesFaibles": [
     "plus.transformation.gouv.fr",
@@ -45,5 +57,12 @@
     "tiktok.com",
     "linkedin.com",
     "pinterest.fr"
+  ],
+  "domainesEtrangersFaibles": [
+    "be",
+    "ch",
+    "lu",
+    "ca",
+    "de"
   ]
 }

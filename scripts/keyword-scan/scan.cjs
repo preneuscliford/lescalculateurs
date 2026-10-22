@@ -20,7 +20,7 @@ const { normaliser } = require("./lib/normaliser.cjs");
 const { creerCache } = require("./lib/cache.cjs");
 const { creerAutocompletion, ArretScan } = require("./lib/autocompletion.cjs");
 const { classer } = require("./lib/classement.cjs");
-const { creerSerp, niveauConcurrence } = require("./lib/serp.cjs");
+const { creerSerp, niveauConcurrence, chargerResultatsManuels } = require("./lib/serp.cjs");
 const { chargerEntrees } = require("./lib/entrees.cjs");
 const { scorer, proposer } = require("./lib/score.cjs");
 const { ecrireRapportTheme } = require("./lib/rapport.cjs");
@@ -47,7 +47,8 @@ if (!themes.length) {
 const journal = (m) => console.log(m);
 const cache = creerCache(path.join(dossierRapports, "cache"), config.cacheTtlJours);
 const auto = creerAutocompletion({ cache, delaiMinMs: config.delaiMinMs, delaiMaxMs: config.delaiMaxMs, dryRun, journal });
-const serp = creerSerp({ cache, config, dryRun, journal });
+const serpManuels = chargerResultatsManuels(path.join(dossierRapports, "input"));
+const serp = creerSerp({ cache, config, dryRun, journal, manuels: serpManuels.resultats });
 const entrees = chargerEntrees(path.join(dossierRapports, "input"));
 
 /** Requêtes à envoyer pour un thème : amorces, débuts communs × termes, expansion a…z */
@@ -132,13 +133,16 @@ async function scannerTheme(theme) {
     Object.assign(c, scorer(c));
   }
 
-  // Concurrence : seulement sur les meilleurs candidats de calcul (quota de 100 requêtes par jour)
-  const aVerifier = [...candidats.values()]
-    .filter((c) => c.classement.categorie === "calcul")
-    .sort((a, b) => b.score - a.score)
-    .slice(0, Number(args.cse || config.cseMaxParScan));
+  // Concurrence : formulations relevées à la main, puis meilleurs candidats via Custom Search
+  // si disponible (quota de 100 requêtes par jour)
+  const calculs = [...candidats.values()].filter((c) => c.classement.categorie === "calcul");
+  const aVerifier = [
+    ...calculs.filter((c) => serp.aDesManuels(c.formulation)),
+    ...(serp.disponible || dryRun
+      ? calculs.filter((c) => !serp.aDesManuels(c.formulation)).sort((a, b) => b.score - a.score).slice(0, Number(args.cse || config.cseMaxParScan))
+      : []),
+  ];
   for (const c of aVerifier) {
-    if (!serp.disponible && !dryRun) break;
     const resultats = await serp.top10(c.formulation);
     c.concurrence = niveauConcurrence(resultats);
     Object.assign(c, scorer(c));
@@ -163,16 +167,18 @@ async function scannerTheme(theme) {
   for (const theme of themes) {
     if (arret) break;
     journal(`\n${theme.libelle}`);
+    const avant = { manuels: serp.stats.manuels, reseau: serp.stats.reseau, cache: serp.stats.cache };
     const r = await scannerTheme(theme);
+    const nb = { manuels: serp.stats.manuels - avant.manuels, reseau: serp.stats.reseau - avant.reseau, cache: serp.stats.cache - avant.cache };
     arret = r.arret;
     const sources = [
       `autocomplétion Google (${r.requetes} requêtes${dryRun ? ", cache uniquement" : ""})`,
       ...entrees.fichiers,
     ];
-    const concurrence =
-      serp.disponible || serp.stats.cache
-        ? `Custom Search (${serp.stats.reseau} appels, ${serp.stats.cache} en cache${serp.stats.horsQuota ? `, ${serp.stats.horsQuota} hors quota` : ""})`
-        : "non vérifiée (clés GOOGLE_CSE_KEY / GOOGLE_CSE_CX absentes)";
+    const morceaux = [];
+    if (nb.manuels) morceaux.push(`recherche web classique, ${nb.manuels} formulations vérifiées (${serpManuels.fichiers.join(" ; ")})`);
+    if (nb.reseau || nb.cache) morceaux.push(`Custom Search (${nb.reseau} appels, ${nb.cache} en cache)`);
+    const concurrence = morceaux.length ? morceaux.join(" ; ") + " ; autres formulations non vérifiées" : "non vérifiée";
     ecrireRapportTheme({ dossier, theme, candidats: r.candidats, meta: { date, sources, concurrence }, top: Number(args.top || 60) });
     const calc = r.candidats.filter((c) => c.classement.categorie === "calcul");
     resume.push({ theme, total: r.candidats.length, calcul: calc.length, dediees: calc.filter((c) => c.proposition === "page dédiée à étudier").length });

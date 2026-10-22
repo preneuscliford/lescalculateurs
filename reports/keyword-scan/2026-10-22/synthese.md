@@ -52,11 +52,31 @@ Les candidats du brief « fin de droits à 60, 61 ou 62 ans » et « dégressivi
 plus » apparaissent bien, mais avec un signal plus faible (3,1 à 4) : ils peuvent rester
 traités par les saisies du calculateur principal, avec un paragraphe dédié.
 
+## Concurrence (recherche web classique, 20 formulations)
+
+L'API Custom Search est fermée aux nouveaux projets (arrêt le 01/01/2027) : la concurrence a été
+relevée par une recherche web classique, consignée dans `input/serp-recherche-web-2026-10-22.json`.
+L'ordre des résultats n'est pas celui de Google France, mais les sites présents sont indicatifs.
+
+| Concurrence | Formulations | Lecture |
+|---|---|---|
+| **Faible** (PDF, forums, questions parlementaires, sites suisses ou belges) | fin de droits et invalidité ; travailleur handicapé ; carence et licenciement pour inaptitude ; « date fin de droits chômage » | aucune page française n'y répond avec un calcul : meilleures opportunités, si la règle est vérifiée (critère 2) |
+| Moyenne | durée après rupture conventionnelle (code.travail.gouv.fr, legisocial) ; dégressivité ; dépôt de garantie | une réponse officielle existe, mais pas de calculateur de date |
+| Forte | arrêt maladie (Unédic, aide-sociale), senior et 62 ans, carence et rupture conventionnelle (legalplace, legalstart, shine), délais et paiement CAF, préavis, DPE, IRL (bailfacile, hellowatt, effy, selectra) | terrain occupé : la page principale et l'observatoire (données propres) doivent faire la différence |
+
+Points relevés au passage :
+- **travailleur handicapé** : aucune règle de durée ou de date propre n'apparaît dans les résultats,
+  donc le critère 2 n'est probablement pas rempli. À traiter par un paragraphe de la page principale ;
+- **invalidité** et **inaptitude** : des règles spécifiques existent (cumul avec une pension
+  d'invalidité ; préavis non payé et indemnité spéciale en cas d'inaptitude). À vérifier sur les
+  sources officielles avant toute page ;
+- plusieurs sites affirment que le délai de carence part de l'inscription : c'est inexact quand il
+  y a des différés (fiche Unédic), et c'est un angle pour le calculateur.
+
 ## Limites de ce premier rapport
 
-- **Concurrence non vérifiée** : aucune clé Custom Search n'est configurée. Pour l'activer :
-  `GOOGLE_CSE_KEY` et `GOOGLE_CSE_CX` en variables d'environnement. Le script vérifie alors les
-  40 meilleurs candidats par scan (quota gratuit : 100 requêtes par jour).
+- **Concurrence vérifiée sur 20 formulations seulement**, par recherche web classique (voir
+  ci-dessus) ; les autres restent « non vérifiées ».
 - **Pas de volume pour la longue traîne** : les exports Semrush disponibles portent sur les
   simulateurs existants. Un export Semrush sur « fin de droits chômage », « délai caf » et
   « préavis location », déposé dans `reports/keyword-scan/input/`, affinerait le score.
