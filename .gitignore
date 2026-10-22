@@ -16,7 +16,9 @@ Thumbs.db
 .env
 
 # Google Cloud credentials (never commit)
+# Clés de compte de service Google (jamais versionnées, à la racine ou dans un sous-dossier)
 mes-sass-*.json
+**/mes-sass-*.json
 
 # Dependencies
 node_modules/

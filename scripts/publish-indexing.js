@@ -1,26 +1,26 @@
 import fs from "fs";
 import path from "path";
 import { GoogleAuth } from "google-auth-library";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const { resolveGoogleCredentials } = require("./lib/google-credentials.cjs");
 
 const INDEXING_SCOPE = "https://www.googleapis.com/auth/indexing";
 const INDEXING_ENDPOINT = "https://indexing.googleapis.com/v3/urlNotifications:publish";
 
 /**
  * Resout le chemin du fichier d'identifiants.
- * Priorite: env GOOGLE_APPLICATION_CREDENTIALS → argument --creds → defaut.
+ * Priorite : argument --creds, puis GOOGLE_APPLICATION_CREDENTIALS ou fichier mes-sass-*.json
+ * à la racine du dépôt (scripts/lib/google-credentials.cjs).
  */
 function resolveCredsPath() {
-  const fromEnv = process.env.GOOGLE_APPLICATION_CREDENTIALS;
-  if (fromEnv && fs.existsSync(fromEnv)) return fromEnv;
   const arg = process.argv.find((a) => a.startsWith("--creds="));
   if (arg) {
     const p = arg.split("=")[1];
     if (p && fs.existsSync(p)) return p;
   }
-  const defaultPath = path.resolve(
-    "c:/Users/prene/OneDrive/Bureau/lesCalculateurs/mes-sass-a09ffa66ca74.json"
-  );
-  return defaultPath;
+  return resolveGoogleCredentials();
 }
 
 /**

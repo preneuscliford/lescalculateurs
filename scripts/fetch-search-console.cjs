@@ -21,7 +21,8 @@ const SEARCH_CONSOLE_SCOPE = "https://www.googleapis.com/auth/webmasters.readonl
 const SEARCH_CONSOLE_API = "https://www.googleapis.com/webmasters/v3";
 const SITE_URL = "https://www.lescalculateurs.fr";
 const SITE_DOMAIN = "sc-domain:lescalculateurs.fr";
-const CREDS_PATH = path.resolve(__dirname, "..", "mes-sass-a09ffa66ca74.json");
+const { resolveGoogleCredentials } = require("./lib/google-credentials.cjs");
+const CREDS_PATH = resolveGoogleCredentials();
 
 const BING_API_KEY = process.env.BING_API_KEY || "";
 const BING_API_BASE = "https://ssl.bing.com/webmaster/api.svc/json";
