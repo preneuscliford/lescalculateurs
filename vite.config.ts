@@ -14,6 +14,7 @@ import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absen
 import { impotPilotScenarios } from "./data/pseo/impot-pilot-scenarios.js";
 import { notaireScenarios } from "./data/pseo/notaire-scenarios.js";
 import { salairePilotScenarios } from "./data/pseo/salaire-pilot-scenarios.js";
+import { blocBarre, insererBarre, pagePourBarre, paramsScenarioApl } from "./src/utils/questions/injectionBarre";
 
 // Date du dernier audit des barèmes, affichée en haut de chaque page au build.
 const siteUpdate = JSON.parse(
@@ -239,6 +240,28 @@ function lastUpdatedPlugin() {
 }
 
 const allAplPilotScenarios = [...aplPilotScenarios, ...aplAbsenceRevenuScenarios];
+
+/**
+ * Barre de question injectée au build sur les simulateurs et leurs pages de questions
+ * (src/data/barre-question.json), pré-remplie avec le scénario de la page s'il existe.
+ * Ordre « pre » : le script de la barre est ensuite compilé par Vite comme les autres.
+ */
+function barreQuestionPlugin() {
+  const scenariosApl = new Map(allAplPilotScenarios.map((s) => [String(s.slug), s.input as Record<string, unknown>]));
+  return {
+    name: "lc-barre-question",
+    transformIndexHtml: {
+      order: "pre" as const,
+      handler(html: string, ctx: { filename: string }) {
+        const page = pagePourBarre(ctx.filename);
+        if (!page) return html;
+        const input = page.scenarios === "apl" && page.slug ? scenariosApl.get(page.slug) : undefined;
+        return insererBarre(html, blocBarre(page.simulateur, input ? paramsScenarioApl(input) : {}));
+      },
+    },
+  };
+}
+
 const allRsaPilotScenarios = [...rsaPilotScenarios, ...rsaAbsenceRevenuScenarios];
 const allArePilotScenarios = [...arePilotScenarios, ...areAbsenceRevenuScenarios];
 const allImpotPilotScenarios = [...impotPilotScenarios];
@@ -913,6 +936,7 @@ export default defineConfig(() => {
       },
     },
     plugins: [
+      barreQuestionPlugin(),
       lastUpdatedPlugin(),
       {
         name: "clean-urls-html",

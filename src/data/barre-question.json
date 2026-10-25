@@ -1,0 +1,21 @@
+{
+  "description": "Pages qui reçoivent la barre de question au build (plugin lc-barre-question de vite.config.ts). Chemin relatif à src/pages, sans .html : une entrée couvre la page et ses sous-pages (apl couvre apl.html et apl/*, pas apl-zones). « scenarios » : pré-remplissage avec le scénario de la page (data/pseo).",
+  "pages": [
+    { "simulateur": "apl", "chemins": ["apl", "apl-zones", "combien-apl-loyer", "apl-dom-tom"], "scenarios": "apl" },
+    { "simulateur": "apl-etudiant", "chemins": ["apl-etudiant"] },
+    { "simulateur": "rsa", "chemins": ["rsa", "rsa-apl-combines", "rsa-vs-smic"] },
+    { "simulateur": "prime-activite", "chemins": ["prime-activite"] },
+    { "simulateur": "aah", "chemins": ["aah"] },
+    { "simulateur": "asf", "chemins": ["asf"] },
+    { "simulateur": "salaire", "chemins": ["salaire", "salaire-brut-net-calcul-2026"] },
+    { "simulateur": "impot", "chemins": ["impot", "guide-complet-impot-revenu-2026"] },
+    { "simulateur": "are", "chemins": ["are"] },
+    { "simulateur": "fin-droits", "chemins": ["fin-de-droits-chomage"] },
+    { "simulateur": "indemnite-licenciement", "chemins": ["indemnite-licenciement"] },
+    { "simulateur": "retraite", "chemins": ["retraite"] },
+    { "simulateur": "notaire", "chemins": ["notaire", "comment-calculer-frais-notaire"] },
+    { "simulateur": "ptz", "chemins": ["ptz"] },
+    { "simulateur": "dpe-location", "chemins": ["dpe-location"] },
+    { "simulateur": "depot-garantie", "chemins": ["depot-de-garantie"] }
+  ]
+}

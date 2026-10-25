@@ -334,6 +334,8 @@ function nomAffiche(nom: string): string {
 export interface OptionsAnalyse {
   /** Index des communes ; sans lui, la commune n'est pas cherchée (communeAChercher indique s'il faut le charger) */
   communes?: IndexCommunes;
+  /** Simulateur de la page où la question est posée, retenu si la question n'en cite aucun */
+  simulateurParDefaut?: SimulateurId;
 }
 
 const AVEC_COMMUNE: SimulateurId[] = ["apl", "apl-etudiant", "notaire"];
@@ -342,7 +344,7 @@ export function analyserQuestion(question: string, options: OptionsAnalyse = {})
   // Les tirets séparent les mots (« auto-entrepreneur », « touche-t-on »)
   const t = normaliser(question).replace(/-/g, " ").replace(/\s+/g, " ");
   const remarques: string[] = [];
-  const simulateur = detecterSimulateur(t);
+  const simulateur = detecterSimulateur(t) ?? options.simulateurParDefaut ?? null;
   const vide: AnalyseQuestion = { simulateur, extraits: {}, validation: null, commune: null, communeAChercher: false, remarques, chemin: null };
   if (!simulateur) return vide;
   const ex: ParametresQuestion = {};
