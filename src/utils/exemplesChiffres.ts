@@ -17,8 +17,10 @@
 import { calculerAPL, type APLInput } from "./aplCalculEngine";
 import { calculerPrimeActivite, type PrimeActiviteCalculData } from "./primeActiviteCalculEngine";
 import { calculerNotaire, type NotaireCalculData } from "./notaireCalculEngine";
+import { calculerFinDroits, formaterDateLongue, type FinDroitsData } from "./finDroitsChomageCalculEngine";
 
-type Calcul = (params: any, champ?: string) => number;
+/** Un calcul renvoie un montant (formaté à la française) ou un texte affiché tel quel (date…) */
+type Calcul = (params: any, champ?: string) => number | string;
 
 export const CALCULS_EXEMPLES: Record<string, Calcul> = {
   /** APL mensuelle ; champ "reste" = loyer − APL, "plafond" = loyer plafond retenu */
@@ -35,6 +37,26 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
     const r = calculerNotaire(p) as unknown as Record<string, number>;
     if (typeof r[champ] !== "number") throw new Error(`Champ notaire inconnu : ${champ}`);
     return r[champ];
+  },
+  /**
+   * Fin de droits chômage ; champ = "premierJour", "dateFin", "degressiviteDate" (dates en
+   * toutes lettres) ou "dureeJours", "differeSpecifique", "differeCongesPayes",
+   * "allocationApres" (nombres)
+   */
+  "fin-droits": (p: FinDroitsData, champ = "dateFin") => {
+    const r = calculerFinDroits(p);
+    const valeurs: Record<string, number | string | null> = {
+      premierJour: formaterDateLongue(r.premierJourIndemnise),
+      dateFin: formaterDateLongue(r.dateFinDroits),
+      degressiviteDate: formaterDateLongue(r.degressivite.dateDebut),
+      dureeJours: r.dureeJours,
+      differeSpecifique: r.differeSpecifiqueJours,
+      differeCongesPayes: r.differeCongesPayesJours,
+      allocationApres: r.degressivite.allocationApres,
+    };
+    const v = valeurs[champ];
+    if (v === undefined || v === null || v === "") throw new Error(`Champ fin-droits indisponible : ${champ}`);
+    return v;
   },
 };
 
@@ -72,7 +94,8 @@ export function synchroniserExemples(html: string): { html: string; ecarts: Ecar
     const params = JSON.parse(brut.replace(/&quot;/g, '"'));
     const arrondi = Number(attribut(ouverture, "data-arrondi") || 1);
     const decimales = Number(attribut(ouverture, "data-decimales") || 0);
-    const attendu = formaterMontant(fn(params, attribut(ouverture, "data-champ")), arrondi, decimales);
+    const valeur = fn(params, attribut(ouverture, "data-champ"));
+    const attendu = typeof valeur === "string" ? valeur : formaterMontant(valeur, arrondi, decimales);
     if (contenu.trim() !== attendu) ecarts.push({ calcul, params: brut, affiche: contenu.trim(), attendu });
     return `${ouverture}${attendu}${fermeture}`;
   });

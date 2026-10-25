@@ -174,6 +174,58 @@ export const socialBaremes = {
         aPartirDe57Ans: 624,
       },
     },
+    // Durée d'indemnisation (Unédic, fiche « Durée d'indemnisation » mise à jour le 05/10/2026,
+    // et « Paramètres utiles » avril 2026) : jours calendaires depuis le 1er jour du 1er contrat
+    // de la période de référence jusqu'à la fin du contrat, jours non travaillés retenus dans la
+    // limite de 70 % des jours travaillés, × 0,75 pour les fins de contrat depuis le 01/02/2023
+    // (sauf résidents d'outre-mer), sans descendre sous 182 jours.
+    dureeIndemnisation: {
+      sourceUrl: "https://www.unedic.org/la-reglementation/fiches-thematiques/duree-dindemnisation",
+      coefficient: 0.75,
+      dateEffetCoefficient: "2023-02-01",
+      dureeMinimaleJours: 182,
+      ratioJoursNonTravaillesMax: 0.7,
+    },
+    // Délai d'attente et différés (Unédic, fiches « Différé d'indemnisation spécifique » et
+    // « Allocation d'aide au retour à l'emploi », mises à jour le 05/10/2026) :
+    // délai d'attente de 7 jours (une fois par période de 12 mois) ; différé congés payés =
+    // indemnités compensatrices de congés payés ÷ SJR, 30 jours au plus ; différé spécifique =
+    // indemnités supra-légales ÷ 111,8 (valeur 2026), 150 jours au plus, 75 jours en cas de
+    // licenciement économique. Le délai d'attente court après les différés, au plus tôt à la date
+    // d'inscription à France Travail.
+    delais: {
+      sourceUrl:
+        "https://www.unedic.org/la-reglementation/fiches-thematiques/differe-dindemnisation-specifique-en-cas-dindemnites-supra-legales",
+      delaiAttenteJours: 7,
+      differeCongesPayesMaxJours: 30,
+      differeSpecifique: {
+        diviseur: 111.8,
+        annee: 2026,
+        maxJours: 150,
+        maxJoursLicenciementEconomique: 75,
+      },
+    },
+    // Inscription dans les 12 mois suivant la fin du contrat, sous peine de perdre ses droits
+    // (France Travail, « Dans quel délai faut-il s'inscrire… », délai de forclusion)
+    forclusion: {
+      sourceUrl:
+        "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/allocations-et-aides--les-repons/allocations--attention-aux-idees/quel-est-le-delai-faut-il-sinscr.html",
+      mois: 12,
+    },
+    // Dégressivité (Unédic, fiche ARE du 05/10/2026 et « Paramètres utiles » avril 2026) :
+    // pour les moins de 55 ans à la fin du contrat (57 ans si la fin de contrat ou la procédure
+    // de licenciement est antérieure au 01/04/2025), allocation journalière supérieure à 92,57 €
+    // réduite de 30 % à partir du 7e mois d'indemnisation, sans descendre sous 92,57 €.
+    degressivite: {
+      sourceUrl: "https://www.unedic.org/la-reglementation/fiches-thematiques/allocation-d-aide-au-retour-a-l-emploi-are",
+      coefficientReduction: 0.3,
+      seuilAllocationJournaliere: 92.57,
+      plancherAllocationJournaliere: 92.57,
+      moisDebut: 7,
+      ageExemption: 55,
+      ageExemptionAvantReforme: 57,
+      dateReformeAge: "2025-04-01",
+    },
   },
   apl: {
     version: "2026.10",

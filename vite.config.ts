@@ -419,6 +419,7 @@ function collectStaticPageInputs() {
     aah: resolve(__dirname, "src/pages/aah.html"),
     "apl-etudiant": resolve(__dirname, "src/pages/apl-etudiant.html"),
     are: resolve(__dirname, "src/pages/are.html"),
+    "fin-de-droits-chomage": resolve(__dirname, "src/pages/fin-de-droits-chomage.html"),
     asf: resolve(__dirname, "src/pages/asf.html"),
     retraite: resolve(__dirname, "src/pages/retraite.html"),
     "indemnite-licenciement": resolve(__dirname, "src/pages/indemnite-licenciement.html"),
