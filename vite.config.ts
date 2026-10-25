@@ -422,6 +422,11 @@ function collectStaticPageInputs() {
     "fin-de-droits-chomage": resolve(__dirname, "src/pages/fin-de-droits-chomage.html"),
     "depot-de-garantie": resolve(__dirname, "src/pages/depot-de-garantie.html"),
     "dpe-location": resolve(__dirname, "src/pages/dpe-location.html"),
+    // Pages de résultat du moteur de questions (noindex, hors sitemap)
+    "r/apl": resolve(__dirname, "src/r/apl.html"),
+    "r/rsa": resolve(__dirname, "src/r/rsa.html"),
+    "r/prime-activite": resolve(__dirname, "src/r/prime-activite.html"),
+    "r/salaire": resolve(__dirname, "src/r/salaire.html"),
     asf: resolve(__dirname, "src/pages/asf.html"),
     retraite: resolve(__dirname, "src/pages/retraite.html"),
     "indemnite-licenciement": resolve(__dirname, "src/pages/indemnite-licenciement.html"),

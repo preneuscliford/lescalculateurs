@@ -111,6 +111,7 @@
     "generate:vdf:income": "node scripts/generate-vdf-income-pages.cjs",
     "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo",
     "exemples:sync": "node scripts/sync-exemples.cjs",
+    "zones-apl:build": "node scripts/build-zones-apl.cjs",
     "exemples:check": "node scripts/sync-exemples.cjs --check",
     "keyword-scan": "node scripts/keyword-scan/scan.cjs",
     "keyword-scan:dry": "node scripts/keyword-scan/scan.cjs --dry-run"
