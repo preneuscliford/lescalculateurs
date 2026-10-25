@@ -40,7 +40,9 @@ for (const fichier of pages(path.join(root, "src/pages"))) {
   const html = fs.readFileSync(fichier, "utf8");
   if (!html.includes("data-exemple=") && !html.includes("data-faq=")) continue;
   const { html: avecExemples, ecarts } = synchroniserExemples(html);
-  const { html: nouveau, ecarts: faqs } = synchroniserFaqJsonLd(avecExemples);
+  const { html: regenere, ecarts: faqs } = synchroniserFaqJsonLd(avecExemples);
+  // Conserver les fins de ligne du fichier (CRLF sous Windows) : sinon chaque build réécrit la page
+  const nouveau = html.includes("\r\n") ? regenere.replace(/\r?\n/g, "\r\n") : regenere;
   for (const g of faqs) console.log(`${path.relative(root, fichier)} : FAQ JSON-LD "${g}" à régénérer`);
   for (const e of ecarts) {
     console.log(`${path.relative(root, fichier)} : ${e.calcul} ${e.params} -> affiché ${e.affiche}, moteur ${e.attendu}`);

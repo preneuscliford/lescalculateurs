@@ -51,16 +51,24 @@ const entries = ROUTE_ENTRIES.filter((f) => fs.existsSync(path.join(SRC_DIR, f))
 async function run() {
   for (const entry of entries) {
     const outFile = entry.replace(/\.ts$/, ".js");
-    await esbuild.build({
+    const outPath = path.join(OUT_DIR, outFile);
+    const result = await esbuild.build({
       entryPoints: [path.join(SRC_DIR, entry)],
-      outfile: path.join(OUT_DIR, outFile),
+      outfile: outPath,
       bundle: true,
       platform: "node",
       format: "esm",
       target: "node20",
       logLevel: "warning",
+      write: false,
     });
-    console.log(`api-src/v1/${entry} -> api/v1/${outFile}`);
+    // N'écrire que si le contenu change, en gardant les fins de ligne du fichier existant (CRLF
+    // sous Windows) : sinon chaque build modifie le fichier dans git sans raison
+    let code = result.outputFiles[0].text;
+    const existant = fs.existsSync(outPath) ? fs.readFileSync(outPath, "utf8") : null;
+    if (existant && existant.includes("\r\n")) code = code.replace(/\r?\n/g, "\r\n");
+    if (existant !== code) fs.writeFileSync(outPath, code, "utf8");
+    console.log(`api-src/v1/${entry} -> api/v1/${outFile}${existant === code ? " (inchangé)" : ""}`);
   }
 }
 
