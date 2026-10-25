@@ -18,6 +18,7 @@ import { calculerAPL, type APLInput } from "./aplCalculEngine";
 import { calculerPrimeActivite, type PrimeActiviteCalculData } from "./primeActiviteCalculEngine";
 import { calculerNotaire, type NotaireCalculData } from "./notaireCalculEngine";
 import { calculerFinDroits, formaterDateLongue, type FinDroitsData } from "./finDroitsChomageCalculEngine";
+import { calculerDepotGarantie, type DepotGarantieData } from "./depotGarantieCalculEngine";
 
 /** Un calcul renvoie un montant (formaté à la française) ou un texte affiché tel quel (date…) */
 type Calcul = (params: any, champ?: string) => number | string;
@@ -58,6 +59,20 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
     };
     const v = valeurs[champ];
     if (v === undefined || v === null || v === "") throw new Error(`Champ fin-droits indisponible : ${champ}`);
+    return v;
+  },
+  /** Dépôt de garantie ; champ = "dateLimite" (date), "moisDeRetard", "penalite", "total" (dépôt + pénalité) */
+  "depot-garantie": (p: DepotGarantieData, champ = "penalite") => {
+    const r = calculerDepotGarantie(p);
+    const valeurs: Record<string, number | string | null> = {
+      dateLimite: formaterDateLongue(r.dateLimite),
+      moisDeRetard: r.moisDeRetard,
+      penalite: r.penalite,
+      penaliteParMois: r.penaliteParMois,
+      total: Math.round((Number(p.depotVerse) + r.penalite) * 100) / 100,
+    };
+    const v = valeurs[champ];
+    if (v === undefined || v === null || v === "") throw new Error(`Champ depot-garantie indisponible : ${champ}`);
     return v;
   },
 };

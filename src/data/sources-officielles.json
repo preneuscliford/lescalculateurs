@@ -227,6 +227,17 @@
           "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006311555"
         }
       ]
+    },
+    "depot-garantie": {
+      "prefixes": [
+        "depot-de-garantie"
+      ],
+      "sources": [
+        {
+          "label": "Service-public.gouv.fr : dépôt de garantie d'un logement loué",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31269"
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dépôt de garantie : date limite de restitution et pénalité de retard (calculateur)</title>
+    <meta
+      name="description"
+      content="Jusqu'à quand le propriétaire doit-il rendre votre dépôt de garantie, et combien vous doit-il en cas de retard ? Date limite (1 ou 2 mois), pénalité de 10 % du loyer par mois commencé, montant maximal."
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/depot-de-garantie" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/depot-de-garantie" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dépôt de garantie : date limite de restitution et pénalité de retard" />
+    <meta
+      property="og:description"
+      content="Date limite de restitution du dépôt de garantie et pénalité due par le propriétaire en cas de retard."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dépôt de garantie : date limite de restitution et pénalité de retard" />
+    <meta
+      name="twitter:description"
+      content="Date limite de restitution du dépôt de garantie et pénalité due par le propriétaire en cas de retard."
+    />
+    <meta name="source" content="service-public.gouv.fr, legifrance.gouv.fr" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/depot-garantie-script.ts"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.lescalculateurs.fr" },
+          { "@type": "ListItem", "position": 2, "name": "Dépôt de garantie", "item": "https://www.lescalculateurs.fr/pages/depot-de-garantie" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-faq="faq">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel est le délai pour rendre le dépôt de garantie ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1 mois à compter de la remise des clés si l'état des lieux de sortie est conforme à celui d'entrée, 2 mois s'il fait apparaître des différences dont le locataire peut être tenu responsable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle pénalité si le dépôt de garantie est rendu en retard ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le montant à rendre est augmenté de 10 % du loyer mensuel hors charges pour chaque mois de retard commencé. Un seul jour de retard compte pour un mois. La pénalité ne s'applique pas si le locataire n'a pas indiqué sa nouvelle adresse lors de la remise des clés."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que faire si le propriétaire ne rend pas le dépôt de garantie ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Envoyez-lui une mise en demeure par lettre recommandée avec avis de réception, en rappelant la pénalité de retard. Sous 5 000 €, une tentative de règlement amiable (conciliation ou médiation) est obligatoire avant de saisir le juge. Vous avez 3 ans à partir du jour où le dépôt aurait dû être rendu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est le montant maximal du dépôt de garantie ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1 mois de loyer hors charges pour un logement vide et 2 mois pour un logement meublé. Le propriétaire ne peut pas l'augmenter en cours de bail ni au renouvellement. Il est interdit en bail mobilité."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on ne pas payer le dernier mois de loyer à la place du dépôt ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Le locataire n'a pas le droit de déduire le dépôt de garantie de son dernier loyer : il doit payer le loyer jusqu'au bout et attendre la restitution du dépôt."
+            }
+          }
+        ]
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs" class="h-8 w-auto" />
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
+          </a>
+          <nav class="flex items-center space-x-4 text-sm">
+            <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">Simulateur APL</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-gradient-to-r from-teal-800 to-emerald-900 text-white py-12">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">Dépôt de garantie : date limite et pénalité de retard</h1>
+        <p class="text-lg text-teal-50">
+          Jusqu'à quand le propriétaire doit-il vous rendre votre dépôt de garantie, et combien vous
+          doit-il s'il est en retard ? Le calculateur applique les règles de la loi du 6 juillet 1989 à
+          vos dates.
+        </p>
+        <a href="#dg-form" class="mt-6 inline-block rounded-lg bg-white px-6 py-3 font-semibold text-teal-800 hover:bg-teal-50">Calculer</a>
+      </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-12">
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Calculer la date limite et la pénalité</h2>
+        <form id="dg-form" class="space-y-5" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="block text-sm font-medium text-gray-800">Type de location
+              <select id="dg-type" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5">
+                <option value="vide">Logement vide</option>
+                <option value="meuble">Logement meublé</option>
+                <option value="mobilite">Bail mobilité</option>
+              </select>
+            </label>
+            <label class="block text-sm font-medium text-gray-800">Loyer mensuel hors charges
+              <input type="number" id="dg-loyer" min="0" step="1" required class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+            </label>
+            <label class="block text-sm font-medium text-gray-800">Dépôt de garantie versé
+              <input type="number" id="dg-depot" min="0" step="1" required class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+            </label>
+            <label class="block text-sm font-medium text-gray-800">Date de remise des clés
+              <input type="date" id="dg-cles" required class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+              <span class="mt-1 block text-xs text-gray-600">En mains propres ou par lettre recommandée avec avis de réception.</span>
+            </label>
+            <label class="block text-sm font-medium text-gray-800">État des lieux de sortie
+              <select id="dg-etat" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5">
+                <option value="conforme">Conforme à celui d'entrée</option>
+                <option value="non-conforme">Différent de celui d'entrée (dégradations)</option>
+              </select>
+            </label>
+            <label class="block text-sm font-medium text-gray-800">Dépôt rendu le
+              <input type="date" id="dg-rendu" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+              <span class="mt-1 block text-xs text-gray-600">Laissez vide s'il n'est pas encore rendu : le calcul se fait à la date du jour.</span>
+            </label>
+          </div>
+          <label class="flex items-start gap-2 text-sm text-gray-800">
+            <input type="checkbox" id="dg-adresse" class="mt-1" checked />
+            J'ai indiqué ma nouvelle adresse au propriétaire (ou à l'agence) lors de la remise des clés
+          </label>
+          <label class="flex items-start gap-2 text-sm text-gray-800">
+            <input type="checkbox" id="dg-copro" class="mt-1" />
+            Le logement est dans une copropriété
+          </label>
+          <p id="dg-erreur" class="hidden rounded-lg bg-red-50 p-3 text-sm text-red-800"></p>
+          <button type="submit" class="rounded-lg bg-teal-700 px-6 py-3 font-semibold text-white hover:bg-teal-800">Calculer</button>
+        </form>
+
+        <div id="dg-resultat" class="mt-8 hidden space-y-6" aria-live="polite"></div>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Exemple : dépôt rendu en retard</h2>
+        <p class="text-gray-700">
+          Logement vide loué 750 € hors charges, dépôt de 750 €, clés rendues le 30 avril 2026 avec un
+          état des lieux conforme. Le propriétaire devait rendre le dépôt au plus tard le
+          <span data-exemple="depot-garantie" data-params='{"typeLocation":"vide","loyerHorsCharges":750,"depotVerse":750,"dateRemiseCles":"2026-04-30","etatDesLieuxConforme":true,"dateReference":"2026-08-15","nouvelleAdresseCommuniquee":true}' data-champ="dateLimite">30 mai 2026</span>.
+          Il le rend le 15 août : <span data-exemple="depot-garantie" data-params='{"typeLocation":"vide","loyerHorsCharges":750,"depotVerse":750,"dateRemiseCles":"2026-04-30","etatDesLieuxConforme":true,"dateReference":"2026-08-15","nouvelleAdresseCommuniquee":true}' data-champ="moisDeRetard">3</span>
+          mois de retard commencés, soit une pénalité de
+          <span data-exemple="depot-garantie" data-params='{"typeLocation":"vide","loyerHorsCharges":750,"depotVerse":750,"dateRemiseCles":"2026-04-30","etatDesLieuxConforme":true,"dateReference":"2026-08-15","nouvelleAdresseCommuniquee":true}' data-champ="penalite">225</span> €
+          (10 % de 750 € par mois commencé). Il doit donc
+          <span data-exemple="depot-garantie" data-params='{"typeLocation":"vide","loyerHorsCharges":750,"depotVerse":750,"dateRemiseCles":"2026-04-30","etatDesLieuxConforme":true,"dateReference":"2026-08-15","nouvelleAdresseCommuniquee":true}' data-champ="total">975</span> €,
+          moins les éventuelles retenues justifiées.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Les règles appliquées</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li><strong>Délai</strong> : 1 mois à compter de la remise des clés si l'état des lieux de sortie est conforme à celui d'entrée, 2 mois sinon.</li>
+          <li><strong>Pénalité</strong> : 10 % du loyer mensuel hors charges pour chaque mois de retard commencé, ajoutés au montant à rendre. Elle ne s'applique pas si vous n'avez pas indiqué votre nouvelle adresse lors de la remise des clés.</li>
+          <li><strong>Montant maximal</strong> : 1 mois de loyer hors charges pour un logement vide, 2 mois pour un meublé. Le dépôt est interdit en bail mobilité, et lorsque le loyer est payé par trimestre d'avance.</li>
+          <li><strong>Copropriété</strong> : le propriétaire peut garder une provision de 20 % du dépôt au plus jusqu'à l'approbation des comptes annuels de l'immeuble, puis doit rendre le solde dans le mois qui suit.</li>
+          <li><strong>Retenues</strong> : impayés de loyer ou de charges, réparations locatives ; elles doivent être justifiées (états des lieux, factures, devis, photos).</li>
+        </ul>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Questions fréquentes</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Quel est le délai pour rendre le dépôt de garantie ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">1 mois à compter de la remise des clés si l'état des lieux de sortie est conforme à celui d'entrée, 2 mois s'il fait apparaître des différences dont le locataire peut être tenu responsable.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Quelle pénalité si le dépôt de garantie est rendu en retard ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Le montant à rendre est augmenté de 10 % du loyer mensuel hors charges pour chaque mois de retard commencé. Un seul jour de retard compte pour un mois. La pénalité ne s'applique pas si le locataire n'a pas indiqué sa nouvelle adresse lors de la remise des clés.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Que faire si le propriétaire ne rend pas le dépôt de garantie ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Envoyez-lui une mise en demeure par lettre recommandée avec avis de réception, en rappelant la pénalité de retard. Sous 5 000 €, une tentative de règlement amiable (conciliation ou médiation) est obligatoire avant de saisir le juge. Vous avez 3 ans à partir du jour où le dépôt aurait dû être rendu.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Quel est le montant maximal du dépôt de garantie ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">1 mois de loyer hors charges pour un logement vide et 2 mois pour un logement meublé. Le propriétaire ne peut pas l'augmenter en cours de bail ni au renouvellement. Il est interdit en bail mobilité.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Peut-on ne pas payer le dernier mois de loyer à la place du dépôt ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Non. Le locataire n'a pas le droit de déduire le dépôt de garantie de son dernier loyer : il doit payer le loyer jusqu'au bout et attendre la restitution du dépôt.</p>
+          </div>
+        </div>
+      </section>
+
+      <p class="text-xs text-gray-600">
+        Estimation indicative pour une location d'habitation en résidence principale, selon la fiche
+        service-public.gouv.fr « Dépôt de garantie » et l'article 22 de la loi du 6 juillet 1989. Elle ne
+        tient pas compte des retenues que le propriétaire peut justifier.
+      </p>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs — Simulateurs gratuits français</p>
+        <div class="flex gap-4 text-sm flex-wrap justify-center mb-4">
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📘 Méthodologie</a>
+          <span class="text-gray-500">|</span>
+          <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">📚 Sources</a>
+        </div>
+        <p class="text-gray-400">Tous les calculs sont indicatifs.</p>
+      </div>
+    </footer>
+  </body>
+</html>
