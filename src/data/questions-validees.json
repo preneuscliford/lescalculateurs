@@ -1,0 +1,80 @@
+{
+  "description": "Pages de questions générées au build (section 9.2). Une entrée = une page indexée, avec ses liens et son entrée de sitemap. Seules les entrées « statut »: « valide » sont générées. Critères (section 2) : 1. formulation réellement recherchée ; 2. réponse matériellement différente ; 3. source propre (moteur du site) ; 4. sinon, le simulateur principal répond.",
+  "sourceDonnees": "Google Search Console, pages /pages/apl*, requêtes du 24/07/2026 au 22/10/2026 (scripts/fetch-search-console-queries.cjs)",
+  "sommaires": [
+    {
+      "simulateur": "apl",
+      "slug": "apl/apl-selon-situation-2026",
+      "titre": "APL : montant selon votre situation (2026)",
+      "statut": "a-valider",
+      "note": "Page existante (5 impressions) réutilisée comme sommaire « APL : toutes les situations », liée depuis le simulateur APL."
+    }
+  ],
+  "questions": [
+    {
+      "id": "apl-personne-seule",
+      "simulateur": "apl",
+      "situation": "seul",
+      "enfants": 0,
+      "zone": null,
+      "slug": "apl/apl-personne-seule",
+      "titre": "APL pour une personne seule : montant 2026 selon vos revenus et votre zone",
+      "statut": "a-valider",
+      "source": { "type": "search-console", "impressions": 4477, "requetes": ["combien d'apl pour un loyer de 700 euros personne seule (1 283)", "combien d'apl pour un loyer de 800 euros personne seule (572)", "montant apl personne seule (259)", "montant apl zone 3 personne seule (270)"] },
+      "pagesExistantes": { "garder": ["apl/apl-smic-seul", "apl/apl-loyer-700-personne-seule", "apl/apl-chomage-loyer-moyen"], "rediriger301": ["apl/apl-personne-seule-smic", "apl/apl-celibataire-smic"] },
+      "note": "Nouvelle URL : aucune page existante ne couvre la personne seule sans scénario de revenu précis."
+    },
+    {
+      "id": "apl-couple-sans-enfant",
+      "simulateur": "apl",
+      "situation": "couple",
+      "enfants": 0,
+      "zone": null,
+      "slug": "apl/apl-couple-sans-enfant",
+      "titre": "APL pour un couple sans enfant : montant 2026 selon vos revenus et votre zone",
+      "statut": "a-valider",
+      "source": { "type": "search-console", "impressions": 145, "requetes": ["apl couple sans enfant (119)", "apl pour un couple sans enfant (21)"] },
+      "pagesExistantes": { "garder": [], "rediriger301": [] },
+      "note": "Page existante mise à jour (même URL)."
+    },
+    {
+      "id": "apl-un-enfant",
+      "simulateur": "apl",
+      "situation": "parent isolé ou couple",
+      "enfants": 1,
+      "zone": null,
+      "slug": "apl/apl-parent-isole-un-enfant",
+      "titre": "APL avec 1 enfant (parent isolé ou couple) : montant 2026",
+      "statut": "a-valider",
+      "source": { "type": "search-console", "impressions": 316, "requetes": ["apl avec 1 enfant (131)", "apl femme seule avec 1 enfant (66)", "couple avec 1 enfant (16)"] },
+      "pagesExistantes": { "garder": [], "rediriger301": ["apl/apl-couple-un-enfant"] },
+      "note": "Parent isolé et couple avec 1 enfant ont le même plafond et le même montant : une seule page."
+    },
+    {
+      "id": "apl-deux-enfants",
+      "simulateur": "apl",
+      "situation": "parent isolé ou couple",
+      "enfants": 2,
+      "zone": null,
+      "slug": "apl/apl-parent-isole-deux-enfants",
+      "titre": "APL avec 2 enfants (parent isolé ou couple) : montant 2026",
+      "statut": "a-valider",
+      "source": { "type": "search-console", "impressions": 2507, "requetes": ["combien d'apl pour un loyer de 700 euros avec 2 enfants (627)", "apl femme seule avec 2 enfants (211)", "apl 2 enfants (180)", "apl couple 2 enfants (67)"] },
+      "pagesExistantes": { "garder": [], "rediriger301": [] },
+      "note": "Page existante qui marche (2 149 impressions, 55 clics) mise à jour, même URL."
+    },
+    {
+      "id": "apl-trois-enfants",
+      "simulateur": "apl",
+      "situation": "parent isolé ou couple",
+      "enfants": 3,
+      "zone": null,
+      "slug": "apl/apl-famille-trois-enfants",
+      "titre": "APL avec 3 enfants (parent isolé ou couple) : montant 2026",
+      "statut": "a-valider",
+      "source": { "type": "search-console", "impressions": 1866, "requetes": ["apl 3 enfants (353)", "combien d'apl pour un loyer de 700 euros avec 3 enfants (268)", "apl avec 3 enfants (160)", "apl femme seule avec 3 enfants (64)"] },
+      "pagesExistantes": { "garder": [], "rediriger301": ["apl/apl-parent-isole-trois-enfants"] },
+      "note": "Deux pages existantes pour la même réponse (862 et 843 impressions) : garder « famille trois enfants » (requêtes « apl 3 enfants ») et rediriger l'autre, à décider."
+    }
+  ]
+}

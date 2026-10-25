@@ -1271,7 +1271,7 @@ export const aplPilotScenarios = [
       {
         question: "Quel montant d'APL pour une personne seule au SMIC en 2026 ?",
         answer:
-          "Dans ce scénario type, l'estimation indicative tourne autour de 144 EUR par mois. Le montant final dépend du loyer retenu, de la zone et des ressources réellement prises en compte.",
+          "Dans ce scénario type (1 460 € de revenus, loyer de 640 € en zone 2), l'aide calculée est de 0 € par mois : avec ces revenus, une personne seule n'a plus droit à l'APL. Le montant final dépend du loyer retenu, de la zone et des ressources réellement prises en compte.",
       },
       {
         question: "Le SMIC suffit-il ? faire tomber l'APL ? zéro ?",
