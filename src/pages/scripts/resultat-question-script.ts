@@ -5,8 +5,9 @@
  */
 import {
   SIMULATEURS,
+  aujourdhuiIso,
   cheminResultat,
-  euros,
+  resumeSituation,
   validerParametres,
   type ChampQuestion,
   type DefinitionSimulateur,
@@ -28,61 +29,23 @@ function lireRemarques(): string[] {
   }
 }
 
-/** Formulation courte de chaque information dans le titre (chaîne vide : non affichée) */
-const RESUME: Record<string, (v: string | number, p: ParametresQuestion) => string> = {
-  situation: (v) => ({ seul: "personne seule", couple: "couple", monoparental: "parent isolé" })[v as "seul"] ?? "",
-  enfants: (v) => (Number(v) === 0 ? "sans enfant" : `${v} enfant${Number(v) > 1 ? "s" : ""}`),
-  loyer: (v) => `loyer de ${euros(Number(v))}`,
-  revenus: (v) => (Number(v) === 0 ? "sans revenu" : `${euros(Number(v))} de revenus`),
-  salaire: (v) => `${euros(Number(v))} de salaire net`,
-  autres: (v) => (Number(v) > 0 ? `${euros(Number(v))} d'autres revenus` : ""),
-  zone: (v, p) => {
-    const zone = v === "dom" ? "outre-mer" : String(v).replace("zone", "zone ");
-    return p.ville ? `${p.ville} (${zone})` : zone;
-  },
-  logement: (v) =>
-    ({
-      colocation: "colocation",
-      hlm: "logement social",
-      aide_logement: "locataire avec APL",
-      loue: "locataire sans APL",
-      proprio: "propriétaire",
-      gratuit: "logé gratuitement",
-      "sans-abri": "sans logement stable",
-    })[v as "hlm"] ?? "",
-  activite: (v) => ({ chomage: "demandeur d'emploi", inactif: "sans activité", independant: "indépendant", apprenti: "apprenti" })[v as "chomage"] ?? "",
-  brut: (v) => `${euros(Number(v))} brut`,
-  statut: (v) => (v === "cadre" ? "cadre" : "non-cadre"),
-  pas: (v) => (Number(v) > 0 ? `prélèvement à la source de ${v} %` : ""),
-};
-const ORDRE_RESUME = ["situation", "enfants"];
-
-/** Résumé de la situation : « couple, 2 enfants, loyer de 700 €, 1 500 € de revenus, Lyon (zone 2) » */
-function resumeSituation(def: DefinitionSimulateur, p: ParametresQuestion, manquants: string[]): string {
-  const cles = def.champs.map((c) => c.cle).sort((a, b) => {
-    const ia = ORDRE_RESUME.indexOf(a), ib = ORDRE_RESUME.indexOf(b);
-    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
-  });
-  return cles
-    .filter((cle) => !manquants.includes(cle) && p[cle] !== undefined)
-    .map((cle) => RESUME[cle]?.(p[cle], p) ?? "")
-    .filter(Boolean)
-    .join(", ");
-}
-
 function champFormulaire(champ: ChampQuestion, valeur: string | number | undefined, manquant: boolean, hypothese: boolean): string {
   const id = `rq-${champ.cle}`;
   const bordure = manquant ? "border-amber-400 ring-1 ring-amber-300" : "border-gray-300";
   const aide = [champ.aide, hypothese ? "valeur supposée, à corriger si besoin" : "", manquant ? "à compléter" : ""].filter(Boolean).join(" · ");
-  const saisie =
-    champ.type === "choix"
-      ? `<select id="${id}" name="${champ.cle}" class="mt-1 w-full rounded-lg border ${bordure} p-2.5">
-          ${manquant ? `<option value="" selected>Choisir…</option>` : ""}
-          ${champ.options!.map((o) => `<option value="${o.valeur}"${String(valeur) === o.valeur ? " selected" : ""}>${echapper(o.libelle)}</option>`).join("")}
-        </select>`
-      : `<div class="mt-1 flex items-center gap-2"><input id="${id}" name="${champ.cle}" type="number" inputmode="decimal" step="any"
-          min="${champ.min ?? ""}" max="${champ.max ?? ""}" value="${valeur ?? ""}" class="w-full rounded-lg border ${bordure} p-2.5" />
-          ${champ.suffixe ? `<span class="shrink-0 text-sm text-gray-600">${echapper(champ.suffixe)}</span>` : ""}</div>`;
+  let saisie: string;
+  if (champ.type === "choix") {
+    saisie = `<select id="${id}" name="${champ.cle}" class="mt-1 w-full rounded-lg border ${bordure} p-2.5">
+      ${manquant ? `<option value="" selected>Choisir…</option>` : ""}
+      ${champ.options!.map((o) => `<option value="${echapper(o.valeur)}"${String(valeur) === o.valeur ? " selected" : ""}>${echapper(o.libelle)}</option>`).join("")}
+    </select>`;
+  } else if (champ.type === "date") {
+    saisie = `<input id="${id}" name="${champ.cle}" type="date" value="${echapper(String(valeur ?? ""))}" class="mt-1 w-full rounded-lg border ${bordure} p-2.5" />`;
+  } else {
+    saisie = `<div class="mt-1 flex items-center gap-2"><input id="${id}" name="${champ.cle}" type="number" inputmode="decimal" step="any"
+      min="${champ.min ?? ""}" max="${champ.max ?? ""}" value="${valeur ?? ""}" class="w-full min-w-0 rounded-lg border ${bordure} p-2.5" />
+      ${champ.suffixe ? `<span class="shrink-0 text-sm text-gray-600">${echapper(champ.suffixe)}</span>` : ""}</div>`;
+  }
   return `<label class="block text-sm font-medium text-gray-800" for="${id}">${echapper(champ.libelle)}${saisie}
     ${aide ? `<span class="mt-1 block text-xs ${manquant ? "text-amber-800" : "text-gray-500"}">${echapper(aide)}</span>` : ""}</label>`;
 }
@@ -91,24 +54,25 @@ function afficher(def: DefinitionSimulateur, remarques: string[]) {
   const brut = Object.fromEntries(new URLSearchParams(window.location.search));
   const { params, manquants, hypotheses } = validerParametres(def.id, brut);
   const complet = manquants.length === 0;
-  const resultat = complet ? def.calculer(params) : null;
+  const resultat = complet ? def.calculer(params, aujourdhuiIso()) : null;
 
   const titre = document.getElementById("rq-titre");
-  const situation = resumeSituation(def, params, manquants);
-  if (titre) titre.textContent = situation ? `${def.titre} : ${situation}` : def.titre;
+  const situation = resumeSituation(def.id, params, manquants);
+  // « DPE : jusqu'à quand… ? — classe F » plutôt que deux « : » à la suite
+  if (titre) titre.textContent = situation ? `${def.titre}${/[:?]/.test(def.titre) ? " — " : " : "}${situation}` : def.titre;
 
   const zone = document.getElementById("rq-resultat");
   if (zone) {
-    if (resultat && "montant" in resultat) {
+    if (resultat && "principal" in resultat) {
       zone.innerHTML = `
         <div class="rounded-xl border border-blue-200 bg-blue-50 p-6">
           <p class="text-sm text-blue-900">${echapper(resultat.phrase)}</p>
-          <p class="mt-2 text-4xl font-black text-blue-900">${euros(resultat.montant, resultat.montant % 1 ? 2 : 0)} <span class="text-lg font-semibold">${echapper(resultat.unite)}</span></p>
+          <p class="mt-2 text-3xl sm:text-4xl font-black text-blue-900">${echapper(resultat.principal)}${resultat.unite ? ` <span class="text-lg font-semibold">${echapper(resultat.unite)}</span>` : ""}</p>
           <p class="mt-1 text-sm font-medium text-blue-900">${echapper(resultat.libelle)}</p>
         </div>
-        <dl class="grid gap-3 sm:grid-cols-2">
+        ${resultat.details.length ? `<dl class="grid gap-3 sm:grid-cols-2">
           ${resultat.details.map((d) => `<div class="rounded-lg border border-gray-200 bg-white p-3"><dt class="text-xs text-gray-600">${echapper(d.libelle)}</dt><dd class="font-semibold text-gray-900">${echapper(d.valeur)}</dd></div>`).join("")}
-        </dl>
+        </dl>` : ""}
         <div class="rounded-lg bg-gray-50 p-4 text-sm text-gray-700">
           <p class="font-semibold text-gray-900">Limites de cette estimation</p>
           <ul class="mt-1 list-disc pl-5">${[...resultat.limites, ...hypotheses.map((h) => `Valeur supposée : ${def.champs.find((c) => c.cle === h)?.libelle.toLowerCase()}.`)].map((l) => `<li>${echapper(l)}</li>`).join("")}</ul>
@@ -133,8 +97,8 @@ function afficher(def: DefinitionSimulateur, remarques: string[]) {
     form.onsubmit = (e) => {
       e.preventDefault();
       const saisie: ParametresQuestion = Object.fromEntries(new FormData(form).entries()) as ParametresQuestion;
-      // La ville ne vaut que pour la zone trouvée : elle disparaît si la zone change
-      if (params.ville && saisie.zone === params.zone) saisie.ville = params.ville;
+      // La ville ne vaut que pour la zone ou le département trouvés : elle disparaît s'ils changent
+      if (params.ville && (saisie.zone ?? saisie.departement) === (params.zone ?? params.departement)) saisie.ville = params.ville;
       history.pushState(null, "", cheminResultat(def.id, validerParametres(def.id, saisie).params));
       afficher(def, []);
       document.getElementById("rq-resultat")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -143,13 +107,11 @@ function afficher(def: DefinitionSimulateur, remarques: string[]) {
 
   const proches = document.getElementById("rq-proches");
   if (proches) {
-    proches.innerHTML = complet
-      ? def
-          .proches(params)
-          .map((l) => `<li><a class="text-blue-700 underline hover:text-blue-900" href="${echapper(cheminResultat(def.id, l.params))}">${echapper(l.libelle)}</a></li>`)
-          .join("")
-      : "";
-    proches.closest("section")?.classList.toggle("hidden", !complet);
+    const liens = complet && resultat && "principal" in resultat ? def.proches(params).filter((l) => validerParametres(def.id, l.params).manquants.length === 0) : [];
+    proches.innerHTML = liens
+      .map((l) => `<li><a class="text-blue-700 underline hover:text-blue-900" href="${echapper(cheminResultat(def.id, l.params))}">${echapper(l.libelle)}</a></li>`)
+      .join("");
+    proches.closest("section")?.classList.toggle("hidden", liens.length === 0);
   }
 }
 

@@ -2,7 +2,10 @@ import fs from "fs";
 import path from "path";
 import { analyserQuestion } from "../src/utils/questions/analyseurQuestion";
 import { creerIndexCommunes, type DonneesZones } from "../src/utils/questions/communesZones";
-import { SIMULATEURS, validerParametres, cheminResultat } from "../src/utils/questions/simulateursQuestions";
+import { SIMULATEURS, SIMULATEURS_IDS, validerParametres, cheminResultat, type SimulateurId } from "../src/utils/questions/simulateursQuestions";
+import { nombreDeParts } from "../src/utils/questions/definitions/revenus";
+
+const AUJOURDHUI = "2026-10-25";
 
 const communes = creerIndexCommunes(
   JSON.parse(fs.readFileSync(path.resolve(__dirname, "../public/data/zones-apl-communes.json"), "utf8")) as DonneesZones,
@@ -30,7 +33,7 @@ describe("analyseur de questions : APL", () => {
 
   test("commune de zone 3, commune composée", () => {
     expect(analyser("APL a Mézières-sur-Ponthouin loyer 400").validation?.params.zone).toBe("zone3");
-    expect(analyser("apl étudiant à Saint-Étienne, loyer 380 €").validation?.params.zone).toBe("zone2");
+    expect(analyser("apl à Saint-Étienne, loyer 380 €").validation?.params.zone).toBe("zone2");
   });
 
   test("homonymes : résolus par le département, sinon zone demandée", () => {
@@ -147,20 +150,126 @@ describe("validation des paramètres et calcul par les moteurs", () => {
 
   test("le montant vient du moteur du site", () => {
     // Même calcul que l'exemple de src/pages/apl-zones.html (couple, 1 000 €, loyer 700 €, zone 2 : 260 €)
-    const r = SIMULATEURS.apl.calculer({ loyer: 700, revenus: 1000, situation: "couple", enfants: 0, zone: "zone2", logement: "location" });
-    expect("montant" in r && Math.round(r.montant)).toBe(260);
+    const r = SIMULATEURS.apl.calculer({ loyer: 700, revenus: 1000, situation: "couple", enfants: 0, zone: "zone2", logement: "location" }, AUJOURDHUI);
+    expect("montant" in r && Math.round(r.montant!)).toBe(260);
   });
 
-  test.each(Object.keys(SIMULATEURS))("%s : calcul et variantes proches", (id) => {
-    const def = SIMULATEURS[id as keyof typeof SIMULATEURS];
-    const exemple: Record<string, Record<string, string | number>> = {
-      apl: { loyer: 600, revenus: 1000, situation: "seul", enfants: 0, zone: "zone1", logement: "location" },
-      rsa: { situation: "seul", enfants: 0, revenus: 0, activite: "inactif", logement: "aide_logement" },
-      "prime-activite": { salaire: 1200, situation: "seul", enfants: 0, autres: 0, logement: "loue", activite: "salarie" },
-      salaire: { brut: 2500, statut: "non_cadre", pas: 0 },
-    };
-    const r = def.calculer(exemple[id]);
-    expect("montant" in r).toBe(true);
-    for (const lien of def.proches(exemple[id])) expect(validerParametres(def.id, lien.params).manquants).toEqual([]);
+  test("dates : valides seulement si elles existent", () => {
+    const v = validerParametres("depot-garantie", { cles: "2026-02-30", rendu: "2026-03-15" });
+    expect(v.manquants).toContain("cles");
+    expect(v.params.rendu).toBe("2026-03-15");
+  });
+
+  test("champ facultatif : ni demandé, ni supposé", () => {
+    const v = validerParametres("retraite", { annee: 1970, mois: "5" });
+    expect(v.manquants).toEqual([]);
+    expect(v.params).not.toHaveProperty("trimestres");
+  });
+
+  /** Paramètres complets de chaque simulateur, pour vérifier le calcul et les variantes proches */
+  const COMPLETS: Record<SimulateurId, Record<string, string | number>> = {
+    apl: { loyer: 600, revenus: 1000, situation: "seul", enfants: 0, zone: "zone1", logement: "location" },
+    "apl-etudiant": { loyer: 450, boursier: "oui", zone: "2", revenus: 0, logement: "classique", horsue: "non" },
+    rsa: { situation: "seul", enfants: 0, revenus: 0, activite: "inactif", logement: "aide_logement" },
+    "prime-activite": { salaire: 1200, situation: "seul", enfants: 0, autres: 0, logement: "loue", activite: "salarie" },
+    aah: { taux: "80", situation: "seul", enfants: 0, revenus: 400, logement: "locataire" },
+    asf: { cas: "parentisole", enfants: 2 },
+    salaire: { brut: 2500, statut: "non_cadre", pas: 0 },
+    impot: { revenu: 35000, situation: "seul", enfants: 0 },
+    are: { salaire: 2200, age: 38, anciennete: 24, rupture: "non" },
+    "fin-droits": { fin: "2026-10-31", inscription: "2026-11-03", rupture: "licenciement", salaire: 2600, age: 42, debut: "2022-03-01", iccp: 1300, supra: 2500 },
+    "indemnite-licenciement": { salaire: 2400, anciennete: 8 },
+    retraite: { annee: 1966, mois: "3" },
+    notaire: { prix: 250000, bien: "ancien", departement: "33", primo: "non" },
+    ptz: { zone: "B1", personnes: 3, rfr: 45000 },
+    "dpe-location": { classe: "F", bail: "vide-particulier", debut: "2025-09-01", outremer: "non" },
+    "depot-garantie": { type: "vide", loyer: 750, depot: 750, cles: "2026-04-30", conforme: "oui", rendu: "2026-08-15", adresse: "oui" },
+  };
+
+  test.each(SIMULATEURS_IDS)("%s : l'exemple de la barre est reconnu, calcul et variantes proches", (id) => {
+    const def = SIMULATEURS[id];
+    expect(analyser(def.exemple).simulateur).toBe(id);
+    const v = validerParametres(id, COMPLETS[id]);
+    expect(v.manquants).toEqual([]);
+    const r = def.calculer(v.params, AUJOURDHUI);
+    expect("principal" in r).toBe(true);
+    for (const lien of def.proches(v.params)) expect(validerParametres(id, lien.params).manquants).toEqual([]);
+  });
+});
+
+describe("analyseur de questions : autres simulateurs", () => {
+  const params = (q: string) => analyser(q).validation?.params;
+
+  test("frais de notaire : département par la ville ou par son nom, prix en k", () => {
+    expect(params("Frais de notaire pour un appartement ancien à 250 000 € à Bordeaux")).toMatchObject({ prix: 250000, bien: "ancien", departement: "33" });
+    expect(params("frais de notaire maison neuve 320000 euros dans le Rhône")).toMatchObject({ prix: 320000, bien: "neuf", departement: "69" });
+    expect(params("combien de frais de notaire pour 200k premier achat")).toMatchObject({ prix: 200000, primo: "oui" });
+  });
+
+  test("frais de notaire : montant identique au moteur (exemple de la page notaire)", () => {
+    const r = SIMULATEURS.notaire.calculer({ prix: 250000, bien: "ancien", departement: "33", primo: "non" }, AUJOURDHUI);
+    expect("montant" in r && r.montant).toBeGreaterThan(15000);
+  });
+
+  test("impôt : nombre de parts (CGI art. 194) et revenu annuel seulement", () => {
+    expect(nombreDeParts("seul", 0)).toBe(1);
+    expect(nombreDeParts("couple", 2)).toBe(3);
+    expect(nombreDeParts("couple", 3)).toBe(4);
+    expect(nombreDeParts("monoparental", 1)).toBe(2);
+    expect(params("combien d'impôts avec 35000 euros de revenu imposable célibataire")).toMatchObject({ revenu: 35000, situation: "seul" });
+    const mensuel = analyser("impot 3000 € par mois marié 1 enfant");
+    expect(mensuel.validation?.manquants).toEqual(["revenu"]);
+  });
+
+  test("chômage : ARE, ou fin de droits quand la question porte sur la date", () => {
+    const are = analyser("je suis au chômage combien je vais toucher, je gagnais 1900 brut, 18 mois de CDD, 29 ans");
+    expect(are.simulateur).toBe("are");
+    expect(are.validation?.params).toMatchObject({ salaire: 1900, age: 29, anciennete: 18 });
+    const fin = analyser("jusqu'à quand je touche le chômage ? rupture conventionnelle le 15 septembre 2026, inscrit le 20 septembre 2026, embauché le 1er mars 2023, 3200 brut, 56 ans");
+    expect(fin.simulateur).toBe("fin-droits");
+    expect(fin.validation?.params).toMatchObject({ fin: "2026-09-15", inscription: "2026-09-20", debut: "2023-03-01", rupture: "rupture-conventionnelle", salaire: 3200, age: 56 });
+  });
+
+  test("chômage cité comme revenu : la question reste une question RSA", () => {
+    expect(analyser("avec 450 € de chômage, combien de RSA pour une personne seule").simulateur).toBe("rsa");
+  });
+
+  test("indemnité de licenciement : ancienneté en années et mois", () => {
+    expect(params("licencié après 12 ans et 6 mois dans l'entreprise, salaire 3100 brut, combien d'indemnité de licenciement")).toMatchObject({ salaire: 3100, anciennete: 12.5 });
+  });
+
+  test("retraite : date ou mois de naissance", () => {
+    expect(params("je suis née le 14/07/1968 quand puis-je partir à la retraite")).toMatchObject({ annee: 1968, mois: "7" });
+    const r = analyser("retraite née en 1972 avec 120 trimestres");
+    expect(r.validation?.params).toMatchObject({ annee: 1972, trimestres: 120 });
+    expect(r.validation?.manquants).toEqual(["mois"]);
+  });
+
+  test("PTZ : personnes déduites du foyer", () => {
+    expect(params("ptz zone A couple 2 enfants rfr 70000")).toMatchObject({ zone: "A", personnes: 4, rfr: 70000 });
+  });
+
+  test("DPE : classe, type de bail et date de début", () => {
+    expect(params("mon appartement est classé G, bail meublé signé le 15 mars 2024, jusqu'à quand puis-je le louer ?")).toMatchObject({ classe: "G", bail: "meuble", debut: "2024-03-15" });
+    expect(params("dpe F maison")).toMatchObject({ classe: "F", bail: "aucun" });
+  });
+
+  test("dépôt de garantie : caution et loyer distincts, dépôt pas encore rendu", () => {
+    const r = analyser("mon proprio ne m'a toujours pas rendu ma caution de 1200 €, loyer 1200 €, meublé, j'ai rendu les clés le 1er juillet 2026, état des lieux avec dégradations");
+    expect(r.validation?.params).toMatchObject({ type: "meuble", loyer: 1200, depot: 1200, cles: "2026-07-01", conforme: "non" });
+    expect(r.validation?.params).not.toHaveProperty("rendu");
+    expect(r.validation?.manquants).toEqual(["adresse"]);
+  });
+
+  test("AAH, ASF, APL étudiant", () => {
+    expect(params("AAH 60% en couple 900 euros de revenus hébergée chez mes parents")).toMatchObject({ taux: "50", situation: "couple", revenus: 900, logement: "heberge" });
+    expect(params("ASF orphelin 1 enfant")).toMatchObject({ cas: "orphelin", enfants: 1 });
+    const etudiant = analyser("apl étudiant non boursier 380 € de loyer à Toulouse en résidence universitaire");
+    expect(etudiant.simulateur).toBe("apl-etudiant");
+    expect(etudiant.validation?.params).toMatchObject({ loyer: 380, boursier: "non", zone: "2", logement: "foyer" });
+  });
+
+  test("RSA : « ne travaille pas » n'est pas une activité", () => {
+    expect(params("RSA seul, je ne travaille pas, sans revenu, logé gratuitement")).toMatchObject({ activite: "inactif", revenus: 0, logement: "gratuit" });
   });
 });

@@ -8,18 +8,15 @@
  *    structurés (montants, situation, zone, ville), jamais le texte de la question.
  */
 import { detecterDonneesPersonnelles, LONGUEUR_MAX_QUESTION, MESSAGE_VIE_PRIVEE } from "../utils/questions/donneesPersonnelles";
-import { analyserQuestion } from "../utils/questions/analyseurQuestion";
 import { chargerIndexCommunes } from "../utils/questions/communesZones";
+import { EXEMPLES_QUESTIONS } from "../utils/questions/exemples";
 
 /** Remarques d'analyse transmises à la page de résultat (jamais la question elle-même) */
 export const CLE_REMARQUES = "lc-question-remarques";
 
-const EXEMPLES = [
-  "Combien d'APL pour 700 € de loyer avec 2 enfants à Lyon ?",
-  "RSA pour un couple avec 2 enfants sans revenu",
-  "Prime d'activité au SMIC, seul, locataire avec APL",
-  "2 500 € brut en net",
-];
+/** Un exemple par simulateur ; les quatre premiers sont visibles, les autres derrière « Voir plus » */
+const EXEMPLES = Object.values(EXEMPLES_QUESTIONS);
+const EXEMPLES_VISIBLES = 4;
 
 function echapper(t: string) {
   return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -42,9 +39,10 @@ export function monterBarreQuestion(conteneur: HTMLElement): void {
       <p data-bq-message class="mt-2 hidden rounded-lg px-3 py-2 text-sm" role="alert"></p>
       <div class="mt-3 flex flex-wrap gap-2">
         ${EXEMPLES.map(
-          (e) =>
-            `<button type="button" data-bq-exemple class="rounded-full ${sombre ? "bg-white/10 text-slate-100 hover:bg-white/20" : "bg-blue-50 text-blue-800 hover:bg-blue-100"} px-3 py-1 text-xs">${echapper(e)}</button>`,
+          (e, i) =>
+            `<button type="button" data-bq-exemple${i >= EXEMPLES_VISIBLES ? " data-bq-plus hidden" : ""} class="rounded-full ${sombre ? "bg-white/10 text-slate-100 hover:bg-white/20" : "bg-blue-50 text-blue-800 hover:bg-blue-100"} px-3 py-1 text-xs text-left">${echapper(e)}</button>`,
         ).join("")}
+        <button type="button" data-bq-voir-plus aria-expanded="false" class="rounded-full ${sombre ? "bg-white hover:bg-orange-50" : "bg-orange-50 hover:bg-orange-100"} px-3 py-1 text-xs font-semibold text-orange-700">Voir plus (${EXEMPLES.length - EXEMPLES_VISIBLES})</button>
       </div>
     </form>`;
 
@@ -57,6 +55,14 @@ export function monterBarreQuestion(conteneur: HTMLElement): void {
     message.innerHTML = texte;
     message.className = `mt-2 rounded-lg px-3 py-2 text-sm ${ton === "erreur" ? "bg-red-50 text-red-800 border border-red-200" : "bg-amber-50 text-amber-900 border border-amber-200"}`;
   };
+
+  const voirPlus = conteneur.querySelector("[data-bq-voir-plus]") as HTMLButtonElement;
+  voirPlus.addEventListener("click", () => {
+    const ouvert = voirPlus.getAttribute("aria-expanded") === "true";
+    conteneur.querySelectorAll<HTMLElement>("[data-bq-plus]").forEach((b) => (b.hidden = ouvert));
+    voirPlus.setAttribute("aria-expanded", String(!ouvert));
+    voirPlus.textContent = ouvert ? `Voir plus (${EXEMPLES.length - EXEMPLES_VISIBLES})` : "Voir moins";
+  });
 
   conteneur.querySelectorAll<HTMLButtonElement>("[data-bq-exemple]").forEach((b) =>
     b.addEventListener("click", () => {
@@ -83,23 +89,24 @@ export function monterBarreQuestion(conteneur: HTMLElement): void {
       return;
     }
 
+    bouton.disabled = true;
+    bouton.textContent = "…";
+    // L'analyseur et les moteurs ne sont chargés qu'à la première question
+    const { analyserQuestion } = await import("../utils/questions/analyseurQuestion");
     let analyse = analyserQuestion(question);
     if (analyse.communeAChercher) {
-      bouton.disabled = true;
-      bouton.textContent = "…";
       try {
         analyse = analyserQuestion(question, { communes: await chargerIndexCommunes() });
       } catch {
         // Sans le fichier des communes, la zone sera demandée sur la page de résultat
-      } finally {
-        bouton.disabled = false;
-        bouton.textContent = "Calculer";
       }
     }
+    bouton.disabled = false;
+    bouton.textContent = "Calculer";
 
     if (!analyse.simulateur || !analyse.chemin) {
       afficher(
-        `Je n'ai pas reconnu le calcul demandé. Les questions comprises portent sur l'APL, le RSA, la prime d'activité et le salaire brut en net. <a class="underline font-semibold" href="/pages/simulateurs">Voir tous les simulateurs</a>`,
+        `Je n'ai pas reconnu le calcul demandé. Les questions comprises portent sur les aides (APL, RSA, prime d'activité, AAH, ASF), le salaire, l'impôt, le chômage, la retraite et le logement (notaire, PTZ, DPE, dépôt de garantie). <a class="underline font-semibold" href="/pages/simulateurs">Voir tous les simulateurs</a>`,
         "info",
       );
       return;

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * Génère public/data/zones-apl-communes.json : zone APL (1, 2, 3) de chaque commune, à partir des
- * données de référence du simulateur service-public « Connaître la zone de sa commune : 1, 1 bis,
- * 2 ou 3 » (DILA, arrêté du 17 mars 1978 révisé) :
+ * Génère public/data/zones-apl-communes.json : département et zone APL (1, 2, 3) de chaque commune,
+ * à partir des données de référence du simulateur service-public « Connaître la zone de sa commune :
+ * 1, 1 bis, 2 ou 3 » (DILA, arrêté du 17 mars 1978 révisé) :
  * https://gitlab.com/pidila/sp-simulateurs-data/-/raw/master/donnees-de-reference/Zone123.json
  *
  * Usage : node scripts/build-zones-apl.cjs [chemin/vers/Zone123.json]
  * Sans argument, le fichier est téléchargé.
  *
- * Codes de zone dans le fichier produit :
+ * Format : departements[département][zone] = noms de communes normalisés. Codes de zone :
  *   "1" : zone 1 (la zone 1 bis, Paris et 29 communes voisines, est rattachée à la zone 1 :
  *         À VÉRIFIER PAR CLIFF, le texte de l'arrêté du 27 septembre 2019 n'a pas pu être relu)
  *   "2", "3" : zones 2 et 3
@@ -56,22 +56,19 @@ async function main() {
     throw new Error(`Données inattendues : ${communes && communes.length} communes`);
   }
 
-  /** nom normalisé → { département → zone } */
-  const parNom = new Map();
+  const departements = {};
   for (const c of communes) {
     const zone = zoneApl(c);
     if (!["1", "2", "3", "D", "M"].includes(zone)) throw new Error(`Zone inconnue : ${JSON.stringify(c)}`);
-    const nom = normaliser(c.nomCommune);
-    if (!parNom.has(nom)) parNom.set(nom, {});
-    parNom.get(nom)[departement(c.codeInsee)] = zone;
+    const dep = departement(c.codeInsee);
+    departements[dep] ??= {};
+    departements[dep][zone] ??= new Set();
+    departements[dep][zone].add(normaliser(c.nomCommune));
   }
-
-  const zones = { 1: [], 2: [], 3: [], D: [], M: [] };
-  const homonymes = {};
-  for (const [nom, deps] of [...parNom.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
-    const valeurs = new Set(Object.values(deps));
-    if (valeurs.size === 1) zones[[...valeurs][0]].push(nom);
-    else homonymes[nom] = deps;
+  const trie = {};
+  for (const dep of Object.keys(departements).sort()) {
+    trie[dep] = {};
+    for (const zone of Object.keys(departements[dep]).sort()) trie[dep][zone] = [...departements[dep][zone]].sort();
   }
 
   const sortie = {
@@ -79,13 +76,12 @@ async function main() {
     sourceUrl: SOURCE_URL,
     genereLe: new Date().toISOString().slice(0, 10),
     note: "Zone 1 bis rattachée à la zone 1. D : outre-mer, M : Mayotte (non calculé).",
-    zones,
-    homonymes,
+    departements: trie,
   };
   fs.mkdirSync(path.dirname(SORTIE), { recursive: true });
   fs.writeFileSync(SORTIE, JSON.stringify(sortie) + "\n", "utf8");
   console.log(
-    `${communes.length} communes, ${parNom.size} noms, ${Object.keys(homonymes).length} homonymes de zones différentes → ${path.relative(process.cwd(), SORTIE)} (${Math.round(fs.statSync(SORTIE).size / 1024)} Ko)`,
+    `${communes.length} communes, ${Object.keys(trie).length} départements → ${path.relative(process.cwd(), SORTIE)} (${Math.round(fs.statSync(SORTIE).size / 1024)} Ko)`,
   );
 }
 
