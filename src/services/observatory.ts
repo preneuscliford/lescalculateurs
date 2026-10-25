@@ -6,6 +6,13 @@
 
 import type { UserFeedback, ProfileStats, GlobalObservatoryStats } from '../types/observatory';
 
+/**
+ * Observatoire hors ligne : le projet Supabase ci-dessous n'existe plus (nom de domaine
+ * introuvable le 25/10/2026). Tant qu'une nouvelle base n'est pas en place, les pages ne
+ * proposent ni le questionnaire ni les statistiques.
+ */
+export const OBSERVATOIRE_ACTIF = false;
+
 // Configuration Supabase (fallback si MCP non disponible)
 const SUPABASE_URL = 'https://bwabwcfyyipfllvmomzx.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_fcagbgnkhDEi_HNDu9OYSw_JDk4ztBg';

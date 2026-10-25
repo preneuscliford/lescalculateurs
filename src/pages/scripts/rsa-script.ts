@@ -4,6 +4,7 @@ import {
   initStatsDisplay,
   generateProfileHash,
 } from "../../components/observatory";
+import { OBSERVATOIRE_ACTIF } from "../../services/observatory";
 
 /**
  * Script de gestion du calculateur RSA
@@ -151,7 +152,7 @@ async function showObservatory(data: {
   logement: string;
 }): Promise<void> {
   const section = document.getElementById("observatory-section");
-  if (!section) return;
+  if (!section || !OBSERVATOIRE_ACTIF) return;
 
   section.classList.remove("hidden");
 
