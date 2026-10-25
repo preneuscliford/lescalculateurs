@@ -6,7 +6,7 @@
       "simulateur": "apl",
       "slug": "apl/apl-selon-situation-2026",
       "titre": "APL : montant selon votre situation (2026)",
-      "statut": "a-valider",
+      "statut": "valide",
       "note": "Page existante (5 impressions) réutilisée comme sommaire « APL : toutes les situations », liée depuis le simulateur APL."
     }
   ],
@@ -19,7 +19,7 @@
       "zone": null,
       "slug": "apl/apl-personne-seule",
       "titre": "APL pour une personne seule : montant 2026 selon vos revenus et votre zone",
-      "statut": "a-valider",
+      "statut": "valide",
       "source": {
         "type": "search-console",
         "impressions": 4477,
@@ -36,18 +36,9 @@
           "apl/apl-loyer-700-personne-seule",
           "apl/apl-chomage-loyer-moyen"
         ],
-        "rediriger301": [
-          {
-            "de": "apl/apl-personne-seule-smic",
-            "vers": "apl/apl-smic-seul"
-          },
-          {
-            "de": "apl/apl-celibataire-smic",
-            "vers": "apl/apl-smic-seul"
-          }
-        ]
+        "rediriger301": []
       },
-      "note": "Nouvelle URL : aucune page existante ne couvre la personne seule sans scénario de revenu précis."
+      "note": "Nouvelle URL : aucune page existante ne couvre la personne seule sans scénario de revenu précis. apl-personne-seule-smic et apl-celibataire-smic sont déjà redirigées vers apl-smic-seul (vercel.json)."
     },
     {
       "id": "apl-couple-sans-enfant",
@@ -57,7 +48,7 @@
       "zone": null,
       "slug": "apl/apl-couple-sans-enfant",
       "titre": "APL pour un couple sans enfant : montant 2026 selon vos revenus et votre zone",
-      "statut": "a-valider",
+      "statut": "valide",
       "source": {
         "type": "search-console",
         "impressions": 145,
@@ -80,7 +71,7 @@
       "zone": null,
       "slug": "apl/apl-parent-isole-un-enfant",
       "titre": "APL avec 1 enfant (parent isolé ou couple) : montant 2026",
-      "statut": "a-valider",
+      "statut": "valide",
       "source": {
         "type": "search-console",
         "impressions": 316,
@@ -109,7 +100,7 @@
       "zone": null,
       "slug": "apl/apl-parent-isole-deux-enfants",
       "titre": "APL avec 2 enfants (parent isolé ou couple) : montant 2026",
-      "statut": "a-valider",
+      "statut": "valide",
       "source": {
         "type": "search-console",
         "impressions": 2507,
@@ -134,7 +125,7 @@
       "zone": null,
       "slug": "apl/apl-famille-trois-enfants",
       "titre": "APL avec 3 enfants (parent isolé ou couple) : montant 2026",
-      "statut": "a-valider",
+      "statut": "valide",
       "source": {
         "type": "search-console",
         "impressions": 1866,
@@ -156,5 +147,6 @@
       },
       "note": "Deux pages existantes pour la même réponse (862 et 843 impressions) : garder « famille trois enfants » (requêtes « apl 3 enfants ») et rediriger l'autre, à décider."
     }
-  ]
+  ],
+  "validation": "Liste validée par Cliff le 25/10/2026 : 5 pages par nombre d'enfants et 4 redirections 301."
 }

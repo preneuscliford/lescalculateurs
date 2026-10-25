@@ -7,9 +7,12 @@
  */
 import config from "../../data/barre-question.json";
 import { SIMULATEURS, resumeSituation, validerParametres, type ParametresQuestion, type SimulateurId } from "./simulateursQuestions";
+import { QUESTIONS, blocLiensSituations } from "./pagesQuestions";
 
 export interface PageBarre {
   simulateur: SimulateurId;
+  /** Chemin de la page relatif à src/pages (« apl/apl-smic-seul ») */
+  chemin: string;
   /** Sous-page d'un chemin listé (« apl/apl-smic-seul ») : son identifiant de scénario */
   slug: string | null;
   scenarios?: string;
@@ -31,6 +34,7 @@ export function pagePourBarre(fichier: string): PageBarre | null {
       if (chemin === base || chemin.startsWith(`${base}/`)) {
         return {
           simulateur: entree.simulateur as SimulateurId,
+          chemin,
           slug: chemin === base ? null : chemin.slice(base.length + 1),
           scenarios: "scenarios" in entree ? (entree as { scenarios?: string }).scenarios : undefined,
         };
@@ -51,6 +55,29 @@ export function paramsScenarioApl(input: Record<string, unknown>): ParametresQue
     zone,
     logement: input.type_logement,
   }).params;
+}
+
+/**
+ * Paramètres d'une page de questions générée (src/data/questions-validees.json) : nombre d'enfants, et
+ * situation quand elle est connue (sans enfant). Avec enfants, parent isolé ou couple reste à choisir.
+ */
+export function paramsPageQuestion(chemin: string): ParametresQuestion | null {
+  const q = QUESTIONS.find((e) => e.slug === chemin);
+  if (!q) return null;
+  return {
+    enfants: q.enfants,
+    ...(q.enfants === 0 ? { situation: q.situation === "couple" ? "couple" : "seul" } : {}),
+  };
+}
+
+/** Sur la page principale d'un simulateur : liens vers ses pages de situations, après la barre */
+export function insererLiensSituations(html: string, simulateur: SimulateurId): string {
+  const bloc = blocLiensSituations(simulateur);
+  if (!bloc || html.includes("data-lc-situations")) return html;
+  const barre = html.indexOf('aria-label="Affiner le calcul"');
+  if (barre < 0) return html;
+  const fin = html.indexOf("</section>", barre) + "</section>".length;
+  return `${html.slice(0, fin)}\n      ${bloc}${html.slice(fin)}`;
 }
 
 const echapperAttribut = (t: string) => t.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");

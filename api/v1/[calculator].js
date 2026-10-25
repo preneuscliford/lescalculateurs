@@ -1733,6 +1733,8 @@ function calculerAPL(input) {
         ressources_annuelles,
         abattement_r0,
         coefficient_degressivite: arrondi(coefficient_degressivite, 4),
+        loyer_degressivite: loyerDegressivite,
+        loyer_suppression: loyerSuppression,
         reste_charge: Math.max(0, loyer - apl_estimee),
         situation,
         enfants: nb_enfants,

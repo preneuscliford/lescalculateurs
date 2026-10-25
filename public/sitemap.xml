@@ -512,18 +512,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-sans-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-un-enfant-loyer-moyen/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -566,12 +554,6 @@
     <priority>0.5</priority>
   </url>
 
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants-paris/</loc>
     <lastmod>2026-10-12</lastmod>
@@ -616,12 +598,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-deux-enfants/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-logement-social/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -629,18 +605,6 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-paris/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-trois-enfants/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-un-enfant/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -667,12 +631,6 @@
 
   <url>
     <loc>https://www.lescalculateurs.fr/pages/apl/apl-sans-revenu-parent-isole/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/apl/apl-selon-situation-2026/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2154,4 +2112,40 @@
     <priority>0.85</priority>
   </url>
 
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-personne-seule</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-couple-sans-enfant</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-un-enfant</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-parent-isole-deux-enfants</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-famille-trois-enfants</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/apl/apl-selon-situation-2026</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

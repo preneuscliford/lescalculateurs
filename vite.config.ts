@@ -14,7 +14,14 @@ import { simulateursAbsenceRevenuScenarios } from "./data/pseo/simulateurs-absen
 import { impotPilotScenarios } from "./data/pseo/impot-pilot-scenarios.js";
 import { notaireScenarios } from "./data/pseo/notaire-scenarios.js";
 import { salairePilotScenarios } from "./data/pseo/salaire-pilot-scenarios.js";
-import { blocBarre, insererBarre, pagePourBarre, paramsScenarioApl } from "./src/utils/questions/injectionBarre";
+import {
+  blocBarre,
+  insererBarre,
+  insererLiensSituations,
+  pagePourBarre,
+  paramsPageQuestion,
+  paramsScenarioApl,
+} from "./src/utils/questions/injectionBarre";
 
 // Date du dernier audit des barèmes, affichée en haut de chaque page au build.
 const siteUpdate = JSON.parse(
@@ -255,8 +262,11 @@ function barreQuestionPlugin() {
       handler(html: string, ctx: { filename: string }) {
         const page = pagePourBarre(ctx.filename);
         if (!page) return html;
+        // Pré-remplissage : page de questions générée, sinon scénario pSEO de la page
         const input = page.scenarios === "apl" && page.slug ? scenariosApl.get(page.slug) : undefined;
-        return insererBarre(html, blocBarre(page.simulateur, input ? paramsScenarioApl(input) : {}));
+        const params = paramsPageQuestion(page.chemin) ?? (input ? paramsScenarioApl(input) : {});
+        const avecBarre = insererBarre(html, blocBarre(page.simulateur, params));
+        return page.slug === null ? insererLiensSituations(avecBarre, page.simulateur) : avecBarre;
       },
     },
   };

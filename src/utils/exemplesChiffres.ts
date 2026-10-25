@@ -30,7 +30,16 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
     const d = calculerAPL(p).data;
     if (!d) throw new Error(`APL non calculable : ${JSON.stringify(p)}`);
     if (champ === "plafond") return d.plafond_loyer;
+    if (champ === "degressivite") return d.loyer_degressivite;
+    if (champ === "suppression") return d.loyer_suppression;
     return champ === "reste" ? d.reste_charge : d.apl_estimee;
+  },
+  /** Revenus mensuels (pas de 10 €) à partir desquels l'APL n'est plus versée, pour ce foyer et ce loyer */
+  "apl-seuil-revenus": (p: APLInput) => {
+    for (let revenus = 0; revenus <= 20000; revenus += 10) {
+      if ((calculerAPL({ ...p, revenus_mensuels: revenus }).data?.apl_estimee ?? 0) === 0) return revenus;
+    }
+    throw new Error(`Seuil de revenus APL introuvable : ${JSON.stringify(p)}`);
   },
   /** Prime d'activité mensuelle */
   "prime-activite": (p: PrimeActiviteCalculData) => calculerPrimeActivite(p).montantEstime,

@@ -69,6 +69,8 @@ export interface APLData {
   ressources_annuelles: number; // R
   abattement_r0: number; // R0
   coefficient_degressivite: number; // 1 = pas de dégressivité
+  loyer_degressivite: number; // loyer au-delà duquel l'aide diminue (art. 10)
+  loyer_suppression: number; // loyer au-delà duquel l'aide est supprimée (art. 10)
   reste_charge: number;
   situation: SituationFamiliale;
   enfants: number;
@@ -240,6 +242,8 @@ export function calculerAPL(input: APLInput): APLResult {
         ressources_annuelles,
         abattement_r0,
         coefficient_degressivite: arrondi(coefficient_degressivite, 4),
+        loyer_degressivite: loyerDegressivite,
+        loyer_suppression: loyerSuppression,
         reste_charge: Math.max(0, loyer - apl_estimee),
         situation,
         enfants: nb_enfants,

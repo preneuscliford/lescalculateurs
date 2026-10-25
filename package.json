@@ -10,7 +10,7 @@
     "utf8:diagnose": "node scripts/diagnose-encoding.cjs",
     "safe-run": "node scripts/safe-run.cjs",
     "dev": "vite",
-    "build": "node scripts/verify-utf8.cjs && node scripts/sync-exemples.cjs && node scripts/build-api.cjs && tsc && vite build && node scripts/verify-utf8.cjs",
+    "build": "node scripts/verify-utf8.cjs && node scripts/generate-pages-questions.cjs && node scripts/sync-exemples.cjs && node scripts/build-api.cjs && tsc && vite build && node scripts/verify-utf8.cjs",
     "build:api": "node scripts/build-api.cjs",
     "check:jsonld": "node scripts/check-jsonld.cjs",
     "check:sources": "node scripts/check-sources-officielles.cjs",
@@ -112,6 +112,8 @@
     "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo",
     "exemples:sync": "node scripts/sync-exemples.cjs",
     "zones-apl:build": "node scripts/build-zones-apl.cjs",
+    "questions:generate": "node scripts/generate-pages-questions.cjs",
+    "questions:check": "node scripts/generate-pages-questions.cjs --check",
     "exemples:check": "node scripts/sync-exemples.cjs --check",
     "keyword-scan": "node scripts/keyword-scan/scan.cjs",
     "keyword-scan:dry": "node scripts/keyword-scan/scan.cjs --dry-run"

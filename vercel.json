@@ -296,6 +296,26 @@
       "source": "/pages/apl/apl-celibataire-toulouse",
       "destination": "/pages/apl",
       "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-couple-un-enfant",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-couple-un-enfant/",
+      "destination": "/pages/apl/apl-parent-isole-un-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-parent-isole-trois-enfants",
+      "destination": "/pages/apl/apl-famille-trois-enfants",
+      "permanent": true
+    },
+    {
+      "source": "/pages/apl/apl-parent-isole-trois-enfants/",
+      "destination": "/pages/apl/apl-famille-trois-enfants",
+      "permanent": true
     }
   ]
 }
