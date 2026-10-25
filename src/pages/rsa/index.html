@@ -139,86 +139,110 @@
     }
     </script>
     <script defer src="/third-party-loader.js"></script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  <script type="application/ld+json" data-faq="faq">
     {
-      "@type": "Question",
-      "name": "Quel est le montant du RSA en 2026 ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En 2026, le montant du RSA (Revenu de Solidarité Active) est de 652,02€ par mois pour une personne seule sans enfant. Pour un couple sans enfant : 978,03€. Avec deux enfants : 1 304,04€. Ces montants sont revalorisés chaque année en avril. Utilisez notre simulateur pour connaître le montant exact selon votre situation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qui a droit au RSA ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le RSA s'adresse aux personnes de 25 ans et plus (18-24 ans sous conditions) ayant de faibles ressources ou sans revenus. Il faut résider en France de façon stable, avoir des ressources inférieures à un certain plafond, et être en recherche d'emploi ou avoir une activité réduite. Les étudiants ne sont généralement pas éligibles sauf exceptions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment faire une simulation RSA CAF gratuite en ligne ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour faire une simulation RSA gratuite en ligne, utilisez notre calculateur : 1) Indiquez votre situation familiale (personne seule, couple, avec enfants) 2) Renseignez vos revenus mensuels nets (salaires, indemnités, pensions) 3) Ajoutez vos charges éventuelles. La simulation RSA calcule instantanément votre montant estimé selon les barèmes officiels CAF 2026. Résultat immédiat en 2 minutes !"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Le RSA est-il cumulable avec l'APL ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, le RSA et l'APL (Aide Personnalisée au Logement) sont cumulables. Percevoir l'APL ne réduit pas le montant de votre RSA. Cependant, si vous percevez le RSA, vous ne pouvez pas bénéficier de la Prime d'activité - il faut choisir entre les deux. Utilisez nos simulateurs pour calculer le cumul RSA + APL selon votre situation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment faire une demande de RSA ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour demander le RSA, rendez-vous sur caf.fr et connectez-vous à votre espace personnel, ou créez un compte. Vous pouvez aussi faire la demande par courrier ou directement en CAF. Des justificatifs seront demandés : pièce d'identité, avis d'imposition, quittances de loyer, etc. Le traitement prend généralement 2 à 3 mois avec rétroactivité."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment faire une simulation CAF RSA gratuite en ligne ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour faire une simulation CAF RSA gratuite en ligne, utilisez notre calculateur (estimation indicative, non officielle) : 1) Sélectionnez votre situation familiale (personne seule, couple, nombre d'enfants) 2) Indiquez vos ressources mensuelles nettes (salaires, pensions, indemnités) 3) Ajoutez vos charges de logement (loyer, charges). La simulation CAF RSA calcule instantanément votre montant mensuel estimé selon les barèmes officiels 2026. Le résultat est indicatif avant dépôt de votre demande sur caf.fr."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment faire une simulation RSA jeune gratuitement ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour faire une simulation RSA jeune gratuitement, sachez d'abord que le RSA est généralement réservé aux personnes de 25 ans et plus. Cependant, les jeunes de 18 à 24 ans peuvent y avoir droit sous certaines conditions : avoir travaillé pendant au moins 2 ans sur les 3 dernières années, être isolés avec des enfants à charge, ou avoir quitté la formation professionnelle depuis plus d'un an. Utilisez notre simulateur RSA en indiquant votre âge et situation pour connaître votre éligibilité et montant estimé."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment calculer le RSA en 2026 ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour calculer le RSA en 2026 : 1) identifiez le montant forfaitaire de votre foyer (651,69 € pour une personne seule, 977,54 € pour un couple, 1 173,04 € pour un couple avec 1 enfant, 1 368,55 € avec 2 enfants, puis +260,68 € par personne supplémentaire) ; 2) additionnez toutes les ressources mensuelles nettes du foyer, salaires compris en totalité ; 3) appliquez la formule RSA = montant forfaitaire − ressources − forfait logement éventuel. Depuis 2016, les revenus du travail sont complétés par la prime d'activité, calculée à part."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment utiliser un simulateur CAF RSA gratuit ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour utiliser un simulateur CAF RSA gratuit : 1) Sélectionnez votre situation familiale (personne seule, couple, avec enfants) 2) Indiquez vos ressources mensuelles nettes (salaires, pensions, indemnités, bourses) 3) Ajoutez vos charges de logement (loyer, charges). Le simulateur CAF RSA calcule instantanément votre montant estimé selon les barèmes officiels 2026. Le résultat est indicatif avant dépôt de votre demande sur caf.fr. Les critères principaux : avoir plus de 25 ans (ou 18-24 ans sous conditions), résider en France, et avoir des ressources inférieures au montant forfaitaire."
-      }
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelles sont les conditions pour avoir le RSA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le RSA dépend de votre âge, de votre résidence en France, de la composition de votre foyer et de vos ressources. Des règles particulières existent selon les situations. Ce simulateur donne une estimation indicative ; la CAF/MSA vérifie les conditions et instruit la demande."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qui peut bénéficier du RSA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le RSA s'adresse aux personnes d'au moins 25 ans qui résident en France de manière stable et dont les ressources du foyer sont inférieures au montant forfaitaire (651,69 € pour une personne seule au 1er avril 2026). Les étrangers hors Union européenne doivent en principe détenir un titre de séjour autorisant à travailler depuis au moins 5 ans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on toucher le RSA avant 25 ans ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, dans deux cas : si vous assumez la charge d'un enfant né ou à naître (parent isolé, femme enceinte), ou au titre du RSA jeune actif si vous avez travaillé au moins 2 ans à temps plein (3 214 heures) au cours des 3 dernières années."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien touche-t-on au RSA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le montant dépend du foyer (seul, couple, enfants) et des ressources prises en compte. Sans ressources, l'ordre de grandeur est d'environ 600 € / mois pour une personne seule et autour de 900 € / mois pour un couple, puis le montant diminue lorsque des revenus existent. Pour un montant personnalisé, utilisez le simulateur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on toucher le RSA en travaillant ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Vos revenus d'activité sont déduits du montant forfaitaire : le RSA diminue à mesure que le salaire augmente, puis s'annule (vers 652 € nets par mois pour une personne seule sans aide au logement). La prime d'activité peut s'ajouter au RSA ou prendre le relais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "RSA et APL : est-ce cumulable ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, le RSA et l'APL sont deux allocations différentes et peuvent être cumulées si vous répondez aux critères de chacune."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment faire une demande de RSA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La demande se fait auprès de votre CAF (ou MSA selon votre régime), généralement en ligne. Vous devrez renseigner votre situation et transmettre des justificatifs. Le droit et le montant exact sont confirmés après instruction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "À qui faire la demande ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La demande de RSA se fait auprès de votre CAF (Caisse d'Allocations Familiales). Vous pouvez la contacter en ligne sur CAF.fr ou vous présenter directement à l'accueil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre RSA et Prime d'activité ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le RSA garantit un revenu minimum aux foyers sans ressources ou à très faibles ressources. La prime d'activité complète les revenus des personnes qui travaillent. Les deux sont cumulables : avec un petit salaire, vous pouvez toucher à la fois un reste de RSA et la prime d'activité. Notre simulateur de prime d'activité permet de l'estimer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps pour recevoir le RSA après la demande ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le droit est ouvert à partir du mois où vous déposez votre demande : les mois antérieurs ne sont pas rattrapés, d'où l'intérêt de la déposer sans attendre. Le RSA est versé à terme échu, le mois suivant, une fois le dossier complet instruit par la CAF ou la MSA. Depuis le 1er janvier 2025, la demande vaut aussi inscription à France Travail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le RSA est-il reconduit automatiquement tous les mois ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, il faut déclarer chaque trimestre vos ressources à la CAF via le formulaire de déclaration trimestrielle. Sans cette déclaration, le versement est suspendu. Pensez aussi à déclarer tout changement de situation (nouvel emploi, déménagement, naissance)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel salaire pour ne plus toucher le RSA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le salaire est déduit euro pour euro du montant forfaitaire : pour une personne seule sans aide au logement, le RSA devient nul à partir d'environ 652 € net par mois de revenus (environ 574 € avec une aide au logement, à cause du forfait logement). Au-delà, c'est la prime d'activité qui peut prendre le relais. Utilisez notre simulateur pour calculer précisément votre seuil selon votre situation."
+          }
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
   <meta name="source" content="caf.fr, service-public.gouv.fr, legifrance.gouv.fr" />
 </head>
   <body class="bg-gray-50">
@@ -715,8 +739,8 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-6">Questions fréquentes</h2>
         <div class="space-y-4">
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Quelles sont les conditions pour avoir le RSA ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Le RSA dépend de votre âge, de votre résidence en France, de la
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Quelles sont les conditions pour avoir le RSA ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Le RSA dépend de votre âge, de votre résidence en France, de la
  composition de votre foyer et de vos ressources. Des règles
  particulières existent selon les situations. Ce simulateur donne
  une estimation indicative ; la CAF/MSA vérifie les conditions et
@@ -724,25 +748,22 @@
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Qui peut bénéficier du RSA ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Le RSA est accessible aux personnes de plus de 25 ans (ou moins
- avec certaines conditions) ayant des ressources limitées. Les
- conditions précises sont définies par la CAF selon votre
- situation.</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Qui peut bénéficier du RSA ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Le RSA s'adresse aux personnes d'au moins 25 ans qui résident en France de manière stable et dont les ressources du foyer sont inférieures au montant forfaitaire (651,69 € pour une personne seule au 1er avril 2026). Les étrangers hors Union européenne doivent en principe détenir un titre de séjour autorisant à travailler depuis au moins 5 ans.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Peut-on toucher le RSA avant 25 ans ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">En principe, le RSA est accessible à partir de 25 ans. Cependant,
- certaines situations peuvent permettre d'y accéder avant (par
- exemple parent isolé, ou autres cas spécifiques selon les règles
- CAF/MSA). La réponse dépend de votre situation exacte : vérifiez
- sur CAF.fr/service-public.fr après l'estimation.</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Peut-on toucher le RSA avant 25 ans ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Oui, dans deux cas : si vous assumez la charge d'un enfant né ou à naître (parent isolé, femme enceinte), ou au titre du RSA jeune actif si vous avez travaillé au moins 2 ans à temps plein (3 214 heures) au cours des 3 dernières années.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Combien touche-t-on au RSA ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Le montant dépend du foyer (seul, couple, enfants) et des
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Combien touche-t-on au RSA ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Le montant dépend du foyer (seul, couple, enfants) et des
  ressources prises en compte. Sans ressources, l'ordre de grandeur
  est d'environ 600 € / mois pour une personne seule et autour de
  900 € / mois pour un couple, puis le montant diminue lorsque des
@@ -751,57 +772,57 @@
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Peut-on toucher le RSA en travaillant ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Oui, le RSA peut être cumulé avec des revenus de travail si
- ceux-ci restent en dessous des plafonds fixés par la CAF.</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Peut-on toucher le RSA en travaillant ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Oui. Vos revenus d'activité sont déduits du montant forfaitaire : le RSA diminue à mesure que le salaire augmente, puis s'annule (vers 652 € nets par mois pour une personne seule sans aide au logement). La prime d'activité peut s'ajouter au RSA ou prendre le relais.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">RSA et APL : est-ce cumulable ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Oui, le RSA et l'APL sont deux allocations différentes et peuvent
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">RSA et APL : est-ce cumulable ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Oui, le RSA et l'APL sont deux allocations différentes et peuvent
  être cumulées si vous répondez aux critères de chacune.</p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Comment faire une demande de RSA ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">La demande se fait auprès de votre CAF (ou MSA selon votre
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Comment faire une demande de RSA ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">La demande se fait auprès de votre CAF (ou MSA selon votre
  régime), généralement en ligne. Vous devrez renseigner votre
  situation et transmettre des justificatifs. Le droit et le
  montant exact sont confirmés après instruction.</p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">À qui faire la demande ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">La demande de RSA se fait auprès de votre CAF (Caisse
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">À qui faire la demande ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">La demande de RSA se fait auprès de votre CAF (Caisse
  d'Allocations Familiales). Vous pouvez la contacter en ligne sur
  CAF.fr ou vous présenter directement à l'accueil.</p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Quelle est la différence entre RSA et Prime d'activité ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Le RSA s'adresse aux personnes <strong>sans emploi ou avec très faibles revenus</strong>.
- La Prime d'activité concerne les <strong>travailleurs aux revenus modestes</strong>.
- On ne peut pas cumuler les deux. Si vous travaillez, la Prime d'activité est
- souvent plus avantageuse. Utilisez notre <a href="/pages/prime-activite" class="text-blue-600 hover:underline">simulateur Prime d'activité</a> pour comparer.</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Quelle est la différence entre RSA et Prime d'activité ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Le RSA garantit un revenu minimum aux foyers sans ressources ou à très faibles ressources. La prime d'activité complète les revenus des personnes qui travaillent. Les deux sont cumulables : avec un petit salaire, vous pouvez toucher à la fois un reste de RSA et la prime d'activité. Notre simulateur de prime d'activité permet de l'estimer.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Combien de temps pour recevoir le RSA après la demande ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Le délai moyen est de <strong>2 à 3 mois</strong> après le dépôt complet du dossier
- sur CAF.fr Le premier versement est <strong>rétroactif à la date de la demande</strong>.
- En attendant, vous pouvez faire une simulation pour estimer votre futur montant.</p>
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Combien de temps pour recevoir le RSA après la demande ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">
+              Le droit est ouvert à partir du mois où vous déposez votre demande : les mois antérieurs ne sont pas rattrapés, d'où l'intérêt de la déposer sans attendre. Le RSA est versé à terme échu, le mois suivant, une fois le dossier complet instruit par la CAF ou la MSA. Depuis le 1er janvier 2025, la demande vaut aussi inscription à France Travail.
+            </p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Le RSA est-il reconduit automatiquement tous les mois ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Non, il faut déclarer chaque trimestre vos ressources à la CAF via le <strong>formulaire de déclaration trimestrielle</strong>. Sans cette déclaration,
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Le RSA est-il reconduit automatiquement tous les mois ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Non, il faut déclarer chaque trimestre vos ressources à la CAF via le <strong>formulaire de déclaration trimestrielle</strong>. Sans cette déclaration,
  le versement est suspendu. Pensez aussi à déclarer tout changement de situation
  (nouvel emploi, déménagement, naissance).</p>
           </details>
 
           <details class="bg-white p-4 rounded-lg border border-gray-200">
-            <summary class="font-semibold text-gray-800 cursor-pointer">Quel salaire pour ne plus toucher le RSA ?</summary>
-            <p class="mt-3 text-gray-600 text-sm">Le salaire est déduit euro pour euro du montant forfaitaire : pour une personne seule sans aide au logement, le RSA devient nul à partir d'environ <strong>652 € net par mois</strong> de revenus (environ 574 € avec une aide au logement, à cause du forfait logement). Au-delà, c'est la <a href="/pages/prime-activite" class="text-blue-600 hover:underline">prime d'activité</a> qui peut prendre le relais. Utilisez notre simulateur pour calculer
+            <summary class="font-semibold text-gray-800 cursor-pointer" data-faq-q="faq">Quel salaire pour ne plus toucher le RSA ?</summary>
+            <p class="mt-3 text-gray-600 text-sm" data-faq-a="faq">Le salaire est déduit euro pour euro du montant forfaitaire : pour une personne seule sans aide au logement, le RSA devient nul à partir d'environ <strong>652 € net par mois</strong> de revenus (environ 574 € avec une aide au logement, à cause du forfait logement). Au-delà, c'est la <a href="/pages/prime-activite" class="text-blue-600 hover:underline">prime d'activité</a> qui peut prendre le relais. Utilisez notre simulateur pour calculer
  précisément votre seuil selon votre situation.</p>
           </details>
         </div>
