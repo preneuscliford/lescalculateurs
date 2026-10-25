@@ -19,6 +19,7 @@ import { calculerPrimeActivite, type PrimeActiviteCalculData } from "./primeActi
 import { calculerNotaire, type NotaireCalculData } from "./notaireCalculEngine";
 import { calculerFinDroits, formaterDateLongue, type FinDroitsData } from "./finDroitsChomageCalculEngine";
 import { calculerDepotGarantie, type DepotGarantieData } from "./depotGarantieCalculEngine";
+import { calculerDpeLocation, type DpeLocationData } from "./dpeLocationCalculEngine";
 
 /** Un calcul renvoie un montant (formaté à la française) ou un texte affiché tel quel (date…) */
 type Calcul = (params: any, champ?: string) => number | string;
@@ -73,6 +74,13 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
     };
     const v = valeurs[champ];
     if (v === undefined || v === null || v === "") throw new Error(`Champ depot-garantie indisponible : ${champ}`);
+    return v;
+  },
+  /** DPE et location ; champ = "dateInterdiction", "bailEnCoursJusquAu", "echeanceConcernee" (dates) */
+  "dpe-location": (p: DpeLocationData, champ = "dateInterdiction") => {
+    const r = calculerDpeLocation(p) as unknown as Record<string, string | null>;
+    const v = formaterDateLongue(r[champ] ?? null);
+    if (!v) throw new Error(`Champ dpe-location indisponible : ${champ}`);
     return v;
   },
 };

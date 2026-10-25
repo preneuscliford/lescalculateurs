@@ -238,6 +238,21 @@
           "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31269"
         }
       ]
+    },
+    "dpe-location": {
+      "prefixes": [
+        "dpe-location"
+      ],
+      "sources": [
+        {
+          "label": "Ministère de la Transition écologique : décence énergétique et gel des loyers",
+          "url": "https://www.ecologie.gouv.fr/politiques-publiques/location-gel-loyers-passoires-energetiques"
+        },
+        {
+          "label": "Service-public.gouv.fr : rédaction du bail d'habitation (durée du bail)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F920"
+        }
+      ]
     }
   }
 }

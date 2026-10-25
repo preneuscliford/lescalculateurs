@@ -136,5 +136,8 @@ export function calculerDepotGarantie(data: DepotGarantieData): DepotGarantieRes
 /** Date au format « 15 avril 2026 » */
 export function formaterDateLongue(iso: string | null): string {
   if (!iso) return "";
-  return versDate(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  // « 1er » pour le premier jour du mois, selon l'usage français
+  return versDate(iso)
+    .toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
+    .replace(/^1 /, "1er ");
 }

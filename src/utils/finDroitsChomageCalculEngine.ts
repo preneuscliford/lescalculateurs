@@ -259,7 +259,7 @@ export function calculerFinDroits(data: FinDroitsData): FinDroitsResult {
   return {
     eligible: true,
     message: inscriptionHorsDelai
-      ? `Inscription au-delà du délai de 12 mois après la fin du contrat (${versIso(dateLimiteInscription)}) : les droits liés à ce contrat sont en principe perdus, sauf allongement (arrêt maladie, congé maternité…).`
+      ? `Inscription au-delà du délai de 12 mois après la fin du contrat (limite au ${formaterDateLongue(versIso(dateLimiteInscription))}) : les droits liés à ce contrat sont en principe perdus, sauf allongement (arrêt maladie, congé maternité…).`
       : "Estimation sans autre interruption que celles que vous avez indiquées (reprise d'emploi, arrêt maladie).",
     differeSpecifiqueJours,
     differeCongesPayesJours,
@@ -295,5 +295,8 @@ export function calculerFinDroits(data: FinDroitsData): FinDroitsResult {
 /** Date au format « 20 novembre 2026 » */
 export function formaterDateLongue(iso: string | null): string {
   if (!iso) return "";
-  return versDate(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  // « 1er » pour le premier jour du mois, selon l'usage français
+  return versDate(iso)
+    .toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
+    .replace(/^1 /, "1er ");
 }

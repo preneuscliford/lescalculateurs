@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DPE F ou G : jusqu'à quand mon logement est-il louable ? (calculateur)</title>
+    <meta
+      name="description"
+      content="Logement classé G, F ou E au DPE : date à partir de laquelle il ne peut plus être loué, date limite pour un bail en cours (renouvellement, reconduction) et gel du loyer. Calcul selon la loi Climat et résilience."
+    />
+    <meta name="google-adsense-account" content="ca-pub-2209781252231399" />
+    <link rel="canonical" href="https://www.lescalculateurs.fr/pages/dpe-location" />
+    <meta property="og:url" content="https://www.lescalculateurs.fr/pages/dpe-location" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DPE F ou G : jusqu'à quand mon logement est-il louable ?" />
+    <meta property="og:description" content="Date d'interdiction de location selon le DPE, date limite pour un bail en cours et gel du loyer." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DPE F ou G : jusqu'à quand mon logement est-il louable ?" />
+    <meta name="twitter:description" content="Date d'interdiction de location selon le DPE, date limite pour un bail en cours et gel du loyer." />
+    <meta name="source" content="ecologie.gouv.fr, service-public.gouv.fr, legifrance.gouv.fr" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="../tailwind.css" />
+    <script type="module" src="./scripts/dpe-location-script.ts"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.lescalculateurs.fr" },
+          { "@type": "ListItem", "position": 2, "name": "DPE et location", "item": "https://www.lescalculateurs.fr/pages/dpe-location" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-faq="faq">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Mon bail en cours s'arrête-t-il si le logement est classé F ou G ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Les critères de décence énergétique ne s'appliquent pas aux contrats en cours : ils s'appliquent au moment du renouvellement ou de la reconduction tacite du bail. À cette échéance, le logement doit atteindre la classe exigée."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le propriétaire peut-il augmenter le loyer d'un logement classé F ou G ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Depuis août 2022, le loyer des logements classés F et G est gelé : pas de révision annuelle, pas de hausse entre deux locataires ni au renouvellement du bail. Une hausse n'est de nouveau possible qu'après des travaux atteignant au moins la classe E, prouvés par un nouveau DPE."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que peut faire le locataire d'un logement non décent ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Demander d'abord la mise en conformité à l'amiable, puis saisir la commission départementale de conciliation ou le juge. Le juge peut ordonner des travaux, réduire le loyer ou suspendre son paiement. Le locataire peut aussi exiger un DPE valide lors d'une reconduction tacite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le calendrier est-il le même en outre-mer ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, un calendrier propre s'applique en Guadeloupe, en Martinique, en Guyane, à La Réunion et à Mayotte. Nous n'avons pas pu le vérifier sur une source officielle : renseignez-vous auprès de l'ADIL de votre département."
+            }
+          }
+        ]
+      }
+    </script>
+    <script defer src="/third-party-loader.js"></script>
+  </head>
+
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/assets/lescalculateurs-new-logo.png" alt="LesCalculateurs" class="h-8 w-auto" />
+            <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
+          </a>
+          <nav class="flex items-center space-x-4 text-sm">
+            <a href="/pages/depot-de-garantie" class="text-gray-600 hover:text-blue-600">Dépôt de garantie</a>
+            <a href="/pages/simulateurs.html" class="text-gray-600 hover:text-blue-600">Outils</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-gradient-to-r from-amber-700 to-orange-800 text-white py-12">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">DPE et location : jusqu'à quand mon logement est-il louable ?</h1>
+        <p class="text-lg text-amber-50">
+          Selon la classe énergétique et votre bail, le calculateur donne la date à partir de laquelle le
+          logement ne peut plus être loué, la date limite pour un bail en cours, et si le loyer peut encore
+          augmenter.
+        </p>
+        <a href="#dpe-form" class="mt-6 inline-block rounded-lg bg-white px-6 py-3 font-semibold text-amber-800 hover:bg-amber-50">Calculer</a>
+      </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-12">
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Calculer pour mon logement</h2>
+        <form id="dpe-form" class="space-y-5" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="block text-sm font-medium text-gray-800">Classe énergétique (DPE)
+              <select id="dpe-classe" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5">
+                <option value="G+">G, avec plus de 450 kWh d'énergie finale par m² et par an</option>
+                <option value="G">G</option>
+                <option value="F" selected>F</option>
+                <option value="E">E</option>
+                <option value="D">D</option>
+                <option value="C">C</option>
+                <option value="B">B</option>
+                <option value="A">A</option>
+              </select>
+            </label>
+            <label class="block text-sm font-medium text-gray-800">Bail en cours
+              <select id="dpe-bail" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5">
+                <option value="">Pas de bail en cours</option>
+                <option value="vide-particulier">Location vide, bailleur particulier (3 ans)</option>
+                <option value="vide-societe">Location vide, bailleur société (6 ans)</option>
+                <option value="meuble">Location meublée (1 an)</option>
+                <option value="meuble-etudiant">Meublé étudiant (9 mois)</option>
+                <option value="mobilite">Bail mobilité</option>
+              </select>
+            </label>
+            <label class="block text-sm font-medium text-gray-800">Date de début du bail
+              <input type="date" id="dpe-debut" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+              <span class="mt-1 block text-xs text-gray-600">Date d'effet indiquée dans le bail.</span>
+            </label>
+          </div>
+          <label class="flex items-start gap-2 text-sm text-gray-800">
+            <input type="checkbox" id="dpe-outre-mer" class="mt-1" />
+            Le logement est en outre-mer (Guadeloupe, Martinique, Guyane, La Réunion, Mayotte)
+          </label>
+          <p id="dpe-erreur" class="hidden rounded-lg bg-red-50 p-3 text-sm text-red-800"></p>
+          <button type="submit" class="rounded-lg bg-amber-700 px-6 py-3 font-semibold text-white hover:bg-amber-800">Calculer</button>
+        </form>
+
+        <div id="dpe-resultat" class="mt-8 hidden space-y-6" aria-live="polite"></div>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Exemple : appartement classé F loué vide</h2>
+        <p class="text-gray-700">
+          Bail de 3 ans signé par un particulier le 1er septembre 2025, logement classé F. Les logements F
+          ne pourront plus être loués à partir du
+          <span data-exemple="dpe-location" data-params='{"classe":"F","typeBail":"vide-particulier","dateDebutBail":"2025-09-01","dateReference":"2026-10-25"}' data-champ="dateInterdiction">1er janvier 2028</span>.
+          Le bail en cours n'est pas remis en cause : il continue jusqu'au
+          <span data-exemple="dpe-location" data-params='{"classe":"F","typeBail":"vide-particulier","dateDebutBail":"2025-09-01","dateReference":"2026-10-25"}' data-champ="bailEnCoursJusquAu">31 août 2028</span>.
+          À son échéance du
+          <span data-exemple="dpe-location" data-params='{"classe":"F","typeBail":"vide-particulier","dateDebutBail":"2025-09-01","dateReference":"2026-10-25"}' data-champ="echeanceConcernee">1er septembre 2028</span>,
+          il ne pourra être ni renouvelé ni reconduit sans travaux pour atteindre au moins la classe E.
+          D'ici là, le loyer ne peut pas augmenter.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Le calendrier en métropole</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="border border-gray-300 px-3 py-2 text-left">Classe</th>
+                <th class="border border-gray-300 px-3 py-2 text-left">Plus de nouveau bail, de renouvellement ni de reconduction à partir du</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="border border-gray-300 px-3 py-2">G (plus de 450 kWh d'énergie finale/m²/an)</td><td class="border border-gray-300 px-3 py-2">1er janvier 2023</td></tr>
+              <tr><td class="border border-gray-300 px-3 py-2">G</td><td class="border border-gray-300 px-3 py-2">1er janvier 2025</td></tr>
+              <tr><td class="border border-gray-300 px-3 py-2">F</td><td class="border border-gray-300 px-3 py-2">1er janvier 2028</td></tr>
+              <tr><td class="border border-gray-300 px-3 py-2">E</td><td class="border border-gray-300 px-3 py-2">1er janvier 2034</td></tr>
+              <tr><td class="border border-gray-300 px-3 py-2">A à D</td><td class="border border-gray-300 px-3 py-2">pas d'interdiction prévue</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 mt-4">
+          Un logement qui n'atteint pas la classe exigée n'est plus considéré comme décent. Les baux en
+          cours ne sont concernés qu'à leur renouvellement ou à leur reconduction tacite. Les loyers des
+          logements classés F et G sont gelés depuis août 2022 : ni révision annuelle, ni hausse à la
+          relocation ou au renouvellement, tant que des travaux n'ont pas fait atteindre au moins la classe E.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Questions fréquentes</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Mon bail en cours s'arrête-t-il si le logement est classé F ou G ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Non. Les critères de décence énergétique ne s'appliquent pas aux contrats en cours : ils s'appliquent au moment du renouvellement ou de la reconduction tacite du bail. À cette échéance, le logement doit atteindre la classe exigée.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Le propriétaire peut-il augmenter le loyer d'un logement classé F ou G ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Non. Depuis août 2022, le loyer des logements classés F et G est gelé : pas de révision annuelle, pas de hausse entre deux locataires ni au renouvellement du bail. Une hausse n'est de nouveau possible qu'après des travaux atteignant au moins la classe E, prouvés par un nouveau DPE.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Que peut faire le locataire d'un logement non décent ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Demander d'abord la mise en conformité à l'amiable, puis saisir la commission départementale de conciliation ou le juge. Le juge peut ordonner des travaux, réduire le loyer ou suspendre son paiement. Le locataire peut aussi exiger un DPE valide lors d'une reconduction tacite.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Le calendrier est-il le même en outre-mer ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Non, un calendrier propre s'applique en Guadeloupe, en Martinique, en Guyane, à La Réunion et à Mayotte. Nous n'avons pas pu le vérifier sur une source officielle : renseignez-vous auprès de l'ADIL de votre département.</p>
+          </div>
+        </div>
+      </section>
+
+      <p class="text-xs text-gray-600">
+        Estimation indicative pour un logement loué en résidence principale, selon la FAQ « Décence
+        énergétique et gel des loyers » du ministère de la Transition écologique et l'article 6 de la loi
+        du 6 juillet 1989. La classe à retenir est celle d'un DPE en cours de validité.
+      </p>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+        <p class="mb-4">© 2026 Les Calculateurs — Simulateurs gratuits français</p>
+        <div class="flex gap-4 text-sm flex-wrap justify-center mb-4">
+          <a href="/pages/methodologie" class="text-gray-300 hover:text-white transition-colors">📘 Méthodologie</a>
+          <span class="text-gray-500">|</span>
+          <a href="/pages/sources" class="text-gray-300 hover:text-white transition-colors">📚 Sources</a>
+        </div>
+        <p class="text-gray-400">Tous les calculs sont indicatifs.</p>
+      </div>
+    </footer>
+  </body>
+</html>
