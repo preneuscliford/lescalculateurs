@@ -14,8 +14,11 @@
  *   l'allocation dépasse 92,57 € par jour, sans descendre sous 92,57 € ;
  * - inscription dans les 12 mois suivant la fin du contrat.
  *
- * Hypothèses : indemnisation continue (sans reprise d'emploi, arrêt maladie ou formation, qui
- * décalent la date de fin) ; métropole seulement (outre-mer : règles de durée non vérifiées).
+ * Report (are.report) : les jours d'arrêt maladie et les jours non indemnisés pendant une reprise
+ * d'emploi repoussent la date de fin ; arrêt maladie et formation retardent aussi la dégressivité.
+ *
+ * Hypothèses : mois de 30 jours pour la reprise d'emploi, salaire de reprise identique chaque mois ;
+ * métropole seulement (outre-mer : règles de durée non vérifiées).
  */
 
 import { socialBaremes } from "../data/social-baremes";
@@ -53,6 +56,14 @@ export interface FinDroitsData {
   delaiAttenteDejaApplique?: boolean;
   /** Résidence en outre-mer à l'ouverture des droits */
   outreMer?: boolean;
+  /** Jours d'arrêt maladie (ou de congé maternité) pendant l'indemnisation */
+  joursArretMaladie?: number;
+  /** Salaire mensuel brut d'un emploi repris pendant l'indemnisation */
+  salaireRepriseMensuelBrut?: number;
+  /** Nombre de mois travaillés à ce salaire */
+  moisReprise?: number;
+  /** Jours de formation (inscrite au contrat d'engagement ou financée par le CPF) */
+  joursFormation?: number;
 }
 
 export interface FinDroitsResult {
@@ -84,6 +95,16 @@ export interface FinDroitsResult {
     plafondApplique: boolean;
     plafondJours: number;
   } | null;
+  /** Report de la date de fin (arrêt maladie, reprise d'emploi) */
+  report: {
+    arretMaladieJours: number;
+    repriseJoursNonIndemnises: number;
+    /** Jours indemnisés par mois de reprise et allocation versée ce mois-là */
+    repriseJoursIndemnisesParMois: number | null;
+    repriseAllocationMensuelle: number | null;
+    /** Date de fin sans aucune interruption (AAAA-MM-JJ) */
+    dateFinSansInterruption: string | null;
+  };
   /** Points non calculés faute de règle vérifiée */
   aVerifier: string[];
 }
@@ -130,6 +151,7 @@ export function calculerFinDroits(data: FinDroitsData): FinDroitsResult {
     sjr: Math.round(sjr * 100) / 100,
     degressivite: { applicable: false, dateDebut: null, allocationApres: null, raison: "" },
     duree: null,
+    report: { arretMaladieJours: 0, repriseJoursNonIndemnises: 0, repriseJoursIndemnisesParMois: null, repriseAllocationMensuelle: null, dateFinSansInterruption: null },
     aVerifier,
   });
 
@@ -190,7 +212,24 @@ export function calculerFinDroits(data: FinDroitsData): FinDroitsResult {
         ruptureConventionnelle: data.typeRupture === "rupture-conventionnelle",
         dateFinContrat: fin,
       });
-  const dateFinDroits = duree ? ajouterJours(premierJour, duree.jours - 1) : null;
+  // Report : arrêt maladie (jour pour jour) et jours non indemnisés pendant une reprise d'emploi
+  const R = ARE.report;
+  const arretMaladieJours = Math.max(0, Math.floor(Number(data.joursArretMaladie) || 0));
+  const salaireReprise = Math.max(0, Number(data.salaireRepriseMensuelBrut) || 0);
+  const moisReprise = Math.max(0, Math.floor(Number(data.moisReprise) || 0));
+  let repriseJoursIndemnisesParMois: number | null = null;
+  let repriseAllocationMensuelle: number | null = null;
+  let repriseJoursNonIndemnises = 0;
+  if (salaireReprise > 0 && moisReprise > 0 && allocationJournaliere > 0) {
+    const apresDeduction = (allocationJournaliere * R.joursParMois - salaireReprise * R.partSalaireDeduite) / allocationJournaliere;
+    const plafond = (sjr * R.coefficientPlafondCumul - salaireReprise) / allocationJournaliere;
+    const jours = Math.min(R.joursParMois, Math.max(0, Math.round(Math.min(apresDeduction, plafond))));
+    repriseJoursIndemnisesParMois = jours;
+    repriseAllocationMensuelle = Math.round(jours * allocationJournaliere * 100) / 100;
+    repriseJoursNonIndemnises = (R.joursParMois - jours) * moisReprise;
+  }
+  const finSansInterruption = duree ? ajouterJours(premierJour, duree.jours - 1) : null;
+  const dateFinDroits = finSansInterruption ? ajouterJours(finSansInterruption, arretMaladieJours + repriseJoursNonIndemnises) : null;
 
   // Dégressivité
   const G = ARE.degressivite;
@@ -206,7 +245,11 @@ export function calculerFinDroits(data: FinDroitsData): FinDroitsResult {
     degressivite = {
       applicable: true,
       // Début du 7e mois : 6 mois d'indemnisation continue après le premier jour indemnisé
-      dateDebut: versIso(ajouterMois(premierJour, G.moisDebut - 1)),
+      // Début du 7e mois : 6 mois d'indemnisation après le premier jour indemnisé, décalés des
+      // jours d'arrêt maladie et de formation (pendant lesquels le décompte est suspendu)
+      dateDebut: versIso(
+        ajouterJours(ajouterMois(premierJour, G.moisDebut - 1), arretMaladieJours + Math.max(0, Math.floor(Number(data.joursFormation) || 0))),
+      ),
       allocationApres:
         Math.round(Math.max(G.plancherAllocationJournaliere, allocationJournaliere * (1 - G.coefficientReduction)) * 100) / 100,
       raison: `allocation supérieure à ${G.seuilAllocationJournaliere.toLocaleString("fr-FR")} € par jour et moins de ${ageExemption} ans`,
@@ -217,7 +260,7 @@ export function calculerFinDroits(data: FinDroitsData): FinDroitsResult {
     eligible: true,
     message: inscriptionHorsDelai
       ? `Inscription au-delà du délai de 12 mois après la fin du contrat (${versIso(dateLimiteInscription)}) : les droits liés à ce contrat sont en principe perdus, sauf allongement (arrêt maladie, congé maternité…).`
-      : "Estimation pour une indemnisation continue, sans reprise d'emploi, arrêt maladie ou formation.",
+      : "Estimation sans autre interruption que celles que vous avez indiquées (reprise d'emploi, arrêt maladie).",
     differeSpecifiqueJours,
     differeCongesPayesJours,
     delaiAttenteJours,
@@ -229,6 +272,13 @@ export function calculerFinDroits(data: FinDroitsData): FinDroitsResult {
     allocationJournaliere: Math.round(allocationJournaliere * 100) / 100,
     sjr: Math.round(sjr * 100) / 100,
     degressivite,
+    report: {
+      arretMaladieJours,
+      repriseJoursNonIndemnises,
+      repriseJoursIndemnisesParMois,
+      repriseAllocationMensuelle,
+      dateFinSansInterruption: finSansInterruption ? versIso(finSansInterruption) : null,
+    },
     duree: duree
       ? {
           joursCalendaires,

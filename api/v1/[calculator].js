@@ -1324,6 +1324,23 @@ var socialBaremes = {
       ageExemption: 55,
       ageExemptionAvantReforme: 57,
       dateReformeAge: "2025-04-01"
+    },
+    // Report de la fin des droits (Unédic, pages lues le 25/10/2026) :
+    // - arrêt maladie : le versement de l'ARE cesse et « la période où vous ne percevez pas votre
+    //   allocation chômage est reportée et vient prolonger votre période d'indemnisation » ;
+    // - reprise d'emploi (fiche « Cumul allocation-salaire » du 05/10/2026) : jours indemnisés
+    //   dans le mois = [ARE du mois − 70 % du salaire brut] ÷ allocation journalière, arrondi à
+    //   l'entier le plus proche ; allocation + salaire limités à SJR × 30,42 ; les jours non
+    //   consommés prolongent les droits ;
+    // - formation inscrite au contrat d'engagement ou financée par le CPF : suspend le décompte
+    //   de la dégressivité (fiche ARE).
+    report: {
+      sourceUrlArretMaladie: "https://www.unedic.org/l-assurance-chomage-et-vous/demandeur-d-emploi-ou-salarie/mes-droits-en-fonction-de-mon-parcours/je-suis-en-arret-maladie-que-deviennent-mes-allocations-chomage",
+      sourceUrlCumul: "https://www.unedic.org/la-reglementation/fiches-thematiques/cumul-allocation-salaire",
+      partSalaireDeduite: 0.7,
+      coefficientPlafondCumul: 30.42,
+      // Mois de 30 jours pour l'estimation (la règle utilise le nombre de jours du mois concerné)
+      joursParMois: 30
     }
   },
   apl: {

@@ -53,6 +53,8 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
       differeSpecifique: r.differeSpecifiqueJours,
       differeCongesPayes: r.differeCongesPayesJours,
       allocationApres: r.degressivite.allocationApres,
+      dateFinSansInterruption: formaterDateLongue(r.report.dateFinSansInterruption),
+      repriseJoursIndemnises: r.report.repriseJoursIndemnisesParMois,
     };
     const v = valeurs[champ];
     if (v === undefined || v === null || v === "") throw new Error(`Champ fin-droits indisponible : ${champ}`);

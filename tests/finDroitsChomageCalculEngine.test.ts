@@ -127,3 +127,33 @@ describe("cas particuliers", () => {
     expect(r.aVerifier.length).toBe(1);
   });
 });
+
+describe("report de la date de fin (arrêt maladie, reprise d'emploi, formation)", () => {
+  test("arrêt maladie : la date de fin est repoussée du nombre de jours d'arrêt", () => {
+    const r = calculerFinDroits({ ...base, dateDebutPremierContrat: "2024-11-02", joursArretMaladie: 15 });
+    expect(r.report.dateFinSansInterruption).toBe("2028-05-09");
+    expect(r.dateFinDroits).toBe("2028-05-24");
+  });
+
+  test("reprise d'emploi : exemple Unédic (allocation 57 €/jour, salaire 2 100 €) = 4 jours indemnisés, 26 jours reportés", () => {
+    // SJR de 100 € (salaire de 3 041,67 €) : allocation journalière de 57 €, plafond 3 042 €
+    const r = calculerFinDroits({ ...base, salaireMensuelBrut: 3041.67, salaireRepriseMensuelBrut: 2100, moisReprise: 1 });
+    expect(r.allocationJournaliere).toBeCloseTo(57, 1);
+    expect(r.report.repriseJoursIndemnisesParMois).toBe(4);
+    expect(r.report.repriseAllocationMensuelle).toBeCloseTo(228, 0);
+    expect(r.report.repriseJoursNonIndemnises).toBe(26);
+  });
+
+  test("reprise d'emploi à temps plein : aucun jour indemnisé, tout le mois est reporté", () => {
+    const r = calculerFinDroits({ ...base, salaireRepriseMensuelBrut: 2500, moisReprise: 3 });
+    expect(r.report.repriseJoursIndemnisesParMois).toBe(0);
+    expect(r.report.repriseJoursNonIndemnises).toBe(90);
+  });
+
+  test("formation et arrêt maladie retardent la dégressivité", () => {
+    const sans = calculerFinDroits({ ...base, salaireMensuelBrut: 6000 });
+    const avec = calculerFinDroits({ ...base, salaireMensuelBrut: 6000, joursFormation: 30, joursArretMaladie: 10 });
+    expect(sans.degressivite.dateDebut).toBe("2027-05-09");
+    expect(avec.degressivite.dateDebut).toBe("2027-06-18");
+  });
+});

@@ -81,6 +81,22 @@
           },
           {
             "@type": "Question",
+            "name": "Un arrêt maladie repousse-t-il la fin de droits au chômage ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Pendant un arrêt maladie, l'allocation chômage cesse et est remplacée par les indemnités journalières de l'Assurance maladie. La période non indemnisée par France Travail prolonge d'autant la durée de vos droits. Il faut déclarer l'arrêt à l'Assurance maladie et à France Travail."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Travailler pendant le chômage repousse-t-il la fin de mes droits ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Chaque mois, 70 % de votre salaire brut est retiré de l'allocation du mois ; le reste est versé et correspond à un nombre de jours consommés. Les jours non consommés prolongent vos droits. L'allocation et le salaire réunis ne peuvent pas dépasser votre ancien salaire de référence."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Que faire à la fin de mes droits au chômage ?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -172,6 +188,25 @@
               <span class="mt-1 block text-xs text-gray-600">Part des indemnités de licenciement ou de rupture conventionnelle qui dépasse l'indemnité légale (0 si vous avez touché le minimum).</span>
             </label>
           </div>
+          <fieldset class="rounded-lg border border-gray-200 p-4">
+            <legend class="px-1 text-sm font-semibold text-gray-900">Pendant votre chômage (facultatif)</legend>
+            <p class="mb-3 text-xs text-gray-600">Ces périodes repoussent votre date de fin de droits.</p>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="block text-sm font-medium text-gray-800">Jours d'arrêt maladie ou de congé maternité
+                <input type="number" id="fd-arret" min="0" value="0" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+              </label>
+              <label class="block text-sm font-medium text-gray-800">Jours de formation
+                <input type="number" id="fd-formation" min="0" value="0" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+                <span class="mt-1 block text-xs text-gray-600">Retardent la dégressivité (formation inscrite à votre projet ou financée par le CPF).</span>
+              </label>
+              <label class="block text-sm font-medium text-gray-800">Salaire brut mensuel d'un emploi repris
+                <input type="number" id="fd-reprise-salaire" min="0" step="10" value="0" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+              </label>
+              <label class="block text-sm font-medium text-gray-800">Nombre de mois travaillés
+                <input type="number" id="fd-reprise-mois" min="0" value="0" class="mt-1 w-full rounded-lg border border-gray-300 p-2.5" />
+              </label>
+            </div>
+          </fieldset>
           <label class="flex items-start gap-2 text-sm text-gray-800">
             <input type="checkbox" id="fd-attente-deja" class="mt-1" />
             Le délai d'attente de 7 jours m'a déjà été appliqué au cours des 12 derniers mois
@@ -249,14 +284,20 @@
       <section class="bg-amber-50 border border-amber-200 rounded-lg p-6 sm:p-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">Ce qui décale votre date de fin de droits</h2>
         <p class="text-gray-700 mb-3">
-          La date affichée suppose une indemnisation continue. Les jours non indemnisés ne sont pas
-          perdus : ils repoussent la date de fin. C'est le cas notamment :
+          Les jours non indemnisés ne sont pas perdus : ils repoussent la date de fin. Le calculateur en
+          tient compte si vous les indiquez dans le formulaire :
         </p>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>d'une reprise d'emploi, même partielle (une partie des jours du mois n'est pas indemnisée) ;</li>
-          <li>d'un arrêt maladie ou d'un congé maternité indemnisé par l'Assurance maladie ;</li>
-          <li>d'une formation, qui suspend aussi le décompte de la dégressivité.</li>
+          <li><strong>arrêt maladie</strong> : l'allocation cesse pendant l'arrêt, et la période non indemnisée prolonge d'autant vos droits ;</li>
+          <li><strong>reprise d'emploi</strong>, même partielle : chaque mois, 70 % du salaire brut est retiré de l'allocation du mois, et seuls les jours correspondant à l'allocation restante sont consommés ; les autres repoussent la fin des droits ;</li>
+          <li><strong>formation</strong> (inscrite à votre projet ou financée par le CPF) : elle suspend le décompte de la dégressivité.</li>
         </ul>
+        <p class="text-gray-700 mt-3">
+          Exemple : salarié licencié fin octobre 2026 après 4 ans de contrat, 2 600 € brut, qui reprend
+          un mi-temps à 1 300 € brut pendant 6 mois. Chaque mois, il ne consomme que <span data-exemple="fin-droits" data-params='{"dateFinContrat":"2026-10-31","dateInscription":"2026-11-03","agePersonne":42,"dateDebutPremierContrat":"2022-03-01","typeRupture":"licenciement","salaireMensuelBrut":2600,"salaireRepriseMensuelBrut":1300,"moisReprise":6}' data-champ="repriseJoursIndemnises">11</span>
+          jours de droits : sa fin de droits passe du <span data-exemple="fin-droits" data-params='{"dateFinContrat":"2026-10-31","dateInscription":"2026-11-03","agePersonne":42,"dateDebutPremierContrat":"2022-03-01","typeRupture":"licenciement","salaireMensuelBrut":2600,"salaireRepriseMensuelBrut":1300,"moisReprise":6}' data-champ="dateFinSansInterruption">10 mai 2028</span>
+          au <span data-exemple="fin-droits" data-params='{"dateFinContrat":"2026-10-31","dateInscription":"2026-11-03","agePersonne":42,"dateDebutPremierContrat":"2022-03-01","typeRupture":"licenciement","salaireMensuelBrut":2600,"salaireRepriseMensuelBrut":1300,"moisReprise":6}' data-champ="dateFin">1 septembre 2028</span>.
+        </p>
         <p class="text-gray-700 mt-3">
           En fin de carrière, le maintien des allocations jusqu'à la retraite à taux plein est possible
           sous conditions (âge, durée d'affiliation, trimestres validés) : il n'est pas calculé ici.
@@ -282,6 +323,14 @@
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Qui est concerné par la dégressivité du chômage ?</h3>
             <p class="text-gray-700" data-faq-a="faq">Les allocataires de moins de 55 ans à la fin du contrat dont l'allocation dépasse 92,57 € par jour, soit un salaire d'environ 4 940 € brut par mois. L'allocation baisse alors de 30 % à partir du 7e mois d'indemnisation, sans descendre sous 92,57 € par jour.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Un arrêt maladie repousse-t-il la fin de droits au chômage ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Oui. Pendant un arrêt maladie, l'allocation chômage cesse et est remplacée par les indemnités journalières de l'Assurance maladie. La période non indemnisée par France Travail prolonge d'autant la durée de vos droits. Il faut déclarer l'arrêt à l'Assurance maladie et à France Travail.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Travailler pendant le chômage repousse-t-il la fin de mes droits ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Oui. Chaque mois, 70 % de votre salaire brut est retiré de l'allocation du mois ; le reste est versé et correspond à un nombre de jours consommés. Les jours non consommés prolongent vos droits. L'allocation et le salaire réunis ne peuvent pas dépasser votre ancien salaire de référence.</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2" data-faq-q="faq">Que faire à la fin de mes droits au chômage ?</h3>

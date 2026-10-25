@@ -49,6 +49,10 @@ form?.addEventListener("submit", (e) => {
     indemnitesSupraLegales: nombre("fd-supra"),
     delaiAttenteDejaApplique: coche("fd-attente-deja"),
     outreMer: coche("fd-outre-mer"),
+    joursArretMaladie: nombre("fd-arret"),
+    joursFormation: nombre("fd-formation"),
+    salaireRepriseMensuelBrut: nombre("fd-reprise-salaire"),
+    moisReprise: nombre("fd-reprise-mois"),
   });
 
   if (!r.eligible) {
@@ -61,7 +65,15 @@ form?.addEventListener("submit", (e) => {
   const cartes = [
     carte("Premier jour indemnisé", formaterDateLongue(r.premierJourIndemnise)),
     r.dureeJours ? carte("Durée de vos droits", `${r.dureeJours} jours`, `environ ${mois} mois`) : "",
-    r.dateFinDroits ? carte("Dernier jour indemnisé", formaterDateLongue(r.dateFinDroits), "si l'indemnisation n'est pas interrompue") : "",
+    r.dateFinDroits
+      ? carte(
+          "Dernier jour indemnisé",
+          formaterDateLongue(r.dateFinDroits),
+          r.dateFinDroits !== r.report.dateFinSansInterruption
+            ? `au lieu du ${formaterDateLongue(r.report.dateFinSansInterruption)} sans interruption`
+            : "si l'indemnisation n'est pas interrompue",
+        )
+      : "",
     carte("Inscription au plus tard le", formaterDateLongue(r.dateLimiteInscription), "12 mois après la fin du contrat"),
   ].join("");
 
@@ -79,6 +91,23 @@ form?.addEventListener("submit", (e) => {
 
   const finDroits = r.dateFinDroits ? formaterDateLongue(r.dateFinDroits) : "la fin de vos droits";
 
+  const lignesReport: string[] = [];
+  if (r.report.arretMaladieJours) {
+    lignesReport.push(`Arrêt maladie : ${r.report.arretMaladieJours} jour(s) non indemnisés par France Travail, qui repoussent d'autant la fin de vos droits.`);
+  }
+  if (r.report.repriseJoursIndemnisesParMois !== null) {
+    lignesReport.push(
+      `Reprise d'emploi : chaque mois, environ ${r.report.repriseJoursIndemnisesParMois} jour(s) indemnisés, soit ${euros(
+        r.report.repriseAllocationMensuelle || 0,
+      )} d'allocation en plus du salaire ; ${r.report.repriseJoursNonIndemnises} jour(s) de droits reportés au total.`,
+    );
+  }
+  const blocReport = lignesReport.length
+    ? `<div class="rounded-lg border border-gray-200 p-4 text-sm text-gray-700"><h3 class="font-semibold text-gray-900 mb-2">Ce qui repousse votre fin de droits</h3><ul class="list-disc list-inside space-y-1">${lignesReport
+        .map((l) => `<li>${echapper(l)}</li>`)
+        .join("")}</ul></div>`
+    : "";
+
   resultat.innerHTML = `
     ${r.inscriptionHorsDelai ? `<p class="rounded-lg bg-red-50 p-3 text-sm text-red-800">${echapper(r.message)}</p>` : ""}
     <div class="grid gap-4 sm:grid-cols-2">${cartes}</div>
@@ -93,6 +122,7 @@ form?.addEventListener("submit", (e) => {
         }</li>
       </ul>
     </div>
+    ${blocReport}
     <div class="rounded-lg border border-gray-200 p-4 text-sm text-gray-700">
       <h3 class="font-semibold text-gray-900 mb-2">Dégressivité</h3>
       ${degressivite}
