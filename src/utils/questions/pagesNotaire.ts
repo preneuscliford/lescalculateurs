@@ -62,8 +62,8 @@ type Cas = "ancien" | "neuf" | "primo";
 const params = (code: string, prix: number, cas: Cas) =>
   JSON.stringify({ prixAchat: prix, typeBien: cas === "neuf" ? "neuf" : "ancien", departement: code, ...(cas === "primo" ? { primoAccedant: true } : {}) });
 const frais = (code: string, prix: number, cas: Cas, champ = "total") =>
-  `<span data-exemple="notaire" data-params='${params(code, prix, cas)}'${champ !== "total" ? ` data-champ="${champ}"` : ""}></span>`;
-const taux = (code: string, cas: Cas = "ancien") => `<span data-exemple="notaire-taux" data-params='${params(code, 200000, cas)}'></span>`;
+  `<span data-exemple="notaire" data-params='${params(code, prix, cas)}'${champ !== "total" ? ` data-champ="${champ}"` : ""} class="whitespace-nowrap"></span>`;
+const taux = (code: string, cas: Cas = "ancien") => `<span data-exemple="notaire-taux" data-params='${params(code, 200000, cas)}' class="whitespace-nowrap"></span>`;
 
 /** « {notaire:250000:primo} » dans un texte de la liste → montant calculé par le moteur */
 function avecMontants(texte: string, code: string): string {
