@@ -13,7 +13,7 @@
     { "simulateur": "fin-droits", "chemins": ["fin-de-droits-chomage"] },
     { "simulateur": "indemnite-licenciement", "chemins": ["indemnite-licenciement"] },
     { "simulateur": "retraite", "chemins": ["retraite"] },
-    { "simulateur": "notaire", "chemins": ["notaire", "comment-calculer-frais-notaire"] },
+    { "simulateur": "notaire", "chemins": ["notaire", "comment-calculer-frais-notaire", "blog/departements", "blog/frais-notaire-departements"] },
     { "simulateur": "ptz", "chemins": ["ptz"] },
     { "simulateur": "dpe-location", "chemins": ["dpe-location"] },
     { "simulateur": "depot-garantie", "chemins": ["depot-de-garantie"] }

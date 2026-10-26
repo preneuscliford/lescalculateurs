@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 /**
- * Génère les pages de questions depuis src/data/questions-validees.json (entrées « valide ») :
- * - une page par situation et le sommaire de l'aide (src/pages/<slug>/index.html), montants calculés
- *   par les moteurs (data-exemple) et FAQ JSON-LD régénérée depuis la FAQ visible ;
+ * Génère les pages de questions depuis les listes validées (entrées « valide ») :
+ * - src/data/questions-validees.json : une page par situation et le sommaire de l'aide
+ *   (src/pages/<slug>/index.html) ;
+ * - src/data/notaire-departements-pages.json : une page « frais de notaire » par département
+ *   (src/pages/<slug>.html) et la page globale par département ;
+ * montants calculés par les moteurs (data-exemple) et FAQ JSON-LD régénérée depuis la FAQ visible ;
  * - le sitemap (public/sitemap.xml) : pages ajoutées, pages redirigées et URL /r/ retirées ;
  * - les redirections 301 des pages remplacées (vercel.json).
  *
  * Lancé au build avant sync-exemples. --check : échoue si un fichier n'est pas à jour, sans écrire.
- * Voir src/utils/questions/pagesQuestions.ts.
+ * Voir src/utils/questions/pagesQuestions.ts et pagesNotaire.ts.
  */
 const fs = require("fs");
 const os = require("os");
@@ -22,6 +25,7 @@ const bundle = path.join(os.tmpdir(), `pages-questions-${process.pid}.cjs`);
 fs.writeFileSync(
   entree,
   `export * from ${JSON.stringify(path.join(root, "src/utils/questions/pagesQuestions.ts"))};\n` +
+    `export * from ${JSON.stringify(path.join(root, "src/utils/questions/pagesNotaire.ts"))};\n` +
     `export { synchroniserExemples, synchroniserFaqJsonLd } from ${JSON.stringify(path.join(root, "src/utils/exemplesChiffres.ts"))};\n`,
 );
 esbuild.buildSync({ entryPoints: [entree], bundle: true, platform: "node", format: "cjs", outfile: bundle, logLevel: "error" });
@@ -73,15 +77,23 @@ for (const s of Q.SOMMAIRES) {
   ecrire(path.join("src/pages", s.slug, "index.html"), finaliser(Q.sommaireApl(s)));
 }
 
+// Frais de notaire par département : pages du lot et page globale
+const generees = new Set(Q.SLUGS_NOTAIRE);
+const existe = (slug) => generees.has(slug) || fs.existsSync(path.join(root, "src/pages", `${slug}.html`));
+for (const p of Q.PAGES_NOTAIRE) ecrire(path.join("src/pages", `${p.slug}.html`), finaliser(Q.pageNotaire(p, existe)));
+ecrire(path.join("src/pages", `${Q.SLUG_PAGE_GLOBALE}.html`), finaliser(Q.pageGlobaleNotaire(existe)));
+
 // Sitemap
 const sitemap = fs.readFileSync(path.join(root, "public/sitemap.xml"), "utf8");
-ecrire("public/sitemap.xml", Q.majSitemap(sitemap.replace(/\r\n/g, "\n"), siteUpdate.lastVerified));
+const pagesSitemap = [...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug), ...Q.SLUGS_NOTAIRE];
+const redirigees = [...Q.REDIRECTIONS, ...Q.REDIRECTIONS_NOTAIRE];
+ecrire("public/sitemap.xml", Q.majSitemap(sitemap.replace(/\r\n/g, "\n"), siteUpdate.lastVerified, pagesSitemap, redirigees.map((r) => r.de)));
 
 // Redirections 301 des pages remplacées
 const vercelTexte = fs.readFileSync(path.join(root, "vercel.json"), "utf8");
 const vercel = JSON.parse(vercelTexte);
 const existantes = new Set(vercel.redirects.map((r) => r.source));
-const nouvelles = Q.redirectionsVercel().filter((r) => !existantes.has(r.source));
+const nouvelles = Q.redirectionsVercel(redirigees).filter((r) => !existantes.has(r.source));
 if (nouvelles.length) {
   vercel.redirects.push(...nouvelles);
   ecrire("vercel.json", JSON.stringify(vercel, null, 2) + "\n");
@@ -94,5 +106,5 @@ if (check && aMettreAJour.length) {
 console.log(
   check
     ? "Pages de questions à jour."
-    : `${Q.QUESTIONS.length} page(s) de questions, ${Q.SOMMAIRES.length} sommaire(s) ; ${aMettreAJour.length} fichier(s) mis à jour${aMettreAJour.length ? ` : ${aMettreAJour.join(", ")}` : ""}.`,
+    : `${Q.QUESTIONS.length} page(s) de questions, ${Q.SOMMAIRES.length} sommaire(s), ${Q.PAGES_NOTAIRE.length} page(s) notaire ; ${aMettreAJour.length} fichier(s) mis à jour${aMettreAJour.length ? ` : ${aMettreAJour.join(", ")}` : ""}.`,
 );

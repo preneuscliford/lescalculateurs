@@ -44,6 +44,9 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
   /** Prime d'activité mensuelle */
   "prime-activite": (p: PrimeActiviteCalculData) => calculerPrimeActivite(p).montantEstime,
   /** Frais de notaire ; champ = "total" (défaut), "droitsEnregistrement", "emoluments"… */
+  /** Taux des droits de mutation appliqué, en texte : « 6,32 % » */
+  "notaire-taux": (p: NotaireCalculData) =>
+    `${(Math.round(calculerNotaire(p).tauxDroits * 100000) / 1000).toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 3 })} %`,
   notaire: (p: NotaireCalculData, champ = "total") => {
     const r = calculerNotaire(p) as unknown as Record<string, number>;
     if (typeof r[champ] !== "number") throw new Error(`Champ notaire inconnu : ${champ}`);

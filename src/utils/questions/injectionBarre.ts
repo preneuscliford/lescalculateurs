@@ -8,6 +8,7 @@
 import config from "../../data/barre-question.json";
 import { SIMULATEURS, resumeSituation, validerParametres, type ParametresQuestion, type SimulateurId } from "./simulateursQuestions";
 import { QUESTIONS, blocLiensSituations } from "./pagesQuestions";
+import { PAGES_NOTAIRE } from "./pagesNotaire";
 
 export interface PageBarre {
   simulateur: SimulateurId;
@@ -62,6 +63,11 @@ export function paramsScenarioApl(input: Record<string, unknown>): ParametresQue
  * situation quand elle est connue (sans enfant). Avec enfants, parent isolé ou couple reste à choisir.
  */
 export function paramsPageQuestion(chemin: string): ParametresQuestion | null {
+  // Page « frais de notaire » d'un département : le département est connu (pas pour la Corse, deux départements)
+  const notaire = PAGES_NOTAIRE.find((p) => p.slug === chemin);
+  if (notaire) return notaire.code === "corse" ? {} : { departement: notaire.codeMoteur };
+  const ancienne = /^blog\/departements\/frais-notaire-(\d{2,3}|2A|2B)$/.exec(chemin);
+  if (ancienne) return { departement: ancienne[1] };
   const q = QUESTIONS.find((e) => e.slug === chemin);
   if (!q) return null;
   return {

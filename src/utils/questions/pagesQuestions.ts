@@ -45,7 +45,7 @@ export const REDIRECTIONS: Redirection[] = QUESTIONS.flatMap((q) => q.pagesExist
 export const urlPage = (slug: string) => `${SITE}/pages/${slug}`;
 const href = (slug: string) => `/pages/${slug}`;
 
-const echapper = (t: string) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+export const echapper = (t: string) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const pluriel = (n: number, mot: string) => `${n} ${mot}${n > 1 ? "s" : ""}`;
 
 // ---------------------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ function titrePageExistante(slug: string, lireTitre: (slug: string) => string | 
   return lireTitre(slug) ?? slug.split("/").pop()!.replace(/-/g, " ");
 }
 
-function filAriane(elements: { nom: string; url: string }[]): { html: string; jsonLd: string } {
+export function filAriane(elements: { nom: string; url: string }[]): { html: string; jsonLd: string } {
   const html = `<nav aria-label="Fil d'Ariane" class="text-sm text-white/80"><ol class="flex flex-wrap gap-1">${elements
     .map((el, i) =>
       i < elements.length - 1
@@ -127,7 +127,7 @@ function filAriane(elements: { nom: string; url: string }[]): { html: string; js
   return { html, jsonLd };
 }
 
-function tete(titre: string, description: string, url: string, jsonLd: string[]): string {
+export function tete(titre: string, description: string, url: string, jsonLd: string[]): string {
   return `<!doctype html>
 <html lang="fr">
   <head>
@@ -154,7 +154,8 @@ ${jsonLd.map((j) => `    ${j}`).join("\n")}
   </head>`;
 }
 
-const ENTETE = `    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+/** En-tête commun ; le lien de navigation pointe vers le simulateur de la page */
+export const entete = (lien = "/pages/apl", libelle = "Simulateur APL") => `    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-14">
           <a href="/" class="flex items-center space-x-2">
@@ -162,14 +163,14 @@ const ENTETE = `    <header class="bg-white shadow-sm border-b border-gray-200 s
             <span class="font-bold text-gray-900 hidden sm:block">Les Calculateurs</span>
           </a>
           <nav class="flex items-center space-x-4 text-sm">
-            <a href="/pages/apl" class="text-gray-600 hover:text-blue-600">Simulateur APL</a>
+            <a href="${lien}" class="text-gray-600 hover:text-blue-600">${libelle}</a>
             <a href="/pages/simulateurs" class="text-gray-600 hover:text-blue-600">Outils</a>
           </nav>
         </div>
       </div>
     </header>`;
 
-const PIED = `    <footer class="bg-gray-800 text-white py-8 mt-12">
+export const PIED = `    <footer class="bg-gray-800 text-white py-8 mt-12">
       <div class="max-w-4xl mx-auto px-4 text-center text-sm">
         <p class="mb-4">© 2026 Les Calculateurs — Simulateurs gratuits français</p>
         <div class="flex gap-4 text-sm flex-wrap justify-center mb-4">
@@ -181,7 +182,7 @@ const PIED = `    <footer class="bg-gray-800 text-white py-8 mt-12">
       </div>
     </footer>`;
 
-const FAQ_VIDE = `<script type="application/ld+json" data-faq="faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>`;
+export const FAQ_VIDE = `<script type="application/ld+json" data-faq="faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>`;
 
 /** Page d'une situation APL : tableau selon les revenus et la zone, plafonds, FAQ, liens */
 export function pageApl(e: EntreeQuestion, lireTitre: (slug: string) => string | null = () => null, toutes = QUESTIONS): string {
@@ -252,7 +253,7 @@ export function pageApl(e: EntreeQuestion, lireTitre: (slug: string) => string |
   return `${tete(e.titre, description, url, [`<script type="application/ld+json">${ariane.jsonLd}</script>`, FAQ_VIDE])}
 
   <body class="bg-gray-50">
-${ENTETE}
+${entete()}
 
     <section class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-10">
       <div class="max-w-4xl mx-auto px-4">
@@ -347,7 +348,7 @@ export function sommaireApl(s: Sommaire, toutes = QUESTIONS): string {
   return `${tete(s.titre, description, url, [`<script type="application/ld+json">${ariane.jsonLd}</script>`, FAQ_VIDE])}
 
   <body class="bg-gray-50">
-${ENTETE}
+${entete()}
 
     <section class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-10">
       <div class="max-w-4xl mx-auto px-4">
