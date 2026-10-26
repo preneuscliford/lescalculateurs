@@ -773,21 +773,21 @@
         <div class="mt-5 grid gap-3 sm:grid-cols-3">
           <div class="rounded-lg bg-white p-4 border border-indigo-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 1</p>
-            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">19 500</span> €</p>
+            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">19 400</span> €</p>
             <p class="text-xs text-gray-700 mt-2">
               Bien ancien 250 000 € (≈ 7,8 % à Paris, droits à 6,32 %).
             </p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-indigo-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 2</p>
-            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":300000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">23 200</span> €</p>
+            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":300000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">23 100</span> €</p>
             <p class="text-xs text-gray-700 mt-2">
               Bien ancien 300 000 € (≈ 7,7 % à Paris).
             </p>
           </div>
           <div class="rounded-lg bg-white p-4 border border-indigo-100">
             <p class="text-xs text-gray-600 font-medium">EXEMPLE 3</p>
-            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"neuf","departement":"75"}' data-arrondi="100">5 500</span> €</p>
+            <p class="text-lg font-bold text-indigo-700 mt-1">≈ <span data-exemple="notaire" data-params='{"prixAchat":250000,"typeBien":"neuf","departement":"75"}' data-arrondi="100">5 400</span> €</p>
             <p class="text-xs text-gray-700 mt-2">
               Neuf/VEFA 250 000 € (≈ 2,2 %). Économie importante par rapport à l’ancien.
             </p>
@@ -849,7 +849,8 @@
             <p>
               Pour obtenir une estimation utile, indiquez votre prix d'achat, le type de bien
               (ancien, neuf, terrain) et votre département. Nous appliquons automatiquement la
-              grille officielle par tranches (3,870 % / 1,596 % / 1,064 % / 0,799 %), la TVA (20%),
+              grille officielle par tranches (3,870 % / 1,596 % / 1,064 % / 0,799 %), la TVA (20 %,
+              8,5 % en Guadeloupe, en Martinique et à La Réunion, aucune en Guyane et à Mayotte),
               la CSI (0,10 % min. 15€) et les droits selon votre département.
             </p>
             <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
@@ -1436,8 +1437,8 @@
                   Pour un bien de <strong>200 000 €</strong>, les frais se répartissent comme suit :
                 </p>
                 <ul class="list-disc list-inside space-y-1 mb-3">
-                  <li><strong>Ancien (droits à 6,32 %) :</strong> ≈ <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">15 800</span> € au total (≈ 7,9 %)</li>
-                  <li><strong>Neuf/VEFA :</strong> ≈ <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"neuf","departement":"75"}' data-arrondi="100">4 600</span> € au total (≈ 2,3 %)</li>
+                  <li><strong>Ancien (droits à 6,32 %) :</strong> ≈ <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"75"}' data-arrondi="100">15 700</span> € au total (≈ 7,9 %)</li>
+                  <li><strong>Neuf/VEFA :</strong> ≈ <span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"neuf","departement":"75"}' data-arrondi="100">4 500</span> € au total (≈ 2,3 %)</li>
                 </ul>
                 <p class="text-sm text-gray-500">
                   La différence s'explique par les droits de mutation (DMTO) : ~<span data-exemple="notaire" data-params='{"prixAchat":200000,"typeBien":"ancien","departement":"75"}' data-champ="droitsEnregistrement">12 640</span> € pour
@@ -1678,6 +1679,7 @@
       import { formatCurrency } from "../main.ts";
       import { baremes } from "../data/baremes.ts";
       import { calculerFraisNotaire } from "../utils/calculNotaire.ts";
+      import { calculerNotaire } from "../utils/notaireCalculEngine.ts";
       import departements from "../data/departements.json" assert { type: "json" };
       import bjson from "../data/baremes.json" assert { type: "json" };
       (async () => {
@@ -1690,23 +1692,6 @@
             return Number(bjson.dmto[c]) / 100;
           }
           return Number(bjson.notaire?.droitsMutation?.standard || 0.0581);
-        }
-        /**
-         * Retourne débours et formalités pour le département
-         */
-        function getDeboursForm(code) {
-          const c = String(code);
-          const dep = bjson.notaire?.fraisDiversParDepartement?.[c];
-          if (dep)
-            return {
-              debours: Number(dep.cadastre || 0) + Number(dep.conservation || 0),
-              formalites: Number(dep.formalites || 0),
-            };
-          const fd = bjson.notaire?.fraisDivers || {};
-          return {
-            debours: Number(fd.cadastre || 0) + Number(fd.conservation || 0),
-            formalites: Number(fd.formalites || 0),
-          };
         }
         /**
          * Formate un pourcentage approximatif (troncature 2 décimales)
@@ -2185,138 +2170,55 @@
           calculate: (values) => {
             try {
               const prixAchat = values.prix_achat || 0;
-              const montantMobilier = values.montant_mobilier || 0;
               const typeBien = values.type_bien;
               const departement = values.departement;
-              const typeEmprunt = values.type_emprunt || "sans";
-              const pretsAides = values.prets_aides || 0;
-              const autresPrets = values.autres_prets || 0;
-              const remiseVar = values.remise_notaire_var === true;
               const primoAccedant = values.primo_accedant === true;
-
-              // Prix net à considérer (hors mobilier)
-              const prixNetImmobilier = prixAchat - montantMobilier;
-              const montantTotalPrets = pretsAides + autresPrets;
-
-              // Récupérer les taux et frais du département
-              const depData = departements[departement] || departements["default"];
-              // Barème émoluments officiels (CSN 2026)
-              const tranches = (bjson.notaire?.tranches || []).map((t) => ({
-                min: t.min,
-                max: t.max === 999999999 ? Infinity : t.max,
-                taux: Number(t.taux),
-              }));
-              if (!tranches.length) {
-                tranches.push(
-                  { min: 0, max: 6500, taux: 0.0387 },
-                  { min: 6500, max: 17000, taux: 0.01596 },
-                  { min: 17000, max: 60000, taux: 0.01064 },
-                  { min: 60000, max: Infinity, taux: 0.00799 },
-                );
-              }
-              let émoluments = 0;
-              let reste = prixNetImmobilier;
-              let émolumentsSansRemise = 0;
-              for (const tranche of tranches) {
-                if (reste <= 0) break;
-                const montantTranche = Math.min(reste, tranche.max - tranche.min);
-                émoluments += montantTranche * tranche.taux;
-                émolumentsSansRemise += montantTranche * tranche.taux;
-                reste -= montantTranche;
-              }
-              // Remise : 20 % au plus, sur les émoluments de la part du prix ≥ 100 000 €
-              let remiseMontant = 0;
-              if (remiseVar) {
-                for (const tranche of tranches) {
-                  const bas = Math.max(tranche.min, 100000);
-                  const haut = Math.min(tranche.max, prixNetImmobilier);
-                  if (haut > bas) remiseMontant += (haut - bas) * tranche.taux * 0.2;
-                }
-                émoluments -= remiseMontant;
-              }
-
-              // Débours/Formalités par département
-              const { debours, formalites } = getDeboursForm(values.departement);
-              // CSI 0,10% (min 15€)
-              const csi = Math.max(
-                prixNetImmobilier * Number(bjson.notaire?.csi?.taux || 0.001),
-                Number(bjson.notaire?.csi?.minimum || 15),
-              );
-
-              // Frais d'hypothèque selon le type d'emprunt
-              let fraisHypotheque = 0;
-              if (typeEmprunt === "avec_garantie" && montantTotalPrets > 0) {
-                fraisHypotheque = Math.max(375, montantTotalPrets * 0.015);
-              } else if (typeEmprunt === "sans_garantie" && montantTotalPrets > 0) {
-                fraisHypotheque = 150;
-              }
-
-              // Frais supplémentaires pour terrain
-              let fraisTerrain = 0;
-              if (typeBien === "terrain") {
-                fraisTerrain = 100;
-              }
-
-              // TVA sur émoluments + formalités uniquement
-              const tva = Math.round((émoluments + formalites) * 0.2 * 100) / 100;
-
-              // Droits d'enregistrement (ancien depuis JSON structuré, neuf 0,715%)
-              let tauxDroits = getDmtoTaux(departement);
-              // Primo-accédant (résidence principale) : la hausse à 5 % de l'article 116
-              // de la loi de finances 2025 ne s'applique pas. Les départements à 6,32 %
-              // avaient tous un taux de base de 4,50 %, soit 5,80 % au total (DGFiP 01/06/2026).
-              const primoApplique = primoAccedant && typeBien !== "neuf" && tauxDroits > 0.058;
-              if (primoApplique) tauxDroits = 0.058;
-              let droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
-              let droitsLabel = primoApplique
-                ? `Droits d'enregistrement primo-accédant (${pct(tauxDroits)}, hausse non appliquée)`
-                : `Droits d'enregistrement (${pct(tauxDroits)})`;
-              if (typeBien === "neuf") {
-                tauxDroits = 0.00715;
-                droitsEnregistrement = Math.round(prixNetImmobilier * tauxDroits * 100) / 100;
-                droitsLabel = `Droits d'enregistrement réduits (0,715%)`;
-              }
-
-              // Total frais de notaire
-              const total =
-                Math.round(
-                  (émoluments +
-                    droitsEnregistrement +
-                    debours +
-                    formalites +
-                    csi +
-                    fraisHypotheque +
-                    fraisTerrain +
-                    tva) *
-                    100,
-                ) / 100;
-              const pourcentage = prixAchat > 0 ? Math.round((total / prixAchat) * 10000) / 100 : 0;
+              // Calcul unique : moteur src/utils/notaireCalculEngine.ts (même calcul que l'API et les pages)
+              const r = calculerNotaire({
+                prixAchat,
+                typeBien,
+                departement,
+                montantMobilier: values.montant_mobilier || 0,
+                typeEmprunt: values.type_emprunt || "sans",
+                pretsAides: values.prets_aides || 0,
+                autresPrets: values.autres_prets || 0,
+                remiseNotarialeVariable: values.remise_notaire_var === true,
+                primoAccedant,
+              });
+              const primoApplique = primoAccedant && typeBien !== "neuf" && r.tauxDroits < getDmtoTaux(departement);
+              const droitsLabel =
+                typeBien === "neuf"
+                  ? `Droits d'enregistrement réduits (0,715%)`
+                  : primoApplique
+                    ? `Droits d'enregistrement primo-accédant (${pct(r.tauxDroits)}, hausse non appliquée)`
+                    : `Droits d'enregistrement (${pct(r.tauxDroits)})`;
 
               return {
                 success: true,
                 data: {
-                  émoluments: Math.round(émoluments * 100) / 100,
-                  émolumentsSansRemise: Math.round(émolumentsSansRemise * 100) / 100,
-                  remiseMontant: Math.round(remiseMontant * 100) / 100,
-                  debours: Math.round(debours * 100) / 100,
-                  formalites: Math.round(formalites * 100) / 100,
-                  csi: Math.round(csi * 100) / 100,
-                  fraisHypotheque: Math.round(fraisHypotheque * 100) / 100,
-                  fraisTerrain: Math.round(fraisTerrain * 100) / 100,
-                  droitsEnregistrement,
+                  émoluments: r.emoluments,
+                  émolumentsSansRemise: r.emolumentsSansRemise,
+                  remiseMontant: r.remiseMontant,
+                  debours: r.debours,
+                  formalites: r.formalites,
+                  csi: r.csi,
+                  fraisHypotheque: r.fraisHypotheque,
+                  fraisTerrain: r.fraisTerrain,
+                  droitsEnregistrement: r.droitsEnregistrement,
                   droitsLabel,
-                  tva,
-                  total,
-                  pourcentage,
-                  prixAchat: Math.round(prixAchat * 100) / 100,
-                  prixNetImmobilier: Math.round(prixNetImmobilier * 100) / 100,
-                  montantMobilier: Math.round(montantMobilier * 100) / 100,
+                  tva: r.tva,
+                  tvaLabel: `TVA (${String(Math.round(r.tauxTva * 1000) / 10).replace(".", ",")} %)`,
+                  total: r.total,
+                  pourcentage: r.pourcentage,
+                  prixAchat: r.prixAchat,
+                  prixNetImmobilier: r.prixNetImmobilier,
+                  montantMobilier: r.montantMobilier,
                   typeBien,
                   departement,
-                  typeEmprunt,
-                  montantTotalPrets: Math.round(montantTotalPrets * 100) / 100,
-                  remiseVar,
-                  tauxDroits,
+                  typeEmprunt: values.type_emprunt || "sans",
+                  montantTotalPrets: r.montantTotalPrets,
+                  remiseVar: values.remise_notaire_var === true,
+                  tauxDroits: r.tauxDroits,
                   isVEFA: typeBien === "neuf",
                   primoApplique,
                 },
@@ -2430,7 +2332,7 @@
                       )}</span></div>`
                     : ""
                 }
-                <div class="flex justify-between"><span>TVA (20%) :</span><span class="font-medium">${formatCurrency(
+                <div class="flex justify-between"><span>${data.tvaLabel || "TVA"} :</span><span class="font-medium">${formatCurrency(
                   data.tva,
                 )}</span></div>
                 <div class="flex justify-between border-t pt-2 font-semibold text-lg"><span>Total frais de notaire :</span><span class="text-green-600">${formatCurrency(
@@ -2548,7 +2450,7 @@
                   ...(d.fraisTerrain > 0
                     ? [["Frais spécifiques terrain", fmt(d.fraisTerrain), pct(d.fraisTerrain)]]
                     : []),
-                  ["TVA (20%)", fmt(d.tva), pct(d.tva)],
+                  [d.tvaLabel || "TVA", fmt(d.tva), pct(d.tva)],
                   ["", "", ""],
                   ["TOTAL FRAIS DE NOTAIRE", fmt(d.total), pct(d.total)],
                 ],
@@ -2643,7 +2545,7 @@
                   ...(d.fraisTerrain > 0
                     ? [["Frais spécifiques terrain", fmt(d.fraisTerrain), pct(d.fraisTerrain)]]
                     : []),
-                  ["TVA (20%)", fmt(d.tva), pct(d.tva)],
+                  [d.tvaLabel || "TVA", fmt(d.tva), pct(d.tva)],
                   ["", "", ""],
                   ["TOTAL FRAIS DE NOTAIRE", fmt(d.total), pct(d.total)],
                 ],

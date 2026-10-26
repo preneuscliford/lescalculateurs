@@ -16,10 +16,6 @@ interface NotaireBaremes {
   notaire: {
     tranches: { min: number; max: number; taux: number }[];
     fraisDivers: { hypotheque: number; cadastre: number; conservation: number; formalites: number };
-    fraisDiversParDepartement?: Record<
-      string,
-      { cadastre: number; conservation: number; formalites: number }
-    >;
     csi: { taux: number; minimum: number };
     droitsMutation: {
       standard: number;
@@ -65,6 +61,8 @@ export interface NotaireCalculResult {
   tva: number;
   total: number;
   pourcentage: number;
+  /** Taux de TVA appliqué aux émoluments et formalités (0,2 ; 0,085 outre-mer ; 0 en Guyane et à Mayotte) */
+  tauxTva: number;
   prixAchat: number;
   prixNetImmobilier: number;
   montantMobilier: number;
@@ -82,20 +80,28 @@ function getDmtoTaux(departement: string): number {
   return Number(bjson.notaire?.droitsMutation?.standard || 0.0581);
 }
 
-function getDeboursFormalites(departement: string): { debours: number; formalites: number } {
-  const c = String(departement);
-  const dep = bjson.notaire?.fraisDiversParDepartement?.[c];
-  if (dep) {
-    return {
-      debours: Number(dep.cadastre || 0) + Number(dep.conservation || 0),
-      formalites: Number(dep.formalites || 0),
-    };
-  }
+/**
+ * Débours et formalités : estimation forfaitaire nationale (baremes.json, notaire.fraisDivers).
+ * Il n'existe pas de barème officiel par département : les montants « par département » ajoutés en
+ * décembre 2025 n'avaient pas de source et ont été retirés (À VÉRIFIER PAR CLIFF : ordre de grandeur).
+ */
+function getDeboursFormalites(): { debours: number; formalites: number } {
   const fd = bjson.notaire?.fraisDivers || { cadastre: 0, conservation: 0, formalites: 0 };
   return {
     debours: Number(fd.cadastre || 0) + Number(fd.conservation || 0),
     formalites: Number(fd.formalites || 0),
   };
+}
+
+/**
+ * Taux de TVA sur les émoluments et formalités : 20 % en métropole et en Corse, 8,5 % en Guadeloupe,
+ * en Martinique et à La Réunion (CGI, art. 296), non applicable en Guyane et à Mayotte (CGI, art. 294-1).
+ */
+export function tauxTvaNotaire(departement: string): number {
+  const c = String(departement);
+  if (c === "971" || c === "972" || c === "974") return 0.085;
+  if (c === "973" || c === "976") return 0;
+  return 0.2;
 }
 
 const REMISE_SEUIL = 100000;
@@ -152,7 +158,7 @@ export function calculerNotaire(data: NotaireCalculData): NotaireCalculResult {
     emoluments -= remiseMontant;
   }
 
-  const { debours, formalites } = getDeboursFormalites(departement);
+  const { debours, formalites } = getDeboursFormalites();
 
   const csi = Math.max(
     prixNetImmobilier * Number(bjson.notaire?.csi?.taux || 0.001),
@@ -168,7 +174,8 @@ export function calculerNotaire(data: NotaireCalculData): NotaireCalculResult {
 
   const fraisTerrain = typeBien === "terrain" ? 100 : 0;
 
-  const tva = Math.round((emoluments + formalites) * 0.2 * 100) / 100;
+  const tauxTva = tauxTvaNotaire(departement);
+  const tva = Math.round((emoluments + formalites) * tauxTva * 100) / 100;
 
   let tauxDroits = getDmtoTaux(departement);
   // Primo-accédant : la hausse à 5 % (art. 116 LF 2025) ne s'applique pas ; les
@@ -209,6 +216,7 @@ export function calculerNotaire(data: NotaireCalculData): NotaireCalculResult {
     droitsEnregistrement,
     tauxDroits,
     tva,
+    tauxTva,
     total,
     pourcentage,
     prixAchat: Math.round(prixAchat * 100) / 100,

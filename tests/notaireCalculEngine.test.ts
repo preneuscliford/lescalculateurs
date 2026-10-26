@@ -10,8 +10,28 @@ describe("notaireCalculEngine", () => {
     expect(r.success).toBe(true);
     expect(r.droitsEnregistrement).toBeCloseTo(15800, 0);
     expect(r.csi).toBeCloseTo(250, 0);
-    expect(r.total).toBeCloseTo(19517.7, 0);
-    expect(r.pourcentage).toBeCloseTo(7.81, 1);
+    // Émoluments 2 394,75 + droits 15 800 + débours 275 + formalités 200 + CSI 250 + TVA 518,95
+    expect(r.total).toBeCloseTo(19438.7, 1);
+    expect(r.pourcentage).toBeCloseTo(7.78, 1);
+  });
+
+  test("TVA : 8,5 % en Guadeloupe, Martinique et Réunion, aucune en Guyane et à Mayotte (CGI art. 296 et 294-1)", () => {
+    const base = { prixAchat: 200000, typeBien: "ancien" as const };
+    const metropole = calculerNotaire({ ...base, departement: "75" });
+    expect(metropole.tauxTva).toBe(0.2);
+    for (const dep of ["971", "972", "974"]) expect(calculerNotaire({ ...base, departement: dep }).tauxTva).toBe(0.085);
+    for (const dep of ["973", "976"]) {
+      const r = calculerNotaire({ ...base, departement: dep });
+      expect(r.tauxTva).toBe(0);
+      expect(r.tva).toBe(0);
+    }
+    const martinique = calculerNotaire({ ...base, departement: "972" });
+    expect(martinique.tva).toBeCloseTo((martinique.emoluments + martinique.formalites) * 0.085, 1);
+  });
+
+  test("débours et formalités : estimation nationale identique dans tous les départements", () => {
+    const deps = ["01", "13", "56", "75", "2A", "972"].map((departement) => calculerNotaire({ prixAchat: 200000, typeBien: "ancien", departement }));
+    expect(new Set(deps.map((r) => r.debours + r.formalites)).size).toBe(1);
   });
 
   test("bien neuf : taux de droits d'enregistrement réduit (0,715%)", () => {
