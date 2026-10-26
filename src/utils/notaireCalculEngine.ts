@@ -42,7 +42,7 @@ export interface NotaireCalculData {
   autresPrets?: number;
   /** Remise maximale autorisée : 20 % des émoluments proportionnels sur la part du prix ≥ 100 000 € */
   remiseNotarialeVariable?: boolean;
-  /** Premier achat de la résidence principale : pas de hausse des DMTO (art. 116 LF 2025) */
+  /** Primo-accédant (pas propriétaire de sa résidence principale depuis 2 ans, CCH art. L. 31-10-3) achetant sa résidence principale : pas de hausse des DMTO (art. 116 LF 2025) */
   primoAccedant?: boolean;
 }
 

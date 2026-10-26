@@ -51,7 +51,7 @@ const PRIX = [100000, 150000, 200000, 250000, 300000, 400000, 500000];
 const nomDepartement = (code: string) => DEPARTEMENTS.find((d) => d.valeur === code)?.libelle.split(" – ")[1] ?? code;
 const slugDepartement = (code: string) => `blog/departements/frais-notaire-${code}`;
 
-/** Le département a relevé ses droits de mutation : le premier achat de résidence principale y coûte moins */
+/** Le département a relevé ses droits de mutation : un primo-accédant qui achète sa résidence principale y paie moins */
 export function tauxReleve(code: string): boolean {
   const ancien = calculerNotaire({ prixAchat: 200000, typeBien: "ancien", departement: code });
   const primo = calculerNotaire({ prixAchat: 200000, typeBien: "ancien", departement: code, primoAccedant: true });
@@ -86,7 +86,14 @@ function liensProches(p: PageNotaire, existe: (slug: string) => boolean): { vois
 const listeLiens = (liens: Lien[]) =>
   liens.map((l) => `          <li><a class="text-blue-700 underline hover:text-blue-900" href="${l.href}">${echapper(l.libelle)}</a></li>`).join("\n");
 
+/** Espace insécable avant « € » et « % » (après un nombre ou un montant calculé) : pas de symbole seul en début de ligne */
+const insecables = (html: string) => html.replace(/(\d|<\/span>) (€|%)/g, "$1&nbsp;$2");
+
 export function pageNotaire(p: PageNotaire, existe: (slug: string) => boolean): string {
+  return insecables(pageNotaireBrute(p, existe));
+}
+
+function pageNotaireBrute(p: PageNotaire, existe: (slug: string) => boolean): string {
   const c = p.codeMoteur;
   const url = urlPage(p.slug);
   // « à Paris » : le département et la ville se confondent
@@ -98,9 +105,9 @@ export function pageNotaire(p: PageNotaire, existe: (slug: string) => boolean): 
     { nom: p.code === "corse" ? "Corse" : `${p.departement} (${p.code})`, url },
   ]);
   const releve = tauxReleve(c);
-  const description = `Frais de notaire ${p.dans} en 2026 : montants calculés pour l'ancien, le neuf${releve ? " et le premier achat" : ""}, taux des droits de mutation, et ce qui distingue ${p.ville}.`;
+  const description = `Frais de notaire ${p.dans} en 2026 : montants calculés pour l'ancien, le neuf${releve ? " et les primo-accédants" : ""}, taux des droits de mutation, et ce qui distingue ${p.ville}.`;
   const colonnes: Cas[] = releve ? ["ancien", "primo", "neuf"] : ["ancien", "neuf"];
-  const nomsColonnes: Record<Cas, string> = { ancien: "Ancien", primo: "Ancien, premier achat", neuf: "Neuf" };
+  const nomsColonnes: Record<Cas, string> = { ancien: "Ancien", primo: "Ancien, primo-accédant", neuf: "Neuf" };
   const lignes = PRIX.map(
     (prix) => `<tr><th scope="row" class="border border-gray-300 px-3 py-2 text-left font-medium">${euros(prix)}</th>${colonnes
       .map((cas) => `<td class="border border-gray-300 px-3 py-2 text-right">${frais(c, prix, cas)} €</td>`)
@@ -125,7 +132,7 @@ export function pageNotaire(p: PageNotaire, existe: (slug: string) => boolean): 
     [
       `Quel est le taux des droits de mutation ${p.dans} en 2026 ?`,
       releve
-        ? `Les droits de mutation sont de ${taux(c)} du prix dans l'ancien. Pour un premier achat de résidence principale, la hausse votée en 2025 ne s'applique pas : le taux est de ${taux(c, "primo")}. Dans le neuf, il tombe à ${taux(c, "neuf")}.`
+        ? `Les droits de mutation sont de ${taux(c)} du prix dans l'ancien. Pour un primo-accédant, c'est-à-dire un acheteur qui n'a pas été propriétaire de sa résidence principale au cours des deux dernières années, qui achète sa résidence principale, la hausse votée en 2025 ne s'applique pas : le taux est de ${taux(c, "primo")}. Dans le neuf, il tombe à ${taux(c, "neuf")}.`
         : `Les droits de mutation sont de ${taux(c)} du prix dans l'ancien : le département n'a pas voté la hausse autorisée depuis 2025. Dans le neuf, ils tombent à ${taux(c, "neuf")}.`,
     ],
     [echapper(p.faqLocale.q), avecMontants(p.faqLocale.a, c)],
@@ -143,7 +150,7 @@ ${entete("/pages/notaire", "Simulateur frais de notaire")}
         <h1 class="mt-3 text-3xl sm:text-4xl font-bold">${echapper(titre)}</h1>
         <p class="mt-4 text-lg text-emerald-50">
           Pour un logement ancien à 200 000 € ${echapper(p.dans)}, les frais de notaire sont d'environ <strong>${frais(c, 200000, "ancien")} €</strong>${
-            releve ? ` (<strong>${frais(c, 200000, "primo")} €</strong> pour un premier achat de résidence principale)` : ""
+            releve ? ` (<strong>${frais(c, 200000, "primo")} €</strong> pour un primo-accédant qui achète sa résidence principale)` : ""
           }, et d'environ <strong>${frais(c, 200000, "neuf")} €</strong> dans le neuf.
         </p>
       </div>
@@ -231,6 +238,10 @@ ${PIED}
 
 /** Page globale : tous les départements, taux des droits de mutation et frais pour 200 000 € */
 export function pageGlobaleNotaire(existe: (slug: string) => boolean): string {
+  return insecables(pageGlobaleBrute(existe));
+}
+
+function pageGlobaleBrute(existe: (slug: string) => boolean): string {
   const url = urlPage(SLUG_PAGE_GLOBALE);
   const titre = "Frais de notaire 2026 par département : taux et montants";
   const ariane = filAriane([

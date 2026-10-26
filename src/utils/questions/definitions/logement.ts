@@ -34,7 +34,7 @@ export const NOTAIRE: DefinitionSimulateur = {
       ],
     },
     { cle: "departement", libelle: "Département du bien", type: "choix", options: DEPARTEMENTS },
-    { cle: "primo", libelle: "Premier achat de votre résidence principale", type: "choix", defaut: "non", options: OUI_NON },
+    { cle: "primo", libelle: "Primo-accédant (pas propriétaire de sa résidence principale depuis 2 ans) achetant sa résidence principale", type: "choix", defaut: "non", options: OUI_NON },
   ],
   calculer(p) {
     const r = calculerNotaire({ prixAchat: Number(p.prix), typeBien: p.bien as TypeBienNotaire, departement: String(p.departement), primoAccedant: p.primo === "oui" });
@@ -61,7 +61,7 @@ export const NOTAIRE: DefinitionSimulateur = {
       { libelle: `Pour ${euros(prix + 50000)}`, params: { ...p, prix: prix + 50000 } },
       ...(prix > 60000 ? [{ libelle: `Pour ${euros(prix - 50000)}`, params: { ...p, prix: prix - 50000 } }] : []),
       { libelle: p.bien === "neuf" ? "Même prix dans l'ancien" : "Même prix dans le neuf", params: { ...p, bien: p.bien === "neuf" ? "ancien" : "neuf" } },
-      ...(p.primo !== "oui" ? [{ libelle: "Pour un premier achat de résidence principale", params: { ...p, primo: "oui" } }] : []),
+      ...(p.primo !== "oui" ? [{ libelle: "Pour un primo-accédant", params: { ...p, primo: "oui" } }] : []),
     ];
   },
   pagesLiees: [
@@ -72,7 +72,7 @@ export const NOTAIRE: DefinitionSimulateur = {
     prix: (v) => `achat à ${euros(Number(v))}`,
     bien: (v) => ({ ancien: "ancien", neuf: "neuf", terrain: "terrain" })[v as "neuf"] ?? "",
     departement: (v, p) => (p.ville ? `${p.ville} (${v})` : nomDepartement(v)),
-    primo: (v) => (v === "oui" ? "premier achat" : ""),
+    primo: (v) => (v === "oui" ? "primo-accédant" : ""),
   },
 };
 

@@ -1,5 +1,5 @@
 {
-  "description": "Pages « frais de notaire » par département (lot 1, validé par Cliff le 26/10/2026). Contenu local rédigé à partir des sources citées ; montants calculés par le moteur au build. Générées par scripts/generate-pages-questions.cjs.",
+  "description": "Pages « frais de notaire » par département (lots 1 et 2, validés par Cliff le 26/10/2026). Contenu local rédigé à partir des sources citées ; montants calculés par le moteur au build. Générées par scripts/generate-pages-questions.cjs.",
   "pages": [
     {
       "code": "06",
@@ -11,7 +11,7 @@
       "slug": "blog/departements/frais-notaire-06",
       "statut": "valide",
       "histoire": "Longtemps tournée vers l'Italie, Nice choisit en 1388 la protection du comté de Savoie et devient en 1526 la capitale du comté de Nice. Elle n'est rattachée à la France qu'en 1860 : le département des Alpes-Maritimes naît alors du comté de Nice et de l'arrondissement de Grasse, détaché du Var.",
-      "particularite": "Les Alpes-Maritimes font partie des départements qui n'ont pas relevé leurs droits de mutation en 2025 : dans l'ancien, ils restent à 5,80 % du prix, contre 6,32 % dans le Var voisin et dans la plupart des départements. De Menton à Cannes, tous les acheteurs en profitent, qu'il s'agisse d'un premier achat ou non.",
+      "particularite": "Les Alpes-Maritimes font partie des départements qui n'ont pas relevé leurs droits de mutation en 2025 : dans l'ancien, ils restent à 5,80 % du prix, contre 6,32 % dans le Var voisin et dans la plupart des départements. De Menton à Cannes, tous les acheteurs en profitent, primo-accédants ou non.",
       "faqLocale": {
         "q": "Pourquoi les frais de notaire sont-ils plus bas à Nice que dans le Var ?",
         "a": "Parce que le département des Alpes-Maritimes n'a pas voté la hausse des droits de mutation autorisée depuis avril 2025. Les droits restent à 5,80 % du prix dans l'ancien, contre 6,32 % dans le Var. Les autres frais (émoluments, débours, contribution de sécurité immobilière) sont les mêmes partout."
@@ -58,7 +58,7 @@
       "particularite": "Les Bouches-du-Rhône sont le troisième département le plus peuplé de France, et Marseille y forme une seule agglomération avec Aix-en-Provence. Pour les frais de notaire, le lieu exact ne change rien : le taux des droits de mutation est voté pour tout le département, et seul le prix du bien fait varier le montant.",
       "faqLocale": {
         "q": "Les frais de notaire sont-ils les mêmes à Marseille et à Aix-en-Provence ?",
-        "a": "Oui. Les droits de mutation sont fixés par le département : 6,32 % du prix dans l'ancien partout dans les Bouches-du-Rhône, 5,80 % pour un premier achat de résidence principale. À prix égal, les frais sont donc identiques à Marseille, à Aix-en-Provence ou à Arles."
+        "a": "Oui. Les droits de mutation sont fixés par le département : 6,32 % du prix dans l'ancien partout dans les Bouches-du-Rhône, 5,80 % pour un primo-accédant qui achète sa résidence principale. À prix égal, les frais sont donc identiques à Marseille, à Aix-en-Provence ou à Arles."
       },
       "voisins": [
         "83",
@@ -101,10 +101,10 @@
       "slug": "blog/departements/frais-notaire-30",
       "statut": "valide",
       "histoire": "Héritière de la Rome antique, Nîmes conserve la Maison carrée, l'un des temples romains les mieux préservés au monde, au cœur d'une ville qui attire chaque été de nombreux visiteurs. Le Gard, dont elle est la préfecture, tient son nom du Gardon, la rivière qui le traverse.",
-      "particularite": "Entre la vallée du Rhône et la plaine languedocienne, à quelques dizaines de kilomètres de la Méditerranée et des Cévennes, Nîmes est la troisième commune d'Occitanie après Toulouse et Montpellier. Le Gard applique le taux relevé des droits de mutation : un premier achat de résidence principale y fait donc baisser les frais.",
+      "particularite": "Entre la vallée du Rhône et la plaine languedocienne, à quelques dizaines de kilomètres de la Méditerranée et des Cévennes, Nîmes est la troisième commune d'Occitanie après Toulouse et Montpellier. Le Gard applique le taux relevé des droits de mutation : les primo-accédants qui achètent leur résidence principale y paient donc moins.",
       "faqLocale": {
         "q": "Le Gard applique-t-il la hausse des droits de mutation ?",
-        "a": "Oui. Depuis le relèvement voté en 2025, les droits de mutation sont de 6,32 % du prix dans l'ancien. Pour un premier achat de résidence principale, la hausse ne s'applique pas : le taux reste à 5,80 %."
+        "a": "Oui. Depuis le relèvement voté en 2025, les droits de mutation sont de 6,32 % du prix dans l'ancien. Pour un primo-accédant qui achète sa résidence principale, la hausse ne s'applique pas : le taux reste à 5,80 %."
       },
       "voisins": [
         "34",
@@ -194,7 +194,7 @@
       "particularite": "La Gironde est le plus grand département de France métropolitaine. Ses paysages vont de Bordeaux au bassin d'Arcachon, du vignoble aux Landes de Gascogne, mais le taux des droits de mutation y est le même partout : 6,32 % du prix dans l'ancien.",
       "faqLocale": {
         "q": "Les frais de notaire sont-ils les mêmes à Bordeaux et sur le bassin d'Arcachon ?",
-        "a": "Oui : le bassin d'Arcachon est en Gironde, et les droits de mutation sont votés pour tout le département. Seul le prix change le montant. Attention : l'exonération de la hausse pour un premier achat ne vaut que pour une résidence principale, pas pour une résidence secondaire."
+        "a": "Oui : le bassin d'Arcachon est en Gironde, et les droits de mutation sont votés pour tout le département. Seul le prix change le montant. Attention : le taux réduit des primo-accédants ne vaut que pour une résidence principale, pas pour une résidence secondaire."
       },
       "voisins": [
         "24",
@@ -235,10 +235,10 @@
       "slug": "blog/departements/frais-notaire-34",
       "statut": "valide",
       "histoire": "Au cœur de l'ancienne province du Languedoc, sur le grand axe qui relie l'Espagne à l'Italie, Montpellier se tient à une dizaine de kilomètres de la Méditerranée. Sa population est en forte hausse depuis 1962.",
-      "particularite": "L'Hérault tire son nom du fleuve côtier qui le traverse. De Montpellier à Sète ou Béziers, les acheteurs paient les mêmes droits de mutation ; un premier achat de résidence principale permet d'échapper à la hausse votée en 2025.",
+      "particularite": "L'Hérault tire son nom du fleuve côtier qui le traverse. De Montpellier à Sète ou Béziers, les acheteurs paient les mêmes droits de mutation ; un primo-accédant qui achète sa résidence principale échappe à la hausse votée en 2025.",
       "faqLocale": {
         "q": "Combien économise un primo-accédant à Montpellier ?",
-        "a": "Pour un premier achat de résidence principale dans l'ancien, les droits de mutation restent à 5,80 % au lieu de 6,32 %. Pour un bien à 250 000 €, les frais passent ainsi de {notaire:250000:ancien} € à {notaire:250000:primo} €."
+        "a": "Pour un primo-accédant qui achète sa résidence principale dans l'ancien, les droits de mutation restent à 5,80 % au lieu de 6,32 %. Pour un bien à 250 000 €, les frais passent ainsi de {notaire:250000:ancien} € à {notaire:250000:primo} €."
       },
       "voisins": [
         "30",
@@ -326,7 +326,7 @@
       "particularite": "L'Isère, dixième département le plus vaste de France, couvre une grande partie de l'ancienne province du Dauphiné, de l'agglomération grenobloise aux stations de montagne. Le taux des droits de mutation y est le même partout, en ville comme en station.",
       "faqLocale": {
         "q": "Les frais de notaire changent-ils pour un appartement en station de ski en Isère ?",
-        "a": "Non, le taux des droits de mutation est le même dans tout le département : 6,32 % du prix dans l'ancien. En revanche, un appartement de vacances n'ouvre pas droit au taux réduit du premier achat, réservé à la résidence principale."
+        "a": "Non, le taux des droits de mutation est le même dans tout le département : 6,32 % du prix dans l'ancien. En revanche, un appartement de vacances n'ouvre pas droit au taux réduit des primo-accédants, réservé à la résidence principale."
       },
       "voisins": [
         "69",
@@ -370,7 +370,7 @@
       "particularite": "Sixième commune de France, Nantes forme avec Saint-Nazaire, son avant-port sur l'estuaire, le principal pôle du Grand Ouest. Pour les frais de notaire, les deux villes sont logées à la même enseigne : un seul taux de droits de mutation pour toute la Loire-Atlantique.",
       "faqLocale": {
         "q": "Les frais de notaire sont-ils les mêmes à Nantes et à Saint-Nazaire ?",
-        "a": "Oui. Les droits de mutation sont votés par le département : 6,32 % du prix dans l'ancien, 5,80 % pour un premier achat de résidence principale, dans toute la Loire-Atlantique."
+        "a": "Oui. Les droits de mutation sont votés par le département : 6,32 % du prix dans l'ancien, 5,80 % pour un primo-accédant qui achète sa résidence principale, dans toute la Loire-Atlantique."
       },
       "voisins": [
         "35",
@@ -456,10 +456,10 @@
       "slug": "blog/departements/frais-notaire-56",
       "statut": "valide",
       "histoire": "Après la défaite des Vénètes face aux légions de Jules César, Rome fait de Darioritum, l'ancienne Vannes, la cité des Vénètes. Bâtie en amphithéâtre au fond du golfe du Morbihan, la vieille ville reste enfermée dans ses remparts, autour de la cathédrale Saint-Pierre, avec ses maisons à pans de bois.",
-      "particularite": "Vannes est la préfecture, mais Lorient est la ville la plus peuplée du Morbihan, un département qui doit son nom au golfe. Sur ce littoral, une maison de vacances paie les droits de mutation au taux plein de 6,32 % : le taux réduit du premier achat est réservé à la résidence principale.",
+      "particularite": "Vannes est la préfecture, mais Lorient est la ville la plus peuplée du Morbihan, un département qui doit son nom au golfe. Sur ce littoral, une maison de vacances paie les droits de mutation au taux plein de 6,32 % : le taux réduit des primo-accédants est réservé à la résidence principale.",
       "faqLocale": {
         "q": "Quels frais de notaire pour une résidence secondaire dans le golfe du Morbihan ?",
-        "a": "Le même taux qu'ailleurs dans le département : 6,32 % du prix dans l'ancien. Le taux réduit de 5,80 % est réservé au premier achat d'une résidence principale : il ne s'applique pas à une maison de vacances."
+        "a": "Le même taux qu'ailleurs dans le département : 6,32 % du prix dans l'ancien. Le taux réduit de 5,80 % est réservé aux primo-accédants qui achètent leur résidence principale : il ne s'applique pas à une maison de vacances."
       },
       "voisins": [
         "35",
@@ -670,7 +670,7 @@
       "particularite": "L'île compte deux départements, la Corse-du-Sud (2A) et la Haute-Corse (2B), réunis depuis 2018 dans la collectivité de Corse. Les deux appliquent le même taux de droits de mutation : les frais sont identiques à Ajaccio, à Bastia ou à Porto-Vecchio.",
       "faqLocale": {
         "q": "Les frais de notaire sont-ils les mêmes en Corse-du-Sud et en Haute-Corse ?",
-        "a": "Oui : 6,32 % de droits de mutation dans l'ancien dans les deux départements, et 5,80 % pour un premier achat de résidence principale. À prix égal, le montant est le même à Ajaccio et à Bastia."
+        "a": "Oui : 6,32 % de droits de mutation dans l'ancien dans les deux départements, et 5,80 % pour un primo-accédant qui achète sa résidence principale. À prix égal, le montant est le même à Ajaccio et à Bastia."
       },
       "voisins": [],
       "image": {
@@ -700,6 +700,816 @@
       "remplace": [
         "blog/departements/frais-notaire-2A",
         "blog/departements/frais-notaire-2B"
+      ]
+    },
+    {
+      "code": "92",
+      "codeMoteur": "92",
+      "departement": "Hauts-de-Seine",
+      "dans": "dans les Hauts-de-Seine",
+      "ville": "Nanterre",
+      "aVille": "à Nanterre",
+      "slug": "blog/departements/frais-notaire-92",
+      "statut": "valide",
+      "histoire": "Créé en 1968, le département des Hauts-de-Seine couvre l'essentiel de la proche banlieue ouest de Paris. Sa préfecture, Nanterre, accueille l'université Paris-Nanterre et une partie de La Défense, le plus grand quartier d'affaires d'Europe, qu'elle partage avec Courbevoie et Puteaux.",
+      "particularite": "Deuxième département de France par la densité de population, les Hauts-de-Seine comptent davantage d'habitants à Boulogne-Billancourt qu'à Nanterre. Les prix y étant élevés, les frais de notaire représentent des sommes importantes ; le taux réduit des primo-accédants pèse donc lourd.",
+      "faqLocale": {
+        "q": "Les frais de notaire sont-ils les mêmes à Boulogne-Billancourt et à Nanterre ?",
+        "a": "Oui : les droits de mutation sont votés pour tout le département, 6,32 % du prix dans l'ancien. Pour un appartement ancien à 400 000 €, les frais sont d'environ {notaire:400000:ancien} €, et d'environ {notaire:400000:primo} € pour un primo-accédant qui achète sa résidence principale."
+      },
+      "voisins": [
+        "75",
+        "78",
+        "95",
+        "94",
+        "91"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-92.jpg",
+        "largeur": 1200,
+        "hauteur": 800,
+        "alt": "Nanterre vue depuis le mont Valérien",
+        "auteur": "Chabe01",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Vue_Nanterre_depuis_Mont_Val%C3%A9rien_9.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Nanterre",
+          "url": "https://fr.wikipedia.org/wiki/Nanterre"
+        },
+        {
+          "libelle": "Wikipédia : Hauts-de-Seine",
+          "url": "https://fr.wikipedia.org/wiki/Hauts-de-Seine"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "78",
+      "codeMoteur": "78",
+      "departement": "Yvelines",
+      "dans": "dans les Yvelines",
+      "ville": "Versailles",
+      "aVille": "à Versailles",
+      "slug": "blog/departements/frais-notaire-78",
+      "statut": "valide",
+      "histoire": "Ville nouvelle voulue par Louis XIV, Versailles fut la capitale de la France de 1682 à 1789. Son château et ses jardins sont inscrits au patrimoine mondial de l'UNESCO ; la ville devient chef-lieu de la Seine-et-Oise en 1790, puis des Yvelines en 1968.",
+      "particularite": "Les Yvelines sont le département le plus peuplé de la grande couronne. De Versailles à Saint-Germain-en-Laye, de Saint-Quentin-en-Yvelines à Mantes-la-Jolie, les acheteurs paient le même taux de droits de mutation, celui voté par le département.",
+      "faqLocale": {
+        "q": "La chambre des notaires de Versailles fixe-t-elle les frais de notaire ?",
+        "a": "Non. Les émoluments sont fixés par l'État selon un barème national, et les droits de mutation, qui forment l'essentiel des frais, sont votés par le département des Yvelines : 6,32 % du prix dans l'ancien. Une chambre des notaires représente la profession ; elle ne fixe pas les tarifs."
+      },
+      "voisins": [
+        "95",
+        "92",
+        "91",
+        "28"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-78.jpg",
+        "largeur": 1200,
+        "hauteur": 900,
+        "alt": "Le domaine de Versailles vu du ciel",
+        "auteur": "ToucanWings",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_073.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Versailles",
+          "url": "https://fr.wikipedia.org/wiki/Versailles"
+        },
+        {
+          "libelle": "Wikipédia : Yvelines",
+          "url": "https://fr.wikipedia.org/wiki/Yvelines"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "94",
+      "codeMoteur": "94",
+      "departement": "Val-de-Marne",
+      "dans": "dans le Val-de-Marne",
+      "ville": "Créteil",
+      "aVille": "à Créteil",
+      "slug": "blog/departements/frais-notaire-94",
+      "statut": "valide",
+      "histoire": "Petite ville au caractère champêtre jusqu'à la Seconde Guerre mondiale, Créteil s'urbanise à partir de 1955 avec le quartier du Mont-Mesly. Devenue en 1965 le chef-lieu du nouveau département du Val-de-Marne, elle se dote du « Nouveau Créteil » : préfecture, hôtel de ville, palais de justice et hôpital Henri-Mondor.",
+      "particularite": "Le Val-de-Marne doit son nom à la Marne, dont les bords sont aménagés à Créteil, à côté d'un lac de 42 hectares. Vitry-sur-Seine y est plus peuplée que la préfecture. Comme dans les autres départements de la petite couronne, les droits de mutation ont été relevés en 2025.",
+      "faqLocale": {
+        "q": "Faut-il prévoir les mêmes frais de notaire à Vitry-sur-Seine qu'à Vincennes ?",
+        "a": "Oui, à prix égal : les deux villes sont dans le Val-de-Marne, qui applique 6,32 % de droits de mutation dans l'ancien. Ce qui change, c'est le prix des logements, donc le montant final."
+      },
+      "voisins": [
+        "75",
+        "92",
+        "91",
+        "77"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-94.jpg",
+        "largeur": 1200,
+        "hauteur": 897,
+        "alt": "Le lac de Créteil vu du ciel",
+        "auteur": "Suaudeau",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Vue_a%C3%A9rienne_du_lac_de_Cr%C3%A9teil.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Créteil",
+          "url": "https://fr.wikipedia.org/wiki/Cr%C3%A9teil"
+        },
+        {
+          "libelle": "Wikipédia : Val-de-Marne",
+          "url": "https://fr.wikipedia.org/wiki/Val-de-Marne"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "91",
+      "codeMoteur": "91",
+      "departement": "Essonne",
+      "dans": "dans l'Essonne",
+      "ville": "Évry-Courcouronnes",
+      "aVille": "à Évry-Courcouronnes",
+      "slug": "blog/departements/frais-notaire-91",
+      "statut": "valide",
+      "histoire": "Village agricole en bord de Seine jusqu'à la fin des années 1950, Évry devient en trente ans une ville nouvelle et la préfecture de l'Essonne, département créé en 1968 du démembrement de la Seine-et-Oise. Sa cathédrale de la Résurrection, achevée en 1995, est l'une des très rares cathédrales construites en France au XXe siècle. En 2019, Évry fusionne avec Courcouronnes.",
+      "particularite": "L'Essonne tire son nom de la rivière qui la traverse du sud au nord jusqu'à la Seine, et une partie de son territoire appartient à la métropole du Grand Paris. Entre villes nouvelles et campagne du sud du département, le taux des droits de mutation ne varie pas.",
+      "faqLocale": {
+        "q": "Combien un primo-accédant économise-t-il dans l'Essonne ?",
+        "a": "Pour une maison ancienne à 300 000 €, les frais de notaire passent d'environ {notaire:300000:ancien} € à environ {notaire:300000:primo} € pour un acheteur qui n'a pas été propriétaire de sa résidence principale depuis deux ans et qui achète sa résidence principale : les droits de mutation restent alors à 5,80 % au lieu de 6,32 %."
+      },
+      "voisins": [
+        "78",
+        "92",
+        "94",
+        "77",
+        "45",
+        "28"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-91.jpg",
+        "largeur": 1200,
+        "hauteur": 900,
+        "alt": "La cathédrale de la Résurrection à Évry-Courcouronnes",
+        "auteur": "Chabe01",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_R%C3%A9surrection_Saint_Corbinien_-_%C3%89vry-Courcouronnes_(FR91)_-_2026-08-15_-_1.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Évry (Essonne)",
+          "url": "https://fr.wikipedia.org/wiki/Évry_(Essonne)"
+        },
+        {
+          "libelle": "Wikipédia : cathédrale de la Résurrection d'Évry",
+          "url": "https://fr.wikipedia.org/wiki/Cathédrale_de_la_Résurrection_d'Évry"
+        },
+        {
+          "libelle": "Wikipédia : Essonne",
+          "url": "https://fr.wikipedia.org/wiki/Essonne_(d%C3%A9partement)"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "77",
+      "codeMoteur": "77",
+      "departement": "Seine-et-Marne",
+      "dans": "en Seine-et-Marne",
+      "ville": "Melun",
+      "aVille": "à Melun",
+      "slug": "blog/departements/frais-notaire-77",
+      "statut": "valide",
+      "histoire": "Melun s'est développée dans un méandre de la Seine, entre la Brie et le Gâtinais, à 41 km au sud-est de Paris et à 15 km de Fontainebleau. Préfecture de la Seine-et-Marne, elle n'en est que la troisième ville, après Meaux et Chelles.",
+      "particularite": "La Seine-et-Marne tire son nom des deux cours d'eau qui la traversent. De Meaux à Fontainebleau, le taux des droits de mutation est le même dans tout le département : seul le prix du bien fait varier le montant des frais.",
+      "faqLocale": {
+        "q": "Les frais de notaire sont-ils plus bas en Seine-et-Marne qu'à Paris ?",
+        "a": "Le taux est le même : 6,32 % de droits de mutation dans l'ancien, en Seine-et-Marne comme à Paris. Les frais sont donc proportionnels au prix ; pour 250 000 €, comptez environ {notaire:250000:ancien} €."
+      },
+      "voisins": [
+        "94",
+        "91",
+        "95",
+        "45",
+        "89",
+        "02"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-77.jpg",
+        "largeur": 1200,
+        "hauteur": 960,
+        "alt": "La collégiale Notre-Dame de Melun",
+        "auteur": "Matgrt",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Melun_-_coll%C3%A9giale_(2023).jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Melun",
+          "url": "https://fr.wikipedia.org/wiki/Melun"
+        },
+        {
+          "libelle": "Wikipédia : Seine-et-Marne",
+          "url": "https://fr.wikipedia.org/wiki/Seine-et-Marne"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "95",
+      "codeMoteur": "95",
+      "departement": "Val-d'Oise",
+      "dans": "dans le Val-d'Oise",
+      "ville": "Cergy",
+      "aVille": "à Cergy",
+      "slug": "blog/departements/frais-notaire-95",
+      "statut": "valide",
+      "histoire": "Créé en 1968 à partir de la Seine-et-Oise, le Val-d'Oise forme la partie nord de l'agglomération parisienne. Cergy, sur la rive droite de l'Oise, accueille la préfecture et le conseil départemental, même si Pontoise reste officiellement le chef-lieu.",
+      "particularite": "Le département réunit deux parcs naturels régionaux et des zones très urbanisées, ainsi que l'aéroport Paris-Charles-de-Gaulle, premier aéroport d'Europe continentale. D'Argenteuil au Vexin, les droits de mutation suivent un taux unique.",
+      "faqLocale": {
+        "q": "Pontoise ou Cergy : quel est le chef-lieu, et cela change-t-il les frais ?",
+        "a": "Pontoise est le chef-lieu officiel, mais la préfecture est installée à Cergy. Cela ne change rien aux frais : les droits de mutation sont votés par le département du Val-d'Oise, 6,32 % du prix dans l'ancien partout."
+      },
+      "voisins": [
+        "78",
+        "92",
+        "77"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-95.jpg",
+        "largeur": 1200,
+        "hauteur": 914,
+        "alt": "Le parc François-Mitterrand à Cergy",
+        "auteur": "L. Pages - Ville de Cergy",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Cergy_Grand_Centre_Parc_Fran%C3%A7ois_Mitterrand%C2%A9L_Pages.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Cergy",
+          "url": "https://fr.wikipedia.org/wiki/Cergy"
+        },
+        {
+          "libelle": "Wikipédia : Val-d'Oise",
+          "url": "https://fr.wikipedia.org/wiki/Val-d%27Oise"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "59",
+      "codeMoteur": "59",
+      "departement": "Nord",
+      "dans": "dans le Nord",
+      "ville": "Lille",
+      "aVille": "à Lille",
+      "slug": "blog/departements/frais-notaire-59",
+      "statut": "valide",
+      "histoire": "Lille, Rijsel en néerlandais, est la principale commune d'une métropole de 95 communes qui compte près de 1,2 million d'habitants, avec Roubaix, Tourcoing et Villeneuve-d'Ascq. Avec les villes belges de Mouscron, Courtrai et Tournai, elle forme depuis 2008 l'Eurométropole Lille-Kortrijk-Tournai.",
+      "particularite": "Le Nord est le département le plus peuplé de France, et la métropole lilloise en rassemble presque la moitié des habitants. De la Flandre au Hainaut, de Dunkerque à Valenciennes, le taux des droits de mutation est le même.",
+      "faqLocale": {
+        "q": "Le Nord a-t-il augmenté ses droits de mutation ?",
+        "a": "Oui. Le département applique la hausse autorisée depuis 2025 : 6,32 % du prix dans l'ancien. Les primo-accédants qui achètent leur résidence principale y échappent et restent à 5,80 %."
+      },
+      "voisins": [
+        "02"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-59.jpg",
+        "largeur": 1200,
+        "hauteur": 900,
+        "alt": "La Grand-Place de Lille",
+        "auteur": "Molde20",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lille_Grand_Place.JPG"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Lille",
+          "url": "https://fr.wikipedia.org/wiki/Lille"
+        },
+        {
+          "libelle": "Wikipédia : Nord",
+          "url": "https://fr.wikipedia.org/wiki/Nord_(d%C3%A9partement_fran%C3%A7ais)"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "67",
+      "codeMoteur": "67",
+      "departement": "Bas-Rhin",
+      "dans": "dans le Bas-Rhin",
+      "ville": "Strasbourg",
+      "aVille": "à Strasbourg",
+      "slug": "blog/departements/frais-notaire-67",
+      "statut": "valide",
+      "histoire": "Capitale de la région historique d'Alsace, bordée par le Rhin et frontalière de l'Allemagne, Strasbourg est la préfecture du Bas-Rhin et de la région Grand Est. Depuis 2021, le Bas-Rhin et le Haut-Rhin sont réunis dans la collectivité européenne d'Alsace, dont Strasbourg est le chef-lieu.",
+      "particularite": "Particularité du droit local d'Alsace-Moselle : la vente est publiée au livre foncier, tenu par le tribunal judiciaire sous le contrôle d'un juge, et non au service de publicité foncière comme dans le reste de la France. Les droits de mutation, eux, suivent la règle commune : 6,32 % dans l'ancien.",
+      "faqLocale": {
+        "q": "Les frais de notaire sont-ils différents en Alsace ?",
+        "a": "Les droits de mutation et les émoluments suivent les mêmes règles que dans le reste de la France. La différence tient à la publicité de la vente, inscrite au livre foncier : nos montants n'intègrent pas d'éventuels frais propres à cette formalité, que le notaire chiffre dans son décompte."
+      },
+      "voisins": [
+        "57"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-67.jpg",
+        "largeur": 1200,
+        "hauteur": 801,
+        "alt": "Strasbourg et sa cathédrale vues du ciel",
+        "auteur": "Photo Claude TRUONG-NGOC",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Strasbourg_vue_a%C3%A9rienne_vers_la_cath%C3%A9drale_septembre_2015.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Strasbourg",
+          "url": "https://fr.wikipedia.org/wiki/Strasbourg"
+        },
+        {
+          "libelle": "Wikipédia : Bas-Rhin",
+          "url": "https://fr.wikipedia.org/wiki/Bas-Rhin"
+        },
+        {
+          "libelle": "Wikipédia : livre foncier (Alsace-Moselle)",
+          "url": "https://fr.wikipedia.org/wiki/Livre_foncier"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "76",
+      "codeMoteur": "76",
+      "departement": "Seine-Maritime",
+      "dans": "en Seine-Maritime",
+      "ville": "Rouen",
+      "aVille": "à Rouen",
+      "slug": "blog/departements/frais-notaire-76",
+      "statut": "valide",
+      "histoire": "Entre 911 et 1204, Rouen est la capitale du duché de Normandie, et l'Échiquier puis le Parlement de Normandie y siègent. Traversée par la Seine, elle est aujourd'hui le chef-lieu de la région Normandie.",
+      "particularite": "La Seine-Maritime, appelée Seine-Inférieure jusqu'en 1955, abrite plus du tiers des Normands. Sa préfecture est Rouen, mais sa plus grande ville est Le Havre : dans les deux, les droits de mutation sont les mêmes.",
+      "faqLocale": {
+        "q": "Les frais de notaire sont-ils les mêmes au Havre et à Rouen ?",
+        "a": "Oui : le taux des droits de mutation est voté par le département de la Seine-Maritime, 6,32 % du prix dans l'ancien. Seul le prix du bien fait varier le montant."
+      },
+      "voisins": [],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-76.jpg",
+        "largeur": 1200,
+        "hauteur": 800,
+        "alt": "Les flèches de la cathédrale de Rouen",
+        "auteur": "DXR",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Rouen",
+          "url": "https://fr.wikipedia.org/wiki/Rouen"
+        },
+        {
+          "libelle": "Wikipédia : Seine-Maritime",
+          "url": "https://fr.wikipedia.org/wiki/Seine-Maritime"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "29",
+      "codeMoteur": "29",
+      "departement": "Finistère",
+      "dans": "dans le Finistère",
+      "ville": "Brest",
+      "aVille": "à Brest",
+      "slug": "blog/departements/frais-notaire-29",
+      "statut": "valide",
+      "histoire": "Au Moyen Âge, l'histoire de Brest se confond avec celle de son château ; Richelieu en fait ensuite un port militaire, et la ville grandit autour de son arsenal. Durement bombardée pendant la Seconde Guerre mondiale, elle voit son centre presque entièrement reconstruit.",
+      "particularite": "Brest est la ville la plus peuplée du Finistère et le deuxième port militaire de France après Toulon, mais la préfecture est Quimper. Le département, Penn-ar-Bed en breton, applique le taux relevé des droits de mutation.",
+      "faqLocale": {
+        "q": "Les frais de notaire ont-ils augmenté dans le Finistère ?",
+        "a": "Oui. Depuis le relèvement voté par le département, les droits de mutation sont de 6,32 % du prix dans l'ancien. Pour une maison à 200 000 €, cela représente environ {notaire:200000:ancien} € de frais au total."
+      },
+      "voisins": [
+        "56"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-29.jpg",
+        "largeur": 1200,
+        "hauteur": 800,
+        "alt": "Le château de Brest et la tour Tanguy",
+        "auteur": "Aodhanbzh",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_et_Tour_Tanguy.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Brest",
+          "url": "https://fr.wikipedia.org/wiki/Brest"
+        },
+        {
+          "libelle": "Wikipédia : Finistère",
+          "url": "https://fr.wikipedia.org/wiki/Finist%C3%A8re"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "14",
+      "codeMoteur": "14",
+      "departement": "Calvados",
+      "dans": "dans le Calvados",
+      "ville": "Caen",
+      "aVille": "à Caen",
+      "slug": "blog/departements/frais-notaire-14",
+      "statut": "valide",
+      "histoire": "Cité de Guillaume le Conquérant et capitale du duché de Normandie avec Rouen, Caen, surnommée la « ville aux cent clochers », a perdu une partie de son patrimoine lors de la bataille de Caen en 1944. Le Mémorial pour la paix y entretient la mémoire de ce moment de la Seconde Guerre mondiale.",
+      "particularite": "Le Calvados, créé en 1790, a pour sous-préfectures Bayeux, Lisieux et Vire Normandie, et Caen accueille le conseil régional de Normandie. Sur la côte comme dans le bocage, les acheteurs paient le même taux de droits de mutation.",
+      "faqLocale": {
+        "q": "Les frais de notaire sont-ils plus élevés sur la côte, à Deauville ou Cabourg ?",
+        "a": "Non, le taux est le même dans tout le Calvados : 6,32 % de droits de mutation dans l'ancien. Les frais sont plus élevés en euros quand le prix l'est, et une résidence secondaire n'a pas droit au taux réduit des primo-accédants."
+      },
+      "voisins": [],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-14.jpg",
+        "largeur": 1200,
+        "hauteur": 797,
+        "alt": "L'église Saint-Pierre de Caen",
+        "auteur": "Viault",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Eglise_St_Pierre_190.JPG"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Caen",
+          "url": "https://fr.wikipedia.org/wiki/Caen"
+        },
+        {
+          "libelle": "Wikipédia : Calvados",
+          "url": "https://fr.wikipedia.org/wiki/Calvados_(d%C3%A9partement)"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "17",
+      "codeMoteur": "17",
+      "departement": "Charente-Maritime",
+      "dans": "en Charente-Maritime",
+      "ville": "La Rochelle",
+      "aVille": "à La Rochelle",
+      "slug": "blog/departements/frais-notaire-17",
+      "statut": "valide",
+      "histoire": "Port de premier ordre depuis le XIIe siècle, La Rochelle est protégée des tempêtes par les îles de Ré, d'Oléron et d'Aix. Ville de forte tradition commerciale, elle compte trois ports : pêche, commerce et plaisance.",
+      "particularite": "La Charente-Maritime, appelée Charente-Inférieure jusqu'en 1941, dispose d'une vaste façade sur l'Atlantique. La Rochelle en est la ville la plus peuplée, devant Saintes, Rochefort et Royan.",
+      "faqLocale": {
+        "q": "Acheter sur l'île de Ré ou d'Oléron : les frais de notaire changent-ils ?",
+        "a": "Les îles font partie de la Charente-Maritime : le taux des droits de mutation est le même qu'à La Rochelle, 6,32 % dans l'ancien. Pour une maison de vacances, le taux réduit des primo-accédants ne s'applique pas."
+      },
+      "voisins": [
+        "79",
+        "86",
+        "24",
+        "33"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-17.jpg",
+        "largeur": 1200,
+        "hauteur": 716,
+        "alt": "L'entrée du vieux port de La Rochelle",
+        "auteur": "Jebulon",
+        "licence": "CC0",
+        "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Entrance_La_Rochelle_old_harbor.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : La Rochelle",
+          "url": "https://fr.wikipedia.org/wiki/La_Rochelle"
+        },
+        {
+          "libelle": "Wikipédia : Charente-Maritime",
+          "url": "https://fr.wikipedia.org/wiki/Charente-Maritime"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "57",
+      "codeMoteur": "57",
+      "departement": "Moselle",
+      "dans": "en Moselle",
+      "ville": "Metz",
+      "aVille": "à Metz",
+      "slug": "blog/departements/frais-notaire-57",
+      "statut": "valide",
+      "histoire": "Oppidum celte des Médiomatriques, connu sous le nom latin de Divodurum, Metz devient au VIe siècle la capitale du royaume franc d'Austrasie. De 1552 à 1790, la ville et ses alentours font partie des Trois-Évêchés.",
+      "particularite": "Frontalière du Luxembourg et de l'Allemagne, la Moselle relève du droit local d'Alsace-Moselle : les ventes y sont inscrites au livre foncier, tenu au tribunal judiciaire. Les droits de mutation suivent la règle commune, avec la hausse votée en 2025.",
+      "faqLocale": {
+        "q": "Les frontaliers qui achètent en Moselle ont-ils droit au taux réduit ?",
+        "a": "Oui, s'ils remplissent les conditions : ne pas avoir été propriétaire de sa résidence principale au cours des deux dernières années et acheter sa résidence principale. Le lieu de travail ne compte pas. Le taux est alors de 5,80 % au lieu de 6,32 %."
+      },
+      "voisins": [
+        "67",
+        "55"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-57.jpg",
+        "largeur": 1200,
+        "hauteur": 801,
+        "alt": "Le centre-ville de Metz",
+        "auteur": "Philippe Gisselbrecht/ Ville de Metz",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Metz_centre_ville.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Metz",
+          "url": "https://fr.wikipedia.org/wiki/Metz"
+        },
+        {
+          "libelle": "Wikipédia : Moselle",
+          "url": "https://fr.wikipedia.org/wiki/Moselle_(d%C3%A9partement)"
+        },
+        {
+          "libelle": "Wikipédia : livre foncier (Alsace-Moselle)",
+          "url": "https://fr.wikipedia.org/wiki/Livre_foncier"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "74",
+      "codeMoteur": "74",
+      "departement": "Haute-Savoie",
+      "dans": "en Haute-Savoie",
+      "ville": "Annecy",
+      "aVille": "à Annecy",
+      "slug": "blog/departements/frais-notaire-74",
+      "statut": "valide",
+      "histoire": "Résidence des comtes de Genève puis des comtes de Savoie, Annecy devient en 1434 capitale de l'apanage de Genevois et Faucigny. Après la Réforme à Genève, elle accueille l'évêque de Genève et le futur saint François de Sales, puis est rattachée à la France par le traité de Turin.",
+      "particularite": "La Haute-Savoie couvre le nord de la Savoie historique et abrite le mont Blanc, plus haut sommet de France. Depuis 2017, Annecy réunit Annecy-le-Vieux, Cran-Gevrier, Meythet, Pringy et Seynod.",
+      "faqLocale": {
+        "q": "Les frais de notaire sont-ils les mêmes au bord du lac d'Annecy et en station ?",
+        "a": "Oui, la Haute-Savoie applique un seul taux : 6,32 % de droits de mutation dans l'ancien. En station comme au bord du lac, un appartement de vacances paie ce taux plein."
+      },
+      "voisins": [],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-74.jpg",
+        "largeur": 1200,
+        "hauteur": 811,
+        "alt": "Annecy et son lac",
+        "auteur": "Roman Boed from The Netherlands",
+        "licence": "CC BY 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Annecy,_France_(37635411615).jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Annecy",
+          "url": "https://fr.wikipedia.org/wiki/Annecy"
+        },
+        {
+          "libelle": "Wikipédia : Haute-Savoie",
+          "url": "https://fr.wikipedia.org/wiki/Haute-Savoie"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "26",
+      "codeMoteur": "26",
+      "departement": "Drôme",
+      "dans": "dans la Drôme",
+      "ville": "Valence",
+      "aVille": "à Valence",
+      "slug": "blog/departements/frais-notaire-26",
+      "statut": "valide",
+      "histoire": "Au cœur du couloir rhodanien, Valence est souvent appelée « la porte du Midi ». Entre Vercors et Provence, la ville est desservie par l'A7, la RN7, le Rhône et la ligne TGV Paris-Marseille.",
+      "particularite": "La Drôme fait partie des départements qui n'ont pas relevé leurs droits de mutation en 2025 : ils restent à 5,80 % dans l'ancien, contre 6,32 % en Isère voisine. Tous les acheteurs en profitent, sans condition.",
+      "faqLocale": {
+        "q": "Les frais de notaire ont-ils augmenté dans la Drôme ?",
+        "a": "Non. Le département n'a pas voté la hausse autorisée depuis 2025 : les droits de mutation restent à 5,80 % du prix dans l'ancien. Pour un bien à 200 000 €, les frais sont d'environ {notaire:200000:ancien} €."
+      },
+      "voisins": [
+        "38",
+        "84",
+        "04"
+      ],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-26.jpg",
+        "largeur": 1200,
+        "hauteur": 800,
+        "alt": "Le parc Jouvet à Valence",
+        "auteur": "Txllxt TxllxT",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Valence_-_Esplanade_Champ_de_Mars_-_View_WNW_on_Parc_Jouvet.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Valence",
+          "url": "https://fr.wikipedia.org/wiki/Valence_(Dr%C3%B4me)"
+        },
+        {
+          "libelle": "Wikipédia : Drôme",
+          "url": "https://fr.wikipedia.org/wiki/Dr%C3%B4me_(d%C3%A9partement)"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "971",
+      "codeMoteur": "971",
+      "departement": "Guadeloupe",
+      "dans": "en Guadeloupe",
+      "ville": "Pointe-à-Pitre",
+      "aVille": "à Pointe-à-Pitre",
+      "slug": "blog/departements/frais-notaire-971",
+      "statut": "valide",
+      "histoire": "Construite sur des marécages et au bord d'une mangrove, Pointe-à-Pitre a gagné du terrain sur la mer, à la jointure de la Grande-Terre et de la Basse-Terre. Capitale économique de la Guadeloupe, elle forme avec Les Abymes la principale agglomération de l'archipel.",
+      "particularite": "Le chef-lieu de la Guadeloupe est Basse-Terre. Deux particularités font baisser les frais : le département n'a pas relevé ses droits de mutation, qui restent à 5,80 % dans l'ancien, et la TVA sur les émoluments du notaire est de 8,5 % au lieu de 20 %.",
+      "faqLocale": {
+        "q": "Pourquoi les frais de notaire sont-ils plus bas en Guadeloupe ?",
+        "a": "Pour deux raisons : les droits de mutation y sont de 5,80 % au lieu de 6,32 % dans la plupart des départements, et la TVA sur les émoluments et les formalités est de 8,5 % (code général des impôts, article 296). Pour 200 000 €, comptez environ {notaire:200000:ancien} €."
+      },
+      "voisins": [],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-971.jpg",
+        "largeur": 1200,
+        "hauteur": 612,
+        "alt": "Pointe-à-Pitre",
+        "auteur": "Zivax",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pointe-%C3%A0-Pitre.JPG"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Pointe-à-Pitre",
+          "url": "https://fr.wikipedia.org/wiki/Pointe-%C3%A0-Pitre"
+        },
+        {
+          "libelle": "Wikipédia : Guadeloupe",
+          "url": "https://fr.wikipedia.org/wiki/Guadeloupe"
+        },
+        {
+          "libelle": "Légifrance : CGI, article 296 (TVA en outre-mer)",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028419532"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "974",
+      "codeMoteur": "974",
+      "departement": "La Réunion",
+      "dans": "à La Réunion",
+      "ville": "Saint-Denis",
+      "aVille": "à Saint-Denis",
+      "slug": "blog/departements/frais-notaire-974",
+      "statut": "valide",
+      "histoire": "Fondée en 1669 par Étienne Regnault, premier gouverneur de l'île Bourbon, Saint-Denis se développe lentement au rythme du café, puis de la canne à sucre. C'est aujourd'hui la plus grande ville de l'outre-mer français.",
+      "particularite": "Île volcanique de l'océan Indien, La Réunion culmine au piton des Neiges, et le piton de la Fournaise est l'un des volcans les plus actifs du monde. Pour les frais de notaire, la TVA sur les émoluments y est de 8,5 %, mais les droits de mutation suivent le taux relevé de 6,32 %.",
+      "faqLocale": {
+        "q": "Les frais de notaire sont-ils moins chers à La Réunion qu'en métropole ?",
+        "a": "Légèrement, à prix égal : les droits de mutation sont les mêmes que dans la plupart des départements (6,32 % dans l'ancien), mais la TVA sur les émoluments est de 8,5 % au lieu de 20 %."
+      },
+      "voisins": [],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-974.jpg",
+        "largeur": 1200,
+        "hauteur": 900,
+        "alt": "Saint-Denis de La Réunion",
+        "auteur": "B.navez",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:SaintDenisReunion005.JPG"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Saint-Denis (La Réunion)",
+          "url": "https://fr.wikipedia.org/wiki/Saint-Denis_(La_R%C3%A9union)"
+        },
+        {
+          "libelle": "Wikipédia : La Réunion",
+          "url": "https://fr.wikipedia.org/wiki/La_R%C3%A9union"
+        },
+        {
+          "libelle": "Légifrance : CGI, article 296 (TVA en outre-mer)",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028419532"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
+      ]
+    },
+    {
+      "code": "25",
+      "codeMoteur": "25",
+      "departement": "Doubs",
+      "dans": "dans le Doubs",
+      "ville": "Besançon",
+      "aVille": "à Besançon",
+      "slug": "blog/departements/frais-notaire-25",
+      "statut": "valide",
+      "histoire": "Capitale historique de la Franche-Comté, Besançon est entourée de collines et traversée par le Doubs, en bordure du massif du Jura, à moins d'une cinquantaine de kilomètres de la Suisse. Elle accueille aujourd'hui le conseil régional de Bourgogne-Franche-Comté.",
+      "particularite": "Le Doubs tient son nom de la rivière qui arrose Besançon ; ses sous-préfectures sont Montbéliard et Pontarlier. De la capitale comtoise au Haut-Doubs, les acheteurs paient le même taux de droits de mutation.",
+      "faqLocale": {
+        "q": "Comment calculer les frais de notaire à Besançon ?",
+        "a": "Les frais se composent surtout des droits de mutation (6,32 % du prix dans l'ancien dans le Doubs), des émoluments du notaire et de quelques débours. Pour un appartement ancien à 150 000 €, le total est d'environ {notaire:150000:ancien} € ; le tableau donne les autres prix."
+      },
+      "voisins": [],
+      "image": {
+        "fichier": "/images/notaire/frais-notaire-25.jpg",
+        "largeur": 1200,
+        "hauteur": 798,
+        "alt": "La rue de la Convention à Besançon",
+        "auteur": "Wikipedro",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Besan%C3%A7on,_la_rue_de_la_Convention.jpg"
+      },
+      "sources": [
+        {
+          "libelle": "Wikipédia : Besançon",
+          "url": "https://fr.wikipedia.org/wiki/Besan%C3%A7on"
+        },
+        {
+          "libelle": "Wikipédia : Doubs",
+          "url": "https://fr.wikipedia.org/wiki/Doubs_(d%C3%A9partement)"
+        },
+        {
+          "libelle": "DGFiP : taux des droits de mutation par département",
+          "url": "https://www.impots.gouv.fr/droits-denregistrement"
+        }
       ]
     }
   ]
