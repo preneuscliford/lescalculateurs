@@ -10,9 +10,9 @@
   var CLIENT = "ca-pub-2209781252231399";
   // Identifiants des blocs d'annonces créés dans AdSense. Vide = emplacement désactivé.
   var BLOCS = {
-    "apres-simulateur": "",
-    "milieu-texte": "",
-    "avant-faq": "",
+    "apres-simulateur": "8938422172",
+    "milieu-texte": "8248157036",
+    "avant-faq": "2476955600",
   };
   var PAGES_EXCLUES = /^\/(r\/|pages\/(mentions-legales|politique-|contact|a-propos|api|sources|methodologie|historique-mises-a-jour|plan-du-site)|404)/;
   var SIMULATEURS =
