@@ -17,6 +17,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { writeFiches } = require("./lib/revenus-fiches-2023.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const OUT_JSON = path.join(ROOT, "public/data/revenus-communes-2023.json");
@@ -459,6 +460,29 @@ function main() {
   fs.writeFileSync(PAGE, html);
   console.log(`✓ ${path.relative(ROOT, PAGE)} mise à jour`);
   for (const v of panel(data)) console.log(`  ${v.nom.padEnd(26)} ${v.m}  ${v.p ?? "-"}`);
+
+  // Fiches villes (/pages/revenus/{ville}) : arrondissements et structure des revenus.
+  const arms = [];
+  const depMeasures = {};
+  for (const g of norm.geo.values()) {
+    if (g.level === "ARM" && g.measures.MED_SL != null)
+      arms.push({
+        code: g.code,
+        label: g.label,
+        m: g.measures.MED_SL,
+        p: g.measures.PR_MD60 ?? null,
+      });
+    if (g.level === "DEP") depMeasures[g.code] = g.measures;
+  }
+  const slugs = writeFiches({
+    data,
+    panel: panel(data),
+    arms,
+    depMeasures,
+    millesime: MILLESIME,
+    pagesDir: path.join(ROOT, "src/pages/revenus"),
+  });
+  console.log(`✓ ${slugs.length} fiches villes : ${slugs.join(", ")}`);
 }
 
 main();

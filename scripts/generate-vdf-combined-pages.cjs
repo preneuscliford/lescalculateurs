@@ -4,15 +4,16 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const ROOT = process.cwd();
-const INPUT = path.join(ROOT, "vdf", "revenu-des-francais-a-la-commune-1765372688826.csv");
+// Revenu médian : Insee Filosofi 2023, généré par scripts/build-revenus-communes-2023.cjs.
+const INPUT = path.join(ROOT, "public", "data", "revenus-communes-2023.json");
 const OUT_DIR = path.join(ROOT, "src", "pages", "revenus");
 const DOMAIN = "https://www.lescalculateurs.fr";
-const DATA_SOURCE_URL = "https://www.data.gouv.fr/datasets/revenu-des-francais-a-la-commune";
+const DATA_SOURCE_URL = "https://www.insee.fr/fr/statistiques/8984752";
 
 const TARGET_CITIES = [
-  { slug: "paris", name: "Paris", type: "arrondissement-prefix", prefix: "Paris " },
-  { slug: "lyon", name: "Lyon", type: "arrondissement-prefix", prefix: "Lyon " },
-  { slug: "marseille", name: "Marseille", type: "arrondissement-prefix", prefix: "Marseille " },
+  { slug: "paris", name: "Paris", code: "75056" },
+  { slug: "lyon", name: "Lyon", code: "69123" },
+  { slug: "marseille", name: "Marseille", code: "13055" },
 ];
 
 const CITY_DEFAULT_RENTS = {
@@ -125,89 +126,22 @@ function median(values) {
   return sorted.length % 2 === 0 ? (sorted[middle - 1] + sorted[middle]) / 2 : sorted[middle];
 }
 
-function parseCsv() {
-  const text = fs.readFileSync(INPUT, "utf8").replace(/^\uFEFF/, "");
-  const lines = text.split(/\r?\n/).filter(Boolean);
-  return lines.slice(1).map((line) => {
-    const cells = line.split(";");
-    return {
-      name: cells[2] || cells[0] || "",
-      code: cells[1] || "",
-      fiscalHouseholds: toNumber(cells[3]),
-      people: toNumber(cells[4]),
-      disposableQ1: toNumber(cells[6]),
-      disposableMedian: toNumber(cells[7]),
-      disposableQ3: toNumber(cells[8]),
-      disposableD1: toNumber(cells[10]),
-      disposableD9: toNumber(cells[17]),
-      disposableD9D1: toNumber(cells[18]),
-      gini: toNumber(cells[20]),
-      activityShare: toNumber(cells[21]),
-      salaryShare: toNumber(cells[22]),
-      unemploymentShare: toNumber(cells[23]),
-      pensionShare: toNumber(cells[25]),
-      propertyShare: toNumber(cells[26]),
-      socialBenefitsShare: toNumber(cells[27]),
-      familyBenefitsShare: toNumber(cells[28]),
-      minimaShare: toNumber(cells[29]),
-      housingBenefitsShare: toNumber(cells[30]),
-      taxShare: toNumber(cells[31]),
-      taxedHouseholdShare: toNumber(cells[35]),
-      declaredMedian: toNumber(cells[37]),
-    };
-  });
+function loadRevenus() {
+  return JSON.parse(fs.readFileSync(INPUT, "utf8"));
 }
 
-function aggregateCity(rows, target) {
-  const matches =
-    target.type === "exact"
-      ? rows.filter((row) => row.name.toLowerCase() === target.name.toLowerCase())
-      : rows.filter((row) => row.name.startsWith(target.prefix));
-
-  if (!matches.length) {
-    throw new Error(`Aucune donnée VDF trouvée pour ${target.name}`);
-  }
-
-  if (matches.length === 1) {
-    return {
-      ...matches[0],
-      slug: target.slug,
-      cityName: target.name,
-      sourceLabel: "Donnée communale VDF",
-      sourceNote: "Donnée communale issue du fichier VDF.",
-      components: matches,
-    };
-  }
-
+// Paris, Lyon et Marseille : médiane publiée par l'Insee pour la commune entière
+// (et non plus une moyenne des médianes d'arrondissements, qui n'a pas de sens).
+function aggregateCity(data, target) {
+  const entry = data.communes[target.code];
+  if (!entry) throw new Error(`Aucune médiane Insee pour ${target.name} (${target.code})`);
   return {
     slug: target.slug,
     cityName: target.name,
-    code: matches.map((row) => row.code).join(", "),
-    fiscalHouseholds: sum(matches, "fiscalHouseholds"),
-    people: sum(matches, "people"),
-    disposableQ1: weightedAverage(matches, "disposableQ1"),
-    disposableMedian: weightedAverage(matches, "disposableMedian"),
-    disposableQ3: weightedAverage(matches, "disposableQ3"),
-    disposableD1: weightedAverage(matches, "disposableD1"),
-    disposableD9: weightedAverage(matches, "disposableD9"),
-    disposableD9D1: weightedAverage(matches, "disposableD9D1"),
-    gini: weightedAverage(matches, "gini"),
-    activityShare: weightedAverage(matches, "activityShare"),
-    salaryShare: weightedAverage(matches, "salaryShare"),
-    unemploymentShare: weightedAverage(matches, "unemploymentShare"),
-    pensionShare: weightedAverage(matches, "pensionShare"),
-    propertyShare: weightedAverage(matches, "propertyShare"),
-    socialBenefitsShare: weightedAverage(matches, "socialBenefitsShare"),
-    familyBenefitsShare: weightedAverage(matches, "familyBenefitsShare"),
-    minimaShare: weightedAverage(matches, "minimaShare"),
-    housingBenefitsShare: weightedAverage(matches, "housingBenefitsShare"),
-    taxShare: weightedAverage(matches, "taxShare"),
-    taxedHouseholdShare: weightedAverage(matches, "taxedHouseholdShare"),
-    declaredMedian: weightedAverage(matches, "declaredMedian"),
-    sourceLabel: "Agrégation indicative des arrondissements VDF",
-    sourceNote:
-      "Paris, Lyon et Marseille sont fournis par arrondissement dans le fichier. Le repère affiché est une moyenne pondérée indicative des arrondissements.",
-    components: matches,
+    code: target.code,
+    disposableMedian: entry[0],
+    povertyRate: entry[1],
+    sourceLabel: `Insee · Filosofi ${data.millesime}`,
   };
 }
 
@@ -448,7 +382,7 @@ function getModeDescription(mode) {
   if (mode.kind === "income-led") {
     return `Simulation de budget pour un revenu net de ${formatEuro(mode.income)} par mois à ${mode.cityName} : aides possibles, reste à vivre, épargne et capacité de prêt.`;
   }
-  return `Simulation de budget à ${mode.cityName} avec un loyer de ${formatEuro(mode.rent)} et un revenu de base calé sur la médiane locale VDF.`;
+  return `Simulation de budget à ${mode.cityName} avec un loyer de ${formatEuro(mode.rent)} et un revenu de base calé sur le revenu médian de la ville (Insee 2023).`;
 }
 
 function buildScenarioPage(simulation) {
@@ -478,7 +412,7 @@ function buildScenarioPage(simulation) {
             ${escapeHtml(description)}
           </p>
           <div class="mt-6 flex flex-wrap gap-3 text-sm text-slate-200">
-            <span class="rounded-full border border-white/15 bg-white/10 px-4 py-2">${escapeHtml(city.sourceLabel || "Donnée VDF")}</span>
+            <span class="rounded-full border border-white/15 bg-white/10 px-4 py-2">${escapeHtml(city.sourceLabel || "Insee")}</span>
             <span class="rounded-full border border-white/15 bg-white/10 px-4 py-2">Revenu médian local : ${escapeHtml(formatEuro(localMedianAnnual))} / an</span>
             <span class="rounded-full border border-white/15 bg-white/10 px-4 py-2">${escapeHtml(cityHook)}</span>
           </div>
@@ -619,7 +553,7 @@ function buildScenarioPage(simulation) {
           <p class="mt-3 leading-relaxed text-slate-700">
             Le revenu médian local vaut ${formatEuro(localMedianMonthly)} par mois. Cette simulation se situe à ${formatSignedEuro(localComparison)} de ce repère.
           </p>
-          <p class="mt-3 text-sm text-slate-500">Source VDF communale via data.gouv.fr.</p>
+          <p class="mt-3 text-sm text-slate-500">Source : Insee, Filosofi 2023 (revenu disponible médian par unité de consommation).</p>
         </article>
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 class="text-xl font-bold text-slate-950">Comment utiliser cette simulation</h2>
@@ -653,9 +587,9 @@ function buildScenarioPage(simulation) {
           <li>• Calculs effectués pour un foyer d'une personne seule, locataire, sans enfant.</li>
           <li>• APL et prime d'activité sont estimées avec un moteur simplifié, suffisant pour comparer des cas concrets.</li>
           <li>• La capacité de prêt correspond à une mensualité théorique de 35 % du revenu net, avec un taux fixe indicatif à 3,5 % sur 20 ans.</li>
-          <li>• Le revenu médian local provient du fichier VDF des revenus des Français à la commune.</li>
+          <li>• Le revenu médian local est celui publié par l'Insee pour la commune (Filosofi 2023, publié en août 2026).</li>
         </ul>
-        <p class="mt-4 text-xs text-slate-500">Source : <a href="${DATA_SOURCE_URL}" class="font-semibold text-blue-700 hover:text-blue-900" rel="nofollow noopener" target="_blank">données VDF sur data.gouv.fr</a>.</p>
+        <p class="mt-4 text-xs text-slate-500">Source : <a href="${DATA_SOURCE_URL}" class="font-semibold text-blue-700 hover:text-blue-900" rel="noopener" target="_blank">Insee, revenus et pauvreté au niveau local en 2023</a>.</p>
       </section>
     </main>`;
 
@@ -685,7 +619,7 @@ function buildPillarPage(cities, simulations) {
         <div class="max-w-4xl">
           <p class="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-emerald-100">Cluster de simulation</p>
           <h1 class="mt-5 max-w-4xl text-4xl font-black leading-tight md:text-5xl">Niveau de vie par ville : revenus, loyer, aides et reste à vivre</h1>
-          <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-100">Cette série de pages combine les revenus VDF des communes avec des scénarios concrets de budget. Chaque page croise un lieu, un revenu ou un loyer, puis calcule les aides, l'épargne et la capacité de prêt.</p>
+          <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-100">Cette série de pages combine le revenu médian des villes (Insee 2023) avec des scénarios concrets de budget. Chaque page croise un lieu, un revenu ou un loyer, puis calcule les aides, l'épargne et la capacité de prêt.</p>
         </div>
       </section>
 
@@ -714,7 +648,7 @@ function buildPillarPage(cities, simulations) {
                   city,
                 ) => `<a href="/pages/revenus/${simulationSlug(city.slug, "rent-led")}" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-cyan-400 hover:bg-cyan-50">
                   <span class="text-lg font-bold text-slate-950">Reste à vivre après un loyer de 700 € à ${escapeHtml(city.cityName)}</span>
-                  <span class="mt-2 block text-sm text-slate-600">Base de revenu calée sur la médiane locale VDF.</span>
+                  <span class="mt-2 block text-sm text-slate-600">Base de revenu calée sur le revenu médian de la ville (Insee 2023).</span>
                 </a>`,
               )
               .join("")}
@@ -724,7 +658,7 @@ function buildPillarPage(cities, simulations) {
 
       <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-950">Pourquoi ce format compte</h2>
-        <p class="mt-4 max-w-4xl leading-relaxed text-slate-700">Le simple revenu médian d'une ville n'explique pas le quotidien. Ce cluster relie la donnée VDF à des cas d'usage concrets : vivre avec 1 800 € net, tenir un loyer de 700 €, estimer les aides, puis évaluer ce qu'il reste réellement pour épargner ou emprunter.</p>
+        <p class="mt-4 max-w-4xl leading-relaxed text-slate-700">Le simple revenu médian d'une ville n'explique pas le quotidien. Ces pages relient le revenu médian à des cas concrets : vivre avec 1 800 € net, tenir un loyer de 700 €, estimer les aides, puis évaluer ce qu'il reste réellement pour épargner ou emprunter.</p>
         <div class="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
           <span class="rounded-full bg-slate-100 px-4 py-2">Aides</span>
           <span class="rounded-full bg-slate-100 px-4 py-2">Budget</span>
@@ -737,7 +671,7 @@ function buildPillarPage(cities, simulations) {
 
       <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-950">Méthode de comparaison</h2>
-        <p class="mt-4 text-sm leading-relaxed text-slate-700">Chaque page utilise le revenu médian local de la commune ou de l'agrégation VDF correspondante, puis applique les mêmes hypothèses de charges pour garder la comparaison lisible entre villes.</p>
+        <p class="mt-4 text-sm leading-relaxed text-slate-700">Chaque page utilise le revenu médian publié par l'Insee pour la commune entière, puis applique les mêmes hypothèses de charges pour garder la comparaison lisible entre villes.</p>
       </section>
     </main>`;
 
@@ -756,8 +690,8 @@ function writePage(filePath, content) {
 }
 
 function main() {
-  const rows = parseCsv();
-  const cities = TARGET_CITIES.map((target) => aggregateCity(rows, target));
+  const data = loadRevenus();
+  const cities = TARGET_CITIES.map((target) => aggregateCity(data, target));
   const simulations = [];
 
   writePage(
@@ -785,7 +719,7 @@ function main() {
     writePage(path.join(OUT_DIR, `${rentLed.mode.slug}.html`), buildScenarioPage(rentLed));
   }
 
-  console.log(`Generated combined VDF pages: 1 pillar + ${simulations.length} simulation pages`);
+  console.log(`Generated revenus pages (Insee 2023): 1 pillar + ${simulations.length} simulation pages`);
 }
 
 main();
