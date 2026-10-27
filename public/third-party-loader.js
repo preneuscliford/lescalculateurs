@@ -247,6 +247,7 @@
         encodeURIComponent(ADSENSE_CLIENT_ID),
       { crossorigin: "anonymous" },
     );
+    if (!alreadyHasScript("/emplacements-pub.js")) addScript("/emplacements-pub.js");
   }
 
   function getPageTrackingContext() {
