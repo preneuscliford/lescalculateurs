@@ -991,7 +991,8 @@ function main() {
   const rows = parseCsv();
   const cities = TARGET_CITIES.map((target) => aggregateCity(rows, target));
 
-  writePage(path.join(OUT_DIR, "revenu-median-commune.html"), pillarPage(cities));
+  // La page pilier est produite par scripts/build-revenus-communes-2023.cjs
+  // (Insee Filosofi 2023) : ne plus l'écraser ici.
 
   for (const city of cities) {
     const html = cityPage(city, cities);

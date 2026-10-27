@@ -416,8 +416,10 @@ function main() {
     "Revenu médian par ville en France : classement des 25 grandes villes (2026)",
     "revenu-median-commune",
   );
-  fs.writeFileSync(path.join(pagesDir, "revenu-median-commune.html"), page1, "utf8");
-  console.log("✓ revenu-median-commune.html (25 villes)");
+  // La page pilier est désormais produite par scripts/build-revenus-communes-2023.cjs
+  // (Insee Filosofi 2023) : ne plus l'écraser avec les anciennes données.
+  void page1;
+  console.log("↷ revenu-median-commune.html ignorée (voir build-revenus-communes-2023.cjs)");
 
   // Page 2 (top-25-revenu-median-france-2026) supprimée : redirigée en 301 vers
   // /pages/revenu-median-commune (vercel.json), même contenu que la page 1.

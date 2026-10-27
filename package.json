@@ -109,6 +109,7 @@
     "generate:pseo:are": "node scripts/generate-pseo-are.js",
     "generate:pseo:impot": "node scripts/generate-pseo-impot.js",
     "generate:vdf:income": "node scripts/generate-vdf-income-pages.cjs",
+    "revenus:2023": "node scripts/build-revenus-communes-2023.cjs",
     "qa:pseo": "npm run utf8:check:pseo && npm run text:normalize:check:pseo && npm run format:check && npm run text:languagetool:pseo",
     "exemples:sync": "node scripts/sync-exemples.cjs",
     "zones-apl:build": "node scripts/build-zones-apl.cjs",

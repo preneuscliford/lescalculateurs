@@ -3,31 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Revenu médian par ville : classement 25 grandes villes 2026</title>
+    <title>Revenu moyen par ville : la médiane de votre commune (Insee 2023)</title>
     <meta
       name="description"
-      content="Classement 2026 des revenus par grande ville française : médiane annuelle, équivalent mensuel, graphique et écarts entre les 25 plus grandes villes de France."
+      content="Cherchez votre commune : revenu médian Insee 2023, équivalent mensuel et taux de pauvreté. Classement des grandes villes et calcul de votre niveau de vie. Gratuit, sans inscription."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.lescalculateurs.fr/pages/revenu-median-commune" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Revenu médian par ville en France : classement des 25 grandes villes (2026)"
+      content="Revenu et salaire par ville : où se situe votre commune ? (Insee 2023)"
     />
     <meta
       property="og:description"
-      content="Classement 2026 des revenus par grande ville française : médiane annuelle, équivalent mensuel, graphique et écarts entre les 25 plus grandes villes de France."
+      content="Revenu médian 2023 de toutes les communes publiées par l'Insee, classement des grandes villes et calcul de votre niveau de vie."
     />
     <meta property="og:url" content="https://www.lescalculateurs.fr/pages/revenu-median-commune" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Revenu médian par ville en France : classement des 25 grandes villes (2026)"
+      content="Revenu et salaire par ville : où se situe votre commune ? (Insee 2023)"
     />
     <meta
       name="twitter:description"
-      content="Classement 2026 des revenus par grande ville française : médiane annuelle, équivalent mensuel, graphique et écarts entre les 25 plus grandes villes de France."
+      content="Revenu médian 2023 de toutes les communes publiées par l'Insee, classement des grandes villes et calcul de votre niveau de vie."
     />
     <meta property="og:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
     <meta name="twitter:image" content="https://www.lescalculateurs.fr/assets/favicon-32x32.png" />
@@ -36,9 +36,37 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
     <link rel="manifest" href="/assets/site.webmanifest" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="preconnect" href="https://geo.api.gouv.fr" crossorigin />
     <link rel="stylesheet" href="/tailwind.css" />
     <script defer src="/third-party-loader.js"></script>
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://www.lescalculateurs.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Simulateurs",
+            "item": "https://www.lescalculateurs.fr/pages/simulateurs"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Revenu par commune",
+            "item": "https://www.lescalculateurs.fr/pages/revenu-median-commune"
+          }
+        ]
+      }
+    </script>
+<!-- GEN:faq-jsonld:START -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -46,30 +74,63 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Revenu médian par ville en France : classement des 25 grandes villes (2026)",
+            "name": "Quelle grande ville a le revenu médian le plus élevé ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Classement 2026 des revenus par grande ville française : médiane annuelle, équivalent mensuel, graphique et écarts entre les 25 plus grandes villes de France."
+              "text": "Parmi les 40 grandes villes de notre classement, Boulogne-Billancourt arrive en tête avec un revenu médian de 40 000 € par an en 2023, soit 3 333 € par mois et par unité de consommation. Saint-Denis (93) est la dernière, avec 18 130 €."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est le revenu médian en France ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En 2023, le niveau de vie médian en France métropolitaine est de 25 920 € par an, soit 2 160 € par mois pour une personne seule (Insee, Filosofi). Le seuil de pauvreté, fixé à 60 % de cette médiane, est de 15 550 € par an."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le revenu médian d'une ville est-il un salaire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. C'est le revenu disponible des habitants (salaires, retraites, allocations, revenus du patrimoine, moins les impôts directs), divisé par le nombre d'unités de consommation du foyer. Il inclut les retraités, les chômeurs et les étudiants. Pour votre salaire, utilisez un calcul du brut en net."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment connaître le revenu médian de ma commune ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tapez le nom de votre commune ou son code postal dans la recherche de cette page. Toutes les communes publiées par l'Insee sont disponibles, soit celles d'au moins 100 habitants fiscaux en France métropolitaine et à La Réunion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi ces chiffres diffèrent-ils de ceux d'autres sites ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Beaucoup de sites affichent encore les données 2020 ou 2021. L'Insee a changé de méthode pour 2023 (les étudiants sont désormais comptés là où ils vivent) et précise que les chiffres ne se comparent pas avec les années précédentes."
             }
           }
         ]
       }
     </script>
+<!-- GEN:faq-jsonld:END -->
   </head>
   <body
     class="bg-slate-100 text-slate-900"
     data-lc-page-type="pseo"
     data-lc-page-cluster="revenu-commune"
-    data-lc-page-template="vdf-income"
+    data-lc-page-template="revenu-commune-2023"
     data-lc-page-slug="revenu-median-commune"
   >
     <header class="border-b border-slate-200 bg-white">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-4">
         <a href="/" class="text-lg font-bold text-slate-900">Les Calculateurs</a>
-        <nav class="flex gap-4 text-sm text-slate-600">
+        <nav class="flex flex-wrap gap-4 text-sm text-slate-600">
           <a href="/">Accueil</a>
           <a href="/pages/simulateurs">Simulateurs</a>
-          <a href="/pages/revenu-median-commune">Revenus par commune</a>
+          <a href="/pages/revenu-median-commune" aria-current="page">Revenus par commune</a>
         </nav>
       </div>
     </header>
@@ -245,134 +306,151 @@
 
 <!-- /Résumé IA -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <nav aria-label="Fil d'Ariane" class="mb-4 text-sm text-slate-500">
+        <a href="/" class="hover:text-slate-800">Accueil</a> ›
+        <a href="/pages/simulateurs" class="hover:text-slate-800">Simulateurs</a> ›
+        <span class="text-slate-700">Revenu par commune</span>
+      </nav>
 
       <section
-        class="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-900 p-8 text-white shadow-xl"
+        class="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-900 p-6 text-white shadow-xl sm:p-8"
       >
         <p
           class="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-cyan-100"
         >
-          Données VDF · Revenus locaux
+          Insee · Filosofi 2023 · publié en août 2026
         </p>
-        <h1 class="mt-5 max-w-4xl text-4xl font-black leading-tight">
-          Quelles sont les villes où l’on gagne le plus en France ?
+        <h1 class="mt-5 max-w-4xl text-3xl font-black leading-tight sm:text-4xl">
+          Revenu et salaire par ville : où se situe votre commune&nbsp;?
         </h1>
+<!-- GEN:hero:START -->
         <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-100">
-          Parmi les 25 grandes villes françaises de ce panel,
-          <strong>Aix-en-Provence</strong> arrive en tête avec
-          <strong>25 810 €</strong> (2 151 €/mois). À l'opposé, <strong>Tourcoing</strong> ferme la
-          marche avec <strong>18 300 €</strong> (1 525 €/mois), soit un écart de plus de 7 500 € par
-          an entre la première et la dernière ville du classement.
+          En 2023, la moitié des habitants de France métropolitaine vit avec moins de
+          <strong>25 920 € par an</strong> (2 160 € par mois et par unité de consommation).
+          Parmi 40 grandes villes, <strong>Boulogne-Billancourt</strong> arrive en tête avec
+          40 000 €, <strong>Saint-Denis (93)</strong> ferme la marche avec 18 130 €.
+          Cherchez votre commune et comparez votre propre niveau de vie.
         </p>
+<!-- GEN:hero:END -->
         <div class="mt-6 flex flex-wrap gap-3">
           <a
-            href="#classement"
+            href="#recherche"
             class="rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white hover:bg-emerald-400"
-            >Voir le classement</a
+            >Chercher ma commune</a
           >
           <a
-            href="/pages/salaire-brut-net-calcul-2026"
+            href="#classement"
             class="rounded-xl border border-white/30 bg-white/5 px-5 py-3 font-semibold text-white hover:bg-white/15"
-            >Calculer mon salaire net</a
+            >Classement des grandes villes</a
           >
         </div>
       </section>
 
-      <section class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <section
+        id="recherche"
+        data-revenu-commune
+        data-clarity-mask="true"
+        class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2"
+      >
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-2xl font-bold text-slate-950">Revenu disponible médian</h2>
+          <h2 class="text-2xl font-bold text-slate-950">Revenu médian de votre commune</h2>
           <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Le graphique ci-dessous montre l’écart de revenus entre les grandes villes.
+            Toutes les communes publiées par l'Insee pour 2023 (France métropolitaine et La
+            Réunion).
           </p>
-          <div class="mt-6 h-72 md:h-96" data-vdf-chart>
-            <script type="application/json" data-vdf-chart-data>
-              {
-                "type": "bar",
-                "title": "Revenu disponible médian",
-                "label": "Revenu médian",
-                "unit": "euro",
-                "color": "emerald",
-                "labels": [
-                  "Aix-en-Provence",
-                  "Bordeaux",
-                  "Nantes",
-                  "Rennes",
-                  "Dijon",
-                  "Nancy",
-                  "Toulouse",
-                  "Grenoble",
-                  "Caen",
-                  "Nice",
-                  "Angers",
-                  "Brest",
-                  "Orléans",
-                  "Tours",
-                  "Metz",
-                  "Besançon",
-                  "Valence",
-                  "Lille",
-                  "Clermont-Ferrand",
-                  "Dunkerque",
-                  "Reims",
-                  "Montpellier",
-                  "Saint-Étienne",
-                  "Nîmes",
-                  "Tourcoing"
-                ],
-                "values": [
-                  25810, 24870, 24170, 22770, 22720, 22360, 22140, 22140, 21600, 21570, 21450,
-                  21420, 21370, 21250, 20940, 20680, 20040, 20520, 20430, 20240, 20210, 19670,
-                  19010, 18760, 18300
-                ]
-              }
-            </script>
+          <label for="rc-commune" class="mt-5 block text-sm font-semibold text-slate-800"
+            >Nom de la commune ou code postal</label
+          >
+          <div class="relative mt-2">
+            <input
+              id="rc-commune"
+              data-rc-input
+              type="text"
+              inputmode="search"
+              autocomplete="off"
+              placeholder="Ex. : Montreuil, 33000…"
+              role="combobox"
+              aria-expanded="false"
+              aria-controls="rc-suggestions"
+              aria-autocomplete="list"
+              class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            />
+            <ul
+              id="rc-suggestions"
+              data-rc-suggestions
+              role="listbox"
+              hidden
+              class="absolute left-0 right-0 z-20 mt-1 max-h-64 overflow-y-auto rounded-xl border border-slate-200 bg-white shadow-lg"
+            ></ul>
           </div>
+          <p data-rc-status class="mt-2 text-xs text-slate-500" aria-live="polite"></p>
+          <div data-rc-result class="mt-4" hidden aria-live="polite"></div>
         </article>
-        <aside class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-2xl font-bold text-slate-950">Réponse rapide</h2>
-          <p class="mt-4 leading-relaxed text-slate-700">
-            Parmi ces 25 grandes villes, <strong>Aix-en-Provence</strong> affiche le revenu médian
-            le plus élevé avec <strong>25 810 €</strong>. À l'opposé, <strong>Tourcoing</strong> se
-            situe à <strong>18 300 €</strong>, soit un écart annuel de <strong>7 510 €</strong>.
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-2xl font-bold text-slate-950">Où vous situez-vous&nbsp;?</h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Calculez votre niveau de vie avec la méthode de l'Insee et comparez-le à votre commune,
+            votre département et la France.
           </p>
-          <div class="mt-5 rounded-2xl bg-slate-50 p-4">
-            <p class="font-semibold text-slate-950">Repère mensuel</p>
-            <p class="mt-2 text-slate-700">
-              25 810 € par an représente environ <strong>2 151 €</strong> par mois.
+          <form data-rc-calc class="mt-5 grid gap-4" novalidate>
+            <div>
+              <label for="rc-revenu" class="block text-sm font-semibold text-slate-800"
+                >Revenus mensuels du foyer, après impôt (€)</label
+              >
+              <input
+                id="rc-revenu"
+                name="rc-revenu"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="10"
+                placeholder="Ex. : 2 800"
+                class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+              />
+              <p class="mt-1 text-xs text-slate-500">
+                Salaires nets versés, pensions, allocations chômage, aides (APL, prime d'activité,
+                allocations familiales…), revenus du patrimoine.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="rc-adultes" class="block text-sm font-semibold text-slate-800"
+                  >Personnes de 14 ans ou plus</label
+                >
+                <input
+                  id="rc-adultes"
+                  name="rc-adultes"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  max="12"
+                  value="1"
+                  class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                />
+              </div>
+              <div>
+                <label for="rc-enfants" class="block text-sm font-semibold text-slate-800"
+                  >Enfants de moins de 14 ans</label
+                >
+                <input
+                  id="rc-enfants"
+                  name="rc-enfants"
+                  type="number"
+                  inputmode="numeric"
+                  min="0"
+                  max="12"
+                  value="0"
+                  class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                />
+              </div>
+            </div>
+            <p class="text-xs text-slate-500">
+              Le calcul se fait dans votre navigateur : rien n'est envoyé ni enregistré.
             </p>
-          </div>
-          <div class="mt-4 rounded-2xl bg-cyan-50 p-4 text-sm text-cyan-950">
-            Les montants sont des revenus disponibles médians par unité de consommation, pas des
-            salaires nets individuels.
-          </div>
-          <p class="mt-4 text-sm text-slate-600">
-            Source :
-            <a
-              href="https://www.data.gouv.fr/datasets/revenu-des-francais-a-la-commune"
-              class="font-semibold text-blue-700 hover:text-blue-900"
-              rel="nofollow noopener"
-              target="_blank"
-              >revenu des Français à la commune sur data.gouv.fr</a
-            >.
-          </p>
-        </aside>
+          </form>
+          <div data-rc-calc-result class="mt-4" hidden aria-live="polite"></div>
+        </article>
       </section>
 
       <section
@@ -380,8 +458,15 @@
         class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
       >
         <h2 class="text-2xl font-bold text-slate-950">
-          Classement détaillé : annuel, mensuel et écart à la médiane
+          Classement des grandes villes par revenu médian
         </h2>
+<!-- GEN:classement-intro:START -->
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+          Revenu disponible médian par unité de consommation en 2023, du plus élevé au plus
+          bas. Repère : <strong>25 920 €</strong> pour la France métropolitaine. Votre ville n'y
+          est pas&nbsp;? <a href="#recherche" class="font-semibold text-blue-700 underline">Cherchez-la</a>.
+        </p>
+<!-- GEN:classement-intro:END -->
         <style>
           @media (max-width: 768px) {
             .responsive-table {
@@ -396,537 +481,578 @@
             }
             .responsive-table tr {
               display: block;
-              margin-bottom: 1.5rem;
+              margin-bottom: 1rem;
               border: 1px solid #e2e8f0;
               border-radius: 0.5rem;
-              padding: 1rem;
+              padding: 0.75rem 1rem;
               background-color: #f8fafc;
             }
             .responsive-table td {
-              display: block;
-              text-align: left;
-              padding: 0.5rem 0;
+              display: flex;
+              justify-content: space-between;
+              gap: 1rem;
+              padding: 0.25rem 0;
               border: none;
             }
             .responsive-table td::before {
               content: attr(data-label);
               font-weight: 600;
               color: #64748b;
-              display: block;
-              font-size: 0.75rem;
-              text-transform: uppercase;
-              margin-bottom: 0.25rem;
+              font-size: 0.8rem;
             }
             .responsive-table td:first-child {
-              font-size: 1.125rem;
+              display: block;
+              font-size: 1.05rem;
               font-weight: 700;
               color: #0f172a;
-              padding-bottom: 0.75rem;
+              padding-bottom: 0.5rem;
               border-bottom: 1px solid #cbd5e1;
-              margin-bottom: 0.75rem;
+              margin-bottom: 0.5rem;
             }
             .responsive-table td:first-child::before {
               display: none;
             }
           }
         </style>
-        <div class="mt-5 overflow-x-auto md:overflow-visible">
+        <div class="mt-6 overflow-x-auto md:overflow-visible">
           <table class="responsive-table min-w-full divide-y divide-slate-200 text-left text-sm">
             <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
               <tr>
                 <th class="px-4 py-3">Ville</th>
-                <th class="px-4 py-3">Revenu annuel</th>
-                <th class="px-4 py-3">Équivalent mensuel</th>
-                <th class="px-4 py-3">Vs médiane (21 370 €)</th>
+                <th class="px-4 py-3">Revenu médian annuel</th>
+                <th class="px-4 py-3">Par mois</th>
+                <th class="px-4 py-3">Écart à la France</th>
+                <th class="px-4 py-3">Taux de pauvreté</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
+<!-- GEN:table:START -->
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">1. Aix-en-Provence</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">25 810 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">2 151 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +4 440 €
+                <td class="px-4 py-3 font-semibold text-slate-950">1. Boulogne-Billancourt</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">40 000 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 100.0%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">3 333 €</td>
+                <td class="px-4 py-3 font-semibold text-emerald-700" data-label="Écart à la France">+54,3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">10,4 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">2. Bordeaux</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">24 870 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">2 073 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +3 500 €
+                <td class="px-4 py-3 font-semibold text-slate-950">2. <a href="/pages/revenus/paris" class="text-blue-700 hover:underline">Paris</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">33 650 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 84.1%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 804 €</td>
+                <td class="px-4 py-3 font-semibold text-emerald-700" data-label="Écart à la France">+29,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">16,8 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">3. Nantes</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">24 170 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">2 014 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +2 800 €
+                <td class="px-4 py-3 font-semibold text-slate-950">3. Annecy</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">29 760 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 74.4%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 480 €</td>
+                <td class="px-4 py-3 font-semibold text-emerald-700" data-label="Écart à la France">+14,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">12,1 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">4. Rennes</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">22 770 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 898 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +1 400 €
+                <td class="px-4 py-3 font-semibold text-slate-950">4. Aix-en-Provence</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">29 010 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 72.5%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 418 €</td>
+                <td class="px-4 py-3 font-semibold text-emerald-700" data-label="Écart à la France">+11,9 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">16,4 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">5. Dijon</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">22 720 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 893 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +1 350 €
+                <td class="px-4 py-3 font-semibold text-slate-950">5. <a href="/pages/revenus/lyon" class="text-blue-700 hover:underline">Lyon</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">28 290 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 70.7%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 358 €</td>
+                <td class="px-4 py-3 font-semibold text-emerald-700" data-label="Écart à la France">+9,1 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">18 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">6. Nancy</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">22 360 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 863 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +990 €
+                <td class="px-4 py-3 font-semibold text-slate-950">6. <a href="/pages/revenus/bordeaux" class="text-blue-700 hover:underline">Bordeaux</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">27 590 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 69.0%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 299 €</td>
+                <td class="px-4 py-3 font-semibold text-emerald-700" data-label="Écart à la France">+6,4 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">18,9 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">7. Toulouse</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">22 140 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 845 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +770 €
+                <td class="px-4 py-3 font-semibold text-slate-950">7. <a href="/pages/revenus/nantes" class="text-blue-700 hover:underline">Nantes</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">26 720 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 66.8%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 227 €</td>
+                <td class="px-4 py-3 font-semibold text-emerald-700" data-label="Écart à la France">+3,1 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">19,1 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">8. Grenoble</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">22 140 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 845 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +770 €
+                <td class="px-4 py-3 font-semibold text-slate-950">8. Dijon</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">25 140 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 62.8%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 095 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">19,2 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">9. Caen</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">21 600 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 800 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +230 €
+                <td class="px-4 py-3 font-semibold text-slate-950">9. Rennes</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">25 100 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 62.7%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 092 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−3,2 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">22,7 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">10. Nice</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">21 570 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 798 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +200 €
+                <td class="px-4 py-3 font-semibold text-slate-950">10. <a href="/pages/revenus/toulouse" class="text-blue-700 hover:underline">Toulouse</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">24 500 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 61.3%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 042 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−5,5 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">24 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">11. Angers</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">21 450 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 788 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +80 €
+                <td class="px-4 py-3 font-semibold text-slate-950">11. Grenoble</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">24 270 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 60.7%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 023 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−6,4 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">23,6 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">12. Brest</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">21 420 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 785 €</td>
-                <td class="px-4 py-3 text-emerald-700 font-semibold" data-label="Vs médiane">
-                  +50 €
+                <td class="px-4 py-3 font-semibold text-slate-950">12. Villeurbanne</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">24 160 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 60.4%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 013 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−6,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">23,1 %</td>
               </tr>
-              <tr class="hover:bg-slate-50 bg-amber-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">
-                  13. Orléans ← médiane du panel
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">13. Montreuil</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">24 100 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 60.3%" aria-hidden="true"></span>
                 </td>
-                <td class="px-4 py-3" data-label="Revenu annuel">21 370 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 781 €</td>
-                <td class="px-4 py-3 font-semibold" data-label="Vs médiane">0 €</td>
+                <td class="px-4 py-3" data-label="Par mois">2 008 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−7 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">25,6 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">14. Tours</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">21 250 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 771 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">−120 €</td>
-              </tr>
-              <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">15. Metz</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">20 940 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 745 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">−430 €</td>
-              </tr>
-              <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">16. Besançon</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">20 680 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 723 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">−690 €</td>
-              </tr>
-              <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">17. Valence</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">20 040 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 670 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">
-                  −1 330 €
+                <td class="px-4 py-3 font-semibold text-slate-950">14. <a href="/pages/revenus/nice" class="text-blue-700 hover:underline">Nice</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">24 080 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 60.2%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 007 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−7,1 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">23,4 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">18. Lille</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">20 520 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 710 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">−850 €</td>
-              </tr>
-              <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">19. Clermont-Ferrand</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">20 430 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 703 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">−940 €</td>
-              </tr>
-              <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">20. Dunkerque</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">20 240 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 687 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">
-                  −1 130 €
+                <td class="px-4 py-3 font-semibold text-slate-950">15. Brest</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">24 030 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 60.1%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">2 003 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−7,3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">20,3 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">21. Reims</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">20 210 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 684 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">
-                  −1 160 €
+                <td class="px-4 py-3 font-semibold text-slate-950">16. Angers</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 930 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 59.8%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">1 994 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−7,7 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">22 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">22. Montpellier</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">19 670 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 639 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">
-                  −1 700 €
+                <td class="px-4 py-3 font-semibold text-slate-950">17. Caen</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 650 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 59.1%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">1 971 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−8,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">24,2 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">23. Saint-Étienne</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">19 010 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 584 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">
-                  −2 360 €
+                <td class="px-4 py-3 font-semibold text-slate-950">18. Orléans</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 630 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 59.1%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">1 969 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−8,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">23,3 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">24. Nîmes</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">18 760 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 563 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">
-                  −2 610 €
+                <td class="px-4 py-3 font-semibold text-slate-950">19. Le Mans</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 610 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 59.0%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">1 968 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−8,9 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">22,9 %</td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-semibold text-slate-950">25. Tourcoing</td>
-                <td class="px-4 py-3" data-label="Revenu annuel">18 300 €</td>
-                <td class="px-4 py-3" data-label="Mensuel">1 525 €</td>
-                <td class="px-4 py-3 text-red-700 font-semibold" data-label="Vs médiane">
-                  −3 070 €
+                <td class="px-4 py-3 font-semibold text-slate-950">20. Tours</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 390 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 58.5%" aria-hidden="true"></span>
                 </td>
+                <td class="px-4 py-3" data-label="Par mois">1 949 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−9,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">24,1 %</td>
               </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">21. Toulon</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 270 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 58.2%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 939 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−10,2 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">24,3 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">22. Besançon</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 240 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 58.1%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 937 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−10,3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">24 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">23. Metz</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 070 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 57.7%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 923 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−11 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">26,4 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">24. Rouen</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">23 060 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 57.6%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 922 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−11 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">26,4 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">25. <a href="/pages/revenus/marseille" class="text-blue-700 hover:underline">Marseille</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">22 860 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 57.1%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 905 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−11,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">28,1 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">26. Limoges</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">22 690 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 56.7%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 891 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−12,5 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">25,5 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">27. Clermont-Ferrand</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">22 640 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 56.6%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 887 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−12,7 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">27 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">28. Le Havre</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">22 480 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 56.2%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 873 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−13,3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">24,2 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">29. <a href="/pages/revenus/lille" class="text-blue-700 hover:underline">Lille</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">22 470 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 56.2%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 873 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−13,3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">28,6 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">30. Reims</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">22 410 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 56.0%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 868 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−13,5 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">25,7 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">31. <a href="/pages/revenus/strasbourg" class="text-blue-700 hover:underline">Strasbourg</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">21 980 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 54.9%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 832 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−15,2 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">29,6 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">32. <a href="/pages/revenus/montpellier" class="text-blue-700 hover:underline">Montpellier</a></td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">21 440 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 53.6%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 787 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−17,3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">30,9 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">33. Amiens</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">21 400 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 53.5%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 783 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−17,4 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">29,3 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">34. Argenteuil</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">21 300 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 53.3%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 775 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−17,8 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">29,8 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">35. Saint-Étienne</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">20 880 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 52.2%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 740 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−19,4 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">30,4 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">36. Nîmes</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">20 830 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 52.1%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 736 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−19,6 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">32,4 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">37. Saint-Denis (La Réunion)</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">20 240 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 50.6%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 687 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−21,9 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">35 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">38. Perpignan</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">19 110 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 47.8%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 593 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−26,3 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">36,2 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">39. Mulhouse</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">18 680 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 46.7%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 557 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−27,9 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">36,5 %</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-slate-950">40. Saint-Denis (93)</td>
+                <td class="px-4 py-3" data-label="Revenu médian annuel">
+                  <span class="font-semibold">18 130 €</span>
+                  <span class="mt-1 hidden h-2 rounded-full bg-emerald-500 md:block" style="width: 45.3%" aria-hidden="true"></span>
+                </td>
+                <td class="px-4 py-3" data-label="Par mois">1 511 €</td>
+                <td class="px-4 py-3 font-semibold text-red-700" data-label="Écart à la France">−30,1 %</td>
+                <td class="px-4 py-3" data-label="Taux de pauvreté">38,6 %</td>
+              </tr>
+<!-- GEN:table:END -->
             </tbody>
           </table>
         </div>
+<!-- GEN:table-note:START -->
         <p class="mt-3 text-xs text-slate-500">
-          Données issues du fichier Revenu des Français à la commune (data.gouv.fr). Classement trié
-          par revenu annuel décroissant. Médiane du panel = 21 370 € (Orléans). Les écarts positifs
-          sont en vert, les négatifs en rouge. — Données mises à jour le 10 juillet 2026.
+          Source : Insee, Filosofi 2023 (publié en août 2026). Écart calculé par rapport à la
+          médiane de France métropolitaine (25 920 €). Taux de pauvreté : part des habitants sous
+          60 % de cette médiane. Paris, Lyon et Marseille : commune entière.
         </p>
-      </section>
-
-      <section class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-2xl font-bold text-slate-950">Part de ménages imposés</h2>
-          <div class="mt-6 h-72 md:h-96" data-vdf-chart>
-            <script type="application/json" data-vdf-chart-data>
-              {
-                "type": "bar",
-                "title": "Part de ménages imposés",
-                "label": "Part de ménages imposés",
-                "unit": "percent",
-                "color": "blue",
-                "labels": [
-                  "Aix-en-Provence",
-                  "Bordeaux",
-                  "Nantes",
-                  "Rennes",
-                  "Dijon",
-                  "Nancy",
-                  "Toulouse",
-                  "Grenoble",
-                  "Caen",
-                  "Nice",
-                  "Angers",
-                  "Brest",
-                  "Orléans",
-                  "Tours",
-                  "Metz",
-                  "Besançon",
-                  "Valence",
-                  "Lille",
-                  "Clermont-Ferrand",
-                  "Dunkerque",
-                  "Reims",
-                  "Montpellier",
-                  "Saint-Étienne",
-                  "Nîmes",
-                  "Tourcoing"
-                ],
-                "values": [
-                  61, 57, 57, 54, 55, 52, 53, 54, 50, 51, 49, 48, 53, 49, 47, 48, 47, 50, 48, 45,
-                  47, 46, 42, 42, 38
-                ]
-              }
-            </script>
-          </div>
-        </article>
+<!-- GEN:table-note:END -->
       </section>
 
       <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 class="text-2xl font-bold text-slate-950">Fiches villes disponibles</h2>
-        <div class="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <a
-            href="/pages/revenus/nice"
-            class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50"
-          >
-            <span class="text-lg font-bold text-slate-950">Nice</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>21 570 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 798 €</span>
-          </a>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Aix-en-Provence</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>25 810 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 2 151 €</span>
+        <h2 class="text-2xl font-bold text-slate-950">
+          Salaire moyen, revenu médian : de quoi parle-t-on&nbsp;?
+        </h2>
+        <div class="mt-5 grid gap-6 md:grid-cols-3">
+          <div>
+            <h3 class="font-bold text-slate-950">Médiane plutôt que moyenne</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">
+              La médiane coupe la population en deux : la moitié vit avec moins, l'autre moitié
+              avec plus. La moyenne est tirée vers le haut par les très hauts revenus, elle décrit
+              mal la situation d'un habitant ordinaire. L'Insee ne publie d'ailleurs que la médiane
+              pour les communes.
+            </p>
           </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Caen</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>21 600 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 800 €</span>
+          <div>
+            <h3 class="font-bold text-slate-950">Revenu disponible, pas salaire</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">
+              Le chiffre compte tous les revenus du foyer (salaires, retraites, chômage, revenus du
+              patrimoine, prestations sociales), moins les impôts directs. Un retraité ou un
+              allocataire y figure au même titre qu'un salarié. Ce n'est donc pas un salaire.
+            </p>
           </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Dijon</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>22 720 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 893 €</span>
+          <div>
+            <h3 class="font-bold text-slate-950">Par « unité de consommation »</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">
+              Le revenu du foyer est divisé par son nombre d'unités : 1 pour le premier adulte, 0,5
+              par personne de 14 ans ou plus, 0,3 par enfant plus jeune. Un couple avec deux jeunes
+              enfants compte 2,1 unités. C'est ce qu'on appelle le niveau de vie.
+            </p>
           </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Besançon</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>20 680 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 723 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Valence</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>20 040 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 670 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Brest</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>21 420 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 785 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Nîmes</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>18 760 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 563 €</span>
-          </div>
-          <a
-            href="/pages/revenus/toulouse"
-            class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50"
-          >
-            <span class="text-lg font-bold text-slate-950">Toulouse</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>22 140 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 845 €</span>
-          </a>
-          <a
-            href="/pages/revenus/bordeaux"
-            class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50"
-          >
-            <span class="text-lg font-bold text-slate-950">Bordeaux</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>24 870 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 2 073 €</span>
-          </a>
-          <a
-            href="/pages/revenus/montpellier"
-            class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50"
-          >
-            <span class="text-lg font-bold text-slate-950">Montpellier</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>19 670 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 639 €</span>
-          </a>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Rennes</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>22 770 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 898 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Tours</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>21 250 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 771 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Grenoble</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>22 140 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 845 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Saint-Étienne</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>19 010 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 584 €</span>
-          </div>
-          <a
-            href="/pages/revenus/nantes"
-            class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50"
-          >
-            <span class="text-lg font-bold text-slate-950">Nantes</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>24 170 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 2 014 €</span>
-          </a>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Orléans</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>21 370 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 781 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Angers</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>21 450 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 788 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Reims</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>20 210 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 684 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Nancy</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>22 360 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 863 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Metz</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>20 940 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 745 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Dunkerque</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>20 240 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 687 €</span>
-          </div>
-          <a
-            href="/pages/revenus/lille"
-            class="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-blue-400 hover:bg-blue-50"
-          >
-            <span class="text-lg font-bold text-slate-950">Lille</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>20 520 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 710 €</span>
-          </a>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Tourcoing</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>18 300 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 525 €</span>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <span class="text-lg font-bold text-slate-950">Clermont-Ferrand</span>
-            <span class="mt-2 block text-sm text-slate-600"
-              >Revenu disponible médian : <strong>20 430 €</strong></span
-            >
-            <span class="mt-1 block text-sm text-slate-600">Équivalent mensuel : 1 703 €</span>
-          </div>
+        </div>
+        <div class="mt-5 rounded-2xl bg-cyan-50 p-4 text-sm text-cyan-950">
+          Pour votre salaire, utilisez plutôt le
+          <a href="/pages/salaire-brut-net-calcul-2026" class="font-semibold underline"
+            >calcul du salaire brut en net</a
+          >. Pour savoir si une ville vous convient, comparez aussi le loyer et vos
+          <a href="/pages/apl" class="font-semibold underline">droits à l'APL</a>.
         </div>
       </section>
 
-      <section class="mt-8 grid gap-6 lg:grid-cols-3">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-xl font-bold text-slate-950">Que signifient ces chiffres ?</h2>
-          <p class="mt-3 leading-relaxed text-slate-700">
-            Un revenu médian plus élevé ne signifie pas toujours un meilleur pouvoir d’achat : le
-            logement, les transports et le coût de la vie peuvent absorber une partie de l’écart.
-          </p>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-xl font-bold text-slate-950">Peut-on vivre avec un SMIC ?</h2>
-          <p class="mt-3 leading-relaxed text-slate-700">
-            Pour juger une ville, comparez le salaire net, le loyer, les aides possibles et le reste
-            à vivre réel.
-          </p>
-          <a
-            href="/pages/apl"
-            class="mt-4 inline-flex rounded-xl bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700"
-            >Simuler mon APL</a
-          >
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-xl font-bold text-slate-950">Simuler mon niveau de vie</h2>
-          <p class="mt-3 leading-relaxed text-slate-700">
-            Transformez ces repères statistiques en calcul personnel avec les simulateurs salaire,
-            impôt et aides.
-          </p>
-          <div class="mt-4 flex flex-wrap gap-2">
+      <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-950">Vivre dans une grande ville : nos fiches</h2>
+        <p class="mt-2 text-sm text-slate-600">Budget, loyer et aides possibles ville par ville.</p>
+        <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <a href="/pages/revenus/paris" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Paris</a>
+          <a href="/pages/revenus/marseille" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Marseille</a>
+          <a href="/pages/revenus/lyon" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Lyon</a>
+          <a href="/pages/revenus/toulouse" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Toulouse</a>
+          <a href="/pages/revenus/nice" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Nice</a>
+          <a href="/pages/revenus/nantes" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Nantes</a>
+          <a href="/pages/revenus/montpellier" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Montpellier</a>
+          <a href="/pages/revenus/strasbourg" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Strasbourg</a>
+          <a href="/pages/revenus/bordeaux" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Bordeaux</a>
+          <a href="/pages/revenus/lille" class="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-950 hover:border-blue-400 hover:bg-blue-50">Lille</a>
+        </div>
+      </section>
+
+      <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-950">Questions fréquentes</h2>
+<!-- GEN:faq:START -->
+        <details class="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <summary class="cursor-pointer font-semibold text-slate-950">Quelle grande ville a le revenu médian le plus élevé ?</summary>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">Parmi les 40 grandes villes de notre classement, Boulogne-Billancourt arrive en tête avec un revenu médian de 40 000 € par an en 2023, soit 3 333 € par mois et par unité de consommation. Saint-Denis (93) est la dernière, avec 18 130 €.</p>
+        </details>
+        <details class="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <summary class="cursor-pointer font-semibold text-slate-950">Quel est le revenu médian en France ?</summary>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">En 2023, le niveau de vie médian en France métropolitaine est de 25 920 € par an, soit 2 160 € par mois pour une personne seule (Insee, Filosofi). Le seuil de pauvreté, fixé à 60 % de cette médiane, est de 15 550 € par an.</p>
+        </details>
+        <details class="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <summary class="cursor-pointer font-semibold text-slate-950">Le revenu médian d'une ville est-il un salaire ?</summary>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">Non. C'est le revenu disponible des habitants (salaires, retraites, allocations, revenus du patrimoine, moins les impôts directs), divisé par le nombre d'unités de consommation du foyer. Il inclut les retraités, les chômeurs et les étudiants. Pour votre salaire, utilisez un calcul du brut en net.</p>
+        </details>
+        <details class="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <summary class="cursor-pointer font-semibold text-slate-950">Comment connaître le revenu médian de ma commune ?</summary>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">Tapez le nom de votre commune ou son code postal dans la recherche de cette page. Toutes les communes publiées par l'Insee sont disponibles, soit celles d'au moins 100 habitants fiscaux en France métropolitaine et à La Réunion.</p>
+        </details>
+        <details class="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <summary class="cursor-pointer font-semibold text-slate-950">Pourquoi ces chiffres diffèrent-ils de ceux d'autres sites ?</summary>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">Beaucoup de sites affichent encore les données 2020 ou 2021. L'Insee a changé de méthode pour 2023 (les étudiants sont désormais comptés là où ils vivent) et précise que les chiffres ne se comparent pas avec les années précédentes.</p>
+        </details>
+<!-- GEN:faq:END -->
+      </section>
+
+      <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 text-sm leading-relaxed text-slate-700 shadow-sm">
+        <h2 class="text-xl font-bold text-slate-950">Source et méthode</h2>
+        <ul class="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            Source :
             <a
-              href="/pages/salaire-brut-net-calcul-2026"
-              class="rounded-xl border border-slate-200 px-4 py-2 font-semibold text-slate-800 hover:border-blue-400"
-              >Salaire net</a
+              href="https://www.insee.fr/fr/statistiques/8984752"
+              class="font-semibold text-blue-700 hover:text-blue-900"
+              rel="noopener"
+              target="_blank"
+              >Insee, indicateurs sur les revenus et la pauvreté au niveau local en 2023</a
             >
-            <a
-              href="/pages/impot"
-              class="rounded-xl border border-slate-200 px-4 py-2 font-semibold text-slate-800 hover:border-blue-400"
-              >Impôt</a
-            >
-          </div>
-        </article>
+            (dispositif Filosofi 2, publié en août 2026, géographie au 1ᵉʳ janvier 2026). C'est le
+            dernier millésime disponible.
+          </li>
+          <li>
+            Les chiffres 2023 ne se comparent pas avec ceux des années 2012 à 2021 : l'Insee a
+            changé de méthode. Les étudiants, par exemple, sont désormais comptés là où ils
+            vivent, et non plus chez leurs parents.
+          </li>
+          <li>
+            Secret statistique : rien n'est publié pour les communes de moins de 100 habitants
+            fiscaux, et le taux de pauvreté seulement à partir de 2 000. La Guadeloupe, la
+            Martinique, la Guyane et Mayotte ne sont pas couvertes en 2023.
+          </li>
+          <li>
+            Le taux de pauvreté est la part des habitants dont le niveau de vie est inférieur à 60 %
+            de la médiane de France métropolitaine.
+          </li>
+        </ul>
       </section>
     </main>
     <script type="module" src="/main.ts"></script>
