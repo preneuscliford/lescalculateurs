@@ -1,4 +1,13 @@
 #!/usr/bin/env node
+// OBSOLÈTE (octobre 2026) : ce script produisait les pages revenus à partir du
+// fichier data.gouv « revenu des Français à la commune » (données 2020).
+// Remplacé par scripts/build-revenus-communes-2023.cjs (Insee Filosofi 2023).
+// Les pages qu'il générait sont soit reconstruites par ce nouveau script, soit
+// redirigées en 301 (vercel.json). Ne pas le relancer : il réécrirait des
+// pages avec des chiffres périmés.
+console.error("Script obsolète : utilisez `npm run revenus:2023 <FILOSOFI_CC.csv>`.");
+process.exit(1);
+
 /**
  * Génère les pages HUB VDF basées sur le pattern gagnant de revenu-median-commune
  * Données source: vdf/revenu-des-francais-a-la-commune-1765372688826.csv
@@ -416,8 +425,10 @@ function main() {
     "Revenu médian par ville en France : classement des 25 grandes villes (2026)",
     "revenu-median-commune",
   );
-  fs.writeFileSync(path.join(pagesDir, "revenu-median-commune.html"), page1, "utf8");
-  console.log("✓ revenu-median-commune.html (25 villes)");
+  // La page pilier est désormais produite par scripts/build-revenus-communes-2023.cjs
+  // (Insee Filosofi 2023) : ne plus l'écraser avec les anciennes données.
+  void page1;
+  console.log("↷ revenu-median-commune.html ignorée (voir build-revenus-communes-2023.cjs)");
 
   // Page 2 (top-25-revenu-median-france-2026) supprimée : redirigée en 301 vers
   // /pages/revenu-median-commune (vercel.json), même contenu que la page 1.

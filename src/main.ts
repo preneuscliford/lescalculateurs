@@ -211,6 +211,11 @@ export function initializeApp() {
 
   // Initialize VDF income charts only on pages that declare them.
   initializeVdfIncomeCharts();
+
+  // Recherche de commune + calcul du niveau de vie (page revenu-median-commune).
+  if (document.querySelector("[data-revenu-commune]")) {
+    import("./utils/revenuCommune").then((m) => m.initializeRevenuCommune());
+  }
 }
 
 // Initialize show more/less functionality for calculators

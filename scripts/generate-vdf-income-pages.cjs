@@ -1,4 +1,13 @@
 #!/usr/bin/env node
+// OBSOLÈTE (octobre 2026) : ce script produisait les pages revenus à partir du
+// fichier data.gouv « revenu des Français à la commune » (données 2020).
+// Remplacé par scripts/build-revenus-communes-2023.cjs (Insee Filosofi 2023).
+// Les pages qu'il générait sont soit reconstruites par ce nouveau script, soit
+// redirigées en 301 (vercel.json). Ne pas le relancer : il réécrirait des
+// pages avec des chiffres périmés.
+console.error("Script obsolète : utilisez `npm run revenus:2023 <FILOSOFI_CC.csv>`.");
+process.exit(1);
+
 
 const fs = require("node:fs");
 const path = require("node:path");
@@ -991,7 +1000,8 @@ function main() {
   const rows = parseCsv();
   const cities = TARGET_CITIES.map((target) => aggregateCity(rows, target));
 
-  writePage(path.join(OUT_DIR, "revenu-median-commune.html"), pillarPage(cities));
+  // La page pilier est produite par scripts/build-revenus-communes-2023.cjs
+  // (Insee Filosofi 2023) : ne plus l'écraser ici.
 
   for (const city of cities) {
     const html = cityPage(city, cities);

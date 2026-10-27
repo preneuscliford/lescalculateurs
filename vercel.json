@@ -12,6 +12,16 @@
       "permanent": true
     },
     {
+      "source": "/(pages/)?top-40-villes-revenu-complet-2026",
+      "destination": "/pages/revenu-median-commune",
+      "permanent": true
+    },
+    {
+      "source": "/(pages/)?inegalites-revenu-ville-france-2026",
+      "destination": "/pages/revenu-median-commune",
+      "permanent": true
+    },
+    {
       "source": "/pages/frais-notaire",
       "destination": "/pages/notaire",
       "permanent": true
