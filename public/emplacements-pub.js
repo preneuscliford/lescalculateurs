@@ -14,12 +14,16 @@
     "milieu-texte": "8248157036",
     "avant-faq": "2476955600",
   };
-  var PAGES_EXCLUES = /^\/(r\/|pages\/(mentions-legales|politique-|contact|a-propos|api|sources|methodologie|historique-mises-a-jour|plan-du-site)|404)/;
+  var PAGES_EXCLUES = /^\/(r\/|pages\/(mentions-legales|politique-|contact|a-propos|api|plan-du-site)|404)/;
   var SIMULATEURS =
     '[id$="-calculator-slot"], [id$="-calculator"], #calculator-container, #simulateur, [data-simulateur]';
   var TITRE_FAQ = /questions fr[ée]quentes|^\W*faq\b(?! express)/i;
   var ECART_MIN = 2; // sections entre deux annonces
-  var TEXTE_MIN = 2500; // caractères de contenu sous lesquels on n'ajoute pas d'annonce dans le texte
+  var TEXTE_MIN = 1200; // caractères de contenu sous lesquels la page ne reçoit aucune annonce
+  // Nombre d'annonces selon la longueur du texte : 1 sous 2 000 caractères, 2 sous 3 500, 3 au-delà
+  function maxAnnonces(texte) {
+    return texte < 2000 ? 1 : texte < 3500 ? 2 : 3;
+  }
   var STYLE_ID = "lc-pub-style";
   // ?lc_pub_test=1 : annonces de test (data-adtest), emplacements posés même sans bloc configuré
   var testAnnonces = /[?&]lc_pub_test=1\b/.test(window.location.search);
@@ -66,7 +70,7 @@
     var liste = [];
     for (var i = 0; i < tous.length; i++) {
       var h = tous[i];
-      if (dans(h, "nav, aside, footer, [data-barre-question], details, .lc-pub")) continue;
+      if (dans(h, "header, nav, aside, footer, [data-barre-question], details, .lc-pub")) continue;
       if (simulateur && (simulateur === h || simulateur.contains(h))) continue;
       if (!h.textContent.trim() || h.offsetParent === null) continue;
       liste.push(h);
@@ -150,9 +154,12 @@
 
   function placer() {
     if (PAGES_EXCLUES.test(window.location.pathname)) return;
-    var main = document.querySelector("main");
+    // Zone de contenu : <main>, sinon l'article (anciennes pages de blog), sinon la page
+    var main = document.querySelector("main") || document.querySelector("article") || document.body;
     if (!main || main.querySelector(".lc-pub")) return;
-    if ((main.textContent || "").replace(/\s+/g, " ").length < TEXTE_MIN) return;
+    var texte = (main.textContent || "").replace(/\s+/g, " ").length;
+    if (texte < TEXTE_MIN) return;
+    var max = maxAnnonces(texte);
 
     var simulateur = null;
     var candidats = main.querySelectorAll(SIMULATEURS);
@@ -166,7 +173,7 @@
     var titres = titresDeContenu(main, simulateur);
     var places = []; // index de titre devant lequel une annonce est posée
     var poser = function (nom, index) {
-      if ((!BLOCS[nom] && !testAnnonces) || index < 0 || index >= titres.length) return null;
+      if ((!BLOCS[nom] && !testAnnonces) || places.length >= max || index < 0 || index >= titres.length) return null;
       for (var p = 0; p < places.length; p++) {
         if (Math.abs(places[p] - index) < ECART_MIN) return null;
       }
