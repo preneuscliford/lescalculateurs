@@ -13,6 +13,7 @@
   <meta property="og:locale" content="fr_FR" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"vous êtes hébergé à titre gratuit : quel impact sur votre Prime d'activité ? (salaire de 1 600 €)","url":"https://www.lescalculateurs.fr/scenarios/prime-activite/heberge-gratuitement-1600-euros","description":"Prime d'activité 2026 : testez l'impact si vous êtes hébergé à titre gratuit avec un salaire de 1 600 € nets mensuels. Comparaison avant/après et explication détaillée.","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="/third-party-loader.js"></script>
   <style>
     @keyframes market-shine { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
     @keyframes market-glow-up { 0%,100%{box-shadow:0 0 0 1px rgba(34,197,94,0.14),0 0 10px rgba(34,197,94,0.18);transform:translateY(0) scale(1)} 50%{box-shadow:0 0 0 1px rgba(34,197,94,0.24),0 0 18px rgba(34,197,94,0.34);transform:translateY(-1px) scale(1.03)} }
@@ -183,7 +184,7 @@ function getPrimeForfait(situation,enfants){const n=Math.max(0,Math.floor(enfant
 function getHousingForfait(logement,situation,enfants){if(logement==="loue")return 0;const s=(situation==="couple"?2:1)+Math.max(0,Math.floor(enfants||0));if(s<=1)return BAREmes.forfaitLogement.unePersonne;if(s===2)return BAREmes.forfaitLogement.deuxPersonnes;return BAREmes.forfaitLogement.troisPersonnesOuPlus}
 function getBonification(revenusProf){const r=Math.max(0,revenusProf||0);if(r<BAREmes.bonification.seuilDebut)return 0;if(r>=BAREmes.bonification.seuilMaximum)return BAREmes.bonification.montantMaximum;return Math.round(BAREmes.bonification.montantMaximum*((r-BAREmes.bonification.seuilDebut)/(BAREmes.bonification.seuilMaximum-BAREmes.bonification.seuilDebut))*100)/100}
 function calculer(d){if(!d.situation||!d.logement||d.revenusProf<=0)return{success:true,montantEstime:0};const mb=getPrimeForfait(d.situation,d.enfants);const bonif=getBonification(d.revenusProf);const fl=getHousingForfait(d.logement,d.situation,d.enfants);const rpc=d.revenusProf*BAREmes.revenusProfessionnelsPrisEnCompte;const arc=Math.max(0,d.autresRevenus||0);const ne=Math.max(0,Math.floor(d.enfants||0));const A=BAREmes.allocationsFamiliales;const af=ne<2?0:ne===2?A.deuxEnfants:A.troisEnfants+(ne-3)*A.parEnfantSupplementaire;const total=d.revenusProf+arc+af+fl;let mf=mb+bonif+rpc-Math.max(mb,total);return{success:true,montantEstime:Math.max(0,Math.round(mf*100)/100),details:{montantBase:mb,bonification:bonif}}}
-function f€(m){return m.toLocaleString("fr-FR")+" €"}
+function fEuros(m){return m.toLocaleString("fr-FR")+" €"}
 function fmt(m){return m===0?"Non éligible":m.toLocaleString("fr-FR")+" € / mois"}
 
 const form=document.getElementById("calc-form");
@@ -207,8 +208,8 @@ function updateUI(baseResult,scenarioResult){
   const beforeH=baseResult.montantEstime;
   const afterH=scenarioResult.montantEstime;
   const maxH=Math.max(beforeH,afterH,50);
-  document.getElementById("bar-before-val").textContent=f€(beforeH);
-  document.getElementById("bar-after-val").textContent=f€(afterH);
+  document.getElementById("bar-before-val").textContent=fEuros(beforeH);
+  document.getElementById("bar-after-val").textContent=fEuros(afterH);
   var bhPx=Math.max(4,Math.round((beforeH/maxH)*144));
   var ahPx=Math.max(4,Math.round((afterH/maxH)*144));
   document.getElementById("bar-before").style.height=bhPx+"px";
