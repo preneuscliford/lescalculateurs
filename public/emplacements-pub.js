@@ -91,6 +91,13 @@
     var libelle = document.createElement("span");
     libelle.className = "lc-pub-libelle";
     libelle.textContent = "Publicité";
+    div.appendChild(libelle);
+    return div;
+  }
+
+  // Le bloc <ins> n'est ajouté qu'au moment de la demande : adsbygoogle.push() remplit
+  // le premier <ins> vide de la page, quel qu'il soit.
+  function creerAnnonce(nom) {
     var ins = document.createElement("ins");
     ins.className = "adsbygoogle";
     ins.setAttribute("data-ad-client", CLIENT);
@@ -98,9 +105,7 @@
     ins.setAttribute("data-ad-format", "auto");
     ins.setAttribute("data-full-width-responsive", "true");
     if (testAnnonces) ins.setAttribute("data-adtest", "on");
-    div.appendChild(libelle);
-    div.appendChild(ins);
-    return div;
+    return ins;
   }
 
   // Demande l'annonce quand l'emplacement approche de l'écran.
@@ -111,6 +116,7 @@
     var demander = function () {
       if (div.getAttribute("data-lc-pub-demande")) return;
       div.setAttribute("data-lc-pub-demande", "1");
+      div.appendChild(creerAnnonce(div.getAttribute("data-lc-pub")));
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (_e) {}
