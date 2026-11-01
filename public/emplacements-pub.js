@@ -13,16 +13,20 @@
     "apres-simulateur": "8938422172",
     "milieu-texte": "8248157036",
     "avant-faq": "2476955600",
+    "supplement": "4137427140",
   };
   var PAGES_EXCLUES = /^\/(r\/|pages\/(mentions-legales|politique-|contact|a-propos|api|plan-du-site)|404)/;
   var SIMULATEURS =
     '[id$="-calculator-slot"], [id$="-calculator"], #calculator-container, #simulateur, [data-simulateur]';
   var TITRE_FAQ = /questions fr[ée]quentes|^\W*faq\b(?! express)/i;
   var ECART_MIN = 2; // sections entre deux annonces
+  var ECART_ECRANS = 0.75; // et au moins 3/4 d'écran : deux annonces jamais entières à l'écran ensemble
+  var ECART_BOUTON = 40; // pas d'annonce juste sous un bouton ou un champ (px)
+  var INTERACTIFS = 'button, input, select, textarea, a[class*="bg-"], [role="button"]';
   var TEXTE_MIN = 1200; // caractères de contenu sous lesquels la page ne reçoit aucune annonce
-  // Nombre d'annonces selon la longueur du texte : 1 sous 2 000 caractères, 2 sous 3 500, 3 au-delà
+  // Nombre d'annonces selon la longueur du texte : 1 sous 2 000 caractères, 2 sous 3 500, 3 sous 6 000, 4 au-delà
   function maxAnnonces(texte) {
-    return texte < 2000 ? 1 : texte < 3500 ? 2 : 3;
+    return texte < 2000 ? 1 : texte < 3500 ? 2 : texte < 6000 ? 3 : 4;
   }
   var STYLE_ID = "lc-pub-style";
   // ?lc_pub_test=1 : annonces de test (data-adtest), emplacements posés même sans bloc configuré
@@ -76,6 +80,17 @@
       liste.push(h);
     }
     return liste;
+  }
+
+  // Un bouton ou un champ visible se termine-t-il juste au-dessus de la position y ?
+  function boutonJusteAuDessus(main, y) {
+    var els = main.querySelectorAll(INTERACTIFS);
+    for (var i = 0; i < els.length; i++) {
+      if (els[i].offsetParent === null || dans(els[i], ".lc-pub")) continue;
+      var bas = els[i].getBoundingClientRect().bottom + window.pageYOffset;
+      if (bas <= y && y - bas < ECART_BOUTON) return true;
+    }
+    return false;
   }
 
   function apres(a, b) {
@@ -178,16 +193,30 @@
 
     var titres = titresDeContenu(main, simulateur);
     var places = []; // index de titre devant lequel une annonce est posée
+    var hauteurs = []; // position verticale de ces titres
+    var ecartPx = ECART_ECRANS * (window.innerHeight || 800);
     var poser = function (nom, index) {
       if ((!BLOCS[nom] && !testAnnonces) || places.length >= max || index < 0 || index >= titres.length) return null;
-      for (var p = 0; p < places.length; p++) {
-        if (Math.abs(places[p] - index) < ECART_MIN) return null;
-      }
       var bloc = blocDe(titres[index], main);
+      var y = bloc.getBoundingClientRect().top + window.pageYOffset;
+      if (boutonJusteAuDessus(main, y)) return null;
+      for (var p = 0; p < places.length; p++) {
+        if (Math.abs(places[p] - index) < ECART_MIN || Math.abs(hauteurs[p] - y) < ecartPx) return null;
+      }
       var div = creerEmplacement(nom);
       bloc.parentNode.insertBefore(div, bloc);
       places.push(index);
+      hauteurs.push(y);
       return div;
+    };
+    // Titre le plus proche de « cible », entre « de » (inclus) et « fin » (exclu), où l'annonce
+    // respecte les écarts
+    var poserPres = function (nom, cible, de, fin) {
+      for (var d = 0; d < fin - de; d++) {
+        var div = (cible + d < fin && poser(nom, cible + d)) || (d > 0 && cible - d >= de && poser(nom, cible - d));
+        if (div) return div;
+      }
+      return null;
     };
 
     // 1. Après le simulateur : devant la première section qui le suit.
@@ -202,7 +231,7 @@
         }
       }
     }
-    var premier = poser("apres-simulateur", debut);
+    var premier = debut < 0 ? null : poserPres("apres-simulateur", debut, debut, debut + 2);
     if (premier) {
       if (simulateur) activerApresCalcul(premier, simulateur);
       else activer(premier);
@@ -219,11 +248,20 @@
     var avantFaq = faq > 0 ? poser("avant-faq", faq) : null;
     if (avantFaq) activer(avantFaq);
 
-    // 3. Au milieu du texte, entre les deux précédentes.
+    // 3. Dans le texte, entre les deux précédentes : au milieu, ou au tiers et aux deux tiers
+    //    sur les pages longues (emplacement supplémentaire).
     var de = premier ? debut : 0;
     var a = avantFaq ? faq : titres.length;
-    var milieu = poser("milieu-texte", Math.round((de + a) / 2));
+    var milieu, supplement;
+    if (max >= 4) {
+      var tiers = de + Math.round((a - de) / 3);
+      var deuxTiers = de + Math.round((2 * (a - de)) / 3);
+      milieu = poserPres("milieu-texte", tiers, de, deuxTiers);
+      supplement = poserPres("supplement", deuxTiers, de, a);
+    }
+    if (!milieu && !supplement) milieu = poserPres("milieu-texte", Math.round((de + a) / 2), de, a);
     if (milieu) activer(milieu);
+    if (supplement) activer(supplement);
   }
 
   function demarrer() {
