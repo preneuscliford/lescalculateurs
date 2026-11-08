@@ -26,10 +26,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Combien touche une mère célibataire avec 4 enfants sans emploi ?",
+            "name": "Combien touche un parent isolé avec 4 enfants sans emploi ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sans revenu, elle touche environ 2 504 € d'aides par mois : 528 € de RSA, 630 € d'APL et 803 € d'ASF, plus 542 € d'allocations familiales. Calcul pour un loyer de 640 € en zone 2, sans pension alimentaire."
+              "text": "Sans revenu, le foyer touche environ 2 504 € d'aides par mois : 528 € de RSA, 630 € d'APL, 803 € d'ASF et 542 € d'allocations familiales. Calcul pour un loyer de 640 € en zone 2, sans pension alimentaire."
             }
           },
           {
@@ -37,7 +37,7 @@
             "name": "Et au SMIC ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Avec 1 478 € de salaire net, le RSA s'arrête mais la prime d'activité prend le relais : 90 € de prime, 498 € d'APL et 803 € d'ASF, plus 542 € d'allocations familiales, soit un revenu total d'environ 3 411 € par mois."
+              "text": "Avec 1 478 € de salaire net, le RSA s'arrête mais la prime d'activité prend le relais : 90 € de prime d'activité, 498 € d'APL, 803 € d'ASF et 542 € d'allocations familiales, soit un revenu total d'environ 3 411 € par mois."
             }
           },
           {
@@ -120,9 +120,9 @@
       <section class="bg-white rounded-lg shadow p-6">
         <h2 class="text-2xl font-bold text-gray-900 mb-2">Comment les aides se combinent</h2>
         <ul class="list-disc pl-5 space-y-2 text-gray-700">
-          <li><strong>RSA</strong> : il complète vos ressources jusqu'au montant forfaitaire. Le salaire, les allocations familiales et une part de l'ASF sont déduits, ainsi qu'un forfait logement quand vous touchez l'APL.</li>
-          <li><strong>Prime d'activité</strong> : dès que vous travaillez. Elle se cumule avec le RSA tant que celui-ci est versé, puis prend le relais.</li>
-          <li><strong>APL</strong> : calculée sur vos revenus d'activité ; ni le RSA ni les prestations familiales n'y entrent.</li>
+          <li><strong>RSA</strong> : il complète les ressources du foyer jusqu'au montant forfaitaire. Le salaire, les allocations familiales et une part de l'ASF sont déduits, ainsi qu'un forfait logement quand le foyer touche l'APL.</li>
+          <li><strong>Prime d'activité</strong> : dès qu'un membre du foyer travaille. Elle se cumule avec le RSA tant que celui-ci est versé, puis prend le relais.</li>
+          <li><strong>APL</strong> : calculée sur les revenus d'activité ; ni le RSA ni les prestations familiales n'y entrent.</li>
           <li><strong>ASF</strong> : 201 € par enfant quand l'autre parent ne verse pas de pension alimentaire (ou verse moins que ce montant), sans condition de ressources.</li>
           <li><strong>Allocations familiales</strong> : à partir de 2 enfants, au taux plein pour ces revenus (sans la majoration pour les enfants de 14 ans et plus).</li>
         </ul>
@@ -146,12 +146,12 @@
         <h2 class="text-2xl font-bold text-gray-900 mb-4">Questions fréquentes</h2>
         <div class="space-y-5">
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-1" data-faq-q="faq">Combien touche une mère célibataire avec 4 enfants sans emploi ?</h3>
-            <p class="text-gray-700" data-faq-a="faq">Sans revenu, elle touche environ <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="aides">2 504</span> € d'aides par mois : <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="rsa">528</span> € de RSA, <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="apl">630</span> € d'APL et <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="asf">803</span> € d'ASF, plus <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="allocationsFamiliales">542</span> € d'allocations familiales. Calcul pour un loyer de 640 € en zone 2, sans pension alimentaire.</p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-1" data-faq-q="faq">Combien touche un parent isolé avec 4 enfants sans emploi ?</h3>
+            <p class="text-gray-700" data-faq-a="faq">Sans revenu, le foyer touche environ <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="aides">2 504</span> € d'aides par mois : <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="rsa">528</span> € de RSA, <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="apl">630</span> € d'APL, <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="asf">803</span> € d'ASF et <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":0,"zone":"zone2","loyer":640}' data-champ="allocationsFamiliales">542</span> € d'allocations familiales. Calcul pour un loyer de 640 € en zone 2, sans pension alimentaire.</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-1" data-faq-q="faq">Et au SMIC ?</h3>
-            <p class="text-gray-700" data-faq-a="faq">Avec 1 478 € de salaire net, le RSA s'arrête mais la prime d'activité prend le relais : <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="prime">90</span> € de prime, <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="apl">498</span> € d'APL et <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="asf">803</span> € d'ASF, plus <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="allocationsFamiliales">542</span> € d'allocations familiales, soit un revenu total d'environ <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="total">3 411</span> € par mois.</p>
+            <p class="text-gray-700" data-faq-a="faq">Avec 1 478 € de salaire net, le RSA s'arrête mais la prime d'activité prend le relais : <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="prime">90</span> € de prime d'activité, <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="apl">498</span> € d'APL, <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="asf">803</span> € d'ASF et <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="allocationsFamiliales">542</span> € d'allocations familiales, soit un revenu total d'environ <span data-exemple="aides-foyer" data-params='{"situation":"parent-isole","enfants":4,"salaire":1478,"zone":"zone2","loyer":640}' data-champ="total">3 411</span> € par mois.</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-1" data-faq-q="faq">L'ASF est-elle déduite du RSA ?</h3>
@@ -181,6 +181,7 @@
           <li><a class="text-blue-700 underline hover:text-blue-900" href="/pages/aides/combien-touche-mere-celibataire-2-enfants">Mère célibataire avec 2 enfants</a></li>
           <li><a class="text-blue-700 underline hover:text-blue-900" href="/pages/aides/combien-touche-mere-celibataire-3-enfants">Mère célibataire avec 3 enfants</a></li>
           <li><a class="text-blue-700 underline hover:text-blue-900" href="/pages/aides/combien-touche-mere-celibataire">Toutes les situations</a></li>
+          <li><a class="text-blue-700 underline hover:text-blue-900" href="/pages/aides/combien-touche-couple-rsa">Couple au RSA : les aides</a></li>
           <li><a class="text-blue-700 underline hover:text-blue-900" href="/pages/rsa">Simulateur RSA</a></li>
           <li><a class="text-blue-700 underline hover:text-blue-900" href="/pages/prime-activite">Simulateur prime d'activité</a></li>
           <li><a class="text-blue-700 underline hover:text-blue-900" href="/pages/apl">Simulateur APL</a></li>

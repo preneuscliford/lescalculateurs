@@ -86,17 +86,17 @@ ecrire(path.join("src/pages", `${Q.SLUG_PAGE_GLOBALE}.html`), finaliser(Q.pageGl
 
 // Aides d'une mère célibataire selon le nombre d'enfants : pages et sommaire
 for (const p of Q.PAGES_AIDES_FOYER) ecrire(path.join("src/pages", p.slug, "index.html"), finaliser(Q.pageAidesFoyer(p)));
-if (Q.SOMMAIRE_AIDES_FOYER.statut === "valide") ecrire(path.join("src/pages", Q.SOMMAIRE_AIDES_FOYER.slug, "index.html"), finaliser(Q.sommaireAidesFoyer()));
+for (const s of Q.SOMMAIRES_AIDES_FOYER) ecrire(path.join("src/pages", s.slug, "index.html"), finaliser(Q.sommaireAidesFoyer(s)));
 
 // Sitemap
 const sitemap = fs.readFileSync(path.join(root, "public/sitemap.xml"), "utf8");
 const pagesSitemap = [...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug), ...Q.SLUGS_NOTAIRE, ...Q.SLUGS_AIDES_FOYER];
-const redirigees = [...Q.REDIRECTIONS, ...Q.REDIRECTIONS_NOTAIRE];
+const redirigees = [...Q.REDIRECTIONS, ...Q.REDIRECTIONS_NOTAIRE, ...Q.REDIRECTIONS_AIDES_FOYER];
 // Date de dernière modification du contenu de chaque page générée (lastmod)
 const datesSitemap = Object.fromEntries([
   ...[...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug)].map((slug) => [slug, Q.MISE_A_JOUR_QUESTIONS]),
   ...Q.SLUGS_NOTAIRE.map((slug) => [slug, Q.MISE_A_JOUR_NOTAIRE]),
-  ...Q.SLUGS_AIDES_FOYER.map((slug) => [slug, Q.MISE_A_JOUR_AIDES_FOYER]),
+  ...Object.entries(Q.DATES_AIDES_FOYER),
 ]);
 ecrire("public/sitemap.xml", Q.majSitemap(sitemap.replace(/\r\n/g, "\n"), siteUpdate.lastVerified, pagesSitemap, redirigees.map((r) => r.de), datesSitemap));
 

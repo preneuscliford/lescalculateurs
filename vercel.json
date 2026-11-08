@@ -346,6 +346,66 @@
       "source": "/pages/blog/departements/frais-notaire-2B/",
       "destination": "/pages/blog/departements/frais-notaire-corse",
       "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-sans-enfant",
+      "destination": "/pages/aides/combien-touche-couple-rsa-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-sans-enfant/",
+      "destination": "/pages/aides/combien-touche-couple-rsa-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-sans-revenu",
+      "destination": "/pages/aides/combien-touche-couple-rsa-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-sans-revenu/",
+      "destination": "/pages/aides/combien-touche-couple-rsa-sans-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-avec-enfant",
+      "destination": "/pages/aides/combien-touche-couple-rsa-1-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-avec-enfant/",
+      "destination": "/pages/aides/combien-touche-couple-rsa-1-enfant",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-2-enfants",
+      "destination": "/pages/aides/combien-touche-couple-rsa-2-enfants",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-2-enfants/",
+      "destination": "/pages/aides/combien-touche-couple-rsa-2-enfants",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-3-enfants",
+      "destination": "/pages/aides/combien-touche-couple-rsa-3-enfants",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-3-enfants/",
+      "destination": "/pages/aides/combien-touche-couple-rsa-3-enfants",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-sans-revenu-avec-enfant",
+      "destination": "/pages/aides/combien-touche-couple-rsa",
+      "permanent": true
+    },
+    {
+      "source": "/pages/rsa/rsa-couple-sans-revenu-avec-enfant/",
+      "destination": "/pages/aides/combien-touche-couple-rsa",
+      "permanent": true
     }
   ]
 }

@@ -1339,18 +1339,6 @@
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-2-enfants/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-3-enfants/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <url>
     <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-salaire-1500/</loc>
@@ -1378,30 +1366,6 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-conditions-2026/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-avec-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-enfant/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-revenu/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lescalculateurs.fr/pages/rsa/rsa-couple-sans-revenu-avec-enfant/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2358,6 +2322,42 @@
   </url>
   <url>
     <loc>https://www.lescalculateurs.fr/pages/aides/combien-touche-mere-celibataire</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aides/combien-touche-couple-rsa-sans-enfant</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aides/combien-touche-couple-rsa-1-enfant</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aides/combien-touche-couple-rsa-2-enfants</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aides/combien-touche-couple-rsa-3-enfants</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aides/combien-touche-couple-rsa-4-enfants</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lescalculateurs.fr/pages/aides/combien-touche-couple-rsa</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

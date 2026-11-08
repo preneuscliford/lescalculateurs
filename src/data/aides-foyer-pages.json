@@ -1,16 +1,38 @@
 {
-  "description": "Pages « combien touche un parent isolé » : total des aides (RSA, prime d'activité, APL, ASF, allocations familiales) selon le nombre d'enfants et le salaire, calculé par src/utils/aidesFoyerCalculEngine.ts. Générées par scripts/generate-pages-questions.cjs.",
-  "miseAJour": "2026-11-08",
-  "sourceDemande": "Autocomplétion Google du 08/11/2026 : « combien touche une mère célibataire avec 1 / 2 / 3 / 4 / 5 enfants », « … sans emploi », « … qui travaille », « … par la caf », « combien touche un parent isolé avec 2 enfants », « aide caf mère célibataire 2 enfants ». Search Console : « femme isolée avec 2 enfants » (33 impressions en 2 semaines sur les pages APL).",
-  "sommaire": {
-    "slug": "aides/combien-touche-mere-celibataire",
-    "titre": "Combien touche une mère célibataire en 2026 ? Les aides selon le nombre d'enfants",
-    "statut": "valide"
+  "description": "Pages « combien touche… » : total des aides (RSA, prime d'activité, APL, ASF, allocations familiales) selon la situation, le nombre d'enfants et le salaire, calculé par src/utils/aidesFoyerCalculEngine.ts. Générées par scripts/generate-pages-questions.cjs.",
+  "sourceDemande": {
+    "parent-isole": "Autocomplétion Google du 08/11/2026 : « combien touche une mère célibataire avec 1 / 2 / 3 / 4 / 5 enfants », « … sans emploi », « … qui travaille », « … par la caf », « combien touche un parent isolé avec 2 enfants ».",
+    "couple": "Autocomplétion Google du 08/11/2026 : « combien touche un couple au rsa sans enfant / avec 1 à 6 enfants », « combien touche un couple avec 2 enfants caf ». Search Console (90 jours) : « simulation rsa couple » 1 116 impressions, « rsa couple 2 enfants » 655, « simulation caf rsa couple » 314, « rsa couple avec 2 enfants » 289."
   },
+  "validation": "Parent isolé : lancé par Cliff le 08/11/2026 (« vas pour l'idée 1 »). Couple et redirections 301 des anciennes pages RSA couple : validés par Cliff le 08/11/2026 (« vas y »).",
+  "sommaires": [
+    {
+      "situation": "parent-isole",
+      "slug": "aides/combien-touche-mere-celibataire",
+      "titre": "Combien touche une mère célibataire en 2026 ? Les aides selon le nombre d'enfants",
+      "ariane": "Mère célibataire : les aides",
+      "miseAJour": "2026-11-08",
+      "statut": "valide"
+    },
+    {
+      "situation": "couple",
+      "slug": "aides/combien-touche-couple-rsa",
+      "titre": "Combien touche un couple au RSA en 2026 ? Les aides selon le nombre d'enfants",
+      "ariane": "Couple au RSA : les aides",
+      "miseAJour": "2026-11-08",
+      "statut": "valide",
+      "remplace": ["rsa/rsa-couple-sans-revenu-avec-enfant"]
+    }
+  ],
   "pages": [
-    { "id": "parent-isole-1", "situation": "parent-isole", "enfants": 1, "slug": "aides/combien-touche-mere-celibataire-1-enfant", "titre": "Combien touche une mère célibataire avec 1 enfant en 2026 ?", "statut": "valide" },
-    { "id": "parent-isole-2", "situation": "parent-isole", "enfants": 2, "slug": "aides/combien-touche-mere-celibataire-2-enfants", "titre": "Combien touche une mère célibataire avec 2 enfants en 2026 ?", "statut": "valide" },
-    { "id": "parent-isole-3", "situation": "parent-isole", "enfants": 3, "slug": "aides/combien-touche-mere-celibataire-3-enfants", "titre": "Combien touche une mère célibataire avec 3 enfants en 2026 ?", "statut": "valide" },
-    { "id": "parent-isole-4", "situation": "parent-isole", "enfants": 4, "slug": "aides/combien-touche-mere-celibataire-4-enfants", "titre": "Combien touche une mère célibataire avec 4 enfants en 2026 ?", "statut": "valide" }
+    { "id": "parent-isole-1", "situation": "parent-isole", "enfants": 1, "slug": "aides/combien-touche-mere-celibataire-1-enfant", "titre": "Combien touche une mère célibataire avec 1 enfant en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide" },
+    { "id": "parent-isole-2", "situation": "parent-isole", "enfants": 2, "slug": "aides/combien-touche-mere-celibataire-2-enfants", "titre": "Combien touche une mère célibataire avec 2 enfants en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide" },
+    { "id": "parent-isole-3", "situation": "parent-isole", "enfants": 3, "slug": "aides/combien-touche-mere-celibataire-3-enfants", "titre": "Combien touche une mère célibataire avec 3 enfants en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide" },
+    { "id": "parent-isole-4", "situation": "parent-isole", "enfants": 4, "slug": "aides/combien-touche-mere-celibataire-4-enfants", "titre": "Combien touche une mère célibataire avec 4 enfants en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide" },
+    { "id": "couple-0", "situation": "couple", "enfants": 0, "slug": "aides/combien-touche-couple-rsa-sans-enfant", "titre": "Combien touche un couple au RSA sans enfant en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide", "remplace": ["rsa/rsa-couple-sans-enfant", "rsa/rsa-couple-sans-revenu"] },
+    { "id": "couple-1", "situation": "couple", "enfants": 1, "slug": "aides/combien-touche-couple-rsa-1-enfant", "titre": "Combien touche un couple au RSA avec 1 enfant en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide", "remplace": ["rsa/rsa-couple-avec-enfant"] },
+    { "id": "couple-2", "situation": "couple", "enfants": 2, "slug": "aides/combien-touche-couple-rsa-2-enfants", "titre": "Combien touche un couple au RSA avec 2 enfants en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide", "remplace": ["rsa/rsa-2-enfants"] },
+    { "id": "couple-3", "situation": "couple", "enfants": 3, "slug": "aides/combien-touche-couple-rsa-3-enfants", "titre": "Combien touche un couple au RSA avec 3 enfants en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide", "remplace": ["rsa/rsa-3-enfants"] },
+    { "id": "couple-4", "situation": "couple", "enfants": 4, "slug": "aides/combien-touche-couple-rsa-4-enfants", "titre": "Combien touche un couple au RSA avec 4 enfants en 2026 ?", "miseAJour": "2026-11-08", "statut": "valide" }
   ]
 }

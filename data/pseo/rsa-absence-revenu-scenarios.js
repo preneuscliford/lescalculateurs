@@ -34,40 +34,6 @@ export const rsaAbsenceRevenuScenarios = [
     ],
   },
   {
-    slug: "rsa-couple-sans-revenu",
-    title: "RSA couple sans revenu : estimation 2026",
-    description:
-      "Ordre de grandeur du RSA 2026 pour un couple sans revenu avec logement loué.",
-    summary:
-      "Cette page répond aux couples qui veulent estimer rapidement le RSA quand les deux adultes n'ont plus de revenu.",
-    audience: "Couple sans revenu",
-    tags: ["rsa", "sans-revenu", "couple"],
-    input: {
-      situation: "couple",
-      enfants: 0,
-      revenus: 0,
-      logement: "loue",
-      activite: "inactif",
-    },
-    checklist: [
-      "Vérifier si un autre revenu du foyer doit encore être pris en compte.",
-      "Comparer avec un hébergement gratuit si vous n'avez plus de loyer.",
-      "Tester aussi le cas avec un enfant si la composition du foyer change.",
-    ],
-    faq: [
-      {
-        question: "Le RSA d'un couple sans revenu est-il plus élevé ?",
-        answer:
-          "Le montant théorique augmente avec la composition du foyer, mais il reste toujours soumis aux conditions de ressources et de situation.",
-      },
-      {
-        question: "Le logement change-t-il le RSA estimé ?",
-        answer:
-          "Oui. Un logement gratuit ou une aide au logement peut modifier l'estimation finale.",
-      },
-    ],
-  },
-  {
     slug: "rsa-parent-isole-sans-revenu",
     title: "RSA parent isolé sans revenu : estimation 2026",
     description:
@@ -166,40 +132,6 @@ export const rsaAbsenceRevenuScenarios = [
         question: "Faut-il aussi regarder l'APL dans ce cas ?",
         answer:
           "Oui, surtout si vous payez un loyer et que le budget logement reste lourd à supporter.",
-      },
-    ],
-  },
-  {
-    slug: "rsa-couple-sans-revenu-avec-enfant",
-    title: "RSA couple sans revenu avec enfant : estimation 2026",
-    description:
-      "Ordre de grandeur du RSA 2026 pour un couple avec enfant sans revenu et avec logement loué.",
-    summary:
-      "Cette page vise les couples avec enfant qui traversent une rupture de revenu et cherchent un repère rapide sur le RSA.",
-    audience: "Couple avec enfant sans revenu",
-    tags: ["rsa", "couple", "sans-revenu", "enfant"],
-    input: {
-      situation: "couple",
-      enfants: 1,
-      revenus: 0,
-      logement: "loue",
-      activite: "inactif",
-    },
-    checklist: [
-      "Vérifier si toutes les ressources du foyer sont bien à zéro ou résiduelles.",
-      "Comparer avec le cas couple sans enfant pour mesurer l'effet du foyer.",
-      "Tester aussi l'APL et les aides globales si le logement reste à payer.",
-    ],
-    faq: [
-      {
-        question: "Le RSA d'un couple avec enfant est-il plus élevé ?",
-        answer:
-          "Le montant théorique peut être plus favorable qu'un couple sans enfant, mais il reste soumis aux conditions de la CAF.",
-      },
-      {
-        question: "Le logement peut-il réduire le RSA estimé ?",
-        answer:
-          "Oui. Le type de logement et l'existence d'une aide logement peuvent modifier l'estimation finale.",
       },
     ],
   },
