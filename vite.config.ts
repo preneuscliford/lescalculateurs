@@ -744,6 +744,20 @@ function collectOutilsInputs() {
   return inputs;
 }
 
+// Pages « aides du foyer » générées sous src/pages/aides/<slug>/index.html
+function collectAidesFoyerInputs() {
+  const aidesDir = resolve(__dirname, "src/pages/aides");
+  if (!fs.existsSync(aidesDir)) return {};
+
+  const inputs: Record<string, string> = {};
+  for (const entry of fs.readdirSync(aidesDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const indexPath = path.join(aidesDir, entry.name, "index.html");
+    if (fs.existsSync(indexPath)) inputs[`pages/aides/${entry.name}/index`] = indexPath;
+  }
+  return inputs;
+}
+
 function collectAideInputs() {
   const aideDir = resolve(__dirname, "src/pages/aide");
   if (!fs.existsSync(aideDir)) return {};
@@ -924,6 +938,7 @@ export default defineConfig(() => {
   const notaireDepartmentInputs = collectNotaireDepartmentInputs();
   const salairePilotInputsResult = collectSalairePilotInputs();
   const aideInputs = collectAideInputs();
+  const aidesFoyerInputs = collectAidesFoyerInputs();
   const outilsInputs = collectOutilsInputs();
   const taxeFonciereInputs = collectTaxeFonciereInputs();
 
@@ -1026,6 +1041,9 @@ export default defineConfig(() => {
 
           // Pages aide presentes sous src/pages/aide/*.html
           ...aideInputs,
+
+          // Pages « aides du foyer » (mère célibataire selon le nombre d'enfants)
+          ...aidesFoyerInputs,
 
           // Pages outils presentes sous src/pages/outils/*.html
           ...outilsInputs,

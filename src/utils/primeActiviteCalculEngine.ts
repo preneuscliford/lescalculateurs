@@ -91,7 +91,7 @@ function getHousingForfait(logement: string, situation: string, enfants: number)
 }
 
 /** Allocations familiales au taux plein selon le nombre d'enfants (0 avant 2 enfants) */
-function getAllocationsFamiliales(enfants: number): number {
+export function getAllocationsFamiliales(enfants: number): number {
   const n = Math.max(0, Math.floor(enfants || 0));
   const af = socialBaremes.allocationsFamiliales.tauxPlein;
   if (n < 2) return 0;

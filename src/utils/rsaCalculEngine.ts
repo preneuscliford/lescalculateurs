@@ -6,6 +6,13 @@ export interface RSACalculData {
   revenus: number;
   logement: string;
   activite: string;
+  /**
+   * Majoration pour isolement (parent isolé) : 12 mois dans les 18 mois suivant la séparation ou
+   * la naissance, ou jusqu'aux 3 ans du plus jeune enfant (CASF, art. R262-1)
+   */
+  majorationIsolement?: boolean;
+  /** Prestations familiales comptées dans les ressources (allocations familiales, part de l'ASF…) */
+  prestationsFamiliales?: number;
 }
 
 export interface RSAResult {
@@ -78,7 +85,11 @@ export function calculerRSA(data: RSACalculData): RSAResult {
     };
   }
 
-  const coefficient = getBaseCoefficient(data.situation, data.enfants);
+  const majoration = rsaBaremes.majorationIsolement;
+  const coefficient =
+    data.majorationIsolement && data.situation !== "couple"
+      ? majoration.base + Math.max(0, Math.floor(data.enfants || 0)) * majoration.parEnfant
+      : getBaseCoefficient(data.situation, data.enfants);
   const montantBase = Math.round(rsaBaremes.montantForfaitaireBase * coefficient * 100) / 100;
   const forfaitLogement = getForfaitLogement(data.logement, data.situation, data.enfants);
   const revenusPris =
@@ -87,7 +98,8 @@ export function calculerRSA(data: RSACalculData): RSAResult {
       : Math.max(0, Math.round((data.revenus || 0) * 100) / 100);
   const abattement = Math.max(0, Math.round(((data.revenus || 0) - revenusPris) * 100) / 100);
 
-  let montantFinal = montantBase - revenusPris - forfaitLogement;
+  const prestationsFamiliales = Math.max(0, data.prestationsFamiliales || 0);
+  let montantFinal = montantBase - revenusPris - prestationsFamiliales - forfaitLogement;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
   const sousSeuilVersement = montantFinal > 0 && montantFinal < rsaBaremes.montantMinimumVerse;
   if (sousSeuilVersement) montantFinal = 0;

@@ -17,6 +17,7 @@
 import { calculerAPL, type APLInput } from "./aplCalculEngine";
 import { calculerPrimeActivite, type PrimeActiviteCalculData } from "./primeActiviteCalculEngine";
 import { calculerRSA, type RSACalculData } from "./rsaCalculEngine";
+import { calculerAidesFoyer, type AidesFoyerData, type AidesFoyerResult } from "./aidesFoyerCalculEngine";
 import { calculerNotaire, type NotaireCalculData } from "./notaireCalculEngine";
 import { calculerFinDroits, formaterDateLongue, type FinDroitsData } from "./finDroitsChomageCalculEngine";
 import { calculerDepotGarantie, type DepotGarantieData } from "./depotGarantieCalculEngine";
@@ -46,6 +47,12 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
   "prime-activite": (p: PrimeActiviteCalculData) => calculerPrimeActivite(p).montantEstime,
   /** RSA mensuel versé (forfait logement et seuil de versement compris) */
   rsa: (p: RSACalculData) => calculerRSA(p).montantEstime,
+  /** Aides d'un foyer ; champ = "aides" (défaut), "total", "rsa", "prime", "apl", "asf", "allocationsFamiliales" */
+  "aides-foyer": (p: AidesFoyerData, champ = "aides") => {
+    const r = calculerAidesFoyer(p);
+    if (!(champ in r)) throw new Error(`Champ aides-foyer inconnu : ${champ}`);
+    return r[champ as keyof AidesFoyerResult];
+  },
   /** Frais de notaire ; champ = "total" (défaut), "droitsEnregistrement", "emoluments"… */
   /** Taux des droits de mutation appliqué, en texte : « 6,32 % » */
   "notaire-taux": (p: NotaireCalculData) =>

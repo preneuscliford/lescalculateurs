@@ -640,6 +640,10 @@ var socialBaremes = {
       coupleAvec2Enfants: 2.1,
       personneSupplementaire: 0.4
     },
+    // RSA majoré pour isolement (CASF, art. R262-1) : 128,412 % du montant forfaitaire,
+    // plus 42,804 % par enfant à charge. Contrôle : 836,85 EUR (grossesse) et 1 115,80 EUR
+    // (1 enfant) au 1er avril 2026, montants publiés par la CAF et Wizbii.
+    majorationIsolement: { base: 1.28412, parEnfant: 0.42804 },
     // Montants officiels au 1er avril 2026 (service-public.gouv.fr F19778)
     forfaitLogement: {
       unePersonne: 78.2,
@@ -721,7 +725,17 @@ var socialBaremes = {
     ],
     sansConditionRessources: true,
     montantParEnfant: 200.78,
-    montantParEnfantPriveDeuxParents: 267.63
+    montantParEnfantPriveDeuxParents: 267.63,
+    // Part de l'ASF comptée dans les ressources du RSA et de la prime d'activité : 22,5 % de la
+    // BMAF par enfant. Les revalorisations de 2013 et la majoration de 50 % du 1er novembre 2022
+    // sont exclues (DREES, Minima sociaux 2025, fiche 9, tableau 1 note 3 ; décret 2014-554).
+    partRessourcesRsaPrime: 0.225
+  },
+  // Base mensuelle de calcul des allocations familiales au 1er avril 2026 (CLEISS)
+  bmaf: {
+    dateEffet: "2026-04-01",
+    sourceUrl: "https://www.cleiss.fr/docs/regimes/regime_france6_prestations-familiales.html",
+    montant: 478.16
   },
   are: {
     // Pas de revalorisation au 1er juillet 2026 (CA Unedic du 30/06/2026) :
@@ -2553,12 +2567,14 @@ function calculerRSA(data) {
       }
     };
   }
-  const coefficient = getBaseCoefficient(data.situation, data.enfants);
+  const majoration = rsaBaremes.majorationIsolement;
+  const coefficient = data.majorationIsolement && data.situation !== "couple" ? majoration.base + Math.max(0, Math.floor(data.enfants || 0)) * majoration.parEnfant : getBaseCoefficient(data.situation, data.enfants);
   const montantBase = Math.round(rsaBaremes.montantForfaitaireBase * coefficient * 100) / 100;
   const forfaitLogement = getForfaitLogement(data.logement, data.situation, data.enfants);
   const revenusPris = data.activite === "actif" ? Math.round((data.revenus || 0) * rsaBaremes.revenusActivitePrisEnCompte * 100) / 100 : Math.max(0, Math.round((data.revenus || 0) * 100) / 100);
   const abattement = Math.max(0, Math.round(((data.revenus || 0) - revenusPris) * 100) / 100);
-  let montantFinal = montantBase - revenusPris - forfaitLogement;
+  const prestationsFamiliales = Math.max(0, data.prestationsFamiliales || 0);
+  let montantFinal = montantBase - revenusPris - prestationsFamiliales - forfaitLogement;
   montantFinal = Math.max(0, Math.round(montantFinal * 100) / 100);
   const sousSeuilVersement = montantFinal > 0 && montantFinal < rsaBaremes.montantMinimumVerse;
   if (sousSeuilVersement) montantFinal = 0;

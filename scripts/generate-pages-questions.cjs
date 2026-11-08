@@ -26,6 +26,7 @@ fs.writeFileSync(
   entree,
   `export * from ${JSON.stringify(path.join(root, "src/utils/questions/pagesQuestions.ts"))};\n` +
     `export * from ${JSON.stringify(path.join(root, "src/utils/questions/pagesNotaire.ts"))};\n` +
+    `export * from ${JSON.stringify(path.join(root, "src/utils/questions/pagesAidesFoyer.ts"))};\n` +
     `export { synchroniserExemples, synchroniserFaqJsonLd } from ${JSON.stringify(path.join(root, "src/utils/exemplesChiffres.ts"))};\n`,
 );
 esbuild.buildSync({ entryPoints: [entree], bundle: true, platform: "node", format: "cjs", outfile: bundle, logLevel: "error" });
@@ -83,14 +84,19 @@ const existe = (slug) => generees.has(slug) || fs.existsSync(path.join(root, "sr
 for (const p of Q.PAGES_NOTAIRE) ecrire(path.join("src/pages", `${p.slug}.html`), finaliser(Q.pageNotaire(p, existe)));
 ecrire(path.join("src/pages", `${Q.SLUG_PAGE_GLOBALE}.html`), finaliser(Q.pageGlobaleNotaire(existe)));
 
+// Aides d'une mère célibataire selon le nombre d'enfants : pages et sommaire
+for (const p of Q.PAGES_AIDES_FOYER) ecrire(path.join("src/pages", p.slug, "index.html"), finaliser(Q.pageAidesFoyer(p)));
+if (Q.SOMMAIRE_AIDES_FOYER.statut === "valide") ecrire(path.join("src/pages", Q.SOMMAIRE_AIDES_FOYER.slug, "index.html"), finaliser(Q.sommaireAidesFoyer()));
+
 // Sitemap
 const sitemap = fs.readFileSync(path.join(root, "public/sitemap.xml"), "utf8");
-const pagesSitemap = [...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug), ...Q.SLUGS_NOTAIRE];
+const pagesSitemap = [...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug), ...Q.SLUGS_NOTAIRE, ...Q.SLUGS_AIDES_FOYER];
 const redirigees = [...Q.REDIRECTIONS, ...Q.REDIRECTIONS_NOTAIRE];
 // Date de dernière modification du contenu de chaque page générée (lastmod)
 const datesSitemap = Object.fromEntries([
   ...[...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug)].map((slug) => [slug, Q.MISE_A_JOUR_QUESTIONS]),
   ...Q.SLUGS_NOTAIRE.map((slug) => [slug, Q.MISE_A_JOUR_NOTAIRE]),
+  ...Q.SLUGS_AIDES_FOYER.map((slug) => [slug, Q.MISE_A_JOUR_AIDES_FOYER]),
 ]);
 ecrire("public/sitemap.xml", Q.majSitemap(sitemap.replace(/\r\n/g, "\n"), siteUpdate.lastVerified, pagesSitemap, redirigees.map((r) => r.de), datesSitemap));
 
@@ -111,5 +117,5 @@ if (check && aMettreAJour.length) {
 console.log(
   check
     ? "Pages de questions à jour."
-    : `${Q.QUESTIONS.length} page(s) de questions, ${Q.SOMMAIRES.length} sommaire(s), ${Q.PAGES_NOTAIRE.length} page(s) notaire ; ${aMettreAJour.length} fichier(s) mis à jour${aMettreAJour.length ? ` : ${aMettreAJour.join(", ")}` : ""}.`,
+    : `${Q.QUESTIONS.length} page(s) de questions, ${Q.SOMMAIRES.length} sommaire(s), ${Q.PAGES_NOTAIRE.length} page(s) notaire, ${Q.PAGES_AIDES_FOYER.length} page(s) aides du foyer ; ${aMettreAJour.length} fichier(s) mis à jour${aMettreAJour.length ? ` : ${aMettreAJour.join(", ")}` : ""}.`,
 );
