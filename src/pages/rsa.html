@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulation RSA 2026 : Calculez votre allocation CAF en 2 min</title>
-    <meta name="description" content="Calculez votre RSA 2026 selon votre situation : célibataire, couple, avec enfant. Simulation gratuite basée sur les barèmes CAF 2026. Résultat immédiat, sans inscription !" />
+    <title>Simulation RSA 2026 selon vos revenus : montant CAF en 2 min</title>
+    <meta name="description" content="Simulation RSA 2026 selon vos revenus : salaire, chômage, pension et aide au logement déduits du montant forfaitaire. Personne seule, couple, avec enfants. Gratuit, sans inscription." />
     <meta
       name="keywords"
       content="simulation RSA, RSA simulation, simulateur RSA, simulation du RSA CAF, CAF simulation RSA, simulateur RSA, simulation RSA couple, simulation CAF RSA, simulation RSA CAF, simulation CAF pour RSA, RSA CAF simulation, calculateur RSA, RSA 2026, montant du RSA, RSA personne seule, RSA et APL cumulable"
@@ -295,7 +295,7 @@
       class="bg-gradient-to-r from-purple-600 to-purple-700 text-white py-12"
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-4">Simulateur RSA 2026 : calculez votre montant selon votre situation familiale</h1>
+        <h1 class="text-4xl font-bold mb-4">Simulateur RSA 2026 : calculez votre montant selon vos revenus et votre situation familiale</h1>
         <p class="text-sm text-purple-200 mb-3">
           <span class="inline-flex items-center bg-purple-800 bg-opacity-50 px-3 py-1 rounded-full text-white">
             <span class="mr-1">✓</span>V&eacute;rifi&eacute; le 5 mai 2026 - Bar&egrave;mes CAF officiels &agrave; jour</span>
@@ -563,6 +563,23 @@
             <span><strong>Méthodologie transparente :</strong> <a href="/pages/methodologie" class="text-blue-600 hover:underline">Consulter notre méthode de calcul</a></span>
           </li>
         </ul>
+      </section>
+      <!-- RSA selon les revenus : montants calculés par le moteur (data-exemple « rsa ») -->
+      <section class="mb-8 bg-white rounded-lg shadow p-6" id="rsa-selon-revenus">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Simulation du RSA selon vos revenus</h2>
+        <p class="text-gray-700 mb-4">Le RSA complète vos ressources jusqu'au montant forfaitaire : chaque euro de salaire, d'allocation chômage ou de pension est déduit. Si vous touchez une aide au logement (APL, ALS, ALF), la CAF retire en plus un forfait logement. Montants mensuels versés :</p>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse text-sm">
+            <thead class="bg-gray-100"><tr><th scope="col" class="border border-gray-300 px-3 py-2 text-left">Revenus du foyer</th><th scope="col" class="border border-gray-300 px-3 py-2 text-right">Personne seule sans APL</th><th scope="col" class="border border-gray-300 px-3 py-2 text-right">Personne seule avec APL</th><th scope="col" class="border border-gray-300 px-3 py-2 text-right">Couple avec APL</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" class="border border-gray-300 px-3 py-2 text-left font-medium text-gray-900">Aucun revenu</th><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":0,"logement":"loue","activite":"inactif"}' data-decimales="2">651,69</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":0,"logement":"aide-logement","activite":"inactif"}' data-decimales="2">573,49</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"couple","enfants":0,"revenus":0,"logement":"aide-logement","activite":"inactif"}' data-decimales="2">821,13</span> €</td></tr>
+              <tr><th scope="row" class="border border-gray-300 px-3 py-2 text-left font-medium text-gray-900">200 € de salaire net</th><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":200,"logement":"loue","activite":"actif"}' data-decimales="2">451,69</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":200,"logement":"aide-logement","activite":"actif"}' data-decimales="2">373,49</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"couple","enfants":0,"revenus":200,"logement":"aide-logement","activite":"actif"}' data-decimales="2">621,13</span> €</td></tr>
+              <tr><th scope="row" class="border border-gray-300 px-3 py-2 text-left font-medium text-gray-900">400 € de salaire net</th><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":400,"logement":"loue","activite":"actif"}' data-decimales="2">251,69</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":400,"logement":"aide-logement","activite":"actif"}' data-decimales="2">173,49</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"couple","enfants":0,"revenus":400,"logement":"aide-logement","activite":"actif"}' data-decimales="2">421,13</span> €</td></tr>
+              <tr><th scope="row" class="border border-gray-300 px-3 py-2 text-left font-medium text-gray-900">600 € de salaire net</th><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":600,"logement":"loue","activite":"actif"}' data-decimales="2">51,69</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"seul","enfants":0,"revenus":600,"logement":"aide-logement","activite":"actif"}' data-decimales="2">0,00</span> €</td><td class="border border-gray-300 px-3 py-2 text-right text-gray-900 whitespace-nowrap"><span data-exemple="rsa" data-params='{"situation":"couple","enfants":0,"revenus":600,"logement":"aide-logement","activite":"actif"}' data-decimales="2">221,13</span> €</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-gray-600">Barème au 1er avril 2026. Parent isolé : le RSA peut être majoré pendant 12 mois, ou jusqu'aux 3 ans du plus jeune enfant (montant non calculé ici). Les allocations familiales et la pension alimentaire comptent aussi dans les ressources. Estimation : seule la CAF fixe le montant.</p>
       </section>
       <!-- H2 SEO (complémentaire au H1) -->
       <h2 class="text-2xl font-bold text-gray-900 mb-6">Montant RSA 2026 : Personne Seule, Couple, Famille</h2>
@@ -945,9 +962,11 @@
                 required
               >
                 <option value="">-- Sélectionnez --</option>
-                <option value="loue">Locataire (loyer payé)</option>
-                <option value="proprio">Propriétaire (remboursement crédit)</option>
-                <option value="gratuit">Logement gratuit</option>
+                <option value="aide-logement">Locataire qui touche une aide au logement (APL, ALS, ALF)</option>
+                <option value="loue">Locataire sans aide au logement</option>
+                <option value="proprio">Propriétaire qui rembourse un prêt</option>
+                <option value="proprio-sans-pret">Propriétaire sans prêt en cours</option>
+                <option value="gratuit">Hébergé gratuitement</option>
                 <option value="sans-abri">Sans logement stable</option>
               </select>
             </div>

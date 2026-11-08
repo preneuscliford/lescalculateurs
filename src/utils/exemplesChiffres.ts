@@ -16,6 +16,7 @@
 
 import { calculerAPL, type APLInput } from "./aplCalculEngine";
 import { calculerPrimeActivite, type PrimeActiviteCalculData } from "./primeActiviteCalculEngine";
+import { calculerRSA, type RSACalculData } from "./rsaCalculEngine";
 import { calculerNotaire, type NotaireCalculData } from "./notaireCalculEngine";
 import { calculerFinDroits, formaterDateLongue, type FinDroitsData } from "./finDroitsChomageCalculEngine";
 import { calculerDepotGarantie, type DepotGarantieData } from "./depotGarantieCalculEngine";
@@ -43,6 +44,8 @@ export const CALCULS_EXEMPLES: Record<string, Calcul> = {
   },
   /** Prime d'activité mensuelle */
   "prime-activite": (p: PrimeActiviteCalculData) => calculerPrimeActivite(p).montantEstime,
+  /** RSA mensuel versé (forfait logement et seuil de versement compris) */
+  rsa: (p: RSACalculData) => calculerRSA(p).montantEstime,
   /** Frais de notaire ; champ = "total" (défaut), "droitsEnregistrement", "emoluments"… */
   /** Taux des droits de mutation appliqué, en texte : « 6,32 % » */
   "notaire-taux": (p: NotaireCalculData) =>

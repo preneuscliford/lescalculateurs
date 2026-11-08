@@ -10,6 +10,7 @@
  */
 import liste from "../../data/questions-validees.json";
 import { calculerAPL } from "../aplCalculEngine";
+import { CALCULS_EXEMPLES } from "../exemplesChiffres";
 import { baremes } from "../../data/baremes";
 
 export const SITE = "https://www.lescalculateurs.fr";
@@ -100,6 +101,12 @@ const champ = (e: EntreeQuestion, zone: string, nom: string, decimales = 0) =>
   exemple("apl", paramsApl(e, zone, 1000), ` data-champ="${nom}"${decimales ? ` data-decimales="${decimales}"` : ""}`);
 const seuilRevenus = (e: EntreeQuestion, zone: string) =>
   exemple("apl-seuil-revenus", paramsApl(e, zone, 0), ` data-arrondi="10"`);
+
+/** Mêmes calculs, en texte, pour les balises où un <span> n'a pas sa place (meta description) */
+const euros = (n: number) => `${Math.round(n).toLocaleString("fr-FR").replace(/ /g, " ")} €`;
+const montantTexte = (e: EntreeQuestion, zone: string, revenus: number) => euros(Number(CALCULS_EXEMPLES.apl(JSON.parse(paramsApl(e, zone, revenus)))));
+const seuilTexte = (e: EntreeQuestion, zone: string) =>
+  euros(Math.round(Number(CALCULS_EXEMPLES["apl-seuil-revenus"](JSON.parse(paramsApl(e, zone, 0)))) / 10) * 10);
 
 /** Pages voisines : un enfant de plus ou de moins, personne seule ou couple */
 export function voisines(e: EntreeQuestion, toutes = QUESTIONS): EntreeQuestion[] {
@@ -197,8 +204,9 @@ export function pageApl(e: EntreeQuestion, lireTitre: (slug: string) => string |
     { nom: libelleCourt(e), url },
   ]);
   const qui = libelleSituation(e);
-  const description = `Montant de l'APL 2026 pour ${qui} : tableau selon vos revenus en zone 1, 2 et 3, plafond de loyer et revenus au-delà desquels l'aide s'arrête. Calcul avec le barème officiel.`;
   const [z1, z2, z3] = ZONES.map((z) => z.code);
+  // Réponse directe dans l'extrait Google : montants du moteur, recalculés à chaque build
+  const description = `APL 2026 pour ${qui} : ${montantTexte(e, z1, 0)} par mois sans revenu en zone 1, ${montantTexte(e, z2, 1000)} avec 1 000 € de revenus en zone 2, plus rien vers ${seuilTexte(e, z2)}. Tableau selon vos revenus et votre zone.`;
 
   const lignes = REVENUS_TABLEAU.map((r) => {
     // Espace insécable visible entre les milliers (l'espace fine de toLocaleString disparaît à l'écran)
@@ -264,6 +272,7 @@ ${entete()}
         <p class="mt-4 text-lg text-blue-50">
           Pour ${qui}, avec 1 000 € de revenus par mois, l'APL est d'environ <strong>${montant(e, z1, 1000)} €</strong> en zone 1,
           <strong>${montant(e, z2, 1000)} €</strong> en zone 2 et <strong>${montant(e, z3, 1000)} €</strong> en zone 3.
+          Sans revenu, elle atteint <strong>${montant(e, z1, 0)} €</strong> en zone 1 ; en zone 2, elle s'arrête vers ${seuilRevenus(e, z2)} € de revenus par mois.
         </p>
       </div>
     </section>
