@@ -124,7 +124,8 @@ export const SITUATIONS: OptionChamp[] = [
 export const LOGEMENT_AIDES: OptionChamp[] = [
   { valeur: "aide_logement", libelle: "Locataire qui touche une aide au logement (APL)" },
   { valeur: "loue", libelle: "Locataire sans aide au logement" },
-  { valeur: "proprio", libelle: "Propriétaire" },
+  { valeur: "proprio", libelle: "Propriétaire qui rembourse un prêt" },
+  { valeur: "proprio-sans-pret", libelle: "Propriétaire sans prêt en cours" },
   { valeur: "gratuit", libelle: "Logé gratuitement" },
 ];
 

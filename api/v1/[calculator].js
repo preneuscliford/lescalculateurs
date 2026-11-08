@@ -2078,7 +2078,7 @@ function getPrimeForfait(situation, enfants, majorationIsolement) {
   return primeBaremes.montantForfaitaire.nonMajoree.isole3Enfants + (nbEnfants - 3) * primeBaremes.montantForfaitaire.nonMajoree.personneSupplementaire;
 }
 function getHousingForfait(logement, situation, enfants) {
-  if (logement === "loue") return 0;
+  if (logement === "loue" || logement === "proprio") return 0;
   const foyerSize = (situation === "couple" ? 2 : 1) + Math.max(0, Math.floor(enfants || 0));
   if (foyerSize <= 1) return primeBaremes.forfaitLogement.unePersonne;
   if (foyerSize === 2) return primeBaremes.forfaitLogement.deuxPersonnes;
@@ -2530,7 +2530,7 @@ function getBaseCoefficient(situation, enfants) {
   return rsaBaremes.coefficientsFoyer.coupleAvec1OuSeulAvec2Enfants + (nbEnfants - 2) * rsaBaremes.coefficientsFoyer.personneSupplementaire;
 }
 function getForfaitLogement(logement, situation, enfants) {
-  if (logement === "loue" || logement === "sans-abri") return 0;
+  if (logement === "loue" || logement === "proprio" || logement === "sans-abri") return 0;
   const foyerSize = (situation === "couple" ? 2 : 1) + Math.max(0, Math.floor(enfants || 0));
   if (foyerSize <= 1) return rsaBaremes.forfaitLogement.unePersonne;
   if (foyerSize === 2) return rsaBaremes.forfaitLogement.deuxPersonnes;

@@ -45,8 +45,14 @@ function getBaseCoefficient(situation: string, enfants: number): number {
   );
 }
 
+/**
+ * Forfait logement : déduit quand le foyer touche une aide au logement (CASF, art. R262-10), est
+ * hébergé gratuitement ou propriétaire sans prêt en cours (art. R262-9). Pas de forfait pour un
+ * locataire sans aide au logement (« loue »), un propriétaire qui rembourse un prêt (« proprio »)
+ * ni sans logement stable.
+ */
 function getForfaitLogement(logement: string, situation: string, enfants: number): number {
-  if (logement === "loue" || logement === "sans-abri") return 0;
+  if (logement === "loue" || logement === "proprio" || logement === "sans-abri") return 0;
 
   const foyerSize = (situation === "couple" ? 2 : 1) + Math.max(0, Math.floor(enfants || 0));
   if (foyerSize <= 1) return rsaBaremes.forfaitLogement.unePersonne;

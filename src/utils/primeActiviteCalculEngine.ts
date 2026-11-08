@@ -76,8 +76,13 @@ function getPrimeForfait(situation: string, enfants: number, majorationIsolement
   );
 }
 
+/**
+ * Forfait logement : déduit pour un foyer qui touche une aide au logement, hébergé gratuitement ou
+ * propriétaire sans prêt en cours (code de la sécurité sociale, art. R844-3). Pas de forfait pour un
+ * locataire sans aide au logement (« loue ») ni pour un propriétaire qui rembourse un prêt (« proprio »).
+ */
 function getHousingForfait(logement: string, situation: string, enfants: number): number {
-  if (logement === "loue") return 0;
+  if (logement === "loue" || logement === "proprio") return 0;
 
   const foyerSize = (situation === "couple" ? 2 : 1) + Math.max(0, Math.floor(enfants || 0));
   if (foyerSize <= 1) return primeBaremes.forfaitLogement.unePersonne;

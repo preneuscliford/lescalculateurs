@@ -57,6 +57,15 @@ describe("primeActiviteCalculEngine", () => {
     expect(r.montantEstime).toBeCloseTo(179.55, 1);
   });
 
+  test("forfait logement : avec aide au logement ou propriétaire sans prêt, pas pour un propriétaire qui rembourse", () => {
+    const prime = (logement: string) =>
+      calculerPrimeActivite({ situation: "seul", enfants: 0, revenusProf: 1400, autresRevenus: 0, logement, typeActivite: "salarie" }).details.forfaitLogement;
+    expect(prime("aide-logement")).toBeGreaterThan(0);
+    expect(prime("proprio-sans-pret")).toBeGreaterThan(0);
+    expect(prime("proprio")).toBe(0);
+    expect(prime("loue")).toBe(0);
+  });
+
   test("montant théorique sous le seuil de versement (15 EUR) => forcé à 0", () => {
     const r = calculerPrimeActivite({
       situation: "seul",
@@ -70,13 +79,13 @@ describe("primeActiviteCalculEngine", () => {
     expect(r.eligibilite).toMatch(/trop faible/i);
   });
 
-  test("forfait logement appliqué quand le logement n'est pas loué", () => {
+  test("forfait logement appliqué à un propriétaire sans prêt en cours", () => {
     const r = calculerPrimeActivite({
       situation: "seul",
       enfants: 0,
       revenusProf: 1000,
       autresRevenus: 0,
-      logement: "proprio",
+      logement: "proprio-sans-pret",
       typeActivite: "salarie",
     });
     expect(r.details.forfaitLogement).toBeCloseTo(76.59, 1);

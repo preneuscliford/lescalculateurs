@@ -35,7 +35,7 @@ const ENDPOINTS: ApiEndpointDoc[] = [
       { name: "situation", type: '"seul" | "couple" | "monoparental"', required: true, description: "Situation familiale" },
       { name: "enfants", type: "number", required: false, description: "Nombre d'enfants à charge (défaut 0)" },
       { name: "revenus", type: "number", required: true, description: "Revenus mensuels nets, hors RSA" },
-      { name: "logement", type: '"loue" | "proprio" | "gratuit" | "sans-abri"', required: true, description: "Situation de logement" },
+      { name: "logement", type: '"aide-logement" | "loue" | "proprio" | "proprio-sans-pret" | "gratuit" | "sans-abri"', required: true, description: "Logement : aide-logement = locataire qui touche une aide au logement, loue = locataire sans aide, proprio = propriétaire qui rembourse un prêt" },
       { name: "activite", type: '"actif" | "inactif" | "chomage"', required: true, description: "Situation professionnelle" },
     ],
     body: { situation: "seul", enfants: 0, revenus: 300, logement: "loue", activite: "inactif" },

@@ -61,6 +61,14 @@ describe("rsaCalculEngine", () => {
     expect(r.montantEstime).toBeCloseTo(573.49, 1);
   });
 
+  test("forfait logement : locataire avec aide au logement et propriétaire sans prêt, pas pour un propriétaire qui rembourse", () => {
+    const rsa = (logement: string) => calculerRSA({ situation: "seul", enfants: 0, revenus: 0, logement, activite: "inactif" }).montantEstime;
+    expect(rsa("aide-logement")).toBeCloseTo(573.49, 1);
+    expect(rsa("proprio-sans-pret")).toBeCloseTo(573.49, 1);
+    expect(rsa("proprio")).toBeCloseTo(651.69, 1);
+    expect(rsa("loue")).toBeCloseTo(651.69, 1);
+  });
+
   test("montant inférieur au seuil de versement de 6 EUR => non versé", () => {
     const r = calculerRSA({
       situation: "seul",
