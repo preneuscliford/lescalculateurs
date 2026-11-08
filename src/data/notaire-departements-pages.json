@@ -1,5 +1,6 @@
 {
   "description": "Pages « frais de notaire » par département (lots 1, 2 et 3, validés par Cliff le 26/10/2026). Contenu local rédigé à partir des sources citées ; montants calculés par le moteur au build. Générées par scripts/generate-pages-questions.cjs.",
+  "miseAJour": "2026-10-26",
   "pages": [
     {
       "code": "06",

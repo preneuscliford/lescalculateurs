@@ -87,7 +87,12 @@ ecrire(path.join("src/pages", `${Q.SLUG_PAGE_GLOBALE}.html`), finaliser(Q.pageGl
 const sitemap = fs.readFileSync(path.join(root, "public/sitemap.xml"), "utf8");
 const pagesSitemap = [...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug), ...Q.SLUGS_NOTAIRE];
 const redirigees = [...Q.REDIRECTIONS, ...Q.REDIRECTIONS_NOTAIRE];
-ecrire("public/sitemap.xml", Q.majSitemap(sitemap.replace(/\r\n/g, "\n"), siteUpdate.lastVerified, pagesSitemap, redirigees.map((r) => r.de)));
+// Date de dernière modification du contenu de chaque page générée (lastmod)
+const datesSitemap = Object.fromEntries([
+  ...[...Q.QUESTIONS.map((q) => q.slug), ...Q.SOMMAIRES.map((s) => s.slug)].map((slug) => [slug, Q.MISE_A_JOUR_QUESTIONS]),
+  ...Q.SLUGS_NOTAIRE.map((slug) => [slug, Q.MISE_A_JOUR_NOTAIRE]),
+]);
+ecrire("public/sitemap.xml", Q.majSitemap(sitemap.replace(/\r\n/g, "\n"), siteUpdate.lastVerified, pagesSitemap, redirigees.map((r) => r.de), datesSitemap));
 
 // Redirections 301 des pages remplacées
 const vercelTexte = fs.readFileSync(path.join(root, "vercel.json"), "utf8");

@@ -1,6 +1,7 @@
 {
   "description": "Pages de questions générées au build (section 9.2). Une entrée = une page indexée, avec ses liens et son entrée de sitemap. Seules les entrées « statut »: « valide » sont générées. Critères (section 2) : 1. formulation réellement recherchée ; 2. réponse matériellement différente ; 3. source propre (moteur du site) ; 4. sinon, le simulateur principal répond.",
   "sourceDonnees": "Google Search Console, pages /pages/apl*, requêtes du 24/07/2026 au 22/10/2026 (scripts/fetch-search-console-queries.cjs)",
+  "miseAJour": "2026-10-25",
   "sommaires": [
     {
       "simulateur": "apl",

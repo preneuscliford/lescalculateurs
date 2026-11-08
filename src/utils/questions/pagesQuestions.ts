@@ -39,6 +39,8 @@ export interface Sommaire {
 }
 
 export const QUESTIONS = (liste.questions as EntreeQuestion[]).filter((q) => q.statut === "valide");
+/** Date de la dernière modification du contenu des pages de questions (lastmod du sitemap) */
+export const MISE_A_JOUR_QUESTIONS: string = liste.miseAJour;
 export const SOMMAIRES = (liste.sommaires as Sommaire[]).filter((s) => s.statut === "valide");
 export const REDIRECTIONS: Redirection[] = QUESTIONS.flatMap((q) => q.pagesExistantes?.rediriger301 ?? []);
 
@@ -415,13 +417,22 @@ export function blocLiensSituations(simulateur: string): string {
 /**
  * Met à jour le sitemap : une entrée (sans barre oblique finale, comme la canonique) par page générée,
  * suppression des pages redirigées et de toute URL /r/. Les autres entrées sont conservées.
+ * « dates » donne, par page générée, la date de dernière modification de son contenu : elle remplace
+ * un lastmod plus ancien (sinon Google ne repasse pas sur une adresse déjà vue en 404 ou redirigée).
  */
-export function majSitemap(xml: string, lastmod: string, pages = [...QUESTIONS.map((q) => q.slug), ...SOMMAIRES.map((s) => s.slug)], redirigees = REDIRECTIONS.map((r) => r.de)): string {
+export function majSitemap(
+  xml: string,
+  lastmod: string,
+  pages = [...QUESTIONS.map((q) => q.slug), ...SOMMAIRES.map((s) => s.slug)],
+  redirigees = REDIRECTIONS.map((r) => r.de),
+  dates: Record<string, string> = {},
+): string {
   const nl = xml.includes("\r\n") ? "\r\n" : "\n";
   const loc = (b: string) => /<loc>([^<]*)<\/loc>/.exec(b)?.[1] ?? "";
   const voulues = new Set(pages.map(urlPage));
   const aRetirer = new Set(redirigees.map(urlPage));
   const presentes = new Set<string>();
+  const dateDe = new Map(Object.entries(dates).map(([slug, d]) => [urlPage(slug), d]));
   // Retire, avec leur ligne, les pages redirigées, les URL /r/ et l'ancienne forme « …/ » des pages générées
   let out = xml.replace(/[ \t]*<url>[\s\S]*?<\/url>[ \t]*\r?\n?/g, (bloc) => {
     const l = loc(bloc);
@@ -429,12 +440,14 @@ export function majSitemap(xml: string, lastmod: string, pages = [...QUESTIONS.m
     if (aRetirer.has(sansBarre) || l.startsWith(`${SITE}/r/`)) return "";
     if (voulues.has(sansBarre) && l !== sansBarre) return "";
     if (voulues.has(l)) presentes.add(l);
+    const d = dateDe.get(l);
+    if (d) return bloc.replace(/<lastmod>([^<]*)<\/lastmod>/, (m, ancienne) => (ancienne < d ? `<lastmod>${d}</lastmod>` : m));
     return bloc;
   });
   const ajouts = pages
     .map(urlPage)
     .filter((u) => !presentes.has(u))
-    .map((u) => `  <url>${nl}    <loc>${u}</loc>${nl}    <lastmod>${lastmod}</lastmod>${nl}    <changefreq>monthly</changefreq>${nl}    <priority>0.6</priority>${nl}  </url>${nl}`)
+    .map((u) => `  <url>${nl}    <loc>${u}</loc>${nl}    <lastmod>${dateDe.get(u) ?? lastmod}</lastmod>${nl}    <changefreq>monthly</changefreq>${nl}    <priority>0.6</priority>${nl}  </url>${nl}`)
     .join("");
   out = out.replace(/<\/urlset>/, `${ajouts}</urlset>`);
   return out;

@@ -49,6 +49,18 @@ describe("pages de questions (src/data/questions-validees.json)", () => {
     expect(majSitemap(out, "2026-10-18", ["apl/a"], [])).toBe(out);
   });
 
+  test("majSitemap : la date de contenu d'une page générée remplace un lastmod plus ancien, jamais un plus récent", () => {
+    const entree = (loc: string, d: string) => `  <url>\n    <loc>https://www.lescalculateurs.fr/pages/${loc}</loc>\n    <lastmod>${d}</lastmod>\n  </url>\n`;
+    const xml = `<urlset>\n${entree("blog/a", "2026-10-18")}${entree("blog/b", "2026-11-02")}${entree("autre", "2026-01-01")}</urlset>\n`;
+    const dates = { "blog/a": "2026-10-26", "blog/b": "2026-10-26", "blog/c": "2026-10-26" };
+    const out = majSitemap(xml, "2026-10-18", ["blog/a", "blog/b", "blog/c"], [], dates);
+    expect(out).toContain(entree("blog/a", "2026-10-26"));
+    expect(out).toContain(entree("blog/b", "2026-11-02"));
+    expect(out).toContain(entree("autre", "2026-01-01"));
+    expect(out).toContain("<loc>https://www.lescalculateurs.fr/pages/blog/c</loc>\n    <lastmod>2026-10-26</lastmod>");
+    expect(majSitemap(out, "2026-10-18", ["blog/a", "blog/b", "blog/c"], [], dates)).toBe(out);
+  });
+
   test("pages voisines : un enfant de plus ou de moins, seul ou couple", () => {
     const parId = (id: string) => QUESTIONS.find((q) => q.id === id) as EntreeQuestion;
     expect(voisines(parId("apl-deux-enfants")).map((q) => q.id).sort()).toEqual(["apl-trois-enfants", "apl-un-enfant"]);

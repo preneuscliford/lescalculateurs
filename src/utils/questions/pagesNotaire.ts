@@ -44,6 +44,8 @@ export interface PageNotaire {
 }
 
 export const PAGES_NOTAIRE = (liste.pages as PageNotaire[]).filter((p) => p.statut === "valide");
+/** Date de la dernière modification du contenu des pages notaire (lastmod du sitemap) */
+export const MISE_A_JOUR_NOTAIRE: string = liste.miseAJour;
 export const SLUG_PAGE_GLOBALE = "blog/frais-notaire-departements";
 export const REDIRECTIONS_NOTAIRE = PAGES_NOTAIRE.flatMap((p) => (p.remplace ?? []).map((de) => ({ de, vers: p.slug })));
 
